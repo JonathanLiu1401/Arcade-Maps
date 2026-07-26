@@ -1,0 +1,17 @@
+Vendored third-party libraries (no CDN at runtime):
+
+- Leaflet 1.9.4 (leaflet.js, leaflet.css, images/)
+  (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+  BSD-2-Clause. https://leafletjs.com
+  Source: https://unpkg.com/leaflet@1.9.4/dist/
+
+- Leaflet.markercluster 1.5.3 (leaflet.markercluster.js, MarkerCluster.css,
+  MarkerCluster.Default.css)
+  (c) 2012 David Leaver
+  MIT. https://github.com/Leaflet/Leaflet.markercluster
+  Source: https://unpkg.com/leaflet.markercluster@1.5.3/dist/
+  Note: upstream dist JS ships without an embedded license header; license
+  text is at the repository above.
+
+Map tiles are loaded at runtime from https://tile.openstreetmap.org
+((c) OpenStreetMap contributors, ODbL) and are not part of this repository.

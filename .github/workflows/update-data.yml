@@ -1,0 +1,48 @@
+name: Update arcade data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly: Monday 18:00 UTC = Tuesday 03:00 JST, a quiet window for the
+    # Japanese source sites (ALL.Net / eagate). Keep this off-peak for JST.
+    - cron: '0 18 * * 1'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Scrapers are stdlib-only today, so there is nothing to install.
+      # If a third-party dependency is ever added, uncomment:
+      # - run: python -m pip install -r requirements.txt
+
+      - name: Scrape all sources
+        # run_all.py is fail-fast: fetches retry 3x with backoff, and any
+        # source that still fails (or parses to zero rows) makes the run
+        # exit nonzero, failing this job so NOTHING is committed and the
+        # previously committed data stays in place. continue-on-error
+        # stays false so a broken run can never half-commit a partial
+        # refresh.
+        continue-on-error: false
+        run: python scrapers/run_all.py
+
+      - name: Commit refreshed data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ data_raw/ mymaps/
+          git diff --cached --quiet || git commit -m "data: automated refresh $(date -u +%F)"
+          git push

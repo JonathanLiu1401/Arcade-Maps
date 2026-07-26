@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import allnet
 import eagate
 import wahlap
+import bemanicn
 import ziv
 import round1usa
 import merge
@@ -56,6 +57,11 @@ def scrape_all(raw_dir, only=None):
                 common.die("wahlap %s returned 0 rows" % slug)
             common.save_json(
                 os.path.join(raw_dir, wahlap.OUTFILE[slug]), rows)
+    if want("bemanicn"):
+        rows = bemanicn.scrape()
+        if not rows:
+            common.die("bemanicn returned 0 rows")
+        common.save_json(os.path.join(raw_dir, bemanicn.OUTFILE), rows)
     if want("ziv"):
         merged = {}
         for country in ZIV_COUNTRIES:
@@ -82,8 +88,8 @@ def main():
     ap.add_argument("--skip-scrape", action="store_true",
                     help="reuse existing data_raw/ (no network)")
     ap.add_argument("--only", action="append",
-                    choices=["allnet", "eagate", "wahlap", "ziv",
-                             "round1usa"],
+                    choices=["allnet", "eagate", "wahlap", "bemanicn",
+                             "ziv", "round1usa"],
                     help="scrape only these sources")
     args = ap.parse_args()
     if not args.skip_scrape:

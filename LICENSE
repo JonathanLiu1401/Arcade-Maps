@@ -1,0 +1,57 @@
+MIT License
+
+Copyright (c) 2026 Jonathan Liu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+----------------------------------------------------------------------
+
+Data and third-party notices
+
+The MIT license above covers the code in this repository. It does not
+claim ownership of the underlying arcade location data.
+
+1. Location data. Arcade location listings are factual information
+   published by their respective operators and communities:
+   - SEGA ALL.Net location search (location.am-all.net) - SEGA
+   - KONAMI e-amusement facility search (p.eagate.573.jp) - KONAMI
+   - WAHLAP location service (sega-register.wahlap.net) - WAHLAP
+     Technology
+   - Zenius-I-Vanisher arcade locations - the Zenius-I-Vanisher community
+   - Round1 USA store listings - Round One Entertainment Inc.
+   This repository redistributes factual location listings (names,
+   addresses, coordinates, available games) with attribution to these
+   sources. All trademarks, game titles, and brand names belong to their
+   respective owners. If you are a rights holder and want a listing
+   corrected or removed, open an issue.
+
+2. Vendored libraries. The following are redistributed under their own
+   licenses, with license text retained alongside the vendored files:
+   - Leaflet (BSD 2-Clause License, (c) Volodymyr Agafonkin and
+     contributors)
+   - Leaflet.markercluster (MIT License, (c) Dave Leaver and
+     contributors)
+   - eviltransform (BSD 2-Clause style license, (c) 2015 Googol Lee and
+     contributors)
+
+3. Map tiles. The website loads basemap tiles from OpenStreetMap.
+   Map data is (c) OpenStreetMap contributors, available under the Open
+   Database License (ODbL). Tile usage follows the OSM Foundation tile
+   usage policy (https://operations.osmfoundation.org/policies/tiles/).
+   No tiles are stored in this repository.

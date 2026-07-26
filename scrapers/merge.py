@@ -2,18 +2,24 @@
 
 Pipeline rules (see README / task spec):
  (a) lat==0 and lng==0 -> null (counted)
- (b) within-source dedupe by exact (name, address)
+ (b) within-source dedupe by NFKC-normalized, whitespace-collapsed
+     (name, address)
  (c) conservative cross-source physical-store merge:
      distance < 120 m AND name similarity >= 0.6, OR exact normalized
      name match when one side lacks coords (same resolved country only).
-     Two coordinate-less entries merge only on exact (name, address).
+     Two coordinate-less entries merge only on exact (name, address),
+     EXCEPT the China-scoped wahlap x bemanicn rule: same province,
+     city-gated, name similarity >= 0.8 (parenthetical branch text
+     kept) - both sources are coordinate-less so the global rules can
+     never fire for them. Same-source listings merge only when the
+     compact names are identical AND coords are within 30 m.
      Official sources (allnet, eagate, wahlap) win name/addr/coords.
      Every cross-source union is logged to data/merge_log.json.
- (d) wahlap (China, coordinate-less) inherits coords from matched
-     ziv/bemanicn entries; recorded as inherited:true in notes.
+ (d) wahlap / bemanicn (China, coordinate-less) inherit coords from
+     matched ziv entries; recorded as inherited:true in notes.
  (e) gcj02 / bd09 -> wgs84 via eviltransform when coord_system says so.
  (f) country from region labels / wahlap province / geo+address heuristics.
- (g) links.gmaps / links.ziv.
+ (g) links.gmaps / links.ziv / links.bemanicn.
 """
 
 import argparse
@@ -146,7 +152,9 @@ _COUNTRY_HINTS = [
 # Ordered bounding boxes (country, lat_min, lat_max, lng_min, lng_max).
 # Small / enclosed regions first; approximate on borders (see README).
 COUNTRY_BOXES = [
-    ("Hong Kong", 22.13, 22.58, 113.82, 114.45),
+    # lat_max 22.50: north of that is Shenzhen (real HK venues top out
+    # around Tin Shui Wai / Tai Po at ~22.46; Sheung Shui ~22.50)
+    ("Hong Kong", 22.13, 22.50, 113.82, 114.45),
     ("Macau", 22.06, 22.24, 113.52, 113.65),
     ("Singapore", 1.15, 1.458, 103.59, 104.10),
     ("Taiwan", 21.85, 25.35, 119.30, 122.05),
@@ -248,20 +256,25 @@ def bbox_country(lat, lng):
 
 
 def resolve_country(lat, lng, addr, name):
+    """Order matters (audit D1): script checks, then the strong signals
+    (coordinate bounding box, US state+ZIP), then keyword hints matched
+    against the ADDRESS ONLY - venue names like "JAPAN VILLAGE" in
+    Brooklyn must never set the country."""
     text = "%s %s" % (addr or "", name or "")
+    addr = addr or ""
     if _HANGUL.search(text):
         return "South Korea"
     if _CA_POSTAL.search(text) or _CA_PROVINCES.search(text):
         return "Canada"
-    for rx, country in _COUNTRY_HINTS:
-        if rx.search(text):
-            return country
-    if _US_STATE_ZIP.search(text):
-        return "United States"
     if lat is not None and lng is not None:
         hit = bbox_country(lat, lng)
         if hit:
             return hit
+    if _US_STATE_ZIP.search(addr):
+        return "United States"
+    for rx, country in _COUNTRY_HINTS:
+        if rx.search(addr):
+            return country
     if _KANA.search(text):
         return "Japan"
     return "Unknown"
@@ -335,8 +348,65 @@ def _bigrams(s):
     return {s[i:i + 2] for i in range(len(s) - 1)}
 
 
-def name_similarity(a, b):
-    na, nb = norm_name(a), norm_name(b)
+# -------------------------------------------- China (wahlap x bemanicn) ---
+
+_CN_SUFFIXES = ["壮族自治区", "回族自治区", "维吾尔自治区", "特别行政区",
+                "自治区", "省", "市", "城区", "地区"]
+
+
+def cn_base(s):
+    """Bare province/city name: 广东省 -> 广东, 上海市 -> 上海."""
+    s = (s or "").strip()
+    for suf in _CN_SUFFIXES:
+        if s.endswith(suf) and len(s) > len(suf):
+            return s[:-len(suf)]
+    return s
+
+
+_REGION_NOTE_RE = re.compile(r"region:\s*([^;]+)")
+
+
+def bemanicn_region(note):
+    """(province_base, city_base) from a bemanicn 'region: 省 市' note.
+    Municipalities (上海市...) have no city token; city falls back to
+    the province itself."""
+    m = _REGION_NOTE_RE.search(note or "")
+    if not m:
+        return None, None
+    toks = m.group(1).split()
+    prov = cn_base(toks[0])
+    city = cn_base(toks[1]) if len(toks) > 1 else prov
+    return prov, city
+
+
+def _china_dice(ca, cb):
+    if not ca or not cb:
+        return 0.0
+    if ca == cb:
+        return 1.0
+    ba, bb = _bigrams(ca), _bigrams(cb)
+    return 2.0 * len(ba & bb) / (len(ba) + len(bb)) if (ba or bb) else 0.0
+
+
+def china_name_similarity(a, b, prov, city_a, city_b):
+    """Similarity for the china_wahlap_bemanicn rule: NFKC compact names
+    KEEPING parenthetical branch text, compared both raw and with the
+    known province/city names stripped - wahlap official names embed the
+    city ("星际传奇上海松江印象城店") while bemanicn community names
+    usually omit it ("星际传奇松江印象城店")."""
+    ca, cb = compact_name_exact(a), compact_name_exact(b)
+    best = _china_dice(ca, cb)
+    geos = sorted({g for g in (prov, city_a, city_b) if g and len(g) >= 2},
+                  key=lambda g: (-len(g), g))
+    for geo in geos:
+        ca = ca.replace(geo, "")
+        cb = cb.replace(geo, "")
+    if len(ca) >= 4 and len(cb) >= 4:
+        best = max(best, _china_dice(ca, cb))
+    return best
+
+
+def _sim_pair(na, nb):
     if not na or not nb:
         return 0.0
     ca, cb = na.replace(" ", ""), nb.replace(" ", "")
@@ -347,6 +417,15 @@ def name_similarity(a, b):
     ba, bb = _bigrams(ca), _bigrams(cb)
     dice = 2.0 * len(ba & bb) / (len(ba) + len(bb)) if (ba or bb) else 0.0
     return max(tok, dice)
+
+
+def name_similarity(a, b):
+    """Max of paren-stripped and paren-kept similarity. The paren-kept
+    pass fixes audit D3's "ROUND1 MEADOWOOD MALL" vs "Round1 Reno
+    (Meadowood Mall)": the branch name lives in the parentheses, and
+    stripping it left nothing to match on."""
+    return max(_sim_pair(norm_name(a), norm_name(b)),
+               _sim_pair(_norm_text(a), _norm_text(b)))
 
 
 def haversine_m(lat1, lng1, lat2, lng2):
@@ -379,23 +458,32 @@ def _null_zero(row, stats, origin):
     return row.get("lat"), row.get("lng")
 
 
+def _dedupe_key(s):
+    """NFKC + whitespace collapse (audit D2): allnet mixes U+3000
+    ideographic spaces with ASCII spaces in otherwise identical rows."""
+    return " ".join(unicodedata.normalize("NFKC", s or "").split())
+
+
 def load_units(raw_dir, stats):
     """Load all raw files -> deduped source units."""
-    units = {}   # (source, name, addr) -> unit
+    units = {}   # (source, normalized name, normalized addr) -> unit
 
     def add(source, name, addr, lat, lng, games, cabs, country, pref,
-            ziv_url=None, note=None, coord_system="wgs84"):
+            ziv_url=None, note=None, coord_system="wgs84",
+            cn_prov=None, cn_city=None, bemanicn_url=None):
         name = (name or "").strip()
         addr = (addr or "").strip()
         if not name:
             return
-        key = (source, name, addr)
+        key = (source, _dedupe_key(name), _dedupe_key(addr))
         u = units.get(key)
         if u is None:
             u = {"source": source, "name": name, "addr": addr,
                  "lat": lat, "lng": lng, "games": set(), "cabs": set(),
                  "country": country, "pref": pref, "ziv_url": ziv_url,
-                 "notes": [], "coord_system": coord_system}
+                 "notes": [], "coord_system": coord_system,
+                 "cn_prov": cn_prov, "cn_city": cn_city,
+                 "bemanicn_url": bemanicn_url}
             units[key] = u
         else:
             stats.within_dupes += 1
@@ -406,6 +494,10 @@ def load_units(raw_dir, stats):
                 u["pref"] = pref
             if u["ziv_url"] is None and ziv_url:
                 u["ziv_url"] = ziv_url
+            if u["cn_prov"] is None and cn_prov:
+                u["cn_prov"], u["cn_city"] = cn_prov, cn_city
+            if u["bemanicn_url"] is None and bemanicn_url:
+                u["bemanicn_url"] = bemanicn_url
         u["games"].update(games)
         u["cabs"].update(cabs)
         if note and note not in u["notes"]:
@@ -504,12 +596,17 @@ def load_units(raw_dir, stats):
         for row in common.load_json(path(fn)):
             stats.raw_rows += 1
             lat, lng = _null_zero(row, stats, fn)
+            # entries with an empty games list (detail 404 / no known
+            # cabs) map to ["other"], keeping their original note
             games = [g if g in GAME_SLUGS else "other"
                      for g in (row.get("games") or ["other"])]
-            pref = extract_pref("China", row.get("address"))
+            prov, city = bemanicn_region(row.get("notes"))
+            pref = prov or extract_pref("China", row.get("address"))
             add("bemanicn", row.get("name"), row.get("address"), lat, lng,
                 games, [], "China", pref, note=row.get("notes"),
-                coord_system=row.get("coord_system") or "unknown")
+                coord_system=row.get("coord_system") or "unknown",
+                cn_prov=prov, cn_city=city,
+                bemanicn_url=row.get("source_url"))
 
     out = list(units.values())
 
@@ -617,6 +714,33 @@ def cluster_units(units, log):
                             "similarity": round(sim, 3),
                             "a": unit_ref(i), "b": unit_ref(j)})
 
+    # same-source near-duplicates (audit D3): one source listing the
+    # same physical store twice with cosmetically different address
+    # strings (Woking Superbowl, Funworld Sun East Mall). Very tight:
+    # identical compact name AND coords within 30 m.
+    for (cx, cy), members in grid.items():
+        cand = []
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                cand.extend(grid.get((cx + dx, cy + dy), ()))
+        for i in members:
+            ui = units[i]
+            for j in cand:
+                if j <= i:
+                    continue
+                uj = units[j]
+                if ui["source"] != uj["source"]:
+                    continue
+                if compacts[i] != compacts[j] or len(compacts[i]) < 3:
+                    continue
+                d = haversine_m(ui["lat"], ui["lng"], uj["lat"], uj["lng"])
+                if d >= 30:
+                    continue
+                if uf.union(i, j):
+                    log.append({"rule": "same-source-dup",
+                                "distance_m": round(d, 1),
+                                "a": unit_ref(i), "b": unit_ref(j)})
+
     # exact-name path when one side lacks coords (same country, diff source)
     by_compact = {}
     for i, c in enumerate(compacts):
@@ -650,6 +774,56 @@ def cluster_units(units, log):
                 if uf.union(i, j):
                     log.append({"rule": rule, "a": unit_ref(i),
                                 "b": unit_ref(j)})
+
+    # China rule (wahlap x bemanicn): both sources are coordinate-less,
+    # so the global rules cannot merge them and the China list would
+    # double. Scoped to China: same province, city-gated (bemanicn knows
+    # its city from the region note; the wahlap city is recognized in
+    # the official name/address), NFKC name similarity >= 0.8 with
+    # parenthetical branch text KEPT. Each bemanicn unit unions with its
+    # single best wahlap match only.
+    bem_idx = [i for i, u in enumerate(units) if u["source"] == "bemanicn"]
+    wah_idx = [i for i, u in enumerate(units) if u["source"] == "wahlap"]
+    if bem_idx and wah_idx:
+        cities = {}   # province base -> known city bases (from bemanicn)
+        for i in bem_idx:
+            u = units[i]
+            if u["cn_prov"]:
+                cities.setdefault(u["cn_prov"], set()).add(u["cn_city"])
+        wah_by_prov = {}
+        for j in wah_idx:
+            u = units[j]
+            prov = cn_base(u["pref"])
+            u["cn_prov"] = prov
+            hay = "%s %s" % (u["name"], u["addr"])
+            for c in sorted(cities.get(prov, ()),
+                            key=lambda s: (-len(s or ""), s or "")):
+                if c and c != prov and len(c) >= 2 and c in hay:
+                    u["cn_city"] = c
+                    break
+            wah_by_prov.setdefault(prov, []).append(j)
+        for i in bem_idx:
+            ui = units[i]
+            prov, city = ui["cn_prov"], ui["cn_city"]
+            if not prov:
+                continue
+            best = (0.0, None)
+            for j in wah_by_prov.get(prov, ()):
+                uj = units[j]
+                wc = uj["cn_city"]
+                if wc and city and wc != city and city != prov:
+                    continue      # cities known on both sides and differ
+                sim = china_name_similarity(ui["name"], uj["name"],
+                                            prov, city, wc)
+                if sim > best[0]:
+                    best = (sim, j)
+            if best[1] is not None and best[0] >= 0.8:
+                j = best[1]
+                if uf.union(j, i):
+                    log.append({"rule": "china_wahlap_bemanicn",
+                                "similarity": round(best[0], 3),
+                                "province": prov,
+                                "a": unit_ref(j), "b": unit_ref(i)})
     groups = {}
     for i in range(n):
         groups.setdefault(uf.find(i), []).append(i)
@@ -670,13 +844,15 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     if coord_u is not None:
         lat, lng = coord_u["lat"], coord_u["lng"]
         if (coord_u["source"] not in OFFICIAL
-                and any(u["source"] == "wahlap" for u in members)):
+                and any(u["source"] in ("wahlap", "bemanicn")
+                        for u in members)):
             inherited_from = coord_u["source"]
     games = set()
     cabs = set()
     src = set()
     notes = []
     ziv_url = None
+    bemanicn_url = None
     pref = None
     country = best["country"]
     for u in members:
@@ -688,11 +864,21 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
                 notes.append(nt)
         if ziv_url is None and u["ziv_url"]:
             ziv_url = u["ziv_url"]
+        if bemanicn_url is None and u["bemanicn_url"]:
+            bemanicn_url = u["bemanicn_url"]
         if pref is None and u["pref"]:
             pref = u["pref"]
         if (u["country"] not in (None, "Unknown") and country
                 in (None, "Unknown")):
             country = u["country"]
+    if best["source"] == "wahlap":
+        # keep the (differing) community address for reference
+        for u in members:
+            if (u["source"] == "bemanicn" and u["addr"]
+                    and norm_name(u["addr"]) != norm_name(best["addr"])):
+                bn = "bemanicn addr: " + u["addr"]
+                if bn not in notes:
+                    notes.append(bn)
     countries = {u["country"] for u in members
                  if u["country"] not in (None, "Unknown")}
     if len(countries) > 1:
@@ -703,7 +889,8 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     if inherited_from:
         notes.append("inherited:true (coords from %s)" % inherited_from)
         inherit_log.append({
-            "wahlap": [u["name"] for u in members if u["source"] == "wahlap"],
+            "coordless": [u["name"] for u in members
+                          if u["source"] in ("wahlap", "bemanicn")],
             "coords_from": {"src": coord_u["source"], "name": coord_u["name"]},
             "lat": lat, "lng": lng})
     note_str = " | ".join(notes) if notes else None
@@ -726,7 +913,7 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "games": sorted(games),
         "cabs": sorted(cabs),
         "src": sorted(src, key=lambda s: SRC_PRIORITY[s]),
-        "links": {"gmaps": gmaps, "ziv": ziv_url},
+        "links": {"gmaps": gmaps, "ziv": ziv_url, "bemanicn": bemanicn_url},
         "notes": note_str,
     }
 

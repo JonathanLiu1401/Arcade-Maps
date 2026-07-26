@@ -52,10 +52,13 @@ def fetch(url, extra_headers=None, retries=3, sleep=DEFAULT_SLEEP, timeout=30):
 
 
 def unescape(text):
-    """HTML-unescape and normalize whitespace."""
+    """HTML-unescape, normalize whitespace, and replace en/em dashes
+    (U+2013 / U+2014, as they appear in some upstream names/addresses)
+    with ASCII hyphens, per this repo's ASCII-punctuation policy."""
     if text is None:
         return None
-    return " ".join(html.unescape(text).split())
+    text = html.unescape(text).replace(chr(0x2013), "-").replace(chr(0x2014), "-")
+    return " ".join(text.split())
 
 
 def save_json(path, data):
