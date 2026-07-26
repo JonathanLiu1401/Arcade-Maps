@@ -67,7 +67,9 @@ def parse_page(html_text, region_code, region_label_fallback):
     return rows
 
 
-def scrape_game(gm, mode, sleep=common.DEFAULT_SLEEP):
+def scrape_game(gm, mode, sleep=common.DEFAULT_SLEEP, smoke=False):
+    """Scrape one game. smoke=True probes a single region only:
+    Tokyo (at=12) for jp mode, the first ct for intl mode."""
     out = []
     if mode == "jp":
         areas = [(str(at),
@@ -79,6 +81,8 @@ def scrape_game(gm, mode, sleep=common.DEFAULT_SLEEP):
                  for ct in range(1000, 1016)]
     else:
         raise ValueError("mode must be jp or intl")
+    if smoke:
+        areas = areas[12:13] if mode == "jp" else areas[:1]
     for region_code, url in areas:
         text = common.fetch(url, sleep=sleep)
         if 'store_name' not in text and 'content_box' not in text:

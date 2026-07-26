@@ -1,9 +1,11 @@
 name: Smoke test scrapers
 
 # Manual-only connectivity test: runs every scraper against ONE region per
-# source (--smoke) to confirm the upstream sites are reachable from
-# GitHub-hosted runners. Nothing is committed; output is uploaded as an
-# artifact for inspection.
+# source (run_all.py --smoke) to confirm the upstream sites are reachable
+# from GitHub-hosted runners. Smoke mode writes only data_raw/smoke_*.json
+# (real data files are untouched), skips merge/MyMaps, and exits nonzero
+# only if EVERY source failed. Nothing is committed; the smoke_*.json
+# files are uploaded as an artifact for inspection.
 on:
   workflow_dispatch:
 
@@ -28,14 +30,11 @@ jobs:
       - name: Run scrapers in smoke mode (one region per source)
         run: python scrapers/run_all.py --smoke
 
-      - name: Upload produced files as artifact
+      - name: Upload smoke output files as artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: smoke-output
-          path: |
-            data/
-            data_raw/
-            mymaps/
+          path: data_raw/smoke_*.json
           if-no-files-found: warn
           retention-days: 7

@@ -91,10 +91,11 @@ def parse_page(html_text, region_code, region_label):
     return rows
 
 
-def scrape_game(gkey, sleep=common.DEFAULT_SLEEP):
+def scrape_game(gkey, sleep=common.DEFAULT_SLEEP, smoke=False):
+    """Scrape one game. smoke=True probes Tokyo (JP-13) only."""
     out = []
     headers = {"Cookie": "facility_dspcount=50"}
-    for p in range(1, 48):
+    for p in ([13] if smoke else range(1, 48)):
         region_code = "JP-%02d" % p
         region_label = PREF_EN[p]
         page = 1
