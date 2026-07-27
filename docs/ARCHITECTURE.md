@@ -231,16 +231,47 @@ Escape peels exactly one layer per press: the settings `<dialog>` is a native
 modal in the browser's top layer and closes itself, so the place panel skips
 its own Escape handler while that dialog is open.
 
-### Marker size classes have one owner
+### Marker tiers have one owner
 
-`markers.js` exports `SIZE_CLASSES` and `UNKNOWN_CLASS`. Both legends (the
-on-map chip and Settings > About) render their thresholds and sample dot
-diameters from those exports. Never restate the bands as literals - a
-hard-coded copy had already drifted out of step with the real bands.
+`markers.js` exports `TIER_CLASSES`, `UNKNOWN_TIER`, `TIER_LEGEND` and
+`tierIconUrl()`. Both legends (the on-map chip and Settings > About) render
+their thresholds, their labels AND their artwork from those exports. Never
+restate the bands as literals and never ship a stand-in shape - a hard-coded
+copy had already drifted out of step with the real bands once.
 
-Unknown is deliberately the middle size, never the smallest: most official
-listings publish which games a store has but not how many cabinets, and
-drawing "unknown" smallest would read as "this store is tiny".
+Six tiers by total cabinets: T1 1-2, T2 3-9, T3 10-19, T4 20-49, T5 50+, and
+TU for "count not published". Each is a different silhouette, so the tier is
+readable without comparing sizes; the size ramp (20/24/26/30/36px, TU 25px) is
+a reinforcing signal only, and the Display toggle flattens it to a uniform
+25px without changing the shapes.
+
+Unknown is deliberately mid-weight, never the smallest: most official listings
+publish which games a store has but not how many cabinets, and drawing
+"unknown" smallest would read as "this store is tiny". A tier is only computed
+from `game_counts` when `counts_src` is a source whose quantities we trust
+(`bemanicn`, or `ziv` where the merge kept a real count); everything else is
+TU, so the counts-honesty policy has exactly one enforcement point.
+
+### Tier artwork is generated, not hand-copied
+
+The six SVGs under `assets/markers/` are the source of truth.
+`tools/build_tier_icons.py` embeds them into `js/tier-icons.js` as strings and
+checks the invariants the tint depends on (one `0 0 32 32` viewBox, a
+`currentColor` region, no `color=` on the root `<svg>`, no `<text>`). Edit the
+SVGs, then re-run the script - never edit the generated file.
+
+They are embedded rather than fetched because `markers.js` builds icons
+synchronously inside `build()`: it replaces `currentColor` with the store's
+game colour and hands the result to `L.icon` as a data URL. A fetch would make
+marker construction asynchronous and would not survive the fixed script order
+in `index.html`. An externally referenced SVG cannot work at all here - it is a
+separate document and inherits nothing, so `currentColor` would resolve to
+black.
+
+Markers are `L.marker` with image icons, not canvas `circleMarker`: the canvas
+renderer can only draw geometry. Each `(tier, colour)` data URL is built once
+and shared, so the browser decodes each of the at most 6 x 19 variants a single
+time, and the artwork stays vector-crisp at `devicePixelRatio` 2.
 
 ## Design decisions
 

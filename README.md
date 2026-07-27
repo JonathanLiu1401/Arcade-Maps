@@ -19,7 +19,7 @@ Worldwide rhythm game arcade locations on one interactive map. Arcade Maps track
 - One search box for three things: type a game (`iidx`, `舞萌`) to switch that filter on, a store name to fly to it, or a city (`Osaka`, `大阪`) to zoom to its arcades. Japanese, Chinese and romaji all match
 - Store detail panel: click any marker and a full-height panel (a drag-to-expand bottom sheet on phones) opens with the store's games and per-game cab counts, address, source badges, notes, and buttons for directions, share-this-store link, and nearby
 - Nearby search: the locate button (or any store's Nearby button) ranks the closest arcades by great-circle distance with a compass bearing, and honours whatever game, cab and source filters are active
-- Settings you keep: turn individual data sources off, switch graduated marker sizing or the map legend on and off, and disable location features entirely. Choices persist per device in localStorage and never travel in a shared link
+- Settings you keep: turn individual data sources off, flatten the marker size ramp (the tier shapes stay), open or close the map legend, and disable location features entirely. Choices persist per device in localStorage and never travel in a shared link
 - Tiered kawaii markers: each store draws one of six original chibi-style icons by total cabinet count (note, button pad, star, cat-ear chibi at 20-49 cabs, crowned idol at 50+, and a "?" pad when no source publishes a count). The icon's disc is tinted by game colour, tiers only use counts a source actually reported, and stacked pins spiderfy on click so overlapping stores stay clickable
 - Cab photos in the detail panel: a store's own photo when a source provides one, otherwise a CC-licensed photo of that game's cabinet from Wikimedia Commons (with the required author/license credit rendered on the image), otherwise a game-colour banner
 - Resizable sidebar: drag the panel edge to any width (double-click resets), remembered per device
@@ -103,6 +103,7 @@ Arcade-Maps/
 |  |- state.js           constants, helpers, loaded data, the state store
 |  |- format.js          distance / count / money / FX formatting
 |  |- mapcore.js         Leaflet map, panes, URL hash sync
+|  |- tier-icons.js      GENERATED tier artwork strings (tools/build_tier_icons.py)
 |  |- markers.js         cluster layer, visibility predicate, tier icons, spiderfy
 |  |- search.js          omnibox over games, arcades and places
 |  |- panel.js           filter drawer, no-coords tab, store detail panel
@@ -117,6 +118,8 @@ Arcade-Maps/
 |- scrapers/             per-source scrapers + merge / geo_validate / china_place / enrich / fx
 |  |- run_all.py         run the full pipeline (scrape -> merge -> mymaps -> fx)
 |  |- build_mymaps.py    regenerate the Google My Maps KMZ/CSV layers
+|- tools/
+|  |- build_tier_icons.py  embed assets/markers/*.svg into js/tier-icons.js
 |- mymaps/               numbered KMZ layers for My Maps import (+ README)
 |- docs/
 |  |- ARCHITECTURE.md    pipeline, data schema, design decisions

@@ -106,9 +106,17 @@ window.AM = window.AM || {};
      help here: "javascript:alert(1)" contains none of the characters it
      escapes, so it survives HTML escaping intact and runs on click. Only http
      and https are allowed through, resolved against the document so a relative
-     value is judged by what it actually becomes. Anything else - javascript:,
-     data:, vbscript:, a protocol-relative //evil.example - yields "" and the
-     caller renders a dead link rather than a live weapon. */
+     value is judged by what it actually becomes. javascript:, data:, vbscript:
+     and friends yield "", and the caller renders a dead link rather than a live
+     weapon. Obfuscation does not help an attacker either: the URL parser folds
+     case and strips the embedded tab in "java&#9;script:" before the check.
+
+     This is a scheme filter, not a destination filter. A protocol-relative
+     "//other.example/x" resolves to https://other.example/x and is allowed, as
+     is any scraped https host - these links are meant to point at ZIv, BemaniCN
+     and Google Maps, so the DESTINATION is untrusted by design and every one of
+     them already carries target="_blank" rel="noopener". What is being stopped
+     here is a URL that executes instead of navigating. */
   function safeUrl(u) {
     if (typeof u !== "string" || !u) return "";
     var abs;

@@ -780,7 +780,7 @@ window.AM = window.AM || {};
         var txt = "photo: " + (cab.author || "unknown") +
           (cab.license ? " / " + cab.license : "");
         credit = cab.source
-          ? '<a class="pl-hero-credit" href="' + esc(cab.source) +
+          ? '<a class="pl-hero-credit" href="' + esc(U.safeUrl(cab.source)) +
             '" target="_blank" rel="noopener">' + esc(txt) + "</a>"
           : '<span class="pl-hero-credit">' + esc(txt) + "</span>";
       }
@@ -845,7 +845,10 @@ window.AM = window.AM || {};
 
   function actionsHtml(a) {
     var h = '<div class="pl-acts">';
-    h += '<a class="act" href="' + esc(directionsUrl(a)) + '" target="_blank" rel="noopener">' +
+    /* directionsUrl can hand back a.links.gmaps, which is a scraped value.
+       esc() is no defence against "javascript:..." - it contains none of the
+       characters esc escapes - so the scheme is checked, not just the markup. */
+    h += '<a class="act" href="' + esc(U.safeUrl(directionsUrl(a))) + '" target="_blank" rel="noopener">' +
       '<span class="act-ico">' + ico("directions") + '</span>' +
       '<span class="act-lb">Directions</span></a>';
     if (U.hasCoords(a)) {
@@ -858,7 +861,7 @@ window.AM = window.AM || {};
       '<span class="act-lb">Share</span></button>';
     var sp = sourcePage(a);
     if (sp) {
-      h += '<a class="act" href="' + esc(sp.url) + '" target="_blank" rel="noopener">' +
+      h += '<a class="act" href="' + esc(U.safeUrl(sp.url)) + '" target="_blank" rel="noopener">' +
         '<span class="act-ico">' + ico("link") + '</span>' +
         '<span class="act-lb">' + esc(sp.label) + "</span></a>";
     }
@@ -982,7 +985,7 @@ window.AM = window.AM || {};
         var label = esc(C.SRC_LABEL[s] || s);
         if ((s === "ziv" || s === "bemanicn") && a.links && a.links[s]) {
           return '<a class="badge" target="_blank" rel="noopener" href="' +
-            esc(a.links[s]) + '">' + label + "</a>";
+            esc(U.safeUrl(a.links[s])) + '">' + label + "</a>";
         }
         return '<span class="badge">' + label + "</span>";
       }).join("");
