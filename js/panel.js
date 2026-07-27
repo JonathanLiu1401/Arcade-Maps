@@ -1532,6 +1532,13 @@ window.AM = window.AM || {};
            store the user closed. */
         scrubHashArcade();
         closePlace();
+        /* The halo is drawn from two places - markers.js for a focused pick,
+           the branch below for a plain marker click - but neither owns the
+           teardown: markers.js's listener returns early unless meta.focus is
+           set, and every dismissal path writes null without it. So a ring
+           stayed pinned to the store for the rest of its 8s life after the
+           panel that explained it had gone. */
+        if (AM.markers && AM.markers.removeHalo) AM.markers.removeHalo();
         return;
       }
       /* markers.js flies and halos focused picks; a plain marker click stays

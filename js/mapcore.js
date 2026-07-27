@@ -147,6 +147,23 @@ window.AM = window.AM || {};
     return String(parseFloat(Number(z).toFixed(2)));
   }
 
+  /* "Is everything selected?", which is what lets writeHash omit the games
+     segment entirely. Matching on SIZE alone would be set equality only if the
+     selection were guaranteed to be a subset of gamesInData, and it is not:
+     parseHash accepts whatever slugs the URL carries and applyHashState installs
+     them verbatim. A link with as many unknown slugs as there are real games
+     therefore looked like "all games" to the old test, and the next write
+     dropped the segment - silently converting a filtered link into an
+     unfiltered one. Unknown slugs match no arcade, so they are harmless until
+     they are counted. */
+  function isAllGames(selGames, gamesInData) {
+    if (selGames.size !== gamesInData.length) return false;
+    for (var i = 0; i < gamesInData.length; i++) {
+      if (!selGames.has(gamesInData[i])) return false;
+    }
+    return true;
+  }
+
   function writeHash() {
     var selGames = AM.state.get("selectedGames");
     if (!selGames) return;
@@ -154,7 +171,7 @@ window.AM = window.AM || {};
     var gamesInData = AM.data.gamesInData;
     var c = map.getCenter();
     var parts = [trimZoom(map.getZoom()), c.lat.toFixed(5), c.lng.toFixed(5)];
-    if (selGames.size !== gamesInData.length) {
+    if (!isAllGames(selGames, gamesInData)) {
       parts.push("games=" + gamesInData.filter(function (g) {
         return selGames.has(g);
       }).join(","));
