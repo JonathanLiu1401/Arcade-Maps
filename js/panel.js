@@ -1439,6 +1439,15 @@ window.AM = window.AM || {};
     AM.markers.cluster.on("mouseover", function (e) {
       var a = hit(e);
       if (!a) return;
+      /* Markers are centre-anchored tier symbols between 20px and 36px tall,
+         so one fixed offset cannot clear them all: -11 sat on top of a T5
+         crown and floated well above a T1 note. Ask the marker layer what it
+         is drawing and clear that, plus a 5px gap for the callout tip.
+         A standalone tooltip has no layer anchor to add, so options.offset is
+         the whole position adjustment, and setLatLng below re-reads it. */
+      if (AM.markers.iconPxFor) {
+        tip.options.offset = [0, -(Math.round(AM.markers.iconPxFor(a) / 2) + 5)];
+      }
       tip.setLatLng([a.lat, a.lng]).setContent(esc(a.name));
       map.openTooltip(tip);
     });

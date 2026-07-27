@@ -100,6 +100,24 @@ window.AM = window.AM || {};
 
   function num(n) { return Number(n || 0).toLocaleString("en-US"); }
 
+  /* A URL that is safe to put in an href, or "" when it is not.
+
+     Every link on a store comes from a third-party scrape, and esc() does not
+     help here: "javascript:alert(1)" contains none of the characters it
+     escapes, so it survives HTML escaping intact and runs on click. Only http
+     and https are allowed through, resolved against the document so a relative
+     value is judged by what it actually becomes. Anything else - javascript:,
+     data:, vbscript:, a protocol-relative //evil.example - yields "" and the
+     caller renders a dead link rather than a live weapon. */
+  function safeUrl(u) {
+    if (typeof u !== "string" || !u) return "";
+    var abs;
+    try { abs = new URL(u, document.baseURI); }
+    catch (e) { return ""; }
+    if (abs.protocol !== "http:" && abs.protocol !== "https:") return "";
+    return abs.href;
+  }
+
   /* Total cabs for a game, or null when the data does not say.
      game_counts is optional in the schema and absent from some sources. */
   function gameCount(a, game) {
@@ -113,6 +131,7 @@ window.AM = window.AM || {};
     esc: esc,
     hasCoords: hasCoords,
     gmapsSearchUrl: gmapsSearchUrl,
+    safeUrl: safeUrl,
     num: num,
     gameCount: gameCount
   };

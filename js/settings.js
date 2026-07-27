@@ -60,28 +60,44 @@ window.AM = window.AM || {};
     { key: "locationEnabled", def: true }
   ];
 
-  /* Marker size classes are read from markers.js (which exports SIZE_CLASSES
-     and UNKNOWN_CLASS for exactly this) rather than copied here: a legend that
-     states its own thresholds silently starts lying the moment the marker
-     layer retunes them, and this legend had already drifted (it read "2 to 4"
-     and "5 to 9" against real bands of 3-6 and 7-12).
-     Diameter is 2x the canvas radius. Unknown is deliberately the middle
-     size, never the smallest. */
-  function sizeClasses() {
-    var src = (AM.markers && AM.markers.SIZE_CLASSES) || [];
-    return src.map(function (c) {
-      var lo = c.min, hi = c.max;
-      var label;
-      if (!isFinite(hi)) label = lo + " or more cabinets";
-      else if (lo === hi) label = lo + (lo === 1 ? " cabinet" : " cabinets");
-      else label = lo + " to " + hi + " cabinets";
-      return { d: c.r * 2, label: label, glow: !!c.glow };
-    });
+  /* Tiers, their thresholds AND their artwork all come from markers.js (which
+     exports TIER_LEGEND and tierIconUrl for exactly this) rather than being
+     copied here: a legend that states its own thresholds silently starts lying
+     the moment the marker layer retunes them, and this legend had already
+     drifted once (it read "2 to 4" and "5 to 9" against real bands of 3-6 and
+     7-12). Drawing the real SVGs rather than a stand-in shape closes the same
+     gap for the artwork - there is no second copy that can fall behind.
+     Unknown is deliberately mid-weight, never the smallest. */
+  function tierLegend() {
+    return (AM.markers && AM.markers.TIER_LEGEND) || [];
   }
 
-  function unknownDiameter() {
-    var u = AM.markers && AM.markers.UNKNOWN_CLASS;
-    return u ? u.r * 2 : 12;
+  /* The legend samples one fixed colour. On the map the tint is the store's
+     game, which the colour section immediately below this one explains; using
+     a different hue per row here would read as "T3 means blue". */
+  var SAMPLE_COLOR = "#E4007F";
+
+  /* Fixed swatch size for the cramped on-map chip; see buildLegendChip. */
+  var CHIP_PX = 24;
+
+  /* One legend swatch: the real marker artwork at the real size.
+
+     px null means "whatever the map is drawing right now", which is the honest
+     answer while the Display toggle can flatten the ramp. The map chip passes
+     a fixed size instead, because four icons of different heights in a 230px
+     pill wrap badly and the shapes are the point there. */
+  function tierSwatch(tier, px) {
+    var img = document.createElement("img");
+    var size = px || (AM.markers && AM.markers.scalingOn && !AM.markers.scalingOn()
+      ? AM.markers.UNIFORM_PX : tier.px);
+    img.className = "sd-tier";
+    img.width = size;
+    img.height = size;
+    img.alt = "";
+    if (AM.markers && AM.markers.tierIconUrl) {
+      img.src = AM.markers.tierIconUrl(tier.id, SAMPLE_COLOR);
+    }
+    return img;
   }
 
   var SECTIONS = [
@@ -140,12 +156,27 @@ window.AM = window.AM || {};
     return wrap;
   }
 
-  /* A sample marker dot at a given diameter, drawn like the map markers. */
-  function sampleDot(d) {
-    var dot = el("span", "sd-dot");
-    dot.style.width = d + "px";
-    dot.style.height = d + "px";
-    return dot;
+  /* The tier rows of the About legend. Rebuilt rather than restyled when the
+     Display toggle flips, because the rows draw the sizes the map is actually
+     drawing at that moment; a static ramp would contradict a flattened map. */
+  function renderTierRows(box) {
+    while (box.firstChild) box.removeChild(box.firstChild);
+    tierLegend().forEach(function (t) {
+      var item = el("div", "sd-size");
+      item.appendChild(tierSwatch(t));
+      item.appendChild(el("span", null,
+        t.id === "U" ? "Count unknown (drawn mid-size)" : t.label));
+      box.appendChild(item);
+    });
+    /* The one marker-ish thing on the map that is not a tier: a cluster bubble
+       reports how many STORES it holds, and warms its rim when at least one of
+       them is a 20+ cabinet venue, so a big store is still findable while it is
+       swallowed by a bubble. */
+    var ring = el("div", "sd-size");
+    ring.appendChild(el("span", "cl-ico cl-big sd-clu", "12"));
+    ring.appendChild(el("span", null,
+      "Cluster of 12 stores. A gold rim means at least one 20+ cabinet store is inside."));
+    box.appendChild(ring);
   }
 
   /* ---------- panes ---------- */
@@ -180,7 +211,7 @@ window.AM = window.AM || {};
   function buildDisplayPane(pane) {
     pane.appendChild(sectionHead("Display"));
     pane.appendChild(prefRow("markerScaling", "Marker size by cabinet count",
-      "Draw busier stores as larger dots. Stores with no published count stay medium, never smallest.").row);
+      "Draw busier stores as larger icons. Turn it off to draw every marker the same size - the icon shape still shows the tier.").row);
   }
 
   function buildLocationPane(pane) {
@@ -208,27 +239,19 @@ window.AM = window.AM || {};
   function buildAboutPane(pane) {
     pane.appendChild(sectionHead("Legend"));
 
-    /* marker sizes */
-    pane.appendChild(el("p", "sd-sub", "Dot size: total cabinets at the store"));
+    /* marker tiers */
+    pane.appendChild(el("p", "sd-sub", "Icon: total cabinets at the store"));
     var sizes = el("div", "sd-sizes");
-    sizeClasses().forEach(function (sc) {
-      var item = el("div", "sd-size");
-      item.appendChild(sampleDot(sc.d));
-      item.appendChild(el("span", null, sc.label));
-      sizes.appendChild(item);
-    });
-    var unknown = el("div", "sd-size");
-    unknown.appendChild(sampleDot(unknownDiameter()));
-    unknown.appendChild(el("span", null, "Count unknown (drawn medium)"));
-    sizes.appendChild(unknown);
+    sizes.id = "sd-tier-legend";
+    renderTierRows(sizes);
     pane.appendChild(sizes);
     pane.appendChild(el("p", "sd-note",
-      "Most official listings publish which games a store has but not how many cabinets, so an unknown count is drawn at the middle size rather than the smallest. Sizing follows the Display setting."));
+      "Each tier is a different shape, so the tier reads without comparing sizes. Most official listings publish which games a store has but not how many cabinets, so an unknown count gets its own icon at mid weight rather than the smallest one - it means \"not published\", never \"one cabinet\". Counts come from BemaniCN and, where they are more than a bare presence marker, from ZIv. Sizes follow the Display setting; the shapes do not."));
 
     /* game colours */
-    pane.appendChild(el("p", "sd-sub", "Dot colour: game at the store"));
+    pane.appendChild(el("p", "sd-sub", "Icon colour: game at the store"));
     pane.appendChild(el("p", "sd-note",
-      "A store with several games takes the colour of the first selected game it has, in the order below."));
+      "A store with several games takes the colour of the first selected game it has, in the order below. The tier icons above are all drawn in one sample colour; on the map each takes its store's game colour."));
     var grid = el("div", "sd-colors");
     AM.data.gamesInData.forEach(function (g) {
       var item = el("div", "sd-color");
@@ -436,37 +459,47 @@ window.AM = window.AM || {};
     legendBtn.id = "legend-toggle";
     legendBtn.setAttribute("aria-expanded", "false");
     legendBtn.setAttribute("aria-controls", "legend-body");
-    legendBtn.innerHTML = '<span class="legend-key" aria-hidden="true"></span>Legend';
+    /* The key glyph is the unknown-tier icon, which is what most of the map
+       actually draws, rather than a generic dot that matches nothing. */
+    var unknownTier = AM.markers && AM.markers.UNKNOWN_TIER;
+    if (unknownTier) {
+      var key = tierSwatch(unknownTier, 14);
+      key.className = "legend-key";
+      key.setAttribute("aria-hidden", "true");
+      legendBtn.appendChild(key);
+    }
+    legendBtn.appendChild(document.createTextNode("Legend"));
     legendBtn.addEventListener("click", function () { toggleLegend(); });
 
     legendBody = el("div", "legend-body");
     legendBody.id = "legend-body";
     legendBody.hidden = true;
 
-    legendBody.appendChild(el("p", "legend-sub", "Size: cabinets at the store"));
+    legendBody.appendChild(el("p", "legend-sub", "Icon: cabinets at the store"));
     var sizes = el("div", "legend-sizes");
-    /* Three ticks (smallest, middle, largest) sampled from the real class
-       table, so the short labels cannot drift from the bands the map draws.
-       Full ranges live in Settings > About. */
-    var all = sizeClasses();
-    var raw = (AM.markers && AM.markers.SIZE_CLASSES) || [];
-    var ticks = all.length ? [0, Math.floor((all.length - 1) / 2), all.length - 1] : [];
+    /* Three ticks (smallest, middle, largest) sampled from the real tier table
+       plus unknown, so neither the labels nor the artwork can drift from what
+       the map draws. Full ranges live in Settings > About.
+
+       Fixed CHIP_PX rather than the map's own sizes: four icons of different
+       heights wrap badly inside a 230px pill, and up here the shapes are the
+       point. The About legend is the one that shows the true size ramp. */
+    var counted = (AM.markers && AM.markers.TIER_CLASSES) || [];
+    var ticks = counted.length
+      ? [0, Math.floor((counted.length - 1) / 2), counted.length - 1] : [];
+    var picks = [];
     ticks.forEach(function (i, n) {
       if (n > 0 && ticks[n - 1] === i) return;   /* very short tables */
-      var sc = all[i], c = raw[i];
-      var short = !isFinite(c.max) ? c.min + "+"
-        : (c.min === c.max ? String(c.min) : c.min + "-" + c.max);
+      picks.push(counted[i]);
+    });
+    if (AM.markers && AM.markers.UNKNOWN_TIER) picks.push(AM.markers.UNKNOWN_TIER);
+    picks.forEach(function (t) {
       var item = el("div", "legend-size");
-      item.appendChild(sampleDot(sc.d));
-      item.appendChild(el("span", null, short));
-      item.title = sc.label;
+      item.appendChild(tierSwatch(t, CHIP_PX));
+      item.appendChild(el("span", null, t.short));
+      item.title = t.id === "U" ? "count unknown, drawn mid-size" : t.label;
       sizes.appendChild(item);
     });
-    var unk = el("div", "legend-size");
-    unk.appendChild(sampleDot(unknownDiameter()));
-    unk.appendChild(el("span", null, "?"));
-    unk.title = "count unknown, drawn medium";
-    sizes.appendChild(unk);
     legendBody.appendChild(sizes);
 
     legendBody.appendChild(el("p", "legend-sub", "Colour: game"));
@@ -574,6 +607,12 @@ window.AM = window.AM || {};
     AM.state.on("enabledSources", syncSources);
     AM.state.on("shownCount", syncShown);
     PREFS.forEach(function (p) { AM.state.on(p.key, syncPrefs); });
+    /* The About legend draws the sizes the map is drawing, so it has to follow
+       the Display toggle. The pane is built once and may not exist yet. */
+    AM.state.on("markerScaling", function () {
+      var box = document.getElementById("sd-tier-legend");
+      if (box) renderTierRows(box);
+    });
     syncSources();
     syncPrefs();
     syncShown();

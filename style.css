@@ -908,7 +908,18 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
   font-size: 12px; font-weight: 600;
   padding: 4px 9px; border-radius: 6px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
-  max-width: 260px; white-space: normal;
+  /* width:max-content is load-bearing, not a tidy-up. A Leaflet tooltip is
+     absolutely positioned inside .leaflet-map-pane, which is itself absolutely
+     positioned with auto width - so the containing block resolves to 0px wide.
+     Shrink-to-fit against a 0px available width collapses the box to its
+     MIN-content width, which max-width can only cap, never widen. The result
+     was a one-word-wide vertical column: "GiGO Abeno Q's Mall (GiGOあべの
+     キューズモール)" measured 63px wide and 144px tall, and CJK is worse than
+     Latin because every character is its own break opportunity.
+     max-content sizes the box to the unwrapped string first; max-width then
+     caps it at 260px and ordinary wrapping takes over inside that. Short names
+     stay on one line, long ones wrap at a readable width. */
+  width: max-content; max-width: 260px; white-space: normal;
 }
 .leaflet-tooltip.am-tip::before { border-top-color: var(--line); }
 
@@ -1136,19 +1147,24 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 }
 
 /* ---- legend content (shared by the About pane and the map chip) ---- */
-.sd-dot {
-  display: inline-block; border-radius: 50%; flex: none;
-  background: var(--accent); border: 1.5px solid rgba(255, 255, 255, 0.9);
-}
+/* A legend swatch is the REAL marker artwork (js/settings.js pulls the same
+   tinted data URL the map uses), so it needs no colour or shape of its own -
+   only a box that does not get stretched by the flex/grid around it. */
+.sd-tier { display: block; flex: none; }
 .sd-sizes { display: flex; flex-direction: column; gap: 7px; }
-/* Fixed-width dot gutter so the labels line up under each other whatever
-   size the sample dot is (the dot is centred inside the 30px column). */
+/* Fixed-width icon gutter so the labels line up under each other whatever
+   size the sample icon is (it is centred inside the 40px column, which is
+   sized for the largest tier at 36px). */
 .sd-sizes .sd-size {
-  display: grid; grid-template-columns: 30px 1fr; align-items: center;
+  display: grid; grid-template-columns: 40px 1fr; align-items: center;
   font-size: 12.5px; color: var(--fg-dim);
 }
-.sd-sizes .sd-size > .sd-dot { justify-self: center; }
+.sd-sizes .sd-size > .sd-tier { justify-self: center; }
+.sd-sizes .sd-size > .sd-clu { justify-self: center; }
 .sd-size > span { line-height: 1.3; }
+/* The sample cluster bubble in the About legend: same .cl-ico chrome the map
+   draws, pinned to a size the legend column can hold. */
+.sd-clu { width: 30px; height: 30px; }
 
 .sd-swatch {
   width: 12px; height: 12px; border-radius: 3px; flex: none;
@@ -1181,10 +1197,9 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 }
 .legend-toggle:hover { color: var(--fg); border-color: var(--fg-dim); }
 .legend-chip.open .legend-toggle { color: var(--fg); border-color: var(--accent); }
-.legend-key {
-  width: 11px; height: 11px; border-radius: 50%; flex: none;
-  background: var(--accent); border: 1.5px solid rgba(255, 255, 255, 0.85);
-}
+/* The pill's key glyph is the unknown-tier marker itself, drawn by settings.js
+   at 14px - what most of the map actually shows. */
+.legend-key { display: block; flex: none; }
 .legend-body {
   width: 230px; max-height: min(52vh, 420px); overflow-y: auto;
   margin-bottom: 6px; padding: 10px 12px 12px;
@@ -1206,7 +1221,7 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
   display: flex; flex-direction: column; align-items: center; gap: 5px;
   font-size: 10.5px; color: var(--fg-dim); font-variant-numeric: tabular-nums;
 }
-.legend-size .sd-dot { margin: 0 auto; }
+.legend-size .sd-tier { margin: 0 auto; }
 .legend-colors {
   display: grid; grid-template-columns: 1fr 1fr; gap: 3px 8px;
 }
@@ -1263,13 +1278,25 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 }
 /* === end settings modal + legend chip === */
 
-/* === graduated markers === */
-/* Marker circles themselves are canvas-drawn (js/markers.js owns their radii
-   and the soft glow ring on XL/XXL), so nothing here touches a dot. The only
-   DOM piece the feature adds is the cluster bubble's "contains a big store"
-   variant: a slightly larger bubble with a warm rim, so a megastore hidden
-   inside a cluster is still findable from a zoomed-out view. Hue is unchanged
-   (the accent already means "highlighted"); only the rim brightens. */
+/* === tier markers === */
+/* The artwork and every dimension live in js/markers.js: each marker is an
+   <img> whose src is the tier SVG tinted with the store's game colour, sized
+   by L.icon. Nothing here may set width/height on .am-tier - Leaflet writes
+   those inline from iconSize, and a CSS override would desync the icon from
+   its anchor and slide every marker off its coordinates.
+
+   The class exists so the icons can be addressed at all (a filter, a print
+   rule, a future high-contrast mode) and to hold the two properties Leaflet
+   does not set: no drag ghost, and no smoothing artefacts.
+
+   The other DOM piece is the cluster bubble's "contains a big store" variant:
+   a slightly larger bubble with a warm rim, so a T4/T5 venue hidden inside a
+   cluster is still findable from a zoomed-out view. Hue is unchanged (the
+   accent already means "highlighted"); only the rim brightens. */
+.am-tier {
+  -webkit-user-drag: none; user-select: none;
+  image-rendering: auto;
+}
 .cl-ico.cl-big {
   border-color: rgba(255, 213, 79, 0.92);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 0 0 3px rgba(255, 213, 79, 0.16);

@@ -1,12 +1,25 @@
-/* Arcade Maps - the marker layer: cluster group, circle markers, popups and
-   the single visibility predicate every filter feeds into.
+/* Arcade Maps - the marker layer: cluster group, tier icons, and the single
+   visibility predicate every filter feeds into.
 
-   Markers are also graduated: circle area carries the store's total cab count
-   (see the SIZE_CLASSES block below), hue stays the game colour, and only the
-   two biggest classes add a soft glow. Size is recomputed on a state change,
-   never per animation frame - Leaflet's canvas renderer redraws from the
-   cached options.radius while panning and zooming, so a pan costs exactly the
-   same with scaling on or off. */
+   Markers are TIERED, not graduated circles. Each store draws one of six
+   hand-authored silhouettes chosen by its total cabinet count (see
+   assets/markers/marker-spec.md), tinted with the store's game colour. Size
+   alone was the old encoding and it was rejected: bubble area is genuinely
+   hard to compare on a dense map, so the tier is carried by SHAPE first, with
+   a mild size ramp left in only as a reinforcing signal.
+
+   Rendering: the artwork is embedded as source strings by js/tier-icons.js
+   (generated from assets/markers/*.svg by tools/build_tier_icons.py). Tinting
+   is a string replace of currentColor with the game's hex, and the result
+   becomes an image/svg+xml data URL handed to L.icon. Each (tier, colour) URL
+   is built at most once and shared by every marker that needs it, so the
+   browser decodes each of the at most 6 x 19 variants a single time.
+
+   That is why these are L.marker and no longer canvas circleMarkers, and why
+   AM.map.renderer is no longer used here: the canvas renderer can only draw
+   geometry, and the whole point of the tier set is artwork. Icons are still
+   recomputed only on a state change, never per animation frame - a pan or a
+   wheel gesture moves existing DOM nodes and does no icon work at all. */
 window.AM = window.AM || {};
 
 (function (AM) {
@@ -15,26 +28,186 @@ window.AM = window.AM || {};
   var C = AM.consts, U = AM.util;
   var F = AM.format;
   var map = AM.map.map;
+  var ART = (AM.tierIcons && AM.tierIcons.SRC) || {};
 
-  /* disableClusteringAtZoom is compared against Math.round(map.getZoom()) by
-     markercluster (_zoomEnd sets this._zoom = Math.round(map._zoom), and
-     _generateInitialClusters caps its grids at disableClusteringAtZoom - 1).
-     The integer comparison therefore still works with fractional zoom - the
-     effective threshold simply lands on the rounding boundary, so markers
-     un-cluster from z >= 15.5 rather than exactly 16. */
+  /* ---------- tiers ---------- */
+
+  /* Range grading, not a continuous curve: the counts are incomplete,
+     integer-skewed and small, so a handful of clearly separated steps reads
+     better than a smooth ramp nobody can decode.
+
+     px is the rendered width and height of the (square) icon, and these are
+     the "Standard" column of the size table in marker-spec.md. The three
+     zoom-banded columns in that document are deliberately NOT implemented: a
+     band change would mean rebuilding thousands of DOM nodes mid-gesture, and
+     the whole marker layer is built around costing the same whatever the map
+     is doing. Treat banding as an enhancement to profile, not a todo.
+
+     UNKNOWN IS NOT SMALLEST. Most stores have no counts at all (the official
+     ALL.Net and e-amusement listings publish which games a store has, not how
+     many cabinets). Drawing them at T1 would assert "this arcade has one cab",
+     which the data never said, so TU carries T2/T3 visual weight and reuses
+     T2's button-pad silhouette with a "?" in place of the note. */
+
+  var TIER_CLASSES = [
+    { id: "1", min: 1,  max: 2,        px: 20, short: "1-2",   label: "1 to 2 cabinets" },
+    { id: "2", min: 3,  max: 9,        px: 24, short: "3-9",   label: "3 to 9 cabinets" },
+    { id: "3", min: 10, max: 19,       px: 26, short: "10-19", label: "10 to 19 cabinets" },
+    { id: "4", min: 20, max: 49,       px: 30, short: "20-49", label: "20 to 49 cabinets", big: true },
+    { id: "5", min: 50, max: Infinity, px: 36, short: "50+",   label: "50 or more cabinets (mega arcade)", big: true }
+  ];
+  var UNKNOWN_TIER = {
+    id: "U", min: null, max: null, px: 25, short: "?", label: "Count unknown"
+  };
+
+  /* Scaling off: every tier draws at TU's size. The silhouette still carries
+     the tier - the toggle turns off the size RAMP, not the encoding. */
+  var UNIFORM_PX = UNKNOWN_TIER.px;
+
+  var TIER_BY_ID = { U: UNKNOWN_TIER };
+  TIER_CLASSES.forEach(function (t) { TIER_BY_ID[t.id] = t; });
+
+  /* Legend order: the five counted tiers, then unknown. */
+  var TIER_LEGEND = TIER_CLASSES.concat([UNKNOWN_TIER]);
+
+  /* Which sources are allowed to put a NUMBER on the map.
+
+     BemaniCN publishes true per-game quantities. ZIv quantities survive into
+     the data only where the merge found at least one count >= 2, because a ZIv
+     page that lists every game as "1" is a placeholder for "this game is here"
+     rather than a census (see scrapers/). Everything else - the official store
+     lists above all - has no counts at all and must land in TU.
+
+     Reading counts_src rather than merely "is game_counts present" keeps that
+     policy in ONE place: if a future source starts emitting counts we do not
+     trust, it draws as unknown until it is added here on purpose. */
+  var TRUSTED_COUNTS = { bemanicn: true, ziv: true };
+
+  /* Total cabs, or null when the data does not say. Sums every game the store
+     reports a count for, not just the ones currently selected: the icon is a
+     property of the arcade, so it must not change when a chip is toggled. */
+  function totalCabs(a) {
+    if (!a || !TRUSTED_COUNTS[a.counts_src]) return null;
+    return F.totalCabs(a.game_counts);
+  }
+
+  function tierFor(a) {
+    var n = totalCabs(a);
+    /* The null test comes FIRST and on purpose: null >= 1 is false in JS but
+       null < 3 is true, so any numeric comparison reached with a null would
+       quietly file every uncounted store into T1. */
+    if (n === null || n === undefined || !isFinite(n) || n < 1) return UNKNOWN_TIER;
+    for (var i = 0; i < TIER_CLASSES.length; i++) {
+      if (n >= TIER_CLASSES[i].min && n <= TIER_CLASSES[i].max) return TIER_CLASSES[i];
+    }
+    return UNKNOWN_TIER;
+  }
+
+  /* Default on. undefined means no settings module has written the key yet, so
+     fall back to whatever a past session persisted; only an explicit false
+     turns the ramp off. Same shape as nearby.js's locationAllowed. */
+  function scalingOn() {
+    var v = AM.state.get("markerScaling");
+    if (v === undefined || v === null) v = AM.state.readSetting("markerScaling", true);
+    return v !== false;
+  }
+
+  function pxFor(tier, on) {
+    return on ? tier.px : UNIFORM_PX;
+  }
+
+  /* ---------- icon cache ---------- */
+
+  /* Two caches, both keyed by strings and both write-once.
+
+     urlCache: tier + colour -> data URL. This is the expensive one (a string
+     replace plus encodeURIComponent over ~600-1900 bytes of markup) and it is
+     what lets the browser decode each variant once instead of once per marker.
+
+     iconCache: tier + colour + px -> L.Icon. Leaflet is happy to share one
+     Icon instance across any number of markers; it builds a fresh <img> per
+     marker from the shared options. */
+
+  var urlCache = {}, iconCache = {};
+
+  function tintedUrl(tierId, color) {
+    var key = tierId + "|" + color;
+    var hit = urlCache[key];
+    if (hit) return hit;
+    var svg = ART[tierId] || ART.U || "";
+    /* split/join, not replace with a regex: a colour is a literal, and a
+       string replace would only swap the first occurrence. */
+    svg = svg.split("currentColor").join(color);
+    /* encodeURIComponent in full rather than the usual "escape only # and
+       quotes" shortcut. The short form depends on the markup never containing
+       an apostrophe, which is a trap for whoever edits the artwork next. */
+    urlCache[key] = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    return urlCache[key];
+  }
+
+  /* Anchor is the CENTRE, not a bottom tip: these are symbols, not pins, so no
+     point on the artwork claims to be the ground position, and a centre anchor
+     keeps the icon visually stable when its size changes. */
+  function iconFor(tierId, color, px) {
+    var key = tierId + "|" + color + "|" + px;
+    var hit = iconCache[key];
+    if (hit) return hit;
+    iconCache[key] = L.icon({
+      iconUrl: tintedUrl(tierId, color),
+      className: "am-tier am-tier-" + tierId,
+      iconSize: [px, px],
+      iconAnchor: [px / 2, px / 2],
+      popupAnchor: [0, -px / 2],
+      tooltipAnchor: [0, -px / 2]
+    });
+    return iconCache[key];
+  }
+
+  function colorFor(g) {
+    return C.GAME_COLOR[g] || C.GAME_COLOR.other;
+  }
+
+  /* The icon a marker should be wearing right now, as a comparable key. Stored
+     on the marker so a filter pass can skip setIcon for the (very common) case
+     where the colour did not actually change. */
+  function iconKey(tierId, color, px) {
+    return tierId + "|" + color + "|" + px;
+  }
+
+  function setMarkerIcon(m, tierId, color, px) {
+    var key = iconKey(tierId, color, px);
+    if (m._amIconKey === key) return;
+    m._amIconKey = key;
+    m.setIcon(iconFor(tierId, color, px));
+  }
+
+  /* ---------- cluster group ---------- */
+
+  /* disableClusteringAtZoom is deliberately NOT set. It used to drop clustering
+     entirely from z15.5 up, which meant two stores in the same building drew
+     exactly on top of each other with no way to reach the one underneath - and
+     stacked stores are common (a mall with two operators, an arcade listed by
+     two sources under slightly different names). Clustering now runs at every
+     zoom with a radius that collapses to 14px up close, so only genuinely
+     overlapping pins bundle, and spiderfyOnMaxZoom fans that bundle out at the
+     deepest zoom instead of hiding it.
+
+     maxClusterRadius is called per integer zoom while the tree is built, so the
+     fractional wheel zoom never re-enters it. */
   var cluster = L.markerClusterGroup({
     chunkedLoading: true,
-    disableClusteringAtZoom: 16,
-    spiderfyOnMaxZoom: false,
+    spiderfyOnMaxZoom: true,
     showCoverageOnHover: false,
+    zoomToBoundsOnClick: true,
+    spiderLegPolylineOptions: { weight: 1.5, color: "#8b93a1", opacity: 0.65 },
     maxClusterRadius: function (zoom) {
-      return zoom >= 13 ? 32 : zoom >= 10 ? 46 : 60;
+      return zoom >= 16 ? 14 : zoom >= 13 ? 32 : zoom >= 10 ? 46 : 60;
     },
     /* The badge stays the STORE COUNT: "how many places" is the mental model
        people bring to a cluster, and summing cabs there would quietly conflate
        one 40-cab megastore with twenty small ones. The only thing the cab data
        changes here is a small size bump plus a warmer border when the bubble is
-       hiding at least one XL/XXL store, so a big venue is still findable from a
+       hiding at least one T4/T5 store, so a big venue is still findable from a
        zoomed-out view instead of vanishing into a generic bubble. */
     iconCreateFunction: function (c) {
       var n = c.getChildCount();
@@ -50,34 +223,19 @@ window.AM = window.AM || {};
   });
   map.addLayer(cluster);
 
-  var markerOf = {};   /* id -> L.circleMarker */
+  var markerOf = {};   /* id -> L.marker */
 
-  /* ---------- graduated sizing ---------- */
-  /* Range grading, not a continuous Flannery curve: the counts are incomplete,
-     integer-skewed and small, so a handful of clearly separated steps reads
-     better than a smooth ramp nobody can decode.
-
-     UNKNOWN IS NOT SMALLEST. Most stores have no game_counts at all (official
-     ALL.Net / e-amusement lists publish presence, not quantities). Drawing them
-     at the S size would tell the reader "this arcade has one cab", which the
-     data never said. They take the M size instead - the same size the whole map
-     uses when scaling is switched off - so an unknown store looks ordinary
-     rather than tiny.
-
-     Radii are screen pixels and deliberately zoom-independent: a fractional
-     zoom of 12.84 draws the same 8.5 px dot as 13 does, which is what keeps a
-     wheel gesture from turning into thousands of geometry recalculations. */
-
-  /* Declared before the cluster group because iconCreateFunction calls it.
-     Function declarations hoist, so the group's option can name it safely. */
-
-  /* Does this bubble hide at least one XL/XXL store? Answered by walking the
+  /* Does this bubble hide at least one T4/T5 store? Answered by walking the
      cluster's own subtree once and caching the answer on the cluster object,
      keyed on its child count so a bubble that gains children re-answers. The
      tree is rebuilt from scratch on every filter change (clearLayers drops
-     _topClusterLevel), so no stale flag can outlive its cluster. */
+     _topClusterLevel), so no stale flag can outlive its cluster.
+
+     Unlike the old size-class version this does NOT consult the Display
+     toggle: "a big venue is hiding in here" is a fact about the data, and the
+     toggle only governs the size ramp. Being toggle-independent also means the
+     cached answer stays valid across a toggle. */
   function clusterHasBig(c) {
-    if (!scalingOn()) return false;
     var n = c.getChildCount();
     if (c._amBigFor === n) return c._amBig;
     var big = false, i;
@@ -98,142 +256,39 @@ window.AM = window.AM || {};
   }
 
   function isBigMarker(m) {
-    return !!(m && m._amClass && m._amClass.glow);
+    return !!(m && m._amTier && TIER_BY_ID[m._amTier] && TIER_BY_ID[m._amTier].big);
   }
 
-  var UNIFORM_R = 6;   /* scaling off, and the unknown-count default */
-
-  var SIZE_CLASSES = [
-    { id: "s",   label: "S",   min: 1,  max: 2,        r: 4,    glow: false },
-    { id: "m",   label: "M",   min: 3,  max: 6,        r: 6,    glow: false },
-    { id: "l",   label: "L",   min: 7,  max: 12,       r: 8.5,  glow: false },
-    { id: "xl",  label: "XL",  min: 13, max: 24,       r: 11,   glow: true },
-    { id: "xxl", label: "XXL", min: 25, max: Infinity, r: 14,   glow: true }
-  ];
-  var UNKNOWN_CLASS = {
-    id: "u", label: "Unknown", min: null, max: null, r: UNIFORM_R, glow: false
-  };
-
-  /* Total cabs, or null when the data does not say. Sums every game the store
-     reports a count for, not just the ones currently selected: the dot's size
-     is a property of the arcade, so it must not jump when a chip is toggled. */
-  function totalCabs(a) {
-    return F.totalCabs(a && a.game_counts);
-  }
-
-  function classFor(a) {
-    var n = totalCabs(a);
-    if (n === null) return UNKNOWN_CLASS;
-    for (var i = 0; i < SIZE_CLASSES.length; i++) {
-      if (n >= SIZE_CLASSES[i].min && n <= SIZE_CLASSES[i].max) return SIZE_CLASSES[i];
-    }
-    /* n < 1 with a game_counts key present: treat as unknown, never as zero. */
-    return UNKNOWN_CLASS;
-  }
-
-  /* Default on. undefined means no settings module has written the key yet, so
-     fall back to whatever a past session persisted; only an explicit false
-     turns scaling off. Same shape as nearby.js's locationAllowed. */
-  function scalingOn() {
-    var v = AM.state.get("markerScaling");
-    if (v === undefined || v === null) v = AM.state.readSetting("markerScaling", true);
-    return v !== false;
-  }
-
-  /* Push one arcade's size class onto its marker. setRadius keeps _radius,
-     options.radius and the pixel bounds in step and redraws only if the marker
-     is actually on the map, so the off-screen 99% cost nothing. */
-  function styleSize(a, on) {
-    var m = markerOf[a.id];
-    if (!m) return;
-    var cls = classFor(a);
-    m._amClass = cls;
-    var r = on ? cls.r : UNIFORM_R;
-    m.options.amGlow = !!(on && cls.glow);
-    if (m.options.radius !== r) m.setRadius(r);
-  }
+  /* ---------- size ramp ---------- */
 
   /* Called once at build and once per markerScaling change - never per frame.
-     Leaflet redraws canvas circles from the cached options.radius while panning
-     and zooming, so a gesture does no sizing work at all. */
+     Only the icon size changes, so the cluster tree is untouched and there is
+     no reason to pay for a full clearLayers + addLayers rebuild. */
   var lastScaling = null;
   function applyScale(force) {
     var on = scalingOn();
     if (!force && on === lastScaling) return;
     lastScaling = on;
     var list = AM.data.plottable;
-    for (var i = 0; i < list.length; i++) styleSize(list[i], on);
-    /* Cluster bubbles carry the same signal, so their icons are stale now. */
-    if (typeof cluster.refreshClusters === "function") cluster.refreshClusters();
+    for (var i = 0; i < list.length; i++) {
+      var m = markerOf[list[i].id];
+      if (!m) continue;
+      var tierId = m._amTier;
+      setMarkerIcon(m, tierId, m._amColor, pxFor(TIER_BY_ID[tierId] || UNKNOWN_TIER, on));
+    }
+    /* Cluster bubbles do not carry the ramp, but a spiderfied set is laid out
+       from icon sizes, so unspiderfy anything currently fanned out. */
+    if (typeof cluster.unspiderfy === "function") cluster.unspiderfy();
   }
 
-  /* ---------- glow ring for the two biggest classes ---------- */
-  /* Leaflet's canvas renderer draws exactly one arc per circleMarker, so the
-     soft outer ring is added by wrapping the renderer's private circle drawing
-     rather than by adding a second layer per store: extra layers would double
-     the hit-test list, and a separate glow pane would keep glowing under a
-     cluster bubble that has swallowed the store.
-
-     Only AM.map.renderer is wrapped, never L.Canvas.prototype, so any other
-     canvas layer on the page is untouched. Markers without options.amGlow take
-     the original code path unchanged.
-
-     Two concentric translucent rings in the marker's own game colour: no new
-     hue, and no ctx.shadowBlur (blur is the slowest thing a 2d context does). */
-
-  var GLOW_RINGS = [
-    { pad: 1.5, weight: 3, alpha: 0.30 },
-    { pad: 4.0, weight: 5, alpha: 0.14 }
-  ];
-  /* How far the outermost ring reaches past the circle edge: pad + weight / 2. */
-  var GLOW_PAD = 6.5;
-
-  (function patchRenderer(renderer) {
-    if (!renderer || renderer._amGlowPatched) return;
-    renderer._amGlowPatched = true;
-    var baseCircle = renderer._updateCircle;
-    var baseExtend = renderer._extendRedrawBounds;
-
-    renderer._updateCircle = function (layer) {
-      if (layer.options.amGlow && this._drawing && !layer._empty()) {
-        /* Recorded where the ring is actually painted, so the clip below can
-           still cover those pixels once options.amGlow has gone back to false. */
-        layer._amGlowEver = true;
-        var ctx = this._ctx, p = layer._point;
-        var r = Math.max(Math.round(layer._radius), 1);
-        ctx.save();
-        ctx.strokeStyle = layer.options.fillColor || layer.options.color;
-        for (var i = 0; i < GLOW_RINGS.length; i++) {
-          var g = GLOW_RINGS[i];
-          ctx.globalAlpha = g.alpha;
-          ctx.lineWidth = g.weight;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, r + g.pad, 0, 2 * Math.PI, false);
-          ctx.stroke();
-        }
-        ctx.restore();
-      }
-      baseCircle.call(this, layer);
-    };
-
-    /* A partial redraw (one marker restyled) clips to the layer's pixel bounds
-       plus its stroke weight. The glow lives outside those bounds, so without
-       this the ring would survive as a stale halo after a colour change.
-
-       The test is _amGlowEver, not the current options.amGlow: turning the glow
-       OFF is exactly the case that must repaint the old ring's pixels, and by
-       the time this runs options.amGlow is already false. A marker that has
-       glowed at any point therefore keeps the padded clip for good - it costs a
-       slightly larger clear rectangle and nothing else. */
-    renderer._extendRedrawBounds = function (layer) {
-      baseExtend.call(this, layer);
-      if (layer.options.amGlow) layer._amGlowEver = true;
-      if (layer._amGlowEver && layer._pxBounds && this._redrawBounds) {
-        this._redrawBounds.extend(layer._pxBounds.min.subtract([GLOW_PAD, GLOW_PAD]));
-        this._redrawBounds.extend(layer._pxBounds.max.add([GLOW_PAD, GLOW_PAD]));
-      }
-    };
-  })(AM.map.renderer);
+  /* Rendered size of an arcade's icon right now, for callers that need to
+     clear it: the hover tooltip and the search halo both sit on top of the
+     marker and would otherwise be sized for a circle that no longer exists. */
+  function iconPxFor(a) {
+    var m = a && markerOf[a.id];
+    var tier = m ? (TIER_BY_ID[m._amTier] || UNKNOWN_TIER) : tierFor(a);
+    return pxFor(tier, scalingOn());
+  }
 
   /* ---------- visibility predicate (single source of truth) ---------- */
 
@@ -312,7 +367,7 @@ window.AM = window.AM || {};
         var label = esc(C.SRC_LABEL[s] || s);
         if ((s === "ziv" || s === "bemanicn") && a.links && a.links[s]) {
           h += '<a class="badge" target="_blank" rel="noopener" href="' +
-            esc(a.links[s]) + '">' + label + "</a>";
+            esc(U.safeUrl(a.links[s])) + '">' + label + "</a>";
         } else {
           h += '<span class="badge">' + label + "</span>";
         }
@@ -321,7 +376,7 @@ window.AM = window.AM || {};
     }
     if (a.notes) h += '<div class="pp-addr">' + esc(a.notes) + "</div>";
     var gm = (a.links && a.links.gmaps) ? a.links.gmaps : U.gmapsSearchUrl(a);
-    h += '<a class="pp-gmaps" target="_blank" rel="noopener" href="' + esc(gm) +
+    h += '<a class="pp-gmaps" target="_blank" rel="noopener" href="' + esc(U.safeUrl(gm)) +
       '">Open in Google Maps</a>';
     return h;
   }
@@ -332,14 +387,25 @@ window.AM = window.AM || {};
     var on = scalingOn();
     lastScaling = on;
     AM.data.plottable.forEach(function (a) {
-      var cls = classFor(a);
-      var m = L.circleMarker([a.lat, a.lng], {
-        renderer: AM.map.renderer, radius: on ? cls.r : UNIFORM_R,
-        weight: 1.5, color: "#ffffff",
-        opacity: 0.9, fillColor: C.GAME_COLOR.other, fillOpacity: 0.92,
-        amGlow: on && cls.glow
+      var tier = tierFor(a);
+      var color = colorFor(displayGame(a));
+      var px = pxFor(tier, on);
+      var m = L.marker([a.lat, a.lng], {
+        icon: iconFor(tier.id, color, px),
+        /* Markers are not tab stops. The old canvas circles never were, and
+           making several hundred visible icons focusable would put a long tab
+           run between the search box and the rest of the page. The keyboard
+           route to a store is the omnibox and the nearby list, both of which
+           select the same state. Same reasoning for the empty alt: the icons
+           are decorative repeats of data the panel and those lists already
+           expose as text. */
+        keyboard: false,
+        alt: "",
+        riseOnHover: false
       });
-      m._amClass = cls;
+      m._amTier = tier.id;
+      m._amColor = color;
+      m._amIconKey = iconKey(tier.id, color, px);
       m.bindPopup(function () { return popupHtml(a); }, { maxWidth: 320 });
       markerOf[a.id] = m;
     });
@@ -350,6 +416,7 @@ window.AM = window.AM || {};
     if (!selGames) return;
     var selCabs = AM.state.get("selectedCabs");
     var enabled = AM.state.get("enabledSources");
+    var on = scalingOn();
     var plottable = AM.data.plottable;
     var vis = [];
     for (var i = 0; i < plottable.length; i++) {
@@ -358,8 +425,10 @@ window.AM = window.AM || {};
       var g = displayGame(a, selGames, selCabs);
       if (!g) continue;
       var m = markerOf[a.id];
-      var color = C.GAME_COLOR[g] || C.GAME_COLOR.other;
-      if (m.options.fillColor !== color) m.setStyle({ fillColor: color });
+      if (!m) continue;
+      var color = colorFor(g);
+      m._amColor = color;
+      setMarkerIcon(m, m._amTier, color, pxFor(TIER_BY_ID[m._amTier] || UNKNOWN_TIER, on));
       vis.push(m);
     }
     cluster.clearLayers();
@@ -402,13 +471,17 @@ window.AM = window.AM || {};
   function showHalo(ll, a) {
     removeHalo();
     haloStore = a;
+    /* Sized off the store's own icon plus a margin, so the ring sits OUTSIDE
+       the artwork on every tier: a fixed 32px ring cut straight through a
+       36px T5 crown. */
+    var d = Math.round(iconPxFor(a)) + 14;
     /* .halo-core is the steady ring that always reads in a screenshot;
        .halo-pulse is the echo that expands out of it once per 1.2s. */
     var icon = L.divIcon({
       className: "halo-wrap",
       html: '<div class="halo-pulse"></div><div class="halo-core"></div>',
-      iconSize: [32, 32],
-      iconAnchor: [16, 16]
+      iconSize: [d, d],
+      iconAnchor: [d / 2, d / 2]
     });
     haloMarker = L.marker(ll, {
       icon: icon, pane: "haloPane", interactive: false, keyboard: false
@@ -425,7 +498,11 @@ window.AM = window.AM || {};
      ask the cluster group to reveal it. The halo itself is already pinned to
      the store's latlng and tracks the map, so nothing to redraw afterwards.
      zoomToShowLayer dereferences marker.__parent._zoom, so guard on __parent
-     (not hasLayer, which can be true with no __parent). */
+     (not hasLayer, which can be true with no __parent).
+
+     With clustering now active at every zoom this path matters more than it
+     used to: a store sharing a building with another one stays inside a bubble
+     even at z16, and zoomToShowLayer spiderfies it into view. */
   function revealHiddenMarker(a) {
     /* A newer pick (or an expiry) may have landed during the flight. */
     if (haloStore !== a) return;
@@ -458,16 +535,14 @@ window.AM = window.AM || {};
   /* ---------- wiring ---------- */
   /* No legend is built here on purpose. settings.js already owns the on-map
      legend chip and the Settings > About legend, and a second control in the
-     same corner would just be clutter. SIZE_CLASSES is exported below so that
-     module can render the real thresholds rather than a hard-coded copy. */
+     same corner would just be clutter. TIER_LEGEND and tierIconUrl are
+     exported below so that module can render the real artwork and the real
+     thresholds rather than a hard-coded copy of either. */
 
   function start() {
     AM.state.on("selectedGames", scheduleApply);
     AM.state.on("selectedCabs", scheduleApply);
     AM.state.on("enabledSources", scheduleApply);
-    /* Resizing every marker in place is enough - the cluster tree is unchanged,
-       so there is no reason to pay for a full clearLayers + addLayers rebuild.
-       refreshClusters inside applyScale redraws the bubbles that changed. */
     AM.state.on("markerScaling", function () { applyScale(); });
     AM.state.on("selectedArcade", function (id, meta) {
       if (!meta || !meta.focus) return;
@@ -495,12 +570,15 @@ window.AM = window.AM || {};
     removeHalo: removeHalo,
     revealHiddenMarker: revealHiddenMarker,
     markerFor: function (id) { return markerOf[id] || null; },
-    /* graduated sizing */
-    SIZE_CLASSES: SIZE_CLASSES,
-    UNKNOWN_CLASS: UNKNOWN_CLASS,
-    UNIFORM_R: UNIFORM_R,
+    /* tier icons */
+    TIER_CLASSES: TIER_CLASSES,
+    UNKNOWN_TIER: UNKNOWN_TIER,
+    TIER_LEGEND: TIER_LEGEND,
+    UNIFORM_PX: UNIFORM_PX,
     totalCabs: totalCabs,
-    classFor: classFor,
+    tierFor: tierFor,
+    tierIconUrl: tintedUrl,
+    iconPxFor: iconPxFor,
     scalingOn: scalingOn,
     applyScale: applyScale,
     clusterHasBig: clusterHasBig
