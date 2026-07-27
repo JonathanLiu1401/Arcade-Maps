@@ -119,7 +119,10 @@ window.AM = window.AM || {};
         list.length + "</span></div>";
       list.forEach(function (a) {
         /* The row itself opens the place panel; the link still opens Maps. */
-        h += '<div class="cn-item" id="cn-' + a.id + '" data-id="' + a.id +
+        /* a.id is an integer today, but it arrives from the data file and this
+           is the one attribute interpolation in the frontend that was not
+           escaped; every other one either escapes or uses a local loop index. */
+        h += '<div class="cn-item" id="cn-' + esc(a.id) + '" data-id="' + esc(a.id) +
           '" role="button" tabindex="0">' +
           '<div class="nm">' + esc(a.name) + "</div>" +
           '<div class="ad">' + esc(a.addr || "") + "</div>" +
@@ -1209,8 +1212,15 @@ window.AM = window.AM || {};
       }
       if (dx || dy) map.panBy([dx, dy], { animate: !C.REDUCED, duration: 0.35 });
     };
-    /* A focused selection is already flying somewhere; measure on arrival. */
-    if (meta && meta.focus) AM.map.map.once("moveend", run);
+    /* A focused selection is already flying somewhere; measure on arrival.
+
+       Except under reduced motion, where markers.js has already moved the map
+       with setViewExact before this runs (its selectedArcade listener is
+       registered first, in app-init) and moveend has therefore ALREADY fired.
+       A once() armed now would never see it, and would instead stay armed and
+       fire on the user's next pan - scrolling the map to the PREVIOUS store.
+       markers.js guards its own arrival callback the same way. */
+    if (meta && meta.focus && !C.REDUCED) AM.map.map.once("moveend", run);
     else run();
   }
 

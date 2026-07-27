@@ -122,6 +122,7 @@ window.AM = window.AM || {};
   var arcadeRows = [];    /* the arcade subset, for the legacy getResults() */
   var selIdx = -1;
   var tmr = null;
+  var flashTimer = null;
   var input = null, list = null;
 
   /* ---------- index construction ---------- */
@@ -484,6 +485,11 @@ window.AM = window.AM || {};
   }
 
   function close() {
+    /* A debounce started by the last keystroke is still pending here, and run()
+       reads input.value, which pick() deliberately leaves in the box. Without
+       this, picking a result inside the DEBOUNCE_MS window re-opened the
+       dropdown on top of the store the user just chose. */
+    clearTimeout(tmr);
     list.hidden = true;
     input.setAttribute("aria-expanded", "false");
     input.removeAttribute("aria-activedescendant");
@@ -536,7 +542,12 @@ window.AM = window.AM || {};
     chip.classList.remove("chip-flash");
     void chip.offsetWidth;   /* restart the transition on a repeat pick */
     chip.classList.add("chip-flash");
-    setTimeout(function () { chip.classList.remove("chip-flash"); }, FLASH_MS);
+    /* Tracked, because overlapping picks otherwise stack: the first pick's
+       timer would land mid-flash on the second chip and cut it short. */
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(function () {
+      chip.classList.remove("chip-flash");
+    }, FLASH_MS);
   }
 
   function pickGame(row) {

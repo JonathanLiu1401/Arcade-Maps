@@ -195,13 +195,23 @@ window.AM = window.AM || {};
     var selGames = AM.state.get("selectedGames");
     if (!selGames) return;
     applyingHash = true;
-    var st = parseHash();
-    AM.state.batch(function () {
-      AM.state.set("selectedGames", st.games || new Set(AM.data.gamesInData));
-      AM.state.set("selectedCabs", st.cabs || new Set());
-    });
-    if (st.view) setViewExact([st.view.lat, st.view.lng], st.view.z);
-    applyingHash = false;
+    /* try/finally, because everything between here and the reset can throw on
+       hostile input: batch() runs listeners from five modules and rethrows, and
+       setViewExact hands Leaflet numbers taken verbatim from the URL. A throw
+       that skipped the reset would leave applyingHash true for the life of the
+       page, and scheduleHashUpdate's first line would then silently discard
+       every later URL update - the map would stop being shareable with no
+       visible symptom. */
+    try {
+      var st = parseHash();
+      AM.state.batch(function () {
+        AM.state.set("selectedGames", st.games || new Set(AM.data.gamesInData));
+        AM.state.set("selectedCabs", st.cabs || new Set());
+      });
+      if (st.view) setViewExact([st.view.lat, st.view.lng], st.view.z);
+    } finally {
+      applyingHash = false;
+    }
   }
 
   function startHashSync() {

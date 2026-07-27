@@ -152,10 +152,19 @@ def _fmt_opening_times(times):
             continue
         op, cl = d[0], d[1]
         closed = d[2] if len(d) > 2 else False
+        # op == cl is ZIv's "nobody filled these in" default, not a real day.
+        # The API hands back ["00:00", "00:00", false] for every day of an
+        # unrecorded venue, and "00:00" is a truthy string, so an `op and cl`
+        # test let it through: 1,730 rows (24.8% of the ZIv set) shipped
+        # "Mon-Sun 00:00-00:00" as if it were published opening hours.
+        # A zero-length day is not hours under any reading, so it is dropped
+        # rather than guessed at; enrich.py re-checks the formatted string so
+        # rows already sitting in data_raw/ are cleaned too.
+        op_s, cl_s = str(op or "").strip(), str(cl or "").strip()
         if closed:
             day_txt.append("closed")
-        elif op and cl:
-            day_txt.append("%s-%s" % (str(op).strip(), str(cl).strip()))
+        elif op_s and cl_s and op_s != cl_s:
+            day_txt.append("%s-%s" % (op_s, cl_s))
         else:
             day_txt.append(None)
     if not any(t for t in day_txt):

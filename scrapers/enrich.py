@@ -61,6 +61,7 @@ bemanicn.py's local _clean).
 """
 
 import os
+import re
 import sys
 from datetime import date
 from html.parser import HTMLParser
@@ -250,6 +251,34 @@ _ZIV_FIELDS = (
     ("hours_text", "hours_text"), ("info_text", "info_text"),
 )
 
+_HOURS_RANGE_RE = re.compile(r"(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})")
+
+
+def _clean_hours_text(text):
+    """Drop an opening-hours string that only encodes "no hours recorded".
+
+    ZIv returns ["00:00", "00:00", false] for every day of a venue whose hours
+    nobody has filled in, which is indistinguishable from real data to a
+    truthiness check - and 1,730 raw rows (24.8% of the ZIv set) carried the
+    resulting "Mon-Sun 00:00-00:00" into the panel as if it were published
+    opening hours. The same default is now rejected at the source in ziv.py;
+    this is the belt to that pair of braces, and it also cleans rows already
+    sitting in data_raw/ from an earlier crawl.
+
+    Deliberately narrow: a string is dropped only when it contains at least one
+    HH:MM-HH:MM range AND every such range opens and closes at the same minute.
+    A string with no parseable range at all (a bare "Mon-Sun closed", or some
+    future free-text format) is passed through untouched rather than guessed
+    at - the point is to stop asserting hours nobody published, not to invent a
+    second opinion about what the source meant.
+    """
+    if not isinstance(text, str) or not text.strip():
+        return None
+    ranges = _HOURS_RANGE_RE.findall(text)
+    if ranges and all(open_ == close for open_, close in ranges):
+        return None
+    return text
+
 
 def _put(entry, key, value, source):
     """Set entry[key] from `source` if `value` is present and the key is
@@ -278,7 +307,10 @@ def entry_from_rows(bemanicn_rows, ziv_rows):
             images.append(thumb)
     for row in ziv_rows:
         for out_key, row_key in _ZIV_FIELDS:
-            _put(entry, out_key, row.get(row_key), "ziv")
+            value = row.get(row_key)
+            if out_key == "hours_text":
+                value = _clean_hours_text(value)
+            _put(entry, out_key, value, "ziv")
         for url in (row.get("pictures") or []):
             if url and url not in images:
                 images.append(url)
