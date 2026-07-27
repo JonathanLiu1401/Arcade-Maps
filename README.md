@@ -5,7 +5,7 @@
 
 Worldwide rhythm game arcade locations on one interactive map. Arcade Maps tracks where you can play CHUNITHM, maimai DX, ONGEKI, SOUND VOLTEX, beatmania IIDX, DanceDanceRevolution, Polaris Chord, GITADORA, jubeat, pop'n music, Nostalgia, DANCERUSH STARDOM, DANCE aROUND, Project DIVA Arcade, and community-tracked games including Taiko no Tatsujin. The data is rebuilt automatically from official operator sources (SEGA ALL.Net, Konami e-amusement, WAHLAP) plus the Zenius-I-Vanisher and BemaniCN community databases, committed to this repo on a weekly schedule, and served as a fast static Leaflet map on GitHub Pages.
 
-**Current dataset (last rebuild):** 13,872 arcades across 68 countries. Sources include SEGA ALL.Net, Konami eagate, WAHLAP China, BemaniCN, Round1 USA, and Zenius-I-Vanisher (65 country queries, plus a United States per-series crawl that also tracks Pump It Up / ITG / StepManiaX and related cabs under `other`).
+**Current dataset (last rebuild):** 13,681 arcades across 68 countries (191 cross-source duplicates were unified by romanization-aware matching, so a Japanese official listing and its romaji community twin now share one pin). Sources include SEGA ALL.Net, Konami eagate, WAHLAP China, BemaniCN, Round1 USA, and Zenius-I-Vanisher (65 country queries, plus a United States per-series crawl that also tracks Pump It Up / ITG / StepManiaX and related cabs under `other`).
 
 ## Live map
 
@@ -20,7 +20,9 @@ Worldwide rhythm game arcade locations on one interactive map. Arcade Maps track
 - Store detail panel: click any marker and a full-height panel (a drag-to-expand bottom sheet on phones) opens with the store's games and per-game cab counts, address, source badges, notes, and buttons for directions, share-this-store link, and nearby
 - Nearby search: the locate button (or any store's Nearby button) ranks the closest arcades by great-circle distance with a compass bearing, and honours whatever game, cab and source filters are active
 - Settings you keep: turn individual data sources off, switch graduated marker sizing or the map legend on and off, and disable location features entirely. Choices persist per device in localStorage and never travel in a shared link
-- Graduated markers: dot size carries the store's total cabinet count in six steps, with a soft glow on the biggest venues. Colour still means game, and a store with no published count draws mid-size rather than smallest so "unknown" never reads as "tiny"
+- Tiered kawaii markers: each store draws one of six original chibi-style icons by total cabinet count (note, button pad, star, cat-ear chibi at 20-49 cabs, crowned idol at 50+, and a "?" pad when no source publishes a count). The icon's disc is tinted by game colour, tiers only use counts a source actually reported, and stacked pins spiderfy on click so overlapping stores stay clickable
+- Cab photos in the detail panel: a store's own photo when a source provides one, otherwise a CC-licensed photo of that game's cabinet from Wikimedia Commons (with the required author/license credit rendered on the image), otherwise a game-colour banner
+- Resizable sidebar: drag the panel edge to any width (double-click resets), remembered per device
 - Shareable URLs: the hash carries the map view plus selected games and cabs, and the Share button adds the exact store, so a link reopens on what you were looking at
 - Official-source data: SEGA ALL.Net, Konami eagate facility search, and WAHLAP (China) are scraped directly, not copied from other maps
 - Community coverage where official sources stop: Zenius-I-Vanisher fills in worldwide arcades (65 countries queried at the last pull), Taiko, offline cabs for retired games, and US extra series (Pump It Up, In The Groove, StepManiaX, and related titles) tracked under Other
@@ -101,7 +103,7 @@ Arcade-Maps/
 |  |- state.js           constants, helpers, loaded data, the state store
 |  |- format.js          distance / count / money / FX formatting
 |  |- mapcore.js         Leaflet map, panes, URL hash sync
-|  |- markers.js         cluster layer, visibility predicate, graduated sizes
+|  |- markers.js         cluster layer, visibility predicate, tier icons, spiderfy
 |  |- search.js          omnibox over games, arcades and places
 |  |- panel.js           filter drawer, no-coords tab, store detail panel
 |  |- settings.js        settings dialog, source toggles, legend chip
@@ -109,6 +111,7 @@ Arcade-Maps/
 |  |- app-init.js        fetch, seed state, build and start every module
 |- style.css             styling
 |- vendor/               vendored Leaflet 1.9.4 + markercluster + SmoothWheelZoom
+|- assets/               favicon, tier marker SVGs, CC-licensed cab photos (+ attribution)
 |- data/                 merged JSON (arcades, stats, enrichment, fx rates, china cities, merge log), auto-committed weekly
 |- data_raw/             per-source scraped rows, auto-committed weekly
 |- scrapers/             per-source scrapers + merge / geo_validate / china_place / enrich / fx

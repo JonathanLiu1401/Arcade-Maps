@@ -173,7 +173,7 @@ flowchart TD
     state["state.js<br>AM.consts / AM.util / AM.data / AM.state"]
     format["format.js<br>AM.format - distance, counts, money, FX"]
     mapcore["mapcore.js<br>AM.map - Leaflet map, panes, URL hash"]
-    markers["markers.js<br>AM.markers - cluster, visibility predicate,<br>graduated sizes, halo"]
+    markers["markers.js<br>AM.markers - cluster, visibility predicate,<br>tier-icon sizes, halo"]
     search["search.js<br>AM.search - omnibox: games / arcades / places"]
     panel["panel.js<br>AM.panel - filter drawer, no-coords tab,<br>place panel + bottom sheet"]
     settings["settings.js<br>AM.settings - dialog, source toggles,<br>prefs, legend chip"]
