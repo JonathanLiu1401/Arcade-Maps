@@ -125,9 +125,9 @@ Kept **separate** from `arcades.json` so the file every visitor downloads on fir
 
 Rationale for the split:
 
-- Transit prose, multi-image URL lists, and free-text price strings are bulky relative to name/address/coords.
-- Only about half of arcades have anything enrichable; a sparse side file avoids null-padding 13k rows.
-- Signed BemaniCN OSS thumbs expire; isolating them makes staleness easier to reason about (`enriched_at` + 403 tolerance).
+- Free-text opening hours, venue info and per-machine price strings are bulky relative to name/address/coords, and the parsers can emit transit prose (BemaniCN) and photo URL lists (either source) on top of that when a crawl reaches them.
+- Only about half of arcades have anything enrichable (6,523 of 13,681 in the current build); a sparse side file avoids null-padding 13k rows.
+- Enrichment goes stale on a different clock from the arcade rows, so each entry carries its own `enriched_at` and the whole file can be replaced without touching `arcades.json`.
 
 Shape (see also `scrapers/enrich.py` docstring and `docs/DATA_SOURCES.md` section 10):
 
@@ -137,13 +137,17 @@ Shape (see also `scrapers/enrich.py` docstring and `docs/DATA_SOURCES.md` sectio
  "country_to_code": {country name: ISO2},
  "counts": {...},
  "arcades": {"<id>": {
-    "transport", "price_text", "pay_type", "hours", "hours_text",
-    "images", "fav_count", "game_prices", "game_versions",
-    "machine_prices", "website", "info_text",
+    "hours_text", "info_text", "website", "machine_prices"
+        (the ONLY four entry fields in the file as built; each is
+         optional, and an arcade with none of them gets no entry),
     "sources": {field: "bemanicn"|"ziv"},
     "enriched_at": "YYYY-MM-DD"
  }}}
 ```
+
+What ships today is ZIv-only: 6,523 of 13,681 arcades have an entry, with `hours_text` on 5,213, `info_text` on 4,209, `website` on 4,092 and `machine_prices` on 2,414, and every tag in `sources` reads `"ziv"`. `scrapers/enrich.py` also parses `transport`, `price_text`, `pay_type`, `hours`, `images`, `fav_count`, `game_prices` and `game_versions`. Of those the place panel actually renders `transport`, `hours`, `price_text`, `game_prices` and `images`; `pay_type`, `fav_count` and `game_versions` are parsed and stored but never displayed. Seven of the eight are BemaniCN-only, and `counts.bemanicn_rows_contributed` in the current file is 0 against 3,812 rows available. `images` is the exception: it can come from either source (BemaniCN `image_thumb` or ZIv `pictures`), but the committed ZIv crawl ran with `skip_pictures`, so no row carries a `pictures` key. The net effect is the same - no transit text, no image URL, no favourite count and no coin/token pricing on disk right now. Those fields are pipeline capability, not data the site can count on.
+
+`hours_text` is ZIv's 7-day table rendered Mon-first. Days ZIv reports as zero-length (`["00:00","00:00",false]`, its shape for "nobody recorded this") are rejected rather than formatted, at two points: `scrapers/ziv.py` drops them when building the string, and `scrapers/enrich.py` `_clean_hours_text` drops them again per segment when copying, which cleans rows crawled before the fix. A venue with no recorded hours therefore has no `hours_text` at all rather than a fabricated `Mon-Sun 00:00-00:00`, and a venue with a partly filled week keeps only its real days. This mattered: 1,742 arcades, a quarter of the enrichment set, were publishing that fabricated string.
 
 Join is by stable source URLs (`links.bemanicn` / `links.ziv`), not by fragile name matching, so enrichment does not need to participate in clustering.
 
@@ -163,7 +167,7 @@ Client multiplies local price estimates by these rates. Missing exotic codes are
 ## Frontend modules (`js/`)
 
 No build step, no bundler, no framework. `index.html` loads vendored Leaflet
-plus nine plain scripts, each an IIFE that hangs one namespace off the global
+plus ten plain scripts, each an IIFE that hangs one namespace off the global
 `AM` object. Everything is served exactly as it sits in the repo.
 
 ```mermaid
@@ -173,13 +177,14 @@ flowchart TD
     state["state.js<br>AM.consts / AM.util / AM.data / AM.state"]
     format["format.js<br>AM.format - distance, counts, money, FX"]
     mapcore["mapcore.js<br>AM.map - Leaflet map, panes, URL hash"]
+    tiericons["tier-icons.js<br>AM.tierIcons - generated tier SVG sources"]
     markers["markers.js<br>AM.markers - cluster, visibility predicate,<br>tier-icon sizes, halo"]
     search["search.js<br>AM.search - omnibox: games / arcades / places"]
     panel["panel.js<br>AM.panel - filter drawer, no-coords tab,<br>place panel + bottom sheet"]
     settings["settings.js<br>AM.settings - dialog, source toggles,<br>prefs, legend chip"]
     nearby["nearby.js<br>AM.nearby - locate control, haversine list"]
     init["app-init.js<br>fetch -> ingest -> build() -> start()"]
-    state --> format --> mapcore --> markers --> search --> panel --> settings --> nearby --> init
+    state --> format --> mapcore --> tiericons --> markers --> search --> panel --> settings --> nearby --> init
   end
 
   store[("AM.state<br>selectedGames, selectedCabs,<br>enabledSources, selectedArcade,<br>shownCount, nearbyFrom,<br>markerScaling, locationEnabled")]
@@ -193,14 +198,23 @@ flowchart TD
 
 ### Load-order invariant (do not "tidy" this)
 
-`markers.js` captures `AM.format` and `AM.map.map` into locals at IIFE parse
-time, not lazily inside its functions. **`format.js` and `mapcore.js` must
-therefore both be evaluated before `markers.js`.** Reordering to the
-alphabetical-looking `state, mapcore, markers, format, ...` was tried and
-measured: the page boots to `data load failed`, 0 markers, no place panel and
-no settings gear, and because `app-init.js` swallows the throw in its
-`.catch(fail)` the console stays completely silent. A silent break is easy to
-reintroduce, so treat this ordering as load-bearing.
+`markers.js` captures `AM.format`, `AM.map.map` and `AM.tierIcons.SRC` into
+locals at IIFE parse time, not lazily inside its functions. **`format.js`,
+`mapcore.js` and `tier-icons.js` must therefore all be evaluated before
+`markers.js`.** Reordering to the alphabetical-looking `state, mapcore,
+markers, format, ...` was tried and measured: the page boots to `data load
+failed`, 0 markers, no place panel and no settings gear, and because
+`app-init.js` swallows the throw in its `.catch(fail)` the console stays
+completely silent.
+
+The `tier-icons.js` half of that ordering fails even more quietly. The capture
+is defensive - `(AM.tierIcons && AM.tierIcons.SRC) || {}` - so loading
+`tier-icons.js` after `markers.js` throws nothing at all. The artwork table is
+just `{}`, every tier lookup misses, `tintedUrl` tints the empty string, and
+each marker gets a data URL holding no SVG. The map draws, the cluster badges
+count correctly, the console stays clean, and every marker is invisible. A
+silent break is easy to reintroduce and this one leaves no evidence, so treat
+this ordering as load-bearing.
 
 ### State-event contract
 
@@ -221,7 +235,7 @@ on still flies, re-halos and re-opens the panel.
 | `nearbyFrom` `{lat, lng, label}` | place panel Nearby button | `nearby.js` opens the list; optional listener, so nothing breaks if that module is absent |
 | `enabledSources` | settings source toggles | `markers.js` re-filters, `nearby.js` re-ranks, `search.js` invalidates cached per-game counts |
 | `selectedGames` / `selectedCabs` | filter chips, omnibox game row, URL hash | markers, nearby, search, panel chips |
-| `markerScaling`, `locationEnabled` | settings prefs | `markers.js` resizes every dot; `nearby.js` adds or removes the locate control |
+| `markerScaling`, `locationEnabled` | settings prefs | `markers.js` `applyScale()` swaps each marker's `L.Icon` for the new tier size, then unspiderfies, because spiderfy leg geometry is derived from icon size; `nearby.js` adds or removes the locate control |
 
 `#pane-nearby` overlays `#pane-filters` in the same left column, so the place
 panel's back control is labelled from whichever surface is actually underneath
@@ -319,8 +333,9 @@ file. Without this the two copies of ZIv would BOTH load: the same
 arcade is spelled differently between them (the API's address parts are
 joined differently now, e.g. `"1 Old St, Tokyo"` vs
 `"1 Old St Tokyo, Tokyo"`), so the within-source dedupe key
-`(source, name, addr)` does not collapse them and ZIv would silently
-double to ~9.5k entries.
+`(source, name, addr)` does not collapse them: only 3 of the bundle's
+4,682 ZIv rows share a key with `ziv.json`'s 6,986, so ZIv would go
+from 6,969 deduped source units to 11,647.
 
 The skip is keyed on the ROW's `source` field, not on the file, so
 `round1usa` and curated `community` rows inside `community.json` are
@@ -361,5 +376,5 @@ written unchanged. `data/arcades.json` is WGS-84 only, always.
 `arcades.json` is the critical path for map markers. Enrichment is
 optional UI detail; FX is a tiny weekly rates blob. Isolating them keeps
 first paint small, lets FX fail without blocking arcade commits, and
-makes it obvious which fields can go stale (`enriched_at`, signed image
-URLs, ECB rate date).
+makes it obvious which fields can go stale (`enriched_at`, the FX rate
+date).

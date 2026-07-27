@@ -8,7 +8,7 @@ Cross-cutting rules:
 - **Coordinate systems:** SEGA ALL.Net, Konami eagate, and ZIv coordinates are WGS-84 (Google-Maps-derived or community-pinned on OSM-style maps) and are used as-is. Anything geocoded through Tencent/AMap for China is GCJ-02 and is converted with vendored eviltransform (`gcj2wgs_exact`); Baidu-derived points would need `bd2wgs`. `outOfChina` guards against double-converting non-China points. City centroids in `data/china_cities.json` are stored already converted to WGS-84 (see section 8).
 - **Coordinate sanity:** longitudes are wrapped into [-180, 180] (some sources emit values outside that range). The `(0, 0)` coordinate pair is treated as a sentinel for "no real coordinates" and such stores are dropped from the map layer (kept in the address-only data), never plotted at Null Island.
 - **Geo validation:** after merge, `scrapers/geo_validate.py` checks every coordinated entry against country bounding boxes. Official sources (allnet / eagate / wahlap, and address-trusting rows without community pins) null out-of-country geocodes; community sources (ziv / round1usa / community) correct a wrong country label from the pin when the pin falls cleanly in another country box.
-- **Enrichment split:** bulky optional fields (transit prose, prices, photos, hours, websites) land in `data/enrichment.json` keyed by merged arcade id, not in `data/arcades.json`. See section 9 and `scrapers/enrich.py`.
+- **Enrichment split:** optional per-arcade extras land in `data/enrichment.json` keyed by merged arcade id, not in `data/arcades.json`. The shipped file today carries four ZIv fields only (opening hours, venue info text, website, per-machine prices); transit prose, photos, and the other BemaniCN fields are parsed by the pipeline but are not populated in it. See section 10 and `scrapers/enrich.py`.
 
 ---
 
@@ -140,7 +140,7 @@ JSON; each arcade carries an id, name, address parts (address / city / state / p
 
 **Machine counts:** yes - each arcade's machine list is tallied per mapped slug into `game_counts` (one machine list entry = one machine; cabs that only map to `other` are not counted).
 
-**Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,961** merged source rows under `ziv` in `data/stats.json`. Includes Taiko no Tatsujin and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
+**Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,955** merged source rows under `ziv` in `data/stats.json`. Includes Taiko no Tatsujin and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
 
 ### Enrichment fields (ZIv)
 
@@ -150,12 +150,14 @@ With the default skip flags, **pricing and venue fields still arrive** (verified
 |---|---|---|
 | machine `displayPrice` / `pricing` / numeric `price` / `freePlay` | `machine_prices` `{slug: text}` | Free-text preferred when present |
 | venue `website` | `website` | |
-| `openingTimes` (7-day Mon-first arrays) | `hours_text` | Rendered `Mon 10:00-21:00; ...` |
+| `openingTimes` (7-day Mon-first arrays) | `hours_text` | Rendered `Mon 10:00-21:00; ...`; days whose open and close times are identical are dropped, see below |
 | `information` | `info_text` | HTML-stripped free text |
 | `pictures[].absolutePath` | `images` (max 3) | Only when crawl drops `skip_pictures` (`--enrich` mode); default weekly crawl skips pictures for payload size |
 | scrape date | `enriched_at` | ISO date on the raw row / enrichment entry |
 
-These land in `data/enrichment.json` via `scrapers/enrich.py`, not in `arcades.json`.
+These land in `data/enrichment.json` via `scrapers/enrich.py`, not in `arcades.json`. Images are the exception: the default weekly crawl keeps `skip_pictures=1`, so no picture URLs reach the shipped file.
+
+**Opening-hours trap:** a day whose open and close times are identical is ZIv's "nobody recorded this" default, not a real 24-hour day. The API hands back `["00:00", "00:00", false]` for all seven days of an unrecorded venue, and `"00:00"` is a truthy string, so a plain truthiness test published `Mon-Sun 00:00-00:00` as if it were real hours. `scrapers/ziv.py` now rejects any zero-length day when rendering `hours_text`, and `_clean_hours_text` in `scrapers/enrich.py` re-checks the formatted string so rows already sitting in `data_raw/` are cleaned too. A string with no parseable `HH:MM-HH:MM` range is passed through untouched rather than guessed at. Effect on the rebuilt file: `hours_text` fell from 6,955 to 5,213 entries, and 432 entries whose only field was that string were dropped entirely.
 
 ### Other caveats
 
@@ -177,6 +179,8 @@ Round1's US store locator is a Storepoint (storepoint.co) embed; Storepoint expo
 **Machine counts:** no - Round1 publishes no per-store machine data at all, so round1usa entries carry no `game_counts`.
 
 **Enrichment:** Storepoint may expose phone/hours/tags in the full API; the scraper currently keeps the standard lineup note only (full field list not exhaustively verified).
+
+**Current build:** there is no `data_raw/round1usa.json` in the tree, so the 59 `round1usa` arcades in `data/arcades.json` still come from the bundled `community.json` rows, not from a fresh scrape (see section 7).
 
 ---
 
@@ -213,6 +217,8 @@ Optional shop/detail fields (all omitted when the payload does not carry them; s
 
 `shop.comment` (long HTML: membership packs, QQ groups, photo rules) is deliberately **not** emitted into enrichment (large, mostly social prose).
 
+**Not populated today.** The committed `data_raw/china_bemanicn.json` rows carry name, address, games, notes, and `game_counts` only (coordinates are null, see the login-only caveat below), so none of the fields above reach `data/enrichment.json`: the counts block reports `bemanicn_rows_contributed: 0` against `bemanicn_rows_available: 3,812`, and every field in the shipped file is tagged `ziv`. The parsers stay in place for a re-crawl that collects shop details; until then, treat this table as the pipeline's capability, not as data on disk.
+
 **Staleness:** every enrichment entry carries `enriched_at` (ISO date of the crawl/build). Prices, hours, transit prose, and signed thumbs go stale; treat them as community data that may be outdated. Thumbs expire independently of `enriched_at` when the OSS signature lapses.
 
 **Caveat: coordinates are login-only.** The map layers / API routes that carry lat/lng (e.g. `api/shared/dxmap`) 302-redirect to `/login`. The public endpoints above expose NO coordinates, so every row ships coordinate-less with `coord_system: "gcj02"` (anything this source ever produces would be GCJ-02 and must go through eviltransform). BemaniCN entries gain coordinates by (1) merging with WAHLAP or inheriting a ZIv pin, or (2) city-centroid approx placement in merge. See the `china_wahlap_bemanicn` rule in `scrapers/merge.py` and `scrapers/china_place.py`.
@@ -225,11 +231,11 @@ Optional shop/detail fields (all omitted when the payload does not carry them; s
 
 ## 7. Superseded `community.json` mechanics
 
-`data_raw/community.json` is a committed historical bundle that once carried rows from three sources at once (`ziv`, `round1usa`, and a few curated `community` entries). Fresh per-source scrapes now write their own files (`data_raw/ziv.json`, `data_raw/round1usa.json`).
+`data_raw/community.json` is a committed historical bundle that carries rows from three sources at once (`ziv`, `round1usa`, and a few curated `community` entries). A fresh per-source scrape writes its own file instead: `data_raw/ziv.json` exists today, and `scrapers/round1usa.py` would write `data_raw/round1usa.json`, but that file is **not** in the tree, so the bundle is still the live source of the `round1usa` rows.
 
 **Rule:** when a fresh file for a source exists, the merger **skips that source's rows inside `community.json`** and takes only the fresh file. The skip is keyed on the **row's** `source` field, not on the file name, so curated `community` rows (and any non-superseded sources still only present in the bundle) continue to load. The skip only engages when the fresh file actually exists, so a checkout without it still gets the bundled rows.
 
-**Why it matters:** without the skip, ZIv would load twice. The same arcade is spelled differently between the old bundle and the live API (address parts joined differently), so the within-source dedupe key `(source, name, addr)` does not collapse them and ZIv would silently double. At the last merge, `community_rows_superseded` reported **4,682** `ziv` rows skipped from the bundle; live stats show only **6** pure `community` source rows remaining.
+**Why it matters:** without the skip, ZIv would load twice. The same arcade is spelled differently between the old bundle and the live API (address parts joined differently), so the within-source dedupe key `(source, name, addr)` does not collapse them and ZIv would silently double. At the last merge, `community_rows_superseded` reported **4,682** `ziv` rows skipped from the bundle; the bundle's **59** `round1usa` rows were all loaded (no fresh file to supersede them), and live stats show only **6** pure `community` source rows remaining.
 
 The superseded count is written to `data/merge_log.json` as `community_rows_superseded`.
 
@@ -267,7 +273,7 @@ Weekly USD-base rates for converting displayed local prices.
 | Primary | [Frankfurter](https://api.frankfurter.app/latest?from=USD) (ECB-derived, **keyless**, verified live) |
 | Fallback / gap-fill | [open.er-api.com](https://open.er-api.com/v6/latest/USD) (keyless; used for codes Frankfurter omits, e.g. TWD and VND, or full primary failure) |
 | Module | `scrapers/fx.py` |
-| Currencies | USD base plus JPY, HKD, CNY, PHP, TWD, KRW, SGD, MYR, THB, VND, IDR, AUD, NZD, GBP, EUR, CAD (kept in sync with `js/format.js` `CURRENCY_SYMBOL`) |
+| Currencies | **Required** (the run fails and keeps the previous file if any is missing): USD base plus JPY, HKD, CNY, PHP, TWD, KRW, SGD, MYR, THB, VND, IDR, AUD, NZD, GBP, EUR, CAD. **Best-effort** (omitted from the file if neither feed publishes them, which is not an error): MOP, MXN, BRL. The set to keep in sync with is `js/panel.js` `CUR_TOKENS`, the price parser's token table, not `js/format.js` `CURRENCY_SYMBOL`: any code the parser can read off a scraped price needs a rate or that price renders with no USD equivalent |
 | Shape | `{base, date, rates, source, sources, fetched_at}` with per-code `sources` map (`frankfurter` / `open.er-api.com` / `base`) |
 | Failure mode | **Non-fatal.** If both feeds fail (or required rates remain missing), the previous `fx_rates.json` is left in place and the step exits 0 so the weekly Action can still commit arcade data |
 
@@ -292,6 +298,8 @@ Built inside merge after ids are assigned (`enrich.build_enrichment`). Join key:
 ```
 
 Only arcades with at least one enrichable field get an entry. Country price defaults always carry `typical: true` and are display fallbacks, never quoted guarantees. Frontend price priority: ZIv `machine_prices` > BemaniCN `game_prices` / `price_text` > country defaults.
+
+**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,523** entries against **13,681** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,213), `info_text` (4,209), `website` (4,092), `machine_prices` (2,414), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
 
 ---
 

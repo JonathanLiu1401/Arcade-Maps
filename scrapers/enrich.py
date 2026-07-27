@@ -265,19 +265,46 @@ def _clean_hours_text(text):
     this is the belt to that pair of braces, and it also cleans rows already
     sitting in data_raw/ from an earlier crawl.
 
-    Deliberately narrow: a string is dropped only when it contains at least one
-    HH:MM-HH:MM range AND every such range opens and closes at the same minute.
-    A string with no parseable range at all (a bare "Mon-Sun closed", or some
-    future free-text format) is passed through untouched rather than guessed
-    at - the point is to stop asserting hours nobody published, not to invent a
-    second opinion about what the source meant.
+    Cleaning is per SEGMENT, not per string, because ziv.py drops individual
+    zero-length DAYS and this has to agree with it. Dropping only all-zero
+    strings would leave 100 entries like
+    "Mon 10:00-22:00; Tue-Sun 00:00-00:00" - one real day plus six days of
+    default - still asserting hours for the other six. Segment-level dropping
+    keeps the Monday and discards the rest, which is what a fresh crawl now
+    produces.
+
+    Exact parity with a fresh crawl is not reachable from a formatted string:
+    ziv.py collapses consecutive identical days into runs BEFORE formatting, so
+    removing days here can leave labels like "Tue-Thu" that a fresh crawl would
+    have grouped differently. The output is always a truthful subset of what
+    the source published, and the next crawl regenerates it properly.
+
+    A segment with no parseable range at all (a "closed" marker, or some future
+    free-text format) is passed through untouched rather than guessed at, and
+    the whole string is dropped when nothing but those markers survives - the
+    point is to stop asserting hours nobody published, not to invent a second
+    opinion about what the source meant.
     """
     if not isinstance(text, str) or not text.strip():
         return None
-    ranges = _HOURS_RANGE_RE.findall(text)
-    if ranges and all(open_ == close for open_, close in ranges):
+    # No parseable range anywhere: a bare "Mon-Sun closed", or a free-text
+    # format some future crawl invents. Not ours to judge, so hand it back.
+    if not _HOURS_RANGE_RE.search(text):
+        return text
+    kept = []
+    for segment in text.split(";"):
+        seg = segment.strip()
+        if not seg:
+            continue
+        ranges = _HOURS_RANGE_RE.findall(seg)
+        if ranges and all(open_ == close for open_, close in ranges):
+            continue              # a zero-length day is not opening hours
+        kept.append(seg)
+    # Only "closed" markers left standing means every day that claimed to be
+    # open was a default, so the venue published nothing usable.
+    if not any(_HOURS_RANGE_RE.search(seg) for seg in kept):
         return None
-    return text
+    return "; ".join(kept)
 
 
 def _put(entry, key, value, source):

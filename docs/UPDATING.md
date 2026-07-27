@@ -12,8 +12,10 @@
      Round1 USA) into `data_raw/`;
    - merges into `data/arcades.json` (dedupe, geo_validate, china_place
      approx centroids, stats);
-   - builds `data/enrichment.json` from raw BemaniCN/ZIv extras joined by
-     source URL;
+   - builds `data/enrichment.json` from the enrichment fields on the raw
+     BemaniCN/ZIv rows, joined by source URL (only the ZIv rows carry
+     those fields in the committed `data_raw/`, so today's file is
+     ZIv-only);
    - rebuilds the My Maps export files under `mymaps/`;
    - bakes `data/fx_rates.json` (Frankfurter primary, open.er-api.com
      gap-fill / fallback).
@@ -31,7 +33,7 @@
 | `data/arcades.json` | Canonical merged arcades (incl. `approx` China pins) |
 | `data/stats.json` | Totals / by_game / by_source / by_country |
 | `data/merge_log.json` | Dedupe counts, geo_validation log, china_approx log, superseded community rows |
-| `data/enrichment.json` | Optional prices, hours, transport, images, websites |
+| `data/enrichment.json` | Optional ZIv extras: opening hours, venue info text, website, per-machine prices |
 | `data/fx_rates.json` | USD FX rates for price display |
 | `data/china_cities.json` | Static centroid table (not rebuilt weekly; only when the table is refreshed by hand) |
 | `data_raw/*.json` | Per-source scraped rows (incl. optional enrichment fields on bemanicn/ziv rows) |
@@ -122,7 +124,9 @@ falls sharply. ZIv empty-200 traps abort the run loudly with
    payloads; login-walled coordinate routes remaining 302 is expected.
    If enrichment fields disappear from raw rows, `enrichment.json`
    simply omits them (`bemanicn_rows_contributed` drops) while arcade
-   placement still works.
+   placement still works. That counter is already **0** in the current
+   build: the committed BemaniCN rows carry no enrichment fields, so
+   every field in `enrichment.json` today comes from ZIv.
 5. Re-run locally (`py scrapers/run_all.py --only <source>` first, then
    a full run) until the source produces sane counts again.
 6. If the site is temporarily down rather than changed, do nothing:
@@ -158,7 +162,10 @@ scrapers are deliberately polite and must stay that way:
 
 - Keep the pause between requests that the scrapers already implement;
   do not remove sleeps or parallelize fetches against one host.
-- Keep the honest, identifiable User-Agent string.
+- Keep the single shared User-Agent (`USER_AGENT` in
+  `scrapers/common.py`). It is a fixed desktop-browser string today,
+  not a project-identifying one; switching to an honest project UA is
+  desirable but untested against the eagate WAF.
 - Do not run full scrapes in a tight loop while debugging; re-run the
   merge/build stages from the saved files with
   `run_all.py --skip-scrape`, or limit fetching with `--only <source>`,

@@ -3,13 +3,19 @@
 Primary:  https://api.frankfurter.app/latest?from=USD  (ECB, keyless)
 Fallback: https://open.er-api.com/v6/latest/USD       (for gaps / full fail)
 
-Currencies: JPY/HKD/CNY plus every code in js/format.js CURRENCY_SYMBOL
-(TWD KRW SGD MYR THB VND IDR AUD NZD GBP EUR CAD PHP), with USD=1.
+Currencies: every code js/panel.js CUR_TOKENS can pull out of a scraped
+price string, with USD=1. That is js/format.js CURRENCY_SYMBOL (JPY USD
+HKD CNY PHP TWD KRW SGD MYR THB VND IDR AUD NZD GBP EUR CAD) plus MOP,
+MXN and BRL, which the parser recognises but format.js has no display
+symbol for. A code absent here still parses; it just renders as the raw
+local amount with no USD equivalent, which is why the parser's token
+table is the set to match.
 
 Frankfurter is ECB-based and omits some Asian codes (live-verified
-2026-07-27: TWD and VND absent; PHP is present). Missing codes are
-filled from open.er-api.com and recorded in the per-currency `sources`
-map.
+2026-07-27: TWD and VND absent; PHP is present). MOP is expected to
+need the fallback as well, though that has not been live-verified.
+Missing codes are filled from open.er-api.com and recorded in the
+per-currency `sources` map.
 
 Never writes a broken file: if both sources fail (or required rates are
 still missing after both), the previous data/fx_rates.json is left in
@@ -34,14 +40,32 @@ OUTFILE = "fx_rates.json"
 PRIMARY_NAME = "frankfurter"
 FALLBACK_NAME = "open.er-api.com"
 
-# Mirror js/format.js CURRENCY_SYMBOL (plus USD base). Keep in sync when
-# the frontend gains a new display currency.
-CURRENCIES = [
+# The authoritative set is js/panel.js CUR_TOKENS, the price parser's token
+# table: any code it can read off a scraped price needs a rate here, or the
+# panel prints that price with no USD equivalent. Most of the list mirrors
+# js/format.js CURRENCY_SYMBOL (plus the USD base); MOP, MXN and BRL are
+# parsed by panel.js but have no format.js display symbol. Keep this in sync
+# with CUR_TOKENS, not with CURRENCY_SYMBOL.
+REQUIRED_CURRENCIES = [
     "USD",
     "JPY", "HKD", "CNY",
     "PHP", "TWD", "KRW", "SGD", "MYR", "THB", "VND", "IDR",
     "AUD", "NZD", "GBP", "EUR", "CAD",
 ]
+
+# Best-effort additions: parsed by panel.js, but NOT gating the run.
+#
+# The missing-currency check below is all-or-nothing and raises, which makes
+# run_all keep the previous file. That is the right behaviour for a code the
+# site depends on, and exactly the wrong behaviour for a rare one: MOP in
+# particular is not published by every feed, and putting it in the required set
+# would mean one absent pataca rate silently freezes ALL rates at their last
+# values, week after week, with nothing but a stderr line to say so. A price in
+# a currency with no rate still renders, just without its USD equivalent, so a
+# missing optional rate costs far less than a frozen file.
+OPTIONAL_CURRENCIES = ["MOP", "MXN", "BRL"]
+
+CURRENCIES = REQUIRED_CURRENCIES + OPTIONAL_CURRENCIES
 
 # Soft sanity bands for 2026 (USD base). Out-of-band rates are accepted
 # but printed loudly so a bad feed is obvious in CI logs.
@@ -162,7 +186,13 @@ def build_rates():
     rates["USD"] = 1.0
     sources["USD"] = "base"
 
-    missing = [c for c in CURRENCIES if c not in rates]
+    absent = [c for c in OPTIONAL_CURRENCIES if c not in rates]
+    if absent:
+        print("fx: note - optional currencies unavailable from both feeds: %s "
+              "(prices in them render without a USD equivalent)"
+              % ",".join(absent), file=sys.stderr)
+
+    missing = [c for c in REQUIRED_CURRENCIES if c not in rates]
     if missing:
         raise common.FetchError(
             "still missing currencies after both feeds: %s "
@@ -199,9 +229,11 @@ def build_rates():
     return {
         "base": "USD",
         "date": date_str,
-        "rates": {c: rates[c] for c in CURRENCIES},
+        # Emitted in CURRENCIES order, skipping any optional code neither feed
+        # published - a KeyError here would turn a missing pataca into a crash.
+        "rates": {c: rates[c] for c in CURRENCIES if c in rates},
         "source": source_summary,
-        "sources": {c: sources[c] for c in CURRENCIES},
+        "sources": {c: sources[c] for c in CURRENCIES if c in sources},
         "fetched_at": fetched_at,
     }
 

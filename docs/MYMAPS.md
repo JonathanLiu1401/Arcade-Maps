@@ -12,7 +12,7 @@ Google's documented My Maps import limits:
 - **2,000 features per import** (Google: "Do not import files with more than 2,000 rows")
 - **5 MB per KML/KMZ file** (unzipped; other formats up to 40 MB)
 
-`scrapers/build_mymaps.py` emits 10 primary numbered layers (01-10), each under 2,000 features and under 5 MB, so every file imports cleanly as one layer. A layer whose data exceeds 2,000 features is split into `_a`/`_b`/... KMZ part files, each of which imports as its own layer.
+`scrapers/build_mymaps.py` emits 10 primary numbered layers (01-10), each under 5 MB and under the builder's own feature cap, so every file imports cleanly as one layer. The builder splits at **1,990** features (`MAX_FEATURES` in `scrapers/build_mymaps.py`), a deliberate margin under Google's 2,000: a layer whose data exceeds 1,990 features is split into `_a`/`_b`/... KMZ part files, each of which imports as its own layer.
 
 ## Import walkthrough
 
@@ -26,7 +26,7 @@ Google's documented My Maps import limits:
 
 ### Optional extras (files 11 and 12)
 
-If `mymaps/` contains files numbered `11_*` or `12_*`, they are optional extra layers. My Maps caps you at 10 layers per map, so to use an extra: **delete (or skip) one numbered layer you do not need** and import the extra in its place. Alternatively, put extras on a second map. Note that layer 12 currently ships as three part files (`12_*_a.kmz` / `_b` / `_c`), each of which needs its own layer slot; a second map is the practical home for it.
+If `mymaps/` contains files numbered `11_*` or `12_*`, they are optional extra layers. My Maps caps you at 10 layers per map, so to use an extra: **delete (or skip) the numbered layers you do not need** and import the extra in their place. Alternatively, put extras on a second map. Note that layers 11 and 12 each currently ship as four part files (`11_*_a.kmz` through `_d`, `12_*_a.kmz` through `_d`), and every part needs its own layer slot: four freed slots for either layer, eight for both. A second map is the practical home for them.
 
 ## Restyling a layer
 

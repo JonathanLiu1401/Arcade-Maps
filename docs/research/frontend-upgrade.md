@@ -1,7 +1,7 @@
 # Frontend Upgrade Research
 
-Date: 2026-07-27. Read-only research for Arcade Maps
-(`C:\Users\jonny\Desktop\Arcade Maps`): static, no build step, vendored
+Date: 2026-07-27. Read-only research for Arcade Maps (the local working
+copy): static, no build step, vendored
 Leaflet 1.9.4 + markercluster 1.5.3, OSM raster tiles, GitHub Pages.
 
 Every claim is marked **[VERIFIED]** with URL/evidence or **[UNVERIFIED]**.
