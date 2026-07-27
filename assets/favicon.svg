@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"
+     role="img" aria-label="Arcade Maps">
+  <title>Arcade Maps</title>
+  <!--
+    Rhythm-game cabinet face: a ring of 8 button dots around a note diamond.
+    Generic geometry only - not derived from any company logo or trademark.
+    Palette: site tile #17181D, accent pink #E4007F, white note core.
+    The dark tile is always drawn so the mark never floats invisibly on a
+    light browser tab strip.
+  -->
+  <rect width="64" height="64" rx="14" ry="14" fill="#17181D"/>
+  <g fill="#E4007F">
+    <circle cx="32.000" cy="10.000" r="5"/>
+    <circle cx="47.556" cy="16.444" r="5"/>
+    <circle cx="54.000" cy="32.000" r="5"/>
+    <circle cx="47.556" cy="47.556" r="5"/>
+    <circle cx="32.000" cy="54.000" r="5"/>
+    <circle cx="16.444" cy="47.556" r="5"/>
+    <circle cx="10.000" cy="32.000" r="5"/>
+    <circle cx="16.444" cy="16.444" r="5"/>
+  </g>
+  <path d="M32 23 L41 32 L32 41 L23 32 Z" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="Arcade with 3 to 9 cabinets">
+  <title>Tier 2 - 3 to 9 cabinets</title>
+  <!--
+    T2: a rounded arcade-button pad carrying a note glyph. The squarish
+    silhouette is the whole point - it is the one shape in the set that is
+    neither round nor spiky, so T2 never collapses into T3/T4/T5 at 20px.
+
+    The interior glyph is DARK, not white. White on a light tint (#F7A400)
+    lands near 2:1 contrast and disappears; the dark ink matches the contour
+    and stays legible over every tint the map assigns.
+
+    No color/style on the root - see tier1.svg for why.
+  -->
+  <rect x="4.8" y="4.8" width="22.4" height="22.4" rx="7.2"
+        fill="currentColor" stroke="#2A1B3D" stroke-width="2.4"/>
+  <!-- candy gloss across the top, fixed white over any tint -->
+  <path d="M8.2 9.6 Q10.6 7.1 16 7.1 Q21.4 7.1 23.8 9.6 Q20.0 11.4 16 11.4 Q12.0 11.4 8.2 9.6 Z"
+        fill="#FFFFFF" opacity="0.45"/>
+  <g fill="#2A1B3D">
+    <rect x="15.4" y="10.4" width="1.9" height="10.2" rx="0.95"/>
+    <path d="M17.3 10.4 Q21.6 11.8 21.6 15.4 Q20.4 12.9 17.3 13.2 Z"/>
+    <ellipse cx="13.8" cy="20.6" rx="3.4" ry="2.9"/>
+  </g>
+</svg>

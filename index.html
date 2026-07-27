@@ -53,8 +53,24 @@
       <p class="hint">These come from the official WAHLAP list and the BemaniCN community map, which publish addresses only; search the address in your preferred map app. Chinese web maps use shifted coordinates (GCJ-02); plotted China points were converted to WGS-84 - positions are approximate.</p>
       <div id="china-list"></div>
     </div>
+    <!-- nearby: overlays the drawer panes while the nearby list is open -->
+    <div id="pane-nearby" aria-label="Nearby arcades">
+      <div class="nb-head">
+        <span class="pane-title">Nearby arcades</span>
+        <button id="nb-close" class="mini" type="button" aria-label="Close nearby list">close</button>
+      </div>
+      <div id="nb-origin" class="nb-origin"></div>
+      <div id="nb-list" role="list"></div>
+      <p id="nb-caption" class="hint nb-cap"></p>
+    </div>
+    <!-- /nearby -->
   </aside>
-  <div id="map" role="application" aria-label="Arcade map"></div>
+  <div id="map" role="application" aria-label="Arcade map">
+    <!-- nearby: map-anchored bits (inside #map so they sit over the tiles) -->
+    <button id="nb-research" type="button" class="nb-pill">Search this area</button>
+    <div id="nb-toast" class="nb-toast" role="status" aria-live="polite"></div>
+    <!-- /nearby -->
+  </div>
 </div>
 
 <footer id="foot">
@@ -64,6 +80,18 @@
 
 <script src="vendor/leaflet.js"></script>
 <script src="vendor/leaflet.markercluster.js"></script>
-<script src="app.js"></script>
+<script src="vendor/SmoothWheelZoom.js"></script>
+<!-- Plain scripts, loaded in dependency order: state first, then the map,
+     then the modules that draw into it, then the boot script. -->
+<script src="js/state.js"></script>
+<!-- graduated markers + price/fx display helpers -->
+<script src="js/format.js"></script>
+<script src="js/mapcore.js"></script>
+<script src="js/markers.js"></script>
+<script src="js/search.js"></script>
+<script src="js/panel.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/nearby.js"></script>
+<script src="js/app-init.js"></script>
 </body>
 </html>

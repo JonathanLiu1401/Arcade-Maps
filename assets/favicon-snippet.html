@@ -1,0 +1,32 @@
+<!--
+  Arcade Maps favicon - paste into <head> of index.html.
+
+  IMPORTANT: this REPLACES the existing inline data-URI icon link
+  (`<link rel="icon" href="data:image/svg+xml,...">`). Delete that line;
+  do not keep both, or the browser picks between two competing icons.
+
+  All hrefs are RELATIVE on purpose. The site is served from a GitHub Pages
+  project subpath (/Arcade-Maps/), so root-absolute "/favicon.ico" would 404.
+  Place this block where the old icon link was; if index.html ever moves into
+  a subdirectory, these paths must be adjusted with it.
+
+  ORDER IS DELIBERATE - DO NOT REORDER THE TWO rel="icon" LINES.
+  Tested in Chrome via DevTools (watching which icon URL is actually fetched):
+  the browser uses the LAST supported rel="icon" declaration. SVG-first/ico-last
+  made Chrome fetch favicon.ico; reversing them made it fetch favicon.svg.
+  So with the order below, Chrome renders the .ico - which is what we want,
+  because its 16/32/48 frames are hand-hinted per size. Measured on the real
+  rasters: the vector at 1x 16px holds only ~43% of its pixels at full #E4007F
+  (subpixel dot positions bleed into the tile), while the hinted 16px .ico frame
+  is 100%. The SVG stays first so SVG-only/older-ico-averse browsers still get a
+  resolution-independent mark, and it covers surfaces larger than 48px.
+  (Chrome verified directly; Firefox/Safari follow the same last-wins rule per
+  spec but were not tested here.)
+
+  Do NOT append another rel="icon" (e.g. the 192 PNG) after these lines - being
+  last, it would win and get downscaled to 16px, undoing the hinting.
+-->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#E4007F">

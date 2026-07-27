@@ -7,6 +7,12 @@ Pipeline rules (see README / task spec):
  (c) conservative cross-source physical-store merge:
      distance < 120 m AND name similarity >= 0.6, OR exact normalized
      name match when one side lacks coords (same resolved country only).
+     PLUS a distance-gated proximity tier (see the delimited section
+     below): official-vs-community pairs under 30 m that the 0.6 name
+     gate rejected are re-examined with romanization-aware matching
+     (scrapers/name_match.py), because a ZIv romaji name and an official
+     kana name for one arcade can share zero characters. The 0.6 gate
+     and the 120 m radius themselves are UNCHANGED.
      Two coordinate-less entries merge only on exact (name, address),
      EXCEPT the China-scoped wahlap x bemanicn rule: same province,
      city-gated, name similarity >= 0.8 (parenthetical branch text
@@ -20,6 +26,49 @@ Pipeline rules (see README / task spec):
  (e) gcj02 / bd09 -> wgs84 via eviltransform when coord_system says so.
  (f) country from region labels / wahlap province / geo+address heuristics.
  (g) links.gmaps / links.ziv / links.bemanicn.
+ (h) a fresh per-source scrape file (ziv.json / round1usa.json)
+     SUPERSEDES that source's rows bundled inside community.json, so
+     a re-crawl replaces rather than doubles it; community.json's
+     other sources are still ingested.
+ (i) game_counts (bemanicn quantities / ziv machine tallies) survive
+     within-source dedupe and cross-source merges as the per-slug MAX
+     over the merged members (bemanicn wins where only it has a slug,
+     ziv where only it does, max where both do). A counted slug is
+     always added to games; entries with no counted slug carry no
+     game_counts key.
+ (m) counts confidence: a ZIv per-game count of exactly 1 is a
+     PLACEHOLDER (its payload lists one row per game version, so any
+     title the arcade merely has tallies to 1), while bemanicn counts
+     are true per-title 台数. Every entry whose members reported counts
+     is therefore tagged "counts_src": bemanicn wins when both sources
+     contributed; ziv-only counts survive when ANY slug is >= 2 (a 2
+     proves the list was really tallied, so that entry's 1s are real
+     1s); ziv-only counts that are ALL 1 are dropped entirely with
+     counts_src null, so placeholder data never renders as "x1". The
+     key is absent when no source counted at all, keeping "suppressed
+     placeholder" distinguishable from "never counted". Dropping a
+     count never drops the game - games is unioned first.
+ (j) source-aware geo validation (scrapers/geo_validate.py): after
+     country resolution, every entry with coords is checked against
+     the labeled country's bbox. Official sources (allnet/eagate/
+     wahlap) trust the address and null out-of-country geocodes;
+     community sources (ziv/round1usa/community) trust the pin and
+     correct a wrong country label. Actions land in merge_log.json
+     under "geo_validation".
+ (k) optional enrichment (bemanicn transit/coin pricing/hours/thumb,
+     ziv machine pricing/website/hours/photos) is written to a SEPARATE
+     data/enrichment.json keyed by merged id, NOT into arcades.json,
+     which stays lean for the initial page load. See scrapers/enrich.py.
+ (l) China approximate placement (scrapers/china_place.py): the ~5.9k
+     coordinate-less China rows (wahlap and bemanicn publish no
+     lat/lng) are placed at their city's centroid from
+     data/china_cities.json, flagged "approx": true and noted
+     "position approximate: city-level centroid (<city>)". Runs after
+     geo validation, never touches an entry that already has coords,
+     hard-skips Taiwan, and rejects any city whose province
+     contradicts the entry's. Pins sharing a centroid are fanned out
+     by a deterministic sub-600 m offset - cosmetic only, it encodes
+     no real position. Logged to merge_log.json under "china_approx".
 """
 
 import argparse
@@ -32,8 +81,12 @@ import unicodedata
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import china_place    # China approximate placement (see (l) in run())
 import common
+import enrich          # enrichment section (see (k) in run())
 import eviltransform
+import geo_validate
+import name_match     # romanization-aware proximity tier (see (c))
 
 GAME_SLUGS = [
     "maimai_dx", "chunithm", "ongeki", "project_diva", "sdvx", "iidx",
@@ -259,17 +312,25 @@ def resolve_country(lat, lng, addr, name):
     """Order matters (audit D1): script checks, then the strong signals
     (coordinate bounding box, US state+ZIP), then keyword hints matched
     against the ADDRESS ONLY - venue names like "JAPAN VILLAGE" in
-    Brooklyn must never set the country."""
+    Brooklyn must never set the country.
+
+    Canadian province names are checked AFTER the coordinate bbox so
+    street strings like "Ontario, California" or "Quebec Rd, Mablethorpe"
+    do not override a real US/UK pin. CA postal codes stay early - they
+    are unambiguous. When no coords are present the province-name check
+    still runs and labels bare "Toronto, Ontario" addresses as Canada."""
     text = "%s %s" % (addr or "", name or "")
     addr = addr or ""
     if _HANGUL.search(text):
         return "South Korea"
-    if _CA_POSTAL.search(text) or _CA_PROVINCES.search(text):
+    if _CA_POSTAL.search(text):
         return "Canada"
     if lat is not None and lng is not None:
         hit = bbox_country(lat, lng)
         if hit:
             return hit
+    if _CA_PROVINCES.search(text):
+        return "Canada"
     if _US_STATE_ZIP.search(addr):
         return "United States"
     for rx, country in _COUNTRY_HINTS:
@@ -446,6 +507,9 @@ class Stats(object):
         self.nulled_examples = []
         self.within_dupes = 0
         self.raw_rows = 0
+        # {source: rows skipped in community.json because a fresh
+        # per-source scrape file superseded them}
+        self.superseded_rows = {}
 
 
 def _null_zero(row, stats, origin):
@@ -470,11 +534,20 @@ def load_units(raw_dir, stats):
 
     def add(source, name, addr, lat, lng, games, cabs, country, pref,
             ziv_url=None, note=None, coord_system="wgs84",
-            cn_prov=None, cn_city=None, bemanicn_url=None):
+            cn_prov=None, cn_city=None, bemanicn_url=None,
+            game_counts=None):
         name = (name or "").strip()
         addr = (addr or "").strip()
         if not name:
             return
+        gc = {}
+        for slug, n in (game_counts or {}).items():
+            try:
+                n = int(n)
+            except (TypeError, ValueError):
+                continue
+            if slug in GAME_SLUGS and n > 0:
+                gc[slug] = n
         key = (source, _dedupe_key(name), _dedupe_key(addr))
         u = units.get(key)
         if u is None:
@@ -483,7 +556,7 @@ def load_units(raw_dir, stats):
                  "country": country, "pref": pref, "ziv_url": ziv_url,
                  "notes": [], "coord_system": coord_system,
                  "cn_prov": cn_prov, "cn_city": cn_city,
-                 "bemanicn_url": bemanicn_url}
+                 "bemanicn_url": bemanicn_url, "game_counts": {}}
             units[key] = u
         else:
             stats.within_dupes += 1
@@ -500,6 +573,12 @@ def load_units(raw_dir, stats):
                 u["bemanicn_url"] = bemanicn_url
         u["games"].update(games)
         u["cabs"].update(cabs)
+        # per-slug max across within-source dupes; a counted slug is
+        # always also a game
+        for slug, n in gc.items():
+            if n > u["game_counts"].get(slug, 0):
+                u["game_counts"][slug] = n
+        u["games"].update(gc)
         if note and note not in u["notes"]:
             u["notes"].append(note)
 
@@ -564,6 +643,15 @@ def load_units(raw_dir, stats):
     # --- community-schema files (community.json bundles ziv / round1usa /
     #     community rows; fresh full scrapes write ziv.json / round1usa.json
     #     in the same schema plus a country field) ---
+    # A fresh per-source scrape SUPERSEDES that source's rows inside the
+    # bundled community.json: without this, community.json's 4.7k ziv
+    # rows and ziv.json's re-crawl BOTH load and ZIv doubles (the two
+    # files' names/addresses differ cosmetically, so within-source
+    # dedupe cannot collapse them). Scoped by row source, not by file,
+    # because round1usa/curated rows live in community.json too and
+    # must still be ingested. Conditional on the fresh file existing so
+    # a checkout without it still gets the bundled rows.
+    superseded = {s for s in ("ziv", "round1usa") if os.path.exists(path(s))}
     for fn, default_src in (("community", "community"), ("ziv", "ziv"),
                             ("round1usa", "round1usa")):
         if not os.path.exists(path(fn)):
@@ -573,6 +661,10 @@ def load_units(raw_dir, stats):
             source = row.get("source") or default_src
             if source not in SRC_PRIORITY:
                 source = "community"
+            if fn == "community" and source in superseded:
+                stats.superseded_rows[source] = (
+                    stats.superseded_rows.get(source, 0) + 1)
+                continue
             lat, lng = _null_zero(row, stats, fn)
             country = row.get("country")
             if country:
@@ -588,7 +680,8 @@ def load_units(raw_dir, stats):
                 games, [], country, pref,
                 ziv_url=(row.get("source_url") if source == "ziv" else None),
                 note=row.get("notes"),
-                coord_system=row.get("coord_system") or "wgs84")
+                coord_system=row.get("coord_system") or "wgs84",
+                game_counts=row.get("game_counts"))
 
     # --- bemanicn (optional) ---
     fn = "china_bemanicn"
@@ -606,7 +699,8 @@ def load_units(raw_dir, stats):
                 games, [], "China", pref, note=row.get("notes"),
                 coord_system=row.get("coord_system") or "unknown",
                 cn_prov=prov, cn_city=city,
-                bemanicn_url=row.get("source_url"))
+                bemanicn_url=row.get("source_url"),
+                game_counts=row.get("game_counts"))
 
     out = list(units.values())
 
@@ -713,6 +807,137 @@ def cluster_units(units, log):
                 log.append({"rule": "dist+name", "distance_m": round(d, 1),
                             "similarity": round(sim, 3),
                             "a": unit_ref(i), "b": unit_ref(j)})
+
+    # ---- BEGIN proximity tier (owner: stacked-pins agent) ------------
+    # Bug: one physical arcade shows as two stacked pins when a community
+    # source romanizes the name and an official source keeps it in kana:
+    #   ziv "AmiPara Kokoja (アミパラ ここじゃ店)"  0.9 m from
+    #   allnet+eagate "アミパラここじゃ店"
+    # name_similarity() scores that 0.571 - just under the 0.6 gate - so
+    # the pair above never unions, and the two pins also cover each other
+    # so neither can be clicked. Loosening 0.6 globally is the wrong fix
+    # (it is doing real work out at 120 m); instead this pass re-examines
+    # ONLY what the loop above rejected, under a hard 30 m gate, with a
+    # matcher that knows kana and romaji are one alphabet. Under 30 m two
+    # listings are essentially never distinct businesses.
+    #
+    # Deliberately a SEPARATE pass, not extra entries in `pairs`: that
+    # dict's mutual-best ranking is (sim, -dist), so injecting low-sim
+    # coincident pairs would outrank-and-displace existing 0.6+ matches
+    # and silently rewrite decisions the audit already signed off on.
+    # Running afterwards, and skipping anything already unioned, means
+    # this pass can only ADD merges - the existing rule's output is
+    # provably untouched (verified by rule-count assertions).
+    #
+    # Scoped to official-vs-community pairs only. Two community sources
+    # disagreeing at 5 m is exactly the ambiguous case this must not
+    # guess at, and same-source pairs have their own tighter rule below.
+    prox_pairs = {}
+    for (cx, cy), members in grid.items():
+        cand = []
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                cand.extend(grid.get((cx + dx, cy + dy), ()))
+        for i in members:
+            ui = units[i]
+            for j in cand:
+                if j <= i:
+                    continue
+                uj = units[j]
+                # exactly one side official: the community listing is the
+                # one being reconciled INTO the official record
+                if (ui["source"] in OFFICIAL) == (uj["source"] in OFFICIAL):
+                    continue
+                if (i, j) in prox_pairs:
+                    continue
+                if uf.find(i) == uf.find(j):
+                    continue          # already merged by the rule above
+                d = haversine_m(ui["lat"], ui["lng"], uj["lat"], uj["lng"])
+                if d >= name_match.PROXIMITY_MAX_M:
+                    continue
+                prox_pairs[(i, j)] = d
+
+    if prox_pairs:
+        # Isolation counts CLUSTERS, not units. An official venue listed
+        # by both allnet and eagate is two units already unioned into one
+        # cluster; counting units would see 3 "neighbours" for a lone
+        # pair and the isolated-pair heuristic would never fire - which
+        # is precisely the Kokoja case (allnet + eagate + ziv).
+        involved = {i for pair in prox_pairs for i in pair}
+        roots = {}
+        for i, u in enumerate(units):
+            if u["lat"] is None:
+                continue
+            roots.setdefault(uf.find(i), (u["lat"], u["lng"]))
+        rcell = 0.001      # ~110 m: a 60 m ball fits in the 3x3 window
+        rgrid = {}
+        for r, (rlat, rlng) in roots.items():
+            rgrid.setdefault((math.floor(rlat / rcell),
+                              math.floor(rlng / rcell)), []).append(r)
+
+        def clusters_near(i):
+            """Distinct coordinate-bearing clusters within 60 m of unit i."""
+            u = units[i]
+            key = (math.floor(u["lat"] / rcell), math.floor(u["lng"] / rcell))
+            near = set()
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    for r in rgrid.get((key[0] + dx, key[1] + dy), ()):
+                        rlat, rlng = roots[r]
+                        if (haversine_m(u["lat"], u["lng"], rlat, rlng)
+                                < name_match.ISOLATION_RADIUS_M):
+                            near.add(r)
+            return near
+
+        near_cache = {i: clusters_near(i) for i in involved}
+
+        # Mutual-best per (unit, other-source), same anti-chaining guard
+        # the primary rule uses: without it a row of neighbouring shops
+        # daisy-chains into one blob through shared counterparts.
+        decided = {}
+        for (i, j), d in prox_pairs.items():
+            ok, rule, sim, conf = name_match.proximity_decision(
+                units[i]["name"], units[j]["name"], d,
+                len(near_cache[i] | near_cache[j]))
+            if ok:
+                decided[(i, j)] = (sim, d, rule, conf)
+        pbest = {}
+        for (i, j), (sim, d, _r, _c) in decided.items():
+            for a, b in ((i, j), (j, i)):
+                key = (a, units[b]["source"])
+                cand = (sim, -d, b)
+                if key not in pbest or cand > pbest[key]:
+                    pbest[key] = cand
+        # One cluster may hold at most one unit per official source. An
+        # official source lists a given storefront exactly once, so two
+        # allnet rows in one cluster means something chained: at Bugis+
+        # (Singapore) three arcades share a mall entrance, and merging
+        # ziv's listing into two different allnet venues would fuse
+        # PACO FUNWORLD, VIRTUALAND and TOG into one pin. Verified to
+        # hold for all 2251 pre-existing clusters, so enforcing it can
+        # only constrain the new tier, never undo an existing merge.
+        official_in = {}
+        for i, u in enumerate(units):
+            if u["source"] in OFFICIAL:
+                official_in.setdefault(uf.find(i), set()).add(u["source"])
+
+        for (i, j), (sim, d, rule, conf) in sorted(
+                decided.items(), key=lambda kv: (-kv[1][0], kv[1][1])):
+            if (pbest[(i, units[j]["source"])][2] != j
+                    or pbest[(j, units[i]["source"])][2] != i):
+                continue
+            ri, rj = uf.find(i), uf.find(j)
+            if official_in.get(ri, set()) & official_in.get(rj, set()):
+                continue          # would put one official source twice
+            if uf.union(i, j):
+                merged = official_in.pop(ri, set()) | official_in.pop(rj, set())
+                if merged:
+                    official_in[uf.find(i)] = merged
+                log.append({"rule": rule, "distance_m": round(d, 1),
+                            "similarity": round(sim, 3),
+                            "confidence": conf,
+                            "a": unit_ref(i), "b": unit_ref(j)})
+    # ---- END proximity tier -----------------------------------------
 
     # same-source near-duplicates (audit D3): one source listing the
     # same physical store twice with cosmetically different address
@@ -855,10 +1080,19 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     bemanicn_url = None
     pref = None
     country = best["country"]
+    game_counts = {}
+    counts_contributors = set()   # (m) which sources actually counted
     for u in members:
         games |= u["games"]
         cabs |= u["cabs"]
         src.add(u["source"])
+        # cross-source counts: per-slug max (bemanicn where only it
+        # knows a slug, ziv where only it does, max when both do)
+        if u["game_counts"]:
+            counts_contributors.add(u["source"])
+        for slug, n in u["game_counts"].items():
+            if n > game_counts.get(slug, 0):
+                game_counts[slug] = n
         for nt in u["notes"]:
             if nt and nt not in notes:
                 notes.append(nt)
@@ -903,7 +1137,8 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         import urllib.parse
         q = urllib.parse.quote(("%s %s" % (best["name"], best["addr"])).strip())
         gmaps = "https://www.google.com/maps/search/?api=1&query=" + q
-    return {
+    games |= set(game_counts)   # a counted slug is always also a game
+    entry = {
         "name": best["name"],
         "addr": best["addr"],
         "lat": lat,
@@ -916,6 +1151,62 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "links": {"gmaps": gmaps, "ziv": ziv_url, "bemanicn": bemanicn_url},
         "notes": note_str,
     }
+    # ---- BEGIN counts confidence (owner: counts-honesty agent) -------
+    # (m) A ZIv per-game count of exactly 1 is NOT a measured quantity.
+    # ZIv's payload is a machine LIST and one row per game version is the
+    # baseline shape, so tallying it yields 1 for any title the arcade
+    # merely HAS. Rendering that as "x1" states a fact the source never
+    # asserted. BemaniCN counts are real 台数 (a per-title `quantity`
+    # field), so they are always trustworthy.
+    #
+    # Rule, applied after the per-slug max above so no count is lost
+    # before the decision:
+    #   bemanicn contributed          -> keep, counts_src "bemanicn"
+    #                                    (bemanicn WINS when both did)
+    #   ziv only, any slug >= 2       -> keep ALL its counts, "ziv".
+    #                                    A 2 proves someone really
+    #                                    tallied that arcade's list, so
+    #                                    its 1s are then real 1s too.
+    #   ziv only, every slug == 1     -> DROP game_counts entirely and
+    #                                    set counts_src null. Placeholder
+    #                                    -only data must not render.
+    # counts_src is written ONLY when some source reported counts:
+    #   "bemanicn"/"ziv" = these counts are real (game_counts present),
+    #   null             = counts existed but were placeholder-only and
+    #                      were dropped (game_counts absent),
+    #   key absent       = no source ever counted this arcade.
+    # That keeps "suppressed placeholder" distinguishable from "never
+    # counted", which a bare missing key would erase.
+    #
+    # Note the ordering above: `games |= set(game_counts)` already ran,
+    # so a dropped slug still shows as a GAME here - we are removing a
+    # quantity claim, never the fact that the machine exists.
+    counts_src = None
+    if counts_contributors:
+        unexpected = counts_contributors - {"bemanicn", "ziv"}
+        assert not unexpected, (
+            "game_counts from unexpected source(s) %s for %s - counts_src "
+            "only documents bemanicn|ziv; teach this rule about the new "
+            "source before shipping it" % (sorted(unexpected), best["name"]))
+        if "bemanicn" in counts_contributors:
+            counts_src = "bemanicn"
+        elif any(n >= 2 for n in game_counts.values()):
+            counts_src = "ziv"
+        else:
+            # placeholder-only: drop the quantities, keep the games.
+            # `games |= set(game_counts)` ran above, so this must hold;
+            # asserted rather than assumed because a future reorder of
+            # that union would silently delete games instead of counts.
+            assert set(game_counts) <= set(entry["games"]), \
+                (best["name"], sorted(game_counts), entry["games"])
+            game_counts = {}
+            counts_src = None
+        entry["counts_src"] = counts_src
+    if game_counts:
+        entry["game_counts"] = {s: game_counts[s]
+                                for s in sorted(game_counts)}
+    # ---- END counts confidence ---------------------------------------
+    return entry
 
 
 def run(raw_dir, out_dir, updated=None):
@@ -925,6 +1216,9 @@ def run(raw_dir, out_dir, updated=None):
           "%d rows with (0,0) coords nulled, %d gcj02/bd09 converted)"
           % (stats.raw_rows, len(units), stats.within_dupes,
              stats.nulled_rows, stats.converted), file=sys.stderr)
+    for s, n in sorted(stats.superseded_rows.items()):
+        print("merge: %d community.json %s row(s) superseded by a fresh "
+              "%s.json scrape" % (n, s, s), file=sys.stderr)
     merge_decisions = []
     groups = cluster_units(units, merge_decisions)
     inherit_log = []
@@ -935,19 +1229,91 @@ def run(raw_dir, out_dir, updated=None):
                                 a["addr"]))
     for i, a in enumerate(arcades, 1):
         a["id"] = i
-    # reorder keys for output
+    # reorder keys for output (game_counts / counts_src are optional)
     ordered = [{k: a[k] for k in
                 ("id", "name", "addr", "lat", "lng", "country", "pref",
-                 "games", "cabs", "src", "links", "notes")} for a in arcades]
+                 "games", "game_counts", "counts_src", "cabs", "src",
+                 "links", "notes")
+                if k in a} for a in arcades]
+
+    # (j) source-aware geo validation: official sources trust the
+    # address/country and drop out-of-country geocodes; community sources
+    # trust the pin and correct a wrong country label. See geo_validate.py.
+    geo_log = geo_validate.validate_arcades(ordered, COUNTRY_BOXES)
+    if geo_log:
+        print("merge: geo_validation changed %d entries"
+              % len(geo_log), file=sys.stderr)
+
+    # --- China approximate placement (owner: china-placement agent) ----
+    # (l) The two Chinese sources are coordinate-less by construction
+    # (wahlap's API returns no lat/lng; bemanicn login-walls its
+    # coordinates), leaving ~5.9k China rows invisible on the map even
+    # though we know their city. china_place resolves each to its city
+    # centroid from data/china_cities.json and marks it "approx": true.
+    # Runs AFTER geo_validation on purpose: validation may null an
+    # out-of-country geocode, and such a row then becomes eligible for a
+    # centroid here. place_approx() self-guards - it refuses any entry
+    # that already has coords (so a real pin is never overwritten and
+    # "approx" is never set on one), any non-China/HK/Macau country, and
+    # anything labeled Taiwan (china_cities.json has no Taiwan rows and a
+    # bare substring match would drop Taiwanese addresses onto the
+    # mainland; ZIv already covers Taiwan with real pins). Unresolved
+    # rows keep lat/lng null. Deliberately NOT touched here: links.gmaps.
+    # Coordless entries got a name+address *search* URL above, which is
+    # strictly more useful than a pin 600 m from a city centroid, so the
+    # link must stay as built - do not "sync" it to the new coords.
+    # Note "approx" lands at the end of each entry dict (the key-order
+    # comprehension above already ran); that is accepted, not an
+    # oversight - geo_validate and this step both operate on `ordered`.
+    approx_log = china_place.place_arcades(ordered)
+    if approx_log:
+        print("merge: china_place placed %d coordless China entries at "
+              "city centroids (approx:true)" % len(approx_log),
+              file=sys.stderr)
+    # --- end China approximate placement ------------------------------
 
     # ------- validation (hard fails) -------
     for a in ordered:
         assert a["games"], "empty games for %s" % a["name"]
         assert all(g in GAME_SLUGS for g in a["games"]), a["games"]
         assert all(c in CAB_SLUGS for c in a["cabs"]), a["cabs"]
+        gc = a.get("game_counts", {})
+        assert set(gc) <= set(a["games"]), (a["name"], gc, a["games"])
+        assert all(isinstance(n, int) and n > 0 for n in gc.values()), \
+            (a["name"], gc)
+        # (m) counts confidence invariants
+        if "counts_src" in a:
+            cs = a["counts_src"]
+            assert cs in ("bemanicn", "ziv", None), (a["name"], cs)
+            # game_counts present exactly when the counts were kept
+            assert ("game_counts" in a) == (cs is not None), (a["name"], cs)
+            # a dropped ziv-placeholder entry must still list the games
+            if cs is None:
+                assert a["games"], a["name"]
+            if cs == "ziv":
+                assert any(n >= 2 for n in gc.values()), (a["name"], gc)
+        else:
+            assert "game_counts" not in a, a["name"]
         if a["lat"] is not None:
             assert -90 <= a["lat"] <= 90 and -180 <= a["lng"] <= 180, a
             assert not (a["lat"] == 0 and a["lng"] == 0), a
+
+    # (m) counts confidence distribution, for the merge log only. Kept
+    # OUT of stats.json/counts: the frontend reads that shape.
+    counts_src_dist = {"bemanicn": 0, "ziv": 0,
+                       "null_placeholder_dropped": 0, "absent_never_counted": 0}
+    for a in ordered:
+        if "counts_src" not in a:
+            counts_src_dist["absent_never_counted"] += 1
+        elif a["counts_src"] is None:
+            counts_src_dist["null_placeholder_dropped"] += 1
+        else:
+            counts_src_dist[a["counts_src"]] += 1
+    print("merge: counts_src bemanicn=%d ziv=%d null(dropped placeholder)=%d "
+          "absent(never counted)=%d"
+          % (counts_src_dist["bemanicn"], counts_src_dist["ziv"],
+             counts_src_dist["null_placeholder_dropped"],
+             counts_src_dist["absent_never_counted"]), file=sys.stderr)
 
     by_game = {g: 0 for g in GAME_SLUGS}
     by_source = {}
@@ -973,19 +1339,40 @@ def run(raw_dir, out_dir, updated=None):
                       "arcades": ordered})
     common.save_json(os.path.join(out_dir, "stats.json"),
                      {"updated": updated, "counts": counts})
+
+    # --- enrichment (owner: enrichment agent) -------------------------
+    # (k) optional per-arcade extras (transit prose, coin/credit pricing,
+    # photos, hours, venue websites) are written to a SEPARATE
+    # data/enrichment.json keyed by merged id, so arcades.json - the file
+    # every visitor downloads - stays lean and the frontend fetches
+    # enrichment on demand. Joins raw rows to merged entries on the
+    # source-native links.bemanicn / links.ziv URLs, so nothing here
+    # touches load_units or merged_entry. `ordered` is NOT mutated.
+    enrichment = enrich.build_enrichment(ordered, raw_dir, updated)
+    common.save_json(os.path.join(out_dir, enrich.OUTFILE), enrichment)
+    print("merge: enrichment for %d/%d arcades -> %s"
+          % (enrichment["counts"]["arcades_enriched"], len(ordered),
+             enrich.OUTFILE), file=sys.stderr)
+    # --- end enrichment ----------------------------------------------
+
     common.save_json(os.path.join(out_dir, "merge_log.json"), {
         "updated": updated,
         "raw_rows": stats.raw_rows,
         "source_units": len(units),
         "within_source_dupes": stats.within_dupes,
+        "community_rows_superseded": dict(sorted(
+            stats.superseded_rows.items())),
         "zero_coord_rows_nulled": stats.nulled_rows,
         "zero_coord_examples": stats.nulled_examples,
         "gcj02_bd09_converted": stats.converted,
+        "counts_src_distribution": counts_src_dist,   # (m)
         "cross_source_merges": len(merge_decisions),
         "coord_inheritances": len(inherit_log),
         "country_conflicts": conflict_log,
         "inheritance_log": inherit_log,
         "merge_decision_log": merge_decisions,
+        "geo_validation": geo_log,
+        "china_approx": approx_log,   # owner: china-placement agent
     })
     print("merge: wrote %d arcades to %s" % (len(ordered), out_dir),
           file=sys.stderr)

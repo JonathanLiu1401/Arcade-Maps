@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="Arcade with 20 to 49 cabinets">
+  <title>Tier 4 - 20 to 49 cabinets</title>
+  <!--
+    T4: an original chibi girl in cat-ear headphones, sitting on a fat
+    game-colour disc. Silhouette signature is the pair of EARS breaking the
+    circle at the top - that is what separates T4 from T5 (crown = one wide
+    gold mass) once face detail has dissolved.
+
+    COLOUR CONTRACT. The character is FIXED palette (cream skin, candy violet
+    hair, dark ink) so a multicolour face never fights currentColor. Violet is
+    the one bold hue absent from the game tints, which is what keeps the hair
+    separable from every disc colour. The game tint is
+    the DISC BEHIND the head, and it is deliberately fat: the head is r=7.6
+    against a r=13.0 disc, leaving ~66% of the disc area as visible tint. An
+    earlier revision let the hair mass cover the ring and measured only 2.5%
+    tinted pixels at 20px - the game colour, which is the map's primary
+    encoding, had effectively vanished. Do not let the head grow.
+
+    CUTENESS RULES (what keeps it cute, not creepy, at 24px):
+      - eyes huge (3.0u wide vs a 15.2u face) and set BELOW the face centre,
+      - the gap between them is wider than one eye,
+      - each eye carries a big white highlight - that gloss is what makes an
+        anime eye read as alive rather than as a dead black dot,
+      - the mouth is a small filled wedge; a hairline arc resolves to a grey
+        smudge at 20px and reads as a grimace.
+
+    No color/style on the root - a value here would beat the inherited CSS and
+    lock every marker to one colour. See marker-spec.md.
+  -->
+
+  <!-- game-colour disc: the ONLY tinted element, kept deliberately fat -->
+  <circle cx="16" cy="17.0" r="13.0" fill="currentColor"
+          stroke="#2A1B3D" stroke-width="2.2"/>
+  <!-- gloss on the disc, fixed white over any tint -->
+  <path d="M6.4 9.6 Q10.2 5.4 16 5.4 Q21.8 5.4 25.6 9.6 Q21.0 12.4 16 12.4 Q11.0 12.4 6.4 9.6 Z"
+        fill="#FFFFFF" opacity="0.28"/>
+
+  <!-- cat ears, perched on the head and poking up into the tint band -->
+  <g fill="#9B5DE5" stroke="#2A1B3D" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M10.2 14.6 L8.8 8.9 L14.6 12.0 Z"/>
+    <path d="M21.8 14.6 L23.2 8.9 L17.4 12.0 Z"/>
+  </g>
+  <g fill="#FF8FC7">
+    <path d="M11.2 12.9 L10.6 10.6 L13.0 11.9 Z"/>
+    <path d="M20.8 12.9 L21.4 10.6 L19.0 11.9 Z"/>
+  </g>
+
+  <!-- head: cream face disc with a dark contour -->
+  <circle cx="16" cy="19.0" r="7.6" fill="#FFE8D2" stroke="#2A1B3D" stroke-width="1.7"/>
+  <!-- bangs: chunky fringe capping the face, kept shallow so the face stays open -->
+  <path d="M8.6 17.2 A 7.6 7.6 0 0 1 23.4 17.2
+           Q21.4 14.6 19.2 16.4 Q17.3 13.9 14.6 16.2 Q11.8 14.3 10.0 16.8 Z"
+        fill="#9B5DE5"/>
+
+  <!-- Headphones are fixed TEAL, not dark ink. Dark ink here was invisible:
+       it sat on the dark bangs, so the whole headset collapsed into an
+       undifferentiated dark cap and T4 lost its "headphone girl" read. Teal
+       is the one hue that separates from violet hair, cream skin, pink blush
+       AND from all four game tints (pink/orange/blue/green). -->
+  <path d="M 7.45 15.89 A 9.10 9.10 0 0 1 24.55 15.89
+           L 22.95 16.47 A 7.40 7.40 0 0 0 9.05 16.47 Z"
+        fill="#3FD9D0" stroke="#2A1B3D" stroke-width="1.1" stroke-linejoin="round"/>
+  <!-- earcups, hugging the head so they do not eat the tint band -->
+  <g fill="#3FD9D0" stroke="#2A1B3D" stroke-width="1.3">
+    <rect x="6.0" y="17.0" width="4.4" height="5.8" rx="2.1"/>
+    <rect x="21.6" y="17.0" width="4.4" height="5.8" rx="2.1"/>
+  </g>
+
+  <!-- Big glossy eyes, low-set, gap wider than one eye. Highlight radius is
+       0.58 against a 1.75x2.3 eye: an earlier 0.78 highlight covered more than
+       half the eye width and measured light grey at the eye centre, hollowing
+       the eye out instead of glinting. -->
+  <g fill="#2A1B3D">
+    <ellipse cx="12.8" cy="20.2" rx="1.75" ry="2.3"/>
+    <ellipse cx="19.2" cy="20.2" rx="1.75" ry="2.3"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="12.2" cy="19.3" r="0.58"/>
+    <circle cx="18.6" cy="19.3" r="0.58"/>
+  </g>
+  <!-- Open joyful mouth: a SOLID flat-top / round-bottom "D", 3.2u x 2.5u.
+       Two earlier attempts (a thin wedge, then a lens) both antialiased to a
+       mid-grey smudge (#9B888C) because their thickest point was barely 1u -
+       under 1px once rendered. Only a solid mass this deep stays true ink at
+       20px, and a smudge here is exactly what turns a chibi into a grimace. -->
+  <path d="M14.4 22.9 L17.6 22.9 Q17.6 25.5 16 25.5 Q14.4 25.5 14.4 22.9 Z"
+        fill="#2A1B3D"/>
+  <!-- blush -->
+  <g fill="#FF7BB8" opacity="0.8">
+    <ellipse cx="10.6" cy="22.0" rx="1.5" ry="1.0"/>
+    <ellipse cx="21.4" cy="22.0" rx="1.5" ry="1.0"/>
+  </g>
+</svg>

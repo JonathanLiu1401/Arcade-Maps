@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="Arcade, cabinet count unknown">
+  <title>Unknown tier - cabinet count not published</title>
+  <!--
+    TU: the T2 button pad with its note glyph swapped for a question mark, so
+    "we have no count" borrows T2/T3 visual weight and never reads as "this
+    arcade has one cab". Most stores land here - the official ALL.Net and
+    e-amusement lists publish presence, not quantities.
+
+    The "?" is a PATH, not <text>. A <text> glyph would depend on whatever font
+    the viewer happens to have, and would render differently in the proof
+    rasteriser than in a browser.
+
+    No color/style on the root - see tier1.svg for why.
+  -->
+  <rect x="4.8" y="4.8" width="22.4" height="22.4" rx="7.2"
+        fill="currentColor" stroke="#2A1B3D" stroke-width="2.4"/>
+  <!-- candy gloss across the top, fixed white over any tint -->
+  <path d="M8.2 9.6 Q10.6 7.1 16 7.1 Q21.4 7.1 23.8 9.6 Q20.0 11.4 16 11.4 Q12.0 11.4 8.2 9.6 Z"
+        fill="#FFFFFF" opacity="0.45"/>
+  <g fill="#2A1B3D">
+    <!-- hook: outer contour of a '?' drawn as a closed path, 2.6u thick -->
+    <path d="M11.9 14.2 Q11.9 9.6 16.2 9.6 Q20.6 9.6 20.6 13.6
+             Q20.6 16.4 17.6 17.9 Q17.3 18.1 17.3 19.2 L14.7 19.2
+             Q14.7 16.6 15.9 15.8 Q18.0 14.6 18.0 13.5
+             Q18.0 12.0 16.2 12.0 Q14.5 12.0 14.5 14.2 Z"/>
+    <circle cx="16.0" cy="22.3" r="1.7"/>
+  </g>
+</svg>
