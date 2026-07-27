@@ -1,105 +1,101 @@
-# Handoff: Arcade Maps overhaul (wip-overhaul branch)
+# Status: Arcade Maps overhaul
 
-Written 2026-07-28 ~07:25 JST for continuation in a remote Claude Code session.
-Working branch: `wip-overhaul`. `main` still serves the last shipped v1 site on
-GitHub Pages (safe). Merge to `main` ONLY after the remaining work below is done
-and verified; Pages deploys from main root.
+Started 2026-07-28 as a continuation brief for a remote session. That
+continuation is done, so this file is now a status record rather than a task
+list. It is a working document, not project documentation: the durable
+material lives in `README.md` and `docs/ARCHITECTURE.md`, so this can be
+deleted before merging to `main` without losing anything.
 
-## State: what is DONE and verified on this branch
+Branch: `claude/arcade-maps-overhaul-handoff-vgbp2h` (contains everything that
+was on `wip-overhaul`, plus the work below). `main` still serves the last
+shipped v1 site on GitHub Pages. Pages deploys from main root.
 
-Data (all verified by adversarial audit agents):
-- data/arcades.json: 13,681 arcades, 68 countries. Includes: romanization-aware
-  cross-source dedupe (191 merges, e.g. ZIv "Amipara Kokojya" + official
-  アミパラここじゃ店 = one entry, scrapers/name_match.py), geo_validate.py
-  (source-aware bad-pin rejection: official=trust address, community=trust
-  coords), China city-centroid approx placement (5,735 entries approx:true,
-  jitter <=600m, scrapers/china_place.py + data/china_cities.json), counts_src
-  honesty tags (bemanicn=true quantities; ziv kept only when any count>=2;
-  placeholder all-1s dropped).
-- data/enrichment.json (keyed by arcade id): transport text, hours, prices,
-  game_prices/versions, image URLs, fav_count. bemanicn fields fully populate
-  on the NEXT weekly crawl (parsers proven live; current file has partial).
-- data/fx_rates.json: USD base, 17 currencies (frankfurter + open.er-api fill).
-- mymaps/ rebuilt KMZ/CSV incl. game_counts column. Weekly Action
-  (.github/workflows/update-data.yml) covers all sources + fx.
+## Done and verified
 
-Frontend (modules js/: state, format, mapcore, markers, search, panel,
-settings, nearby, app-init - LOAD-BEARING script order in index.html, markers.js
-captures AM.format/AM.map at parse time, do NOT reorder):
-- Done + e2e-verified by agents: smooth fractional zoom (SmoothWheelZoom
-  vendored), place panel (Google-Maps-style IA, dark neon, mobile bottom
-  sheet), settings modal (source toggles live-update, localStorage
-  am_settings_v1), omnibox (games/arcades/places groups, CJK+romaji aliases),
-  nearby+locate (haversine top-20), search halo highlight, hash deep links
-  incl #arcade=, CJK tooltip nowrap fix, panel width 1.3x + drag-resize
-  (280px..55vw, dblclick reset, persisted), cab-photo fallback chain
-  (enrichment image -> assets/cabs/<game>.jpg + CC attribution overlay ->
-  gradient), enrichment rows (transit w/ staleness caption, prices + 4-currency
-  FX), counts-honesty chips (bemanicn "x9" / ziv "x7 listed" / plain chip +
-  "counts unavailable" row), critical #arcade=% URIError boot fix +
-  shareUrl encode, fitSheet resize listener, focus a11y fixes, mobile fixes
-  (initial fitBounds view, collapsible footer, 44px targets, 320px overflow,
-  anchored settings dialog, chips grid, empty-state hint).
+Data:
+- `data/arcades.json`: 13,681 arcades, 68 countries. Romanization-aware
+  cross-source dedupe (191 merges, `scrapers/name_match.py`), `geo_validate.py`
+  source-aware bad-pin rejection, China city-centroid approx placement (5,735
+  entries `approx: true`, `scrapers/china_place.py`), `counts_src` honesty tags.
+- `data/enrichment.json`: 6,523 entries, four fields only - `hours_text`
+  (5,213), `info_text` (4,209), `website` (4,092), `machine_prices` (2,414).
+  Every row is ZIv-sourced. The BemaniCN parsers exist and are proven, but no
+  BemaniCN row has landed in the shipped file yet, so transit prose, coin
+  pricing, images, `fav_count`, `game_prices` and `game_versions` are NOT
+  shipped data. Earlier revisions of this file and of the README claimed
+  otherwise; that has been corrected.
+- `data/fx_rates.json`: USD base, 17 currencies.
+- `mymaps/` KMZ/CSV layers incl. game_counts. Weekly Action covers all sources.
 
-Assets ready on disk:
-- assets/markers/tier{1,2,3,4,5,U}.svg + marker-spec.md: 6 kawaii tier icons
-  (SEGA-promo style, original art; T1 1-2 note, T2 3-9 pad, T3 10-19 star,
-  T4 20-49 cat-ear chibi, T5 50+ crowned idol, TU unknown "?"; currentColor
-  tints the disc, faces fixed-palette). Proof sheet verified at 20px.
-- assets/cabs/: 17 CC-licensed cabinet photos + manifest.json + ATTRIBUTION.md
-  (ongeki, drs missing on Commons - manifest records file:null; panel already
-  handles). Attribution rendering is a LICENSE REQUIREMENT (CC BY/BY-SA).
-- assets/favicon.svg + favicon.ico (root) + favicon-snippet.html: 8-dot ring
-  favicon, hand-hinted 16px. SNIPPET NOT YET MERGED into index.html.
+Frontend (modules in `js/`, LOAD-BEARING script order in `index.html` - see the
+load-order invariant in `docs/ARCHITECTURE.md` before touching it):
+smooth fractional zoom, place panel, settings modal, omnibox, nearby + locate,
+search halo, hash deep links incl. `#arcade=`, panel drag-resize, cab-photo
+fallback chain with CC attribution, enrichment rows, counts-honesty chips,
+mobile fixes.
 
-## REMAINING WORK (in order)
+Tier marker icons, wired this session:
+- Six silhouettes by total cabinets: T1 1-2, T2 3-9, T3 10-19, T4 20-49,
+  T5 50+, TU unknown, at 20/24/26/30/36px with TU 25px. Shape carries the tier;
+  the size ramp only reinforces it, and the Display toggle flattens sizes to
+  25px without changing shapes.
+- A tier is computed only when `counts_src` is trusted (`bemanicn`, or `ziv`
+  where the merge kept a real quantity). Everything else is TU.
+- `L.marker` + `L.icon` over per-(tier, colour) SVG data URLs. Artwork is
+  generated into `js/tier-icons.js` by `tools/build_tier_icons.py`; edit the
+  SVGs under `assets/markers/` and re-run, never the generated file.
+- Clustering at every zoom with the radius collapsing to 14px up close, plus
+  `spiderfyOnMaxZoom`, so stores sharing a building are reachable.
+- Both legends render the real artwork from the exported tier table.
 
-1. TIER ICON WIRING (the one unfinished feature; an agent thrashed on it, was
-   killed; a fresh attempt was also stopped for shutdown - partial edits MAY
-   exist in js/markers.js, git diff it first):
-   - markers.js: tier from summed game_counts when counts_src trustworthy
-     (bemanicn or ziv), else TU. Render: pre-rasterize 6 SVGs x 19 game colors
-     to cached dataURLs via canvas at boot (string-replace currentColor with
-     hex), L.icon markers (sizes/anchors per marker-spec.md). markerScaling
-     false -> uniform TU-size. Spiderfy: spiderfyOnMaxZoom true + REMOVE
-     disableClusteringAtZoom; verify lone-marker single-click still opens
-     panel. Remap clusterHasBig to tier>=4 (currently keys on dead xl/xxl ids
-     = silently broken). Legends (settings.js About + legend chip) must render
-     the actual tier SVGs from an exported TIER_CLASSES, kill hard-coded size
-     lists, keep gold-ring row + honesty caption.
-   - Merge assets/favicon-snippet.html into index.html head (ico LAST rel=icon
-     per snippet comment; REMOVE old inline data-URI icon line).
-2. QA pass (desktop 1600x900 + mobile 390x844, Playwright, zero console):
-   cold load, tier icons crisp at Tokyo z16, spiderfy stacked pair, panel photo
-   chain 3 levels + attribution visible, FX row, counts chips, drag-resize,
-   share round-trip, #arcade=% boots, omnibox groups, source toggles, locate,
-   legend chip, tooltip GiGO神楽坂 horizontal, mobile sheet + footer.
-3. README hero screenshot refresh (docs/screenshot.png) once icons live.
-4. work-checker suite (user requested full run): code critics (XSS on scraped
-   strings via innerHTML, listener leaks, hash codec, state-bus discipline)
-   + data recompute + rasterized screenshot review. Fix confirmed, re-verify.
-5. Housekeeping before merge: delete or gitignore .design-review/ (49
-   screenshots, untracked), delete assets/cabs/_mgr_proof.png, check no stray
-   test files at root.
-6. Merge wip-overhaul -> main, push, verify live site + mobile viewport, run
-   Actions smoke (workflow_dispatch) to confirm runner health.
+Also fixed this session:
+- Opening hours: ZIv's `["00:00","00:00",false]` "not recorded" default was
+  being published as `Mon-Sun 00:00-00:00` on 1,742 arcades. Rejected at the
+  source and re-checked in `enrich.py`; data regenerated.
+- Hover tooltip collapsed to a one-word-wide vertical column (a Leaflet
+  tooltip's containing block resolves to 0px, so `white-space: normal` fell
+  back to min-content). Fixed with `width: max-content`.
+- `util.safeUrl` on every scraped link that reaches an `href`.
+- Four listener/timer defects: omnibox debounce reopening after a pick,
+  `keepInView` arming a `moveend` that had already fired under reduced motion,
+  an untracked chip-flash timer, and `applyingHash` without `try/finally`.
 
-## Known issues / decisions on record
-- Design-review P2 polish items deliberately deferred (ragged chip wrap partly
-  fixed, XXL legend swatch gap, etc. - see workflow reports in session).
-- ongeki + drs cab photos unavailable under free licenses; gradient fallback.
-- bemanicn coordinates are login-walled; user offered their login via their
-  own Chrome earlier (never executed); China stays city-approx until then.
-- ZIv x1 counts are placeholders, by policy never rendered as numbers.
-- Owner style refs: SEGA otoge promo banners (markers), Google Maps place
-  panel (IA only, original visuals), Claude desktop settings modal.
-- NO EM DASHES anywhere (user hard rule; PS 5.1 ANSI decode breaks scripts).
-- Mobile is P0: owner uses the site primarily on a phone.
+## Open items
 
-## Environment notes for the remote session
-- Site is plain static files, no build step; python -m http.server to serve.
-- Scrapers stdlib-only Python 3.12+; run_all.py --skip-scrape re-merges
-  without network; full crawl ~50 min (bemanicn 0.5s politeness).
-- GitHub: repo JonathanLiu1401/Arcade-Maps, Pages from main root, gh CLI
-  authed locally (remote session needs its own auth or the repo-local
-  credential helper).
+- README hero screenshot (`docs/screenshot.png`) still shows the old circle
+  markers. It could not be refreshed remotely: that environment's egress policy
+  blocks `tile.openstreetmap.org`, so every screenshot taken there has a blank
+  basemap. Needs one capture from a machine that can reach OSM tiles.
+- Hover behaviour was verified by shimming `matchMedia`, because headless
+  Chromium reports `(hover: none)`. Worth one look in a real desktop browser.
+- BemaniCN coordinates remain login-walled, so China stays city-approx.
+- `ongeki` and `drs` cabinet photos are unavailable under free licences; the
+  panel falls back to a gradient.
+- Two unmerged duplicate pairs survive, both ZIv-only and both understood:
+  #1139/#6224 (same Beijing store, romaji vs hanzi, identical coordinates) and
+  #11628/#11629 (both "Hollywood Bowl Ashford", 47.1 m apart, just outside
+  `merge.py`'s 30 m same-source window). Left alone on purpose: loosening that
+  window or the same-source name rule to catch two pairs risks over-merging
+  genuinely distinct neighbours across 13,681 entries, and that needs a full
+  re-run with a dedupe audit rather than a threshold nudge.
+- `.design-review/` blobs remain in git history from the earlier checkpoint
+  commit even though the directory is gone from the tree. Reclaiming the 26 MB
+  needs a history rewrite, which is not worth doing to a shared branch.
+
+## Decisions on record
+
+- Counts honesty: never render a number the source did not actually publish.
+  ZIv all-1s rows are placeholders and are dropped; unknown counts get their
+  own marker at mid weight, never the smallest.
+- Owner style refs: SEGA otoge promo banners (markers), Google Maps place panel
+  (information architecture only, original visuals), Claude desktop settings
+  modal.
+- NO EM DASHES anywhere (hard rule: PowerShell 5.1 ANSI decode breaks scripts).
+- Mobile is P0: the site is used primarily on a phone.
+
+## Environment notes
+
+- Plain static files, no build step. `python3 -m http.server` to serve.
+- Scrapers are stdlib-only Python 3.12+. `run_all.py --skip-scrape` re-merges
+  without network; a full crawl is about 50 minutes.
+- GitHub Pages serves from main root, so asset paths must stay relative.
