@@ -981,39 +981,131 @@ def cluster_units(units, log):
     # with no branch suffix. An unbounded exact-name rule would fuse them.
     NAME_EXACT_MAX_M = 3000.0
     NAME_EXACT_MIN_LEN = 5
+    NAME_BRAND_PREFIX_MIN = 5
+
+    def exact_keys(name):
+        """Every normalized form that counts as this venue's exact name.
+
+        ZIv routinely writes a bilingual name, "Romaji (日本語店名)", where the
+        PARENTHETICAL is the official name an operator source publishes on its
+        own. compact_name_exact deliberately keeps parentheses (so two branches
+        of one chain never collapse), which means the bilingual form never
+        equals the official one:
+
+            ziv     "PLAZA CAPCOM Niihama (プラサカプコン 新居浜店)"
+                    -> plazacapcomniihamaプラサカプコン新居浜
+            allnet  "プラサカプコン新居浜店"
+                    -> プラサカプコン新居浜
+
+        Comparing the parenthetical on its own closes that gap exactly: both
+        sides reduce to プラサカプコン新居浜. The pair was 130.8 m apart with a
+        name similarity of 0.526, so it missed the dist+name rule on BOTH its
+        gates (120 m and 0.6) and had nothing else to catch it.
+
+        The paren-STRIPPED form is deliberately NOT a key. "GiGO(1号館)" and
+        "GiGO(2号館)" both strip to "gigo", and keying on that would fuse two
+        genuinely different branches in one building. Keeping only the full
+        form and the parenthetical means those two share no key at all.
+        """
+        keys = set()
+        c = compact_name_exact(name)
+        if len(c) >= NAME_EXACT_MIN_LEN:
+            keys.add(c)
+        inner = name_match.compact(name_match.paren_inner(name))
+        if len(inner) >= NAME_EXACT_MIN_LEN:
+            keys.add(inner)
+        return keys
+
+    def _common_prefix_len(a, b):
+        n = 0
+        while n < min(len(a), len(b)) and a[n] == b[n]:
+            n += 1
+        return n
+
+    def exact_name_match(na, nb):
+        """Do these two names denote the same venue by exact-name evidence?
+
+        The key index above only proposes candidates; this makes the call,
+        because not every shared key is equally strong.
+
+        Strongest, and the common cases: the two full compact names are equal,
+        or one side's parenthetical IS the other side's whole name (the ZIv
+        bilingual pattern).
+
+        Weakest, and the one that needs a guard: BOTH sides merely share a
+        parenthetical. That parenthetical is frequently a shopping centre
+        rather than a store, e.g. "Round1 Houston (Willowbrook Mall)" against
+        "Round1 Bowling & Arcade (Willowbrook Mall)". Those two are one venue,
+        but the same shape would also equate "Timezone (Westfield)" with
+        "Round1 (Westfield)" - two different operators under one roof. So when
+        the parenthetical is all the sides have in common, the brands outside
+        the parentheses must agree as well. Every real pair in this category
+        is a Round1 or Tom's World listing whose prefixes agree on at least
+        six characters; a cross-operator collision agrees on zero.
+        """
+        fa, fb = compact_name_exact(na), compact_name_exact(nb)
+        ia = name_match.compact(name_match.paren_inner(na))
+        ib = name_match.compact(name_match.paren_inner(nb))
+        if len(fa) >= NAME_EXACT_MIN_LEN and fa == fb:
+            return True
+        if len(ia) >= NAME_EXACT_MIN_LEN and ia == fb:
+            return True
+        if len(ib) >= NAME_EXACT_MIN_LEN and ib == fa:
+            return True
+        if len(ia) >= NAME_EXACT_MIN_LEN and ia == ib:
+            return (_common_prefix_len(compact_name(na), compact_name(nb))
+                    >= NAME_BRAND_PREFIX_MIN)
+        return False
 
     exact_index = {}
     for i, u in enumerate(units):
-        c = compacts[i]
-        if len(c) >= NAME_EXACT_MIN_LEN and u["lat"] is not None:
-            exact_index.setdefault((u["country"], c), []).append(i)
-
-    exact_best = {}     # unit -> (dist, other) nearest qualifying partner
-    for (_country, _c), idxs in exact_index.items():
-        if len(idxs) < 2:
+        if u["lat"] is None:
             continue
-        for x in range(len(idxs)):
-            for y in range(x + 1, len(idxs)):
-                i, j = idxs[x], idxs[y]
-                if units[i]["source"] == units[j]["source"]:
-                    continue
-                if uf.find(i) == uf.find(j):
-                    continue
-                d = haversine_m(units[i]["lat"], units[i]["lng"],
-                                units[j]["lat"], units[j]["lng"])
-                if d >= NAME_EXACT_MAX_M:
-                    continue
-                for a, b in ((i, j), (j, i)):
-                    if a not in exact_best or d < exact_best[a][0]:
-                        exact_best[a] = (d, b)
+        for k in exact_keys(u["name"]):
+            exact_index.setdefault((u["country"], k), []).append(i)
 
-    for i, (d, j) in sorted(exact_best.items()):
-        if exact_best.get(j, (None, None))[1] != i:
-            continue        # not mutual: ambiguous, leave both alone
-        if uf.union(i, j):
-            log.append({"rule": "exact-name-locality",
-                        "distance_m": round(d, 1),
-                        "a": unit_ref(i), "b": unit_ref(j)})
+    # Repeated to a fixed point, because mutual-nearest resolves only ONE pair
+    # per group per pass and three sources naming one venue is common. At
+    # AEON MALL Miyazaki the ALL.Net and e-amusement rows are 164 m apart and
+    # are each other's nearest, so they pair on the first pass; the ZIv row
+    # 334 m away is nearest to ALL.Net but not the reverse, so it was left
+    # stranded as a second pin. Once the first two are one cluster they stop
+    # being candidates for each other, ZIv becomes the unambiguous best, and
+    # the second pass folds it in. Bounded, and it stops as soon as a pass
+    # changes nothing.
+    for _pass in range(6):
+        exact_best = {}     # unit -> (dist, other) nearest qualifying partner
+        for (_country, _c), idxs in exact_index.items():
+            if len(idxs) < 2:
+                continue
+            for x in range(len(idxs)):
+                for y in range(x + 1, len(idxs)):
+                    i, j = idxs[x], idxs[y]
+                    if units[i]["source"] == units[j]["source"]:
+                        continue
+                    if uf.find(i) == uf.find(j):
+                        continue
+                    if not exact_name_match(units[i]["name"], units[j]["name"]):
+                        continue
+                    d = haversine_m(units[i]["lat"], units[i]["lng"],
+                                    units[j]["lat"], units[j]["lng"])
+                    if d >= NAME_EXACT_MAX_M:
+                        continue
+                    for a, b in ((i, j), (j, i)):
+                        if a not in exact_best or d < exact_best[a][0]:
+                            exact_best[a] = (d, b)
+
+        merged_any = False
+        for i, (d, j) in sorted(exact_best.items()):
+            if exact_best.get(j, (None, None))[1] != i:
+                continue    # not mutual: ambiguous, leave both alone
+            if uf.union(i, j):
+                merged_any = True
+                log.append({"rule": "exact-name-locality",
+                            "distance_m": round(d, 1),
+                            "a": unit_ref(i), "b": unit_ref(j)})
+        if not merged_any:
+            break
 
     # same-source near-duplicates (audit D3): one source listing the
     # same physical store twice with cosmetically different address
@@ -1043,10 +1135,26 @@ def cluster_units(units, log):
                                 "a": unit_ref(i), "b": unit_ref(j)})
 
     # exact-name path when one side lacks coords (same country, diff source)
+    # Bucketed on the same key set the coord-based tier uses, not on the full
+    # compact name alone. Mainland China rows arrive here coordinate-less (the
+    # sources publish addresses only, and china_place assigns centroids AFTER
+    # merge), so this path is the only chance those rows get - and ZIv writes
+    # them bilingually, exactly the shape a full-compact key cannot match:
+    #
+    #   ziv       "汤姆熊欢乐世界 Tom's World (上海南翔印象城店)"
+    #   bemanicn  "汤姆熊欢乐世界(上海南翔印象城店)"
+    #
+    # Those never shared a bucket, so both survived and later drew two pins,
+    # one on a real coordinate and one on a city centroid kilometres away.
+    # exact_name_match below still makes the accept/reject call, so the extra
+    # buckets only widen what is CONSIDERED, never what is accepted.
     by_compact = {}
-    for i, c in enumerate(compacts):
-        if len(c) >= 3:
-            by_compact.setdefault(c, []).append(i)
+    for i, u in enumerate(units):
+        ks = set(exact_keys(u["name"]))
+        if len(compacts[i]) >= 3:
+            ks.add(compacts[i])
+        for k in ks:
+            by_compact.setdefault(k, []).append(i)
     for c, idxs in by_compact.items():
         if len(idxs) < 2:
             continue
@@ -1055,6 +1163,9 @@ def cluster_units(units, log):
                 i, j = idxs[x], idxs[y]
                 ui, uj = units[i], units[j]
                 if ui["source"] == uj["source"]:
+                    continue
+                if compacts[i] != compacts[j] and not exact_name_match(
+                        ui["name"], uj["name"]):
                     continue
                 ci, cj = ui["country"], uj["country"]
                 if (ci not in (None, "Unknown") and cj not in (None, "Unknown")
