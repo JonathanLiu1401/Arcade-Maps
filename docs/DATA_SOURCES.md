@@ -5,7 +5,7 @@ Deep per-source reference for the Arcade Maps scrapers: exact URL patterns, resp
 Cross-cutting rules:
 
 - **Politeness:** every scraper sleeps after each request (0.4 s by default, `DEFAULT_SLEEP` in `scrapers/common.py`) and retries at most 3 times with exponential backoff. Requests are sequential, never parallel fan-out against a single host. The shared User-Agent is currently a fixed desktop-browser string (`common.USER_AGENT`); switching to a project-identifying UA is desirable but untested against the eagate WAF.
-- **Coordinate systems:** SEGA ALL.Net, Konami eagate, and ZIv coordinates are WGS-84 (Google-Maps-derived or community-pinned on OSM-style maps) and are used as-is. Anything geocoded through Tencent/AMap for China is GCJ-02 and is converted with vendored eviltransform (`gcj2wgs_exact`); Baidu-derived points would need `bd2wgs`. `outOfChina` guards against double-converting non-China points. City centroids in `data/china_cities.json` are stored already converted to WGS-84 (see section 8).
+- **Coordinate systems:** SEGA ALL.Net, Konami eagate, and ZIv coordinates are WGS-84 (Google-Maps-derived or community-pinned on OSM-style maps) and are used as-is. Anything geocoded through Tencent/AMap for China is GCJ-02 and is converted with vendored eviltransform (`gcj2wgs_exact`); Baidu-derived points would need `bd2wgs`. `outOfChina` guards against double-converting non-China points. Administrative centroids in `data/china_areas.json` are stored already converted to WGS-84 (see section 8).
 - **Coordinate sanity:** longitudes are wrapped into [-180, 180] (some sources emit values outside that range). The `(0, 0)` coordinate pair is treated as a sentinel for "no real coordinates" and such stores are dropped from the map layer (kept in the address-only data), never plotted at Null Island.
 - **Geo validation:** after merge, `scrapers/geo_validate.py` checks every coordinated entry against country bounding boxes. Official sources (allnet / eagate / wahlap, and address-trusting rows without community pins) null out-of-country geocodes; community sources (ziv / round1usa / community) correct a wrong country label from the pin when the pin falls cleanly in another country box.
 - **Enrichment split:** optional per-arcade extras land in `data/enrichment.json` keyed by merged arcade id, not in `data/arcades.json`. The shipped file today carries four ZIv fields only (opening hours, venue info text, website, per-machine prices); transit prose, photos, and the other BemaniCN fields are parsed by the pipeline but are not populated in it. See section 10 and `scrapers/enrich.py`.
@@ -103,7 +103,7 @@ Each returns HTTP 200 with a single JSON array (some deployments wrap it as `{"d
 
 **Response format:** JSON array. Fields per store include `arcadeName`, `address`, `province`, `placeId`, `id`.
 
-**Caveat: NO coordinates.** The REST payload is addresses only. Stores ship address-only into merge; `china_place` then assigns city-centroid coordinates with `approx: true` when a city key resolves (see section 8 and the README China accuracy disclosure). Optional commercial geocoding (e.g. Tencent) is not used.
+**Caveat: NO coordinates.** The REST payload is addresses only. Stores ship address-only into merge; `china_place` then assigns an administrative centroid with `approx: true`, as deep as the address reads (see section 8 and the README China accuracy disclosure). Street-level geocoding is opt-in and off by default: `scrapers/geocode_cn.py` only runs when an API key is present in the environment.
 
 **Volume (at last refresh, from `data/stats.json`):** 3,207 merged source rows under `wahlap` (maimai DX CN + CHUNITHM CN combined after within-source handling).
 
@@ -221,7 +221,7 @@ Optional shop/detail fields (all omitted when the payload does not carry them; s
 
 **Staleness:** every enrichment entry carries `enriched_at` (ISO date of the crawl/build). Prices, hours, transit prose, and signed thumbs go stale; treat them as community data that may be outdated. Thumbs expire independently of `enriched_at` when the OSS signature lapses.
 
-**Caveat: coordinates are login-only.** The map layers / API routes that carry lat/lng (e.g. `api/shared/dxmap`) 302-redirect to `/login`. The public endpoints above expose NO coordinates, so every row ships coordinate-less with `coord_system: "gcj02"` (anything this source ever produces would be GCJ-02 and must go through eviltransform). BemaniCN entries gain coordinates by (1) merging with WAHLAP or inheriting a ZIv pin, or (2) city-centroid approx placement in merge. See the `china_wahlap_bemanicn` rule in `scrapers/merge.py` and `scrapers/china_place.py`.
+**Caveat: coordinates are login-only.** The map layers / API routes that carry lat/lng (e.g. `api/shared/dxmap`) 302-redirect to `/login`. The public endpoints above expose NO coordinates, so every row ships coordinate-less with `coord_system: "gcj02"` (anything this source ever produces would be GCJ-02 and must go through eviltransform). BemaniCN entries gain coordinates by (1) merging with WAHLAP or inheriting a ZIv pin, or (2) district-centroid approx placement in merge. See the `china_wahlap_bemanicn` rule in `scrapers/merge.py` and `scrapers/china_place.py`.
 
 **Caveat: shop detail 404s.** A few shops listed in a city index have no detail page (404). They are kept, with games `["other"]` and a `detail page 404 (listed in city index only); games unknown` note.
 
@@ -241,26 +241,26 @@ The superseded count is written to `data/merge_log.json` as `community_rows_supe
 
 ---
 
-## 8. `data/china_cities.json` (city centroids for approx placement)
+## 8. `data/china_areas.json` (administrative centroids for approx placement)
 
-Lookup table used by `scrapers/china_place.py` to place coordinate-less mainland China stores at city-level centroids.
+Lookup table used by `scrapers/china_place.py` to place coordinate-less mainland China stores at the centroid of the deepest administrative unit their address names. Rebuilt by `tools/build_china_areas.py`, not by the weekly Action.
 
 | Item | Value |
 |---|---|
-| Path | `data/china_cities.json` |
-| Shape | `{source, coord_system, conversion, cities: {name: [lat, lng]}}` |
-| Keys | **1,009** name keys (full name + suffix-stripped forms, plus municipality districts and ethnonym-free aliases) |
-| Unique centroids | **457** (about 458 prefecture-level places counting HK/Macau; dual keys share one point) |
+| Path | `data/china_areas.json` |
+| Shape | `{source, coord_system, conversion, counts, areas: {id: {n, p, d, lat, lng}}}` where `p` is the parent id and `d` the level |
+| Rows | **3,257**: 34 provinces, 372 prefecture-level cities, 2,851 districts/counties |
+| Depth | District (区/县) is the floor. Upstream publishes 乡镇/街道 boundaries only as a paid asset (free sample: Shenzhen, Zhongshan, HK, Macau), so `东门街道` in an address cannot be resolved |
 | Stored coord system | **WGS-84** (`coord_system: "wgs84"`) |
 | Upstream native system | **GCJ-02** |
 | Conversion | `GCJ-02 -> WGS-84` via vendored `scrapers/eviltransform.py` `gcj2wgs()` at table build time |
 | Upstream source | [xiangyuecn/AreaCity-JsSpider-StatsGov](https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov) release `2025.251231.260403`, file `ok_geo.csv` (deep 0/1/2 centroid column `geo`) |
 | License | **MIT** (repository LICENSE, Copyright (c) 2019 xiangyuecn); ok_geo.csv marked free/open in the bundled data doc. Upstream administrative data compiled from 国家地名信息库, 腾讯地图行政区划, and 高德地图行政区划 |
-| Taiwan | **Absent.** Upstream ships no coordinates for Taiwan. `china_place` hard-skips anything labeled Taiwan so street names like `中山路` / `北屯路` never false-match mainland `中山市` / `北屯市` |
+| Taiwan | **Province row only, no cities.** Upstream ships no coordinates below it. `china_place` hard-skips anything labeled Taiwan so street names like `中山路` / `北屯路` never false-match mainland `中山市` / `北屯市` |
 
-**Caveat (from the table's own `source.caveat`):** short keys such as `中山` / `东城` / `和平` / `北屯` also occur as street and district names elsewhere. A bare longest-substring match over the whole country mis-places roughly 0.4% of rows. `china_place` therefore applies a province-consistency guard and prefers BemaniCN `region:` notes over address substring matches.
+**Why the parent chain matters:** short names such as `中山` / `东城` / `和平` / `北屯` are street and district names as often as they are cities. A bare longest-substring match over the whole country mis-places roughly 0.4% of rows. `china_place` never scans the whole country: it resolves province, then city among that province's children, then district among that city's children, so `中山市` is simply not a candidate for a 河北 address. Short forms are tried only when no full official name is present, and are rejected when the next character continues a road or building name (`南山路` is not `南山区`).
 
-**Approx semantics:** placed entries get real-looking `lat`/`lng` plus `approx: true`. Fan-out jitter is cosmetic only. Addresses remain the authoritative location for navigation.
+**Approx semantics:** placed entries get real-looking `lat`/`lng` plus `approx: true` and `approx_level` (`district` or `city`). Entries sharing an area sit on its centroid exactly, with no fan-out, so a cluster badge is the honest reading of them. Addresses remain the authoritative location for navigation.
 
 ---
 

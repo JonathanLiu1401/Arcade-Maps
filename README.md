@@ -31,7 +31,7 @@ Worldwide rhythm game arcade locations on one interactive map. Arcade Maps track
 - Machine counts where sources report them: BemaniCN per-title quantities and ZIv machine-list tallies land in optional `game_counts` (about 30% of merged arcades; BemaniCN raw coverage is ~94% of its shops). ZIv counts are only kept when a store's list repeats a machine title - a ZIv page lists what is there rather than how many, so every game shows as "1" and two versions of one game show as "2", and neither is a quantity the site actually published. Those are dropped rather than shown as "x1". Each counted arcade records which source the numbers came from in `counts_src`
 - Community enrichment: `data/enrichment.json` covers 6,521 of the 13,512 arcades, and every row in it comes from ZIv - opening hours (5,211 arcades), venue info text (4,207), a website (4,092), and free-text machine prices per game (2,413), plus country-level typical-price defaults. Weekly USD FX rates come from Frankfurter (ECB) with open.er-api.com gap-fill, so the site can show a local price and a converted estimate. `scrapers/enrich.py` also parses the BemaniCN fields (transit prose, venue coin/token price, per-title coins per play, game versions, photo thumbnails, favourite counts), but no BemaniCN row has landed in the shipped file yet
 - Directions: every store links out to Google Maps, by coordinate when it has one and by name + address search when it does not
-- Approximate China placement: coordinate-less mainland China stores are placed at city-level centroids (cosmetic fan-out within the city) so they appear on the map at all. See the China accuracy disclosure below
+- Approximate China placement: coordinate-less mainland China stores are placed at the centre of the **district** their address names (city centre only when it names no district), stacked on that point rather than scattered around it. See the China accuracy disclosure below
 - Automated freshness: a GitHub Action re-scrapes weekly and commits the diff, so the badge above tells you exactly how stale the data is
 - Google My Maps export: numbered KMZ layers in `mymaps/` let you rebuild the classic My Maps experience in your own Google account (see [docs/MYMAPS.md](docs/MYMAPS.md))
 - No backend, no API keys: static HTML + vendored Leaflet 1.9.4 + Leaflet.markercluster 1.5.3 on GitHub Pages, OpenStreetMap raster tiles
@@ -45,12 +45,16 @@ Every Chinese primary source used here (WAHLAP's official venue API and BemaniCN
 What the map does instead:
 
 1. Prefer a real coordinate when one exists (ZIv community pin, or a WAHLAP/BemaniCN row that merged with a coordinate-bearing twin).
-2. Otherwise place the store at its **city-level centroid** from `data/china_cities.json` (prefecture / municipality-district centroids, already converted GCJ-02 to WGS-84), and mark the entry `approx: true`.
-3. Apply a small **cosmetic fan-out** so many stores in the same city do not stack on one identical pixel. The offset does not encode a real street location.
+2. Otherwise read the address as far down the administrative chain as `data/china_areas.json` goes and place the store at that unit's centroid: the **district** (区/县) where the address names one, the prefecture-level **city** where it does not. Mark the entry `approx: true` and record which level was used in `approx_level`.
+3. Place every such store on that centroid **exactly**. Stores sharing an area stack into one cluster badge and fan out only when you click it, because that is what the data supports: an earlier revision spread them over a 600 m circle, which made a district-wide guess look like a street address.
 
 **Addresses remain authoritative.** For navigation, copy the address into a local map app (AMap, Baidu Maps, Apple Maps, Google Maps) rather than trusting the pin.
 
-At the last rebuild this affected **5,687 of 6,482 China entries** (`approx: true`). About 621 China entries have real (non-approx) coordinates, and 174 remain coordinate-less because no city key could be resolved. Taiwan is never approximated from this table (no Taiwan centroids; ZIv covers Taiwan with community pins).
+At the last rebuild this affected **5625 of 6482 China entries** (`approx: true`): **4064 at district level** and 1561 at city level. About 621 China entries have real (non-approx) coordinates, and 236 remain coordinate-less because no city could be resolved. Taiwan, Hong Kong and Macau are never approximated (ZIv, ALL.Net and e-amusement cover them with real pins).
+
+District is as far as free data reaches: the upstream release publishes 乡镇/街道 boundaries only as a paid asset.
+
+**Street-level is available but opt-in.** `scrapers/geocode_cn.py` geocodes the printed addresses through AMap or Google and commits the answers to `data/china_geocode.json`, which merge then prefers over any centroid. It is off in this repo: it needs an API key, so with no key set it fetches nothing, writes nothing and cannot fail a build. To turn it on, add `AMAP_KEY` (or `GOOGLE_MAPS_API_KEY`) to the repository secrets and run `python scrapers/run_all.py --skip-scrape --only geocode`, then re-merge. Only rooftop and street answers are taken; a provider's vaguer "area" guess is discarded in favour of the district centroid, which at least comes with a level attached.
 
 ## Quick start
 
@@ -75,16 +79,16 @@ The scrapers are stdlib-only (Python 3.12 or newer); there is nothing to pip ins
 |---|---|---|---|---|
 | SEGA ALL.Net (location.am-all.net) | maimai DX JP + International (gm 96 / 98), CHUNITHM JP + International (gm 109 / 104), ONGEKI (gm 88), Project DIVA Arcade (gm 34) | Japan (47 prefectures via ct=1000) + 15 international country codes | Yes (official) | ALL.Net scraper, weekly Action |
 | Konami eagate facility search (p.eagate.573.jp) | 20 game keys: IIDX, SDVX, DDR, GITADORA (GF/DM), jubeat, pop'n, Nostalgia, DANCERUSH, DANCE aROUND, Polaris Chord (PLRS), MUSECA, REFLEC BEAT, DanceEvolution, and cab variants (SDVX Valkyrie, IIDX Lightning, DDR gold cab, plus Arena and Pikapika variants) | Japan only (verified live: the facility search exposes no overseas listings) | Yes (official, `data-latitude` / `data-longitude`) | eagate scraper, weekly Action |
-| WAHLAP official REST (sega-register.wahlap.net) | maimai DX CN, CHUNITHM CN (3,207 merged source rows at last refresh) | Mainland China | No (addresses only; city-centroid approx placement in merge) | WAHLAP scraper, weekly Action |
+| WAHLAP official REST (sega-register.wahlap.net) | maimai DX CN, CHUNITHM CN (3,207 merged source rows at last refresh) | Mainland China | No (addresses only; district-centroid approx placement in merge) | WAHLAP scraper, weekly Action |
 | Zenius-I-Vanisher community DB | Everything the community tracks, incl. Taiko, offline cabs of retired games, and US extra series (Pump It Up / ITG / StepManiaX / etc. under `other`) | Worldwide, 65 country queries at last pull (6,953 merged source rows) | Yes (community-pinned) | ZIv JSON API, weekly Action |
 | Round1 USA (Storepoint API) | Standard Round1 rhythm lineup (assumed per chain standard, not per-store verified) | United States | Yes | Round1 scraper, weekly Action |
-| BemaniCN community map (map.bemanicn.com) | Community-tracked China listings: maimai DX, CHUNITHM, Taiko, and the wider Bemani lineup, with per-store game lists and per-title machine counts (3,567 shops) | Mainland China (392 city indexes; 3,802 merged source rows) | No (public Inertia endpoints publish addresses + game lists; the coordinate map layers are login-only; city-centroid approx placement in merge) | BemaniCN scraper, weekly Action |
+| BemaniCN community map (map.bemanicn.com) | Community-tracked China listings: maimai DX, CHUNITHM, Taiko, and the wider Bemani lineup, with per-store game lists and per-title machine counts (3,567 shops) | Mainland China (392 city indexes; 3,802 merged source rows) | No (public Inertia endpoints publish addresses + game lists; the coordinate map layers are login-only; district-centroid approx placement in merge) | BemaniCN scraper, weekly Action |
 
 Deep per-source detail (exact URLs, parse markers, caveats): [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
 
 ## Known gaps
 
-- **China coordinates are approximate or missing.** WAHLAP and BemaniCN publish addresses without lat/lng. Most China pins are city centroids (`approx: true`); a minority inherit real pins from ZIv merges. See the China accuracy disclosure above.
+- **China coordinates are approximate or missing.** WAHLAP and BemaniCN publish addresses without lat/lng. Most China pins are district (or city) centroids (`approx: true`); a minority inherit real pins from ZIv merges. See the China accuracy disclosure above.
 - **BemaniCN map layers are login-walled.** Public endpoints give addresses + game lists + per-title machine counts; exact coordinates still require a login the scraper does not use. The shop detail pages also expose transit prose, prices, hours and thumbnails, but the crawl behind the shipped `data_raw/china_bemanicn.json` captured none of them, so `data/enrichment.json` currently holds zero BemaniCN rows.
 - **CHUNITHM US:** SEGA's ALL.Net locator currently lists zero official CHUNITHM locations in the US. US CHUNITHM cabs appear only via community sources (ZIv) and the Round1 lineup assumption.
 - **Konami overseas:** the eagate facility search is Japan-only, so overseas Bemani cabs (US Round1, Asia, Europe) come only from ZIv / community data.
@@ -144,7 +148,7 @@ Prior art studied while designing this project (protocols and recipes, no code c
 - [djzmo/otoge-app](https://github.com/djzmo/otoge-app) - multi-source scraper suite, eagate facility-search recipe
 - [Naptie/nearcade](https://github.com/Naptie/nearcade) (MPL-2.0) - China data-source landscape and demand validation
 - [googollee/eviltransform](https://github.com/googollee/eviltransform) (BSD-2-Clause) - GCJ-02 / BD-09 to WGS-84 conversion, vendored
-- [xiangyuecn/AreaCity-JsSpider-StatsGov](https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov) (MIT) - China prefecture centroids underlying `data/china_cities.json`
+- [xiangyuecn/AreaCity-JsSpider-StatsGov](https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov) (MIT) - China province / city / district centroids underlying `data/china_areas.json`
 - [Leaflet](https://leafletjs.com/) and [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) - the map engine
 - [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors - base map tiles
 - [Frankfurter](https://www.frankfurter.app/) / ECB reference rates - weekly FX bake
@@ -152,4 +156,4 @@ Prior art studied while designing this project (protocols and recipes, no code c
 
 ## License and disclaimer
 
-Code in this repository is MIT licensed (see LICENSE). Location data belongs to the respective operators (SEGA, Konami, WAHLAP) and community maintainers; it is republished here for player convenience only. Listings can lag reality: stores close, machines move, and hours change. China map pins that carry `approx: true` are city-level only (see the China accuracy disclosure). Verify with the venue before traveling any distance to play.
+Code in this repository is MIT licensed (see LICENSE). Location data belongs to the respective operators (SEGA, Konami, WAHLAP) and community maintainers; it is republished here for player convenience only. Listings can lag reality: stores close, machines move, and hours change. China map pins that carry `approx: true` are district-level or city-level only (see the China accuracy disclosure). Verify with the venue before traveling any distance to play.

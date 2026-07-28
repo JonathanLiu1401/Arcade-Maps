@@ -35,6 +35,7 @@ import round1usa
 import merge
 import build_mymaps
 import fx
+import geocode_cn
 import common
 
 # Spellings must match ZIV's own country list EXACTLY: an unknown name
@@ -196,8 +197,10 @@ def main():
                     help="reuse existing data_raw/ (no network)")
     ap.add_argument("--only", action="append",
                     choices=["allnet", "eagate", "wahlap", "bemanicn",
-                             "ziv", "round1usa", "fx"],
-                    help="scrape only these sources")
+                             "ziv", "round1usa", "fx", "geocode"],
+                    help="scrape only these sources; `geocode` is the opt-in "
+                         "China address geocode refresh, which needs an API "
+                         "key in the environment and is a no-op without one")
     ap.add_argument("--smoke", action="store_true",
                     help="one-region connectivity probe per source; "
                          "writes data_raw/smoke_*.json, skips merge and "
@@ -225,16 +228,29 @@ def main():
                   % (n_fail, len(results)), file=sys.stderr)
         return
     only = set(args.only) if args.only else None
+    post_merge = {"fx", "geocode"}
     if not args.skip_scrape:
-        # Arcade scrapers only; fx is a post-merge step (writes data/).
-        arcade_only = None if only is None else (only - {"fx"})
+        # Arcade scrapers only; fx and geocode are post-merge steps that
+        # write data/, not data_raw/.
+        arcade_only = None if only is None else (only - post_merge)
         if arcade_only is None or arcade_only:
             scrape_all(args.raw, arcade_only)
     # merge (incl. enrichment + china_place + geo_validate) + MyMaps
-    # only when we are not restricted to fx-only.
-    if only is None or (only - {"fx"}):
+    # only when we are not restricted to the post-merge steps.
+    if only is None or (only - post_merge):
         merge.run(args.raw, args.data)
         build_mymaps.run(args.data, args.mymaps)
+    # China address geocoding: opt-in, and deliberately NOT part of a default
+    # run. It costs provider quota and it needs a key, so it only happens when
+    # asked for by name. Its output is a committed cache that the NEXT merge
+    # reads, so a refresh is followed by a re-merge, not folded into one.
+    if only is not None and "geocode" in only:
+        arcades_path = os.path.join(args.data, "arcades.json")
+        addresses = geocode_cn.addresses_for(
+            common.load_json(arcades_path).get("arcades") or [])
+        print("geocode: %d coordless China address(es) to consider"
+              % len(addresses), file=sys.stderr)
+        geocode_cn.run(addresses, out_dir=args.data)
     # FX rates: non-fatal. fx.run never raises for feed failure; it keeps
     # the previous file and returns (path, None).
     if only is None or "fx" in only:

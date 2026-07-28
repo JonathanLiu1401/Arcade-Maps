@@ -35,7 +35,8 @@
 | `data/merge_log.json` | Dedupe counts, geo_validation log, china_approx log, superseded community rows |
 | `data/enrichment.json` | Optional ZIv extras: opening hours, venue info text, website, per-machine prices |
 | `data/fx_rates.json` | USD FX rates for price display |
-| `data/china_cities.json` | Static centroid table (not rebuilt weekly; only when the table is refreshed by hand) |
+| `data/china_areas.json` | Static administrative centroid table (not rebuilt weekly; `tools/build_china_areas.py` refreshes it by hand) |
+| `data/china_geocode.json` | Committed China address -> coordinate cache (only written by the opt-in `--only geocode` step; absent until someone runs it with a key) |
 | `data_raw/*.json` | Per-source scraped rows (incl. optional enrichment fields on bemanicn/ziv rows) |
 | `mymaps/*` | KMZ/CSV layers + regenerated README manifest |
 
@@ -124,7 +125,19 @@ py scrapers/run_all.py --only fx
 
 # connectivity smoke (no merge / My Maps):
 py scrapers/run_all.py --smoke
+
+# opt-in China address geocoding (needs AMAP_KEY or GOOGLE_MAPS_API_KEY;
+# a no-op without one). Refreshes data/china_geocode.json only; re-run the
+# merge afterwards so the new coordinates reach data/arcades.json:
+py scrapers/run_all.py --skip-scrape --only geocode
+py scrapers/run_all.py --skip-scrape
 ```
+
+`--only geocode` is never part of a default run. It costs provider quota,
+so it happens only when asked for by name, and the answers are committed
+so nobody pays for the same address twice. `--limit N` caps how many NEW
+addresses one run buys, which is how a first full pass over the ~5.7k
+coordinate-less China rows can be spread out.
 
 The scrapers are stdlib-only: no virtualenv or `pip install` is needed.
 Python 3.12 or newer is expected. Review the resulting diff of
@@ -175,10 +188,14 @@ falls sharply. ZIv empty-200 traps abort the run loudly with
 ### China placement checks
 
 - If many China pins vanish or cluster oddly: check
-  `merge_log.json` -> `china_approx` length (last good run ~5,687) and
-  that `data/china_cities.json` is present.
-- Never set Taiwan keys in `china_cities.json` without a real Taiwan
+  `merge_log.json` -> `china_approx` length (last good run ~5,625, of
+  which ~4,064 resolved to a district) and that
+  `data/china_areas.json` is present.
+- Never add Taiwan rows to `china_areas.json` without a real Taiwan
   centroid source; the placer hard-skips Taiwan by design.
+- A sudden swing in the district-vs-city split means the address text
+  changed shape upstream, not that the table broke. Run
+  `python scrapers/test_china_place.py` first.
 - `approx: true` count should stay in the same ballpark as
   WAHLAP+BemaniCN coordinate-less volume minus merges that inherit ZIv
   pins.

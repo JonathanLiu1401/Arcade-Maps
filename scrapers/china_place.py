@@ -1,4 +1,5 @@
-"""China approximate placement: city-level centroids for coordinate-less rows.
+"""China approximate placement: the finest administrative centroid the address
+actually names.
 
 The two Chinese sources are coordinate-less by construction:
 
@@ -8,86 +9,83 @@ The two Chinese sources are coordinate-less by construction:
     payload gives an address plus a ``region: <province> <city>`` label that
     ``scrapers/bemanicn.py`` copies into ``notes``.
 
-Roughly 5.9k of the 6.5k China entries therefore carry ``lat: null`` and are
-invisible on the map even though we know, to city precision, where they are.
-This module resolves such an entry to the centroid of its city using
-``data/china_cities.json`` (prefecture-level centroids, WGS-84, derived from
-AreaCity-JsSpider-StatsGov ``ok_geo.csv``; see that file's ``source`` block).
+Roughly 5.7k of the 6.5k China entries therefore carry ``lat: null``. Their
+addresses, though, are excellent: ``广东省深圳市罗湖区东门街道城东社区东门中路
+2010号信和东门商厦201`` names five nested administrative units, a road, a street
+number and a building. This module reads as far down that chain as
+``data/china_areas.json`` can follow and places the entry at that unit's
+centroid.
 
-Resolution order for one entry:
+**District, not city.** An earlier revision resolved only to the prefecture-level
+city, which for a place like Shenzhen dropped all 119 of its coordinate-less
+venues onto one point near 市民中心 and then fanned them out cosmetically, so the
+map showed a fake arcade district a few hundred metres wide in Futian while the
+real venues sit in Bao'an, Longgang and Nanshan, up to 40 km away. Resolving the
+district named in the address moves 71% of the placed rows, by a median of 10 km
+and a p90 of 60 km. It is still an approximation and still says so, but it is an
+approximation of the right neighbourhood rather than of the wrong one.
 
-  1. **bemanicn region note** - ``region: 河北省 沧州市`` -> city key ``沧州市``.
-     Authoritative: it is the site's own administrative label, not a guess.
-  2. **address substring** - longest ``china_cities`` key contained in the
-     address (then the name), which is how the wahlap rows get placed.
-  3. **municipality district refinement** - 北京 / 上海 / 天津 / 重庆 have no
-     meaningful single centroid for our purposes (157 coordless rows sit in
-     Shanghai alone). ``china_cities.json`` deliberately carries district-level
-     rows for exactly these four, so when step 1 or 2 lands on the
-     municipality itself we re-scan the address for a district key belonging
-     to that same municipality (``浦东新区``, ``沙坪坝区``, ...) and prefer it.
+District is as deep as free data goes. The upstream release publishes 乡镇/街道
+boundaries (level 4) only as a paid asset, apart from a Shenzhen/Zhongshan/HK/
+Macau sample, so the ``东门街道`` in that address cannot be resolved here. Real
+street-number precision needs a geocoding API; see ``scrapers/geocode_cn.py``.
 
-Two hard skips:
+Resolution for one entry, each step gated by the one above it through the
+parent-id chain in ``china_areas.json``:
 
-  * **Taiwan.** ``china_cities.json`` has no Taiwan rows at all (the upstream
-    release ships no coordinates for them), while ZIv already covers Taiwan
-    with real, community-verified pins. Worse, a bare substring match would
-    silently drop Taiwanese addresses onto the mainland - ``中山路`` ->
-    ``中山市``, ``北屯路`` -> ``北屯市``. Anything whose country or province
-    says Taiwan is refused outright.
-  * **Hong Kong and Macau.** Excluded outright, for the same reason as Taiwan.
-    An earlier revision assumed those entries were "all already-coordinated in
-    practice" and left the HK/Macau keys in the table for the handful of
-    China-labeled rows carrying a ``香港`` / ``澳门`` province. That assumption
-    was wrong: 34 BemaniCN rows arrived with no coordinates at all, took the
-    ``香港`` centroid, and landed in the middle of Victoria Harbour, where the
-    cosmetic jitter spread them into a scatter of pins sitting in the water off
-    Central and Wan Chai. ALL.Net, e-amusement and ZIv all cover Hong Kong with
-    real street-level pins, so a venue that exists there is placed by merge
-    instead, and anything unmatched keeps its authoritative address in the
-    no-coords list. See ``PLACEABLE_COUNTRIES``.
+  1. **Province** - the entry's own ``pref``, or the province token of the
+     bemanicn ``region:`` note. An entry with no province is refused outright;
+     without it a bare substring scan is free to match anything.
+  2. **City** - the region note's city token first (the site's own
+     administrative label, not a guess), else the earliest city name of that
+     province appearing in the address or the venue name.
+  3. **District** - the earliest district name of that city appearing in the
+     address or the venue name.
 
-  * **Entries that already have coordinates.** ``place_approx`` returns None
-    for them, so an approximate centroid can never overwrite a real pin and
+The gating is structural rather than a maintained lookup table. An earlier
+revision carried a hand-built 1,009-key ``KEY_PROVINCE`` map purely to stop
+``中山中路`` in 定州 (河北) resolving to 中山市 (广东); with the hierarchy in the
+data file, 中山市 is simply not among 河北's children and can never be
+considered. The same structure fixes the harder half of that problem too: a
+district name is only ever matched against the districts of the city already
+resolved, so ``朝阳区`` cannot pull a 沈阳 address to 北京.
+
+**Names, and their short forms.** Addresses usually write the full official name
+(``宝安区``), and a full-name match always wins. When none is present the short
+form is tried (``奎屯`` for ``奎屯市``), guarded against the obvious trap: a short
+form immediately followed by a road/place character is part of a longer word, not
+an administrative unit, so ``南山路`` never resolves to ``南山区``. Short forms
+supply 13% of the district matches.
+
+Three hard skips:
+
+  * **Taiwan.** ``china_areas.json`` has the province but no cities or districts
+    under it (the upstream release ships no coordinates for Taiwan), while ZIv
+    already covers Taiwan with real, community-verified pins. Anything whose
+    country or province says Taiwan is refused before any lookup runs, so a
+    stray substring can never drop a Taiwanese address on the mainland.
+  * **Hong Kong and Macau.** Excluded outright. The table holds one point for
+    each, and Hong Kong's sits in Victoria Harbour: every coordinate-less Hong
+    Kong row placed there landed in the water off Central and Wan Chai. ALL.Net,
+    e-amusement and ZIv all cover Hong Kong with real street-level pins, so a
+    venue that exists there is placed by merge instead, and anything unmatched
+    keeps its authoritative address in the no-coords list.
+  * **Entries that already have coordinates.** ``place_approx`` returns None for
+    them, so an approximate centroid can never overwrite a real pin and
     ``approx`` can never be set on one.
 
-**Province-consistency guard.** ``china_cities.json`` warns that short keys
-such as ``中山`` / ``东城`` / ``和平`` / ``北屯`` also occur as street and
-district names far from the city they name, and measured a ~0.4% cross-province
-error rate for a naive longest-substring match. Every candidate key is
-therefore checked against the province the entry itself declares (``pref``, or
-the region note's province token): a candidate whose province contradicts the
-entry is rejected and the next-longest candidate is tried. ``中山中路`` in
-定州 (河北) no longer resolves to 中山市 (广东); it is rejected, and
-``KEY_PROVINCE`` lets the scan fall through to a compatible key when one
-exists (``沈阳市`` instead of 天津's ``和平区``, ``长春市`` instead of
-北京's ``朝阳区``).
-
-``KEY_PROVINCE`` below is a static table keyed by exactly the
-``china_cities.json`` keys. It was generated by intersecting those keys with
-the province -> city and municipality -> district lists of
-https://github.com/modood/Administrative-divisions-of-China (``dist/pc.json``
-and ``dist/pca.json``), grouping the keys by centroid so that every alias of a
-place inherits one province, and accepting only unanimous groups. All 1009 keys
-resolved; ``verify_table()`` re-asserts that against the live JSON.
-
-Jitter: several arcades routinely share one city. Painting them at the exact
-same centroid stacks them into a single indistinguishable pin, so each placed
-entry is pushed off the centroid by a deterministic offset of at most
-``JITTER_M`` metres, derived from a hash of its name+address. **The fan-out is
-purely cosmetic** - it conveys no information about where the venue actually
-is, and any two pins in the same city are equally "somewhere in that city".
-The hash is taken over name+address rather than ``id`` on purpose: ids are
-assigned positionally after the final sort, so a single added or removed
-arcade would renumber the rest and make every approximate pin jump between
-weekly rebuilds.
+**No fan-out.** Entries sharing a centroid are placed on it exactly, stacked.
+A previous revision pushed each one off the centroid by up to 600 m so they
+rendered as separate pins; that is precisely the lie this module should not
+tell, because a reader zoomed into a street sees what looks like a specific
+address for every one of them. Stacked, they cluster into a single badge that
+reads "28 arcades in Bao'an" and spiderfy on click, which is exactly what the
+data supports.
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
-import math
 import os
 import re
 
@@ -96,6 +94,16 @@ import re
 # this module must also run standalone against a frozen arcades.json.
 _CN_SUFFIXES = ["壮族自治区", "回族自治区", "维吾尔自治区", "特别行政区",
                 "自治区", "省", "市", "城区", "地区"]
+
+#: Suffixes that turn an area name into its short form (宝安区 -> 宝安). Longest
+#: first, so 自治州 is stripped before 州.
+_AREA_SUFFIXES = ("特别行政区", "自治州", "自治县", "自治旗", "新区", "林区",
+                  "地区", "矿区", "盟", "市", "州", "区", "县", "旗")
+
+#: A short form directly followed by one of these is part of a road or building
+#: name rather than an administrative unit: 南山路, 和平街, 朝阳大厦. Full names
+#: never need this guard because 南山区路 is not a thing.
+_CONTINUATION = set("路街道巷里号弄村镇乡桥站城湖山河园苑府庭阁院场坊道")
 
 
 def cn_base(s):
@@ -107,6 +115,15 @@ def cn_base(s):
     return s
 
 
+def short_name(name):
+    """宝安区 -> 宝安, 奎屯市 -> 奎屯. None when nothing can be stripped, or
+    when what is left is a single character and far too weak to match on."""
+    for suf in _AREA_SUFFIXES:
+        if name.endswith(suf) and len(name) - len(suf) >= 2:
+            return name[:-len(suf)]
+    return None
+
+
 # Own regex rather than merge.bemanicn_region's: that one is r"region:\s*([^;]+)"
 # and does not stop at "|", which is exactly the separator geo_validate uses
 # when appending notes, so it would capture across the pipe.
@@ -116,112 +133,74 @@ _TAIWAN_PREFS = frozenset({"台湾", "臺灣", "台灣", "臺湾"})
 _TAIWAN_COUNTRIES = frozenset({"Taiwan"})
 
 #: Countries whose coordinate-less rows this module is allowed to place.
-#: Mainland China only. Hong Kong and Macau are deliberately EXCLUDED, for the
-#: same reason Taiwan is: this table's centroid for them is useless and the
-#: result is actively misleading. The 香港 centroid sits in Victoria Harbour,
-#: so every coordinate-less Hong Kong row landed in the water off Central and
-#: Wan Chai, fanned out by the cosmetic jitter into a scatter of pins that
-#: looked like the map had simply invented locations.
-#:
-#: Nothing is lost by refusing them. ALL.Net, e-amusement and ZIv all cover
-#: Hong Kong with real, street-level pins, so a venue that exists in those
-#: sources is already placed; merge pairs the BemaniCN row with it and the row
-#: inherits that real coordinate. A row that matches nothing stays
-#: coordinate-less and appears in the no-coords list carrying its authoritative
-#: address, which is the honest outcome and the one the China disclosure
-#: already promises: the address is trustworthy, the pin is not.
+#: Mainland China only - see the Hong Kong / Macau / Taiwan note above.
 PLACEABLE_COUNTRIES = frozenset({"China"})
-
-#: The four direct-administered municipalities, for which china_cities.json
-#: carries district-level rows worth preferring over the city centroid.
-MUNICIPALITIES = frozenset({"北京", "上海", "天津", "重庆"})
-
-#: Max jitter displacement in metres (see module docstring - cosmetic only).
-JITTER_M = 600.0
-
-# ------------------------------------------------------- key -> province ---
-# province -> space-separated china_cities.json keys. See module docstring for
-# provenance. Regenerate by re-running the intersection against dist/pc.json +
-# dist/pca.json if data/china_cities.json is ever rebuilt; verify_table()
-# fails loudly when the two drift apart.
-_KEY_PROVINCE_RAW = {
-    "上海": "上海 上海市 嘉定 嘉定区 奉贤 奉贤区 宝山 宝山区 崇明 崇明区 徐汇 徐汇区 普陀 普陀区 杨浦 杨浦区 松江 松江区 浦东 浦东新区 虹口 虹口区 金山 金山区 长宁 长宁区 闵行 闵行区 青浦 青浦区 静安 静安区 黄浦 黄浦区",
-    "云南": "临沧 临沧市 丽江 丽江市 保山 保山市 大理 大理州 大理白族 大理白族自治州 大理自治州 德宏 德宏傣族景颇族 德宏傣族景颇族自治州 德宏州 德宏自治州 怒江 怒江傈僳族 怒江傈僳族自治州 怒江州 怒江自治州 文山 文山壮族苗族 文山壮族苗族自治州 文山州 文山自治州 昆明 昆明市 昭通 昭通市 普洱 普洱市 曲靖 曲靖市 楚雄 楚雄州 楚雄彝族 楚雄彝族自治州 楚雄自治州 玉溪 玉溪市 红河 红河哈尼族彝族 红河哈尼族彝族自治州 红河州 红河自治州 西双版纳 西双版纳傣族 西双版纳傣族自治州 西双版纳州 西双版纳自治州 迪庆 迪庆州 迪庆自治州 迪庆藏族 迪庆藏族自治州",
-    "内蒙古": "乌兰察布 乌兰察布市 乌海 乌海市 兴安 兴安盟 包头 包头市 呼伦贝尔 呼伦贝尔市 呼和浩特 呼和浩特市 巴彦淖尔 巴彦淖尔市 赤峰 赤峰市 通辽 通辽市 鄂尔多斯 鄂尔多斯市 锡林郭勒 锡林郭勒盟 阿拉善 阿拉善盟",
-    "北京": "东城 东城区 丰台 丰台区 北京 北京市 大兴 大兴区 密云 密云区 平谷 平谷区 延庆 延庆区 怀柔 怀柔区 房山 房山区 昌平 昌平区 朝阳区 海淀 海淀区 石景山 石景山区 西城 西城区 通州 通州区 门头沟 门头沟区 顺义 顺义区",
-    "吉林": "吉林 吉林市 四平 四平市 延边 延边州 延边朝鲜族 延边朝鲜族自治州 延边自治州 松原 松原市 白城 白城市 白山 白山市 辽源 辽源市 通化 通化市 长春 长春市",
-    "四川": "乐山 乐山市 内江 内江市 凉山 凉山州 凉山彝族 凉山彝族自治州 凉山自治州 南充 南充市 宜宾 宜宾市 巴中 巴中市 广元 广元市 广安 广安市 德阳 德阳市 成都 成都市 攀枝花 攀枝花市 泸州 泸州市 甘孜 甘孜州 甘孜自治州 甘孜藏族 甘孜藏族自治州 眉山 眉山市 绵阳 绵阳市 自贡 自贡市 资阳 资阳市 达州 达州市 遂宁 遂宁市 阿坝 阿坝州 阿坝自治州 阿坝藏族羌族 阿坝藏族羌族自治州 雅安 雅安市",
-    "天津": "东丽 东丽区 北辰 北辰区 南开 南开区 和平 和平区 天津 天津市 宁河 宁河区 宝坻 宝坻区 武清 武清区 河东 河东区 河北区 河西 河西区 津南 津南区 滨海 滨海新区 红桥 红桥区 蓟州 蓟州区 西青 西青区 静海 静海区",
-    "宁夏": "中卫 中卫市 吴忠 吴忠市 固原 固原市 石嘴山 石嘴山市 银川 银川市",
-    "安徽": "亳州 亳州市 六安 六安市 合肥 合肥市 安庆 安庆市 宣城 宣城市 宿州 宿州市 池州 池州市 淮北 淮北市 淮南 淮南市 滁州 滁州市 芜湖 芜湖市 蚌埠 蚌埠市 铜陵 铜陵市 阜阳 阜阳市 马鞍山 马鞍山市 黄山 黄山市",
-    "山东": "东营 东营市 临沂 临沂市 威海 威海市 德州 德州市 日照 日照市 枣庄 枣庄市 泰安 泰安市 济南 济南市 济宁 济宁市 淄博 淄博市 滨州 滨州市 潍坊 潍坊市 烟台 烟台市 聊城 聊城市 菏泽 菏泽市 青岛 青岛市",
-    "山西": "临汾 临汾市 吕梁 吕梁市 大同 大同市 太原 太原市 忻州 忻州市 晋中 晋中市 晋城 晋城市 朔州 朔州市 运城 运城市 长治 长治市 阳泉 阳泉市",
-    "广东": "东莞 东莞市 中山 中山市 云浮 云浮市 佛山 佛山市 广州 广州市 惠州 惠州市 揭阳 揭阳市 梅州 梅州市 汕头 汕头市 汕尾 汕尾市 江门 江门市 河源 河源市 深圳 深圳市 清远 清远市 湛江 湛江市 潮州 潮州市 珠海 珠海市 肇庆 肇庆市 茂名 茂名市 阳江 阳江市 韶关 韶关市",
-    "广西": "北海 北海市 南宁 南宁市 崇左 崇左市 来宾 来宾市 柳州 柳州市 桂林 桂林市 梧州 梧州市 河池 河池市 玉林 玉林市 百色 百色市 贵港 贵港市 贺州 贺州市 钦州 钦州市 防城港 防城港市",
-    "新疆": "乌鲁木齐 乌鲁木齐市 五家渠 五家渠市 伊犁 伊犁哈萨克 伊犁哈萨克自治州 伊犁州 伊犁自治州 克孜勒苏 克孜勒苏州 克孜勒苏柯尔克孜 克孜勒苏柯尔克孜自治州 克孜勒苏自治州 克拉玛依 克拉玛依市 北屯 北屯市 博尔塔拉 博尔塔拉州 博尔塔拉自治州 博尔塔拉蒙古 博尔塔拉蒙古自治州 双河 双河市 可克达拉 可克达拉市 吐鲁番 吐鲁番市 和田 和田地区 哈密 哈密市 喀什 喀什地区 图木舒克 图木舒克市 塔城 塔城地区 巴音郭楞 巴音郭楞州 巴音郭楞自治州 巴音郭楞蒙古 巴音郭楞蒙古自治州 新星 新星市 昆玉 昆玉市 昌吉 昌吉回族 昌吉回族自治州 昌吉州 昌吉自治州 白杨 白杨市 石河子 石河子市 胡杨河 胡杨河市 铁门关 铁门关市 阿克苏 阿克苏地区 阿勒泰 阿勒泰地区 阿拉尔 阿拉尔市",
-    "江苏": "南京 南京市 南通 南通市 宿迁 宿迁市 常州 常州市 徐州 徐州市 扬州 扬州市 无锡 无锡市 泰州 泰州市 淮安 淮安市 盐城 盐城市 苏州 苏州市 连云港 连云港市 镇江 镇江市",
-    "江西": "上饶 上饶市 九江 九江市 南昌 南昌市 吉安 吉安市 宜春 宜春市 抚州 抚州市 新余 新余市 景德镇 景德镇市 萍乡 萍乡市 赣州 赣州市 鹰潭 鹰潭市",
-    "河北": "保定 保定市 唐山 唐山市 廊坊 廊坊市 张家口 张家口市 承德 承德市 沧州 沧州市 石家庄 石家庄市 秦皇岛 秦皇岛市 衡水 衡水市 邢台 邢台市 邯郸 邯郸市",
-    "河南": "三门峡 三门峡市 信阳 信阳市 南阳 南阳市 周口 周口市 商丘 商丘市 安阳 安阳市 平顶山 平顶山市 开封 开封市 新乡 新乡市 洛阳 洛阳市 济源 济源市 漯河 漯河市 濮阳 濮阳市 焦作 焦作市 许昌 许昌市 郑州 郑州市 驻马店 驻马店市 鹤壁 鹤壁市",
-    "浙江": "丽水 丽水市 台州 台州市 嘉兴 嘉兴市 宁波 宁波市 杭州 杭州市 温州 温州市 湖州 湖州市 绍兴 绍兴市 舟山 舟山市 衢州 衢州市 金华 金华市",
-    "海南": "万宁 万宁市 三亚 三亚市 三沙 三沙市 东方 东方市 临高 临高县 乐东 乐东黎族 乐东黎族自治县 五指山 五指山市 保亭 保亭黎族苗族 保亭黎族苗族自治县 儋州 儋州市 定安 定安县 屯昌 屯昌县 文昌 文昌市 昌江 昌江黎族 昌江黎族自治县 海口 海口市 澄迈 澄迈县 琼中 琼中黎族苗族 琼中黎族苗族自治县 琼海 琼海市 白沙 白沙黎族 白沙黎族自治县 陵水 陵水黎族 陵水黎族自治县",
-    "湖北": "仙桃 仙桃市 十堰 十堰市 咸宁 咸宁市 天门 天门市 孝感 孝感市 宜昌 宜昌市 恩施 恩施土家族苗族 恩施土家族苗族自治州 恩施州 恩施自治州 武汉 武汉市 潜江 潜江市 神农架 神农架林区 荆州 荆州市 荆门 荆门市 襄阳 襄阳市 鄂州 鄂州市 随州 随州市 黄冈 黄冈市 黄石 黄石市",
-    "湖南": "娄底 娄底市 岳阳 岳阳市 常德 常德市 张家界 张家界市 怀化 怀化市 株洲 株洲市 永州 永州市 湘潭 湘潭市 湘西 湘西土家族苗族 湘西土家族苗族自治州 湘西州 湘西自治州 益阳 益阳市 衡阳 衡阳市 邵阳 邵阳市 郴州 郴州市 长沙 长沙市",
-    "澳门": "澳门 澳门特别行政区",
-    "甘肃": "临夏 临夏回族 临夏回族自治州 临夏州 临夏自治州 兰州 兰州市 嘉峪关 嘉峪关市 天水 天水市 定西 定西市 平凉 平凉市 庆阳 庆阳市 张掖 张掖市 武威 武威市 甘南 甘南州 甘南自治州 甘南藏族 甘南藏族自治州 白银 白银市 酒泉 酒泉市 金昌 金昌市 陇南 陇南市",
-    "福建": "三明 三明市 南平 南平市 厦门 厦门市 宁德 宁德市 泉州 泉州市 漳州 漳州市 福州 福州市 莆田 莆田市 龙岩 龙岩市",
-    "西藏": "山南 山南市 拉萨 拉萨市 日喀则 日喀则市 昌都 昌都市 林芝 林芝市 那曲 那曲市 阿里 阿里地区",
-    "贵州": "六盘水 六盘水市 安顺 安顺市 毕节 毕节市 贵阳 贵阳市 遵义 遵义市 铜仁 铜仁市 黔东南 黔东南州 黔东南自治州 黔东南苗族侗族 黔东南苗族侗族自治州 黔南 黔南州 黔南布依族苗族 黔南布依族苗族自治州 黔南自治州 黔西南 黔西南州 黔西南布依族苗族 黔西南布依族苗族自治州 黔西南自治州",
-    "辽宁": "丹东 丹东市 大连 大连市 抚顺 抚顺市 朝阳市 本溪 本溪市 沈阳 沈阳市 盘锦 盘锦市 营口 营口市 葫芦岛 葫芦岛市 辽阳 辽阳市 铁岭 铁岭市 锦州 锦州市 阜新 阜新市 鞍山 鞍山市",
-    "重庆": "万州 万州区 两江 两江新区 丰都 丰都县 九龙坡 九龙坡区 云阳 云阳县 北碚 北碚区 南岸 南岸区 南川 南川区 合川 合川区 垫江 垫江县 城口 城口县 大渡口 大渡口区 大足 大足区 奉节 奉节县 巫山 巫山县 巫溪 巫溪县 巴南 巴南区 开州 开州区 彭水 彭水苗族土家族 彭水苗族土家族自治县 忠县 梁平 梁平区 武隆 武隆区 永川 永川区 江津 江津区 沙坪坝 沙坪坝区 涪陵 涪陵区 渝中 渝中区 潼南 潼南区 璧山 璧山区 石柱 石柱土家族 石柱土家族自治县 秀山 秀山土家族苗族 秀山土家族苗族自治县 綦江 綦江区 荣昌 荣昌区 酉阳 酉阳土家族苗族 酉阳土家族苗族自治县 重庆 重庆城区 重庆市 重庆郊县 铜梁 铜梁区 长寿 长寿区 黔江 黔江区",
-    "陕西": "咸阳 咸阳市 商洛 商洛市 安康 安康市 宝鸡 宝鸡市 延安 延安市 榆林 榆林市 汉中 汉中市 渭南 渭南市 西安 西安市 铜川 铜川市",
-    "青海": "果洛 果洛州 果洛自治州 果洛藏族 果洛藏族自治州 海东 海东市 海北 海北州 海北自治州 海北藏族 海北藏族自治州 海南州 海南自治州 海南藏族 海南藏族自治州 海西 海西州 海西自治州 海西蒙古族藏族 海西蒙古族藏族自治州 玉树 玉树州 玉树自治州 玉树藏族 玉树藏族自治州 西宁 西宁市 黄南 黄南州 黄南自治州 黄南藏族 黄南藏族自治州",
-    "香港": "香港 香港特别行政区",
-    "黑龙江": "七台河 七台河市 伊春 伊春市 佳木斯 佳木斯市 双鸭山 双鸭山市 哈尔滨 哈尔滨市 大兴安岭 大兴安岭地区 大庆 大庆市 牡丹江 牡丹江市 绥化 绥化市 鸡西 鸡西市 鹤岗 鹤岗市 黑河 黑河市 齐齐哈尔 齐齐哈尔市",
-}
-
-#: china_cities.json key -> province base name (广东, 上海, 内蒙古, 香港, ...).
-KEY_PROVINCE = {k: prov
-                for prov, keys in _KEY_PROVINCE_RAW.items()
-                for k in keys.split()}
 
 _DATA_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    "data", "china_cities.json")
+    "data", "china_areas.json")
 
-_CITIES = None       # key -> [lat, lng]
-_KEYS_BY_LEN = None  # keys, longest first, ties broken alphabetically
+_INDEX = None
 
 
-def load_cities(path=None, force=False):
-    """Load (and memoize) the city centroid table. Returns key -> [lat, lng]."""
-    global _CITIES, _KEYS_BY_LEN
-    if _CITIES is not None and not force and path is None:
-        return _CITIES
+class AreaIndex(object):
+    """china_areas.json, indexed for parent-gated name lookup.
+
+    ``areas`` is id -> {n, p, d, lat, lng}; ``children`` is parent id -> list of
+    child ids, ordered by id so a rebuild picks the same candidate every time.
+    """
+
+    def __init__(self, areas):
+        self.areas = areas
+        self.children = {}
+        for aid in sorted(areas):
+            self.children.setdefault(areas[aid]["p"], []).append(aid)
+        self.provinces = [aid for aid in sorted(areas)
+                          if areas[aid]["d"] == 0]
+        self.province_by_base = {}
+        for aid in self.provinces:
+            self.province_by_base.setdefault(cn_base(areas[aid]["n"]), aid)
+
+    def kids(self, aid):
+        return self.children.get(aid, [])
+
+    def name(self, aid):
+        return self.areas[aid]["n"]
+
+    def coords(self, aid):
+        a = self.areas[aid]
+        return float(a["lat"]), float(a["lng"])
+
+    def path(self, aid):
+        """深圳市 宝安区 - the chain from city down, for the note text.
+
+        A repeated name is collapsed: 东莞 and the other 直筒子市 have no
+        districts, so the table repeats the city as its own only child and the
+        raw chain reads "东莞市 东莞市".
+        """
+        parts = []
+        while aid in self.areas and self.areas[aid]["d"] >= 1:
+            name = self.areas[aid]["n"]
+            if not parts or parts[-1] != name:
+                parts.append(name)
+            aid = self.areas[aid]["p"]
+        return " ".join(reversed(parts))
+
+
+def load_areas(path=None, force=False):
+    """Load (and memoize) the administrative centroid table."""
+    global _INDEX
+    if _INDEX is not None and not force and path is None:
+        return _INDEX
     with open(path or _DATA_PATH, encoding="utf-8") as fh:
         blob = json.load(fh)
-    cities = blob["cities"]
     if blob.get("coord_system") != "wgs84":
-        raise ValueError("china_cities.json is not wgs84: %r"
+        raise ValueError("china_areas.json is not wgs84: %r"
                          % blob.get("coord_system"))
-    _CITIES = cities
-    # Deterministic ordering: longest key wins, alphabetical tie-break, so
-    # repeated builds pick the same candidate among equal-length keys.
-    _KEYS_BY_LEN = sorted(cities, key=lambda k: (-len(k), k))
-    return _CITIES
-
-
-def verify_table(path=None):
-    """Consistency check between KEY_PROVINCE and china_cities.json.
-
-    Returns (unmapped_keys, stale_keys): keys in the JSON with no province,
-    and provinces claimed for keys the JSON no longer has. Both empty is the
-    healthy state; the proof script and unit test assert that.
-    """
-    cities = load_cities(path, force=path is not None)
-    unmapped = sorted(k for k in cities if k not in KEY_PROVINCE)
-    stale = sorted(k for k in KEY_PROVINCE if k not in cities)
-    return unmapped, stale
+    index = AreaIndex(blob["areas"])
+    if path is None:
+        _INDEX = index
+    return index
 
 
 # ------------------------------------------------------------- extraction ---
@@ -230,8 +209,7 @@ def entry_province(entry):
     """Province base for an entry: 广东省 -> 广东, 中国湖南省 -> 湖南.
 
     Falls back to the bemanicn region note's province token when ``pref`` is
-    absent. Returns None when the entry declares no province (the guard then
-    has nothing to check against and every candidate is accepted)."""
+    absent. Returns None when the entry declares no province."""
     pref = (entry.get("pref") or "").strip()
     pref = re.sub(r"^中国", "", pref)
     if pref:
@@ -243,7 +221,7 @@ def entry_province(entry):
 def region_tokens(notes):
     """(province_base, city_token) from a ``region: 省 市`` note.
 
-    The city token is returned verbatim (``沧州市``) so the exact key can be
+    The city token is returned verbatim (``沧州市``) so the exact name can be
     tried before the suffix-stripped form. Municipalities carry only one
     token, in which case the city token is that same token."""
     m = _REGION_RE.search(notes or "")
@@ -270,61 +248,49 @@ def is_taiwan(entry):
 
 # ------------------------------------------------------------ resolution ---
 
-def _lookup(key, cities):
-    """Exact key, then suffix-stripped key. Returns the matched key or None."""
-    if not key:
-        return None
-    if key in cities:
-        return key
-    base = cn_base(key)
-    return base if base in cities else None
+def match_area(text, ids, index, allow_short=True):
+    """Earliest area from ``ids`` named in ``text``. Returns (id, how).
 
-
-def _province_ok(key, prov):
-    """Province-consistency guard: False only on an explicit contradiction."""
-    if not prov:
-        return True
-    kp = KEY_PROVINCE.get(key)
-    if kp is None:      # key absent from the table (JSON regenerated) - can't
-        return True     # contradict, so accept; verify_table() flags the drift
-    return kp == prov
-
-
-def _address_candidates(entry):
-    """Address then name, so a city named in the address always outranks one
-    that only appears in the venue's brand name."""
-    return [(entry.get("addr") or ""), (entry.get("name") or "")]
-
-
-def _scan(text, prov, cities, exclude=()):
-    """Longest province-consistent city key contained in ``text``."""
-    for key in _KEYS_BY_LEN:
-        if key in exclude:
+    Full official names are considered first and as a group, so a full-name hit
+    anywhere in the string beats a short-form hit that happens to come earlier:
+    ``深圳市宝安区南山路`` must resolve to 宝安区, not 南山区.
+    """
+    best = None
+    for aid in ids:
+        pos = text.find(index.name(aid))
+        if pos >= 0 and (best is None or pos < best[0]):
+            best = (pos, aid)
+    if best:
+        return best[1], "name"
+    if not allow_short:
+        return None, None
+    for aid in ids:
+        short = short_name(index.name(aid))
+        if not short:
             continue
-        if key in text and _province_ok(key, prov):
-            return key
-    return None
+        pos = text.find(short)
+        while pos >= 0:
+            after = text[pos + len(short):pos + len(short) + 1]
+            if after not in _CONTINUATION:
+                if best is None or pos < best[0]:
+                    best = (pos, aid)
+                break
+            pos = text.find(short, pos + 1)
+    return (best[1], "short") if best else (None, None)
 
 
-def _is_municipality_level(key, prov):
-    """True when ``key`` is the municipality itself rather than a district.
-
-    ``重庆城区`` / ``重庆郊县`` count: both are whole-municipality buckets in
-    the source data, so refining them to a district is still an improvement."""
-    if prov not in MUNICIPALITIES:
-        return False
-    return cn_base(key) == prov or key.startswith(prov)
+def _search_text(entry):
+    """Address first, then the venue name, joined so one scan covers both. The
+    address leads because a city named in it always outranks one that only
+    appears in a brand (``玩计划沈阳和平K11店``)."""
+    return "%s %s" % (entry.get("addr") or "", entry.get("name") or "")
 
 
-def place_approx(entry, cities=None):
-    """Resolve one entry to a city centroid.
+def resolve(entry, index=None):
+    """Deepest administrative unit this entry names.
 
-    Returns ``(lat, lng, city_key)`` on a hit, or ``None`` when the entry is
-    skipped or unresolvable. The returned coordinates are the raw centroid -
-    ``jitter()`` / ``apply_approx()`` add the cosmetic fan-out offset.
-
-    Never returns a placement for an entry that already has coordinates, so
-    a real pin can never be replaced by an approximate one.
+    Returns ``(area_id, level)`` where level is "district" or "city", or None.
+    Applies the country / Taiwan / already-placed guards.
     """
     if entry.get("lat") is not None or entry.get("lng") is not None:
         return None
@@ -333,77 +299,58 @@ def place_approx(entry, cities=None):
     if is_taiwan(entry):
         return None
 
-    cities = cities if cities is not None else load_cities()
-    prov = entry_province(entry)
+    index = index if index is not None else load_areas()
+    text = _search_text(entry)
 
-    # (1) bemanicn region note - the source's own administrative label.
-    key = None
-    _rprov, rcity = region_tokens(entry.get("notes"))
-    if rcity:
-        cand = _lookup(rcity, cities)
-        if cand and _province_ok(cand, prov):
-            key = cand
-
-    # (2) longest province-consistent city key in the address, then the name.
-    if key is None:
-        for text in _address_candidates(entry):
-            if not text:
-                continue
-            key = _scan(text, prov, cities)
-            if key:
-                break
-
-    if key is None:
+    prov_base = entry_province(entry)
+    prov_id = index.province_by_base.get(prov_base) if prov_base else None
+    if prov_id is None:
+        # No usable declared province. A well-formed Chinese address opens with
+        # one (``江苏省苏州市工业园区...``), so read it from the text - but by
+        # full official name only. The short forms are the dangerous half of
+        # the province list: 河北, 山东 and 上海 are all common road names, and
+        # a wrong province here mis-gates every step below it.
+        prov_id, _how = match_area(text, index.provinces, index,
+                                   allow_short=False)
+    if prov_id is None:
         return None
 
-    # (3) municipality district refinement (see module docstring).
-    if _is_municipality_level(key, prov):
-        muni_keys = {k for k in _KEYS_BY_LEN
-                     if KEY_PROVINCE.get(k) == prov
-                     and not _is_municipality_level(k, prov)}
-        for text in _address_candidates(entry):
-            if not text:
-                continue
-            for cand in _KEYS_BY_LEN:
-                if cand in muni_keys and cand in text:
-                    key = cand
-                    break
-            else:
-                continue
-            break
+    # City: the region note's own label first, matched against this province's
+    # children only, then a scan of the address.
+    city_id = None
+    _rprov, rcity = region_tokens(entry.get("notes"))
+    if rcity:
+        want = (rcity, cn_base(rcity))
+        for aid in index.kids(prov_id):
+            name = index.name(aid)
+            if name in want or short_name(name) in want:
+                city_id = aid
+                break
+    if city_id is None:
+        city_id, _how = match_area(text, index.kids(prov_id), index)
+    if city_id is None:
+        return None
 
-    lat, lng = cities[key]
-    return float(lat), float(lng), key
-
-
-# ---------------------------------------------------------------- jitter ---
-
-_M_PER_DEG_LAT = 111320.0
+    district_id, _how = match_area(text, index.kids(city_id), index)
+    if district_id is not None:
+        return district_id, "district"
+    return city_id, "city"
 
 
-def jitter(lat, lng, seed, radius_m=JITTER_M):
-    """Deterministic cosmetic offset of at most ``radius_m`` metres.
+def place_approx(entry, index=None):
+    """Resolve one entry to a centroid.
 
-    Same seed -> same offset, always. Purely so that arcades sharing a city
-    centroid render as a readable cluster instead of one stacked pin; it
-    carries no positional information whatsoever.
+    Returns ``(lat, lng, area_id, level)`` on a hit, or None when the entry is
+    skipped or unresolvable. The coordinates are the centroid exactly; nothing
+    is added to them.
     """
-    digest = hashlib.md5(seed.encode("utf-8")).digest()
-    angle = int.from_bytes(digest[:4], "big") / 2 ** 32 * 2.0 * math.pi
-    # Keep the ring away from the exact centroid so two entries can never land
-    # on top of each other via a near-zero radius.
-    frac = 0.35 + 0.65 * (int.from_bytes(digest[4:8], "big") / 2 ** 32)
-    dist = radius_m * frac
-    dlat = dist * math.sin(angle) / _M_PER_DEG_LAT
-    coslat = math.cos(math.radians(lat))
-    denom = _M_PER_DEG_LAT * (coslat if abs(coslat) > 1e-6 else 1e-6)
-    dlng = dist * math.cos(angle) / denom
-    return lat + dlat, lng + dlng
-
-
-def jitter_seed(entry):
-    """Stable per-entry jitter seed: name + address, never the positional id."""
-    return "%s\x1f%s" % (entry.get("name") or "", entry.get("addr") or "")
+    index = index if index is not None else load_areas()
+    hit = resolve(entry, index)
+    if hit is None:
+        return None
+    area_id, level = hit
+    lat, lng = index.coords(area_id)
+    return lat, lng, area_id, level
 
 
 def _append_note(entry, note):
@@ -416,39 +363,41 @@ def _append_note(entry, note):
     entry["notes"] = existing + " | " + note
 
 
-def apply_approx(entry, cities=None):
+def apply_approx(entry, index=None):
     """Place one entry in place. Returns a log record, or None if untouched."""
-    hit = place_approx(entry, cities)
+    index = index if index is not None else load_areas()
+    hit = place_approx(entry, index)
     if hit is None:
         return None
-    clat, clng, key = hit
-    lat, lng = jitter(clat, clng, jitter_seed(entry))
+    lat, lng, area_id, level = hit
+    path = index.path(area_id)
     entry["lat"] = round(lat, 6)
     entry["lng"] = round(lng, 6)
     entry["approx"] = True
-    _append_note(entry, "position approximate: city-level centroid (%s)" % key)
+    entry["approx_level"] = level
+    _append_note(entry, "position approximate: %s centroid (%s)" % (level, path))
     return {
         "id": entry.get("id"),
         "name": entry.get("name"),
         "src": list(entry.get("src") or []),
         "pref": entry.get("pref"),
-        "city": key,
-        "centroid_lat": clat,
-        "centroid_lng": clng,
+        "level": level,
+        "area": path,
+        "area_id": area_id,
         "lat": entry["lat"],
         "lng": entry["lng"],
     }
 
 
-def place_arcades(arcades, cities=None):
+def place_arcades(arcades, index=None):
     """Place every eligible coordinate-less entry. Mutates in place.
 
     Returns the list of log records (merge_log.json "china_approx").
     """
-    cities = cities if cities is not None else load_cities()
+    index = index if index is not None else load_areas()
     log = []
     for entry in arcades:
-        rec = apply_approx(entry, cities)
+        rec = apply_approx(entry, index)
         if rec is not None:
             log.append(rec)
     return log

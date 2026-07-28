@@ -13,7 +13,7 @@ flowchart LR
   run["scrapers/run_all.py"] --> raw[("data_raw/<br>per-source raw output")]
   raw --> merge["merge: dedupe, slug mapping,<br>gcj2wgs conversion"]
   merge --> geov["geo_validate:<br>bbox country vs coords"]
-  geov --> china["china_place:<br>city centroids + approx"]
+  geov --> china["china_place:<br>district centroids + approx"]
   china --> canon[("data/arcades.json<br>+ stats.json")]
   china --> enrich["enrich:<br>join raw extras by URL"]
   enrich --> enj[("data/enrichment.json")]
@@ -65,7 +65,7 @@ One weekly GitHub Action (see `docs/UPDATING.md`) runs scrape -> merge (includin
    two rival partners and block itself
 3. Assign sequential ids after sort by country, name, address
 4. **`geo_validate`** - source-aware country vs bounding-box checks (official: null bad geocodes; community: fix wrong country labels)
-5. **`china_place`** - for remaining coordinate-less MAINLAND China rows, resolve city centroid from `data/china_cities.json`, jitter cosmetically, set `approx: true` (never overwrites a real pin). Taiwan, Hong Kong and Macau are refused outright: the 香港 centroid is in Victoria Harbour, so approximating there put a scatter of pins in the water rather than on any street, and those territories are covered with real pins by ALL.Net, e-amusement and ZIv anyway
+5. **`china_place`** - for remaining coordinate-less MAINLAND China rows, resolve the deepest administrative unit the address names in `data/china_areas.json` (district, else prefecture-level city), place the pin on that centroid exactly, set `approx: true` and `approx_level` (never overwrites a real pin). Each level is gated by the one above it through the table's parent-id chain, so a district is only ever matched among the children of the city already resolved. Taiwan, Hong Kong and Macau are refused outright: the 香港 centroid is in Victoria Harbour, so approximating there put a scatter of pins in the water rather than on any street, and those territories are covered with real pins by ALL.Net, e-amusement and ZIv anyway
 6. Write `data/arcades.json` + `data/stats.json`
 7. **`enrich.build_enrichment`** - join raw BemaniCN/ZIv extras onto merged ids via `links.*` URLs; write `data/enrichment.json` (does not mutate arcade rows)
 8. Write `data/merge_log.json` (includes `geo_validation` and `china_approx` logs)
@@ -89,7 +89,7 @@ After merge returns, `run_all.py` rebuilds My Maps, then runs `fx.run` into `dat
    "lng": float|null (WGS-84 ONLY; convert gcj02 via embedded
           eviltransform gcj2wgs before writing; (0,0) or missing
           means null). For China rows with approx:true these are
-          city-centroid coordinates with cosmetic fan-out, NOT
+          administrative centroids (see approx_level), NOT
           street-accurate pins,
    "country": str (English: "Japan","China","Taiwan","United States",...),
    "pref": str|null (JP prefecture / CN province / US state where known,
@@ -125,15 +125,17 @@ After merge returns, `run_all.py` rebuilds My Maps, then runs `fx.run` into `dat
    "links": {"gmaps": str|null, "ziv": str|null, "bemanicn": str|null},
    "notes": str|null,
    "approx": true (OPTIONAL - present only when china_place assigned
-          a city-centroid pin; never set on real / inherited coords)}
+          an administrative centroid; never set on real / inherited coords),
+   "approx_level": "district"|"city" (OPTIONAL - present exactly when
+          "approx" is, naming how deep the address could be read)}
  ]}
 ```
 
 ### `approx` field semantics
 
-- Present and `true` only after successful city-centroid placement.
-- Means: "somewhere in this city (or municipality district), addresses authoritative; pin is not a surveyed storefront."
-- Fan-out offset is deterministic from name+address (not id) so weekly renumbering does not jump pins, and is purely cosmetic.
+- Present and `true` only after successful administrative-centroid placement; `approx_level` says which level was reached.
+- Means: "somewhere in this district (or city), addresses authoritative; pin is not a surveyed storefront."
+- No fan-out: entries sharing an area sit on its centroid exactly, so they cluster into one badge instead of impersonating separate street addresses.
 - Entries that stay coordinate-less have no `approx` key and `lat`/`lng` null (sidebar / no-coords list).
 - `links.gmaps` for those rows stays a name+address search URL; merge deliberately does not rewrite it to the centroid pin.
 
@@ -402,15 +404,16 @@ exists, so a checkout without it still gets the bundled rows. The count
 of superseded rows is written to `data/merge_log.json` as
 `community_rows_superseded`.
 
-### Why China entries use approx city centroids (and still can be coordinate-less)
+### Why China entries use approx administrative centroids (and still can be coordinate-less)
 
 The official WAHLAP endpoint returns name, address, province, and
 machine count but NO coordinates, and BemaniCN's public endpoints are
 addresses + game lists only (its coordinate layers are login-walled).
 Commercial Chinese geocoders need API keys, quotas, and still return
-GCJ-02. Rather than leave ~5.9k China stores invisible, `china_place`
-assigns **city-level** WGS-84 centroids from `data/china_cities.json` and
-marks them `approx: true`. Unresolved rows keep `lat`/`lng` = null and
+GCJ-02. Rather than leave ~5.7k China stores invisible, `china_place`
+assigns WGS-84 centroids from `data/china_areas.json` at the deepest
+level the address supports (**district** for 72% of them, city for the
+rest) and marks them `approx: true`. Unresolved rows keep `lat`/`lng` = null and
 appear in the no-coords list. Addresses remain authoritative for
 navigation. See the README China accuracy disclosure.
 
@@ -424,7 +427,8 @@ WGS-84) lands markers roughly 100-700 m off. The pipeline therefore
 converts any GCJ-02-sourced coordinate with the vendored eviltransform
 `gcj2wgs` before writing `data/arcades.json`, guarded by
 `outOfChina` so non-China points are never double-converted. The
-`china_cities.json` table is pre-converted the same way at build time.
+`china_areas.json` table is pre-converted the same way at build time
+(`tools/build_china_areas.py`).
 Baidu coordinates (BD-09) would need `bd2wgs` instead. Coordinates from
 SEGA/KONAMI pages, ZIv, and Round1 USA are already WGS-84 and are
 written unchanged. `data/arcades.json` is WGS-84 only, always.

@@ -81,6 +81,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ data_raw/ mymaps/
-          git add data/fx_rates.json data/enrichment.json data/china_cities.json
+          git add data/fx_rates.json data/enrichment.json data/china_areas.json
           git diff --cached --quiet || git commit -m "data: automated refresh $(date -u +%F)"
           git push

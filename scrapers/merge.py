@@ -65,14 +65,17 @@ Pipeline rules (see README / task spec):
      which stays lean for the initial page load. See scrapers/enrich.py.
  (l) China approximate placement (scrapers/china_place.py): the ~5.9k
      coordinate-less China rows (wahlap and bemanicn publish no
-     lat/lng) are placed at their city's centroid from
-     data/china_cities.json, flagged "approx": true and noted
-     "position approximate: city-level centroid (<city>)". Runs after
-     geo validation, never touches an entry that already has coords,
-     hard-skips Taiwan, and rejects any city whose province
-     contradicts the entry's. Pins sharing a centroid are fanned out
-     by a deterministic sub-600 m offset - cosmetic only, it encodes
-     no real position. Logged to merge_log.json under "china_approx".
+     lat/lng) are placed at the centroid of the finest administrative
+     unit their address names - the district where one is named, the
+     prefecture-level city otherwise - from data/china_areas.json,
+     flagged "approx": true, tagged "approx_level", and noted
+     "position approximate: <level> centroid (<area>)". Every step is
+     gated by the one above it through the table's parent-id chain,
+     so a district can only ever be matched inside the city already
+     resolved. Runs after geo validation, never touches an entry that
+     already has coords, hard-skips Taiwan / Hong Kong / Macau, and
+     places pins sharing an area on that point exactly rather than
+     fanning them out. Logged to merge_log.json under "china_approx".
 """
 
 import argparse
@@ -90,6 +93,7 @@ import common
 import enrich          # enrichment section (see (k) in run())
 import eviltransform
 import geo_validate
+import geocode_cn     # opt-in street geocode cache (see (l))
 import name_match     # romanization-aware proximity tier (see (c))
 import ziv            # title -> slug lookup for the counts test (see (m))
 
@@ -1660,28 +1664,42 @@ def run(raw_dir, out_dir, updated=None):
     # --- China approximate placement (owner: china-placement agent) ----
     # (l) The two Chinese sources are coordinate-less by construction
     # (wahlap's API returns no lat/lng; bemanicn login-walls its
-    # coordinates), leaving ~5.9k China rows invisible on the map even
-    # though we know their city. china_place resolves each to its city
-    # centroid from data/china_cities.json and marks it "approx": true.
+    # coordinates), leaving ~5.7k China rows invisible on the map even
+    # though their addresses name the district they are in. china_place
+    # resolves each as deep as data/china_areas.json reaches - district
+    # where the address names one, city otherwise - and marks it
+    # "approx": true plus "approx_level".
     # Runs AFTER geo_validation on purpose: validation may null an
     # out-of-country geocode, and such a row then becomes eligible for a
     # centroid here. place_approx() self-guards - it refuses any entry
     # that already has coords (so a real pin is never overwritten and
-    # "approx" is never set on one), any non-China/HK/Macau country, and
-    # anything labeled Taiwan (china_cities.json has no Taiwan rows and a
-    # bare substring match would drop Taiwanese addresses onto the
-    # mainland; ZIv already covers Taiwan with real pins). Unresolved
-    # rows keep lat/lng null. Deliberately NOT touched here: links.gmaps.
+    # "approx" is never set on one), any non-China country, and anything
+    # labeled Taiwan (the table has no Taiwanese cities and a bare
+    # substring match would drop Taiwanese addresses onto the mainland;
+    # ZIv already covers Taiwan with real pins). Unresolved rows keep
+    # lat/lng null. Deliberately NOT touched here: links.gmaps.
     # Coordless entries got a name+address *search* URL above, which is
-    # strictly more useful than a pin 600 m from a city centroid, so the
-    # link must stay as built - do not "sync" it to the new coords.
+    # strictly more useful than a district centroid, so the link must
+    # stay as built - do not "sync" it to the new coords.
     # Note "approx" lands at the end of each entry dict (the key-order
     # comprehension above already ran); that is accepted, not an
     # oversight - geo_validate and this step both operate on `ordered`.
+    # Street-level first, where a committed geocode exists for the address.
+    # Empty in this repo today (nobody has run the opt-in refresh), so this is
+    # a no-op that costs one dict lookup per coordless row; when the cache is
+    # populated it takes those rows out of china_place's hands entirely.
+    geocode_log = geocode_cn.apply_cache(ordered)
+    if geocode_log:
+        print("merge: geocode_cn placed %d coordless China entries from the "
+              "address cache" % len(geocode_log), file=sys.stderr)
     approx_log = china_place.place_arcades(ordered)
     if approx_log:
-        print("merge: china_place placed %d coordless China entries at "
-              "city centroids (approx:true)" % len(approx_log),
+        lv = {}
+        for rec in approx_log:
+            lv[rec["level"]] = lv.get(rec["level"], 0) + 1
+        print("merge: china_place placed %d coordless China entries "
+              "(%d district, %d city; approx:true)"
+              % (len(approx_log), lv.get("district", 0), lv.get("city", 0)),
               file=sys.stderr)
     # --- end China approximate placement ------------------------------
 
@@ -1789,6 +1807,7 @@ def run(raw_dir, out_dir, updated=None):
         "inheritance_log": inherit_log,
         "merge_decision_log": merge_decisions,
         "geo_validation": geo_log,
+        "china_geocoded": geocode_log,
         "china_approx": approx_log,   # owner: china-placement agent
     })
     print("merge: wrote %d arcades to %s" % (len(ordered), out_dir),

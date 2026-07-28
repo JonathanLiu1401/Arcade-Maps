@@ -953,8 +953,28 @@ window.AM = window.AM || {};
       h += row("info", "No map position for this store",
         "Published as an address only. Use Directions to search it.", "muted");
     } else if (a.approx) {
-      h += row("alert", "Position approximate - city level",
-        "Plotted from a converted or city-level coordinate.", "warn");
+      /* Name the level the merge actually reached. "City level" was printed for
+         every approximate pin even after most of them moved to their district,
+         which understates a 10 km improvement and, worse, reads as a promise
+         the district-level pins do not need to make. An address- or
+         street-level pin came from geocoding the published address, so it is
+         about the building: still derived, no longer a guess at an area. */
+      var APPROX_TEXT = {
+        address: ["Position from the address",
+          "The source publishes no coordinates, so this pin was geocoded from "
+          + "the printed address."],
+        street: ["Position from the address - street level",
+          "Geocoded to the road rather than the building, so expect to be a "
+          + "door or two out."],
+        district: ["Position approximate - district level",
+          "The source publishes no coordinates, so this pin is the centre of "
+          + "the district named in the address, not the store."],
+        city: ["Position approximate - city level",
+          "The source publishes no coordinates and the address names no "
+          + "district, so this pin is the centre of the city."]
+      };
+      var t = APPROX_TEXT[a.approx_level] || APPROX_TEXT.city;
+      h += row("alert", t[0], t[1], "warn");
     }
 
     var transit = field(a, e, ["transport", "transit", "access"]);
