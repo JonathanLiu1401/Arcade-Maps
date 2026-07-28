@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="Arcade with 1 to 2 cabinets">
+  <title>Tier 1 - 1 to 2 cabinets</title>
+  <!--
+    T1: a single glossy eighth note. Lowest visual mass in the set, but still
+    styled to match (chunky dark contour, candy gloss) so it reads as the same
+    family rather than a leftover dot.
+
+    Outline technique: the two shapes are drawn TWICE. Pass 1 fills AND strokes
+    them dark, which unions them into one dark blob 1.2u larger than the glyph.
+    Pass 2 refills them with the tint, leaving a clean outer contour and - the
+    point of doing it this way - NO dark seam where the stem meets the notehead.
+
+    fill="currentColor" is inherited from the element the SVG is inlined into.
+    There is deliberately no color/style attribute on this root: a value here
+    would beat the inherited CSS and lock every marker to one colour.
+  -->
+  <g fill="#2A1B3D" stroke="#2A1B3D" stroke-width="2.4" stroke-linejoin="round">
+    <rect x="18.6" y="6.9" width="3.2" height="13.1" rx="1.6"/>
+    <ellipse cx="16.2" cy="20.0" rx="6.0" ry="5.2"/>
+  </g>
+  <g fill="currentColor">
+    <rect x="18.6" y="6.9" width="3.2" height="13.1" rx="1.6"/>
+    <ellipse cx="16.2" cy="20.0" rx="6.0" ry="5.2"/>
+  </g>
+  <!-- candy gloss: fixed white, semi-transparent so it works over any tint -->
+  <ellipse cx="13.6" cy="17.9" rx="2.1" ry="1.5" fill="#FFFFFF" opacity="0.5"
+           transform="rotate(-24 13.6 17.9)"/>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="Mega arcade, 50 or more cabinets">
+  <title>Tier 5 - 50 or more cabinets (mega arcade)</title>
+  <!--
+    T5: the king of the map. An original chibi idol wearing a gold crown, on a
+    fat game-colour disc, with a sparkle burst. Silhouette signature is the
+    CROWN - one wide gold spiky mass across the top - which is what tells T5
+    apart from T4's two separate ears once detail dissolves.
+
+    Deliberately authored in the SAME 0 0 32 32 box as every other tier. A
+    40-box would be an optical-size trap: T5 at 36px in a 40 box is 0.90
+    px/unit versus T4 at 30px in a 32 box = 0.94, so the "bigger" tier would
+    render with SMALLER features. One box everywhere makes the spec's px
+    numbers directly comparable.
+
+    Same colour contract as T4: character fixed-palette, tint is the disc, and
+    the disc is kept fat on purpose (head r=7.4 inside a r=13.0 disc). Same
+    cuteness rules - huge low-set glossy eyes, wide eye gap, filled wedge
+    mouth, no hairline arcs.
+
+    No color/style on the root - see marker-spec.md.
+  -->
+
+  <!-- Sparkle burst behind everything, fixed gold, tucked into the corners the
+       disc does not occupy so it never masks the tint. Every extent is pulled
+       inside the viewBox WITH its 1.0 stroke allowed for (widest point 31.4 +
+       0.5 = 31.9 < 32): an inline <svg> gets overflow:hidden from the UA
+       stylesheet, so anything past 32 would clip to a flat edge in a browser
+       even though a standalone rasteriser might render it. -->
+  <g fill="#FFD93B" stroke="#2A1B3D" stroke-width="1.0" stroke-linejoin="round">
+    <path d="M28.1 2.2 Q28.8 4.8 31.4 5.5 Q28.8 6.2 28.1 8.8
+             Q27.4 6.2 24.8 5.5 Q27.4 4.8 28.1 2.2 Z"/>
+    <path d="M3.4 4.6 Q4.0 6.6 6.0 7.2 Q4.0 7.8 3.4 9.8
+             Q2.8 7.8 0.8 7.2 Q2.8 6.6 3.4 4.6 Z"/>
+    <path d="M28.8 24.9 Q29.3 26.7 31.1 27.2 Q29.3 27.7 28.8 29.5
+             Q28.3 27.7 26.5 27.2 Q28.3 26.7 28.8 24.9 Z"/>
+  </g>
+
+  <!-- game-colour disc: the ONLY tinted element, kept deliberately fat -->
+  <circle cx="16" cy="17.0" r="13.0" fill="currentColor"
+          stroke="#2A1B3D" stroke-width="2.2"/>
+  <path d="M6.4 9.6 Q10.2 5.4 16 5.4 Q21.8 5.4 25.6 9.6 Q21.0 12.4 16 12.4 Q11.0 12.4 6.4 9.6 Z"
+        fill="#FFFFFF" opacity="0.28"/>
+
+  <!-- twin side-tails, tucked close to the head -->
+  <g fill="#9B5DE5" stroke="#2A1B3D" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M10.4 17.4 Q6.2 18.6 6.4 23.4 Q8.6 21.4 11.2 22.0 Z"/>
+    <path d="M21.6 17.4 Q25.8 18.6 25.6 23.4 Q23.4 21.4 20.8 22.0 Z"/>
+  </g>
+
+  <!-- head -->
+  <circle cx="16" cy="19.2" r="7.4" fill="#FFE8D2" stroke="#2A1B3D" stroke-width="1.7"/>
+  <!-- bangs -->
+  <path d="M8.8 17.6 A 7.4 7.4 0 0 1 23.2 17.6
+           Q21.2 15.0 19.1 16.8 Q17.3 14.3 14.7 16.6 Q11.9 14.7 10.2 17.2 Z"
+        fill="#9B5DE5"/>
+
+  <!-- crown: one wide gold spiky mass, the T5 signature -->
+  <path d="M9.0 15.4 L11.4 12.9 L13.6 9.0 L16.0 12.4
+           L18.4 9.0 L20.6 12.9 L23.0 15.4 Z"
+        fill="#FFD93B" stroke="#2A1B3D" stroke-width="1.7" stroke-linejoin="round"/>
+  <circle cx="16" cy="13.9" r="1.1" fill="#FF4FA3" stroke="#2A1B3D" stroke-width="0.7"/>
+
+  <!-- Big glossy eyes, low-set, wide gap. Highlight kept small (0.58) so it
+       glints instead of hollowing the eye out - see tier4.svg. -->
+  <g fill="#2A1B3D">
+    <ellipse cx="12.9" cy="20.4" rx="1.75" ry="2.3"/>
+    <ellipse cx="19.1" cy="20.4" rx="1.75" ry="2.3"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="12.3" cy="19.5" r="0.58"/>
+    <circle cx="18.5" cy="19.5" r="0.58"/>
+  </g>
+  <!-- Open joyful mouth: solid "D" mass, not a thin arc - see tier4.svg. -->
+  <path d="M14.5 23.1 L17.5 23.1 Q17.5 25.6 16 25.6 Q14.5 25.6 14.5 23.1 Z"
+        fill="#2A1B3D"/>
+  <!-- blush -->
+  <g fill="#FF7BB8" opacity="0.8">
+    <ellipse cx="10.8" cy="22.2" rx="1.45" ry="1.0"/>
+    <ellipse cx="21.2" cy="22.2" rx="1.45" ry="1.0"/>
+  </g>
+</svg>

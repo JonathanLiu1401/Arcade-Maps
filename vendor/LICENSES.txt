@@ -13,5 +13,14 @@ Vendored third-party libraries (no CDN at runtime):
   Note: upstream dist JS ships without an embedded license header; license
   text is at the repository above.
 
+- Leaflet.SmoothWheelZoom (SmoothWheelZoom.js)
+  (c) 2019 mutsuyuki
+  MIT. https://github.com/mutsuyuki/Leaflet.SmoothWheelZoom
+  Source: SmoothWheelZoom.js at the repository above (master).
+  Note: locally adapted for Leaflet 1.9.4 - three robustness fixes marked
+  "AM fix" in the file header (dead animation loop when the pointer sits on
+  the map centre, deadlock when the map moves mid-gesture, duplicate
+  moveEnd from an uncleared idle timer). Upstream zoom maths is unchanged.
+
 Map tiles are loaded at runtime from https://tile.openstreetmap.org
 ((c) OpenStreetMap contributors, ODbL) and are not part of this repository.

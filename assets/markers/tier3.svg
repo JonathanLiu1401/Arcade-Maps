@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="Arcade with 10 to 19 cabinets">
+  <title>Tier 3 - 10 to 19 cabinets</title>
+  <!--
+    T3: a chunky five-point star. Convex-vs-spiky is the strongest silhouette
+    break available against T2's square pad, and the star still reads as a
+    star at 20px because the points are short and fat (inner radius is 47% of
+    the outer, not the thin 38% of a classic pentagram).
+
+    Star path generated with inner/outer radii 11.4 / 5.4 about (16, 16.4),
+    first point straight up. stroke-linejoin="round" keeps the tips from
+    growing into needles when the 2.4u contour is applied.
+
+    No color/style on the root - see tier1.svg for why.
+  -->
+  <path d="M 16.00 5.00 L 19.17 12.03 L 26.84 12.88 L 21.14 18.07 L 22.70 25.62
+           L 16.00 21.80 L 9.30 25.62 L 10.86 18.07 L 5.16 12.88 L 12.83 12.03 Z"
+        fill="currentColor" stroke="#2A1B3D" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- gloss on the upper-left lobe, fixed white over any tint -->
+  <path d="M13.9 10.6 Q15.0 7.8 16.0 7.4 Q16.4 9.6 15.6 11.6 Q14.5 11.3 13.9 10.6 Z"
+        fill="#FFFFFF" opacity="0.5"/>
+</svg>
