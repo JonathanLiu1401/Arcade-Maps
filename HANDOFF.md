@@ -85,8 +85,9 @@ Also fixed this session:
 ## Decisions on record
 
 - Counts honesty: never render a number the source did not actually publish.
-  ZIv all-1s rows are placeholders and are dropped; unknown counts get their
-  own marker at mid weight, never the smallest.
+  A ZIv tally counts list rows, not machines, so it survives only where a
+  title repeats; everything else is a placeholder and is dropped. Unknown
+  counts get their own marker at mid weight, never the smallest.
 - Owner style refs: SEGA otoge promo banners (markers), Google Maps place panel
   (information architecture only, original visuals), Claude desktop settings
   modal.

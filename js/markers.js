@@ -73,10 +73,11 @@ window.AM = window.AM || {};
   /* Which sources are allowed to put a NUMBER on the map.
 
      BemaniCN publishes true per-game quantities. ZIv quantities survive into
-     the data only where the merge found at least one count >= 2, because a ZIv
-     page that lists every game as "1" is a placeholder for "this game is here"
-     rather than a census (see scrapers/). Everything else - the official store
-     lists above all - has no counts at all and must land in TU.
+     the data only where the merge found a repeated machine title, because a
+     ZIv page is a list of what is there rather than a census: every game shows
+     as "1", and two versions of one game show as "2" (see scrapers/).
+     Everything else - the official store lists above all - has no counts at
+     all and must land in TU.
 
      Reading counts_src rather than merely "is game_counts present" keeps that
      policy in ONE place: if a future source starts emitting counts we do not

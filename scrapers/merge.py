@@ -36,18 +36,22 @@ Pipeline rules (see README / task spec):
      ziv where only it does, max where both do). A counted slug is
      always added to games; entries with no counted slug carry no
      game_counts key.
- (m) counts confidence: a ZIv per-game count of exactly 1 is a
-     PLACEHOLDER (its payload lists one row per game version, so any
-     title the arcade merely has tallies to 1), while bemanicn counts
+ (m) counts confidence: a ZIv per-game tally is a PLACEHOLDER unless
+     the row proves otherwise (its payload lists one row per game
+     version, so any title the arcade merely has tallies to 1, and two
+     versions - or two titles sharing one slug, GuitarFreaks and
+     DrumMania under `gitadora` - tally to 2), while bemanicn counts
      are true per-title 台数. Every entry whose members reported counts
      is therefore tagged "counts_src": bemanicn wins when both sources
-     contributed; ziv-only counts survive when ANY slug is >= 2 (a 2
-     proves the list was really tallied, so that entry's 1s are real
-     1s); ziv-only counts that are ALL 1 are dropped entirely with
-     counts_src null, so placeholder data never renders as "x1". The
-     key is absent when no source counted at all, keeping "suppressed
-     placeholder" distinguishable from "never counted". Dropping a
-     count never drops the game - games is unioned first.
+     contributed; ziv-only counts survive when some slug counts MORE
+     machines than that row lists distinct titles for it, which means a
+     title is repeated and the list was entered machine by machine (so
+     that entry's 1s are real 1s too - see _ziv_counts_tallied); every
+     other ziv-only count is dropped entirely with counts_src null, so
+     placeholder data never renders as "x1". The key is absent when no
+     source counted at all, keeping "suppressed placeholder"
+     distinguishable from "never counted". Dropping a count never drops
+     the game - games is unioned first.
  (j) source-aware geo validation (scrapers/geo_validate.py): after
      country resolution, every entry with coords is checked against
      the labeled country's bbox. Official sources (allnet/eagate/
@@ -87,6 +91,7 @@ import enrich          # enrichment section (see (k) in run())
 import eviltransform
 import geo_validate
 import name_match     # romanization-aware proximity tier (see (c))
+import ziv            # title -> slug lookup for the counts test (see (m))
 
 GAME_SLUGS = [
     "maimai_dx", "chunithm", "ongeki", "project_diva", "sdvx", "iidx",
@@ -528,6 +533,52 @@ def _dedupe_key(s):
     return " ".join(unicodedata.normalize("NFKC", s or "").split())
 
 
+_ZIV_CABS_PREFIX = "Cabs: "
+
+
+def _ziv_counts_tallied(note, game_counts):
+    """True when a ZIv row's counts are a real machine tally (see (m)).
+
+    ZIv publishes a list of machines, so ziv.py tallies one per list entry
+    and a slug reaches 2 in two very different ways. Two machines of the
+    same title is a quantity the source actually asserted. Two DIFFERENT
+    titles that happen to share one of our slugs is not: GuitarFreaksV7 and
+    DrumManiaV7 both fold into `gitadora`, DDR A3 and DDR WORLD both fold
+    into `ddr`, and a venue with one of each has one cabinet of each. The
+    older "any slug >= 2" test could not tell those apart and published the
+    second as a count.
+
+    The row's "Cabs:" note is the same title list de-duplicated, so
+    comparing a slug's count against the number of distinct titles mapping
+    to it separates them: strictly more machines than titles means some
+    title is listed twice, and a list only repeats a title when it was
+    entered machine by machine. That makes the whole row a tally, which is
+    why the caller then keeps its 1s too - on a machine-level list a 1
+    really is one machine.
+
+    A slug that no title maps to is skipped rather than read as evidence.
+    Titles reach their slug by seriesID as well as by name and the note
+    carries no IDs, so 0 titles means the name lookup missed, not that the
+    count came from nowhere. GAME_PATTERNS covers every such title in the
+    committed crawl (it gained `Wadaiko Master`, `PercussionFreaks`,
+    `ノスタルジア` and the rest for exactly this reason), so the guard is
+    dead weight today and stays only because the next crawl can introduce a
+    spelling it has never seen. Skipping costs a suppressed real tally;
+    trusting it would invent one.
+    """
+    if not game_counts or not note or not note.startswith(_ZIV_CABS_PREFIX):
+        return False
+    titles_per_slug = {}
+    for title in note[len(_ZIV_CABS_PREFIX):].split("; "):
+        title = title.strip()
+        if not title:
+            continue
+        for slug in ziv.slugs_for_title(title):
+            titles_per_slug[slug] = titles_per_slug.get(slug, 0) + 1
+    return any(titles_per_slug.get(slug, 0) and n > titles_per_slug[slug]
+               for slug, n in game_counts.items())
+
+
 def load_units(raw_dir, stats):
     """Load all raw files -> deduped source units."""
     units = {}   # (source, normalized name, normalized addr) -> unit
@@ -556,7 +607,8 @@ def load_units(raw_dir, stats):
                  "country": country, "pref": pref, "ziv_url": ziv_url,
                  "notes": [], "coord_system": coord_system,
                  "cn_prov": cn_prov, "cn_city": cn_city,
-                 "bemanicn_url": bemanicn_url, "game_counts": {}}
+                 "bemanicn_url": bemanicn_url, "game_counts": {},
+                 "counts_tallied": False}
             units[key] = u
         else:
             stats.within_dupes += 1
@@ -579,6 +631,11 @@ def load_units(raw_dir, stats):
             if n > u["game_counts"].get(slug, 0):
                 u["game_counts"][slug] = n
         u["games"].update(gc)
+        # (m) one tallied row is enough: the flag rides the unit through
+        # within-source dedupe, so a listing split across two rows keeps
+        # its evidence.
+        if source == "ziv" and _ziv_counts_tallied(note, gc):
+            u["counts_tallied"] = True
         if note and note not in u["notes"]:
             u["notes"].append(note)
 
@@ -1503,22 +1560,27 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "notes": note_str,
     }
     # ---- BEGIN counts confidence (owner: counts-honesty agent) -------
-    # (m) A ZIv per-game count of exactly 1 is NOT a measured quantity.
+    # (m) A ZIv per-game tally is NOT a measured quantity by default.
     # ZIv's payload is a machine LIST and one row per game version is the
     # baseline shape, so tallying it yields 1 for any title the arcade
-    # merely HAS. Rendering that as "x1" states a fact the source never
-    # asserted. BemaniCN counts are real 台数 (a per-title `quantity`
-    # field), so they are always trustworthy.
+    # merely HAS - and 2 for any arcade that merely has two versions, or
+    # two titles we fold into one slug. Rendering either as a count states
+    # a fact the source never asserted. BemaniCN counts are real 台数 (a
+    # per-title `quantity` field), so they are always trustworthy.
     #
     # Rule, applied after the per-slug max above so no count is lost
     # before the decision:
     #   bemanicn contributed          -> keep, counts_src "bemanicn"
     #                                    (bemanicn WINS when both did)
-    #   ziv only, any slug >= 2       -> keep ALL its counts, "ziv".
-    #                                    A 2 proves someone really
-    #                                    tallied that arcade's list, so
-    #                                    its 1s are then real 1s too.
-    #   ziv only, every slug == 1     -> DROP game_counts entirely and
+    #   ziv only, some slug counts    -> keep ALL its counts, "ziv". A
+    #     MORE machines than it has      repeated title proves the list
+    #     distinct titles               was entered machine by machine,
+    #                                    so its 1s are then real 1s too.
+    #                                    See _ziv_counts_tallied: a bare
+    #                                    2 does NOT prove this, because
+    #                                    GuitarFreaks + DrumMania are two
+    #                                    titles under one `gitadora`.
+    #   ziv only, no repeated title   -> DROP game_counts entirely and
     #                                    set counts_src null. Placeholder
     #                                    -only data must not render.
     # counts_src is written ONLY when some source reported counts:
@@ -1541,7 +1603,7 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
             "source before shipping it" % (sorted(unexpected), best["name"]))
         if "bemanicn" in counts_contributors:
             counts_src = "bemanicn"
-        elif any(n >= 2 for n in game_counts.values()):
+        elif any(u["counts_tallied"] for u in members):
             counts_src = "ziv"
         else:
             # placeholder-only: drop the quantities, keep the games.
@@ -1642,6 +1704,10 @@ def run(raw_dir, out_dir, updated=None):
             if cs is None:
                 assert a["games"], a["name"]
             if cs == "ziv":
+                # necessary, not sufficient: a kept row has some slug with
+                # more machines than titles, so that slug is >= 2. The
+                # real test lives in _ziv_counts_tallied, which needs the
+                # per-row title list this loop no longer has.
                 assert any(n >= 2 for n in gc.values()), (a["name"], gc)
         else:
             assert "game_counts" not in a, a["name"]

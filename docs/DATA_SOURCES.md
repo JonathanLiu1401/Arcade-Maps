@@ -138,7 +138,7 @@ This is the most dangerous silent-dropout in the whole pipeline. Spelling the Un
 
 JSON; each arcade carries an id, name, address parts (address / city / state / postalcode), latitude / longitude, an info text, and a machine list whose entries hold a nested `game` object (`{name, seriesID, genre, ...}`). Machines are mapped to canonical game slugs primarily by `game.seriesID` (`USA_SERIES` in `scrapers/ziv.py`), falling back to name-substring patterns; unrecognized machines map to `other`.
 
-**Machine counts:** yes - each arcade's machine list is tallied per mapped slug into `game_counts` (one machine list entry = one machine; cabs that only map to `other` are not counted).
+**Machine counts:** yes, but most of them do not survive the merge - each arcade's machine list is tallied per mapped slug into `game_counts` (one machine list entry = one machine; cabs that only map to `other` are not counted), and the list is a record of what a venue has rather than how many it has. A store that owns one of each game tallies to 1 everywhere, and one that owns GuitarFreaks plus DrumMania tallies `gitadora: 2` off two single cabinets. `merge.py` therefore keeps a ZIv row's counts only when some slug counts more machines than the row lists distinct titles for it, which happens only when a title is listed twice and so proves the list was entered machine by machine. 466 of 2,809 counted ZIv rows clear that bar; the rest ship with `counts_src: null` and no numbers.
 
 **Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,953** merged source rows under `ziv` in `data/stats.json`. Includes Taiko no Tatsujin and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
 

@@ -105,18 +105,35 @@ USA_EXTRA_SERIES = [7, 8, 18, 766, 1281, 1536]
 
 # Substring -> canonical slug fallback mapping for ZIV cab/game titles
 # (used when the machine's game.seriesID is not in USA_SERIES).
+#
+# Regional and script variants of a title belong here even when seriesID
+# already covers them, because merge.py's counts test (see
+# `slugs_for_title`) has only the title text to work from: a variant this
+# table misses looks like a title that maps to no game at all, and one
+# unmapped variant sitting beside its own sibling ("GUITARFREAKS" plus
+# "PercussionFreaks") is what makes two separate cabinets read as a tally
+# of two.
 GAME_PATTERNS = [
     ("dancedancerevolution", "ddr"), ("dance dance revolution", "ddr"),
+    ("dancing stage", "ddr"),   # DDR's European branding
     ("beatmania iidx", "iidx"), ("pop'n music", "popn"), ("popn music", "popn"),
     ("guitarfreaks", "gitadora"), ("drummania", "gitadora"),
+    ("percussionfreaks", "gitadora"),   # GuitarFreaks' export drum sibling
+    ("狂熱鼓手", "gitadora"), ("狂热鼓手", "gitadora"),   # DrumMania (zh)
     ("gitadora", "gitadora"), ("jubeat", "jubeat"),
+    ("ubeat", "jubeat"),        # jubeat's Korean release title
     ("太鼓の達人", "taiko"), ("taiko no tatsujin", "taiko"),
+    ("wadaiko master", "taiko"),   # Taiko's western release title
     ("sound voltex", "sdvx"), ("maimai", "maimai_dx"),
+    ("舞萌", "maimai_dx"),      # maimai's Chinese title
     ("chunithm", "chunithm"), ("museca", "museca"),
-    ("nostalgia", "nostalgia"), ("dancerush", "drs"),
+    ("múseca", "museca"),       # the accented spelling ZIv actually uses
+    ("nostalgia", "nostalgia"), ("ノスタルジア", "nostalgia"),
+    ("dancerush", "drs"),
     ("dance around", "dance_around"), ("dance around", "dance_around"),
     ("ongeki", "ongeki"), ("オンゲキ", "ongeki"),
-    ("polaris chord", "polaris_chord"), ("project diva", "project_diva"),
+    ("polaris chord", "polaris_chord"), ("ポラリスコード", "polaris_chord"),
+    ("project diva", "project_diva"),
     ("danceevolution", "dance_evo"), ("reflec beat", "reflec"),
 ]
 
@@ -276,6 +293,19 @@ def _machine_slugs(nm, sid):
         if pat in low or pat in nm:
             slugs.add(slug)
     return slugs
+
+
+def slugs_for_title(name):
+    """Canonical slugs a cab TITLE alone maps to, with no seriesID to help.
+
+    Public because merge.py has to re-derive per-slug title counts from the
+    committed "Cabs:" note (the raw row keeps the title list nowhere else) to
+    tell a real machine tally from two different titles sharing one slug. It
+    is deliberately the weaker of the two lookups: a title the name patterns
+    miss returns nothing rather than guessing, and the caller treats that as
+    "no evidence" instead of as a count from nowhere.
+    """
+    return _machine_slugs(name, None)
 
 
 def _slugs_for_machines(machines):

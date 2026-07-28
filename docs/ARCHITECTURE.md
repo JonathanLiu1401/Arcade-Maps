@@ -105,13 +105,17 @@ After merge returns, `run_all.py` rebuilds My Maps, then runs `fx.run` into `dat
           some source reported counts for this arcade. Names which
           source the surviving game_counts came from; BemaniCN wins
           when both contributed. null means counts existed but were
-          ZIv placeholders (every per-game tally == 1, which is ZIv's
-          baseline one-row-per-game-version shape rather than a real
-          quantity) and were DROPPED, so game_counts is absent and
-          nothing renders as "x1". ZIv counts survive only when some
-          slug is >= 2, which proves the list was really tallied. Key
-          absent entirely = no source ever counted this arcade, which
-          is distinct from a suppressed placeholder.
+          ZIv placeholders (ZIv lists one row per game version, so a
+          store that merely HAS a game tallies to 1 for it, and one
+          that has two versions - or two titles sharing a slug, like
+          GuitarFreaks and DrumMania under gitadora - tallies to 2)
+          and were DROPPED, so game_counts is absent and nothing
+          renders as "x1". ZIv counts survive only where some slug
+          counts MORE machines than that row lists distinct titles for
+          it: a repeated title is the one thing that proves the list
+          was entered machine by machine. Key absent entirely = no
+          source ever counted this arcade, which is distinct from a
+          suppressed placeholder.
           Invariant: game_counts present <=> counts_src is non-null.
           Dropping counts never drops games),
    "cabs": [variant slugs among: sdvx_vm, iidx_lm, ddr_gold,
