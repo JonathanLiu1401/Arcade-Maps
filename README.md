@@ -1,5 +1,7 @@
 # Arcade Maps
 
+## **[Open the live map](https://jonathanliu1401.github.io/Arcade-Maps/)**
+
 [![Last data update](https://img.shields.io/github/last-commit/JonathanLiu1401/Arcade-Maps?label=last%20data%20update)](https://github.com/JonathanLiu1401/Arcade-Maps/commits)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
