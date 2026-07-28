@@ -1107,6 +1107,68 @@ def cluster_units(units, log):
         if not merged_any:
             break
 
+    # ---- branch-suffix tier: "Game Zone" vs "Game Zone (Mong Kok)" ----
+    #
+    # One source publishes the bare venue name and the other appends a branch
+    # qualifier in parentheses. Reported from Hong Kong: ZIv's "Game Zone" and
+    # ALL.Net's "GAMEZONE(MONG KOK)" are both B/F, 65 Argyle St, Mong Kok, but
+    # they are 172 m apart with a name similarity below the 0.6 the fuzzy rule
+    # needs, and no exact-name key can match them either - the whole point of
+    # keeping parentheses is that the two forms differ.
+    #
+    # So this compares the bare name against the other side's PAREN-STRIPPED
+    # name, which is the one comparison the tiers above deliberately refuse to
+    # make. Refusing it is right in general: "GiGO" would otherwise match every
+    # GiGO branch. What makes it safe here is the ambiguity guard - a bare-name
+    # row is merged only when it has exactly ONE candidate inside the radius,
+    # and that candidate has only it. A bare "GiGO" sitting between two GiGO
+    # branches has two candidates and is left alone, which is the case the
+    # guard exists for.
+    #
+    # Measured over the whole dataset: 7 qualifying pairs, none ambiguous, and
+    # every one a single venue (Hong Kong's Game Zone, Taiwan's Rhythm Arena,
+    # Laser Bounce Glendale, Indah Family Centre, and three Chinese venues
+    # where BemaniCN parenthesises a mall or a former name).
+    BRANCH_SUFFIX_MAX_M = 600.0
+
+    branch_cands = {}   # unit -> list of (dist, other)
+    base_index = {}
+    for i, u in enumerate(units):
+        if u["lat"] is None:
+            continue
+        base = compact_name(u["name"])
+        if len(base) >= NAME_EXACT_MIN_LEN:
+            base_index.setdefault((u["country"], base), []).append(i)
+
+    for (_country, _base), idxs in base_index.items():
+        if len(idxs) < 2:
+            continue
+        bare = [i for i in idxs if not name_match.paren_inner(units[i]["name"])]
+        qual = [i for i in idxs if name_match.paren_inner(units[i]["name"])]
+        for i in bare:
+            for j in qual:
+                if units[i]["source"] == units[j]["source"]:
+                    continue
+                if uf.find(i) == uf.find(j):
+                    continue
+                d = haversine_m(units[i]["lat"], units[i]["lng"],
+                                units[j]["lat"], units[j]["lng"])
+                if d >= BRANCH_SUFFIX_MAX_M:
+                    continue
+                branch_cands.setdefault(i, []).append((d, j))
+                branch_cands.setdefault(j, []).append((d, i))
+
+    for i, cand in sorted(branch_cands.items()):
+        if len(cand) != 1:
+            continue                      # ambiguous: this row has rivals
+        d, j = cand[0]
+        if len(branch_cands.get(j, [])) != 1:
+            continue                      # the partner has rivals of its own
+        if uf.union(i, j):
+            log.append({"rule": "exact-name-branch-suffix",
+                        "distance_m": round(d, 1),
+                        "a": unit_ref(i), "b": unit_ref(j)})
+
     # same-source near-duplicates (audit D3): one source listing the
     # same physical store twice with cosmetically different address
     # strings (Woking Superbowl, Funworld Sun East Mall). Very tight:

@@ -13,7 +13,7 @@ shipped v1 site on GitHub Pages. Pages deploys from main root.
 ## Done and verified
 
 Data:
-- `data/arcades.json`: 13,532 arcades, 68 countries. Romanization-aware
+- `data/arcades.json`: 13,528 arcades, 68 countries. Romanization-aware
   cross-source dedupe (191 merges, `scrapers/name_match.py`), `geo_validate.py`
   source-aware bad-pin rejection, China city-centroid approx placement (5,721
   entries `approx: true`, `scrapers/china_place.py`), `counts_src` honesty tags.
@@ -76,7 +76,7 @@ Also fixed this session:
   #11628/#11629 (both "Hollywood Bowl Ashford", 47.1 m apart, just outside
   `merge.py`'s 30 m same-source window). Left alone on purpose: loosening that
   window or the same-source name rule to catch two pairs risks over-merging
-  genuinely distinct neighbours across 13,532 entries, and that needs a full
+  genuinely distinct neighbours across 13,528 entries, and that needs a full
   re-run with a dedupe audit rather than a threshold nudge.
 - `.design-review/` blobs remain in git history from the earlier checkpoint
   commit even though the directory is gone from the tree. Reclaiming the 26 MB

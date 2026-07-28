@@ -310,9 +310,9 @@
   "bemanicn": 3567,
   "ziv": 769,
   "null_placeholder_dropped": 1915,
-  "absent_never_counted": 7281
+  "absent_never_counted": 7277
  },
- "cross_source_merges": 3057,
+ "cross_source_merges": 3061,
  "coord_inheritances": 122,
  "country_conflicts": [],
  "inheritance_log": [
@@ -30324,6 +30324,62 @@
    }
   },
   {
+   "rule": "exact-name-branch-suffix",
+   "distance_m": 503.5,
+   "a": {
+    "src": "allnet",
+    "name": "RHYTHM ARENA(KAOHSIUNG)",
+    "addr": "No.86-1, Zhonghua 3rd Rd.Qianjin Dist.,Kaohsiung City 801615"
+   },
+   "b": {
+    "src": "ziv",
+    "name": "Rhythm Arena",
+    "addr": "No. 86-1 Zhonghua 3rd Rd. Qianjin Dist. Kaohsiung City, 801, Qianjin Dist."
+   }
+  },
+  {
+   "rule": "exact-name-branch-suffix",
+   "distance_m": 171.8,
+   "a": {
+    "src": "allnet",
+    "name": "GAMEZONE(MONG KOK)",
+    "addr": "BF., ARGYLE CENTRE PHASE I,65 ARGYLE ST, MONGKOK, KOWLOON"
+   },
+   "b": {
+    "src": "ziv",
+    "name": "Game Zone",
+    "addr": "B/F 65 Argyle St 旺角 (Mong Kok) 九龍 (Kowloon), 旺角 (Mong Kok)"
+   }
+  },
+  {
+   "rule": "exact-name-branch-suffix",
+   "distance_m": 146.8,
+   "a": {
+    "src": "allnet",
+    "name": "INDAH FAMILY CENTRE",
+    "addr": "L1-13A-13B, JALAN MANIS 6 TAMANBUKIT SEGAR 56100"
+   },
+   "b": {
+    "src": "ziv",
+    "name": "Indah Family Centre (Cheras LeisureMall)",
+    "addr": "L1-13A & 13B, Cheras LeisureMall, Jalan Manis 6, Taman Bukit Segar, Kuala Lumpur Wilayah Persekutuan Kuala Lumpur, 56100, Kuala Lumpur"
+   }
+  },
+  {
+   "rule": "exact-name-branch-suffix",
+   "distance_m": 179.8,
+   "a": {
+    "src": "allnet",
+    "name": "LASER BOUNCE",
+    "addr": "80-28 COOPER AVE #6-004 GLENDALE NY11385"
+   },
+   "b": {
+    "src": "ziv",
+    "name": "Laser Bounce (Glendale)",
+    "addr": "80-28 Cooper Avenue Glendale New York, 11385, Glendale"
+   }
+  },
+  {
    "rule": "same-source-dup",
    "distance_m": 20.1,
    "a": {
@@ -47452,7 +47508,7 @@
    "to_country": "Czechia"
   },
   {
-   "id": 9737,
+   "id": 9735,
    "name": "MOLLYFANTASY MAYANG MALL",
    "src": [
     "allnet"
@@ -47471,7 +47527,7 @@
    "previous_lng": 92.0407904
   },
   {
-   "id": 10268,
+   "id": 10266,
    "name": "QUANTUM SM PAMPANGA",
    "src": [
     "allnet"
@@ -47488,7 +47544,7 @@
    "previous_lng": -121.8852525
   },
   {
-   "id": 10662,
+   "id": 10660,
    "name": "Arcade @ Elegante Mall",
    "src": [
     "ziv"
@@ -47504,7 +47560,7 @@
    "to_country": "Nigeria"
   },
   {
-   "id": 10789,
+   "id": 10787,
    "name": "VAMS MUSIC/SPORT",
    "src": [
     "ziv"
@@ -47521,7 +47577,7 @@
    "to_country": "Japan"
   },
   {
-   "id": 10999,
+   "id": 10996,
    "name": "SHIRONEKOYA 白喵一番屋 台北店",
    "src": [
     "ziv"
@@ -47537,7 +47593,7 @@
    "to_country": "Australia"
   },
   {
-   "id": 11020,
+   "id": 11017,
    "name": "TOM'S WORLD (HAIDIAN-LI@TAINAN))",
    "src": [
     "allnet"
@@ -47554,7 +47610,7 @@
    "previous_lng": 116.298326
   },
   {
-   "id": 11216,
+   "id": 11213,
    "name": "Adventure Island",
    "src": [
     "ziv"
@@ -47570,7 +47626,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11221,
+   "id": 11218,
    "name": "Iceland",
    "src": [
     "ziv"
@@ -47586,7 +47642,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11226,
+   "id": 11223,
    "name": "PlayOcity",
    "src": [
     "ziv"
@@ -47602,7 +47658,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11230,
+   "id": 11227,
    "name": "Sparky's",
    "src": [
     "ziv"
@@ -47618,7 +47674,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11234,
+   "id": 11231,
    "name": "Vuvuzella Park",
    "src": [
     "ziv"
@@ -47634,7 +47690,7 @@
    "to_country": "Egypt"
   },
   {
-   "id": 12860,
+   "id": 12856,
    "name": "Micronesia Mall - Fun Fair",
    "src": [
     "ziv"
@@ -47650,7 +47706,7 @@
    "to_country": "Guam"
   },
   {
-   "id": 13496,
+   "id": 13492,
    "name": "KIDS BOX&TINY MF AEON TAN AN",
    "src": [
     "allnet"
