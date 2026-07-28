@@ -53,10 +53,19 @@ One weekly GitHub Action (see `docs/UPDATING.md`) runs scrape -> merge (includin
    form is never a key, so `GiGO(1号館)` and `GiGO(2号館)` cannot collapse.
    The same matcher backs the coordinate-less path, which is the only tier
    mainland China rows reach (their sources publish addresses without coords,
-   and `china_place` runs after merge)
+   and `china_place` runs after merge).
+   `hk-street-number` handles Hong Kong and Macau, where BemaniCN publishes a
+   precise Chinese address and no coordinate while the official sources publish
+   the same venue in English with one. No name rule can bridge
+   `168遊戲機中心` and `168 GAME CENTRE`, but the STREET NUMBER survives
+   translation and is specific in a territory that dense. Unit codes are
+   excluded (`SHOP A15` made three rows collide on "15"), bare numbers below 10
+   are ignored, and ambiguity is counted per CLUSTER rather than per unit,
+   because a venue already merged from two sources would otherwise look like
+   two rival partners and block itself
 3. Assign sequential ids after sort by country, name, address
 4. **`geo_validate`** - source-aware country vs bounding-box checks (official: null bad geocodes; community: fix wrong country labels)
-5. **`china_place`** - for remaining coordinate-less China rows, resolve city centroid from `data/china_cities.json`, jitter cosmetically, set `approx: true` (never overwrites a real pin; never places Taiwan from this table)
+5. **`china_place`** - for remaining coordinate-less MAINLAND China rows, resolve city centroid from `data/china_cities.json`, jitter cosmetically, set `approx: true` (never overwrites a real pin). Taiwan, Hong Kong and Macau are refused outright: the 香港 centroid is in Victoria Harbour, so approximating there put a scatter of pins in the water rather than on any street, and those territories are covered with real pins by ALL.Net, e-amusement and ZIv anyway
 6. Write `data/arcades.json` + `data/stats.json`
 7. **`enrich.build_enrichment`** - join raw BemaniCN/ZIv extras onto merged ids via `links.*` URLs; write `data/enrichment.json` (does not mutate arcade rows)
 8. Write `data/merge_log.json` (includes `geo_validation` and `china_approx` logs)
@@ -149,7 +158,7 @@ Kept **separate** from `arcades.json` so the file every visitor downloads on fir
 Rationale for the split:
 
 - Free-text opening hours, venue info and per-machine price strings are bulky relative to name/address/coords, and the parsers can emit transit prose (BemaniCN) and photo URL lists (either source) on top of that when a crawl reaches them.
-- Only about half of arcades have anything enrichable (6,521 of 13,528 in the current build); a sparse side file avoids null-padding 13k rows.
+- Only about half of arcades have anything enrichable (6,521 of 13,512 in the current build); a sparse side file avoids null-padding 13k rows.
 - Enrichment goes stale on a different clock from the arcade rows, so each entry carries its own `enriched_at` and the whole file can be replaced without touching `arcades.json`.
 
 Shape (see also `scrapers/enrich.py` docstring and `docs/DATA_SOURCES.md` section 10):
@@ -168,7 +177,7 @@ Shape (see also `scrapers/enrich.py` docstring and `docs/DATA_SOURCES.md` sectio
  }}}
 ```
 
-What ships today is ZIv-only: 6,521 of 13,528 arcades have an entry, with `hours_text` on 5,211, `info_text` on 4,207, `website` on 4,092 and `machine_prices` on 2,414, and every tag in `sources` reads `"ziv"`. `scrapers/enrich.py` also parses `transport`, `price_text`, `pay_type`, `hours`, `images`, `fav_count`, `game_prices` and `game_versions`. Of those the place panel actually renders `transport`, `hours`, `price_text`, `game_prices` and `images`; `pay_type`, `fav_count` and `game_versions` are parsed and stored but never displayed. Seven of the eight are BemaniCN-only, and `counts.bemanicn_rows_contributed` in the current file is 0 against 3,812 rows available. `images` is the exception: it can come from either source (BemaniCN `image_thumb` or ZIv `pictures`), but the committed ZIv crawl ran with `skip_pictures`, so no row carries a `pictures` key. The net effect is the same - no transit text, no image URL, no favourite count and no coin/token pricing on disk right now. Those fields are pipeline capability, not data the site can count on.
+What ships today is ZIv-only: 6,521 of 13,512 arcades have an entry, with `hours_text` on 5,211, `info_text` on 4,207, `website` on 4,092 and `machine_prices` on 2,414, and every tag in `sources` reads `"ziv"`. `scrapers/enrich.py` also parses `transport`, `price_text`, `pay_type`, `hours`, `images`, `fav_count`, `game_prices` and `game_versions`. Of those the place panel actually renders `transport`, `hours`, `price_text`, `game_prices` and `images`; `pay_type`, `fav_count` and `game_versions` are parsed and stored but never displayed. Seven of the eight are BemaniCN-only, and `counts.bemanicn_rows_contributed` in the current file is 0 against 3,812 rows available. `images` is the exception: it can come from either source (BemaniCN `image_thumb` or ZIv `pictures`), but the committed ZIv crawl ran with `skip_pictures`, so no row carries a `pictures` key. The net effect is the same - no transit text, no image URL, no favourite count and no coin/token pricing on disk right now. Those fields are pipeline capability, not data the site can count on.
 
 `hours_text` is ZIv's 7-day table rendered Mon-first. Days ZIv reports as zero-length (`["00:00","00:00",false]`, its shape for "nobody recorded this") are rejected rather than formatted, at two points: `scrapers/ziv.py` drops them when building the string, and `scrapers/enrich.py` `_clean_hours_text` drops them again per segment when copying, which cleans rows crawled before the fix. A venue with no recorded hours therefore has no `hours_text` at all rather than a fabricated `Mon-Sun 00:00-00:00`, and a venue with a partly filled week keeps only its real days. This mattered: 1,742 arcades, a quarter of the enrichment set, were publishing that fabricated string.
 

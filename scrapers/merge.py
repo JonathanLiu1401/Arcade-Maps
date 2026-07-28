@@ -694,9 +694,28 @@ def load_units(raw_dir, stats):
             games = [g if g in GAME_SLUGS else "other"
                      for g in (row.get("games") or ["other"])]
             prov, city = bemanicn_region(row.get("notes"))
+            # BemaniCN is a mainland-Chinese site and labels everything it
+            # lists as China, including its Hong Kong and Macau shops. Left as
+            # "China" those rows sit in a different country bucket from the
+            # ALL.Net / e-amusement / ZIv rows for the SAME venues, so no
+            # cross-source rule can ever pair them, and china_place then
+            # assigns them the Hong Kong city centroid - which is in the middle
+            # of Victoria Harbour. That is exactly what put a scatter of pins
+            # in the water off Central and Wan Chai.
+            #
+            # The province in the row's own "region:" note is the authority
+            # here, NOT the address text. Six mainland rows carry 香港 inside a
+            # BUILDING name (香港财富广场 in Fuyang, 香港东路 in Qingdao) while
+            # their region says 安徽省 / 山东省, and matching on the address
+            # would drag them to Hong Kong.
+            country = "China"
+            if prov.startswith("香港"):
+                country = "Hong Kong"
+            elif prov.startswith("澳门") or prov.startswith("澳門"):
+                country = "Macau"
             pref = prov or extract_pref("China", row.get("address"))
             add("bemanicn", row.get("name"), row.get("address"), lat, lng,
-                games, [], "China", pref, note=row.get("notes"),
+                games, [], country, pref, note=row.get("notes"),
                 coord_system=row.get("coord_system") or "unknown",
                 cn_prov=prov, cn_city=city,
                 bemanicn_url=row.get("source_url"),
@@ -1248,6 +1267,89 @@ def cluster_units(units, log):
                 if uf.union(i, j):
                     log.append({"rule": rule, "a": unit_ref(i),
                                 "b": unit_ref(j)})
+
+    # Hong Kong / Macau rule: BemaniCN publishes those shops with a precise
+    # Chinese address and NO coordinates, while ALL.Net, e-amusement and ZIv
+    # publish the same venues in English WITH coordinates. Nothing above can
+    # pair them - the names share no script ("168遊戲機中心" against
+    # "168 GAME CENTRE", "珍宝游戏机中心" against "JUMBO GAME") and one side has
+    # no pin to measure a distance from.
+    #
+    # The STREET NUMBER survives translation, and in a territory this dense it
+    # is specific. "300-302", "557-559", "290-296" identify a building outright.
+    #
+    # Two things had to be handled before this was trustworthy, both found by
+    # checking the output rather than by reasoning about it:
+    #
+    #   * Unit codes are not street numbers. "SHOP A15" made three different
+    #     BemaniCN rows match INTERNATIONAL GAMES CENTRE on "15". A digit run
+    #     glued to an ASCII letter is therefore ignored. The check is
+    #     ASCII-specific on purpose: Python treats CJK as alphabetic, so a
+    #     plain isalpha() test rejected "道300" and matched nothing at all.
+    #   * Small numbers are weak. Only ranges and numbers >= 10 count.
+    #
+    # Then a two-way uniqueness guard: a row merges only when it has exactly
+    # one partner AND that partner has only it, so a number appearing on both
+    # sides of two different venues merges neither.
+    #
+    # Result: 10 pairs, each independently corroborated by the names once
+    # translated (金星 = Gold Star, 荷里活 = Hollywood, 珍宝 = Jumbo,
+    # 紅棉 = Hung Min, 西岸國際 = West Coast, RETROCITY CONCEPT verbatim).
+    HK_COUNTRIES = ("Hong Kong", "Macau")
+
+    def _hk_street_numbers(addr):
+        s = (addr or "").replace("號", "").replace("号", "")
+        out = set()
+        for m in re.finditer(r"[0-9]{1,4}(?:\s*-\s*[0-9]{1,4})?", s):
+            tok = m.group(0).replace(" ", "")
+            prev = s[m.start() - 1] if m.start() else ""
+            if prev.isascii() and prev.isalpha():
+                # A15 / B03 / G71 are unit codes, not street numbers. A RANGE
+                # is exempt: the official addresses run words into the number
+                # ("TAI ON BLDG57-87SHAU KEI WAN RD"), and "57-87" is a street
+                # range whatever precedes it.
+                if "-" not in tok:
+                    continue
+            if "-" in tok or (tok.isdigit() and int(tok) >= 10):
+                out.add(tok)
+        return out
+
+    # Edges are keyed by CLUSTER, not by unit. A venue already merged from
+    # ALL.Net and ZIv is two units, and counting them separately made a
+    # BemaniCN row matching both halves of ONE venue look ambiguous and merge
+    # with neither - which is how Plaza Hollywood stayed split despite both
+    # sides plainly reading 383.
+    hk_edge = {}        # (root_a, root_b) -> (i, j, shared numbers)
+    hk_partners = {}    # root -> set of partner roots
+    hk_idx = [i for i, u in enumerate(units) if u["country"] in HK_COUNTRIES]
+    for x in range(len(hk_idx)):
+        for y in range(x + 1, len(hk_idx)):
+            i, j = hk_idx[x], hk_idx[y]
+            ui, uj = units[i], units[j]
+            if ui["source"] == uj["source"]:
+                continue
+            if ui["country"] != uj["country"]:
+                continue
+            ra, rb = uf.find(i), uf.find(j)
+            if ra == rb:
+                continue
+            # exactly one side coordinate-less: the other supplies the pin
+            if (ui["lat"] is None) == (uj["lat"] is None):
+                continue
+            shared = _hk_street_numbers(ui["addr"]) & _hk_street_numbers(uj["addr"])
+            if not shared:
+                continue
+            key = (min(ra, rb), max(ra, rb))
+            hk_edge.setdefault(key, (i, j, sorted(shared)))
+            hk_partners.setdefault(ra, set()).add(rb)
+            hk_partners.setdefault(rb, set()).add(ra)
+
+    for (ra, rb), (i, j, sh) in sorted(hk_edge.items()):
+        if len(hk_partners.get(ra, ())) != 1 or len(hk_partners.get(rb, ())) != 1:
+            continue                          # ambiguous on either side
+        if uf.union(i, j):
+            log.append({"rule": "hk-street-number", "numbers": sh,
+                        "a": unit_ref(i), "b": unit_ref(j)})
 
     # China rule (wahlap x bemanicn): both sources are coordinate-less,
     # so the global rules cannot merge them and the China list would

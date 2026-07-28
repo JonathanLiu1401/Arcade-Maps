@@ -35,12 +35,21 @@ Two hard skips:
     silently drop Taiwanese addresses onto the mainland - ``中山路`` ->
     ``中山市``, ``北屯路`` -> ``北屯市``. Anything whose country or province
     says Taiwan is refused outright.
+  * **Hong Kong and Macau.** Excluded outright, for the same reason as Taiwan.
+    An earlier revision assumed those entries were "all already-coordinated in
+    practice" and left the HK/Macau keys in the table for the handful of
+    China-labeled rows carrying a ``香港`` / ``澳门`` province. That assumption
+    was wrong: 34 BemaniCN rows arrived with no coordinates at all, took the
+    ``香港`` centroid, and landed in the middle of Victoria Harbour, where the
+    cosmetic jitter spread them into a scatter of pins sitting in the water off
+    Central and Wan Chai. ALL.Net, e-amusement and ZIv all cover Hong Kong with
+    real street-level pins, so a venue that exists there is placed by merge
+    instead, and anything unmatched keeps its authoritative address in the
+    no-coords list. See ``PLACEABLE_COUNTRIES``.
+
   * **Entries that already have coordinates.** ``place_approx`` returns None
     for them, so an approximate centroid can never overwrite a real pin and
-    ``approx`` can never be set on one. Hong Kong and Macau entries are all
-    already-coordinated in practice and so fall out here; the HK/Macau keys
-    remain in the table for the handful of China-labeled rows that carry a
-    ``香港`` / ``澳门`` province.
+    ``approx`` can never be set on one.
 
 **Province-consistency guard.** ``china_cities.json`` warns that short keys
 such as ``中山`` / ``东城`` / ``和平`` / ``北屯`` also occur as street and
@@ -107,7 +116,21 @@ _TAIWAN_PREFS = frozenset({"台湾", "臺灣", "台灣", "臺湾"})
 _TAIWAN_COUNTRIES = frozenset({"Taiwan"})
 
 #: Countries whose coordinate-less rows this module is allowed to place.
-PLACEABLE_COUNTRIES = frozenset({"China", "Hong Kong", "Macau"})
+#: Mainland China only. Hong Kong and Macau are deliberately EXCLUDED, for the
+#: same reason Taiwan is: this table's centroid for them is useless and the
+#: result is actively misleading. The 香港 centroid sits in Victoria Harbour,
+#: so every coordinate-less Hong Kong row landed in the water off Central and
+#: Wan Chai, fanned out by the cosmetic jitter into a scatter of pins that
+#: looked like the map had simply invented locations.
+#:
+#: Nothing is lost by refusing them. ALL.Net, e-amusement and ZIv all cover
+#: Hong Kong with real, street-level pins, so a venue that exists in those
+#: sources is already placed; merge pairs the BemaniCN row with it and the row
+#: inherits that real coordinate. A row that matches nothing stays
+#: coordinate-less and appears in the no-coords list carrying its authoritative
+#: address, which is the honest outcome and the one the China disclosure
+#: already promises: the address is trustworthy, the pin is not.
+PLACEABLE_COUNTRIES = frozenset({"China"})
 
 #: The four direct-administered municipalities, for which china_cities.json
 #: carries district-level rows worth preferring over the city centroid.

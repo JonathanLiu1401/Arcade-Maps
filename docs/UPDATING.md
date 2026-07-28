@@ -175,7 +175,7 @@ falls sharply. ZIv empty-200 traps abort the run loudly with
 ### China placement checks
 
 - If many China pins vanish or cluster oddly: check
-  `merge_log.json` -> `china_approx` length (last good run ~5,721) and
+  `merge_log.json` -> `china_approx` length (last good run ~5,687) and
   that `data/china_cities.json` is present.
 - Never set Taiwan keys in `china_cities.json` without a real Taiwan
   centroid source; the placer hard-skips Taiwan by design.
