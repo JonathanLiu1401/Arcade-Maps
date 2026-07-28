@@ -991,11 +991,23 @@ window.AM = window.AM || {};
 
     /* A count of zero cabs is never printed as a fact, so when nothing counted
        this store the panel says who did not, rather than leaving a reader to
-       infer a number from the absence of one. */
+       infer a number from the absence of one.
+
+       Two different absences, and conflating them was wrong: counts_src null
+       means a source DID list this store's machines and the merge declined to
+       read that list as a census, which reads as a flat lie next to the "Cabs:"
+       line printing those very machines. Say which one it is and point at the
+       list. */
     if (!hasCounts(a)) {
-      h += row("info", "Cab counts unavailable",
-        "The listings this store comes from do not publish how many machines it has.",
-        "muted");
+      if (a.counts_src === null) {
+        h += row("info", "Machine list, but no cab counts",
+          "The community listing names the machines below without saying how "
+          + "many of each, so the list is a floor and not a tally.", "muted");
+      } else {
+        h += row("info", "Cab counts unavailable",
+          "The listings this store comes from do not publish how many machines it has.",
+          "muted");
+      }
     }
 
     var site = field(a, e, ["website", "url", "homepage"]);

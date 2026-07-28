@@ -299,7 +299,7 @@ Built inside merge after ids are assigned (`enrich.build_enrichment`). Join key:
 
 Only arcades with at least one enrichable field get an entry. Country price defaults always carry `typical: true` and are display fallbacks, never quoted guarantees. Frontend price priority: ZIv `machine_prices` > BemaniCN `game_prices` / `price_text` > country defaults.
 
-**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,521** entries against **13,512** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,211), `info_text` (4,207), `website` (4,092), `machine_prices` (2,413), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
+**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,521** entries against **13,510** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,211), `info_text` (4,207), `website` (4,092), `machine_prices` (2,413), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
 
 ---
 

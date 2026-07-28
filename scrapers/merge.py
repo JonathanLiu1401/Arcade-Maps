@@ -13,6 +13,15 @@ Pipeline rules (see README / task spec):
      (scrapers/name_match.py), because a ZIv romaji name and an official
      kana name for one arcade can share zero characters. The 0.6 gate
      and the 120 m radius themselves are UNCHANGED.
+     Hong Kong and Macau add two more tiers, because no name rule can
+     bridge an official English listing and BemaniCN's Chinese one:
+     `hk-street-number` pairs them on a street number that survives
+     translation, and `hk-locality-brand` pairs them on the operator's
+     own Latin branding plus the locality, for the case where the two
+     sources cite different faces of one corner building (65 Argyle
+     Street and 688 Nathan Road are both Argyle Centre). Locality
+     aliases are mined from ZIv's bilingual Hong Kong addresses, never
+     hand-listed.
      Two coordinate-less entries merge only on exact (name, address),
      EXCEPT the China-scoped wahlap x bemanicn rule: same province,
      city-gated, name similarity >= 0.8 (parenthetical branch text
@@ -1410,6 +1419,99 @@ def cluster_units(units, log):
             continue                          # ambiguous on either side
         if uf.union(i, j):
             log.append({"rule": "hk-street-number", "numbers": sh,
+                        "a": unit_ref(i), "b": unit_ref(j)})
+
+    # Second Hong Kong tier: the street number fails when the two sources cite
+    # DIFFERENT FACES of the same corner building. Game Zone in Mong Kok is the
+    # case that forced this: ALL.Net files it as "ARGYLE CENTRE PHASE I, 65
+    # ARGYLE ST" and BemaniCN as "旺角彌敦道688號地底鋪全層". Both are Argyle
+    # Centre - the block runs from 65 Argyle Street to 688 Nathan Road - but 65
+    # and 688 share nothing, so the venue stayed split and the official half
+    # showed no machine counts while the BemaniCN half sat elsewhere on the map
+    # holding maimai x22.
+    #
+    # What DOES survive is the Latin brand: BemaniCN writes Hong Kong venue
+    # names as <locality><name> and keeps the operator's own Latin branding
+    # inline, so "旺角新之城GAME ZONE游戏天地" and "GAMEZONE(MONG KOK)" share
+    # "GAMEZONE" verbatim. On its own that is far too weak - six Hong Kong rows
+    # carry it - so it is paired with the locality, and the locality aliases are
+    # MINED FROM THE DATA rather than hand-listed: ZIv writes its Hong Kong
+    # addresses bilingually ("旺角 (Mong Kok)", "鑽石山 (Diamond Hill)"), which
+    # is exactly the CJK-to-Latin table this needs and which grows itself as ZIv
+    # adds venues.
+    #
+    # Guards, in the order they matter:
+    #   * District-scale aliases are dropped. 九龍 / Kowloon covers half the
+    #     territory's arcades and would make every pairing look plausible.
+    #   * A Latin run that IS a locality cannot serve as the brand, or two
+    #     unrelated Mong Kok venues would "share a brand" of MONGKOK.
+    #   * Brand runs must be >= 6 letters, so "MG" or "JP" cannot pair anything.
+    #   * The same cluster-keyed two-way uniqueness as above: one partner each,
+    #     or no merge.
+    _HK_COARSE = {"KOWLOON", "NEWTERRITORIES", "HONGKONGISLAND", "HONGKONG"}
+
+    def _letters(s):
+        return "".join(c for c in (s or "").upper() if "A" <= c <= "Z")
+
+    def _latin_runs(s):
+        return {_letters(m.group(0))
+                for m in re.finditer(r"[A-Za-z][A-Za-z' ]*[A-Za-z]", s or "")}
+
+    hk_alias = {}       # CJK locality -> Latin form
+    _seen_alias = {}
+    for i in hk_idx:
+        for cjk, lat in re.findall(
+                r"([一-鿿]{2,6})\s*\(([A-Za-z][A-Za-z' -]{2,24})\)",
+                units[i]["addr"] or ""):
+            lat = _letters(lat)
+            if len(lat) >= 5 and lat not in _HK_COARSE:
+                _seen_alias.setdefault(cjk, set()).add(lat)
+    for cjk, lats in _seen_alias.items():
+        if len(lats) == 1:      # an ambiguous alias is no alias at all
+            hk_alias[cjk] = next(iter(lats))
+    hk_latin_localities = set(hk_alias.values())
+
+    def _hk_localities(u):
+        text = "%s %s" % (u["name"] or "", u["addr"] or "")
+        letters = _letters(text)
+        return {cjk for cjk, lat in hk_alias.items()
+                if cjk in text or lat in letters}
+
+    def _hk_brands(u):
+        return {r for r in _latin_runs(u["name"])
+                if len(r) >= 6 and r not in hk_latin_localities}
+
+    brand_edge = {}
+    brand_partners = {}
+    for x in range(len(hk_idx)):
+        for y in range(x + 1, len(hk_idx)):
+            i, j = hk_idx[x], hk_idx[y]
+            ui, uj = units[i], units[j]
+            if ui["source"] == uj["source"] or ui["country"] != uj["country"]:
+                continue
+            ra, rb = uf.find(i), uf.find(j)
+            if ra == rb:
+                continue
+            if (ui["lat"] is None) == (uj["lat"] is None):
+                continue
+            if not (_hk_localities(ui) & _hk_localities(uj)):
+                continue
+            bi, bj = _hk_brands(ui), _hk_brands(uj)
+            shared = sorted(b for b in bi
+                            if any(b in o or o in b for o in bj))
+            if not shared:
+                continue
+            key = (min(ra, rb), max(ra, rb))
+            brand_edge.setdefault(key, (i, j, shared))
+            brand_partners.setdefault(ra, set()).add(rb)
+            brand_partners.setdefault(rb, set()).add(ra)
+
+    for (ra, rb), (i, j, sh) in sorted(brand_edge.items()):
+        if (len(brand_partners.get(ra, ())) != 1
+                or len(brand_partners.get(rb, ())) != 1):
+            continue
+        if uf.union(i, j):
+            log.append({"rule": "hk-locality-brand", "brand": sh,
                         "a": unit_ref(i), "b": unit_ref(j)})
 
     # China rule (wahlap x bemanicn): both sources are coordinate-less,

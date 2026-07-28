@@ -308,11 +308,11 @@
  "gcj02_bd09_converted": 0,
  "counts_src_distribution": {
   "bemanicn": 3567,
-  "ziv": 466,
-  "null_placeholder_dropped": 2210,
+  "ziv": 465,
+  "null_placeholder_dropped": 2209,
   "absent_never_counted": 7269
  },
- "cross_source_merges": 3077,
+ "cross_source_merges": 3079,
  "coord_inheritances": 125,
  "country_conflicts": [],
  "inheritance_log": [
@@ -33365,6 +33365,38 @@
    }
   },
   {
+   "rule": "hk-locality-brand",
+   "brand": [
+    "SALEMGAMECENTRE"
+   ],
+   "a": {
+    "src": "allnet",
+    "name": "SALEM GAME CENTRE",
+    "addr": "C2 G/F.,FUN CITY, 7LEK YUEN ST.,SHA TIN ,NT."
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "沙龍游戲機中心 Salem Game Centre",
+    "addr": "新界沙田區瀝源街7號沙田娛樂城"
+   }
+  },
+  {
+   "rule": "hk-locality-brand",
+   "brand": [
+    "GAMEZONE"
+   ],
+   "a": {
+    "src": "allnet",
+    "name": "GAMEZONE(MONG KOK)",
+    "addr": "BF., ARGYLE CENTRE PHASE I,65 ARGYLE ST, MONGKOK, KOWLOON"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "旺角新之城GAME ZONE游戏天地",
+    "addr": "旺角彌敦道688號地底鋪全層"
+   }
+  },
+  {
    "rule": "china_wahlap_bemanicn",
    "similarity": 0.842,
    "province": "北京",
@@ -47785,7 +47817,7 @@
    "to_country": "Czechia"
   },
   {
-   "id": 9719,
+   "id": 9717,
    "name": "MOLLYFANTASY MAYANG MALL",
    "src": [
     "allnet"
@@ -47804,7 +47836,7 @@
    "previous_lng": 92.0407904
   },
   {
-   "id": 10250,
+   "id": 10248,
    "name": "QUANTUM SM PAMPANGA",
    "src": [
     "allnet"
@@ -47821,7 +47853,7 @@
    "previous_lng": -121.8852525
   },
   {
-   "id": 10644,
+   "id": 10642,
    "name": "Arcade @ Elegante Mall",
    "src": [
     "ziv"
@@ -47837,7 +47869,7 @@
    "to_country": "Nigeria"
   },
   {
-   "id": 10771,
+   "id": 10769,
    "name": "VAMS MUSIC/SPORT",
    "src": [
     "ziv"
@@ -47854,7 +47886,7 @@
    "to_country": "Japan"
   },
   {
-   "id": 10980,
+   "id": 10978,
    "name": "SHIRONEKOYA 白喵一番屋 台北店",
    "src": [
     "ziv"
@@ -47870,7 +47902,7 @@
    "to_country": "Australia"
   },
   {
-   "id": 11001,
+   "id": 10999,
    "name": "TOM'S WORLD (HAIDIAN-LI@TAINAN))",
    "src": [
     "allnet"
@@ -47887,7 +47919,7 @@
    "previous_lng": 116.298326
   },
   {
-   "id": 11197,
+   "id": 11195,
    "name": "Adventure Island",
    "src": [
     "ziv"
@@ -47903,7 +47935,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11202,
+   "id": 11200,
    "name": "Iceland",
    "src": [
     "ziv"
@@ -47919,7 +47951,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11207,
+   "id": 11205,
    "name": "PlayOcity",
    "src": [
     "ziv"
@@ -47935,7 +47967,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11211,
+   "id": 11209,
    "name": "Sparky's",
    "src": [
     "ziv"
@@ -47951,7 +47983,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11215,
+   "id": 11213,
    "name": "Vuvuzella Park",
    "src": [
     "ziv"
@@ -47967,7 +47999,7 @@
    "to_country": "Egypt"
   },
   {
-   "id": 12840,
+   "id": 12838,
    "name": "Micronesia Mall - Fun Fair",
    "src": [
     "ziv"
@@ -47983,7 +48015,7 @@
    "to_country": "Guam"
   },
   {
-   "id": 13476,
+   "id": 13474,
    "name": "KIDS BOX&TINY MF AEON TAN AN",
    "src": [
     "allnet"
