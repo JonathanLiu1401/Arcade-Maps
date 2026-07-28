@@ -50,6 +50,34 @@ place until a later run succeeds. There is currently no per-source skip
 for arcade sources; one broken arcade source blocks the whole weekly
 refresh.
 
+**A quiet shrink is caught separately.** The checks above are all
+fail-loud: a source returning nothing, a ZIv country hitting the empty-200
+trap. None of them notice an upstream that answers every request and
+returns a third of its usual rows, because that produces a smaller but
+perfectly well-formed dataset. `scrapers/guard_regression.py` runs after
+the build and before the commit, compares the fresh output against what is
+already committed, and fails the job when the drop is implausible, so
+nothing lands and the previous data stays live.
+
+It checks `data_raw/` as well as `data/`, and that matters: dedupe folds
+most community rows into official entries, so a 30% collapse in raw ZIv
+rows moves the merged arcade total by only about half a percent and would
+sail past a merged-only check. It also tracks ZIv country coverage, which
+is the sharpest signal that source has, since rows drift but a whole
+country going missing does not.
+
+Defaults are loose on purpose: more than 5% off the total, more than 25%
+off any one source or raw file, a source vanishing, or any ZIv country
+disappearing. Growth is never blocked. If a shrink is real, re-run the
+workflow with raised thresholds or run it locally with `--force` and
+commit by hand:
+
+```
+python scrapers/guard_regression.py             # compare against HEAD
+python scrapers/guard_regression.py --force     # report but exit 0
+python scrapers/guard_regression.py --source-drop 40
+```
+
 **FX is the graceful exception.** `scrapers/fx.py` never fails the job
 for feed problems: if Frankfurter and open.er-api.com both fail (or
 required codes remain missing after both), it leaves the previous

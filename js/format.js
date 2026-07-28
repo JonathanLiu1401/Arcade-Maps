@@ -220,7 +220,8 @@ window.AM = window.AM || {};
     var target = url || FX_URL;
     fxPromise = new Promise(function (resolve) {
       if (typeof fetch !== "function") { resolve(null); return; }
-      fetch(target)
+      /* Rates are rebaked weekly, so revalidate. See app-init.js. */
+      fetch(target, { cache: "no-cache" })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (blob) { fxRates = normalizeFx(blob); resolve(fxRates); })
         .catch(function () { resolve(null); });

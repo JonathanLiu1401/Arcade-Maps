@@ -266,6 +266,28 @@ from `game_counts` when `counts_src` is a source whose quantities we trust
 (`bemanicn`, or `ziv` where the merge kept a real count); everything else is
 TU, so the counts-honesty policy has exactly one enforcement point.
 
+### Asset URLs carry a content stamp
+
+Every local CSS and JS URL in `index.html` ends in `?v=<8 hex>`, written by
+`tools/stamp_assets.py` from a hash of the file's own bytes. Run it after
+changing anything under `js/` or `style.css`; `--check` exits nonzero when a
+stamp is stale.
+
+This is not cosmetic. Pages caches assets for much longer than it caches
+`index.html`, so without the stamp a returning visitor gets a FRESH page and a
+STALE script, which is worse than an entirely stale page: the new markup loads
+`js/tier-icons.js` (a new URL, so fetched) while the browser serves the old
+`js/markers.js` from cache, and that old module ignores `AM.tierIcons`
+completely. The map silently renders the previous marker style with nothing in
+the console. That is exactly how the tier-icon release looked "not updated"
+after it went live.
+
+Data files are deliberately NOT stamped: their URLs are built in JavaScript,
+and they change weekly rather than per release. `app-init.js`, `panel.js` and
+`format.js` fetch them with `cache: "no-cache"`, which revalidates and takes a
+cheap 304 when nothing changed, so a weekly data refresh is picked up without a
+new page load.
+
 ### Tier artwork is generated, not hand-copied
 
 The six SVGs under `assets/markers/` are the source of truth.

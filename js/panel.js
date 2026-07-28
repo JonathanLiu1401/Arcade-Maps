@@ -456,7 +456,9 @@ window.AM = window.AM || {};
   function fetchJson(url) {
     return new Promise(function (resolve) {
       if (typeof fetch !== "function") { resolve(null); return; }
-      fetch(url)
+      /* Revalidate rather than trust the cache: enrichment and the cab
+         manifest are both rewritten by the weekly Action. See app-init.js. */
+      fetch(url, { cache: "no-cache" })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(resolve)
         .catch(function () { resolve(null); });

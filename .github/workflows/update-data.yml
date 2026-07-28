@@ -55,6 +55,27 @@ jobs:
         continue-on-error: true
         run: python scrapers/fx.py --out data
 
+      - name: Guard against a shrinking dataset
+        # Last line of defence before this lands on main and Pages serves it
+        # minutes later. The guards above catch LOUD failures: a source that
+        # returns nothing, a ZIv country whose spelling drifted. None of them
+        # catch a quiet shrink - an upstream that answers every request but
+        # returns a third of its rows, a parser that stops matching after a
+        # markup change - because the result is a smaller but perfectly
+        # well-formed dataset.
+        #
+        # It compares the fresh build against what is already committed and
+        # fails the job when the drop is implausible, so nothing is committed
+        # and the previous data stays live. Note it checks data_raw/ as well
+        # as data/: dedupe folds most community rows into official entries, so
+        # a 30% collapse in raw ZIv rows moved the merged arcade total by only
+        # 0.5% and would have passed a merged-only check.
+        #
+        # Growth is never blocked. If a shrink is real, re-run this workflow
+        # from the Actions tab after raising the thresholds, or run the script
+        # locally with --force and commit by hand.
+        run: python scrapers/guard_regression.py
+
       - name: Commit refreshed data if changed
         run: |
           git config user.name "github-actions[bot]"

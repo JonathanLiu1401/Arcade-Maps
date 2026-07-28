@@ -119,9 +119,11 @@ Arcade-Maps/
 |- data_raw/             per-source scraped rows, auto-committed weekly
 |- scrapers/             per-source scrapers + merge / geo_validate / china_place / enrich / fx
 |  |- run_all.py         run the full pipeline (scrape -> merge -> mymaps -> fx)
+|  |- guard_regression.py  block a commit when a crawl shrinks implausibly
 |  |- build_mymaps.py    regenerate the Google My Maps KMZ/CSV layers
 |- tools/
 |  |- build_tier_icons.py  embed assets/markers/*.svg into js/tier-icons.js
+|  |- stamp_assets.py    content-hash ?v= stamps on the css/js in index.html
 |- mymaps/               numbered KMZ layers for My Maps import (+ README)
 |- docs/
 |  |- ARCHITECTURE.md    pipeline, data schema, design decisions

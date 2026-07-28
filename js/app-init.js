@@ -153,7 +153,12 @@ window.AM = window.AM || {};
     AM.map.map.setView([30, 135], 3);
   }
 
-  fetch(C.DATA_URL)
+  /* cache: "no-cache" REVALIDATES, it does not skip the cache: the browser
+     still sends the conditional request and a 304 costs nothing, but a stale
+     copy can never be served silently. This file is rewritten by the weekly
+     Action, and without this a returning visitor kept last week's arcades for
+     as long as the CDN's max-age said they could. */
+  fetch(C.DATA_URL, { cache: "no-cache" })
     .then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status + " loading " + C.DATA_URL);
       return r.json();
