@@ -140,7 +140,7 @@ JSON; each arcade carries an id, name, address parts (address / city / state / p
 
 **Machine counts:** yes - each arcade's machine list is tallied per mapped slug into `game_counts` (one machine list entry = one machine; cabs that only map to `other` are not counted).
 
-**Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,955** merged source rows under `ziv` in `data/stats.json`. Includes Taiko no Tatsujin and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
+**Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,954** merged source rows under `ziv` in `data/stats.json`. Includes Taiko no Tatsujin and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
 
 ### Enrichment fields (ZIv)
 
@@ -157,7 +157,7 @@ With the default skip flags, **pricing and venue fields still arrive** (verified
 
 These land in `data/enrichment.json` via `scrapers/enrich.py`, not in `arcades.json`. Images are the exception: the default weekly crawl keeps `skip_pictures=1`, so no picture URLs reach the shipped file.
 
-**Opening-hours trap:** a day whose open and close times are identical is ZIv's "nobody recorded this" default, not a real 24-hour day. The API hands back `["00:00", "00:00", false]` for all seven days of an unrecorded venue, and `"00:00"` is a truthy string, so a plain truthiness test published `Mon-Sun 00:00-00:00` as if it were real hours. `scrapers/ziv.py` now rejects any zero-length day when rendering `hours_text`, and `_clean_hours_text` in `scrapers/enrich.py` re-checks the formatted string so rows already sitting in `data_raw/` are cleaned too. A string with no parseable `HH:MM-HH:MM` range is passed through untouched rather than guessed at. Effect on the rebuilt file: `hours_text` fell from 6,955 to 5,213 entries, and 432 entries whose only field was that string were dropped entirely.
+**Opening-hours trap:** a day whose open and close times are identical is ZIv's "nobody recorded this" default, not a real 24-hour day. The API hands back `["00:00", "00:00", false]` for all seven days of an unrecorded venue, and `"00:00"` is a truthy string, so a plain truthiness test published `Mon-Sun 00:00-00:00` as if it were real hours. `scrapers/ziv.py` now rejects any zero-length day when rendering `hours_text`, and `_clean_hours_text` in `scrapers/enrich.py` re-checks the formatted string so rows already sitting in `data_raw/` are cleaned too. A string with no parseable `HH:MM-HH:MM` range is passed through untouched rather than guessed at. Effect on the rebuilt file: `hours_text` fell from 6,955 to 5,212 entries, and 432 entries whose only field was that string were dropped entirely.
 
 ### Other caveats
 
@@ -299,7 +299,7 @@ Built inside merge after ids are assigned (`enrich.build_enrichment`). Join key:
 
 Only arcades with at least one enrichable field get an entry. Country price defaults always carry `typical: true` and are display fallbacks, never quoted guarantees. Frontend price priority: ZIv `machine_prices` > BemaniCN `game_prices` / `price_text` > country defaults.
 
-**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,523** entries against **13,681** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,213), `info_text` (4,209), `website` (4,092), `machine_prices` (2,414), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
+**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,522** entries against **13,621** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,212), `info_text` (4,208), `website` (4,092), `machine_prices` (2,414), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
 
 ---
 

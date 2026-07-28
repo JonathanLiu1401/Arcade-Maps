@@ -939,6 +939,82 @@ def cluster_units(units, log):
                             "a": unit_ref(i), "b": unit_ref(j)})
     # ---- END proximity tier -----------------------------------------
 
+    # ---- exact-name tier: one venue, two sources, two geocodes --------
+    #
+    # The dist+name rule above gates on 120 m, which is tuned for a FUZZY
+    # name match (similarity >= 0.6). That gate is wrong when the names are
+    # not fuzzy at all but byte-identical after normalization, because the
+    # thing that actually separates the two rows is not the venue moving,
+    # it is the two sources geocoding the same building differently. A mall
+    # entrance versus its car park is routinely 150-500 m.
+    #
+    # Real example, reported as two icons on one store: ALL.Net lists
+    # "アミューズメントパークＭＧ西条" and e-amusement lists
+    # "アミューズメントパークMG西条店" - identical once NFKC folds the
+    # fullwidth ＭＧ and the trailing 店 is dropped - but their pins are
+    # 176 m apart, so the 120 m rule never saw the pair. 51 such pairs
+    # survived, and every one inspected was a single venue: Timezone,
+    # アピナ, GiGO, Kingpin, MOLLY FANTASY branches listed twice.
+    #
+    # So: exact name equality carries the evidence here, and distance is
+    # demoted to a locality sanity bound whose only job is to stop two
+    # genuinely different branches that happen to share a name from merging
+    # across a city. Safeguards against over-merging:
+    #
+    #   * compact_name_exact KEEPS parenthetical branch names, so
+    #     "GiGO(1号館)" and "GiGO(2号館)" never collapse.
+    #   * a minimum length, so a bare chain name is never enough on its own.
+    #   * MUTUAL-NEAREST only. If three rows in one town share a name, no
+    #     pair is each other's unambiguous best and none of them merge.
+    #   * cross-source only; same-source duplicates keep their tighter rule
+    #     below, and pairs already clustered are skipped, so this pass can
+    #     only ADD merges.
+    # 3 km is not a guess about how far a venue moves, it is the measured gap
+    # between the two populations. Sorting every surviving exact-name
+    # cross-source pair by distance, the genuine ones run out at 2,441 m
+    # (MoCity Cosmic Park, PT434 vs PT435 of one Melaka lot) and the next pair
+    # is 7,746 m away and is NOT one venue ("168 GAME CENTRE" in Kwun Tong vs
+    # "GAME CENTRE" in Central). 3 km sits in that gap with margin either side.
+    #
+    # The bound is load-bearing, not decoration: two イーグルボウル rows 722 km
+    # apart, one in Towada and one in Chiryu, are a real chain sharing one name
+    # with no branch suffix. An unbounded exact-name rule would fuse them.
+    NAME_EXACT_MAX_M = 3000.0
+    NAME_EXACT_MIN_LEN = 5
+
+    exact_index = {}
+    for i, u in enumerate(units):
+        c = compacts[i]
+        if len(c) >= NAME_EXACT_MIN_LEN and u["lat"] is not None:
+            exact_index.setdefault((u["country"], c), []).append(i)
+
+    exact_best = {}     # unit -> (dist, other) nearest qualifying partner
+    for (_country, _c), idxs in exact_index.items():
+        if len(idxs) < 2:
+            continue
+        for x in range(len(idxs)):
+            for y in range(x + 1, len(idxs)):
+                i, j = idxs[x], idxs[y]
+                if units[i]["source"] == units[j]["source"]:
+                    continue
+                if uf.find(i) == uf.find(j):
+                    continue
+                d = haversine_m(units[i]["lat"], units[i]["lng"],
+                                units[j]["lat"], units[j]["lng"])
+                if d >= NAME_EXACT_MAX_M:
+                    continue
+                for a, b in ((i, j), (j, i)):
+                    if a not in exact_best or d < exact_best[a][0]:
+                        exact_best[a] = (d, b)
+
+    for i, (d, j) in sorted(exact_best.items()):
+        if exact_best.get(j, (None, None))[1] != i:
+            continue        # not mutual: ambiguous, leave both alone
+        if uf.union(i, j):
+            log.append({"rule": "exact-name-locality",
+                        "distance_m": round(d, 1),
+                        "a": unit_ref(i), "b": unit_ref(j)})
+
     # same-source near-duplicates (audit D3): one source listing the
     # same physical store twice with cosmetically different address
     # strings (Woking Superbowl, Funworld Sun East Mall). Very tight:
