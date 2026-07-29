@@ -262,6 +262,26 @@ Lookup table used by `scrapers/china_place.py` to place coordinate-less mainland
 
 **Approx semantics:** placed entries get real-looking `lat`/`lng` plus `approx: true` and `approx_level` (`district` or `city`). Entries sharing an area sit on its centroid exactly, with no fan-out, so a cluster badge is the honest reading of them. Addresses remain the authoritative location for navigation.
 
+
+## 8b. `data/hk_romanize.json` (Cantonese readings for cross-script merging)
+
+Hong Kong and Macau are the only places where one venue is published under two names that share no characters: ALL.Net writes `PIK FU GAME CENTRE, 26-30 WO YI HOP ROAD` and BemaniCN writes `碧富遊戲機, 和宜合道`. The English is the Cantonese READING of the Chinese, so `scrapers/hk_match.py` reconstructs the reading and compares it.
+
+| Item | Value |
+|---|---|
+| Path | `data/hk_romanize.json` |
+| Shape | `{source, readings: {char: [jyutping syllable, ...]}}`, tones stripped, at most 3 readings per character |
+| Rows | **25,001** characters |
+| Upstream source | [rime/rime-cantonese](https://github.com/rime/rime-cantonese) `jyut6ping3.chars.dict.yaml` |
+| License | **CC BY 4.0**, 粵語計算語言學基礎建設組 (CanCLID) |
+| Rebuilt by | `python tools/build_hk_romanize.py` (not the weekly Action) |
+
+**Jyutping is not what Hong Kong street signs use.** The signs use the older Hong Kong Government romanisation, which disagrees with Jyutping constantly: 觀塘 is `gun tong` in Jyutping and `Kwun Tong` on the sign, 沙田 is `saa tin` against `Sha Tin`. Both sides are folded onto a coarse phonetic skeleton that discards exactly the distinctions the two systems argue about (voicing, sibilant spelling, doubled vowels) and the remainder is compared with a one-edit tolerance. The skeleton is lossy on purpose, so `merge.py` never acts on one match alone: the Hong Kong tier requires two independent kinds of evidence.
+
+Some names are translations rather than romanizations and no phonetic method reaches them (香港仔 is Aberdeen, 青山公路 is Castle Peak Road, 旧大街 is Old Main Street). Those live in a short, individually commented `EXONYMS` table in `scrapers/hk_match.py`.
+
+---
+
 ---
 
 ## 9. FX rates (`data/fx_rates.json`)
@@ -299,7 +319,7 @@ Built inside merge after ids are assigned (`enrich.build_enrichment`). Join key:
 
 Only arcades with at least one enrichable field get an entry. Country price defaults always carry `typical: true` and are display fallbacks, never quoted guarantees. Frontend price priority: ZIv `machine_prices` > BemaniCN `game_prices` / `price_text` > country defaults.
 
-**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,521** entries against **13,510** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,211), `info_text` (4,207), `website` (4,092), `machine_prices` (2,413), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
+**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,521** entries against **13,502** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,211), `info_text` (4,207), `website` (4,092), `machine_prices` (2,413), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
 
 ---
 

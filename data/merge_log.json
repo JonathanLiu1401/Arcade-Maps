@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-28",
+ "updated": "2026-07-29",
  "raw_rows": 29482,
  "source_units": 16589,
  "within_source_dupes": 8211,
@@ -308,11 +308,11 @@
  "gcj02_bd09_converted": 0,
  "counts_src_distribution": {
   "bemanicn": 3567,
-  "ziv": 465,
-  "null_placeholder_dropped": 2209,
-  "absent_never_counted": 7269
+  "ziv": 464,
+  "null_placeholder_dropped": 2205,
+  "absent_never_counted": 7266
  },
- "cross_source_merges": 3079,
+ "cross_source_merges": 3090,
  "coord_inheritances": 125,
  "country_conflicts": [],
  "inheritance_log": [
@@ -1691,14 +1691,14 @@
   },
   {
    "coordless": [
-    "BEEBEELAND 蜂狂天地"
+    "佳景樂園"
    ],
    "coords_from": {
     "src": "ziv",
-    "name": "BEEBEELAND 蜂狂天地"
+    "name": "佳景樂園兒童天地 Future Bright Amusement Park"
    },
-   "lat": 22.139791263277,
-   "lng": 113.57311964035
+   "lat": 22.199316458331,
+   "lng": 113.54036048055
   },
   {
    "coordless": [
@@ -33173,202 +33173,47 @@
    }
   },
   {
-   "rule": "hk-street-number",
-   "numbers": [
-    "11-13"
-   ],
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "woyihop",
+     "yihop"
+    ],
+    "romname": [
+     "碧富"
+    ]
+   },
    "a": {
     "src": "allnet",
-    "name": "HUNG MIN GAME CENTRE",
-    "addr": "G/F., 11-13 Hung Min Court, Yuen Long, N.T. (YLFL152)"
+    "name": "PIK FU GAME CENTRE",
+    "addr": "SHOP LG1,26-30 WO YI HOP ROAD, KWAI CHUNG,N.T"
    },
    "b": {
     "src": "bemanicn",
-    "name": "紅棉遊戲機中心",
-    "addr": "新界元朗紅棉圍11-13號地舖"
+    "name": "碧富遊戲機",
+    "addr": "和宜合道"
    }
   },
   {
-   "rule": "hk-street-number",
-   "numbers": [
-    "63"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "RETROCITY CONCEPT",
-    "addr": "UNIT NO.23  LG/F,HOUSTON CENTRE,NO.63 MODY DOAD,KLN. HKG"
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "lekyun",
+     "likyun"
+    ],
+    "number": [
+     "7-7"
+    ],
+    "place": [
+     "沙田"
+    ],
+    "brand": [
+     "SALEMGAMECENTRE"
+    ],
+    "cjkname": [
+     "沙龍"
+    ]
    },
-   "b": {
-    "src": "bemanicn",
-    "name": "RETROCITY CONCEPT (会员制店铺)",
-    "addr": "尖東麼地道63號好時中心LG23"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "68"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "GAMEZONE(KWUN TONG PLAZA)",
-    "addr": "1/F,KWUN TONG PLAZA,68HOI YUEN ROAD, KWUNTONG, KOWLOON"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "觀塘廣場GAMEZONE",
-    "addr": "開源道68號觀塘廣場1樓117-121"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "300-302"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "168 GAME CENTRE",
-    "addr": "GIF YUE MAN SHOPPING CENTRE 300-302 NGAU TAU KOK RD. KWUN TONG"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "168遊戲機中心",
-    "addr": "觀塘牛頭角道300-302號裕民中心地下54-58號鋪"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "290-296"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "SUPER KING GAME CENTRE",
-    "addr": "B/F,WEST COAST BLDG, 290-296UN CHAU ST.,CHEUNG SHA WAN,KW"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "龍威娛樂遊戲機中心",
-    "addr": "元州街290-296號西岸國際大廈地庫"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "383"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "HOLLYWOOD GAME ZONE",
-    "addr": "383, LEVEL 3, PLAZA HOLLYWOODDIAMOND HILL, KOWLOON,"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "荷里活遊戲城Game Zone",
-    "addr": "九龍黃大仙區鑽石山龍蟠街3號荷里活廣場3樓383A號鋪"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "30"
-   ],
-   "a": {
-    "src": "ziv",
-    "name": "新宿驛新港機城 (Silvercord Amusement & Games)",
-    "addr": "B03 30 Canton Road Tin Sha Tsui Kowloon, 000, Tin Sha Tsui"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "新宿驛新港機城",
-    "addr": "尖沙咀廣東道30號(新港中心)地庫B03鋪"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "557-559"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "GOLD STAR(NATHAN ROAD)",
-    "addr": "B,WING WONG BLDG., 557-559NATHAN RD., YAU MA TEI, KOWLOON"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "金星遊戲機中心（油麻地）",
-    "addr": "香港旺角弥敦道557-559号永旺行地下及地庫A舖"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "57-87"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "INTERNATIONAL GAMES CENTRE",
-    "addr": "SHOP A15 39,40&41G/F,TAI ON BLDG57-87SHAU KEI WAN RD,SAI WAN HO"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "西灣河遊戲機中心",
-    "addr": "筲箕湾道57-87号"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "82"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "JUMBO GAME",
-    "addr": "BASEMENT, 82 OLD MAIN STREET,ABERDEEN, HONG KONG,"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "珍宝游戏机中心",
-    "addr": "香港岛香港仔香港仔旧大街82号地库"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "230"
-   ],
-   "a": {
-    "src": "allnet",
-    "name": "SMART GAME(WAN CHAI)",
-    "addr": "G/F,GREAT SMART TOWER,NO.230 WAN CHAI ROAD,HONG KONG"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "湾仔 Smart Game 遊戲機",
-    "addr": "灣仔灣仔道230號"
-   }
-  },
-  {
-   "rule": "hk-street-number",
-   "numbers": [
-    "122"
-   ],
-   "a": {
-    "src": "ziv",
-    "name": "栢蕙遊戲廣場 Praça de Diversóes Pak Wai",
-    "addr": "122 Avenida do Conselheiro Ferreira de Almeida 荷蘭園大馬路122號地下 Macau 999078, Macau"
-   },
-   "b": {
-    "src": "bemanicn",
-    "name": "栢蕙遊戲廣場",
-    "addr": "澳門荷蘭園大馬路122號地下"
-   }
-  },
-  {
-   "rule": "hk-locality-brand",
-   "brand": [
-    "SALEMGAMECENTRE"
-   ],
    "a": {
     "src": "allnet",
     "name": "SALEM GAME CENTRE",
@@ -33381,10 +33226,310 @@
    }
   },
   {
-   "rule": "hk-locality-brand",
-   "brand": [
-    "GAMEZONE"
-   ],
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "oncong"
+    ],
+    "number": [
+     "2-2"
+    ],
+    "place": [
+     "体育",
+     "大埔"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "IGAME(TAI PO)",
+    "addr": "B,TAI PO SPORTS ASSOCIATION 2ON CHEUNG RD.,TAI PO,N.T"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "大埔桌球娱乐城 i-game",
+    "addr": "大埔安祥路2号李福林体育馆地库"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "nanfung"
+    ],
+    "cjkname": [
+     "金星"
+    ],
+    "romname": [
+     "荃灣"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "GOLD STAR(TSUEN WAN)",
+    "addr": "3F,E WING, NAN FUNG CENTRE, 264-298CASTLE PEAK RD.,TSUEN WAN N.T"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "荃灣新之城金星Gamezone",
+    "addr": "南豐中心新之城三樓303"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "cingpak"
+    ],
+    "number": [
+     "5-5"
+    ],
+    "place": [
+     "屯門"
+    ],
+    "romname": [
+     "天天"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "TIN TIN GAME CENTRE(TUEN MUN)",
+    "addr": "SHOP B, G/F., SAI BO BUILDING, 5 TSING PAK PATH, TUEN MUN, NT"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "屯門天天遊戲機中心",
+    "addr": "屯門新墟青柏徑5號 四寶大廈"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "tinyan"
+    ],
+    "number": [
+     "18-18"
+    ],
+    "place": [
+     "天水圍"
+    ],
+    "brand": [
+     "POWERCITY"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "POWER CITY(TIN SHUI WAI)",
+    "addr": "G68-72 G/F,PHASE 1 KINGSWOOD GINZA, TIN SHUI WAI, N.T."
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "活力城PowerCity",
+    "addr": "天水圍天恩路12-18號Shop No. G71, G/F, Kingswood GinzaPhase 1"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "hungmin"
+    ],
+    "number": [
+     "11-13"
+    ],
+    "place": [
+     "元朗"
+    ],
+    "romname": [
+     "紅棉"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "HUNG MIN GAME CENTRE",
+    "addr": "G/F., 11-13 Hung Min Court, Yuen Long, N.T. (YLFL152)"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "紅棉遊戲機中心",
+    "addr": "新界元朗紅棉圍11-13號地舖"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "number": [
+     "63-63"
+    ],
+    "brand": [
+     "RETROCITYCONCEPT"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "RETROCITY CONCEPT",
+    "addr": "UNIT NO.23  LG/F,HOUSTON CENTRE,NO.63 MODY DOAD,KLN. HKG"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "RETROCITY CONCEPT (会员制店铺)",
+    "addr": "尖東麼地道63號好時中心LG23"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "hoiyun",
+     "kwuntong"
+    ],
+    "number": [
+     "1-1",
+     "68-68"
+    ],
+    "brand": [
+     "GAMEZONE",
+     "GAMEZONEKWUNTONGPLAZA"
+    ],
+    "romname": [
+     "觀塘"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "GAMEZONE(KWUN TONG PLAZA)",
+    "addr": "1/F,KWUN TONG PLAZA,68HOI YUEN ROAD, KWUNTONG, KOWLOON"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "觀塘廣場GAMEZONE",
+    "addr": "開源道68號觀塘廣場1樓117-121"
+   }
+  },
+  {
+   "rule": "hk-cross-script-blocked",
+   "evidence": {
+    "place": [
+     "敦吳"
+    ],
+    "brand": [
+     "GAMEZONE",
+     "GAMEZONEKWUNTONGPLAZA"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "GAMEZONE(KWUN TONG PLAZA)",
+    "addr": "1/F,KWUN TONG PLAZA,68HOI YUEN ROAD, KWUNTONG, KOWLOON"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "佐敦Game Zone",
+    "addr": "佐敦吳松街2號地底鋪"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "ngautaukok",
+     "taukok"
+    ],
+    "number": [
+     "300-302"
+    ],
+    "place": [
+     "裕民",
+     "觀塘"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "168 GAME CENTRE",
+    "addr": "GIF YUE MAN SHOPPING CENTRE 300-302 NGAU TAU KOK RD. KWUN TONG"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "168遊戲機中心",
+    "addr": "觀塘牛頭角道300-302號裕民中心地下54-58號鋪"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "uncau"
+    ],
+    "number": [
+     "290-296",
+     "296-296"
+    ],
+    "cjkname": [
+     "龍威"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "SUPER KING GAME CENTRE",
+    "addr": "B/F,WEST COAST BLDG, 290-296UN CHAU ST.,CHEUNG SHA WAN,KW"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "龍威娛樂遊戲機中心",
+    "addr": "元州街290-296號西岸國際大廈地庫"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "holeikut",
+     "holeiwut",
+     "houho",
+     "houholeikut",
+     "houholeiwut",
+     "leikut",
+     "leiwut",
+     "lungfan",
+     "lungpun",
+     "sanlungfan",
+     "sanlungpun",
+     "seksanlungfan",
+     "seksanlungpun",
+     "tamsanlungfan",
+     "tamsanlungpun"
+    ],
+    "number": [
+     "3-3"
+    ],
+    "place": [
+     "diamondhill"
+    ],
+    "brand": [
+     "HOLLYWOODGAMEZONE"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "HOLLYWOOD GAME ZONE",
+    "addr": "383, LEVEL 3, PLAZA HOLLYWOODDIAMOND HILL, KOWLOON,"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "荷里活遊戲城Game Zone",
+    "addr": "九龍黃大仙區鑽石山龍蟠街3號荷里活廣場3樓383A號鋪"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "place": [
+     "旺角"
+    ],
+    "brand": [
+     "GAMEZONE"
+    ]
+   },
    "a": {
     "src": "allnet",
     "name": "GAMEZONE(MONG KOK)",
@@ -33394,6 +33539,332 @@
     "src": "bemanicn",
     "name": "旺角新之城GAME ZONE游戏天地",
     "addr": "旺角彌敦道688號地底鋪全層"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "houkamkai",
+     "kamkai",
+     "koksaiyi",
+     "koksinyi",
+     "luksaiyi",
+     "luksinyi",
+     "saiyi",
+     "sinyi",
+     "wongkoksaiyi",
+     "wongkoksinyi",
+     "wongluksaiyi",
+     "wongluksinyi"
+    ],
+    "number": [
+     "39-39"
+    ],
+    "place": [
+     "旺角"
+    ],
+    "cjkname": [
+     "金雞",
+     "金雞遊",
+     "金雞遊戲",
+     "雞遊",
+     "雞遊戲",
+     "雞遊戲機"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "GOLDEN ERA GAME CENTRE",
+    "addr": "2/F, GOLDEN ERA PLAZA, 39SAI YEE STREET, MONGKOK, KOWLOON"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "旺角金雞遊戲機",
+    "addr": "旺角洗衣街39-55號金雞廣場二樓"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "cantonroad"
+    ],
+    "number": [
+     "30-30"
+    ],
+    "place": [
+     "沙咀"
+    ],
+    "cjkname": [
+     "宿驛",
+     "宿驛新",
+     "宿驛新港",
+     "新宿",
+     "新宿驛",
+     "新宿驛新",
+     "新港",
+     "新港機",
+     "新港機城",
+     "港機",
+     "港機城",
+     "驛新",
+     "驛新港",
+     "驛新港機"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "SILVERCORD AMUSEMENT ＆ GAMES",
+    "addr": "SHOP B03 BASEMENT, SILVERCORD30CANTON RD, T.S.T, KOWLOON"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "新宿驛新港機城",
+    "addr": "尖沙咀廣東道30號(新港中心)地庫B03鋪"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "nathanroad"
+    ],
+    "number": [
+     "557-559"
+    ],
+    "place": [
+     "永旺"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "GOLD STAR(NATHAN ROAD)",
+    "addr": "B,WING WONG BLDG., 557-559NATHAN RD., YAU MA TEI, KOWLOON"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "金星遊戲機中心（油麻地）",
+    "addr": "香港旺角弥敦道557-559号永旺行地下及地庫A舖"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "saukeiwan",
+     "shaukeiwan"
+    ],
+    "number": [
+     "57-87"
+    ],
+    "place": [
+     "筲箕"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "INTERNATIONAL GAMES CENTRE",
+    "addr": "SHOP A15 39,40&41G/F,TAI ON BLDG57-87SHAU KEI WAN RD,SAI WAN HO"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "西灣河遊戲機中心",
+    "addr": "筲箕湾道57-87号"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "number": [
+     "82-82"
+    ],
+    "place": [
+     "aberdeen"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "JUMBO GAME",
+    "addr": "BASEMENT, 82 OLD MAIN STREET,ABERDEEN, HONG KONG,"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "珍宝游戏机中心",
+    "addr": "香港岛香港仔香港仔旧大街82号地库"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "wancai"
+    ],
+    "number": [
+     "230-230"
+    ],
+    "brand": [
+     "SMARTGAME"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "SMART GAME(WAN CHAI)",
+    "addr": "G/F,GREAT SMART TOWER,NO.230 WAN CHAI ROAD,HONG KONG"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "湾仔 Smart Game 遊戲機",
+    "addr": "灣仔灣仔道230號"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "place": [
+     "macau"
+    ],
+    "brand": [
+     "BEEBEELAND"
+    ]
+   },
+   "a": {
+    "src": "allnet",
+    "name": "BEEBEE LAND",
+    "addr": "R92A, 2F, H853 Fun Factory, Lisboeta, Macau"
+   },
+   "b": {
+    "src": "ziv",
+    "name": "BEEBEELAND 蜂狂天地",
+    "addr": "Rua da Patinagem R92 AB, 2nd Floor, H853 Fun Factory, Lisboeta Macau Cotai Macau Special Administrative Region, 999078, Cotai"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "caulaihou",
+     "cauleihou",
+     "kapcaulaihou",
+     "kapcauleihou",
+     "kaptaulaihou",
+     "kaptauleihou",
+     "laihou",
+     "leihou",
+     "taulaihou",
+     "tauleihou"
+    ],
+    "cjkname": [
+     "佳景",
+     "佳景樂",
+     "佳景樂園",
+     "景樂",
+     "景樂園"
+    ]
+   },
+   "a": {
+    "src": "ziv",
+    "name": "佳景樂園兒童天地 Future Bright Amusement Park",
+    "addr": "1G Rua de Coelho do Amaral 白鴿巢麗豪花園地下 Macau 999078, Macau"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "佳景樂園",
+    "addr": "连胜街1A号白鴿巢麗豪花園地庫"
+   }
+  },
+  {
+   "rule": "hk-cross-script-blocked",
+   "evidence": {
+    "street": [
+     "houkiukwong",
+     "kiukwong",
+     "wingfa",
+     "wingwa"
+    ],
+    "number": [
+     "57-57"
+    ],
+    "cjkname": [
+     "兒童",
+     "兒童王",
+     "兒童王國",
+     "王國",
+     "童王",
+     "童王國"
+    ]
+   },
+   "a": {
+    "src": "ziv",
+    "name": "兒童王國",
+    "addr": "澳門永華街3-91 號僑光大廈 Macau Macau, 999078, Macau"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "新遊戲/兒童王國",
+    "addr": "永華街57號僑光大廈地下H鋪"
+   }
+  },
+  {
+   "rule": "hk-cross-script-blocked",
+   "evidence": {
+    "street": [
+     "wingfa",
+     "wingwa"
+    ],
+    "number": [
+     "57-57"
+    ],
+    "cjkname": [
+     "新遊",
+     "新遊戲"
+    ]
+   },
+   "a": {
+    "src": "ziv",
+    "name": "新遊戲",
+    "addr": "永華街57號僑光工業大廈地下H舖 Macau 999078, Macau"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "新遊戲/兒童王國",
+    "addr": "永華街57號僑光大廈地下H鋪"
+   }
+  },
+  {
+   "rule": "hk-cross-script",
+   "evidence": {
+    "street": [
+     "holanyun",
+     "lanyun"
+    ],
+    "number": [
+     "122-122"
+    ],
+    "place": [
+     "macau"
+    ],
+    "cjkname": [
+     "栢蕙",
+     "栢蕙遊",
+     "栢蕙遊戲",
+     "蕙遊",
+     "蕙遊戲",
+     "蕙遊戲廣"
+    ],
+    "romname": [
+     "栢蕙"
+    ]
+   },
+   "a": {
+    "src": "ziv",
+    "name": "栢蕙遊戲廣場 Praça de Diversóes Pak Wai",
+    "addr": "122 Avenida do Conselheiro Ferreira de Almeida 荷蘭園大馬路122號地下 Macau 999078, Macau"
+   },
+   "b": {
+    "src": "bemanicn",
+    "name": "栢蕙遊戲廣場",
+    "addr": "澳門荷蘭園大馬路122號地下"
    }
   },
   {
@@ -47817,7 +48288,7 @@
    "to_country": "Czechia"
   },
   {
-   "id": 9717,
+   "id": 9709,
    "name": "MOLLYFANTASY MAYANG MALL",
    "src": [
     "allnet"
@@ -47836,7 +48307,7 @@
    "previous_lng": 92.0407904
   },
   {
-   "id": 10248,
+   "id": 10240,
    "name": "QUANTUM SM PAMPANGA",
    "src": [
     "allnet"
@@ -47853,7 +48324,7 @@
    "previous_lng": -121.8852525
   },
   {
-   "id": 10642,
+   "id": 10634,
    "name": "Arcade @ Elegante Mall",
    "src": [
     "ziv"
@@ -47869,7 +48340,7 @@
    "to_country": "Nigeria"
   },
   {
-   "id": 10769,
+   "id": 10761,
    "name": "VAMS MUSIC/SPORT",
    "src": [
     "ziv"
@@ -47886,7 +48357,7 @@
    "to_country": "Japan"
   },
   {
-   "id": 10978,
+   "id": 10970,
    "name": "SHIRONEKOYA 白喵一番屋 台北店",
    "src": [
     "ziv"
@@ -47902,7 +48373,7 @@
    "to_country": "Australia"
   },
   {
-   "id": 10999,
+   "id": 10991,
    "name": "TOM'S WORLD (HAIDIAN-LI@TAINAN))",
    "src": [
     "allnet"
@@ -47919,7 +48390,7 @@
    "previous_lng": 116.298326
   },
   {
-   "id": 11195,
+   "id": 11187,
    "name": "Adventure Island",
    "src": [
     "ziv"
@@ -47935,7 +48406,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11200,
+   "id": 11192,
    "name": "Iceland",
    "src": [
     "ziv"
@@ -47951,7 +48422,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11205,
+   "id": 11197,
    "name": "PlayOcity",
    "src": [
     "ziv"
@@ -47967,7 +48438,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11209,
+   "id": 11201,
    "name": "Sparky's",
    "src": [
     "ziv"
@@ -47983,7 +48454,7 @@
    "to_country": "Saudi Arabia"
   },
   {
-   "id": 11213,
+   "id": 11205,
    "name": "Vuvuzella Park",
    "src": [
     "ziv"
@@ -47999,7 +48470,7 @@
    "to_country": "Egypt"
   },
   {
-   "id": 12838,
+   "id": 12830,
    "name": "Micronesia Mall - Fun Fair",
    "src": [
     "ziv"
@@ -48015,7 +48486,7 @@
    "to_country": "Guam"
   },
   {
-   "id": 13474,
+   "id": 13466,
    "name": "KIDS BOX&TINY MF AEON TAN AN",
    "src": [
     "allnet"

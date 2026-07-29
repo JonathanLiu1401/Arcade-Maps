@@ -36,6 +36,7 @@
 | `data/enrichment.json` | Optional ZIv extras: opening hours, venue info text, website, per-machine prices |
 | `data/fx_rates.json` | USD FX rates for price display |
 | `data/china_areas.json` | Static administrative centroid table (not rebuilt weekly; `tools/build_china_areas.py` refreshes it by hand) |
+| `data/hk_romanize.json` | Static Cantonese readings per character (not rebuilt weekly; `tools/build_hk_romanize.py` refreshes it by hand). Used only by the Hong Kong / Macau merge tier |
 | `data/china_geocode.json` | Committed China address -> coordinate cache (only written by the opt-in `--only geocode` step; absent until someone runs it with a key) |
 | `data_raw/*.json` | Per-source scraped rows (incl. optional enrichment fields on bemanicn/ziv rows) |
 | `mymaps/*` | KMZ/CSV layers + regenerated README manifest |

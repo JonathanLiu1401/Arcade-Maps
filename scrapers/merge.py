@@ -103,6 +103,7 @@ import enrich          # enrichment section (see (k) in run())
 import eviltransform
 import geo_validate
 import geocode_cn     # opt-in street geocode cache (see (l))
+import hk_match      # Cantonese-reading bridge for the Hong Kong tier
 import name_match     # romanization-aware proximity tier (see (c))
 import ziv            # title -> slug lookup for the counts test (see (m))
 
@@ -1338,181 +1339,112 @@ def cluster_units(units, log):
                     log.append({"rule": rule, "a": unit_ref(i),
                                 "b": unit_ref(j)})
 
-    # Hong Kong / Macau rule: BemaniCN publishes those shops with a precise
-    # Chinese address and NO coordinates, while ALL.Net, e-amusement and ZIv
-    # publish the same venues in English WITH coordinates. Nothing above can
-    # pair them - the names share no script ("168遊戲機中心" against
-    # "168 GAME CENTRE", "珍宝游戏机中心" against "JUMBO GAME") and one side has
-    # no pin to measure a distance from.
+    # ---- Hong Kong / Macau cross-script tier -------------------------
+    # The only territory where one venue is routinely published under two
+    # names that share not a single character. The official sources are
+    # English with a coordinate; BemaniCN is Chinese with a precise address
+    # and no coordinate. Name similarity is zero by construction and there is
+    # no distance to measure, so every general tier above is blind here.
     #
-    # The STREET NUMBER survives translation, and in a territory this dense it
-    # is specific. "300-302", "557-559", "290-296" identify a building outright.
+    # scrapers/hk_match.py extracts independent kinds of evidence - the street
+    # name (compared through the Cantonese reading, because 和宜合道 IS Wo Yi
+    # Hop Road), the street number, the locality, the operator's Latin brand,
+    # a shared Chinese venue name, and the venue name read aloud - and this
+    # requires TWO KINDS before merging anything. One kind is never enough:
+    # a bare 68 pairs Kwun Tong Plaza with an arcade in Shau Kei Wan, and a
+    # bare GAMEZONE pairs all six Game Zone branches with each other.
     #
-    # Two things had to be handled before this was trustworthy, both found by
-    # checking the output rather than by reasoning about it:
+    # A shared street at conflicting numbers VETOES the pair outright. That is
+    # the one signal in this dataset that positively separates two venues:
+    # 觀塘道418號 (APM) and 觀塘道410號 (金沙) are two buildings on one road,
+    # and every other kind of evidence would have called them the same arcade.
     #
-    #   * Unit codes are not street numbers. "SHOP A15" made three different
-    #     BemaniCN rows match INTERNATIONAL GAMES CENTRE on "15". A digit run
-    #     glued to an ASCII letter is therefore ignored. The check is
-    #     ASCII-specific on purpose: Python treats CJK as alphabetic, so a
-    #     plain isalpha() test rejected "道300" and matched nothing at all.
-    #   * Small numbers are weak. Only ranges and numbers >= 10 count.
+    # Evidence is gathered per CLUSTER, not per unit. A venue already merged
+    # from ALL.Net and ZIv carries the English name AND ZIv's bilingual
+    # address, and the Chinese half of that address is often the only thing
+    # the BemaniCN row can be compared against. Counting units separately also
+    # made a BemaniCN row matching both halves of ONE venue look ambiguous and
+    # merge with neither, which is how Plaza Hollywood stayed split despite
+    # both sides plainly reading 383.
     #
-    # Then a two-way uniqueness guard: a row merges only when it has exactly
-    # one partner AND that partner has only it, so a number appearing on both
-    # sides of two different venues merges neither.
-    #
-    # Result: 10 pairs, each independently corroborated by the names once
-    # translated (金星 = Gold Star, 荷里活 = Hollywood, 珍宝 = Jumbo,
-    # 紅棉 = Hung Min, 西岸國際 = West Coast, RETROCITY CONCEPT verbatim).
+    # Then a two-way uniqueness guard: a cluster merges only when it has
+    # exactly one partner AND that partner has only it.
     HK_COUNTRIES = ("Hong Kong", "Macau")
+    HK_NEAR_M = 1000.0    # both-coordinated pairs must still be plausible
 
-    def _hk_street_numbers(addr):
-        s = (addr or "").replace("號", "").replace("号", "")
-        out = set()
-        for m in re.finditer(r"[0-9]{1,4}(?:\s*-\s*[0-9]{1,4})?", s):
-            tok = m.group(0).replace(" ", "")
-            prev = s[m.start() - 1] if m.start() else ""
-            if prev.isascii() and prev.isalpha():
-                # A15 / B03 / G71 are unit codes, not street numbers. A RANGE
-                # is exempt: the official addresses run words into the number
-                # ("TAI ON BLDG57-87SHAU KEI WAN RD"), and "57-87" is a street
-                # range whatever precedes it.
-                if "-" not in tok:
-                    continue
-            if "-" in tok or (tok.isdigit() and int(tok) >= 10):
-                out.add(tok)
-        return out
-
-    # Edges are keyed by CLUSTER, not by unit. A venue already merged from
-    # ALL.Net and ZIv is two units, and counting them separately made a
-    # BemaniCN row matching both halves of ONE venue look ambiguous and merge
-    # with neither - which is how Plaza Hollywood stayed split despite both
-    # sides plainly reading 383.
-    hk_edge = {}        # (root_a, root_b) -> (i, j, shared numbers)
-    hk_partners = {}    # root -> set of partner roots
     hk_idx = [i for i, u in enumerate(units) if u["country"] in HK_COUNTRIES]
-    for x in range(len(hk_idx)):
-        for y in range(x + 1, len(hk_idx)):
-            i, j = hk_idx[x], hk_idx[y]
-            ui, uj = units[i], units[j]
-            if ui["source"] == uj["source"]:
+    hk_clusters = {}
+    for i in hk_idx:
+        hk_clusters.setdefault(uf.find(i), []).append(i)
+
+    def _cluster_field(members, key):
+        return " ".join(units[k][key] or "" for k in members)
+
+    hk_edge = {}
+    hk_partners = {}
+    roots = sorted(hk_clusters)
+    for x in range(len(roots)):
+        for y in range(x + 1, len(roots)):
+            ra, rb = roots[x], roots[y]
+            ma, mb = hk_clusters[ra], hk_clusters[rb]
+            if ({units[k]["country"] for k in ma}
+                    != {units[k]["country"] for k in mb}):
                 continue
-            if ui["country"] != uj["country"]:
+            if not ({units[k]["source"] for k in ma}
+                    ^ {units[k]["source"] for k in mb}):
+                continue                  # same single source, nothing to add
+            coords_a = [k for k in ma if units[k]["lat"] is not None]
+            coords_b = [k for k in mb if units[k]["lat"] is not None]
+            if coords_a and coords_b:
+                # Both already placed: only merge when the pins agree, so a
+                # brand shared by two real branches cannot fuse them.
+                if min(haversine_m(units[p]["lat"], units[p]["lng"],
+                                   units[q]["lat"], units[q]["lng"])
+                       for p in coords_a for q in coords_b) > HK_NEAR_M:
+                    continue
+            types, veto = hk_match.evidence(
+                _cluster_field(ma, "addr"), _cluster_field(ma, "name"),
+                _cluster_field(mb, "addr"), _cluster_field(mb, "name"))
+            if veto or len(types) < 2:
                 continue
-            ra, rb = uf.find(i), uf.find(j)
-            if ra == rb:
-                continue
-            # exactly one side coordinate-less: the other supplies the pin
-            if (ui["lat"] is None) == (uj["lat"] is None):
-                continue
-            shared = _hk_street_numbers(ui["addr"]) & _hk_street_numbers(uj["addr"])
-            if not shared:
-                continue
-            key = (min(ra, rb), max(ra, rb))
-            hk_edge.setdefault(key, (i, j, sorted(shared)))
+            hk_edge[(ra, rb)] = (ma[0], mb[0], types)
             hk_partners.setdefault(ra, set()).add(rb)
             hk_partners.setdefault(rb, set()).add(ra)
 
-    for (ra, rb), (i, j, sh) in sorted(hk_edge.items()):
-        if len(hk_partners.get(ra, ())) != 1 or len(hk_partners.get(rb, ())) != 1:
-            continue                          # ambiguous on either side
-        if uf.union(i, j):
-            log.append({"rule": "hk-street-number", "numbers": sh,
-                        "a": unit_ref(i), "b": unit_ref(j)})
+    # Mutual best, with a margin. Plain uniqueness was too blunt: 佐敦Game Zone
+    # shares a brand and a locality reading with Kwun Tong Plaza, which is
+    # enough to be a candidate and was enough to block the real Kwun Tong pair
+    # from merging. A cluster now picks the partner backed by the most KINDS of
+    # evidence, and merges only when that partner picks it back and no runner
+    # up ties it. Two Macau rows really are tied - 新遊戲/兒童王國 names two
+    # arcades in one building - and a tie still refuses.
+    def _rank(root):
+        cands = []
+        for other in hk_partners.get(root, ()):
+            key = (min(root, other), max(root, other))
+            cands.append((len(hk_edge[key][2]), other))
+        cands.sort(key=lambda c: (-c[0], c[1]))
+        return cands
 
-    # Second Hong Kong tier: the street number fails when the two sources cite
-    # DIFFERENT FACES of the same corner building. Game Zone in Mong Kok is the
-    # case that forced this: ALL.Net files it as "ARGYLE CENTRE PHASE I, 65
-    # ARGYLE ST" and BemaniCN as "旺角彌敦道688號地底鋪全層". Both are Argyle
-    # Centre - the block runs from 65 Argyle Street to 688 Nathan Road - but 65
-    # and 688 share nothing, so the venue stayed split and the official half
-    # showed no machine counts while the BemaniCN half sat elsewhere on the map
-    # holding maimai x22.
-    #
-    # What DOES survive is the Latin brand: BemaniCN writes Hong Kong venue
-    # names as <locality><name> and keeps the operator's own Latin branding
-    # inline, so "旺角新之城GAME ZONE游戏天地" and "GAMEZONE(MONG KOK)" share
-    # "GAMEZONE" verbatim. On its own that is far too weak - six Hong Kong rows
-    # carry it - so it is paired with the locality, and the locality aliases are
-    # MINED FROM THE DATA rather than hand-listed: ZIv writes its Hong Kong
-    # addresses bilingually ("旺角 (Mong Kok)", "鑽石山 (Diamond Hill)"), which
-    # is exactly the CJK-to-Latin table this needs and which grows itself as ZIv
-    # adds venues.
-    #
-    # Guards, in the order they matter:
-    #   * District-scale aliases are dropped. 九龍 / Kowloon covers half the
-    #     territory's arcades and would make every pairing look plausible.
-    #   * A Latin run that IS a locality cannot serve as the brand, or two
-    #     unrelated Mong Kok venues would "share a brand" of MONGKOK.
-    #   * Brand runs must be >= 6 letters, so "MG" or "JP" cannot pair anything.
-    #   * The same cluster-keyed two-way uniqueness as above: one partner each,
-    #     or no merge.
-    _HK_COARSE = {"KOWLOON", "NEWTERRITORIES", "HONGKONGISLAND", "HONGKONG"}
+    def _best_unambiguous(root):
+        cands = _rank(root)
+        if not cands:
+            return None
+        if len(cands) > 1 and cands[0][0] == cands[1][0]:
+            return None
+        return cands[0][1]
 
-    def _letters(s):
-        return "".join(c for c in (s or "").upper() if "A" <= c <= "Z")
-
-    def _latin_runs(s):
-        return {_letters(m.group(0))
-                for m in re.finditer(r"[A-Za-z][A-Za-z' ]*[A-Za-z]", s or "")}
-
-    hk_alias = {}       # CJK locality -> Latin form
-    _seen_alias = {}
-    for i in hk_idx:
-        for cjk, lat in re.findall(
-                r"([一-鿿]{2,6})\s*\(([A-Za-z][A-Za-z' -]{2,24})\)",
-                units[i]["addr"] or ""):
-            lat = _letters(lat)
-            if len(lat) >= 5 and lat not in _HK_COARSE:
-                _seen_alias.setdefault(cjk, set()).add(lat)
-    for cjk, lats in _seen_alias.items():
-        if len(lats) == 1:      # an ambiguous alias is no alias at all
-            hk_alias[cjk] = next(iter(lats))
-    hk_latin_localities = set(hk_alias.values())
-
-    def _hk_localities(u):
-        text = "%s %s" % (u["name"] or "", u["addr"] or "")
-        letters = _letters(text)
-        return {cjk for cjk, lat in hk_alias.items()
-                if cjk in text or lat in letters}
-
-    def _hk_brands(u):
-        return {r for r in _latin_runs(u["name"])
-                if len(r) >= 6 and r not in hk_latin_localities}
-
-    brand_edge = {}
-    brand_partners = {}
-    for x in range(len(hk_idx)):
-        for y in range(x + 1, len(hk_idx)):
-            i, j = hk_idx[x], hk_idx[y]
-            ui, uj = units[i], units[j]
-            if ui["source"] == uj["source"] or ui["country"] != uj["country"]:
-                continue
-            ra, rb = uf.find(i), uf.find(j)
-            if ra == rb:
-                continue
-            if (ui["lat"] is None) == (uj["lat"] is None):
-                continue
-            if not (_hk_localities(ui) & _hk_localities(uj)):
-                continue
-            bi, bj = _hk_brands(ui), _hk_brands(uj)
-            shared = sorted(b for b in bi
-                            if any(b in o or o in b for o in bj))
-            if not shared:
-                continue
-            key = (min(ra, rb), max(ra, rb))
-            brand_edge.setdefault(key, (i, j, shared))
-            brand_partners.setdefault(ra, set()).add(rb)
-            brand_partners.setdefault(rb, set()).add(ra)
-
-    for (ra, rb), (i, j, sh) in sorted(brand_edge.items()):
-        if (len(brand_partners.get(ra, ())) != 1
-                or len(brand_partners.get(rb, ())) != 1):
-            continue
-        if uf.union(i, j):
-            log.append({"rule": "hk-locality-brand", "brand": sh,
-                        "a": unit_ref(i), "b": unit_ref(j)})
+    for (ra, rb), (i, j, types) in sorted(hk_edge.items()):
+        ambiguous = (_best_unambiguous(ra) != rb
+                     or _best_unambiguous(rb) != ra)
+        # Blocked pairs are logged rather than dropped silently. A refusal here
+        # is either correct or a rule that needs another kind of evidence, and
+        # there is no way to tell which without seeing them.
+        log.append({"rule": ("hk-cross-script-blocked" if ambiguous
+                             else "hk-cross-script"),
+                    "evidence": types, "a": unit_ref(i), "b": unit_ref(j)})
+        if not ambiguous:
+            uf.union(i, j)
 
     # China rule (wahlap x bemanicn): both sources are coordinate-less,
     # so the global rules cannot merge them and the China list would
