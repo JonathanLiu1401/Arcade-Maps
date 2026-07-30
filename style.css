@@ -244,14 +244,14 @@ body.drawer-closed .panel-grip { display: none; }
   font-size: 10.5px; color: var(--fg-dim); text-transform: uppercase; letter-spacing: 0.04em;
 }
 .badge.cab { color: #ffd54f; border-color: #6d5c1e; }
-/* An offline cabinet: the network is dead, so it cannot save a score. Struck
-   through and desaturated, because it has to be distinguishable from a live
-   variant badge at a glance and without relying on colour alone - the line
-   through the text survives greyscale, low vision and colour blindness. */
-.badge.cab.dead {
-  color: #d0806f; border-color: #6d3a2e;
-  text-decoration: line-through; text-decoration-thickness: 1px;
-}
+/* An offline cabinet: the network is dead, so it cannot save a score. It gets
+   its own warm colour, and NOT a strikethrough. A line through the text reads
+   as "this is not here" or "we crossed this out", when the cabinet is very
+   much there and playable - only its network is gone. The badge is also the
+   hardest thing on the chip row to read at a phone size, so striking it out
+   cost legibility to say something it was not even saying. The warning that
+   the network is dead belongs in the cabinet row below, in words. */
+.badge.cab.dead { color: #d0806f; border-color: #6d3a2e; }
 a.badge { text-decoration: none; }
 a.badge:hover { color: var(--fg); }
 .pp-gmaps {
