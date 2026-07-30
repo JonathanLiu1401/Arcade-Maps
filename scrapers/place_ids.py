@@ -2,7 +2,8 @@
 
 WHY THIS FILE EXISTS, AND WHY IT ONLY STORES AN ID
 --------------------------------------------------
-Photo coverage is ~7.5% overall (Japan ~3%, China ~0%). Google has a photo
+Photo coverage is ~43% overall, but only ~7% in Japan, where the chain
+store pages that do have photos forbid embedding them. Google has a photo
 for most of these venues. We are allowed to show one; we are not allowed to
 keep one.
 

@@ -10,12 +10,15 @@
    - fetches every arcade source (ALL.Net, eagate, WAHLAP, BemaniCN,
      Zenius-I-Vanisher across 65 country queries + US series crawl,
      Round1 USA) into `data_raw/`;
-   - merges into `data/arcades.json` (dedupe, geo_validate, china_place
-     approx centroids, stats);
+   - merges into `data/arcades.json` (dedupe, geo_validate, China
+     placement from the committed `data/china_geocode.json` cache,
+     china_place centroids for the residue, stats);
    - builds `data/enrichment.json` from the enrichment fields on the raw
-     BemaniCN/ZIv rows, joined by source URL (only the ZIv rows carry
-     those fields in the committed `data_raw/`, so today's file is
-     ZIv-only);
+     BemaniCN/ZIv rows joined by source URL, plus venue photos joined by
+     merged arcade id from the committed photo sidecars, plus the
+     measured price table (`scrapers/prices.py`). Every TEXT field in
+     the committed `data_raw/` comes from ZIv; BemaniCN contributes
+     photos only;
    - rebuilds the My Maps export files under `mymaps/`;
    - bakes `data/fx_rates.json` (Frankfurter primary, open.er-api.com
      gap-fill / fallback).
@@ -32,14 +35,25 @@
 |---|---|
 | `data/arcades.json` | Canonical merged arcades (incl. `approx` China pins) |
 | `data/stats.json` | Totals / by_game / by_source / by_country |
-| `data/merge_log.json` | Dedupe counts, geo_validation log, china_approx log, superseded community rows |
-| `data/enrichment.json` | Optional ZIv extras: opening hours, venue info text, website, per-machine prices |
+| `data/merge_log.json` | Dedupe counts, geo_validation log, china_geocoded / china_geocode_rejected / china_approx logs, superseded community rows |
+| `data/enrichment.json` | Optional extras: ZIv opening hours, venue info text, website and per-machine prices; venue photos; the measured `prices` table |
 | `data/fx_rates.json` | USD FX rates for price display |
-| `data/china_areas.json` | Static administrative centroid table (not rebuilt weekly; `tools/build_china_areas.py` refreshes it by hand) |
-| `data/hk_romanize.json` | Static Cantonese readings per character (not rebuilt weekly; `tools/build_hk_romanize.py` refreshes it by hand). Used only by the Hong Kong / Macau merge tier |
-| `data/china_geocode.json` | Committed China address -> coordinate cache (only written by the opt-in `--only geocode` step; absent until someone runs it with a key) |
-| `data_raw/*.json` | Per-source scraped rows (incl. optional enrichment fields on bemanicn/ziv rows) |
 | `mymaps/*` | KMZ/CSV layers + regenerated README manifest |
+| `data_raw/*.json` | Per-source scraped rows (incl. optional enrichment fields on bemanicn/ziv rows) |
+
+**Read, never written, by a weekly run.** These are committed artefacts from
+manual steps. The Action needs no API key for any of them, and must not gain
+one:
+
+| Path | Refreshed by |
+|---|---|
+| `data/china_areas.json` | `tools/build_china_areas.py`, by hand |
+| `data/hk_romanize.json` | `tools/build_hk_romanize.py`, by hand. Used only by the Hong Kong / Macau merge tier |
+| `data/china_geocode.json` | `run_all.py --skip-scrape --only geocode`, by name only. Keyless by default (Baidu); `AMAP_KEY` / `GOOGLE_MAPS_API_KEY` win when set |
+| `data/china_manual_coords.json` | Hand-researched pins, edited by a human. Every record needs a `source_url` and a `name` |
+| `data_raw/ziv_photos.json`, `data_raw/chain_photos.json`, `data_raw/bemanicn_photos.json`, `data_raw/photo_index.json`, `data_raw/photo_quality.json` | The manual photo crawls in `docs/DATA_SOURCES.md` section 11 |
+| `assets/venues/cn/*.jpg` | `scrapers/bemanicn_photos.py`, by hand |
+| `data/place_ids.json` | `scrapers/place_ids.py`, opt-in and needs a Google key. **Absent from the tree today** because nobody has run it; the frontend treats that as "feature off". See `docs/GOOGLE_PHOTOS.md` |
 
 ### Failure handling
 
@@ -127,23 +141,73 @@ py scrapers/run_all.py --only fx
 # connectivity smoke (no merge / My Maps):
 py scrapers/run_all.py --smoke
 
-# opt-in China address geocoding (needs AMAP_KEY or GOOGLE_MAPS_API_KEY;
-# a no-op without one). Refreshes data/china_geocode.json only; re-run the
-# merge afterwards so the new coordinates reach data/arcades.json:
+# opt-in China address geocoding. Refreshes data/china_geocode.json only;
+# re-run the merge afterwards so the new coordinates reach
+# data/arcades.json:
 py scrapers/run_all.py --skip-scrape --only geocode
 py scrapers/run_all.py --skip-scrape
 ```
 
-`--only geocode` is never part of a default run. It costs provider quota,
-so it happens only when asked for by name, and the answers are committed
-so nobody pays for the same address twice. `--limit N` caps how many NEW
-addresses one run buys, which is how a first full pass over the ~5.7k
-coordinate-less China rows can be spread out.
+`--only geocode` is never part of a default run, and the reason is time
+rather than money: the default provider is Baidu's **keyless** public
+endpoint, so no API key is needed, but a full pass is a couple of hours of
+polite serial requests against an undocumented endpoint. `AMAP_KEY` or
+`GOOGLE_MAPS_API_KEY` take precedence when they are set in the environment.
+The answers are committed, so an ordinary build (including every CI run)
+reads the file and makes no request at all, and nobody re-pays for the same
+address. `--limit N` caps how many NEW addresses one run buys, which is how
+a first full pass over the coordinate-less China rows can be spread out.
+Addresses nothing resolves are stored as explicit misses so a later refresh
+does not retry the same dead ends.
 
 The scrapers are stdlib-only: no virtualenv or `pip install` is needed.
 Python 3.12 or newer is expected. Review the resulting diff of
 `data/arcades.json`, `data/enrichment.json`, and `data/fx_rates.json`
 before committing.
+
+## Refreshing venue photos (manual, occasional)
+
+None of this is wired into `run_all.py` or the weekly Action, on purpose:
+each crawl is hours of somebody else's bandwidth, and the results are
+committed artefacts a normal build simply reads. Run them when coverage
+has clearly gone stale, not on a schedule. Full source-by-source detail,
+including the licence position for each, is in `docs/DATA_SOURCES.md`
+section 11.
+
+```powershell
+# 1. harvest. Each writes its own sidecar under data_raw/.
+py scrapers/photos.py                      # ZIv, without skip_pictures
+py scrapers/chain_photos.py --all          # ZIv full-country sweep + Commons + link-outs
+
+# BemaniCN thumbnails: mirrors BYTES into assets/venues/cn/, because the
+# upstream URLs are signed and expire within the hour. ~4.5 h serially,
+# resumable from its journal, so smoke it first.
+py scrapers/bemanicn_photos.py --limit 25
+py scrapers/bemanicn_photos.py
+
+# 2. score every image from its header (ranked, not just filtered)
+py scrapers/photo_quality.py --enrichment data/enrichment.json --out data_raw/photo_quality.json
+
+# 3. unify every harvest into data_raw/photo_index.json. Offline, no network.
+#    This is the file enrich.py joins BY ARCADE ID, so skipping it means the
+#    new photos never reach the site.
+py scrapers/photos.py --merge
+
+# 4. re-merge so the index reaches data/enrichment.json
+py scrapers/run_all.py --skip-scrape
+```
+
+Step 3 is the one that is easy to forget and silent when missed. Two checks on
+the diff afterwards: `counts.arcades_with_venue_photos` in
+`data/enrichment.json` should move in the direction you expect, and every
+`file` path in the new records must exist under `assets/venues/`. A record
+carrying `file` and no `url` is normal for the mirrored China photos, and it is
+exactly the shape a renderer has silently dropped before, leaving thousands of
+photos sitting in the repo unseen.
+
+Google Places photos are a separate, optional, keyed path and are documented
+on their own: [`docs/GOOGLE_PHOTOS.md`](GOOGLE_PHOTOS.md). `scrapers/place_ids.py`
+is not part of `run_all.py` and makes no request without `GOOGLE_MAPS_API_KEY`.
 
 ## When a source breaks
 
@@ -166,9 +230,12 @@ falls sharply. ZIv empty-200 traps abort the run loudly with
    payloads; login-walled coordinate routes remaining 302 is expected.
    If enrichment fields disappear from raw rows, `enrichment.json`
    simply omits them (`bemanicn_rows_contributed` drops) while arcade
-   placement still works. That counter is already **0** in the current
-   build: the committed BemaniCN rows carry no enrichment fields, so
-   every field in `enrichment.json` today comes from ZIv.
+   placement still works. That counter reads **2,256** of 3,812 in the
+   current build, and every one of those contributions is a PHOTO: the
+   committed BemaniCN rows still carry no text enrichment, so every
+   text field in `enrichment.json` today comes from ZIv. A drop in that
+   counter with the photo sidecars untouched therefore means the photo
+   JOIN broke, not the crawl.
 5. Re-run locally (`py scrapers/run_all.py --only <source>` first, then
    a full run) until the source produces sane counts again.
 6. If the site is temporarily down rather than changed, do nothing:
@@ -188,18 +255,40 @@ falls sharply. ZIv empty-200 traps abort the run loudly with
 
 ### China placement checks
 
-- If many China pins vanish or cluster oddly: check
-  `merge_log.json` -> `china_approx` length (last good run ~5,625, of
-  which ~4,064 resolved to a district) and that
-  `data/china_areas.json` is present.
+Two different mechanisms place China rows now, and they have different
+healthy values. `merge_log.json` carries a log for each:
+
+- **`china_geocoded`** is the main path: rows placed from the committed
+  address cache. Last good run **5,757**, all at level `address`. A sharp
+  drop here means `data/china_geocode.json` is missing or truncated, not
+  that addresses changed.
+- **`china_approx`** is now only the residue that no cached answer covers.
+  Last good run **10** (7 district, 3 city). This number being small is
+  healthy; it was ~5,625 before the geocode cache existed, so an old note
+  quoting thousands is describing the previous design.
+- **`china_geocode_rejected`** lists cached answers the district gate
+  refused at read time. Last good run **1**. A jump here means upstream
+  addresses changed shape or the area table moved, and those rows fall
+  through to a centroid rather than being placed wrongly.
 - Never add Taiwan rows to `china_areas.json` without a real Taiwan
-  centroid source; the placer hard-skips Taiwan by design.
-- A sudden swing in the district-vs-city split means the address text
-  changed shape upstream, not that the table broke. Run
-  `python scrapers/test_china_place.py` first.
-- `approx: true` count should stay in the same ballpark as
-  WAHLAP+BemaniCN coordinate-less volume minus merges that inherit ZIv
-  pins.
+  centroid source; the placer hard-skips Taiwan by design, as it does
+  Hong Kong and Macau.
+- Run `python scrapers/test_china_place.py` and
+  `python scrapers/test_geocode_cn.py` before assuming the data moved.
+- **`approx: true` should stay high, and that is correct.** All 5,767
+  placed China rows carry it. The flag does not mean "we failed to
+  geocode this"; it means the pin was derived rather than published, and
+  a POI search answers with a building rather than necessarily the right
+  one. Do not add a step that clears it: one was written, measured to be
+  roughly a fifth wrong in both directions, and deleted. The metric that
+  actually tracks placement quality is how many rows SHARE a coordinate
+  while claiming precision, which is 2. See the README China accuracy
+  disclosure and the comment in `merge.py`.
+- If a hand-researched pin in `data/china_manual_coords.json` stops
+  applying, look for a loud warning about a name/id mismatch rather than
+  assuming the file is ignored: merge renumbers ids on every build, so a
+  record whose venue has shifted id is refused on purpose and needs
+  re-keying to the new id.
 
 ## Rate-limit etiquette
 

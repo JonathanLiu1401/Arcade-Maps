@@ -5,10 +5,11 @@ Deep per-source reference for the Arcade Maps scrapers: exact URL patterns, resp
 Cross-cutting rules:
 
 - **Politeness:** every scraper sleeps after each request (0.4 s by default, `DEFAULT_SLEEP` in `scrapers/common.py`) and retries at most 3 times with exponential backoff. Requests are sequential, never parallel fan-out against a single host. The shared User-Agent is currently a fixed desktop-browser string (`common.USER_AGENT`); switching to a project-identifying UA is desirable but untested against the eagate WAF.
-- **Coordinate systems:** SEGA ALL.Net, Konami eagate, and ZIv coordinates are WGS-84 (Google-Maps-derived or community-pinned on OSM-style maps) and are used as-is. Anything geocoded through Tencent/AMap for China is GCJ-02 and is converted with vendored eviltransform (`gcj2wgs_exact`); Baidu-derived points would need `bd2wgs`. `outOfChina` guards against double-converting non-China points. Administrative centroids in `data/china_areas.json` are stored already converted to WGS-84 (see section 8).
+- **Coordinate systems:** SEGA ALL.Net, Konami eagate, and ZIv coordinates are WGS-84 (Google-Maps-derived or community-pinned on OSM-style maps) and are used as-is. Anything geocoded through Tencent/AMap for China is GCJ-02 and is converted with vendored eviltransform (`gcj2wgs_exact`); Baidu answers are BD-09 (and arrive as Mercator metres times 100) and go through `bd2wgs`. Google is GCJ-02 too **for mainland-China locations only**, which is the trap that ships every Chinese pin 100-700 m off if you assume it speaks WGS-84 everywhere. `outOfChina` guards against double-converting non-China points. `data/china_areas.json` and `data/china_geocode.json` are both stored already converted to WGS-84 (see sections 8 and 8c).
 - **Coordinate sanity:** longitudes are wrapped into [-180, 180] (some sources emit values outside that range). The `(0, 0)` coordinate pair is treated as a sentinel for "no real coordinates" and such stores are dropped from the map layer (kept in the address-only data), never plotted at Null Island.
 - **Geo validation:** after merge, `scrapers/geo_validate.py` checks every coordinated entry against country bounding boxes. Official sources (allnet / eagate / wahlap, and address-trusting rows without community pins) null out-of-country geocodes; community sources (ziv / round1usa / community) correct a wrong country label from the pin when the pin falls cleanly in another country box.
-- **Enrichment split:** optional per-arcade extras land in `data/enrichment.json` keyed by merged arcade id, not in `data/arcades.json`. The shipped file today carries four ZIv fields only (opening hours, venue info text, website, per-machine prices); transit prose, photos, and the other BemaniCN fields are parsed by the pipeline but are not populated in it. See section 10 and `scrapers/enrich.py`.
+- **Enrichment split:** optional per-arcade extras land in `data/enrichment.json` keyed by merged arcade id, not in `data/arcades.json`. The shipped file carries four ZIv text fields (opening hours, venue info text, website, per-machine prices), venue photos from three sources, and a measured price table derived from those quoted prices. Transit prose and the remaining BemaniCN fields are parsed by the pipeline but are still not populated in it. See sections 10 and 11 and `scrapers/enrich.py`.
+- **Photos are out of band.** No photo source is part of `run_all.py`. `photos.py`, `chain_photos.py`, `bemanicn_photos.py` and `photo_quality.py` are manual crawls that write committed artefacts under `data_raw/` (and `assets/venues/` for the mirrored bytes); the weekly build only reads them. See section 11.
 
 ---
 
@@ -103,7 +104,7 @@ Each returns HTTP 200 with a single JSON array (some deployments wrap it as `{"d
 
 **Response format:** JSON array. Fields per store include `arcadeName`, `address`, `province`, `placeId`, `id`.
 
-**Caveat: NO coordinates.** The REST payload is addresses only. Stores ship address-only into merge; `china_place` then assigns an administrative centroid with `approx: true`, as deep as the address reads (see section 8 and the README China accuracy disclosure). Street-level geocoding is opt-in and off by default: `scrapers/geocode_cn.py` only runs when an API key is present in the environment.
+**Caveat: NO coordinates.** The REST payload is addresses only. Stores ship address-only into merge, which places them from the committed geocode cache where the address resolved (`approx_level: "address"`) and from an administrative centroid otherwise (see sections 8 and 8c, and the README China accuracy disclosure). Either way the row keeps `approx: true`: a POI search answers with a building, not necessarily the right one.
 
 **Volume (at last refresh, from `data/stats.json`):** 3,207 merged source rows under `wahlap` (maimai DX CN + CHUNITHM CN combined after within-source handling).
 
@@ -126,7 +127,7 @@ https://zenius-i-vanisher.com/api/arcades.php?action=query&country={NAME}&skip_p
 ```
 
 - One request per country, with country names spelled **exactly** as ZIv spells them (`ZIV_COUNTRIES` in `scrapers/run_all.py`; **65 entries** are queried today, where the sentinel `"USA"` triggers the per-series United States fetch under the real name `"United States"`).
-- The United States is too large for a single country query (the unsegmented query returns HTTP 500) and is fetched per rhythm-game series (`&country=United States&series_id={ID}`) and merged by arcade id. The series ids are `USA_SERIES` (which doubles as the seriesID -> slug map) plus `USA_EXTRA_SERIES` in `scrapers/ziv.py` - Pump It Up, In The Groove, Guitar Hero Arcade, StepManiaX, Beat Saber and StepMania. Those extra series are US-fetch-only and are deliberately NOT slug mappings: their machines still resolve to `other` and are never counted in `game_counts`. Other countries need no equivalent because their whole-country query already returns those venues.
+- The United States is too large for a single country query (the unsegmented query returns HTTP 500) and is fetched per rhythm-game series (`&country=United States&series_id={ID}`) and merged by arcade id. The series ids are `USA_SERIES` (which doubles as the seriesID -> slug map) plus `USA_EXTRA_SERIES` in `scrapers/ziv.py` - Pump It Up, In The Groove, Guitar Hero Arcade, StepManiaX, Beat Saber and StepMania. `USA_EXTRA_SERIES` controls only WHICH series the US crawl fetches, not how their machines are slugged: Pump It Up and StepManiaX now have canonical slugs of their own (as do WACCA, Groove Coaster, crossbeats and BeatStream, which arrive through ordinary country queries), while In The Groove, Guitar Hero Arcade, Beat Saber and StepMania still resolve to `other` and are never counted in `game_counts`. Other countries need no equivalent because their whole-country query already returns those venues.
 
 ### Country-name trap (loud)
 
@@ -138,9 +139,19 @@ This is the most dangerous silent-dropout in the whole pipeline. Spelling the Un
 
 JSON; each arcade carries an id, name, address parts (address / city / state / postalcode), latitude / longitude, an info text, and a machine list whose entries hold a nested `game` object (`{name, seriesID, genre, ...}`). Machines are mapped to canonical game slugs primarily by `game.seriesID` (`USA_SERIES` in `scrapers/ziv.py`), falling back to name-substring patterns; unrecognized machines map to `other`.
 
-**Machine counts:** yes, but most of them do not survive the merge - each arcade's machine list is tallied per mapped slug into `game_counts` (one machine list entry = one machine; cabs that only map to `other` are not counted), and the list is a record of what a venue has rather than how many it has. A store that owns one of each game tallies to 1 everywhere, and one that owns GuitarFreaks plus DrumMania tallies `gitadora: 2` off two single cabinets. `merge.py` therefore keeps a ZIv row's counts only when some slug counts more machines than the row lists distinct titles for it, which happens only when a title is listed twice and so proves the list was entered machine by machine. 466 of 2,809 counted ZIv rows clear that bar; the rest ship with `counts_src: null` and no numbers.
+**Machine counts:** yes, and each one is now labelled with the evidence behind it rather than published bare. Three classes reach `count_evidence` (see the schema in `docs/ARCHITECTURE.md`):
 
-**Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,953** merged source rows under `ziv` in `data/stats.json`. Includes Taiko no Tatsujin and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
+| Evidence | What it is | How it renders |
+|---|---|---|
+| `ziv_listed` | the number of machine ROWS the listing enumerates | a FLOOR, not a total. Suppressed entirely at n == 1, hedged as "listed" at n >= 2 |
+| `ziv_comment` | a human wrote a quantity on the listing ("12 machines", "6x") | authoritative at any value, including 1 |
+| `bemanicn_qty` | BemaniCN's published per-title quantity | authoritative |
+
+The `ziv_listed` rule is the important one: ZIv's machine list is a record of WHAT a venue has rather than HOW MANY, so a store owning one of each game tallies to 1 everywhere, and one owning GuitarFreaks plus DrumMania tallies `gitadora: 2` off two single cabinets. `merge.py` keeps a ZIv row's numbers only when some slug counts more machines than the row lists distinct titles for it, which happens only when a title appears twice and so proves the list was entered machine by machine. In the current build 903 merged arcades carry surviving ZIv counts against 3,246 whose counts were placeholders and were dropped (`counts_src: null`, no numbers), out of 4,319 raw ZIv rows that carried any tally.
+
+The same rule applies one level down to `cab_models`: a quantity reaches a cabinet model only when the listing comment NAMES that model. A comment on a "SOUND VOLTEX (Valkyrie model)" row describes the venue's SDVX machines, not its Valkyrie ones, and taking it made 230 of 317 numbered variant pills byte-identical to their parent game's count.
+
+**Coverage:** 65 country queries returned ZIv arcades at the last pull; **6,989** merged source rows under `ziv` in `data/stats.json`, from **7,022** raw rows. Includes Taiko no Tatsujin, Pump It Up, StepManiaX, WACCA, Groove Coaster, crossbeats, BeatStream, and offline cabs of retired games (Project DIVA Arcade, MUSECA, REFLEC BEAT, DanceEvolution).
 
 ### Enrichment fields (ZIv)
 
@@ -152,12 +163,12 @@ With the default skip flags, **pricing and venue fields still arrive** (verified
 | venue `website` | `website` | |
 | `openingTimes` (7-day Mon-first arrays) | `hours_text` | Rendered `Mon 10:00-21:00; ...`; days whose open and close times are identical are dropped, see below |
 | `information` | `info_text` | HTML-stripped free text |
-| `pictures[].absolutePath` | `images` (max 3) | Only when crawl drops `skip_pictures` (`--enrich` mode); default weekly crawl skips pictures for payload size |
+| `pictures[].absolutePath` | `images` (max 3) | Only when a crawl drops `skip_pictures`; the weekly crawl keeps it for payload size, so photos come from the separate harvest in section 11 instead |
 | scrape date | `enriched_at` | ISO date on the raw row / enrichment entry |
 
-These land in `data/enrichment.json` via `scrapers/enrich.py`, not in `arcades.json`. Images are the exception: the default weekly crawl keeps `skip_pictures=1`, so no picture URLs reach the shipped file.
+These land in `data/enrichment.json` via `scrapers/enrich.py`, not in `arcades.json`. Images are the exception: the weekly crawl keeps `skip_pictures=1`, so no picture URLs come from `data_raw/ziv.json` itself. The 2,610 ZIv venue photos in the shipped file were collected by `scrapers/photos.py` and `scrapers/chain_photos.py`, which query without that flag, and join by ZIv arcade id rather than through the bulk rows.
 
-**Opening-hours trap:** a day whose open and close times are identical is ZIv's "nobody recorded this" default, not a real 24-hour day. The API hands back `["00:00", "00:00", false]` for all seven days of an unrecorded venue, and `"00:00"` is a truthy string, so a plain truthiness test published `Mon-Sun 00:00-00:00` as if it were real hours. `scrapers/ziv.py` now rejects any zero-length day when rendering `hours_text`, and `_clean_hours_text` in `scrapers/enrich.py` re-checks the formatted string so rows already sitting in `data_raw/` are cleaned too. A string with no parseable `HH:MM-HH:MM` range is passed through untouched rather than guessed at. Effect on the rebuilt file: `hours_text` fell from 6,955 to 5,211 entries, and 432 entries whose only field was that string were dropped entirely.
+**Opening-hours trap:** a day whose open and close times are identical is ZIv's "nobody recorded this" default, not a real 24-hour day. The API hands back `["00:00", "00:00", false]` for all seven days of an unrecorded venue, and `"00:00"` is a truthy string, so a plain truthiness test published `Mon-Sun 00:00-00:00` as if it were real hours. `scrapers/ziv.py` now rejects any zero-length day when rendering `hours_text`, and `_clean_hours_text` in `scrapers/enrich.py` re-checks the formatted string so rows already sitting in `data_raw/` are cleaned too. A string with no parseable `HH:MM-HH:MM` range is passed through untouched rather than guessed at. Effect when the fix landed: `hours_text` fell from 6,955 to 5,211 entries, and 432 entries whose only field was that string were dropped entirely. The field now stands at 5,259 as the ZIv crawl has grown.
 
 ### Other caveats
 
@@ -197,7 +208,7 @@ Community-maintained map of rhythm game locations in mainland China; the richest
 
 **Politeness:** 0.5 s sleep after every request, sequential fetching, 3 retries with exponential backoff, the shared desktop Chrome UA. A full crawl is roughly 1 + 392 + ~3,800 requests; keep it weekly.
 
-**Machine counts:** yes - each shop's `arcades[]` entries carry a per-title `quantity`; quantities are summed per mapped slug into `game_counts` (titles that map to `other` are not counted). At the last re-crawl, **~93.8%** of raw BemaniCN rows carried a non-empty `game_counts` (3,576 / 3,812). Merged source rows under `bemanicn` in stats: **3,802**.
+**Machine counts:** yes - each shop's `arcades[]` entries carry a per-title `quantity`; quantities are summed per mapped slug into `game_counts` (titles that map to `other` are not counted) and tagged `bemanicn_qty` in `count_evidence`, the strongest of the three classes. At the last re-crawl, **93.8%** of raw BemaniCN rows carried a non-empty `game_counts` (3,576 / 3,812). Merged source rows under `bemanicn` in stats: **3,802**.
 
 ### Enrichment fields (BemaniCN)
 
@@ -209,7 +220,7 @@ Optional shop/detail fields (all omitted when the payload does not carry them; s
 | `price` | `price_text` | Venue token/coin unit price (free text, often CNY/token) |
 | `pay_type` | `pay_type` | Payment-mode enum (kept raw; not fully reverse-documented) |
 | `start_time` / `end_time` | `hours` | Integers; `>24` means next day (e.g. 10/26 -> `10:00-02:00 (+1d)`) |
-| `image_thumb.url` | `images` (via `image_thumb` on the raw row) | **Signed OSS URL** with `e=` expiry; re-resolve weekly; clients must tolerate 403 |
+| `image_thumb.url` | `images` (via the mirrored file, NOT this URL) | **Signed OSS URL** with `e=` expiry. Unusable as a stored link; see section 11 for the mirror |
 | `fav_count` | `fav_count` | Community favourites count, **not** a star rating |
 | `arcades[].coin` (+ venue price) | `game_prices` `{slug: text}` | e.g. `5 coins/play (~CNY 5.00)` when both parse |
 | `arcades[].version` | `game_versions` `{slug: text}` | e.g. `舞萌DX2025` |
@@ -217,11 +228,13 @@ Optional shop/detail fields (all omitted when the payload does not carry them; s
 
 `shop.comment` (long HTML: membership packs, QQ groups, photo rules) is deliberately **not** emitted into enrichment (large, mostly social prose).
 
-**Not populated today.** The committed `data_raw/china_bemanicn.json` rows carry name, address, games, notes, and `game_counts` only (coordinates are null, see the login-only caveat below), so none of the fields above reach `data/enrichment.json`: the counts block reports `bemanicn_rows_contributed: 0` against `bemanicn_rows_available: 3,812`, and every field in the shipped file is tagged `ziv`. The parsers stay in place for a re-crawl that collects shop details; until then, treat this table as the pipeline's capability, not as data on disk.
+**Still not populated, except for photos.** The committed `data_raw/china_bemanicn.json` rows carry name, address, games, notes, and `game_counts` only (coordinates are null, see the login-only caveat below), so none of the TEXT fields above reach `data/enrichment.json`: `transport`, `price_text`, `pay_type`, `hours`, `fav_count`, `game_prices` and `game_versions` are absent from every entry, and every text field in the shipped file is tagged `ziv`. The parsers stay in place for a re-crawl that collects shop details; until then, treat those rows of the table as the pipeline's capability, not as data on disk.
+
+The one exception is `images`. `counts.bemanicn_rows_contributed` reads **2,256** of 3,812 available, and every one of those contributions is a photo: the separate `scrapers/bemanicn_photos.py` crawl mirrored 3,210 shop thumbnails into `assets/venues/cn/`, and they join to arcades by merged id rather than by source URL. See section 11.
 
 **Staleness:** every enrichment entry carries `enriched_at` (ISO date of the crawl/build). Prices, hours, transit prose, and signed thumbs go stale; treat them as community data that may be outdated. Thumbs expire independently of `enriched_at` when the OSS signature lapses.
 
-**Caveat: coordinates are login-only.** The map layers / API routes that carry lat/lng (e.g. `api/shared/dxmap`) 302-redirect to `/login`. The public endpoints above expose NO coordinates, so every row ships coordinate-less with `coord_system: "gcj02"` (anything this source ever produces would be GCJ-02 and must go through eviltransform). BemaniCN entries gain coordinates by (1) merging with WAHLAP or inheriting a ZIv pin, or (2) district-centroid approx placement in merge. See the `china_wahlap_bemanicn` rule in `scrapers/merge.py` and `scrapers/china_place.py`.
+**Caveat: coordinates are login-only.** The map layers / API routes that carry lat/lng (e.g. `api/shared/dxmap`) 302-redirect to `/login`. The public endpoints above expose NO coordinates, so every row ships coordinate-less with `coord_system: "gcj02"` (anything this source ever produces would be GCJ-02 and must go through eviltransform). BemaniCN entries gain coordinates by (1) merging with WAHLAP or inheriting a ZIv pin, (2) geocoding the printed address from the committed cache, or (3) administrative-centroid placement for the residue. Options 2 and 3 both set `approx: true`. See the `china_wahlap_bemanicn` rule in `scrapers/merge.py`, plus `scrapers/geocode_cn.py` and `scrapers/china_place.py`.
 
 **Caveat: shop detail 404s.** A few shops listed in a city index have no detail page (404). They are kept, with games `["other"]` and a `detail page 404 (listed in city index only); games unknown` note.
 
@@ -282,6 +295,36 @@ Some names are translations rather than romanizations and no phonetic method rea
 
 ---
 
+## 8c. `data/china_geocode.json` (street-level China addresses, keyless)
+
+The committed answer cache that places almost every mainland-China arcade. Written by `scrapers/geocode_cn.py`, read by merge, and never refreshed on a normal build.
+
+| Item | Value |
+|---|---|
+| Path | `data/china_geocode.json` (plus `data/china_manual_coords.json` for hand-researched pins) |
+| Shape | `{"<query key>": {lat, lng, provider, precision, formatted, query, fetched_at}}`, or `{"miss": true, provider, fetched_at}` for an address nothing resolves |
+| Rows | **5,738**: 5,723 hits (all `provider: "baidu"`), 15 recorded misses |
+| Default provider | **Baidu, keyless.** `https://api.map.baidu.com/?qt=s`, the backend map.baidu.com's own frontend calls, over plain HTTPS with a browser UA and a map.baidu.com Referer |
+| Other providers | `AMAP_KEY` / `GOOGLE_MAPS_API_KEY` win when present in the environment. Neither is required, and CI has neither |
+| Native coord system | Baidu **BD-09, as Mercator metres times 100** (`x: 1267877300`). AMap and Google-in-China are **GCJ-02** |
+| Stored coord system | **WGS-84**, converted through `bd2wgs` / `gcj2wgs` before anything reaches the cache |
+| Refresh | `python scrapers/run_all.py --skip-scrape --only geocode`, then re-merge. Hours of polite serial requests, so it is asked for by name and never part of a default run |
+| Effect | 5,757 rows placed at address level; China distinct coordinates 2,090 -> 5,305; worst pile-up on one point 69 venues -> 6 |
+
+**Why a miss is stored.** An address no geocoder can resolve (a bare mall-floor label, a closed venue) is written as `{"miss": true}` rather than left absent, so the next refresh does not re-pay for the same dead end. `lookup` never hands a miss back as a coordinate.
+
+**Three gates, all of them about garbage rather than jurisdiction:**
+
+1. **Mainland bounding box.** A partial address like `中山路` or `万达广场3F` resolves *somewhere*, and every provider would rather return a confident point in Kazakhstan than admit it does not know. Outside the box, the candidate is discarded and the next coarser one tried. The box does NOT filter by jurisdiction (Taiwan, Hong Kong and Macau all sit inside it); keeping those out is the caller's job, exactly as it is in `china_place`.
+2. **Area check.** Baidu states the answer's own administrative area in `area_name` (`深圳市宝安区`), and a mismatch against the city the address named is a rejection rather than a pin. This is why the province/city prefix on the query is not optional: BemaniCN's `全运路万达3F` names no city, so `qualified_address` prepends the one the region note knows, and a row with no stated city is skipped rather than guessed at.
+3. **District check at READ time, not only at fetch time.** 5,702 answers were already committed when the gate was added and `run()` never re-asks a cached hit, so a fetch-only gate would have fixed nothing that already shipped. `apply_cache` re-checks and refuses; refused rows fall through to a centroid and are logged as `china_geocode_rejected` in `data/merge_log.json`.
+
+**Progressive queries.** A printed Chinese address is a province, a city, a district, a road, a number, a mall, a floor and a unit stacked together. Handing the whole string to a POI search resolves about a tenth of the time, because no index holds a row for "3rd floor, next to the lift". `scrapers/cn_address.py` strips that tail (`strip_noise`) and emits progressively coarser candidates (`candidates`): full cleaned address, then city + district + mall, then city + mall, then road + number. The venue NAME is a candidate too, because BemaniCN names its shops after the mall they sit in (`环游嘉年华（北京朝阳大悦城店）`) even when the address does not.
+
+**What the cache does NOT establish, and this is the whole caveat:** the keyless endpoint is a POI SEARCH. A `precision: "poi"` answer says the result was a building, never that it was THIS building. Every placed row therefore keeps `approx: true`. See the README China accuracy disclosure and the long comment in `scrapers/merge.py`.
+
+**`data/china_manual_coords.json`** holds the few venues nothing resolves, applied BEFORE the cache. Every record must carry a `source_url` (a coordinate nobody can audit is indistinguishable from one somebody invented) and a `name`. The name is a safety interlock, not decoration: merge renumbers ids 1..N by (country, name, addr) on every build, so an id alone would silently drift onto a different venue when the upstream feed adds or drops a row. `apply_cache` refuses to place a record whose name no longer matches its id, and says so loudly.
+
 ---
 
 ## 9. FX rates (`data/fx_rates.json`)
@@ -308,21 +351,81 @@ Built inside merge after ids are assigned (`enrich.build_enrichment`). Join key:
 ```
 {
   "updated": "YYYY-MM-DD",
+  "prices": {as_of, basis, source, note, min_measured, countries, coverage,
+             stats, artifacts},
   "price_defaults": {ISO2: {currency, display, notes, typical, source, as_of}},
   "country_to_code": {"Japan": "JP", ...},
-  "counts": {arcades_enriched, of_total, by_field, bemanicn_rows_*, ziv_rows_*},
+  "counts": {arcades_enriched, of_total, by_field, bemanicn_rows_*, ziv_rows_*,
+             arcades_with_venue_photos, venue_photos_by_source, photos_index_ids},
   "arcades": {"<merged id>": {transport, price_text, pay_type, hours, hours_text,
-                               images, fav_count, game_prices, game_versions,
-                               machine_prices, website, info_text, sources, enriched_at}}
+                               images, image, image_tier, fav_count, game_prices,
+                               game_versions, machine_prices, website, info_text,
+                               sources, enriched_at}}
 }
 ```
 
-Only arcades with at least one enrichable field get an entry. Country price defaults always carry `typical: true` and are display fallbacks, never quoted guarantees. Frontend price priority: ZIv `machine_prices` > BemaniCN `game_prices` / `price_text` > country defaults.
+Only arcades with at least one enrichable field (or a photo) get an entry. Frontend price priority: a MEASURED figure from the `prices` table for this country and this game > the country's measured overall > the hand-written `price_defaults` entry, which is a last resort and always carries `typical: true`. A cell tiered `unknown` renders nothing at all rather than falling back to a guess. A store's own quoted `machine_prices` are shown separately, as its own listing rather than a country figure.
 
-**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **6,521** entries against **13,502** arcades, and exactly four data fields, all tagged `ziv`: `hours_text` (5,211), `info_text` (4,207), `website` (4,092), `machine_prices` (2,413), plus the per-entry `sources` and `enriched_at` metadata. There is no `transport`, `images`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text`, or `hours` in it, because `bemanicn_rows_contributed` is **0** (see section 6).
+**The measured price table (`prices`).** Built by `scrapers/prices.py` from the same `machine_prices` strings the ZIv rows contribute, aggregated per country and per game. It exists because the `price_defaults` table was hand-guessed and at least one cell was wrong: it asserted "HKD 8-15/play typical" where every Hong Kong listing in the dataset quotes HK$6.00 for maimai and CHUNITHM, n=15, zero variance.
+
+Rules, in priority order:
+
+1. **A wrong price is worse than no price.** Every ambiguous construction is rejected and counted rather than guessed. The current run parsed 4,316 of 8,194 candidate rows and accepted 4,291; rejections break down as 1,918 token systems, 1,272 free play, 570 with no identifiable currency, 118 where every play tier was rejected.
+2. **Store tokens are not money.** "3 Medals", "8 creds", "6.8 Funcoins" have no public exchange rate and are classified `token_system`, never coerced to a number.
+3. **Play tiers are not interchangeable.** Light / Standard / Premium / Galaxy / Blaster starts cost different amounts; the STANDARD tier wins and a Premium figure is never averaged in as though it were the standard price.
+4. **The headline is the MODE, not the mean or an interpolated median.** The mode is always an amount somebody actually quoted; a median over `{6, 8}` invents HK$7, which nobody charges. `median` is still emitted for reference, and a cell whose median disagrees or whose spread is wide is demoted (`demoted_by`).
+5. **Local currency only.** `js/format.js` converts at render time against `data/fx_rates.json`, so baking converted values in would freeze them.
+
+Tiers: `measured` needs n >= 5, `sparse` is 2 to 4 and renders with an explicit "based on only N listings" caveat, `unknown` renders nothing. Current coverage across 29 countries: **116 measured, 113 sparse, 87 unknown**. The block also carries `stats.unmapped_countries` (countries with quoted prices but no currency mapping, so their rows are dropped rather than guessed at) and an `artifacts` list of the individual rows a plausibility gate rejected, each with the text that produced it, so a bad parse is auditable rather than invisible.
+
+**Note on the parser, worth knowing before changing it:** the number pattern treats a space as a thousands separator ONLY when it is followed by exactly three digits. That is what a thousands separator always looks like (`₩2 500`, `Rp10 000`) and what a trailing quantity almost never does. An earlier unrestricted run of digits, commas, dots and spaces walked through the word boundary and read "R$4,00 5 hearts" as BRL 4005. The extreme case is caught by the plausibility gate; the dangerous sibling is not, because "R$2 5 hearts" parses as BRL 25.00, an entirely ordinary-looking price.
+
+**What the shipped file actually contains.** The key list above is the full set the builder can emit, not the set on disk. The current `data/enrichment.json` holds **9,862** entries against **13,540** arcades: `hours_text` (5,259), `info_text` (4,241), `website` (4,095), `machine_prices` (3,664) and `images` / `image_tier` (5,824), plus the per-entry `sources` and `enriched_at` metadata. Every text field is tagged `ziv`. There is still no `transport`, `fav_count`, `game_prices`, `game_versions`, `pay_type`, `price_text` or `hours`: `bemanicn_rows_contributed` is 2,256 of 3,812, and every one of those contributions is a photo (see sections 6 and 11).
+
+---
+
+## 11. Venue photos (`assets/venues/`, `data_raw/*photo*.json`)
+
+Real photographs OF the venue, as distinct from the stock cabinet shots under `assets/cabs/`. **Nothing in this section runs during the weekly Action.** Each crawl below is manual and writes a committed artefact; `scrapers/enrich.py` only reads them.
+
+**Coverage today: 5,824 of 13,540 arcades (43.0%)**, by contributing source: BemaniCN 3,192, ZIv 2,610, Wikimedia Commons 22. By country it is very uneven: China 51.1%, United Kingdom 60.1%, United States 57.5%, Japan **6.9%**, Taiwan 6.8%.
+
+| Module | Source | Output | Mirrored? |
+|---|---|---|---|
+| `scrapers/photos.py` | ZIv, `skip_pictures` dropped | `data_raw/ziv_photos.json` | No, hotlinked with credit + deep link |
+| `scrapers/chain_photos.py` | ZIv full-country sweep, Wikimedia Commons, GiGO link-out repair | `data_raw/chain_photos.json` | Commons only |
+| `scrapers/bemanicn_photos.py` | BemaniCN shop thumbnails | `assets/venues/cn/<shop_id>.jpg` + `data_raw/bemanicn_photos.json` | **Yes, of necessity** |
+| `scrapers/photo_quality.py` | none (scores existing images) | `data_raw/photo_quality.json` + probe cache | n/a |
+| `scrapers/streetphotos.py` | measured and rejected | `data_raw/street_photos.json`, intentionally empty | n/a |
+
+**Only tier `venue` counts as coverage.** A chain logo is not a photo of that arcade, and neither is a photo of the mall around it or a closeup of one cabinet. Link-outs count as zero.
+
+**Why BemaniCN photos are mirrored rather than linked.** `props.shop.image_thumb.url` is a **signed OSS link**: it carries `?e=<unix expiry>&token=...` scoped to one exact path, and measured behaviour is that the token expires within the hour, stripping the query returns 401, and every larger variant (`-large`, `-medium`, `-origin`, Qiniu `imageView2` params) also returns 401. A weekly JSON of remote URLs would therefore ship 100% dead images. Only one photo per shop is publicly reachable; the multi-photo gallery is login-walled. Expect ~150-200 px on the long edge and 7-10 KB per file: these are PANEL THUMBNAILS, and the index records real pixel dimensions so the frontend can refuse to upscale one into a hero slot.
+
+**Licence position:** BemaniCN publishes no ToS, no CC grant and no photo licence page (`/terms`, `/privacy`, `/tos`, `/agreement` all 404); the site meta carries `(c) BEMANICN` and the photos are community uploads. They are **not** relicensed by this repo's MIT licence. Every file ships with attribution, a per-shop deep link and a takedown path in [`assets/venues/ATTRIBUTION.md`](../assets/venues/ATTRIBUTION.md). ZIv likewise publishes no photo licence, so its images are hotlinked with a visible credit and a deep link home and are never rehosted. Commons images are CC/PD with per-file attribution carried in the record.
+
+**Ranking, not just rejecting.** `scrapers/photo_quality.py` never decodes a pixel (the repo is stdlib-only). It reads the image HEADER plus the byte length the server reports and reasons from four measurables: pixel dimensions, byte size, aspect ratio, and bytes per pixel. That honestly answers "will this upscale into a blurry mess in the hero slot", "will `object-fit: cover` crop it to a meaningless sliver", and "was this uploaded in 2012" (ZIv filenames carry a unix timestamp). It CANNOT answer "is this blurry" or "is this a photo of somebody's legs", and does not claim to. Every image gets a score, a verdict and a human-readable reason list, so the ordering is auditable rather than trusted.
+
+**Chain store pages: measured, and deliberately not used.** GiGO, Taito, Round1, namco, APINA, Timezone, Dave & Buster's, Cineplex and Tom's World were probed and scrape at 95-100% technically. Every one of them publishes all-rights-reserved terms, Taito and namco explicitly restrict copying and transmitting, and namco asks that image files not be deep-linked at all. Hotlinking their CDN from a public GitHub Pages map is exactly the pattern those terms forbid, so `chain_photos.py` emits **zero** chain imagery. Those chains appear only as `link_outs`, which carry `page_url` and never `url` or `file` (a record with a `url` key is a DISPLAY path regardless of its tier, so mixing them would render an all-rights-reserved image). This is the main reason Japanese coverage is 6.9% while the UK is 60%.
+
+**Street-level imagery: measured and rejected.** Five sources were probed against a fixed-seed stratified sample of 210 arcades (`data_raw/streetlevel_imagery_probe.json`, 30 each across Japan, US, UK, Taiwan, Philippines, Singapore, China):
+
+| Source | Verdict |
+|---|---|
+| KartaView | REJECT. Keyless and the only one with real hits, but only **5.2%** of arcades have a photo within 60 m whose camera is pointed at them, and **0 of 7** best-case frames downloaded and inspected showed an arcade. All were road-forward windshield dashcam shots. Japan and China measure 0-3% |
+| Mapillary | BLOCKED. Token-gated, and a shared token must never be committed to a public repo. Same dashcam capture model regardless |
+| Wikimedia Commons geosearch | REJECT. Raw hits are majority tourist/transport geography; no hit was confirmed to be the arcade. (The category-walked, hand-reviewed Commons path in `chain_photos.py` is a different thing and does ship, at 22 arcades) |
+| OSM `image=*` tags | REJECT. 0 of 210 in the sample; global ceiling 24 objects of ~8,880 mapped arcades, and those point at unmirrorable third-party hosts |
+| Wikidata P18 | REJECT. 32 items worldwide in the arcade class. Brand-level P18 is actively harmful: it would put a corporate HQ photo on every branch of a chain |
+
+Dashcams photograph roads, not shops, and radius hit rate overstates usable storefront coverage by roughly an order of magnitude. `streetphotos.py` therefore ships an empty index WITH the rationale rather than being deleted, so the measurement does not have to be repeated.
+
+**Google Places photos** are a separate optional path: place IDs may be stored (Google exempts them explicitly), photo bytes may not be, so nothing is ever written to disk and the whole feature is a no-op without a key. Full detail, costs and match verification: [`docs/GOOGLE_PHOTOS.md`](GOOGLE_PHOTOS.md).
 
 ---
 
 ## Refresh pipeline
 
 All sources are re-scraped by a single GitHub Action: weekly cron, Monday 18:00 UTC, plus `workflow_dispatch` for manual runs. The job runs with `permissions: contents: write`, commits changed files under `data/`, `data_raw/`, and `mymaps/` with a bot identity, and skips the commit when nothing changed. Arcade scrapers fail-fast (one broken source blocks the commit). FX is the exception: total feed failure keeps the previous rates file and does not fail the job. Both scrape targets (location.am-all.net, p.eagate.573.jp) are empirically reachable from GitHub-hosted US runners as of July 2026.
+
+**What the Action does NOT run,** and must not start running, because each costs hours of somebody else's bandwidth or somebody's API quota: the China geocode refresh (section 8c), every photo harvest (section 11), and Google place-ID resolution. All of those write committed artefacts that the weekly build merely reads, so the Action needs no key for any of them and a keyless CI run produces the same output as a developer's machine. `run_all.py --only` accepts `geocode` for the first of these; the rest are invoked directly.

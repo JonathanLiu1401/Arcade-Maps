@@ -1738,7 +1738,25 @@ def manual_record(manual, entry):
         return None
     rec = manual.get(str(entry.get("id")))
     if not isinstance(rec, dict):
-        return None
+        # The id drifted. Every record stores the venue NAME it was researched
+        # for precisely because ids are reassigned on every build, so recover
+        # by that instead of stranding the research: two of the three pins in
+        # this file were orphaned within a day of being written, and one of
+        # them was a venue no geocoder can resolve at all, so losing it meant
+        # losing the only coordinate that venue will ever have.
+        # The name still has to match exactly, so this recovers a moved record
+        # without ever placing a pin on a venue it was not researched for.
+        want_name = norm_addr(entry.get("name"))
+        if not want_name:
+            return None
+        rec = None
+        for cand in manual.values():
+            if (isinstance(cand, dict)
+                    and norm_addr(cand.get("name")) == want_name):
+                rec = cand
+                break
+        if not isinstance(rec, dict):
+            return None
     lat, lng = rec.get("lat"), rec.get("lng")
     if isinstance(lat, bool) or isinstance(lng, bool):
         return None

@@ -386,7 +386,7 @@ window.AM = window.AM || {};
          variant slug -> { n: count|null, src: "eagate"|"ziv"|"cab_models" }
 
      computed ONCE per arcade and cached on a side map keyed by id. It has to
-     be cached: markers.js runs the visibility predicate over 13,502 rows on
+     be cached: markers.js runs the visibility predicate over 13,540 rows on
      every filter toggle, and search.js and nearby.js run it again, so a regex
      sweep inside that predicate would make every checkbox click walk the whole
      data file. Nothing here runs during a zoom or pan - the cache is built on
