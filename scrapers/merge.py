@@ -120,7 +120,22 @@ import ziv            # title -> slug lookup for the counts test (see (m))
 GAME_SLUGS = [
     "maimai_dx", "chunithm", "ongeki", "project_diva", "sdvx", "iidx",
     "ddr", "polaris_chord", "gitadora", "jubeat", "popn", "nostalgia",
-    "drs", "dance_around", "dance_evo", "museca", "reflec", "taiko", "other",
+    "drs", "dance_around", "dance_evo", "museca", "reflec", "taiko",
+    # Six titles ziv.py already slugs out of the `other` bucket and this list
+    # used to throw straight back into it, one line below at the `g if g in
+    # GAME_SLUGS else "other"` guard. The scraper was right and the guard
+    # silently overruled it, so 1,541 real rhythm-game venues rendered as an
+    # unnamed grey chip: 1,562 Pump It Up rows, 597 StepManiaX, 252 WACCA,
+    # 225 Groove Coaster, 51 crossbeats, 8 BeatStream.
+    # maimai CLASSIC is deliberately NOT here even though ziv.py promotes it
+    # too. A FiNALE cabinet is a maimai store's other cabinet, not a separate
+    # venue category, and it is already modelled as the maimai_classic cab
+    # variant that carries the offline warning. Giving it a slug as well would
+    # make the 46 stores holding both show a "maimai" chip AND a "FiNALE"
+    # badge for the same machine. Six, not seven; js/state.js GAMES agrees.
+    "pump_it_up", "stepmaniax", "wacca", "groove_coaster", "crossbeats",
+    "beatstream",
+    "other",
 ]
 CAB_SLUGS = ["sdvx_vm", "iidx_lm", "ddr_gold", "gitadora_gf_arena",
              "gitadora_dm_arena", "popn_pikapika"]
@@ -2116,6 +2131,12 @@ def run(raw_dir, out_dir, updated=None):
         "merge_decision_log": merge_decisions,
         "geo_validation": geo_log,
         "china_geocoded": geocode_log,
+        # Every cached answer the district gate refused, with what came back
+        # and why. Written to the log rather than only printed, because "this
+        # pin was rejected" is the claim a reader is most entitled to check:
+        # the row visibly falls back to a centroid and nothing else on the map
+        # says why it did.
+        "china_geocode_rejected": geocode_rejects,
         "china_approx": approx_log,   # owner: china-placement agent
     })
     print("merge: wrote %d arcades to %s" % (len(ordered), out_dir),

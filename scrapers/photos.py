@@ -57,6 +57,7 @@ picture tree on GitHub Pages without written permission from ZIv.
 from __future__ import annotations
 
 import argparse
+import datetime as _datetime
 import json
 import os
 import re
@@ -382,12 +383,571 @@ def photos_for_ziv_url(source_url, photos_index):
     return list(recs) if isinstance(recs, list) else []
 
 
+# ============================================================================
+# MERGED PHOTO INDEX  (data_raw/photo_index.json)
+# ============================================================================
+#
+# Everything below is additive. The ZIv functions above keep their exact
+# signatures because enrich.py imports load_photos_index, photos_for_ziv_url,
+# image_record, ziv_image_records, force_https, ziv_id_from_url and
+# bemanicn_id_from_url. Nothing above this line changed.
+#
+# The merged index unifies four harvests into one file keyed by ARCADE ID:
+#
+#   data_raw/ziv_photos.json      keyed by ZIv arcade id  -> join via links.ziv
+#   data_raw/chain_photos.json    keyed by arcade id      (superset of ziv_photos
+#                                                          for US/UK/PH/SG/JP)
+#   data_raw/bemanicn_photos.json keyed by BemaniCN shop id -> carries arcade_id
+#   data_raw/street_photos.json   keyed by arcade id      (currently empty:
+#                                                          status rejected_empty)
+#
+# Output shape:
+#
+#   {
+#     "updated": "YYYY-MM-DD",
+#     "snapshot": {"arcades_path": ..., "sha256": ..., "arcades": 13534, ...},
+#     "sources": {...per-source provenance and licence...},
+#     "counts": {...},
+#     "coverage": {...per-country before/after...},
+#     "link_outs": {"<arcade_id>": [ {page_url, ...} ]},
+#     "by_arcade_id": {
+#       "<arcade_id>": {
+#         "images": [ {url|file, source, credit, license, license_url,
+#                      page_url, tier, distance_m?, w?, h?}, ... ],
+#         "best_tier": "venue" | "chain" | null,
+#         "join": {"ziv_id": "1110", "bemanicn_shop_id": "42"}
+#       }
+#     }
+#   }
+#
+# Conventions the consumer (enrich.py) can rely on:
+#   - MIRRORED images carry `file` (repo-relative path) and NO `url`.
+#   - HOTLINKED images carry `url` (absolute https) and NO `file`.
+#     bemanicn_photos.json sets both to the same repo path; we normalise to
+#     `file` only, so a renderer never treats a repo path as a remote URL.
+#   - link_outs live in their own top-level key. They have no url and no file
+#     and MUST NOT be merged into images[]: enrich.py mirrors images[0].url
+#     into entry["image"] and the panel renders whatever string it finds.
+#   - best_tier is "venue" or null. "chain" is in the enum because the brief
+#     asks for it, but no chain-tier image is licence-clean, so nothing emits
+#     it today. street tier is likewise empty (rejected_empty upstream).
+
+PHOTO_INDEX_FILE = "photo_index.json"
+
+# Tier precedence: a real venue photo beats a street-level frontage beats a
+# chain image. Lower number wins.
+TIER_RANK = {
+    "venue": 0,
+    "street_near": 1,
+    "street_far": 2,
+    "chain": 3,
+}
+# Tiers that are allowed into images[] at all. "reject" never ships.
+SHIPPABLE_TIERS = ("venue", "street_near", "street_far", "chain")
+
+# Within venue tier, prefer the source that gives the biggest usable picture.
+# ziv/commons are full-size hotlinks; bemanicn is a 150-200px thumbnail.
+SOURCE_RANK = {
+    "wikimedia_commons": 0,
+    "ziv": 1,
+    "bemanicn": 2,
+    "kartaview": 3,
+    "mapillary": 3,
+}
+
+MERGE_INPUTS = (
+    "chain_photos.json",
+    "ziv_photos.json",
+    "bemanicn_photos.json",
+    "street_photos.json",
+)
+
+# The repo's own hero gate, mirrored from data_raw/photo_quality.json
+# thresholds so "hero capable" here means the same thing it means there.
+HERO_MIN_W = 416
+HERO_MIN_H = 148
+
+# Any "scheme:" prefix. Used to reject ftp:/data:/javascript: rather than
+# silently treating them as repo-relative file paths.
+_SCHEME_RE = re.compile(r"^[a-z][a-z0-9+.-]*:", re.I)
+
+
+def _read_json(path):
+    """load_json that returns None instead of raising on a missing/bad file."""
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        return common.load_json(path)
+    except (OSError, ValueError):
+        return None
+
+
+def _sha256_file(path):
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def arcade_snapshot(arcades_path):
+    """Read data/arcades.json ONCE and return (records, meta).
+
+    Every count in the merged index is derived from this single snapshot.
+    Another agent may be rewriting arcades.json concurrently; the meta block
+    records size + sha256 + mtime so the numbers are reproducible against a
+    known byte state rather than "whatever the file said at some point".
+    """
+    doc = common.load_json(arcades_path)
+    arcades = doc.get("arcades") if isinstance(doc, dict) else doc
+    st = os.stat(arcades_path)
+    meta = {
+        "arcades_path": arcades_path.replace("\\", "/"),
+        "arcades": len(arcades),
+        "bytes": st.st_size,
+        "mtime": _datetime.datetime.fromtimestamp(
+            st.st_mtime, _datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "sha256": _sha256_file(arcades_path),
+        "updated_field": doc.get("updated") if isinstance(doc, dict) else None,
+    }
+    return arcades, meta
+
+
+def _norm_record(rec, source_default=None):
+    """Normalise one harvested record to the merged-index field contract.
+
+    Returns None when the record has neither a url nor a file (a link-out
+    smuggled into an images list, for example).
+    """
+    if not isinstance(rec, dict):
+        # A bare URL string is accepted for tolerance with older files.
+        u = force_https(rec)
+        if not u:
+            return None
+        rec = {"url": u}
+    out = {}
+    url = (rec.get("url") or "").strip() if isinstance(
+        rec.get("url"), str) else rec.get("url")
+    fil = (rec.get("file") or "").strip() if isinstance(
+        rec.get("file"), str) else rec.get("file")
+    # bemanicn sets url == file == repo-relative path. A repo path is not a
+    # URL; collapse those to `file` so a renderer never hotlinks a local path.
+    # Anything carrying some OTHER scheme (ftp:, data:, javascript:) is not a
+    # repo path either and must be dropped, never demoted to a file.
+    if url and not str(url).lower().startswith(("http://", "https://", "//")):
+        if _SCHEME_RE.match(str(url)):
+            return None
+        fil = fil or url
+        url = None
+    if fil:
+        out["file"] = str(fil).replace("\\", "/")
+    elif url:
+        u = force_https(url)
+        if not u:
+            return None
+        if u.startswith("//"):          # protocol-relative is mixed content
+            u = "https:" + u
+        if not u.startswith("https://"):
+            return None
+        out["url"] = u
+    else:
+        return None
+    out["source"] = rec.get("source") or source_default
+    out["credit"] = rec.get("credit")
+    out["license"] = rec.get("license")
+    if rec.get("license_url"):
+        out["license_url"] = rec["license_url"]
+    out["page_url"] = rec.get("page_url") or rec.get("source_url")
+    tier = rec.get("tier") or "venue"
+    if tier not in SHIPPABLE_TIERS:
+        return None                     # "reject" / "link_out" never ship
+    out["tier"] = tier
+    for opt in ("distance_m", "w", "h", "picture_id", "sha256", "bytes",
+                "artist", "commons_file", "extreme_aspect", "dup_count"):
+        if rec.get(opt) is not None:
+            out[opt] = rec[opt]
+    # ziv/commons carry width/height under other names in some files
+    if "w" not in out and rec.get("width") is not None:
+        out["w"] = rec["width"]
+    if "h" not in out and rec.get("height") is not None:
+        out["h"] = rec["height"]
+    return out
+
+
+def _dedup_key(rec):
+    """URL/file identity for dedup."""
+    return ("f:" + rec["file"]) if rec.get("file") else ("u:" + rec["url"])
+
+
+# Quality verdicts from data_raw/photo_quality.json, worst last. A "reject"
+# must never become images[0] while a "good" sibling exists: enrich.py mirrors
+# images[0] into entry["image"] and the panel renders it as the hero.
+VERDICT_RANK = {"good": 0, "ok": 1, "unknown": 2, None: 2, "weak": 3,
+                "reject": 4}
+
+
+def _sort_key(rec):
+    """Ordering within one arcade. MUST run AFTER quality annotation, or the
+    verdict and the ziv w/h (which only photo_quality.json supplies) are
+    invisible here and ordering collapses to arbitrary string order."""
+    return (
+        TIER_RANK.get(rec.get("tier"), 9),
+        VERDICT_RANK.get(rec.get("quality_verdict"), 2),
+        -(rec.get("quality_score") if rec.get("quality_score") is not None
+          else -1),
+        SOURCE_RANK.get(rec.get("source"), 8),
+        # bigger picture first within a source
+        -(rec.get("w") or 0) * (rec.get("h") or 0),
+        _dedup_key(rec),
+    )
+
+
+def _annotate_quality(rec, qmap):
+    """Fold photo_quality.json fields onto a record, in place."""
+    q = qmap.get(rec.get("url") or "")
+    if not q:
+        return rec
+    if q.get("verdict"):
+        rec["quality_verdict"] = q["verdict"]
+    if q.get("score") is not None:
+        rec["quality_score"] = q["score"]
+    if "w" not in rec and q.get("width"):
+        rec["w"] = q["width"]
+    if "h" not in rec and q.get("height"):
+        rec["h"] = q["height"]
+    return rec
+
+
+def build_photo_index(raw_dir="data_raw", arcades_path="data/arcades.json",
+                      quality_path=None, max_images=MAX_IMAGES):
+    """Merge every photo harvest in raw_dir into one arcade-id-keyed index.
+
+    Pure function of what is on disk: no network. Returns the payload dict.
+    """
+    arcades, snap = arcade_snapshot(arcades_path)
+    by_id = {}
+    ziv_to_arcade = {}
+    bemani_to_arcade = {}
+    for a in arcades:
+        if not isinstance(a, dict) or a.get("id") is None:
+            continue
+        aid = str(a["id"])
+        by_id[aid] = a
+        links = a.get("links") or {}
+        z = ziv_id_from_url(links.get("ziv"))
+        if z:
+            ziv_to_arcade[z] = aid
+        b = bemanicn_id_from_url(links.get("bemanicn"))
+        if b:
+            bemani_to_arcade[b] = aid
+
+    merged = {}          # arcade_id -> list of normalised records
+    join = {}            # arcade_id -> {"ziv_id":..., "bemanicn_shop_id":...}
+    link_outs = {}
+    dangling = {"chain": [], "ziv": [], "bemanicn": [], "street": []}
+    src_meta = {}
+
+    def _add(aid, rec):
+        merged.setdefault(aid, []).append(rec)
+
+    # --- chain_photos.json (venue tier only; supersedes ziv_photos overlap) --
+    doc = _read_json(os.path.join(raw_dir, "chain_photos.json"))
+    if doc:
+        src_meta["chain_photos"] = {
+            "file": "data_raw/chain_photos.json",
+            "updated": doc.get("updated"),
+            "arcades_with_images": len(doc.get("images") or {}),
+            "records": sum(len(v) for v in (doc.get("images") or {}).values()),
+            "records_by_source": (doc.get("totals") or {}).get(
+                "records_by_source"),
+            "link_out_arcades": len(doc.get("link_outs") or {}),
+            "licence": "ziv: no published photo licence, hotlink + credit + "
+                       "deep link, never rehosted. wikimedia_commons: CC/PD "
+                       "with per-file attribution.",
+        }
+        for k, recs in (doc.get("images") or {}).items():
+            aid = str(k)
+            if aid not in by_id:
+                dangling["chain"].append(aid)
+                continue
+            for r in recs or []:
+                n = _norm_record(r, source_default="ziv")
+                if n:
+                    _add(aid, n)
+        for k, recs in (doc.get("link_outs") or {}).items():
+            aid = str(k)
+            if aid not in by_id:
+                dangling["chain"].append(aid)
+                continue
+            keep = []
+            for r in recs or []:
+                if not isinstance(r, dict) or not r.get("page_url"):
+                    continue
+                if r.get("url") or r.get("file"):
+                    # defensive: a link-out must never carry a renderable src
+                    r = dict(r)
+                    r.pop("url", None)
+                    r.pop("file", None)
+                keep.append(r)
+            if keep:
+                link_outs[aid] = keep
+
+    # --- ziv_photos.json (keyed by ZIv id; join through links.ziv) ----------
+    doc = _read_json(os.path.join(raw_dir, "ziv_photos.json"))
+    if doc:
+        bz = doc.get("by_ziv_id") or {}
+        src_meta["ziv_photos"] = {
+            "file": "data_raw/ziv_photos.json",
+            "updated": doc.get("updated"),
+            "ziv_ids": len(bz),
+            "records": sum(len(v) for v in bz.values()),
+            "licence": "ZIv publishes no photo licence; hotlink with visible "
+                       "credit and a deep link home, never rehosted.",
+        }
+        for zid, recs in bz.items():
+            aid = ziv_to_arcade.get(str(zid))
+            if aid is None:
+                dangling["ziv"].append(str(zid))
+                continue
+            join.setdefault(aid, {})["ziv_id"] = str(zid)
+            for r in recs or []:
+                n = _norm_record(r, source_default="ziv")
+                if n:
+                    _add(aid, n)
+
+    # --- bemanicn_photos.json (keyed by shop id; carries arcade_id) ---------
+    doc = _read_json(os.path.join(raw_dir, "bemanicn_photos.json"))
+    if doc:
+        ph = doc.get("photos") or {}
+        src_meta["bemanicn_photos"] = {
+            "file": "data_raw/bemanicn_photos.json",
+            "updated": doc.get("updated"),
+            "shops_with_photo": len(ph),
+            "asset_dir": doc.get("asset_dir"),
+            "bytes_on_disk": (doc.get("counts") or {}).get("bytes_on_disk"),
+            "licence": doc.get("license"),
+            "licence_note": doc.get("license_note"),
+            "thumbnail_only": True,
+        }
+        for shop_id, rec in ph.items():
+            if not isinstance(rec, dict):
+                continue
+            aid = rec.get("arcade_id")
+            aid = str(aid) if aid is not None else bemani_to_arcade.get(
+                str(shop_id))
+            if aid is None or aid not in by_id:
+                dangling["bemanicn"].append(str(shop_id))
+                continue
+            join.setdefault(aid, {})["bemanicn_shop_id"] = str(shop_id)
+            n = _norm_record(rec, source_default="bemanicn")
+            if n:
+                _add(aid, n)
+
+    # --- street_photos.json (arcade-id keyed; empty while rejected) ---------
+    doc = _read_json(os.path.join(raw_dir, "street_photos.json"))
+    if doc:
+        ba = doc.get("by_arcade_id") or {}
+        src_meta["street_photos"] = {
+            "file": "data_raw/street_photos.json",
+            "updated": doc.get("updated"),
+            "status": doc.get("status"),
+            "arcades_with_images": len(ba),
+            "rejection": (doc.get("rejection") or {}).get("reason"),
+            "licence": "CC BY-SA when shipped; share-alike survives the MIT "
+                       "repo, so per-image author + licence_url are required.",
+        }
+        for k, recs in ba.items():
+            aid = str(k)
+            if aid not in by_id:
+                dangling["street"].append(aid)
+                continue
+            for r in recs or []:
+                n = _norm_record(r, source_default="streetphotos")
+                if n and n.get("tier") in SHIPPABLE_TIERS:
+                    _add(aid, n)
+
+    # --- optional quality annotations (data_raw/photo_quality.json) ---------
+    qmap = {}
+    if quality_path is None:
+        quality_path = os.path.join(raw_dir, "photo_quality.json")
+    qdoc = _read_json(quality_path)
+    if qdoc and isinstance(qdoc.get("images"), dict):
+        qmap = qdoc["images"]
+        src_meta["photo_quality"] = {
+            "file": "data_raw/photo_quality.json",
+            "updated": qdoc.get("updated"),
+            "images_scored": len(qmap),
+            "thresholds": qdoc.get("thresholds"),
+        }
+
+    # --- dedup, order, cap -------------------------------------------------
+    out = {}
+    dup_url = 0
+    dup_hash = 0
+    for aid, recs in merged.items():
+        # Pass 1: annotate BEFORE sorting, so the verdict, the score and the
+        # ziv w/h are all visible to _sort_key. Sorting first would rank on
+        # fields that are not populated yet and can leave a "reject" at [0].
+        for r in recs:
+            _annotate_quality(r, qmap)
+        # Pass 2: rank, dedup, cap.
+        seen_key, seen_hash, keep = set(), set(), []
+        for r in sorted(recs, key=_sort_key):
+            k = _dedup_key(r)
+            if k in seen_key:
+                dup_url += 1
+                continue
+            h = r.get("sha256")
+            if h and h in seen_hash:
+                dup_hash += 1
+                continue
+            seen_key.add(k)
+            if h:
+                seen_hash.add(h)
+            keep.append(r)
+            if len(keep) >= max_images:
+                break
+        if not keep:
+            continue
+        best = min(TIER_RANK.get(r.get("tier"), 9) for r in keep)
+        best_tier = None
+        for name, rank in TIER_RANK.items():
+            if rank == best:
+                best_tier = "venue" if name == "venue" else (
+                    "chain" if name == "chain" else "street")
+                break
+        entry = {"images": keep, "best_tier": best_tier}
+        j = join.get(aid)
+        if j:
+            entry["join"] = j
+        out[aid] = entry
+
+    payload = {
+        "updated": date.today().isoformat(),
+        "schema": {
+            "keyed_by": "arcade id from data/arcades.json (the snapshot below)",
+            "mirrored": "record has `file` (repo-relative) and no `url`",
+            "hotlinked": "record has `url` (absolute https) and no `file`",
+            "link_outs": "separate top-level key; no url and no file; these "
+                         "count as ZERO photo coverage and must never be "
+                         "merged into images[]",
+            "best_tier": ["venue", "street", "chain", None],
+            "best_tier_note": "the brief names venue/chain/null. 'street' is "
+                              "reachable in code if street_photos ever ships, "
+                              "but street_photos.json is rejected_empty today "
+                              "so only 'venue' is ever emitted.",
+            "join": "stable natural keys so the manager can re-join if "
+                    "merge.py renumbers arcade ids",
+        },
+        "snapshot": snap,
+        "sources": src_meta,
+        "counts": {
+            "arcades_total": snap["arcades"],
+            "arcades_with_image": len(out),
+            "images": sum(len(v["images"]) for v in out.values()),
+            "by_best_tier": _count_by(out, "best_tier"),
+            "dedup_dropped_by_url": dup_url,
+            "dedup_dropped_by_hash": dup_hash,
+            "link_out_arcades": len(link_outs),
+            "dangling_keys": {k: len(v) for k, v in dangling.items()},
+        },
+        "link_outs": {k: link_outs[k] for k in sorted(link_outs, key=_intkey)},
+        "by_arcade_id": {k: out[k] for k in sorted(out, key=_intkey)},
+    }
+    payload["counts"]["dangling_samples"] = {
+        k: v[:10] for k, v in dangling.items() if v
+    }
+    return payload
+
+
+def _intkey(s):
+    try:
+        return (0, int(s))
+    except (TypeError, ValueError):
+        return (1, str(s))
+
+
+def _count_by(out, field):
+    counts = {}
+    for v in out.values():
+        counts[v.get(field)] = counts.get(v.get(field), 0) + 1
+    return {("null" if k is None else k): counts[k] for k in counts}
+
+
+# ------------------------------------------------------------------ loader --
+
+
+def load_photo_index(path):
+    """Load data_raw/photo_index.json -> {arcade_id_str: entry}, {} on miss.
+
+    Companion to the older load_photos_index (ZIv-keyed); both stay available
+    because enrich.py still joins ZIv photos by ZIv id.
+    """
+    doc = _read_json(path)
+    if not isinstance(doc, dict):
+        return {}
+    idx = doc.get("by_arcade_id")
+    return idx if isinstance(idx, dict) else {}
+
+
+def load_photo_index_doc(path):
+    """Full merged-index document (meta + link_outs + by_arcade_id), or {}."""
+    doc = _read_json(path)
+    return doc if isinstance(doc, dict) else {}
+
+
+def photos_for_arcade_id(arcade_id, photo_index):
+    """Image records for one arcade id from a merged index. [] on miss."""
+    if not photo_index or arcade_id is None:
+        return []
+    entry = photo_index.get(str(arcade_id))
+    if not isinstance(entry, dict):
+        return []
+    imgs = entry.get("images")
+    return list(imgs) if isinstance(imgs, list) else []
+
+
+def best_tier_for_arcade_id(arcade_id, photo_index):
+    """"venue" / "chain" / "street" / None for one arcade id."""
+    if not photo_index or arcade_id is None:
+        return None
+    entry = photo_index.get(str(arcade_id))
+    if not isinstance(entry, dict):
+        return None
+    return entry.get("best_tier")
+
+
+def link_outs_for_arcade_id(arcade_id, photo_index_doc):
+    """Official-store-page link-outs for one arcade. NOT photo coverage."""
+    if not photo_index_doc or arcade_id is None:
+        return []
+    lo = photo_index_doc.get("link_outs")
+    if not isinstance(lo, dict):
+        return []
+    recs = lo.get(str(arcade_id))
+    return list(recs) if isinstance(recs, list) else []
+
+
+def is_hero_capable(rec, min_w=HERO_MIN_W, min_h=HERO_MIN_H):
+    """True when this record's pixels clear the repo's existing hero gate.
+
+    Unknown dimensions return None (not False): a ZIv hotlink whose size was
+    never probed is undetermined, not disqualified.
+    """
+    w, h = rec.get("w"), rec.get("h")
+    if not w or not h:
+        return None
+    return w >= min_w and h >= min_h
+
+
 # ------------------------------------------------------------------- main --
 
 
 def main():
     ap = argparse.ArgumentParser(
-        description="Harvest real ZIv venue photos into data_raw/ziv_photos.json")
+        description="Harvest real ZIv venue photos into data_raw/ziv_photos.json, "
+                    "or (--merge) unify every harvest into data_raw/photo_index.json")
     ap.add_argument("--out", default="data_raw",
                     help="output directory (default: data_raw)")
     ap.add_argument("--outfile", default=OUTFILE)
@@ -397,7 +957,27 @@ def main():
                          "set that includes Japan and USA.")
     ap.add_argument("--max-images", type=int, default=MAX_IMAGES,
                     help="max picture URLs kept per arcade (default 3)")
+    ap.add_argument("--merge", action="store_true",
+                    help="offline: merge existing harvests in --out into "
+                         "photo_index.json (no network)")
+    ap.add_argument("--arcades", default="data/arcades.json",
+                    help="arcade snapshot for --merge (read once, hashed)")
     args = ap.parse_args()
+
+    if args.merge:
+        payload = build_photo_index(
+            raw_dir=args.out, arcades_path=args.arcades,
+            max_images=args.max_images)
+        path = os.path.join(args.out, PHOTO_INDEX_FILE)
+        common.save_json(path, payload)
+        c = payload["counts"]
+        print("wrote %s" % path)
+        print("%d of %d arcades have an image (%.1f%%)"
+              % (c["arcades_with_image"], c["arcades_total"],
+                 100.0 * c["arcades_with_image"] / c["arcades_total"]))
+        print(json.dumps(c, ensure_ascii=False, indent=1))
+        return
+
     payload = harvest(args.country, max_images=args.max_images)
     path = os.path.join(args.out, args.outfile)
     common.save_json(path, payload)

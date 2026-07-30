@@ -55,12 +55,18 @@ The full-size original and the multi-photo gallery are behind a login and are
 not publicly reachable. Use the `w` and `h` fields in the index and render
 these at their native size. Do not upscale a 200 px thumbnail into a hero slot.
 
-A minority of shops upload a notice poster, a price-list screenshot, or a
-promotional graphic instead of a photo of the venue. Treat these as "the picture
-the venue's community posted", not as a guaranteed photograph of the premises.
-The index flags the most obvious cases with `extreme_aspect` (a long sliver is
-almost always a screenshot); `dup_count` marks a cover reused across several
-branches of a chain, which is a brand image rather than that branch.
+A minority of shops upload a notice poster, a price-list screenshot, a shop
+logo, or a promotional graphic instead of a photo of the venue. Treat these as
+"the picture the venue's community posted", not as a guaranteed photograph of
+the premises. On a 40-file random sample graded by eye, 38 (95%) were genuine
+photographs of the venue and 2 were graphics (one promo poster, one shop logo).
+
+The index flags the most obvious cases so the UI can demote them:
+`extreme_aspect` (a long sliver is almost always a screenshot, not a photo) and
+`dup_count` > 1 (one cover reused across several branches of a chain is a brand
+image rather than a photo of that branch). Together those flag about 1.2% of
+the set; the eyeball sample suggests roughly 5% are non-photographs, so the
+flags catch the obvious cases and not all of them.
 
 ## Takedown
 

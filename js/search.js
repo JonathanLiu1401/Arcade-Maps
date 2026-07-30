@@ -302,20 +302,26 @@ window.AM = window.AM || {};
       var r = termRank(g.terms, q);
       if (r !== -1) out.push({ g: g, rank: r, note: null });
     });
-    /* Untracked titles resolve to the "other" bucket with an explanation. */
+    /* Untracked titles resolve to the "other" bucket with an explanation.
+
+       These terms are also the ONLY way to reach several of these games: the
+       gameIndex terms for a slug are just its label, its slug and its aliases,
+       so "piu", "smx", "펌프", "ワッカ", "华卡音舞" and "グルーヴコースター"
+       match no game row at all and exist only in this table. So the promoted
+       case must REDIRECT this row onto the real game, not drop it - dropping
+       it would make all six of those queries return nothing the day the merge
+       lands, which is the exact silence this table was written to prevent. */
     Object.keys(OTHER_TITLES).forEach(function (term) {
       if (term.indexOf(q) === -1) return;
       var info = OTHER_TITLES[term];
-      /* Already promoted to a real chip in THIS data file: the game row above
-         is the right answer and this fallback must not fire, or the reader
-         gets the same title twice - once as its own chip and once as "Other,
-         which has no chip for it". gamesInData is the live test, so this
-         switches over on its own the day the merge stops reverting the slug,
-         with no second edit here. */
-      if (info.slug && AM.data.gamesInData.indexOf(info.slug) !== -1) return;
+      /* Live once the data actually carries the slug (merge.py's GAME_SLUGS
+         still reverts these today). gamesInData is the test, so the changeover
+         happens on its own with no second edit here. */
+      var live = !!info.slug && AM.data.gamesInData.indexOf(info.slug) !== -1;
+      var wantSlug = live ? info.slug : "other";
       var og = null;
       for (var i = 0; i < gameIndex.length; i++) {
-        if (gameIndex[i].slug === "other") { og = gameIndex[i]; break; }
+        if (gameIndex[i].slug === wantSlug) { og = gameIndex[i]; break; }
       }
       if (!og) return;
       var rank = (term === q) ? 0 : (term.indexOf(q) === 0 ? 1 : 2);
@@ -323,14 +329,19 @@ window.AM = window.AM || {};
       for (var j = 0; j < out.length; j++) {
         if (out[j].g === og) { hit = out[j]; break; }
       }
-      /* The chip really does filter to "Other" and no further, so the note
-         still has to say so. It no longer says the title is unfindable
-         though: the machine lists are indexed now, so the ARCADES group
-         below this row lists the actual stores that have it. */
-      var note = info.label + " has no filter chip - see arcades below";
+      /* While the title has no chip of its own, the row must say so: the chip
+         it points at really does filter to "Other" and no further. It does not
+         say the title is unfindable, because the machine lists are indexed and
+         the ARCADES group below lists the actual stores.
+
+         Once the title HAS a chip, the sentence is simply false and the note
+         is dropped - the row now points at that game's own chip, which filters
+         to exactly the game the user asked for. */
+      var note = live ? null
+        : info.label + " has no filter chip - see arcades below";
       if (hit) {
         if (rank < hit.rank) hit.rank = rank;
-        if (!hit.note) hit.note = note;
+        if (!hit.note && note) hit.note = note;
       } else {
         out.push({ g: og, rank: rank, note: note });
       }

@@ -262,15 +262,30 @@ def thumb_of(payload):
 # --------------------------------------------------------------------------
 
 def load_journals(paths):
-    """Merge several journals. Later files win on a duplicate shop id.
+    """Merge several journals into {shop_id: record}.
 
-    A long crawl can be sharded across processes (one journal each) to keep
-    the wall clock sane; the canonical index is then rebuilt from all of them.
+    A long crawl can be sharded across processes (one journal each), and a
+    killed shard is resumed into a NEW journal, so the same shop can appear
+    twice: once as a transient ERROR and once as a real result. Resolution
+    must not depend on the order the caller happens to pass the files in, or
+    a rebuild would resurrect errors that were already retried successfully.
+
+    A settled record therefore always beats an unsettled one; between two
+    records of the same class, the later fetch wins.
     """
     out = {}
     for p in paths:
-        out.update(load_journal(p))
+        for sid, rec in load_journal(p).items():
+            cur = out.get(sid)
+            if cur is None or _rank(rec) >= _rank(cur):
+                out[sid] = rec
     return out
+
+
+def _rank(rec):
+    """Sort key deciding which duplicate journal record to keep."""
+    settled = 1 if rec.get("status") in PERMANENT else 0
+    return (settled, rec.get("fetched_at") or "")
 
 
 def load_journal(path):
@@ -290,6 +305,55 @@ def load_journal(path):
             sid = rec.get("shop_id")
             if sid:
                 out[str(sid)] = rec
+    return out
+
+
+def journal_from_index(index_path, asset_dir):
+    """Reconstruct journal records from a previously written index.
+
+    The image files and data_raw/bemanicn_photos.json are committed; the
+    JSONL journals are not (data_raw/tmp* is gitignored). A clone therefore
+    has the photos but no journal, and a naive resume would re-download all
+    of them. An index row plus a file that still exists on disk is proof the
+    shop is done, so it is replayed as a settled OK record.
+
+    Misses are replayed too: a shop with no photo upstream should not be
+    re-fetched every week either. Only records whose file has since been
+    deleted are dropped, so removing a file is how you force a re-fetch.
+    """
+    out = {}
+    try:
+        with open(index_path, encoding="utf-8") as f:
+            doc = json.load(f)
+    except (OSError, ValueError):
+        return out
+    # index paths are repo-relative ("assets/venues/cn/1.jpg"); asset_dir is
+    # <repo>/assets/venues/cn, so the repo root is three levels up.
+    root = os.path.dirname(os.path.dirname(
+        os.path.dirname(os.path.abspath(asset_dir))))
+    for sid, p in (doc.get("photos") or {}).items():
+        rel = p.get("file")
+        if not rel:
+            continue
+        if not os.path.exists(os.path.join(root, rel)) and \
+           not os.path.exists(rel):
+            continue  # file deleted -> let the crawl fetch it again
+        out[str(sid)] = {
+            "shop_id": str(sid), "status": OK, "file": rel,
+            "format": p.get("format"), "w": p.get("w"), "h": p.get("h"),
+            "bytes": p.get("bytes"), "sha256": p.get("sha256"),
+            "fetched_at": p.get("fetched_at"),
+            "source_url": p.get("source_url"),
+            "credit": p.get("credit"), "license": p.get("license"),
+            "source": p.get("source"),
+        }
+    for sid, m in (doc.get("misses") or {}).items():
+        if str(sid) in out:
+            continue
+        status = m.get("status")
+        if status in PERMANENT:
+            out[str(sid)] = {"shop_id": str(sid), "status": status,
+                             "source_url": "%s/s/%s" % (BASE, sid)}
     return out
 
 
@@ -506,8 +570,14 @@ def build_index(journal, meta_by_shop, out_path):
 
 
 def crawl(shops, asset_dir, journal_path, index_path, limit=None,
-          checkpoint=50, retry_errors=True):
-    journal = load_journal(journal_path)
+          checkpoint=50, retry_errors=True, extra_journals=()):
+    # The committed index is the durable resume state. Journals live under
+    # data_raw/tmp* and are gitignored, so a fresh clone (or the weekly CI
+    # run) has none: without this, every already-mirrored shop would be
+    # re-fetched to rewrite bytes that are already committed.
+    journal = journal_from_index(index_path, asset_dir)
+    # Journals are newer than the index, so they win over it.
+    journal.update(load_journals(list(extra_journals) + [journal_path]))
     meta_by_shop = {s["shop_id"]: s for s in shops}
 
     def is_done(sid):
@@ -567,8 +637,10 @@ def main():
     ap.add_argument("--journal", default=JOURNAL_PATH,
                     help="journal this process appends to")
     ap.add_argument("--extra-journal", action="append", default=[],
-                    help="additional journal(s) to fold into the index; "
-                         "repeatable. Use to merge sharded crawls.")
+                    help="additional journal(s) to read, repeatable. Their "
+                         "shops count as already done and their records are "
+                         "folded into the index. Use to merge sharded crawls. "
+                         "Only --journal is written to.")
     ap.add_argument("--index", default=INDEX_PATH)
     ap.add_argument("--asset-dir", default=ASSET_DIR)
     ap.add_argument("--checkpoint", type=int, default=50)
@@ -595,7 +667,8 @@ def main():
     else:
         doc = crawl(shops, args.asset_dir, args.journal, args.index,
                     limit=args.limit, checkpoint=args.checkpoint,
-                    retry_errors=not args.skip_errors)
+                    retry_errors=not args.skip_errors,
+                    extra_journals=args.extra_journal)
 
     c = doc["counts"]
     print("\nphotos=%d no_photo=%d gone=%d image_gone=%d error=%d | %.1f MB | "

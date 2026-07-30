@@ -860,24 +860,36 @@ def _is_related_area(want_base, got_base, index):
     The name gate compares a single administrative LEVEL, and the two sides do
     not always speak at the same one. Three real shapes from this dataset:
 
-      * 双河市 is a county-level city sitting DIRECTLY under 新疆 in the table,
-        while Baidu answers with the prefecture it is inside,
-        博尔塔拉蒙古自治州. Neither name contains the other and both are right.
+      * 齐齐哈尔市 is what a row expects; Baidu answers with its district
+        碾子山区. The answer is deeper than the question and still right.
       * 榆树市 is under 长春市, but the row's own region note says 吉林市 - a
         different prefecture in the same province. That one is a genuine
         disagreement between two cities and must NOT be waved through here.
       * 酉阳土家族苗族自治县 is a child of the synthetic 重庆郊县 bucket.
 
     So relatedness is decided on the TABLE's own tree, not on string overlap:
-    the two names pass when they are the same area, or when one is an ancestor
-    of the other. 榆树/吉林 are siblings under 吉林省 and correctly still fail.
+    the two names pass only when they are the same area, or when one is an
+    ANCESTOR of the other. 榆树/吉林 are siblings and correctly still fail.
+
+    ``want_base`` is matched at city level or below, never against a province,
+    and that restriction carries real weight. Four provinces share their bare
+    name with one of their own cities - 吉林省/吉林市, 黑龙江, 海南, 陕西 - so
+    a row expecting the CITY 吉林 would otherwise also match the PROVINCE node,
+    making every city in the province its descendant and waving the whole of
+    Jilin through on a name collision. That is precisely the failure this
+    function exists to prevent.
+
+    A pair that is merely NEARBY is not related: 双河市 and the prefecture that
+    surrounds it, 博尔塔拉蒙古自治州, are siblings under 新疆 in this table
+    (双河 is a Corps city filed directly under the region), so this returns
+    False for them and the distance backstop is what decides that case.
     """
     if not want_base or not got_base:
         return False
     if want_base == got_base:
         return True
     want_ids = [aid for aid, a in index.areas.items()
-                if china_place.cn_base(a["n"]) == want_base]
+                if a["d"] >= 1 and china_place.cn_base(a["n"]) == want_base]
     got_ids = [aid for aid, a in index.areas.items()
                if china_place.cn_base(a["n"]) == got_base]
     if not want_ids or not got_ids:

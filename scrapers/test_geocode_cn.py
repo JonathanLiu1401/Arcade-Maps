@@ -1393,9 +1393,20 @@ print("\n--- the name gate applies to name rungs only ---")
 # One canned answer, one query string, asked twice: once as an address rung and
 # once as a name rung. Only the classification differs, so the difference in
 # outcome is the gate and nothing else.
+#: BD-09 Mercator metres x100 that decode to WGS-84 39.92, 116.44 - Beijing.
+#: Real projected values, not round numbers: bdmc2bd is a per-band polynomial,
+#: so an invented pair decodes to a latitude in the Arctic and every case built
+#: on it fails the mainland box for reasons that have nothing to do with the
+#: behaviour under test.
+BJ_X, BJ_Y = 1296360322, 482767219
+check("the canned Beijing point really is in Beijing, so a rejection in these "
+      "cases is about the gate and not about the fixture",
+      gc.in_mainland(*eviltransform.bd2wgs(*gc.bdmc2bd(BJ_X / 100.0,
+                                                       BJ_Y / 100.0))))
+
 NAME_Q = "北京市朝阳区长楹天街"
 gc.fetch = fake_fetch({NAME_Q: {"content": [
-    poi("长楹天街购物中心", "北京市朝阳区常通路1号院", 1298000000, 4825000000,
+    poi("长楹天街购物中心", "北京市朝阳区常通路1号院", BJ_X, BJ_Y,
         area="北京市朝阳区")]}})[0]
 
 rec, kind = gc.geocode_one("北京朝阳区常通路1号院长楹天街", "baidu", None,
@@ -1436,18 +1447,34 @@ ok, why = gc.verify_area("河南洛阳市上海市场地下步行街爱尚街",
                          expect=("河南", "洛阳"))
 check("...and WITH it the row is placed at its address", ok, why)
 
-# 双河市 is a Production and Construction Corps city filed directly under
-# 新疆, while Baidu answers with the prefecture that physically surrounds it.
-# Neither name contains the other and both are right.
+# 双河市 is a Production and Construction Corps city filed DIRECTLY under 新疆,
+# while Baidu answers with the prefecture that physically surrounds it,
+# 博尔塔拉蒙古自治州. In this table they are siblings, not parent and child, so
+# the name gate cannot relate them - and must not, since that would also relate
+# every other prefecture in Xinjiang. What saves the row is the answer naming
+# 双河市 itself further along, and the distance backstop measuring 1 km.
 ok, why = gc.verify_area("新疆双河市明珠街道壹号公馆", 44.835248, 82.366654,
                          "壹号公馆 双河市灵峪路 博尔塔拉蒙古自治州",
                          expect=("新疆", "双河"))
-check("an ancestor/descendant pair in the area table is not a disagreement",
-      ok, why)
-check("but two SIBLINGS still are: 榆树市 is under 长春市, not 吉林市, and "
-      "waving that through would accept any city in the province",
-      not gc._is_related_area("吉林", "长春", IDX))
+check("a Corps city whose answer names the surrounding prefecture still "
+      "verifies, on the name in the text plus the distance", ok, why)
+check("but the two are NOT declared related by the table, because they are "
+      "siblings - relating them would relate all of Xinjiang",
+      not gc._is_related_area("双河", "博尔塔拉蒙古自治州", IDX))
+check("a district of the expected city IS related: 碾子山区 is inside "
+      "齐齐哈尔市, so an answer deeper than the question still passes",
+      gc._is_related_area("齐齐哈尔", "碾子山区", IDX))
 check("and a city is related to itself", gc._is_related_area("洛阳", "洛阳", IDX))
+# Two SIBLING cities are not related, and the guard that makes that true is
+# matching want_base at city level only. 吉林省 and 吉林市 share a bare name,
+# so without it every city in Jilin would look like a descendant of "吉林".
+for prov_city, other in [("吉林", "长春"), ("黑龙江", "哈尔滨"),
+                         ("海南", "海口"), ("陕西", "西安")]:
+    check("%s the province does not make %s an acceptable answer for %s the "
+          "CITY" % (prov_city, other, prov_city),
+          not gc._is_related_area(prov_city, other, IDX))
+check("and two ordinary sibling cities are still unrelated",
+      not gc._is_related_area("常德", "武陵", IDX))
 
 print("\n--- the synthetic Chongqing buckets ---")
 # china_areas.json groups Chongqing's 38 districts and counties into two
@@ -1490,7 +1517,7 @@ with open(p, "w", encoding="utf-8") as fh:
                            "fetched_at": "2020-01-01"}}, fh,
               ensure_ascii=False)
 answer = {"content": [poi("某某广场", "北京市朝阳区某某路1号",
-                          1298000000, 4825000000, area="北京市朝阳区")]}
+                          BJ_X, BJ_Y, area="北京市朝阳区")]}
 gc.fetch = fake_fetch({MISS_ADDR: answer})[0]
 
 out = gc.run([MISS_ADDR], path=p, provider="baidu")

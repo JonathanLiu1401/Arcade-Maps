@@ -682,7 +682,13 @@ def main(argv=None):
             "coverage. link_outs[] is a separate key whose records carry "
             "page_url and NO url/file key - they must NEVER be merged into "
             "images[], because enrich.py mirrors images[0].url into "
-            "entry['image'] and the panel renders any string it finds."),
+            "entry['image'] and the panel renders any string it finds. "
+            "OVERLAP: this file supersedes data_raw/ziv_photos.json on "
+            "US/UK/PH/SG/JP - both are the same ZIv source and a merge "
+            "should prefer this file, not union the two. See "
+            "sources.ziv_sweep.content_mix before quoting the headline "
+            "percentage: about half of ZIv pictures are cabinet closeups "
+            "rather than pictures of the venue."),
         "updated": date.today().isoformat(),
         "max_images": MAX_IMAGES,
         "tiers": {

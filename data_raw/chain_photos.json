@@ -1,5 +1,5 @@
 {
- "_comment": "Rights-cleared venue imagery for Arcade Maps. Despite the filename this file contains NO chain store photos: GiGO, Taito, Round1, namco, APINA, Timezone, Dave & Buster's and the rest publish all-rights-reserved terms and are link-out only. images[] holds ONLY tier 'venue' records that count toward coverage. link_outs[] is a separate key whose records carry page_url and NO url/file key - they must NEVER be merged into images[], because enrich.py mirrors images[0].url into entry['image'] and the panel renders any string it finds.",
+ "_comment": "Rights-cleared venue imagery for Arcade Maps. Despite the filename this file contains NO chain store photos: GiGO, Taito, Round1, namco, APINA, Timezone, Dave & Buster's and the rest publish all-rights-reserved terms and are link-out only. images[] holds ONLY tier 'venue' records that count toward coverage. link_outs[] is a separate key whose records carry page_url and NO url/file key - they must NEVER be merged into images[], because enrich.py mirrors images[0].url into entry['image'] and the panel renders any string it finds. OVERLAP: this file supersedes data_raw/ziv_photos.json on US/UK/PH/SG/JP - both are the same ZIv source and a merge should prefer this file, not union the two. See sources.ziv_sweep.content_mix before quoting the headline percentage: about half of ZIv pictures are cabinet closeups rather than pictures of the venue.",
  "updated": "2026-07-31",
  "max_images": 3,
  "tiers": {
@@ -49,7 +49,7 @@
      "with_pics": 15
     },
     "China": {
-     "arcades": 651,
+     "arcades": 656,
      "with_pics": 157
     },
     "Colombia": {
@@ -285,7 +285,28 @@
      "with_pics": 6
     }
    },
-   "licence": "ZIv publishes no photo licence; project policy is hotlink + visible credit + deep link, never rehost"
+   "licence": "ZIv publishes no photo licence; project policy is hotlink + visible credit + deep link, never rehost",
+   "content_mix": {
+    "_warning": "NOT every ZIv picture is a photo of the venue. ZIv is a rhythm-game site and a large share of uploads are single-cabinet closeups, which are not a picture of the arcade any more than a chain logo is. Coverage counts arcades with a ZIv photo, not arcades with a verified storefront.",
+    "method": "first picture of each sampled arcade downloaded and hand-classified by eye",
+    "new_countries": {
+     "n": 48,
+     "storefront": 13,
+     "interior": 10,
+     "cabinet_closeup": 24,
+     "other": 1,
+     "shows_venue_pct": 48
+    },
+    "already_shipped_countries": {
+     "n": 24,
+     "storefront": 6,
+     "interior": 5,
+     "cabinet_closeup": 12,
+     "other": 1,
+     "shows_venue_pct": 46
+    },
+    "conclusion": "48% vs 46% - the newly swept countries are statistically indistinguishable from the corpus already shipping, so this expands existing coverage at the same quality rather than diluting it"
+   }
   },
   "wikimedia_commons": {
    "arcades": 34,
@@ -296,8 +317,11 @@
   },
   "gigo_link_outs": {
    "candidates": 217,
-   "resolved": 137,
+   "live": 137,
+   "repaired_from_dead_slug": 128,
+   "already_live": 9,
    "dead": 80,
+   "why": "tempo.gendagigo.jp/am/{slug} now 301s every slug to a generic /renewal hub, so those link-outs were dead; repaired_from_dead_slug counts the ones this run actually fixed by resolving to www.gigo.co.jp/shops/{slug}",
    "licence": "all-rights-reserved; link-out only, counts as ZERO photo coverage"
   }
  },
@@ -593,8 +617,8 @@
   "arcades_with_venue_photo": 2022,
   "pct": 14.9,
   "records_by_source": {
-   "ziv": 4080,
-   "wikimedia_commons": 35
+   "ziv": 4067,
+   "wikimedia_commons": 48
   },
   "link_out_arcades": 137,
   "link_out_counts_as_coverage": 0
@@ -4759,17 +4783,6 @@
   ],
   "610": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1661051809.7052.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6316",
-    "tier": "venue",
-    "picture_id": 57825,
-    "arcade_name": "Quilles G plus Rose Bowl",
-    "country": "Canada"
-   },
-   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rose_Bowl_-_Montreal_%2826259012566%29.jpg/1280px-Rose_Bowl_-_Montreal_%2826259012566%29.jpg",
     "source": "wikimedia_commons",
     "credit": "Coastal Elite from Halifax, Canada / CC BY-SA 2.0 via Wikimedia Commons",
@@ -4780,6 +4793,17 @@
     "artist": "Coastal Elite from Halifax, Canada",
     "commons_file": "File:Rose Bowl - Montreal (26259012566).jpg",
     "full_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Rose_Bowl_-_Montreal_%2826259012566%29.jpg",
+    "arcade_name": "Quilles G plus Rose Bowl",
+    "country": "Canada"
+   },
+   {
+    "url": "https://zenius-i-vanisher.com/pictures/1661051809.7052.jpg",
+    "source": "ziv",
+    "credit": "Community photo via Zenius-I-Vanisher",
+    "license": null,
+    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6316",
+    "tier": "venue",
+    "picture_id": 57825,
     "arcade_name": "Quilles G plus Rose Bowl",
     "country": "Canada"
    }
@@ -14752,17 +14776,6 @@
   ],
   "8781": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/833-1374386608.jpeg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2824",
-    "tier": "venue",
-    "picture_id": 27416,
-    "arcade_name": "タイトーステーション広島紙屋町店",
-    "country": "Japan"
-   },
-   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Hondori_Street_in_Hiroshima.jpg/1280px-Hondori_Street_in_Hiroshima.jpg",
     "source": "wikimedia_commons",
     "credit": "Christophe95 / CC BY-SA 4.0 via Wikimedia Commons",
@@ -14775,9 +14788,48 @@
     "full_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Hondori_Street_in_Hiroshima.jpg",
     "arcade_name": "タイトーステーション広島紙屋町店",
     "country": "Japan"
+   },
+   {
+    "url": "https://zenius-i-vanisher.com/pictures/833-1374386608.jpeg",
+    "source": "ziv",
+    "credit": "Community photo via Zenius-I-Vanisher",
+    "license": null,
+    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2824",
+    "tier": "venue",
+    "picture_id": 27416,
+    "arcade_name": "タイトーステーション広島紙屋町店",
+    "country": "Japan"
    }
   ],
   "8763": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Taito_Station_%282812431296%29.jpg/1280px-Taito_Station_%282812431296%29.jpg",
+    "source": "wikimedia_commons",
+    "credit": "DocChewbacca / CC BY-SA 2.0 via Wikimedia Commons",
+    "license": "CC BY-SA 2.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Taito_Station_(2812431296).jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "DocChewbacca",
+    "commons_file": "File:Taito Station (2812431296).jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Taito_Station_%282812431296%29.jpg",
+    "arcade_name": "タイトーステーション 渋谷店",
+    "country": "Japan"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Virtual_horse_races_-_Inside_Taito_Station.jpg/1280px-Virtual_horse_races_-_Inside_Taito_Station.jpg",
+    "source": "wikimedia_commons",
+    "credit": "DocChewbacca / CC BY-SA 2.0 via Wikimedia Commons",
+    "license": "CC BY-SA 2.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Virtual_horse_races_-_Inside_Taito_Station.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "DocChewbacca",
+    "commons_file": "File:Virtual horse races - Inside Taito Station.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Virtual_horse_races_-_Inside_Taito_Station.jpg",
+    "arcade_name": "タイトーステーション 渋谷店",
+    "country": "Japan"
+   },
    {
     "url": "https://zenius-i-vanisher.com/pictures/833-1365883913[0].jpg",
     "source": "ziv",
@@ -14786,28 +14838,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2735",
     "tier": "venue",
     "picture_id": 26276,
-    "arcade_name": "タイトーステーション 渋谷店",
-    "country": "Japan"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1537261634.8929.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2735",
-    "tier": "venue",
-    "picture_id": 51367,
-    "arcade_name": "タイトーステーション 渋谷店",
-    "country": "Japan"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1537261688.1287.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2735",
-    "tier": "venue",
-    "picture_id": 51368,
     "arcade_name": "タイトーステーション 渋谷店",
     "country": "Japan"
    }
@@ -14862,35 +14892,44 @@
   ],
   "9218": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1681037892.2492.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7015",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/BabaMikado-1F-1.png",
+    "source": "wikimedia_commons",
+    "credit": "M.T / CC0 via Wikimedia Commons",
+    "license": "CC0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:BabaMikado-1F-1.png",
     "tier": "venue",
-    "picture_id": 59756,
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "M.T",
+    "commons_file": "File:BabaMikado-1F-1.png",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/BabaMikado-1F-1.png",
     "arcade_name": "高田馬場ゲームセンターミカド",
     "country": "Japan"
    },
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1681037923.6333.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7015",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/BabaMikado-1F-2.png",
+    "source": "wikimedia_commons",
+    "credit": "M.T / CC0 via Wikimedia Commons",
+    "license": "CC0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:BabaMikado-1F-2.png",
     "tier": "venue",
-    "picture_id": 59757,
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "M.T",
+    "commons_file": "File:BabaMikado-1F-2.png",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/BabaMikado-1F-2.png",
     "arcade_name": "高田馬場ゲームセンターミカド",
     "country": "Japan"
    },
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1681037959.8633.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7015",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/BabaMikado-1F-3.png",
+    "source": "wikimedia_commons",
+    "credit": "M.T / CC0 via Wikimedia Commons",
+    "license": "CC0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:BabaMikado-1F-3.png",
     "tier": "venue",
-    "picture_id": 59758,
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "M.T",
+    "commons_file": "File:BabaMikado-1F-3.png",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/BabaMikado-1F-3.png",
     "arcade_name": "高田馬場ゲームセンターミカド",
     "country": "Japan"
    }
@@ -15268,6 +15307,20 @@
   ],
   "9583": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/20260714_Yurakucho.jpg/1280px-20260714_Yurakucho.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Yumeto / CC BY-SA 4.0 via Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:20260714_Yurakucho.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Yumeto",
+    "commons_file": "File:20260714 Yurakucho.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/20260714_Yurakucho.jpg",
+    "arcade_name": "YURAKUCHO",
+    "country": "Macau"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1687254992.5372.jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -15286,20 +15339,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7060",
     "tier": "venue",
     "picture_id": 60970,
-    "arcade_name": "YURAKUCHO",
-    "country": "Macau"
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/20260714_Yurakucho.jpg/1280px-20260714_Yurakucho.jpg",
-    "source": "wikimedia_commons",
-    "credit": "Yumeto / CC BY-SA 4.0 via Wikimedia Commons",
-    "license": "CC BY-SA 4.0",
-    "page_url": "https://commons.wikimedia.org/wiki/File:20260714_Yurakucho.jpg",
-    "tier": "venue",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "artist": "Yumeto",
-    "commons_file": "File:20260714 Yurakucho.jpg",
-    "full_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/20260714_Yurakucho.jpg",
     "arcade_name": "YURAKUCHO",
     "country": "Macau"
    }
@@ -31078,6 +31117,20 @@
   ],
   "11371": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Weymouth_-_The_Electric_Palace_-_geograph.org.uk_-_1099493.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Chris Talbot / CC BY-SA 2.0 via Wikimedia Commons",
+    "license": "CC BY-SA 2.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Weymouth_-_The_Electric_Palace_-_geograph.org.uk_-_1099493.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "Chris Talbot",
+    "commons_file": "File:Weymouth - The Electric Palace - geograph.org.uk - 1099493.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Weymouth_-_The_Electric_Palace_-_geograph.org.uk_-_1099493.jpg",
+    "arcade_name": "Electric Palace",
+    "country": "United Kingdom"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1222-1315804625[2].jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -31096,17 +31149,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1908",
     "tier": "venue",
     "picture_id": 16239,
-    "arcade_name": "Electric Palace",
-    "country": "United Kingdom"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1222-1315804625[4].jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1908",
-    "tier": "venue",
-    "picture_id": 16240,
     "arcade_name": "Electric Palace",
     "country": "United Kingdom"
    }
@@ -32356,17 +32398,6 @@
   ],
   "11467": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1424103726.0668.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3364",
-    "tier": "venue",
-    "picture_id": 35335,
-    "arcade_name": "Happyland Amusements",
-    "country": "United Kingdom"
-   },
-   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bournemouth%2C_Happyland_Amusements_-_geograph.org.uk_-_1091459.jpg",
     "source": "wikimedia_commons",
     "credit": "Chris Downer / CC BY-SA 2.0 via Wikimedia Commons",
@@ -32377,6 +32408,17 @@
     "artist": "Chris Downer",
     "commons_file": "File:Bournemouth, Happyland Amusements - geograph.org.uk - 1091459.jpg",
     "full_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bournemouth%2C_Happyland_Amusements_-_geograph.org.uk_-_1091459.jpg",
+    "arcade_name": "Happyland Amusements",
+    "country": "United Kingdom"
+   },
+   {
+    "url": "https://zenius-i-vanisher.com/pictures/1424103726.0668.jpg",
+    "source": "ziv",
+    "credit": "Community photo via Zenius-I-Vanisher",
+    "license": null,
+    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3364",
+    "tier": "venue",
+    "picture_id": 35335,
     "arcade_name": "Happyland Amusements",
     "country": "United Kingdom"
    }
@@ -32442,6 +32484,20 @@
   ],
   "11471": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Dawlish_%2C_Piermont_Road_Pedestrian_Crossing_-_geograph.org.uk_-_1345889.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Lewis Clarke / CC BY-SA 2.0 via Wikimedia Commons",
+    "license": "CC BY-SA 2.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Dawlish_,_Piermont_Road_Pedestrian_Crossing_-_geograph.org.uk_-_1345889.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "Lewis Clarke",
+    "commons_file": "File:Dawlish , Piermont Road Pedestrian Crossing - geograph.org.uk - 1345889.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Dawlish_%2C_Piermont_Road_Pedestrian_Crossing_-_geograph.org.uk_-_1345889.jpg",
+    "arcade_name": "Harrisons Amusements",
+    "country": "United Kingdom"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1681207613.9262.jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -32460,20 +32516,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7019",
     "tier": "venue",
     "picture_id": 59909,
-    "arcade_name": "Harrisons Amusements",
-    "country": "United Kingdom"
-   },
-   {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Dawlish_%2C_Piermont_Road_Pedestrian_Crossing_-_geograph.org.uk_-_1345889.jpg",
-    "source": "wikimedia_commons",
-    "credit": "Lewis Clarke / CC BY-SA 2.0 via Wikimedia Commons",
-    "license": "CC BY-SA 2.0",
-    "page_url": "https://commons.wikimedia.org/wiki/File:Dawlish_,_Piermont_Road_Pedestrian_Crossing_-_geograph.org.uk_-_1345889.jpg",
-    "tier": "venue",
-    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
-    "artist": "Lewis Clarke",
-    "commons_file": "File:Dawlish , Piermont Road Pedestrian Crossing - geograph.org.uk - 1345889.jpg",
-    "full_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Dawlish_%2C_Piermont_Road_Pedestrian_Crossing_-_geograph.org.uk_-_1345889.jpg",
     "arcade_name": "Harrisons Amusements",
     "country": "United Kingdom"
    }
@@ -37355,6 +37397,34 @@
   ],
   "12174": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Chinatown_Fair_storefront.jpg/1280px-Chinatown_Fair_storefront.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Seth Tisue from San Francisco, CA, USA / CC BY-SA 2.0 via Wikimedia Commons",
+    "license": "CC BY-SA 2.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Chinatown_Fair_storefront.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "Seth Tisue from San Francisco, CA, USA",
+    "commons_file": "File:Chinatown Fair storefront.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Chinatown_Fair_storefront.jpg",
+    "arcade_name": "CHINATOWN FAIR",
+    "country": "United States"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Chinatown_Fair_%E2%80%93_interior_from_entranceway_%E2%80%93_2020.jpg/1280px-Chinatown_Fair_%E2%80%93_interior_from_entranceway_%E2%80%93_2020.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Opencooper / CC0 via Wikimedia Commons",
+    "license": "CC0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Chinatown_Fair_%E2%80%93_interior_from_entranceway_%E2%80%93_2020.jpg",
+    "tier": "venue",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "Opencooper",
+    "commons_file": "File:Chinatown Fair – interior from entranceway – 2020.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Chinatown_Fair_%E2%80%93_interior_from_entranceway_%E2%80%93_2020.jpg",
+    "arcade_name": "CHINATOWN FAIR",
+    "country": "United States"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1272-1194684812.jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -37362,28 +37432,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=111",
     "tier": "venue",
     "picture_id": 1963,
-    "arcade_name": "CHINATOWN FAIR",
-    "country": "United States"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/3921-1389704343.png",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=111",
-    "tier": "venue",
-    "picture_id": 30671,
-    "arcade_name": "CHINATOWN FAIR",
-    "country": "United States"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1454872631.1862.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=111",
-    "tier": "venue",
-    "picture_id": 42057,
     "arcade_name": "CHINATOWN FAIR",
     "country": "United States"
    }
@@ -42385,17 +42433,6 @@
   ],
   "13306": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1749535177.9516.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4738",
-    "tier": "venue",
-    "picture_id": 68618,
-    "arcade_name": "The Garcade",
-    "country": "United States"
-   },
-   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Menomonee_Falls_June_2026_70_%28The_Garcade%29.jpg/1280px-Menomonee_Falls_June_2026_70_%28The_Garcade%29.jpg",
     "source": "wikimedia_commons",
     "credit": "Michael Barera / CC BY-SA 4.0 via Wikimedia Commons",
@@ -42406,6 +42443,17 @@
     "artist": "Michael Barera",
     "commons_file": "File:Menomonee Falls June 2026 70 (The Garcade).jpg",
     "full_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Menomonee_Falls_June_2026_70_%28The_Garcade%29.jpg",
+    "arcade_name": "The Garcade",
+    "country": "United States"
+   },
+   {
+    "url": "https://zenius-i-vanisher.com/pictures/1749535177.9516.jpg",
+    "source": "ziv",
+    "credit": "Community photo via Zenius-I-Vanisher",
+    "license": null,
+    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4738",
+    "tier": "venue",
+    "picture_id": 68618,
     "arcade_name": "The Garcade",
     "country": "United States"
    }
@@ -42558,6 +42606,20 @@
   ],
   "13354": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tilted_10_in_Willow_Grove_Park_Mall.jpeg/1280px-Tilted_10_in_Willow_Grove_Park_Mall.jpeg",
+    "source": "wikimedia_commons",
+    "credit": "Dough4872 / CC BY-SA 4.0 via Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Tilted_10_in_Willow_Grove_Park_Mall.jpeg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Dough4872",
+    "commons_file": "File:Tilted 10 in Willow Grove Park Mall.jpeg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Tilted_10_in_Willow_Grove_Park_Mall.jpeg",
+    "arcade_name": "Tilted 10 (Willow Grove)",
+    "country": "United States"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1699019076.7672.jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -42576,17 +42638,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7913",
     "tier": "venue",
     "picture_id": 70351,
-    "arcade_name": "Tilted 10 (Willow Grove)",
-    "country": "United States"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/22864-1765140687[0].jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7913",
-    "tier": "venue",
-    "picture_id": 70352,
     "arcade_name": "Tilted 10 (Willow Grove)",
     "country": "United States"
    }
@@ -43403,6 +43454,34 @@
   ],
   "12200": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cidercade_1_2023-11-16.jpg/1280px-Cidercade_1_2023-11-16.jpg",
+    "source": "wikimedia_commons",
+    "credit": "F ASTILY / CC BY-SA 4.0 via Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cidercade_1_2023-11-16.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "F ASTILY",
+    "commons_file": "File:Cidercade 1 2023-11-16.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Cidercade_1_2023-11-16.jpg",
+    "arcade_name": "CIDERCADE AUSTIN",
+    "country": "United States"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Cidercade_2_2023-11-16.jpg/1280px-Cidercade_2_2023-11-16.jpg",
+    "source": "wikimedia_commons",
+    "credit": "F ASTILY / CC BY-SA 4.0 via Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Cidercade_2_2023-11-16.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "F ASTILY",
+    "commons_file": "File:Cidercade 2 2023-11-16.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Cidercade_2_2023-11-16.jpg",
+    "arcade_name": "CIDERCADE AUSTIN",
+    "country": "United States"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1779460437.6141.jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -43410,28 +43489,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7204",
     "tier": "venue",
     "picture_id": 71397,
-    "arcade_name": "CIDERCADE AUSTIN",
-    "country": "United States"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1779460510.803.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7204",
-    "tier": "venue",
-    "picture_id": 71398,
-    "arcade_name": "CIDERCADE AUSTIN",
-    "country": "United States"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1784986740.3937.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7204",
-    "tier": "venue",
-    "picture_id": 71890,
     "arcade_name": "CIDERCADE AUSTIN",
     "country": "United States"
    }
@@ -44264,6 +44321,20 @@
   ],
   "12356": [
    {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Dave_%26_Buster_entrance%2C_Springfield_Town_Center.jpg/1280px-Dave_%26_Buster_entrance%2C_Springfield_Town_Center.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Ser Amantio di Nicolao / CC BY-SA 3.0 via Wikimedia Commons",
+    "license": "CC BY-SA 3.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Dave_%26_Buster_entrance,_Springfield_Town_Center.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "Ser Amantio di Nicolao",
+    "commons_file": "File:Dave & Buster entrance, Springfield Town Center.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Dave_%26_Buster_entrance%2C_Springfield_Town_Center.jpg",
+    "arcade_name": "Dave & Buster's (Springfield)",
+    "country": "United States"
+   },
+   {
     "url": "https://zenius-i-vanisher.com/pictures/1462646881.4306.jpg",
     "source": "ziv",
     "credit": "Community photo via Zenius-I-Vanisher",
@@ -44282,17 +44353,6 @@
     "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3746",
     "tier": "venue",
     "picture_id": 42675,
-    "arcade_name": "Dave & Buster's (Springfield)",
-    "country": "United States"
-   },
-   {
-    "url": "https://zenius-i-vanisher.com/pictures/1462647081.5025.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3746",
-    "tier": "venue",
-    "picture_id": 42676,
     "arcade_name": "Dave & Buster's (Springfield)",
     "country": "United States"
    }
@@ -44644,17 +44704,6 @@
   ],
   "12561": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1735235843.1374.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9229",
-    "tier": "venue",
-    "picture_id": 67205,
-    "arcade_name": "Game Box Arcade (Langhorne)",
-    "country": "United States"
-   },
-   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2025-09-10_18_53_00_The_entrance_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township%2C_Bucks_County%2C_Pennsylvania.jpg/1280px-2025-09-10_18_53_00_The_entrance_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township%2C_Bucks_County%2C_Pennsylvania.jpg",
     "source": "wikimedia_commons",
     "credit": "Famartin / CC BY-SA 4.0 via Wikimedia Commons",
@@ -44679,6 +44728,20 @@
     "artist": "Famartin",
     "commons_file": "File:2025-09-10 18 54 44 Interior of the Game Box Arcade within the Oxford Valley Mall in Middletown Township, Bucks County, Pennsylvania.jpg",
     "full_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/2025-09-10_18_54_44_Interior_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township%2C_Bucks_County%2C_Pennsylvania.jpg",
+    "arcade_name": "Game Box Arcade (Langhorne)",
+    "country": "United States"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/2025-09-10_18_54_17_Interior_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township%2C_Bucks_County%2C_Pennsylvania.jpg/1280px-2025-09-10_18_54_17_Interior_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township%2C_Bucks_County%2C_Pennsylvania.jpg",
+    "source": "wikimedia_commons",
+    "credit": "Famartin / CC BY-SA 4.0 via Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "page_url": "https://commons.wikimedia.org/wiki/File:2025-09-10_18_54_17_Interior_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township,_Bucks_County,_Pennsylvania.jpg",
+    "tier": "venue",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Famartin",
+    "commons_file": "File:2025-09-10 18 54 17 Interior of the Game Box Arcade within the Oxford Valley Mall in Middletown Township, Bucks County, Pennsylvania.jpg",
+    "full_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/2025-09-10_18_54_17_Interior_of_the_Game_Box_Arcade_within_the_Oxford_Valley_Mall_in_Middletown_Township%2C_Bucks_County%2C_Pennsylvania.jpg",
     "arcade_name": "Game Box Arcade (Langhorne)",
     "country": "United States"
    }
@@ -45847,17 +45910,6 @@
   ],
   "13433": [
    {
-    "url": "https://zenius-i-vanisher.com/pictures/1561824156.7836.jpg",
-    "source": "ziv",
-    "credit": "Community photo via Zenius-I-Vanisher",
-    "license": null,
-    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4542",
-    "tier": "venue",
-    "picture_id": 53172,
-    "arcade_name": "YESTERcades (Somerville)",
-    "country": "United States"
-   },
-   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Yestercades%2C_Somerville%2C_NJ_5_3_15_%2817178181217%29.jpg/1280px-Yestercades%2C_Somerville%2C_NJ_5_3_15_%2817178181217%29.jpg",
     "source": "wikimedia_commons",
     "credit": "Rob DiCaterino from Clifton, NJ, USA / CC BY 2.0 via Wikimedia Commons",
@@ -45882,6 +45934,17 @@
     "artist": "Rob DiCaterino from Clifton, NJ, USA",
     "commons_file": "File:Yestercades, Somerville, NJ 5 3 15 (17383659032).jpg",
     "full_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Yestercades%2C_Somerville%2C_NJ_5_3_15_%2817383659032%29.jpg",
+    "arcade_name": "YESTERcades (Somerville)",
+    "country": "United States"
+   },
+   {
+    "url": "https://zenius-i-vanisher.com/pictures/1561824156.7836.jpg",
+    "source": "ziv",
+    "credit": "Community photo via Zenius-I-Vanisher",
+    "license": null,
+    "page_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4542",
+    "tier": "venue",
+    "picture_id": 53172,
     "arcade_name": "YESTERcades (Somerville)",
     "country": "United States"
    }
@@ -50025,7 +50088,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/akihabara5"
+    "repaired": false
    }
   ],
   "8256": [
@@ -50037,7 +50100,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/amagasaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/amagasaki/",
+    "repaired": true
    }
   ],
   "8257": [
@@ -50049,7 +50113,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/soga/"
+    "replaces": "https://tempo.gendagigo.jp/am/soga/",
+    "repaired": true
    }
   ],
   "8258": [
@@ -50061,7 +50126,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/saitama-fukiage?utm_medium=GBP&utm_campaign=mov&utm_source=website-button"
+    "replaces": "https://www.gigo.co.jp/shops/saitama-fukiage?utm_medium=GBP&utm_campaign=mov&utm_source=website-button",
+    "repaired": true
    }
   ],
   "8262": [
@@ -50073,7 +50139,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hachioji-hazama/"
+    "replaces": "https://tempo.gendagigo.jp/am/hachioji-hazama/",
+    "repaired": true
    }
   ],
   "8265": [
@@ -50085,7 +50152,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/marugame/"
+    "replaces": "https://tempo.gendagigo.jp/am/marugame/",
+    "repaired": true
    }
   ],
   "8267": [
@@ -50097,7 +50165,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/namba-ebisubashi/"
+    "replaces": "https://tempo.gendagigo.jp/am/namba-ebisubashi/",
+    "repaired": true
    }
   ],
   "8269": [
@@ -50109,7 +50178,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/shibuya/"
+    "replaces": "https://tempo.gendagigo.jp/am/shibuya/",
+    "repaired": true
    }
   ],
   "8272": [
@@ -50121,7 +50191,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/muroran-chuo/"
+    "replaces": "https://tempo.gendagigo.jp/am/muroran-chuo/",
+    "repaired": true
    }
   ],
   "8273": [
@@ -50133,7 +50204,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kamiiso/"
+    "replaces": "https://tempo.gendagigo.jp/am/kamiiso/",
+    "repaired": true
    }
   ],
   "8535": [
@@ -50145,7 +50217,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/ap-marushin"
+    "repaired": false
    }
   ],
   "9256": [
@@ -50157,7 +50229,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tsukashin/"
+    "replaces": "https://tempo.gendagigo.jp/am/tsukashin/",
+    "repaired": true
    }
   ],
   "9257": [
@@ -50169,7 +50242,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hitachinaka/"
+    "replaces": "https://tempo.gendagigo.jp/am/hitachinaka/",
+    "repaired": true
    }
   ],
   "9258": [
@@ -50181,7 +50255,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/nagasaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/nagasaki/",
+    "repaired": true
    }
   ],
   "9259": [
@@ -50193,7 +50268,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/iizuka/"
+    "replaces": "https://tempo.gendagigo.jp/am/iizuka/",
+    "repaired": true
    }
   ],
   "9263": [
@@ -50205,7 +50281,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/matsusaka/"
+    "replaces": "https://tempo.gendagigo.jp/am/matsusaka/",
+    "repaired": true
    }
   ],
   "9264": [
@@ -50217,7 +50294,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kumamoto/"
+    "replaces": "https://tempo.gendagigo.jp/am/kumamoto/",
+    "repaired": true
    }
   ],
   "9265": [
@@ -50229,7 +50307,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/miyazaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/miyazaki/",
+    "repaired": true
    }
   ],
   "9266": [
@@ -50241,7 +50320,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kasai/"
+    "replaces": "https://tempo.gendagigo.jp/am/kasai/",
+    "repaired": true
    }
   ],
   "9267": [
@@ -50253,7 +50333,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/alpark?utm_campaign=mov&utm_medium=GBP&utm_source=website-button"
+    "replaces": "https://www.gigo.co.jp/shops/alpark?utm_campaign=mov&utm_medium=GBP&utm_source=website-button",
+    "repaired": true
    }
   ],
   "9270": [
@@ -50265,7 +50346,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/a-kariya"
+    "repaired": false
    }
   ],
   "9290": [
@@ -50277,7 +50358,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kobuchi/"
+    "replaces": "https://tempo.gendagigo.jp/am/kobuchi/",
+    "repaired": true
    }
   ],
   "9293": [
@@ -50289,7 +50371,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kusatsu/"
+    "replaces": "https://tempo.gendagigo.jp/am/kusatsu/",
+    "repaired": true
    }
   ],
   "9294": [
@@ -50301,7 +50384,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/chiryu"
+    "repaired": false
    }
   ],
   "9301": [
@@ -50313,7 +50396,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/odawara/"
+    "replaces": "https://tempo.gendagigo.jp/am/odawara/",
+    "repaired": true
    }
   ],
   "9302": [
@@ -50325,7 +50409,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tsukuba/"
+    "replaces": "https://tempo.gendagigo.jp/am/tsukuba/",
+    "repaired": true
    }
   ],
   "9310": [
@@ -50337,7 +50422,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/maya/"
+    "replaces": "https://tempo.gendagigo.jp/am/maya/",
+    "repaired": true
    }
   ],
   "9314": [
@@ -50349,7 +50435,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/shimizu/"
+    "replaces": "https://tempo.gendagigo.jp/am/shimizu/",
+    "repaired": true
    }
   ],
   "9315": [
@@ -50361,7 +50448,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/toyama/"
+    "replaces": "https://tempo.gendagigo.jp/am/toyama/",
+    "repaired": true
    }
   ],
   "9316": [
@@ -50373,7 +50461,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sasashima/"
+    "replaces": "https://tempo.gendagigo.jp/am/sasashima/",
+    "repaired": true
    }
   ],
   "9317": [
@@ -50385,7 +50474,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/seki/"
+    "replaces": "https://tempo.gendagigo.jp/am/seki/",
+    "repaired": true
    }
   ],
   "9318": [
@@ -50397,7 +50487,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/mina-tenjin/"
+    "replaces": "https://tempo.gendagigo.jp/am/mina-tenjin/",
+    "repaired": true
    }
   ],
   "9322": [
@@ -50409,7 +50500,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/seiseki-sakuragaoka"
+    "repaired": false
    }
   ],
   "9325": [
@@ -50421,7 +50512,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sannomiya-kitaguchi/"
+    "replaces": "https://tempo.gendagigo.jp/am/sannomiya-kitaguchi/",
+    "repaired": true
    }
   ],
   "9326": [
@@ -50433,7 +50525,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ueda/"
+    "replaces": "https://tempo.gendagigo.jp/am/ueda/",
+    "repaired": true
    }
   ],
   "9327": [
@@ -50445,7 +50538,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/nakatsu/"
+    "replaces": "https://tempo.gendagigo.jp/am/nakatsu/",
+    "repaired": true
    }
   ],
   "9329": [
@@ -50457,7 +50551,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/nakama/"
+    "replaces": "https://tempo.gendagigo.jp/am/nakama/",
+    "repaired": true
    }
   ],
   "9330": [
@@ -50469,7 +50564,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hisai/"
+    "replaces": "https://tempo.gendagigo.jp/am/hisai/",
+    "repaired": true
    }
   ],
   "9331": [
@@ -50481,7 +50577,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/imafuku/"
+    "replaces": "https://tempo.gendagigo.jp/am/imafuku/",
+    "repaired": true
    }
   ],
   "9332": [
@@ -50493,7 +50590,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sendai/"
+    "replaces": "https://tempo.gendagigo.jp/am/sendai/",
+    "repaired": true
    }
   ],
   "9333": [
@@ -50505,7 +50603,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sendai-korona/"
+    "replaces": "https://tempo.gendagigo.jp/am/sendai-korona/",
+    "repaired": true
    }
   ],
   "9334": [
@@ -50517,7 +50616,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sendai-ichibancho/"
+    "replaces": "https://tempo.gendagigo.jp/am/sendai-ichibancho/",
+    "repaired": true
    }
   ],
   "9335": [
@@ -50529,7 +50629,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ise/"
+    "replaces": "https://tempo.gendagigo.jp/am/ise/",
+    "repaired": true
    }
   ],
   "9337": [
@@ -50541,7 +50642,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sanuma/"
+    "replaces": "https://tempo.gendagigo.jp/am/sanuma/",
+    "repaired": true
    }
   ],
   "9338": [
@@ -50553,7 +50655,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kurashiki/"
+    "replaces": "https://tempo.gendagigo.jp/am/kurashiki/",
+    "repaired": true
    }
   ],
   "9339": [
@@ -50565,7 +50668,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/iruma/"
+    "replaces": "https://tempo.gendagigo.jp/am/iruma/",
+    "repaired": true
    }
   ],
   "9341": [
@@ -50577,7 +50681,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/matsudo/"
+    "replaces": "https://tempo.gendagigo.jp/am/matsudo/",
+    "repaired": true
    }
   ],
   "9343": [
@@ -50589,7 +50694,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hakodate-showa/"
+    "replaces": "https://tempo.gendagigo.jp/am/hakodate-showa/",
+    "repaired": true
    }
   ],
   "9346": [
@@ -50601,7 +50707,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/nakoso/"
+    "replaces": "https://tempo.gendagigo.jp/am/nakoso/",
+    "repaired": true
    }
   ],
   "9349": [
@@ -50613,7 +50720,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kitami/"
+    "replaces": "https://tempo.gendagigo.jp/am/kitami/",
+    "repaired": true
    }
   ],
   "9350": [
@@ -50625,7 +50733,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/chatan/"
+    "replaces": "https://tempo.gendagigo.jp/am/chatan/",
+    "repaired": true
    }
   ],
   "9351": [
@@ -50637,7 +50746,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/chiba/"
+    "replaces": "https://tempo.gendagigo.jp/am/chiba/",
+    "repaired": true
    }
   ],
   "9353": [
@@ -50649,7 +50759,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/koshigaya/"
+    "replaces": "https://tempo.gendagigo.jp/am/koshigaya/",
+    "repaired": true
    }
   ],
   "9355": [
@@ -50661,7 +50772,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/nabari/"
+    "replaces": "https://tempo.gendagigo.jp/am/nabari/",
+    "repaired": true
    }
   ],
   "9358": [
@@ -50673,7 +50785,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/omori/"
+    "replaces": "https://tempo.gendagigo.jp/am/omori/",
+    "repaired": true
    }
   ],
   "9361": [
@@ -50685,7 +50798,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tendo/"
+    "replaces": "https://tempo.gendagigo.jp/am/tendo/",
+    "repaired": true
    }
   ],
   "9363": [
@@ -50697,7 +50811,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/himeji-ekimae"
+    "repaired": false
    }
   ],
   "9364": [
@@ -50709,7 +50823,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/utsunomiya/"
+    "replaces": "https://tempo.gendagigo.jp/am/utsunomiya/",
+    "repaired": true
    }
   ],
   "9365": [
@@ -50721,7 +50836,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/anjo/"
+    "replaces": "https://tempo.gendagigo.jp/am/anjo/",
+    "repaired": true
    }
   ],
   "9366": [
@@ -50733,7 +50849,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/muroran"
+    "replaces": "https://tempo.gendagigo.jp/am/muroran",
+    "repaired": true
    }
   ],
   "9367": [
@@ -50745,7 +50862,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/oyama/"
+    "replaces": "https://tempo.gendagigo.jp/am/oyama/",
+    "repaired": true
    }
   ],
   "9368": [
@@ -50757,7 +50875,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/bisai/"
+    "replaces": "https://tempo.gendagigo.jp/am/bisai/",
+    "repaired": true
    }
   ],
   "9369": [
@@ -50769,7 +50888,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/onomichi/"
+    "replaces": "https://tempo.gendagigo.jp/am/onomichi/",
+    "repaired": true
    }
   ],
   "9371": [
@@ -50781,7 +50901,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/okazaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/okazaki/",
+    "repaired": true
    }
   ],
   "9372": [
@@ -50793,7 +50914,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/okaya/"
+    "replaces": "https://tempo.gendagigo.jp/am/okaya/",
+    "repaired": true
    }
   ],
   "9373": [
@@ -50805,7 +50927,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kawaguchi/"
+    "replaces": "https://tempo.gendagigo.jp/am/kawaguchi/",
+    "repaired": true
    }
   ],
   "9374": [
@@ -50817,7 +50940,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fuse/"
+    "replaces": "https://tempo.gendagigo.jp/am/fuse/",
+    "repaired": true
    }
   ],
   "9375": [
@@ -50829,7 +50953,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/obihiro-inada/"
+    "replaces": "https://tempo.gendagigo.jp/am/obihiro-inada/",
+    "repaired": true
    }
   ],
   "9376": [
@@ -50841,7 +50966,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/makuhari/"
+    "replaces": "https://tempo.gendagigo.jp/am/makuhari/",
+    "repaired": true
    }
   ],
   "9377": [
@@ -50853,7 +50979,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hiro/"
+    "replaces": "https://tempo.gendagigo.jp/am/hiro/",
+    "repaired": true
    }
   ],
   "9379": [
@@ -50865,7 +50992,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/shonai/"
+    "replaces": "https://tempo.gendagigo.jp/am/shonai/",
+    "repaired": true
    }
   ],
   "9380": [
@@ -50877,7 +51005,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fuchu/"
+    "replaces": "https://tempo.gendagigo.jp/am/fuchu/",
+    "repaired": true
    }
   ],
   "9381": [
@@ -50889,7 +51018,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/nobeoka/"
+    "replaces": "https://tempo.gendagigo.jp/am/nobeoka/",
+    "repaired": true
    }
   ],
   "9382": [
@@ -50901,7 +51031,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hirosaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/hirosaki/",
+    "repaired": true
    }
   ],
   "9384": [
@@ -50913,7 +51044,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/abiko/"
+    "replaces": "https://tempo.gendagigo.jp/am/abiko/",
+    "repaired": true
    }
   ],
   "9385": [
@@ -50925,7 +51057,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tokorozawa/"
+    "replaces": "https://tempo.gendagigo.jp/am/tokorozawa/",
+    "repaired": true
    }
   ],
   "9386": [
@@ -50937,7 +51070,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kakegawa/"
+    "replaces": "https://tempo.gendagigo.jp/am/kakegawa/",
+    "repaired": true
    }
   ],
   "9391": [
@@ -50949,7 +51083,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/shinsugita/"
+    "replaces": "https://tempo.gendagigo.jp/am/shinsugita/",
+    "repaired": true
    }
   ],
   "9393": [
@@ -50961,7 +51096,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hiwada/"
+    "replaces": "https://tempo.gendagigo.jp/am/hiwada/",
+    "repaired": true
    }
   ],
   "9394": [
@@ -50973,7 +51109,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hitachi/"
+    "replaces": "https://tempo.gendagigo.jp/am/hitachi/",
+    "repaired": true
    }
   ],
   "9395": [
@@ -50985,7 +51122,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/asahi/"
+    "replaces": "https://tempo.gendagigo.jp/am/asahi/",
+    "repaired": true
    }
   ],
   "9396": [
@@ -50997,7 +51135,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/akashi/"
+    "replaces": "https://tempo.gendagigo.jp/am/akashi/",
+    "repaired": true
    }
   ],
   "9397": [
@@ -51009,7 +51148,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kasugai"
+    "replaces": "https://tempo.gendagigo.jp/am/kasugai",
+    "repaired": true
    }
   ],
   "9402": [
@@ -51021,7 +51161,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/tomei-bowl"
+    "repaired": false
    }
   ],
   "9404": [
@@ -51033,7 +51173,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/matsuyama/"
+    "replaces": "https://tempo.gendagigo.jp/am/matsuyama/",
+    "repaired": true
    }
   ],
   "9405": [
@@ -51045,7 +51186,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/matsue/"
+    "replaces": "https://tempo.gendagigo.jp/am/matsue/",
+    "repaired": true
    }
   ],
   "9406": [
@@ -51057,7 +51199,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/hirakata/"
+    "replaces": "https://tempo.gendagigo.jp/am/hirakata/",
+    "repaired": true
    }
   ],
   "9407": [
@@ -51069,7 +51212,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kashiwa/"
+    "replaces": "https://tempo.gendagigo.jp/am/kashiwa/",
+    "repaired": true
    }
   ],
   "9408": [
@@ -51081,7 +51225,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/gifu-yanaizu/"
+    "replaces": "https://tempo.gendagigo.jp/am/gifu-yanaizu/",
+    "repaired": true
    }
   ],
   "9409": [
@@ -51093,7 +51238,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kuwana"
+    "replaces": "https://tempo.gendagigo.jp/am/kuwana",
+    "repaired": true
    }
   ],
   "9410": [
@@ -51105,7 +51251,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/yokohama-chukagai/"
+    "replaces": "https://tempo.gendagigo.jp/am/yokohama-chukagai/",
+    "repaired": true
    }
   ],
   "9411": [
@@ -51117,7 +51264,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/takefu/"
+    "replaces": "https://tempo.gendagigo.jp/am/takefu/",
+    "repaired": true
    }
   ],
   "9413": [
@@ -51129,7 +51277,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/mito/"
+    "replaces": "https://tempo.gendagigo.jp/am/mito/",
+    "repaired": true
    }
   ],
   "9416": [
@@ -51141,7 +51290,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/mizusawa/"
+    "replaces": "https://tempo.gendagigo.jp/am/mizusawa/",
+    "repaired": true
    }
   ],
   "9417": [
@@ -51153,7 +51303,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ikegami/"
+    "replaces": "https://tempo.gendagigo.jp/am/ikegami/",
+    "repaired": true
    }
   ],
   "9418": [
@@ -51165,7 +51316,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kawaramachi"
+    "replaces": "https://tempo.gendagigo.jp/am/kawaramachi",
+    "repaired": true
    }
   ],
   "9419": [
@@ -51177,7 +51329,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/numata/"
+    "replaces": "https://tempo.gendagigo.jp/am/numata/",
+    "repaired": true
    }
   ],
   "9421": [
@@ -51189,7 +51342,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kaita/"
+    "replaces": "https://tempo.gendagigo.jp/am/kaita/",
+    "repaired": true
    }
   ],
   "9422": [
@@ -51201,7 +51355,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ebina/"
+    "replaces": "https://tempo.gendagigo.jp/am/ebina/",
+    "repaired": true
    }
   ],
   "9425": [
@@ -51213,7 +51368,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ikuwa/"
+    "replaces": "https://tempo.gendagigo.jp/am/ikuwa/",
+    "repaired": true
    }
   ],
   "9427": [
@@ -51225,7 +51381,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/machida/"
+    "replaces": "https://tempo.gendagigo.jp/am/machida/",
+    "repaired": true
    }
   ],
   "9428": [
@@ -51237,7 +51394,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/shirakawa/"
+    "replaces": "https://tempo.gendagigo.jp/am/shirakawa/",
+    "repaired": true
    }
   ],
   "9431": [
@@ -51249,7 +51407,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sagamiohno/"
+    "replaces": "https://tempo.gendagigo.jp/am/sagamiohno/",
+    "repaired": true
    }
   ],
   "9432": [
@@ -51261,7 +51420,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ishioka/"
+    "replaces": "https://tempo.gendagigo.jp/am/ishioka/",
+    "repaired": true
    }
   ],
   "9433": [
@@ -51273,7 +51433,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ishinomaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/ishinomaki/",
+    "repaired": true
    }
   ],
   "9436": [
@@ -51285,7 +51446,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kamisu/"
+    "replaces": "https://tempo.gendagigo.jp/am/kamisu/",
+    "repaired": true
    }
   ],
   "9437": [
@@ -51297,7 +51459,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/kagurazaka"
+    "repaired": false
    }
   ],
   "9438": [
@@ -51309,7 +51471,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fukui/"
+    "replaces": "https://tempo.gendagigo.jp/am/fukui/",
+    "repaired": true
    }
   ],
   "9439": [
@@ -51321,7 +51484,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fukuyama/"
+    "replaces": "https://tempo.gendagigo.jp/am/fukuyama/",
+    "repaired": true
    }
   ],
   "9441": [
@@ -51333,7 +51497,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fukushima/"
+    "replaces": "https://tempo.gendagigo.jp/am/fukushima/",
+    "repaired": true
    }
   ],
   "9442": [
@@ -51345,7 +51510,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fukushima-minami/"
+    "replaces": "https://tempo.gendagigo.jp/am/fukushima-minami/",
+    "repaired": true
    }
   ],
   "9443": [
@@ -51357,7 +51523,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fussa/"
+    "replaces": "https://tempo.gendagigo.jp/am/fussa/",
+    "repaired": true
    }
   ],
   "9444": [
@@ -51369,7 +51536,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/akita/"
+    "replaces": "https://tempo.gendagigo.jp/am/akita/",
+    "repaired": true
    }
   ],
   "9447": [
@@ -51381,7 +51549,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tachikawa/"
+    "replaces": "https://tempo.gendagigo.jp/am/tachikawa/",
+    "repaired": true
    }
   ],
   "9449": [
@@ -51393,7 +51562,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/takenotsuka/"
+    "replaces": "https://tempo.gendagigo.jp/am/takenotsuka/",
+    "repaired": true
    }
   ],
   "9450": [
@@ -51405,7 +51575,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kagohara/"
+    "replaces": "https://tempo.gendagigo.jp/am/kagohara/",
+    "repaired": true
    }
   ],
   "9451": [
@@ -51417,7 +51588,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/yonago/"
+    "replaces": "https://tempo.gendagigo.jp/am/yonago/",
+    "repaired": true
    }
   ],
   "9452": [
@@ -51429,7 +51601,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/yonezawa/"
+    "replaces": "https://tempo.gendagigo.jp/am/yonezawa/",
+    "repaired": true
    }
   ],
   "9453": [
@@ -51441,7 +51614,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tsunashima/"
+    "replaces": "https://tempo.gendagigo.jp/am/tsunashima/",
+    "repaired": true
    }
   ],
   "9454": [
@@ -51453,7 +51627,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/sohonten/"
+    "replaces": "https://tempo.gendagigo.jp/am/sohonten/",
+    "repaired": true
    }
   ],
   "9455": [
@@ -51465,7 +51640,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/jiyugaoka/"
+    "replaces": "https://tempo.gendagigo.jp/am/jiyugaoka/",
+    "repaired": true
    }
   ],
   "9456": [
@@ -51477,7 +51653,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/funabori/"
+    "replaces": "https://tempo.gendagigo.jp/am/funabori/",
+    "repaired": true
    }
   ],
   "9457": [
@@ -51489,7 +51666,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/saitama-hanazono/"
+    "replaces": "https://tempo.gendagigo.jp/am/saitama-hanazono/",
+    "repaired": true
    }
   ],
   "9458": [
@@ -51501,7 +51679,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/fukuroi/"
+    "replaces": "https://tempo.gendagigo.jp/am/fukuroi/",
+    "repaired": true
    }
   ],
   "9464": [
@@ -51513,7 +51692,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/toyota/"
+    "replaces": "https://tempo.gendagigo.jp/am/toyota/",
+    "repaired": true
    }
   ],
   "9465": [
@@ -51525,7 +51705,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/toyoshina/"
+    "replaces": "https://tempo.gendagigo.jp/am/toyoshina/",
+    "repaired": true
    }
   ],
   "9466": [
@@ -51537,7 +51718,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/akabane/"
+    "replaces": "https://tempo.gendagigo.jp/am/akabane/",
+    "repaired": true
    }
   ],
   "9470": [
@@ -51549,7 +51731,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/kanayama"
+    "replaces": "https://tempo.gendagigo.jp/am/kanayama",
+    "repaired": true
    }
   ],
   "9471": [
@@ -51561,7 +51744,7 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://www.gigo.co.jp/shops/nagakute"
+    "repaired": false
    }
   ],
   "9473": [
@@ -51573,7 +51756,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/shizuoka/"
+    "replaces": "https://tempo.gendagigo.jp/am/shizuoka/",
+    "repaired": true
    }
   ],
   "9474": [
@@ -51585,7 +51769,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tatebayashi/"
+    "replaces": "https://tempo.gendagigo.jp/am/tatebayashi/",
+    "repaired": true
    }
   ],
   "9475": [
@@ -51597,7 +51782,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/takajo/"
+    "replaces": "https://tempo.gendagigo.jp/am/takajo/",
+    "repaired": true
    }
   ],
   "9476": [
@@ -51609,7 +51795,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/takayama/"
+    "replaces": "https://tempo.gendagigo.jp/am/takayama/",
+    "repaired": true
    }
   ],
   "9477": [
@@ -51621,7 +51808,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/takamatsu/"
+    "replaces": "https://tempo.gendagigo.jp/am/takamatsu/",
+    "repaired": true
    }
   ],
   "9478": [
@@ -51633,7 +51821,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/takadanobaba/"
+    "replaces": "https://tempo.gendagigo.jp/am/takadanobaba/",
+    "repaired": true
    }
   ],
   "9479": [
@@ -51645,7 +51834,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/tottori/"
+    "replaces": "https://tempo.gendagigo.jp/am/tottori/",
+    "repaired": true
    }
   ],
   "9480": [
@@ -51657,7 +51847,8 @@
     "license": "all-rights-reserved",
     "tier": "link_out",
     "note": "store photos on this page are ARR and are NOT mirrored or hotlinked",
-    "replaces": "https://tempo.gendagigo.jp/am/ryugasaki/"
+    "replaces": "https://tempo.gendagigo.jp/am/ryugasaki/",
+    "repaired": true
    }
   ]
  }
