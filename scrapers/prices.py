@@ -114,7 +114,18 @@ for _t, _c in CURRENCY_TOKENS:
 
 _ordered = sorted(CURRENCY_TOKENS, key=lambda t: -len(t[0]))
 _ALTS = "|".join(re.escape(t[0]) for t in _ordered)
-_NUM = r"[0-9][0-9,. ]*[0-9]|[0-9]"
+# A space is a legitimate thousands separator (₩2 500, Rp10 000), so the
+# number pattern has to allow one. It must not allow ANY space, though: with
+# an unrestricted [0-9,. ]* the pattern ran straight through a word boundary
+# and swallowed the quantity after the price, so "R$2 5 hearts" parsed as
+# BRL 25.00 rather than BRL 2.00. That one is especially nasty because 25 is
+# inside the plausible range for a Brazilian arcade, so the value-range gate
+# waves it through and the wrong figure ships looking perfectly ordinary.
+# A space is therefore only a separator when it is followed by a group of
+# exactly three digits, which is what a thousands separator always is and
+# what a trailing quantity almost never is.
+_GROUP = r"(?:[.,][0-9]+|(?: [0-9]{3})(?![0-9]))*"
+_NUM = r"[0-9]+" + _GROUP
 
 PREFIX_RE = re.compile("(" + _ALTS + r")\s*(" + _NUM + ")")
 

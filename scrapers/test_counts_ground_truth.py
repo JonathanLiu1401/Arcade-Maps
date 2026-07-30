@@ -37,6 +37,8 @@ GROUND_TRUTH = {
 
 def load_arcades():
     path = os.path.join(ROOT, "data", "arcades.json")
+    if not os.path.exists(path):
+        return None          # fresh clone, pipeline has not run yet
     with open(path, encoding="utf-8") as fh:
         return json.load(fh)["arcades"]
 
@@ -56,6 +58,11 @@ def by_ziv_id(arcades):
 
 def main():
     arcades = load_arcades()
+    if arcades is None:
+        # Skip rather than fail: this asserts against BUILT data, so on a
+        # fresh clone there is nothing to be right or wrong about yet.
+        print("SKIP (no data/arcades.json - run the pipeline first)")
+        return 0
     index = by_ziv_id(arcades)
     failures = []
 

@@ -32,12 +32,12 @@ window.AM = window.AM || {};
     ["museca", "MUSECA", "#7E57C2"],
     ["reflec", "REFLEC BEAT", "#EF5350"],
     ["taiko", "Taiko no Tatsujin", "#D32F2F"],
-    /* Six titles that scrapers/ziv.py already slugs out of the `other` bucket
-       (pump_it_up 1562 rows, stepmaniax 597, wacca 252, groove_coaster 225,
-       crossbeats 51, beatstream 8 in data_raw/ziv.json). merge.py's GAME_SLUGS
-       does not list them, so today the merge reverts every one to `other` and
-       these rows match nothing - they are inert until that one line changes.
-       They are declared here first so the chip, the filter, the colour, the
+    /* Six titles that scrapers/ziv.py slugs out of the `other` bucket and that
+       merge.py's GAME_SLUGS now keeps (it used to revert every one, which is
+       why 1,541 real rhythm-game venues rendered as an unnamed grey chip).
+       Live counts in the current data: pump_it_up 1558, stepmaniax 596,
+       wacca 252, groove_coaster 224, crossbeats 50, beatstream 8.
+       They are declared here so the chip, the filter, the colour, the
        legend and the per-game price lookup all light up the moment it does,
        rather than the frontend becoming the second half of a two-part fix.
 
@@ -580,10 +580,10 @@ window.AM = window.AM || {};
 
      A title that has since been PROMOTED to a real game slug is skipped, and
      that guard is what keeps this list from double-naming a machine. Six of
-     the eight entries in OTHER_GAMES now also exist in GAMES, waiting on
-     merge.py; the day the merge stops reverting them, a store with a Pump It
-     Up cabinet gets a real "Pump It Up" chip, and without this test the grey
-     chip beside it would ALSO read "Pump It Up" off the same cabinet. The
+     the eight entries in OTHER_GAMES also exist in GAMES and the merge now
+     keeps them, so a store with a Pump It Up cabinet gets a real "Pump It Up"
+     chip, and without this test the grey chip beside it would ALSO read
+     "Pump It Up" off the same cabinet. The
      store has one machine, so the UI must name it once.
 
      Only the arcade's own games list can decide this - not the presence of the

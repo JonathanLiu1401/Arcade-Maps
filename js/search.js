@@ -69,13 +69,13 @@ window.AM = window.AM || {};
      "other" bucket and the row says so, rather than returning nothing and
      leaving the user thinking the site has no WACCA stores at all.
 
-     `slug` is the game slug this title WILL have once the pipeline stops
-     folding it into `other` (scrapers/ziv.py already emits these; merge.py's
-     GAME_SLUGS does not list them yet, so they are reverted). It is not a
-     claim that the slug is live - queryGames checks gamesInData for that at
-     query time. The moment the merge lands, these rows stop saying "has no
-     filter chip", because that sentence would then be false and would send a
-     reader to the grey Other chip when their own chip is sitting right there. */
+     `slug` is the game slug the title carries in the merged data. Six of
+     these are now live (merge.py's GAME_SLUGS keeps what ziv.py emits); the
+     rest still fold into `other`. Either way this is not a CLAIM that the
+     slug is live - queryGames checks gamesInData at query time, so a row
+     stops saying "has no filter chip" exactly when that sentence becomes
+     false, rather than sending a reader to the grey Other chip when their
+     own chip is sitting right there. */
   var OTHER_TITLES = {
     wacca: { label: "WACCA", slug: "wacca" },
     "ワッカ": { label: "WACCA", slug: "wacca" },
@@ -314,9 +314,9 @@ window.AM = window.AM || {};
     Object.keys(OTHER_TITLES).forEach(function (term) {
       if (term.indexOf(q) === -1) return;
       var info = OTHER_TITLES[term];
-      /* Live once the data actually carries the slug (merge.py's GAME_SLUGS
-         still reverts these today). gamesInData is the test, so the changeover
-         happens on its own with no second edit here. */
+      /* Live only when the data actually carries the slug. gamesInData is the
+         test, so a title promoted in the merge lights up here on its own and
+         one still folded into `other` keeps saying so, with no edit here. */
       var live = !!info.slug && AM.data.gamesInData.indexOf(info.slug) !== -1;
       var wantSlug = live ? info.slug : "other";
       var og = null;
