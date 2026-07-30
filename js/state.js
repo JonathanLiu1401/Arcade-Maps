@@ -534,8 +534,18 @@ window.AM = window.AM || {};
        2020-03). So a store listed by one of them and carrying maimai is
        running DX, full stop - that is a positive, not an assumption, and it
        resolves 4,179 stores that ZIv never described. */
-    if (a && a.games && a.games.indexOf("maimai_dx") !== -1 && !map.maimai_dx_cab &&
-        !map.maimai_classic && a.src) {
+    /* The official listing wins even when ZIv ALSO names a classic cabinet,
+       and dropping the old `!map.maimai_classic` guard is the point. ZIv's cab
+       list is community-maintained and goes stale: Round1 Hiroshima still
+       carries "maimai GreeN", a 2013 title, so the chip renamed itself to
+       "maimai (FiNALE / pre-DX)" and told a player the machine was offline
+       while SEGA's own current maimai DX locator lists that exact store.
+       41 venues were mislabelled this way, 22 of them present in an official
+       list. A newer official listing beats an older community one: the store
+       is running DX, and any classic cabinet it also has is a second cabinet
+       rather than a correction. */
+    if (a && a.games && a.games.indexOf("maimai_dx") !== -1 && !map.maimai_dx_cab
+        && a.src) {
       for (var s = 0; s < a.src.length; s++) {
         if (a.src[s] === "allnet" || a.src[s] === "wahlap") {
           addHit(map, "maimai_dx_cab", "official", null);
