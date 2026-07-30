@@ -940,11 +940,17 @@ window.AM = window.AM || {};
     return typeof v === "string" ? v : null;
   }
 
+  /* Does this store show a single real quantity? Counts the chips the reader
+     will actually SEE, not the keys in game_counts: a store whose every entry
+     is a lone unqualified ZIv row now prints no numbers at all, so it needs
+     the same "we do not know" caption as a store with no counts at all.
+     Judging by the raw keys let 1,536 suppressed chips masquerade as counted. */
   function hasCounts(a) {
     if (!a || !a.game_counts) return false;
     for (var k in a.game_counts) {
       if (Object.prototype.hasOwnProperty.call(a.game_counts, k) &&
-          typeof a.game_counts[k] === "number" && isFinite(a.game_counts[k])) return true;
+          typeof a.game_counts[k] === "number" && isFinite(a.game_counts[k]) &&
+          U.countIsShowable(a, k)) return true;
     }
     return false;
   }
@@ -997,13 +1003,12 @@ window.AM = window.AM || {};
   function chipsHtml(a) {
     var h = "";
     var src = countsSrc(a);
-    var qualify = src === "ziv";
     orderedGames(a).forEach(function (g) {
       var n = U.gameCount(a, g);
       var cnt = "";
-      if (n !== null) {
+      if (n !== null && U.countIsShowable(a, g)) {
         cnt = ' <b class="cnt tabnum">x' + n + "</b>" +
-          (qualify ? ' <i class="cnt-q">listed</i>' : "");
+          (U.countIsQualified(a, g, src) ? ' <i class="cnt-q">listed</i>' : "");
       }
       /* The grey "Other" chip covers 7,491 stores and names nothing. Pump It
          Up alone sits in 1,481 of them. The merge has no slug for these yet,
@@ -1221,7 +1226,7 @@ window.AM = window.AM || {};
        line printing those very machines. Say which one it is and point at the
        list. */
     if (!hasCounts(a)) {
-      if (a.counts_src === null) {
+      if (a.counts_src === null || a.game_counts) {
         h += row("info", "Machine list, but no cab counts",
           "The community listing names the machines below without saying how "
           + "many of each, so the list is a floor and not a tally.", "muted");

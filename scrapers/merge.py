@@ -45,22 +45,32 @@ Pipeline rules (see README / task spec):
      ziv where only it does, max where both do). A counted slug is
      always added to games; entries with no counted slug carry no
      game_counts key.
- (m) counts confidence: a ZIv per-game tally is a PLACEHOLDER unless
-     the row proves otherwise (its payload lists one row per game
-     version, so any title the arcade merely has tallies to 1, and two
-     versions - or two titles sharing one slug, GuitarFreaks and
-     DrumMania under `gitadora` - tally to 2), while bemanicn counts
-     are true per-title 台数. Every entry whose members reported counts
-     is therefore tagged "counts_src": bemanicn wins when both sources
-     contributed; ziv-only counts survive when some slug counts MORE
-     machines than that row lists distinct titles for it, which means a
-     title is repeated and the list was entered machine by machine (so
-     that entry's 1s are real 1s too - see _ziv_counts_tallied); every
-     other ziv-only count is dropped entirely with counts_src null, so
-     placeholder data never renders as "x1". The key is absent when no
-     source counted at all, keeping "suppressed placeholder"
-     distinguishable from "never counted". Dropping a count never drops
-     the game - games is unioned first.
+ (m) counts confidence, decided per slug from "count_evidence":
+       bemanicn_qty  BemaniCN's per-title 台数. A real quantity.
+       ziv_comment   A human stated a quantity on the ZIv listing ("12
+                     machines", "4x"). A real quantity.
+       ziv_listed    Nobody stated one. ZIv's payload lists one row per
+                     game version, so a bare tally is a LOWER BOUND: any
+                     title the arcade merely has tallies to 1, and two
+                     versions - or two titles sharing one slug,
+                     GuitarFreaks and DrumMania under `gitadora` - tally
+                     to 2.
+     An entry publishes game_counts when any slug carries real evidence,
+     or when _ziv_counts_tallied vouches for a listed-only row (some slug
+     counts MORE machines than that row lists distinct titles for it,
+     so a title is repeated and the list was entered machine by machine,
+     which makes its 1s real 1s too). Everything else is dropped with
+     counts_src null, so placeholder data never renders as "x1".
+     counts_src stays the four-value vocabulary the UI reads: bemanicn |
+     ziv | null (dropped) | key absent (nobody counted). ALL.Net and
+     e-amusement publish no quantities at all, so venues known only to
+     them land in "absent" and the panel says counts are unavailable.
+     count_evidence ships beside game_counts so the UI can render a
+     listed 12 as "12 listed" rather than "x12". Dropping a count never
+     drops the game - games is unioned first.
+     cab_models (per hardware variant: Lightning, Valkyrie, gold cab,
+     regional Taiko builds) is published independently of that gate - a
+     cabinet model is a fact about the room, not a quantity claim.
  (j) source-aware geo validation (scrapers/geo_validate.py): after
      country resolution, every entry with coords is checked against
      the labeled country's bbox. Official sources (allnet/eagate/
@@ -549,6 +559,79 @@ def _dedupe_key(s):
 
 _ZIV_CABS_PREFIX = "Cabs: "
 
+# (m2) Per-slug count evidence, strongest first. This vocabulary is the
+# whole counts policy in one place, and every value is published into
+# arcades.json under "count_evidence" so the UI can say what a number is
+# rather than printing every number the same way.
+#
+#   bemanicn_qty  BemaniCN's per-title 台数 field. A real quantity.
+#   ziv_comment   A human wrote a quantity on the ZIv listing ("12
+#                 machines", "4x"). A real quantity, and the fix for
+#                 GiGO Akihabara Building 3 rendering CHUNITHM as x1
+#                 when its listing says twelve.
+#   ziv_listed    ZIv lists one entry per machine and nobody stated a
+#                 quantity, so the tally is a LOWER BOUND: it counts
+#                 what somebody bothered to list, which is why the UI
+#                 must render it "12 listed" and never "x12".
+#
+# Deliberately absent: any evidence class for ALL.Net, e-amusement,
+# wahlap or round1usa. Those publish no quantities at all, so a venue
+# known only to them carries no count and the panel says counts are
+# unavailable. Inventing an x1 there is the bug this table exists to
+# stop, not a default worth having.
+COUNT_EVIDENCE_RANK = {"ziv_listed": 1, "ziv_comment": 2, "bemanicn_qty": 3}
+COUNT_EVIDENCE = frozenset(COUNT_EVIDENCE_RANK)
+
+# Evidence classes that publish a NUMBER (game_counts + counts_src set).
+# ziv_listed does not: it is a floor, and it rides in game_counts only
+# when _ziv_counts_tallied vouches for the row (see (m)).
+REAL_COUNT_EVIDENCE = frozenset(("ziv_comment", "bemanicn_qty"))
+
+# Hardware-variant slug -> the game slug it is a cabinet OF. Mirrors the
+# `game:` key of the VARIANTS table in js/state.js, which is what decides
+# where a pill renders; a variant missing from here cannot have its count
+# justified and is therefore published without one.
+CAB_MODEL_GAME = {
+    "sdvx_vm": "sdvx", "sdvx_nemsys": "sdvx",
+    "iidx_lm": "iidx",
+    "ddr_gold": "ddr", "ddr_universal": "ddr", "ddr_legacy": "ddr",
+    "gitadora_gf_arena": "gitadora", "gitadora_dm_arena": "gitadora",
+    "popn_pikapika": "popn",
+    "taiko_asia": "taiko", "taiko_jp": "taiko", "taiko_us": "taiko",
+    "maimai_classic": "maimai_dx", "maimai_dx_cab": "maimai_dx",
+}
+
+# Hardware-variant slugs ziv.py can assert per cabinet. Wider than
+# CAB_SLUGS (which is the e-amusement flag vocabulary); this is the set
+# js/state.js reads out of an arcade's `cab_models`.
+CAB_MODEL_SLUGS = frozenset(CAB_MODEL_GAME)
+
+
+def _take_count(counts, evidence, slug, n, ev):
+    """Fold one (slug, count, evidence) into a counts/evidence pair.
+
+    Stronger evidence wins outright, ties break on the larger count.
+    Ranking before comparing is the point: a comment-backed 3 must beat
+    a listed 9, because "3 machines" is somebody reporting the room and
+    9 is somebody having typed nine rows. A plain per-slug max would
+    publish the 9 and label it with the comment's evidence, which is a
+    number from one source wearing another source's credibility.
+    """
+    if n <= 0:
+        return
+    rank = COUNT_EVIDENCE_RANK.get(ev, 0)
+    if slug in counts:
+        cur_rank = COUNT_EVIDENCE_RANK.get(evidence.get(slug), 0)
+        if rank < cur_rank:
+            return
+        if rank == cur_rank and n <= counts[slug]:
+            return
+    counts[slug] = n
+    if ev:
+        evidence[slug] = ev
+    else:
+        evidence.pop(slug, None)
+
 
 def _ziv_counts_tallied(note, game_counts):
     """True when a ZIv row's counts are a real machine tally (see (m)).
@@ -600,7 +683,7 @@ def load_units(raw_dir, stats):
     def add(source, name, addr, lat, lng, games, cabs, country, pref,
             ziv_url=None, note=None, coord_system="wgs84",
             cn_prov=None, cn_city=None, bemanicn_url=None,
-            game_counts=None):
+            game_counts=None, count_evidence=None, cab_models=None):
         name = (name or "").strip()
         addr = (addr or "").strip()
         if not name:
@@ -613,6 +696,32 @@ def load_units(raw_dir, stats):
                 continue
             if slug in GAME_SLUGS and n > 0:
                 gc[slug] = n
+        # (m2) per-slug evidence for the counts above. ziv.py emits
+        # "ziv_comment" (a human wrote a quantity on the listing) or
+        # "ziv_listed" (one list entry per machine, a lower bound).
+        # bemanicn publishes real per-title 台数 and sends none, so its
+        # slugs are labelled here rather than trusted to the payload.
+        ev = {}
+        raw_ev = count_evidence or {}
+        for slug in gc:
+            e = raw_ev.get(slug)
+            if e in COUNT_EVIDENCE:
+                ev[slug] = e
+            elif source == "bemanicn":
+                ev[slug] = "bemanicn_qty"
+            elif source == "ziv":
+                # A ziv row from before the quantity parser existed (or
+                # community.json's bundled ziv rows) carries counts with
+                # no evidence key. Those are list tallies by construction.
+                ev[slug] = "ziv_listed"
+        cm = {}
+        for slug, n in (cab_models or {}).items():
+            try:
+                n = int(n)
+            except (TypeError, ValueError):
+                continue
+            if slug in CAB_MODEL_SLUGS and n > 0:
+                cm[slug] = n
         key = (source, _dedupe_key(name), _dedupe_key(addr))
         u = units.get(key)
         if u is None:
@@ -622,6 +731,7 @@ def load_units(raw_dir, stats):
                  "notes": [], "coord_system": coord_system,
                  "cn_prov": cn_prov, "cn_city": cn_city,
                  "bemanicn_url": bemanicn_url, "game_counts": {},
+                 "count_evidence": {}, "cab_models": {},
                  "counts_tallied": False}
             units[key] = u
         else:
@@ -639,12 +749,19 @@ def load_units(raw_dir, stats):
                 u["bemanicn_url"] = bemanicn_url
         u["games"].update(games)
         u["cabs"].update(cabs)
-        # per-slug max across within-source dupes; a counted slug is
-        # always also a game
+        # Per-slug pick across within-source dupes. The evidence has to
+        # travel WITH the number it justifies, so this is not a bare max:
+        # a stronger evidence class wins outright (a comment-backed 3
+        # beats a listed 9 - the human who wrote "3 machines" saw the
+        # room, the list did not), and within one class the max wins.
+        # A counted slug is always also a game.
         for slug, n in gc.items():
-            if n > u["game_counts"].get(slug, 0):
-                u["game_counts"][slug] = n
+            _take_count(u["game_counts"], u["count_evidence"], slug, n,
+                        ev.get(slug))
         u["games"].update(gc)
+        for slug, n in cm.items():
+            if n > u["cab_models"].get(slug, 0):
+                u["cab_models"][slug] = n
         # (m) one tallied row is enough: the flag rides the unit through
         # within-source dedupe, so a listing split across two rows keeps
         # its evidence.
@@ -752,7 +869,9 @@ def load_units(raw_dir, stats):
                 ziv_url=(row.get("source_url") if source == "ziv" else None),
                 note=row.get("notes"),
                 coord_system=row.get("coord_system") or "wgs84",
-                game_counts=row.get("game_counts"))
+                game_counts=row.get("game_counts"),
+                count_evidence=row.get("count_evidence"),
+                cab_models=row.get("cab_models"))
 
     # --- bemanicn (optional) ---
     fn = "china_bemanicn"
@@ -790,7 +909,9 @@ def load_units(raw_dir, stats):
                 coord_system=row.get("coord_system") or "unknown",
                 cn_prov=prov, cn_city=city,
                 bemanicn_url=row.get("source_url"),
-                game_counts=row.get("game_counts"))
+                game_counts=row.get("game_counts"),
+                count_evidence=row.get("count_evidence"),
+                cab_models=row.get("cab_models"))
 
     out = list(units.values())
 
@@ -1527,18 +1648,26 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     pref = None
     country = best["country"]
     game_counts = {}
+    count_evidence = {}
+    cab_models = {}
     counts_contributors = set()   # (m) which sources actually counted
     for u in members:
         games |= u["games"]
         cabs |= u["cabs"]
         src.add(u["source"])
-        # cross-source counts: per-slug max (bemanicn where only it
-        # knows a slug, ziv where only it does, max when both do)
+        # (m2) cross-source counts, resolved on EVIDENCE first and count
+        # second (see _take_count): bemanicn's 台数 outranks a ZIv comment,
+        # which outranks a bare ZIv list tally. Magnitude breaks ties only
+        # WITHIN one evidence class - a bigger number from a weaker source
+        # never wins, or the count would wear credibility it did not earn.
         if u["game_counts"]:
             counts_contributors.add(u["source"])
         for slug, n in u["game_counts"].items():
-            if n > game_counts.get(slug, 0):
-                game_counts[slug] = n
+            _take_count(game_counts, count_evidence, slug, n,
+                        u["count_evidence"].get(slug))
+        for slug, n in u["cab_models"].items():
+            if n > cab_models.get(slug, 0):
+                cab_models[slug] = n
         for nt in u["notes"]:
             if nt and nt not in notes:
                 notes.append(nt)
@@ -1598,36 +1727,49 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "notes": note_str,
     }
     # ---- BEGIN counts confidence (owner: counts-honesty agent) -------
-    # (m) A ZIv per-game tally is NOT a measured quantity by default.
-    # ZIv's payload is a machine LIST and one row per game version is the
-    # baseline shape, so tallying it yields 1 for any title the arcade
-    # merely HAS - and 2 for any arcade that merely has two versions, or
-    # two titles we fold into one slug. Rendering either as a count states
-    # a fact the source never asserted. BemaniCN counts are real 台数 (a
-    # per-title `quantity` field), so they are always trustworthy.
+    # (m) A cabinet count is published only when a source ASSERTED one.
+    # The decision is per slug and it is driven by count_evidence, not by
+    # which source the row came from:
     #
-    # Rule, applied after the per-slug max above so no count is lost
+    #   bemanicn_qty  BemaniCN's per-title 台数. A real quantity.
+    #   ziv_comment   A human wrote a quantity on the ZIv listing ("12
+    #                 machines", "4x"). A real quantity, and the reason
+    #                 this block was rewritten: GiGO Akihabara Building 3
+    #                 lists twelve CHUNITHM and used to render x1.
+    #   ziv_listed    Nobody stated a quantity; ZIv's payload is a machine
+    #                 LIST, so the tally is a LOWER BOUND. One row per
+    #                 game version is the baseline shape, so a bare tally
+    #                 reads 1 for any title the arcade merely HAS, and 2
+    #                 for two versions or two titles sharing one slug
+    #                 (GuitarFreaks + DrumMania -> gitadora).
+    #
+    # Rule, applied after the per-slug fold above so no count is lost
     # before the decision:
-    #   bemanicn contributed          -> keep, counts_src "bemanicn"
-    #                                    (bemanicn WINS when both did)
-    #   ziv only, some slug counts    -> keep ALL its counts, "ziv". A
-    #     MORE machines than it has      repeated title proves the list
-    #     distinct titles               was entered machine by machine,
-    #                                    so its 1s are then real 1s too.
-    #                                    See _ziv_counts_tallied: a bare
-    #                                    2 does NOT prove this, because
-    #                                    GuitarFreaks + DrumMania are two
-    #                                    titles under one `gitadora`.
-    #   ziv only, no repeated title   -> DROP game_counts entirely and
-    #                                    set counts_src null. Placeholder
-    #                                    -only data must not render.
+    #   any REAL evidence (bemanicn_qty / ziv_comment) on any slug
+    #       -> publish game_counts. counts_src is "bemanicn" when
+    #          bemanicn contributed at all, else "ziv". A ziv_listed slug
+    #          on such a row rides along: the same listing that stated one
+    #          quantity is a listing somebody maintained.
+    #   ziv_listed only, and _ziv_counts_tallied vouches for the row
+    #       -> publish, counts_src "ziv". A repeated title proves the list
+    #          was entered machine by machine, so its 1s are real 1s.
+    #   ziv_listed only, no repeated title
+    #       -> DROP game_counts entirely, counts_src null. Placeholder
+    #          -only data must not render as "x1".
+    #
     # counts_src is written ONLY when some source reported counts:
     #   "bemanicn"/"ziv" = these counts are real (game_counts present),
     #   null             = counts existed but were placeholder-only and
     #                      were dropped (game_counts absent),
-    #   key absent       = no source ever counted this arcade.
+    #   key absent       = no source ever counted this arcade. ALL.Net and
+    #                      e-amusement publish no quantities at all, so
+    #                      every venue known only to them lands here and
+    #                      the panel says counts are unavailable.
     # That keeps "suppressed placeholder" distinguishable from "never
     # counted", which a bare missing key would erase.
+    #
+    # count_evidence ships alongside so the UI can render a ziv_listed 12
+    # as "12 listed" rather than "x12" - a floor is not a tally.
     #
     # Note the ordering above: `games |= set(game_counts)` already ran,
     # so a dropped slug still shows as a GAME here - we are removing a
@@ -1639,10 +1781,11 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
             "game_counts from unexpected source(s) %s for %s - counts_src "
             "only documents bemanicn|ziv; teach this rule about the new "
             "source before shipping it" % (sorted(unexpected), best["name"]))
-        if "bemanicn" in counts_contributors:
-            counts_src = "bemanicn"
-        elif any(u["counts_tallied"] for u in members):
-            counts_src = "ziv"
+        has_real = any(e in REAL_COUNT_EVIDENCE
+                       for e in count_evidence.values())
+        if has_real or any(u["counts_tallied"] for u in members):
+            counts_src = ("bemanicn" if "bemanicn" in counts_contributors
+                          else "ziv")
         else:
             # placeholder-only: drop the quantities, keep the games.
             # `games |= set(game_counts)` ran above, so this must hold;
@@ -1651,11 +1794,45 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
             assert set(game_counts) <= set(entry["games"]), \
                 (best["name"], sorted(game_counts), entry["games"])
             game_counts = {}
+            count_evidence = {}
             counts_src = None
         entry["counts_src"] = counts_src
     if game_counts:
         entry["game_counts"] = {s: game_counts[s]
                                 for s in sorted(game_counts)}
+        if count_evidence:
+            entry["count_evidence"] = {s: count_evidence[s]
+                                       for s in sorted(count_evidence)}
+    # cab_models is per-CABINET-variant, not per game. WHICH variants exist
+    # is a fact about the hardware in the room and is published regardless
+    # of the counts gate above; HOW MANY of each is a quantity claim and
+    # obeys the same rule as game_counts.
+    #
+    # ziv.py folds comment quantities into cab_models but discards the
+    # evidence class while doing it (_counts_and_evidence_for_machines
+    # returns the variant total and drops its `_ev`), so a bare title with
+    # no comment arrives here as a 1 that means "this cabinet exists", not
+    # "there is one of them". Publishing that renders "Lightning x1" in
+    # js/panel.js variantPillsHtml - which is exactly the fabrication the
+    # owner reported, moved from the game chip to the cabinet pill, and
+    # exactly what that function's own comment forbids: "inventing 'x1'
+    # from the presence of a title would be the same fabrication the
+    # counts-honesty rule exists to stop".
+    #
+    # The evidence for the variant's PARENT game is the honest proxy: the
+    # variant count is derived from the same machine list, so when nobody
+    # stated a quantity for the game, nobody stated one for its cabinets
+    # either. Backed counts are published; unbacked ones are published as
+    # null, which keeps the variant (the pill still renders, and that is
+    # real information) while withholding the number. js/state.js already
+    # treats a non-number as "no count" - addHit stores `n: null` for it
+    # and variantPillsHtml then omits the count entirely.
+    if cab_models:
+        pub = {}
+        for slug in sorted(cab_models):
+            ev = count_evidence.get(CAB_MODEL_GAME.get(slug))
+            pub[slug] = cab_models[slug] if ev in REAL_COUNT_EVIDENCE else None
+        entry["cab_models"] = pub
     # ---- END counts confidence ---------------------------------------
     return entry
 
@@ -1680,11 +1857,12 @@ def run(raw_dir, out_dir, updated=None):
                                 a["addr"]))
     for i, a in enumerate(arcades, 1):
         a["id"] = i
-    # reorder keys for output (game_counts / counts_src are optional)
+    # reorder keys for output (game_counts / count_evidence / counts_src /
+    # cab_models are all optional)
     ordered = [{k: a[k] for k in
                 ("id", "name", "addr", "lat", "lng", "country", "pref",
-                 "games", "game_counts", "counts_src", "cabs", "src",
-                 "links", "notes")
+                 "games", "game_counts", "count_evidence", "counts_src",
+                 "cab_models", "cabs", "src", "links", "notes")
                 if k in a} for a in arcades]
 
     # (j) source-aware geo validation: official sources trust the
@@ -1726,6 +1904,41 @@ def run(raw_dir, out_dir, updated=None):
     if geocode_log:
         print("merge: geocode_cn placed %d coordless China entries from the "
               "address cache" % len(geocode_log), file=sys.stderr)
+    # A POI/street geocode is NOT an approximation. geocode_cn.apply_cache
+    # sets approx:true on everything it places, which was right while the
+    # only alternative was a district centroid, but it is wrong now that
+    # the Baidu pass resolves 5,702 of 5,736 addresses at POI precision:
+    # the map was flagging "position approximate" over pins that name the
+    # actual building, and China's approx count went UP (5,625 -> 5,766)
+    # after the geocoding that was supposed to fix it.
+    #
+    # The flag is corrected HERE, off geocode_log, rather than in
+    # geocode_cn (another agent's finished module, whose tests assert
+    # apply_cache sets approx). geocode_log names exactly the rows this
+    # pass placed and the precision it reached, so a genuine district or
+    # city CENTROID - whether from china_place below or a previous build -
+    # is never touched: it is not in this log.
+    #
+    # address = Baidu poi / AMap rooftop, street = road-level. Both are
+    # derived from the published address, which the retained note still
+    # says ("position from address: geocoded to N precision by baidu");
+    # what goes away is the warning banner claiming the pin is a guess at
+    # an area. Only a centroid gets that.
+    unapproxed = 0
+    by_id = {e.get("id"): e for e in ordered}
+    for rec in geocode_log:
+        if rec.get("level") not in ("address", "street"):
+            continue
+        e = by_id.get(rec.get("id"))
+        if e is None:
+            continue
+        e.pop("approx", None)
+        e.pop("approx_level", None)
+        unapproxed += 1
+    if unapproxed:
+        print("merge: cleared approx on %d China entries geocoded to "
+              "poi/street precision (a building is not an approximation)"
+              % unapproxed, file=sys.stderr)
     approx_log = china_place.place_arcades(ordered)
     if approx_log:
         lv = {}
@@ -1747,6 +1960,21 @@ def run(raw_dir, out_dir, updated=None):
         assert all(isinstance(n, int) and n > 0 for n in gc.values()), \
             (a["name"], gc)
         # (m) counts confidence invariants
+        ce = a.get("count_evidence", {})
+        assert set(ce) <= set(gc), (a["name"], sorted(ce), sorted(gc))
+        assert all(v in COUNT_EVIDENCE for v in ce.values()), (a["name"], ce)
+        assert ("count_evidence" in a) <= ("game_counts" in a), a["name"]
+        cm = a.get("cab_models", {})
+        assert all(s in CAB_MODEL_SLUGS for s in cm), (a["name"], sorted(cm))
+        # null = "this cabinet is here, nobody said how many". A number is
+        # only ever published when the parent game carries real evidence.
+        assert all(n is None or (isinstance(n, int) and n > 0)
+                   for n in cm.values()), (a["name"], cm)
+        for slug, n in cm.items():
+            if n is None:
+                continue
+            assert ce.get(CAB_MODEL_GAME[slug]) in REAL_COUNT_EVIDENCE, \
+                (a["name"], slug, n, ce.get(CAB_MODEL_GAME[slug]))
         if "counts_src" in a:
             cs = a["counts_src"]
             assert cs in ("bemanicn", "ziv", None), (a["name"], cs)
@@ -1755,14 +1983,26 @@ def run(raw_dir, out_dir, updated=None):
             # a dropped ziv-placeholder entry must still list the games
             if cs is None:
                 assert a["games"], a["name"]
+                assert "count_evidence" not in a, a["name"]
             if cs == "ziv":
-                # necessary, not sufficient: a kept row has some slug with
-                # more machines than titles, so that slug is >= 2. The
-                # real test lives in _ziv_counts_tallied, which needs the
-                # per-row title list this loop no longer has.
-                assert any(n >= 2 for n in gc.values()), (a["name"], gc)
+                # A published ziv row is justified either by a stated
+                # quantity (some slug is ziv_comment) or by the repeated
+                # -title tally rule, which needs some slug >= 2.
+                #
+                # The old assertion was `any(n >= 2)` alone. That was
+                # correct while the tally rule was the ONLY way a ziv row
+                # could publish, and it is wrong now: a listing whose one
+                # comment says "1 machine" is a real, human-asserted 1 and
+                # must be publishable. Relaxed deliberately - the >= 2
+                # branch below still guards the tally path exactly as
+                # before, so the rule that stopped placeholder x1s is
+                # intact; what changed is that a STATED 1 is no longer
+                # mistaken for a placeholder 1.
+                assert (any(e == "ziv_comment" for e in ce.values())
+                        or any(n >= 2 for n in gc.values())), (a["name"], gc)
         else:
             assert "game_counts" not in a, a["name"]
+            assert "count_evidence" not in a, a["name"]
         if a["lat"] is not None:
             assert -90 <= a["lat"] <= 90 and -180 <= a["lng"] <= 180, a
             assert not (a["lat"] == 0 and a["lng"] == 0), a
@@ -1783,6 +2023,31 @@ def run(raw_dir, out_dir, updated=None):
           % (counts_src_dist["bemanicn"], counts_src_dist["ziv"],
              counts_src_dist["null_placeholder_dropped"],
              counts_src_dist["absent_never_counted"]), file=sys.stderr)
+
+    # (m) evidence mix, at ENTRY level: an entry counts once per evidence
+    # class it carries, so the three buckets overlap by construction (a
+    # venue can state a quantity for CHUNITHM and merely list its jubeat).
+    # "real" is the honest headline - how many venues have at least one
+    # quantity somebody actually asserted.
+    ev_dist = {"any_real": 0, "bemanicn_qty": 0, "ziv_comment": 0,
+               "ziv_listed_only": 0, "cab_models": 0}
+    for a in ordered:
+        ce = a.get("count_evidence") or {}
+        vals = set(ce.values())
+        for k in ("bemanicn_qty", "ziv_comment"):
+            if k in vals:
+                ev_dist[k] += 1
+        if vals & REAL_COUNT_EVIDENCE:
+            ev_dist["any_real"] += 1
+        elif vals:
+            ev_dist["ziv_listed_only"] += 1
+        if a.get("cab_models"):
+            ev_dist["cab_models"] += 1
+    print("merge: count_evidence real=%d (bemanicn_qty=%d, ziv_comment=%d), "
+          "ziv_listed-only=%d; %d entries with cab_models"
+          % (ev_dist["any_real"], ev_dist["bemanicn_qty"],
+             ev_dist["ziv_comment"], ev_dist["ziv_listed_only"],
+             ev_dist["cab_models"]), file=sys.stderr)
 
     by_game = {g: 0 for g in GAME_SLUGS}
     by_source = {}
@@ -1835,6 +2100,7 @@ def run(raw_dir, out_dir, updated=None):
         "zero_coord_examples": stats.nulled_examples,
         "gcj02_bd09_converted": stats.converted,
         "counts_src_distribution": counts_src_dist,   # (m)
+        "count_evidence_distribution": ev_dist,       # (m)
         "cross_source_merges": len(merge_decisions),
         "coord_inheritances": len(inherit_log),
         "country_conflicts": conflict_log,

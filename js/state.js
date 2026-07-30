@@ -272,6 +272,41 @@ window.AM = window.AM || {};
     return typeof v === "number" && isFinite(v) ? v : null;
   }
 
+  /* Whether a count may be PRINTED AS A NUMBER.
+
+     The rule exists because of one specific lie. ZIv lists machines, and for
+     most titles it lists exactly one row whether the store has one cabinet or
+     twelve: GiGO総本店 is a nine-floor flagship whose CHUNITHM row is a single
+     entry, and the panel rendered that as "CHUNITHM x1 listed". Across the
+     data that produced 1,536 chips asserting a quantity nobody published, in
+     every country, and it is worse than showing nothing - a reader who sees
+     "x1" believes it.
+
+     So a lone ZIv row is treated as what it is: evidence the game is HERE,
+     and no evidence at all of how many. n >= 2 is different and does survive,
+     because ZIv genuinely repeats a title per cabinet when a contributor
+     enumerates them (271 titles in the live Japan payload appear more than
+     once, and GiGO's three DDR WORLD rows really are three gold cabs).
+     A count backed by an explicit human comment ("6x", "12 machines") is
+     authoritative at any value, including one. */
+  function countIsShowable(a, game) {
+    var n = gameCount(a, game);
+    if (n === null) return false;
+    var ev = a && a.count_evidence && a.count_evidence[game];
+    if (ev === "ziv_listed") return n >= 2;
+    return true;
+  }
+
+  /* "listed" means a lower bound: this many were enumerated, there may be
+     more. Explicit quantities and BemaniCN's published per-title numbers are
+     not hedged; a ZIv enumeration is. Falls back to the arcade-level
+     counts_src for rows written before count_evidence existed. */
+  function countIsQualified(a, game, src) {
+    var ev = a && a.count_evidence && a.count_evidence[game];
+    if (ev) return ev === "ziv_listed";
+    return src === "ziv";
+  }
+
   /* ---------- cab-variant detection ----------
 
      Everything below turns one arcade into a map of
@@ -380,7 +415,13 @@ window.AM = window.AM || {};
       for (var slug in cm) {
         if (!Object.prototype.hasOwnProperty.call(cm, slug)) continue;
         var q = cm[slug];
-        addHit(map, slug, "cab_models", typeof q === "number" ? q : null);
+        /* Same lie as the game chips, one level down: these quantities are
+           tallied from the same ZIv machine rows, so a lone row means "this
+           cabinet is here", not "there is exactly one of it". A Valkyrie pill
+           reading X1 at a flagship is a claim no source made. Drop the number
+           and keep the pill; n >= 2 is a real enumeration and survives. */
+        addHit(map, slug, "cab_models",
+          (typeof q === "number" && isFinite(q) && q >= 2) ? q : null);
       }
     }
 
@@ -508,6 +549,8 @@ window.AM = window.AM || {};
     safeUrl: safeUrl,
     num: num,
     gameCount: gameCount,
+    countIsShowable: countIsShowable,
+    countIsQualified: countIsQualified,
     cabTitles: cabTitles,
     variantsOf: variantsOf,
     hasVariant: hasVariant,
