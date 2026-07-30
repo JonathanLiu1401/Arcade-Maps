@@ -1,0 +1,162 @@
+{
+  "_comment": "MEASUREMENT ARTEFACT, not an enrichment index. Research output only: measured hit rates for street-level and geo-image sources against a fixed-seed stratified sample of 210 arcade coordinates (30 each across Japan, United States, United Kingdom, Taiwan, Philippines, Singapore, China). Contains NO image URLs for shipping. Bottom line: no source here is worth building. Do not wire this into data/enrichment.json.",
+  "generated": "2026-07-31",
+  "verified_live": true,
+  "sample": {
+    "n": 210,
+    "seed": 20260730,
+    "per_country": 30,
+    "countries": ["Japan", "United States", "United Kingdom", "Taiwan", "Philippines", "Singapore", "China"],
+    "source": "data/arcades.json",
+    "note": "30 per country gives roughly plus/minus 17 points at 95 percent confidence on a mid-range rate. Differences under about 15 points between countries are not significant; the order-of-magnitude conclusions below are far outside that band."
+  },
+
+  "headline": {
+    "question": "Can street-level imagery give each arcade a real storefront picture?",
+    "answer": "No. Measured usable storefront yield is 0 of 7 best-case frames inspected. The best street-level source (KartaView) reaches only 5.2 percent of arcades with a camera even pointed at the venue, and every one of those frames is a road-forward dashcam shot of asphalt. Japan and China, 58 percent of the dataset, measure 0-3 percent on every source tested.",
+    "recommendation": "Do not build any of these five sources."
+  },
+
+  "sources": {
+    "mapillary": {
+      "status": "BLOCKED_UNMEASURED",
+      "reason": "Every endpoint is token-gated and no account is available to this agent. graph.mapillary.com/images returns HTTP 500 MLYApiException code 190 'Invalid OAuth 2.0 Access Token'. tiles.mapillary.com vector tiles return HTTP 403 both with an empty access_token param and with none.",
+      "licence": "CC BY-SA (Terms s3(b)). Some datasets are CC BY-NC-SA, whose terms take precedence where they conflict.",
+      "attribution_required": "Terms s11 does not specify a text string. It requires visibly displaying the Mapillary logo and linking back to the Mapillary homepage or the corresponding image page. Note s7 restricts trademark use, so the press-kit logo asset is needed. CC BY-SA separately requires per-image author, licence and link.",
+      "token_committable": false,
+      "token_note": "Terms require a unique client_id per application (s2a) and forbid permitting others to access your account. Committing a token to a public MIT repo is inconsistent with both. NOT permitted, do not ship one.",
+      "mirroring_allowed": "Self-hosting individual images is contemplated by s11, but s5 prohibits automated data-gathering and bulk extraction by default, and share-alike still attaches to any mirrored image.",
+      "china": "Mainland uploads are legally precarious under Chinese surveying and mapping law and Meta services are blocked in-country, so coverage is thin. Not worth pursuing regardless of token.",
+      "expected_if_unblocked": "Mapillary is the larger of the two crowd-sourced street-level archives, so its radius hit rate would beat KartaView's. That does not change the recommendation: the binding constraint measured here is not radius coverage but that dashcam frames do not show storefronts, and Mapillary is the same windshield-mounted capture model."
+    },
+
+    "kartaview": {
+      "status": "MEASURED",
+      "endpoint": "https://api.openstreetcam.org/2.0/photo/?lat=&lng=&radius=",
+      "token_required": false,
+      "note_on_endpoints": "api.kartaview.org/2.0/ returns 404; the working host is api.openstreetcam.org. An empty result is a normal HTTP 200 with apiCode 601 and result:null, not an error.",
+      "licence": "CC BY-SA 4.0 (imagery). Server backend is proprietary.",
+      "attribution_required": "CC BY-SA 4.0 per image: author/username, the licence name with a link to the 4.0 legalcode, and a link to the source photo. Share-alike means these images stay BY-SA; the repo's MIT licence does NOT relicense them. Any index would have to carry per-image attribution fields, not just URLs.",
+      "errors": 0,
+      "hit_rate_any_photo": {
+        "within_30m": {"Japan": 0.07, "United States": 0.10, "United Kingdom": 0.10, "Taiwan": 0.00, "Philippines": 0.10, "Singapore": 0.30, "China": 0.00, "OVERALL": 0.095},
+        "within_60m": {"Japan": 0.10, "United States": 0.27, "United Kingdom": 0.13, "Taiwan": 0.00, "Philippines": 0.27, "Singapore": 0.90, "China": 0.00, "OVERALL": 0.238},
+        "within_120m": {"Japan": 0.17, "United States": 0.43, "United Kingdom": 0.37, "Taiwan": 0.00, "Philippines": 0.57, "Singapore": 0.97, "China": 0.00, "OVERALL": 0.357}
+      },
+      "camera_actually_facing_venue_within_60m": {
+        "definition": "photo within 60 m AND camera heading within 60 degrees of the bearing from camera to venue",
+        "Japan": 0.03, "United States": 0.07, "United Kingdom": 0.03, "Taiwan": 0.00,
+        "Philippines": 0.10, "Singapore": 0.13, "China": 0.00, "OVERALL": 0.052
+      },
+      "visual_verification": {
+        "method": "took every arcade meeting the best-case filter (closest photo, within 60 m, camera bearing within 60 degrees of the venue), downloaded the JPEGs and looked at them",
+        "candidates": 11,
+        "downloaded_ok": 8,
+        "dead_urls": 2,
+        "inspected": 7,
+        "showing_identifiable_venue_frontage": 0,
+        "verdict": "All 7 are road-forward windshield dashcam frames dominated by asphalt, traffic, dashboard and sky. Two were shot at night or into the sun. None shows the arcade. This is the number that matters: radius hit rate overstates usable coverage by roughly an order of magnitude."
+      },
+      "360_panorama_check": {
+        "rationale": "a 360 sphere sees sideways regardless of heading, so it is the one case where a nearby capture could still show a storefront",
+        "share_of_photos_within_60m_that_are_SPHERE": 0.105,
+        "arcades_with_a_360_within_60m": {"Japan": 0.00, "United States": 0.00, "United Kingdom": 0.00, "Taiwan": 0.00, "Philippines": 0.03, "Singapore": 0.83, "China": 0.00, "OVERALL": 0.124},
+        "verdict": "360 coverage is a Singapore-only artefact (25 of 26 hits). Inspected one: it does show the containing mall facade (Bugis+), but heavily fisheye-distorted at car level, and the arcade itself is inside on an upper floor. Would need reprojection and cropping per image and still would not be a storefront shot."
+      },
+      "freshness": "Of 252 photos within 60 m, shot years spread 2016-2025 with the mass in 2018-2019 and 2023. A material share are 6-9 years old.",
+      "blurring": "autoImgProcessingResult=BLURRED on the frames seen; faces and plates are blurred, storefront signage is not deliberately obscured. Not the limiting factor here."
+    },
+
+    "wikimedia_commons": {
+      "status": "MEASURED",
+      "endpoint": "commons.wikimedia.org/w/api.php action=query list=geosearch gsnamespace=6",
+      "token_required": false,
+      "licence": "per-file and mixed (CC BY, CC BY-SA, PD and others). Must be read per file via the API; there is no blanket licence.",
+      "attribution_required": "per file, per its own licence. Cannot be generated from the geosearch response alone.",
+      "errors": 0,
+      "hit_rate_any_file_within_100m": {"Japan": 0.37, "United States": 0.27, "United Kingdom": 0.93, "Taiwan": 0.77, "Philippines": 0.57, "Singapore": 1.00, "China": 0.23, "OVERALL": 0.590},
+      "after_removing_transport_and_landmark_noise": {"Japan": 0.37, "United States": 0.23, "United Kingdom": 0.87, "Taiwan": 0.57, "Philippines": 0.47, "Singapore": 0.97, "China": 0.07, "OVERALL": 0.505},
+      "name_or_address_token_match": {
+        "caveat": "THIS NUMBER IS AN ARTEFACT, recorded so nobody re-derives it and believes it",
+        "rate": {"Japan": 0.03, "United States": 0.23, "United Kingdom": 0.93, "Taiwan": 0.57, "Philippines": 0.47, "Singapore": 0.93, "China": 0.03, "OVERALL": 0.457},
+        "why_it_is_wrong": "Inspecting which tokens matched shows they are town names pulled from the address, not venue names: 'london', 'harlow', 'southport', 'walsall', 'ormskirk'. Only 2 of the 12 UK matches inspected matched a token from the arcade NAME, and both of those were also town names (Harlow, Chatham). The high UK and Singapore figures are geography, not venue identification."
+      },
+      "what_the_hits_actually_are": [
+        "Las Vegas Amusements (UK): promenade, parish church, level crossing, seafront hotels",
+        "Tenpin Harlow (UK): Harlow Bus Station plus three photos of buses",
+        "TOCA Social (UK): O2 Arena Christmas tree, Brooklyn Bowl, a Paddington Bear statue",
+        "VIRTUALAND BUGIS+ (SG): four photos of Uniqlo clothing racks inside Bugis+",
+        "PACO FUNWORLD i12 (SG): show cars, a BYD M6 and a Maserati Ghibli",
+        "GiGO Tokyo Dome City (JP): Tokyo Dome, a baseball manager statue",
+        "GiGO Akihabara Bldg 5 (JP): a piece of public art, generic Akihabara streetscapes",
+        "China venues: metro station exits, a railway station, city skylines and night HDR panoramas"
+      ],
+      "confidence_level_of_this_finding": "TITLE-LEVEL ONLY, weaker than the KartaView finding. Commons files were classified by their titles; no Commons image was downloaded and viewed. This is explicitly a lower standard of proof than the KartaView result, where 7 JPEGs were downloaded and inspected by eye. Titles like 'Bugis+ Uniqlo clothes' or 'Harlow Bus Station' are conclusive on their face, but titles like 'Miuraya.jpg' or 'Beishu.jpg' at 68 m are unclassifiable without opening them, and some of those could be the building the arcade sits in. Confirming or refuting the useful-mall-photo case would require per-image inspection, which was NOT done.",
+      "verdict": "The 59 percent raw rate is the most misleading number in this report. Commons geosearch measures 'is this a photographed place', which correlates with dense tourist and transport geography, not with arcades. Title-level classification shows the hits are dominated by transport infrastructure, vehicles and landmarks; the filtered remainder includes a clinic, a furniture store, a parked Nissan Sylvia and a municipal building. NO hit was confirmed to be the venue, though absence of confirmation here is title-level inference rather than the visual proof obtained for KartaView. This does not change the recommendation: at 50.5 percent raw-minus-noise with Japan at 37 percent and China at 7 percent, and with no per-venue certainty, Commons cannot deliver 80 percent storefront coverage, which is what the owner asked for."
+    },
+
+    "osm_tags": {
+      "status": "MEASURED",
+      "query": "nwr[leisure=amusement_arcade](around:150,lat,lng) per sampled coordinate, batched one request per country",
+      "licence": "ODbL for the OSM data itself. An image=* URL points off-site and carries whatever licence that third-party host imposes, which is usually all-rights-reserved and NOT mirrorable.",
+      "global_ceiling": {
+        "leisure=amusement_arcade objects worldwide": 8880,
+        "amenity=arcade objects worldwide": 3,
+        "note": "amenity=arcade is effectively not a real tag. 8880 worldwide objects against our 13502 arcades caps coverage below full even before asking how many carry an image."
+      },
+      "arcade_object_within_150m": {"Japan": 0.23, "United States": 0.47, "United Kingdom": 0.30, "Taiwan": 0.43, "Philippines": 0.30, "Singapore": 0.50, "China": 0.00, "OVERALL": 0.319},
+      "carrying_image_tag": {"ALL_COUNTRIES": 0.00, "OVERALL": 0.000, "absolute": "0 of 210"},
+      "carrying_wikimedia_commons_tag": {"ALL_COUNTRIES": 0.00, "OVERALL": 0.000, "absolute": "0 of 210"},
+      "positive_control_on_the_zero": {
+        "why": "a 0 of 210 is the same shape as the false zero the Switzerland extract produced, so the extraction path had to be proven capable of reporting a non-zero",
+        "query": "nwr[leisure=amusement_arcade][image](-60,-180,75,180)",
+        "worldwide_arcades_carrying_image_tag": 24,
+        "against_8880_mapped_arcades": 0.0027,
+        "conclusion": "The extraction path works and DOES report image=* when present. The 0 of 210 is a real finding, not a query bug. The true global ceiling for OSM image=* is 24 objects worldwide, i.e. 0.27 percent of mapped arcades and 0.18 percent of our 13502.",
+        "and_they_are_unusable_anyway": "Of the 24, the image URLs point to Google Photos share links, pagesjaunes.fr, yadi.sk, shorturl.at, private CDNs and an OVH bucket. These are third-party all-rights-reserved hosts, not mirrorable, many are shorteners or will rot. Even the 24 are not shippable under the licence position."
+      },
+      "carrying_wikidata_or_brand_wikidata": {"Japan": 0.07, "United States": 0.10, "United Kingdom": 0.00, "Taiwan": 0.17, "Philippines": 0.23, "Singapore": 0.17, "China": 0.00, "OVERALL": 0.105},
+      "verdict": "Decisive. About a third of arcades have a mapped OSM arcade object nearby, but ZERO of 210 carry image=* or wikimedia_commons=*. OSM knows where arcades are; it does not hold pictures of them. China is 0 percent even for the object itself."
+    },
+
+    "wikidata_p18": {
+      "status": "MEASURED",
+      "class": "Q260676 amusement arcade",
+      "items_worldwide": 74,
+      "items_with_P18_image": 32,
+      "items_with_coordinates": 50,
+      "ceiling_against_13502_arcades": 0.0024,
+      "chain_check": {
+        "distinct_QIDs_referenced_by_nearby_OSM_objects": 7,
+        "all_were_brand_level_not_venue_level": true,
+        "qids": ["Q1054844 Taito", "Q12521502 Timezone", "Q15952961 Tom's World", "Q2438391 Chuck E. Cheese", "Q5228205 Dave & Buster's", "Q7446141 SegaWorld", "Q752941 Taco Bell"],
+        "with_P18": 5,
+        "what_those_P18_images_actually_are": [
+          "Taito -> 'Square Enix HQ (Shinjuku Eastside Square).jpg' (a corporate office tower, not an arcade)",
+          "Taco Bell -> 'Tacobellheadquartersirvine.jpg' (a head office in Irvine; also, Taco Bell is not an arcade)",
+          "Chuck E. Cheese -> a cropped logo/sign shot",
+          "Dave & Buster's -> one specific Springfield Town Center entrance, wrong for every other branch",
+          "Tom's World -> one specific Keelung store, wrong for every other branch"
+        ],
+        "verdict": "Brand P18 is actively harmful. Applying it would put a photo of Square Enix's Shinjuku head office on every Taito arcade in Japan and a Virginia storefront on every Dave & Buster's. That is worse than no image."
+      },
+      "verdict": "Hard ceiling 0.24 percent even if every one of the 74 items matched an arcade of ours. Not viable, and the chain-level fallback is wrong-building imagery."
+    }
+  },
+
+  "china_datum_check": {
+    "question": "Are data/arcades.json China coordinates WGS-84 or GCJ-02? If GCJ-02, every China number above would be off by 500 m and meaningless.",
+    "answer": "WGS-84, confirmed. China numbers are trustworthy.",
+    "code_evidence": "scrapers/geocode_cn.py lines 647-648 run every provider result through eviltransform bd2wgs/gcj2wgs before it reaches the cache.",
+    "empirical_evidence": "Reverse-geocoded five random China arcade coordinates against WGS-84 Nominatim. All five returned the correct province, city and district, and one resolved to the exact named building (淄博市客运中心, matching our address). Applying gcj2wgs a second time would move them 514-626 m, confirming they are already converted.",
+    "consequence": "China's 0 percent street-level coverage is real, not a datum artefact."
+  },
+
+  "methodology_warnings": [
+    "overpass.osm.ch is a SWITZERLAND-ONLY extract. It answers HTTP 200 with zero elements for every non-Swiss coordinate. A first OSM run against it produced a plausible-looking but entirely false 0/210 across all seven countries. Control query proving this: node(around:200,35.6580,139.7016) returns 0 there and 3096 on a worldwide instance. ALWAYS run a known-good control before trusting an Overpass mirror.",
+    "The final OSM run asserts a control (Akihabara box returns 13 arcades) before measuring, and aborts otherwise.",
+    "overpass-api.de, overpass.kumi.systems and overpass.private.coffee were all returning 504 during this session. maps.mail.ru/osm/tools/overpass worked. overpass.osm.jp fails TLS verification.",
+    "A radius hit is NOT a storefront photo. Every radius-based rate in this file overstates usable coverage; the only honest numbers are the visually verified ones.",
+    "Wikidata class Q2593535 is NOT amusement arcade (it returns 0 items). The correct class is Q260676."
+  ]
+}

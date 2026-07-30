@@ -329,6 +329,80 @@ def name_landmark(name):
     return find_landmark(re.sub(r"店$", "", name))
 
 
+#: Venue-type words shared by half the arcades in the country. They must come
+#: OFF both sides before two names are compared, or ``欢乐总动园电玩城`` and
+#: ``欢乐时光电玩城`` - different venues in different counties - look alike on
+#: the strength of ``电玩城`` alone.
+_GENERIC_VENUE_WORDS = (
+    "家庭娱乐中心", "成人用品店", "儿童乐园", "游乐王国", "电玩城", "游戏城",
+    "动漫城", "游艺城", "娱乐城", "娱乐厅", "游乐场", "俱乐部", "购物中心",
+    "娱乐中心", "体验馆", "游艺厅", "电玩", "游艺", "乐园", "乐场", "广场",
+    "公园", "商场", "商城", "中心", "店",
+)
+
+
+def _name_core(name):
+    """A venue name with the generic type words removed, for comparison."""
+    text = norm(name)
+    if not text:
+        return ""
+    text = re.sub(r"[（(].*?[)）]", "", text)
+    for word in _GENERIC_VENUE_WORDS:
+        text = text.replace(word, "")
+    return re.sub(r"[\s·・,，.。\-]+", "", text)
+
+
+def name_agrees(venue, answer, k=3):
+    """Does ``answer`` look like it is about ``venue``? (for NAME queries only)
+
+    A venue-name query is the weakest rung in the ladder and it fails in a way
+    the area gate cannot see: Baidu answers ``跳跃者成人室内蹦床公园`` with an
+    adult-products shop in the right city, and ``欢乐总动园电玩城`` with a
+    different arcade in the right prefecture. Both are in the right place and
+    neither is the right venue, so the ONLY thing that separates them is the
+    name itself.
+
+    The test is a shared ``k``-character run after the generic venue words are
+    stripped from the query side. Deliberately not a ratio: Chinese venue names
+    are short, and one distinctive three-character run (``超爱顽``, ``毛毛虫``)
+    is far stronger evidence than any percentage of overlap.
+
+    A venue whose whole name is generic has no core left, and no evidence -
+    so it fails, and the row keeps its honest centroid.
+    """
+    core = _name_core(venue)
+    answer = norm(answer)
+    if not core or not answer or len(core) < k:
+        return False
+    return any(core[i:i + k] in answer for i in range(len(core) - k + 1))
+
+
+def full_name_queries(name, city=None, district=None, province=None):
+    """The venue-NAME rungs for one entry, coarse-to-fine. May be empty.
+
+    Split out of ``candidates`` so the caller can tell which queries came from
+    the name and hold only those to ``name_agrees``. One definition, so the two
+    cannot drift.
+    """
+    full = re.sub(r"\s+", "", norm(name)) if name else ""
+    city, district, province = norm(city), norm(district), norm(province)
+    if not full or not (city or province):
+        return []
+    out, seen = [], set()
+
+    def head(text, deepest=None):
+        parts = []
+        for tok in (province, city, deepest):
+            if tok and tok not in text and tok not in "".join(parts):
+                parts.append(tok)
+        return "".join(parts)
+
+    if district:
+        _add(out, seen, head(full, district) + full)
+    _add(out, seen, head(full) + full)
+    return out
+
+
 def _add(out, seen, query):
     """Append a query once, ignoring blanks and duplicates."""
     q = norm(query)
@@ -359,6 +433,18 @@ def candidates(address, city=None, district=None, province=None, name=None):
       5. city + landmark from the venue NAME - the bemanicn rescue: the shop is
          named after a mall its address never mentions.
       6. city + road - last resort, and street precision at best.
+      7. city + the WHOLE venue name - the rung for a row whose address is
+         unusable and whose name contains no recognisable mall suffix. Chinese
+         arcades are POIs in their own right, so ``齐齐哈尔市街霸电玩台球厅``
+         answers when ``碾子山区`` (a bare district, the entire address) cannot.
+         It is LAST on purpose: a trading name is the weakest evidence here,
+         because chains repeat it in every city, and the city prefix plus
+         verify_area are the only things keeping it honest.
+
+    The name rungs always carry the administrative prefix. Measured: the bare
+    name ``快乐拾光`` returns a Zhengzhou venue while ``重庆郊县快乐拾光``
+    returns the right one in 丰都县, and ``毛毛虫乐场`` alone is ambiguous.
+    A bare-name rung is therefore deliberately NOT offered.
     """
     cleaned = strip_noise(address)
     landmark = find_landmark(cleaned) or find_landmark(norm(address))
@@ -394,6 +480,13 @@ def candidates(address, city=None, district=None, province=None, name=None):
         _add(out, seen, head(nm_landmark) + nm_landmark)
     if road:
         _add(out, seen, head(road) + road)
+    # The whole venue name, last. Only useful with a city in front of it, so a
+    # row with no resolved city does not get this rung at all - an unprefixed
+    # trading name is exactly the query that resolves to a same-named branch a
+    # thousand kilometres away.
+    for q in full_name_queries(name, city=city, district=district,
+                               province=province):
+        _add(out, seen, q)
     if not out and cleaned:
         _add(out, seen, cleaned)
     return out

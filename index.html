@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="vendor/leaflet.css?v=a7837102">
 <link rel="stylesheet" href="vendor/MarkerCluster.css?v=614dea0a">
 <link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=61258232">
-<link rel="stylesheet" href="style.css?v=67fcefcd">
+<link rel="stylesheet" href="style.css?v=33fd5128">
 </head>
 <body>
 <header id="topbar">
@@ -91,6 +91,25 @@
   <a href="https://github.com/JonathanLiu1401/Arcade-Maps/tree/main/docs" target="_blank" rel="noopener">data sources</a>
 </footer>
 
+<!-- OPTIONAL: Google Places photos. Leave the key EMPTY and nothing changes -
+     the site works exactly as it does without it, makes no Google request and
+     logs nothing. Filling it in lets a place panel show a Google photo for an
+     arcade we have no photo of. Setup, cost and the key restrictions you MUST
+     set are in docs/GOOGLE_PHOTOS.md - a key here is public by design, so the
+     HTTP-referrer and API restrictions are what protect it, not secrecy.
+
+     Photos are fetched live and NEVER stored: Google's terms forbid caching a
+     photo name. Only place IDs are cached, which Google exempts explicitly. -->
+<script>
+window.AM_CONFIG = {
+  googleMapsApiKey: "",
+  /* "high" (default) only uses place IDs whose offline match was verified by
+     BOTH distance and name. "medium" also allows weaker matches, including
+     centroid-placed China rows - more photos, and a higher chance one of them
+     is the building next door. */
+  googlePhotoMinConfidence: "high"
+};
+</script>
 <script src="vendor/leaflet.js?v=db49d009"></script>
 <script src="vendor/leaflet.markercluster.js?v=1e4e1d22"></script>
 <script src="vendor/SmoothWheelZoom.js?v=065a1c76"></script>
@@ -104,8 +123,11 @@
      tools/build_tier_icons.py; markers.js reads it at parse time -->
 <script src="js/tier-icons.js?v=b970f432"></script>
 <script src="js/markers.js?v=3ce142f9"></script>
+<!-- runtime Google Places photos; no-op unless AM_CONFIG.googleMapsApiKey is
+     set. Must load before panel.js, which consults it in its photo chain. -->
+<script src="js/gphotos.js?v=3d7a627f"></script>
 <script src="js/search.js?v=fa0e3655"></script>
-<script src="js/panel.js?v=4a2e7826"></script>
+<script src="js/panel.js?v=49577fe3"></script>
 <script src="js/settings.js?v=9c75ef79"></script>
 <script src="js/nearby.js?v=7c438461"></script>
 <script src="js/app-init.js?v=b29224b8"></script>

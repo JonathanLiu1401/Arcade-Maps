@@ -412,6 +412,8 @@ window.AM = window.AM || {};
   var ICONS = {
     back: '<path d="M15 5l-7 7 7 7"/>',
     close: '<path d="M6 6l12 12M18 6L6 18"/>',
+    chevL: '<path d="M14.5 5.5 8 12l6.5 6.5"/>',
+    chevR: '<path d="M9.5 5.5 16 12l-6.5 6.5"/>',
     directions: '<path d="M3.5 11.2 20.5 3.5 13 20.5l-2-7.2z"/>',
     nearby: '<circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/>',
     share: '<circle cx="17.5" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/>' +
@@ -472,15 +474,21 @@ window.AM = window.AM || {};
      path relative to the site. All three are fine; anything carrying some
      other scheme (javascript:, blob:, ...) is dropped rather than fed to an
      <img>, which would at best be a console error and at worst a hazard. */
-  function photoUrl(a) {
-    var v = firstField(a, ["image_thumb", "image", "photo", "photo_url"]);
-    if (!v && Array.isArray(a.images) && typeof a.images[0] === "string") v = a.images[0];
+  function safePhotoUrl(v) {
+    if (typeof v !== "string") return null;
+    v = v.trim();
     if (!v) return null;
     if (/^https?:\/\//i.test(v)) return v;
     if (/^data:image\//i.test(v)) return v;
     /* No scheme at all: a same-origin relative path. */
     if (!/^[a-z][a-z0-9+.-]*:/i.test(v)) return v;
     return null;
+  }
+
+  function photoUrl(a) {
+    var v = firstField(a, ["image_thumb", "image", "photo", "photo_url"]);
+    if (!v && Array.isArray(a.images) && typeof a.images[0] === "string") v = a.images[0];
+    return safePhotoUrl(v);
   }
 
   /* ================= enrichment (lazy, one fetch each) =================
@@ -876,53 +884,360 @@ window.AM = window.AM || {};
 
   /* ---------- rendering ---------- */
 
+  /* ---------- photo gallery ----------
+
+     The enrichment file carries up to three photos per store (170 stores have
+     two, 482 have three), and the panel used to show exactly one of them and
+     silently discard the rest. This builds the Google-Maps-style strip: one
+     photo at a time, swipe or arrow to the next, a dot per slide.
+
+     Three shapes come out of the data and all three are accepted, because the
+     pipeline is still moving and a panel that only understands one of them
+     would go blank the week the schema changes:
+
+       images: [{url, credit, license, page_url, tier}, ...]   the real one
+       images: ["https://...", ...]                            older mirror
+       image / photo / image_thumb: "https://..."              single-field
+
+     Everything is normalised into the same record so the renderer below has
+     exactly one case to handle. */
+
+  var MAX_SLIDES = 8;   /* the pipeline caps at 3; this is a sanity bound */
+
+  function imageRecords(a) {
+    var e = enrichOf(a) || {};
+    var out = [], seen = {};
+
+    function push(url, meta) {
+      var u = safePhotoUrl(url);
+      if (!u || seen[u] || out.length >= MAX_SLIDES) return;
+      seen[u] = 1;
+      meta = meta || {};
+      out.push({
+        url: u,
+        /* ZIv publishes no licence for community uploads, so credit is often
+           the only attribution string there is. It is still shown: naming the
+           source is the minimum courtesy for a photo we hotlink, and where a
+           licence IS recorded (CC BY / BY-SA) showing it is an obligation. */
+        credit: typeof meta.credit === "string" ? meta.credit : null,
+        license: typeof meta.license === "string" ? meta.license : null,
+        page: U.safeUrl(meta.page_url || meta.source || "") || null,
+        kind: "own"
+      });
+    }
+
+    /* Arcade row first, then enrichment: same precedence field() uses. */
+    [a, e].forEach(function (src) {
+      if (!src) return;
+      var list = src.images;
+      if (Array.isArray(list)) {
+        list.forEach(function (im) {
+          if (typeof im === "string") push(im, { credit: src.image_credit });
+          else if (im && typeof im === "object") push(im.url, im);
+        });
+      }
+      push(firstField(src, ["image_thumb", "image", "photo", "photo_url"]),
+           { credit: src.image_credit });
+    });
+
+    return out;
+  }
+
+  /* The cab fallback, as a one-entry gallery so the renderer stays single-path.
+     A cab shot is a stock photo of the MACHINE rather than of this venue, so it
+     is flagged and labelled - see .pl-hero-kind. */
+  function cabRecords(a) {
+    var cab = cabPhoto(a);
+    if (!cab) return [];
+    /* CC BY and BY-SA both require author + licence next to the work. CC0 does
+       not, but the same line is rendered for it anyway: one code path is
+       harder to get wrong than two, and crediting is never wrong. */
+    return [{
+      url: cab.url,
+      credit: (cab.author || cab.license)
+        ? "photo: " + (cab.author || "unknown") +
+          (cab.license ? " / " + cab.license : "")
+        : null,
+      license: null,
+      page: U.safeUrl(cab.source || "") || null,
+      kind: "cab",
+      label: gameLabelFor(a, cab.game) + " cabinet"
+    }];
+  }
+
+  function creditHtml(rec) {
+    var txt = rec.credit || "";
+    if (rec.license && txt.indexOf(rec.license) === -1) {
+      txt = txt ? txt + " / " + rec.license : rec.license;
+    }
+    if (!txt) return "";
+    return rec.page
+      ? '<a class="pl-hero-credit" href="' + esc(rec.page) +
+        '" target="_blank" rel="noopener">' + esc(txt) + "</a>"
+      : '<span class="pl-hero-credit">' + esc(txt) + "</span>";
+  }
+
+  /* One slide. Only slide 0 gets a real src; the rest carry data-src and are
+     promoted by loadSlide() when the reader actually engages.
+
+     loading="lazy" is NOT enough on its own here. Every slide is inside the
+     hero box and positioned by transform, so all of them are "in the viewport"
+     as far as the browser is concerned and it will happily fetch all three the
+     moment the panel opens. With 13.5k stores in memory and the panel opening
+     on every marker click, that is two wasted third-party requests per click,
+     against a host we are already only tolerated on. Hence data-src. */
+  function slideHtml(rec, i) {
+    var srcAttr = i === 0
+      ? 'src="' + esc(rec.url) + '"'
+      : 'data-src="' + esc(rec.url) + '"';
+    return '<div class="pl-slide' + (i === 0 ? " on" : "") + '" data-i="' + i +
+      '" role="group" aria-roledescription="slide" ' +
+      'aria-label="Photo ' + (i + 1) + '" ' + (i === 0 ? "" : 'aria-hidden="true" ') +
+      '>' +
+      '<img class="pl-hero-img" ' + srcAttr + ' alt="" decoding="async" ' +
+      'loading="lazy" data-hero="' + rec.kind + '">' +
+      '<div class="pl-hero-veil"></div>' +
+      '<div class="pl-hero-foot">' +
+      (rec.label ? '<span class="pl-hero-kind">' + esc(rec.label) + "</span>" : "") +
+      /* Attribution rides on the SLIDE, not on the gallery, so it changes with
+         the photo. A credit line that stayed put while the image moved would
+         be crediting the wrong person, which for a CC BY work is worse than
+         showing nothing. */
+      creditHtml(rec) + "</div></div>";
+  }
+
   /* Media header, best available of three:
-       1. a photo of THIS store, from enrichment
+       1. photos of THIS store, from enrichment - a gallery when there is more
+          than one, a plain hero when there is exactly one
        2. a photo of a cabinet it has, from assets/cabs - a stock shot of the
           machine, not of the venue, so it says so on its face and carries the
           licence line its CC terms require
        3. the game-tinted gradient banner
-     Only the chosen one is requested, and only when the panel opens, so a
-     session that never opens a store downloads no images at all. */
+     Only the FIRST photo is requested when the panel opens, so a session that
+     never opens a store downloads no images at all and a session that opens a
+     hundred downloads a hundred, not three hundred. */
   function heroHtml(a) {
     var g = dominantGame(a);
     var color = C.GAME_COLOR[g] || C.GAME_COLOR.other;
 
-    var own = photoUrl(a) || photoUrl(enrichOf(a) || {});
-    if (own) {
-      return '<div class="pl-hero has-photo" style="--c:' + color + '">' +
-        '<img class="pl-hero-img" src="' + esc(own) + '" alt="" ' +
-        'loading="lazy" decoding="async" data-hero="own">' +
-        '<div class="pl-hero-veil"></div></div>';
+    var recs = imageRecords(a);
+    /* Google fills the gap, it never replaces what works: our own venue photo
+       is licence-clean and free, so it always wins. A Google photo is tried
+       only when we have none, and it outranks the cab shot because a cab shot
+       is a stock photo of a MACHINE and this is a photo of the venue. See
+       js/gphotos.js - a no-op when no API key is configured. */
+    if (!recs.length && AM.gphotos) recs = AM.gphotos.records(a);
+    if (!recs.length) recs = cabRecords(a);
+
+    if (!recs.length) {
+      return '<div class="pl-hero" style="--c:' + color + '">' +
+        '<div class="pl-hero-art"></div>' +
+        '<div class="pl-hero-tag">' + esc(gameLabelFor(a, g)) + "</div></div>";
     }
 
-    var cab = cabPhoto(a);
-    if (cab) {
-      /* CC BY and BY-SA both require author + licence next to the work. CC0
-         does not, but the same line is rendered for it anyway: one code path
-         is harder to get wrong than two, and crediting is never wrong. */
-      var credit = "";
-      if (cab.author || cab.license) {
-        var txt = "photo: " + (cab.author || "unknown") +
-          (cab.license ? " / " + cab.license : "");
-        credit = cab.source
-          ? '<a class="pl-hero-credit" href="' + esc(U.safeUrl(cab.source)) +
-            '" target="_blank" rel="noopener">' + esc(txt) + "</a>"
-          : '<span class="pl-hero-credit">' + esc(txt) + "</span>";
+    var isCab = recs[0].kind === "cab";
+    var cls = "pl-hero has-photo" + (isCab ? " is-cab" : "") +
+      (recs.length > 1 ? " has-gallery" : "");
+
+    /* One photo: exactly the old markup and the old behaviour. No dots, no
+       arrows, no swipe handling, nothing extra to fetch or to get wrong. */
+    if (recs.length === 1) {
+      return '<div class="' + cls + '" style="--c:' + color + '">' +
+        slideHtml(recs[0], 0) + "</div>";
+    }
+
+    var slides = recs.map(slideHtml).join("");
+
+    var dots = recs.map(function (r, i) {
+      return '<button type="button" class="pl-dot' + (i === 0 ? " on" : "") +
+        '" data-act="photo-go" data-i="' + i + '" ' +
+        'aria-label="Photo ' + (i + 1) + ' of ' + recs.length + '"' +
+        (i === 0 ? ' aria-current="true"' : "") + "></button>";
+    }).join("");
+
+    /* tabindex + the roles make the strip one keyboard stop that announces
+       itself, and the arrow keys are handled only while focus is inside it -
+       the map and the search combobox both use arrows and neither may lose
+       them to a photo strip. */
+    return '<div class="' + cls + '" style="--c:' + color + '" ' +
+      'data-gallery="1" data-n="' + recs.length + '" tabindex="0" ' +
+      'role="group" aria-roledescription="carousel" ' +
+      'aria-label="Photos of this arcade, ' + recs.length + ' images">' +
+      '<div class="pl-slides">' + slides + "</div>" +
+      '<button type="button" class="pl-nav prev" data-act="photo-prev" ' +
+      'aria-label="Previous photo">' + ico("chevL") + "</button>" +
+      '<button type="button" class="pl-nav next" data-act="photo-next" ' +
+      'aria-label="Next photo">' + ico("chevR") + "</button>" +
+      '<div class="pl-count tabnum" aria-hidden="true">1 / ' + recs.length + "</div>" +
+      '<div class="pl-dots" role="tablist" aria-label="Choose photo">' + dots + "</div>" +
+      /* The live region is how a screen reader learns the slide changed. It is
+         separate from the visible counter because that one is aria-hidden: a
+         counter that announced itself on every keypress would be noise. */
+      '<div class="pl-sr" role="status" aria-live="polite"></div>' +
+      "</div>";
+  }
+
+  /* ---------- gallery behaviour ----------
+
+     State lives in a plain variable rather than in the DOM because renderPlace
+     replaces bodyEl.innerHTML wholesale, and refreshWhenEnriched calls it again
+     a moment after the panel opens (once the enrichment fetch lands). Anything
+     kept only in the markup is destroyed by that second render - which is
+     exactly when the gallery first appears, since the photos come FROM the
+     enrichment file. So the index is restored after a re-render, the same way
+     that code already restores scrollTop. */
+
+  var galleryIndex = 0;
+
+  function galleryEl() {
+    return bodyEl && bodyEl.querySelector("[data-gallery]");
+  }
+
+  /* Promote data-src to src. Called for the slide being shown and for its
+     immediate neighbour, so the next swipe is instant without the panel ever
+     fetching a photo nobody asked to see. */
+  function loadSlide(gal, i) {
+    var s = gal.querySelector('.pl-slide[data-i="' + i + '"]');
+    if (!s) return;
+    var img = s.querySelector("img");
+    if (img && !img.getAttribute("src") && img.dataset.src) {
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
+    }
+  }
+
+  function showSlide(i, opts) {
+    var gal = galleryEl();
+    if (!gal) return;
+    var n = parseInt(gal.dataset.n, 10) || 1;
+    /* Clamped, not wrapped. A strip of three photos that jumps from the last
+       back to the first hides the fact that it ended; the disabled arrow says
+       so plainly. */
+    i = Math.max(0, Math.min(n - 1, i));
+    galleryIndex = i;
+
+    var slides = gal.querySelectorAll(".pl-slide");
+    for (var k = 0; k < slides.length; k++) {
+      var on = k === i;
+      slides[k].classList.toggle("on", on);
+      if (on) slides[k].removeAttribute("aria-hidden");
+      else slides[k].setAttribute("aria-hidden", "true");
+    }
+
+    var dots = gal.querySelectorAll(".pl-dot");
+    for (var d = 0; d < dots.length; d++) {
+      dots[d].classList.toggle("on", d === i);
+      if (d === i) dots[d].setAttribute("aria-current", "true");
+      else dots[d].removeAttribute("aria-current");
+    }
+
+    var strip = gal.querySelector(".pl-slides");
+    if (strip) strip.style.transform = "translate3d(" + (-100 * i) + "%,0,0)";
+
+    var count = gal.querySelector(".pl-count");
+    if (count) count.textContent = (i + 1) + " / " + n;
+
+    var prev = gal.querySelector(".pl-nav.prev");
+    var next = gal.querySelector(".pl-nav.next");
+    if (prev) prev.disabled = i === 0;
+    if (next) next.disabled = i === n - 1;
+
+    loadSlide(gal, i);
+    loadSlide(gal, i + 1);
+
+    /* Only announce a change the user drove. The restore after a re-render
+       calls this too, and announcing "photo 2 of 3" because a background fetch
+       landed would be a screen reader talking about nothing. */
+    if (opts && opts.announce) {
+      var sr = gal.querySelector(".pl-sr");
+      if (sr) sr.textContent = "Photo " + (i + 1) + " of " + n;
+    }
+  }
+
+  /* Put the strip back where the reader left it after renderPlace wiped the
+     DOM. Never announces, never re-fetches anything already loaded. */
+  function restoreGallery() {
+    var gal = galleryEl();
+    if (!gal) { galleryIndex = 0; return; }
+    var n = parseInt(gal.dataset.n, 10) || 1;
+    showSlide(Math.min(galleryIndex, n - 1));
+  }
+
+  function stepSlide(delta) {
+    showSlide(galleryIndex + delta, { announce: true });
+  }
+
+  /* Touch swipe.
+
+     Bound once to bodyEl and filtered to the gallery, so it survives every
+     innerHTML swap. Two things it must not break:
+
+       - .pl-body scrolls vertically, and the gallery sits inside it. So
+         touch-action is pan-y (CSS) and preventDefault is called only after a
+         gesture has proved itself horizontal. A gallery that swallowed
+         vertical drags would make the panel unscrollable exactly where the
+         reader's thumb naturally lands.
+       - the mobile sheet's drag-to-resize is bound to #pl-grip alone, which is
+         a different element, so the two gestures cannot collide.
+
+     Pointer events cover touch, pen and mouse-drag in one path. */
+  function startGalleryDrag() {
+    var id = null, x0 = 0, y0 = 0, dx = 0, horiz = false, gal = null, strip = null;
+
+    function reset() {
+      if (strip) strip.style.transition = "";
+      id = null; gal = null; strip = null; horiz = false; dx = 0;
+    }
+
+    bodyEl.addEventListener("pointerdown", function (e) {
+      if (id !== null || e.button > 0) return;
+      var g = e.target.closest ? e.target.closest("[data-gallery]") : null;
+      if (!g) return;
+      /* An arrow or a dot is a tap target, not a swipe surface. */
+      if (e.target.closest("button, a")) return;
+      id = e.pointerId; gal = g; strip = g.querySelector(".pl-slides");
+      x0 = e.clientX; y0 = e.clientY; dx = 0; horiz = false;
+    });
+
+    bodyEl.addEventListener("pointermove", function (e) {
+      if (e.pointerId !== id || !strip) return;
+      dx = e.clientX - x0;
+      var dy = e.clientY - y0;
+      if (!horiz) {
+        if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+        /* First real movement decides the gesture, once. A drag that started
+           vertical stays vertical (the panel scrolls) even if the thumb
+           wanders sideways later. */
+        if (Math.abs(dx) <= Math.abs(dy)) { reset(); return; }
+        horiz = true;
+        strip.style.transition = "none";
       }
-      return '<div class="pl-hero has-photo is-cab" style="--c:' + color + '">' +
-        '<img class="pl-hero-img" src="' + esc(cab.url) + '" alt="" ' +
-        'loading="lazy" decoding="async" data-hero="cab">' +
-        '<div class="pl-hero-veil"></div>' +
-        '<div class="pl-hero-foot">' +
-        '<span class="pl-hero-kind">' +
-        esc(gameLabelFor(a, cab.game)) + " cabinet</span>" +
-        credit + "</div></div>";
+      /* Rubber-band at the two ends so the strip visibly resists rather than
+         sliding into blank space. */
+      var n = parseInt(gal.dataset.n, 10) || 1;
+      var d = dx;
+      if ((galleryIndex === 0 && d > 0) || (galleryIndex === n - 1 && d < 0)) d *= 0.3;
+      var w = gal.clientWidth || 1;
+      strip.style.transform =
+        "translate3d(" + (-100 * galleryIndex + (d / w) * 100) + "%,0,0)";
+      e.preventDefault();
+    }, { passive: false });
+
+    function end(e) {
+      if (e.pointerId !== id) return;
+      var wasHoriz = horiz, moved = dx, g = gal, s = strip;
+      reset();
+      if (!wasHoriz || !g) return;
+      if (s) s.style.transition = "";
+      /* 40px, not a fraction of the width: on a 390px phone a third of the
+         width is 130px, which is further than a thumb travels comfortably. */
+      if (moved <= -40) stepSlide(1);
+      else if (moved >= 40) stepSlide(-1);
+      else showSlide(galleryIndex);
     }
 
-    return '<div class="pl-hero" style="--c:' + color + '">' +
-      '<div class="pl-hero-art"></div>' +
-      '<div class="pl-hero-tag">' + esc(gameLabelFor(a, g)) + "</div></div>";
+    bodyEl.addEventListener("pointerup", end);
+    bodyEl.addEventListener("pointercancel", end);
   }
 
   /* How much a cab count can be trusted, from the data itself.
@@ -1295,7 +1610,11 @@ window.AM = window.AM || {};
       (sub ? '<div class="pl-sub">' + esc(sub) + "</div>" : "") + "</div>" +
       chipsHtml(a) + actionsHtml(a) + rowsHtml(a);
     renderedVersion = dataVersion;
-    if (!keepScroll) bodyEl.scrollTop = 0;
+    /* keepScroll marks a re-render of the SAME store (the enrichment fetch
+       landing), where the reader may already be on slide 2. A fresh store
+       starts at its first photo. */
+    if (!keepScroll) { galleryIndex = 0; bodyEl.scrollTop = 0; }
+    restoreGallery();
   }
 
   /* The enrichment file is megabytes and the panel must not wait for it, so
@@ -1306,6 +1625,12 @@ window.AM = window.AM || {};
   function refreshWhenEnriched(a) {
     ensureEnrichData().then(function () {
       if (!current || current.id !== a.id || !isPlaceOpen()) return;
+      /* Only once the enrichment file has landed do we know whether this store
+         has a photo of its own, and a Google photo is a billed request we must
+         not make for a store we can already illustrate. So the ask happens
+         HERE rather than in openPlace: by this point imageRecords(a) is
+         answerable. A no-op without an API key. */
+      if (AM.gphotos && !imageRecords(a).length) AM.gphotos.request(a);
       if (renderedVersion === dataVersion) return;
       var top = bodyEl.scrollTop;
       renderPlace(current, true);
@@ -1620,6 +1945,17 @@ window.AM = window.AM || {};
       var el = e.target.closest("[data-act]");
       if (!el || !current) return;
       var act = el.dataset.act;
+      /* The gallery controls are delegated through this same handler on
+         purpose. renderPlace replaces bodyEl.innerHTML, so a listener bound to
+         a freshly-created arrow button is orphaned the moment the enrichment
+         fetch lands and the panel re-renders - which is precisely when the
+         gallery appears. Delegation costs nothing and cannot go stale. */
+      if (act === "photo-next") { stepSlide(1); return; }
+      if (act === "photo-prev") { stepSlide(-1); return; }
+      if (act === "photo-go") {
+        showSlide(parseInt(el.dataset.i, 10) || 0, { announce: true });
+        return;
+      }
       if (act === "copy-addr") {
         copyText(current.addr || "", "Address copied");
       } else if (act === "share") {
@@ -1651,6 +1987,33 @@ window.AM = window.AM || {};
         });
       }
     });
+
+    /* Arrow keys move the photo strip, but ONLY while focus is inside it.
+       Scoped to bodyEl and gated on closest("[data-gallery]") because the map
+       pans with arrows and the search combobox walks its result list with
+       them - a document-level handler would steal both. Escape is deliberately
+       NOT handled here: the panel's own Escape (below) must keep closing the
+       panel, and a gallery that swallowed it would leave the reader with a
+       key that does nothing.
+
+       Home/End are included because a three-slide strip is exactly the case
+       where "jump to the end" is one key instead of two. */
+    bodyEl.addEventListener("keydown", function (e) {
+      var gal = e.target.closest && e.target.closest("[data-gallery]");
+      if (!gal) return;
+      var n = parseInt(gal.dataset.n, 10) || 1;
+      var handled = true;
+      if (e.key === "ArrowRight") stepSlide(1);
+      else if (e.key === "ArrowLeft") stepSlide(-1);
+      else if (e.key === "Home") showSlide(0, { announce: true });
+      else if (e.key === "End") showSlide(n - 1, { announce: true });
+      else handled = false;
+      /* Only swallow the keys actually used. Tab must still leave the strip -
+         nothing here traps focus. */
+      if (handled) { e.preventDefault(); e.stopPropagation(); }
+    });
+
+    startGalleryDrag();
 
     /* Escape dismisses exactly one layer: the topmost one. The settings
        <dialog> is a modal in the browser's top layer and closes itself on
@@ -1786,6 +2149,19 @@ window.AM = window.AM || {};
     AM.state.on("selectedGames", syncChips);
     AM.state.on("selectedCabs", syncCabFilters);
     AM.state.on("shownCount", syncCount);
+    /* A Google photo arrives after the panel has already painted, so it needs
+       the same late-arrival re-render the enrichment fetch gets. Bumping
+       dataVersion reuses that machinery rather than adding a second one. */
+    if (AM.gphotos) {
+      AM.gphotos.onPhoto(function (arcadeId) {
+        dataVersion++;
+        if (!current || current.id !== arcadeId || !isPlaceOpen()) return;
+        var top = bodyEl.scrollTop;
+        renderPlace(current, true);
+        bodyEl.scrollTop = top;
+        fitSheet();
+      });
+    }
     AM.state.on("selectedArcade", function (id, meta) {
       var a = id === null || id === undefined ? null : AM.data.byId[id];
       if (!a) {

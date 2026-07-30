@@ -695,9 +695,26 @@ class TestLiveData(unittest.TestCase):
             rates = json.load(fh)["rates"]
         hkd = self.table["countries"]["Hong Kong"]["games"]["maimai_dx"]["value"]
         usd = hkd / rates["HKD"]
-        self.assertAlmostEqual(usd, 0.77, places=2)
-        self.assertAlmostEqual(usd * rates["JPY"], 125.2, delta=1.0)
-        self.assertAlmostEqual(usd * rates["CNY"], 5.18, delta=0.1)
+
+        # The figure under test is HK$6, which is the owner's own correction and
+        # the measured median of every Hong Kong maimai listing we hold. What
+        # must NOT be asserted is the exchange rate: scrapers/fx.py refreshes
+        # data/fx_rates.json weekly, so pinning "USD 0.77" makes this test fail
+        # every time the Hong Kong dollar moves a fraction of a cent, which is
+        # a false alarm about data that is behaving exactly as designed.
+        # So assert the conversion is SELF-CONSISTENT against whatever rates
+        # shipped, plus a band wide enough to survive normal FX drift but tight
+        # enough to catch a real defect (a currency mix-up, a factor-of-ten
+        # slip, or a rate table that inverted its base).
+        self.assertEqual(hkd, 6.0)
+        self.assertAlmostEqual(usd, hkd / rates["HKD"], places=9)
+        self.assertTrue(0.70 <= usd <= 0.85,
+                        "HK$6 converted to USD %.4f, outside a sane band for a "
+                        "pegged currency" % usd)
+        jpy = usd * rates["JPY"]
+        cny = usd * rates["CNY"]
+        self.assertTrue(100 <= jpy <= 150, "HK$6 -> JPY %.1f" % jpy)
+        self.assertTrue(4.0 <= cny <= 6.5, "HK$6 -> CNY %.2f" % cny)
 
 
 if __name__ == "__main__":

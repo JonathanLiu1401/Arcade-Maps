@@ -751,6 +751,99 @@ body.am-empty #map::after {
   background: linear-gradient(180deg, rgba(23, 24, 29, 0.1), rgba(31, 32, 39, 0.85));
 }
 
+/* ---- photo gallery ----
+   170 stores carry two photos and 482 carry three; the panel used to show one
+   and throw the rest away. The strip below is one slide wide with the others
+   parked off to the side, moved by a single transform on .pl-slides.
+
+   ONE photo is not a gallery: heroHtml emits a bare .pl-slide with no
+   [data-gallery] and none of the chrome below applies, so that case renders
+   byte-for-byte what it always did. */
+.pl-hero.has-gallery { touch-action: pan-y; }
+.pl-hero.has-gallery:focus { outline: none; }
+/* The strip is a real keyboard stop (it owns the arrow keys), so it has to
+   show where focus is. Inset so the ring is not clipped by overflow:hidden. */
+.pl-hero.has-gallery:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: -2px;
+}
+.pl-slides {
+  position: absolute; inset: 0;
+  display: flex; width: 100%; height: 100%;
+  transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.pl-slide { position: relative; flex: 0 0 100%; width: 100%; height: 100%; }
+/* A slide with no gallery around it (the single-photo case) is not in a flex
+   strip, so it fills the hero on its own. */
+.pl-hero:not(.has-gallery) > .pl-slide { position: absolute; inset: 0; }
+
+/* Arrows. 44px is the phone tap minimum and it is used on every viewport -
+   a desktop pointer is not harmed by a target being comfortable. They sit
+   OUTSIDE .pl-slides so the transform never moves them. */
+.pl-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; padding: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  border: none; border-radius: 50%; cursor: pointer;
+  background: rgba(15, 16, 20, 0.55);
+  color: #fff; opacity: 0.9;
+  transition: opacity 140ms ease, background 140ms ease;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+}
+.pl-nav.prev { left: 4px; }
+.pl-nav.next { right: 4px; }
+.pl-nav:hover { background: rgba(15, 16, 20, 0.8); opacity: 1; }
+.pl-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* At the ends the arrow is disabled rather than hidden: a control that
+   vanishes moves the other one under the reader's finger mid-tap. It stays
+   put, greys out, and stops taking pointer events. */
+.pl-nav[disabled] { opacity: 0.25; cursor: default; pointer-events: none; }
+.pl-nav .ic { width: 20px; height: 20px; stroke-width: 2.2; }
+
+/* "2 / 3" - the unambiguous position readout. aria-hidden: the live region in
+   the markup announces changes instead, so a screen reader is not read a
+   counter on every keypress. */
+.pl-count {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em;
+  color: #fff; padding: 2px 7px; border-radius: 999px;
+  background: rgba(15, 16, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+}
+
+/* Dots. The visible dot is 7px but the BUTTON is a 44px-tall strip of padding,
+   so a thumb hits it without the hero growing a 44px bar of chrome. They sit
+   at the top because the bottom band is where the credit line lives, and an
+   attribution the licence requires does not yield space to a nicety. */
+.pl-dots {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; align-items: center; gap: 2px;
+}
+.pl-dot {
+  width: 22px; height: 44px; padding: 0; border: none; background: none;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.pl-dot::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  transition: background 140ms ease, transform 140ms ease;
+}
+.pl-dot.on::before { background: #fff; transform: scale(1.25); }
+.pl-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: -6px; }
+
+/* Screen-reader-only live region. Not display:none - that would stop it being
+   announced, which is its whole job. */
+.pl-sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-slides { transition: none; }
+}
+
 /* The cabinet label and the licence credit share ONE flex row across the
    bottom of the photo rather than being two independently positioned boxes.
    As absolute boxes they collided at 320px ("Taiko no Tatsujin cabinet" is
@@ -1008,6 +1101,24 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
   .pl-hero.has-photo { height: 62px; transition: height 190ms ease; }
   #place.expanded .pl-hero.has-photo { height: 132px; }
   .pl-hero.has-photo::after { display: block; }
+  /* Gallery chrome at the 62px resting height.
+
+     A 44px round arrow inside a 62px band covers most of the photo it is
+     meant to be navigating, so the arrows are withheld until the sheet is
+     expanded and there is room for them. Nothing is lost: SWIPE is the
+     primary phone gesture and it works at every height, the dots are always
+     there and are always tappable, and dragging the sheet up brings the
+     arrows back. This is the same trade the chip rows and the placeholder
+     banner already make at this height.
+
+     The dots keep their full 44px touch strip - it fits inside 62px, and the
+     one control that must never shrink on a phone is the one a thumb uses. */
+  .pl-hero.has-gallery .pl-nav { display: none; }
+  #place.expanded .pl-hero.has-gallery .pl-nav { display: flex; }
+  /* The counter would sit on top of the dots' touch strip in a 62px band, and
+     the dots already say the same thing. It returns with the arrows. */
+  .pl-hero.has-gallery .pl-count { display: none; }
+  #place.expanded .pl-hero.has-gallery .pl-count { display: block; }
   .pl-head { padding-top: 11px; }
   .pl-name { font-size: 18px; }
   /* A store with eleven games wraps to four chip rows and pushes the action
