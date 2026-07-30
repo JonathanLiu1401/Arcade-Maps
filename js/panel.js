@@ -757,15 +757,75 @@ window.AM = window.AM || {};
     return best;
   }
 
-  /* The country-level "typical" figure the enrichment file ships. Always a
-     display fallback and always labelled as typical - never quoted as this
-     store's price. */
+  /* Round a measured figure the way the currency is actually quoted: whole
+     units for yen and won, two decimals elsewhere, and no trailing ".00". */
+  function fmtMeasured(v, cur) {
+    if (cur === "JPY" || cur === "KRW" || cur === "IDR" || cur === "VND") {
+      return String(Math.round(v));
+    }
+    var s = v.toFixed(2);
+    return s.replace(/\.00$/, "");
+  }
+
+  /* What a play costs here, in priority order:
+       1. a MEASURED figure for this country and this game, derived from real
+          quoted prices in the listings (scrapers/prices.py). n >= 5 prints as
+          a definite figure; 2 to 4 prints with a "based on N listings" caveat.
+       2. the country's measured overall, same rules.
+       3. the hand-written PRICE_DEFAULTS table, last resort only.
+     Tier "unknown" deliberately renders NOTHING rather than a guess: the old
+     table claimed "HKD 8-15/play typical" for Hong Kong, where every listing
+     we hold quotes HK$6.00 for maimai and CHUNITHM with no variance at all. */
   function typicalPrice(a) {
     if (!enrich || !a || !a.country) return null;
+    var m = measuredPrice(a);
+    if (m) return m;
     var iso = (enrich.country_to_code || {})[a.country];
     var def = iso && (enrich.price_defaults || {})[iso];
     if (!def || typeof def.display !== "string") return null;
-    return { display: def.display, notes: def.notes || null, as_of: def.as_of || null };
+    return {
+      display: def.display, notes: def.notes || null,
+      as_of: def.as_of || null, tier: "guess"
+    };
+  }
+
+  function measuredPrice(a) {
+    var table = enrich && enrich.prices;
+    var entry = table && table.countries && table.countries[a.country];
+    if (!entry) return null;
+
+    var cell = null, slug = null, games = entry.games || {}, i;
+    var ordered = orderedGames(a);
+    for (i = 0; i < ordered.length; i++) {
+      var c = games[ordered[i]];
+      if (c && c.tier !== "unknown" && typeof c.value === "number") {
+        cell = c; slug = ordered[i];
+        break;                         /* the arcade's own headline game wins */
+      }
+    }
+    if (!cell) {
+      var o = entry.overall;
+      if (o && o.tier !== "unknown" && typeof o.value === "number") cell = o;
+    }
+    if (!cell) return null;
+
+    var cur = cell.currency || entry.currency || "";
+    var display = (cur ? cur + " " : "") + fmtMeasured(cell.value, cur) +
+      " per credit";
+    var label = slug ? (C.GAME_LABEL[slug] || slug) : null;
+    var notes;
+    if (cell.tier === "measured") {
+      notes = (label ? label + ", " : "") + "median of " + cell.n +
+        " quoted prices in " + a.country + ". Not this store's own price.";
+    } else {
+      notes = "Based on only " + cell.n + " listing" +
+        (cell.n === 1 ? "" : "s") + " in " + a.country +
+        (label ? " for " + label : "") + ", so treat it as a rough guide.";
+    }
+    return {
+      display: display, notes: notes, as_of: cell.as_of || table.as_of || null,
+      tier: cell.tier, measured: true
+    };
   }
 
   function directionsUrl(a) {
@@ -1045,9 +1105,11 @@ window.AM = window.AM || {};
     if (!vp && !per.length) {
       var tp = typicalPrice(a);
       if (tp) {
+        var cap = tp.notes && tp.measured
+          ? esc(tp.notes)
+          : "Typical for " + esc(a.country) + " - not this store's own price";
         h += row("price", esc(tp.display),
-          "Typical for " + esc(a.country) + " - not this store's own price" +
-          (tp.as_of ? " (" + esc(tp.as_of) + ")" : ""), "muted");
+          cap + (tp.as_of ? " (" + esc(tp.as_of) + ")" : ""), "muted");
       }
     }
     return h;

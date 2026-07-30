@@ -78,6 +78,7 @@ from html.parser import HTMLParser
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common
 import photos as photos_mod
+import prices
 
 OUTFILE = "enrichment.json"
 MAX_IMAGES = 3            # per arcade; keeps the file small
@@ -599,8 +600,22 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         "venue_photos_by_source": dict(sorted(image_by_source.items())),
         "photos_index_ids": len(photos_index or {}),
     }
+    payload_date = updated or date.today().isoformat()
+    # Measured per-country per-game prices, derived from the quoted prices the
+    # rows above just contributed (scrapers/prices.py). The guessed
+    # PRICE_DEFAULTS table stays only as a last resort for countries the
+    # measurement cannot reach: a hand-written "HKD 8-15/play typical" was
+    # wrong by the repo's own data, which quotes HK$6.00 for maimai and
+    # CHUNITHM without variance. Measured figures win wherever they exist.
+    arcade_countries = {}
+    for a in arcades:
+        if a.get("country"):
+            arcade_countries[str(a["id"])] = a["country"]
+    price_table = prices.build_price_table(out, arcade_countries,
+                                           as_of=payload_date)
     return {
-        "updated": updated or date.today().isoformat(),
+        "updated": payload_date,
+        "prices": price_table,
         "price_defaults": price_defaults_table(),
         "country_to_code": dict(sorted(COUNTRY_TO_CODE.items())),
         "counts": counts,
