@@ -933,7 +933,14 @@ window.AM = window.AM || {};
       if (Array.isArray(list)) {
         list.forEach(function (im) {
           if (typeof im === "string") push(im, { credit: src.image_credit });
-          else if (im && typeof im === "object") push(im.url, im);
+          /* A venue photo arrives one of two ways. Hotlinked records carry an
+             absolute `url`; MIRRORED ones carry a repo-relative `file` and no
+             url at all, because the source serves signed links that expire
+             within the hour (BemaniCN's OSS thumbnails) and a stored link
+             would be dead before anyone loaded the page. Reading only `url`
+             silently skipped 3,202 mirrored files that were sitting in the
+             repo, which is every China venue photo. */
+          else if (im && typeof im === "object") push(im.url || im.file, im);
         });
       }
       push(firstField(src, ["image_thumb", "image", "photo", "photo_url"]),

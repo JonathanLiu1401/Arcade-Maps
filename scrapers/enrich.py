@@ -460,7 +460,7 @@ def _collect_images(bemanicn_rows, ziv_rows, photos_index=None):
 
 
 def entry_from_rows(bemanicn_rows, ziv_rows, photos_index=None,
-                    quality_probes=None):
+                    quality_probes=None, merged_images=None):
     """Build one enrichment entry from the raw rows that merged into a
     single arcade. Returns None when nothing enrichable is present.
 
@@ -483,6 +483,14 @@ def entry_from_rows(bemanicn_rows, ziv_rows, photos_index=None,
             _put(entry, out_key, value, "ziv")
 
     images, lead = _collect_images(bemanicn_rows, ziv_rows, photos_index)
+    # The merged index (photos.build_photo_index) has already deduplicated
+    # across every source and picked a best tier, so when it has an answer for
+    # this arcade it supersedes the per-source collection rather than being
+    # appended to it. It also carries the mirrored-file records that no
+    # URL-keyed join can reach.
+    if merged_images:
+        images = list(merged_images)
+        lead = images[0].get("source") or lead
     if images:
         # Rank before anything downstream reads images[0]. A venue's photos
         # arrive in whatever order the source listed them, which is upload
@@ -572,6 +580,8 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
     # silently disables the ranking while looking like it works.
     quality_probes = photo_quality.load_json(
         os.path.join(raw_dir, QUALITY_CACHE_FILE), {}) or {}
+    photo_index = photos_mod.load_photo_index(
+        os.path.join(raw_dir, photos_mod.PHOTO_INDEX_FILE))
     out = {}
     used_b, used_z = set(), set()
     image_arcades = 0
@@ -581,9 +591,15 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         b_url, z_url = links.get("bemanicn"), links.get("ziv")
         b_rows = bemanicn_idx.get(b_url, []) if b_url else []
         z_rows = ziv_idx.get(z_url, []) if z_url else []
-        # Even with no raw enrichment fields, a photos-index hit alone is
-        # enough to emit a venue-photo entry for this arcade.
-        if not b_rows and not z_rows and not (
+        # The merged index is keyed by ARCADE ID rather than by a source URL,
+        # which is the only key that works for China: those photos are
+        # mirrored files, not ZIv rows, so a URL join cannot see them. Without
+        # this branch 3,210 mirrored China venue photos sit on disk and never
+        # reach the site.
+        merged_imgs = photos_mod.photos_for_arcade_id(a["id"], photo_index)
+        # Even with no raw enrichment fields, a photo alone is enough to emit
+        # an entry for this arcade.
+        if not b_rows and not z_rows and not merged_imgs and not (
                 photos_index and z_url
                 and photos_mod.photos_for_ziv_url(z_url, photos_index)):
             continue
@@ -594,7 +610,8 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
                 photos_mod.photos_for_ziv_url(z_url, photos_index):
             z_rows = [{"source_url": z_url}]
         entry = entry_from_rows(b_rows, z_rows, photos_index=photos_index,
-                                quality_probes=quality_probes)
+                                quality_probes=quality_probes,
+                                merged_images=merged_imgs)
         if entry is None:
             continue
         out[str(a["id"])] = entry
