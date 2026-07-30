@@ -341,15 +341,20 @@ _GENERIC_VENUE_WORDS = (
 )
 
 
-def _name_core(name):
-    """A venue name with the generic type words removed, for comparison."""
-    text = norm(name)
-    if not text:
-        return ""
-    text = re.sub(r"[（(].*?[)）]", "", text)
+def name_segments(name):
+    """A venue name SPLIT on its generic type words, longest pieces first.
+
+    Split rather than delete, because deleting joins two halves that were never
+    adjacent: ``街霸电玩台球厅`` minus ``电玩`` reads ``街霸台球厅``, and the
+    junction ``霸台`` is a run that appears in neither the name nor any answer.
+    Split, it yields ``台球厅`` and ``街霸`` - and ``街霸`` is the distinctive
+    half that identifies the venue.
+    """
+    text = re.sub(r"[（(].*?[)）]", " ", norm(name))
     for word in _GENERIC_VENUE_WORDS:
-        text = text.replace(word, "")
-    return re.sub(r"[\s·・,，.。\-]+", "", text)
+        text = text.replace(word, " ")
+    parts = [re.sub(r"[\s·・,，.。\-]+", "", p) for p in text.split(" ")]
+    return sorted((p for p in parts if len(p) >= 2), key=len, reverse=True)
 
 
 def name_agrees(venue, answer, k=3):
@@ -358,23 +363,31 @@ def name_agrees(venue, answer, k=3):
     A venue-name query is the weakest rung in the ladder and it fails in a way
     the area gate cannot see: Baidu answers ``跳跃者成人室内蹦床公园`` with an
     adult-products shop in the right city, and ``欢乐总动园电玩城`` with a
-    different arcade in the right prefecture. Both are in the right place and
-    neither is the right venue, so the ONLY thing that separates them is the
-    name itself.
+    DIFFERENT arcade (``欢乐时光电玩城``) in the right prefecture. Both are in
+    the right place and neither is the right venue, so the only thing that can
+    separate them is the name.
 
-    The test is a shared ``k``-character run after the generic venue words are
-    stripped from the query side. Deliberately not a ratio: Chinese venue names
-    are short, and one distinctive three-character run (``超爱顽``, ``毛毛虫``)
-    is far stronger evidence than any percentage of overlap.
+    The comparison is per SEGMENT, never across two of them, and the generic
+    half is what gets dropped: matching on ``电玩城`` alone would call every
+    arcade in China the same venue. A segment agrees when a ``k``-character run
+    of it appears in the answer, or - for a segment too short to have one - when
+    the whole segment does. That is what lets ``街霸`` confirm
+    ``街霸电玩娱乐厅`` while ``欢乐总动园`` still refuses ``欢乐时光电玩城``.
 
-    A venue whose whole name is generic has no core left, and no evidence -
-    so it fails, and the row keeps its honest centroid.
+    A venue whose name is entirely generic has no distinctive segment, so it
+    cannot be confirmed and the row keeps its honest centroid.
     """
-    core = _name_core(venue)
     answer = norm(answer)
-    if not core or not answer or len(core) < k:
+    if not answer:
         return False
-    return any(core[i:i + k] in answer for i in range(len(core) - k + 1))
+    for seg in name_segments(venue):
+        if len(seg) < k:
+            if seg in answer:
+                return True
+            continue
+        if any(seg[i:i + k] in answer for i in range(len(seg) - k + 1)):
+            return True
+    return False
 
 
 def full_name_queries(name, city=None, district=None, province=None):

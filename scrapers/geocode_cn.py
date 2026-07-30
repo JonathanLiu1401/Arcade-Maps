@@ -837,11 +837,19 @@ def expected_area(addr):
 
 
 def _city_id_by_base(base, index):
-    """The prefecture-level area whose bare name is ``base``, or None."""
+    """The prefecture-level area whose bare name is ``base``, or None.
+
+    Both spellings are accepted. The synthetic Chongqing buckets are named
+    ``重庆城区`` / ``重庆郊县``, whose ``cn_base`` strips the trailing 区/县 and
+    yields ``重庆城`` / ``重庆郊`` - so a base-only comparison never finds them,
+    and the bucket check silently degrades to "no members, reject everything".
+    """
     if not base:
         return None
     for aid, area in index.areas.items():
-        if area["d"] == 1 and china_place.cn_base(area["n"]) == base:
+        if area["d"] != 1:
+            continue
+        if area["n"] == base or china_place.cn_base(area["n"]) == base:
             return aid
     return None
 
@@ -901,6 +909,108 @@ def _is_related_area(want_base, got_base, index):
 _SYNTHETIC_CITIES = frozenset({"重庆城区", "重庆郊县"})
 
 
+# ------------------------------------------------------- the district gate ---
+# verify_area stops at the CITY, and a Chinese prefecture is the size of a
+# small country. Measured on the committed cache: 57 rows whose entry resolves
+# to a district sit on an answer that names a DIFFERENT district of the same
+# city, and every one of them passed verify_area because the city agreed.
+#
+# The worst is arcade 893, 1号机长超乐场常德澧县店 in 澧县. Its address is the
+# bare "欢乐城22号入口下"; the first candidate, 湖南省常德市欢乐城, names no
+# district, so Baidu answered with 和瑞欢乐城(常德店) in 武陵区 - which is a
+# real 欢乐城, in the right city, about 100 km from 澧县. Arcade 889 is
+# genuinely in that building, so the two ended up on one coordinate and the
+# map asserted building-level accuracy for a venue in the wrong county.
+#
+# The gate is deliberately NOT "reject every district disagreement". Three
+# shapes in the same 57 are correct answers:
+#
+#   * 临平区 was split out of 余杭区 in 2021 and the table still says 余杭区,
+#     so the answer is right and newer than the source (#1009).
+#   * 利民开发区 straddles 松北区 and 呼兰区, and Baidu picks the other one
+#     (#1765).
+#   * The entry's own district token is simply wrong and the answer's road and
+#     number are byte-identical to the address's (#2199, 兴华街299号).
+#
+# What separates those from 893 is CORROBORATION: the answer repeats the road
+# and number the address printed, which is the strongest identifier a Chinese
+# address carries. So a district disagreement is fatal only when the answer
+# also fails to echo the road+number. That is not a free pass either - #1449
+# matches 滨河路87号 in two different counties and answers with a bathroom-
+# fixtures shop - which is why the road check demands the NUMBER as well as
+# the road, and why every decision is logged.
+
+def _district_ids_in(text, city_id, index):
+    """Full district names of ``city_id`` that appear in ``text``."""
+    out = set()
+    if city_id is None:
+        return out
+    for kid in index.kids(city_id):
+        if index.name(kid) in text:
+            out.add(kid)
+    return out
+
+
+def verify_district(formatted, want_district, addr=None, index=None):
+    """Is the answer in the district the entry resolved to? (ok, reason).
+
+    ``want_district`` is the area id of the district ``china_place.resolve``
+    put the entry in, or None when the entry only resolved to a city - in
+    which case there is nothing to check and the answer passes.
+
+    Passes when the answer names that district (full or short form), when it
+    names no district of that city at all (nothing to disagree with), or when
+    it corroborates the address's own road AND street number, which outranks a
+    district token the source may simply have got wrong.
+    """
+    if want_district is None:
+        return True, "no district to check"
+    index = index if index is not None else china_place.load_areas()
+    if want_district not in index.areas:
+        # Loud, because the failure mode is silent. Area ids are STRINGS
+        # ("430723"); an int slipped in from a caller turns this gate off
+        # while every caller still sees a pass, which is how four of this
+        # module's own tests reported PASS on a gate that never ran.
+        raise KeyError("verify_district: %r is not an area id (they are "
+                       "strings, e.g. '430723')" % (want_district,))
+    formatted = norm_addr(formatted)
+    name = index.name(want_district)
+    short = china_place.short_name(name)
+    if name in formatted or (short and short in formatted):
+        return True, "answer names %s" % name
+    city_id = index.areas[want_district]["p"]
+    got = _district_ids_in(formatted, city_id, index)
+    if not got:
+        return True, "answer names no district of this city"
+    got_names = ", ".join(sorted(index.name(g) for g in got))
+    if addr and _road_number_agrees(addr, formatted):
+        return True, ("answer says %s, entry says %s, but the road and number "
+                      "match" % (got_names, name))
+    return False, ("answer is in %s, the entry resolves to %s"
+                   % (got_names, name))
+
+
+def _road_number_agrees(addr, formatted):
+    """Does the answer repeat the road AND street number the address printed?
+
+    Both halves are required. The number alone repeats across every city, and
+    the road alone is the ordinary case of a mall whose entrance is on a
+    different street than its postal address - neither is evidence on its own.
+    Together they are the strongest thing a Chinese address carries, strong
+    enough to overrule a district token: ``兴华街299号`` appears verbatim in
+    both the address and the answer for arcade 2199, whose entry says
+    尖草坪区 and whose answer says 万柏林区; the answer is right.
+    """
+    cleaned = cn_address.strip_noise(addr or "")
+    road, num = cn_address.find_road(cleaned)
+    if not (road and num):
+        return False
+    groad, gnum = cn_address.find_road(formatted)
+    if not (groad and gnum) or num != gnum:
+        return False
+    return road in formatted or groad in cleaned
+
+
 def verify_area(addr, lat, lng, formatted, index=None, expect=None):
     """Does a hit belong to the place the address named? (ok, reason).
 
@@ -938,9 +1048,28 @@ def verify_area(addr, lat, lng, formatted, index=None, expect=None):
     got_prov, got_city = _admin_tokens(formatted)
 
     # A synthetic bucket is not a name any provider can echo, so the city half
-    # of the gate is structurally unsatisfiable for those rows. Fall back to
-    # the province, which IS real, and let the distance backstop do the rest.
+    # of the gate is structurally unsatisfiable for those rows. It is NOT
+    # simply dropped, though: 重庆郊县 measures 299 km across, so falling back
+    # to the province plus the distance backstop lets an answer in any county
+    # of Chongqing satisfy a query about any other - which is how a 奉节 arcade
+    # took the coordinate of the 万州 Wanda, 100 km away. Instead the bucket is
+    # checked through its MEMBERSHIP: the answer has to name one of the
+    # districts or counties the table files under that bucket. That is a real,
+    # echoable name, and it is exactly the assertion the bucket stands for.
     if want_city in _SYNTHETIC_CITIES:
+        bucket_id = _city_id_by_base(want_city, index)
+        members = [index.name(k) for k in index.kids(bucket_id)] if bucket_id \
+            else []
+        text = norm_addr(formatted)
+        named = [m for m in members if m and m in text]
+        if not named:
+            short = [m for m in members
+                     if china_place.short_name(m)
+                     and china_place.short_name(m) in text]
+            named = short
+        if not named:
+            return False, ("answer names no district of %s (%r)"
+                           % (want_city, formatted[:60]))
         want_city = None
 
     if want_city:
@@ -985,7 +1114,7 @@ def verify_area(addr, lat, lng, formatted, index=None, expect=None):
 
 def geocode_one(addr, provider, key, sleep=None, day=None, queries=None,
                 verify=True, on_reject=None, expect=None, name_queries=None,
-                venue_name=None):
+                venue_name=None, want_district=None):
     """Geocode one normalized address. Returns (record, kind).
 
     ``kind`` is one of:
@@ -1021,6 +1150,13 @@ def geocode_one(addr, provider, key, sleep=None, day=None, queries=None,
     with whatever it does hold nearby, and "an adult-products shop in Yangquan"
     passes every area check there is. Confirming the name is the only thing
     that can tell those apart.
+
+    ``want_district`` is the area id the ENTRY resolved to, and it narrows
+    verify_area's city-level check by one level. It applies to every rung, not
+    just the name ones, because the failure it catches is an ADDRESS rung's:
+    arcade 893's address names no district, so its first candidate asked about
+    ``常德市欢乐城`` and got the 武陵区 one, 100 km from the 澧县 the entry
+    resolves to. See ``verify_district``.
     """
     day = day or _today()
     if sleep is None:
@@ -1069,6 +1205,11 @@ def geocode_one(addr, provider, key, sleep=None, day=None, queries=None,
                     on_reject(addr, query, lat, lng, formatted,
                               "name query, but the answer is not about %r"
                               % (venue_name or ""))
+                continue
+            ok, why = verify_district(formatted, want_district, addr, index)
+            if not ok:
+                if on_reject:
+                    on_reject(addr, query, lat, lng, formatted, why)
                 continue
         return _hit_record(lat, lng, provider, precision, formatted, day,
                            query=query), "hit"
@@ -1173,7 +1314,7 @@ def _flush(path, cache):
 
 def run(addresses, out_dir="data", limit=None, provider=None,
         sleep=None, dry_run=False, path=None, queries=None, verify=True,
-        reject_log=None, expects=None, retry_misses=False):
+        reject_log=None, plans=None, retry_misses=False):
     """Refresh the cache for ``addresses``. Returns the cache dict.
 
     Never raises for a feed problem, and never shrinks the cache. A provider
@@ -1189,9 +1330,10 @@ def run(addresses, out_dir="data", limit=None, provider=None,
     run_all.py) still gets the noise stripped and the coarser fallbacks tried,
     rather than one verbatim question with a floor number in it.
 
-    ``expects`` maps an address to the ``(province, city)`` the entry itself
-    resolved to, which verify_area then holds the answer to instead of parsing
-    the query string. See ``entry_expect``.
+    ``plans`` maps an address to its ``entry_plan``: the ``(province, city)``
+    verify_area holds the answer to instead of parsing the query string, which
+    of the candidates are venue-NAME rungs, and the venue name those rungs are
+    checked against. See ``entry_plan``.
 
     ``retry_misses`` re-asks the addresses already recorded as a miss. Off by
     default, because a cached miss is permanent BY DESIGN - that is what stops
@@ -1204,7 +1346,7 @@ def run(addresses, out_dir="data", limit=None, provider=None,
     path = path or os.path.join(out_dir, OUTFILE)
     cache = load_cache(path)
     queries = queries or {}
-    expects = expects or {}
+    plans = plans or {}
     rejections = reject_log if reject_log is not None else []
 
     name, key = resolve_provider(provider)
@@ -1263,10 +1405,14 @@ def run(addresses, out_dir="data", limit=None, provider=None,
     miss_streak = 0
     for i, k in enumerate(pending, 1):
         asks = queries.get(k) or candidates_for(k)
+        plan = plans.get(k) or {}
         try:
             rec, kind = geocode_one(k, name, key, sleep=sleep, queries=asks,
                                     verify=verify, on_reject=note_rejection,
-                                    expect=expects.get(k))
+                                    expect=plan.get("expect"),
+                                    name_queries=plan.get("name_queries"),
+                                    venue_name=plan.get("venue_name"),
+                                    want_district=plan.get("want_district"))
         except Exception as e:
             # fx.py's contract: an optional network step never fails the
             # build. Stop asking (whatever broke will break the next call
@@ -1431,16 +1577,32 @@ def entry_expect(entry, index=None):
             china_place.cn_base(city) if city else None)
 
 
+def entry_district(entry, index=None):
+    """The district area id ``china_place`` resolves this entry to, or None.
+
+    None for a row that only names a city: there is then no district to hold
+    the answer to, and ``verify_district`` passes it. Deliberately the same
+    call china_place would make when placing a centroid, so the gate and the
+    fallback agree on which district the row belongs to.
+    """
+    index = index if index is not None else china_place.load_areas()
+    hit = china_place.resolve(dict(entry, lat=None, lng=None), index)
+    if hit is None or hit[1] != "district":
+        return None
+    return hit[0]
+
+
 def entry_plan(entry, index=None):
     """Everything verify needs about one entry, as one record.
 
-    Kept together because all three answer the same question - "what would
-    make an answer to THIS row believable" - and splitting them across parallel
+    Kept together because they all answer the same question - "what would make
+    an answer to THIS row believable" - and splitting them across parallel
     dicts is how the query list and the check it is held to drift apart.
     """
     return {"expect": entry_expect(entry, index),
             "name_queries": name_query_candidates(entry, index),
-            "venue_name": entry.get("name") or ""}
+            "venue_name": entry.get("name") or "",
+            "want_district": entry_district(entry, index)}
 
 
 def addresses_for(arcades, with_queries=False, with_plans=False):
@@ -1484,14 +1646,14 @@ def addresses_for(arcades, with_queries=False, with_plans=False):
             out.append(addr)
             if with_queries:
                 queries[addr] = query_candidates(entry, index)
-            if with_expects:
-                expects[addr] = entry_expect(entry, index)
-    if with_queries and with_expects:
-        return out, queries, expects
+            if with_plans:
+                plans[addr] = entry_plan(entry, index)
+    if with_queries and with_plans:
+        return out, queries, plans
     if with_queries:
         return out, queries
-    if with_expects:
-        return out, expects
+    if with_plans:
+        return out, plans
     return out
 
 
@@ -1585,7 +1747,7 @@ def manual_record(manual, entry):
 
 
 def apply_cache(arcades, cache=None, path=None, manual=None,
-                manual_path=None):
+                manual_path=None, reject_log=None):
     """Place coordinate-less China rows from the committed cache. Mutates.
 
     Runs BEFORE china_place, so a geocoded address wins over a centroid, and
@@ -1597,11 +1759,27 @@ def apply_cache(arcades, cache=None, path=None, manual=None,
     the geocoder answered badly or not at all. They are placed at "address"
     precision, since a human read the venue off a map rather than off a POI
     index.
+
+    **The district gate runs HERE as well as at fetch time**, and it has to.
+    The committed cache holds 5,702 answers fetched before the gate existed,
+    and nothing re-asks them: ``run`` never re-fetches a hit, and a weekly
+    build reads the file and never opens a socket. A gate that only ran during
+    an opt-in refresh would leave every one of those rows exactly as wrong as
+    it is today. A rejection here places nothing and logs why; china_place
+    then gives the row its honest district centroid, which is what it had
+    before the geocoder answered.
+
+    Nothing in this function writes to the cache file. A rejected answer stays
+    in ``china_geocode.json`` untouched, so the build stays deterministic and
+    a later refresh can still see what the provider said.
+
+    ``reject_log``, when given a list, collects one record per refusal.
     """
     cache = cache if cache is not None else load_cache(path)
     manual = manual if manual is not None else load_manual(manual_path)
     if not cache and not manual:
         return []
+    index = china_place.load_areas()
     log = []
     for entry in arcades:
         if entry.get("lat") is not None or entry.get("lng") is not None:
@@ -1622,17 +1800,41 @@ def apply_cache(arcades, cache=None, path=None, manual=None,
                         "level": "address", "provider": "manual",
                         "lat": entry["lat"], "lng": entry["lng"]})
             continue
-        rec = lookup(cache, qualified_address(entry))
+        addr = qualified_address(entry)
+        rec = lookup(cache, addr)
         if not rec:
             continue
         level = USABLE_PRECISION.get(rec.get("precision"))
         if not level:
             continue
+        formatted = rec.get("formatted") or ""
+        ok, why = verify_district(formatted, entry_district(entry, index),
+                                  addr, index)
+        if not ok:
+            # Placing nothing is the point. The row falls through to
+            # china_place, which puts it on the centroid of the district it
+            # actually names and flags it approximate - honest, and 100 km
+            # closer than the answer just refused.
+            if reject_log is not None:
+                reject_log.append({"id": entry.get("id"),
+                                   "name": entry.get("name"),
+                                   "addr": entry.get("addr"),
+                                   "query": rec.get("query"),
+                                   "got": formatted, "why": why,
+                                   "lat": rec.get("lat"),
+                                   "lng": rec.get("lng")})
+            continue
         entry["lat"] = round(float(rec["lat"]), 6)
         entry["lng"] = round(float(rec["lng"]), 6)
-        # Still "approx": the pin is the building the address names, not a
-        # surveyed doorway, and the panel says so. What changes is the LEVEL -
-        # "the mall in the address" instead of "the middle of the district".
+        # Still "approx", and merge no longer strips it. Baidu's qt=s is a POI
+        # SEARCH: the answer is whichever POI ranked first, so "poi precision"
+        # says a building was found, never that it was THIS building. For a
+        # venue inside a mall the answer is routinely the mall itself
+        # ("和瑞欢乐城(常德店)"), which the arcade sits somewhere inside - an
+        # approximation by any reading, and one js/panel.js already has the
+        # wording for. See the comment in merge.py for why no attempt is made
+        # to tell the two apart: it was measured and it cannot be done
+        # reliably enough to justify removing a caveat.
         entry["approx"] = True
         entry["approx_level"] = level
         note = ("position from address: geocoded to %s precision by %s"
@@ -1712,11 +1914,11 @@ def main():
     addresses = (_load_addresses(args.addresses_from)
                  if args.addresses_from else [])
     queries = {}
-    expects = {}
+    plans = {}
     if args.from_arcades:
         blob = common.load_json(args.from_arcades)
-        harvested, queries, expects = addresses_for(
-            blob.get("arcades") or [], with_queries=True, with_expects=True)
+        harvested, queries, plans = addresses_for(
+            blob.get("arcades") or [], with_queries=True, with_plans=True)
         addresses += harvested
     if addresses:
         print("geocode_cn: %d address(es) from %s"
@@ -1731,7 +1933,7 @@ def main():
     cache = run(addresses, out_dir=args.data, limit=args.limit,
                 provider=args.provider, sleep=args.sleep,
                 dry_run=args.dry_run, queries=queries,
-                reject_log=rejections, expects=expects,
+                reject_log=rejections, plans=plans,
                 retry_misses=args.retry_misses)
     if args.reject_log and rejections:
         common.save_json(args.reject_log, rejections)

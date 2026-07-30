@@ -525,22 +525,52 @@ def stale(resolved_at, months=12):
 
 # ----------------------------------------------------------------- selection --
 
-def photo_ids_from_enrichment(enrich_path):
+# MUST mirror js/panel.js imageRecords(), which is what actually decides
+# whether a Google photo is ever asked for at runtime. That function reads an
+# images[] array AND four single-field spellings, on both the arcade row and
+# the enrichment entry. If this list is narrower than that one, we pay for a
+# Text Search on an arcade the frontend will never show a Google photo for -
+# the ID is resolved, then the panel finds a photo it already had and never
+# calls Google. Real money for nothing.
+#
+# Today every photographed entry uses images[] (1,013 of them, 0 single-field),
+# so the extra fields are currently a no-op. They are here because the BemaniCN
+# harvest shapes `image_thumb`, and the day one lands without an images[] array
+# is the day this silently starts billing.
+PHOTO_FIELDS = ("image_thumb", "image", "photo", "photo_url")
+
+
+def _has_photo(entry):
+    if not isinstance(entry, dict):
+        return False
+    if entry.get("images"):
+        return True
+    return any(entry.get(f) for f in PHOTO_FIELDS)
+
+
+def photo_ids_from_enrichment(enrich_path, arcades=None):
     """Arcade ids that already have a real venue photo of our own.
 
     Ours is licence-clean and free, so Google is only ever asked to fill a
     gap. Resolving an ID for a store we can already illustrate is money spent
     on a photo js/gphotos.js will never show.
     """
+    out = set()
+
+    # The arcade row itself can carry a photo field, and panel.js checks it
+    # first, so it counts as "already photographed" too.
+    for a in (arcades or []):
+        if _has_photo(a):
+            out.add(str(a.get("id")))
+
     if not os.path.isfile(enrich_path):
-        return set()
+        return out
     try:
         blob = common.load_json(enrich_path)
     except (ValueError, OSError):
-        return set()
-    out = set()
+        return out
     for k, v in (blob.get("arcades") or {}).items():
-        if isinstance(v, dict) and v.get("images"):
+        if _has_photo(v):
             out.add(str(k))
     return out
 
@@ -575,7 +605,8 @@ def run_resolve(key, args):
     store = load_store(out_path)
 
     arcades = common.load_json(os.path.join(args.out, ARCADES_FILE))["arcades"]
-    have_photo = (photo_ids_from_enrichment(os.path.join(args.out, ENRICH_FILE))
+    have_photo = (photo_ids_from_enrichment(
+                      os.path.join(args.out, ENRICH_FILE), arcades)
                   if args.missing_photos_only else set())
 
     todo = select_arcades(arcades, store, args, have_photo)
@@ -700,9 +731,28 @@ def run_refresh(key, args):
             try:
                 now_id = refresh_id(key, rec.get("place_id"))
             except ApiError as e:
-                if e.status in (400, 401, 403):
+                # 401/403 are KEY problems (bad key, wrong restriction, API
+                # off) and every remaining call would fail the same way, so
+                # stop. A 400 is INVALID_REQUEST for THIS id - a truncated or
+                # malformed stored place_id - and that must not abort the
+                # batch: refresh is free and re-runnable, and one bad row
+                # would otherwise poison every future --refresh --all run.
+                if e.status in (401, 403):
                     print("place_ids: FATAL %s" % e, file=sys.stderr)
                     break
+                if e.status == 400:
+                    gone += 1
+                    store["misses"][aid] = {
+                        "name": rec.get("name"),
+                        "country": rec.get("country"),
+                        "checked_at": date.today().isoformat(),
+                        "reason": "place_id_invalid",
+                        "was": rec.get("place_id"),
+                    }
+                    store["places"].pop(aid, None)
+                    print("  BAD  %-6s %s (invalid place_id, dropped)"
+                          % (aid, rec.get("name") or ""))
+                    continue
                 print("place_ids: refresh %s failed: %s" % (aid, e),
                       file=sys.stderr)
                 continue

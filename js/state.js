@@ -32,6 +32,42 @@ window.AM = window.AM || {};
     ["museca", "MUSECA", "#7E57C2"],
     ["reflec", "REFLEC BEAT", "#EF5350"],
     ["taiko", "Taiko no Tatsujin", "#D32F2F"],
+    /* Six titles that scrapers/ziv.py already slugs out of the `other` bucket
+       (pump_it_up 1562 rows, stepmaniax 597, wacca 252, groove_coaster 225,
+       crossbeats 51, beatstream 8 in data_raw/ziv.json). merge.py's GAME_SLUGS
+       does not list them, so today the merge reverts every one to `other` and
+       these rows match nothing - they are inert until that one line changes.
+       They are declared here first so the chip, the filter, the colour, the
+       legend and the per-game price lookup all light up the moment it does,
+       rather than the frontend becoming the second half of a two-part fix.
+
+       maimai CLASSIC IS DELIBERATELY NOT HERE, even though ziv.py promotes it
+       alongside these six and the raw file carries 266 rows. It is already
+       modelled as the maimai_classic CAB_VARIANT, which is the more accurate
+       shape: a FiNALE cabinet is a maimai DX store's OTHER CABINET, not a
+       separate venue category, and the variant carries the offline warning
+       that matters (every maimai network closed in 2020). Giving it a game
+       slug too would double-name the same machine - 46 stores in the current
+       data have both a classic and a DX cabinet and would show a "maimai"
+       chip AND a "FiNALE / pre-DX" badge on their maimai DX chip, which is the
+       one state this must not produce. Six rows, not seven; see the merge.py
+       note in the handoff.
+
+       Colours are chosen against the light OSM basemap and measured, not
+       eyeballed: the tightest CIEDE2000 distance between any new colour and
+       any of the 19 above is dE 15.05 (pump_it_up vs museca), against dE 4.40
+       for the existing palette's own closest pair (chunithm vs dance_around).
+       They are not all mutually distinguishable at 20px - 25 categorical hues
+       cannot be - but marker colour comes from the first SELECTED game, so a
+       reader sees a handful at a time, and no new colour is a worse neighbour
+       than pairs the map already ships. */
+    ["pump_it_up", "Pump It Up", "#303F9F"],
+    ["stepmaniax", "StepManiaX", "#00897B"],
+    ["wacca", "WACCA", "#880E4F"],
+    ["groove_coaster", "Groove Coaster", "#827717"],
+    ["crossbeats", "crossbeats", "#5D4037"],
+    ["beatstream", "BeatStream", "#33691E"],
+    /* Stays last: the catch-all must sort after every named game. */
     ["other", "Other", "#9E9E9E"]
   ];
   var GAME_LABEL = {}, GAME_COLOR = {}, GAME_ORDER = [];
@@ -297,6 +333,42 @@ window.AM = window.AM || {};
     return true;
   }
 
+  /* Sum of only the counts a source ACTUALLY PUBLISHED, or null when none of
+     them survive countIsShowable.
+
+     This exists because the panel and the marker were telling different
+     stories about the same store. AM.format.totalCabs sums game_counts RAW,
+     which is the right answer to "what is in the file" and the wrong answer to
+     "how big is this arcade": a lone ZIv machine row means "this game is
+     here", not "there is exactly one cabinet", and countIsShowable is the rule
+     that already suppresses it everywhere a NUMBER is printed.
+
+     KINGPIN MELBOURNE (id 177) is the case that made this visible. Its raw sum
+     is 6, which the marker graded "3 to 9 cabinets", while the panel printed
+     "maimai DX | CHUNITHM x2 listed | DDR | DANCERUSH | Taiko" - four of its
+     five counts suppressed, a showable sum of 2. One store, two contradictory
+     claims, and the bigger one was the one drawn on the map. 516 arcades
+     disagreed this way and 213 of them were graded into the wrong tier.
+
+     Returns null, never 0, when nothing is showable: that is the same contract
+     AM.format.totalCabs uses, and it is what lets markers.js fall through to
+     the UNKNOWN tier without a special case. "We do not know how big this is"
+     and "this is tiny" are different statements and must not share a symbol. */
+  function showableCabs(a) {
+    var counts = a && a.game_counts;
+    if (!counts || typeof counts !== "object") return null;
+    var total = 0, seen = false;
+    for (var g in counts) {
+      if (!Object.prototype.hasOwnProperty.call(counts, g)) continue;
+      var n = counts[g];
+      if (typeof n !== "number" || !isFinite(n) || n <= 0) continue;
+      if (!countIsShowable(a, g)) continue;
+      total += n;
+      seen = true;
+    }
+    return seen ? total : null;
+  }
+
   /* "listed" means a lower bound: this many were enumerated, there may be
      more. Explicit quantities and BemaniCN's published per-title numbers are
      not hedged; a ZIv enumeration is. Falls back to the arcade-level
@@ -504,15 +576,34 @@ window.AM = window.AM || {};
   }
 
   /* Which `other` titles a store actually has, so the grey "Other" chip can
-     stop being a black box. Returns [] when nothing is derivable. */
+     stop being a black box. Returns [] when nothing is derivable.
+
+     A title that has since been PROMOTED to a real game slug is skipped, and
+     that guard is what keeps this list from double-naming a machine. Six of
+     the eight entries in OTHER_GAMES now also exist in GAMES, waiting on
+     merge.py; the day the merge stops reverting them, a store with a Pump It
+     Up cabinet gets a real "Pump It Up" chip, and without this test the grey
+     chip beside it would ALSO read "Pump It Up" off the same cabinet. The
+     store has one machine, so the UI must name it once.
+
+     Only the arcade's own games list can decide this - not the presence of the
+     slug in GAMES - because during the changeover a store scraped before the
+     merge fix still carries the title under `other` alone and must keep its
+     name on the grey chip. Beat Saber and DanceEvolution have no game slug at
+     all, so they always fall through and always show here. */
   function otherGamesOf(a) {
     var titles = cabTitles(a);
     if (!titles.length) return [];
+    var games = (a && a.games) || [];
     var seen = {}, out = [];
     for (var i = 0; i < titles.length; i++) {
       for (var j = 0; j < OTHER_GAMES.length; j++) {
         var og = OTHER_GAMES[j];
-        if (!seen[og.id] && og.re.test(titles[i])) { seen[og.id] = true; out.push(og); }
+        if (seen[og.id]) continue;
+        /* Already promoted to its own chip on THIS store: naming it again on
+           the catch-all chip would claim a second machine that is not there. */
+        if (games.indexOf(og.id) !== -1) { seen[og.id] = true; continue; }
+        if (og.re.test(titles[i])) { seen[og.id] = true; out.push(og); }
       }
     }
     return out;
@@ -550,6 +641,7 @@ window.AM = window.AM || {};
     num: num,
     gameCount: gameCount,
     countIsShowable: countIsShowable,
+    showableCabs: showableCabs,
     countIsQualified: countIsQualified,
     cabTitles: cabTitles,
     variantsOf: variantsOf,

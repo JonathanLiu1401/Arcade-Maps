@@ -52,6 +52,18 @@ Usage
   python scrapers/bemanicn_photos.py                 # full crawl
   python scrapers/bemanicn_photos.py --ids-file x.json
   python scrapers/bemanicn_photos.py --rebuild-index # journal -> index only
+
+A serial full crawl of ~3,800 shops takes about 4.5 hours (latency-bound, not
+rate-limited). Splitting the id list across 3 processes with one journal each
+finishes in ~75 minutes and still holds the origin under ~0.8 req/s. Rebuild
+the single canonical index afterwards from ALL the journals, passing the FULL
+id list so every record still resolves its arcade_id and country:
+
+  python scrapers/bemanicn_photos.py --rebuild-index \
+      --ids-file all_shop_ids.json \
+      --journal data_raw/tmp_bemanicn_shard0.jsonl \
+      --extra-journal data_raw/tmp_bemanicn_shard1.jsonl \
+      --extra-journal data_raw/tmp_bemanicn_shard2.jsonl
 """
 
 from __future__ import annotations
@@ -94,8 +106,12 @@ ARCADES_PATH = os.path.join(REPO, "data", "arcades.json")
 OK = "ok"                    # bytes mirrored
 NO_PHOTO = "no_photo"        # shop exists, image_thumb is null
 GONE = "gone"                # shop id 404s
+IMAGE_GONE = "image_gone"    # shop lists a thumb, but OSS 404s the object
 ERROR = "error"              # transient/unexpected failure, retried next run
-PERMANENT = (OK, NO_PHOTO, GONE)
+# Statuses a resume treats as settled. IMAGE_GONE is included: the row exists
+# in BemaniCN's DB but the file is missing from OSS, so re-signing the URL on
+# a later run cannot conjure it back.
+PERMANENT = (OK, NO_PHOTO, GONE, IMAGE_GONE)
 
 
 # --------------------------------------------------------------------------
@@ -334,7 +350,19 @@ def mirror_one(shop_id, asset_dir):
                             "images_count"))
         try:
             data = fetch_bytes(thumb["url"])
-        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                # The shop row still points at an object OSS no longer has.
+                # A fresh token will 404 too, so stop rather than retry.
+                return dict(base, status=IMAGE_GONE,
+                            remote_filename=thumb.get("filename"),
+                            error="image 404 on OSS")
+            last_err = e
+            print("  shop %s image attempt %d/%d failed: %s"
+                  % (shop_id, attempt + 1, IMG_RETRIES, e), file=sys.stderr)
+            time.sleep(1 + attempt)
+            continue
+        except (urllib.error.URLError, OSError) as e:
             last_err = e
             print("  shop %s image attempt %d/%d failed: %s"
                   % (shop_id, attempt + 1, IMG_RETRIES, e), file=sys.stderr)
@@ -389,11 +417,24 @@ def build_index(journal, meta_by_shop, out_path):
         meta = meta_by_shop.get(sid) or {}
         status = rec.get("status")
         if status == OK:
+            w, h = rec.get("w"), rec.get("h")
+            # A very tall/wide sliver is a screenshot of a price list or a
+            # poster, not a photo of the venue. Flag it so the UI can demote
+            # it rather than letterboxing it into a photo slot.
+            aspect = None
+            if w and h:
+                aspect = round(max(w, h) / float(min(w, h)), 2)
             photos[sid] = {
+                # `url` is the same relative path as `file`. panel.js's
+                # safePhotoUrl() accepts a scheme-less same-origin path, so an
+                # image record can be handed to the UI unchanged.
+                "url": rec.get("file"),
                 "file": rec.get("file"),
                 "format": rec.get("format"),
-                "w": rec.get("w"),
-                "h": rec.get("h"),
+                "w": w,
+                "h": h,
+                "aspect": aspect,
+                "extreme_aspect": bool(aspect and aspect >= 2.5),
                 "bytes": rec.get("bytes"),
                 "sha256": rec.get("sha256"),
                 "dup_count": hash_counts.get(rec.get("sha256"), 1),
@@ -402,11 +443,15 @@ def build_index(journal, meta_by_shop, out_path):
                 "license": LICENSE,
                 "source": SOURCE,
                 "source_url": rec.get("source_url"),
+                # `page_url` is the canonical name used by photos.py /
+                # enrich.py image records; kept identical to source_url so a
+                # record can be consumed by either without a translation step.
+                "page_url": rec.get("source_url"),
                 "tier": "venue",
                 "arcade_id": meta.get("arcade_id"),
                 "country": meta.get("country"),
             }
-        elif status in (NO_PHOTO, GONE, ERROR):
+        elif status in (NO_PHOTO, GONE, IMAGE_GONE, ERROR):
             misses[sid] = {"status": status, "country": meta.get("country")}
 
     by_country = {}
@@ -440,12 +485,16 @@ def build_index(journal, meta_by_shop, out_path):
                             if r.get("status") == NO_PHOTO),
             "gone": sum(1 for r in journal.values()
                         if r.get("status") == GONE),
+            "image_gone": sum(1 for r in journal.values()
+                              if r.get("status") == IMAGE_GONE),
             "error": sum(1 for r in journal.values()
                          if r.get("status") == ERROR),
             "bytes_on_disk": sum(p.get("bytes") or 0
                                  for p in photos.values()),
             "distinct_images": len(hash_counts),
             "reused_images": sum(1 for c in hash_counts.values() if c > 1),
+            "extreme_aspect": sum(1 for p in photos.values()
+                                  if p.get("extreme_aspect")),
         },
         "by_country": by_country,
         "top_duplicates": [{"sha256": h, "shops": c} for c, h in dup_top],
@@ -549,11 +598,11 @@ def main():
                     retry_errors=not args.skip_errors)
 
     c = doc["counts"]
-    print("\nphotos=%d no_photo=%d gone=%d error=%d | %.1f MB | "
-          "distinct=%d reused=%d"
-          % (c["photos"], c["no_photo"], c["gone"], c["error"],
-             c["bytes_on_disk"] / 1048576.0, c["distinct_images"],
-             c["reused_images"]))
+    print("\nphotos=%d no_photo=%d gone=%d image_gone=%d error=%d | %.1f MB | "
+          "distinct=%d reused=%d extreme_aspect=%d"
+          % (c["photos"], c["no_photo"], c["gone"], c["image_gone"],
+             c["error"], c["bytes_on_disk"] / 1048576.0,
+             c["distinct_images"], c["reused_images"], c["extreme_aspect"]))
     print("by country: %s" % json.dumps(doc["by_country"], ensure_ascii=False))
     print("index: %s" % args.index)
 

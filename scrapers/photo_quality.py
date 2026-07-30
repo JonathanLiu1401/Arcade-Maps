@@ -364,6 +364,18 @@ def age_years(ts, now=None):
 
 FIRST_SLICE = 4096          # enough for a PNG IHDR and most JPEG SOFs
 WIDE_SLICE = 262143         # re-read when a fat EXIF/ICC pushed SOF past 4 KB
+# Some phone JPEGs bury the frame header behind a LOT of metadata. Measured on
+# this corpus: 22 files came back unmeasurable from a 256 KB read. Six are HTC
+# handset shots carrying a 55 KB EXIF plus four 64 KB APP4 segments, putting
+# SOF at byte 286,019. This third read recovered 20 of the 22.
+#
+# The window deliberately STOPS here. The last two files put SOF at 1,272,008
+# and 1,911,797 bytes, and chasing them would mean downloading ~2 MB of a
+# hotlinked third-party image to learn its width - which is most of the file,
+# for two images out of 2,142. They stay "unknown", which is the honest
+# outcome: unknown scores neutrally and is kept, never dropped. Reporting a
+# dimension we did not read would be worse than admitting we did not read it.
+HUGE_SLICE = 1048575
 
 
 def _http_slice(url, last_byte, timeout=25):
@@ -416,13 +428,19 @@ def probe(url, sleep=0.15, retries=2):
             # wider read. Recording "unknown" here would silently skew the
             # dimension stats for an unknown slice of the corpus.
             if w is None and raw[:2] == b"\xff\xd8":
-                time.sleep(sleep)
-                raw2, total2, _ = _http_slice(url, WIDE_SLICE)
-                if total2:
-                    total = total2
-                w, h, fmt = parse_size(raw2)
-                if fmt is None:
-                    fmt = "jpeg"
+                for wider in (WIDE_SLICE, HUGE_SLICE):
+                    time.sleep(sleep)
+                    raw2, total2, _ = _http_slice(url, wider)
+                    if total2:
+                        total = total2
+                    w, h, fmt = parse_size(raw2)
+                    if fmt is None:
+                        fmt = "jpeg"
+                    if w:
+                        break
+                    # No point reading further than the file actually is.
+                    if total and wider >= total:
+                        break
             if total is None and len(raw) < FIRST_SLICE:
                 # The whole file fit inside the slice: its length is the total.
                 total = len(raw)

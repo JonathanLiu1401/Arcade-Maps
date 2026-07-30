@@ -135,16 +135,18 @@ billed to you.
 
 On the key's settings page:
 
-**Application restrictions** -> **Websites**, and add exactly:
+**Application restrictions** -> **Websites**, and add the live site:
 
 ```
 https://jonathanliu1401.github.io/*
-http://localhost:*
-http://127.0.0.1:*
 ```
 
-The first is the live site. The two local entries are for development
-(`python3 -m http.server`); drop them if you never test locally.
+If you also want to test locally (`python3 -m http.server`), add your dev
+origin as a second entry. The console validates what you type and shows the
+accepted forms next to the field, so enter it the way the console asks rather
+than copying a pattern from here: I have not verified which port-wildcard
+syntax it currently accepts, and an entry the console rejects looks exactly
+like the feature being broken. If you never test locally, one entry is enough.
 
 **API restrictions** -> **Restrict key** -> select **Places API (New)** only.
 

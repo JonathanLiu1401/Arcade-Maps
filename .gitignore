@@ -9,3 +9,6 @@ reference/
 
 # Playwright MCP session artefacts (screenshots, page snapshots)
 .playwright-mcp/
+
+# Photo probe cache (rebuildable; enables --offline re-scoring)
+data_raw/photo_probe_cache.json

@@ -779,8 +779,18 @@ body.am-empty #map::after {
 
 /* Arrows. 44px is the phone tap minimum and it is used on every viewport -
    a desktop pointer is not harmed by a target being comfortable. They sit
-   OUTSIDE .pl-slides so the transform never moves them. */
-.pl-nav {
+   OUTSIDE .pl-slides so the transform never moves them.
+
+   `#place button.pl-nav` is NOT over-qualified, it is the minimum that wins.
+   `#place button:not(.act)` above sets `background: none` at specificity
+   (1,1,1). A bare `.pl-nav` is (0,1,0) and a prefixed `#place .pl-nav` is
+   still only (1,1,0), so BOTH lose to it and the arrows rendered with no
+   plate at all - a white chevron floating on the photo, invisible against a
+   bright slide. Adding the element selector takes this to (1,2,0), which is
+   the first form that beats the reset. Measured in the browser both times:
+   backgroundColor computed rgba(0,0,0,0) until `button` was added. The dots
+   carry the element selector for the same reason. */
+#place button.pl-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; padding: 0; z-index: 2;
   display: flex; align-items: center; justify-content: center;
@@ -790,15 +800,15 @@ body.am-empty #map::after {
   transition: opacity 140ms ease, background 140ms ease;
   -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
 }
-.pl-nav.prev { left: 4px; }
-.pl-nav.next { right: 4px; }
-.pl-nav:hover { background: rgba(15, 16, 20, 0.8); opacity: 1; }
-.pl-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#place button.pl-nav.prev { left: 4px; }
+#place button.pl-nav.next { right: 4px; }
+#place button.pl-nav:hover { background: rgba(15, 16, 20, 0.8); opacity: 1; }
+#place button.pl-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* At the ends the arrow is disabled rather than hidden: a control that
    vanishes moves the other one under the reader's finger mid-tap. It stays
    put, greys out, and stops taking pointer events. */
-.pl-nav[disabled] { opacity: 0.25; cursor: default; pointer-events: none; }
-.pl-nav .ic { width: 20px; height: 20px; stroke-width: 2.2; }
+#place button.pl-nav[disabled] { opacity: 0.25; cursor: default; pointer-events: none; }
+#place button.pl-nav .ic { width: 20px; height: 20px; stroke-width: 2.2; }
 
 /* "2 / 3" - the unambiguous position readout. aria-hidden: the live region in
    the markup announces changes instead, so a screen reader is not read a
@@ -820,18 +830,18 @@ body.am-empty #map::after {
   position: absolute; top: 0; left: 50%; transform: translateX(-50%);
   z-index: 2; display: flex; align-items: center; gap: 2px;
 }
-.pl-dot {
+#place button.pl-dot {
   width: 22px; height: 44px; padding: 0; border: none; background: none;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
-.pl-dot::before {
+#place button.pl-dot::before {
   content: ""; width: 7px; height: 7px; border-radius: 50%;
   background: rgba(255, 255, 255, 0.45);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   transition: background 140ms ease, transform 140ms ease;
 }
-.pl-dot.on::before { background: #fff; transform: scale(1.25); }
-.pl-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: -6px; }
+#place button.pl-dot.on::before { background: #fff; transform: scale(1.25); }
+#place button.pl-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: -6px; }
 
 /* Screen-reader-only live region. Not display:none - that would stop it being
    announced, which is its whole job. */
@@ -1113,8 +1123,8 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 
      The dots keep their full 44px touch strip - it fits inside 62px, and the
      one control that must never shrink on a phone is the one a thumb uses. */
-  .pl-hero.has-gallery .pl-nav { display: none; }
-  #place.expanded .pl-hero.has-gallery .pl-nav { display: flex; }
+  #place .pl-hero.has-gallery button.pl-nav { display: none; }
+  #place.expanded .pl-hero.has-gallery button.pl-nav { display: flex; }
   /* The counter would sit on top of the dots' touch strip in a 62px band, and
      the dots already say the same thing. It returns with the arrows. */
   .pl-hero.has-gallery .pl-count { display: none; }

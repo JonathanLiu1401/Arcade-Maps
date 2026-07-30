@@ -1,0 +1,33 @@
+{
+ "_comment": "Hand-researched coordinates for mainland-China arcades no geocoder resolves. WGS-84, like every other coordinate in this repo. Read by scrapers/geocode_cn.py:apply_cache, which places these BEFORE the geocode cache and before china_place's centroids. Every record must carry source_url: a coordinate nobody can audit is indistinguishable from one somebody invented, and apply_cache drops any record without one. The 'name' field is a safety interlock, NOT decoration - merge reassigns ids 1..N by (country, name, addr) on every build, so an id alone would silently drift onto a different venue if the upstream feed adds or drops a row. apply_cache refuses to place a record whose name no longer matches the id and says so loudly.",
+ "coord_system": "wgs84",
+ "entries": {
+  "983": {
+   "lat": 44.835248,
+   "lng": 82.366654,
+   "name": "Bubble's Home",
+   "source_url": "https://api.map.baidu.com/?qt=s&wd=%E5%8F%8C%E6%B2%B3%E5%B8%82%E5%A3%B9%E5%8F%B7%E5%85%AC%E9%A6%86",
+   "method": "Baidu POI search for the residential complex named in the address (壹号公馆, 双河市灵峪路与天山路交叉路口往北约120米). BD-09 converted to WGS-84 via the vendored eviltransform.bd2wgs.",
+   "resolved_at": "2026-07-31",
+   "note": "The venue's own address (双河市明珠街道壹号公馆1单元) names a unit inside a residential block, which no POI index holds; the BLOCK is indexed and is what this pin is. Automatic geocoding failed for a different reason: 双河市 is a Xinjiang Production and Construction Corps city that the area table files directly under 新疆, while Baidu answers every query in the area with the surrounding prefecture 博尔塔拉蒙古自治州, so the two names never matched. Verified 1.4 km from the 双河市 centroid, i.e. inside the city it claims."
+  },
+  "6456": {
+   "lat": 47.516575,
+   "lng": 122.882121,
+   "name": "街霸电玩台球厅",
+   "source_url": "https://map.bemanicn.com/s/6639",
+   "method": "Baidu POI search for the district named in the address returns exactly one arcade-tagged venue in it: 街霸电玩娱乐厅, di_tag '休闲娱乐 游乐游艺 电玩电竞', at 富强路与中兴街交叉口西120米. BD-09 converted to WGS-84 via eviltransform.bd2wgs. Recorded manually rather than left to the geocoder because the match rests on a trading name (街霸) rather than on an address, and that reasoning belongs in the file rather than in a cache row.",
+   "resolved_at": "2026-07-31",
+   "note": "CONFIDENCE: good, not certain. The upstream address is the bare district 碾子山区 with no street, so there is nothing to corroborate against. What supports the identification: the name 街霸 is distinctive and matches; the venue TYPE matches (bemanicn lists this row as an arcade with 1 taiko cabinet, and the answer is Baidu-tagged as an arcade); and 碾子山区 is a small district of 56,553 people where this is the only arcade-tagged POI, so a same-named branch nearby is implausible. What is unconfirmed: the upstream name says 台球厅 (billiards hall) and the POI says 娱乐厅 (amusement hall), which is the usual drift between a community listing and a POI index but is not proof. Web search found no independent listing for the venue. If this pin is ever disputed, prefer the district centroid over guessing again."
+  },
+  "6687": {
+   "lat": 38.085852,
+   "lng": 113.385389,
+   "name": "跳跃者成人室内蹦床公园",
+   "source_url": "https://m.map.360.cn/m/search/detail/pid=d2f71ac5203619b7",
+   "method": "Located the mall named in the address (凯悦城) in 盂县, Yangquan. Two independent sources agree: 360 Maps places it at GCJ-02 38.08711,113.39214 (WGS-84 38.086297,113.385207 after eviltransform.gcj2wgs) and Baidu's POI index at WGS-84 38.085852,113.385389 - 52 m apart. The Baidu value is recorded.",
+   "resolved_at": "2026-07-31",
+   "note": "The pin is the mall, not the unit inside it: the address (石阳线凯悦城) names no floor or shop number. Automatic geocoding failed because 石阳线 is a HIGHWAY spanning several prefectures, so the address rung resolved into 晋城 (292 km away, correctly rejected by the area gate), and the venue-name rung returned an unrelated shop that the name check correctly refused. 凯悦城 sits in 盂县, a county of Yangquan, 1.7 km from the 盂县 centroid and 30 km from the Yangquan city centroid this row was previously stacked on."
+  }
+ }
+}

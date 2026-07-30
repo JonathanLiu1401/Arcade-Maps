@@ -55,9 +55,12 @@ The full-size original and the multi-photo gallery are behind a login and are
 not publicly reachable. Use the `w` and `h` fields in the index and render
 these at their native size. Do not upscale a 200 px thumbnail into a hero slot.
 
-A minority of shops upload a notice poster or a promotional graphic instead of
-a photo of the venue. Treat these as "the picture the venue's community posted",
-not as a guaranteed photograph of the premises.
+A minority of shops upload a notice poster, a price-list screenshot, or a
+promotional graphic instead of a photo of the venue. Treat these as "the picture
+the venue's community posted", not as a guaranteed photograph of the premises.
+The index flags the most obvious cases with `extreme_aspect` (a long sliver is
+almost always a screenshot); `dup_count` marks a cover reused across several
+branches of a chain, which is a brand image rather than that branch.
 
 ## Takedown
 

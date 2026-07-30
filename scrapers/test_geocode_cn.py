@@ -53,6 +53,19 @@ def fresh_dir():
     return d
 
 
+def _raises(exc, fn):
+    """True when ``fn()`` raises ``exc``. For the gates that must not fail
+    open: a check that only asserts a return value cannot tell "the gate said
+    yes" from "the gate never ran"."""
+    try:
+        fn()
+    except exc:
+        return True
+    except Exception:
+        return False
+    return False
+
+
 def set_keys(amap=None, google=None):
     """Point the module at a provider (or at none) for the next run()."""
     for env, val in ((gc.ENV_KEYS["amap"], amap),
@@ -1159,6 +1172,365 @@ gc.apply_cache([a3], cache=cache)
 check("a row that already has coordinates is never overwritten",
       (a3["lat"], a3["lng"]) == (41.0, 123.0))
 check("an empty cache is a no-op", gc.apply_cache([arc(id=11)], cache={}) == [])
+
+# ------------------------------------------------------- the district gate --
+# verify_area stops at the city. A Chinese prefecture is the size of a small
+# country, so "right city" and "right place" are not the same claim, and the
+# gap is where arcade 893 ended up 100 km from where it is.
+print("\n--- verify_district: the answer's district must be the entry's ---")
+
+IDX = china_place.load_areas()
+# Area ids are STRINGS in china_areas.json. Passing ints here is exactly the
+# mistake that silently disabled this gate while the tests still said PASS,
+# so the shape is asserted before anything is checked with it.
+LIXIAN, WULING = "430723", "430702"        # 澧县 / 武陵区, under 常德市
+JIANCAOPING, WANBOLIN = "140108", "140109"  # 尖草坪区 / 万柏林区, under 太原市
+check("the test's own district ids are real keys in the area table",
+      all(i in IDX.areas for i in (LIXIAN, WULING, JIANCAOPING, WANBOLIN)))
+check("an id that is not in the table is an ERROR, never a silent pass",
+      _raises(KeyError, lambda: gc.verify_district("x", 430723, None, IDX)))
+
+# The bug, exactly as measured. 893's address names no district, so its first
+# candidate asked about "常德市欢乐城" and Baidu answered with the 武陵区 one -
+# in the right city, in the wrong county, and on top of arcade 889's pin.
+ok, why = gc.verify_district(
+    "和瑞欢乐城(常德店) 湖南省常德市武陵区武陵大道998号 常德市武陵区",
+    LIXIAN, "湖南常德市欢乐城22号入口下", IDX)
+check("the 893 case: a 武陵区 answer is refused for a 澧县 entry",
+      ok is False, why)
+check("and the reason names both districts",
+      "武陵区" in why and "澧县" in why, why)
+
+# The legitimate mall match the task calls out: a venue name that embeds the
+# mall it sits in is a correct answer to an address naming that mall, as long
+# as the district agrees. This one must NOT be refused.
+ok, why = gc.verify_district(
+    "和瑞欢乐城(常德店) 湖南省常德市武陵区武陵大道998号 常德市武陵区",
+    WULING, "湖南省常德市武陵区武陵大道998号和瑞欢乐城3楼3030号", IDX)
+check("the 889 case: the same answer is fine for the 武陵区 entry it belongs to",
+      ok is True, why)
+
+# The district's SHORT form counts. Baidu writes 常德市武陵区 but plenty of
+# answers say only 武陵.
+ok, why = gc.verify_district("欢乐城 常德武陵大道998号", WULING, None, IDX)
+check("the short form of the district counts as naming it", ok is True, why)
+
+# Silence is not disagreement. An answer that names no district at all is the
+# ordinary case (a bare road and number) and there is nothing to reject.
+ok, why = gc.verify_district("某某广场 湖南省常德市某某路1号", LIXIAN, None, IDX)
+check("an answer naming no district of that city passes", ok is True, why)
+
+# A row that only resolved to a city has no district to be held to.
+ok, why = gc.verify_district("任意答案 常德市武陵区", None, None, IDX)
+check("an entry with no district resolved is not gated", ok is True, why)
+
+# Road AND number override a district token, because the source's district is
+# the thing that is wrong about #2199: the answer repeats 兴华街299号 verbatim.
+ok, why = gc.verify_district(
+    "山姆士广场(兴华街店) 兴华街299号(近顺和中巷) 太原市万柏林区",
+    JIANCAOPING,
+    "山西省太原市尖草坪区汇丰街道兴华街299号山姆士广场三层F3-016", IDX)
+check("a matching road AND number outranks a disagreeing district",
+      ok is True, why)
+
+# ...but the number alone must not, or #1449 (滨河路87号 in two counties,
+# answered with a bathroom-fixtures shop) walks straight through.
+check("a different street number does not corroborate anything",
+      gc._road_number_agrees("四川省巴中市通江县滨河路87号",
+                             "帝菲洁具 四川省巴中市南江县滨河路88号") is False)
+check("no number in the address means no corroboration",
+      gc._road_number_agrees("湖南常德市欢乐城22号入口下",
+                             "和瑞欢乐城 湖南省常德市武陵区武陵大道998号")
+      is False)
+
+# apply_cache is where the gate has to bite: 5,702 answers are already
+# committed and nothing ever re-asks them.
+print("\n--- apply_cache refuses a committed answer in the wrong district ---")
+BAD = ("和瑞欢乐城(常德店) 湖南省常德市武陵区武陵大道998号 常德市武陵区")
+row = arc(id=893, name="1号机长超乐场常德澧县店", addr="澧县欢乐城22号入口下",
+          pref="湖南", notes="region: 湖南省 常德市")
+key = gc.qualified_address(row)
+cache = {key: {"lat": 29.069141, "lng": 111.690946, "provider": "baidu",
+               "precision": "poi", "formatted": BAD, "query": "常德市欢乐城"}}
+rejects = []
+log = gc.apply_cache([row], cache=cache, manual={}, reject_log=rejects)
+check("the wrong-district answer places nothing", row["lat"] is None, repr(row))
+check("and is not logged as a placement", log == [], repr(log))
+check("and IS logged as a rejection", len(rejects) == 1, repr(rejects))
+check("the rejection record names the venue and the reason",
+      rejects and rejects[0]["id"] == 893 and "澧县" in rejects[0]["why"],
+      repr(rejects[0]) if rejects else "")
+check("the cache itself is left untouched",
+      cache[key]["formatted"] == BAD)
+
+good = arc(id=889, name="1号机长常德武陵店",
+           addr="湖南省常德市武陵区武陵大道998号和瑞欢乐城3楼3030号",
+           pref="湖南", notes="region: 湖南省 常德市")
+gkey = gc.qualified_address(good)
+log = gc.apply_cache([good], cache={gkey: dict(cache[key])}, manual={})
+check("the venue that IS in that building is still placed",
+      good["lat"] == 29.069141, repr(good.get("lat")))
+
+# ------------------------------------------- approx survives a mall answer --
+# Bug 1: merge cleared approx for every address/street geocode, so 5,737 China
+# rows asserted building-level accuracy while 0 carried a caveat. Baidu's qt=s
+# is a POI SEARCH and answers a mall query with the MALL, so the pin is the
+# building the venue sits inside - an approximation, and one panel.js already
+# has wording for. Nothing clears the flag now; these assert that.
+print("\n--- a geocoded row keeps its caveat, whatever the answer named ---")
+
+mall = arc(id=886, name="1号机长合肥瑶海天地店",
+           addr="长江东路567号瑶海天地",
+           pref="安徽", notes="region: 安徽省 合肥市")
+mkey = gc.qualified_address(mall)
+log = gc.apply_cache([mall], manual={}, cache={mkey: {
+    "lat": 31.86, "lng": 117.33, "provider": "baidu", "precision": "poi",
+    "formatted": "瑶海天地 安徽省合肥市瑶海区铜陵路街道长江东路567号 合肥市瑶海区"}})
+check("a MALL answer is placed and stays approximate",
+      mall.get("approx") is True and mall.get("approx_level") == "address",
+      repr((mall.get("approx"), mall.get("approx_level"))))
+
+venue = arc(id=895, name="1号机长超乐场茂名化州店",
+            addr="金沙路万达广场",
+            pref="广东", notes="region: 广东省 茂名市")
+vkey = gc.qualified_address(venue)
+log = gc.apply_cache([venue], manual={}, cache={vkey: {
+    "lat": 21.66, "lng": 110.63, "provider": "baidu", "precision": "poi",
+    "formatted": "1号机长超乐场(化州万达店) 广东省茂名市化州市河西街道金沙路 "
+                 "茂名市化州市"}})
+check("an answer naming the ARCADE itself stays approximate too - a POI "
+      "search cannot prove which of a mall's units it found",
+      venue.get("approx") is True and venue.get("approx_level") == "address",
+      repr((venue.get("approx"), venue.get("approx_level"))))
+check("and the log record carries no confirmation field for merge to act on",
+      log and "venue_confirmed" not in log[0], repr(log))
+
+# ------------------------------------------- the gate at FETCH time as well -
+print("\n--- geocode_one applies the district gate to every rung ---")
+set_keys(amap="testkey")
+d = fresh_dir()
+LI_ADDR = "湖南省常德市澧县欢乐城"
+WU_ANSWER = "湖南省常德市武陵区武陵大道998号和瑞欢乐城"
+install({"常德市欢乐城": amap_hit(111.690946, 29.069141, "兴趣点",
+                                 formatted=WU_ANSWER),
+         LI_ADDR: amap_hit(111.7573, 29.6335, "兴趣点",
+                           formatted="湖南省常德市澧县解放路澧州万达广场M+欢乐城")})
+rej = []
+rec, kind = gc.geocode_one("湖南常德市欢乐城", "amap", "testkey", sleep=0,
+                           queries=["常德市欢乐城", LI_ADDR],
+                           on_reject=lambda *a: rej.append(a[-1]),
+                           expect=("湖南", "常德"), want_district=LIXIAN)
+check("the 武陵区 rung is refused at fetch time", len(rej) == 1, repr(rej))
+check("and the next, district-qualified rung is taken instead",
+      kind == "hit" and abs(rec["lat"] - 29.6335) < 0.02,
+      repr((kind, rec.get("lat"))))
+set_keys()
+
+# ================================== the venue-NAME rung and what gates it ==
+# Chinese arcades are POIs in their own right, and their names very often name
+# the mall too, so asking about the NAME resolves rows whose ADDRESS cannot be
+# geocoded at all (a bare district, a highway, a unit inside a housing block).
+# It is also the weakest rung in the ladder, and it fails in a way no area
+# check can see, so it carries an extra gate of its own.
+print("\n--- the venue-NAME rung is offered, prefixed, and last ---")
+
+NAME_CANDS = cn_address.candidates("石阳线凯悦城", city="阳泉市",
+                                   province="山西省",
+                                   name="跳跃者成人室内蹦床公园")
+check("the whole venue name is offered as a candidate",
+      any("跳跃者成人室内蹦床公园" in c for c in NAME_CANDS), repr(NAME_CANDS))
+check("and it carries the administrative prefix, because a bare trading name "
+      "resolves to a same-named branch in another province",
+      all(c.startswith("山西") or c.startswith("阳泉")
+          for c in NAME_CANDS if "跳跃者" in c), repr(NAME_CANDS))
+check("the name rung comes LAST - the address is always the better question",
+      "跳跃者" in NAME_CANDS[-1], repr(NAME_CANDS))
+
+check("a row with no resolved city gets NO name rung at all: an unprefixed "
+      "trading name is exactly the query that lands in the wrong province",
+      cn_address.full_name_queries("跳跃者成人室内蹦床公园") == [],
+      repr(cn_address.full_name_queries("跳跃者成人室内蹦床公园")))
+check("candidates and full_name_queries agree on what the name rungs are, so "
+      "the gate cannot be applied to the wrong subset",
+      all(q in NAME_CANDS for q in
+          cn_address.full_name_queries("跳跃者成人室内蹦床公园",
+                                       city="阳泉市", province="山西省")))
+
+print("\n--- name_agrees: the answer has to be about the VENUE ---")
+# Measured, live, against the keyless endpoint. Each of these is a real answer
+# Baidu returned for a real venue-name query in this dataset.
+for venue, answer, want, why in [
+    ("街霸电玩台球厅",
+     "街霸电玩娱乐厅 富强路与中兴街交叉口西120米 齐齐哈尔市碾子山区",
+     True, "the distinctive half (街霸) matches; 电玩/厅 is generic"),
+    ("街霸电玩台球厅", "碾子山区 黑龙江省齐齐哈尔市碾子山区", False,
+     "the district itself is not a venue"),
+    ("跳跃者成人室内蹦床公园",
+     "浓情码头24h成人用品店 山西省阳泉市城区南山路10号", False,
+     "right city, right province, completely different business"),
+    ("欢乐总动园电玩城",
+     "欢乐时光电玩城 河南省洛阳市汝阳县城关镇人民路郑辉百货四层", False,
+     "two arcades sharing only 电玩城 are not the same arcade"),
+    ("超爱顽洛阳瀍河店",
+     "超爱顽家庭娱乐中心(洛城中街店) 夹马营路555号洛城中街", True,
+     "超爱顽 is distinctive"),
+    ("毛毛虫乐场",
+     "毛毛虫乐园(泗阳哥伦布毛毛虫乐场) 哥伦布广场三楼 宿迁市泗阳县", True,
+     "毛毛虫 survives the generic 乐场/乐园"),
+]:
+    check("%s vs %s -> %s (%s)" % (venue[:10], answer[:14], want, why),
+          cn_address.name_agrees(venue, answer) is want,
+          repr(cn_address.name_segments(venue)))
+
+check("a venue whose whole name is generic has nothing to confirm, so it is "
+      "refused rather than guessed at",
+      not cn_address.name_agrees("电玩城", "某某电玩城 某市某区"))
+
+# The gate is applied ONLY to the name rungs. An address rung already carries
+# the road and number, which is far stronger evidence than a name match, and
+# holding it to the venue name would throw away every correct mall answer.
+print("\n--- the name gate applies to name rungs only ---")
+# One canned answer, one query string, asked twice: once as an address rung and
+# once as a name rung. Only the classification differs, so the difference in
+# outcome is the gate and nothing else.
+NAME_Q = "北京市朝阳区长楹天街"
+gc.fetch = fake_fetch({NAME_Q: {"content": [
+    poi("长楹天街购物中心", "北京市朝阳区常通路1号院", 1298000000, 4825000000,
+        area="北京市朝阳区")]}})[0]
+
+rec, kind = gc.geocode_one("北京朝阳区常通路1号院长楹天街", "baidu", None,
+                           sleep=0, queries=[NAME_Q],
+                           expect=("北京", "北京"), name_queries=[],
+                           venue_name="夸特游艺北京朝阳长楹天街店")
+check("an ADDRESS rung answering with the mall is a hit - the address is the "
+      "evidence, and the mall is where the arcade is", kind == "hit",
+      repr((kind, rec)))
+
+rej = []
+rec, kind = gc.geocode_one("北京朝阳区常通路1号院长楹天街", "baidu", None,
+                           sleep=0, queries=[NAME_Q],
+                           expect=("北京", "北京"), name_queries=[NAME_Q],
+                           venue_name="毫不相干的店名",
+                           on_reject=lambda *a: rej.append(a[-1]))
+check("the SAME answer to a NAME rung is refused when the name does not match",
+      kind != "hit" and rej, repr((kind, rej)))
+
+# ============================ the area gate, where it used to reject truth ==
+# Every case below is a row that was sitting on a centroid because the gate
+# refused a CORRECT answer. The brief asked for the gate to be tightened; the
+# measurement said the opposite, and these are the measurements.
+print("\n--- the area gate no longer refuses correct answers ---")
+
+check("an entry's OWN resolved region beats a substring scan of its address: "
+      "河南洛阳市上海市场... is a Luoyang venue on a market called 上海市场",
+      gc._admin_tokens("河南洛阳市上海市场地下步行街爱尚街") == ("上海", "上海"),
+      repr(gc._admin_tokens("河南洛阳市上海市场地下步行街爱尚街")))
+ok, why = gc.verify_area("河南洛阳市上海市场地下步行街爱尚街",
+                         34.671787, 112.425525,
+                         "兴华地下商业街 河南省洛阳市西工区纱厂南路41号 洛阳市西工区")
+check("...so WITHOUT the override the correct Luoyang answer is thrown away",
+      not ok, why)
+ok, why = gc.verify_area("河南洛阳市上海市场地下步行街爱尚街",
+                         34.671787, 112.425525,
+                         "兴华地下商业街 河南省洛阳市西工区纱厂南路41号 洛阳市西工区",
+                         expect=("河南", "洛阳"))
+check("...and WITH it the row is placed at its address", ok, why)
+
+# 双河市 is a Production and Construction Corps city filed directly under
+# 新疆, while Baidu answers with the prefecture that physically surrounds it.
+# Neither name contains the other and both are right.
+ok, why = gc.verify_area("新疆双河市明珠街道壹号公馆", 44.835248, 82.366654,
+                         "壹号公馆 双河市灵峪路 博尔塔拉蒙古自治州",
+                         expect=("新疆", "双河"))
+check("an ancestor/descendant pair in the area table is not a disagreement",
+      ok, why)
+check("but two SIBLINGS still are: 榆树市 is under 长春市, not 吉林市, and "
+      "waving that through would accept any city in the province",
+      not gc._is_related_area("吉林", "长春", IDX))
+check("and a city is related to itself", gc._is_related_area("洛阳", "洛阳", IDX))
+
+print("\n--- the synthetic Chongqing buckets ---")
+# china_areas.json groups Chongqing's 38 districts and counties into two
+# invented prefecture-level rows. They are the ONLY ones in the table (checked:
+# every other depth-1 name is a real 市/州/地区/盟), and no geocoder will ever
+# echo them - so every Chongqing row was unverifiable and kept its centroid.
+check("重庆城区 / 重庆郊县 are the only synthetic buckets in the table",
+      sorted(gc._SYNTHETIC_CITIES) == ["重庆城区", "重庆郊县"],
+      repr(sorted(gc._SYNTHETIC_CITIES)))
+# Asserted against the table itself, so a future rebuild that invents another
+# bucket fails here instead of silently rejecting every row in that province.
+_REAL_SUFFIXES = ("市", "州", "地区", "盟", "区", "县", "旗")
+_DEPTH1 = [a["n"] for a in IDX.areas.values() if a["d"] == 1]
+check("every other depth-1 area is a real, echoable administrative name",
+      all(n.endswith(_REAL_SUFFIXES) for n in _DEPTH1),
+      repr([n for n in _DEPTH1 if not n.endswith(_REAL_SUFFIXES)][:5]))
+check("a bucket resolves by its FULL name - cn_base('重庆城区') is '重庆城', "
+      "which matches nothing, and a bucket that resolves to None rejects "
+      "every answer",
+      gc._city_id_by_base("重庆城区", IDX) is not None)
+
+ok, why = gc.verify_area("重庆重庆郊县久桓时代", 29.881211, 107.747390,
+                         "久桓时代广场 龙城大道西150米 重庆市丰都县",
+                         expect=("重庆", "重庆郊县"))
+check("a 丰都县 answer satisfies a 重庆郊县 row - 丰都 is IN that bucket",
+      ok, why)
+ok, why = gc.verify_area("重庆重庆郊县万达广场", 30.813544, 108.379552,
+                         "万达广场(万州店) 重庆市万州区北滨大道二段998号 重庆市万州区",
+                         expect=("重庆", "重庆郊县"))
+check("a 万州区 answer does NOT: 万州 is in the OTHER bucket, and the row is "
+      "in 奉节, 100 km away. Dropping the bucket entirely would have accepted "
+      "this on the province alone", not ok, why)
+
+print("\n--- a cached miss is permanent, unless the ladder improved ---")
+MISS_ADDR = "北京市朝阳区某某路某某广场"
+d = fresh_dir()
+p = os.path.join(d, gc.OUTFILE)
+with open(p, "w", encoding="utf-8") as fh:
+    json.dump({MISS_ADDR: {"miss": True, "provider": "baidu",
+                           "fetched_at": "2020-01-01"}}, fh,
+              ensure_ascii=False)
+answer = {"content": [poi("某某广场", "北京市朝阳区某某路1号",
+                          1298000000, 4825000000, area="北京市朝阳区")]}
+gc.fetch = fake_fetch({MISS_ADDR: answer})[0]
+
+out = gc.run([MISS_ADDR], path=p, provider="baidu")
+check("by default a cached miss is never re-asked, which is what stops a "
+      "refresh re-paying for thousands of dead ends every week",
+      out[MISS_ADDR].get("miss") is True, repr(out))
+out = gc.run([MISS_ADDR], path=p, provider="baidu", retry_misses=True)
+check("retry_misses re-asks it, so an improved ladder can actually reach the "
+      "rows that need it - without this, every gate fix above is unreachable",
+      not out[MISS_ADDR].get("miss"), repr(out))
+check("a cached HIT is never re-asked even then - retrying misses must not "
+      "turn into a full refetch of 5,700 answered addresses",
+      gc.run([MISS_ADDR], path=p, provider="baidu",
+             retry_misses=True)[MISS_ADDR]["fetched_at"]
+      == out[MISS_ADDR]["fetched_at"])
+set_keys()
+
+print("\n--- hand-researched coordinates ---")
+MAN = {"41": {"lat": 38.085852, "lng": 113.385389, "name": "跳跃者",
+              "source_url": "https://example.invalid/x"}}
+row = arc(id=41, name="跳跃者", addr="石阳线凯悦城", pref="山西",
+          notes="region: 山西省 阳泉市")
+log = gc.apply_cache([row], cache={}, manual=MAN)
+check("a manual coordinate places the row", (row["lat"], row["lng"])
+      == (38.085852, 113.385389), repr(log))
+check("and the note cites the source, so the number is auditable",
+      "example.invalid" in row["notes"], row["notes"])
+
+check("an unsourced manual coordinate is refused - a coordinate nobody can "
+      "check is indistinguishable from one somebody invented",
+      gc.manual_record({"42": {"lat": 38.0, "lng": 113.0}}, arc(id=42)) is None)
+check("a manual coordinate outside the mainland box is refused",
+      gc.manual_record({"43": {"lat": 1.35, "lng": 103.8, "name": "x",
+                               "source_url": "https://example.invalid/y"}},
+                       arc(id=43, name="x")) is None)
+# merge reassigns ids 1..N by (country, name, addr) on EVERY build, so an id
+# alone would silently drift onto a different venue as the feed changes.
+check("a manual coordinate whose id now belongs to a different venue is "
+      "refused rather than placed on the wrong arcade",
+      gc.manual_record(MAN, arc(id=41, name="somewhere else")) is None)
 
 # ----------------------------------------------------------------- cleanup --
 set_keys()

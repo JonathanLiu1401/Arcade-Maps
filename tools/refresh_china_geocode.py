@@ -223,6 +223,11 @@ def main():
                     help="skip the network entirely; just report what the "
                          "committed cache already achieves")
     ap.add_argument("--reject-log", default=None)
+    ap.add_argument("--retry-misses", action="store_true",
+                    help="re-ask addresses already cached as a miss. Needed "
+                         "once after the candidate ladder or the area gate "
+                         "changes, since a cached miss is otherwise permanent "
+                         "and those rows are skipped before a query is built")
     args = ap.parse_args()
 
     for stream in (sys.stdout, sys.stderr):
@@ -242,13 +247,15 @@ def main():
         cache = geocode_cn.load_cache(
             os.path.join(args.data, geocode_cn.OUTFILE))
     else:
-        addresses, queries = geocode_cn.addresses_for(rows, with_queries=True)
+        addresses, queries, plans = geocode_cn.addresses_for(
+            rows, with_queries=True, with_plans=True)
         print("refresh: %d distinct qualified address(es)" % len(addresses),
               file=sys.stderr)
         rejections = []
         cache = geocode_cn.run(addresses, out_dir=args.data, limit=args.limit,
                                provider=args.provider, sleep=args.sleep,
-                               queries=queries, reject_log=rejections)
+                               queries=queries, reject_log=rejections,
+                               plans=plans, retry_misses=args.retry_misses)
         if args.reject_log and rejections:
             common.save_json(args.reject_log, rejections)
             print("refresh: %d rejection(s) -> %s"

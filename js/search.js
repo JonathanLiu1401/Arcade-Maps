@@ -67,17 +67,35 @@ window.AM = window.AM || {};
 
   /* Titles the data does not track as their own slug. They resolve to the
      "other" bucket and the row says so, rather than returning nothing and
-     leaving the user thinking the site has no WACCA stores at all. */
+     leaving the user thinking the site has no WACCA stores at all.
+
+     `slug` is the game slug this title WILL have once the pipeline stops
+     folding it into `other` (scrapers/ziv.py already emits these; merge.py's
+     GAME_SLUGS does not list them yet, so they are reverted). It is not a
+     claim that the slug is live - queryGames checks gamesInData for that at
+     query time. The moment the merge lands, these rows stop saying "has no
+     filter chip", because that sentence would then be false and would send a
+     reader to the grey Other chip when their own chip is sitting right there. */
   var OTHER_TITLES = {
-    wacca: "WACCA", "ワッカ": "WACCA", "华卡音舞": "WACCA",
-    "groove coaster": "Groove Coaster", "グルーヴコースター": "Groove Coaster",
-    "音炫轨道": "Groove Coaster",
-    "pump it up": "Pump It Up", piu: "Pump It Up", "펌프": "Pump It Up",
+    wacca: { label: "WACCA", slug: "wacca" },
+    "ワッカ": { label: "WACCA", slug: "wacca" },
+    "华卡音舞": { label: "WACCA", slug: "wacca" },
+    "groove coaster": { label: "Groove Coaster", slug: "groove_coaster" },
+    "グルーヴコースター": { label: "Groove Coaster", slug: "groove_coaster" },
+    "音炫轨道": { label: "Groove Coaster", slug: "groove_coaster" },
+    "pump it up": { label: "Pump It Up", slug: "pump_it_up" },
+    piu: { label: "Pump It Up", slug: "pump_it_up" },
+    "펌프": { label: "Pump It Up", slug: "pump_it_up" },
     /* StepManiaX is in 543 stores and had no alias at all, so a US player
        searching the second most common pad game on this map got nothing. */
-    stepmaniax: "StepManiaX", smx: "StepManiaX", stepmania: "StepManiaX",
-    "beat saber": "Beat Saber",
-    "beatstream": "BEATSTREAM", "crossbeats": "crossbeats"
+    stepmaniax: { label: "StepManiaX", slug: "stepmaniax" },
+    smx: { label: "StepManiaX", slug: "stepmaniax" },
+    stepmania: { label: "StepManiaX", slug: "stepmaniax" },
+    /* Beat Saber has no game slug anywhere in the pipeline, so it stays in
+       the Other bucket permanently and keeps the explanatory note forever. */
+    "beat saber": { label: "Beat Saber", slug: null },
+    "beatstream": { label: "BEATSTREAM", slug: "beatstream" },
+    "crossbeats": { label: "crossbeats", slug: "crossbeats" }
   };
 
   /* ---------- place tables ---------- */
@@ -287,6 +305,14 @@ window.AM = window.AM || {};
     /* Untracked titles resolve to the "other" bucket with an explanation. */
     Object.keys(OTHER_TITLES).forEach(function (term) {
       if (term.indexOf(q) === -1) return;
+      var info = OTHER_TITLES[term];
+      /* Already promoted to a real chip in THIS data file: the game row above
+         is the right answer and this fallback must not fire, or the reader
+         gets the same title twice - once as its own chip and once as "Other,
+         which has no chip for it". gamesInData is the live test, so this
+         switches over on its own the day the merge stops reverting the slug,
+         with no second edit here. */
+      if (info.slug && AM.data.gamesInData.indexOf(info.slug) !== -1) return;
       var og = null;
       for (var i = 0; i < gameIndex.length; i++) {
         if (gameIndex[i].slug === "other") { og = gameIndex[i]; break; }
@@ -301,7 +327,7 @@ window.AM = window.AM || {};
          still has to say so. It no longer says the title is unfindable
          though: the machine lists are indexed now, so the ARCADES group
          below this row lists the actual stores that have it. */
-      var note = OTHER_TITLES[term] + " has no filter chip - see arcades below";
+      var note = info.label + " has no filter chip - see arcades below";
       if (hit) {
         if (rank < hit.rank) hit.rank = rank;
         if (!hit.note) hit.note = note;

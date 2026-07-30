@@ -2,8 +2,9 @@
    visibility predicate every filter feeds into.
 
    Markers are TIERED, not graduated circles. Each store draws one of six
-   hand-authored silhouettes chosen by its total cabinet count (see
-   assets/markers/marker-spec.md), tinted with the store's game colour. Size
+   hand-authored silhouettes chosen by the cabinet count its sources actually
+   PUBLISHED (see assets/markers/marker-spec.md and showableCabs below - a
+   count nobody stated does not grade a store), tinted with its game colour. Size
    alone was the old encoding and it was rejected: bubble area is genuinely
    hard to compare on a dense map, so the tier is carried by SHAPE first, with
    a mild size ramp left in only as a reinforcing signal.
@@ -81,22 +82,46 @@ window.AM = window.AM || {};
 
      Reading counts_src rather than merely "is game_counts present" keeps that
      policy in ONE place: if a future source starts emitting counts we do not
-     trust, it draws as unknown until it is added here on purpose. */
+     trust, it draws as unknown until it is added here on purpose.
+
+     This is a per-SOURCE gate and it is not sufficient on its own. ZIv is
+     trusted here, yet most individual ZIv rows are a lone "1" that states
+     presence rather than quantity - so the per-GAME gate (U.countIsShowable,
+     applied in showableCabs below) still has to run inside a trusted source. */
   var TRUSTED_COUNTS = { bemanicn: true, ziv: true };
 
-  /* Total cabs, or null when the data does not say. Sums every game the store
-     reports a count for, not just the ones currently selected: the icon is a
-     property of the arcade, so it must not change when a chip is toggled. */
-  function totalCabs(a) {
+  /* Cabs this store's sources actually PUBLISHED, or null when they published
+     none. Sums every game the store reports a showable count for, not just the
+     ones currently selected: the icon is a property of the arcade, so it must
+     not change when a chip is toggled.
+
+     TWO gates, and they answer different questions. TRUSTED_COUNTS asks "is
+     this SOURCE allowed to put a number on the map at all"; U.showableCabs
+     asks, per game, "did anybody actually state THIS quantity" - a lone ZIv
+     machine row is evidence the game is present and no evidence of how many,
+     so it contributes nothing here.
+
+     This used to be F.totalCabs(a.game_counts), the RAW sum, and that made the
+     marker contradict the panel on 516 stores: KINGPIN MELBOURNE (id 177) drew
+     as "3 to 9 cabinets" off a raw sum of 6 while its panel printed one single
+     number, because four of its five counts are suppressed lone ZIv rows. The
+     panel has honoured countIsShowable since the counts-honesty rule landed;
+     the marker did not, so the map asserted a mid-size venue the data never
+     described. F.totalCabs still exists and is still the raw sum - it is the
+     right answer to a different question, and nothing here wants it. */
+  function showableCabs(a) {
     if (!a || !TRUSTED_COUNTS[a.counts_src]) return null;
-    return F.totalCabs(a.game_counts);
+    return U.showableCabs(a);
   }
 
   function tierFor(a) {
-    var n = totalCabs(a);
+    var n = showableCabs(a);
     /* The null test comes FIRST and on purpose: null >= 1 is false in JS but
        null < 3 is true, so any numeric comparison reached with a null would
-       quietly file every uncounted store into T1. */
+       quietly file every uncounted store into T1. It is also what routes a
+       store whose every count is suppressed to TU rather than T1: showableCabs
+       returns null (not 0) in that case precisely so this line catches it, and
+       "we do not know how big this is" keeps its own symbol. */
     if (n === null || n === undefined || !isFinite(n) || n < 1) return UNKNOWN_TIER;
     for (var i = 0; i < TIER_CLASSES.length; i++) {
       if (n >= TIER_CLASSES[i].min && n <= TIER_CLASSES[i].max) return TIER_CLASSES[i];
@@ -593,7 +618,12 @@ window.AM = window.AM || {};
     UNKNOWN_TIER: UNKNOWN_TIER,
     TIER_LEGEND: TIER_LEGEND,
     UNIFORM_PX: UNIFORM_PX,
-    totalCabs: totalCabs,
+    /* Renamed from totalCabs when the tier stopped counting suppressed rows.
+       The old name promised a raw total and now returns a showable one, and a
+       caller reading `totalCabs` would get a number that is not the total. No
+       module outside this file ever called it (checked across js/ and tools/);
+       AM.format.totalCabs remains available for a genuine raw sum. */
+    showableCabs: showableCabs,
     tierFor: tierFor,
     tierIconUrl: tintedUrl,
     iconPxFor: iconPxFor,

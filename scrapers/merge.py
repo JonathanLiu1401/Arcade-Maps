@@ -1900,45 +1900,53 @@ def run(raw_dir, out_dir, updated=None):
     # Empty in this repo today (nobody has run the opt-in refresh), so this is
     # a no-op that costs one dict lookup per coordless row; when the cache is
     # populated it takes those rows out of china_place's hands entirely.
-    geocode_log = geocode_cn.apply_cache(ordered)
+    geocode_rejects = []
+    geocode_log = geocode_cn.apply_cache(ordered, reject_log=geocode_rejects)
     if geocode_log:
         print("merge: geocode_cn placed %d coordless China entries from the "
               "address cache" % len(geocode_log), file=sys.stderr)
-    # A POI/street geocode is NOT an approximation. geocode_cn.apply_cache
-    # sets approx:true on everything it places, which was right while the
-    # only alternative was a district centroid, but it is wrong now that
-    # the Baidu pass resolves 5,702 of 5,736 addresses at POI precision:
-    # the map was flagging "position approximate" over pins that name the
-    # actual building, and China's approx count went UP (5,625 -> 5,766)
-    # after the geocoding that was supposed to fix it.
+    if geocode_rejects:
+        print("merge: geocode_cn REFUSED %d cached answer(s) that resolve to "
+              "the wrong district; those rows fall through to a centroid"
+              % len(geocode_rejects), file=sys.stderr)
+        for r in geocode_rejects[:5]:
+            print("  #%s %s | %s" % (r.get("id"), (r.get("name") or "")[:28],
+                                     r.get("why")), file=sys.stderr)
+    # There is deliberately NO "clear approx on the geocoded rows" step here
+    # any more, and its absence is the fix for the worse of two bugs.
     #
-    # The flag is corrected HERE, off geocode_log, rather than in
-    # geocode_cn (another agent's finished module, whose tests assert
-    # apply_cache sets approx). geocode_log names exactly the rows this
-    # pass placed and the precision it reached, so a genuine district or
-    # city CENTROID - whether from china_place below or a previous build -
-    # is never touched: it is not in this log.
+    # It used to clear the flag for every row whose level was address or
+    # street, on the premise that "a building is not an approximation". The
+    # premise is false twice over. Baidu's keyless endpoint is a POI SEARCH,
+    # so "poi precision" says the answer was a building, never that it was
+    # THIS building: for a venue inside a mall the top result is routinely the
+    # MALL (1号机长合肥瑶海天地店 -> 瑶海天地, the shopping centre it holds a
+    # unit of), and when the query is thin it is a different branch entirely
+    # (arcade 893, in 澧县, took the coordinate of a 欢乐城 in 武陵区, 100 km
+    # away). The clearing turned 5,737 China rows into pins that asserted
+    # building-level accuracy, 0 of which carried any caveat.
     #
-    # address = Baidu poi / AMap rooftop, street = road-level. Both are
-    # derived from the published address, which the retained note still
-    # says ("position from address: geocoded to N precision by baidu");
-    # what goes away is the warning banner claiming the pin is a guess at
-    # an area. Only a centroid gets that.
-    unapproxed = 0
-    by_id = {e.get("id"): e for e in ordered}
-    for rec in geocode_log:
-        if rec.get("level") not in ("address", "street"):
-            continue
-        e = by_id.get(rec.get("id"))
-        if e is None:
-            continue
-        e.pop("approx", None)
-        e.pop("approx_level", None)
-        unapproxed += 1
-    if unapproxed:
-        print("merge: cleared approx on %d China entries geocoded to "
-              "poi/street precision (a building is not an approximation)"
-              % unapproxed, file=sys.stderr)
+    # The obvious repair - clear only where the answer can be confirmed to
+    # name the arcade rather than its mall - was tried and MEASURED, and it
+    # does not work. Three discriminators over the committed cache confirmed
+    # 2,547, then 1,240, then 230 of 5,769 rows, and every one of them was
+    # visibly wrong in both directions: a KFC and two shopping centres came
+    # back "confirmed", while 1-7PLAY家庭娱乐中心(唐山中骏世界城店) - plainly
+    # the arcade - came back "not confirmed". A discriminator that is ~20%
+    # wrong, used to REMOVE a caveat, silently overclaims on scores of rows.
+    # So nothing is cleared, and the honest reason is recorded here rather
+    # than a tuned heuristic being left in the file for somebody to trust.
+    #
+    # Every geocoded row therefore keeps approx:true and its approx_level, and
+    # js/panel.js renders the row it already has written for exactly this:
+    # "Position from the address - the source publishes no coordinates, so
+    # this pin was geocoded from the printed address." That sentence is true
+    # whether the POI found was the arcade or the mall around it, which is
+    # precisely why it is the one to show.
+    #
+    # Consequence to expect, and it is the intended one: China's approx count
+    # goes from 29 back to ~5,700. That is not a regression. The previous
+    # commit read the same rise as one and deleted the caveat instead.
     approx_log = china_place.place_arcades(ordered)
     if approx_log:
         lv = {}

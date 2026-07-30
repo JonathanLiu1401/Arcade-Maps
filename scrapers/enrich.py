@@ -77,6 +77,7 @@ from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common
+import photo_quality
 import photos as photos_mod
 import prices
 
@@ -88,6 +89,7 @@ MAX_PRICE_TEXT = 300      # per per-game price string
 # Photo harvest index written by scrapers/photos.py (ZIv pictures without
 # skip_pictures). Joined on links.ziv arcade id inside build_enrichment.
 PHOTOS_INDEX_FILE = "ziv_photos.json"
+QUALITY_CACHE_FILE = "photo_probe_cache.json"
 
 # Honest image tiers (emitted on every image record; never invent a venue
 # photo from a stock cabinet shot):
@@ -457,7 +459,8 @@ def _collect_images(bemanicn_rows, ziv_rows, photos_index=None):
     return images, lead_source
 
 
-def entry_from_rows(bemanicn_rows, ziv_rows, photos_index=None):
+def entry_from_rows(bemanicn_rows, ziv_rows, photos_index=None,
+                    quality_probes=None):
     """Build one enrichment entry from the raw rows that merged into a
     single arcade. Returns None when nothing enrichable is present.
 
@@ -481,6 +484,20 @@ def entry_from_rows(bemanicn_rows, ziv_rows, photos_index=None):
 
     images, lead = _collect_images(bemanicn_rows, ziv_rows, photos_index)
     if images:
+        # Rank before anything downstream reads images[0]. A venue's photos
+        # arrive in whatever order the source listed them, which is upload
+        # order, so the oldest and worst-shaped shot routinely won the hero
+        # slot: Round1 Ikebukuro led with a 2012 photo of the backs of
+        # players' heads. photo_quality scores what it can actually measure
+        # from the file header (real pixel size, aspect against the hero box,
+        # and the upload timestamp ZIv embeds in its filenames) and reorders
+        # in place, so the panel needs no change and neither does the
+        # slideshow: both already read images[] in order.
+        # It never sees a pixel, so it cannot judge blur or subject. It moves
+        # the small, the badly proportioned and the decade-old down the list,
+        # and records why on each entry.
+        if quality_probes:
+            images = photo_quality.apply_to_images(images, quality_probes)
         entry["images"] = images
         # Self-describing winning tier so the UI does not guess. Only venue
         # (and optionally chain) records are emitted by this module; game-tier
@@ -544,6 +561,17 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
     if photos_index is None:
         path = photos_path or os.path.join(raw_dir, PHOTOS_INDEX_FILE)
         photos_index = photos_mod.load_photos_index(path)
+    # Optional and absent-tolerant, like every other sidecar here: the report
+    # is produced by a separate crawl (photo_quality.py probes each image's
+    # header over a ranged GET), so a fresh clone that has never run it simply
+    # keeps source order rather than failing the build.
+    # Read the raw PROBE CACHE, not the published report. The report stores
+    # each image already scored (verdict, reasons) and drops probe_status and
+    # ts on the way out, and score() treats a missing probe_status as "could
+    # not measure" - so feeding it the report scores every image "unknown" and
+    # silently disables the ranking while looking like it works.
+    quality_probes = photo_quality.load_json(
+        os.path.join(raw_dir, QUALITY_CACHE_FILE), {}) or {}
     out = {}
     used_b, used_z = set(), set()
     image_arcades = 0
@@ -565,7 +593,8 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         if not z_rows and z_url and photos_index and \
                 photos_mod.photos_for_ziv_url(z_url, photos_index):
             z_rows = [{"source_url": z_url}]
-        entry = entry_from_rows(b_rows, z_rows, photos_index=photos_index)
+        entry = entry_from_rows(b_rows, z_rows, photos_index=photos_index,
+                                quality_probes=quality_probes)
         if entry is None:
             continue
         out[str(a["id"])] = entry

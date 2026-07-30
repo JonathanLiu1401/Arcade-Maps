@@ -546,6 +546,119 @@ def test_resolve_against_a_fixture():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def test_photo_filter_matches_the_frontend():
+    """Every field js/panel.js imageRecords() reads must skip a Pro call.
+
+    If this list is narrower than the frontend's, we pay $32/1k to resolve an
+    arcade whose panel will never ask Google for a photo, because it already
+    has one. That is real money for nothing.
+    """
+    print("\n-- the 'already photographed' filter mirrors panel.js --")
+
+    tmp = tempfile.mkdtemp()
+    try:
+        path = os.path.join(tmp, "enrichment.json")
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump({"arcades": {
+                "1": {"images": [{"url": "https://x/1.jpg"}]},
+                "2": {"image_thumb": "https://x/2.jpg"},
+                "3": {"image": "https://x/3.jpg"},
+                "4": {"photo": "https://x/4.jpg"},
+                "5": {"photo_url": "https://x/5.jpg"},
+                "6": {"info_text": "no photo here"},
+                "7": {"images": []},
+            }}, fh)
+
+        have = P.photo_ids_from_enrichment(path)
+        for k in ("1", "2", "3", "4", "5"):
+            check("id %s counts as photographed" % k, k in have)
+        check("an entry with no photo is not counted", "6" not in have)
+        check("an empty images[] is not counted", "7" not in have)
+
+        # A photo on the ARCADE ROW counts too: panel.js checks it first.
+        rows = [arcade(8, "Has row photo", 35.0, 139.0),
+                arcade(9, "No photo", 35.0, 139.0)]
+        rows[0]["image_thumb"] = "https://x/8.jpg"
+        have = P.photo_ids_from_enrichment(path, rows)
+        check("a photo on the arcade row counts", "8" in have)
+        check("an arcade with no photo anywhere does not", "9" not in have)
+
+        have = P.photo_ids_from_enrichment(os.path.join(tmp, "nope.json"))
+        check("a missing enrichment file is not an error", have == set())
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_refresh_survives_one_bad_id():
+    """A single malformed stored place_id must not abort --refresh.
+
+    Refresh is free and re-runnable, so one 400 aborting the batch would mean
+    that row poisons every future run.
+    """
+    print("\n-- --refresh: one bad id does not poison the batch --")
+
+    tmp = tempfile.mkdtemp()
+    saved = os.environ.get(P.ENV_KEY)
+    os.environ[P.ENV_KEY] = "test-key-not-real"
+    real_request = P._request
+    seen = []
+
+    def fake_request(url, key, mask, body=None):
+        seen.append(url)
+        if "TRUNCATED" in url:
+            raise P.ApiError("HTTP 400: INVALID_REQUEST", status=400)
+        if "OBSOLETE" in url:
+            return None                       # 404 -> NOT_FOUND
+        return {"id": url.rsplit("/", 1)[-1].split("?")[0]}
+
+    P._request = fake_request
+    try:
+        path = os.path.join(tmp, "place_ids.json")
+        store = P.empty_store()
+        for aid, pid in (("1", "ChIJgoodOne"), ("2", "TRUNCATED"),
+                         ("3", "ChIJgoodTwo"), ("4", "OBSOLETE")):
+            store["places"][aid] = {"place_id": pid, "name": "A" + aid,
+                                    "resolved_at": "2020-01-01"}
+        P.save_store(path, store)
+
+        rc = P.main(["--out", tmp, "--refresh", "--all"])
+        back = json.load(open(path, encoding="utf-8"))
+
+        check("run exits 0", rc == 0, str(rc))
+        check("all 4 ids were attempted, the 400 did not abort the batch",
+              len(seen) == 4, "%d call(s)" % len(seen))
+        check("the good ids survive",
+              back["places"].get("1") and back["places"].get("3"))
+        check("the malformed id is dropped and recorded",
+              "2" not in back["places"]
+              and back["misses"].get("2", {}).get("reason")
+              == "place_id_invalid")
+        check("the obsolete id is dropped and recorded",
+              "4" not in back["places"]
+              and back["misses"].get("4", {}).get("reason")
+              == "place_id_obsolete")
+
+        # A 403 IS a key problem and must still stop everything.
+        seen[:] = []
+        P._request = lambda *a, **k: (
+            seen.append(1) or (_ for _ in ()).throw(
+                P.ApiError("HTTP 403", status=403)))
+        store = P.empty_store()
+        for i in range(5):
+            store["places"][str(i)] = {"place_id": "p%d" % i,
+                                       "resolved_at": "2020-01-01"}
+        P.save_store(path, store)
+        P.main(["--out", tmp, "--refresh", "--all"])
+        check("a 403 still stops the batch after the first call",
+              len(seen) == 1, "%d call(s)" % len(seen))
+    finally:
+        P._request = real_request
+        os.environ.pop(P.ENV_KEY, None)
+        if saved is not None:
+            os.environ[P.ENV_KEY] = saved
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def test_search_body_shape():
     print("\n-- the Text Search request body matches Google's schema --")
 
@@ -596,6 +709,8 @@ def main():
     test_no_key_is_a_silent_noop()
     test_all_requires_yes()
     test_resolve_against_a_fixture()
+    test_photo_filter_matches_the_frontend()
+    test_refresh_survives_one_bad_id()
     test_search_body_shape()
 
     print("\n%d checks, %d failed" % (len(RAN), len(FAILED)))
