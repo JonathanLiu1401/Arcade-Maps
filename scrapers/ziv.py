@@ -258,6 +258,34 @@ def _qty_hard_reject(text):
     return False
 
 
+"""Phrases in a venue's own free-text that say its machine list is not a
+current inventory: it has not opened, or the room it describes has closed or
+moved. Deliberately narrow - each phrase asserts the state of the VENUE, not
+of a machine or a weekday. "Closed on Thursdays" and "closed for renovation
+until 6pm" must not match, and neither must a note about a predecessor
+business, which is why "formerly known as" and "was closed" are absent."""
+_NOT_CURRENT_RE = re.compile(
+    r"permanently closed"
+    r"|opening soon"
+    r"|not yet open"
+    r"|expected to open"
+    r"|due to open"
+    r"|under construction"
+    r"|currently under renovation"
+    r"|has relocated"
+    r"|is relocating",
+    re.I)
+
+
+def _inventory_not_current(arcade):
+    """True when the venue's own information says its list is not what is
+    standing there today. Only the QUANTITIES are dropped on a True; the
+    machine list itself is kept, since it is still the venue's own statement
+    of what it has or expects."""
+    info = enrich.strip_html(arcade.get("information")) or ""
+    return bool(_NOT_CURRENT_RE.search(info))
+
+
 def parse_machine_quantity(comment):
     """Parse a ZIv machine comment into a cabinet count, or None.
 
@@ -433,6 +461,39 @@ CAB_VARIANT_RULES = [
     ("taiko_us", re.compile(
         r"nijiro\s*usa|taiko.*nijiro\s*usa", re.I)),
 ]
+
+
+"""Words a free-text comment uses to say WHICH CABINET MODEL it is counting.
+
+Separate from CAB_VARIANT_RULES, which match a formal ZIv title such as
+"beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL)". A comment is written by
+a person and says "8 LIGHTNING MODEL machines" or "2 gold cabs", so it needs
+its own vocabulary. Matching a variant here is what promotes a quantity from
+"this many of the game" to "this many of this model".
+"""
+_VARIANT_COMMENT_WORDS = {
+    "iidx_lm": (r"lightning",),
+    "sdvx_vm": (r"valkyrie",),
+    "sdvx_nemsys": (r"nemsys",),
+    "ddr_gold": (r"gold\b", r"20th"),
+    "ddr_universal": (r"universal",),
+    "ddr_legacy": (r"legacy", r"\bcrt\b"),
+    "gitadora_gf_arena": (r"arena",),
+    "gitadora_dm_arena": (r"arena",),
+    "popn_pikapika": (r"pikapika", r"pika\s*pika"),
+    "maimai_classic": (r"finale", r"pre-?dx"),
+}
+
+
+def _comment_names_variant(comment, variant):
+    """True when the comment itself names this cabinet model, so its number
+    is that model's number rather than the whole game's."""
+    if not comment:
+        return False
+    for pat in _VARIANT_COMMENT_WORDS.get(variant, ()):
+        if re.search(pat, comment, re.I):
+            return True
+    return False
 
 
 def cab_variants_for_title(name):
@@ -711,7 +772,20 @@ def _counts_and_evidence_for_machines(machines_with_comments):
         for slug in slugs:
             per_slug.setdefault(slug, []).append(qty)
         for variant in cab_variants_for_title(nm):
-            per_variant.setdefault(variant, []).append(qty)
+            # A comment quantity is only the VARIANT's quantity when the
+            # comment names the variant. "8 LIGHTNING MODEL machines" does, so
+            # GiGO's Lightning pill is a real 8. "11 machines" on a row titled
+            # "SOUND VOLTEX (Valkyrie model)" does NOT: it counts the venue's
+            # SDVX cabinets, of which only some are Valkyrie, and taking it
+            # made Round1 Ikebukuro print "VALKYRIE x11" off a single cabinet.
+            # 230 of 317 numbered pills were byte-identical to their parent
+            # game's count, which is the fingerprint of that leak.
+            # When the comment does not name the variant the listing simply
+            # does not say how many are that model, so nothing is recorded.
+            # The title still counts as one entry, which _fold reads as a
+            # lower bound, and js/state.js suppresses a lone one.
+            vq = qty if _comment_names_variant(comment, variant) else None
+            per_variant.setdefault(variant, []).append(vq)
 
     def _fold(entries):
         """(total, evidence) from a list of per-entry qty-or-None."""
@@ -833,6 +907,21 @@ def _parse_arcades(payload, country, enrich_pictures=False):
         }
         counts, evidence, cab_models = _counts_and_evidence_for_machines(
             machines)
+        # A venue that has not opened yet, or whose room has closed and moved,
+        # still carries the machine list somebody typed in before or after the
+        # move, and publishing that as an inventory states a fact the listing
+        # explicitly contradicts. Dora Planet Xiaozhai says in its own notes
+        # that it closed on 2026-04-30, that the new Rose ONE room is under
+        # renovation, and that "it is currently unknown whether the new
+        # location will have maimai DX or CHUNITHM" - while the map printed
+        # counts for both. FUNSCAPE Sri Petaling reads, in full, "Opening soon
+        # in July 2026", and printed "maimai DX x4" unhedged.
+        # The machine list is kept, because it is the venue's own statement of
+        # what it expects to have. Only the QUANTITIES are withheld, which is
+        # the same rule the rest of this file follows: say what the source
+        # says, and no more.
+        if _inventory_not_current(a):
+            counts, evidence, cab_models = {}, {}, {}
         if counts:
             out[aid]["game_counts"] = {s: counts[s] for s in sorted(counts)}
             out[aid]["count_evidence"] = {

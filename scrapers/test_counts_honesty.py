@@ -193,12 +193,26 @@ check("a stated quantity plus a bare sibling totals 13",
 check("...and is evidenced as a stated quantity",
       evidence.get("chunithm") == "ziv_comment", repr(evidence))
 
+# A quantity belongs to the CABINET MODEL only when the comment names the
+# model. A bare "8x" on a Lightning-titled row counts the venue's IIDX
+# machines, and some of those may be standard cabs, so it is the game's
+# number and not the model's. Taking it anyway is what printed "VALKYRIE x11"
+# at Round1 Ikebukuro off a single Valkyrie cabinet.
 counts, evidence, models = ziv._counts_and_evidence_for_machines([
     ("beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL)", 2, "8x"),
 ])
-check("a Lightning cab's stated 8 lands in cab_models too",
+check("a bare quantity is the GAME's, not the cabinet model's",
+      models.get("iidx_lm") == 1, repr(models))
+check("...while the game count still takes it", counts.get("iidx") == 8,
+      repr(counts))
+
+# Name the model in the comment and it does back the model's count.
+counts, evidence, models = ziv._counts_and_evidence_for_machines([
+    ("beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL)", 2,
+     "8 LIGHTNING MODEL machines"),
+])
+check("a stated quantity DOES back its cabinet count",
       models.get("iidx_lm") == 8, repr(models))
-check("...and in the game count", counts.get("iidx") == 8, repr(counts))
 
 # The fabrication guard, stated as a property of the vocabulary rather than
 # of any one venue: there is no evidence class an official store list could
@@ -257,12 +271,15 @@ check("so merge must NOT publish that 1 as a number",
       evidence.get("ddr") not in merge.REAL_COUNT_EVIDENCE,
       "an unbacked variant count is published as null instead")
 
-# A stated quantity backs its cabinets: GiGO's "8x" on the Lightning IIDX
-# is a real eight, and the pill may show it.
+# A stated quantity backs its cabinets when it NAMES them: GiGO's comment
+# reads "8 LIGHTNING MODEL machines", so the pill may show that eight. A bare
+# "8x" on the same row would be the game's number instead (see above), which
+# is the distinction that stopped 230 pills claiming their parent's count.
 counts, evidence, models = ziv._counts_and_evidence_for_machines([
-    ("beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL)", 2, "8x"),
+    ("beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL)", 2,
+     "8 LIGHTNING MODEL machines"),
 ])
-check("a stated quantity DOES back its cabinet count",
+check("a named quantity DOES back its cabinet count",
       evidence.get(merge.CAB_MODEL_GAME["iidx_lm"])
       in merge.REAL_COUNT_EVIDENCE and models.get("iidx_lm") == 8,
       repr((evidence, models)))

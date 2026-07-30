@@ -180,7 +180,15 @@ check("non-rhythm Time Crisis is not counted", "other" not in counts
       and "time_crisis" not in counts)
 check("iidx_lm cab model is 8", cab_models.get("iidx_lm") == 8,
       repr(cab_models))
-check("sdvx_vm cab model is 8", cab_models.get("sdvx_vm") == 8)
+# Deliberately NOT 8, and the contrast with iidx_lm above is the whole rule.
+# The Lightning row's comment says "8 LIGHTNING MODEL machines", which names
+# the cabinet model, so 8 is that model's number. The Valkyrie row's comment
+# says only "8 machines", which counts the venue's SDVX cabinets - some of
+# which are Valkyrie and some of which are not. Taking it anyway is what made
+# Round1 Ikebukuro print "VALKYRIE x11" from one cabinet, and left 230 of 317
+# numbered pills byte-identical to their parent game's count.
+check("sdvx_vm gets no number from a comment that does not name it",
+      cab_models.get("sdvx_vm") == 1, repr(cab_models))
 
 # Mixed: one entry with comment qty, one without for the same slug.
 counts2, evidence2, _ = ziv._counts_and_evidence_for_machines([
