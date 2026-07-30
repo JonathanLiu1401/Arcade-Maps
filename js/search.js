@@ -69,9 +69,14 @@ window.AM = window.AM || {};
      "other" bucket and the row says so, rather than returning nothing and
      leaving the user thinking the site has no WACCA stores at all. */
   var OTHER_TITLES = {
-    wacca: "WACCA", "ワッカ": "WACCA",
+    wacca: "WACCA", "ワッカ": "WACCA", "华卡音舞": "WACCA",
     "groove coaster": "Groove Coaster", "グルーヴコースター": "Groove Coaster",
-    "pump it up": "Pump It Up", piu: "Pump It Up",
+    "音炫轨道": "Groove Coaster",
+    "pump it up": "Pump It Up", piu: "Pump It Up", "펌프": "Pump It Up",
+    /* StepManiaX is in 543 stores and had no alias at all, so a US player
+       searching the second most common pad game on this map got nothing. */
+    stepmaniax: "StepManiaX", smx: "StepManiaX", stepmania: "StepManiaX",
+    "beat saber": "Beat Saber",
     "beatstream": "BEATSTREAM", "crossbeats": "crossbeats"
   };
 
@@ -133,10 +138,23 @@ window.AM = window.AM || {};
        stores are unreachable by province name. country is deliberately NOT
        in the haystack - "japan" would return 8 arbitrary stores, which the
        Places group answers properly instead. */
+    /* The machine titles go in too. Two things were unfindable without them:
+       the ~2,200 stores whose only slug is "other" (Pump It Up is in 1,481 of
+       them, StepManiaX 543, WACCA 178 - typing "pump it up" returned nothing
+       at all), and cabinet models, so "lightning model" or "valkyrie" now
+       finds the stores that have one. These are the first things a player
+       types, and every one of them was a dead end.
+
+       Only the machine list is indexed, not the whole notes field: the prose
+       after it includes "Standard Round1 US rhythm lineup assumed: DDR, maimai
+       DX, ..." on 171 stores, and indexing that makes a search for a game
+       return stores that were only GUESSED to have it. */
     arcadeIndex = AM.data.arcades.map(function (a) {
+      var titles = AM.util.cabTitles(a);
       return {
         a: a,
-        hay: (a.name + " " + (a.addr || "") + " " + (a.pref || "")).toLowerCase()
+        hay: (a.name + " " + (a.addr || "") + " " + (a.pref || "") +
+          (titles.length ? " " + titles.join(" ") : "")).toLowerCase()
       };
     });
   }
@@ -279,7 +297,11 @@ window.AM = window.AM || {};
       for (var j = 0; j < out.length; j++) {
         if (out[j].g === og) { hit = out[j]; break; }
       }
-      var note = OTHER_TITLES[term] + " is not tracked separately - filed under Other";
+      /* The chip really does filter to "Other" and no further, so the note
+         still has to say so. It no longer says the title is unfindable
+         though: the machine lists are indexed now, so the ARCADES group
+         below this row lists the actual stores that have it. */
+      var note = OTHER_TITLES[term] + " has no filter chip - see arcades below";
       if (hit) {
         if (rank < hit.rank) hit.rank = rank;
         if (!hit.note) hit.note = note;
@@ -387,11 +409,14 @@ window.AM = window.AM || {};
       "</mark>" + esc(text.slice(end));
   }
 
+  /* Chips on a search result. gameLabelFor, not the raw label: a store whose
+     only maimai cabinet is a dead pre-DX one must not be advertised as maimai
+     DX here either, or the result row contradicts the panel it opens. */
   function gameChipsHtml(a) {
     return a.games.slice(0, 3).map(function (g) {
       return '<span class="gc" style="--c:' +
         (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-        esc(C.GAME_LABEL[g] || g) + "</span>";
+        esc(AM.util.gameLabelFor(a, g)) + "</span>";
     }).join("");
   }
 
@@ -414,9 +439,24 @@ window.AM = window.AM || {};
         '<span class="o-n tabnum">' + U.num(row.count) + "</span>";
     } else if (row.kind === "arcade") {
       var a = row.a;
+      /* Machine titles are in the haystack, so a row can match on a cabinet
+         the name and address never mention - "valkyrie" or "pump it up" would
+         otherwise return stores with no visible reason for being there. When
+         the hit is in a title, show THAT title as the subtitle instead of the
+         address, with the match highlighted, so the row explains itself. */
+      var sub = a.addr || "", hitTitle = null;
+      if (q && (a.name + " " + (a.addr || "") + " " + (a.pref || ""))
+          .toLowerCase().indexOf(q) === -1) {
+        var titles = AM.util.cabTitles(a);
+        for (var ti = 0; ti < titles.length; ti++) {
+          if (titles[ti].toLowerCase().indexOf(q) !== -1) { hitTitle = titles[ti]; break; }
+        }
+      }
       h += '<span class="o-main">' +
         '<span class="o-title">' + mark(a.name, q) + "</span>" +
-        '<span class="o-sub">' + mark(a.addr || "", q) + "</span>" +
+        '<span class="o-sub">' +
+        (hitTitle ? '<span class="o-hit">' + mark(hitTitle, q) + "</span>"
+                  : mark(sub, q)) + "</span>" +
         '<span class="o-chips">' + gameChipsHtml(a) + "</span>" +
         "</span>" +
         '<span class="o-tag">' + esc(a.country || "?") + "</span>";

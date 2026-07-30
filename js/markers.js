@@ -293,15 +293,29 @@ window.AM = window.AM || {};
 
   /* ---------- visibility predicate (single source of truth) ---------- */
 
-  /* Does arcade a count as a hit for game g under the current cab filters? */
+  /* Does arcade a count as a hit for game g under the current cab filters?
+
+     The cab test reads AM.util.variantsOf, which unions the e-amusement
+     cabs[] flags with the cabinet models named in the ZIv machine list, so a
+     Lightning Model in Hong Kong is findable. Reading a.cabs directly (as this
+     did) restricted every cab filter to Japan, because the e-amusement
+     facility search only covers Japan.
+
+     variantsOf is memoised per arcade id. That matters here specifically: this
+     predicate runs over all 13,502 rows on every filter toggle and again from
+     search.js and nearby.js, so the parse happens once per store for the life
+     of the page and this stays a plain object lookup. */
   function matchesForGame(a, g, selCabs) {
     if (a.games.indexOf(g) === -1) return false;
+    if (!selCabs || !selCabs.size) return true;
+    var have = null;
     for (var i = 0; i < C.CAB_FILTERS.length; i++) {
       var cf = C.CAB_FILTERS[i];
       if (cf.game !== g || !selCabs.has(cf.id)) continue;
+      if (have === null) have = U.variantsOf(a);
       var ok = false;
       for (var j = 0; j < cf.slugs.length; j++) {
-        if (a.cabs && a.cabs.indexOf(cf.slugs[j]) !== -1) { ok = true; break; }
+        if (Object.prototype.hasOwnProperty.call(have, cf.slugs[j])) { ok = true; break; }
       }
       if (!ok) return false;
     }
@@ -349,19 +363,22 @@ window.AM = window.AM || {};
     var h = '<div class="pp-name">' + esc(a.name) + "</div>";
     h += '<div class="pp-addr">' + esc(a.addr || "") +
       (a.pref ? " &middot; " + esc(a.pref) : "") + " &middot; " + esc(a.country) + "</div>";
+    /* Cabinet variants ride next to the game they qualify, and a game whose
+       only known cabinet is the pre-DX one is not labelled "maimai DX" - the
+       popup carries the same honesty rule as the panel, from the same source. */
+    var have = U.variantsOf(a);
     h += '<div class="pp-row">';
     a.games.forEach(function (g) {
       h += '<span class="gc" style="--c:' + (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-        esc(C.GAME_LABEL[g] || g) + "</span>";
+        esc(U.gameLabelFor(a, g)) + "</span>";
+      (C.VARIANTS_BY_GAME[g] || []).forEach(function (v) {
+        if (v.chipOnly || !v.badge) return;
+        if (!Object.prototype.hasOwnProperty.call(have, v.id)) return;
+        h += '<span class="badge cab' + (v.offline ? " dead" : "") + '">' +
+          esc(v.badge) + "</span>";
+      });
     });
     h += "</div>";
-    if (a.cabs && a.cabs.length) {
-      h += '<div class="pp-row">';
-      a.cabs.forEach(function (c) {
-        h += '<span class="badge cab">' + esc(C.CAB_BADGE[c] || c) + "</span>";
-      });
-      h += "</div>";
-    }
     if (a.src && a.src.length) {
       h += '<div class="pp-row">';
       a.src.forEach(function (s) {

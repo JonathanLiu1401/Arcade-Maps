@@ -24,7 +24,16 @@ say gets no entry at all):
     pay_type       int   bemanicn payment-mode enum (kept raw)
     hours          str   "10:00-22:00" / "10:00-02:00 (+1d)" (bemanicn)
     hours_text     str   7-day opening times, Mon-first (ziv)
-    images         list  photo URLs, max 3
+    images         list  structured photo records, max 3. Each record is
+                         {url, source, credit, license, page_url, tier}
+                         with tier in {venue, chain}. http is forced to
+                         https. Generic assets/cabs stock shots are NEVER
+                         written here (those are frontend-only "game" tier).
+    image          str   plain https URL of images[0] (compat mirror for
+                         panel.js photoUrl, which reads image/photo fields
+                         and only accepts string images[] entries today)
+    image_tier     str   winning tier of images[0] ("venue" / "chain"), so
+                         the UI does not have to guess
     fav_count      int   bemanicn community favourites (NOT a rating)
     game_prices    dict  {slug: "5 coins/play (~CNY 5.00)"} (bemanicn)
     game_versions  dict  {slug: "舞萌DX2025"} (bemanicn)
@@ -68,11 +77,27 @@ from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common
+import photos as photos_mod
 
 OUTFILE = "enrichment.json"
 MAX_IMAGES = 3            # per arcade; keeps the file small
 MAX_TEXT = 1200           # per free-text field, characters
 MAX_PRICE_TEXT = 300      # per per-game price string
+
+# Photo harvest index written by scrapers/photos.py (ZIv pictures without
+# skip_pictures). Joined on links.ziv arcade id inside build_enrichment.
+PHOTOS_INDEX_FILE = "ziv_photos.json"
+
+# Honest image tiers (emitted on every image record; never invent a venue
+# photo from a stock cabinet shot):
+#   venue - real photo of THIS arcade (ZIv pictures, bemanicn thumb)
+#   chain - chain storefront/logo, labelled as not this branch (optional)
+#   game  - representative cabinet (assets/cabs only; frontend, not here)
+#   none  - no photo (entry simply has no images key)
+IMAGE_TIER_VENUE = "venue"
+IMAGE_TIER_CHAIN = "chain"
+IMAGE_TIER_GAME = "game"
+IMAGE_TIER_NONE = "none"
 
 
 # ----------------------------------------------------------- HTML stripping -
@@ -318,41 +343,158 @@ def _put(entry, key, value, source):
     entry["sources"][key] = source
 
 
-def entry_from_rows(bemanicn_rows, ziv_rows):
+def _as_image_record(item, default_source, default_page_url=None):
+    """Normalise a raw picture value into a structured image record.
+
+    Accepts:
+      - already-structured dicts from photos.py / prior enrichment
+      - plain URL strings (legacy ziv.py --enrich pictures list)
+      - bemanicn image_thumb URL strings
+    Always forces https. Returns None when nothing usable is present.
+    """
+    if isinstance(item, dict) and item.get("url"):
+        url = photos_mod.force_https(item.get("url"))
+        if not url:
+            return None
+        tier = item.get("tier") or IMAGE_TIER_VENUE
+        # Never promote a game/cab stock shot into enrichment as a venue photo.
+        if tier == IMAGE_TIER_GAME:
+            return None
+        return {
+            "url": url,
+            "source": item.get("source") or default_source,
+            "credit": item.get("credit") or (
+                photos_mod.ZIV_CREDIT if default_source == "ziv"
+                else photos_mod.BEMANICN_CREDIT if default_source == "bemanicn"
+                else None),
+            "license": item.get("license"),
+            "page_url": item.get("page_url") or default_page_url,
+            "tier": tier,
+        }
+    if isinstance(item, str) and item.strip():
+        url = photos_mod.force_https(item)
+        if not url:
+            return None
+        credit = (photos_mod.ZIV_CREDIT if default_source == "ziv"
+                  else photos_mod.BEMANICN_CREDIT if default_source == "bemanicn"
+                  else None)
+        return {
+            "url": url,
+            "source": default_source,
+            "credit": credit,
+            "license": None,
+            "page_url": default_page_url,
+            "tier": IMAGE_TIER_VENUE,
+        }
+    return None
+
+
+def _collect_images(bemanicn_rows, ziv_rows, photos_index=None):
+    """Build the honest venue-photo list for one arcade (max MAX_IMAGES).
+
+    Ranked chain (research 2026-07-30):
+      1. ZIv real venue photos (photos index first, then raw row.pictures)
+      2. BemaniCN signed image_thumb (expires; UI must fail soft on 401/403)
+
+    Generic assets/cabs/*.jpg stock cabinets are NEVER emitted here. Those
+    remain a frontend-only "game" tier, labelled representative-cabinet, and
+    must not stand in as a photo of this venue.
+    """
+    images = []
+    seen = set()
+    lead_source = None
+
+    def _add(rec, source_name):
+        nonlocal lead_source
+        if rec is None:
+            return
+        url = rec.get("url")
+        if not url or url in seen:
+            return
+        if len(images) >= MAX_IMAGES:
+            return
+        seen.add(url)
+        images.append(rec)
+        if lead_source is None:
+            lead_source = source_name
+
+    # --- tier 1: ZIv venue photos -----------------------------------------
+    # Prefer the dedicated harvest index (skip_pictures dropped). Fall back
+    # to any pictures already sitting on the raw ziv row (ziv.py --enrich).
+    for row in ziv_rows:
+        z_url = row.get("source_url")
+        page = z_url
+        if photos_index:
+            for rec in photos_mod.photos_for_ziv_url(z_url, photos_index):
+                _add(_as_image_record(rec, "ziv", page), "ziv")
+        for p in (row.get("pictures") or []):
+            # row.pictures may be URL strings or already-structured records
+            if isinstance(p, dict):
+                _add(_as_image_record(p, "ziv", page), "ziv")
+            else:
+                aid = photos_mod.ziv_id_from_url(z_url)
+                recs = photos_mod.ziv_image_records(aid, [p]) if aid else []
+                if recs:
+                    _add(recs[0], "ziv")
+                else:
+                    _add(_as_image_record(p, "ziv", page), "ziv")
+
+    # --- tier 2: BemaniCN signed thumbs -----------------------------------
+    for row in bemanicn_rows:
+        thumb = row.get("image_thumb")
+        if not thumb:
+            continue
+        shop_id = photos_mod.bemanicn_id_from_url(row.get("source_url"))
+        if isinstance(thumb, dict) and thumb.get("url"):
+            rec = photos_mod.bemanicn_image_record(thumb.get("url"), shop_id)
+        elif isinstance(thumb, str):
+            rec = photos_mod.bemanicn_image_record(thumb, shop_id)
+        else:
+            rec = None
+        _add(rec, "bemanicn")
+
+    return images, lead_source
+
+
+def entry_from_rows(bemanicn_rows, ziv_rows, photos_index=None):
     """Build one enrichment entry from the raw rows that merged into a
     single arcade. Returns None when nothing enrichable is present.
 
     Precedence when several rows of the same source merged: first row
-    that carries a given field wins (rows arrive in merge order)."""
+    that carries a given field wins (rows arrive in merge order).
+
+    photos_index: optional {ziv_id: [image_record, ...]} from photos.py
+    (data_raw/ziv_photos.json). When present, real venue photos are joined
+    even if the bulk ziv crawl kept skip_pictures=1.
+    """
     entry = {"sources": {}}
-    images = []
     for row in bemanicn_rows:
         for out_key, row_key in _BEMANICN_FIELDS:
             _put(entry, out_key, row.get(row_key), "bemanicn")
-        thumb = row.get("image_thumb")
-        if thumb and thumb not in images:
-            images.append(thumb)
     for row in ziv_rows:
         for out_key, row_key in _ZIV_FIELDS:
             value = row.get(row_key)
             if out_key == "hours_text":
                 value = _clean_hours_text(value)
             _put(entry, out_key, value, "ziv")
-        for url in (row.get("pictures") or []):
-            if url and url not in images:
-                images.append(url)
+
+    images, lead = _collect_images(bemanicn_rows, ziv_rows, photos_index)
     if images:
-        entry["images"] = images[:MAX_IMAGES]
-        # bemanicn thumbs are signed OSS URLs that EXPIRE (an "e=" epoch
-        # in the query string, days-to-weeks after the crawl), so
-        # consumers must tolerate a 403; ziv pictures are plain hotlinks.
-        # When both sources contribute, the bemanicn thumb sorts first
-        # and the label names that first source - so treat this as "who
-        # led", not "who supplied every URL" (URLs are distinguishable by
-        # host: oss.bemanicn.com vs zenius-i-vanisher.com).
-        entry["sources"]["images"] = (
-            "bemanicn" if any(r.get("image_thumb") for r in bemanicn_rows)
-            else "ziv")
+        entry["images"] = images
+        # Self-describing winning tier so the UI does not guess. Only venue
+        # (and optionally chain) records are emitted by this module; game-tier
+        # stock cabinets live in assets/cabs and are never written here.
+        entry["image_tier"] = images[0].get("tier") or IMAGE_TIER_VENUE
+        # Plain string mirror of images[0].url so today's panel.js photoUrl()
+        # (which only accepts string images[] / image / photo fields) can show
+        # a real venue photo without a frontend change. Structured images[] is
+        # still the canonical form (credit, page_url, tier).
+        if images[0].get("url"):
+            entry["image"] = images[0]["url"]
+            entry["sources"]["image"] = lead or images[0].get("source") or "ziv"
+        entry["sources"]["images"] = lead or images[0].get("source") or "ziv"
+        entry["sources"]["image_tier"] = entry["sources"]["images"]
+
     if not entry["sources"]:
         return None
     entry["enriched_at"] = date.today().isoformat()
@@ -386,21 +528,43 @@ def _index_raw(raw_dir):
     return bemanicn, ziv
 
 
-def build_enrichment(arcades, raw_dir, updated=None):
+def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
+                     photos_path=None):
     """Build the enrichment payload for already-merged, already-id'd
     arcades. Pure read of raw_dir + the merged list; `arcades` is NOT
-    mutated, so arcades.json stays lean."""
+    mutated, so arcades.json stays lean.
+
+    photos_index / photos_path: optional ZIv picture harvest from
+    scrapers/photos.py. When neither is given, raw_dir/ziv_photos.json is
+    loaded if present. Without a photos index (and without pictures on the
+    raw ziv rows), image coverage stays zero - that is the pre-fix state.
+    """
     bemanicn_idx, ziv_idx = _index_raw(raw_dir)
+    if photos_index is None:
+        path = photos_path or os.path.join(raw_dir, PHOTOS_INDEX_FILE)
+        photos_index = photos_mod.load_photos_index(path)
     out = {}
     used_b, used_z = set(), set()
+    image_arcades = 0
+    image_by_source = {}
     for a in arcades:
         links = a.get("links") or {}
         b_url, z_url = links.get("bemanicn"), links.get("ziv")
         b_rows = bemanicn_idx.get(b_url, []) if b_url else []
         z_rows = ziv_idx.get(z_url, []) if z_url else []
-        if not b_rows and not z_rows:
+        # Even with no raw enrichment fields, a photos-index hit alone is
+        # enough to emit a venue-photo entry for this arcade.
+        if not b_rows and not z_rows and not (
+                photos_index and z_url
+                and photos_mod.photos_for_ziv_url(z_url, photos_index)):
             continue
-        entry = entry_from_rows(b_rows, z_rows)
+        # When the photos index has a hit but raw ziv row is missing (or the
+        # bulk crawl dropped pictures), synthesise a minimal ziv row so
+        # entry_from_rows can still attach images via source_url.
+        if not z_rows and z_url and photos_index and \
+                photos_mod.photos_for_ziv_url(z_url, photos_index):
+            z_rows = [{"source_url": z_url}]
+        entry = entry_from_rows(b_rows, z_rows, photos_index=photos_index)
         if entry is None:
             continue
         out[str(a["id"])] = entry
@@ -411,8 +575,12 @@ def build_enrichment(arcades, raw_dir, updated=None):
         contributed = set(entry["sources"].values())
         if b_rows and "bemanicn" in contributed:
             used_b.add(b_url)
-        if z_rows and "ziv" in contributed:
+        if (z_rows or z_url) and "ziv" in contributed:
             used_z.add(z_url)
+        if entry.get("images"):
+            image_arcades += 1
+            src = entry["sources"].get("images") or "unknown"
+            image_by_source[src] = image_by_source.get(src, 0) + 1
     field_counts = {}
     for e in out.values():
         for k in e["sources"]:
@@ -426,6 +594,10 @@ def build_enrichment(arcades, raw_dir, updated=None):
         "bemanicn_rows_available": len(bemanicn_idx),
         "ziv_rows_contributed": len(used_z),
         "ziv_rows_available": len(ziv_idx),
+        # honest photo coverage (venue tier only; cabs are not counted)
+        "arcades_with_venue_photos": image_arcades,
+        "venue_photos_by_source": dict(sorted(image_by_source.items())),
+        "photos_index_ids": len(photos_index or {}),
     }
     return {
         "updated": updated or date.today().isoformat(),
@@ -447,12 +619,18 @@ def main():
     ap.add_argument("--out", default="data")
     ap.add_argument("--arcades", default=None,
                     help="merged arcades.json (default: <out>/arcades.json)")
+    ap.add_argument("--photos", default=None,
+                    help="ziv_photos.json from scrapers/photos.py "
+                         "(default: <raw>/ziv_photos.json if present)")
     args = ap.parse_args()
     arc_path = args.arcades or os.path.join(args.out, "arcades.json")
     doc = common.load_json(arc_path)
     arcades = doc["arcades"] if isinstance(doc, dict) else doc
-    payload = build_enrichment(arcades, args.raw, doc.get("updated")
-                               if isinstance(doc, dict) else None)
+    payload = build_enrichment(
+        arcades, args.raw,
+        updated=doc.get("updated") if isinstance(doc, dict) else None,
+        photos_path=args.photos,
+    )
     path = os.path.join(args.out, OUTFILE)
     common.save_json(path, payload)
     print("wrote %s" % path)

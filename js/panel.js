@@ -67,23 +67,72 @@ window.AM = window.AM || {};
 
   /* ---------- cab filters ---------- */
 
+  /* Cab-variant checkboxes, GROUPED BY GAME.
+
+     Thirteen variants in one flat list is thirteen rows of "<name> <game>"
+     where the game repeats and the eye has to re-read it every line. Grouped,
+     the game is stated once as a heading and each row is just the cabinet, so
+     the list is shorter to scan and much shorter on a 390px screen. The
+     heading takes the game's own colour, matching the chips directly above.
+
+     The live count next to each variant is the number of PLOTTABLE stores that
+     variant would leave on the map. Without it a user ticks "NEMSYS
+     (standard)", watches the map empty out, and cannot tell whether the filter
+     is broken or the answer is genuinely 2. */
+  function variantStoreCount(cf) {
+    var n = 0, list = AM.data.plottable;
+    for (var i = 0; i < list.length; i++) {
+      var a = list[i];
+      /* Count only what ticking the box would actually leave on the map. The
+         filter is applied per GAME, so a store carrying the cabinet but not
+         the game slug is never a hit - counting it would print a number the
+         map cannot deliver. Every variant currently agrees on both, and this
+         guard keeps the sidebar honest if a later data refresh files a title
+         under a different slug. */
+      if (a.games.indexOf(cf.game) === -1) continue;
+      var have = U.variantsOf(a);
+      for (var j = 0; j < cf.slugs.length; j++) {
+        if (Object.prototype.hasOwnProperty.call(have, cf.slugs[j])) { n++; break; }
+      }
+    }
+    return n;
+  }
+
   function buildCabFilters() {
     var box = $("cab-filters");
     var sel = AM.state.get("selectedCabs");
+    var byGame = {}, order = [];
     C.CAB_FILTERS.forEach(function (cf) {
-      var lab = document.createElement("label");
-      var cb = document.createElement("input");
-      cb.type = "checkbox";
-      cb.checked = sel.has(cf.id);
-      cb.addEventListener("change", function () { AM.state.toggleCab(cf.id); });
-      lab.appendChild(cb);
-      lab.appendChild(document.createTextNode(" " + cf.label + " "));
-      var tag = document.createElement("span");
-      tag.className = "cabgame";
-      tag.textContent = C.GAME_LABEL[cf.game] || cf.game;
-      lab.appendChild(tag);
-      lab.dataset.cab = cf.id;
-      box.appendChild(lab);
+      if (!byGame[cf.game]) { byGame[cf.game] = []; order.push(cf.game); }
+      byGame[cf.game].push(cf);
+    });
+    /* Canonical game order, so this list reads in the same order as the chips. */
+    order.sort(function (x, y) {
+      return C.GAME_ORDER.indexOf(x) - C.GAME_ORDER.indexOf(y);
+    });
+    order.forEach(function (g) {
+      var head = document.createElement("div");
+      head.className = "cabgrp";
+      head.style.setProperty("--c", C.GAME_COLOR[g] || C.GAME_COLOR.other);
+      head.textContent = C.GAME_LABEL[g] || g;
+      box.appendChild(head);
+      byGame[g].forEach(function (cf) {
+        var lab = document.createElement("label");
+        var cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.checked = sel.has(cf.id);
+        cb.addEventListener("change", function () { AM.state.toggleCab(cf.id); });
+        lab.appendChild(cb);
+        lab.appendChild(document.createTextNode(" " + cf.label + " "));
+        var tag = document.createElement("span");
+        tag.className = "cabgame tabnum";
+        tag.textContent = U.num(variantStoreCount(cf));
+        lab.appendChild(tag);
+        lab.dataset.cab = cf.id;
+        var def = C.VARIANT_BY_ID[cf.slugs[0]];
+        if (def && def.note) lab.title = def.note;
+        box.appendChild(lab);
+      });
     });
   }
 
@@ -129,7 +178,7 @@ window.AM = window.AM || {};
           '<div class="gchips">' + a.games.map(function (g) {
             return '<span class="gc" style="--c:' +
               (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-              esc(C.GAME_LABEL[g] || g) + "</span>";
+              esc(gameLabelFor(a, g)) + "</span>";
           }).join("") + "</div>" +
           '<a target="_blank" rel="noopener" href="' + esc(U.gmapsSearchUrl(a)) +
           '">Search in Google Maps</a></div>';
@@ -529,10 +578,22 @@ window.AM = window.AM || {};
   /* The first of this store's games that the manifest actually has a file for.
      Entries exist for games with no acceptably-licensed photo (file: null), so
      presence of a key is not presence of an image. */
+  /* A stock photo of a cabinet the store has. The manifest is keyed by GAME,
+     which is only safe while the game implies the machine - and for maimai it
+     does not: the DX photo over a store that only has a pre-DX cabinet shows a
+     machine that is not there, captioned as if it were. Games whose cabinet
+     this store contradicts are skipped, and the next game's photo is used. */
+  function photoWrongFor(a, g) {
+    if (g !== "maimai_dx") return false;
+    var have = U.variantsOf(a);
+    return !!(have.maimai_classic && !have.maimai_dx_cab);
+  }
+
   function cabPhoto(a) {
     if (!cabs) return null;
     var order = orderedGames(a);
     for (var i = 0; i < order.length; i++) {
+      if (photoWrongFor(a, order[i])) continue;
       var m = cabs[order[i]];
       if (m && typeof m.file === "string" && m.file) {
         return {
@@ -795,13 +856,13 @@ window.AM = window.AM || {};
         '<div class="pl-hero-veil"></div>' +
         '<div class="pl-hero-foot">' +
         '<span class="pl-hero-kind">' +
-        esc(C.GAME_LABEL[cab.game] || cab.game) + " cabinet</span>" +
+        esc(gameLabelFor(a, cab.game)) + " cabinet</span>" +
         credit + "</div></div>";
     }
 
     return '<div class="pl-hero" style="--c:' + color + '">' +
       '<div class="pl-hero-art"></div>' +
-      '<div class="pl-hero-tag">' + esc(C.GAME_LABEL[g] || g) + "</div></div>";
+      '<div class="pl-hero-tag">' + esc(gameLabelFor(a, g)) + "</div></div>";
   }
 
   /* How much a cab count can be trusted, from the data itself.
@@ -828,6 +889,51 @@ window.AM = window.AM || {};
     return false;
   }
 
+  /* One game chip, plus whatever the data actually knows about the CABINET.
+
+     Three rules, and they are the whole point of this section:
+
+     1. A chip must never name a machine the store does not have. A store whose
+        only maimai is a FiNALE cab said "maimai DX" until now - 226 stores
+        advertising a game that has been impossible to play online since 2020.
+        When the only known variant REPLACES the game (maimai classic), the
+        chip is renamed rather than badged, so the chip itself stops lying.
+
+     2. Additive variants (Lightning, Valkyrie, gold cab) get a pill next to
+        their game chip, not a free-floating badge at the end of the row. A row
+        of five yellow pills with no attachment to a game is unreadable on a
+        phone, and it is the game they qualify that makes them mean anything.
+
+     3. A count only appears when a source published one. `cab_models` carries
+        real per-variant quantities when the scrape provides them; ZIv titles
+        do not, and inventing "x1" from the presence of a title would be the
+        same fabrication the counts-honesty rule exists to stop. */
+  function variantPillsHtml(a, g) {
+    var vs = U.variantsForGame(a, g);
+    var h = "";
+    /* When the chip has already been RENAMED to the variant, the pill would
+       just repeat it - "maimai (FiNALE / pre-DX)" followed by a "FiNALE /
+       pre-DX" badge. The badge exists to add a cabinet to a game name, so it
+       is dropped when it is the game name. */
+    var renamed = gameLabelFor(a, g) !== (C.GAME_LABEL[g] || g);
+    vs.forEach(function (v) {
+      if (v.def.chipOnly || !v.def.badge) return;
+      if (renamed && v.def.offline) return;
+      var n = (v.ev && typeof v.ev.n === "number" && v.ev.n > 0) ? v.ev.n : null;
+      var cnt = n !== null ? ' <b class="tabnum">x' + n + "</b>" : "";
+      h += '<span class="badge cab' + (v.def.offline ? " dead" : "") + '"' +
+        (v.def.note ? ' title="' + esc(v.def.note) + '"' : "") + ">" +
+        esc(v.def.badge) + cnt + "</span>";
+    });
+    return h;
+  }
+
+  /* The game's name at THIS store - see AM.util.gameLabelFor, which owns the
+     rule so the map popup and the nearby list tell the same story. Declared as
+     a function, not `var f = U.gameLabelFor`, because callers appear earlier in
+     this file than this line and only a declaration is hoisted. */
+  function gameLabelFor(a, g) { return U.gameLabelFor(a, g); }
+
   function chipsHtml(a) {
     var h = "";
     var src = countsSrc(a);
@@ -839,11 +945,20 @@ window.AM = window.AM || {};
         cnt = ' <b class="cnt tabnum">x' + n + "</b>" +
           (qualify ? ' <i class="cnt-q">listed</i>' : "");
       }
+      /* The grey "Other" chip covers 7,491 stores and names nothing. Pump It
+         Up alone sits in 1,481 of them. The merge has no slug for these yet,
+         but the titles are right there in the listing, so the chip says what
+         it is instead of being a black box. */
+      var label = gameLabelFor(a, g);
+      if (g === "other") {
+        var og = U.otherGamesOf(a);
+        if (og.length) {
+          label = og.slice(0, 3).map(function (x) { return x.label; }).join(", ") +
+            (og.length > 3 ? " +" + (og.length - 3) : "");
+        }
+      }
       h += '<span class="gc" style="--c:' + (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-        esc(C.GAME_LABEL[g] || g) + cnt + "</span>";
-    });
-    (a.cabs || []).forEach(function (c) {
-      h += '<span class="badge cab">' + esc(C.CAB_BADGE[c] || c) + "</span>";
+        esc(label) + cnt + "</span>" + variantPillsHtml(a, g);
     });
     return h ? '<div class="pl-chips">' + h + "</div>" : "";
   }
@@ -918,7 +1033,7 @@ window.AM = window.AM || {};
         var g = r.game;
         return '<li><span class="pp-g gc" style="--c:' +
           (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-          esc(C.GAME_LABEL[g] || g) + "</span>" +
+          esc(gameLabelFor(a, g)) + "</span>" +
           '<span class="pp-v">' + esc(r.text) + "</span></li>";
       }).join("");
       h += row("layers", '<ul class="pl-prices">' + items + "</ul>",
@@ -933,6 +1048,51 @@ window.AM = window.AM || {};
         h += row("price", esc(tp.display),
           "Typical for " + esc(a.country) + " - not this store's own price" +
           (tp.as_of ? " (" + esc(tp.as_of) + ")" : ""), "muted");
+      }
+    }
+    return h;
+  }
+
+  /* Cabinet rows: what the variant pills cannot say in two words.
+
+     The offline warning is the one that matters. A maimai FiNALE or a CRT-era
+     DDR is a machine you can stand in front of and play, and which will not
+     save a single score - every one of those networks is dead. Showing it with
+     the same weight as a live cab is how someone ends up driving across a city
+     for nothing, so it gets a warning row of its own and names the cabinet.
+
+     The second row is a limit, not a feature. Cab flags from e-amusement only
+     ever cover Japan, so "no Lightning badge" outside Japan means "nobody
+     published a cabinet model", never "standard cab". Saying so where a reader
+     would otherwise infer the negative is the whole three-state requirement. */
+  function cabinetRowsHtml(a) {
+    var have = U.variantsOf(a);
+    var h = "", dead = [], known = false, k;
+    for (k in have) {
+      if (!Object.prototype.hasOwnProperty.call(have, k)) continue;
+      known = true;
+      var def = C.VARIANT_BY_ID[k];
+      if (def && def.offline) dead.push(def.label);
+    }
+    if (dead.length) {
+      h += row("alert", esc(dead.join(", ")) + " - offline cabinet" +
+        (dead.length > 1 ? "s" : ""),
+        "This cabinet's network has shut down. It can still be played, but "
+        + "nothing is saved: no score history, no online play, no unlocks.",
+        "warn");
+    }
+    /* Only worth saying where a cabinet variant actually exists to be missed,
+       and only when nothing is known about this store's. */
+    if (!known) {
+      var couldVary = (a.games || []).some(function (g) {
+        return (C.VARIANTS_BY_GAME[g] || []).length > 0;
+      });
+      if (couldVary) {
+        h += row("info", "Cabinet model not published",
+          "No listing says which cabinet this store runs. Official cab data "
+          + "covers Japan only, and community listings record the model just "
+          + "when someone noted it - so this is \"unknown\", not \"standard\".",
+          "muted");
       }
     }
     return h;
@@ -1009,6 +1169,8 @@ window.AM = window.AM || {};
           "muted");
       }
     }
+
+    h += cabinetRowsHtml(a);
 
     var site = field(a, e, ["website", "url", "homepage"]);
     if (site && /^https?:\/\//i.test(site)) {

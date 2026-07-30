@@ -24,9 +24,16 @@ dicts are still handled).
 Output schema per row (matches data_extra/community.json):
 {name, name_en, address, lat, lng, coord_system, games, source, source_url, notes}
 plus a "country" field recording which country query returned the arcade,
-plus an OPTIONAL "game_counts" {slug: int}: machines in the arcade's cab
-list tallied per mapped slug (one cab list entry = one machine; cabs that
-only map to "other" are NOT counted; absent when nothing mapped).
+plus an OPTIONAL "game_counts" {slug: int}: per-slug cabinet quantity.
+A list entry is NOT automatically one cabinet. When machines[].comment
+states a quantity ("8 machines", "4x", "2台"), that number is used and
+count_evidence[slug] is "ziv_comment". Otherwise the list-entry count is
+only a lower bound (count_evidence "ziv_listed") - never invent a total.
+Cabs that only map to "other" are NOT counted; game_counts is absent when
+nothing mapped. Optional siblings:
+  count_evidence {slug: "ziv_comment"|"ziv_listed"}
+  cab_models     {variant_slug: int}  hardware variants from the cab title
+                 (Lightning, Valkyrie, DDR gold, etc.), same count rules.
 
 ENRICHMENT (added 2026-07-27; see docs/research/enrichment-sources.md
 section 1b and scrapers/enrich.py):
@@ -83,25 +90,27 @@ ARCADE_URL = "https://zenius-i-vanisher.com/v5.2/arcade.php?id=%s"
 # are the fallback for series without an id here).
 USA_SERIES = {
     1: "ddr", 2: "iidx", 3: "popn", 4: "gitadora", 5: "jubeat",
+    7: "pump_it_up",
     12: "taiko", 173: "sdvx", 267: "gitadora", 284: "maimai_dx",
     506: "chunithm", 549: "museca", 643: "nostalgia", 694: "drs",
+    766: "stepmaniax",
     1366: "ongeki", 1556: "dance_around",
 }
 
 # Extra series ids fetched by the per-series United States crawl ONLY:
-# Pump It Up (7), In The Groove (8), Guitar Hero Arcade (18),
-# StepManiaX (766), Beat Saber (1281), StepMania (1536). Without them
-# the US crawl misses ~780 arcades whose only rhythm cabs are these,
-# because the unsegmented country query 500s and the US set is the
-# union of the per-series queries.
+# In The Groove (8), Guitar Hero Arcade (18), Beat Saber (1281),
+# StepMania (1536). Without them the US crawl misses arcades whose only
+# rhythm cabs are these, because the unsegmented country query 500s and
+# the US set is the union of the per-series queries.
 #
-# Deliberately NOT part of USA_SERIES: that dict doubles as the
-# seriesID -> canonical-slug map, so listing these there would map
-# their machines to a real slug (or to "other", which merge.py counts
-# because "other" is in GAME_SLUGS) and would put an "other" key into
-# game_counts worldwide. These machines keep resolving to "other" via
-# the no-pattern-hit fallback and are never counted.
-USA_EXTRA_SERIES = [7, 8, 18, 766, 1281, 1536]
+# Pump It Up (7) and StepManiaX (766) used to live here too and resolve
+# to "other"; they now map to real slugs via USA_SERIES / GAME_PATTERNS.
+#
+# Remaining extras are deliberately NOT part of USA_SERIES: that dict
+# doubles as the seriesID -> canonical-slug map, so listing them there
+# would map their machines into game_counts. They still resolve to
+# "other" via the no-pattern-hit fallback and are never counted.
+USA_EXTRA_SERIES = [8, 18, 1281, 1536]
 
 # Substring -> canonical slug fallback mapping for ZIV cab/game titles
 # (used when the machine's game.seriesID is not in USA_SERIES).
@@ -113,6 +122,12 @@ USA_EXTRA_SERIES = [7, 8, 18, 766, 1281, 1536]
 # unmapped variant sitting beside its own sibling ("GUITARFREAKS" plus
 # "PercussionFreaks") is what makes two separate cabinets read as a tally
 # of two.
+#
+# maimai classic vs maimai DX is NOT decided here: both hit the shared
+# "maimai" / "舞萌" token. _machine_slugs special-cases the split so a
+# classic title never lands on maimai_dx (and a DX title never lands on
+# the classic maimai slug). Order of the remaining patterns still
+# matters for overlapping tokens.
 GAME_PATTERNS = [
     ("dancedancerevolution", "ddr"), ("dance dance revolution", "ddr"),
     ("dancing stage", "ddr"),   # DDR's European branding
@@ -124,7 +139,10 @@ GAME_PATTERNS = [
     ("ubeat", "jubeat"),        # jubeat's Korean release title
     ("太鼓の達人", "taiko"), ("taiko no tatsujin", "taiko"),
     ("wadaiko master", "taiko"),   # Taiko's western release title
-    ("sound voltex", "sdvx"), ("maimai", "maimai_dx"),
+    ("sound voltex", "sdvx"),
+    # maimai tokens: placeholder slug; _machine_slugs rewrites to
+    # maimai (classic) and/or maimai_dx via the ordered classic/DX rules.
+    ("maimai", "maimai_dx"),
     ("舞萌", "maimai_dx"),      # maimai's Chinese title
     ("chunithm", "chunithm"), ("museca", "museca"),
     ("múseca", "museca"),       # the accented spelling ZIv actually uses
@@ -135,9 +153,330 @@ GAME_PATTERNS = [
     ("polaris chord", "polaris_chord"), ("ポラリスコード", "polaris_chord"),
     ("project diva", "project_diva"),
     ("danceevolution", "dance_evo"), ("reflec beat", "reflec"),
+    # promoted out of the old "other" bucket (see research cab-variant spec)
+    ("pump it up", "pump_it_up"), ("pumpitup", "pump_it_up"),
+    ("stepmaniax", "stepmaniax"), ("stepmania x", "stepmaniax"),
+    ("wacca", "wacca"), ("华卡音舞", "wacca"),
+    ("groove coaster", "groove_coaster"), ("音炫轨道", "groove_coaster"),
+    ("crossbeats", "crossbeats"), ("crossbeat", "crossbeats"),
+    ("beatstream", "beatstream"),
 ]
 
 _CLOSED_RE = re.compile(r'closed|permanently closed|閉店', re.I)
+
+# ---- quantity parser over machines[].comment ----------------------------
+# A ZIv machines[] element is a cab *title* entry, not a cabinet count.
+# Real quantities live in free-text comments ("8 machines", "4x", "2台").
+# False counts (treating floor numbers / version strings / yen as qty)
+# are worse than no count: reject those hard.
+#
+# Evidence vocabulary (per slug, written next to game_counts):
+#   "ziv_comment" - at least one machine for the slug had a parsed qty;
+#                   the number is a real total and may render as "xN".
+#   "ziv_listed"  - we only know N distinct list entries exist; lower
+#                   bound, UI must say "N listed" (or bare chip for 1).
+
+_UNIT_WORD = r"(?:machines?|cabs?|cabinets?|units?)"
+# Optional short English descriptors between a number and a unit word
+# ("8 LIGHTNING MODEL machines", "12 HG cabinets in total.").
+_DESC_WORDS = r"(?:[A-Za-z./★☆*-]+\s+){0,4}"
+
+_RE_QTY_PURE_NX = re.compile(r"^\s*(\d+)\s*[xX×]\s*$")
+_RE_QTY_PURE_XN = re.compile(r"^\s*[xX×]\s*(\d+)\s*$")
+_RE_QTY_NX_PREFIX = re.compile(r"^\s*(\d+)\s*[xX×]\b")
+_RE_QTY_MULTI_NX = re.compile(r"(\d+)\s*[xX×]\b")
+_RE_QTY_SETS_OF = re.compile(r"(\d+)\s*sets?\s+of\s+(\d+)", re.I)
+_RE_QTY_IN_TOTAL = re.compile(
+    r"(\d+)\s+" + _DESC_WORDS + _UNIT_WORD + r"\s+in\s+total", re.I)
+_RE_QTY_THERE_ARE = re.compile(
+    r"(?i)there\s+are\s+(\d+)\s+" + _DESC_WORDS + _UNIT_WORD)
+_RE_QTY_N_WORD = re.compile(
+    r"(?i)(\d+)\s+" + _DESC_WORDS + r"(" + _UNIT_WORD + r")\b")
+_RE_QTY_N_WORD_TIGHT = re.compile(
+    r"(?i)(\d+)\s*(" + _UNIT_WORD + r")\b")
+_RE_QTY_LINKED = re.compile(
+    r"(?i)(\d+)\s+linked(?:\s+side-by-side)?\s+" + _UNIT_WORD)
+_RE_QTY_PAIR_OF = re.compile(
+    r"(?i)(?:a\s+)?side-by-side\s+pair\s+of\s+(\d+)\s+linked")
+_RE_QTY_VER_THEN_NX = re.compile(
+    r"(?i)\bver(?:sion)?\.?\s*[\d.]+,\s*(\d+)\s*[xX×]\b")
+_RE_QTY_CJK_INSTALL = re.compile(r"(\d+)\s*台(?:設置|置いて)")
+_RE_QTY_CJK_TAI = re.compile(r"(\d+)\s*台")
+_RE_QTY_N_TAIKO = re.compile(r"(?i)^\s*(\d+)\s+taiko\s*$")
+_RE_QTY_SILVER_GOLD = re.compile(
+    r"(?i)(\d+)\s+silver\s+cabs?,\s*(\d+)\s+gold")
+_RE_QTY_N_HD = re.compile(r"(?i)(\d+)\s+HD\s+cabinets?\b")
+_RE_QTY_ANOTHER_PAIR = re.compile(r"(?i)as well as another pair")
+
+# Plausible cabinet totals. Real mega-venues top out well under this
+# (GiGO Akihabara Bldg 5 has a 52x Gundam comment); anything above is
+# almost certainly a false parse and is rejected.
+_QTY_MAX = 200
+
+
+def _qty_hard_reject(text):
+    """True when `text` has digits that are NOT a cabinet quantity."""
+    t = text.strip()
+    if re.match(r"^\d+F$", t, re.I):
+        return True
+    if re.match(r"(?i)^ver(?:sion)?\.?\s*[\d.]+$", t):
+        return True
+    if re.match(r"(?i)^\d+\s*(yen|円)$", t):
+        return True
+    if re.match(r"(?i)^\d+P$", t):
+        return True
+    if re.match(r"(?i)^japanese\s+\d+P\b", t):
+        return True
+    # "Cabinet 1", "Cabinet 2 - First generation Lightning..."
+    if re.match(r"(?i)^cabinet\s+\d+\b", t):
+        return True
+    # model names: "X2 cabinet.", "XG2 cabinet.", "XG cabinet, 2F"
+    if re.match(r"(?i)^xg?\d*\s*cabinet\b", t):
+        return True
+    if re.match(r"(?i)^\d+(st|nd|rd|th)\s+gen\b", t):
+        return True
+    if re.match(r"(?i)^\d+g\s+switches", t):
+        return True
+    if re.search(r"(?i)\b\d+\s+in\s+\d+\s+cab", t):
+        return True
+    if re.match(r"(?i)^\d{4}\s+cabinet", t):
+        return True
+    if (re.match(r"(?i)^(jpn\.?\s*)?version\b", t)
+            and not re.search(
+                r"(?i)\d+\s*(?:[A-Za-z./-]+\s+){0,4}" + _UNIT_WORD, t)):
+        return True
+    if re.search(r"(?i)\b\d+\s*player\s+cab", t):
+        return True
+    if re.search(r"(?i)\b\d+\s*screen\s+cab", t):
+        return True
+    if (re.search(r"(?i)\b\d+\s*songs?\b", t)
+            and not re.search(r"(?i)\d+\s*" + _UNIT_WORD, t)):
+        return True
+    # "Part of the 4 cabinets..." is a location note, not a total.
+    if re.match(r"(?i)^part of the\b", t):
+        return True
+    return False
+
+
+def parse_machine_quantity(comment):
+    """Parse a ZIv machine comment into a cabinet count, or None.
+
+    Returns an int in [1, _QTY_MAX] only when the comment explicitly
+    states a quantity. Never invents a count from price/version/floor
+    noise. Public so unit tests and other scrapers can call it directly.
+    """
+    if not comment or not isinstance(comment, str):
+        return None
+    text = comment.strip()
+    if not text:
+        return None
+    if _qty_hard_reject(text):
+        return None
+
+    m = _RE_QTY_SETS_OF.search(text)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2))
+        if 1 <= a <= 50 and 1 <= b <= 50:
+            return a * b
+
+    m = _RE_QTY_PAIR_OF.search(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= 50:
+            return 2 * n  # "pair of 4 linked" => 8
+
+    m = _RE_QTY_PURE_NX.match(text) or _RE_QTY_PURE_XN.match(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    multi = _RE_QTY_MULTI_NX.findall(text)
+    if len(multi) >= 2:
+        nums = [int(x) for x in multi]
+        if all(1 <= x <= _QTY_MAX for x in nums):
+            return sum(nums)
+
+    m = _RE_QTY_NX_PREFIX.match(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    m = _RE_QTY_VER_THEN_NX.search(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    m = _RE_QTY_SILVER_GOLD.search(text)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2))
+        if 1 <= a <= _QTY_MAX and 1 <= b <= _QTY_MAX:
+            return a + b
+
+    m = _RE_QTY_IN_TOTAL.search(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    m = _RE_QTY_THERE_ARE.search(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    m = _RE_QTY_LINKED.search(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            if _RE_QTY_ANOTHER_PAIR.search(text):
+                return n + 2
+            return n
+
+    m = _RE_QTY_N_TAIKO.match(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    m = _RE_QTY_N_HD.search(text)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= _QTY_MAX:
+            return n
+
+    for rx in (_RE_QTY_N_WORD, _RE_QTY_N_WORD_TIGHT):
+        matches = list(rx.finditer(text))
+        if matches:
+            n = int(matches[0].group(1))
+            if 1 <= n <= _QTY_MAX:
+                return n
+
+    if "台" in text:
+        # Ordinal "1台目" is a cabinet index, not a total, unless the
+        # comment also has an install form ("2台置いてあり1台目...").
+        if "台目" in text and not re.search(r"台設置|台置", text):
+            return None
+        # "新筐体2台ノーマルタイプ1台" => sum of type counts.
+        if re.search(r"新筐体|ノーマル", text):
+            nums = [int(x) for x in _RE_QTY_CJK_TAI.findall(text)]
+            if nums and all(1 <= x <= _QTY_MAX for x in nums):
+                return sum(nums)
+        m = _RE_QTY_CJK_INSTALL.search(text)
+        if m:
+            n = int(m.group(1))
+            if 1 <= n <= _QTY_MAX:
+                return n
+        nums = _RE_QTY_CJK_TAI.findall(text)
+        if len(nums) == 1:
+            n = int(nums[0])
+            if 1 <= n <= _QTY_MAX:
+                return n
+        if nums and "台目" not in text:
+            n = int(nums[0])
+            if 1 <= n <= _QTY_MAX:
+                return n
+    return None
+
+
+# ---- cab-model variants from the machine game NAME ----------------------
+# Ordered rules; first match wins within each family. Patterns are applied
+# case-insensitively to a single cab-title string. Spec source: research
+# cab-variant hierarchy (maimai classic/DX split, IIDX Lightning, SDVX
+# Valkyrie/NEMSYS, DDR gold/Universal/legacy, taiko regional, ...).
+
+# maimai classic (pre-DX). Applied BEFORE the DX rule. A title may match
+# both families across two different machine rows of one arcade; those
+# produce two slugs, not a move.
+_RE_MAIMAI_CLASSIC = [
+    re.compile(r"^\s*maimai\b(?!\s*(?:dx|でらっくす))", re.I),
+    re.compile(r"^舞萌\s*\((?!.*dx)", re.I),
+    re.compile(r"^maimaiPLUS\b", re.I),
+]
+_RE_MAIMAI_DX = re.compile(
+    r"maimai\s*dx|maimai\s*でらっくす|舞萌\s*dx", re.I)
+
+# Cab-flag variants (hardware), keyed by the parent game slug they refine.
+# Each entry: (variant_slug, compiled regex on the full title).
+CAB_VARIANT_RULES = [
+    # DDR three-state: gold and universal are positive; bare A/A20/A3/WORLD
+    # is deliberately NOT asserted as white (unknown). Legacy is offline.
+    ("ddr_gold", re.compile(
+        r"(?:dancedancerevolution|dance\s*dance\s*revolution).*"
+        r"\(20th anniversary model\)", re.I)),
+    ("ddr_universal", re.compile(
+        r"(?:dancedancerevolution|dance\s*dance\s*revolution).*"
+        r"\(universal model\)", re.I)),
+    # Legacy / CRT: require a DDR-family title token. Bare "7thMIX" /
+    # "Solo" must NOT fire on beatmania III APPEND 7thMIX etc.
+    ("ddr_legacy", re.compile(
+        r"(?:dance\s*dance\s*revolution|dancedancerevolution)\s*"
+        r"(?:extreme|ddrmax|supernova|solo|[2-7]th\s*mix|x2|x3)|"
+        r"dancing\s*stage|"
+        r"\bddrmax\b|"
+        r"\bddr\s*(?:solo|[2-7]th\s*mix)\b", re.I)),
+    # SOUND VOLTEX
+    ("sdvx_vm", re.compile(
+        r"sound\s*voltex.*\(valkyrie model\)", re.I)),
+    ("sdvx_nemsys", re.compile(
+        r"sound\s*voltex.*\(nemsys model\)", re.I)),
+    # beatmania IIDX
+    ("iidx_lm", re.compile(
+        r"beatmania\s*iidx.*\(lightning model\)", re.I)),
+    # Taiko regional builds (full-width parens must match)
+    ("taiko_asia", re.compile(
+        r"ニジイロVer\.[\(（]アシア版[\)）]")),
+    ("taiko_jp", re.compile(
+        r"太鼓の達人\s*ニジイロVer\.$")),
+    ("taiko_us", re.compile(
+        r"nijiro\s*usa|taiko.*nijiro\s*usa", re.I)),
+]
+
+
+def cab_variants_for_title(name):
+    """Hardware variant slugs a single cab title asserts, or empty set.
+
+    Never infers 'standard' / white / non-Lightning from a bare title;
+    only positive pattern hits are returned.
+    """
+    if not name:
+        return set()
+    out = set()
+    for variant, rx in CAB_VARIANT_RULES:
+        if rx.search(name):
+            out.add(variant)
+    return out
+
+
+def _maimai_slugs_for_title(name):
+    """Classic and/or DX maimai slugs for one title (ordered rules)."""
+    if not name:
+        return set()
+    out = set()
+    for rx in _RE_MAIMAI_CLASSIC:
+        if rx.search(name):
+            out.add("maimai")
+            break
+    if _RE_MAIMAI_DX.search(name):
+        out.add("maimai_dx")
+    # Bare "maimai" token with no classic/DX decision still needs a home:
+    # if neither rule fired but the title carries maimai/舞萌, treat as
+    # classic only when it is clearly pre-DX; otherwise leave empty so
+    # the seriesID path (284 -> maimai_dx) can still assign DX.
+    if not out:
+        low = name.lower()
+        if "maimai" in low or "舞萌" in name:
+            # seriesID 284 is DX; name-only classic detection already
+            # ran above. Remaining bare hits without dx/でらっくす are
+            # classic (e.g. "maimai FiNALE", "maimai").
+            if not re.search(r"(?i)dx|でらっくす", name):
+                out.add("maimai")
+            else:
+                out.add("maimai_dx")
+    return out
+
 
 # Countries whose ZIv rows are dense enough with community edits to be
 # worth the picture-enabled fetch in --enrich mode. Spellings are ZIv's
@@ -284,13 +623,39 @@ def arcade_enrichment(a, machines_raw, enrich_pictures=False):
 
 def _machine_slugs(nm, sid):
     """Distinct canonical slugs one machine maps to (empty set if none):
-    seriesID via USA_SERIES first, then name-substring patterns."""
+    seriesID via USA_SERIES first, then name-substring patterns.
+
+    maimai is special: classic (pre-DX) and DX are different game slugs.
+    The ordered classic/DX rules run on the title. seriesID 284 only
+    contributes maimai_dx when the title does not assert classic alone.
+    """
     slugs = set()
+    low = (nm or "").lower()
+    is_maimai = ("maimai" in low or "舞萌" in (nm or ""))
+    if is_maimai:
+        # Title rules are authoritative for the classic/DX split.
+        title_slugs = _maimai_slugs_for_title(nm)
+        slugs |= title_slugs
+        if sid is not None and sid in USA_SERIES:
+            mapped = USA_SERIES[sid]
+            if mapped == "maimai_dx":
+                # seriesID 284 is the DX series. Honour a classic-only
+                # title assertion; otherwise ensure maimai_dx is present.
+                if "maimai" in title_slugs and "maimai_dx" not in title_slugs:
+                    pass  # classic title wins over the seriesID default
+                else:
+                    slugs.add("maimai_dx")
+            else:
+                slugs.add(mapped)
+        return slugs
+
     if sid is not None and sid in USA_SERIES:
         slugs.add(USA_SERIES[sid])
-    low = nm.lower()
     for pat, slug in GAME_PATTERNS:
-        if pat in low or pat in nm:
+        if pat in low or pat in (nm or ""):
+            # Skip the maimai placeholder pattern here; handled above.
+            if slug == "maimai_dx" and pat in ("maimai", "舞萌"):
+                continue
             slugs.add(slug)
     return slugs
 
@@ -310,18 +675,81 @@ def slugs_for_title(name):
 
 def _slugs_for_machines(machines):
     slugs = set()
-    for nm, sid in machines:
+    for item in machines:
+        if len(item) >= 2:
+            nm, sid = item[0], item[1]
+        else:
+            continue
         slugs |= _machine_slugs(nm, sid) or {"other"}
     return sorted(slugs) or ["other"]
 
 
-def _counts_for_machines(machines):
-    """{slug: machine count}: each machine list entry is one machine and
-    increments every distinct slug it maps to ("other" is not counted)."""
+def _counts_and_evidence_for_machines(machines_with_comments):
+    """Per-arcade game_counts, count_evidence, and cab_models.
+
+    machines_with_comments: iterable of (name, series_id, comment).
+
+    Counting rules (never invent a total):
+      - If any machine of a slug has a comment-parsed quantity, sum those
+        parsed quantities (entries with no parseable comment contribute
+        nothing to a ziv_comment total - the comment is the authority).
+        When SOME entries of a slug have comments and some do not, sum
+        (parsed qtys) + 1 per unparsed entry, still tagged ziv_comment
+        because at least one real quantity was asserted.
+      - If no machine of a slug has a parseable quantity, the count is the
+        number of list entries (lower bound) with evidence ziv_listed.
+      - "other" is never counted.
+      - cab_models uses the same rules, keyed by variant slug from the
+        title (Lightning, Valkyrie, DDR gold, ...).
+    """
+    # slug -> list of per-entry quantities (int) or None if unparsed
+    per_slug = {}
+    per_variant = {}
+    for nm, sid, comment in machines_with_comments:
+        slugs = _machine_slugs(nm, sid)
+        qty = parse_machine_quantity(comment)
+        for slug in slugs:
+            per_slug.setdefault(slug, []).append(qty)
+        for variant in cab_variants_for_title(nm):
+            per_variant.setdefault(variant, []).append(qty)
+
+    def _fold(entries):
+        """(total, evidence) from a list of per-entry qty-or-None."""
+        parsed = [q for q in entries if q is not None]
+        unparsed = len(entries) - len(parsed)
+        if parsed:
+            # Real comment quantity present. Unparsed siblings still count
+            # as at least one cab each (they exist in the list).
+            total = sum(parsed) + unparsed
+            return total, "ziv_comment"
+        # list-entry lower bound only
+        return len(entries), "ziv_listed"
+
     counts = {}
-    for nm, sid in machines:
-        for slug in _machine_slugs(nm, sid):
-            counts[slug] = counts.get(slug, 0) + 1
+    evidence = {}
+    for slug, entries in per_slug.items():
+        total, ev = _fold(entries)
+        if total > 0:
+            counts[slug] = total
+            evidence[slug] = ev
+
+    cab_models = {}
+    for variant, entries in per_variant.items():
+        total, _ev = _fold(entries)
+        if total > 0:
+            cab_models[variant] = total
+
+    return counts, evidence, cab_models
+
+
+def _counts_for_machines(machines):
+    """Backward-compatible wrapper: {slug: count} from (nm, sid) pairs.
+
+    Treats every list entry as quantity 1 with no comment (ziv_listed).
+    Prefer _counts_and_evidence_for_machines when comments are available.
+    """
+    counts, _ev, _cm = _counts_and_evidence_for_machines(
+        [(nm, sid, None) for nm, sid in machines])
     return counts
 
 
@@ -362,7 +790,8 @@ def _parse_arcades(payload, country, enrich_pictures=False):
             lng = _wrap_lng(float(lng)) if lng not in (None, "") else None
         except (TypeError, ValueError):
             lat = lng = None
-        machines = []   # (machine name, series id or None)
+        # (name, series_id, comment) - comment drives real quantities
+        machines = []
         machines_raw = a.get("cabs") or a.get("machines") or []
         for c in (a.get("cabs") or a.get("machines") or []):
             if isinstance(c, dict):
@@ -375,12 +804,16 @@ def _parse_arcades(payload, country, enrich_pictures=False):
                     sid = int(sid)
                 except (TypeError, ValueError):
                     sid = None
-                machines.append((nm, sid))
+                comment = c.get("comment")
+                if comment is not None:
+                    comment = str(comment)
+                machines.append((nm, sid, comment))
             else:
-                machines.append((str(c), None))
-        machines = [(nm, sid) for nm, sid in machines
+                machines.append((str(c), None, None))
+        machines = [(nm, sid, comment) for nm, sid, comment in machines
                     if nm and not _CLOSED_RE.search(nm)]
-        cabs = [nm for nm, _ in machines]
+        machines_ns = [(nm, sid) for nm, sid, _ in machines]
+        cabs = [nm for nm, _ in machines_ns]
         addr_bits = [str(a.get(k) or "") for k in
                      ("address", "city", "state", "postalcode")]
         addr = ", ".join(b for b in addr_bits if b)
@@ -392,15 +825,21 @@ def _parse_arcades(payload, country, enrich_pictures=False):
             "lat": lat,
             "lng": lng,
             "coord_system": "wgs84",
-            "games": _slugs_for_machines(machines),
+            "games": _slugs_for_machines(machines_ns),
             "source": "ziv",
             "source_url": ARCADE_URL % aid,
             "notes": notes,
             "country": country,
         }
-        counts = _counts_for_machines(machines)
+        counts, evidence, cab_models = _counts_and_evidence_for_machines(
+            machines)
         if counts:
             out[aid]["game_counts"] = {s: counts[s] for s in sorted(counts)}
+            out[aid]["count_evidence"] = {
+                s: evidence[s] for s in sorted(evidence)}
+        if cab_models:
+            out[aid]["cab_models"] = {
+                s: cab_models[s] for s in sorted(cab_models)}
         # optional enrichment; absent keys simply do not appear
         out[aid].update(arcade_enrichment(a, machines_raw, enrich_pictures))
     return out
@@ -442,12 +881,38 @@ def fetch_usa(pictures=False):
                 merged[aid]["games"] = sorted(
                     set(merged[aid]["games"]) | set(row["games"]))
                 gc = merged[aid].get("game_counts") or {}
+                ce = merged[aid].get("count_evidence") or {}
                 for slug, n in (row.get("game_counts") or {}).items():
-                    if n > gc.get(slug, 0):
+                    row_ev = (row.get("count_evidence") or {}).get(
+                        slug, "ziv_listed")
+                    if slug not in gc:
                         gc[slug] = n
+                        ce[slug] = row_ev
+                    else:
+                        # Prefer a comment-backed total over a list bound;
+                        # within the same evidence class take the max.
+                        cur_ev = ce.get(slug, "ziv_listed")
+                        if row_ev == "ziv_comment" and cur_ev != "ziv_comment":
+                            gc[slug] = n
+                            ce[slug] = row_ev
+                        elif row_ev == cur_ev and n > gc[slug]:
+                            gc[slug] = n
+                        elif (row_ev == "ziv_comment"
+                              and cur_ev == "ziv_comment"
+                              and n > gc[slug]):
+                            gc[slug] = n
                 if gc:
                     merged[aid]["game_counts"] = {s: gc[s]
                                                   for s in sorted(gc)}
+                    merged[aid]["count_evidence"] = {
+                        s: ce[s] for s in sorted(ce)}
+                cm = merged[aid].get("cab_models") or {}
+                for slug, n in (row.get("cab_models") or {}).items():
+                    if n > cm.get(slug, 0):
+                        cm[slug] = n
+                if cm:
+                    merged[aid]["cab_models"] = {s: cm[s]
+                                                 for s in sorted(cm)}
                 # each series query returns only that series' machines,
                 # so per-slug prices and pictures accumulate across the
                 # per-series loop rather than one query seeing them all

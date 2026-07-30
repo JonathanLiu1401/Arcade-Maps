@@ -10,9 +10,22 @@ window.AM = window.AM || {};
   var REDUCED = C.REDUCED;
 
   /* ---------- map ---------- */
-  /* zoomSnap 0.25 keeps +/- buttons, keyboard, double-click and pinch-end on a
-     quarter-level grid; the wheel handler below is deliberately continuous and
-     is not snapped, so getZoom() reads values like 12.37 during a gesture.
+  /* zoomSnap is 0, which means NO zoom level is ever rounded to a grid.
+     It used to be 0.25, and that quarter-level grid was the "chunky zoom" the
+     owner reported on a phone. The wheel handler was never snapped, so desktop
+     looked fine and the defect hid there, but PINCH is a different code path:
+     Leaflet's TouchZoom ends with _animateZoom(center, _limitZoom(zoom)), and
+     _limitZoom rounds to zoomSnap. A measured pinch ran smoothly up to z14.864
+     and then jumped BACKWARDS to z14.75 the instant the fingers lifted - a
+     0.114-level recoil at the end of every single pinch. Snapping to 0 makes
+     the gesture end exactly where the fingers left it, which is what Google
+     Maps does and what the owner is asking for.
+
+     zoomDelta 0.5 is what still gives the +/- buttons, the keyboard and
+     double-click a definite step (0.5 levels per press) now that no grid does.
+     Those are RELATIVE steps, so from a fractional 13.37 the + button lands on
+     13.87 rather than the old grid's 13.75.
+
      smoothSensitivity is the single wheel-speed knob: zoom levels per unit of
      L.DomEvent.getWheelDelta, applied as delta * 0.003 * sensitivity. Chrome
      reports getWheelDelta 50 for one 100 px notch, so 0.003 * 50 * 3 = 0.45
@@ -24,11 +37,14 @@ window.AM = window.AM || {};
     fadeAnimation: !REDUCED,
     zoomAnimation: !REDUCED,
     markerZoomAnimation: !REDUCED,
-    zoomSnap: 0.25,
+    zoomSnap: 0,
     zoomDelta: 0.5,
     wheelPxPerZoomLevel: 80,
     wheelDebounceTime: 20,
-    /* Reduced motion keeps Leaflet's discrete, non-animated wheel zoom. */
+    /* Reduced motion keeps Leaflet's built-in, non-animated wheel zoom. With
+       zoomSnap 0 that path is no longer snapped to a grid either (Leaflet only
+       rounds the wheel delta when zoomSnap is non-zero), so it stays a plain
+       un-animated jump per notch, which is the point for reduced motion. */
     scrollWheelZoom: REDUCED,
     smoothWheelZoom: !REDUCED,
     smoothSensitivity: 3
@@ -50,7 +66,12 @@ window.AM = window.AM || {};
 
   /* setView applies _limitZoom, which snaps to zoomSnap. Restoring a shared
      link captured mid-gesture (say z=12.37) would otherwise land on 12.25, so
-     the snap is suspended for the duration of the restore. */
+     the snap is suspended for the duration of the restore.
+
+     With zoomSnap now 0 this is a no-op, and it is kept deliberately: it is
+     the guarantee that an exact zoom survives, not a consequence of the
+     current option value. If a future change reintroduces a snap grid, shared
+     links keep round-tripping without anyone having to rediscover this. */
   function setViewExact(latlng, zoom, options) {
     var snap = map.options.zoomSnap;
     map.options.zoomSnap = 0;
@@ -64,10 +85,14 @@ window.AM = window.AM || {};
      fitBounds alone is honest but unreadable on a phone: the data bbox spans
      lat -54.8..69.7 / lng -158.0..176.9, which is 93% of the world's width and
      only 46% of its Mercator height. Fitting that into a 390x713 map column
-     solves for the WIDTH and lands on z0.47 (Leaflet snapped it to 0.25), so
-     the world is drawn 355px tall inside a 713px box - 245px of dead grey
-     above it and 217px below. The map reads as broken before a single store
-     is legible.
+     solves for the WIDTH and lands on z0.47 (which the old zoomSnap 0.25
+     rounded to 0.25), so the world is drawn 355px tall inside a 713px box -
+     245px of dead grey above it and 217px below. The map reads as broken
+     before a single store is legible.
+
+     The floor below is computed, not snapped, so it is unaffected by zoomSnap
+     being 0: the opening view was measured at z1.576 both before and after
+     that change.
 
      So the fit is kept, then floored: below the zoom at which the world fills
      the container's HEIGHT there is nothing but empty grey to gain, so that
@@ -78,7 +103,10 @@ window.AM = window.AM || {};
 
      The floor self-disables wherever the natural fit already clears it: a
      1280x822 desktop map fits at z2.36 against a floor of 1.68, so desktop
-     keeps the exact view it had before and needs no media query.
+     takes the fitBounds branch and needs no media query. (Measured at
+     1600x900: the fit is z2.2766 with zoomSnap 0 where it was z2.25 on the
+     old quarter grid, a 0.027-level difference, and the opening view still
+     contains the whole data bbox.)
 
      The floored view has to be re-centred: the bbox centre (16.1N, 9.5E) is
      the middle of Africa, and at the tighter zoom that frames the Atlantic and

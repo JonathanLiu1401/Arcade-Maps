@@ -9,6 +9,19 @@ They remain available under their original licenses. Photos under CC BY or CC BY
 require the attribution shown here; the site renders it alongside each photo.
 CC BY-SA images are shared under the same license as the original.
 
+## Honest use (critical)
+
+These files are **representative cabinet photos**, not photos of a specific
+arcade location. They may only be shown as a "game" tier image, clearly labelled
+as a representative cabinet (not this venue). They must **never** be used as the
+location photo for an arcade pin.
+
+Real venue photos come from community sources (Zenius-I-Vanisher pictures,
+BemaniCN shop thumbs) via `scrapers/photos.py` + `scrapers/enrich.py`, and carry
+their own credit + deep link. When no venue photo exists the UI must show an
+empty / no-photo state rather than silently substituting a stock cab shot as if
+it were the venue.
+
 | Game | File | Photo | Author | License | Source |
 | --- | --- | --- | --- | --- | --- |
 | `maimai_dx` | `maimai_dx.jpg` | Maimai DX PRiSM Cabinet | TerraGaming | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Commons](https://commons.wikimedia.org/wiki/File:Maimai_DX_PRiSM_Cabinet.jpg) |

@@ -39,20 +39,137 @@ window.AM = window.AM || {};
     GAME_ORDER.push(g[0]); GAME_LABEL[g[0]] = g[1]; GAME_COLOR[g[0]] = g[2];
   });
 
-  /* Cab-variant filters: id, label, game restricted, matching cab slugs. */
+  /* ---------- cabinet variants ----------
+
+     A rhythm game is not one machine. maimai DX and maimai FiNALE are
+     different games on incompatible hardware; an IIDX Lightning Model runs
+     charts a standard LDJ cab cannot unlock; a DDR gold cab has Dan courses
+     the white cab does not. Which cabinet a store has is often the whole
+     reason to travel to it, so the map has to say.
+
+     WHERE THE EVIDENCE COMES FROM, and why it is not just `cabs[]`:
+
+     `cabs[]` is assigned by the merge from KONAMI e-amusement facility
+     files, and that search only covers JAPAN. Every one of the six flags in
+     the current data file is 100% Japanese, so a cab filter built on `cabs[]`
+     alone silently means "in Japan" - a Hong Kong player ticking "Lightning
+     model" loses every Hong Kong store that has one.
+
+     ZIv carries the same information worldwide, in the `Cabs:` list this
+     file already ships inside `notes` ("beatmania IIDX 33 Sparkle Shower
+     (LIGHTNING MODEL)"). Parsing that recovers 111 non-Japan Lightning cabs
+     and 112 non-Japan Valkyrie cabs that `cabs[]` cannot see. So evidence is
+     the UNION of the two, with per-source provenance kept so the UI can be
+     honest about which is which.
+
+     ONE eagate flag is dropped outright. data_raw/sdvx.json and
+     data_raw/sdvx_vm.json are byte-identical (md5 35d3e6a0...): the upstream
+     SDVX_VM facility key returns the plain SDVX result set, so the merge
+     flagged all 551 Japanese SDVX stores as Valkyrie. That claim is false and
+     a veteran spots it instantly, so `sdvx_vm` is sourced from ZIv only. The
+     sibling pairs were checked the same way and all differ (iidx 6417600a vs
+     df58b585, ddr 197ec818 vs ab1d9b80, popn 84443f6d vs b0bd6301, gitadora
+     gf 32c8fd49 vs 541a566e, dm a328e0a0 vs a165a76f), so those five flags
+     are trusted.
+
+     THREE-STATE, NOT TWO. ZIv's silence is "unknown", never "standard": a
+     bare `DanceDanceRevolution WORLD` line appears 160 times against 156 that
+     name the gold cab, and reading the bare ones as white would assert a
+     cabinet nobody recorded. Nothing here ever renders an absence as a
+     variant. e-amusement CAN produce a negative inside Japan (a store in DDR
+     but absent from DDR20TH really has no gold cab) and that is the only
+     negative this file will state. */
+
+  /* Variant slugs. `game` ties the variant to the game chip it qualifies,
+     `badge` is the compact panel/popup pill, `chipOnly` variants rename the
+     game chip instead of adding a pill (used where a badge on 7,656 stores
+     would be noise), and `offline` marks a cabinet whose network is dead -
+     you can play it, it cannot save a score. */
+  var CAB_VARIANTS = [
+    { id: "maimai_classic", game: "maimai_dx", label: "maimai (FiNALE / pre-DX)",
+      badge: "FiNALE / pre-DX", offline: true,
+      note: "Pre-DX cabinet. Every maimai network closed in 2020, so these run "
+        + "offline: no score saving, no maimai-NET, Utage locked." },
+    { id: "maimai_dx_cab", game: "maimai_dx", label: "maimai DX", chipOnly: true },
+    { id: "iidx_lm", game: "iidx", label: "Lightning model", badge: "Lightning",
+      note: "120Hz DisplayPort panel, touchscreen Premium Area, consistent "
+        + "offset between cabs, and Kiwami Class charts a standard cab cannot unlock." },
+    { id: "sdvx_vm", game: "sdvx", label: "Valkyrie model", badge: "Valkyrie",
+      note: "43\" 120Hz portrait screen plus touch subscreen, better knobs, "
+        + "S-CRITICAL judgement and Valkyrie-exclusive songs." },
+    { id: "sdvx_nemsys", game: "sdvx", label: "NEMSYS (standard)", badge: "NEMSYS",
+      note: "Standard 60Hz cabinet. The only one that can use Card Generator / "
+        + "Card Connect, but it is being retired and stays on EXCEED GEAR." },
+    { id: "ddr_gold", game: "ddr", label: "Gold cab (20th anniversary)", badge: "Gold cab",
+      note: "BIO2 board, gold UI theme, and gold-only content: Dan courses "
+        + "and the Legend Licenses Dancemania remixes." },
+    { id: "ddr_universal", game: "ddr", label: "Universal Model (EU/NA)", badge: "Universal",
+      note: "2026 Uniana-built platinum cabinet, EU and NA only. European "
+        + "units ship with online removed and a reduced songlist." },
+    { id: "ddr_legacy", game: "ddr", label: "Legacy CRT cabinet", badge: "Legacy CRT",
+      offline: true,
+      note: "Pre-LCD cabinet capped at old software - DDR WORLD dropped CRT "
+        + "support entirely. Offline, no e-amusement." },
+    { id: "popn_pikapika", game: "popn", label: "Pikapika model", badge: "Pikapika",
+      note: "First new pop'n cabinet in 15 years: 43\" 120fps screen, two "
+        + "large Dekka Pop-kun buttons and a touchscreen." },
+    { id: "gitadora_gf_arena", game: "gitadora", label: "GuitarFreaks Arena model",
+      badge: "GF Arena",
+      note: "2025 four-screen chassis, physical buttons replaced by a touchscreen." },
+    { id: "gitadora_dm_arena", game: "gitadora", label: "DrumMania Arena model",
+      badge: "DM Arena",
+      note: "2025 four-screen chassis with silicone snare and tom pads." },
+    /* Taiko's axis is the regional BUILD, not the cabinet: the Asia, Japan and
+       USA versions carry different songlists and are separated in the source.
+       Labelled generically because the Asia bucket holds older Asia releases
+       (Taiko 11/12 Asia) alongside Nijiiro, and naming Nijiiro would overclaim. */
+    { id: "taiko_asia", game: "taiko", label: "Asia build", badge: "Asia build" },
+    { id: "taiko_jp", game: "taiko", label: "Japan build (Nijiiro)", badge: "JP build" },
+    { id: "taiko_us", game: "taiko", label: "USA build (Nijiiro)", badge: "USA build" }
+  ];
+  var VARIANT_BY_ID = {}, VARIANTS_BY_GAME = {};
+  CAB_VARIANTS.forEach(function (v) {
+    VARIANT_BY_ID[v.id] = v;
+    (VARIANTS_BY_GAME[v.game] = VARIANTS_BY_GAME[v.game] || []).push(v);
+  });
+
+  /* Cab-variant filters: id, label, game restricted, matching variant slugs.
+
+     The FIVE ORIGINAL IDS ARE FROZEN. mapcore.js serialises the checked set
+     into the URL as `cabs=<id>,<id>` by iterating this list, so renaming
+     sdvx_vm or gitadora_arena would break every link anyone has already
+     shared. New variants are appended; nothing is renamed. */
   var CAB_FILTERS = [
     { id: "sdvx_vm", label: "Valkyrie model", game: "sdvx", slugs: ["sdvx_vm"] },
     { id: "iidx_lm", label: "Lightning model", game: "iidx", slugs: ["iidx_lm"] },
-    { id: "ddr_gold", label: "DDR gold cab", game: "ddr", slugs: ["ddr_gold"] },
-    { id: "gitadora_arena", label: "GITADORA Arena", game: "gitadora",
+    { id: "ddr_gold", label: "Gold cab (20th anniv.)", game: "ddr", slugs: ["ddr_gold"] },
+    { id: "gitadora_arena", label: "Arena model", game: "gitadora",
       slugs: ["gitadora_gf_arena", "gitadora_dm_arena"] },
-    { id: "popn_pikapika", label: "pop'n Pikapika", game: "popn", slugs: ["popn_pikapika"] }
+    { id: "popn_pikapika", label: "Pikapika model", game: "popn", slugs: ["popn_pikapika"] },
+    /* There is deliberately NO "maimai DX" checkbox, even though the variant
+       exists and the chip logic depends on it. Every other box here selects a
+       cabinet somebody positively identified; a DX box would select "DX, where
+       a source happened to record it" and silently drop the 2,313 stores whose
+       cabinet is merely unrecorded - which for maimai is almost always a DX
+       cab. That is unknown being rendered as absent, the exact error the
+       three-state rule exists to prevent, and it would hide more stores than
+       any other filter on this list. FiNALE is the useful filter and it is a
+       positive claim, so it is the one that ships. */
+    { id: "maimai_classic", label: "maimai FiNALE / pre-DX", game: "maimai_dx",
+      slugs: ["maimai_classic"] },
+    { id: "sdvx_nemsys", label: "NEMSYS (standard)", game: "sdvx", slugs: ["sdvx_nemsys"] },
+    { id: "ddr_universal", label: "Universal Model (EU/NA)", game: "ddr",
+      slugs: ["ddr_universal"] },
+    { id: "ddr_legacy", label: "Legacy CRT cab", game: "ddr", slugs: ["ddr_legacy"] },
+    { id: "taiko_asia", label: "Nijiiro - Asia build", game: "taiko", slugs: ["taiko_asia"] },
+    { id: "taiko_jp", label: "Nijiiro - Japan build", game: "taiko", slugs: ["taiko_jp"] },
+    { id: "taiko_us", label: "Nijiiro - USA build", game: "taiko", slugs: ["taiko_us"] }
   ];
-  var CAB_BADGE = {
-    sdvx_vm: "Valkyrie", iidx_lm: "Lightning", ddr_gold: "DDR gold",
-    gitadora_gf_arena: "GF Arena", gitadora_dm_arena: "DM Arena",
-    popn_pikapika: "Pikapika"
-  };
+  var CAB_BADGE = {};
+  CAB_VARIANTS.forEach(function (v) { if (v.badge) CAB_BADGE[v.id] = v.badge; });
+  /* Legacy slugs that may still arrive in a data file's cabs[]. */
+  CAB_BADGE.gitadora_gf_arena = "GF Arena";
+  CAB_BADGE.gitadora_dm_arena = "DM Arena";
   var SRC_LABEL = {
     allnet: "ALL.Net", eagate: "e-amusement", wahlap: "WAHLAP", ziv: "ZIv",
     round1usa: "Round1 USA", bemanicn: "BemaniCN", community: "community"
@@ -62,6 +179,23 @@ window.AM = window.AM || {};
 
   var REDUCED = !!(window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  /* Rhythm titles the merge drops into the `other` bucket. 7,491 stores carry
+     `other` and the chip says nothing, yet Pump It Up alone is in 1,481 of
+     them - on a worldwide map that is a bigger omission than any cab badge.
+     Re-slugging them belongs in the scraper; naming them in the UI does not,
+     so the panel reads the titles back out of the ZIv list and the search box
+     indexes them. Anchored to the title token, never to a bare parenthetical. */
+  var OTHER_GAMES = [
+    { id: "pump_it_up", label: "Pump It Up", re: /pump\s*it\s*up|펌프/i },
+    { id: "stepmaniax", label: "StepManiaX", re: /step\s*mania\s*x|stepmania/i },
+    { id: "wacca", label: "WACCA", re: /\bwacca\b|华卡音舞/i },
+    { id: "groove_coaster", label: "Groove Coaster", re: /groove\s*coaster|音炫轨道/i },
+    { id: "crossbeats", label: "crossbeats", re: /crossbeats/i },
+    { id: "beatstream", label: "BeatStream", re: /beatstream/i },
+    { id: "beat_saber", label: "Beat Saber", re: /beat\s*saber/i },
+    { id: "dance_evo_other", label: "DanceEvolution", re: /dance\s*evolution/i }
+  ];
 
   AM.consts = {
     DATA_URL: DATA_URL,
@@ -73,6 +207,10 @@ window.AM = window.AM || {};
     GAME_COLOR: GAME_COLOR,
     CAB_FILTERS: CAB_FILTERS,
     CAB_BADGE: CAB_BADGE,
+    CAB_VARIANTS: CAB_VARIANTS,
+    VARIANT_BY_ID: VARIANT_BY_ID,
+    VARIANTS_BY_GAME: VARIANTS_BY_GAME,
+    OTHER_GAMES: OTHER_GAMES,
     SRC_LABEL: SRC_LABEL,
     SRC_ORDER: SRC_ORDER,
     REDUCED: REDUCED
@@ -134,6 +272,234 @@ window.AM = window.AM || {};
     return typeof v === "number" && isFinite(v) ? v : null;
   }
 
+  /* ---------- cab-variant detection ----------
+
+     Everything below turns one arcade into a map of
+
+         variant slug -> { n: count|null, src: "eagate"|"ziv"|"cab_models" }
+
+     computed ONCE per arcade and cached on a side map keyed by id. It has to
+     be cached: markers.js runs the visibility predicate over 13,502 rows on
+     every filter toggle, and search.js and nearby.js run it again, so a regex
+     sweep inside that predicate would make every checkbox click walk the whole
+     data file. Nothing here runs during a zoom or pan - the cache is built on
+     first read and only invalidated when the data file itself is replaced. */
+
+  /* ZIv publishes the machine list inside `notes` as
+       "region: X | Cabs: TITLE; TITLE; TITLE | other prose"
+     Only the segment between "Cabs:" and the next pipe is a machine list;
+     the prose after it is human commentary that happens to name games
+     ("Standard Round1 US rhythm lineup assumed: DDR, maimai DX, ...") and
+     reading that as a cab list would invent machines. */
+  function cabTitles(a) {
+    var n = a && a.notes;
+    if (typeof n !== "string") return [];
+    var at = n.indexOf("Cabs:");
+    if (at === -1) return [];
+    var body = n.slice(at + 5).split("|")[0];
+    var out = [];
+    body.split(";").forEach(function (t) {
+      t = t.trim();
+      if (t) out.push(t);
+    });
+    return out;
+  }
+
+  /* Ordered rules, first match wins WITHIN a game. Anchored to the game token
+     on purpose: a bare /\(.*model.*\)/ scoops "Terminator Salvation (Unknown
+     Model)" 193 times, plus Sweet Land's Blue/Pink models and a Batman - all
+     checked, none of them rhythm games. Everything is case-insensitive
+     because the source mixes "(LIGHTNING MODEL)", "(Valkyrie model)" and
+     "(20th anniversary model)" freely, and every parenthesis class accepts
+     the FULL-WIDTH form too: the 267-row Asia Taiko build is written
+     "ニジイロVer.(アシア版）" with an ASCII open paren and a full-width close,
+     which a plain [^)]+ never matches. */
+  var TITLE_RULES = [
+    /* maimai: the classic rule MUST be tested before the DX rule, because
+       "舞萌DX 2026 (maimai DX PRiSM PLUS)" contains both tokens. */
+    { id: "maimai_classic",
+      re: /(?:^|[\s\/])maimai(?:PLUS)?\b(?!\s*(?:dx|でらっくす))|^舞萌\s*[\(（](?!.*dx)/i },
+    { id: "maimai_dx_cab", re: /maimai\s*dx|maimai\s*でらっくす|舞萌\s*dx/i },
+
+    { id: "iidx_lm", re: /beatmania[\s\S]*[\(（]\s*lightning\s+model\s*[\)）]/i },
+
+    { id: "sdvx_vm", re: /(?:sound\s*voltex|音律炫动)[\s\S]*[\(（]\s*valkyrie\s+model\s*[\)）]/i },
+    { id: "sdvx_nemsys", re: /(?:sound\s*voltex|音律炫动)[\s\S]*[\(（]\s*nemsys\s+model\s*[\)）]/i },
+
+    { id: "ddr_gold",
+      re: /(?:dance\s*dance\s*revolution|ddr)[\s\S]*[\(（]\s*20th\s+anniversary\s+model\s*[\)）]/i },
+    { id: "ddr_universal",
+      re: /(?:dance\s*dance\s*revolution|ddr)[\s\S]*[\(（]\s*universal\s+model\s*[\)）]/i },
+    /* Legacy is a TITLE test, not a parenthetical: these cabinets are CRT-era
+       and identified by which mix they are stuck on. DDR WORLD is the first
+       DDR with no CRT support, so an EXTREME or SuperNOVA cab is hard-capped
+       at dead software - 251 EXTREME cabs currently render identically to a
+       live A3. Deliberately excludes the A/A20/A3/WORLD generation. */
+    { id: "ddr_legacy",
+      re: /(?:dance\s*dance\s*revolution|dancing\s*stage|ddrmax)[\s\S]*(?:extreme|supernova|euromix|fusion|ddrmax|\bsolo\b|[2-8](?:nd|rd|th)\s*mix|\bstomp\b|\bX[23]?\b|hottest\s*party|konamix)|ddrmax/i },
+
+    { id: "taiko_asia", re: /(?:太鼓の達人|taiko)[\s\S]*[\(（]\s*(?:アシア版|亞洲版|亚洲版)\s*[\)）]|亞洲版|亚洲版/i },
+    { id: "taiko_us", re: /taiko[\s\S]*nijii?ro[\s\S]*\busa\b/i },
+    { id: "taiko_jp", re: /太鼓の達人\s*ニジイロ/i },
+
+    { id: "popn_pikapika", re: /pop'?n[\s\S]*(?:ピカピカ|pikapika)/i },
+    { id: "gitadora_gf_arena", re: /gitadora[\s\S]*arena[\s\S]*guitar|guitarfreaks[\s\S]*arena/i },
+    { id: "gitadora_dm_arena", re: /gitadora[\s\S]*arena[\s\S]*drum|drummania[\s\S]*arena/i }
+  ];
+
+  /* An e-amusement flag is only evidence when its facility file actually
+     differs from the base game's. SDVX_VM is a real gkey that returns the
+     plain SDVX result set byte for byte, so it flags every Japanese SDVX
+     store as Valkyrie; believing it is worse than having no data. */
+  var UNTRUSTED_EAGATE_CAB = { sdvx_vm: true };
+
+  /* A machine title the source clipped: "maimai D...", "SOUND...", "...". */
+  var TRUNCATED = /(?:\.\.\.|…)\s*$/;
+
+  function addHit(map, id, src, n) {
+    if (!id) return;
+    var cur = map[id];
+    if (!cur) { map[id] = { n: (typeof n === "number" && n > 0) ? n : null, src: src }; return; }
+    /* Two sources agreeing is not two cabinets. Keep the stronger provenance
+       and the count only if one side actually has one. */
+    if (typeof n === "number" && n > 0 && (cur.n === null || n > cur.n)) cur.n = n;
+    if (src === "cab_models") cur.src = src;
+    else if (src === "eagate" && cur.src === "ziv") cur.src = "both";
+    else if (src === "ziv" && cur.src === "eagate") cur.src = "both";
+  }
+
+  function computeVariants(a) {
+    var map = {};
+
+    /* 1. cab_models {slug: count} - the field a concurrent scraper change is
+       adding. Absent from every row today, so this branch is written blind
+       and is deliberately the highest-precedence source: when it lands it
+       carries real per-variant quantities and supersedes both guesses. */
+    var cm = a && a.cab_models;
+    if (cm && typeof cm === "object") {
+      for (var slug in cm) {
+        if (!Object.prototype.hasOwnProperty.call(cm, slug)) continue;
+        var q = cm[slug];
+        addHit(map, slug, "cab_models", typeof q === "number" ? q : null);
+      }
+    }
+
+    /* 2. cabs[] from e-amusement, minus the flag that carries no information. */
+    if (a && a.cabs && a.cabs.length) {
+      for (var i = 0; i < a.cabs.length; i++) {
+        var c = a.cabs[i];
+        if (UNTRUSTED_EAGATE_CAB[c]) continue;
+        addHit(map, c, "eagate", null);
+      }
+    }
+
+    /* 3. ZIv titles - the only worldwide source. Each title is tested against
+       the ordered rules and takes the FIRST match, so one machine can never
+       count as two variants of the same game. */
+    var titles = cabTitles(a);
+    for (var t = 0; t < titles.length; t++) {
+      /* 301 titles in this file arrive TRUNCATED ("maimai D...", "SOUND...",
+         and 36 bare "..."), because the upstream listing clipped them. A
+         truncated title is not evidence: "maimai D..." is almost certainly
+         "maimai DX", but the classic rule matches it first and would label a
+         live DX cabinet as a dead offline FiNALE - the single worst error this
+         feature can make, because it sends someone to a machine that cannot
+         save a score. A clipped string proves only that SOMETHING is there,
+         so it is skipped rather than guessed at. */
+      if (TRUNCATED.test(titles[t])) continue;
+      for (var r = 0; r < TITLE_RULES.length; r++) {
+        if (TITLE_RULES[r].re.test(titles[t])) {
+          addHit(map, TITLE_RULES[r].id, "ziv", null);
+          break;
+        }
+      }
+    }
+
+    /* maimai three-state. ALL.Net and WAHLAP are official locators that list
+       only currently-serviced titles, and no maimai FiNALE network exists
+       anywhere on earth (JP closed 2019-09, Asia 2020-02, maimai-NET
+       2020-03). So a store listed by one of them and carrying maimai is
+       running DX, full stop - that is a positive, not an assumption, and it
+       resolves 4,179 stores that ZIv never described. */
+    if (a && a.games && a.games.indexOf("maimai_dx") !== -1 && !map.maimai_dx_cab &&
+        !map.maimai_classic && a.src) {
+      for (var s = 0; s < a.src.length; s++) {
+        if (a.src[s] === "allnet" || a.src[s] === "wahlap") {
+          addHit(map, "maimai_dx_cab", "official", null);
+          break;
+        }
+      }
+    }
+    return map;
+  }
+
+  var variantCache = {};
+
+  /* variantsOf(a) -> { slug: {n, src} }. Never null. */
+  function variantsOf(a) {
+    if (!a) return {};
+    var key = a.id;
+    if (key === undefined || key === null) return computeVariants(a);
+    var hit = variantCache[key];
+    if (hit === undefined) { hit = variantCache[key] = computeVariants(a); }
+    return hit;
+  }
+
+  function hasVariant(a, slug) {
+    return Object.prototype.hasOwnProperty.call(variantsOf(a), slug);
+  }
+
+  /* Variants for one game, in CAB_VARIANTS order, only the ones present. */
+  function variantsForGame(a, game) {
+    var have = variantsOf(a);
+    var defs = VARIANTS_BY_GAME[game] || [];
+    var out = [];
+    for (var i = 0; i < defs.length; i++) {
+      if (Object.prototype.hasOwnProperty.call(have, defs[i].id)) {
+        out.push({ def: defs[i], ev: have[defs[i].id] });
+      }
+    }
+    return out;
+  }
+
+  /* Which `other` titles a store actually has, so the grey "Other" chip can
+     stop being a black box. Returns [] when nothing is derivable. */
+  function otherGamesOf(a) {
+    var titles = cabTitles(a);
+    if (!titles.length) return [];
+    var seen = {}, out = [];
+    for (var i = 0; i < titles.length; i++) {
+      for (var j = 0; j < OTHER_GAMES.length; j++) {
+        var og = OTHER_GAMES[j];
+        if (!seen[og.id] && og.re.test(titles[i])) { seen[og.id] = true; out.push(og); }
+      }
+    }
+    return out;
+  }
+
+  /* The game's name AT ONE STORE, which is not always the game's own label.
+
+     A store whose only maimai cabinet is a pre-DX one is not a maimai DX
+     store, and calling it one is the single most misleading thing this map
+     did: 222 stores advertised a game whose network shut down in 2020, so a
+     player could travel to one and find a machine that cannot save a score.
+
+     This lives in util rather than in the panel because FIVE surfaces print a
+     game name (place-panel chip, hero caption, price row, no-coords list, map
+     popup) and nearby.js prints a sixth. Fixing one leaves the same false
+     claim on the others in a different font, so they all read it from here. */
+  function gameLabelFor(a, g) {
+    if (g === "maimai_dx") {
+      var have = variantsOf(a);
+      if (have.maimai_classic && !have.maimai_dx_cab) return "maimai (FiNALE / pre-DX)";
+    }
+    return GAME_LABEL[g] || g;
+  }
+
+  /* Only needed if the data file is ever swapped at runtime; arcades.json is
+     fetched once today, so nothing calls this. */
+  function resetVariantCache() { variantCache = {}; }
+
   AM.util = {
     $: $,
     esc: esc,
@@ -141,7 +507,14 @@ window.AM = window.AM || {};
     gmapsSearchUrl: gmapsSearchUrl,
     safeUrl: safeUrl,
     num: num,
-    gameCount: gameCount
+    gameCount: gameCount,
+    cabTitles: cabTitles,
+    variantsOf: variantsOf,
+    hasVariant: hasVariant,
+    variantsForGame: variantsForGame,
+    otherGamesOf: otherGamesOf,
+    gameLabelFor: gameLabelFor,
+    resetVariantCache: resetVariantCache
   };
 
   /* ---------- loaded data (filled by app-init) ---------- */

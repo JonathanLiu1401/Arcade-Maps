@@ -277,9 +277,30 @@ window.AM = window.AM || {};
     var cabBadge = el("div", "sd-badge-row");
     cabBadge.appendChild(el("span", "badge cab", "Lightning"));
     cabBadge.appendChild(el("span", "sd-badge-txt",
-      "Yellow badges mark special cabinet variants: Valkyrie, Lightning, DDR gold, GITADORA Arena, pop'n Pikapika."));
+      "Yellow badges name the CABINET, not the game: Lightning model IIDX, "
+      + "Valkyrie or NEMSYS SOUND VOLTEX, DDR gold and Universal cabs, "
+      + "GITADORA Arena, pop'n Pikapika, and Taiko regional builds. The "
+      + "cabinet decides which charts and modes you can actually play."));
     badges.appendChild(cabBadge);
+    var deadBadge = el("div", "sd-badge-row");
+    deadBadge.appendChild(el("span", "badge cab dead", "FiNALE"));
+    deadBadge.appendChild(el("span", "sd-badge-txt",
+      "A struck-through badge is an OFFLINE cabinet: maimai FiNALE and pre-LCD "
+      + "DDR cabs still run, but their networks shut down, so nothing is saved "
+      + "- no scores, no unlocks, no online play."));
+    badges.appendChild(deadBadge);
     pane.appendChild(badges);
+    pane.appendChild(el("p", "sd-note",
+      "Where cabinet data comes from, and what it cannot tell you. Official "
+      + "operator listings publish cabinet models for Japan only, so outside "
+      + "Japan the model is read from the machine list community members "
+      + "wrote. That means a missing badge always reads as \"nobody recorded "
+      + "the model\" and never as \"standard cabinet\". Two known gaps: the "
+      + "operator feed for SOUND VOLTEX returns the same stores whether or not "
+      + "you ask for Valkyrie cabs, so Valkyrie is taken from community "
+      + "listings alone; and CHUNITHM gold and silver cabinets are real (gold "
+      + "runs at 120Hz, and the two do not match against each other in versus) "
+      + "but no source publishes which a store has, so this map does not guess."));
 
     /* data + links */
     pane.appendChild(sectionHead("About this map"));
