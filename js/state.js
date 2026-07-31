@@ -534,21 +534,29 @@ window.AM = window.AM || {};
        2020-03). So a store listed by one of them and carrying maimai is
        running DX, full stop - that is a positive, not an assumption, and it
        resolves 4,179 stores that ZIv never described. */
-    /* The official listing wins even when ZIv ALSO names a classic cabinet,
-       and dropping the old `!map.maimai_classic` guard is the point. ZIv's cab
-       list is community-maintained and goes stale: Round1 Hiroshima still
-       carries "maimai GreeN", a 2013 title, so the chip renamed itself to
-       "maimai (FiNALE / pre-DX)" and told a player the machine was offline
-       while SEGA's own current maimai DX locator lists that exact store.
-       41 venues were mislabelled this way, 22 of them present in an official
-       list. A newer official listing beats an older community one: the store
-       is running DX, and any classic cabinet it also has is a second cabinet
-       rather than a correction. */
-    if (a && a.games && a.games.indexOf("maimai_dx") !== -1 && !map.maimai_dx_cab
-        && a.src) {
+    /* The official listing SUPERSEDES a stale community one rather than
+       sitting beside it, and the reason is how arcades actually operate.
+       A pre-DX cabinet is not kept alongside a DX one: DX replaced it, the
+       old cab went out when the new cab came in, and its network has been
+       dead since 2020 so there is nothing to keep it for. Round1 Hiroshima's
+       only maimai title in ZIv is "maimai GreeN", which genuinely is a pre-DX
+       cabinet, but the row dates from 2013 and nobody has touched it since.
+       SEGA's own current DX locator lists that store, so the DX cab is there
+       now and the GreeN almost certainly is not.
+       An official DX listing therefore CLEARS the classic claim instead of
+       adding to it. Leaving both would put a "FiNALE / pre-DX" badge beside a
+       "maimai DX" chip, which reads the way "LIGHTNING" beside beatmania IIDX
+       reads: as a statement about THAT cabinet. maimai DX and FiNALE are
+       different games on different hardware, so the badge does not qualify
+       the chip, it contradicts it.
+       41 venues carried the stale claim, 22 of them in an official list. The
+       ones with no official listing keep the badge, because there a classic
+       title is the only evidence anybody has. */
+    if (a && a.games && a.games.indexOf("maimai_dx") !== -1 && a.src) {
       for (var s = 0; s < a.src.length; s++) {
         if (a.src[s] === "allnet" || a.src[s] === "wahlap") {
-          addHit(map, "maimai_dx_cab", "official", null);
+          delete map.maimai_classic;
+          if (!map.maimai_dx_cab) addHit(map, "maimai_dx_cab", "official", null);
           break;
         }
       }
