@@ -582,6 +582,11 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         os.path.join(raw_dir, QUALITY_CACHE_FILE), {}) or {}
     photo_index = photos_mod.load_photo_index(
         os.path.join(raw_dir, photos_mod.PHOTO_INDEX_FILE))
+    # Re-key the index off each record's own source page rather than trusting
+    # the arcade ids it was written with. Those ids are reassigned on every
+    # merge, so an index built one build ago silently hands photos to the
+    # wrong venues (3,138 of them, at last count).
+    photos_by_source = photos_mod.index_by_source_url(photo_index)
     out = {}
     used_b, used_z = set(), set()
     image_arcades = 0
@@ -596,7 +601,7 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         # mirrored files, not ZIv rows, so a URL join cannot see them. Without
         # this branch 3,210 mirrored China venue photos sit on disk and never
         # reach the site.
-        merged_imgs = photos_mod.photos_for_arcade_id(a["id"], photo_index)
+        merged_imgs = photos_mod.photos_for_arcade(a, photos_by_source)
         # Even with no raw enrichment fields, a photo alone is enough to emit
         # an entry for this arcade.
         if not b_rows and not z_rows and not merged_imgs and not (

@@ -897,8 +897,66 @@ def load_photo_index_doc(path):
     return doc if isinstance(doc, dict) else {}
 
 
+def index_by_source_url(photo_index):
+    """{"ziv:<id>"|"bemanicn:<id>": [image record, ...]} from a merged index.
+
+    THE ARCADE ID IS NOT A STABLE KEY, and using it as one put 3,138 photos on
+    the wrong venue. merge re-sorts every build and assigns ids 1..N by
+    (country, name, addr), so six arcades appearing upstream shifted every id
+    after them: the index was built against a 13,534-row snapshot and read
+    against a 13,540-row one, and every photo past the insertion point slid
+    onto its neighbour. Top Bowling in Italy showed a photo of Adores Asakusa.
+
+    Each record already carries the source page it came from, which is a
+    genuinely stable key, so this rebuilds the join off that and the caller
+    matches on the arcade's own links. It is the same failure and the same fix
+    as the hand-researched China coordinates, one file over.
+    """
+    out = {}
+    for entry in (photo_index or {}).values():
+        if not isinstance(entry, dict):
+            continue
+        for rec in (entry.get("images") or []):
+            if not isinstance(rec, dict):
+                continue
+            page = rec.get("page_url") or ""
+            z = ziv_id_from_url(page)
+            b = bemanicn_id_from_url(page)
+            key = ("ziv:" + z) if z else (("bemanicn:" + b) if b else None)
+            if key:
+                out.setdefault(key, []).append(rec)
+    return out
+
+
+def photos_for_arcade(arcade, by_source):
+    """Image records for one arcade, joined on its OWN source links. [] on miss.
+
+    Preferred over photos_for_arcade_id: survives the id reassignment that
+    happens on every merge.
+    """
+    if not by_source or not isinstance(arcade, dict):
+        return []
+    links = arcade.get("links") or {}
+    out, seen = [], set()
+    for key in (("ziv:" + (ziv_id_from_url(links.get("ziv")) or "")),
+                ("bemanicn:" + (bemanicn_id_from_url(links.get("bemanicn")) or ""))):
+        if key.endswith(":"):
+            continue
+        for rec in by_source.get(key, []):
+            ident = rec.get("url") or rec.get("file")
+            if ident and ident not in seen:
+                seen.add(ident)
+                out.append(rec)
+    return out
+
+
 def photos_for_arcade_id(arcade_id, photo_index):
-    """Image records for one arcade id from a merged index. [] on miss."""
+    """Image records for one arcade id from a merged index. [] on miss.
+
+    Kept for callers that genuinely have only an id. Prefer
+    photos_for_arcade(), because an id is only valid against the exact
+    snapshot the index was built from.
+    """
     if not photo_index or arcade_id is None:
         return []
     entry = photo_index.get(str(arcade_id))
