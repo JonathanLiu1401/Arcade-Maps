@@ -79,8 +79,19 @@ def scrape_all(raw_dir, only=None):
                 common.die("allnet gm=%d returned 0 rows" % gm)
             common.save_json(os.path.join(raw_dir, slug + ".json"), rows)
     if want("eagate"):
+        # Every other source dies on an empty result; eagate alone wrote the
+        # empty file and let the run continue, which is the one shape this
+        # orchestrator exists to refuse. A markup change upstream returns 0
+        # rows per game, all 20 files get overwritten with [], and the merge
+        # happily rebuilds without e-amusement. The size guard does not save
+        # the small ones either: museca ships 6 rows and dance_evo 12, both
+        # under its threshold. eagate.main already refuses this unless it is
+        # given --allow-empty; the orchestrator now refuses it the same way.
         for gkey in sorted(eagate.GKEYS):
             rows = eagate.scrape_game(gkey)
+            if not rows:
+                common.die("eagate %s returned 0 rows"
+                           % eagate.GKEYS[gkey])
             common.save_json(
                 os.path.join(raw_dir, eagate.GKEYS[gkey] + ".json"), rows)
     if want("wahlap"):

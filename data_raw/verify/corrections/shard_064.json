@@ -1,0 +1,3401 @@
+{
+  "shard": 64,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live fetch 2026-07-31; 113 Hebei maimai venues)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live fetch 2026-07-31; 16 Hebei chunithm venues)",
+    "https://map.bemanicn.com/s/{id} Inertia JSON (live fetch 2026-07-31; 81 shops)",
+    "data_raw/china_bemanicn.json (Hebei subset cross-check)",
+    "data_raw/china_wahlap_maimai_dx.json / china_wahlap_chunithm.json (cached baseline)"
+  ],
+  "corrections": [
+    {
+      "id": null,
+      "name": "星际玩家石家庄勒泰店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "星际玩家石家庄勒泰店",
+        "addr": "河北省石家庄市长安区中山东路39号勒泰中心5层F5-0SA星际玩家",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6277",
+        "wahlap_placeId": "4520",
+        "wahlap_id": "1982316669385064450",
+        "game_versions": {
+          "maimai_dx": "随网更新",
+          "chunithm": "随网更新"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=星际玩家石家庄勒泰店 address=河北省石家庄市长安区中山东路39号勒泰中心5层F5-0SA星际玩家 province=河北 placeId=4520",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/6277 games=['maimai_dx', 'chunithm'] counts={'chunithm': 2, 'maimai_dx': 2}. Also on live WAHLAP chunithm. BemaniCN s/6277 quantities={'maimai_dx': 2, 'chunithm': 2} versions={'maimai_dx': '随网更新', 'chunithm': '随网更新'} updated=2026-07-03T06:59:46.000000Z."
+    },
+    {
+      "id": null,
+      "name": "潮越时空沧州黄骅金宝店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮越时空沧州黄骅金宝店",
+        "addr": "河北省沧州市黄骅市金宝方圆荟二楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "chunithm"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "3083",
+        "wahlap_id": "1948316381011787861"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP chunithm location: arcadeName=潮越时空沧州黄骅金宝店 address=河北省沧州市黄骅市金宝方圆荟二楼 province=河北",
+      "checked_at": "2026-08-01",
+      "note": "CHUNITHM-only (or not matched maimai) on live WAHLAP, absent from shard."
+    },
+    {
+      "id": null,
+      "name": "热带雨林邯郸丛台店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "热带雨林邯郸丛台店",
+        "addr": "河北省邯郸市丛台区人民东路环球中心美乐城五层热带雨林主题乐园",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "chunithm",
+          "jubeat",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "jubeat": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/1053",
+        "wahlap_placeId": "1571",
+        "wahlap_id": "1948316382249107788",
+        "game_versions": {
+          "maimai_dx": "国行Ver.CN1.51-C",
+          "chunithm": "2026",
+          "jubeat": "音乐魔方"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=热带雨林邯郸丛台店 address=河北省邯郸市丛台区人民东路环球中心美乐城五层热带雨林主题乐园 province=河北 placeId=1571",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. Also on live WAHLAP chunithm. BemaniCN s/1053 quantities={'maimai_dx': 2, 'chunithm': 2, 'jubeat': 2} versions={'maimai_dx': '国行Ver.CN1.51-C', 'chunithm': '2026', 'jubeat': '音乐魔方'} updated=2026-07-24T04:01:26.000000Z."
+    },
+    {
+      "id": null,
+      "name": "超爱顽唐山路南万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超爱顽唐山路南万达店",
+        "addr": "河北省唐山市路南区万达广场三号门二楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6098",
+        "wahlap_placeId": "4480",
+        "wahlap_id": "1973003910122061825",
+        "game_versions": {
+          "maimai_dx": "国服 DX2026",
+          "chunithm": "国服 2026",
+          "taiko": "国服 2026秋"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=超爱顽唐山路南万达店 address=河北省唐山市路南区万达广场三号门二楼 province=河北 placeId=4480",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. Also on live WAHLAP chunithm. BemaniCN s/6098 quantities={'maimai_dx': 2, 'chunithm': 2, 'taiko': 1} versions={'maimai_dx': '国服 DX2026', 'chunithm': '国服 2026', 'taiko': '国服 2026秋'} updated=2026-07-26T11:39:51.000000Z."
+    },
+    {
+      "id": null,
+      "name": "晓地球潮玩空间沧州店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "晓地球潮玩空间沧州店",
+        "addr": "河北省沧州市任丘市蕾莎城市广场晓地球潮玩空间",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/2533",
+        "wahlap_placeId": "2373",
+        "wahlap_id": "1948316381036953975"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=晓地球潮玩空间沧州店 address=河北省沧州市任丘市蕾莎城市广场晓地球潮玩空间 province=河北 placeId=2373",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/2533 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "未来之星辛集清河湾店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "未来之星辛集清河湾店",
+        "addr": "河北省辛集市清河湾北国超市二楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4941",
+        "wahlap_placeId": "3727",
+        "wahlap_id": "1948316381485744359",
+        "game_versions": {
+          "maimai_dx": "CN"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=未来之星辛集清河湾店 address=河北省辛集市清河湾北国超市二楼 province=河北 placeId=3727",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4941 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/4941 quantities={'maimai_dx': 1} versions={'maimai_dx': 'CN'} updated=2025-11-29T17:21:23.000000Z."
+    },
+    {
+      "id": null,
+      "name": "极客森邯郸万象汇店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "极客森邯郸万象汇店",
+        "addr": "河北省邯郸市丛台区兼庄乡廉颇北大街277号邯郸万象汇二楼L232极客森",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3516",
+        "wahlap_placeId": "2871",
+        "wahlap_id": "1948316382253301907",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.40-A",
+          "taiko": "2026"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=极客森邯郸万象汇店 address=河北省邯郸市丛台区兼庄乡廉颇北大街277号邯郸万象汇二楼L232极客森 province=河北 placeId=2871",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3516 games=['maimai_dx', 'taiko'] counts={'maimai_dx': 2, 'taiko': 1}. BemaniCN s/3516 quantities={'maimai_dx': 2, 'taiko': 1} versions={'maimai_dx': 'Ver.CN1.40-A', 'taiko': '2026'} updated=2026-07-19T05:48:31.000000Z."
+    },
+    {
+      "id": null,
+      "name": "栗子星球石家庄鹿泉北国奥特莱斯店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "栗子星球石家庄鹿泉北国奥特莱斯店",
+        "addr": "石家庄市鹿泉区北国奥特莱斯栗子星球",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6445",
+        "wahlap_placeId": "4618",
+        "wahlap_id": "1997914105768312834",
+        "game_versions": {
+          "maimai_dx": "2025"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=栗子星球石家庄鹿泉北国奥特莱斯店 address=石家庄市鹿泉区北国奥特莱斯栗子星球 province=河北 placeId=4618",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/6445 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/6445 quantities={'maimai_dx': 1} versions={'maimai_dx': '2025'} updated=2025-12-16T11:30:34.000000Z."
+    },
+    {
+      "id": null,
+      "name": "榜上英雄定州北城万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "榜上英雄定州北城万达店",
+        "addr": "河北省定州市北城区定州万达广场三楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4583",
+        "wahlap_placeId": "3459",
+        "wahlap_id": "1948316381015982264",
+        "game_versions": {
+          "maimai_dx": "2025 Ver.CN1.53-M",
+          "taiko": "2026春"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=榜上英雄定州北城万达店 address=河北省定州市北城区定州万达广场三楼 province=河北 placeId=3459",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4583 games=['maimai_dx', 'taiko', 'other'] counts={'maimai_dx': 1, 'taiko': 1}. BemaniCN s/4583 quantities={'maimai_dx': 1, 'taiko': 1} versions={'maimai_dx': '2025 Ver.CN1.53-M', 'taiko': '2026春'} updated=2026-04-09T15:00:39.000000Z."
+    },
+    {
+      "id": null,
+      "name": "榜上英雄石家庄裕华店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "榜上英雄石家庄裕华店",
+        "addr": "河北省石家庄市裕华区裕华万达火车头步行街榜上英雄",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5521",
+        "wahlap_placeId": "4126",
+        "wahlap_id": "1948316397835141228",
+        "game_versions": {
+          "maimai_dx": "随网更新",
+          "taiko": "2026春"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=榜上英雄石家庄裕华店 address=河北省石家庄市裕华区裕华万达火车头步行街榜上英雄 province=河北 placeId=4126",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4583 games=['maimai_dx', 'taiko', 'other'] counts={'maimai_dx': 1, 'taiko': 1}. BemaniCN s/5521 quantities={'maimai_dx': 2, 'taiko': 1} versions={'maimai_dx': '随网更新', 'taiko': '2026春'} updated=2026-07-26T07:00:16.000000Z."
+    },
+    {
+      "id": null,
+      "name": "洋灿灿秦皇岛卢龙店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "洋灿灿秦皇岛卢龙店",
+        "addr": "河北省秦皇岛市卢龙县塞北福满家卢龙生活购物广场三楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "4968",
+        "wahlap_id": "2059828143107239938"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=洋灿灿秦皇岛卢龙店 address=河北省秦皇岛市卢龙县塞北福满家卢龙生活购物广场三楼 province=河北 placeId=4968",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump."
+    },
+    {
+      "id": null,
+      "name": "润宝梦唐山路南万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "润宝梦唐山路南万达店",
+        "addr": "河北省唐山市路南区万达广场2楼润宝梦",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3247",
+        "wahlap_placeId": "2777",
+        "wahlap_id": "1948316382249107820",
+        "game_versions": {
+          "maimai_dx": "国行 DX2026"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=润宝梦唐山路南万达店 address=河北省唐山市路南区万达广场2楼润宝梦 province=河北 placeId=2777",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/3247 quantities={'maimai_dx': 2} versions={'maimai_dx': '国行 DX2026'} updated=2026-07-07T07:51:45.000000Z."
+    },
+    {
+      "id": null,
+      "name": "润宝梦邯郸万达广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "润宝梦邯郸万达广场店",
+        "addr": "河北省邯郸市邯山区陵园路万达广场三楼润宝梦",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3054",
+        "wahlap_placeId": "2635",
+        "wahlap_id": "1948316382249107593",
+        "game_versions": {
+          "maimai_dx": "2026"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=润宝梦邯郸万达广场店 address=河北省邯郸市邯山区陵园路万达广场三楼润宝梦 province=河北 placeId=2635",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/3054 quantities={'maimai_dx': 1} versions={'maimai_dx': '2026'} updated=2026-07-15T04:36:09.000000Z."
+    },
+    {
+      "id": null,
+      "name": "淘气熊双桥金龙店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "淘气熊双桥金龙店",
+        "addr": "河北省承德市双桥区都统府大街金龙购物广场B座6楼淘气熊电玩城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4101",
+        "wahlap_placeId": "3196",
+        "wahlap_id": "1948316381011787974"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=淘气熊双桥金龙店 address=河北省承德市双桥区都统府大街金龙购物广场B座6楼淘气熊电玩城 province=河北 placeId=3196",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4101 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "满载客保定高碑富民大街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "满载客保定高碑富民大街店",
+        "addr": "河北省保定市高碑市白沟新城富民大街电子大厦三楼满载客娱乐中心",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5504",
+        "wahlap_placeId": "4022",
+        "wahlap_id": "1948316397835141124",
+        "game_versions": {
+          "maimai_dx": "2026，Ver.CN1.56-A"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=满载客保定高碑富民大街店 address=河北省保定市高碑市白沟新城富民大街电子大厦三楼满载客娱乐中心 province=河北 placeId=4022",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/5504 quantities={'maimai_dx': 1} versions={'maimai_dx': '2026，Ver.CN1.56-A'} updated=2026-07-16T15:17:22.000000Z."
+    },
+    {
+      "id": null,
+      "name": "潮玩会唐山唐海名都广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩会唐山唐海名都广场店",
+        "addr": "河北省唐山市唐海镇大通路兴海名都广场三层潮玩会",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5301",
+        "wahlap_placeId": "3867",
+        "wahlap_id": "1948316381485744499",
+        "game_versions": {
+          "maimai_dx": "国服 DX2026",
+          "taiko": "12亚"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩会唐山唐海名都广场店 address=河北省唐山市唐海镇大通路兴海名都广场三层潮玩会 province=河北 placeId=3867",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5301 games=['maimai_dx', 'taiko', 'other'] counts={'maimai_dx': 1, 'taiko': 1}. BemaniCN s/5301 quantities={'maimai_dx': 1, 'taiko': 1} versions={'maimai_dx': '国服 DX2026', 'taiko': '12亚'} updated=2026-07-20T17:58:37.000000Z."
+    },
+    {
+      "id": null,
+      "name": "潮玩炫酷保定莲池华创国际广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩炫酷保定莲池华创国际广场店",
+        "addr": "河北省保定市莲池区裕华路华创国际广场3楼潮玩炫酷",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5068",
+        "wahlap_placeId": "3630",
+        "wahlap_id": "1948316381485744262"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩炫酷保定莲池华创国际广场店 address=河北省保定市莲池区裕华路华创国际广场3楼潮玩炫酷 province=河北 placeId=3630",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5068 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "潮玩炫酷沧州新华店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩炫酷沧州新华店",
+        "addr": "河北省沧州市新华区解放东路华北商厦城市广场3楼东区20号潮玩炫酷",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5068",
+        "wahlap_placeId": "3395",
+        "wahlap_id": "1948316381015982200"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩炫酷沧州新华店 address=河北省沧州市新华区解放东路华北商厦城市广场3楼东区20号潮玩炫酷 province=河北 placeId=3395",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5068 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "潮玩炫酷沧州运河华北商厦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩炫酷沧州运河华北商厦店",
+        "addr": "河北省沧州市运河区水月寺街道华北商厦9F潮玩炫酷",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5068",
+        "wahlap_placeId": "4790",
+        "wahlap_id": "2015990188517900289"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩炫酷沧州运河华北商厦店 address=河北省沧州市运河区水月寺街道华北商厦9F潮玩炫酷 province=河北 placeId=4790",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5068 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "潮玩炫酷石家庄裕华欢乐汇店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩炫酷石家庄裕华欢乐汇店",
+        "addr": "河北省石家庄市裕华区建华南街道裕泰路77号欢乐汇商场4楼潮玩炫酷",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4420",
+        "wahlap_placeId": "3394",
+        "wahlap_id": "1948316381015982199",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.41-F"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩炫酷石家庄裕华欢乐汇店 address=河北省石家庄市裕华区建华南街道裕泰路77号欢乐汇商场4楼潮玩炫酷 province=河北 placeId=3394",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5068 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/4420 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.41-F'} updated=2026-05-02T01:54:34.000000Z."
+    },
+    {
+      "id": null,
+      "name": "潮玩英雄唐山玉田北购店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩英雄唐山玉田北购店",
+        "addr": "河北省唐山市玉田县北环路北方购物4楼东侧潮玩英雄",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4710",
+        "wahlap_placeId": "3564",
+        "wahlap_id": "1948316381485744196",
+        "game_versions": {
+          "maimai_dx": "DX2026随网络更新"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩英雄唐山玉田北购店 address=河北省唐山市玉田县北环路北方购物4楼东侧潮玩英雄 province=河北 placeId=3564",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/4710 quantities={'maimai_dx': 1} versions={'maimai_dx': 'DX2026随网络更新'} updated=2026-07-25T08:37:21.000000Z."
+    },
+    {
+      "id": null,
+      "name": "潮玩英雄唐山遵化店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩英雄唐山遵化店",
+        "addr": "河北省唐山市遵化市文化北路金缘购物四楼潮玩英雄电玩城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3867",
+        "wahlap_placeId": "3069",
+        "wahlap_id": "1948316381011787847"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩英雄唐山遵化店 address=河北省唐山市遵化市文化北路金缘购物四楼潮玩英雄电玩城 province=河北 placeId=3069",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3867 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "潮玩街区保定莲池万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩街区保定莲池万达店",
+        "addr": "河北省保定市莲池区东金庄乡七一路1999号负一层潮玩街区",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3693",
+        "wahlap_placeId": "2971",
+        "wahlap_id": "1948316382253302080",
+        "game_versions": {
+          "maimai_dx": "国服1.41-D"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮玩街区保定莲池万达店 address=河北省保定市莲池区东金庄乡七一路1999号负一层潮玩街区 province=河北 placeId=2971",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3693 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/3693 quantities={'maimai_dx': 1} versions={'maimai_dx': '国服1.41-D'} updated=2025-11-29T17:21:22.000000Z."
+    },
+    {
+      "id": null,
+      "name": "潮白大玩家廊坊谭台生活广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮白大玩家廊坊谭台生活广场店",
+        "addr": "河北省廊坊市大厂回族自治县谭台生活广场3楼潮白大玩家",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/1349",
+        "wahlap_placeId": "3575",
+        "wahlap_id": "1948316381485744207"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=潮白大玩家廊坊谭台生活广场店 address=河北省廊坊市大厂回族自治县谭台生活广场3楼潮白大玩家 province=河北 placeId=3575",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/1349 games=['maimai_dx', 'taiko', 'other'] counts={'maimai_dx': 1, 'taiko': 1}."
+    },
+    {
+      "id": null,
+      "name": "热带时光邯郸邯山店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "热带时光邯郸邯山店",
+        "addr": "河北省邯郸市邯山区未来石购物中心三层热带时光",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5561",
+        "wahlap_placeId": "4064",
+        "wahlap_id": "1948316397835141166",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.50-C"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=热带时光邯郸邯山店 address=河北省邯郸市邯山区未来石购物中心三层热带时光 province=河北 placeId=4064",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5561 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/5561 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.50-C'} updated=2025-11-29T17:21:24.000000Z."
+    },
+    {
+      "id": null,
+      "name": "爱尚潮玩沧州黄骅店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "爱尚潮玩沧州黄骅店",
+        "addr": "河北省沧州市黄骅市学院西路信源购物广场4楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/1870",
+        "wahlap_placeId": "1966",
+        "wahlap_id": "1948316382253302345"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=爱尚潮玩沧州黄骅店 address=河北省沧州市黄骅市学院西路信源购物广场4楼 province=河北 placeId=1966",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/1870 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "王者之风石家庄勒泰店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "王者之风石家庄勒泰店",
+        "addr": "河北省石家庄市勒泰商场三楼王者之风电玩城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4040",
+        "wahlap_placeId": "2374",
+        "wahlap_id": "1948316381036953976"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=王者之风石家庄勒泰店 address=河北省石家庄市勒泰商场三楼王者之风电玩城 province=河北 placeId=2374",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4040 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "王者之风石家庄桥西店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "王者之风石家庄桥西店",
+        "addr": "河北省石家庄市桥西区天元名品商城一层",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4040",
+        "wahlap_placeId": "2347",
+        "wahlap_id": "1948316381036953949"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=王者之风石家庄桥西店 address=河北省石家庄市桥西区天元名品商城一层 province=河北 placeId=2347",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4040 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "王者之风石家庄长安万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "王者之风石家庄长安万达店",
+        "addr": "河北省石家庄市长安区万达广场3楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4040",
+        "wahlap_placeId": "4000",
+        "wahlap_id": "1948316397830946821",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.55"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=王者之风石家庄长安万达店 address=河北省石家庄市长安区万达广场3楼 province=河北 placeId=4000",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4040 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/4040 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.55'} updated=2026-06-10T09:11:59.000000Z."
+    },
+    {
+      "id": null,
+      "name": "王者之风邢台信都店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "王者之风邢台信都店",
+        "addr": "河北省邢台市信都区中华大街街道逗号立方广场四楼王者之风",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/1569",
+        "wahlap_placeId": "1742",
+        "wahlap_id": "1948316382253302107",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.55-A"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=王者之风邢台信都店 address=河北省邢台市信都区中华大街街道逗号立方广场四楼王者之风 province=河北 placeId=1742",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4040 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/1569 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.55-A'} updated=2026-06-28T04:02:55.000000Z."
+    },
+    {
+      "id": null,
+      "name": "电玩森林廊坊天洋店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电玩森林廊坊天洋店",
+        "addr": "河北省廊坊市三河市燕郊镇天洋广场C馆B1层",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5238",
+        "wahlap_placeId": "5093",
+        "wahlap_id": "2061718817998020609"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=电玩森林廊坊天洋店 address=河北省廊坊市三河市燕郊镇天洋广场C馆B1层 province=河北 placeId=5093",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5238 games=['maimai_dx', 'taiko'] counts={'maimai_dx': 1, 'taiko': 1}."
+    },
+    {
+      "id": null,
+      "name": "真快活三河燕郊永旺店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "真快活三河燕郊永旺店",
+        "addr": "河北省三河市燕郊镇永旺梦乐城负一楼真快活美乐园",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "1512",
+        "wahlap_id": "1948316382249107642"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=真快活三河燕郊永旺店 address=河北省三河市燕郊镇永旺梦乐城负一楼真快活美乐园 province=河北 placeId=1512",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump."
+    },
+    {
+      "id": null,
+      "name": "米乐多邯郸丛台店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "米乐多邯郸丛台店",
+        "addr": "河北省邯郸市丛台区苏曹乡天虹广场米乐多家庭中心",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/1124",
+        "wahlap_placeId": "1537",
+        "wahlap_id": "1948316382249107706",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.40-A（2024）"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=米乐多邯郸丛台店 address=河北省邯郸市丛台区苏曹乡天虹广场米乐多家庭中心 province=河北 placeId=1537",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/1124 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/1124 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.40-A（2024）'} updated=2026-07-30T08:14:14.000000Z."
+    },
+    {
+      "id": null,
+      "name": "荣大电玩城唐山丰南荣大店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "荣大电玩城唐山丰南荣大店",
+        "addr": "河北省唐山市丰南区荣大购物广场b座5层荣大电玩城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4699",
+        "wahlap_placeId": "3566",
+        "wahlap_id": "1948316381485744198",
+        "game_versions": {
+          "maimai_dx": "国服 DX2026"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=荣大电玩城唐山丰南荣大店 address=河北省唐山市丰南区荣大购物广场b座5层荣大电玩城 province=河北 placeId=3566",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4699 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/4699 quantities={'maimai_dx': 1} versions={'maimai_dx': '国服 DX2026'} updated=2026-06-25T01:26:46.000000Z."
+    },
+    {
+      "id": null,
+      "name": "萌太极定州北门街万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "萌太极定州北门街万达店",
+        "addr": "河北省定州市北门街万达广场三楼萌太极家庭娱乐中心",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4075",
+        "wahlap_placeId": "3086",
+        "wahlap_id": "1948316381011787864",
+        "game_versions": {
+          "maimai_dx": "2025 Ver.CN1.51-D"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=萌太极定州北门街万达店 address=河北省定州市北门街万达广场三楼萌太极家庭娱乐中心 province=河北 placeId=3086",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/4075 quantities={'maimai_dx': 1} versions={'maimai_dx': '2025 Ver.CN1.51-D'} updated=2025-11-29T17:21:22.000000Z."
+    },
+    {
+      "id": null,
+      "name": "蓝梦日记石家庄栖栖谷",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "蓝梦日记石家庄栖栖谷",
+        "addr": "河北省石家庄市裕华区峨眉街与槐安东路交叉口栖栖谷二层A区",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6192",
+        "wahlap_placeId": "4422",
+        "wahlap_id": "1971498758080839681",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.51-F"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=蓝梦日记石家庄栖栖谷 address=河北省石家庄市裕华区峨眉街与槐安东路交叉口栖栖谷二层A区 province=河北 placeId=4422",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/6192 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/6192 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.51-F'} updated=2026-06-22T07:04:12.000000Z."
+    },
+    {
+      "id": null,
+      "name": "赛博云电玩霸州未来城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "赛博云电玩霸州未来城店",
+        "addr": "河北省霸州市胜芳镇未来城负一层B1-30号，赛博云电玩",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5964",
+        "wahlap_placeId": "4340",
+        "wahlap_id": "1960268069713477633"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=赛博云电玩霸州未来城店 address=河北省霸州市胜芳镇未来城负一层B1-30号，赛博云电玩 province=河北 placeId=4340",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/5964 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "赛博时空承德万达广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "赛博时空承德万达广场店",
+        "addr": "河北省承德市万达广场负一楼1-1赛博时空",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4123",
+        "wahlap_placeId": "3197",
+        "wahlap_id": "1948316381011787975"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=赛博时空承德万达广场店 address=河北省承德市万达广场负一楼1-1赛博时空 province=河北 placeId=3197",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/4123 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "超级星座秦皇岛太阳城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级星座秦皇岛太阳城店",
+        "addr": "秦皇岛市海港区建设大街太阳城五兴图书广场三楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5478",
+        "wahlap_placeId": "4093",
+        "wahlap_id": "1948316397835141195",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.56-A"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=超级星座秦皇岛太阳城店 address=秦皇岛市海港区建设大街太阳城五兴图书广场三楼 province=河北 placeId=4093",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/5478 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.56-A'} updated=2026-07-01T07:15:21.000000Z."
+    },
+    {
+      "id": null,
+      "name": "超级英雄石家庄新华店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级英雄石家庄新华店",
+        "addr": "河北省石家庄市新华区华强电子通讯城1楼超级英雄",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3785",
+        "wahlap_placeId": "3028",
+        "wahlap_id": "1948316381011787806",
+        "game_versions": {
+          "maimai_dx": "随网更新",
+          "taiko": "国服"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=超级英雄石家庄新华店 address=河北省石家庄市新华区华强电子通讯城1楼超级英雄 province=河北 placeId=3028",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3785 games=['maimai_dx', 'taiko', 'other'] counts={'maimai_dx': 1, 'taiko': 1}. BemaniCN s/3785 quantities={'maimai_dx': 1, 'taiko': 1} versions={'maimai_dx': '随网更新', 'taiko': '国服'} updated=2026-07-20T09:59:20.000000Z."
+    },
+    {
+      "id": null,
+      "name": "超能地带石家庄店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超能地带石家庄店",
+        "addr": "河北省石家庄新华区赵陵铺路街道兴街21号金象城2号楼3层18号",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4986",
+        "wahlap_placeId": "3746",
+        "wahlap_id": "1948316381485744378",
+        "game_versions": {
+          "maimai_dx": "CN"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=超能地带石家庄店 address=河北省石家庄新华区赵陵铺路街道兴街21号金象城2号楼3层18号 province=河北 placeId=3746",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump. BemaniCN s/4986 quantities={'maimai_dx': 2} versions={'maimai_dx': 'CN'} updated=2026-07-01T10:16:45.000000Z."
+    },
+    {
+      "id": null,
+      "name": "邢台信都知止商城",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "邢台信都知止商城",
+        "addr": "河北省邢台市信都区冶金南路物兴广场知止商城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "1579",
+        "wahlap_id": "1948316382249107807"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=邢台信都知止商城 address=河北省邢台市信都区冶金南路物兴广场知止商城 province=河北 placeId=1579",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump."
+    },
+    {
+      "id": null,
+      "name": "酷乐王国廊坊固安万汇广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐王国廊坊固安万汇广场店",
+        "addr": "河北省廊坊市固安县万汇广场二期二楼酷乐王国",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3955",
+        "wahlap_placeId": "3116",
+        "wahlap_id": "1948316381011787894"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷乐王国廊坊固安万汇广场店 address=河北省廊坊市固安县万汇广场二期二楼酷乐王国 province=河北 placeId=3116",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3955 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "酷乐王国沧州河间店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐王国沧州河间店",
+        "addr": "河北省沧州市河间市嘉浩城市广场二楼酷乐王国",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/2397",
+        "wahlap_placeId": "2289",
+        "wahlap_id": "1948316381036953891"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷乐王国沧州河间店 address=河北省沧州市河间市嘉浩城市广场二楼酷乐王国 province=河北 placeId=2289",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/2397 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "酷客领域廊坊广阳店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷客领域廊坊广阳店",
+        "addr": "河北省廊坊市广阳区解放道街道新朝阳购物中心四楼酷客领域",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "5181",
+        "wahlap_id": "2064257126498476034"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷客领域廊坊广阳店 address=河北省廊坊市广阳区解放道街道新朝阳购物中心四楼酷客领域 province=河北 placeId=5181",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump."
+    },
+    {
+      "id": null,
+      "name": "酷客领域沧州吾悦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷客领域沧州吾悦店",
+        "addr": "河北省沧州市运河区吾悦广场二楼酷客领域电玩城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "1633",
+        "wahlap_id": "1948316382253301855"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷客领域沧州吾悦店 address=河北省沧州市运河区吾悦广场二楼酷客领域电玩城 province=河北 placeId=1633",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump."
+    },
+    {
+      "id": null,
+      "name": "酷玩猩球保定曲阳永宁店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩猩球保定曲阳永宁店",
+        "addr": "河北省保定市曲阳县永宁广场三楼酷玩猩球电玩城",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5477",
+        "wahlap_placeId": "3992",
+        "wahlap_id": "1948316381485744624",
+        "game_versions": {
+          "maimai_dx": "随网更新"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷玩猩球保定曲阳永宁店 address=河北省保定市曲阳县永宁广场三楼酷玩猩球电玩城 province=河北 placeId=3992",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3517 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/5477 quantities={'maimai_dx': 1} versions={'maimai_dx': '随网更新'} updated=2026-07-23T17:24:02.000000Z."
+    },
+    {
+      "id": null,
+      "name": "酷玩猩球廊坊大城明珠店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩猩球廊坊大城明珠店",
+        "addr": "河北省廊坊市大城县明珠商厦",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3517",
+        "wahlap_placeId": "2628",
+        "wahlap_id": "1948316382249107586"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷玩猩球廊坊大城明珠店 address=河北省廊坊市大城县明珠商厦 province=河北 placeId=2628",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3517 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "酷玩猩球沧州黄骅华贸店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩猩球沧州黄骅华贸店",
+        "addr": "河北省沧州市黄骅市华贸商厦负一酷玩猩球",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3517",
+        "wahlap_placeId": "2930",
+        "wahlap_id": "1948316382253302007"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷玩猩球沧州黄骅华贸店 address=河北省沧州市黄骅市华贸商厦负一酷玩猩球 province=河北 placeId=2930",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3517 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "酷玩猩球沧州黄骅金宝城市店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩猩球沧州黄骅金宝城市店",
+        "addr": "河北省沧州市黄骅市金宝城市广场二楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3517",
+        "wahlap_placeId": "2425",
+        "wahlap_id": "1948316381036954027"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=酷玩猩球沧州黄骅金宝城市店 address=河北省沧州市黄骅市金宝城市广场二楼 province=河北 placeId=2425",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/3517 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "金思乐海淀U悦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "金思乐海淀U悦店",
+        "addr": "河北省三河市燕郊开发区鑫乐汇肯德基楼上三楼金思乐",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6919",
+        "wahlap_placeId": "3137",
+        "wahlap_id": "1948316381011787915"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=金思乐海淀U悦店 address=河北省三河市燕郊开发区鑫乐汇肯德基楼上三楼金思乐 province=河北 placeId=3137",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/6919 games=['maimai_dx'] counts={'maimai_dx': 1}."
+    },
+    {
+      "id": null,
+      "name": "长乐门欢乐汇石家庄勒泰中心店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "长乐门欢乐汇石家庄勒泰中心店",
+        "addr": "河北省石家庄市勒泰中心D座1楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "4856",
+        "wahlap_id": "2022521467069546498"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=长乐门欢乐汇石家庄勒泰中心店 address=河北省石家庄市勒泰中心D座1楼 province=河北 placeId=4856",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. No BemaniCN match found in china_bemanicn Hebei dump."
+    },
+    {
+      "id": null,
+      "name": "风之谷电玩娱乐中心邯郸涉县龙山广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风之谷电玩娱乐中心邯郸涉县龙山广场店",
+        "addr": "邯郸市涉县龙山广场三楼",
+        "country": "China",
+        "pref": "河北",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6559",
+        "wahlap_placeId": "4713",
+        "wahlap_id": "2005469616691290114",
+        "game_versions": {
+          "maimai_dx": "Ver.CN1.52-H"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai location: arcadeName=风之谷电玩娱乐中心邯郸涉县龙山广场店 address=邯郸市涉县龙山广场三楼 province=河北 placeId=4713",
+      "checked_at": "2026-08-01",
+      "note": "Present on live official WAHLAP maimai locator but absent from shard_064. Also on BemaniCN https://map.bemanicn.com/s/6559 games=['maimai_dx'] counts={'maimai_dx': 1}. BemaniCN s/6559 quantities={'maimai_dx': 1} versions={'maimai_dx': 'Ver.CN1.52-H'} updated=2026-06-05T02:55:05.000000Z."
+    },
+    {
+      "id": 1123,
+      "name": "咕咕岛/GOOGOO Zhuozhou Junyue",
+      "field": "other",
+      "current": {
+        "1123": {
+          "name": "GOOGOOISLAND咕咕岛",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx",
+            "taiko"
+          ],
+          "lat": 39.482976,
+          "lng": 116.024977,
+          "bc": "https://map.bemanicn.com/s/263"
+        },
+        "2126": {
+          "name": "咕咕岛保定涿州君悦广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.483128,
+          "lng": 116.024454,
+          "bc": null
+        },
+        "2130": {
+          "name": "咕咕岛涿州范阳君悦广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "chunithm"
+          ],
+          "lat": 39.482976,
+          "lng": 116.024977,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [1123, 2126, 2130] into one venue (prefer WAHLAP name '咕咕岛保定涿州君悦广场店 / 咕咕岛涿州范阳君悦广场店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 咕咕岛保定涿州君悦广场店 / 咕咕岛涿州范阳君悦广场店. Shard has multiple rows for it: ['GOOGOOISLAND咕咕岛', '咕咕岛保定涿州君悦广场店', '咕咕岛涿州范阳君悦广场店']",
+      "checked_at": "2026-08-01",
+      "note": "Zhuozhou Junyue Plaza: bemanicn 'GOOGOOISLAND咕咕岛' (1123, bc/263, chunithm+maimai+taiko), wahlap maimai '咕咕岛保定涿州君悦广场店' (2126), wahlap chunithm '咕咕岛涿州范阳君悦广场店' (2130). Three rows for one plaza venue. Live WAHLAP lists both maimai and chunithm names for Junyue. Merge to one. bemanicn: https://map.bemanicn.com/s/263"
+    },
+    {
+      "id": 1127,
+      "name": "G元素 Baoding Beiguo Xian Tianxia",
+      "field": "other",
+      "current": {
+        "1127": {
+          "name": "G元素保定竞秀北国店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 38.888772,
+          "lng": 115.463473,
+          "bc": null
+        },
+        "1128": {
+          "name": "G元素（北国先天下店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx",
+            "taiko"
+          ],
+          "lat": 38.888772,
+          "lng": 115.463473,
+          "bc": "https://map.bemanicn.com/s/4780"
+        }
+      },
+      "proposed": "MERGE ids [1127, 1128] into one venue (prefer WAHLAP name 'G元素保定竞秀北国店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: G元素保定竞秀北国店. Shard has multiple rows for it: ['G元素保定竞秀北国店', 'G元素（北国先天下店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Beiguo Xiantianxia floor 6: wahlap 'G元素保定竞秀北国店' (1127, maimai+chunithm live) and bemanicn 'G元素（北国先天下店）' (1128, bc/4780, also lists taiko). Merge; keep taiko from bemanicn as community claim. bemanicn: https://map.bemanicn.com/s/4780"
+    },
+    {
+      "id": 1201,
+      "name": "M9 Zhangjiakou Baisheng",
+      "field": "other",
+      "current": {
+        "1201": {
+          "name": "M9潮玩街区张家口市桥东店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 40.815909,
+          "lng": 114.880663,
+          "bc": null
+        },
+        "1202": {
+          "name": "M9潮玩街区（张家口百盛店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 40.815895,
+          "lng": 114.880663,
+          "bc": "https://map.bemanicn.com/s/5441"
+        }
+      },
+      "proposed": "MERGE ids [1201, 1202] into one venue (prefer WAHLAP name 'M9潮玩街区张家口市桥东店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: M9潮玩街区张家口市桥东店. Shard has multiple rows for it: ['M9潮玩街区张家口市桥东店', 'M9潮玩街区（张家口百盛店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Baisheng floor 5: wahlap 'M9潮玩街区张家口市桥东店' (1201, maimai+chunithm live) and bemanicn 'M9潮玩街区（张家口百盛店）' (1202, bc/5441). Merge. bemanicn: https://map.bemanicn.com/s/5441"
+    },
+    {
+      "id": 1418,
+      "name": "一起玩嘉年华 Baoding Lianchi Love Plaza",
+      "field": "other",
+      "current": {
+        "1418": {
+          "name": "一起玩嘉年华保定莲池店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.820402,
+          "lng": 115.457108,
+          "bc": null
+        },
+        "1421": {
+          "name": "一起玩家年华保定莲池店",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.820402,
+          "lng": 115.457108,
+          "bc": "https://map.bemanicn.com/s/5642"
+        }
+      },
+      "proposed": "MERGE ids [1418, 1421] into one venue (prefer WAHLAP name '一起玩嘉年华保定莲池店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 一起玩嘉年华保定莲池店. Shard has multiple rows for it: ['一起玩嘉年华保定莲池店', '一起玩家年华保定莲池店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Love Plaza floor 3: wahlap '一起玩嘉年华保定莲池店' (1418) and bemanicn '一起玩家年华保定莲池店' (1421, bc/5642, typo 玩家 vs 玩). Live WAHLAP has 一起玩嘉年华保定莲池店. Merge. bemanicn: https://map.bemanicn.com/s/5642"
+    },
+    {
+      "id": 1436,
+      "name": "七号电玩城 Langfang Dacheng Xintiandi",
+      "field": "other",
+      "current": {
+        "1435": {
+          "name": "七号电玩城",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.695307,
+          "lng": 116.635531,
+          "bc": "https://map.bemanicn.com/s/6606"
+        },
+        "1436": {
+          "name": "七号电玩城廊坊新天地店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.695349,
+          "lng": 116.635424,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [1435, 1436] into one venue (prefer WAHLAP name '七号电玩城廊坊新天地店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 七号电玩城廊坊新天地店. Shard has multiple rows for it: ['七号电玩城', '七号电玩城廊坊新天地店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Xintiandi supermarket Dacheng: bemanicn '七号电玩城' (1435, bc/6606) and wahlap '七号电玩城廊坊新天地店' (1436). Live WAHLAP has wahlap name. Merge. bemanicn: https://map.bemanicn.com/s/6606"
+    },
+    {
+      "id": 1672,
+      "name": "乐翻天 Chengde Shuangqiao",
+      "field": "other",
+      "current": {
+        "1672": {
+          "name": "乐翻天承德双桥店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 40.971874,
+          "lng": 117.929238,
+          "bc": null
+        },
+        "1674": {
+          "name": "乐翻天游乐城",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 40.971874,
+          "lng": 117.929238,
+          "bc": "https://map.bemanicn.com/s/1792"
+        }
+      },
+      "proposed": "MERGE ids [1672, 1674] into one venue (prefer WAHLAP name '乐翻天承德双桥店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 乐翻天承德双桥店. Shard has multiple rows for it: ['乐翻天承德双桥店', '乐翻天游乐城']",
+      "checked_at": "2026-08-01",
+      "note": "Same Chengde venue: wahlap '乐翻天承德双桥店' (1672) and bemanicn '乐翻天游乐城' (1674, bc/1792, addr 佟温路2号 vs wahlap 酒仙庙路2号 - same area naming). Live WAHLAP has 乐翻天承德双桥店. Merge. bemanicn: https://map.bemanicn.com/s/1792"
+    },
+    {
+      "id": 1748,
+      "name": "佳乐佳 Qinglong Taifeng",
+      "field": "other",
+      "current": {
+        "1747": {
+          "name": "佳乐佳娱乐城",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 40.407697,
+          "lng": 118.947471,
+          "bc": "https://map.bemanicn.com/s/5957"
+        },
+        "1748": {
+          "name": "佳乐佳青龙泰丰广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 40.407607,
+          "lng": 118.945355,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [1747, 1748] into one venue (prefer WAHLAP name '佳乐佳青龙泰丰广场店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 佳乐佳青龙泰丰广场店. Shard has multiple rows for it: ['佳乐佳娱乐城', '佳乐佳青龙泰丰广场店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Qinglong Taifeng plaza: bemanicn '佳乐佳娱乐城' (1747, bc/5957) and wahlap '佳乐佳青龙泰丰广场店' (1748). Live WAHLAP has wahlap name. Merge. bemanicn: https://map.bemanicn.com/s/5957"
+    },
+    {
+      "id": 2014,
+      "name": "卢比猩球 Wen'an Hongxing Macalline",
+      "field": "other",
+      "current": {
+        "2013": {
+          "name": "卢比猩球",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "taiko"
+          ],
+          "lat": 39.489821,
+          "lng": 116.693981,
+          "bc": "https://map.bemanicn.com/s/4236"
+        },
+        "2014": {
+          "name": "卢比猩球文安红星美凯龙店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.86438,
+          "lng": 116.430395,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2013, 2014] into one venue (prefer WAHLAP name '卢比猩球文安红星美凯龙店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 卢比猩球文安红星美凯龙店. Shard has multiple rows for it: ['卢比猩球', '卢比猩球文安红星美凯龙店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Hongxing Macalline unit 7-1-101: bemanicn '卢比猩球' (2013, bc/4236, maimai+taiko) and wahlap '卢比猩球文安红星美凯龙店' (2014). Live WAHLAP has wahlap name. Merge; keep taiko from bemanicn. bemanicn: https://map.bemanicn.com/s/4236"
+    },
+    {
+      "id": 2015,
+      "name": "印象邯郸道 Handan Congtai",
+      "field": "other",
+      "current": {
+        "2015": {
+          "name": "印象邯郸道",
+          "src": [
+            "wahlap",
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx",
+            "taiko"
+          ],
+          "lat": 36.609765,
+          "lng": 114.484576,
+          "bc": "https://map.bemanicn.com/s/6978"
+        },
+        "2016": {
+          "name": "印象邯郸道邯郸丛台店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 36.614116,
+          "lng": 114.48049,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2015, 2016] into one venue (prefer WAHLAP name '印象邯郸道 / 印象邯郸道邯郸丛台店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 印象邯郸道 / 印象邯郸道邯郸丛台店. Shard has multiple rows for it: ['印象邯郸道', '印象邯郸道邯郸丛台店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Handan Dao historic district: id 2015 (wahlap+bemanicn, chunithm+maimai+taiko, bc/6978) and id 2016 pure wahlap maimai-only '印象邯郸道邯郸丛台店'. Live WAHLAP maimai lists 印象邯郸道邯郸丛台店; live chunithm lists 印象邯郸道. These are one venue with two WAHLAP name variants. Merge into one. bemanicn: https://map.bemanicn.com/s/6978"
+    },
+    {
+      "id": 2053,
+      "name": "可爱淘 Gaocheng Fashion Hui",
+      "field": "other",
+      "current": {
+        "2053": {
+          "name": "可爱淘家庭游乐中心石家庄藁城时尚汇",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.025901,
+          "lng": 114.853586,
+          "bc": null
+        },
+        "2054": {
+          "name": "可爱淘（时尚汇地下商业街）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.025901,
+          "lng": 114.853586,
+          "bc": "https://map.bemanicn.com/s/6702"
+        }
+      },
+      "proposed": "MERGE ids [2053, 2054] into one venue (prefer WAHLAP name '可爱淘家庭游乐中心石家庄藁城时尚汇' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 可爱淘家庭游乐中心石家庄藁城时尚汇. Shard has multiple rows for it: ['可爱淘家庭游乐中心石家庄藁城时尚汇', '可爱淘（时尚汇地下商业街）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Fashion Hui underground street: wahlap '可爱淘家庭游乐中心石家庄藁城时尚汇' (2053) and bemanicn '可爱淘（时尚汇地下商业街）' (2054, bc/6702). Merge. bemanicn: https://map.bemanicn.com/s/6702"
+    },
+    {
+      "id": 2121,
+      "name": "咔奇咔奇 Shijiazhuang Yuhua Wanda",
+      "field": "other",
+      "current": {
+        "2121": {
+          "name": "咔奇咔奇石家庄裕华店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.023449,
+          "lng": 114.539101,
+          "bc": null
+        },
+        "2123": {
+          "name": "咔奇咔奇超乐场（裕华万达店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.022597,
+          "lng": 114.537073,
+          "bc": "https://map.bemanicn.com/s/5766"
+        }
+      },
+      "proposed": "MERGE ids [2121, 2123] into one venue (prefer WAHLAP name '咔奇咔奇石家庄裕华店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 咔奇咔奇石家庄裕华店. Shard has multiple rows for it: ['咔奇咔奇石家庄裕华店', '咔奇咔奇超乐场（裕华万达店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Yuhua Wanda floor 3: wahlap '咔奇咔奇石家庄裕华店' (2121) and bemanicn '咔奇咔奇超乐场（裕华万达店）' (2123, bc/5766). Merge. bemanicn: https://map.bemanicn.com/s/5766"
+    },
+    {
+      "id": 2128,
+      "name": "咕咕岛 Laiyuan Xinyu",
+      "field": "other",
+      "current": {
+        "2127": {
+          "name": "咕咕岛儿童乐园",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.357439,
+          "lng": 114.70007,
+          "bc": "https://map.bemanicn.com/s/6814"
+        },
+        "2128": {
+          "name": "咕咕岛儿童乐园保定涞源信誉商厦店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.357399,
+          "lng": 114.699951,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2127, 2128] into one venue (prefer WAHLAP name '咕咕岛儿童乐园保定涞源信誉商厦店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 咕咕岛儿童乐园保定涞源信誉商厦店. Shard has multiple rows for it: ['咕咕岛儿童乐园', '咕咕岛儿童乐园保定涞源信誉商厦店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Laiyuan Xinyu department store: bemanicn '咕咕岛儿童乐园' (2127, bc/6814) and wahlap '咕咕岛儿童乐园保定涞源信誉商厦店' (2128). Merge. bemanicn: https://map.bemanicn.com/s/6814"
+    },
+    {
+      "id": 2129,
+      "name": "咕咕岛 Zhuozhou Jingtong Outlets",
+      "field": "other",
+      "current": {
+        "2129": {
+          "name": "咕咕岛涿州京通大奥莱店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.484565,
+          "lng": 115.969472,
+          "bc": null
+        },
+        "2131": {
+          "name": "咕咕岛超级乐园",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "other",
+            "taiko"
+          ],
+          "lat": 39.484342,
+          "lng": 115.970453,
+          "bc": "https://map.bemanicn.com/s/4646"
+        }
+      },
+      "proposed": "MERGE ids [2129, 2131] into one venue (prefer WAHLAP name '咕咕岛涿州京通大奥莱店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 咕咕岛涿州京通大奥莱店. Shard has multiple rows for it: ['咕咕岛涿州京通大奥莱店', '咕咕岛超级乐园']",
+      "checked_at": "2026-08-01",
+      "note": "Same Jingtong Outlets floor 3: wahlap '咕咕岛涿州京通大奥莱店' (2129) and bemanicn '咕咕岛超级乐园' (2131, bc/4646, also taiko+other). Merge; keep extra games from bemanicn. bemanicn: https://map.bemanicn.com/s/4646"
+    },
+    {
+      "id": 2132,
+      "name": "咕咕鲨/咕咕小镇 Bazhou Haiyue",
+      "field": "other",
+      "current": {
+        "2125": {
+          "name": "咕咕小镇家庭娱乐中心",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "other"
+          ],
+          "lat": 39.131428,
+          "lng": 116.381672,
+          "bc": "https://map.bemanicn.com/s/2500"
+        },
+        "2132": {
+          "name": "咕咕鲨廊坊霸州海悦店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.131031,
+          "lng": 116.381858,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2125, 2132] into one venue (prefer WAHLAP name '咕咕鲨廊坊霸州海悦店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 咕咕鲨廊坊霸州海悦店. Shard has multiple rows for it: ['咕咕小镇家庭娱乐中心', '咕咕鲨廊坊霸州海悦店']",
+      "checked_at": "2026-08-01",
+      "note": "Bazhou Haiyue Plaza: bemanicn '咕咕小镇家庭娱乐中心' (2125, bc/2500) vs wahlap '咕咕鲨廊坊霸州海悦店' (2132). Same plaza (海悦广场). Possibly rebrand or same operator; pins should be checked. Likely same venue or successor. bemanicn: https://map.bemanicn.com/s/2500"
+    },
+    {
+      "id": 2139,
+      "name": "哆力王国 Tangshan Fengnan Gangdao",
+      "field": "other",
+      "current": {
+        "2139": {
+          "name": "哆力王国唐山丰南店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.5741,
+          "lng": 118.082001,
+          "bc": null
+        },
+        "2140": {
+          "name": "哆力王国（唐山丰南港岛中心店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.574534,
+          "lng": 118.082808,
+          "bc": "https://map.bemanicn.com/s/4925"
+        }
+      },
+      "proposed": "MERGE ids [2139, 2140] into one venue (prefer WAHLAP name '哆力王国唐山丰南店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 哆力王国唐山丰南店. Shard has multiple rows for it: ['哆力王国唐山丰南店', '哆力王国（唐山丰南港岛中心店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Gangdao Center: wahlap '哆力王国唐山丰南店' (2139) and bemanicn '哆力王国（唐山丰南港岛中心店）' (2140, bc/4925). Merge. bemanicn: https://map.bemanicn.com/s/4925"
+    },
+    {
+      "id": 2219,
+      "name": "嗨嗨电玩 Xingtai Xindu Hongsheng",
+      "field": "other",
+      "current": {
+        "2218": {
+          "name": "嗨嗨电玩娱乐城",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 37.059823,
+          "lng": 114.459703,
+          "bc": "https://map.bemanicn.com/s/5050"
+        },
+        "2219": {
+          "name": "嗨嗨电玩邢台新都鸿胜店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 37.059823,
+          "lng": 114.459703,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2218, 2219] into one venue (prefer WAHLAP name '嗨嗨电玩邢台新都鸿胜店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 嗨嗨电玩邢台新都鸿胜店. Shard has multiple rows for it: ['嗨嗨电玩娱乐城', '嗨嗨电玩邢台新都鸿胜店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Hongsheng mall: bemanicn '嗨嗨电玩娱乐城' (2218, bc/5050, chunithm+maimai) and wahlap '嗨嗨电玩邢台新都鸿胜店' (2219, chunithm+maimai live). Merge. bemanicn: https://map.bemanicn.com/s/5050"
+    },
+    {
+      "id": 2304,
+      "name": "嘻游大玩家 Sanhe Yanjiao Xinlehui",
+      "field": "other",
+      "current": {
+        "2304": {
+          "name": "嘻游大玩家廊坊三河店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.969219,
+          "lng": 116.791757,
+          "bc": null
+        },
+        "2307": {
+          "name": "嘻游大玩家（鑫乐汇购物广场店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 39.96934,
+          "lng": 116.792296,
+          "bc": "https://map.bemanicn.com/s/2914"
+        }
+      },
+      "proposed": "MERGE ids [2304, 2307] into one venue (prefer WAHLAP name '嘻游大玩家廊坊三河店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 嘻游大玩家廊坊三河店. Shard has multiple rows for it: ['嘻游大玩家廊坊三河店', '嘻游大玩家（鑫乐汇购物广场店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Xinlehui Yanjiao floor 4: wahlap '嘻游大玩家廊坊三河店' (2304, maimai only) and bemanicn '嘻游大玩家（鑫乐汇购物广场店）' (2307, bc/2914, chunithm+maimai). Live WAHLAP maimai has wahlap name; live chunithm does NOT list this venue. Merge rows; chunithm claim is bemanicn-only (weaker). bemanicn: https://map.bemanicn.com/s/2914"
+    },
+    {
+      "id": 2425,
+      "name": "城市英雄 Shijiazhuang Letai",
+      "field": "other",
+      "current": {
+        "2425": {
+          "name": "城市英雄石家庄市桥西勒泰店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.024905,
+          "lng": 114.436517,
+          "bc": null
+        },
+        "2446": {
+          "name": "城市英雄（勒泰广场店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.024399,
+          "lng": 114.436936,
+          "bc": "https://map.bemanicn.com/s/4536"
+        }
+      },
+      "proposed": "MERGE ids [2425, 2446] into one venue (prefer WAHLAP name '城市英雄石家庄市桥西勒泰店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 城市英雄石家庄市桥西勒泰店. Shard has multiple rows for it: ['城市英雄石家庄市桥西勒泰店', '城市英雄（勒泰广场店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Letai Plaza floor 3: wahlap '城市英雄石家庄市桥西勒泰店' (2425) and bemanicn '城市英雄（勒泰广场店）' (2446, bc/4536). Merge. bemanicn: https://map.bemanicn.com/s/4536"
+    },
+    {
+      "id": 2497,
+      "name": "多乐世界 Qinhuangdao Ledu Hui",
+      "field": "other",
+      "current": {
+        "2496": {
+          "name": "多乐世界",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "other",
+            "taiko"
+          ],
+          "lat": 39.932509,
+          "lng": 119.598935,
+          "bc": "https://map.bemanicn.com/s/2022"
+        },
+        "2497": {
+          "name": "多乐世界秦皇岛海港店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.932509,
+          "lng": 119.598935,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2496, 2497] into one venue (prefer WAHLAP name '多乐世界秦皇岛海港店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 多乐世界秦皇岛海港店. Shard has multiple rows for it: ['多乐世界', '多乐世界秦皇岛海港店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Ledu Hui floor 4: bemanicn '多乐世界' (2496, bc/2022, maimai+taiko+other) and wahlap '多乐世界秦皇岛海港店' (2497). Merge; keep taiko from bemanicn. bemanicn: https://map.bemanicn.com/s/2022"
+    },
+    {
+      "id": 2512,
+      "name": "大兵小将 Shijiazhuang Ximei Huajie",
+      "field": "other",
+      "current": {
+        "2512": {
+          "name": "大兵小将石家庄桥西店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.993276,
+          "lng": 114.453056,
+          "bc": null
+        },
+        "2513": {
+          "name": "大兵小将（西美花街店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "other"
+          ],
+          "lat": 37.993276,
+          "lng": 114.453056,
+          "bc": "https://map.bemanicn.com/s/3056"
+        }
+      },
+      "proposed": "MERGE ids [2512, 2513] into one venue (prefer WAHLAP name '大兵小将石家庄桥西店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 大兵小将石家庄桥西店. Shard has multiple rows for it: ['大兵小将石家庄桥西店', '大兵小将（西美花街店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Ximei Huajie floor 2 west: wahlap '大兵小将石家庄桥西店' (2512) and bemanicn '大兵小将（西美花街店）' (2513, bc/3056). Note: 1-7PLAY西美花街 (868) is a DIFFERENT floor/shop in same complex. Merge only 2512/2513. bemanicn: https://map.bemanicn.com/s/3056"
+    },
+    {
+      "id": 2602,
+      "name": "大玩家 Renqiu Wanda",
+      "field": "other",
+      "current": {
+        "2602": {
+          "name": "大玩家沧州任丘万达店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.684112,
+          "lng": 116.082415,
+          "bc": null
+        },
+        "2631": {
+          "name": "大玩家超乐场（任丘万达店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "other",
+            "taiko"
+          ],
+          "lat": 38.684513,
+          "lng": 116.083021,
+          "bc": "https://map.bemanicn.com/s/1349"
+        }
+      },
+      "proposed": "MERGE ids [2602, 2631] into one venue (prefer WAHLAP name '大玩家沧州任丘万达店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 大玩家沧州任丘万达店. Shard has multiple rows for it: ['大玩家沧州任丘万达店', '大玩家超乐场（任丘万达店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Renqiu Wanda: wahlap '大玩家沧州任丘万达店' (2602) and bemanicn '大玩家超乐场（任丘万达店）' (2631, bc/1349, maimai+taiko+other). Separate from 365PLAY and 58潮玩 also in Renqiu Wanda. Merge 2602/2631 only. bemanicn: https://map.bemanicn.com/s/1349"
+    },
+    {
+      "id": 2613,
+      "name": "大玩家 Qinhuangdao Wanda",
+      "field": "other",
+      "current": {
+        "2613": {
+          "name": "大玩家秦皇岛万达店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 39.951695,
+          "lng": 119.569852,
+          "bc": null
+        },
+        "2630": {
+          "name": "大玩家超乐场秦皇岛万达店",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx",
+            "taiko"
+          ],
+          "lat": 39.951695,
+          "lng": 119.569852,
+          "bc": "https://map.bemanicn.com/s/4277"
+        }
+      },
+      "proposed": "MERGE ids [2613, 2630] into one venue (prefer WAHLAP name '大玩家秦皇岛万达店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 大玩家秦皇岛万达店. Shard has multiple rows for it: ['大玩家秦皇岛万达店', '大玩家超乐场秦皇岛万达店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Qinhuangdao Wanda floor 2: wahlap '大玩家秦皇岛万达店' (2613, maimai+chunithm live) and bemanicn '大玩家超乐场秦皇岛万达店' (2630, bc/4277, +taiko). Merge; keep taiko from bemanicn. bemanicn: https://map.bemanicn.com/s/4277"
+    },
+    {
+      "id": 2681,
+      "name": "天一动漫 Xingtai Tianyi City",
+      "field": "other",
+      "current": {
+        "2680": {
+          "name": "天一动漫",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx",
+            "other"
+          ],
+          "lat": 37.076211,
+          "lng": 114.494109,
+          "bc": "https://map.bemanicn.com/s/1202"
+        },
+        "2681": {
+          "name": "天一动漫邢台襄都天一城店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.076606,
+          "lng": 114.492054,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2680, 2681] into one venue (prefer WAHLAP name '天一动漫邢台襄都天一城店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 天一动漫邢台襄都天一城店. Shard has multiple rows for it: ['天一动漫', '天一动漫邢台襄都天一城店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Tianyi City D-block floor 4: bemanicn '天一动漫' (2680, bc/1202, chunithm+maimai+other) and wahlap '天一动漫邢台襄都天一城店' (2681, maimai only live). Live chunithm does NOT list this venue (nearby 天下无双 has chunithm on D floor 2). Merge rows; chunithm on 2680 is unverified vs WAHLAP. bemanicn: https://map.bemanicn.com/s/1202"
+    },
+    {
+      "id": 2689,
+      "name": "天乐动漫 Xingtai Tianle City",
+      "field": "other",
+      "current": {
+        "2689": {
+          "name": "天乐动漫邢台信都天乐城店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.058706,
+          "lng": 114.455011,
+          "bc": null
+        },
+        "2690": {
+          "name": "天乐动漫（天乐城）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.058771,
+          "lng": 114.45481,
+          "bc": "https://map.bemanicn.com/s/6921"
+        }
+      },
+      "proposed": "MERGE ids [2689, 2690] into one venue (prefer WAHLAP name '天乐动漫邢台信都天乐城店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 天乐动漫邢台信都天乐城店. Shard has multiple rows for it: ['天乐动漫邢台信都天乐城店', '天乐动漫（天乐城）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Tianle City B floor 3: wahlap '天乐动漫邢台信都天乐城店' (2689) and bemanicn '天乐动漫（天乐城）' (2690, bc/6921). Merge. bemanicn: https://map.bemanicn.com/s/6921"
+    },
+    {
+      "id": 2781,
+      "name": "天空之城多奇妙 Tangshan Wuyue",
+      "field": "other",
+      "current": {
+        "2781": {
+          "name": "天空之城唐山吾悦广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx"
+          ],
+          "lat": 39.666637,
+          "lng": 118.149175,
+          "bc": null
+        },
+        "2791": {
+          "name": "天空之城多奇妙家庭娱乐中心(唐山吾悦店)",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "chunithm",
+            "maimai_dx",
+            "other"
+          ],
+          "lat": 39.666637,
+          "lng": 118.149117,
+          "bc": "https://map.bemanicn.com/s/3934"
+        }
+      },
+      "proposed": "MERGE ids [2781, 2791] into one venue (prefer WAHLAP name '天空之城唐山吾悦广场店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 天空之城唐山吾悦广场店. Shard has multiple rows for it: ['天空之城唐山吾悦广场店', '天空之城多奇妙家庭娱乐中心(唐山吾悦店)']",
+      "checked_at": "2026-08-01",
+      "note": "Same Wuyue Plaza floor 3: wahlap '天空之城唐山吾悦广场店' (2781, maimai+chunithm live) and bemanicn '天空之城多奇妙家庭娱乐中心(唐山吾悦店)' (2791, bc/3934). Merge. bemanicn: https://map.bemanicn.com/s/3934"
+    },
+    {
+      "id": 2956,
+      "name": "太空橙 Xingtai Neiqiu",
+      "field": "other",
+      "current": {
+        "2955": {
+          "name": "太空橙家庭娱乐中心",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.354518,
+          "lng": 115.383319,
+          "bc": "https://map.bemanicn.com/s/5047"
+        },
+        "2956": {
+          "name": "太空橙邢台内丘福壹城店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.279559,
+          "lng": 114.509316,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [2955, 2956] into one venue (prefer WAHLAP name '太空橙邢台内丘福壹城店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 太空橙邢台内丘福壹城店. Shard has multiple rows for it: ['太空橙家庭娱乐中心', '太空橙邢台内丘福壹城店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Neiqiu Fuyi City floor 2: bemanicn '太空橙家庭娱乐中心' (2955, bc/5047) and wahlap '太空橙邢台内丘福壹城店' (2956). Merge. bemanicn: https://map.bemanicn.com/s/5047"
+    },
+    {
+      "id": 3008,
+      "name": "夺宝奇兵 Shijiazhuang Future City",
+      "field": "other",
+      "current": {
+        "3008": {
+          "name": "夺宝奇兵石家市桥西店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.999431,
+          "lng": 114.468157,
+          "bc": null
+        },
+        "3009": {
+          "name": "夺宝奇兵（北国未来城店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.004728,
+          "lng": 114.471083,
+          "bc": "https://map.bemanicn.com/s/3283"
+        }
+      },
+      "proposed": "MERGE ids [3008, 3009] into one venue (prefer WAHLAP name '夺宝奇兵石家市桥西店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 夺宝奇兵石家市桥西店. Shard has multiple rows for it: ['夺宝奇兵石家市桥西店', '夺宝奇兵（北国未来城店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Beiguo Future City floor 4: wahlap '夺宝奇兵石家市桥西店' (3008) and bemanicn '夺宝奇兵（北国未来城店）' (3009, bc/3283). Merge. bemanicn: https://map.bemanicn.com/s/3283"
+    },
+    {
+      "id": 3017,
+      "name": "奇享玩 Handan Congtai Tianhong",
+      "field": "other",
+      "current": {
+        "3016": {
+          "name": "奇享玩电玩城",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 36.626637,
+          "lng": 114.514083,
+          "bc": "https://map.bemanicn.com/s/5239"
+        },
+        "3017": {
+          "name": "奇享玩邯郸丛台天鸿广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 36.626637,
+          "lng": 114.514083,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [3016, 3017] into one venue (prefer WAHLAP name '奇享玩邯郸丛台天鸿广场店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 奇享玩邯郸丛台天鸿广场店. Shard has multiple rows for it: ['奇享玩电玩城', '奇享玩邯郸丛台天鸿广场店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Sunshine Tianhong Plaza B301: bemanicn '奇享玩电玩城' (3016, bc/5239) and wahlap '奇享玩邯郸丛台天鸿广场店' (3017). Merge. bemanicn: https://map.bemanicn.com/s/5239"
+    },
+    {
+      "id": 3102,
+      "name": "奇迹风云会秦皇岛茂业天地店",
+      "field": "other",
+      "current": {
+        "id": 3102,
+        "name": "奇迹风云会秦皇岛茂业天地店",
+        "addr": "河北省秦皇岛市海港区河北大街西段茂业天地4楼奇迹风云会",
+        "games": [
+          "jubeat",
+          "maimai_dx",
+          "taiko"
+        ]
+      },
+      "proposed": "Investigate dual WAHLAP listing: live maimai has BOTH 奇迹风云会秦皇岛茂业天地店 and 风云再起秦皇岛店 at 茂业天地4楼 same street address 河北大街西段368号. Likely rebrand/dual name of one venue (BemaniCN only has 奇迹风云会 s/467). Do NOT add a second pin without on-site confirmation.",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Two live WAHLAP maimai rows share 茂业天地4楼: arcadeName=奇迹风云会秦皇岛茂业天地店 and arcadeName=风云再起秦皇岛店 address=...河北大街西段368号茂业天地4楼风云再起",
+      "checked_at": "2026-08-01",
+      "note": "Official locator lists two names; community map has one shop. Prefer merge/alias rather than second map pin."
+    },
+    {
+      "id": 3129,
+      "name": "好玩谷 Tangshan Fengrun Wanda",
+      "field": "other",
+      "current": {
+        "3127": {
+          "name": "好玩谷动漫游乐（唐山丰润万达店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "other",
+            "taiko"
+          ],
+          "lat": 39.81759,
+          "lng": 118.111412,
+          "bc": "https://map.bemanicn.com/s/6718"
+        },
+        "3129": {
+          "name": "好玩谷唐山市丰润区万达广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.817811,
+          "lng": 118.111904,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [3127, 3129] into one venue (prefer WAHLAP name '好玩谷唐山市丰润区万达广场店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 好玩谷唐山市丰润区万达广场店. Shard has multiple rows for it: ['好玩谷动漫游乐（唐山丰润万达店）', '好玩谷唐山市丰润区万达广场店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Fengrun Wanda 2F-B: bemanicn '好玩谷动漫游乐（唐山丰润万达店）' (3127, bc/6718, maimai+taiko+other) and wahlap '好玩谷唐山市丰润区万达广场店' (3129). Merge; keep taiko from bemanicn. bemanicn: https://map.bemanicn.com/s/6718"
+    },
+    {
+      "id": 3316,
+      "name": "宝贝王 Federal Sky Garden",
+      "field": "other",
+      "current": {
+        "3316": {
+          "name": "宝贝王石家庄联邦空中花园店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.009984,
+          "lng": 114.54883,
+          "bc": null
+        },
+        "3328": {
+          "name": "宝贝王超级乐园（联邦空中花园店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.009984,
+          "lng": 114.54883,
+          "bc": "https://map.bemanicn.com/s/6278"
+        }
+      },
+      "proposed": "MERGE ids [3316, 3328] into one venue (prefer WAHLAP name '宝贝王石家庄联邦空中花园店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 宝贝王石家庄联邦空中花园店. Shard has multiple rows for it: ['宝贝王石家庄联邦空中花园店', '宝贝王超级乐园（联邦空中花园店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Federal Sky Garden: wahlap '宝贝王石家庄联邦空中花园店' (3316) and bemanicn '宝贝王超级乐园（联邦空中花园店）' (3328, bc/6278). Merge. bemanicn: https://map.bemanicn.com/s/6278"
+    },
+    {
+      "id": 3317,
+      "name": "宝贝王 Xihuanli",
+      "field": "other",
+      "current": {
+        "3317": {
+          "name": "宝贝王石家庄西桥禧欢里店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.9952,
+          "lng": 114.453515,
+          "bc": null
+        },
+        "3345": {
+          "name": "宝贝王（禧欢里店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.9952,
+          "lng": 114.453515,
+          "bc": "https://map.bemanicn.com/s/7018"
+        }
+      },
+      "proposed": "MERGE ids [3317, 3345] into one venue (prefer WAHLAP name '宝贝王石家庄西桥禧欢里店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 宝贝王石家庄西桥禧欢里店. Shard has multiple rows for it: ['宝贝王石家庄西桥禧欢里店', '宝贝王（禧欢里店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Xihuanli plaza floor 3: wahlap '宝贝王石家庄西桥禧欢里店' (3317) and bemanicn '宝贝王（禧欢里店）' (3345, bc/7018). Merge. bemanicn: https://map.bemanicn.com/s/7018"
+    },
+    {
+      "id": 3394,
+      "name": "小洋人宝贝王 Dingzhou Shidai Plaza",
+      "field": "other",
+      "current": {
+        "3394": {
+          "name": "小洋人宝贝王定州南城店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.515537,
+          "lng": 114.980333,
+          "bc": null
+        },
+        "3395": {
+          "name": "小洋人宝贝王定州时代广场店",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.515503,
+          "lng": 114.980364,
+          "bc": "https://map.bemanicn.com/s/4074"
+        }
+      },
+      "proposed": "MERGE ids [3394, 3395] into one venue (prefer WAHLAP name '小洋人宝贝王定州南城店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 小洋人宝贝王定州南城店. Shard has multiple rows for it: ['小洋人宝贝王定州南城店', '小洋人宝贝王定州时代广场店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Dingzhou Shidai Plaza floor 3: wahlap '小洋人宝贝王定州南城店' (3394) and bemanicn '小洋人宝贝王定州时代广场店' (3395, bc/4074). Merge. bemanicn: https://map.bemanicn.com/s/4074"
+    },
+    {
+      "id": 3460,
+      "name": "希美潮玩 Handan Meile City",
+      "field": "other",
+      "current": {
+        "3459": {
+          "name": "希美潮玩",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "bc": "https://map.bemanicn.com/s/1561"
+        },
+        "3460": {
+          "name": "希美潮玩邯郸丛台美乐城店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ]
+        }
+      },
+      "proposed": "MERGE ids [3459, 3460] into one venue (prefer WAHLAP name '希美潮玩邯郸丛台美乐城店')",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists 希美潮玩邯郸丛台美乐城店 at 美乐城负一楼; shard also has bemanicn-only short name 希美潮玩 (3459) at 人民东路美乐城",
+      "checked_at": "2026-08-01",
+      "note": "Same Meile City Handan Congtai basement venue, wahlap+bemanicn double row."
+    },
+    {
+      "id": 3501,
+      "name": "廊坊广阳区麦酷潮玩中心（万向城店）",
+      "field": "other",
+      "current": "廊坊广阳区麦酷潮玩中心（万向城店）",
+      "proposed": "麦酷电玩城廊坊广阳万向城店",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "live WAHLAP Hebei lists arcadeName=麦酷电玩城廊坊广阳万向城店",
+      "checked_at": "2026-08-01",
+      "note": "bemanicn '廊坊广阳区麦酷潮玩中心（万向城店）' (3501, bc/3584) matches live WAHLAP '麦酷电玩城廊坊广阳万向城店'. Not a within-shard double row under two names - only one id. Align name to WAHLAP."
+    },
+    {
+      "id": 3537,
+      "name": "张家口饕餮游戏俱乐部",
+      "field": "other",
+      "current": "张家口饕餮游戏俱乐部",
+      "proposed": "饕餮游戏张家口中泰万和店",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "live WAHLAP Hebei lists arcadeName=饕餮游戏张家口中泰万和店",
+      "checked_at": "2026-08-01",
+      "note": "bemanicn '张家口饕餮游戏俱乐部' (3537, bc/5518) is the same as live WAHLAP '饕餮游戏张家口中泰万和店' (not present as separate shard id under that name - 3537 is the only row). Not a within-shard dup; ensure name/address aligned to WAHLAP."
+    },
+    {
+      "id": 3543,
+      "name": "彩虹星际 Lixian",
+      "field": "other",
+      "current": {
+        "3543": {
+          "name": "彩虹星际保定蠡县吾北大街店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.510146,
+          "lng": 115.579028,
+          "bc": null
+        },
+        "3544": {
+          "name": "彩虹星际超乐园",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.510146,
+          "lng": 115.579028,
+          "bc": "https://map.bemanicn.com/s/5711"
+        }
+      },
+      "proposed": "MERGE ids [3543, 3544] into one venue (prefer WAHLAP name '彩虹星际保定蠡县吾北大街店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 彩虹星际保定蠡县吾北大街店. Shard has multiple rows for it: ['彩虹星际保定蠡县吾北大街店', '彩虹星际超乐园']",
+      "checked_at": "2026-08-01",
+      "note": "Same Lixian Liwu North Street: wahlap '彩虹星际保定蠡县吾北大街店' (3543, addr 543号) and bemanicn '彩虹星际超乐园' (3544, bc/5711, addr 558号). Near-identical pins/names; almost certainly one venue with address number variance. Merge likely. bemanicn: https://map.bemanicn.com/s/5711"
+    },
+    {
+      "id": 4225,
+      "name": "星际梦想城 Xinji Wanda",
+      "field": "other",
+      "current": {
+        "4215": {
+          "name": "星际梦想城 辛集店",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.94809,
+          "lng": 115.225456,
+          "bc": "https://map.bemanicn.com/s/2074"
+        },
+        "4225": {
+          "name": "星际梦想城辛集万达广场店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.94809,
+          "lng": 115.225456,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [4215, 4225] into one venue (prefer WAHLAP name '星际梦想城辛集万达广场店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 星际梦想城辛集万达广场店. Shard has multiple rows for it: ['星际梦想城 辛集店', '星际梦想城辛集万达广场店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Xinji Wanda 3F: bemanicn '星际梦想城 辛集店' (4215, bc/2074) and wahlap '星际梦想城辛集万达广场店' (4225). Merge. bemanicn: https://map.bemanicn.com/s/2074"
+    },
+    {
+      "id": 4236,
+      "name": "创新超玩 / 星际潮玩 Hengshui Aite",
+      "field": "other",
+      "current": {
+        "1850": {
+          "name": "创新超玩儿童乐园(衡水路北爱特生活广场店)",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.753659,
+          "lng": 115.665609,
+          "bc": "https://map.bemanicn.com/s/6222"
+        },
+        "4236": {
+          "name": "星际潮玩衡水桃城爱特店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 37.753659,
+          "lng": 115.665609,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [1850, 4236] into one venue (prefer WAHLAP name '星际潮玩衡水桃城爱特店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 星际潮玩衡水桃城爱特店. Shard has multiple rows for it: ['创新超玩儿童乐园(衡水路北爱特生活广场店)', '星际潮玩衡水桃城爱特店']",
+      "checked_at": "2026-08-01",
+      "note": "Hengshui Aite Life Plaza floor 2: bemanicn '创新超玩儿童乐园(衡水路北爱特生活广场店)' (1850, bc/6222) and wahlap '星际潮玩衡水桃城爱特店' (4236, notes say 创新超玩 in address). Live WAHLAP name is 星际潮玩... address contains 创新超玩. Almost certainly same shop rebranded or dual-named. Merge. bemanicn: https://map.bemanicn.com/s/6222"
+    },
+    {
+      "id": 873,
+      "name": "1-7PLAY Tangshan Zhongjun World City",
+      "field": "other",
+      "current": {
+        "873": {
+          "name": "1-7PLAY唐山世界城店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 39.676057,
+          "lng": 118.24714,
+          "bc": null
+        },
+        "874": {
+          "name": "1-7PLAY家庭娱乐中心(中骏世界城店)",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx",
+            "taiko"
+          ],
+          "lat": 39.676293,
+          "lng": 118.247707,
+          "bc": "https://map.bemanicn.com/s/3031"
+        }
+      },
+      "proposed": "MERGE ids [873, 874] into one venue (prefer WAHLAP name '1-7PLAY唐山世界城店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 1-7PLAY唐山世界城店. Shard has multiple rows for it: ['1-7PLAY唐山世界城店', '1-7PLAY家庭娱乐中心(中骏世界城店)']",
+      "checked_at": "2026-08-01",
+      "note": "Same Zhongjun World City Tangshan venue listed twice: wahlap name '1-7PLAY唐山世界城店' (id 873) and bemanicn '1-7PLAY家庭娱乐中心(中骏世界城店)' (id 874, bc/3031). Live WAHLAP lists one: 1-7PLAY唐山世界城店. Pins nearly identical. Merge into one row; keep maimai from WAHLAP and taiko qty from bemanicn if still valid. bemanicn: https://map.bemanicn.com/s/3031"
+    },
+    {
+      "id": 875,
+      "name": "1-7PLAY家庭娱乐中心（雄安奥特莱斯店）",
+      "field": "other",
+      "current": {
+        "games": [
+          "taiko"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": "Review vs 雄安奥莱潮玩星球 (bemanicn/7264, not in shard) - possible rename or neighbor",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/7264",
+      "evidence_quote": "雄安奥莱潮玩星球 at 容东奥特莱斯c区三楼 lists maimai+taiko; 1-7PLAY雄安 is A301 same outlet area",
+      "checked_at": "2026-08-01",
+      "note": "1-7PLAY雄安奥特莱斯: bemanicn lists taiko only (no maimai). Live WAHLAP has no 雄安/奥特莱斯 1-7PLAY. Separate BemaniCN 7264 雄安奥莱潮玩星球 has maimai+taiko - may be successor or different shop in same outlet."
+    },
+    {
+      "id": 876,
+      "name": "1-7PLAY Cangzhou Yishoushi",
+      "field": "other",
+      "current": {
+        "870": {
+          "name": "1-7PLAY一起玩嘉年华(沧州一首诗生活中心店)",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.289967,
+          "lng": 116.812184,
+          "bc": "https://map.bemanicn.com/s/5890"
+        },
+        "876": {
+          "name": "1-7play沧州一首诗中心店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.288931,
+          "lng": 116.811287,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [870, 876] into one venue (prefer WAHLAP name '1-7play沧州一首诗中心店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 1-7play沧州一首诗中心店. Shard has multiple rows for it: ['1-7PLAY一起玩嘉年华(沧州一首诗生活中心店)', '1-7play沧州一首诗中心店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Cangzhou Yishoushi art life center: wahlap '1-7play沧州一首诗中心店' (876) and bemanicn '1-7PLAY一起玩嘉年华(沧州一首诗生活中心店)' (870, bc/5890). Live WAHLAP has 1-7play沧州一首诗中心店. Merge. bemanicn: https://map.bemanicn.com/s/5890"
+    },
+    {
+      "id": 909,
+      "name": "365PLAY Renqiu Wanda",
+      "field": "other",
+      "current": {
+        "908": {
+          "name": "365PLAY潮玩",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.684513,
+          "lng": 116.083021,
+          "bc": "https://map.bemanicn.com/s/5566"
+        },
+        "909": {
+          "name": "365PLAY潮玩沧州任丘万达店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.684509,
+          "lng": 116.083015,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [908, 909] into one venue (prefer WAHLAP name '365PLAY潮玩沧州任丘万达店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 365PLAY潮玩沧州任丘万达店. Shard has multiple rows for it: ['365PLAY潮玩', '365PLAY潮玩沧州任丘万达店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Renqiu Wanda venue: bemanicn short '365PLAY潮玩' (908, bc/5566) and wahlap '365PLAY潮玩沧州任丘万达店' (909). Live WAHLAP has the wahlap name. Merge. bemanicn: https://map.bemanicn.com/s/5566"
+    },
+    {
+      "id": 911,
+      "name": "37du Handan Heping Sougou",
+      "field": "other",
+      "current": {
+        "910": {
+          "name": "37度家庭娱乐中心搜购店",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 36.603515,
+          "lng": 114.480405,
+          "bc": "https://map.bemanicn.com/s/3464"
+        },
+        "911": {
+          "name": "37度邯郸和平店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 36.603515,
+          "lng": 114.480405,
+          "bc": null
+        }
+      },
+      "proposed": "MERGE ids [910, 911] into one venue (prefer WAHLAP name '37度邯郸和平店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 37度邯郸和平店. Shard has multiple rows for it: ['37度家庭娱乐中心搜购店', '37度邯郸和平店']",
+      "checked_at": "2026-08-01",
+      "note": "Same Handan Heping Sougou plaza: bemanicn '37度家庭娱乐中心搜购店' (910, bc/3464) and wahlap '37度邯郸和平店' (911). Live WAHLAP lists 37度邯郸和平店. Merge. bemanicn: https://map.bemanicn.com/s/3464"
+    },
+    {
+      "id": 952,
+      "name": "58潮玩 Renqiu Wanda",
+      "field": "other",
+      "current": {
+        "952": {
+          "name": "58潮玩SPACE任丘万达店",
+          "src": [
+            "wahlap"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": null,
+          "lng": null,
+          "bc": null
+        },
+        "953": {
+          "name": "58潮玩空间（任丘万达店）",
+          "src": [
+            "bemanicn"
+          ],
+          "games": [
+            "maimai_dx"
+          ],
+          "lat": 38.684513,
+          "lng": 116.083021,
+          "bc": "https://map.bemanicn.com/s/5981"
+        }
+      },
+      "proposed": "MERGE ids [952, 953] into one venue (prefer WAHLAP name '58潮玩SPACE任丘万达店' for SEGA titles; preserve bemanicn taiko/other counts when present)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP Hebei maimai lists exactly one matching serviced venue: 58潮玩SPACE任丘万达店. Shard has multiple rows for it: ['58潮玩SPACE任丘万达店', '58潮玩空间（任丘万达店）']",
+      "checked_at": "2026-08-01",
+      "note": "Same Renqiu Wanda: wahlap '58潮玩SPACE任丘万达店' (952) and bemanicn '58潮玩空间（任丘万达店）' (953, bc/5981). Live WAHLAP has 58潮玩SPACE任丘万达店. Note: Renqiu Wanda also has other arcades (365PLAY, 大玩家) as SEPARATE venues, do not merge those. bemanicn: https://map.bemanicn.com/s/5981"
+    },
+    {
+      "id": 1033,
+      "name": "D壹电玩",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai Hebei has no D壹电玩 / 霸州大华世纪商厦 entry",
+      "checked_at": "2026-08-01",
+      "note": "Only src bemanicn. maimai claim unsupported by official locator as of 2026-07-31. Remove maimai or mark unverified; venue existence itself not independently confirmed beyond BemaniCN."
+    },
+    {
+      "id": 1184,
+      "name": "KK园区成安分园",
+      "field": "games",
+      "current": [
+        "chunithm"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP CHUNITHM Hebei list (16 venues) does not include KK园区成安分园 or any 成安 venue",
+      "checked_at": "2026-08-01",
+      "note": "BemaniCN shop 6888 lists title_id 3 qty 1 version 2.45.00; NOT in live WAHLAP chunithm Hebei (16 venues). May be private/home install (type=3) or offline cab. Do not treat as public WAHLAP-serviced venue."
+    },
+    {
+      "id": 2307,
+      "name": "嘻游大玩家（鑫乐汇购物广场店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP CHUNITHM Hebei (16) has no 嘻游大玩家 / 鑫乐汇 / 三河 / 燕郊 entry",
+      "checked_at": "2026-08-01",
+      "note": "Pair with 2304. maimai is on WAHLAP under 嘻游大玩家廊坊三河店; chunithm is bemanicn-only and not on official locator."
+    },
+    {
+      "id": 2680,
+      "name": "天一动漫",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP CHUNITHM Hebei lists 天下无双邢台襄都店 at 天一城D座2层, not 天一动漫 at D座4层",
+      "checked_at": "2026-08-01",
+      "note": "天一动漫 D4 maimai is on WAHLAP as 天一动漫邢台襄都天一城店. chunithm at same complex is a different shop (天下无双 D2, id 2682). Do not attribute chunithm to 天一动漫."
+    },
+    {
+      "id": 868,
+      "name": "1-7PLAY(西美花街店)",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai Hebei (113 venues) has no matching 1-7PLAY for this address/city branch",
+      "checked_at": "2026-08-01",
+      "note": "1-7PLAY西美花街: bemanicn lists maimai x1 but live WAHLAP Hebei has no 西美花街 / 1-7PLAY石家庄 entry. Nearby WAHLAP has 大兵小将 at same complex floor 2. maimai claim may be stale. Official locator is authoritative for currently serviced maimai; community list can lag."
+    }
+  ]
+}

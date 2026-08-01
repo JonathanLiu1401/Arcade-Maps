@@ -298,6 +298,52 @@ for title, want in [
           repr(sorted(ziv.slugs_for_title(title))))
 
 
+# ---------------------------------------- signed / range quantities
+# A leading hyphen used to be stripped and the magnitude published, so
+# "-1 machines" became a confident 1, and a stated RANGE lost its lower
+# half ("1-2 machines" -> 2). Both are claims the comment does not make.
+print("\n--- signed and range quantities are not counts ---")
+
+for text in ["-1 machines", "-3 cabs", "there are -2 machines",
+             "1-2 machines", "2-4 cabinets", "-2 台"]:
+    check("%r yields no count" % text,
+          ziv.parse_machine_quantity(text) is None,
+          repr(ziv.parse_machine_quantity(text)))
+
+# The same sweep must not cost any real total: hyphens appear in ordinary
+# cab prose ("side-by-side"), and those still have to parse.
+for text, want in [("2 machines", 2), ("8 machines", 8),
+                   ("12 cabinets in total", 12), ("there are 5 machines", 5),
+                   ("3 台設置", 3), ("8 LIGHTNING MODEL machines", 8),
+                   ("2 sets of 4", 8),
+                   ("a side-by-side pair of 4 linked cabinets", 8)]:
+    check("%r still parses as %d" % (text, want),
+          ziv.parse_machine_quantity(text) == want,
+          repr(ziv.parse_machine_quantity(text)))
+
+
+# ------------------------------------------- zero is a real coordinate
+# lat/lng were read with `or`, which treats 0.0 as absent: a venue on the
+# equator or the prime meridian lost that axis. Ghana sits on both.
+print("\n--- 0.0 lat/lng survives parsing ---")
+
+for lat, lng in [(0, 10), (10, 0), (0, 0)]:
+    got = ziv._parse_arcades(
+        {"arcades": [{"id": "1", "name": "Equator Arcade",
+                      "latitude": lat, "longitude": lng}]}, "Ghana")["1"]
+    check("lat=%r lng=%r kept as a coordinate" % (lat, lng),
+          got["lat"] == float(lat) and got["lng"] == float(lng),
+          "got lat=%r lng=%r" % (got["lat"], got["lng"]))
+
+# A genuinely absent axis must still read as absent, not as 0.
+_absent = ziv._parse_arcades(
+    {"arcades": [{"id": "1", "name": "No Coords", "latitude": None,
+                  "longitude": None}]}, "Ghana")["1"]
+check("missing lat/lng stays None",
+      _absent["lat"] is None and _absent["lng"] is None,
+      "got lat=%r lng=%r" % (_absent["lat"], _absent["lng"]))
+
+
 # ------------------------------------------------------ end
 print("\n%d checks, %d failed" % (len(RAN), len(FAILED)))
 if FAILED:

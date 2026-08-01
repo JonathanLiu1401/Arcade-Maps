@@ -1,0 +1,774 @@
+{
+  "shard": 63,
+  "checked": 104,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+    "https://map.bemanicn.com/s/{id} (Inertia Shop/Show for 66 shop ids)",
+    "https://map.bemanicn.com/games (arcade_type title map)",
+    "data/arcades.json (full map membership check for missing venues)"
+  ],
+  "corrections": [
+    {
+      "id": 7078,
+      "name": "阿斯坦丁俏皮世界（方圆荟世纪中心店）",
+      "field": "status",
+      "current": {
+        "listed": true,
+        "games": [
+          "drs"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3214"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3214",
+      "evidence_quote": "HTTP 404 for Inertia Shop/Show partial on 2026-07-31; shop id 3214 no longer returns props.shop",
+      "note": "Only source was bemanicn with DRS only. Shop page is gone (404). Cannot confirm physical closure vs page deletion; treat listing as stale until re-confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7087,
+      "name": "雨窝",
+      "field": "status",
+      "current": {
+        "open_assumed": true,
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 6
+        }
+      },
+      "proposed": "likely non-operational or relocated; do not treat as a normal public arcade",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5552",
+      "evidence_quote": "10.15 迟来的运营公告: 长沙窝因为神秘力量导致警哥突袭 目前所有设备已被缴获 正在想办法进行重新复活 ... 目前前负责人小雨已被控制走 无法进行音游窝营运; also 2025.8.30 搬迁计划已定. status still 1, updated_at 2026-01-28T19:45:03Z",
+      "note": "Private nest (wo), not on WAHLAP. Comment is strong evidence of raid/confiscation and planned move; later undated lines about new cabs conflict with the raid notice. Last shop update 2026-01-28. Operational state not confirmed as of check date; travelers should not rely on this pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6210,
+      "name": "缤纷幻想电玩城（广安店）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6578",
+      "evidence_quote": "arcades: title_id=1 (maimai DX) quantity=1 version=2026; shop updated_at 2026-07-30T06:26:55.000000Z; comment 进门后就能看见舞萌",
+      "note": "App game_counts still 2 with count_evidence bemanicn_qty; live BemaniCN qty is 1. Same physical shop as wahlap row id 6207.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7253,
+      "name": "飞马王国寿县恒太城店",
+      "field": "other",
+      "current": "飞马王国寿县恒太城店",
+      "proposed": "城市星空寿县恒太城店 (WAHLAP: 城市星空淮南恒太城店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4918",
+      "evidence_quote": "props.shop.name=城市星空寿县恒太城店 address=寿县寿州恒太城三楼 status=1 updated_at=2026-07-28T06:39:02.000000Z maimai quantity=1",
+      "note": "WAHLAP official maimai list has 城市星空淮南恒太城店 at 安徽省淮南市寿县恒太城3楼城市星空. App name 飞马王国 is stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7275,
+      "name": "骑士玩国(丽发店)",
+      "field": "location",
+      "current": {
+        "lat": 28.193148,
+        "lng": 113.026458,
+        "addr": "万家丽南路与汇金路交叉口东南150米丽发国际广场内"
+      },
+      "proposed": "re-geocode to 丽发国际广场; must not share pin with 万家丽国际购物广场 id 7281",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1621",
+      "evidence_quote": "骑士玩国(丽发店) address=万家丽南路与汇金路交叉口东南150米丽发国际广场内",
+      "note": "Shard pins 7275 (Lifa) and 7281 (Wanjiali, BC s/6754 万家丽中路99号) share identical lat/lng 28.193148,113.026458. Different malls on different roads. approx:true is expected for China but identical coords for two distinct malls is wrong. Exact survey coords not collected here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7281,
+      "name": "骑士玩国长沙万家丽店",
+      "field": "location",
+      "current": {
+        "lat": 28.193148,
+        "lng": 113.026458,
+        "addr": "湖南省长沙市芙蓉区万家丽中路万家丽国际购物广场8楼"
+      },
+      "proposed": "re-geocode to 万家丽国际购物广场 / 万家丽中路99号; must not share pin with Lifa store id 7275",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6754",
+      "evidence_quote": "骑士玩国(万家丽店) address=万家丽中路99号(万家丽广场地铁站2号线2号口步行50米); games maimai qty1 chunithm qty2 taiko qty1",
+      "note": "Same shared-pin issue as id 7275. WAHLAP lists 骑士玩国长沙万家丽店 at 万家丽中路万家丽国际购物广场8楼.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7280,
+      "name": "骑士玩国长开福大悦城店",
+      "field": "status",
+      "current": {
+        "name": "骑士玩国长开福大悦城店",
+        "addr": "湖南省长沙市开福区新河街道大悦城LG层南馆骑士玩国店",
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": "verify whether still at Dayuecheng or relocated/renamed to 骑士玩国(北辰荟店) id 7276; do not auto-delete while WAHLAP still lists Dayuecheng",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/4041",
+      "evidence_quote": "骑士玩国(北辰荟店) comment: 店铺原名：骑士玩国大悦城店; status=1 updated 2026-07-25; 4x maimai. WAHLAP still has separate entry 骑士玩国长开福大悦城店 at 大悦城LG层南馆",
+      "note": "BC treats Beichenhui as former Dayuecheng name. WAHLAP still lists Dayuecheng as of live fetch. Could be relocate, dual listing, or stale WAHLAP. Coords differ (7280 vs 7276). Needs human check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7169,
+      "name": "风云再起四川成都天府广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/277",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=0.4; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7221,
+      "name": "风云再起长沙黄兴南路店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/177",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=26 (values >24 mean next calendar day); price(token CNY)=0.3; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7167,
+      "name": "风云再起合肥淮河路店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-01:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/225",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=25 (values >24 mean next calendar day); price(token CNY)=1; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7263,
+      "name": "骇客码头成都天府红店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5252",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=24 (values >24 mean next calendar day); price(token CNY)=0.2; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6076,
+      "name": "第一回合成都银泰城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/884",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=1; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6846,
+      "name": "酷漫地带（成都龙湖上城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2077",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=1; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7281,
+      "name": "骑士玩国长沙万家丽店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6754",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=1; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7276,
+      "name": "骑士玩国(北辰荟店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4041",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=0.2; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7032,
+      "name": "闲乐谷大玩家（乐山店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/406",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=0.4; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5895,
+      "name": "真快活仁和新城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7180",
+      "evidence_quote": "BemaniCN shop.start_time=10 end_time=22 (values >24 mean next calendar day); price(token CNY)=1; community-maintained hours, not operator-official",
+      "note": "App hours_text is null for entire shard. Prefer operator/mall hours if found later. For 7167 BC comment also says 实际营业时间至25:30 which matches end_time=25.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7167,
+      "name": "风云再起合肥淮河路店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/play (~CNY 3.00 at price=1)",
+        "chunithm": "4 coins/play",
+        "taiko": "6 coins/play",
+        "token_cny": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/225",
+      "evidence_quote": "shop.price=1; arcades coins maimai title_id1 qty6 coin=3; chunithm title_id3 qty2 coin=4; taiko title_id31 qty2 coin=6; comment notes 3 coins 1pc for maimai DX at times",
+      "note": "Token unit price and coins/play from BemaniCN community fields.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7169,
+      "name": "风云再起四川成都天府广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/play (~CNY 2.00 at price=0.4)",
+        "taiko": "6 coins/play",
+        "token_cny": 0.4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/277",
+      "evidence_quote": "shop.price=0.4; maimai coin=5 qty=3; taiko coin=6 qty=1; comment current coin package 69/150 coins (0.46/coin)",
+      "note": "Community coin price; package price in comment differs slightly.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7221,
+      "name": "风云再起长沙黄兴南路店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/play (~CNY 1.50 at price=0.3)",
+        "taiko": "10 coins/play",
+        "token_cny": 0.3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/177",
+      "evidence_quote": "shop.price=0.3; maimai coin=5 qty=2; taiko coin=10 qty=1; comment Douyin/Meituan package about 60 CNY for 200 coins",
+      "note": "Package rates change; community snapshot only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7236,
+      "name": "风铃工坊 Foorin Studio",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:45-18:45 (comment) or 09:00-19:00 (start_time/end_time)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6838",
+      "evidence_quote": "comment: open daily 08:45-18:45; pricing CNY 10/h, 15min unit, CNY 40 cap; shop.start_time=9 end_time=19; updated_at 2026-07-21",
+      "note": "Private nest with JP cab/handcab setups (not WAHLAP network). App correctly has chunithm+ongeki without maimai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7236,
+      "name": "风铃工坊 Foorin Studio",
+      "field": "prices",
+      "current": null,
+      "proposed": "time-based CNY 10/h (15min unit), CNY 40 cap; not coin-per-credit",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6838",
+      "evidence_quote": "pricing: CNY 10/h, 15min minimum unit, CNY 40 cap",
+      "note": "Not a standard coin arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "城市英雄长沙永旺梦乐城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "城市英雄长沙永旺梦乐城店",
+        "addr": "湖南省长沙市湘江新区永旺梦乐城3楼332城市英雄电玩馆",
+        "country": "China",
+        "pref": "湖南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=城市英雄长沙永旺梦乐城店 address=湖南省长沙市湘江新区永旺梦乐城3楼332城市英雄电玩馆 (province 湖南); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "城市英雄长沙开福北辰荟店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "城市英雄长沙开福北辰荟店",
+        "addr": "湖南省长沙市开福区湘江路1500号北辰荟购物中心3楼",
+        "country": "China",
+        "pref": "湖南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=城市英雄长沙开福北辰荟店 address=湖南省长沙市开福区湘江路1500号北辰荟购物中心3楼 (province 湖南); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "城市英雄长沙岳麓万象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "城市英雄长沙岳麓万象城店",
+        "addr": "湖南省长沙市岳麓区万象城L5 553城市英雄",
+        "country": "China",
+        "pref": "湖南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=城市英雄长沙岳麓万象城店 address=湖南省长沙市岳麓区万象城L5 553城市英雄 (province 湖南); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "和音屋成都武侯店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "和音屋成都武侯店",
+        "addr": "四川省成都市武侯区科华北路58号亚太广场C座1020和音屋",
+        "country": "China",
+        "pref": "四川",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=和音屋成都武侯店 address=四川省成都市武侯区科华北路58号亚太广场C座1020和音屋 (province 四川); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "元气总动员成都郫都时代店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "元气总动员成都郫都时代店",
+        "addr": "四川省成都市郫都区时代天街三楼元气总动员",
+        "country": "China",
+        "pref": "四川",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=元气总动员成都郫都时代店 address=四川省成都市郫都区时代天街三楼元气总动员 (province 四川); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "汤姆熊成都蜀都万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "汤姆熊成都蜀都万达店",
+        "addr": "四川省成都市郫都区望丛东路139号蜀都万达广场2楼汤姆熊欢乐世界",
+        "country": "China",
+        "pref": "四川",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=汤姆熊成都蜀都万达店 address=四川省成都市郫都区望丛东路139号蜀都万达广场2楼汤姆熊欢乐世界 (province 四川)",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "汤姆熊成都温江珠江广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "汤姆熊成都温江珠江广场店",
+        "addr": "四川省成都市温江区光华大道三段1588号合生汇广场4楼汤姆熊",
+        "country": "China",
+        "pref": "四川",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=汤姆熊成都温江珠江广场店 address=四川省成都市温江区光华大道三段1588号合生汇广场4楼汤姆熊 (province 四川)",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "炫动魔方成都双流店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "炫动魔方成都双流店",
+        "addr": "四川省成都市双流区西航港街道韩国城喜乐齐超市二楼炫动魔方电玩城",
+        "country": "China",
+        "pref": "四川",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=炫动魔方成都双流店 address=四川省成都市双流区西航港街道韩国城喜乐齐超市二楼炫动魔方电玩城 (province 四川); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "摩羯星座芜湖镜湖万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "摩羯星座芜湖镜湖万达店",
+        "addr": "芜湖市镜湖区万达广场二楼摩羯星座",
+        "country": "China",
+        "pref": "安徽",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maidx location API lists arcadeName=摩羯星座芜湖镜湖万达店 address=芜湖市镜湖区万达广场二楼摩羯星座 (province 安徽); also present on midtr (CHUNITHM) endpoint",
+      "note": "Not found in data/arcades.json full China set by name/address match on check date. Official currently-serviced WAHLAP listing. Coordinates unknown (WAHLAP has no lat/lng). 城市英雄长沙开福北辰荟 is a different brand from existing 骑士玩国(北辰荟店) id 7276.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5908,
+      "name": "真快活成都武侯仁和新城店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 5895 (真快活仁和新城店); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7180",
+      "evidence_quote": "Same address 府城大道西段505号仁和新城5楼; 5895 has BC counts maimai2+taiko1; 5908 is wahlap-only maimai",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6034,
+      "name": "童年搭档成都郫都店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6030 (童年搭档(龙湖蜀新天街店)); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3993",
+      "evidence_quote": "Same 龙湖蜀新天街 3F-26; dual wahlap/bemanicn rows",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6053,
+      "name": "童趣玩国泸州龙马潭公园九街店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6052 (童趣玩国家庭娱乐中心); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7067",
+      "evidence_quote": "Same 公园九街14栋2层; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6196,
+      "name": "维京传奇资阳万达店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6185 (维京传奇卡牌动漫馆); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2829",
+      "evidence_quote": "Same 万达广场3031; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6207,
+      "name": "缤纷幻想城广安广门路店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6210 (缤纷幻想电玩城（广安店）); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6578",
+      "evidence_quote": "Same 广门路2号2栋1层1-21号; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6215,
+      "name": "美乐彼成都金牛店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6214 (美乐彼MERRYBE（金牛万达店）); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2719",
+      "evidence_quote": "Same 金牛万达 3015-3016; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6841,
+      "name": "酷漫地带德阳旌阳店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6840 (酷漫地带); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2526",
+      "evidence_quote": "Same 洋洋百货五楼 德阳; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6843,
+      "name": "酷漫地带成都金牛龙湖天街店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6846 (酷漫地带（成都龙湖上城店）); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2077",
+      "evidence_quote": "Same 龙湖上城天街 3F; 6846 has richer BC counts (mai3 chu2 taiko1)",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6837,
+      "name": "酷洛潮漫郴州北湖店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6835 (酷洛潮漫 步步高新天地店（酷洛小镇改名）); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1165",
+      "evidence_quote": "Same 国庆北路 步步高新天地; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6958,
+      "name": "量子时空舱长沙店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6957 (量子时空舱(蟠龙时代广场店)); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/878",
+      "evidence_quote": "Same 蟠龙时代广场; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7120,
+      "name": "顽楽引擎益阳万达店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 7117 (顽乐引擎益阳万达店); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6101",
+      "evidence_quote": "Same 益阳万达 F3; spelling variants; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7239,
+      "name": "飞影传奇遂宁射洪店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 7238 (飞影传奇家庭游乐中心(射洪店)); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4449",
+      "evidence_quote": "Same 射洪万达; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7287,
+      "name": "骑士玩国长沙雨花吉联店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 7277 (骑士玩国(吉联mall店)); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2726",
+      "evidence_quote": "Same 劳动东路268号吉联mall; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7283,
+      "name": "骑士玩国长沙开福富兴店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 7278 (骑士玩国(富兴店)); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2536",
+      "evidence_quote": "Same 芙蓉中路311号富兴; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7284,
+      "name": "骑士玩国长沙旭辉里店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 7279 (骑士玩国(雨花旭辉里)); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4105",
+      "evidence_quote": "Same 雨花旭辉里; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7354,
+      "name": "麦兜熊宣城缤纷环球城店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 7355 (麦兜熊潮玩空间); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2857",
+      "evidence_quote": "Same 泾县缤纷环球城2楼; dual source",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6075,
+      "name": "第一回合成都郫都龙湖天街店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 6084 (第一回合（成都郫都蜀新天街店）); merge sources/games",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2131",
+      "evidence_quote": "Same 蜀新龙湖天街 4楼第一回合; 6075 wahlap has chunithm+maimai; 6084 BC has maimai+taiko+pokemon without chunithm - merge should UNION games",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5772,
+      "name": "电玩森林成都锦江店",
+      "field": "other",
+      "current": "separate venue row",
+      "proposed": "duplicate_of id 5776 (电玩森林（锦华万达店）); merge sources/games",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6359",
+      "evidence_quote": "Likely same Jinhua/Jinjiang Wanda complex. Confirm before hard-merge.",
+      "note": "China wahlap+bemanicn dual ingestion often creates two pins for one shop. Prefer keeping bemanicn row when it has quantities, and attach wahlap as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6084,
+      "name": "第一回合（成都郫都蜀新天街店）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "WAHLAP chunithm list includes 第一回合成都郫都龙湖天街店 at 蜀新龙湖天街4楼第一回合; bemanicn s/2131 currently lists maimai+taiko+pokemon only (no chunithm title_id)",
+      "note": "If 6075 and 6084 are merged, union is correct. If kept separate, 6084 understates SEGA games vs official WAHLAP. Not certain because BC s/2131 does not currently show chunithm qty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7115,
+      "name": "韵窝",
+      "field": "other",
+      "current": {
+        "games": [
+          "sdvx"
+        ],
+        "game_counts": {
+          "sdvx": 1
+        }
+      },
+      "proposed": "note only: private nest; BC comment claims more cabs than mapped",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6810",
+      "evidence_quote": "comment: nest has adx x2 + sdvx x1 + ongeki x1 + chu x1 + taiko x1; arcades array only has title_id=4 sdvx qty=1; also notes Chuzhou Fengyunzaiqi stopped paying network fees since 2025-10",
+      "note": "Mapped games understate free-text comment. Do not auto-add maimai/chunithm/ongeki/taiko without structured arcades or WAHLAP.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

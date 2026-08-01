@@ -1,0 +1,871 @@
+{
+  "shard": 69,
+  "checked": 87,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1012",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Australia",
+    "https://www.timezonegames.com/en-au/locations",
+    "https://www.timezonegames.com/en-au/locations/timezone-braybrook",
+    "https://www.timezonegames.com/en-au/locations/timezone-parramatta",
+    "https://www.timezonegames.com/en-au/locations/timezone-central-park",
+    "https://www.timezonegames.com/en-au/locations/timezone-dee-why",
+    "https://www.timezonegames.com/en-au/locations/timezone-bunbury",
+    "https://www.timezonegames.com/en-au/locations/timezone-midland",
+    "https://www.timezonegames.com/en-au/locations/timezone-illawarra",
+    "https://www.timezonegames.com/en-au/locations/timezone-fountain-gate",
+    "https://www.timezonegames.com/en-au/locations/timezone-sunshine-plaza",
+    "https://www.varsity.com.au/locations/waterford",
+    "https://www.thekeys.com.au",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7135",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6205",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4114",
+    "http://www.zone3act.com.au/main.html"
+  ],
+  "corrections": [
+    {
+      "id": 217,
+      "name": "TIMEZONE BANKSTOWN",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into_id": 218,
+        "reason": "ALL.Net-only shadow of Timezone Bankstown Central"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE BANKSTOWN | Bankstown Central Shopping Centre, Shop MM022 North Terrace",
+      "note": "Same shopping centre shop code MM022 / North Terrace as id 218 Timezone Bankstown Central (ZIv). ALL.Net row has no usable coords (0,0). Prefer keeping the ZIv-enriched id 218 and attaching allnet src/maimai confirmation to it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 217,
+      "name": "TIMEZONE BANKSTOWN",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": -33.916137760812,
+        "lng": 151.03720932731,
+        "addr": "Bankstown Central Shopping Centre, Shop MM022 North Terrace, Bankstown NSW 2200"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11128",
+      "evidence_quote": "Timezone Bankstown Central | MM022 North Terrace Bankstown New South Wales, 2200 | lat -33.916137760812 lng 151.03720932731",
+      "note": "If this row is kept rather than merged, copy coords from the matching ZIv venue. ALL.Net map link for Bankstown is @0,0 which is unusable.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 221,
+      "name": "TIMEZONE BRAYBROOK",
+      "field": "location",
+      "current": {
+        "lat": -33.8632365,
+        "lng": 151.0889051,
+        "addr": "Central West Shopping Centre 67Ashley St,Braybrook VIC"
+      },
+      "proposed": {
+        "lat": -37.79442962137,
+        "lng": 144.86079297111,
+        "addr": "Central West Shopping Centre, 67 Ashley St, Braybrook VIC 3019"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-braybrook",
+      "evidence_quote": "Central West Shopping Centre, 67 Ashley St, Braybrook VIC 3019",
+      "note": "CRITICAL wrong-city pin: current lat/lng (-33.86, 151.09) is in Sydney NSW (matches ALL.Net KINGPIN NORTH STRATHFIELD coords), not Braybrook VIC. Correct VIC coords are approx -37.794, 144.861 (same as sibling id 220).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 221,
+      "name": "TIMEZONE BRAYBROOK",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "games": [
+          "chunithm"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into_id": 220,
+        "reason": "ALL.Net-only shadow of Timezone Braybrook"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-braybrook",
+      "evidence_quote": "Central West Shopping Centre, 67 Ashley St, Braybrook VIC 3019",
+      "note": "Same address as id 220. Prefer id 220 (has ZIv machines, correct coords). Also: ALL.Net CHUNITHM AU list (gm=104, ct=1012, 17 venues) does NOT include Braybrook as of 2026-07-31, so the allnet chunithm-only claim on this shadow row is not supported by current ALL.Net CHUNITHM locator.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 220,
+      "name": "Timezone Braybrook",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "pump_it_up",
+        "stepmaniax",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "other",
+        "pump_it_up",
+        "stepmaniax",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1012",
+      "evidence_quote": "Australia CHUNITHM list (17 locations) does not include TIMEZONE BRAYBROOK; listed names include HAYMARKET, CENTRAL, MACQUARIE, CHATSWOOD, TOP RYDE, CRONULLA, ERINA, GARDEN CITY, TREE TEA PLAZA, PARADIGM ZONE, VARSITY WATERFORD, KINGPIN CROWN, HIGHPOINT, KINGPIN MELBOURNE, KNOX, KOKO 614, KOKO BURWOOD.",
+      "note": "Keep chunithm for now but flag network status: ZIv lists CHUNITHM X-VERSE-X updated 2026-07-19 (https://zenius-i-vanisher.com/v5.2/arcade.php?id=7135) while official ALL.Net CHUNITHM International Australia locator does not list Braybrook. Per precedence official network locator may mean the cab is offline or not currently serviced. Do not remove solely on that; investigate before removing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 255,
+      "name": "TIMEZONE PRESTON",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "Northland Shopping Centre,2-50 Murray Rd,Preston VIC 3072"
+      },
+      "proposed": {
+        "merge_into_id": 252,
+        "reason": "ALL.Net name TIMEZONE PRESTON is the Northland Shopping Centre Timezone"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE PRESTON | Northland Shopping Centre,2-50 Murray Rd,Preston VIC 3072 | -37.7389461,145.0299969",
+      "note": "id 252 Timezone Northland is the same venue (Northland SC, Murray Rd Preston) with fuller ZIv game list. Distance between pins ~0.13 km.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 270,
+      "name": "TIMEZONE(MACQUARIE)",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into_id": 248,
+        "reason": "ALL.Net-only shadow of Timezone Macquarie Park / Macquarie Centre"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE(MACQUARIE) | MacquarieCentre,CornerofHerringRd&WaterlooRd,NorthRyde,NSW2113 | -33.7763709,151.1200451",
+      "note": "Same centre as id 248 Timezone Macquarie Park (~0.12 km). ALL.Net confirms both maimai (gm=98) and chunithm (gm=104) here; keep those games on the merged record.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 291,
+      "name": "ZONE BOWLING SOUTHLAND",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into_id": 259,
+        "reason": "ALL.Net Zone Bowling Southland is the dual-branded Timezone/Zone Bowling Southland"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONE BOWLING SOUTHLAND | Zone Bowling Southland SHOP 3049B, 1239 Nepean Highway 3192 | -37.9584584,145.0510807",
+      "note": "id 259 Timezone Southland uses the same shop 3049B / 1239 Nepean Highway Cheltenham address (~0.32 km pin delta). ZIv updated 2026-07-24 lists 2x maimai DX CiRCLE PLUS + taiko + DDR WORLD.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 295,
+      "name": "ZONEBOWLING(GARDEN CITY)",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into_id": 240,
+        "reason": "ALL.Net Zonebowling Garden City is Timezone/Zone Bowling Garden City Westfield"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONEBOWLING(GARDEN CITY) | Westfield Garden City, Kessels Rd, Upper Mount Gravatt QLD 4122 | -27.5626135,153.0822254",
+      "note": "Same Westfield Garden City as id 240 Timezone Garden City (~0.21 km). ALL.Net lists both maimai and chunithm under the Zonebowling name; ZIv id 240 has the full rhythm floor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 253,
+      "name": "TIMEZONE PARRAMATTA",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1012",
+      "evidence_quote": "Australia CHUNITHM 17 locations: no TIMEZONE PARRAMATTA. maimai AU list does include TIMEZONE PARRAMATTA | Shop 4070, Westfield Parramatta, 175 Church St., NSW 2150",
+      "note": "ZIv (updated 2026-07-25) still lists CHUNITHM X-VERSE-X at Parramatta, but official ALL.Net CHUNITHM International locator does not. maimai is confirmed on ALL.Net gm=98. Flag chunithm network status as uncertain; do not auto-remove without a site visit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 292,
+      "name": "ZONE BOWLING TOP RYDE",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1012",
+      "evidence_quote": "ZONE BOWLING TOP RYDE | GRD M5,Top Ryde City Shopping Centre,Blaxland Rd.&Devlin St.NSW | -33.8122148,151.1062214",
+      "note": "Keep chunithm: official ALL.Net CHUNITHM list includes this venue. ZIv machine list updated 2026-05-28 only shows maimai DX CiRCLE + taiko + DDR WORLD (no CHUNITHM row) so ZIv is incomplete, not authoritative for removal. maimai also on ALL.Net gm=98.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 214,
+      "name": "Timezone @ Coolangatta",
+      "field": "games",
+      "current": [
+        "drs",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "drs",
+        "other",
+        "pump_it_up",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5300",
+      "evidence_quote": "StepMania Converted Cabinet | BEWARE! alot of the pads are very loose. p1 is basically unplayable | lastUpdate 2026-03-15",
+      "note": "ZIv lists StepMania Converted Cabinet as of 2026-03-15. Official Timezone list still has Coolangatta as open.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 214,
+      "name": "Timezone @ Coolangatta",
+      "field": "games",
+      "current": "pump_it_up present",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5300",
+      "evidence_quote": "Pump It Up PRIME | Seems to have been moved to Surfers paradise or in storage",
+      "note": "Optional removal of pump_it_up: only ZIv community comment suggests relocation/storage. Not confirmed by official source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 213,
+      "name": "Timezone - Orion Springfield",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora"
+      ],
+      "proposed": [
+        "ddr",
+        "gitadora"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5753",
+      "evidence_quote": "DrumManiaV7 | $2.50 (Normal) / $2.40 (VIP) | lastUpdate 2026-05-03; also DanceDanceRevolution WORLD",
+      "note": "The cab mapped to gitadora is legacy DrumMania V7, not modern networked GITADORA GALAXY WAVE. Keep a gitadora/drum tag if the app uses that bucket for all GF/DM, but do not imply live e-amusement GITADORA.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 218,
+      "name": "Timezone Bankstown Central",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE BANKSTOWN | Bankstown Central Shopping Centre, Shop MM022 North Terrace",
+      "note": "ALL.Net still lists maimai here (network online). ZIv comment on maimai: 'MaiMai cabinet came from Bankstown Funland | Offline' (update 2026-07-27). Prefer ALL.Net for online status; ZIv offline note may be transient. Venue rebranded from Funland mid-2026 per ZIv info.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 238,
+      "name": "Timezone Fountain Gate",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1929",
+      "evidence_quote": "Formerly Tunzafun but rebranded and reopened as a Timezone. No rhythm games currently. lastUpdate 2022-07-06 (4 years ago)",
+      "note": "Official Timezone page still lists Fountain Gate as active (Fountain Gate Shopping Centre, 25-55 Overland Dr, Narre Warren VIC 3805). Rhythm inventory remains empty per last ZIv note; no evidence of new rhythm installs found.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 268,
+      "name": "TIMEZONE(HAYMARKET)",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "sdvx_vm": null,
+        "taiko_asia": null
+      },
+      "proposed": {
+        "ddr_gold": true,
+        "sdvx_vm": true,
+        "taiko_asia": true,
+        "chunithm": "X-VERSE-X"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4114",
+      "evidence_quote": "SOUND VOLTEX nabla (Valkyrie model); DanceDanceRevolution WORLD (20th anniversary model); taiko Nijiiro Asia; CHUNITHM X-VERSE-X; lastUpdate 2026-07-25",
+      "note": "Valkyrie SDVX, 20th anniversary DDR, Nijiiro Asia taiko, CHUNITHM X-VERSE-X confirmed on ZIv 2026-07-25. Boolean true values interpret non-null model tags; adjust to app schema as needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 268,
+      "name": "TIMEZONE(HAYMARKET)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "ddr": 2,
+        "drs": 1,
+        "gitadora": 2,
+        "maimai_dx": 2,
+        "popn": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "ddr": 2,
+        "drs": 1,
+        "gitadora": 2,
+        "maimai_dx": 2,
+        "popn": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4114",
+      "evidence_quote": "CHUNITHM X-VERSE-X (Left Cab); CHUNITHM X-VERSE-X (Right cab); maimai DX CiRCLE PLUS (Left cab); maimai DX CiRCLE PLUS (Right cab); lastUpdate 2026-07-25",
+      "note": "Counts already match ZIv multi-row listings as of 2026-07-25. Included to confirm Haymarket is consistent with recent community inventory.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 267,
+      "name": "TIMEZONE(CENTRAL)",
+      "field": "website",
+      "current": "https://timezone.com.au",
+      "proposed": "https://www.timezonegames.com/en-au/locations/timezone-central-park",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-central-park",
+      "evidence_quote": "Level 2, Central Park Mall, 28 Broadway, Chippendale, NSW, 2008 | Taiko no Tatsujin, Maimai, Chunithm, Pump It Up, Sound Voltex Valkyrie",
+      "note": "Generic timezone.com.au homepage is weak; venue-specific official page exists and names the rhythm set including SDVX Valkyrie.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 267,
+      "name": "TIMEZONE(CENTRAL)",
+      "field": "cab_models",
+      "current": {
+        "sdvx_vm": null,
+        "taiko_asia": null
+      },
+      "proposed": {
+        "sdvx_vm": true,
+        "taiko_asia": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-central-park",
+      "evidence_quote": "Sound Voltex Valkyrie; Taiko no Tatsujin, Maimai, Chunithm, Pump It Up",
+      "note": "Official Timezone page explicitly says Sound Voltex Valkyrie. ZIv also lists SOUND VOLTEX EXCEED GEAR (Valkyrie model) and 2x taiko Nijiiro Asia.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 267,
+      "name": "TIMEZONE(CENTRAL)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4115",
+      "evidence_quote": "maimai DX CiRCLE left cab; maimai DX CiRCLE right cab; taiko Nijiiro x2; CHUNITHM X-VERSE-X 1 cabinet; lastUpdate 2026-04-24",
+      "note": "Counts already align with ZIv. ALL.Net confirms maimai+chunithm at TIMEZONE(CENTRAL).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 245,
+      "name": "TIMEZONE KNOX",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1978",
+      "evidence_quote": "CHUNITHM X-VERSE-X; maimai DX CiRCLE PLUS Left Cab; maimai DX CiRCLE PLUS Right Cab; taiko Nijiiro Asia; lastUpdate within 7 days of 2026-07-31 pull",
+      "note": "ZIv lists two distinct maimai cabs. ALL.Net confirms both maimai and chunithm at TIMEZONE KNOX. Shard currently has null game_counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 245,
+      "name": "TIMEZONE KNOX",
+      "field": "other",
+      "current": "info may be stale on prior location",
+      "proposed": "relocated inside Westfield Knox Level 2 main entrance / Ozone area",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1978",
+      "evidence_quote": "Please note: Timezone & Zone Bowling Knox has relocated to inside the shopping centre and is located on Level 2 at the main entrance between the Shopping Centre and Ozone area.",
+      "note": "Ensure map pin/info reflects post-relocation Level 2 position (ALL.Net addr: 2 Brisbane Ln, Wantirna South Vic 3152).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 262,
+      "name": "TIMEZONE TREE TEA PLAZA",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1,
+        "ddr": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=641",
+      "evidence_quote": "CHUNITHM X-VERSE-X x2 (2P Cabinet Matching Now Available); maimai DX CiRCLE x2; DanceDanceRevolution WORLD (20th anniversary model); taiko Nijiiro; lastUpdate 2026-06-06",
+      "note": "Dual CHUNITHM and dual maimai per ZIv. ALL.Net confirms maimai+chunithm. Name spelling TREE TEA is ALL.Net's; venue is Tea Tree Plaza / Zone Bowling.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 259,
+      "name": "Timezone Southland",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1,
+        "ddr": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11129",
+      "evidence_quote": "maimai DX CiRCLE PLUS Left cabinet; maimai DX CiRCLE PLUS Right cabinet, Brand new; taiko Nijiiro; DanceDanceRevolution WORLD (20th anniversary model); lastUpdate 2026-07-24",
+      "note": "Opened mid-2025 per ZIv info. ALL.Net maimai under ZONE BOWLING SOUTHLAND.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 240,
+      "name": "Timezone Garden City",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_vm": true,
+        "taiko_asia": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1900",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR (Valkyrie model); taiko Nijiiro Asia; CHUNITHM X-VERSE-X; maimai DX CiRCLE x2; lastUpdate 2026-06-11",
+      "note": "Valkyrie SDVX at Garden City per ZIv. ALL.Net lists chunithm+maimai under ZONEBOWLING(GARDEN CITY).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 240,
+      "name": "Timezone Garden City",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1,
+        "pump_it_up": 1,
+        "popn": 1,
+        "gitadora": 1,
+        "ddr": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1900",
+      "evidence_quote": "maimai DX CiRCLE Left Cab; maimai DX CiRCLE Right Cab; DanceDanceRevolution WORLD; DanceDanceRevolution WORLD (20th anniversary model); GITADORA GALAXY WAVE GuitarFreaks; pop'n music High Cheers; Pump It Up Phoenix; SOUND VOLTEX EXCEED GEAR (Valkyrie model)",
+      "note": "Rich ZIv list 1 month old. ddr count 2 from two WORLD rows (one 20th anniversary).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 269,
+      "name": "TIMEZONE(HIGHPOINT)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_vm": true,
+        "taiko_asia": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1979",
+      "evidence_quote": "SOUND VOLTEX nabla (Valkyrie model); taiko Nijiiro Asia; CHUNITHM X-VERSE-X; maimai DX CiRCLE PLUS; lastUpdate within 7 days of pull",
+      "note": "Valkyrie SDVX. ALL.Net confirms maimai+chunithm at HIGHPOINT.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 228,
+      "name": "TIMEZONE CHATSWOOD",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "ddr": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6205",
+      "evidence_quote": "CHUNITHM X-VERSE; DanceDanceRevolution WORLD; maimai DX CiRCLE (right older); maimai DX CiRCLE (left newer); taiko Nijiiro; last update 2026-05-28",
+      "note": "Two maimai cabs explicitly. ALL.Net confirms maimai+chunithm. DDR present on ZIv page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 253,
+      "name": "TIMEZONE PARRAMATTA",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "ddr": 1,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "ddr": 1,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4881",
+      "evidence_quote": "maimai DX CiRCLE PLUS x2; CHUNITHM X-VERSE-X; taiko Nijiiro; DanceDanceRevolution WORLD (20th anniversary model); lastUpdate 2026-07-25",
+      "note": "Counts already match. Multi-cab maimai is real (two CiRCLE PLUS rows), not a fake placeholder 1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 211,
+      "name": "Timezone & Zone Bowling Joondalup",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7154",
+      "evidence_quote": "taiko no tatsujin Nijiiro Ver. Asia",
+      "note": "Nijiiro Asia taiko listed on ZIv. Model tag currently null/absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 212,
+      "name": "Timezone & Zone Bowling Watergardens",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5773",
+      "evidence_quote": "taiko no tatsujin Nijiiro Ver. Asia",
+      "note": "Nijiiro Asia taiko listed on ZIv. Model tag currently null/absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 252,
+      "name": "Timezone Northland",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko_asia": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4098",
+      "evidence_quote": "taiko no tatsujin Nijiiro Ver. Asia",
+      "note": "Nijiiro Asia taiko listed on ZIv. Model tag currently null/absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 210,
+      "name": "The Keys",
+      "field": "hours",
+      "current": "Mon-Tue 17:00-01:00; Wed-Fri 23:00-01:00; Sat-Sun 22:00-01:00",
+      "proposed": "Mon-Fri 11:00-late; Sat 10:00-late; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.thekeys.com.au",
+      "evidence_quote": "Monday-Friday: 11am - late; Saturday: 10am - late; Sunday: 10am - 10pm",
+      "note": "Official venue site hours differ sharply from the ZIv-derived hours in the app. Kitchen hours differ again (Mon-Sat until 10pm, Sun 11am-9pm).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 277,
+      "name": "VARSITY WATERFORD",
+      "field": "hours",
+      "current": null,
+      "proposed": "Sun-Thu 11:00-22:00; Fri-Sat 11:00-late",
+      "confidence": "certain",
+      "evidence_url": "https://www.varsity.com.au/locations/waterford",
+      "evidence_quote": "Sunday-Thursday: 11:00am - 10:00pm; Friday-Saturday: 11:00am - Late",
+      "note": "Official Varsity page. ALL.Net confirms maimai+chunithm. Page says 'some rare Japanese rhythm games' without naming titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 214,
+      "name": "Timezone @ Coolangatta",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-au/locations/timezone-coolangatta",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations",
+      "evidence_quote": "QLD venues include Timezone Coolangatta (The Strand)",
+      "note": "Official locations directory lists Coolangatta; slug pattern matches other venues.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 268,
+      "name": "TIMEZONE(HAYMARKET)",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-au/locations/timezone-haymarket",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations",
+      "evidence_quote": "NSW list includes Haymarket | Market City, Haymarket",
+      "note": "Slug inferred from official directory naming; confirm live path if 404.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 248,
+      "name": "Timezone Macquarie Park",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-au/locations/timezone-macquarie-park",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations",
+      "evidence_quote": "Macquarie Park | Macquarie Centre, North Ryde",
+      "note": "Official directory lists Macquarie Park; ALL.Net name TIMEZONE(MACQUARIE).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 220,
+      "name": "Timezone Braybrook",
+      "field": "prices",
+      "current": "app has various ZIv-derived prices",
+      "proposed": {
+        "chunithm": "A$2.80 standard / A$2.60 VIP / A$6.00 Aime (3 songs)",
+        "pump_it_up": "A$2.50 normal / A$2.40 VIP / A$5.00 premium / A$4.80 premium VIP / A$6.00 AM.PASS",
+        "stepmaniax": "A$2.80 / 3 songs / A$2.60 VIP",
+        "taiko": "A$2.80 / A$2.60 VIP / A$6.00 Bandai Namco Passport (3 songs)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7135",
+      "evidence_quote": "CHUNITHM X-VERSE-X AUD$2.80 standard, AUD$2.60 VIP, AUD$6.00 Aime; Pump It Up Phoenix AUD$2.50/$2.40/$5.00/$4.80/$6.00; StepManiaX A$2.80/3 songs $2.60 VIP; taiko A$2.80/$2.60 VIP/$6.00 passport; lastUpdate 2026-07-19",
+      "note": "Community-reported prices on ZIv, 12 days old at research time. Not from Timezone official site (which does not list per-game prices).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 226,
+      "name": "Timezone Casuarina",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "unknown_or_closed",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations",
+      "evidence_quote": "Timezone locations filter regions: NSW, VIC, QLD, WA, SA, ACT only. No Northern Territory / Casuarina venue listed. Intro: locations across ACT, NSW, QLD, SA, VIC and WA.",
+      "note": "ZIv last update ~3 years ago with only Wangan Midnight. Official Timezone AU venue directory has no Casuarina/NT entry as of 2026-07-31. Likely closed or no longer a Timezone. Confirm with local sources before hard-delete.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 285,
+      "name": "Zone 3",
+      "field": "status",
+      "current": "open (implied) with DDR Extreme",
+      "proposed": "unknown_or_closed",
+      "confidence": "likely",
+      "evidence_url": "http://www.zone3act.com.au/main.html",
+      "evidence_quote": "HTTP 404 Not Found",
+      "note": "Listed website dead. ZIv last update 2021-09-17 (~4 years) with offline-era Dance Dance Revolution EXTREME. Address field also mis-labels ACT as New South Wales. Treat as stale; verify before showing as a playable DDR venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 285,
+      "name": "Zone 3",
+      "field": "location",
+      "current": "28 Weedon Close Belconnen, ACT Canberra New South Wales (NSW), 2617, Canberra",
+      "proposed": "28 Weedon Close, Belconnen ACT 2617",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2010",
+      "evidence_quote": "28 Weedon Close Belconnen, ACT",
+      "note": "Country subdivision text incorrectly says New South Wales for an ACT suburb.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 236,
+      "name": "TIMEZONE ERINA",
+      "field": "location",
+      "current": "coords present in shard from allnet/ziv hybrid",
+      "proposed": "keep existing coords; ALL.Net map link is @0,0 for ERINA so do not overwrite from ALL.Net alone",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE ERINA | SHOP H09, Terrigal Dr, Erina NSW 2250 | maps q=@0.0,0.0",
+      "note": "ALL.Net has zeroed coordinates for Erina (and Bankstown, Funhouse Sunnybank, PLAYit, KOKO Dixon). Prefer ZIv/geocode coords. No change if shard already has non-zero pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone Dee Why",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Dee Why",
+        "addr": "932 Pittwater Road, Dee Why NSW 2099",
+        "country": "Australia",
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-dee-why",
+        "games": [],
+        "notes": "Official Timezone venue at Dee Why RSL complex. Rhythm games not confirmed."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-dee-why",
+      "evidence_quote": "932 Pittwater Road, Dee Why, NSW, 2099 | 16 full-sized bowling lanes | 65+ arcade games | at the Dee Why RSL complex",
+      "note": "Present on official Timezone AU locations list (NSW). Not found in shard_069 or other AU shards searched (no Dee Why hit). Rhythm cabinets not named on the page; add as venue shell and fill games later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone Bunbury",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Bunbury",
+        "addr": "32 Clifton Street, Bunbury WA 6230",
+        "country": "Australia",
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-bunbury",
+        "games": [],
+        "notes": "Official Timezone. Rhythm games not confirmed on page (70+ arcade games, laser tag, mini bowling)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-bunbury",
+      "evidence_quote": "32 Clifton Street, Bunbury, WA, 6230 | 70+ arcade games",
+      "note": "On official WA list; not found in shard_069. No confirmed rhythm titles from sources used.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone Midland",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Midland",
+        "addr": "Level 2, Midland Gate Shopping Centre, 274 Great Eastern Highway, Midland WA 6056",
+        "country": "Australia",
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-midland",
+        "games": [],
+        "notes": "Official Timezone at Midland Gate near Ace Cinemas. Rhythm games not confirmed."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-midland",
+      "evidence_quote": "Level 2, Midland Gate Shopping Centre, 274 Great Eastern Highway, Midland, WA, 6056 | 65+ arcade games",
+      "note": "On official WA list; not in shard_069.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone Illawarra",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone & Zone Bowling Illawarra",
+        "addr": "47 Princes Highway, Albion Park Rail NSW 2527",
+        "country": "Australia",
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-illawarra",
+        "games": [],
+        "notes": "Dual Timezone & Zone Bowling since 2021. 70+ arcade games claimed; rhythm not confirmed on page."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-au/locations/timezone-illawarra",
+      "evidence_quote": "47 Princes Highway, Albion Park Rail, NSW, 2527 | Timezone & Zone Bowling Illawarra | 24 bowling lanes | 70+ of the latest, greatest arcade games",
+      "note": "On official NSW list as Illawarra; not found in shard_069 under Illawarra/Albion Park.",
+      "checked_at": "2026-07-31"
+    }
+  ],
+  "summary": "Shard 69 is Australia-only (87 venues), dominated by Timezone/Zone Bowling plus a few independents. Shared lookups: ALL.Net maimai International AU (ct=1012) returned 47 live networked venues; ALL.Net CHUNITHM International AU returned 17; ZIv Australia API returned 192 arcades; official Timezone games directory lists venues across NSW/VIC/QLD/WA/SA/ACT (no NT). Highest-impact issues: (1) six ALL.Net-only shadow rows that duplicate richer ZIv venues (Bankstown 217=218, Braybrook 221=220, Preston 255=252 Northland, Macquarie 270=248, Southland 291=259, Garden City 295=240); (2) id 221 TIMEZONE BRAYBROOK has CRITICAL wrong-city coordinates in Sydney instead of Braybrook VIC; (3) Braybrook and Parramatta list CHUNITHM on ZIv/app but are absent from the official ALL.Net CHUNITHM AU locator (network status uncertain); (4) Top Ryde chunithm is confirmed by ALL.Net even though ZIv omitted it; (5) Zone 3 website 404 and 4-year-stale DDR Extreme; (6) Timezone Casuarina absent from official Timezone directory; (7) four official Timezone venues missing from the map entirely (Dee Why, Bunbury, Midland, Illawarra) without confirmed rhythm titles; (8) The Keys hours wrong vs official site. Many other Timezone venues match ALL.Net maimai/chunithm where claimed and recent ZIv (days-months old) supports multi-cab counts at major sites (Haymarket, Central Park, Knox, Tea Tree Plaza, Southland, Garden City, Chatswood). Could not fully verify every other-only suburban Timezone/Zone Bowling for permanent closure beyond directory presence, and could not obtain live Konami e-amusement data (Japan-only). Cabinet counts are from ZIv machine rows, not official SEGA counts. Other AU rhythm venues seen on ALL.Net (KOKO, Kingpin, Fortress, Paradigm Zone, Archie Brothers, etc.) already live in shard_066, not missing from the project."
+}

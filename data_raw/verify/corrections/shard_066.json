@@ -1,0 +1,1319 @@
+{
+  "shard": 66,
+  "checked": 78,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1012",
+    "https://location.am-all.net/alm/location?gm=88&lang=en&ct=1012",
+    "https://location.am-all.net/alm/location?gm=34&lang=en&ct=1012",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Australia",
+    "https://www.timezonegames.com/en-au/venues/",
+    "https://www.timezonegames.com/en-au/venues/nsw/timezone-haymarket/",
+    "https://www.timezonegames.com/en-au/venues/nsw/timezone-central-park/",
+    "https://www.timezonegames.com/en-au/venues/nsw/timezone-macquarie-park/",
+    "https://www.timezonegames.com/en-au/venues/nsw/timezone-chatswood/",
+    "https://www.timezonegames.com/en-au/venues/vic/timezone-highpoint/",
+    "https://archiebrothers.com.au/locations",
+    "https://archiebrothers.com.au/locations/qv-melbourne",
+    "https://www.iplayaustralia.com.au/locations/",
+    "https://www.iplayaustralia.com.au/locations/iplay-frankston/",
+    "https://www.iplayaustralia.com.au/locations/iplay-wetherill-park/",
+    "https://www.iplayaustralia.com.au/locations/iplay-carousel/",
+    "https://www.iplayaustralia.com.au/locations/iplay-tenpin-city-lidcombe/",
+    "https://paradigmzone.com.au/",
+    "https://www.kokoamusement.com.au/"
+  ],
+  "corrections": [
+    {
+      "id": null,
+      "name": "Timezone Haymarket",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Haymarket",
+        "addr": "Level 3 Market City, 9-13 Hay Street, Haymarket, Sydney, NSW 2000",
+        "lat": -33.8797944,
+        "lng": 151.2033833,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "gitadora",
+          "popn",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-haymarket/",
+        "allnet_sid": "19807",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4114"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE(HAYMARKET) Level 3 Market City, 9-13 Hay Street, Haymerket, Sydney, NSW2020 (Australia maimai list, 47 locations; also on CHUNITHM AU list)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Haymarket lastUpdateTime 2026-07-25; CHUNITHM X-VERSE-X x2, maimai DX CiRCLE PLUS x2, SOUND VOLTEX Valkyrie, GITADORA, pop'n, Pump It Up. Chain page: Level 3 Market City, 9-13 Hay Street, Haymarket, Sydney, NSW, 2000; 150+ arcade games. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Central Park",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Central Park",
+        "addr": "Level 2, Central Park Mall, 28 Broadway, Chippendale, NSW 2008",
+        "lat": -33.884581,
+        "lng": 151.2006823,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-central-park/",
+        "allnet_sid": "19806",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4598"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE(CENTRAL) Level 2, Central Park Mall, 28 Broadway, Chippendale,NSW2008",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Central Park upd 2026-04-24; CHUNITHM X-VERSE-X, maimai DX CiRCLE x2, SOUND VOLTEX EXCEED GEAR (Valkyrie model). Chain page: Level 2, Central Park Mall, 28 Broadway, Chippendale, NSW, 2008; 75+ arcade games - from rhythm games to carnival classics. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Macquarie Park",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Macquarie Park",
+        "addr": "Level 4 Macquarie Centre, Corner of Herring Road & Waterloo Road, North Ryde, NSW 2113",
+        "lat": -33.7763709,
+        "lng": 151.1200451,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-macquarie-park/",
+        "allnet_sid": "19805",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4118"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE(MACQUARIE) MacquarieCentre,CornerofHerringRd&WaterlooRd,NorthRyde,NSW2113",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Macquarie Park upd 2026-05-28; CHUNITHM X-VERSE, maimai DX CiRCLE x2. Chain page: Level 4 Macquarie Centre, Corner of Herring Road & Waterloo Road, North Ryde, NSW, 2113. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Chatswood",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Chatswood",
+        "addr": "Level 6 Westfield Chatswood, 1 Anderson Street, Chatswood, NSW 2067",
+        "lat": -33.7973628,
+        "lng": 151.1831083,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-chatswood/",
+        "allnet_sid": "19443",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6205"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE CHATSWOOD Level6 Westfield Chatswood,1 Anderson Street,Chatswood,NSW 2067",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Westfield Timezone Chatswood upd 2026-05-28; CHUNITHM X-VERSE, maimai DX CiRCLE x2. Chain page: Level 6 Westfield Chatswood, 1 Anderson Street, Chatswood, NSW, 2067; 110+ arcade games. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Zone Bowling Top Ryde",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Zone Bowling Top Ryde",
+        "addr": "GRD M5, Top Ryde City Shopping Centre, Blaxland Rd & Devlin St, Ryde, NSW 2112",
+        "lat": -33.8122148,
+        "lng": 151.1062214,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.zonebowling.com/venues/nsw/zone-bowling-top-ryde",
+        "allnet_sid": "19399",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6369"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONE BOWLING TOP RYDE GRD M5,Top Ryde City Shopping Centre,Blaxland Rd.&Devlin St.NSW (maimai + chunithm lists)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Zone Bowling Top Ryde upd 2026-05-28; maimai DX CiRCLE. Chain page: Level G, Top Ryde Shopping Centre Cnr Devlin St & Blaxland Rd Ryde NSW 2112. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Parramatta",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Parramatta",
+        "addr": "Shop 4070, Westfield Parramatta, 175 Church St, Parramatta, NSW 2150",
+        "lat": -33.8173782,
+        "lng": 151.0016557,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-parramatta",
+        "allnet_sid": "19191",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6575"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE PARRAMATTA Shop 4070, Westfield Parramatta, 175 Church St., NSW 2150",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Parramatta upd 2026-07-25; CHUNITHM X-VERSE-X, maimai DX CiRCLE PLUS x2. Chain page: Floor 5 Westfield Parramatta 159-175 Church Street Parramatta NSW 2150. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Bankstown",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Bankstown",
+        "addr": "Shop MM022 North Terrace, Bankstown Central Shopping Centre, Bankstown, NSW 2200",
+        "lat": -33.916137760812,
+        "lng": 151.03720932731,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-bankstown/",
+        "allnet_sid": "18322",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11128"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE BANKSTOWN Bankstown Central Shopping Centre, Shop MM022 North Terrace",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Bankstown Central upd 2026-07-27; maimai DX CiRCLE, Taiko. Chain page: MM022 North Terrace Bankstown NSW 2200. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone & Zone Bowling Blacktown",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone & Zone Bowling Blacktown",
+        "addr": "Shop 4011/17 Patrick St, Blacktown, NSW 2148",
+        "lat": -33.7699265,
+        "lng": 150.9061011,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "website": "https://www.zonebowling.com/en-au/venues/nsw/zone-bowling-blacktown/",
+        "allnet_sid": "18938",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7938"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONEBOWLING BLACKTOWN Shop 4011/17 Patrick st, Blacktown NSW 2148",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone & Zone Bowling Blacktown upd 2026-05-28; maimai DX CiRCLE, Taiko No Tatsujin (2020). Chain page: Shop 4011/17 Patrick St, Blacktown NSW 2148. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone & Zone Bowling Villawood",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone & Zone Bowling Villawood",
+        "addr": "850a Woodville Road, Villawood, NSW 2163",
+        "lat": -33.8792943,
+        "lng": 150.9786698,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "website": "https://www.zonebowling.com/en-au/venues/nsw/zone-bowling-villawood",
+        "allnet_sid": "18915",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7401"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONE BOWLING VILLAWOOD 850a Woodvilla Road,Villawood NSW 2163",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone & Zone Bowling Villawood upd 2026-07-27; maimai DX CiRCLE PLUS, Pump It Up Phoenix (2024). Chain page: 824-850 Woodville Road Villawood NSW 2163. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Woden",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Woden",
+        "addr": "Shop A3 Westfield Woden, Keltie St, Phillip, ACT 2606",
+        "lat": -35.3462875,
+        "lng": 149.0860718,
+        "country": "Australia",
+        "games": [
+          "maimai_dx"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/act/timezone-woden/",
+        "allnet_sid": "18730",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9550"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE WODEN Shop A3 Westfield Woden, KeltieSt, Phillip ACT 2606",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Woden upd 2025-08-01; maimai DX PRiSM PLUS. Chain page: Corner of Bradley St & Corinna St Phillip ACT 2606. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Eastgardens",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Eastgardens",
+        "addr": "Westfield Eastgardens, Bunnerong Rd, Eastgardens, NSW 2036",
+        "lat": -33.9448896,
+        "lng": 151.2243238,
+        "country": "Australia",
+        "games": [
+          "maimai_dx"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-eastgardens/",
+        "allnet_sid": "18539",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10598"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE EASTGARDENS Westfield Shopping Centre, Bunnerong Rd, Eastgardens, NSW, 2036",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Eastgardens upd 2026-03-20; maimai DX CiRCLE. Chain page: Westfield Eastgardens 152 Bunnerong Road Eastgardens NSW 2036. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Erina",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Erina",
+        "addr": "SHOP H09, Terrigal Dr, Erina Fair, Erina, NSW 2250",
+        "lat": -33.437798104948,
+        "lng": 151.39151003701,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-erina/",
+        "allnet_sid": "18362",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11145"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE ERINA SHOP H09, Terrigal Dr, Erina NSW 2250 (maimai + chunithm)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Erina upd 2026-06-07; CHUNITHM X-VERSE-X, maimai DX CiRCLE, Taiko. Chain page: 620/658 Terrigal Dr Erina Fair Level 1 near Yo-Chi Erina NSW 2250. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Garden City (Zone Bowling)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Garden City (Zone Bowling)",
+        "addr": "Westfield Garden City, Kessels Rd, Upper Mount Gravatt, QLD 4122",
+        "lat": -27.5626135,
+        "lng": 153.0822254,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "gitadora",
+          "popn",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-garden-city",
+        "allnet_sid": "19804",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4783"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONEBOWLING(GARDEN CITY) Westfield Garden City, Kessels Rd, Upper Mount Gravatt QLD 4122 (maimai + chunithm)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Garden City upd 2026-06-11; CHUNITHM X-VERSE-X, GITADORA, maimai DX CiRCLE x2, pop'n, SOUND VOLTEX Valkyrie. Chain page: Level 2, Westfield Garden City Upper Mount Gravatt QLD 4122. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Indooroopilly",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Indooroopilly",
+        "addr": "Indooroopilly Shopping Centre, 322 Moggill Rd, Indooroopilly, QLD 4068",
+        "lat": -27.4994475,
+        "lng": 152.9723122,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-indooroopilly",
+        "allnet_sid": "19190",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6444"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE INDOOROOPILLY Indooroopilly Shopping Centre 322 Moggill Rd, QLD 4068",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Indooroopilly upd 2026-07-02; maimai DX CiRCLE x2. Chain page: 322 Moggill Road Indooroopilly QLD 4068. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Surfers Paradise",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Surfers Paradise",
+        "addr": "Level 1 Paradise Centre, Cavill Mall, Surfers Paradise, QLD 4217",
+        "lat": -28.001953,
+        "lng": 153.4298183,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/surfers-paradise/locations/timezone-surfers-paradise",
+        "allnet_sid": "18816",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3953"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE SURFERS PARADISE Level1 Paradise Centre,Cavilll Mall,Surfers Paradise QLD 4217",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone @ Surfers Paradise upd 2026-03-04; maimai DX CiRCLE, Pump It Up Phoenix, Taiko No Tatsujin (2020). Chain page: Level 1 Paradise Centre, Cavill Mall Surfers Paradise QLD 4217. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone / Zone Bowling Tea Tree Plaza",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone / Zone Bowling Tea Tree Plaza",
+        "addr": "Tea Tree Plaza, 976 North East Road, Modbury, SA 5092",
+        "lat": -34.8307178,
+        "lng": 138.6901334,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.zonebowling.com/en-au/venues/sa/zone-bowling-tea-tree-plaza/",
+        "allnet_sid": "18877",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=641"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE TREE TEA PLAZA Tea Tree Plaza, 976 North East Road, Modbury SA 5092 (maimai + chunithm)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Zone Bowling Tea Tree Plaza upd 2026-06-06; CHUNITHM X-VERSE-X x2, maimai DX CiRCLE x2. Chain page: 976 North East Rd Modbury Adelaide SA 5092. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Varsity Waterford",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Varsity Waterford",
+        "addr": "55/230 Manning Road, Karawara, Perth, WA 6152",
+        "lat": -32.011588,
+        "lng": 115.886449,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.varsity.com.au/locations/waterford",
+        "allnet_sid": "18400",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10431"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "VARSITY WATERFORD 55/230 Manning Road, Karawara Perth, WA (maimai + chunithm)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Varsity Waterford upd 2026-05-09; CHUNITHM X-VERSE-X, maimai DX CiRCLE. Chain page: 55/230 Manning Rd Perth Karawara 6152. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Highpoint",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Highpoint",
+        "addr": "Level 1 Highpoint Shopping Centre, 120-200 Rosamond Road, Maribyrnong, VIC 3032",
+        "lat": -37.7695602,
+        "lng": 144.8820803,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/vic/timezone-highpoint/",
+        "allnet_sid": "19808",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1979"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE(HIGHPOINT) Level 1 Highpoint SC,120-200Rosamond Rd,Maribyrnong,VIC3032 (maimai + chunithm)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Highpoint upd 2026-07-24; CHUNITHM X-VERSE-X, maimai DX CiRCLE PLUS, SOUND VOLTEX Valkyrie. Chain page: Level 1 Highpoint Shopping Centre, 120-200 Rosamond Road, Maribyrnong, VIC, 3032. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone / Zone Bowling Southland",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone / Zone Bowling Southland",
+        "addr": "Shop 3049B, 1239 Nepean Highway, Cheltenham, VIC 3192",
+        "lat": -37.9584584,
+        "lng": 145.0510807,
+        "country": "Australia",
+        "games": [
+          "maimai_dx"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/vic/timezone-southland/",
+        "allnet_sid": "18628",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10250"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ZONE BOWLING SOUTHLAND Zone Bowling Southland SHOP 3049B, 1239 Nepean Highway 3192",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Southland upd 2026-07-24; maimai DX CiRCLE PLUS x2. Chain page: Shop 3049B 1239 Nepean Highway Cheltenham VIC 3192. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Knox",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Knox",
+        "addr": "Level 2, Westfield Knox, 425 Burwood Hwy / 2 Brisbane Ln, Wantirna South, VIC 3152",
+        "lat": -37.8699923,
+        "lng": 145.2437459,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/vic/timezone-knox/",
+        "allnet_sid": "18898",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1760"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE KNOX 2 Brisbane Ln, Wantirna South Vic 3152 (maimai + chunithm)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Knox upd 2026-07-24; CHUNITHM X-VERSE-X, maimai DX CiRCLE PLUS x2. Chain page: Level 2, Westfield Knox, 425 Burwood Hwy Wantirna South VIC 3152. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Northland (Preston)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Northland (Preston)",
+        "addr": "Northland Shopping Centre, 2-50 Murray Rd, Preston, VIC 3072",
+        "lat": -37.7389461,
+        "lng": 145.0299969,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/vic/timezone-northland/",
+        "allnet_sid": "18796",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1961"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE PRESTON Northland Shopping Centre,2-50 Murray Rd,Preston VIC 3072",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Northland upd 2026-07-22; maimai DX CiRCLE PLUS. Chain page: Northland Shopping Centre 2-50 Murray Road Preston VIC 3072. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Werribee",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Werribee",
+        "addr": "Level 1 Shop RE14, Pacific Werribee Shopping Centre, Werribee, VIC 3030",
+        "lat": -37.8769343,
+        "lng": 144.6804581,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-werribee",
+        "allnet_sid": "18729",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4091"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE WERRIBEE Pacific Werribee Shopping Centre Heaths VIC 3029",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Werribee upd 2026-07-24; maimai DX CiRCLE PLUS. Chain page: Level 1 Shop RE14 Pacific Werribee Shopping Centre Werribee VIC 3030. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Eastland",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Eastland",
+        "addr": "Shop MM12/13 Eastland Shopping Centre, 171-175 Maroondah Hwy, Ringwood, VIC 3134",
+        "lat": -37.8126592,
+        "lng": 145.2292803,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/locations/timezone-eastland",
+        "allnet_sid": "18501",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4276"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE EASTLAND Shop MM12/13 Eastland Shopping Centre,171 -175 Maroondah Hwy",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Eastland upd 2026-07-24; maimai DX CiRCLE PLUS. Chain page: Eastland Shopping Centre 175 Maroondah Highway Ringwood VIC 3134. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Northbridge",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Northbridge",
+        "addr": "31 Lake Street, Northbridge, WA 6003",
+        "lat": -31.9475043,
+        "lng": 115.8567513,
+        "country": "Australia",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/wa/timezone-northbridge/",
+        "allnet_sid": "19802",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4024"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE(NORTHBRIDGE) 31 Lake Street, Northbridge, WA6003",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Northbridge upd 2026-02-01; maimai DX CiRCLE x2. Chain page: 31 Lake Street Northbridge WA 6003. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Fremantle",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Fremantle",
+        "addr": "Shop 32-33 South Terrace Piazza, Fremantle, WA 6160",
+        "lat": -32.0562381,
+        "lng": 115.7479566,
+        "country": "Australia",
+        "games": [
+          "maimai_dx"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/wa/timezone-fremantle/",
+        "allnet_sid": "18918",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9628"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE FREMANTLE Shop 32-33 South Terrace PiazzaFremantle WA 6160",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Fremantle upd 2025-08-01; maimai DX PRiSM PLUS. Chain page: 32/33 South Terrace Fremantle WA 6160. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Timezone Cronulla",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Cronulla",
+        "addr": "126-128 Cronulla St, Cronulla, NSW 2230",
+        "lat": -34.055215,
+        "lng": 151.1521713,
+        "country": "Australia",
+        "games": [
+          "chunithm"
+        ],
+        "website": "https://www.timezonegames.com/en-au/venues/nsw/timezone-cronulla/",
+        "allnet_sid": "18899",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8570"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1012",
+      "evidence_quote": "TIMEZONE CRONULLA 126-128 Cronulla St, Cronulla, 2230 NSW (CHUNITHM AU list only; not on maimai list)",
+      "checked_at": "2026-07-31",
+      "note": "Official ALL.Net AU listing (ct=1012). Cross-check ZIv: Timezone Cronulla upd 2025-12-12; CHUNITHM VERSE. Chain page: 126-128 Cronulla Street, Cronulla NSW 2230. Not present under any name in shard_066. Do not merge with nearby different operators (e.g. Koko Dixon is not Timezone Haymarket; Archie Surfers is not Timezone Surfers)."
+    },
+    {
+      "id": null,
+      "name": "Varsity Nedlands",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Varsity Nedlands",
+        "addr": "88 Broadway, Crawley, Western Australia 6009",
+        "lat": -31.984152533340016,
+        "lng": 115.81515670196652,
+        "country": "Australia",
+        "games": [
+          "sdvx"
+        ],
+        "website": "https://www.varsity.com.au/locations/nedlands",
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9742"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9742",
+      "evidence_quote": "Varsity Nedlands lastUpdateTime 2026-02-17; SOUND VOLTEX EXCEED GEAR (Second hand Nemsys model... Moved from Waterford)",
+      "checked_at": "2026-07-31",
+      "note": "Community ZIv only (Konami title, not on ALL.Net). Not in shard. Confidence likely."
+    },
+    {
+      "id": 113,
+      "name": "ARCHIE BROTHERS QV",
+      "field": "status",
+      "current": "open (separate allnet-only row)",
+      "proposed": "duplicate_of:106",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ARCHIE BROTHERS QV 45 Little Londsdale Street, Melbourne, Victoria, 3000 (ALL.Net sid=18636)",
+      "checked_at": "2026-07-31",
+      "note": "ALL.Net ARCHIE BROTHERS QV is the same Archie Brothers QV as id 106 (Level 3 QV Lonsdale). Id 113 is an allnet-import stub with partial address and no ziv/hours/website. Merge into 106."
+    },
+    {
+      "id": 113,
+      "name": "ARCHIE BROTHERS QV",
+      "field": "location",
+      "current": {
+        "addr": "45 Little Londsdale Street, Melbourne, Victoria, 3000",
+        "lat": -37.8093821,
+        "lng": 144.9712286
+      },
+      "proposed": {
+        "addr": "Level 3 QV Shopping Centre, 222 Lonsdale Street, Melbourne VIC 3000",
+        "lat": -37.810794747321,
+        "lng": 144.96520836518
+      },
+      "confidence": "certain",
+      "evidence_url": "https://archiebrothers.com.au/locations/qv-melbourne",
+      "evidence_quote": "QV Melbourne, Level 3, Cnr Lonsdale and Swanston Street, Melbourne VIC 3000",
+      "checked_at": "2026-07-31",
+      "note": "If not deleted as duplicate, fix address to official QV Level 3 (matches id 106)."
+    },
+    {
+      "id": 131,
+      "name": "FUNHOUSE SUNNYBANK",
+      "field": "status",
+      "current": "open (separate allnet-only row)",
+      "proposed": "duplicate_of:129",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "FUNHOUSE SUNNYBANK Corner Mains & McCullough Roads, Sunnybank QLD 4109 (ALL.Net sid=18779)",
+      "checked_at": "2026-07-31",
+      "note": "Same Sunnybank Plaza Funhouse as id 129 (ziv 693). Id 131 is allnet stub without coords/hours. Merge into 129."
+    },
+    {
+      "id": 179,
+      "name": "KINGPIN(CHERMSIDE)",
+      "field": "status",
+      "current": "open (separate allnet-only row)",
+      "proposed": "duplicate_of:171",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "KINGPIN(CHERMSIDE) Westfield Chermside,Corner Gympie & HamiltonRd,Chermside QLD4032 (ALL.Net sid=19803)",
+      "checked_at": "2026-07-31",
+      "note": "Same Westfield Chermside Kingpin as id 171 (ziv 4926, about 130m). Merge into 171; keep allnet maimai on 171."
+    },
+    {
+      "id": 199,
+      "name": "PLAYit",
+      "field": "status",
+      "current": "open (separate allnet-only row)",
+      "proposed": "duplicate_of:200",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "PLAYit Shop 14-22 Southgate Shopping Centre3 Southgate Ave (ALL.Net sid=18686)",
+      "checked_at": "2026-07-31",
+      "note": "Same Southgate PLAYit as id 200 (ziv 9794). Merge into 200."
+    },
+    {
+      "id": 189,
+      "name": "KOKO AMUSEMENTS DIXON",
+      "field": "status",
+      "current": "open (separate allnet-only row)",
+      "proposed": "duplicate_of:188",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "KOKO AMUSEMENTS DIXON Level 1 & 2/1 Dixon Street, Haymerket, Sydney (ALL.Net sid=18527)",
+      "checked_at": "2026-07-31",
+      "note": "Same 1 Dixon Street venue as id 188 Koko Amusement Haymarket (ziv 9408). Merge into 188. Distinct from Timezone Haymarket at Market City."
+    },
+    {
+      "id": 161,
+      "name": "iPlay Tenpin City",
+      "field": "status",
+      "current": "open (near-duplicate of 162)",
+      "proposed": "duplicate_of:162",
+      "confidence": "likely",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-tenpin-city-lidcombe/",
+      "evidence_quote": "92/96 Parramatta Rd, Lidcombe NSW 2141",
+      "checked_at": "2026-07-31",
+      "note": "Ids 161 and 162 share address and official page. 162 has maimai on ZIv (11129); 161 (10400) is a parallel list without maimai. Merge to one Lidcombe record."
+    },
+    {
+      "id": 183,
+      "name": "KOKO AMUSEMENT 614",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 5,
+        "chunithm": 3,
+        "sdvx": 2,
+        "popn": 2,
+        "iidx": 1,
+        "gitadora": 1,
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5910",
+      "evidence_quote": "ZIv KOKO Amusement Town Hall lastUpdate 2026-07-25: 5x maimai DX CiRCLE PLUS, 3x CHUNITHM X-VERSE-X, 2x SOUND VOLTEX Valkyrie, 2x pop'n High Cheers, 1x IIDX 33 Sparkle Shower (LIGHTNING MODEL), 1x GITADORA GALAXY WAVE GuitarFreaks, 1x Pump It Up",
+      "checked_at": "2026-07-31",
+      "note": "Community ZIv counts, not official ALL.Net quantities. DDR/DRS/taiko in app notes not in this ZIv machine list; do not invent those counts."
+    },
+    {
+      "id": 183,
+      "name": "KOKO AMUSEMENT 614",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": [
+          "Lightning"
+        ],
+        "sdvx": [
+          "Valkyrie"
+        ],
+        "chunithm": [
+          "X-VERSE-X"
+        ],
+        "maimai_dx": [
+          "DX CiRCLE PLUS"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5910",
+      "evidence_quote": "beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL); SOUND VOLTEX (Valkyrie model) x2; CHUNITHM X-VERSE-X x3; maimai DX CiRCLE PLUS x5",
+      "checked_at": "2026-07-31",
+      "note": "ZIv machine names. ALL.Net only confirms maimai + chunithm presence."
+    },
+    {
+      "id": 180,
+      "name": "KINGPIN(CROWN)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1698",
+      "evidence_quote": "Kingpin Crown lastUpdate 2026-07-24: CHUNITHM X-VERSE x2, maimai DX CiRCLE PLUS x2, SOUND VOLTEX (Valkyrie model) Brand new cab, Taiko No Tatsujin (2020) x1",
+      "checked_at": "2026-07-31",
+      "note": "ZIv counts. DDR in app/notes not in this ZIv snapshot. ALL.Net confirms maimai + chunithm."
+    },
+    {
+      "id": 180,
+      "name": "KINGPIN(CROWN)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": [
+          "Valkyrie"
+        ],
+        "chunithm": [
+          "X-VERSE"
+        ],
+        "maimai_dx": [
+          "DX CiRCLE PLUS"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1698",
+      "evidence_quote": "SOUND VOLTEX (Valkyrie model) Brand new cab; CHUNITHM X-VERSE; maimai DX CiRCLE PLUS",
+      "checked_at": "2026-07-31",
+      "note": "ZIv machine labels."
+    },
+    {
+      "id": 198,
+      "name": "PARADIGM ZONE",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "popn": 2,
+        "iidx": 1,
+        "sdvx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8801",
+      "evidence_quote": "Paradigm Zone lastUpdate 2026-07-02: CHUNITHM X-VERSE-X x2, maimai DX CiRCLE x1, maimai FiNALE x1, pop'n High Cheers x2, IIDX 33 x1, SOUND VOLTEX Valkyrie (PC away for repairs cond=1)",
+      "checked_at": "2026-07-31",
+      "note": "One maimai is FiNALE (legacy), one is DX. SDVX may be down per comment."
+    },
+    {
+      "id": 198,
+      "name": "PARADIGM ZONE",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": [
+          "DX CiRCLE",
+          "FiNALE (non-DX separate cab)"
+        ],
+        "sdvx": [
+          "Valkyrie"
+        ],
+        "chunithm": [
+          "X-VERSE-X"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8801",
+      "evidence_quote": "maimai DX CiRCLE; maimai FiNALE (Buttons sticking...); SOUND VOLTEX (Valkyrie model)",
+      "checked_at": "2026-07-31",
+      "note": "Do not treat FiNALE as live ALL.Net DX; ALL.Net certifies networked DX only."
+    },
+    {
+      "id": 106,
+      "name": "Archie Brothers Cirque Electriq QV Melbourne",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "sdvx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10269",
+      "evidence_quote": "Archie Brothers Cirque Electriq QV Melbourne lastUpdate 2026-06-24: maimai DX CiRCLE x2, SOUND VOLTEX (Valkyrie model) x1",
+      "checked_at": "2026-07-31",
+      "note": "DDR/taiko in app notes not separate ZIv rows this snapshot."
+    },
+    {
+      "id": 106,
+      "name": "Archie Brothers Cirque Electriq QV Melbourne",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": [
+          "Valkyrie"
+        ],
+        "maimai_dx": [
+          "DX CiRCLE"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10269",
+      "evidence_quote": "SOUND VOLTEX (Valkyrie model) Works perfectly fine; maimai DX CiRCLE x2",
+      "checked_at": "2026-07-31",
+      "note": "Official Archie page live. Page includes Opening August 1st promo text; ZIv had June 2026 machine updates."
+    },
+    {
+      "id": 185,
+      "name": "KOKO AMUSEMENT BURWOOD",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "chunithm": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5864",
+      "evidence_quote": "KOKO Amusement Burwood lastUpdate 2026-07-27: CHUNITHM X-VERSE-X x1, maimai DX CiRCLE PLUS x2",
+      "checked_at": "2026-07-31",
+      "note": "ALL.Net confirms maimai + chunithm."
+    },
+    {
+      "id": 200,
+      "name": "PLAYit Melbourne",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": [
+          "Valkyrie"
+        ],
+        "maimai_dx": [
+          "DX CiRCLE PLUS"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9794",
+      "evidence_quote": "SOUND VOLTEX (Valkyrie model) As of 10/01/2026, running latest version; maimai DX CiRCLE PLUS",
+      "checked_at": "2026-07-31",
+      "note": "ZIv 2026-07-24. ALL.Net confirms maimai under PLAYit Southgate."
+    },
+    {
+      "id": 187,
+      "name": "KOKO Amusement City Heroes",
+      "field": "games",
+      "current": [
+        "crossbeats",
+        "jubeat",
+        "ongeki",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "crossbeats",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "stepmaniax",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6225",
+      "evidence_quote": "ZIv City Heroes lastUpdate 2026-04-13: jubeat x2, maimai FiNALE (private server), pop'n UniLab (private server), SDVX VIVID WAVE offline Nemsys, WACCA REVERSE private server, Project DIVA private server, StepMania, crossbeats; NO ongeki row",
+      "checked_at": "2026-07-31",
+      "note": "Add maimai_dx and stepmaniax per ZIv; remove ongeki (likely). Most non-SEGA cabs are private-server/offline - not live network play."
+    },
+    {
+      "id": 187,
+      "name": "KOKO Amusement City Heroes",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": [
+          "FiNALE (private server, not live ALL.Net DX)"
+        ],
+        "sdvx": [
+          "NEMSYS VIVID WAVE (offline)"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6225",
+      "evidence_quote": "maimai FiNALE Running private server, english patch applied; SOUND VOLTEX VIVID WAVE Offline/Not updated. Nemsys cab",
+      "checked_at": "2026-07-31",
+      "note": "Not a live maimai DX network venue."
+    },
+    {
+      "id": 165,
+      "name": "IPLAY WETHERILL PARK",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "Australia maimai DX International list returns 47 locations; IPLAY CAROUSEL is present but IPLAY WETHERILL PARK is not among store_name entries",
+      "checked_at": "2026-07-31",
+      "note": "App src includes allnet and games includes maimai_dx, but live ALL.Net AU maimai locator does not list this venue. ZIv 8568 (2026-03-22) lists no maimai. Propose remove maimai_dx. Venue still open per iPlay official page."
+    },
+    {
+      "id": 158,
+      "name": "iPlay Frankston",
+      "field": "other",
+      "current": "locations index previously implied Coming Soon",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-frankston/",
+      "evidence_quote": "9 Shannon Street Mall, Frankston, VIC 3199; Open Hours 10am - 10pm (daily on page)",
+      "checked_at": "2026-07-31",
+      "note": "Dedicated official page has full address and hours. Index may still say Coming Soon elsewhere; page is stronger open evidence."
+    },
+    {
+      "id": 158,
+      "name": "iPlay Frankston",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11671",
+      "evidence_quote": "iPlay Frankston lastUpdate 2026-07-30; maimai DX CiRCLE comment: Currently has no online service",
+      "checked_at": "2026-07-31",
+      "note": "Venue open. Cab may be offline (not on ALL.Net AU list). Keep maimai with offline note; do not mark closed."
+    },
+    {
+      "id": 208,
+      "name": "Strike Bowling Macquarie",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11170",
+      "evidence_quote": "Strike Bowling Macquarie lastUpdate 2026-05-25; machines include maimai DX and Taiko",
+      "checked_at": "2026-07-31",
+      "note": "Distinct from ALL.Net TIMEZONE(MACQUARIE) in same centre. ZIv attributes maimai to Strike; ALL.Net attributes maimai/chunithm to Timezone Macquarie."
+    },
+    {
+      "id": 165,
+      "name": "IPLAY WETHERILL PARK",
+      "field": "hours",
+      "current": "Fri-Sun 10:00-11:00",
+      "proposed": "Mon-Thu 10:00-22:00; Fri-Sat 10:00-23:00; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-wetherill-park/",
+      "evidence_quote": "JSON-LD openingHoursSpecification: Sun-Thu 10:00-22:00; Friday 10:00-23:00; Saturday 10:00-23:00; address 561-583 Polding St Wetherill Park NSW 2164",
+      "checked_at": "2026-07-31",
+      "note": "Current hours_text is corrupted (only Fri-Sun, closes 11:00). Replaced from official LocalBusiness schema."
+    },
+    {
+      "id": 155,
+      "name": "IPLAY CAROUSEL",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu 10:00-22:00; Fri 10:00-23:00; Sat 09:00-23:00; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-carousel/",
+      "evidence_quote": "JSON-LD LocalBusiness iPlay Carousel: Mon-Thu 10:00-22:00, Friday 10:00-23:00, Saturday 09:00-23:00, Sunday 10:00-22:00; Level 2, Westfield Carousel, 1382 Albany Highway Cannington WA 6107",
+      "checked_at": "2026-07-31",
+      "note": "Official hours were missing in app."
+    },
+    {
+      "id": 155,
+      "name": "IPLAY CAROUSEL",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.iplayaustralia.com.au/locations/iplay-carousel/",
+      "confidence": "certain",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-carousel/",
+      "evidence_quote": "iPlay Carousel official location page",
+      "checked_at": "2026-07-31",
+      "note": "Fill missing website."
+    },
+    {
+      "id": 162,
+      "name": "iPlay Tenpin City Lidcombe",
+      "field": "hours",
+      "current": "Mon-Tue 05:00-10:00",
+      "proposed": "Mon-Tue 17:00-22:00; Wed-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-tenpin-city-lidcombe/",
+      "evidence_quote": "Official Open Hours: Mon/Tue 5pm - 10pm; other days 10am - 10pm (page also shows one 10am-9pm slot)",
+      "checked_at": "2026-07-31",
+      "note": "App hours Mon-Tue 05:00-10:00 are inverted (AM instead of PM)."
+    },
+    {
+      "id": 161,
+      "name": "iPlay Tenpin City",
+      "field": "hours",
+      "current": "Mon-Tue 17:00-22:00; Wed-Thu 10:00-22:00; Fri 10:00-21:00; Sat-Sun 10:00-22:00",
+      "proposed": "Mon-Tue 17:00-22:00; Wed-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://www.iplayaustralia.com.au/locations/iplay-tenpin-city-lidcombe/",
+      "evidence_quote": "Official page: Mon/Tue 5pm-10pm; remaining days 10am-10pm",
+      "checked_at": "2026-07-31",
+      "note": "Minor cleanup; Fri 21:00 in app may be outdated."
+    },
+    {
+      "id": 198,
+      "name": "PARADIGM ZONE",
+      "field": "hours",
+      "current": "Mon-Thu 10:00-22:00; Fri-Sat 10:00-00:00; Sun 10:00-22:00",
+      "proposed": "Mon-Thu 10:00-22:00; Fri-Sat 10:00-00:00; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://paradigmzone.com.au/",
+      "evidence_quote": "Hours: Mon-Thu 10am-10pm · Fri 10am-12am · Sat 10am-12am · Sun 10am-10pm; 58 Gawler Place, Adelaide SA 5000",
+      "checked_at": "2026-07-31",
+      "note": "Verified correct against official site (no change needed; confirmation record)."
+    },
+    {
+      "id": 97,
+      "name": "AMUSE",
+      "field": "website",
+      "current": "http://info@amuse.zone",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10320",
+      "evidence_quote": "website field on ZIv is http://info@amuse.zone (email-shaped, not a browsable URL)",
+      "checked_at": "2026-07-31",
+      "note": "Current website is not a URL. Propose null; keep as contact email elsewhere if needed. ALL.Net still lists AMUSE for maimai (sid 18399)."
+    },
+    {
+      "id": 97,
+      "name": "AMUSE",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "jubeat",
+        "maimai_dx",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "jubeat",
+        "maimai_dx",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10320",
+      "evidence_quote": "Amuse lastUpdate 2026-06-15: CHUNITHM X-VERSE, GITADORA FUZZ-UP DM+GF, jubeat beyond the Ave, maimai DX CiRCLE, SOUND VOLTEX EXCEED GEAR",
+      "checked_at": "2026-07-31",
+      "note": "ALL.Net only lists maimai for AMUSE. Other titles are ZIv community evidence. Leave games as-is."
+    },
+    {
+      "id": 99,
+      "name": "ARCHIE BROTHERS CCW",
+      "field": "games",
+      "current": [
+        "ddr",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1012",
+      "evidence_quote": "ARCHIE BROTHERS CCW 285 Springvale Road, Glen Waverley, Victoria, Australia, 3150 (maimai AU list sid=18755)",
+      "checked_at": "2026-07-31",
+      "note": "maimai confirmed official. DDR/taiko remain community (ZIv 2026-01-22 only lists maimai among rhythm)."
+    },
+    {
+      "id": 126,
+      "name": "FORTRESS MELBOURNE",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5598",
+      "evidence_quote": "Fortress Melbourne lastUpdate 2026-06-30; maimai DX PRiSM PLUS x1",
+      "checked_at": "2026-07-31",
+      "note": "ALL.Net confirms maimai."
+    },
+    {
+      "id": 115,
+      "name": "B.LUCKY&SONS MELBOURNE",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "sdvx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4617",
+      "evidence_quote": "B. Lucky & Sons lastUpdate 2026-07-24; maimai DX CiRCLE PLUS x1, SOUND VOLTEX EXCEED GEAR x1",
+      "checked_at": "2026-07-31",
+      "note": "ALL.Net confirms maimai."
+    },
+    {
+      "id": 123,
+      "name": "Dreamworld",
+      "field": "status",
+      "current": "open",
+      "proposed": "unverified_possibly_stale",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Australia",
+      "evidence_quote": "Dreamworld ZIv lastUpdateTime 2010-08-16 (15 years ago); machines: DDR only",
+      "checked_at": "2026-07-31",
+      "note": "ZIv row is 15 years stale. Theme park still exists, but whether any DDR/rhythm cab remains is NOT verified."
+    },
+    {
+      "id": 168,
+      "name": "Kapow! Entertainment",
+      "field": "status",
+      "current": "open",
+      "proposed": "unverified_possibly_closed",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Australia",
+      "evidence_quote": "Kapow! Entertainment ZIv lastUpdateTime 2018-08-10; n_machines=0; 7 years ago",
+      "checked_at": "2026-07-31",
+      "note": "No machines and 7-year-stale ZIv. Could not confirm open/closed from official source this pass."
+    },
+    {
+      "id": 194,
+      "name": "Million Life",
+      "field": "status",
+      "current": "open",
+      "proposed": "unverified_possibly_closed",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Australia",
+      "evidence_quote": "Million Life ZIv lastUpdateTime 2019-10-12; n_machines=0; 6 years ago",
+      "checked_at": "2026-07-31",
+      "note": "Empty and stale ZIv row. Status unverified."
+    },
+    {
+      "id": null,
+      "name": "Australia ONGEKI network",
+      "field": "other",
+      "current": "shard may imply ongeki at City Heroes",
+      "proposed": "no official ALL.Net ONGEKI locations in Australia",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=en&ct=1012",
+      "evidence_quote": "Australia(No Installed Locations); page also states no installed locations",
+      "checked_at": "2026-07-31",
+      "note": "Official ONGEKI locator: Australia has zero installed locations. Any AU ongeki cab is offline/private if it exists."
+    }
+  ]
+}

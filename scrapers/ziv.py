@@ -255,6 +255,17 @@ def _qty_hard_reject(text):
     # "Part of the 4 cabinets..." is a location note, not a total.
     if re.match(r"(?i)^part of the\b", t):
         return True
+    # A quantity written with a leading hyphen is not a plain total, and the
+    # number readers here strip the sign and publish the magnitude: "-1
+    # machines" parsed as 1 and "1-2 machines" as 2, so a typo and a stated
+    # RANGE both became a confident exact count. A range is genuinely two
+    # different claims and picking its top is an overstatement, so neither
+    # shape yields a number. Withholding costs one count; publishing the wrong
+    # one is the error this file exists to prevent.
+    if re.search(r"-\s*\d+\s*" + _DESC_WORDS + _UNIT_WORD, t, re.I):
+        return True
+    if re.search(r"-\s*\d+\s*台", t):
+        return True
     return False
 
 
@@ -857,8 +868,18 @@ def _parse_arcades(payload, country, enrich_pictures=False):
         info = str(a.get("info") or "")
         if _CLOSED_RE.search(name) or _CLOSED_RE.search(info):
             continue
-        lat = a.get("latitude") or a.get("lat")
-        lng = a.get("longitude") or a.get("lng")
+        # `or` picks the fallback key on any FALSEY value, and 0.0 is falsey:
+        # a venue on the equator or the prime meridian had that axis silently
+        # replaced by the alternate key, or nulled when the alternate was
+        # absent, turning a real coordinate into a missing one. The 0 line runs
+        # through crawled countries (Ghana sits on both), so this is a real
+        # coordinate, not a sentinel. Only absence counts as absent.
+        lat = a.get("latitude")
+        if lat is None:
+            lat = a.get("lat")
+        lng = a.get("longitude")
+        if lng is None:
+            lng = a.get("lng")
         try:
             lat = float(lat) if lat not in (None, "") else None
             lng = _wrap_lng(float(lng)) if lng not in (None, "") else None

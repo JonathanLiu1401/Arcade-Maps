@@ -938,8 +938,19 @@ def photos_for_arcade(arcade, by_source):
         return []
     links = arcade.get("links") or {}
     out, seen = [], set()
-    for key in (("ziv:" + (ziv_id_from_url(links.get("ziv")) or "")),
-                ("bemanicn:" + (bemanicn_id_from_url(links.get("bemanicn")) or ""))):
+    # links.also holds source pages of rows that were merged INTO this one
+    # by a same-source dedupe. Their photos are keyed to those urls, so
+    # skipping them silently drops pictures the venue really has.
+    urls = [links.get("ziv"), links.get("bemanicn")]
+    urls.extend(links.get("also") or [])
+    keys = []
+    for u in urls:
+        for prefix, fn in (("ziv:", ziv_id_from_url),
+                           ("bemanicn:", bemanicn_id_from_url)):
+            ident = fn(u) if u else None
+            if ident:
+                keys.append(prefix + ident)
+    for key in keys:
         if key.endswith(":"):
             continue
         for rec in by_source.get(key, []):

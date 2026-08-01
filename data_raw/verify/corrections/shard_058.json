@@ -1,0 +1,715 @@
+{
+  "shard": 58,
+  "checked": 72,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (Inertia JSON X-Inertia:true for all 72 BemaniCN-linked shops in shard)",
+    "https://maimai.wahlap.com/location (official CN maimai site; locator is WeChat-app gated, no public shop list API found)",
+    "https://location.am-all.net/alm/location?gm=98 (ALL.Net intl maimai: no mainland China region)",
+    "Coordinate + name/address cross-match within shard for WAHLAP-only vs BemaniCN twins"
+  ],
+  "corrections": [
+    {
+      "id": 2960,
+      "name": "头号玩家(凯德广场店)",
+      "field": "status",
+      "current": "open (implicit; listed with maimai_dx)",
+      "proposed": "temporarily_closed_relocating",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/693",
+      "evidence_quote": "店铺搬迁，暂时停业 (shop comment; status still 1; updated_at 2026-07-28T11:58:24.000000Z)",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN has not flipped status code off 1, but the live shop comment explicitly says the venue is relocating and temporarily closed. High travel-risk: treat as closed until a new address appears. Keep listing but flag closed."
+    },
+    {
+      "id": 1624,
+      "name": "乐玩U选常德澧县万达店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5564",
+      "evidence_quote": "arcades: title_id 1 maimai DX qty=1 (舞萌dx2025); title_id 31 太鼓之达人 qty=1; title_id 16 GROOVE COASTER qty=1. Shop comment: 内部有舞萌一台，太鼓达人一台，GC国框一台. No CHUNITHM (title_id 3). updated_at 2026-07-29.",
+      "checked_at": "2026-07-31",
+      "note": "App incorrectly lists chunithm. Live BemaniCN has maimai DX + 国服 taiko + Groove Coaster only. other can remain as GC placeholder if the app maps GC under other."
+    },
+    {
+      "id": 1624,
+      "name": "乐玩U选常德澧县万达店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1,
+        "other": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5564",
+      "evidence_quote": "title_id 16 GROOVE COASTER quantity=1 version=国服 coin=3; shop comment lists GC国框一台",
+      "checked_at": "2026-07-31",
+      "note": "GC qty is live-verified. Only add if other is used for Groove Coaster in the app taxonomy."
+    },
+    {
+      "id": 1139,
+      "name": "Hi one潮玩运动馆",
+      "field": "games",
+      "current": [
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5431",
+      "evidence_quote": "arcades: title_id 15 太鼓达人(旧代) quantity=1 version=12亚洲版 coin=0 comment=购买门票入场后免费游玩. Not title_id 31 太鼓之达人 (国服/新框).",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN distinguishes 太鼓达人(旧代) title_id=15 from networked 太鼓之达人 title_id=31. This venue has only old-gen Asia cabinet, ticket-entry free play. App taiko tag implies modern/networked taiko and is misleading. If the app has no old-taiko key, use other or a cab_models note rather than taiko."
+    },
+    {
+      "id": 1602,
+      "name": "乐满地(融冠乐城店)",
+      "field": "games",
+      "current": [
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4506",
+      "evidence_quote": "arcades: title_id 15 太鼓达人(旧代) quantity=1 version=12代亚洲版 coin=4. No title_id 31.",
+      "checked_at": "2026-07-31",
+      "note": "Same old-gen taiko mislabel as 1139. Remove networked taiko claim."
+    },
+    {
+      "id": 1401,
+      "name": "一号街区新化店",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5862",
+      "evidence_quote": "arcades: title_id 15 太鼓达人(旧代) qty=1 version=12亚洲版; title_id 16 GROOVE COASTER qty=2. No title_id 31 太鼓之达人.",
+      "checked_at": "2026-07-31",
+      "note": "Remove taiko (networked) claim. Keep other for GC + old taiko, or split if taxonomy allows."
+    },
+    {
+      "id": 1701,
+      "name": "乐酷星球(南郊生活广场店)",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/630",
+      "evidence_quote": "arcades: title_id 15 太鼓达人(旧代) qty=1; title_id 2 maimai (classic FiNALE) qty=1; title_id 13 DanceEvolution qty=1. No title_id 31.",
+      "checked_at": "2026-07-31",
+      "note": "Has classic offline maimai FiNALE and old taiko, not modern taiko/DX. Do NOT upgrade classic maimai to maimai_dx."
+    },
+    {
+      "id": 2094,
+      "name": "呀呀潮玩（株洲王府星mall店）",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2475",
+      "evidence_quote": "arcades: title_id 15 太鼓达人(旧代) qty=1; title_id 2 maimai classic qty=1 version=球; title_id 22 鼓王 qty=1. Shop comment: maimai finale ... 太鼓机况很差. No title_id 31.",
+      "checked_at": "2026-07-31",
+      "note": "Classic maimai + old taiko + 鼓王 only. Remove networked taiko."
+    },
+    {
+      "id": 2340,
+      "name": "城市Nicole潮玩街区(奇峰店)",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "jubeat",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6530",
+      "evidence_quote": "arcades: title_id 1 maimai DX qty=1; title_id 34 jubeat音乐魔方 qty=2; title_id 15 太鼓达人(旧代) qty=1 version=12亚洲版. Comment on taiko: 全新旧框；鼓况吃音严重...推荐去隔壁中商广场三楼玩新框. No title_id 31.",
+      "checked_at": "2026-07-31",
+      "note": "jubeat and maimai_dx confirmed. Taiko is old-gen only; do not list as modern taiko. Sister shop 2339 (中商) has real title_id 31."
+    },
+    {
+      "id": 2340,
+      "name": "城市Nicole潮玩街区(奇峰店)",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 2,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "jubeat": 2,
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6530",
+      "evidence_quote": "title_id 34 qty=2; title_id 1 qty=1; title_id 15 qty=1 (旧代, not networked taiko)",
+      "checked_at": "2026-07-31",
+      "note": "Drop taiko count; jubeat/maimai counts match live."
+    },
+    {
+      "id": 2441,
+      "name": "城市英雄长沙珠江店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3792",
+      "evidence_quote": "live name 城市英雄(珠江星环店); arcades: title_id 1 maimai DX qty=1; title_id 15 太鼓达人(旧代) qty=1; title_id 2 maimai classic (旧框murasaki改DX2024) qty=1. No title_id 31.",
+      "checked_at": "2026-07-31",
+      "note": "Has modern maimai_dx plus classic/modded old maimai and old taiko. App taiko tag should not imply 国服新框. Prefer rename display to 城市英雄(珠江星环店)."
+    },
+    {
+      "id": 3100,
+      "name": "奇迹童年家庭娱乐中心（奥特莱斯店）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4928",
+      "evidence_quote": "arcades: title_id 1 maimai DX qty=1 version=2025; title_id 15 太鼓达人(旧代) qty=1 version=12 亚. No title_id 31.",
+      "checked_at": "2026-07-31",
+      "note": "maimai_dx OK; taiko is old-gen Asia only."
+    },
+    {
+      "id": 2413,
+      "name": "城市英雄步步高店",
+      "field": "other",
+      "current": "城市英雄步步高店",
+      "proposed": "城市英雄岳阳步步高店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/188",
+      "evidence_quote": "name: 城市英雄岳阳步步高店; address: 湖南省岳阳市岳阳楼区步行街步步高6楼; updated_at 2026-07-30",
+      "checked_at": "2026-07-31",
+      "note": "App name omits city (岳阳). Games/counts (jubeat 2, maimai_dx 1, taiko 2) match live BemaniCN title_ids 34/1/31."
+    },
+    {
+      "id": 2029,
+      "name": "反斗乐园派长沙雨花星城店",
+      "field": "other",
+      "current": "反斗乐园派长沙雨花星城店",
+      "proposed": "反斗乐园π(长沙雨花星城店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2029",
+      "evidence_quote": "name: 反斗乐园π(长沙雨花星城店); arcades include WACCA title_id 17 qty=2 (comment: 两台华卡...2026/1 机况都已经难以正常游玩)",
+      "checked_at": "2026-07-31",
+      "note": "Display name uses pi character. App other correctly covers WACCA; maimai_dx x1 and chunithm x2 still match live."
+    },
+    {
+      "id": 2397,
+      "name": "城市英雄司门口店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Weekdays 11:00-23:30; weekends 10:00-01:00 (subject to change; may power off 5-15 min early)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/321",
+      "evidence_quote": "start_time=11 end_time=23; comment: 目前营业时间为：工作日（周一至周五）11:00-23:30 节假日（周六及周日）10:00-01:00 （可能会提前5-15分钟断电...） updated 2026-07-23",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN numeric hours are coarse (11-23). Prefer the comment schedule. Coins physical-only, shared with 春天百货店."
+    },
+    {
+      "id": 2410,
+      "name": "城市英雄春天百货店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Weekdays 11:00-23:30; weekends ~10:30-00:30 (comment notes frequent adjustments; shop also states 本店营业时间：10:30 ~ 23:30 adjusted 2026-04-28)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/176",
+      "evidence_quote": "start_time=11 end_time=23; comment includes 本店营业时间：10:30 ~ 23:30（已于2026年4月28日调整） and 2026/2更新：营业时间为工作日11:00-23:30，周末10:30-次日00:30; updated_at 2026-07-30",
+      "checked_at": "2026-07-31",
+      "note": "Schedule has changed multiple times; do not hardcode without re-check. Physical coins only, shared with 司门口."
+    },
+    {
+      "id": 2281,
+      "name": "嘻品堂长沙湘江永旺店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6363",
+      "evidence_quote": "start_time=10 end_time=23; name 嘻品堂(湘江永旺店); address 湘江新区永旺梦乐城4楼; maimai DX qty=2",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN hours only; mall hours may override. Floor is 4F on BemaniCN (app wahlap twin may say 3F for 城市英雄 in same mall)."
+    },
+    {
+      "id": 3100,
+      "name": "奇迹童年家庭娱乐中心（奥特莱斯店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-21:30 (closes earlier than many arcades)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4928",
+      "evidence_quote": "start_time=10 end_time=21; comment: 目前营业时间设为9：30~21：30 （九点半不一定准时关门断电但是闭店时间较早尽量不要太晚退勤）",
+      "checked_at": "2026-07-31",
+      "note": "Comment is more precise than start/end integers."
+    },
+    {
+      "id": 2447,
+      "name": "城市英雄（株洲美佳/汉华国际店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/180",
+      "evidence_quote": "start_time=11 end_time=23; comment: 平日营业时间11:00~23:00，全天",
+      "checked_at": "2026-07-31",
+      "note": "Also note shop comment warns older machine condition vs other Zhuzhou venues."
+    },
+    {
+      "id": 2461,
+      "name": "壹加壹潮玩",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3946",
+      "evidence_quote": "start_time=9 end_time=21; price=0.68; updated_at 2026-07-30",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN hours only."
+    },
+    {
+      "id": 1394,
+      "name": "一号机长长沙岳麓店",
+      "field": "other",
+      "current": "separate venue id 1394 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 883 1号机长(凯德壹店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3732",
+      "evidence_quote": "883 BemaniCN: name 1号机长(凯德壹店) address 茶子山东路112号...凯德壹中心 status=1. Shard coords for 1394 and 883 are identical (28.245605, 112.95202); same address 凯德一/壹中心 L2.",
+      "checked_at": "2026-07-31",
+      "note": "Clear WAHLAP vs BemaniCN duplicate of the same 1号机长 凯德壹 store. Keep 883 (richer BemaniCN data); remove or alias 1394."
+    },
+    {
+      "id": 892,
+      "name": "1号机长怀化溆浦万达店",
+      "field": "other",
+      "current": "separate venue id 892 (wahlap-only, maimai_dx only)",
+      "proposed": "merge_into_or_dedupe_with id 898 1号机长超乐场（溆浦店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1925",
+      "evidence_quote": "898 live: 1号机长超乐场（溆浦店） at 溆浦县万达广场; maimai_dx x1 + taiko x1; coords match 892 exactly (0 m).",
+      "checked_at": "2026-07-31",
+      "note": "Same Wanda plaza 1号机长. Prefer 898 (has taiko)."
+    },
+    {
+      "id": 1871,
+      "name": "动漫E族益阳赫山印象汇店",
+      "field": "other",
+      "current": "separate venue id 1871 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 1869 动漫e族",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7258",
+      "evidence_quote": "1869 live: 动漫e族 at 桃花仑西路555号益阳印象汇 status=1 maimai DX. Coords identical to 1871.",
+      "checked_at": "2026-07-31",
+      "note": "Same shop, different case/source naming."
+    },
+    {
+      "id": 1898,
+      "name": "十二星球潮玩城吉首店",
+      "field": "other",
+      "current": "separate venue id 1898 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2086 吉首天虹十二星球潮玩城",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1951",
+      "evidence_quote": "2086: 吉首天虹十二星球潮玩城 address 吉首天虹购物中心4楼 status=1. Coords match 1898 at 0 m.",
+      "checked_at": "2026-07-31",
+      "note": "Same 天虹 4F 十二星球."
+    },
+    {
+      "id": 1900,
+      "name": "十二星球长沙芙蓉店",
+      "field": "other",
+      "current": "separate venue id 1900 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 1893 十二星球(龙湖时代天街店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2450",
+      "evidence_quote": "1893: 十二星球(龙湖时代天街店) 东岸街道龙湖芙蓉天街3楼 status=1. Coords match 1900.",
+      "checked_at": "2026-07-31",
+      "note": "Same 龙湖芙蓉天街 3F."
+    },
+    {
+      "id": 2251,
+      "name": "嗨贝堂衡阳蒸湘万达店",
+      "field": "other",
+      "current": "separate venue id 2251 (wahlap-only; spelling 嗨贝堂)",
+      "proposed": "merge_into_or_dedupe_with id 2213 嗨倍堂欢乐世界（衡阳蒸湘万达店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3797",
+      "evidence_quote": "2213: 嗨倍堂欢乐世界（衡阳蒸湘万达店） 蒸湘区万达广场3楼 status=1. Coords match 2251 at 0 m; 贝/倍 is orthographic variance.",
+      "checked_at": "2026-07-31",
+      "note": "Same 嗨倍堂 蒸湘万达."
+    },
+    {
+      "id": 2277,
+      "name": "嘻品堂电玩长沙万家丽店",
+      "field": "other",
+      "current": "separate venue id 2277 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2271 嘻品堂(万家丽店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/635",
+      "evidence_quote": "2271: 嘻品堂(万家丽店) 万家丽国际购物广场5楼 status=1. Same mall floor as 2277 wahlap address 五楼. Coords 0 m from 2271.",
+      "checked_at": "2026-07-31",
+      "note": "NOT the same as 1760 偶予电玩 which is B1 of the same mall (different floor/brand)."
+    },
+    {
+      "id": 2279,
+      "name": "嘻品堂长沙天心中海店",
+      "field": "other",
+      "current": "separate venue id 2279 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2272 嘻品堂(中海店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1783",
+      "evidence_quote": "2272: 嘻品堂(中海店) 中意二路111号环宇城F2 status=1 maimai DX + 宝可梦明耀之星 x2. Coords match 2279.",
+      "checked_at": "2026-07-31",
+      "note": "Clear twin."
+    },
+    {
+      "id": 2343,
+      "name": "城市宝贝衡阳珠晖万达广场店",
+      "field": "other",
+      "current": "separate venue id 2343 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2342 城市宝贝",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4524",
+      "evidence_quote": "2342: 城市宝贝 address 酃湖万达广场三楼 status=1. Coords match 2343.",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN name is short; prefer fuller wahlap display name on the kept record."
+    },
+    {
+      "id": 2435,
+      "name": "城市英雄长沙岳麓万达店",
+      "field": "other",
+      "current": "separate venue id 2435 (wahlap-only, games maimai_dx only)",
+      "proposed": "merge_into_or_dedupe_with id 2376 城市英雄(银盆岭万达店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5496",
+      "evidence_quote": "2376: 城市英雄(银盆岭万达店) 银盆岭万达广场3楼; maimai_dx x1 + taiko x1 status=1. Coords match 2435.",
+      "checked_at": "2026-07-31",
+      "note": "Prefer 2376 which has taiko."
+    },
+    {
+      "id": 2436,
+      "name": "城市英雄长沙岳麓金茂店",
+      "field": "other",
+      "current": "separate venue id 2436 (wahlap-only, maimai_dx only)",
+      "proposed": "merge_into_or_dedupe_with id 2381 城市英雄(长沙金茂览秀城店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2542",
+      "evidence_quote": "2381: 城市英雄(长沙金茂览秀城店) 金茂览秀城LG层LG28号; jubeat x2, maimai_dx x3, taiko x2. Coords match 2436.",
+      "checked_at": "2026-07-31",
+      "note": "Wahlap record under-lists games badly; keep 2381."
+    },
+    {
+      "id": 2438,
+      "name": "城市英雄长沙开福北辰荟店",
+      "field": "other",
+      "current": "separate venue id 2438 (wahlap-only, chunithm+maimai_dx)",
+      "proposed": "merge_into_or_dedupe_with id 2378 城市英雄(长沙北辰荟店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1335",
+      "evidence_quote": "2378: 城市英雄(长沙北辰荟店) 湘江北路1500号长沙北辰荟3F; chunithm x2 maimai_dx x4 taiko x2. Coords match 2438.",
+      "checked_at": "2026-07-31",
+      "note": "Prefer 2378 (includes taiko and higher maimai count)."
+    },
+    {
+      "id": 2440,
+      "name": "城市英雄长沙永旺梦乐城店",
+      "field": "other",
+      "current": "separate venue id 2440 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2375 城市英雄(湘江新区永旺梦乐城店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6347",
+      "evidence_quote": "2375: 城市英雄(湘江新区永旺梦乐城店) 永旺梦乐城湘江新区店3楼; maimai_dx x4 chunithm x2 taiko x2 status=1. Coords match 2440. Separate shop 嘻品堂(湘江永旺) is 4F same mall (id 2281), not a twin of 城市英雄.",
+      "checked_at": "2026-07-31",
+      "note": "Keep 2375. Do not merge with 2281 嘻品堂."
+    },
+    {
+      "id": 2444,
+      "name": "城市英雄长沙雨花德思勤店",
+      "field": "other",
+      "current": "separate venue id 2444 (wahlap-only, maimai_dx only)",
+      "proposed": "merge_into_or_dedupe_with id 2379 城市英雄(长沙德思勤店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1777",
+      "evidence_quote": "2379: 城市英雄(长沙德思勤店) 德思勤...四季汇...L3-19; jubeat x2 maimai_dx x2 taiko x1. Coords match 2444. 嘻品堂(德思勤) id 2273 is a different brand same mall L3.",
+      "checked_at": "2026-07-31",
+      "note": "Prefer 2379. Do not merge with 2273 嘻品堂."
+    },
+    {
+      "id": 2455,
+      "name": "城市部落永州祁阳店",
+      "field": "other",
+      "current": "separate venue id 2455 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2453 城市部落动漫城（祁阳步步高新天地店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6262",
+      "evidence_quote": "2453: 城市部落动漫城（祁阳步步高新天地店） 椒山北路步步高新天地广场G层 status=1. Coords match 2455 at 0 m.",
+      "checked_at": "2026-07-31",
+      "note": "Same 祁阳 步步高新天地 城市部落."
+    },
+    {
+      "id": 2456,
+      "name": "城市部落衡阳祁东友阿广场店",
+      "field": "other",
+      "current": "separate venue id 2456 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2454 城市部落家庭欢乐中心（祁东友阿广场店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4884",
+      "evidence_quote": "2454: 城市部落家庭欢乐中心（祁东友阿广场店） 友阿广场1栋3层; chunithm x2 maimai_dx x2. Distance to 2456 ~13 m.",
+      "checked_at": "2026-07-31",
+      "note": "Same 祁东 友阿 城市部落."
+    },
+    {
+      "id": 2839,
+      "name": "天空之城永州冷水滩万达店",
+      "field": "other",
+      "current": "separate venue id 2839 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2928 天空之城（永州万达店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2975",
+      "evidence_quote": "2928: 天空之城（永州万达店） 冷水滩...万达广场 status=1 maimai_dx. Coords match 2839.",
+      "checked_at": "2026-07-31",
+      "note": "Same 永州冷水滩万达 天空之城."
+    },
+    {
+      "id": 2914,
+      "name": "天空之城长沙东四吾悦广场店",
+      "field": "other",
+      "current": "separate venue id 2914 (wahlap-only, chunithm+maimai_dx)",
+      "proposed": "merge_into_or_dedupe_with id 2786 天空之城多奇妙(长沙店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4356",
+      "evidence_quote": "2786: 天空之城多奇妙(长沙店) 星沙松雅湖吾悦广场3楼3015店铺; chunithm x2 maimai_dx x1 taiko x1. Coords identical to 2914 (and also to 2409 城市英雄 which is unit 3005, a DIFFERENT shop in the same mall).",
+      "checked_at": "2026-07-31",
+      "note": "2914 and 2786 are the same 天空之城 unit 3015. 2409 城市英雄 3005 is adjacent, keep separate."
+    },
+    {
+      "id": 3158,
+      "name": "子洋联盟娄底娄星吾悦广场店",
+      "field": "other",
+      "current": "separate venue id 3158 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 3157 子洋联盟吾悦广场店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3067",
+      "evidence_quote": "3157: 子洋联盟吾悦广场店 氐星路吾悦广场三楼 status=1. Coords match 3158. 2212 嗨倍堂 is 四楼 same mall (different brand).",
+      "checked_at": "2026-07-31",
+      "note": "Keep 3157. Do not merge with 嗨倍堂 2212."
+    },
+    {
+      "id": 3101,
+      "name": "奇迹童年株洲天元奥特莱斯店",
+      "field": "other",
+      "current": "separate venue id 3101 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 3100 奇迹童年家庭娱乐中心（奥特莱斯店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4928",
+      "evidence_quote": "3100 live at 润鲨奥特莱斯2楼; distance to 3101 ~8 m; same brand 奇迹童年 奥特莱斯.",
+      "checked_at": "2026-07-31",
+      "note": "Prefer 3100 (has BemaniCN games detail)."
+    },
+    {
+      "id": 1897,
+      "name": "十二星球岳阳华容店",
+      "field": "other",
+      "current": "separate venue id 1897 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 1909 华容县十二星球动漫体验中心（岳阳市华容步步高新天地店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1795",
+      "evidence_quote": "1909: 华容县十二星球...步步高新天地 L5-5002 status=1. Distance to 1897 ~22 m.",
+      "checked_at": "2026-07-31",
+      "note": "Same 华容 步步高新天地 十二星球."
+    },
+    {
+      "id": 1392,
+      "name": "一号机长邵阳洞口步步高店",
+      "field": "other",
+      "current": "separate venue id 1392 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 1397 一号机长（洞口店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7226",
+      "evidence_quote": "1397: 一号机长（洞口店） 洞口县步步高凰腾新天地 status=1. Distance to 1392 ~32 m.",
+      "checked_at": "2026-07-31",
+      "note": "Same 洞口 步步高 一号机长. 2464 壹加壹 is a different brand in the same complex."
+    },
+    {
+      "id": 3091,
+      "name": "奇趣超乐园岳阳平江店",
+      "field": "other",
+      "current": "separate venue id 3091 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 3092 奇趣超乐园（汉昌街道店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5412",
+      "evidence_quote": "3092: 奇趣超乐园（汉昌街道店） 天岳大道与长冲路交叉口... status=1. Distance to 3091 ~38 m; same intersection address.",
+      "checked_at": "2026-07-31",
+      "note": "Same 平江 奇趣超乐园."
+    },
+    {
+      "id": 2434,
+      "name": "城市英雄长沙岳麓万象城店",
+      "field": "other",
+      "current": "separate venue id 2434 (wahlap-only, chunithm+maimai_dx)",
+      "proposed": "merge_into_or_dedupe_with id 2377 城市英雄(长沙万象城店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4611",
+      "evidence_quote": "2377: 城市英雄(长沙万象城店) 桐梓坡路万象城L553号; chunithm x2 maimai_dx x3 taiko x1. Distance to 2434 ~39 m; same unit L553.",
+      "checked_at": "2026-07-31",
+      "note": "Prefer 2377 (includes taiko)."
+    },
+    {
+      "id": 890,
+      "name": "1号机长常德澧县店",
+      "field": "other",
+      "current": "separate venue id 890 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 893 1号机长超乐场常德澧县店",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1717",
+      "evidence_quote": "893: 1号机长超乐场常德澧县店 address 欢乐城22号入口下 status=1. Distance to 890 ~152 m; both addresses reference 欢乐城22号入口 1号机长超乐场.",
+      "checked_at": "2026-07-31",
+      "note": "Likely same 澧县欢乐城 1号机长. Nearby 1624 乐玩U选 is a DIFFERENT brand in 万达 (not a twin of 890)."
+    },
+    {
+      "id": 2280,
+      "name": "嘻品堂长沙永旺店",
+      "field": "other",
+      "current": "separate venue id 2280 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2274 嘻品堂(星沙永旺店)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4133",
+      "evidence_quote": "2274: 嘻品堂(星沙永旺店) 永旺乐梦城...3楼 maimai DX qty=2 status=1. Distance to 2280 ~185 m; both are 嘻品堂 at 长沙县/星沙 永旺梦乐城 3F.",
+      "checked_at": "2026-07-31",
+      "note": "Same mall brand; geocode variance. Prefer 2274 (qty=2)."
+    },
+    {
+      "id": 3168,
+      "name": "子洋联盟长沙望城奥莱店",
+      "field": "other",
+      "current": "separate venue id 3168 (wahlap-only, chunithm+maimai_dx)",
+      "proposed": "merge_into_or_dedupe_with id 3156 子洋联盟(砂之船店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1076",
+      "evidence_quote": "3156: 子洋联盟(砂之船店) 砂之船奥特莱斯 L3; maimai_dx x2 chunithm x2 + 头文字D x4. Distance to 3168 ~102 m; same 砂之船 奥莱 brand.",
+      "checked_at": "2026-07-31",
+      "note": "Prefer 3156."
+    },
+    {
+      "id": 2282,
+      "name": "嘻品堂长沙雨花四季汇店",
+      "field": "other",
+      "current": "separate venue id 2282 (wahlap-only)",
+      "proposed": "merge_into_or_dedupe_with id 2273 嘻品堂(德思勤店)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3505",
+      "evidence_quote": "2273: 嘻品堂(德思勤店) 雨花区德思勤城市广场L3 status=1. Distance to 2282 ~110 m; 四季汇 is the 德思勤 complex name used in both wahlap and 城市英雄 addresses.",
+      "checked_at": "2026-07-31",
+      "note": "Likely same 嘻品堂. 2379 城市英雄 is a different brand in the same complex."
+    },
+    {
+      "id": 2439,
+      "name": "城市英雄长沙梅溪湖步步高店",
+      "field": "other",
+      "current": "separate venue id 2439 (wahlap-only, chunithm+maimai_dx)",
+      "proposed": "merge_into_or_dedupe_with id 2380 城市英雄(长沙梅溪湖新天地店)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/314",
+      "evidence_quote": "2380: 城市英雄(长沙梅溪湖新天地店) 枫林三路1099号步步高梅溪湖新天地B1层; chunithm x2 maimai_dx x3 taiko x2. Distance to 2439 ~240 m; both 梅溪湖 步步高/新天地 B1 城市英雄.",
+      "checked_at": "2026-07-31",
+      "note": "Likely same store; geocode spread. Prefer 2380 (has taiko + counts)."
+    },
+    {
+      "id": 2484,
+      "name": "壹零壹潮漫万家丽负一楼店（偶予电玩）",
+      "field": "other",
+      "current": "separate venue id 2484 (wahlap-only, chunithm+maimai_dx)",
+      "proposed": "merge_into_or_dedupe_with id 1760 偶予电玩(万家丽店)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/276",
+      "evidence_quote": "1760: 偶予电玩(万家丽店) 万家丽购物广场B1层东南角; chunithm x2 maimai_dx x2 taiko x1 status=1. 2484 address is same mall B1 and name includes （偶予电玩）. Distance ~516 m (geocode noise on long mall).",
+      "checked_at": "2026-07-31",
+      "note": "Name explicitly aliases 偶予电玩. Prefer 1760. 2271 嘻品堂 is 5F same mall, different brand."
+    },
+    {
+      "id": 2412,
+      "name": "城市英雄株洲芦淞店",
+      "field": "other",
+      "current": "separate venue id 2412 (wahlap-only)",
+      "proposed": "possible_duplicate_of id 2447 城市英雄（株洲美佳/汉华国际店）",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/180",
+      "evidence_quote": "2447 live: 城市英雄（株洲美佳/汉华国际店） 建设南路338号美佳YOUNG范MALL三楼. 2412 address: 芦淞区美佳you范mall-3楼城市英雄. Same mall brand string; coord distance ~1.08 km (may be geocode error on one side).",
+      "checked_at": "2026-07-31",
+      "note": "Could not prove same unit vs two 城市英雄 in 株洲芦淞. Maintainer should verify on-site or via brand store list before merge. If merge, prefer 2447."
+    },
+    {
+      "id": 1623,
+      "name": "乐玩U选常德武陵欢乐城店",
+      "field": "other",
+      "current": "wahlap-only maimai_dx at 武陵欢乐城",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1348",
+      "evidence_quote": "Nearest BemaniCN id 889 is 1号机长常德武陵店 at same 和瑞欢乐城 (~31 m) - DIFFERENT brand. No BemaniCN page found for 乐玩U选 at 武陵欢乐城 (unlike 澧县万达 1624 which exists).",
+      "checked_at": "2026-07-31",
+      "note": "Could not confirm whether 乐玩U选 武陵 still exists. Do not merge with 1号机长 889. WAHLAP official public locator is WeChat-gated so status unverified from open web."
+    },
+    {
+      "id": 1865,
+      "name": "动感街区",
+      "field": "other",
+      "current": "listed open with maimai_dx",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/3783",
+      "evidence_quote": "status=1 maimai DX qty=1; comment: 新机器，人很少，有倒闭的风险; hours fields start_time=9 end_time=11 (suspicious/placeholder); updated_at 2025-12-27",
+      "checked_at": "2026-07-31",
+      "note": "Still marked open on BemaniCN but community comment flags closure risk and odd 9-11 hours. Not enough to mark closed; flag for re-check."
+    }
+  ]
+}

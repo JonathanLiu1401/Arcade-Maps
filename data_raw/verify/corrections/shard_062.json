@@ -1,0 +1,938 @@
+{
+  "shard": 62,
+  "checked": 115,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1004",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1004",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19146&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19800&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19041&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18319&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18313&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19002&lang=en",
+    "https://location.am-all.net/alm/shop?gm=104&astep=1004&sid=18999&lang=en",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia"
+  ],
+  "corrections": [
+    {
+      "id": 9635,
+      "name": "FUN SCAPE SEREMBAN",
+      "field": "location",
+      "current": {
+        "lat": 2.2811342,
+        "lng": 102.2161119,
+        "addr": "Lot F01 & F02,AEON Seremban 2,70300 Seremban, Negeri Sembian."
+      },
+      "proposed": {
+        "lat": 2.7016189725775,
+        "lng": 101.91166352524,
+        "addr": "Lot F01 & F02, AEON Seremban 2, 70300 Seremban, Negeri Sembilan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#6994 U-bowl (Cobay) AEON Seremban 2 address LOT F01 &F02 AEON SEREMBAN2 coords 2.7016189725775,101.91166352524 lastUpdateTime=2026-02-20; ZIv#6880 Fun Scape @ Lotus's Melaka Cheng coords 2.2811348978602,102.2161115706 (the pin currently used). ALL.Net sid=19146 address text is AEON Seremban 2 but its Google Maps button uses the Melaka Cheng coords.",
+      "note": "Pin is in Melaka Cheng (Lotus's Melaka), about 70km from AEON Seremban 2. Address text is Seremban; ZIv link on this row points at Melaka Cheng (arcade.php?id=6880). Prefer Seremban AEON coords from ZIv#6994 / Mollyfantasy AEON Seremban 2 ZIv#6995 (~2.70,101.91). ALL.Net still lists maimai at this name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9635,
+      "name": "FUN SCAPE SEREMBAN",
+      "field": "other",
+      "current": {
+        "links.ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6880"
+      },
+      "proposed": {
+        "links.ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6994"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#6880 name='Fun Scape @ Lotus's Melaka Cheng' city=Malacca; ZIv#6994 name='U-bowl (Cobay) AEON Seremban 2' with maimai DX CiRCLE 2 cabinets at AEON Seremban 2.",
+      "note": "Current ZIv link is the Melaka Cheng outlet, not Seremban. Seremban FunScape/Cobay/U-bowl is ZIv#6994. Maintainers may also keep Melaka Cheng as its own venue if missing from map.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9637,
+      "name": "FUN SCAPE@LOW YAT",
+      "field": "location",
+      "current": {
+        "lat": 3.8182407,
+        "lng": 103.3262695,
+        "addr": "7, Jalan Bintang, Off Jalan Bukit Bintang,55100 Kuala Lumpur"
+      },
+      "proposed": {
+        "lat": 3.144375355408,
+        "lng": 101.71009813266,
+        "addr": "LG-030 - LG-034, LG Floor, Plaza Low Yat, 7, Jalan Bintang, Off Jalan Bukit Bintang, 55100 Kuala Lumpur"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#9545 FUNSCAPE Cobay Plaza Low Yat coords 3.144375355408,101.71009813266 lastUpdateTime=2026-07-27. Current pin 3.818,103.326 is near Kuantan/Pahang, not Bukit Bintang KL.",
+      "note": "Near-duplicate of id=9651 (FUNSCAPE Cobay Plaza Low Yat) which already has correct coords and fuller game list. Consider merging 9637 into 9651 rather than keeping both. ALL.Net sid=19800 confirms maimai DX at Plaza Low Yat address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9637,
+      "name": "FUN SCAPE@LOW YAT",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19800&lang=en",
+      "evidence_quote": "FUN SCAPE@LOW YAT ALL.Net games list: maimai DX International Version only (no CHUNITHM on this sid). CHUNITHM is not on ALL.Net Malaysia chunithm list under this name.",
+      "note": "Chunithm does exist at Plaza Low Yat per ZIv#9545 (id=9651). If 9637 is kept as the ALL.Net stub, tag only maimai_dx; if merged into 9651, keep chunithm there from ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9634,
+      "name": "FUN SCAPE PUBLIKA",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "Lot 72, UG, Publika Shopping Gallery, Solaris Dutamas, 50480"
+      },
+      "proposed": {
+        "lat": 3.1708055474582757,
+        "lng": 101.66554151310311,
+        "addr": "UG72, Publika Shopping Gallery, Solaris Dutamas, 50480 Kuala Lumpur"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#11424 FUNSCAPE Cobay @ Publika Shopping Gallery coords 3.1708055474582757,101.66554151310311 lastUpdateTime=2026-07-13; maimai DX CiRCLE 1 Cabinet 2P. ALL.Net sid=18319 FUN SCAPE PUBLIKA address Lot 72 UG Publika, 'No GPS'.",
+      "note": "Duplicate of id=9647 which already has coords. Prefer merge into 9647.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9640,
+      "name": "FUN SCAPE@SUNWAY PUTRA",
+      "field": "location",
+      "current": {
+        "lat": 3.139003,
+        "lng": 101.686855
+      },
+      "proposed": {
+        "lat": 3.1661995413241,
+        "lng": 101.69182725768
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#5030 FUNSCAPE Cobay @ Sunway Putra Mall coords 3.1661995413241,101.69182725768 lastUpdateTime=2026-02-20. Current pin 3.139,101.686 is ~3km south of Sunway Putra Mall.",
+      "note": "Near-duplicate of id=9648 which has correct pin and fuller machine list. Prefer merge into 9648.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9625,
+      "name": "DISTRICT 21",
+      "field": "location",
+      "current": {
+        "lat": 2.970663,
+        "lng": 101.7136681
+      },
+      "proposed": {
+        "lat": 2.9696639058273,
+        "lng": 101.71470880508
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#8748 District21, IOI City Mall coords 2.9696639058273,101.71470880508. Shard id=9625 and id=9704 MOLLY FANTASY IOI MALL PUTRAJAYA currently share identical coords 2.970663,101.7136681 (ALL.Net geocode collision).",
+      "note": "Duplicate of id=9626 (District21, IOI City Mall). Merge 9625 into 9626; 9704 Molly Fantasy is a different operator in the same mall and should not share District21's pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9624,
+      "name": "CPCM BANDAR PUCHONG",
+      "field": "other",
+      "current": "separate venue from id=9622 Cow Play Cow Moo IOI Mall Puchong",
+      "proposed": "likely same venue as id=9622 (Cow Play Cow Moo / CPCM IOI Mall Puchong ET3)",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1004",
+      "evidence_quote": "ALL.Net CPCM BANDAR PUCHONG addr='ET3-2 3rdFlr IOIMall Puchong, Puchong Jaya 47170' lat=3.0463256,lng=101.6183585. ZIv#3630 Cow Play Cow Moo IOI Mall Puchong ET 3 3rd Floor IOI Mall Puchong coords 3.043857,101.617906. Distinct from ALL.Net PALO BANDAR PUCHONG / ZIv#9359 PALO IOI Mall Puchong (north wing, 2F).",
+      "note": "CPCM = Cow Play Cow Moo branding. 9624 is ALL.Net-only stub; 9622 is ZIv detail for same south-court ET3 site. Merge rather than keep both. Do NOT merge with PALO Bandar Puchong.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9630,
+      "name": "FANTAZIA Vivacity Megamall",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "closed or relocated (community); ALL.Net still lists online cabs",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#6871 FANTAZIA Vivacity Megamall information='Closed, MR DIY will be opening in the current lot location' lastUpdateTime=2026-01-25 16:42:56. Separate open venue ZIv#8724 Mollyfantasy Vivacity Megamall Lot L3-005A has CHUNITHM X-VERSE and maimai DX CiRCLE lastUpdateTime=2026-03-05.",
+      "note": "Conflict: ALL.Net sid=19041 still lists FANTAZIA Vivacity with maimai DX + CHUNITHM as of 2026-08-01 fetch. Official network status can lag real closures. Prefer marking Fantazia closed and ensuring Mollyfantasy Vivacity is present as the live rhythm venue at Vivacity. Do not trust ALL.Net alone here without a site visit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9632,
+      "name": "Fun Factory",
+      "field": "games",
+      "current": [
+        "chunithm"
+      ],
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1004",
+      "evidence_quote": "ALL.Net CHUNITHM Malaysia list (41 locations, 2026-08-01) has no store named Fun Factory. FUN SCAPE@MINES and other Mines-area entries remain; Fun Factory is absent from both gm=104 and gm=98 Malaysia lists.",
+      "note": "src=['allnet'] only with chunithm. Venue may still exist as a non-ALL.Net Semico/Fun Factory arcade at The Mines (ZIv notes reference Fun Factory minexport), but the chunithm claim is not supported by current official locator. Remove chunithm or remove venue if no other games remain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9610,
+      "name": "Berjaya Time Square (Cosmo's World, Galaxy Station)",
+      "field": "status",
+      "current": "open with ddr",
+      "proposed": "unverified / almost certainly dead listing",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#378 lastUpdateTime=2010-05-01 00:43:49 machines=['Dancing Stage featuring Disney's RAVE'] only. No update in 16 years.",
+      "note": "Disney's RAVE is not a modern network DDR cab. Theme-park ticketed zone. Do not treat as a living DDR destination without a 2024+ visit. Prefer remove ddr claim or hide until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9664,
+      "name": "Happy Land - Dataran Pahlawan",
+      "field": "status",
+      "current": "open with iidx",
+      "proposed": "stale offline IIDX 14 GOLD; existence of cab unverified since 2023",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#2185 lastUpdateTime=2023-07-20 08:36:00 machine beatmania IIDX 14 GOLD condition=0.",
+      "note": "IIDX 14 GOLD is offline-era hardware. condition=0 on ZIv. No official e-amusement locator for Malaysia. Flag for field check; do not advertise as a playable IIDX destination.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9658,
+      "name": "GAMEON Arcade Arena, Pavillion Bukit Jalil",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 4,
+        "maimai_dx": 4,
+        "ddr": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#11506 lastUpdateTime=2026-07-31 23:30:07: CHUNITHM X-VERSE-X '4 cab, can play cab-to-cab'; maimai DX CiRCLE PLUS '4 cabs (16 slot)'; two DanceDanceRevolution WORLD (20th anniversary model) entries. ALL.Net sid=18313 PAVILION BUKIT JALIL (GAME ON) lists maimai DX + CHUNITHM + Initial D THE ARCADE.",
+      "note": "Opened ~18 July 2026 per ZIv info. Pavilion spelling in ALL.Net/ZIv varies (Pavilion/Pavillion).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9650,
+      "name": "FUNSCAPE Cobay PINNACLE Sri Petaling",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 4,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#11638 lastUpdateTime=2026-07-30 02:57:12: maimai DX CiRCLE PLUS '4 cabinets 8P, continue play enabled, Temporary moved from 1U due to renovation'; Pump It Up Phoenix (2024) '1 cabinet 2P, TX cab'; notes also list taiko Nijiiro.",
+      "note": "Not yet on ALL.Net Malaysia maimai list (temporary/new). ZIv info says opening July 2026; machines temporarily from 1U renovation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9651,
+      "name": "FUNSCAPE Cobay Plaza Low Yat",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "popn": 1,
+        "pump_it_up": 1,
+        "taiko": 1,
+        "gitadora": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#9545 lastUpdateTime=2026-07-27: CHUNITHM X-VERSE-X 2 cabinets; maimai DX CiRCLE 2 cabinets 4P; pop'n music High Cheers 1 cabinet; Pump It Up Phoenix 1 TX; taiko Nijiiro 1; DrumManiaV7 1.",
+      "note": "Richer and more current than ALL.Net-only stub 9637.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9641,
+      "name": "FUN SCAPE@SUNWAY PYRAMID",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 4,
+        "maimai_dx": 4,
+        "popn": 1,
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#4237 lastUpdateTime=2026-05-29: CHUNITHM X-VERSE-X 4 cabinets; maimai DX CiRCLE 4 cabinets 8P; pop'n music High Cheers 1; Pump It Up Phoenix (2024) 1 TX.",
+      "note": "ALL.Net confirms both maimai and chunithm still online at FUN SCAPE@SUNWAY PYRAMID.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9648,
+      "name": "FUNSCAPE Cobay @ Sunway Putra Mall",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 4,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#5030: CHUNITHM X-VERSE 2 cabinets; maimai DX CiRCLE 4 cabinets 8P; also maimai FiNALE 2 cabinets 4P (offline-era); Pump It Up Phoenix 1; taiko Nijiiro 1.",
+      "note": "FiNALE cabs are offline private builds, not ALL.Net maimai_dx. Count maimai_dx as the 4 DX cabs only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9653,
+      "name": "FUNSCAPE Cobay, Paradigm Mall JB",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 4,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#8667 lastUpdateTime=2026-06-12: maimai DX CiRCLE '4 cabinets 8P (2 cabs from closed FunScape Toppen outlet)'; Pump It Up Phoenix 1 CX. Not on current ALL.Net maimai MY list under this name.",
+      "note": "Absent from ALL.Net maimai Malaysia list despite ZIv claiming online DX. Confidence on existence is community-level (likely), not official-certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9596,
+      "name": "1st Avenue (K.B. Fun)",
+      "field": "other",
+      "current": "notes: maimai FiNALE; games=['other']",
+      "proposed": "keep games without maimai_dx; FiNALE is offline private cab (not network DX)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#6794 lastUpdateTime=2026-07-04: maimai FiNALE comment describes standard unmodified finale cab, songs only up to MiLK PLUS, 2 cabinets with hardware issues. Not present on ALL.Net maimai Malaysia list.",
+      "note": "Correct that it is not tagged maimai_dx. Notes already say FiNALE. No network maimai claim to remove. Optional: add note that FiNALE network ended 2020 and this is private offline.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9662,
+      "name": "GENTING HIGHLAND",
+      "field": "location",
+      "current": {
+        "lat": 3.3970414,
+        "lng": 101.7865654,
+        "addr": "Genting Highland, 69000 Pahang Darul Markmur, Malaysia"
+      },
+      "proposed": {
+        "lat": 3.423771815029,
+        "lng": 101.7928925409,
+        "name_hint": "Vision City Video Games Park, Genting Grand Complex",
+        "addr": "Lower Lobby, G Floor, Genting Grand Complex, Genting Highlands, Pahang"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#1847 Vision City Video Games Park, Genting Grand Complex coords 3.423771815029,101.7928925409 lastUpdateTime=2026-03-09 machines include CHUNITHM X-VERSE and maimai DX PRiSM PLUS 4 Cabinets 8P. ALL.Net sid=18999 GENTING HIGHLAND lists CHUNITHM + Initial D THE ARCADE only (no maimai on that sid shop page).",
+      "note": "Vague Genting pin. Vision City is the known ALL.Net-era rhythm venue. ALL.Net does not list maimai for GENTING HIGHLAND sid; ZIv claims maimai there - treat maimai as community-only until ALL.Net lists it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO Central i-City",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO Central i-City",
+        "addr": "L4-18, Persiaran Multimedia, Seksyen 7, 40000 Shah Alam, Selangor",
+        "lat": 3.062407710962,
+        "lng": 101.48174081352,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19040&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=19040). ZIv#8397 PALO Central I-City lastUpdateTime=2026-07-14: CHUNITHM X-VERSE-X 2 cabinets; maimai DX CiRCLE 2 cabinets 4P",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO Imago",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO Imago",
+        "addr": "Lot 2-49 & 2-50, Off Coastal Highway, 88100 Kota Kinabalu, Sabah",
+        "lat": 5.9706169381874,
+        "lng": 116.06624188727,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19039&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=19039). ZIv#4668 PALO Imago lastUpdateTime=2026-02-16: CHUNITHM X-VERSE 2 cabinets; maimai DX CiRCLE 2 cabinets 4P",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO Sunway Velocity Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO Sunway Velocity Mall",
+        "addr": "Lot 4-32 & 33, Lingkaran SV, Sunway Velocity, 55100 Kuala Lumpur",
+        "lat": 3.1275402374125,
+        "lng": 101.72486096621,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19037&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=19037). ZIv#4453 PALO Sunway Velocity Mall lastUpdateTime=2026-04-20: CHUNITHM X-VERSE-X 2; maimai DX CiRCLE 2 cabinets 4P. Distinct from FUN SCAPE@VELOCITY MALL (id=9646).",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO AEON Mall Tebrau City",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO AEON Mall Tebrau City",
+        "addr": "S106, No.1, Jalan Desa Tebrau, Taman Desa Tebrau, 81100 Johor Bahru",
+        "lat": 1.5490712658697,
+        "lng": 103.79586696625,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=20405&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=20405). ZIv#8657 PALO AEON MALL Tebrau lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 2; maimai DX CiRCLE 2. Distinct from Get!Stage AEON Tebrau (id=9663, Animal Kaiser only) and Mollyfantasy AEON Tebrau ZIv#8675.",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO MidValley Southkey",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO MidValley Southkey",
+        "addr": "Lot S-012, Jalan Bakar Batu, Southkey, 81100 Johor Bahru, Johor",
+        "lat": 1.5002647922703,
+        "lng": 103.77848685011,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19038&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=19038). ZIv#8420 PALO MidValley Southkey lastUpdateTime=2026-07-27: CHUNITHM X-VERSE-X 2; maimai DX CiRCLE 2 cabinets 4P",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO Quayside Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO Quayside Mall",
+        "addr": "1F12, Lv1, Quayside Mall, Gamuda Kemuning, 25.7 Persiaran Freesia",
+        "lat": 2.9561743582718,
+        "lng": 101.55311107635,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18683&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18683). ZIv#9335 PALO Quayside Mall lastUpdateTime=2026-07-02: CHUNITHM X-VERSE-X 2; maimai DX CiRCLE 2. Distinct from Indah Family Centre Quayside (id=9670).",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PALO Taman Maluri",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PALO Taman Maluri",
+        "addr": "Lot T-03, Jalan Jejaka, Maluri, 55100 Cheras",
+        "lat": 3.1261014153487,
+        "lng": 101.72770770566,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 1
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18568&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18568). ZIv#7339 PALO AEON Taman Maluri lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 1; maimai DX CiRCLE 1 cabinet 2P",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TINY MOLLY Kluang Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TINY MOLLY Kluang Mall",
+        "addr": "Level 2, Kluang Mall, Jalan Rambutan, Taman Suria, 86000 Kluang",
+        "lat": 2.0400485951843,
+        "lng": 103.32047224045,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18573&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18573). ZIv#9038 Tiny Mollyfantasy Sunway Kluang Mall lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 2; maimai DX CiRCLE 2 cabinets 4P. ALL.Net name TINY MOLLY KLUANG MALL.",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TINY MOLLY Amanjaya Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TINY MOLLY Amanjaya Mall",
+        "addr": "2F-01 / 2F-08, Amanjaya Mall, 1 Jalan Badlishah, Bandar Amanjaya, 08000 Sungai Petani, Kedah",
+        "lat": 5.6739929049632,
+        "lng": 100.50966203213,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 1
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18572&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18572). ZIv#9639 Tiny Mollyfantasy Amanjaya Mall lastUpdateTime=2026-04-26: CHUNITHM X-VERSE-X 1; maimai DX CiRCLE 1 cabinet 2P | Online.",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "MOLLY FANTASY SEREMBAN2",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "MOLLY FANTASY SEREMBAN2",
+        "addr": "Lot F48 area, AEON Seremban 2 Shopping Centre, 112 Persiaran S2B1, 70300 Seremban",
+        "lat": 2.7024629290589,
+        "lng": 101.91186189651,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18960&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18960). ZIv#6995 Mollyfantasy AEON Seremban 2 lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 2; maimai DX CiRCLE 2 cabinets 4P. Distinct from FUN SCAPE SEREMBAN / U-bowl at same mall.",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "MOLLY FANTASY SETIA CITY MALL",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "MOLLY FANTASY SETIA CITY MALL",
+        "addr": "Unit L2-02, Level 2, Setia City Mall, Bandar Setia Alam, Seksyen U13, 40170 Shah Alam",
+        "lat": 3.1092318067975,
+        "lng": 101.46123206261,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18957&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18957). ZIv#8686 Mollyfantasy Setia City Mall lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 2; maimai DX CiRCLE 2 cabinets 4P",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "MOLLY FANTASY SHAH ALAM",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "MOLLY FANTASY SHAH ALAM",
+        "addr": "Lot S01 & S02, 2nd Floor, AEON Mall Shah Alam, Persiaran Akuatik / Seksyen 13, 40100 Shah Alam, Selangor",
+        "lat": 3.0763288633128,
+        "lng": 101.54745192385,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18956&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18956). ZIv#8676 Mollyfantasy AEON MALL Shah Alam lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 2; maimai DX CiRCLE 2 cabinets 4P; also Pump It Up NX ABSOLUTE",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "MOLLYFANTASY MAYANG MALL",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "MOLLYFANTASY MAYANG MALL",
+        "addr": "Lot L3-09, L3-10 Level 3, Mayang Mall, Persiaran Mayang, 20000 Kuala Terengganu",
+        "lat": 5.3372390444058,
+        "lng": 103.1444093585,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18574&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18574). ZIv#9524 Mollyfantasy Mayang Mall lastUpdateTime=2026-04-29: CHUNITHM X-VERSE-X 2; maimai DX CiRCLE 2; taiko Nijiiro 2 cabinet 4P. ALL.Net Google Maps button wrongly places this at 26.25,92.04 (Assam, India) - ignore ALL.Net coords, use ZIv.",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "MOLLYFANTASY LALAPORT",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "MOLLYFANTASY LALAPORT",
+        "addr": "Garden Dining, 4th Floor, Lalaport BBCC, 2 Jln Hang Tuah, Bukit Bintang, 55100 Kuala Lumpur",
+        "lat": 3.1409954982397,
+        "lng": 101.70821785927,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 4,
+          "chunithm": 4
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18621&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18621). ZIv#7542 Mollyfantasy Lalaport BBCC lastUpdateTime=2026-04-20: CHUNITHM X-VERSE-X 4 cabinets; maimai DX CiRCLE 4 cabinets 8P. Distinct from Indah Family Game Center @ Lalaport BBCC (id=9672).",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "NEXTGEN Theme Park 1Utama",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "NEXTGEN Theme Park 1Utama",
+        "addr": "S603-S610, Level 2, 1 Utama E, 1 Utama Shopping Centre, Bandar Utama, 47800 Petaling Jaya",
+        "lat": 3.1488077188488,
+        "lng": 101.61734199266,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "ddr"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "ddr": 1
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=19002&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=19002). ZIv#6942 NextGen Theme Park 1Utama lastUpdateTime=2026-04-20: CHUNITHM X-VERSE-X 2; maimai DX CiRCLE 2; DanceDanceRevolution WORLD 20th anniversary. ALL.Net NEXTGEN lists maimai DX + CHUNITHM + Initial D THE ARCADE. Distinct from Mollyfantasy 1Utama ZIv#9546 and COBAY 1U CROSS FIRE (id=9618).",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "THE SPRING BINTULU (Molly Fantasy)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "THE SPRING BINTULU (Molly Fantasy)",
+        "addr": "Lot F53, 1st Floor, The Spring Bintulu, 97000 Bintulu, Sarawak",
+        "lat": 3.1812424020696604,
+        "lng": 113.03495585918428,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18961&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18961). ZIv#8787 Mollyfantasy The Spring Bintulu lastUpdateTime=2026-02-20: CHUNITHM X-VERSE 2; maimai DX PRiSM PLUS 2 cabinets 4P",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Fun Car Street, Pearl Point Shopping Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Fun Car Street, Pearl Point Shopping Mall",
+        "addr": "Level 2, Pearl Point Shopping Mall, 1 Jalan Klang Lama, PJS6, 58000 Kuala Lumpur",
+        "lat": 3.0846183049823,
+        "lng": 101.67349406083,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1004&sid=18630&lang=en",
+      "evidence_quote": "ALL.Net maimai MY lists this store (sid=18630). ZIv#9092 Fun Car Street, Pearl Point Shopping Mall lastUpdateTime=2026-04-29: maimai DX CiRCLE 2 cabinets 4P. Distinct from Fun Car Street @ Main Place Mall (id=9631).",
+      "note": "Official ALL.Net Malaysia locator (gm=98 and usually gm=104) plus recent ZIv machine comments. Coords from ZIv when ALL.Net map button is missing or absurd.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Fun Scape @ Lotus's Melaka Cheng",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Fun Scape @ Lotus's Melaka Cheng",
+        "addr": "1 Jalan Inang 3, Melaka (Lotus's Melaka Cheng)",
+        "lat": 2.2811348978602,
+        "lng": 102.2161115706,
+        "country": "Malaysia",
+        "games": [
+          "other"
+        ],
+        "src": [
+          "ziv"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#6880 Fun Scape @ Lotus's Melaka Cheng lastUpdateTime=2025-07-31 coords 2.2811348978602,102.2161115706. Currently mis-linked as FUN SCAPE SEREMBAN (id=9635).",
+      "note": "If 9635 is corrected to Seremban, Melaka Cheng needs its own row. Rhythm game list on ZIv for this id was empty in the API dump at check time; re-check machines before advertising specific titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Vision City Video Games Park, Genting Grand Complex",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Vision City Video Games Park, Genting Grand Complex",
+        "addr": "Lower Lobby, G Floor, Genting Grand Complex, Genting Highlands, Pahang",
+        "lat": 3.423771815029,
+        "lng": 101.7928925409,
+        "country": "Malaysia",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "chunithm": 1,
+          "maimai_dx": 4
+        },
+        "src": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#1847 Vision City Video Games Park lastUpdateTime=2026-03-09: CHUNITHM X-VERSE; maimai DX PRiSM PLUS 4 Cabinets 8P. ALL.Net GENTING HIGHLAND sid=18999 lists CHUNITHM (not maimai).",
+      "note": "Better replacement/refinement of vague id=9662 GENTING HIGHLAND. maimai_dx is ZIv-only for this site; ALL.Net shop page shows CHUNITHM + Initial D only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Mollyfantasy Vivacity Megamall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Mollyfantasy Vivacity Megamall",
+        "addr": "Lot L3-005A, Level 3, Vivacity Megamall, Kuching, Sarawak",
+        "lat": 1.5265970876817,
+        "lng": 110.37019701941,
+        "country": "Malaysia",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "ziv"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+      "evidence_quote": "ZIv#8724 Mollyfantasy Vivacity Megamall lastUpdateTime=2026-03-05: CHUNITHM X-VERSE 2 cabinets; maimai DX CiRCLE 2 cabinets 4P. Separate from closed Fantazia lot L3-031 (ZIv#6871).",
+      "note": "Community source only for this Molly branch name (ALL.Net still has FANTAZIA name at Vivacity). Add when Fantazia is marked closed.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

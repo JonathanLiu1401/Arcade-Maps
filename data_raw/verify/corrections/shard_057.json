@@ -1,0 +1,1328 @@
+{
+  "shard": 57,
+  "checked": 65,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (Inertia JSON, 40/41 linked shops fetched 2026-08-01)",
+    "https://map.bemanicn.com/games (title_id map)",
+    "https://map.bemanicn.com/region/city/420100000000 (Wuhan shop index)",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live maimai, Hubei filter)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live chunithm, Hubei filter)",
+    "Local data/arcades.json Hubei cross-check for missing-venue false positives",
+    "Local data_raw/china_wahlap_maimai_dx.json (2026-07-27 dump, secondary)"
+  ],
+  "corrections": [
+    {
+      "id": 6141,
+      "name": "精灵岛潮玩中心电玩城",
+      "field": "status",
+      "current": {
+        "open": true,
+        "bemanicn": "https://map.bemanicn.com/s/5649"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5649",
+      "evidence_quote": "HTTP 404; Inertia JSON: {\"code\": -1, \"message\": \"Not found.\"}",
+      "note": "BemaniCN shop page 5649 is gone (404 Not found as of 2026-08-01). Same pin and mall as WAHLAP-live 精灵岛武汉保利店 (id 6137), which is still on the official WAHLAP maimai location API (placeId=4134, 湖北省武汉市洪山区关山大道330号保利广场二楼精灵岛). Prefer keeping 6137 as the live official row and treating 6141 as a stale BemaniCN duplicate to merge/remove. Do not claim permanent physical closure of the mall shop; only the BCN record is dead.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6777,
+      "name": "都市玩家荆门掇刀万达店",
+      "field": "location",
+      "current": {
+        "addr": "湖北省荆门市掇刀区万达广场4楼都市玩家",
+        "lat": 31.004874,
+        "lng": 112.201101
+      },
+      "proposed": {
+        "addr": "白云大道5号国卓广场4F（都市玩家；社区简称新万）",
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/855",
+      "evidence_quote": "name=\"都市玩家（掇刀万达店）\"; address=\"白云大道5号国卓广场4F\"; comment starts with \"简称 新万\"; updated_at=2026-07-19T09:04:31.000000Z",
+      "note": "Official WAHLAP maimai list still names the store 都市玩家荆门掇刀万达店 with address 湖北省荆门市掇刀区万达广场4楼都市玩家 (placeId=1441). BemaniCN (more recently updated community page) gives 国卓广场4F and nicknames it 新万. App pin may still be near Wanda. Maintainer should verify whether the shop relocated to Guozhuo Plaza or if Wanda and Guozhuo are the same complex under different names; do not blindly overwrite lat/lng. proposed lat/lng null means re-geocode from the confirmed street address.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6294,
+      "name": "荟乐达潮乐场武汉汉阳万达广场店",
+      "field": "location",
+      "current": {
+        "addr": "武汉市汉阳区龙阳街道万达广场"
+      },
+      "proposed": {
+        "addr": "四新大道汉阳万达荟乐达潮玩馆（汉阳万达）"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6727",
+      "evidence_quote": "address=\"四新大道汉阳万达荟乐达潮玩馆\"; updated_at=2026-07-19T03:39:21.000000Z",
+      "note": "App address is vague (龙阳街道万达). BemaniCN and comment place it at 汉阳万达 / 四新大道 side. Approx pin OK for China.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6294,
+      "name": "荟乐达潮乐场武汉汉阳万达广场店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6727",
+      "evidence_quote": "arcades: title_id=1 quantity=1 version=2025 (maimai DX); title_id=17 quantity=4 version=3.0 comment='原童梦园机台...26.7.17更新，这4台似乎全坏完了' (WACCA)",
+      "note": "title_id 17 is WACCA on BemaniCN /games list. Four WACCA cabs listed but community note on 2026-07-17 says they may all be out of order. Keep wacca in games; do not invent a working count.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6294,
+      "name": "荟乐达潮乐场武汉汉阳万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6727",
+      "evidence_quote": "start_time=10 end_time=21",
+      "note": "BemaniCN community hours integers; not an official chain page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6294,
+      "name": "荟乐达潮乐场武汉汉阳万达广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.25,
+        "maimai_dx": "5 coins/play",
+        "wacca": "5 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6727",
+      "evidence_quote": "price=\"0.25\"; maimai coin=5; WACCA (title_id 17) coin=5",
+      "note": "price field is CNY per coin; play cost = coins * unit. Community-reported.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6332,
+      "name": "菲游乐湖北武汉万象城店",
+      "field": "location",
+      "current": {
+        "addr": "湖北省武汉市江岸区汉口万象城3楼菲游乐"
+      },
+      "proposed": {
+        "addr": "建设大道668号华润万象城西区3楼K320号商铺（汉口万象城/菲游乐）"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5467",
+      "evidence_quote": "name=\"菲游乐（武汉万象城店）\"; address=\"建设大道668号华润万象城西区3楼K320号商铺\"; updated_at=2026-07-09T10:35:24.000000Z",
+      "note": "Same venue as WAHLAP 菲游乐武汉江岸汉口万象城店 (id 6328, same lat/lng). Live WAHLAP still lists BOTH placeId 4876 and 4883 for the same 汉口万象城3楼 address (duplicate official rows). Merge 6328 into 6332. BCN unit number K320 is useful.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6332,
+      "name": "菲游乐湖北武汉万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5467",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN community hours.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6332,
+      "name": "菲游乐湖北武汉万象城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.5,
+        "maimai_dx": "6 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5467",
+      "evidence_quote": "price=\"0.5\"; arcades title_id=1 quantity=3 coin=6 version=2026",
+      "note": "game_counts maimai_dx=3 already matches BCN. other is 宝可梦明耀之星 title_id=32, not a core rhythm title.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6213,
+      "name": "羊窝 2.0",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h (self-service)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4819",
+      "evidence_quote": "start_time=24 end_time=24; comment \"24 小时自助，请前往 otogamer.cn 注册店铺用户帐号。\"",
+      "note": "Private self-service shop. Not on WAHLAP official maimai/chunithm location lists (hand/ADX units).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6213,
+      "name": "羊窝 2.0",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "billing": "hourly",
+        "day_cny_per_hour": 10,
+        "night_cny_per_hour": 12,
+        "cap_12h_cny": 60,
+        "note": "day 10:00-22:00 ¥10/h; night 22:00-10:00 ¥12/h; 12h cap ¥60; monthly card 20% off + 1 free hour/day"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4819",
+      "evidence_quote": "普通用户价格：10-22 时（日间）：¥10/小时；22-10 时（夜间）：¥12/小时；12 小时内 ¥60 封顶；月卡八折优惠，每日免费 1 小时",
+      "note": "Hourly private-room pricing, not per-credit. price field on BCN is 10 (matches day rate).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6213,
+      "name": "羊窝 2.0",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "chunithm": 1,
+          "maimai_dx": 3
+        }
+      },
+      "proposed": {
+        "cab_note": "maimai: 2x 国行 + 1x ADX自制; chunithm: 1x 抬手乐 RinNET (not official WAHLAP network)",
+        "booking": "otogamer.cn registration required"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4819",
+      "evidence_quote": "arcades: title_id=1 qty=2 version=国行; title_id=1 qty=1 version=adx 自制; title_id=3 qty=1 version=抬手乐 comment=RinNET，可刷卡. Counts match app (maimai 3, chunithm 1).",
+      "note": "Counts already correct. Flag as private/hand-cabinet venue so users do not expect Aime/WAHLAP network.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6485,
+      "name": "诺窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h (reservation; day 07:00-23:00 / night 23:00-08:00 pricing windows)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5309",
+      "evidence_quote": "comment: \"营业时间: 24h全天候营业\\n白天时段 7:00-23:00  夜间时段 23:00-次日8:00\"; start_time=1 end_time=26 (site integer encoding of near-24h)",
+      "note": "Private shop; appointment required (QQ 892764879). Prefer prose hours from comment over raw 01:00-02:00+1d integers.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6485,
+      "name": "诺窝",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5309",
+      "evidence_quote": "arcades array only lists maimai x2, chunithm x1, ongeki x1; comment machine list also states Sound Voltex 手台 * 1, Nostalgia 手台 * 1, IIDX * 1",
+      "note": "Extra titles appear only in shop.comment prose, not in structured arcades[]. Not on WAHLAP official lists (hand cabs). confidence likely, not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6485,
+      "name": "诺窝",
+      "field": "other",
+      "current": null,
+      "proposed": {
+        "booking": "QQ群 892764879 预约; 到店需注册用户",
+        "type": "private_hand_cabs"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5309",
+      "evidence_quote": "到店需要注册用户提前预约，请加群获取详细到店地址 QQ群：892764879",
+      "note": "Without reservation the pin alone is not enough to enter.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7188,
+      "name": "风云再起武汉江汉路站店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00 (maimai often powered down ~22:00 depending on crowd)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/165",
+      "evidence_quote": "start_time=10 end_time=23; comment: DX现在晚上10点多就会关机，尽量不要来的太晚。 updated_at=2026-07-22T07:52:03.000000Z",
+      "note": "Hours from BemaniCN; evening maimai early shutdown is community note.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7188,
+      "name": "风云再起武汉江汉路站店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1,
+        "maimai_dx": "6 coins/play",
+        "taiko": "10 coins/play",
+        "token_note": "store uses unique silver tokens; other 风云 regions not interchangeable"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/165",
+      "evidence_quote": "price=\"1\"; maimai coin=6; taiko coin=10; comment: 使用独有的银色代币，全国其他地区的风云代币无法通用。",
+      "note": "game_counts maimai=2 taiko=1 already match BCN. other is 头文字D (title_id 26), not rhythm.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6497,
+      "name": "贝贝侠武汉菱角湖万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6664",
+      "evidence_quote": "start_time=10 end_time=22; updated_at=2026-07-29T13:02:41.000000Z",
+      "note": "BemaniCN community hours. Counts maimai=2 jubeat=2 match; other=头文字D x2.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6497,
+      "name": "贝贝侠武汉菱角湖万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.3,
+        "maimai_dx": "3 coins/play",
+        "jubeat": "5 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6664",
+      "evidence_quote": "price=\"0.3\"; maimai coin=3; jubeat (title_id 34 音乐魔方) coin=5",
+      "note": "Comment: former play1 site; maimai and jubeat outside storefront, card or QR.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6532,
+      "name": "赛尔之城潮玩街区SEER CITY-武汉经开万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3488",
+      "evidence_quote": "start_time=9 end_time=22; updated_at=2026-07-18T11:13:49.000000Z",
+      "note": "Same pin as WAHLAP-only 6531 赛尔之城沌口经开万达店; merge candidates. Counts maimai=2 taiko=1 match BCN.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6532,
+      "name": "赛尔之城潮玩街区SEER CITY-武汉经开万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.34,
+        "maimai_dx": "5 coins/play",
+        "taiko": "8 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3488",
+      "evidence_quote": "price=\"0.34\"; maimai coin=5; taiko coin=8; comment also notes 币价0.288-0.667（多买多惠）",
+      "note": "Unit price is approximate; packages change the effective coin cost.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7326,
+      "name": "魔逗潮玩社恩施和润城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1711",
+      "evidence_quote": "start_time=10 end_time=21; updated_at=2025-12-21T17:45:26.000000Z",
+      "note": "Also on live WAHLAP chunithm list: 魔逗潮玩社恩施和润城店 和润城A馆四楼. Counts maimai=3 chunithm=2 match BCN.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7326,
+      "name": "魔逗潮玩社恩施和润城店",
+      "field": "location",
+      "current": {
+        "addr": "湖北省恩施土家族苗族自治州恩施市和润城A馆四楼"
+      },
+      "proposed": {
+        "addr": "施州大道168号和润城A区四楼L4-003"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1711",
+      "evidence_quote": "address=\"施州大道168号和润城A区四楼L4-003\"; transport mentions 麦当劳进商场右转",
+      "note": "More precise unit; still 和润城 A馆/A区 四楼.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7326,
+      "name": "魔逗潮玩社恩施和润城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.5,
+        "maimai_dx": "4 coins/play",
+        "chunithm": "5 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1711",
+      "evidence_quote": "price=\"0.5\"; maimai coin=4; chunithm coin=5; comment \"舞萌已调整回4币1pc / 中二5币\"",
+      "note": "other is 头文字D x2.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7327,
+      "name": "魔逗潮玩社荆州万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7234",
+      "evidence_quote": "start_time=10 end_time=22; updated_at=2026-07-11T11:18:45.000000Z",
+      "note": "Live WAHLAP still lists this name/address. maimai count 2 matches.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7327,
+      "name": "魔逗潮玩社荆州万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1,
+        "maimai_dx": "5 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7234",
+      "evidence_quote": "price=\"1\"; maimai coin=5; other title_id=32 宝可梦明耀之星 qty=2",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6189,
+      "name": "维京传奇家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3801",
+      "evidence_quote": "start_time/end_time map to 09:00-21:00; status=1; maimai quantity=1",
+      "note": "Duplicate pair note: WAHLAP twin 6188 当阳. Official WAHLAP still lists the WAHLAP-named twin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6189,
+      "name": "维京传奇家庭娱乐中心",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1.0,
+        "maimai_dx": "4 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3801",
+      "evidence_quote": "price=\"1\"; maimai coin=4",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6190,
+      "name": "维京传奇家庭娱乐中心（云梦店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3171",
+      "evidence_quote": "start_time/end_time map to 09:00-21:00; status=1; maimai quantity=1",
+      "note": "Duplicate pair note: WAHLAP twin 6187 云梦. Official WAHLAP still lists the WAHLAP-named twin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6190,
+      "name": "维京传奇家庭娱乐中心（云梦店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.5,
+        "maimai_dx": "4 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3171",
+      "evidence_quote": "price=\"0.5\"; maimai coin=4",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6192,
+      "name": "维京传奇家庭娱乐中心（洪湖店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4730",
+      "evidence_quote": "start_time/end_time map to 10:00-22:00; status=1; maimai quantity=1",
+      "note": "Duplicate pair note: WAHLAP twin 6195 洪湖. Official WAHLAP still lists the WAHLAP-named twin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6192,
+      "name": "维京传奇家庭娱乐中心（洪湖店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1.0,
+        "maimai_dx": "4 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4730",
+      "evidence_quote": "price=\"1\"; maimai coin=4",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6193,
+      "name": "维京传奇家庭娱乐中心（鄂州店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5388",
+      "evidence_quote": "start_time/end_time map to 09:00-21:00; status=1; maimai quantity=1",
+      "note": "Duplicate pair note: WAHLAP twin 6197 鄂州. Official WAHLAP still lists the WAHLAP-named twin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6193,
+      "name": "维京传奇家庭娱乐中心（鄂州店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1.0,
+        "maimai_dx": "4 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5388",
+      "evidence_quote": "price=\"1\"; maimai coin=4",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6189,
+      "name": "维京传奇家庭娱乐中心",
+      "field": "location",
+      "current": {
+        "addr": "雅斯国际广场(南正街)三楼",
+        "name": "维京传奇家庭娱乐中心"
+      },
+      "proposed": {
+        "name": "维京传奇家庭娱乐中心（宜昌当阳雅斯国际广场店）",
+        "addr": "湖北省宜昌市当阳市玉阳街道南正街16号当阳雅斯国际广场3楼维京传奇"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "live WAHLAP entry arcadeName=\"维京传奇宜昌当阳雅斯国际广场店\" address=\"湖北省宜昌市当阳市玉阳街道南正街16号当阳雅斯国际广场3楼维京传奇\" placeId=3027; identical coords to app id 6188",
+      "note": "BCN short name omits city; merge with 6188. Without city the map is hard to search.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6191,
+      "name": "维京传奇家庭娱乐中心（应城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6154",
+      "evidence_quote": "start_time=9 end_time=21; updated_at=2026-07-30T10:43:51.000000Z; title_id=31 taiko qty=1; title_id=33 舞立方EVO qty=1",
+      "note": "Not on live WAHLAP maimai list (consistent with no maimai). App games [other, taiko] OK: other is 舞立方EVO. Prices: coin unit 1 CNY, taiko 8 coins.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6372,
+      "name": "萌可力潮玩（大中华购物广场）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7106",
+      "evidence_quote": "start_time=9 end_time=21; only arcade title_id=33 舞立方EVO qty=1; comment 店内带有舞立方（4币）和e舞成名（3币）",
+      "note": "Correctly has no maimai_dx. games=['other'] is fine for 舞立方.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6228,
+      "name": "联合动漫城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4299",
+      "evidence_quote": "start_time=9 end_time=21; taiko title_id=15 qty=1 version=12亚 coin=2",
+      "note": "Old-gen taiko (title_id 15), not Nijiiro. Community comment discourages visit quality.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6228,
+      "name": "联合动漫城",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1,
+        "taiko": "2 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4299",
+      "evidence_quote": "price=\"1\"; taiko coin=2; comment 前台买币1元/枚",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6643,
+      "name": "趣玩乐园（义水广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "05:00-17:00",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6288",
+      "evidence_quote": "start_time=5 end_time=17; updated_at=2026-03-29T01:24:11.000000Z",
+      "note": "BemaniCN integers literally decode to 05:00-17:00, which is unusual for an arcade. May be data entry error on BCN. Twin WAHLAP id 6642 same mall. Treat as unverified.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6323,
+      "name": "菲游乐孝感银泰城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6519",
+      "evidence_quote": "start_time=10 end_time=22; maimai qty=1 coin=3; price=0.3; updated 2026-07-19",
+      "note": "Also on live WAHLAP. BCN address adds 丹阳街道天仙北路26号银泰城三楼(原菲菲羊乐园).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6323,
+      "name": "菲游乐孝感银泰城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.3,
+        "maimai_dx": "3 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6519",
+      "evidence_quote": "price=\"0.3\"; coin=3",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6811,
+      "name": "酷乐街区娱乐中心(虎泉时尚中心店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2965",
+      "evidence_quote": "start_time=10 end_time=22; maimai qty=2 coin=4; price=1",
+      "note": "game_counts maimai=2 already correct.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6811,
+      "name": "酷乐街区娱乐中心(虎泉时尚中心店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 1,
+        "maimai_dx": "4 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2965",
+      "evidence_quote": "price=\"1\"; maimai coin=4",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6546,
+      "name": "超吉好玩十堰茅箭永乐风尚店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6603",
+      "evidence_quote": "start_time=10 end_time=22; updated_at=2026-07-30T06:24:43.000000Z; maimai qty=1 coin=6 price=0.2",
+      "note": "Also live on WAHLAP.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6546,
+      "name": "超吉好玩十堰茅箭永乐风尚店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.2,
+        "maimai_dx": "6 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6603",
+      "evidence_quote": "price=\"0.2\"; coin=6",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6498,
+      "name": "贝贝侠湖北黄石港万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3489",
+      "evidence_quote": "start_time=9 end_time=22; maimai=1 taiko=1; address 黄石港万达广场-1层贝贝侠",
+      "note": "App addr says 负一楼 which matches BCN -1层. Same mall as 7364 黄石万达宝贝王 (F2) which is a different shop upstairs. Not a dupe of 7364.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6498,
+      "name": "贝贝侠湖北黄石港万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.26,
+        "maimai_dx": "3 coins/play",
+        "taiko": "10 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3489",
+      "evidence_quote": "price=\"0.26\"; maimai coin=3; taiko coin=10",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6503,
+      "name": "贝贝侠（红安盛地万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6776",
+      "evidence_quote": "start_time=10 end_time=22; maimai qty=1 coin=5 price=0.5",
+      "note": "WAHLAP twin 6501 same mall (红安万达).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6370,
+      "name": "萌可力潮玩娱乐（漳河万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5546",
+      "evidence_quote": "start_time=10 end_time=22; maimai qty=2 coin=5 price=0.3; updated 2026-07-19",
+      "note": "WAHLAP twin 6373 萌可力荆门掇刀万达店 same pin (漳河万达).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6369,
+      "name": "萌可力潮玩娱乐(天成购物广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7219",
+      "evidence_quote": "start_time=10 end_time=21; maimai qty=1 coin=3",
+      "note": "WAHLAP twin 6371 萌可力潮玩襄阳谷城店.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6368,
+      "name": "萌可力潮玩大冶吾悦广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2971",
+      "evidence_quote": "start_time=10 end_time=22; maimai qty=1; other title_id=26 头文字D qty=2",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6772,
+      "name": "都市玩家利川店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4111",
+      "evidence_quote": "start_time=9 end_time=22; updated 2026-07-15; maimai qty=1 coin=5 price=1",
+      "note": "Live WAHLAP.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6770,
+      "name": "都市玩家(咸宁中商店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4282",
+      "evidence_quote": "start_time=9 end_time=23; maimai qty=1 coin=5 price=1",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6872,
+      "name": "酷玩e族家庭娱乐中心(丹江口店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5526",
+      "evidence_quote": "start_time=9 end_time=22; maimai qty=1 coin=5",
+      "note": "WAHLAP twin 6870 same 丹传公司 building.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6878,
+      "name": "酷玩E族老河口武商店",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4875",
+      "evidence_quote": "start_time=8 end_time=24; price=0.18; maimai coin=5; updated 2026-07-11",
+      "note": "end_time 24 means midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6878,
+      "name": "酷玩E族老河口武商店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_cny": 0.18,
+        "maimai_dx": "5 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4875",
+      "evidence_quote": "price=\"0.18\"; coin=5",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6937,
+      "name": "酷豆番电玩公社（荆州）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/727",
+      "evidence_quote": "start_time=10 end_time=23; maimai qty=1 coin=4 price=1; other 头文字D x4; updated 2026-07-12",
+      "note": "WAHLAP twin 6938 酷豆番荆州沙市店 人信汇.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7325,
+      "name": "魔逗潮玩社建始店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2584",
+      "evidence_quote": "start_time=9 end_time=22; maimai qty=1 coin=4 price=1",
+      "note": "Live WAHLAP.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7329,
+      "name": "魔逗潮玩社（利川店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5067",
+      "evidence_quote": "start_time=9 end_time=21; maimai qty=1 coin=5 price=0.6; updated 2026-07-15",
+      "note": "WAHLAP twin 7324 魔豆潮玩社利川都亭置地广场店 (spelling 魔豆 vs 魔逗) same pin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6733,
+      "name": "迪迪冒险乐园鄂州鄂城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2920",
+      "evidence_quote": "start_time=10 end_time=22; name=迪迪冒险乐园; address=南浦国际广场附近; maimai=1 coin=5 price=0.4",
+      "note": "Same mall area as 维京鄂州南浦; different shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6613,
+      "name": "超级玩家（沙隆达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4059",
+      "evidence_quote": "start_time=10 end_time=22; maimai=1 coin=3 price=0.5",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6745,
+      "name": "遊占超级电玩(武汉佰港城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5226",
+      "evidence_quote": "start_time=10 end_time=22; maimai=1 coin=6 price=0.4; updated 2026-06-22",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6466,
+      "name": "襄阳市万达宝贝王",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5310",
+      "evidence_quote": "start_time=10 end_time=22; maimai=1 coin=5 price=0.3; updated 2026-02-21",
+      "note": "Not seen on live WAHLAP maimai under this exact name; BCN still status=1. Presence not re-confirmed by official WAHLAP.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7364,
+      "name": "黄石万达宝贝王",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4315",
+      "evidence_quote": "start_time=10 end_time=22; maimai=1 coin=3 price=0.3; F2层",
+      "note": "Different floor from 贝贝侠 黄石港万达 (B1).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7365,
+      "name": "黄石摩尔城贝贝侠店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2319",
+      "evidence_quote": "start_time=9 end_time=21; maimai=1 coin=3; address 黄石沃尔玛负一楼贝贝侠8007",
+      "note": "Possibly same as WAHLAP 6502 贝贝侠黄石沃尔玛店 (武汉路沃尔玛). Coords differ by ~3 km in app (30.2146 vs 30.2460) so treat as location uncertainty, not auto-merge without ground truth.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6500,
+      "name": "贝贝侠电玩城(公安雅斯店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7294",
+      "evidence_quote": "start_time=10 end_time=22; maimai=1 coin=3 price=0.5; updated 2026-07-19",
+      "note": "Not matched on live WAHLAP by exact name; BCN status=1 only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6137,
+      "name": "精灵岛 保利广场",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6137,
+          6141
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6137,
+          6141
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6137 and 6141 share brand+mall and ~identical geocode (see research notes). keep 6137 (live WAHLAP); 6141 BCN 404",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6188,
+      "name": "维京 当阳雅斯",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6188,
+          6189
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6188,
+          6189
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6188 and 6189 share brand+mall and ~identical geocode (see research notes). same coords; merge to WAHLAP full name",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6187,
+      "name": "维京 云梦雅斯",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6187,
+          6190
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6187,
+          6190
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6187 and 6190 share brand+mall and ~identical geocode (see research notes). near coords; same mall",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6195,
+      "name": "维京 洪湖雅斯",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6195,
+          6192
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6195,
+          6192
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6195 and 6192 share brand+mall and ~identical geocode (see research notes). same coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6197,
+      "name": "维京 鄂州南浦",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6197,
+          6193
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6197,
+          6193
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6197 and 6193 share brand+mall and ~identical geocode (see research notes). near coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6328,
+      "name": "菲游乐 汉口万象城",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6328,
+          6332
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6328,
+          6332
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6328 and 6332 share brand+mall and ~identical geocode (see research notes). same coords; live WAHLAP has two placeIds for same address",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6371,
+      "name": "萌可力 谷城天成",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6371,
+          6369
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6371,
+          6369
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6371 and 6369 share brand+mall and ~identical geocode (see research notes). near coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6373,
+      "name": "萌可力 荆门漳河万达",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6373,
+          6370
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6373,
+          6370
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6373 and 6370 share brand+mall and ~identical geocode (see research notes). same coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6501,
+      "name": "贝贝侠 红安万达",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6501,
+          6503
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6501,
+          6503
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6501 and 6503 share brand+mall and ~identical geocode (see research notes). near coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6531,
+      "name": "赛尔之城 经开/沌口万达",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6531,
+          6532
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6531,
+          6532
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6531 and 6532 share brand+mall and ~identical geocode (see research notes). same coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6642,
+      "name": "趣玩乐园 罗田义水",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6642,
+          6643
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6642,
+          6643
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6642 and 6643 share brand+mall and ~identical geocode (see research notes). near coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6870,
+      "name": "酷玩e族 丹江口丹传",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6870,
+          6872
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6870,
+          6872
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6870 and 6872 share brand+mall and ~identical geocode (see research notes). near coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6938,
+      "name": "酷豆番 荆州人信汇",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          6938,
+          6937
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          6938,
+          6937
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 6938 and 6937 share brand+mall and ~identical geocode (see research notes). near coords",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7324,
+      "name": "魔逗/魔豆 利川置地",
+      "field": "other",
+      "current": {
+        "pair_ids": [
+          7324,
+          7329
+        ]
+      },
+      "proposed": {
+        "action": "merge_candidates",
+        "ids": [
+          7324,
+          7329
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Shard internal: ids 7324 and 7329 share brand+mall and ~identical geocode (see research notes). same coords; spelling 魔豆 vs 魔逗",
+      "note": "Dedup signal for maintainers. Not a claim that either is closed. Prefer official WAHLAP name + richer BemaniCN games/hours when merging.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "汤姆熊武汉硚口恒隆店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "汤姆熊武汉硚口恒隆店",
+        "addr": "硚口区京汉大道668号恒隆广场3楼l302",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_placeId": "5328",
+        "lat": null,
+        "lng": null,
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "live WAHLAP maimai row: arcadeName=\"汤姆熊武汉硚口恒隆店\" address=\"硚口区京汉大道668号恒隆广场3楼l302\" placeId=5328 id=2083030123146117121",
+      "note": "Not present under 汤姆熊+硚口/恒隆/京汉大道668 in full arcades.json China set as of research date. Only other Hubei 汤姆熊 is 销品茂. Geocode from address (GCJ-02 then convert if needed).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6213,
+      "name": "羊窝 2.0",
+      "field": "status",
+      "current": {
+        "open": true
+      },
+      "proposed": {
+        "open": true,
+        "network": "private_not_wahlap"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4819",
+      "evidence_quote": "status=1 updated_at=2026-03-25; not present on WAHLAP maimai/chunithm official location APIs",
+      "note": "Absence from WAHLAP is expected for private hand-cab rooms; not evidence of closure.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6485,
+      "name": "诺窝",
+      "field": "status",
+      "current": {
+        "open": true
+      },
+      "proposed": {
+        "open": true,
+        "network": "private_not_wahlap"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5309",
+      "evidence_quote": "status=1 updated_at=2025-12-23; reservation shop; not on WAHLAP location APIs",
+      "note": "Same as 羊窝: private hand cabs.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

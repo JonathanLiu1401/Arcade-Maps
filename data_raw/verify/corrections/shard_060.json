@@ -1,0 +1,689 @@
+{
+  "shard": 60,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON props.shop for 69 Anhui shops; title map from props.titles.name",
+    "BemaniCN shop s/1377 HTTP 404 body",
+    "Shard internal cross-check of wahlap-only vs bemanicn rows (coords/name/mall)",
+    "Could NOT use: WAHLAP official store search (login/app-walled), ZIv, ALL.Net JP endpoints (not applicable to Anhui China)"
+  ],
+  "corrections": [
+    {
+      "id": 1384,
+      "name": "【暂停歇业中】潮玩派对天鹅湖万达店",
+      "field": "status",
+      "current": "shown as open venue with maimai_dx x2",
+      "proposed": "temporarily closed / suspended (暂停歇业中); do not send players here",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7210",
+      "evidence_quote": "name: 【暂停歇业中】潮玩派对天鹅湖万达店; address: 【地址无效】安徽省合肥市蜀山区笔架山街道万达广场B1...; updated_at 2026-07-24",
+      "note": "BemaniCN still has status=1 but public name and address both flag suspension and invalid address. Updated 2026-07-24. Treat as closed until a reopening edit appears.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1384,
+      "name": "【暂停歇业中】潮玩派对天鹅湖万达店",
+      "field": "location",
+      "current": "app pin at swan lake wanda area with a normal-looking address",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7210",
+      "evidence_quote": "address starts with 【地址无效】",
+      "note": "Address marked invalid on BemaniCN. Pin should not be trusted for navigation. Prefer removing or hiding until a valid address is confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2371,
+      "name": "城市玩家（阜阳颍泉店）",
+      "field": "status",
+      "current": "open with maimai_dx",
+      "proposed": "closed / cabs removed (no longer a playable maimai venue)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1815",
+      "evidence_quote": "2025/1/19更新：该店目前已迁至颍东爱情海，本篇仅作为留档。2025/7/23颍东爱情海已撤机，去向不明",
+      "note": "Community timeline on BemaniCN (shop updated 2026-03-30): original mall closed, moved to 颍东爱情海, then cabs removed 2025-07-23. Arcade list still shows stale maimai qty=1. No independent official confirmation found. Recommend hide or mark closed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2371,
+      "name": "城市玩家（阜阳颍泉店）",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1815",
+      "evidence_quote": "2025/7/23颍东爱情海已撤机，去向不明",
+      "note": "If the venue row is kept for historical reasons, remove live maimai_dx claim. Destination of cabs after 2025-07-23 is unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3335,
+      "name": "宝贝王颍泉万达广场店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4912",
+      "evidence_quote": "本店舞萌已撤机，机器目前被运往颍州万达宝贝王，请各位来出勤的朋友不要走空。",
+      "note": "BemaniCN comment (page updated 2025-11-29) says maimai was removed and moved to 颍州万达宝贝王. The machines[] row still has quantity 1 with the same removal note in the machine comment. App should not list live maimai_dx. Venue may still exist as a kids arcade without rhythm cabs. WAHLAP official listing status not independently re-checked (store search is login-walled).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3335,
+      "name": "宝贝王颍泉万达广场店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4912",
+      "evidence_quote": "2024年11月1日更新,机台目前被拉到颍州万达宝贝王，请近期来颍泉万达出勤的玩家注意不要跑空。",
+      "note": "Remove maimai_dx count. Destination stated as 颍州万达宝贝王 (related wahlap-only id 3255 宝贝王安徽阜阳万达店 lists chunithm+maimai - possible destination, not verified as same cab).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3373,
+      "name": "宣城酷卡贝家庭娱乐中心",
+      "field": "status",
+      "current": "listed with games=['other'] and bemanicn s/1377",
+      "proposed": "BemaniCN page gone (HTTP 404). Existence unverified; may be closed or delisted.",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1377",
+      "evidence_quote": "{\"code\":-1,\"message\":\"Not found.\"}",
+      "note": "Only game was 'other' (no core rhythm titles). No alternate official source checked. Recommend mark unverified/closed pending other evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2853,
+      "name": "天空之城淮南田家庵店",
+      "field": "location",
+      "current": {
+        "addr": "安徽省淮南市田家庵区洞山东路吾悦广场3F天空之城多奇妙",
+        "lat": 32.630108,
+        "lng": 117.004876,
+        "bemanicn": "https://map.bemanicn.com/s/1648"
+      },
+      "proposed": "This row is a duplicate of id 2793 (吾悦) at the same lat/lng. Linked BemaniCN s/1648 is a DIFFERENT shop: 天空之城淮南田家庵八佰伴店 at 学院南路与朝阳中路交叉口西150米.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1648",
+      "evidence_quote": "name: 天空之城淮南田家庵八佰伴店; address: 学院南路与朝阳中路交叉口西150米",
+      "note": "App id 2853 address/coords match 吾悦 (same 32.630108,117.004876 as id 2793) and WAHLAP name, but bemanicn link points to 八佰伴 page s/1648. Compare https://map.bemanicn.com/s/3268 for the real 吾悦 shop (already id 2793). Fix: treat 2853 as duplicate of 2793; keep 八佰伴 as its own venue (see missing_venue correction).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2853,
+      "name": "天空之城淮南田家庵店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1648",
+      "evidence_quote": "arcades: title_id 1 maimai DX qty 1; title_id 26 头文字D qty 4. No CHUNITHM (title_id 3).",
+      "note": "Only applies if 2853 is reassigned to the 八佰伴 shop. CHUNITHM belongs to the 吾悦 shop (s/3268 / id 2793: maimai 2, chunithm 2, taiko 1). If 2853 is deleted as a 吾悦 duplicate, ignore this games correction.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "天空之城淮南田家庵八佰伴店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城淮南田家庵八佰伴店",
+        "addr": "学院南路与朝阳中路交叉口西150米",
+        "country": "China",
+        "pref": "安徽",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/1648",
+        "notes": "region: 安徽省 淮南市; other: 头文字D x4; distinct from 吾悦店 s/3268"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1648",
+      "evidence_quote": "天空之城淮南田家庵八佰伴店; 学院南路与朝阳中路交叉口西150米; maimai DX quantity 1; updated 2026-05-01",
+      "note": "Currently only present as a mislinked source on id 2853. Needs its own pin at the 八佰伴 address (not 吾悦 coords). Exact lat/lng not independently geocoded here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3428,
+      "name": "岚小馆音游窝",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4092",
+      "evidence_quote": "arcades include title_id 17 WACCA quantity 2 (version 国行), plus maimai DX quantity 2; updated 2026-07-11",
+      "note": "Appointment-only self-service rhythm cafe at 之心城环球中心A座1002.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3428,
+      "name": "岚小馆音游窝",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4092",
+      "evidence_quote": "title_id 1 quantity 2; title_id 17 quantity 2",
+      "note": "Both quantities from BemaniCN machines list (shop updated_at 2026-07-11).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3428,
+      "name": "岚小馆音游窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "预约制; 早场 8:00-12:00 / 日间 12:00-22:00 / 包夜 22:00-次日 8:00 (community listing)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4092",
+      "evidence_quote": "日间游玩时间为12~22点，封顶价格43.6元，包夜时间为22~次日8点，封顶价格44.7元，早场时间为8~12点，封顶价格14.9元",
+      "note": "Hours from BemaniCN comment, not a chain official page. Strict WeChat reservation (公众号 岚小馆).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3428,
+      "name": "岚小馆音游窝",
+      "field": "prices",
+      "current": null,
+      "proposed": "time-based session fees (not coin): daytime cap ~43.6 CNY, overnight cap ~44.7 CNY, early bird cap ~14.9 CNY; cabs free once in session",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4092",
+      "evidence_quote": "日间...封顶价格43.6元，包夜...封顶价格44.7元，早场...封顶价格14.9元",
+      "note": "Not per-credit pricing. machine_prices schema may not fit; put in hours/info text. Coin fields are 0 on BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 872,
+      "name": "1-7PLAY一起玩滁州苏宁广场店（原风云再起）",
+      "field": "other",
+      "current": "games maimai_dx+taiko+other listed as normal live network cabs",
+      "proposed": "maimai DX present but reported offline since 2025-10 (unpaid network fee); still physically there per comments",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/228",
+      "evidence_quote": "！！！舞萌dx自2025年10月起未交网费！！！ ... (注：舞萌因为欠交网费，现已断网)",
+      "note": "Do not remove the venue or maimai_dx entry without stronger proof of removal. Offline status matters for players expecting online features/ratings. Taiko still listed. Shop updated 2026-04-27.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2110,
+      "name": "和音屋合肥之心城环球中心",
+      "field": "other",
+      "current": "separate wahlap-only row with games=['maimai_dx'] at same B座1501 as 2111 and 2115",
+      "proposed": "merge into id 2115 (complete bemanicn listing)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3653",
+      "evidence_quote": "和音屋（合肥之心城店）; address 之心城环球中心B座1501; arcades maimai DX x2, CHUNITHM x1, SDVX x1",
+      "note": "ids 2110, 2111, 2115 share essentially the same address (B座1501) and coords ~31.8557,117.2523. 2110=wahlap maimai only, 2111=wahlap chunithm only, 2115=bemanicn full set. Classic source-split duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2111,
+      "name": "和音屋合肥蜀山环球中心店",
+      "field": "other",
+      "current": "separate wahlap-only row with games=['chunithm'] at 之心城环球中心B座1501",
+      "proposed": "merge into id 2115",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3653",
+      "evidence_quote": "和音屋（合肥之心城店）; 之心城环球中心B座1501; CHUNITHM quantity 1 among arcades",
+      "note": "Same physical venue as 2110/2115. Keep 2115 as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2115,
+      "name": "和音屋（合肥之心城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h support with day staff; early-bird (needs booking) 8:00-12:00; day 12:00-22:00; overnight 22:00-next 12:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3653",
+      "evidence_quote": "【营业时间】24小时营业，支持早鸟、通宵（自助，需提前预约）白天场有工作人员，无需预约，直接来玩~",
+      "note": "Community-managed listing updated 2026-04-10. Pricing is session-based (15 CNY/h day, 58 cap, overnight packages), not coin-per-credit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2115,
+      "name": "和音屋（合肥之心城店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "Valkyrie-style (女武神框) converted from older 5-gen + sub screen; version listed as 7 nabla; BJM network"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3653",
+      "evidence_quote": "以前烈火的5代加副屏改女武神框，BJM网",
+      "note": "SDVX is a converted Valkyrie-style cab on BJM, not official Konami e-amusement China. Note for players.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 894,
+      "name": "1号机长超乐场芜湖inPARK店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 902 (1号机长（芜湖镜湖inPARK店）)",
+      "proposed": "merge into id 902; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7154",
+      "evidence_quote": "1号机长（芜湖镜湖inPARK店）; 中山路步行街48号inPARK4楼; maimai DX x2",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 906,
+      "name": "1号赢家亳州谯城万达店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 905 (1号赢家)",
+      "proposed": "merge into id 905; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6990",
+      "evidence_quote": "1号赢家; 人民路与汤王大道交汇处; maimai DX x2",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 980,
+      "name": "Baby熊家庭阜阳太和万达店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 979 (Baby熊太和万达店)",
+      "proposed": "merge into id 979; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4288",
+      "evidence_quote": "Baby熊太和万达店; 太和大道666号万达广场3楼; maimai DX x1",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1047,
+      "name": "e+酷玩芜湖无为大润发店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1046 (e+酷玩)",
+      "proposed": "merge into id 1046; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6172",
+      "evidence_quote": "e+酷玩 (bemanicn name); same coords ~31.307,117.919",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1145,
+      "name": "HOOLIPAY年轻力聚场合肥蜀山店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1146 (HOOLIPAY新粮仓店虎力场)",
+      "proposed": "merge into id 1146; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7287",
+      "evidence_quote": "HOOLIPAY新粮仓店虎力场; 望江西路蜀山区新粮仓28号仓; maimai DX x1; updated 2026-07-28",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1226,
+      "name": "PLAY-ONE家庭娱乐中心六安银泰店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1227 (play1家庭娱乐中心六安银泰百货店)",
+      "proposed": "merge into id 1227; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5927",
+      "evidence_quote": "play1家庭娱乐中心六安银泰百货店; 六安银泰百货2层; maimai DX x1",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1875,
+      "name": "动漫前线凤阳府城店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1876 (动漫前线游艺城(凤阳商贸城广场店))",
+      "proposed": "merge into id 1876; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6031",
+      "evidence_quote": "动漫前线游艺城(凤阳商贸城广场店); 凤阳县府西街商贸城2期3层302",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1961,
+      "name": "卡希尔淮南寿县环球港店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1959 (卡希尔家庭娱乐中心)",
+      "proposed": "merge into id 1959; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4555",
+      "evidence_quote": "卡希尔家庭娱乐中心; 状元路与楚都大道交叉口西南环球港二楼",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1965,
+      "name": "卡迪龙合肥瑶海保利店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1966 (卡迪龙奇幻世界（保利广场店）)",
+      "proposed": "merge into id 1966; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6290",
+      "evidence_quote": "卡迪龙奇幻世界（保利广场店）; 郎溪路保利广场三楼",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2320,
+      "name": "嘿鹿鹿芜湖镜湖八佰伴店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1138 (HeyLulu嘿鹿鹿（芜湖镜湖八佰伴店）)",
+      "proposed": "merge into id 1138; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6703",
+      "evidence_quote": "HeyLulu嘿鹿鹿（芜湖镜湖八佰伴店）; 中山北路33号3层最北侧",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2350,
+      "name": "城市星空合肥北城店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2356 (城市星空电玩城（合肥北城店）)",
+      "proposed": "merge into id 2356; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7132",
+      "evidence_quote": "城市星空电玩城（合肥北城店）; 北城世纪金源购物中心b栋4楼",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2426,
+      "name": "城市英雄芜湖弋江银泰城店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2450 (城市英雄（芜湖银泰店）)",
+      "proposed": "merge into id 2450; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6100",
+      "evidence_quote": "城市英雄（芜湖银泰店）; 银泰百货2楼",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2564,
+      "name": "大玩家亳州高新万达店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2655 (大玩家（亳州万达店）)",
+      "proposed": "merge into id 2655; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2173",
+      "evidence_quote": "大玩家（亳州万达店）; 亳州高新万达广场; maimai+taiko",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2778,
+      "name": "天空之城合肥瑶海吾悦广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2777 (天空之城合肥坝上吾悦广场店)",
+      "proposed": "merge into id 2777; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3495",
+      "evidence_quote": "天空之城合肥坝上吾悦广场店; 芜湖路坝上吾悦广场3F东侧",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2802,
+      "name": "天空之城安庆吾悦广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2792 (天空之城多奇妙家庭娱乐中心（安庆吾悦店）)",
+      "proposed": "merge into id 2792; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3810",
+      "evidence_quote": "天空之城多奇妙家庭娱乐中心（安庆吾悦店）; 菱湖南路1号吾悦广场二层2F-2013",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2806,
+      "name": "天空之城宿州埇桥吾悦店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2866 (天空之城游乐体验世界(宿州吾悦店))",
+      "proposed": "merge into id 2866; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6380",
+      "evidence_quote": "天空之城游乐体验世界(宿州吾悦店); 新城吾悦广场三楼Z08商铺; updated 2026-07-30",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2890,
+      "name": "天空之城芜湖镜湖店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2701 (天空の城（芜湖吾悦广场店）)",
+      "proposed": "merge into id 2701; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2511",
+      "evidence_quote": "天空の城（芜湖吾悦广场店）; 中山北路33号吾悦广场三楼; maimai x2 + chunithm x2",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2895,
+      "name": "天空之城蚌埠吾悦广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2935 (天空之城（蚌山吾悦广场店）)",
+      "proposed": "merge into id 2935; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3499",
+      "evidence_quote": "天空之城（蚌山吾悦广场店）; 解放路750号吾悦广场3楼",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3048,
+      "name": "奇妙之城六安裕安吾悦广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 2790 (天空之城多奇妙家庭娱乐中心(六安吾悦店))",
+      "proposed": "merge into id 2790; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4178",
+      "evidence_quote": "天空之城多奇妙家庭娱乐中心(六安吾悦店); 新城吾悦广场3层Z6号铺",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3111,
+      "name": "奥康潮玩城滁州全椒店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1825 (全椒县奥康潮玩城)",
+      "proposed": "merge into id 1825; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2223",
+      "evidence_quote": "全椒县奥康潮玩城",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3246,
+      "name": "宝贝王合肥万达广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3340 (宝贝王（合肥巢湖万达店）)",
+      "proposed": "merge into id 3340; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3033",
+      "evidence_quote": "宝贝王（合肥巢湖万达店）; 巢湖万达广场三楼宝贝王",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3303,
+      "name": "宝贝王淮北相山万达广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 1481 (万达宝贝王（淮北万达广场店）)",
+      "proposed": "merge into id 1481; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2919",
+      "evidence_quote": "万达宝贝王（淮北万达广场店）",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3321,
+      "name": "宝贝王芜湖镜湖万达店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3309 (宝贝王潮玩幸运星（芜湖镜湖万达店）)",
+      "proposed": "merge into id 3309; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4454",
+      "evidence_quote": "宝贝王潮玩幸运星（芜湖镜湖万达店）; 万达广场2楼2F-01铺",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3336,
+      "name": "宝贝王马鞍山雨山万达店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3348 (宝贝王（马鞍山万达广场店）)",
+      "proposed": "merge into id 3348; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5015",
+      "evidence_quote": "宝贝王（马鞍山万达广场店）; maimai + taiko",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3476,
+      "name": "幻乐魔方黄山歙县江南明珠店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3475 (幻乐魔方)",
+      "proposed": "merge into id 3475; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6735",
+      "evidence_quote": "幻乐魔方 (bemanicn)",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3553,
+      "name": "征途动漫城宣城国际广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3371 (宣城国购广场征途动漫)",
+      "proposed": "merge into id 3371; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3524",
+      "evidence_quote": "宣城国购广场征途动漫",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3739,
+      "name": "摩羯星座芜湖镜湖万达店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3738 (摩羯星座家庭娱乐中心（芜湖镜湖万达店）)",
+      "proposed": "merge into id 3738; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6903",
+      "evidence_quote": "摩羯星座家庭娱乐中心（芜湖镜湖万达店）; maimai x1 + chunithm x2 + taiko x1; updated 2026-07-25",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3761,
+      "name": "新界电玩芜湖三山星悦广场店",
+      "field": "other",
+      "current": "wahlap-only duplicate of bemanicn venue id 3762 (新界电玩（原第九区）)",
+      "proposed": "merge into id 3762; keep bemanicn-linked row as canonical",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6985",
+      "evidence_quote": "新界电玩（原第九区）",
+      "note": "Near-identical name/mall/coords between a wahlap-only row and a bemanicn row. Classic dual-source duplicate. I did not independently re-hit WAHLAP official locator (login-walled); confidence is from matching address strings + shared coordinates in the shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3739,
+      "name": "摩羯星座芜湖镜湖万达店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6903",
+      "evidence_quote": "maimai DX qty 1, CHUNITHM qty 2, 太鼓之达人 qty 1; updated 2026-07-25",
+      "note": "Only needed if 3739 is kept instead of merged into 3738. 3738 already has taiko.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2963,
+      "name": "头号玩家合肥经开星达城店",
+      "field": "status",
+      "current": "wahlap-only open with maimai_dx",
+      "proposed": "possibly closed or stripped; cabs reported moved to 弘阳广场 头号玩家",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/7216",
+      "evidence_quote": "机台是原星达城头号运来的老机台",
+      "note": "Indirect only: BemaniCN page for 头号玩家（弘阳广场店） id 2977 / s/7216 says machines came from 星达城. Does NOT prove 星达城 is empty today. Could not fetch WAHLAP store search. Flag for human follow-up.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 902,
+      "name": "1号机长（芜湖镜湖inPARK店）",
+      "field": "hours",
+      "current": null,
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/7154",
+      "evidence_quote": "start_time 9 end_time 11 on BemaniCN (shop updated 2026-06-14)",
+      "note": "BemaniCN end_time=11 is almost certainly wrong for a mall arcade. Do NOT import this hours field. No reliable hours found.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2969,
+      "name": "头号玩家潮玩竞技淮南时代广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "ticketed all-day venue; full day ticket valid 10:00 to next day 08:00; night sessions from 20/21/22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2572",
+      "evidence_quote": "全天场 50r/12h(购买后可在生效当日10:00-8:00(+1)游玩); 夜场 22:00入场/20r ...",
+      "note": "Not a normal mall-hours coin arcade; pay-to-enter then free play on maimai/chunithm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2969,
+      "name": "头号玩家潮玩竞技淮南时代广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": "session entry fee (not per-credit): full day 50 CNY/12h; night from 20 CNY; monthly 199; yearly 599. Rhythm cabs free after entry.",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2572",
+      "evidence_quote": "店铺出售游戏币，但舞萌和中二节奏不可用，游戏币仅用作娃娃机夹零食。 全天场 50r/12h",
+      "note": "Important: coins do NOT work on maimai/chunithm here.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

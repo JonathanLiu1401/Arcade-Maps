@@ -150,6 +150,31 @@ def test_merge_unions_and_never_loses_a_source_link():
     assert log and log[0]["rule"] == "china_colocated"
 
 
+def test_same_source_merge_keeps_the_loser_page_url():
+    # links holds one url per source, so merging two ziv rows would drop
+    # the loser's page - and photos join on exactly that url. Measured:
+    # 16 China photos were orphaned this way before links.also existed.
+    a = _cn("星际玩家（海口龙湖天街店）", 20.0300, 110.3300, src=["ziv"],
+            links={"ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10222",
+                   "gmaps": "https://maps.google.com/?q=a"})
+    b = _cn("星际玩家潮玩（海口龙湖天街店）", 20.0301, 110.3301, src=["ziv"],
+            links={"ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10223",
+                   "gmaps": "https://maps.google.com/?q=b"})
+    out = M.dedupe_china_colocated([a, b], [])
+    assert len(out) == 1
+    # Whichever row survived, BOTH ziv page urls must still be reachable
+    # - links.ziv for the survivor's own, links.also for the other's.
+    also = out[0]["links"].get("also") or []
+    reachable = set(also) | {out[0]["links"].get("ziv")}
+    for want in ("id=10222", "id=10223"):
+        assert any(u and want in u for u in reachable), \
+            "ziv page url %s was lost; its photos are orphaned" % want
+    # A generated gmaps search url is not a source page and must not
+    # crowd the real ones out.
+    assert not any("maps.google" in u for u in also), \
+        "gmaps search url leaked into links.also"
+
+
 def test_merge_keeps_the_better_evidenced_count():
     a = _cn("酷玩时代兰州城关店", 36.0600, 103.8300, games=["maimai_dx"],
             game_counts={"maimai_dx": 1},

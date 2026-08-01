@@ -1931,9 +1931,27 @@ def _merge_two_china(keep, drop):
                 seen.append(v)
         keep[key] = seen
     links = dict(keep.get("links") or {})
+    # links holds ONE url per source, so when two rows of the SAME source
+    # merge, the loser's page url has nowhere to go - and photos join on
+    # that url, so its pictures would be orphaned (measured: 16 China
+    # photos lost this way). Extra urls are kept in links.also so the
+    # photo join can still find them.
+    # Only SOURCE PAGES belong in `also`. links.gmaps is a generated
+    # search url, not a page anything is keyed to, and letting it in
+    # buried the second ziv url behind two useless entries.
+    also = list(links.get("also") or [])
     for k, v in (drop.get("links") or {}).items():
-        if v and not links.get(k):
+        if not v or k in ("also", "gmaps"):
+            continue
+        if not links.get(k):
             links[k] = v
+        elif links[k] != v and v not in also:
+            also.append(v)
+    for v in (drop.get("links") or {}).get("also") or []:
+        if v not in also and v not in links.values():
+            also.append(v)
+    if also:
+        links["also"] = also
     keep["links"] = links
     # Counts: keep the better-evidenced number per game, not the first.
     # counts_src must end up naming the source that actually justifies
@@ -2112,6 +2130,7 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     notes = []
     ziv_url = None
     bemanicn_url = None
+    also_urls = []
     pref = None
     country = best["country"]
     game_counts = {}
@@ -2138,10 +2157,21 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         for nt in u["notes"]:
             if nt and nt not in notes:
                 notes.append(nt)
-        if ziv_url is None and u["ziv_url"]:
-            ziv_url = u["ziv_url"]
-        if bemanicn_url is None and u["bemanicn_url"]:
-            bemanicn_url = u["bemanicn_url"]
+        # links carries ONE url per source, so a cluster holding two rows
+        # of the same source would silently drop the second page - and
+        # photos join on that page url, so its pictures are orphaned.
+        # Extras go to links.also; see photos.photos_for_arcade.
+        if u["ziv_url"]:
+            if ziv_url is None:
+                ziv_url = u["ziv_url"]
+            elif u["ziv_url"] != ziv_url and u["ziv_url"] not in also_urls:
+                also_urls.append(u["ziv_url"])
+        if u["bemanicn_url"]:
+            if bemanicn_url is None:
+                bemanicn_url = u["bemanicn_url"]
+            elif (u["bemanicn_url"] != bemanicn_url
+                  and u["bemanicn_url"] not in also_urls):
+                also_urls.append(u["bemanicn_url"])
         if pref is None and u["pref"]:
             pref = u["pref"]
         if (u["country"] not in (None, "Unknown") and country
@@ -2190,7 +2220,11 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "games": sorted(games),
         "cabs": sorted(cabs),
         "src": sorted(src, key=lambda s: SRC_PRIORITY[s]),
-        "links": {"gmaps": gmaps, "ziv": ziv_url, "bemanicn": bemanicn_url},
+        "links": ({"gmaps": gmaps, "ziv": ziv_url,
+                   "bemanicn": bemanicn_url, "also": also_urls}
+                  if also_urls else
+                  {"gmaps": gmaps, "ziv": ziv_url,
+                   "bemanicn": bemanicn_url}),
         "notes": note_str,
     }
     # ---- BEGIN counts confidence (owner: counts-honesty agent) -------

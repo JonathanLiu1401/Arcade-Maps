@@ -1,0 +1,1039 @@
+{
+  "shard": 53,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+    "https://map.bemanicn.com/s/{id} (Inertia JSON for all 66 bemanicn-linked shops in shard)",
+    "https://map.bemanicn.com/region/province/420000000000",
+    "repo:data_raw/verify/shards/shard_053.json",
+    "repo:scrapers/wahlap.py"
+  ],
+  "corrections": [
+    {
+      "id": 5884,
+      "name": "真快活coohooMax武汉汉阳店",
+      "field": "other",
+      "current": {
+        "name": "真快活coohooMax武汉汉阳店",
+        "addr": "湖北省武汉市汉阳区汉阳大道408号万科未来中心3号门L4层真快活coohooMax",
+        "lat": 30.556985,
+        "lng": 114.238691,
+        "bemanicn": "https://map.bemanicn.com/s/3257",
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "notes_snippet": "bemanicn addr: 建设大道668号武汉万象城五楼S518商铺"
+      },
+      "proposed": {
+        "action": "fix_bemanicn_link_or_split",
+        "bemanicn_should_be": "https://map.bemanicn.com/s/2505",
+        "or_merge_into_id": 5877,
+        "reason": "App pin/name is Hanyang Vanke Future Center, but linked BemaniCN s/3257 is Jiangan MixC S518. Sibling #5877 is already the correct Vanke BCN page (s/2505). #5917 is the WAHLAP row for Jiangan MixC."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3257",
+      "evidence_quote": "name 真快活Coohoo Max(武汉万象城店); address 建设大道668号武汉万象城五楼S518商铺; maimai DX qty 1; 太鼓 qty 1; updated 2026-07-24",
+      "note": "Live WAHLAP maimai lists both: (1) 真快活coohooMax武汉汉阳店 at 万科未来中心 placeId=2334 and (2) 真快活武汉江岸万象城店 at 万象城五层S518 placeId=3370. BCN s/2505 matches Vanke; s/3257 matches MixC. App #5884 incorrectly pairs Vanke name/coords with MixC BCN id, and invents maimai_dx count 2 from the wrong shop.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5884,
+      "name": "真快活coohooMax武汉汉阳店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2505",
+      "evidence_quote": "真快活Coohoo Max(武汉万科未来中心店): maimai DX quantity 1; 太鼓之达人 quantity 1; updated 2026-02-09",
+      "note": "If this row is kept as Vanke Future Center (matching name/coords and WAHLAP placeId 2334), counts should follow BCN s/2505 and sibling #5877 (both 1+1), not the wrongly linked s/3257.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5917,
+      "name": "真快活武汉江岸万象城店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3257",
+      "evidence_quote": "真快活Coohoo Max(武汉万象城店) 建设大道668号武汉万象城五楼S518: maimai DX x1, 太鼓之达人 x1, 宝可梦明耀之星 x2; updated 2026-07-24",
+      "note": "WAHLAP live maimai lists this exact Jiangan MixC S518 address (placeId 3370). BCN s/3257 is the same shop. App only has maimai_dx from WAHLAP scrape; taiko and Mezastar are on current BCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5917,
+      "name": "真快活武汉江岸万象城店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3257",
+      "evidence_quote": "maimai DX quantity 1; 太鼓之达人 quantity 1",
+      "note": "Link BCN s/3257 to this WAHLAP-only row rather than to #5884.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4649,
+      "name": "欢悦天堂仙桃新天地国际广场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP CHUNITHM province=湖北 list (17 shops, fetched 2026-07-31) does NOT include 欢悦天堂仙桃/新天地. WAHLAP maimai DOES list 欢悦天堂仙桃宏达新天地 placeId=5184.",
+      "note": "BemaniCN s/4678 (updated 2026-04-02) still lists CHUNITHM qty 1. Official WAHLAP midtr locator is newer authority for currently serviced CHUNITHM and omits this shop. Confidence likely not certain: cab may exist offline/unlinked. Sibling WAHLAP-only row #4648 is same venue (0m).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4660,
+      "name": "欢悦天堂（汉口城市广场店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP CHUNITHM Hubei list does not include 欢悦天堂 汉口城市广场/江岸城市广场. WAHLAP maimai lists 欢悦天堂武汉江岸城市广场店 placeId=3512.",
+      "note": "BemaniCN s/3919 updated 2026-07-22 still claims CHUNITHM qty 1. Official network locator omits it. Same physical venue as WAHLAP-only #4654 (0m).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4651,
+      "name": "欢悦天堂孝感乾坤新城店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Live WAHLAP CHUNITHM Hubei list omits 欢悦天堂孝感乾坤新城店. WAHLAP maimai includes it placeId=2584. BemaniCN s/2755 updated 2026-07-30 still lists CHUNITHM qty 1 Ver CN1.30.",
+      "note": "Conflict: very recent community page still lists CHUNITHM; official WAHLAP midtr does not. Do NOT auto-remove. Flag for maintainer: either cab left network or BCN is ahead/wrong. proposed null means no auto change.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5177,
+      "name": "潮玩无界（武昌万象城店）",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "other"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "note": "Private/non-WAHLAP cabinets (国框). Present on BemaniCN 2026-07-30; absent from live WAHLAP maimai and CHUNITHM locators.",
+        "keep_on_map": true,
+        "maimai_dx_qty": 1,
+        "chunithm_qty": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7312",
+      "evidence_quote": "潮玩无界（武昌万象城店） 和平大道619号武汉武昌万象城5楼L5030; maimai DX qty 1 国框; CHUNITHM qty 2 国框; updated 2026-07-30; comment 一台宝可梦明耀之星，两台中二节奏，一台国框舞萌",
+      "note": "Not a closure. Official WAHLAP APIs do not list this operator, so these are almost certainly non-network (国框) cabs. App game list matches BCN. 10m from 真快活武昌万象城 #5914 (different operator, same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5268,
+      "name": "潮玩运动街区",
+      "field": "other",
+      "current": {
+        "name": "潮玩运动街区",
+        "addr": "五堰街道五堰丰融超市三楼"
+      },
+      "proposed": {
+        "name_official_wahlap": "superallday潮玩街区十堰茅箭店",
+        "addr_official": "湖北省十堰市茅箭区丰融集市3楼superallday潮玩街区",
+        "games_confirmed": [
+          "maimai_dx",
+          "chunithm"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName superallday潮玩街区十堰茅箭店; address 湖北省十堰市茅箭区丰融集市3楼superallday潮玩街区; province 湖北; also on CHUNITHM locator placeId=4129",
+      "note": "BemaniCN s/5569 name 潮玩运动街区 same 五堰丰融三楼 (updated 2025-11-29). Live WAHLAP uses superallday branding at 丰融集市3楼 for both maimai and CHUNITHM. Likely rename of same venue; prefer official WAHLAP name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4480,
+      "name": "柒彩大玩家黄梅鹏泰百货店",
+      "field": "other",
+      "current": {
+        "id_pair": [
+          4480,
+          5135
+        ],
+        "names": [
+          "柒彩大玩家黄梅鹏泰百货店",
+          "潮玩PARTY（黄梅店）"
+        ],
+        "distance_m": 12
+      },
+      "proposed": {
+        "action": "merge_duplicate",
+        "prefer_name": "柒彩大玩家黄梅鹏泰百货店",
+        "prefer_source": "wahlap",
+        "keep_bemanicn_link_from": 5135
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 柒彩大玩家黄梅鹏泰百货店; address 湖北省黄冈市黄梅县正街鑫城鹏泰百货柒彩大玩家",
+      "note": "#5135 BCN s/4317 潮玩PARTY（黄梅店） 黄梅鹏泰百货三楼 is 12m from #4480. Same mall; likely rebrand or dual listing. WAHLAP still uses 柒彩 name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4861,
+      "name": "浠水润达国际abam电玩城",
+      "field": "other",
+      "current": {
+        "id_pair": [
+          4861,
+          5438
+        ],
+        "names": [
+          "浠水润达国际abam电玩城",
+          "爱巴爱麻黄冈浠水润达店"
+        ],
+        "distance_m": 31
+      },
+      "proposed": {
+        "action": "merge_duplicate",
+        "prefer_name": "爱巴爱麻黄冈浠水润达店",
+        "prefer_source": "wahlap",
+        "bemanicn": "https://map.bemanicn.com/s/4514"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 爱巴爱麻黄冈浠水润达店; address 湖北省黄冈市浠水县润达国际三楼爱巴爱麻",
+      "note": "WAHLAP official name is 爱巴爱麻; BCN s/4514 uses abam. Same 润达国际三楼 (~31m). BCN also notes other:鼓王.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4126,
+      "name": "星际传奇武汉龙湖江宸天街店",
+      "field": "other",
+      "current": {
+        "id_pair": [
+          4126,
+          4128
+        ],
+        "distance_m": 98
+      },
+      "proposed": {
+        "action": "merge_duplicate",
+        "prefer_id": 4128,
+        "prefer_source": "bemanicn+wahlap",
+        "bemanicn": "https://map.bemanicn.com/s/1091",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1091",
+      "evidence_quote": "星际传奇江宸天街店 青年路518号武汉江宸天街4楼; maimai DX qty 1 DX2025; 太鼓 qty 1; WACCA qty 2; status 1; updated 2026-05-28",
+      "note": "WAHLAP still lists 星际传奇武汉龙湖江宸天街店 at 江宸天街 A-4F-28/29. Same venue as BCN 1091. Keep single pin with full game list from BCN; other=WACCA.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4128,
+      "name": "星际传奇江宸天街店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1091",
+      "evidence_quote": "start_time 10; end_time 22; updated 2026-05-28",
+      "note": "BemaniCN community hours field, not chain official page. Treat as likely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5422,
+      "name": "爱儿乐亲子潮玩基地",
+      "field": "cab_models",
+      "current": {
+        "games": [
+          "other",
+          "taiko"
+        ]
+      },
+      "proposed": {
+        "taiko": "太鼓达人(旧代) 亚洲版12",
+        "other": "maimai FiNALE 1.99b 盗版机 (not network DX)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2191",
+      "evidence_quote": "title 太鼓达人(旧代) version 亚洲版12 qty 1; title maimai version finale 1.99b qty 1 comment 盗版机，触屏延迟0.5秒，无法刷卡没有任何网络连接; updated 2026-04-20",
+      "note": "App correctly does NOT list maimai_dx. Keep as other/taiko only. Not a live WAHLAP DX venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5901,
+      "name": "真快活十堰茅箭人民商城店",
+      "field": "cab_models",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        }
+      },
+      "proposed": {
+        "maimai_dx": "华立代理国行 x2",
+        "taiko": "华立国行 x1",
+        "other": "maimai FiNALE（球盘） x1 offline"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/303",
+      "evidence_quote": "maimai DX qty 2 华立代理国行; 太鼓 qty 1; maimai qty 1 version FiNALE（球盘） comment 机况有点差; updated 2026-07-18",
+      "note": "game_counts for maimai_dx=2 and taiko=1 match BCN. other is offline FiNALE, not DX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5843,
+      "name": "皆道口studio",
+      "field": "hours",
+      "current": null,
+      "proposed": "appointment-only; roughly 12:00-23:00 (door time depends on earliest reservation; comment also says [9:30,12:00)-23:00)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2779",
+      "evidence_quote": "start_time 12 end_time 23; comment 营业时间[9:30,12:00)-23:00 具体开门时间每天会播报，取决于次日预约的最早时间 目前为预约模式，未预约到店大概率不会开门; updated 2026-05-21",
+      "note": "Private/appointment studio (aic). Not on WAHLAP. Addr is vague 街道口. Games maimai_dx1/chunithm2/ongeki1 match BCN. Price is hourly not coin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5843,
+      "name": "皆道口studio",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "model": "hourly",
+        "price": "10 CNY/hour, 60 CNY/day cap",
+        "currency": "CNY"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2779",
+      "evidence_quote": "comment 价格10r/h，单日60r封顶 预约/咨询请加Q群：921385770",
+      "note": "Not per-credit coin pricing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5485,
+      "name": "牧喵窝",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "中南路3号嘉园大厦2栋11层7号（1107）"
+      },
+      "proposed": {
+        "type": "private_appointment",
+        "note": "Not on WAHLAP. BCN: maimai_dx 3 (2 hand cabs + 1 国框), chunithm 2. Must join QQ group before visit.",
+        "game_counts": {
+          "maimai_dx": 3,
+          "chunithm": 2
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2938",
+      "evidence_quote": "maimai DX qty 2 手台 + qty 1 舞萌DX国框; CHUNITHM qty 2; comment 进群（群号214925465）查看详细内容 游玩前请先进群 谢绝游客直接上门; updated 2026-04-27",
+      "note": "App game_counts already match (3/2). Flag as private so travelers know walk-in is refused.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5911,
+      "name": "真快活武汉光谷世界城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/698",
+      "evidence_quote": "start_time/end_time fields 10-22; shop updated_at 2026-07-31; community-maintained hours on BemaniCN",
+      "note": "BCN price field=1 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5914,
+      "name": "真快活武汉武昌万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3587",
+      "evidence_quote": "start_time/end_time fields 10-22; shop updated_at 2026-07-23; community-maintained hours on BemaniCN",
+      "note": "BCN price field=0.4 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5910,
+      "name": "真快活武商梦时代店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2083",
+      "evidence_quote": "start_time/end_time fields 10-22; shop updated_at 2026-07-13; community-maintained hours on BemaniCN",
+      "note": "BCN price field=0.4 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5968,
+      "name": "神采飞扬硚口凯德店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3409",
+      "evidence_quote": "start_time/end_time fields 10-24; shop updated_at 2026-07-24; community-maintained hours on BemaniCN",
+      "note": "BCN price field=0.3 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4651,
+      "name": "欢悦天堂孝感乾坤新城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2755",
+      "evidence_quote": "start_time/end_time fields 10-22; shop updated_at 2026-07-30; community-maintained hours on BemaniCN",
+      "note": "BCN price field=0.4 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4660,
+      "name": "欢悦天堂（汉口城市广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3919",
+      "evidence_quote": "start_time/end_time fields 10-22; shop updated_at 2026-07-22; community-maintained hours on BemaniCN",
+      "note": "BCN price field=1 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5949,
+      "name": "真快活（武商MALL店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/158",
+      "evidence_quote": "start_time/end_time fields 10-22; shop updated_at 2026-06-13; community-maintained hours on BemaniCN",
+      "note": "BCN price field=1.5 (yuan per coin, not always per-credit game cost). Hours are community-sourced; prefer chain page if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5945,
+      "name": "真快活鄂州吾悦广场店",
+      "field": "location",
+      "current": {
+        "lat": 30.394703,
+        "lng": 114.918782,
+        "addr": "湖北省鄂州市吾悦广场"
+      },
+      "proposed": {
+        "prefer_sibling_id": 5946,
+        "sibling_addr": "湖北省鄂州市鄂城区临空经济区大桥路吾悦广场2楼Z202铺真快活电玩城",
+        "sibling_lat": 30.398388,
+        "sibling_lng": 115.010606,
+        "note": "Two pins ~9km apart for same brand+吾悦 in Ezhou. WAHLAP name is 真快活鄂州鄂城吾悦店 with 大桥路 address. BCN s/2068 only says 湖北省鄂州市吾悦广场."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 真快活鄂州鄂城吾悦店; address 湖北省鄂州市鄂城区临空经济区大桥路吾悦广场2楼Z202铺真快活电玩城",
+      "note": "Do not invent which pin is wrong without geocoding 鄂州吾悦. #5945 BCN has taiko x2; #5946 WAHLAP-only maimai. Likely same venue; merge using WAHLAP address and BCN games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4657,
+      "name": "欢悦天堂武汉范湖万达店",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "bemanicn_games_live": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "keep_chunithm": true,
+        "bcn_stale_for_chunithm": true,
+        "maimai_dx_qty": 1,
+        "note": "Official WAHLAP still lists this shop for BOTH maimai and CHUNITHM. BemaniCN s/3148 (updated 2025-11-29) only shows maimai and comments that one maimai was moved to 青山奥莱; it does not list CHUNITHM. Prefer official WAHLAP: keep chunithm on app."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 欢悦天堂武汉范湖万达店; address 湖北省武汉市江汉区范湖万达广场B区2F; province 湖北; placeId 2025 (also on maimai locator)",
+      "note": "No correction to remove chunithm. BCN quantity for maimai_dx=1 matches app. CHUNITHM quantity unknown from WAHLAP API (no qty field).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5872,
+      "name": "直通车欢聚中心",
+      "field": "other",
+      "current": {
+        "games": [
+          "other"
+        ]
+      },
+      "proposed": {
+        "other_detail": "鼓王 3代骑士与公主 x1 (not modern rhythm network)",
+        "rhythm_priority": "low"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1020",
+      "evidence_quote": "title 鼓王 version 3代骑士与公主 qty 1 comment 2p不行，1p机况良好，未联网; updated 2026-07-23",
+      "note": "Not a maimai/chunithm/taiko venue. Keep only if map wants non-core rhythm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "playone武汉菱角湖万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "playone武汉菱角湖万达店",
+        "addr": "湖北省武汉市江汉区唐家墩菱角湖万达广场2层playone",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName playone武汉菱角湖万达店; address 湖北省武汉市江汉区唐家墩菱角湖万达广场2层playone; province 湖北; placeId 1031",
+      "note": "On live WAHLAP maimai 2026-07-31. Not in shard 53. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起武汉江汉路站店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起武汉江汉路站店",
+        "addr": "湖北省武汉市江汉区地铁二号线江汉路站JH2-009风云再起",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 风云再起武汉江汉路站店; address 湖北省武汉市江汉区地铁二号线江汉路站JH2-009风云再起; province 湖北; placeId 1713",
+      "note": "Metro-station location; live WAHLAP maimai. Not in shard. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "C翻乐园武汉洪山大悦城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "C翻乐园武汉洪山大悦城店",
+        "addr": "湖北省武汉市洪山区高新大道718号大悦城3楼",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "CHUNITHM list: arcadeName C翻乐园武汉洪山大悦城店; address 湖北省武汉市洪山区高新大道718号大悦城3楼; placeId 2154. Also on maimai locator.",
+      "note": "Both maimai and CHUNITHM on live WAHLAP. Different mall from 真快活光谷大悦城. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "C翻乐园武汉群星城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "C翻乐园武汉群星城店",
+        "addr": "湖北省武汉市武昌区徐东大街120号福星惠誉群星城5楼",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName C翻乐园武汉群星城店; address 湖北省武汉市武昌区徐东大街120号福星惠誉群星城5楼; placeId 2626",
+      "note": "Live WAHLAP maimai only (not on CHUNITHM list). Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "城市星空武汉汉阳店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "城市星空武汉汉阳店",
+        "addr": "湖北省武汉市汉阳区方圆荟奥莱5号门3楼城市星空",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "CHUNITHM+maimai: arcadeName 城市星空武汉汉阳店; address 湖北省武汉市汉阳区方圆荟奥莱5号门3楼城市星空; placeId 2897",
+      "note": "Live WAHLAP both games. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "大明星武汉江汉世贸店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "大明星武汉江汉世贸店",
+        "addr": "湖北省武汉市江汉区解放大道686号世贸广场7楼",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 大明星武汉江汉世贸店; address 湖北省武汉市江汉区解放大道686号世贸广场7楼; placeId 2449; also on maimai list",
+      "note": "Near 真快活武商MALL cluster but different operator (686 vs 690). Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "魔逗潮玩社恩施和润城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "魔逗潮玩社恩施和润城店",
+        "addr": "湖北省恩施土家族苗族自治州恩施市和润城A馆四楼",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 魔逗潮玩社恩施和润城店; address 湖北省恩施土家族苗族自治州恩施市和润城A馆四楼; placeId 1849; also maimai",
+      "note": "Enshi already has 真快活九立方 in shard; this is a different mall (和润城). Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "小玩家潜江万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "小玩家潜江万达店",
+        "addr": "湖北省潜江市万达广场三楼小玩家娱乐中心",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 小玩家潜江万达店; address 湖北省潜江市万达广场三楼小玩家娱乐中心; placeId 3443; also maimai. Shard already has 洛克公园潜江万达店 on floor 2.",
+      "note": "Same mall different floor/operator from #4855 洛克公园. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "孩皮吧咸宁咸安同惠店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "孩皮吧咸宁咸安同惠店",
+        "addr": "湖北省咸宁市咸安区同惠国际广场三楼孩皮吧",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 孩皮吧咸宁咸安同惠店; address 湖北省咸宁市咸安区同惠国际广场三楼孩皮吧; placeId 2884; also maimai",
+      "note": "Xianning has almost no coverage in this shard; valuable add. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "子洋联盟宜昌水悦城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "子洋联盟宜昌水悦城店",
+        "addr": "湖北省宜昌市高新区发展大道水悦城四楼409A子洋联盟",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 子洋联盟宜昌水悦城店; address 湖北省宜昌市高新区发展大道水悦城四楼409A子洋联盟; placeId 2551. maimai list has 子洋联盟宜昌西陵水悦城店 at 西陵区水悦城四楼 placeId 3981",
+      "note": "Possibly one venue with slightly different city-district wording on maimai vs chunithm lists. Add with both games if same site. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "大乐魔潮玩星球黄石摩尔城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "大乐魔潮玩星球黄石摩尔城店",
+        "addr": "湖北省黄石市黄石摩尔城中商广场四楼",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 大乐魔潮玩星球黄石摩尔城店; address 湖北省黄石市黄石摩尔城中商广场四楼; placeId 2571",
+      "note": "On live CHUNITHM locator; maimai presence not confirmed in this pass. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "汤姆熊武汉硚口恒隆店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "汤姆熊武汉硚口恒隆店",
+        "addr": "硚口区京汉大道668号恒隆广场3楼l302",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 汤姆熊武汉硚口恒隆店; address 硚口区京汉大道668号恒隆广场3楼l302; province 湖北",
+      "note": "Distinct from shard 汤姆熊销品茂 entries. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "放学后903电玩武汉市街道口店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "放学后903电玩武汉市街道口店",
+        "addr": "武汉市洪山区珞南街道流行视窗A1502号",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "maimai_dx"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 放学后903电玩武汉市街道口店; address 武汉市洪山区珞南街道流行视窗A1502号; placeId 4835",
+      "note": "Near private 皆道口studio area; this is a public WAHLAP-listed shop. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王宜昌伍家岗万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王宜昌伍家岗万达店",
+        "addr": "湖北省宜昌市伍家岗区万达广场三楼",
+        "country": "China",
+        "pref": "湖北",
+        "games": [
+          "chunithm"
+        ],
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "source": "wahlap_live_2026-07-31"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName 宝贝王宜昌伍家岗万达店; address 湖北省宜昌市伍家岗区万达广场三楼; placeId 3072. maimai list also has 宝贝王宜昌伍家岗万达广场店 / 万达店 variants.",
+      "note": "Live WAHLAP CHUNITHM. maimai may also be present under same brand. Coordinates not geocoded in this pass (approx:true expected for China).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "(shard_053 duplicate pairs)",
+      "field": "other",
+      "current": {
+        "approx_duplicate_pairs_count": 40
+      },
+      "proposed": {
+        "action": "dedupe_wahlap_bemanicn_pairs",
+        "examples": [
+          [
+            4198,
+            4199,
+            "星际动漫 天门印象西江"
+          ],
+          [
+            4467,
+            4910,
+            "润宝梦 枣阳汇聚"
+          ],
+          [
+            4647,
+            4653,
+            "欢悦天堂 光谷天地"
+          ],
+          [
+            4648,
+            4649,
+            "欢悦天堂 仙桃新天地"
+          ],
+          [
+            4650,
+            4655,
+            "欢悦天堂 北都泛悦"
+          ],
+          [
+            4652,
+            4658,
+            "欢悦天堂 武商奥莱"
+          ],
+          [
+            4654,
+            4660,
+            "欢悦天堂 汉口城市广场"
+          ],
+          [
+            4668,
+            4669,
+            "欣动空间 东西湖中百"
+          ],
+          [
+            4797,
+            4798,
+            "汤姆熊 销品茂"
+          ],
+          [
+            4859,
+            4860,
+            "派对街区 阳新城市广场"
+          ],
+          [
+            4938,
+            4939,
+            "淘淘兔 武穴万达"
+          ],
+          [
+            5107,
+            5111,
+            "潮可爱 随州万达"
+          ],
+          [
+            5226,
+            5233,
+            "潮玩社 黄石万达"
+          ],
+          [
+            5234,
+            5239,
+            "潮玩空间 时代广场"
+          ],
+          [
+            5569,
+            5570,
+            "玩嘉来了 松滋万达"
+          ],
+          [
+            5880,
+            5947,
+            "真快活 金银潭永旺"
+          ],
+          [
+            5889,
+            5907,
+            "真快活 恩施九立方"
+          ],
+          [
+            5894,
+            5912,
+            "真快活 亲橙万象汇"
+          ],
+          [
+            5897,
+            5928,
+            "真快活 光谷大悦城"
+          ],
+          [
+            5901,
+            5902,
+            "真快活 十堰人民商场"
+          ],
+          [
+            5909,
+            5915,
+            "真快活 摩尔城"
+          ],
+          [
+            5910,
+            5913,
+            "真快活 梦时代"
+          ],
+          [
+            5921,
+            5933,
+            "真快活 佰港城"
+          ],
+          [
+            5922,
+            5948,
+            "真快活 银泰创意城"
+          ],
+          [
+            5929,
+            5943,
+            "真快活 荆门银泰"
+          ],
+          [
+            5958,
+            5959,
+            "神话动漫 新洲摩尔城"
+          ],
+          [
+            5964,
+            5968,
+            "神采飞扬 武胜凯德"
+          ],
+          [
+            5965,
+            5974,
+            "神采飞扬 江腾"
+          ],
+          [
+            6010,
+            6011,
+            "积木熊 荆门"
+          ]
+        ],
+        "rule": "Prefer merged row with BemaniCN game list + WAHLAP presence confirmation. All 66 BemaniCN-linked shops returned status=1 on 2026-07-31 fetch (no closed flags)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1091",
+      "evidence_quote": "All 66 shard BemaniCN shop pages fetched with X-Inertia returned props.shop.status=1 (open). Cross-checked against live WAHLAP maimai (160 Hubei) and CHUNITHM (17 Hubei) lists.",
+      "note": "These pairs share coords within ~0-150m and brand+mall tokens. Not full investigation of every pair beyond distance+name; merge is a data-quality task for maintainers.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}
