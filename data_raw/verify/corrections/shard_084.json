@@ -1,0 +1,641 @@
+{
+  "shard": 84,
+  "checked": 115,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=12",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=12",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+    "https://www.gigo.co.jp/shops?area=13",
+    "https://www.gigo.co.jp/shops/omori",
+    "https://www.gigo.co.jp/shops/omori/games",
+    "https://www.gigo.co.jp/shops/omori/games?page=2",
+    "https://www.gigo.co.jp/shops/jiyugaoka",
+    "https://www.gigo.co.jp/shops/jiyugaoka/games",
+    "https://www.gigo.co.jp/shops/tachikawa",
+    "https://www.gigo.co.jp/shops/tachikawa/games",
+    "https://www.gigo.co.jp/shops/nishikasai",
+    "https://www.gigo.co.jp/shops?area=13&q=%E8%A5%BF%E8%91%9B%E8%A5%BF",
+    "https://www.gigo.co.jp/shops?area=13&q=%E7%AB%8B%E5%B7%9D",
+    "https://www.taito.co.jp/store/00001408",
+    "https://www.taito.co.jp/store/00001582",
+    "http://www.adores.jp/tenpo/uenoameyoko.html",
+    "https://www.adores.jp/tenpo/",
+    "http://wgc.me/",
+    "http://wgc.me/access/",
+    "https://tokyo-joypolis.com/game/",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3667"
+  ],
+  "corrections": [
+    {
+      "id": 8598,
+      "name": "キャッツアイ西葛西店",
+      "field": "status",
+      "current": {
+        "status": "open",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ],
+        "addr": "東京都江戸川区西葛西４−２−２８"
+      },
+      "proposed": {
+        "status": "closed_or_delisted",
+        "action": "remove_or_mark_closed",
+        "reason": "Absent from live ALL.Net Tokyo lists for maimai DX, CHUNITHM, and ONGEKI. Nearby GiGO西葛西 is the active SEGA location in the district."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Tokyo maimai DX store list includes ＧｉＧＯ西葛西 at 東京都江戸川区西葛西５−１−１４第一保志ビル but has no キャッツアイ西葛西 or 西葛西４−２−２８ entry. Same absence on CHUNITHM and ONGEKI Tokyo lists.",
+      "note": "Could not load catseye-net.co.jp (connection failed). No ZIv Tokyo row for this CatsEye address. Treat as no longer SEGA-serviced; physical closure not proven from a chain press release. Do not confuse with open GiGO西葛西 (id 9465).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "ＷＯＲＬＤ　ＧＡＭＥ　ＣＩＲＣＵＳ",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "ＷＯＲＬＤ　ＧＡＭＥ　ＣＩＲＣＵＳ",
+        "name_alt": [
+          "WGC -World Game Circus-",
+          "WORLD GAME CIRCUS"
+        ],
+        "addr": "東京都立川市羽衣町２−４−１３羽衣長田ビル１０１ＷＧＣ",
+        "lat": 35.6964221,
+        "lng": 139.4288034,
+        "country": "Japan",
+        "pref": "東京都",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki",
+          "project_diva",
+          "iidx",
+          "ddr",
+          "gitadora",
+          "jubeat",
+          "popn",
+          "sdvx",
+          "reflec",
+          "other"
+        ],
+        "website": "http://wgc.me/",
+        "hours_text": "Mon-Sun 10:00-24:00",
+        "ziv_id": 3667,
+        "src_suggested": [
+          "allnet",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "store_name ＷＯＲＬＤ　ＧＡＭＥ　ＣＩＲＣＵＳ / store_address 東京都立川市羽衣町２−４−１３羽衣長田ビル１０１ＷＧＣ / map 35.6964221,139.4288034. Also present on CHUNITHM, ONGEKI, and Project DIVA Tokyo ALL.Net lists.",
+      "note": "Also confirmed on official site wgc.me (東京都立川市で絶賛営業中, news into 2026) and access page 〒190-0021 東京都立川市羽衣町2-4-13 羽衣長田ビル101, hours 10:00～24:00. ZIv id 3667 lastUpdate 2026-06-14. Sibling Club EXA 2号館 already in shard as id 8233.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8210,
+      "name": "Amusement&Game MAGHREB",
+      "field": "status",
+      "current": {
+        "id": 8210,
+        "name": "Amusement&Game MAGHREB",
+        "addr": "多摩市落合1-39-2マグレブビル1F",
+        "lat": 35.624024,
+        "lng": 139.423196,
+        "games": [
+          "gitadora",
+          "iidx",
+          "jubeat",
+          "polaris_chord",
+          "popn",
+          "sdvx"
+        ],
+        "src": [
+          "eagate"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 8517,
+        "reason": "Same Maghreb building (多摩市落合1-39-2 マグレブビル1F). 8517 holds ALL.Net SEGA titles; 8210 holds e-amusement Konami titles."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ALL.Net lists アミューズメントゲーム　マグレブ at 東京都多摩市落合１−３９−２マグレブビル１階 for maimai DX (and likewise CHUNITHM, ONGEKI).",
+      "note": "Pins differ by about 226 m (geocode drift on 8210). After merge, union SEGA games from 8517 with Konami games from 8210.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8517,
+      "name": "アミューズメントゲーム　マグレブ",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ALL.Net SEGA list for アミューズメントゲーム　マグレブ: maimai/CHUNITHM/ONGEKI. Sibling row id 8210 at same address carries eagate Konami titles.",
+      "note": "Depends on merging 8210 into 8517. Konami titles come from existing eagate-sourced row; e-amusement HTML required login in this session so those titles were not re-fetched live.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8421,
+      "name": "アドアーズ上野アメ横",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Project DIVA Tokyo ALL.Net list does not include アドアーズ上野アメ横. Adores Ueno is on CHUNITHM and ONGEKI lists only.",
+      "note": "Official adores.jp tenpo page is live (10:00～23:30) and promotes IIDX 33 / CHUNITHM X-VERSE; no DIVA mention. Also clear game_counts.project_diva.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9019,
+      "name": "ラウンドワンダイバーシティ東京プラザ店",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Project DIVA Tokyo ALL.Net list has ラウンドワン池袋店 and ラウンドワン町田店 but not ラウンドワンダイバーシティ東京プラザ店.",
+      "note": "App count project_diva:1 is ziv_listed; remove game and count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9038,
+      "name": "ラウンドワン南砂店",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Project DIVA Tokyo ALL.Net list does not include ラウンドワン南砂店.",
+      "note": "App count project_diva:2 is ziv-derived; remove game and count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9062,
+      "name": "ラウンドワン府中本町駅前",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Project DIVA Tokyo ALL.Net list does not include ラウンドワン府中本町駅前.",
+      "note": "App count project_diva:2 is ziv-derived; remove game and count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9143,
+      "name": "新宿スポーツランド本館",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Project DIVA Tokyo ALL.Net list does not include 新宿スポーツランド本館 (venue is on maimai/CHUNITHM/ONGEKI lists only).",
+      "note": "ZIv still lists Project DIVA with empty condition; ALL.Net wins for current network status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9146,
+      "name": "東京ジョイポリス",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Project DIVA Tokyo ALL.Net list does not include 東京ジョイポリス. Joypolis appears only on maimai DX Tokyo list.",
+      "note": "ZIv still shows 2x Project DIVA (lastUpdate 2025-04-04). Keep maimai_dx and taiko. Official joypolis game page does not name individual rhythm titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9453,
+      "name": "ＧｉＧＯ立川",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/tachikawa/games",
+      "evidence_quote": "GiGO立川 music titles: オンゲキ Re:Fresh Act.2, maimai でらっくす CiRCLE PLUS, pop'n music High☆Cheers!!, アイドルマスター TOURS, ポラリスコード. No Project DIVA. Also absent from ALL.Net Project DIVA Tokyo list.",
+      "note": "App has project_diva with game_counts 2 (ziv_listed). Remove game and count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9461,
+      "name": "ＧｉＧＯ自由が丘",
+      "field": "games",
+      "current": {
+        "remove": "project_diva"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "project_diva"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/jiyugaoka/games",
+      "evidence_quote": "GiGO自由が丘 music games: オンゲキ Re:Fresh Act.2, CHUNITHM Mate, maimai でらっくす CiRCLE PLUS, SOUND VOLTEX ∇, pop'n music High☆Cheers!!, ポラリスコード, GITADORA GALAXY WAVE. No Project DIVA. Also absent from ALL.Net Project DIVA Tokyo list.",
+      "note": "App game_counts.project_diva=1 (ziv_listed). Remove game and count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9364,
+      "name": "ＧｉＧＯ大森",
+      "field": "games",
+      "current": {
+        "project_diva": true,
+        "source_conflict": true
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.gigo.co.jp/shops/omori/games?page=2",
+      "evidence_quote": "GiGO大森 games listing includes 初音ミク Project DIVA Arcade Future Tone under 音楽ゲーム. ALL.Net Project DIVA Tokyo list does NOT include ＧｉＧＯ大森.",
+      "note": "SOURCE CONFLICT. Do not auto-remove. GiGO official store games page lists DIVA; SEGA ALL.Net DIVA locator omits this store. Needs human or on-site check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8789,
+      "name": "タイトーステーション新宿東口店",
+      "field": "games",
+      "current": {
+        "remove": "ongeki",
+        "game_counts_ongeki": 1
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "ongeki"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ONGEKI Tokyo ALL.Net list includes タイトー新宿南口ゲームワールド店 and タイトーステーション新宿歌舞伎町店 but not タイトーステーション新宿東口店. Same store IS on maimai DX and CHUNITHM Tokyo lists at 東京都新宿区新宿３−２２−７　指田ビル.",
+      "note": "Also clear game_counts.ongeki. Official taito.co.jp/store/00001582 is live (10:00～25:00). ZIv still lists ONGEKI (stale vs ALL.Net).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8794,
+      "name": "タイトーステーション池袋ロサ店",
+      "field": "games",
+      "current": {
+        "remove": "chunithm"
+      },
+      "proposed": {
+        "action": "remove_game",
+        "game": "chunithm"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=12",
+      "evidence_quote": "CHUNITHM Tokyo ALL.Net list has タイトーステーション 池袋西口店 (西池袋１−１５−９第一西池ビル) but no 池袋ロサ / 西池袋１−３７−１２ entry. maimai and ONGEKI Tokyo lists also omit Rosa.",
+      "note": "Official Taito page store/00001408 still presents 池袋ロサ店 as open (ロサ会館1F, 10:00～24:00). Distinct from id 8768 池袋西口店. Konami titles may still be valid.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8794,
+      "name": "タイトーステーション池袋ロサ店",
+      "field": "other",
+      "current": {
+        "info_text": "This Taito Station is broken apart into segments and has three different entrances. The bulk of the music games are on the 7th floor, where the bowling alley is."
+      },
+      "proposed": {
+        "info_text": null,
+        "action": "remove_or_rewrite",
+        "reason": "Official store is ロサ会館1F only; 7th-floor bowling description does not match Rosa."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00001408",
+      "evidence_quote": "店舗名 タイトーステーション 池袋ロサ店 / 住所 東京都豊島区西池袋１－３７－１２ロサ会館１Ｆ / 営業時間 10:00～24:00 年中無休",
+      "note": "info_text appears copied from a multi-floor Taito. Safe action: delete stale info_text.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9461,
+      "name": "ＧｉＧＯ自由が丘",
+      "field": "games",
+      "current": {
+        "missing": "polaris_chord"
+      },
+      "proposed": {
+        "add": "polaris_chord"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/jiyugaoka/games",
+      "evidence_quote": "音楽ゲーム list includes ポラリスコード alongside ONGEKI, CHUNITHM Mate, maimai でらっくす CiRCLE PLUS, SOUND VOLTEX ∇, pop'n music High☆Cheers!!, GITADORA GALAXY WAVE.",
+      "note": "App games currently omit polaris_chord.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9364,
+      "name": "ＧｉＧＯ大森",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/omori/",
+      "proposed": "https://www.gigo.co.jp/shops/omori",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/omori",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/omori; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9453,
+      "name": "ＧｉＧＯ立川",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/tachikawa/",
+      "proposed": "https://www.gigo.co.jp/shops/tachikawa",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/tachikawa",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/tachikawa; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9461,
+      "name": "ＧｉＧＯ自由が丘",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/jiyugaoka/",
+      "proposed": "https://www.gigo.co.jp/shops/jiyugaoka",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/jiyugaoka",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/jiyugaoka; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9465,
+      "name": "ＧｉＧＯ西葛西",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/HS-kasai/",
+      "proposed": "https://www.gigo.co.jp/shops/nishikasai",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/nishikasai",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/nishikasai; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9460,
+      "name": "ＧｉＧＯ総本店",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/sohonten/",
+      "proposed": "https://www.gigo.co.jp/shops/sohonten",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/sohonten",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/sohonten; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9395,
+      "name": "ＧｉＧＯ新宿西口",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/nishiguchi",
+      "proposed": "https://www.gigo.co.jp/shops/shinjuku-nishiguchi",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/shinjuku-nishiguchi",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/shinjuku-nishiguchi; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9394,
+      "name": "ＧｉＧＯ新大久保",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/shinokubo",
+      "proposed": "https://www.gigo.co.jp/shops/shin-okubo",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/shin-okubo",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/shin-okubo; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9407,
+      "name": "ＧｉＧＯ東京ドームシティ",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/tokyo-domecity",
+      "proposed": "https://www.gigo.co.jp/shops/tokyodomecity",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/tokyodomecity",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/tokyodomecity; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9423,
+      "name": "ＧｉＧＯ池上",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/ikegami/",
+      "proposed": "https://www.gigo.co.jp/shops/ikegami",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/ikegami",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/ikegami; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9484,
+      "name": "ＧｉＧＯ高田馬場",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/takadanobaba/",
+      "proposed": "https://www.gigo.co.jp/shops/takadanobaba",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/takadanobaba",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/takadanobaba; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9451,
+      "name": "ＧｉＧＯ秋葉原３号館",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/akiba-new/",
+      "proposed": "https://www.gigo.co.jp/shops/akihabara3",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/akihabara3",
+      "evidence_quote": "Live GiGO store page at https://www.gigo.co.jp/shops/akihabara3; old tempo.gendagigo.jp URLs redirect to www.gigo.co.jp/renewal (domain migration).",
+      "note": "GENDA GiGO moved store pages from tempo.gendagigo.jp to www.gigo.co.jp/shops/<slug>. Other Tokyo GiGO rows still on tempo.* were not all re-resolved here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8421,
+      "name": "アドアーズ上野アメ横",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 1
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9019,
+      "name": "ラウンドワンダイバーシティ東京プラザ店",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 1
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9038,
+      "name": "ラウンドワン南砂店",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 2
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9062,
+      "name": "ラウンドワン府中本町駅前",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 2
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9453,
+      "name": "ＧｉＧＯ立川",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 2
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9461,
+      "name": "ＧｉＧＯ自由が丘",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 1
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9146,
+      "name": "東京ジョイポリス",
+      "field": "game_counts",
+      "current": {
+        "project_diva": 2
+      },
+      "proposed": {
+        "project_diva": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=12",
+      "evidence_quote": "Paired with project_diva game removal: venue not on live ALL.Net Project DIVA Tokyo list (or GiGO official games list for GiGO rows).",
+      "note": "count_evidence was ziv_listed/ziv_comment; placeholder counts should not remain after game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8789,
+      "name": "タイトーステーション新宿東口店",
+      "field": "game_counts",
+      "current": {
+        "ongeki": 1
+      },
+      "proposed": {
+        "ongeki": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ONGEKI not on ALL.Net for this store; clear paired count.",
+      "note": "Paired with ongeki game removal.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

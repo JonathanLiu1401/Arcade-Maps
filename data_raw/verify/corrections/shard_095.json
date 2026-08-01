@@ -1,0 +1,677 @@
+{
+  "shard": 95,
+  "checked": 55,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=France",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10590",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9228",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2673",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5906",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2882",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6372",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7001",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=298",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9549",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3784",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=334",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6276",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=486",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10932",
+    "https://www.alphanef.com/",
+    "https://www.alphanef.com/arcade/",
+    "https://atomcity.fr/",
+    "https://latetedanslesnuages.com/centres/",
+    "https://www.bowling-des-lumieres.fr/",
+    "https://echirolles.bowlcenter.fr/",
+    "https://www.lemanoirorange.fr/",
+    "https://valencearcade.fr/nos-jeux",
+    "http://geek-room.com/",
+    "https://akihapop.com/",
+    "https://exalto-park.com/"
+  ],
+  "corrections": [
+    {
+      "id": 7513,
+      "name": "Game On",
+      "field": "status",
+      "current": "open (shown with stepmaniax, other)",
+      "proposed": "closed",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10590",
+      "evidence_quote": "Game On span class label alert CLOSED; comment: Location marked as closed.",
+      "note": "ZIv page title badge shows CLOSED. Also absent from ZIv France country API query (empty). CNIT La Defense location.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7514,
+      "name": "Game On",
+      "field": "status",
+      "current": "open (shown with stepmaniax, other)",
+      "proposed": "closed",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9228",
+      "evidence_quote": "Game On span class label alert CLOSED; comment: Location marked as closed.",
+      "note": "ZIv CLOSED badge. Louvre Carrousel shopping center location. Absent from ZIv France API.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7478,
+      "name": "AlphaNef",
+      "field": "games",
+      "current": [
+        "groove_coaster",
+        "jubeat",
+        "other",
+        "popn",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": [
+        "groove_coaster",
+        "jubeat",
+        "maimai",
+        "other",
+        "popn",
+        "sdvx",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.alphanef.com/arcade/",
+      "evidence_quote": "Maimai - 1-2 players, 10+; difficulty rated 1 to 14, two jack sockets and headsets. All rhythm titles: 1 token = 1 play = 3 songs.",
+      "note": "Official machine page lists Maimai. ZIv also lists maimai FiNALE (upd 2026-02-01). App already has maimai prices and notes but omitted maimai from games[].",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7478,
+      "name": "AlphaNef",
+      "field": "game_counts",
+      "current": {
+        "groove_coaster": 1,
+        "jubeat": 2,
+        "popn": 1,
+        "sdvx": 2,
+        "wacca": 1
+      },
+      "proposed": {
+        "groove_coaster": 1,
+        "jubeat": 2,
+        "maimai": 1,
+        "popn": 1,
+        "sdvx": 2,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5906",
+      "evidence_quote": "maimai FiNALE | cond=5 | price=1.00 EUR / 3 Songs SP, 2.00 EUR / 3 Songs DP (one listing)",
+      "note": "Single maimai FiNALE on ZIv; count_evidence should be ziv_listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7478,
+      "name": "AlphaNef",
+      "field": "other",
+      "current": null,
+      "proposed": "temporary_closure_notice_2026-08-07_to_2026-08-19",
+      "confidence": "certain",
+      "evidence_url": "https://www.alphanef.com/",
+      "evidence_quote": "Attention : Le vaisseau sera ferme du 7 au 19 Aout 2026 (Inclus)",
+      "note": "Temporary full-venue closure for mid-August 2026 only; not permanent. Hours otherwise match app.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7481,
+      "name": "Atom City",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "other",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "nostalgia",
+        "other",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2673",
+      "evidence_quote": "maimai FiNALE (cond=4, Chinese cab online) x2; lastUpdateTime 2026-07-29 18:03:27 (2 days ago)",
+      "note": "Two maimai FiNALE cabs on ZIv with recent visit. App notes/prices already mention maimai but games[] omits it. Official site freeplay membership still active (atomcity.fr).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7481,
+      "name": "Atom City",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "drs": 1,
+        "gitadora": 4,
+        "groove_coaster": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "nostalgia": 1,
+        "popn": 3,
+        "project_diva": 1,
+        "pump_it_up": 1,
+        "sdvx": 2,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "groove_coaster": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "maimai": 2,
+        "nostalgia": 0,
+        "popn": 3,
+        "project_diva": 1,
+        "pump_it_up": 1,
+        "sdvx": 2,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2673",
+      "evidence_quote": "GITADORA GALAXY WAVE DrumMania + GuitarFreaks only (2 cabs). CHUNITHM X-VERSE-X second unit comment: ( NOT PRESENT AT THE MOMENT!!! ). Nostalgia Op.3: In storage for now. Planned to work soon. maimai FiNALE x2 present.",
+      "note": "gitadora app=4 was wrong (only GF+DM listed). Second CHUNITHM not on floor as of 2026-07-29. Nostalgia in storage: propose 0 or remove from active games. Maintainers may prefer keeping nostalgia in games with a status note.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7481,
+      "name": "Atom City",
+      "field": "other",
+      "current": "includes nostalgia as active floor cab",
+      "proposed": "nostalgia currently in storage / not floor-playable (still owned)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2673",
+      "evidence_quote": "Nostalgia Op.3 | condition=1 | comment: In storage for now. Planned to work soon.",
+      "note": "ZIv 2-day-old report. Do not invent a permanent removal; floor status is storage.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7501,
+      "name": "Envie De Japon",
+      "field": "games",
+      "current": [
+        "ddr",
+        "jubeat",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "ddr",
+        "jubeat",
+        "maimai",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6372",
+      "evidence_quote": "maimai FiNALE | cond=4 | Free Play | Scores can be saved with the correct card (SEGA Aime / Amusement IC).",
+      "note": "ZIv lists maimai FiNALE; app notes and machine_prices already include maimai free play. Last ZIv update 2025-01-31 (about 1 year). popn was OUT FOR REPAIR at that update.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7501,
+      "name": "Envie De Japon",
+      "field": "other",
+      "current": "popn listed as active",
+      "proposed": "popn may be out for repair (verify on visit)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6372",
+      "evidence_quote": "pop'n music UniLab | condition=1 | OUT FOR REPAIR.",
+      "note": "Stale relative to today (ZIv update 2025-01-31). Flag only; do not remove popn without fresher evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7517,
+      "name": "Gamespirit Lyon",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "jubeat",
+        "other",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "jubeat",
+        "maimai",
+        "other",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2882",
+      "evidence_quote": "maimai FiNALE | cond=5 | 0,50 EUR / 3 songs SP 1,00 EUR / 3 songs DP | Online @ maiTea NET; lastUpdateTime 2026-07-18",
+      "note": "App notes and prices already include maimai. SDVX was temporarily out of service (Nemsys) on 2026-07-18 ZIv report.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7517,
+      "name": "Gamespirit Lyon",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "nemsys"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2882",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR | Temporarily out of service | Nemsys model, online @ Flower",
+      "note": "Nemsys (not Valkyrie). Temporarily OOS as of mid-July 2026 ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7519,
+      "name": "Geek Room",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "other",
+        "popn",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "jubeat",
+        "maimai",
+        "other",
+        "popn",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7001",
+      "evidence_quote": "maimai FiNALE | cond=5 | Free Play; lastUpdateTime 2026-06-07",
+      "note": "ZIv lists maimai FiNALE. Official geek-room.com lists Pop'n Music, Guitar Hero, Jubeat under music games but does not name maimai. Venue reopened 2024-08-24; hours Sat 14h-18h match app. Entry 23 EUR freeplay.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7530,
+      "name": "La Tete Dans Les Nuages",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=298",
+      "evidence_quote": "machines include DanceDanceRevolution A, CN drum game, DANCE3 2; no GITADORA / GuitarFreaks / DrumMania listed. lastUpdateTime 2025-08-09",
+      "note": "App mapped Chinese drum game to gitadora. That is a different series. notes[] already correctly lists those titles under Cabs. Remove gitadora from games and prices.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7530,
+      "name": "La Tete Dans Les Nuages",
+      "field": "prices",
+      "current": {
+        "ddr": "8 points per credit / 3 songs / 16 points for double play / 3 songs",
+        "gitadora": "4 points per credit / 3 songs"
+      },
+      "proposed": {
+        "ddr": "8 points per credit / 3 songs / 16 points for double play / 3 songs"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=298",
+      "evidence_quote": "CN drum game | 4 points per credit / 3 songs (this is the price source for the mis-tagged gitadora entry)",
+      "note": "Delete gitadora price key; optional: re-home as other CN drum price if schema allows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7485,
+      "name": "BowlCenter Echirolles (La Tete dans les Nuages)",
+      "field": "game_counts",
+      "current": {
+        "pump_it_up": 24
+      },
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9549",
+      "evidence_quote": "Pump It Up Phoenix (one machine). comment: Offline, not up to date... 24 units is 10EUR, 66 is 20EUR. price: 8 UNITS / 3 songs STANDARD MODE",
+      "note": "count_evidence ziv_comment mis-parsed '24 units is 10EUR' (credit pricing) as cabinet quantity. Only one PIU machine listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7489,
+      "name": "Bowling des Lumieres",
+      "field": "hours",
+      "current": "Mon-Wed 11:00-00:00; Thu 11:00-00:01; Fri 11:00-00:02; Sat 10:00-00:02; Sun 10:00-00:00",
+      "proposed": "Mon-Wed 11:00-00:00; Thu 11:00-01:00; Fri 11:00-02:00; Sat 10:00-02:00; Sun 10:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.bowling-des-lumieres.fr/",
+      "evidence_quote": "Lundi : 11h-00h / Mardi : 11h-00h / Mercredi : 11h-00h / Jeudi : 11h-01h / Vendredi : 11h-02h / Samedi : 10h-02h / Dimanche 10h-00h",
+      "note": "App/ZIv stored 00:01/00:02 instead of 01:00/02:00 (French 01h/02h mis-encoded).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7566,
+      "name": "Valence Arcade",
+      "field": "hours",
+      "current": "Mon-Tue 11:00-20:00; Wed 00:11-20:00; Thu 11:00-20:00; Fri-Sat 11:00-23:00; Sun 14:00-20:00",
+      "proposed": "Mon-Tue 11:00-20:00; Wed 11:00-20:00; Thu 11:00-20:00; Fri-Sat 11:00-23:00; Sun 14:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10932",
+      "evidence_quote": "openingTimes Wed entry is ['00:11','20:00',false] while Mon/Tue/Thu are ['11:00','20:00']; clear digit-order typo for 11:00",
+      "note": "Official valencearcade.fr home page does not list hours. Fix is by internal consistency of ZIv times. Website nos-jeux images include wacca, dancerush, groove-coaster (supports current games list).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7498,
+      "name": "City Bowling d'Oz",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3784",
+      "evidence_quote": "DanceDanceRevolution X2 | condition=1 | Not working since many months. Also it's a raw thrills cab.",
+      "note": "ZIv update 2024-09-01. Propose remove ddr claim or mark non-functional. Cab model is Raw Thrills DDR X2 style.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7484,
+      "name": "Beach Bowling - La Tete dans les Nuages",
+      "field": "status",
+      "current": "open with games=['other'], no cabs listed",
+      "proposed": "stale / rhythm games gone; old arcade replaced (verify if venue entry still useful)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=334",
+      "evidence_quote": "Old arcade has closed down and was replaced with new machines. There used to be a Dancing Stage Fusion machine in August 2017 but it has been sold away in November 2017. Visitor: Their DDR cab was removed a couple of weeks before I came.",
+      "note": "ZIv lastUpdate 2018-01-18, empty machines[]. Related Beach Bowling Thiais (id 7483) still lists Pump It Up XX (ZIv 2023). 7484 may be a duplicate/stale row of the same complex.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7500,
+      "name": "Elyzion Park",
+      "field": "status",
+      "current": "open with chunithm, drs, other; website https://elyzionpark.com/",
+      "proposed": "rebranded/absorbed into Le Manoir Orange nearby; rhythm lineup unverified since 2022",
+      "confidence": "unverified",
+      "evidence_url": "https://www.lemanoirorange.fr/",
+      "evidence_quote": "Le Manoir Orange at 713 route de Jonquieres 84100 Orange. Activities include mini golf, VR, axe throwing, karaoke, escape rooms and generic Jeux d'arcade. No CHUNITHM/DANCERUSH named.",
+      "note": "elyzionpark.com and elyzion.fr both 301 to lemanoirorange.fr. Address almost same road (Elyzion was 693 Route de Jonquieres). ZIv last update 2022-12-09 for CHUNITHM PARADISE LOST + DANCERUSH. Cannot confirm those cabs still exist. Do NOT mark closed with certainty; flag for on-site check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7500,
+      "name": "Elyzion Park",
+      "field": "website",
+      "current": "https://elyzionpark.com/",
+      "proposed": "https://www.lemanoirorange.fr/",
+      "confidence": "likely",
+      "evidence_url": "https://elyzionpark.com/",
+      "evidence_quote": "HTTP 301 redirect chain: elyzionpark.com -> www.elyzion.fr -> www.lemanoirorange.fr",
+      "note": "Update website if venue is same operator under new brand.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7512,
+      "name": "Game Center",
+      "field": "other",
+      "current": "notes: Cabs: Pump It Up PRIME",
+      "proposed": "notes should say Pump It Up PRIME 2 (ZIv 2026-07-30)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6276",
+      "evidence_quote": "Pump It Up PRIME 2 | cond=4 | Free Play | comment: PumpItUp DX; lastUpdateTime 2026-07-30 21:48:31",
+      "note": "Private arcade for castle visitors only (info_text). Fresh ZIv update.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7553,
+      "name": "Planet Bowling",
+      "field": "games",
+      "current": [
+        "ddr",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "ddr"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=486",
+      "evidence_quote": "Pump It Up XX | condition=0 (unknown/dead marker); Dancing Stage SuperNOVA | cond=3 still listed",
+      "note": "ZIv 2024-03-01. cond=0 is weak; propose remove pump_it_up only as unverified suspicion, or leave with note.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Tete dans les Nuages Noisy-le-Grand - Les Arcades",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "234 Bd du Mont d'Est, 93160 Noisy-le-Grand, France",
+        "country": "France",
+        "games": "unknown",
+        "chain": "La Tete dans les Nuages"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://latetedanslesnuages.com/centres/",
+      "evidence_quote": "Listed on LTDN Nos centres page with address: 234 Bd du Mont d'Est, 93160 Noisy-le-Grand, France",
+      "note": "Official LTDN centres list. Rhythm games not confirmed on official page. Not present in France shard (92 venues). Sibling LTDN Opera/Defense/Aeroville/Part-Dieu/Nice/Confluence are already in map. Do not invent rhythm games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Tete dans les Nuages Paris Plaisir",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "1170 Av. de Saint-Germain, 78370 Plaisir, France (Mon Grand Plaisir)",
+        "country": "France",
+        "games": "unknown",
+        "chain": "La Tete dans les Nuages"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://latetedanslesnuages.com/centres/",
+      "evidence_quote": "Listed on LTDN Nos centres page with address: 1170 Av. de Saint-Germain, 78370 Plaisir, France (Mon Grand Plaisir)",
+      "note": "Official LTDN centres list. Games unknown. Not present in France shard (92 venues). Sibling LTDN Opera/Defense/Aeroville/Part-Dieu/Nice/Confluence are already in map. Do not invent rhythm games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Tete dans les Nuages Paris Carre Senart",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "3 allee du Preambule, 77127 Lieusaint, France (Westfield Carre Senart, RDC Porte 4)",
+        "country": "France",
+        "games": "unknown",
+        "chain": "La Tete dans les Nuages"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://latetedanslesnuages.com/centres/",
+      "evidence_quote": "Listed on LTDN Nos centres page with address: 3 allee du Preambule, 77127 Lieusaint, France (Westfield Carre Senart, RDC Porte 4)",
+      "note": "Official LTDN centres list. Games unknown. Not present in France shard (92 venues). Sibling LTDN Opera/Defense/Aeroville/Part-Dieu/Nice/Confluence are already in map. Do not invent rhythm games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Tete dans les Nuages Paris Le Spot Evry",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "2 boulevard de l'Europe, 91000 Evry, France",
+        "country": "France",
+        "games": "unknown",
+        "chain": "La Tete dans les Nuages"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://latetedanslesnuages.com/centres/",
+      "evidence_quote": "Listed on LTDN Nos centres page with address: 2 boulevard de l'Europe, 91000 Evry, France",
+      "note": "Official LTDN centres list. Games unknown. Not present in France shard (92 venues). Sibling LTDN Opera/Defense/Aeroville/Part-Dieu/Nice/Confluence are already in map. Do not invent rhythm games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Tete dans les Nuages Toulon - Avenue 83",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "300 Avenue de l'Universite, 83160 La Valette-du-Var, France",
+        "country": "France",
+        "games": "unknown",
+        "chain": "La Tete dans les Nuages"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://latetedanslesnuages.com/centres/",
+      "evidence_quote": "Listed on LTDN Nos centres page with address: 300 Avenue de l'Universite, 83160 La Valette-du-Var, France",
+      "note": "Official LTDN centres list. Games unknown. Not present in France shard (92 venues). Sibling LTDN Opera/Defense/Aeroville/Part-Dieu/Nice/Confluence are already in map. Do not invent rhythm games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7479,
+      "name": "Arcade",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2010-08-10",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1389",
+      "evidence_quote": "lastUpdateTime 2010-08-10; machine still listed as Dancing Stage EuroMIX with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7539,
+      "name": "Le Palace",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2010-08-24",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1412",
+      "evidence_quote": "lastUpdateTime 2010-08-24; machine still listed as Dancing Stage EuroMIX2 with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7542,
+      "name": "Luna Park",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2010-08-10",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1388",
+      "evidence_quote": "lastUpdateTime 2010-08-10; machine still listed as Dancing Stage EuroMIX2 with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7550,
+      "name": "Pathe Brumath",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2010-08-28",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1417",
+      "evidence_quote": "lastUpdateTime 2010-08-28; machine still listed as Dancing Stage EuroMIX2 with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7510,
+      "name": "FirstBowl",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2011-08-31",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1886",
+      "evidence_quote": "lastUpdateTime 2011-08-31; machine still listed as DanceDanceRevolution X with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7544,
+      "name": "Magic World",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2012-08-18",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2349",
+      "evidence_quote": "lastUpdateTime 2012-08-18; machine still listed as DanceDanceRevolution X2 with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7502,
+      "name": "Euro Park",
+      "field": "other",
+      "current": "listed with ddr; ZIv last update 2014-09-10",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3249",
+      "evidence_quote": "lastUpdateTime 2014-09-10; machine still listed as DanceDanceRevolution X2 with no fresher confirmation on ZIv France API",
+      "note": "11-15 year stale community listing. I could NOT confirm presence or absence from an official source. Do not auto-delete; treat as high-risk stale until field check. Supreme rule: do not invent closed status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7476,
+      "name": "Akiha Pop",
+      "field": "website",
+      "current": "https://akihapop.com/fr/",
+      "proposed": "https://akihapop.com/",
+      "confidence": "likely",
+      "evidence_url": "https://akihapop.com/fr/",
+      "evidence_quote": "HTTP 404 on /fr/; root akihapop.com loads and advertises Salle d'arcade a Lille; nos-magasins lists Saint-Etienne Centre Deux explicitly",
+      "note": "Could not reconfirm Chalons-en-Champagne branch from official nos-magasins page (only Saint-Etienne fully listed). ZIv last update 2023-03-12 for this row. Leave open unless better evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7534,
+      "name": "La Tete dans les Nuages Nice Cap 3000",
+      "field": "website",
+      "current": null,
+      "proposed": "https://latetedanslesnuages.com/",
+      "confidence": "certain",
+      "evidence_url": "https://latetedanslesnuages.com/centres/",
+      "evidence_quote": "Nice CAP3000 - 217 Avenue Eugene Donadei, 06700 Saint-Laurent-du-Var, Zone Extension - CORSO, Niveau 2 Boutique 246, tel. 04 83 56 04 20",
+      "note": "Fill missing website with chain site. Address matches.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7485,
+      "name": "BowlCenter Echirolles (La Tete dans les Nuages)",
+      "field": "hours",
+      "current": "Mon 14:00-00:00; Tue-Wed 14:00-01:00; Thu 14:00-00:00; Fri-Sat 14:00-03:00; Sun 14:00-00:00",
+      "proposed": "Mon 14:00-00:00; Tue-Thu 14:00-01:00; Fri 14:00-03:00; Sat 10:00-03:00; Sun 10:00-00:00",
+      "confidence": "likely",
+      "evidence_url": "https://echirolles.bowlcenter.fr/",
+      "evidence_quote": "Monday: 14h00 - midnight; Tuesday-Thursday: 14h00 - 1h00; Friday: 14h00 - 3h00; Saturday: 10h00 - 3h00; Sunday: 10h00 - midnight",
+      "note": "Official hours differ from app (Sat/Sun open earlier 10h; Tue-Thu close 1h). School holidays open 10h except Jul-Aug.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

@@ -125,14 +125,19 @@ def test_venue_key_prefers_the_source_page_over_the_address(tmp_path):
     assert before == after == "ziv|https://ziv/1"
 
 
-def test_a_no_op_proposal_is_not_counted_as_a_change(tmp_path):
+def test_a_proposal_matching_current_data_is_still_kept(tmp_path):
+    # build() reads arcades.json, which is the ALREADY-CORRECTED output
+    # of the previous build. "already right" therefore usually means
+    # "the overlay put it there", so skipping those shrank the overlay
+    # on every rebuild until the corrections silently reverted.
     out, stats = _one(str(tmp_path), {
         "field": "games", "name": "Test Arcade",
         "current": {"name": "Test Arcade", "addr": "1 Main St"},
         "proposed": ["maimai_dx"], "confidence": "certain",
         "evidence_url": "https://x", "evidence_quote": "q",
     })
-    assert not out and stats["no_change"] == 1
+    assert out, "a correction was dropped because it already applied"
+    assert stats["no_change"] == 0
 
 
 def test_unknown_game_slugs_are_dropped(tmp_path):

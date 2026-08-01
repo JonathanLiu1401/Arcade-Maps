@@ -1,0 +1,642 @@
+{
+  "shard": 97,
+  "checked": 91,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Mexico",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5233",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6750",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4560",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9774",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10569",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8597",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5779",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5635",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5638",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9127",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5580",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5499",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4566",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7465",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4301",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4475",
+    "https://www.lahordabar.com/",
+    "https://www.lahordabarsanico.com/",
+    "https://arcademty.com",
+    "https://incrediblepizza.mx/",
+    "https://www.incrediblepizzachihuahua.com/",
+    "https://www.mundodivertido.com.mx/",
+    "https://www.replayarcades.mx/tijuana",
+    "https://circuspark.com.mx/",
+    "https://circuspark.com.mx/circus-park-sun-mall/",
+    "https://circuspark.com.mx/circus-park-sendero-la-fe/",
+    "https://www.galex.com.mx/",
+    "http://recorcholis.com.mx",
+    "https://imaginatecachanill.wixsite.com/diversiones"
+  ],
+  "corrections": [
+    {
+      "id": 9866,
+      "name": "La Horda Bar Arcade",
+      "field": "hours",
+      "current": "Mon-Wed closed; Thu 18:00-00:00; Fri 18:00-01:00; Sat 18:00-02:00; Sun 15:00-22:00",
+      "proposed": "Mon 13:00-22:00; Tue-Wed closed; Thu 18:00-00:00; Fri 18:00-01:00; Sat 15:00-02:00; Sun 15:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.lahordabar.com/",
+      "evidence_quote": "Lun: 1PM a 10PM; Mar: CERRADO; Mie: CERRADO; Jue: 6PM a 12AM; Vie: 6PM a 1AM; Sab: 3PM a 2AM; Dom: 3PM a 10PM. Puerta cierra una hora y media antes del cierre",
+      "note": "Official site hours supersede ZIv (last ZIv hours update 2026-03-06 still had Mon-Wed closed and Sat open from 18:00). Door closes 1.5h before listed close. Social posts sometimes vary.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9866,
+      "name": "La Horda Bar Arcade",
+      "field": "prices",
+      "current": {
+        "cover": "$125 Thu/Fri, $150 Sat/Sun free-play",
+        "machine_prices": "all rhythm free play"
+      },
+      "proposed": {
+        "cover_MXN": 200,
+        "note": "BRAZALETE DE ACCESO $200 unlimited free play on arcades (except pinball and prize machines); pinball MX$5/credit"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.lahordabar.com/",
+      "evidence_quote": "BRAZALETE DE ACCESO $200, puedes jugar todas las arcades de forma ilimitada, juegos de mesa y maquinas de baile. Todas las maquinas son FREE PLAY (excepto las Pinball y premios). $5 el credito en los pinballs mamalones",
+      "note": "App info_text still says $125/$150 from ZIv 2026-03-06. Official site now advertises flat $200 wristband. Update info_text accordingly. Rhythm free-play claim remains true once inside.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9866,
+      "name": "La Horda Bar Arcade",
+      "field": "other",
+      "current": "info_text: Only $125 on Thursdays & Fridays, $150 on Saturdays & Sundays...",
+      "proposed": "Cover is currently advertised as $200 wristband for unlimited free play (except pinball/prizes). Official hours include Monday 1PM-10PM trial openings; Tue-Wed closed. Family Sundays with no minor restriction. 3rd branch La Horda Leones announced as coming soon (not open yet).",
+      "confidence": "certain",
+      "evidence_url": "https://www.lahordabar.com/",
+      "evidence_quote": "BRAZALETE DE ACCESO $200... Pronto nuestra 3er sucursal La Horda Bar Arcade Leones",
+      "note": "Also update info_text. Pump It Up Phoenix 2 mentioned as arrived on site posts; ZIv still lists Pump It Up Phoenix (DX cab). SDVX Valkyrie model confirmed in ZIv cab list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9867,
+      "name": "La Horda Bar Arcade Sanico",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "other",
+        "popn",
+        "project_diva",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "ddr",
+        "gitadora",
+        "maimai",
+        "other",
+        "popn",
+        "project_diva",
+        "pump_it_up"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6750",
+      "evidence_quote": "maimai FiNALE (Japan) listed among machines; HELLO! POP'N MUSIC; Dance Dance Revolution 3rdMIX Ver.KOREA2; drummania 2ndMIX; Pump It Up Fiesta 2; Project DIVA Arcade Future Tone",
+      "note": "machine_prices already contains maimai: free play but games[] omits maimai. Official site Instagram feed also calls out #MaiMai. This is offline FiNALE (not DX); maimai network ended 2019/2020 so treat as private offline cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9867,
+      "name": "La Horda Bar Arcade Sanico",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_finale_offline": true,
+        "note": "ZIv lists maimai FiNALE (not DX)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6750",
+      "evidence_quote": "maimai FiNALE",
+      "note": "Do not tag as maimai DX. Offline FiNALE private cabinet is the supported claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9867,
+      "name": "La Horda Bar Arcade Sanico",
+      "field": "hours",
+      "current": "Mon-Wed 16:00-23:00; Thu 16:00-00:00; Fri 16:00-01:00; Sat 15:00-01:00; Sun 15:00-22:00",
+      "proposed": "Mon-Wed 17:00-23:00; Thu-Fri 17:00-00:00; Sat 14:00-00:00; Sun 14:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://www.lahordabarsanico.com/",
+      "evidence_quote": "Lun/Mar/Mie: 5PM a 11PM; Jue/Vie: 5PM a 12AM; Sab: 2:00PM a 12AM; Dom: 2PM a 10PM. Las promos, precios y horarios pueden variar por sucursal.",
+      "note": "Official site differs from ZIv on Fri close (12AM vs 1AM) and Sat open (2PM vs 3PM). Prefer official. Door often closes earlier per social posts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9867,
+      "name": "La Horda Bar Arcade Sanico",
+      "field": "prices",
+      "current": {
+        "machine_prices_include_maimai_free_play": true,
+        "no_cover_in_app": true
+      },
+      "proposed": {
+        "cover_MXN_mon_wed": 150,
+        "cover_MXN_thu_sun_and_holidays": 200,
+        "note": "Unlimited free play except pinball and prize machines"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.lahordabarsanico.com/",
+      "evidence_quote": "ACCESO $150 lunes a miercoles (excepto dias festivos en donde aplica precio regular), $200 de jueves a domingo (y dias festivos). puedes jugar todas las arcades de forma ilimitada (mas de 50)",
+      "note": "App lacks cover price. Add to info_text/machine_prices context.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9867,
+      "name": "La Horda Bar Arcade Sanico",
+      "field": "other",
+      "current": "Pump listed as Fiesta 2 in ZIv notes",
+      "proposed": "Official social posts (2025-2026) state Pump It Up Phoenix 2 is installed (#PumpItUpPhoenix2 ya disponible). ZIv still lists Fiesta 2 on Perfect Collection cab (updated 2025-08-01). Prefer Phoenix 2 as current version with likely confidence; keep Fiesta 2 as historical ZIv row until ZIv is refreshed.",
+      "confidence": "likely",
+      "evidence_url": "https://www.lahordabarsanico.com/",
+      "evidence_quote": "#PumpItUpPhoenix2 ya disponible",
+      "note": "Newer official/social source beats older community listing for version string.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9821,
+      "name": "Arcade Monterrey",
+      "field": "hours",
+      "current": "Mon closed; Tue-Sat 13:00-22:45; Sun 13:00-21:45",
+      "proposed": "Mon closed; Tue-Sat 13:00-23:00; Sun 13:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://arcademty.com",
+      "evidence_quote": "Martes a Sabado de 1pm a 11pm; Domingos de 1pm a 10pm",
+      "note": "Official site rounds to 11pm/10pm. ZIv had 22:45/21:45. Prefer official. Venue appears open (active promos including June 2026). DDR still listed on ZIv (EXTREME) updated 2025-10-07; site does not name DDR explicitly.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9821,
+      "name": "Arcade Monterrey",
+      "field": "location",
+      "current": "Av. Paseo De Los Leones, 5a. Avenida 1649 Cumbres Del Sur, 1er Sector",
+      "proposed": "Av Paseo de los Leones 1647, Cumbres Primer Sector, Monterrey, N.L. (confirm whether 1647 or 1649)",
+      "confidence": "likely",
+      "evidence_url": "https://arcademty.com",
+      "evidence_quote": "Av Paseo de los Leones, 1647, Cumbres Primer Sector, Monterrey, N.L",
+      "note": "App has 1649; official site has 1647. Same street/sector, one digit off. Coordinates already near this block. Relocated Nov 11 2023 (already noted in info_text).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9881,
+      "name": "Placeholder",
+      "field": "status",
+      "current": "open-looking venue named Placeholder with pump_it_up + other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4560",
+      "evidence_quote": "Name: Placeholder. Last updated 2018-07-26 21:22 by Meikoloid. Address 196-C Avenida Diego Diaz de Berlanga, San Nicolas de los Garza. Machines: Guitar Hero Arcade, Pump It Up PRIME, 18 Wheeler, Daytona Championship USA. No visitor comments.",
+      "note": "Real business name unknown; listing is 8 years stale with no independent confirmation it still exists. Do NOT confidently mark closed either. Recommend maintainer field visit or local search before keeping as a pin. proposed null means remove or quarantine until identified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9881,
+      "name": "Placeholder",
+      "field": "other",
+      "current": "name=Placeholder",
+      "proposed": "Rename once real operator name found; current label is a ZIv stub",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4560",
+      "evidence_quote": "Placeholder",
+      "note": "Display name should never be the literal word Placeholder on a traveler map.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9891,
+      "name": "Recorcholis",
+      "field": "game_counts",
+      "current": {
+        "pump_it_up": 10
+      },
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5779",
+      "evidence_quote": "Two machines only: Pump It Up 3rd Dance Floor (comment: Not actually a 3rd Dance Floor machine per say, it's a SM 3.9 machine, but the shell is from a 3rd Dance Floor cab.); Pump It Up NX ABSOLUTE. Last update 2020-12-01.",
+      "note": "count_evidence was ziv_comment but neither comment says 10. Stale (5-6 years). Even 2 is only as of 2020; true current count unverified. Better than inventing 10.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9905,
+      "name": "!Recorcholis! (Centro Comercial Altacia)",
+      "field": "game_counts",
+      "current": {
+        "pump_it_up": 4
+      },
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5635",
+      "evidence_quote": "Two Pump It Up PRIME entries, each comment \"SXv2 cab with a LCD replacement screen\". Last update 2020-07-24.",
+      "note": "ziv_comment evidence does not mention 4 cabs. Two machine rows = 2. Still 6 years stale overall for this venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9909,
+      "name": "!Recorcholis! (Portal San Angel)",
+      "field": "game_counts",
+      "current": {
+        "pump_it_up": 2
+      },
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5638",
+      "evidence_quote": "Single machine: Pump It Up PRIME 2, comment SXv2 cab with a LCD replacement screen. Last update 2020-07-24.",
+      "note": "ziv_comment does not say 2. Only one machine row. Stale listing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9833,
+      "name": "Circus Park - Esfera Fashion Hall",
+      "field": "website",
+      "current": "https://circuspark.com.mx/circus-park-esfera-fashion-hall/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-park-esfera-fashion-hall/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9834,
+      "name": "Circus Park - Paseo Monclova",
+      "field": "website",
+      "current": "https://circuspark.com.mx/circus-park-plaza-paseo-monclova/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-park-plaza-paseo-monclova/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9835,
+      "name": "Circus Park - Plaza Fashion Drive",
+      "field": "website",
+      "current": "https://circuspark.com.mx/circus-circus-plaza-fashion-drive/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-circus-plaza-fashion-drive/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9836,
+      "name": "Circus Park - Plaza Fiesta Anahuac",
+      "field": "website",
+      "current": "https://circuspark.com.mx/circus-plaza-fiesta-anahuac/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-plaza-fiesta-anahuac/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9837,
+      "name": "Circus Park - Plaza Sendero Apodaca",
+      "field": "website",
+      "current": "https://circuspark.com.mx/circus-circus-plaza-sendero-apodaca/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-circus-plaza-sendero-apodaca/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9860,
+      "name": "HappyLand Park - Plaza Las Misiones",
+      "field": "website",
+      "current": "http://www.happyland.com.mx/misiones/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "http://www.happyland.com.mx/misiones/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9910,
+      "name": "!Recorcholis! - Plaza Galerias Saltillo",
+      "field": "website",
+      "current": "http://www.recorcholis.com.mx/index.php/sucursales/plazagaleriassaltillo",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "http://www.recorcholis.com.mx/index.php/sucursales/plazagaleriassaltillo",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-08-01",
+      "note": "Dead deep-link. For Circus Park, homepage https://circuspark.com.mx/ still lists some active branch names (Sendero San Luis, The Park, Fashion Drive, Esfera, Sendero La Fe, Galerias) but several per-branch URLs 404. 404 website is not proof the arcade closed. Prefer null or chain homepage until a live branch URL is found. Happyland misiones path 404; Recorcholis Saltillo deep link 404 (chain homepage recorcholis.com.mx is live).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9838,
+      "name": "Circus Park - Plaza Sendero La Fe",
+      "field": "hours",
+      "current": "(from ZIv)",
+      "proposed": "Mon-Sun 11:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-park-sendero-la-fe/",
+      "evidence_quote": "LUNES A DOMINGO DE 11:00 A.M. A 10:00 P.M. Address Av. Miguel Aleman Km 18 789 Col. Centro APODACA, NL CP 66600. Phone (81) 1090 0516",
+      "note": "Official branch page still live 2026. App already has Mon-Sun 11:00-22:00 so if identical, maintainer can ignore; included to lock official confirmation. Rhythm game presence (pump) not reconfirmed on this page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9832,
+      "name": "Circus Park (Circus Circus) - Sun Mall",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://circuspark.com.mx/circus-park-sun-mall/",
+      "evidence_quote": "LUNES A DOMINGO DE 10:00 A.M. A 9:00 P.M. Address Av. Pablo Livas 7601 Col. Rincon de Guadalupe GUADALUPE, NL CP 67193. Phone (81) 83616160",
+      "note": "Official branch page live. App hours_text was null/unknown for some Circus entries - check app; if already set leave it. No specific rhythm titles named on page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9875,
+      "name": "OLD SCHOOL GAMES",
+      "field": "other",
+      "current": "info_text: DDR X3 VS 2ND MIX / PUMP IT UP VERSION XX; notes cabs include Pump It Up Phoenix",
+      "proposed": "Align info_text with machine list: DDR X3 VS 2ndMIX and Pump It Up Phoenix (ZIv). Remove VERSION XX claim unless reconfirmed.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5580",
+      "evidence_quote": "Machines: DanceDanceRevolution X3 VS 2ndMIX; Pump It Up Phoenix. Information text still says PUMP IT UP VERSION XX. Last update 2023-10-05.",
+      "note": "Internal inconsistency between info_text and machine list on same ZIv page. Prefer machine row (Phoenix). Venue last updated 2 years ago; current open status unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9825,
+      "name": "Burla-landia",
+      "field": "other",
+      "current": "Appears as normal public pump venue; hours Mon-Thu 06:00-19:00; Fri 00:00-19:00; Sat-Sun 06:00-20:00",
+      "proposed": "Private/invitation-only Pump It Up PHOENIX 2. Not a walk-in public arcade. Contact required.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9774",
+      "evidence_quote": "Pump It Up PHOENIX 2. Comment: They can only play by invitation from \"Burla\" or by contacting her. Price 1 person $80 MXN/Hour / 2 persons $120 MXN/Hour. Last update 2026-07-24.",
+      "note": "Recently updated (7 days before 2026-08-01). Odd Friday 00:00 open may be data entry or special schedule; not independently verified. Flag for map UX so travelers do not go expecting walk-in play.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9873,
+      "name": "Mundo Divertido",
+      "field": "hours",
+      "current": "Mon-Fri 12:00-21:00; Sat-Sun 10:00-22:00 (from ZIv 2019)",
+      "proposed": "Tue closed; Wed-Mon 13:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.mundodivertido.com.mx/",
+      "evidence_quote": "MIERCOLES A LUNES DE 1:00 PM A 9:00 PM; MARTES CERRADO. SOMOS EL UNICO PARQUE DE ATRACCIONES EN TIJUANA! Phone (664) 701-7133",
+      "note": "Official site indicates venue still operating in Tijuana. No specific rhythm cabinets confirmed (arcade area mas de 30 juegos de arcade). ZIv has zero machines listed (6 years stale).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9862,
+      "name": "Incredible Pizza",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Fri 13:00-20:00; Sat-Sun 12:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.incrediblepizzachihuahua.com/",
+      "evidence_quote": "Lun-Vie: 1:00 PM - 8:00 PM; Sab-Dom: 12:00 PM - 8:00 PM. Address Periferico de la Juventud 6506 Chihuahua, Chih. Mexico. +100 Juegos, VR, Go Karts",
+      "note": "Official site live and advertising visits. Does NOT mention DDR; ZIv lists DanceDanceRevolution X2 with broken P2 panel (updated 2023-09-30). DDR presence today is unverified from official sources; keep ddr tag only with low confidence or re-verify on site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9862,
+      "name": "Incredible Pizza",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": [
+        "ddr"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://www.incrediblepizzachihuahua.com/",
+      "evidence_quote": "Page lists videojuegos / +100 Juegos / VR / Go Karts but never names Dance Dance Revolution or any rhythm title.",
+      "note": "Cannot confirm DDR still present from official site. ZIv last said DDR X2 with broken panel in 2023. Confidence for keeping ddr is weak; maintainer may demote or drop until reconfirmed. proposed keeps current pending field check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9887,
+      "name": "Plaza de la tecnologia",
+      "field": "other",
+      "current": "info_text: Plaza de la tecnologia piso 2, zona de juegos",
+      "proposed": "Rhythm cabinets (SDVX EXCEED GEAR, WACCA REVERSE, Nostalgia Op.3, Rhythm Tengoku) are described on ZIv as primer piso local 256 (and PIU units at entrance / fondo). info_text piso 2 is incomplete/misleading. Token-only for those cabs; e-amusement cards sold Wed-Sat ~150 MXN at local.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8597",
+      "evidence_quote": "NOSTALGIA location: En el primer piso local 256, al lado de la maquina de SDVX. WACCA REVERSE: En el primer piso, en el Local 256. SDVX: En el primer piso local 256. Last update 2025-11-27.",
+      "note": "Multi-vendor tech mall, not a single operator. Pins may be mall centroid which is fine; note floor/local numbers matter for finding cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9896,
+      "name": "Replay Arcades (Alameda Otay)",
+      "field": "games",
+      "current": [
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "pump_it_up",
+        "taiko"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://www.replayarcades.mx/tijuana",
+      "evidence_quote": "Site confirms branch Tijuana Alameda Otay is active with promotions (Jan 2026 banners) but lists no cabinet titles. ZIv lists Pump It Up XX and taiko no tatsujin 13 (both condition 0) last update 2024-12-27.",
+      "note": "Keep tags but both taiko and PIU versions/conditions are only community-sourced and ~1 year old with condition 0 (unknown). Cannot confirm from official site. Branch list also mentions Mexicali San Pedro, Mexicali Juventud 2000, Tijuana Paseo 2000, Saltillo Paseo Villalta as other Replay locations that may be missing from the map (not verified for rhythm cabs).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9903,
+      "name": "XGames",
+      "field": "other",
+      "current": "ddr + pump_it_up free play; no hours",
+      "proposed": "Keep. ZIv 2025-10-05 lists DanceDanceRevolution WORLD and Pump It Up Phoenix (2024), both free play / Perfect. Hours unknown. Facebook arcadesXgames; phone 55 8548 1784.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10569",
+      "evidence_quote": "DanceDanceRevolution WORLD Free Play Perfect; Pump It Up Phoenix (2024) Free Play Perfect. Created/updated 2025-10-05 by lesezry. Opening hours Unknown.",
+      "note": "Relatively fresh ZIv entry. No official website found. Not a correction of wrong data; positive confirmation. cab_models could note modern DDR WORLD (not legacy) if schema supports.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9903,
+      "name": "XGames",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr_world": true,
+        "pump_phoenix_2024": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10569",
+      "evidence_quote": "DanceDanceRevolution WORLD; Pump It Up Phoenix (2024)",
+      "note": "App currently has no cab_models; do not use ddr_legacy for this venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9848,
+      "name": "Diversiones Imaginate - San Luis",
+      "field": "other",
+      "current": "ddr + other; SuperNOVA + ITG2; hours Mon-Fri 12-21 Sat-Sun 10-22",
+      "proposed": "Still listed among 5 Imaginate branches on operator site (San Luis Rio Colorado 534-2338). ZIv updated 2026-07-28 with DDR SuperNOVA and In the Groove 2 (condition 0). Hours app matches ZIv. Wix site itself last noted update 2021-06 so current ops only weakly confirmed by phone listing.",
+      "confidence": "likely",
+      "evidence_url": "https://imaginatecachanill.wixsite.com/diversiones",
+      "evidence_quote": "Imaginate Cachanilla 554-0735, Galerias del Valle 218-9500, Nuevo mexicali 580-3180, Sendero 516-2401 y San Luis Rio Colorado 534-2338. Copyright actualizacion 2021-06.",
+      "note": "Not a field change if data already correct. Confirms branch still advertised. DDR cabinets condition 0 on ZIv = unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9829,
+      "name": "Cinepolis Pabellon Rosarito",
+      "field": "status",
+      "current": "listed with ddr (DanceDanceRevolution X)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4566",
+      "evidence_quote": "Last updated 2018-07-29 (8 years ago). Single machine DanceDanceRevolution X condition 3. No recent comments.",
+      "note": "Cinema brand likely still operates but 8-year-stale single DDR listing is not evidence the cabinet remains. Recommend remove ddr claim or mark heavily stale until reconfirmed. proposed null = remove open-rhythm claim strength, not necessarily delete venue pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9863,
+      "name": "Infinity Games @ Centro Comercial Valle Soleado",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5499",
+      "evidence_quote": "Only machine: Dancing Stage featuring TRUE KiSS DESTiNATiON. Last update 2022-03-15 (4 years ago).",
+      "note": "TRUE KiSS DESTiNATiON is a 1999 Dancing Stage title, not modern DDR. Tagging as ddr is debatable; existence after 4 years with condition 0 is unverified. proposed null means drop ddr claim until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9822,
+      "name": "Arcade PLAZA",
+      "field": "other",
+      "current": "pump_it_up; hours Mon-Sat 10:00-08:00; Sun 10:00-07:00; info: No longer in Frikiplaza, Stepmania-based PIU",
+      "proposed": "Keep pump tag but note it is a modified/StepMania-based PIU PRIME with custom songs up to Phoenix (ZIv comment). Hours string 10:00-08:00 is almost certainly 10:00-20:00 or overnight data-entry weirdness from ZIv; treat as unreliable.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9127",
+      "evidence_quote": "Info: No longer in Frikiplaza, now just the Stepmania-based Pump it Up machine in a building to the left of a Telcel near the pin. Machine: Pump It Up PRIME - Actually a modified Pump it Up Prime to include custom songs up to Phoenix with others. Updated 2024-12-26.",
+      "note": "Hours ending 08:00 while opening 10:00 look inverted/corrupt. Do not trust hours_text without local confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9866,
+      "name": "La Horda Bar Arcade",
+      "field": "cab_models",
+      "current": {
+        "sdvx_vm": null
+      },
+      "proposed": {
+        "sdvx_valkyrie": true,
+        "ddr_a3_on_3rdmix_cab": true,
+        "pump_dx_phoenix": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5233",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR (Valkyrie model); DanceDanceRevolution A3 On a DDR3rdMix Cabinet.; Pump It Up Phoenix DX game cabinet running latest Phoenix version...; taiko no tatsujin 14; Nostalgia Op.3; CHUNITHM Unknown version; WACCA REVERSE; jubeat Unknown version",
+      "note": "App already flags sdvx_vm which matches Valkyrie. Expand if schema allows. Taiko is older console-era style numbering in ZIv, not necessarily Nijiiro. CHUNITHM version unknown (private import likely).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Replay Arcades - other Mexico branches (candidates)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": "Replay Arcades also advertises: Mexicali San Pedro, Mexicali Juventud 2000, Tijuana Paseo 2000, Saltillo Paseo Villalta. Shard already has Replay Arcade @ Plaza San Pedro (Mexicali) and Alameda Otay (Tijuana). Other branches not in shard 097; unknown whether they have rhythm games.",
+      "confidence": "unverified",
+      "evidence_url": "https://www.replayarcades.mx/tijuana",
+      "evidence_quote": "Branch list includes Tijuana Alameda Otay alongside Mexicali San Pedro, Mexicali Juventud 2000, Tijuana Paseo 2000, Saltillo Paseo Villalta",
+      "note": "Do not auto-add without addresses, coords, and confirmed rhythm cabinets. Only a lead for maintainers.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Horda Bar Arcade Leones",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": "Third La Horda location announced as coming soon (Leones / Monterrey area). Not open yet as of site copy fetched 2026-08-01. Do not add as open venue.",
+      "confidence": "likely",
+      "evidence_url": "https://www.lahordabar.com/",
+      "evidence_quote": "Pronto nuestra 3er sucursal La Horda Bar Arcade Leones",
+      "note": "Track for future add when they publish address/opening date.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9871,
+      "name": "Moon Palace Golf & Spa Resort",
+      "field": "status",
+      "current": "other, pump_it_up listed",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4301",
+      "evidence_quote": "lastUpdateTime 2018-01-03 (8 years ago) - oldest update in this Mexico shard",
+      "note": "Resort still exists as a brand but 2018 PIU claim is not evidence for 2026. proposed null = drop rhythm claims until reconfirmed; do not assert closed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9890,
+      "name": "Pool",
+      "field": "status",
+      "current": "ddr, other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4475",
+      "evidence_quote": "lastUpdateTime 2018-06-11 (8 years ago)",
+      "note": "8-year-stale DDR claim. Cannot verify open/closed or machines from current sources. Flag for recheck.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9841,
+      "name": "Diversiones Galex Centro Sur",
+      "field": "website",
+      "current": "https://www.galex.com.mx/",
+      "proposed": "https://www.galex.com.mx/",
+      "confidence": "likely",
+      "evidence_url": "https://www.galex.com.mx/",
+      "evidence_quote": "Chain homepage live 2026; Sucursales page did not expose branch list in static HTML (likely dynamic). Corporate address Pelicano No. 1537 Col. Morelos, Guadalajara, Jalisco CP 44910. WhatsApp 523313973602.",
+      "note": "Not a change. All Galex PIU listings in shard are 2-5 years stale with 1 machine each; cannot confirm current PIU from official site (no machine list). Status of individual Guadalajara-area branches unverified beyond ZIv age.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9897,
+      "name": "Rhythm Zone",
+      "field": "other",
+      "current": "jubeat, popn, pump_it_up, sdvx; no hours; Matehuala",
+      "proposed": "Keep games as of ZIv 2023-08-26: jubeat Ave. (network), pop'n music Kaimei Riddles (network), Pump It Up XX, SDVX EXCEED GEAR (network). Hours unknown. Important niche Bemani venue in Matehuala but 2+ years since update.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7465",
+      "evidence_quote": "jubeat Ave. En buenas condiciones y con network; pop'n music network; Pump It Up XX; SOUND VOLTEX EXCEED GEAR En buenas condiciones y con network. Info: Arcade con piu y maquinas de bemani. Updated 2023-08-26.",
+      "note": "No official website found. Data not disproven; flag for recheck. n_images=3 on ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9820,
+      "name": "America's Incredible Pizza Company - Monterrey",
+      "field": "other",
+      "current": "games: [other]; no machines on ZIv; hours present; website incrediblepizza.mx",
+      "proposed": "Venue ZIv row updated 2026-03-06 but machines array empty. Official site is live family entertainment (tickets, video games, go karts, laser tag, mini golf). No rhythm titles confirmed. Keep as non-rhythm FEC unless a cab is found.",
+      "confidence": "likely",
+      "evidence_url": "https://incrediblepizza.mx/",
+      "evidence_quote": "Incredible Pizza Mexico 2026. Attractions: maquina de tickets, video juegos, go karts, laser tag, mini golf, mini boliche...",
+      "note": "Not a map error for rhythm; just no rhythm evidence. Hours app Mon-Thu 12-21 etc match ZIv.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

@@ -30,6 +30,12 @@ reassigns ids 1..N every build, and using an id as a key has already put
 The key is also always the ORIGINAL name/addr, never the corrected
 value, so re-running the pipeline does not stop the overlay matching
 itself.
+
+For the same reason this script does NOT skip proposals that match the
+current data. It reads data/arcades.json, which is the ALREADY-CORRECTED
+output of the previous build, so "the value is already right" usually
+means "the overlay put it there". Dropping those would shrink the
+overlay on every rebuild until the corrections silently reverted.
 """
 
 import glob
@@ -148,9 +154,6 @@ def build(raw_dir, arcades, game_slugs):
                 if not games:
                     stats["bad_slug"] += 1
                     continue
-                if games == sorted(arcade.get("games") or []):
-                    stats["no_change"] += 1
-                    continue
                 value = games
             elif field == "game_counts":
                 if not isinstance(proposed, dict):
@@ -164,9 +167,6 @@ def build(raw_dir, arcades, game_slugs):
                           if k in game_slugs and isinstance(v, int) and v > 0}
                 if not counts:
                     stats["bad_slug"] += 1
-                    continue
-                if counts == (arcade.get("game_counts") or {}):
-                    stats["no_change"] += 1
                     continue
                 value = counts
             else:

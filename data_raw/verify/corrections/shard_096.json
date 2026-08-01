@@ -1,0 +1,1232 @@
+{
+  "shard": 96,
+  "checked": 91,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (60 shops Inertia JSON 2026-08-01)",
+    "https://map.bemanicn.com/region/city/{code} (12 NMG cities)",
+    "https://map.bemanicn.com/api/miniapp/common/region",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-08-01 41 NMG)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-08-01 11 NMG)",
+    "data_raw/china_wahlap_maimai_dx.json",
+    "data_raw/china_wahlap_chunithm.json",
+    "data_raw/china_bemanicn.json",
+    "bc_title_map.json"
+  ],
+  "corrections": [
+    {
+      "id": 4268,
+      "name": "晧轩快乐星球",
+      "field": "location",
+      "current": {
+        "lat": 39.147208,
+        "lng": 117.274669,
+        "approx": null,
+        "addr": "胜利南路维多利摩尔城南区4号门5楼"
+      },
+      "proposed": {
+        "lat": 40.75133,
+        "lng": 107.41494,
+        "approx": true,
+        "note": "Bayannur mall near id 3577"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6543",
+      "evidence_quote": "BCN name=晧轩快乐星球 address=胜利南路维多利摩尔城南区4号门5楼 city_code=150800000000 updated=2026-07-31T13:51:43.000000Z. App pin (39.147208,117.274669) ~861km from Bayannur, ~7km from Tianjin.",
+      "note": "CRITICAL wrong-city pin (Tianjin coords for Bayannur venue). Likely merge with 3577 after fix.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4268,
+      "name": "晧轩快乐星球",
+      "field": "other",
+      "current": {
+        "likely_duplicate_of": null
+      },
+      "proposed": {
+        "likely_duplicate_of": 3577,
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6543",
+      "evidence_quote": "BCN 晧轩快乐星球 @ 胜利南路维多利摩尔城南区4号门5楼 maimai+taiko; WAHLAP 3577 same mall floor 5 brand 快乐星球",
+      "note": "Same mall/floor/brand family as 3577",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2627,
+      "name": "大玩家超乐场乌海万达店",
+      "field": "status",
+      "current": {
+        "open": true,
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "open": false,
+        "or": "remove_maimai_dx",
+        "note": "absent from live WAHLAP"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai NMG 2026-08-01 Wuhai entries: ['酷迪炫乌海海勃湾万达店']. 大玩家超乐场乌海万达店 missing (was placeId=1915 in raw snapshot).",
+      "note": "Official locator dropped this store. Same mall has 酷迪炫 6940/6941. No closed date. likely not certain because WAHLAP can lag or rename.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2627,
+      "name": "大玩家超乐场乌海万达店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live NMG maimai n=41 excludes this venue",
+      "note": "Remove maimai_dx claim",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1200,
+      "name": "M8潮玩街区（时尚摩尔地下街店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3466",
+      "evidence_quote": "updated=2026-06-21T02:40:52.000000Z counts={'maimai_dx': 2, 'chunithm': 2, 'taiko': 1} other=[]; no WACCA",
+      "note": "ZIv had WACCA; BCN 2026-06 no longer lists it",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1200,
+      "name": "M8潮玩街区（时尚摩尔地下街店）",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3466",
+      "evidence_quote": "qty {'maimai_dx': 2, 'chunithm': 2, 'taiko': 1}; WACCA absent",
+      "note": "drop stale wacca:2",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1200,
+      "name": "M8潮玩街区（时尚摩尔地下街店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "CN1.55-A",
+        "chunithm": "2026",
+        "taiko": "2025春"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3466",
+      "evidence_quote": "versions {'maimai_dx': 'CN1.55-A', 'chunithm': '2026', 'taiko': '2025春'}",
+      "note": "BCN versions",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2941,
+      "name": "天空之境",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3219",
+      "evidence_quote": "title_id=17 WACCA quantity=2 version=国行; app notes already say other games: WACCA",
+      "note": "misfiled under other",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2941,
+      "name": "天空之境",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3219",
+      "evidence_quote": "quantity=2 version=国行 coin=0; shop.price=129 ticket",
+      "note": "ticket venue",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1273,
+      "name": "Super101呼和浩特新城店",
+      "field": "other",
+      "current": {
+        "name": "Super101呼和浩特新城店",
+        "addr": "内蒙古自治区呼和浩特市新城区网红街19号口电玩城"
+      },
+      "proposed": {
+        "name": "Super101（新华广场店）",
+        "addr": "新华广场地铁网红街欧洲小镇H区第H005/H010/H030/H036"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1848",
+      "evidence_quote": "BCN name=Super101（新华广场店） addr=新华广场地铁网红街欧洲小镇H区第H005/H010/H030/H036 updated=2026-07-05T12:52:19.000000Z",
+      "note": "dual naming same venue; prefer BCN unit numbers",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1273,
+      "name": "Super101呼和浩特新城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1848",
+      "evidence_quote": "hours 10:00-23:00",
+      "note": "BCN community hours",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1273,
+      "name": "Super101呼和浩特新城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1848",
+      "evidence_quote": "coins={'maimai_dx': 4} unit=1",
+      "note": "BCN coins",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1693,
+      "name": "乐逸超乐场包头青山万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5338",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3239,
+      "name": "宝贝王包头青山万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5339",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6527,
+      "name": "赛博矩阵呼和浩特赛罕万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3266",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4107,
+      "name": "星际传奇呼和浩特玉泉万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5539",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2640,
+      "name": "大玩家超乐空间（乌兰浩特万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3218",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2949,
+      "name": "太平洋电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/331",
+      "evidence_quote": "hours 09:00-22:00 start=9 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4501,
+      "name": "梓木超级英雄电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5672",
+      "evidence_quote": "hours 10:00-24:00 start=10 end=24",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5284,
+      "name": "潮范儿电玩（新华MALL店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4617",
+      "evidence_quote": "hours 10:00-24:00 start=10 end=24",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5560,
+      "name": "玩力湃潮玩馆",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5846",
+      "evidence_quote": "hours 09:00-22:00 start=9 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6534,
+      "name": "超乐玩家娱乐中心东胜区万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2324",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6794,
+      "name": "酷乐大玩家鄂尔多斯店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/996",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6941,
+      "name": "酷迪炫潮玩空间",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6103",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7128,
+      "name": "风の屋",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5064",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3435,
+      "name": "巅峰之城（包头青山万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/332",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2558,
+      "name": "大玩家乌兰察布集宁万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6335",
+      "evidence_quote": "hours 10:00-22:00 start=10 end=22",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6611,
+      "name": "超级玩家通辽维多利店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2389",
+      "evidence_quote": "hours 10:00-02:00 (+1d) start=10 end=26",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6632,
+      "name": "超能玩家（茂业摩尔城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-01:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4964",
+      "evidence_quote": "hours 10:00-01:00 (+1d) start=10 end=25",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6631,
+      "name": "超能玩家（维多利店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5253",
+      "evidence_quote": "hours 08:00-02:00 (+1d) start=8 end=26",
+      "note": "BCN community hours; end>24 next day",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1693,
+      "name": "乐逸超乐场包头青山万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "6币/play (币价约1元)",
+        "chunithm": "6币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5338",
+      "evidence_quote": "coins={'maimai_dx': 6, 'chunithm': 6} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3239,
+      "name": "宝贝王包头青山万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4币/play (币价约1元)",
+        "chunithm": "5币/play (币价约1元)",
+        "taiko": "6币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5339",
+      "evidence_quote": "coins={'maimai_dx': 4, 'chunithm': 5, 'taiko': 6} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6527,
+      "name": "赛博矩阵呼和浩特赛罕万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3币/play (币价约1元)",
+        "chunithm": "3币/play (币价约1元)",
+        "taiko": "8币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3266",
+      "evidence_quote": "coins={'maimai_dx': 3, 'chunithm': 3, 'taiko': 8} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4107,
+      "name": "星际传奇呼和浩特玉泉万象城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4币/play (币价约1元)",
+        "taiko": "9币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5539",
+      "evidence_quote": "coins={'maimai_dx': 4, 'taiko': 9} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2640,
+      "name": "大玩家超乐空间（乌兰浩特万达广场店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4币/play (币价约1元)",
+        "chunithm": "4币/play (币价约1元)",
+        "jubeat": "4币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3218",
+      "evidence_quote": "coins={'maimai_dx': 4, 'chunithm': 4, 'jubeat': 4} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2949,
+      "name": "太平洋电玩城",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5币/play (币价约0.25元)",
+        "chunithm": "5币/play (币价约0.25元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/331",
+      "evidence_quote": "coins={'maimai_dx': 5, 'chunithm': 5} unit=0.25",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6794,
+      "name": "酷乐大玩家鄂尔多斯店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5币/play (币价约1元)",
+        "chunithm": "5币/play (币价约1元)",
+        "taiko": "8币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/996",
+      "evidence_quote": "coins={'maimai_dx': 5, 'chunithm': 5, 'taiko': 8} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6534,
+      "name": "超乐玩家娱乐中心东胜区万达广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5币/play (币价约1.0元)",
+        "taiko": "8币/play (币价约1.0元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2324",
+      "evidence_quote": "coins={'maimai_dx': 5, 'taiko': 8} unit=1.0",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6941,
+      "name": "酷迪炫潮玩空间",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5币/play (币价约0.5元)",
+        "chunithm": "5币/play (币价约0.5元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6103",
+      "evidence_quote": "coins={'maimai_dx': 5, 'chunithm': 5} unit=0.5",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4501,
+      "name": "梓木超级英雄电玩城",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5672",
+      "evidence_quote": "coins={'maimai_dx': 4} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2558,
+      "name": "大玩家乌兰察布集宁万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "12币/play (币价约1元)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6335",
+      "evidence_quote": "coins={'maimai_dx': 12} unit=1",
+      "note": "BCN coin counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1003,
+      "name": "CLUBPLAY（振华广场店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "国行5代",
+        "taiko": "12亚"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/326",
+      "evidence_quote": "versions={'sdvx': '国行5代', 'taiko': '12亚'} machines=[('SOUND VOLTEX', '国行5代', 2), ('太鼓达人(旧代)', '12亚', 1), ('星光', '2', 2)]",
+      "note": "BCN version field",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6527,
+      "name": "赛博矩阵呼和浩特赛罕万达店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "CN1.56-A",
+        "chunithm": "2026",
+        "taiko": "2025秋"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3266",
+      "evidence_quote": "versions={'maimai_dx': 'CN1.56-A', 'chunithm': '2026', 'taiko': '2025秋'} machines=[('maimai DX', 'CN1.56-A', 2), ('CHUNITHM', '2026', 2), ('太鼓之达人', '2025秋', 1)]",
+      "note": "BCN version field",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2640,
+      "name": "大玩家超乐空间（乌兰浩特万达广场店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "1.55-A",
+        "chunithm": "2026",
+        "jubeat": "1.0"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3218",
+      "evidence_quote": "versions={'maimai_dx': '1.55-A', 'chunithm': '2026', 'jubeat': '1.0'} machines=[('maimai DX', '1.55-A', 2), ('CHUNITHM', '2026', 2), ('jubeat音乐魔方', '1.0', 2)]",
+      "note": "BCN version field",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1003,
+      "name": "CLUBPLAY（振华广场店）",
+      "field": "other",
+      "current": {
+        "sdvx_playable": true
+      },
+      "proposed": {
+        "sdvx_playable": "degraded",
+        "detail": "2025-06-30 nearly unplayable offline"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/326",
+      "evidence_quote": "2025年6月30日：\n两台的状况都非常凄惨，几乎是只能看不能玩。1p按键被泼过疑似饮料的物体，导致按键黏滞现象特别严重。二p旋钮贴靠主板摩擦力非常大，无法维修。两台机器均无法正常联网。\n以下为原注释：\n两台均已更换为欧姆龙微动，1p位更换为世宇新旋钮及星韵按键，40g弹簧。2p为源台标准按键与自购新旋钮。\n两台的耳机孔均有接触不良现象，已额外安装耳放。\n按键如有接触不良现象叫机修拧下来重新安一下",
+      "note": "still qty=2 status=1; flag condition",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2246,
+      "name": "嗨玩竞技现场",
+      "field": "other",
+      "current": {
+        "games": [
+          "other"
+        ]
+      },
+      "proposed": {
+        "note": "title_id=2 maimai finale x2 offline old cabs, not maimai_dx; family ticket pricing"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5085",
+      "evidence_quote": "other=['maimai x2'] machines=[{'title_id': 2, 'title': 'maimai', 'slug': 'other', 'quantity': 2, 'version': 'finale', 'coin': 0, 'comment': '旧框\\n靠门机台连不上网，另一个1P2P吃音，但可以刷aime登录（处aime卡以外的登陆卡都行）'}] comment=5777权威概括\n两对旧框辉代舞萌\n一台断网，有神秘曲包，一台正常辉代绿网框体\n两对机子都有些吃的情况\n不计币价，而采用了包天或是半天的家庭式收费制，价格不一，建议从团购上查看价格后再酌情购买",
+      "note": "correct as other/legacy not DX",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3435,
+      "name": "巅峰之城（包头青山万达广场店）",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other"
+        ]
+      },
+      "proposed": {
+        "note": "maimai present but long-term offline per BCN; 国服2025 no Plus"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/332",
+      "evidence_quote": "comment=5777权威概括\n舞萌长期在店门口摆放，与舞立方在一起，有时在维护会收到店家内部不对外开放\n币价较贵，长期勤建议团购买套餐\n长期断网，原因未知\n店铺最近翻新，除了门口的舞萌和舞立方里面还没开\n2026/2/13还是断网\n左右侧分别有不同的问题，一个是内屏糊而且六号键吃键吃内，一个是星星留尾不到底\n平时游客玩家较多\n晚上八点四十五左右会闭店\n早间十点左右开店\n versions={'maimai_dx': '国服2025（没更plus）'} updated=2026-07-07T11:01:30.000000Z",
+      "note": "still open; distinct from 乐逸/宝贝王 same mall",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6631,
+      "name": "超能玩家（维多利店）",
+      "field": "other",
+      "current": {
+        "name": "超能玩家（维多利店）",
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "name": "超能玩家内蒙古巴彦淖尔维多利店",
+        "src": [
+          "bemanicn",
+          "wahlap"
+        ],
+        "wahlap_placeId": "3840"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP: [{'name': '超能玩家内蒙古巴彦淖尔维多利店', 'address': '内蒙古自治区巴彦淖尔市临河区新华西街维多利二期六楼超能玩家', 'province': '内蒙古', 'placeId': '3840', 'id': '1948316381485744472', 'raw_keys': ['id', 'province', 'arcadeName', 'address', 'placeId']}]",
+      "note": "attach WAHLAP source; LIVE-not-RAW delta",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5801,
+      "name": "疯狂巴比特通辽壹方城店",
+      "field": "location",
+      "current": {
+        "addr": "内蒙古通辽市万达2号门星际玩家",
+        "name": "疯狂巴比特通辽壹方城店"
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP same inconsistency name=疯狂巴比特通辽壹方城店 address=内蒙古通辽市万达2号门星际玩家 placeId=3123",
+      "note": "Name 壹方城 vs address 万达/星际玩家. Official source same conflict. Human check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5280,
+      "name": "潮范儿呼和浩特新华MALL店",
+      "field": "location",
+      "current": {
+        "lat": 40.817653,
+        "lng": 111.661167,
+        "approx": true
+      },
+      "proposed": {
+        "lat": 40.829152,
+        "lng": 111.693755,
+        "approx": true,
+        "use_partner": 5284
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4617",
+      "evidence_quote": "Partner 5284 pin (40.829152,111.693755) addr=新华MALL地下一层T24号; 5280 pin (40.817653,111.661167) ~3km west near 振华广场 not 新华MALL",
+      "note": "merge 5280/5284 or fix pin",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4006,
+      "name": "星纪元赤峰众联时代城店",
+      "field": "other",
+      "current": {
+        "same_coords_as": null
+      },
+      "proposed": {
+        "same_coords_as": 5285,
+        "note": "both WAHLAP maimai at 众联时代城 exact pin"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP has both 星纪元 placeId=2606 and 潮范儿 placeId=5295 at 众联时代城",
+      "note": "two live official entries; do not delete either",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1694,
+      "name": "乐逸超乐场包头青山华联店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 1698,
+        "partner_name": "乐逸超乐场（正翔国际店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5164",
+      "evidence_quote": "A:乐逸超乐场包头青山华联店|内蒙古自治区包头市青山区北京华联购物中心四楼乐逸超乐场|src=['wahlap']|g=['maimai_dx']|40.655849,109.854553 || B:乐逸超乐场（正翔国际店）|内蒙古自治区包头市青山区钢铁大街与富强路东北角BHGMall北京华联包头购物中心4层北|src=['bemanicn']|g=['maimai_dx']|40.655849,109.854553",
+      "note": "exact coords BHGMall 华联 乐逸. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1736,
+      "name": "伊仕丹顿雷之城（海拉尔店）",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 7123,
+        "partner_name": "顿雷电玩城呼伦贝尔伊仕丹商场店",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5266",
+      "evidence_quote": "A:伊仕丹顿雷之城（海拉尔店）|海拉尔区桥头街11号 伊仕丹购物广场六楼 顿雷之城电玩城|src=['bemanicn']|g=['maimai_dx', 'taiko']|49.211144,119.739953 || B:顿雷电玩城呼伦贝尔伊仕丹商场店|内蒙古自治区呼伦贝尔市海拉尔区正阳街道伊仕丹商场内六层6F01.02.04|src=['wahlap']|g=['maimai_dx']|49.211144,119.739953",
+      "note": "exact coords 伊仕丹 顿雷. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2118,
+      "name": "咔嘻龙包头萨拉齐店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 2119,
+        "partner_name": "咔嘻龙家庭娱乐中心",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5761",
+      "evidence_quote": "A:咔嘻龙包头萨拉齐店|内蒙古自治区包头市土默特右旗萨拉齐镇果园路九号金街229号喜玛特超市一楼|src=['wahlap']|g=['maimai_dx']|40.565758,110.511147 || B:咔嘻龙家庭娱乐中心|喜玛特购物广场一楼|src=['bemanicn']|g=['maimai_dx']|40.565758,110.511147",
+      "note": "exact coords 萨拉齐 咔嘻龙. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2370,
+      "name": "城市玩家通辽科尔沁太平洋店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 2949,
+        "partner_name": "太平洋电玩城",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/331",
+      "evidence_quote": "A:城市玩家通辽科尔沁太平洋店|内蒙古通辽市科尔沁区太平洋商场一楼城市玩家大乐场|src=['wahlap']|g=['chunithm', 'maimai_dx']|43.609742,122.264703 || B:太平洋电玩城|太平洋商场1层东门|src=['bemanicn']|g=['chunithm', 'maimai_dx', 'other']|43.609742,122.264703",
+      "note": "exact coords 太平洋商场. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2700,
+      "name": "天空の城（包头昆区吾悦店）",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 2755,
+        "partner_name": "天空之城包头昆都仑吾悦广场店",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4885",
+      "evidence_quote": "A:天空の城（包头昆区吾悦店）|内蒙古包头市昆都仑区校园路与丰盈道交汇处吾悦广场3层Z10商铺|src=['bemanicn']|g=['maimai_dx']|40.616892,109.81777 || B:天空之城包头昆都仑吾悦广场店|内蒙古包头市昆都仑区昆河镇吾悦广场三楼天空之城|src=['wahlap']|g=['maimai_dx']|40.616892,109.81777",
+      "note": "exact coords 吾悦 天空之城. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3734,
+      "name": "摩星乐园",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 3735,
+        "partner_name": "摩星乐园通辽科尔沁店",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3973",
+      "evidence_quote": "A:摩星乐园|桥北胜利北路东侧 维多利摩尔城|src=['bemanicn']|g=['maimai_dx', 'other', 'taiko']|43.649733,122.23296 || B:摩星乐园通辽科尔沁店|内蒙古自治区通辽市科尔沁区维多利摩尔城三楼魔星乐园|src=['wahlap']|g=['maimai_dx']|43.649733,122.23296",
+      "note": "exact coords 通辽维多利 摩星乐园. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6891,
+      "name": "酷玩地带呼伦贝尔海拉尔店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6892,
+        "partner_name": "酷玩地带电玩城（龙凤新天地购物广场店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5291",
+      "evidence_quote": "A:酷玩地带呼伦贝尔海拉尔店|内蒙古自治区呼伦贝尔市海拉尔区胜利街道龙凤新天地购物广场四层F4-045号|src=['wahlap']|g=['maimai_dx']|49.207957,119.760917 || B:酷玩地带电玩城（龙凤新天地购物广场店）|诺敏路龙凤新天地广场内4F|src=['bemanicn']|g=['maimai_dx']|49.207957,119.760917",
+      "note": "exact coords 龙凤新天地 酷玩地带. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6940,
+      "name": "酷迪炫乌海海勃湾万达店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6941,
+        "partner_name": "酷迪炫潮玩空间",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6103",
+      "evidence_quote": "A:酷迪炫乌海海勃湾万达店|内蒙古自治区乌海市海勃湾区万达3F-C-A-B|src=['wahlap']|g=['chunithm', 'maimai_dx']|39.658541,106.817305 || B:酷迪炫潮玩空间|万达三楼海底捞旁|src=['bemanicn']|g=['chunithm', 'maimai_dx']|39.658541,106.817305",
+      "note": "exact coords 乌海万达 酷迪炫. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2640,
+      "name": "大玩家超乐空间（乌兰浩特万达广场店）",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6536,
+        "partner_name": "超乐空间内蒙古乌兰浩特万达店",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3218",
+      "evidence_quote": "A:大玩家超乐空间（乌兰浩特万达广场店）|乌兰浩特市万达广场大玩家二楼|src=['bemanicn']|g=['chunithm', 'jubeat', 'maimai_dx']|46.085821,122.022274 || B:超乐空间内蒙古乌兰浩特万达店|内蒙古乌兰浩特市万达广场二楼2FA|src=['wahlap']|g=['chunithm', 'maimai_dx']|46.085821,122.022274",
+      "note": "exact coords 乌兰浩特万达 超乐空间. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1087,
+      "name": "G2街区呼和浩特万达店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 1107,
+        "partner_name": "G2街区（苏宁百货店）",
+        "action": "merge"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5106",
+      "evidence_quote": "A:G2街区呼和浩特万达店|内蒙古自治区呼和浩特市赛罕区万达广场苏宁易购五层G2街区|src=['wahlap']|g=['maimai_dx']|40.834285,111.727052 || B:G2街区（苏宁百货店）|苏宁百货三楼|src=['bemanicn', 'ziv']|g=['maimai_dx', 'other']|40.834471376343,111.72702491283",
+      "note": "near coords G2街区; floor 5 vs 3 conflict. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1199,
+      "name": "M8潮玩街区呼和浩特店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 1200,
+        "partner_name": "M8潮玩街区（时尚摩尔地下街店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3466",
+      "evidence_quote": "A:M8潮玩街区呼和浩特店|内蒙古呼和浩特市回民区中山西路街道海亮负一层|src=['wahlap']|g=['chunithm', 'maimai_dx']|40.813389,111.663052 || B:M8潮玩街区（时尚摩尔地下街店）|中山路海亮广场B1层茂业时尚摩尔地下街夜上海街区|src=['bemanicn', 'ziv']|g=['chunithm', 'maimai_dx', 'other', 'taiko', 'wacca']|40.813931030248,111.66341900826",
+      "note": "near coords M8 海亮. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1417,
+      "name": "一起玩呼和浩特玉泉凯德店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 1423,
+        "partner_name": "一起玩家年华（凯德广场诺和木勒店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1774",
+      "evidence_quote": "A:一起玩呼和浩特玉泉凯德店|内蒙古呼和浩特市玉泉区凯德广场五楼一起玩家年华|src=['wahlap']|g=['maimai_dx']|40.79581,111.67162 || B:一起玩家年华（凯德广场诺和木勒店）|鄂尔多斯大街38号凯德广场五楼(诺和木勒地铁站出入口旁)|src=['bemanicn', 'ziv']|g=['maimai_dx', 'other']|40.795953009201,111.67201280594",
+      "note": "near coords 凯德 一起玩. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1696,
+      "name": "乐逸超乐场昆都仑包百步行街店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 1697,
+        "partner_name": "乐逸超乐场（昆区包百步行街店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5340",
+      "evidence_quote": "A:乐逸超乐场昆都仑包百步行街店|内蒙古包头市昆都仑区包百步行街乐逸超乐场|src=['wahlap']|g=['maimai_dx']|40.658509,109.810837 || B:乐逸超乐场（昆区包百步行街店）|内蒙古自治区包头市昆都仑区前进道街道鞍山道包百步行街|src=['bemanicn']|g=['maimai_dx']|40.660266,109.811241",
+      "note": "near coords 包百 乐逸. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2176,
+      "name": "哒不溜赤峰松山万达店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 2177,
+        "partner_name": "哒卟溜欢乐王国(赤峰松山万达广场店)",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5747",
+      "evidence_quote": "A:哒不溜赤峰松山万达店|内蒙古赤峰市松山万达广场三楼哒不溜欢乐王国|src=['wahlap']|g=['maimai_dx']|42.292078,118.908601 || B:哒卟溜欢乐王国(赤峰松山万达广场店)|万达广场三楼|src=['bemanicn']|g=['maimai_dx']|42.292536,118.909692",
+      "note": "near coords 哒不溜 松山万达. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2619,
+      "name": "大玩家赤峰松山万达店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 2638,
+        "partner_name": "大玩家超乐场（赤峰松山万达广场店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1187",
+      "evidence_quote": "A:大玩家赤峰松山万达店|内蒙古赤峰市松山区万达广场3楼大玩家|src=['wahlap']|g=['maimai_dx']|42.292879,118.910123 || B:大玩家超乐场（赤峰松山万达广场店）|友谊大街与百柳路交叉口西南侧松山万达广场|src=['bemanicn']|g=['maimai_dx', 'other']|42.292536,118.909692",
+      "note": "near coords 大玩家 松山万达. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2620,
+      "name": "大玩家赤峰洪山店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 2639,
+        "partner_name": "大玩家超乐场（赤峰红山万达广场店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/472",
+      "evidence_quote": "A:大玩家赤峰洪山店|内蒙古自治区赤峰市红山区西拉沐沦大街万达广场二楼娱乐楼大玩家超乐场|src=['wahlap']|g=['maimai_dx']|42.250454,118.908939 || B:大玩家超乐场（赤峰红山万达广场店）|西拉沐沦大街8号|src=['bemanicn']|g=['maimai_dx']|42.251118,118.909829",
+      "note": "near coords 大玩家 红山/洪山万达. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4500,
+      "name": "梓木超级英雄呼和浩特回民店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 4501,
+        "partner_name": "梓木超级英雄电玩城",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5672",
+      "evidence_quote": "A:梓木超级英雄呼和浩特回民店|内蒙古自治区呼和浩特市回民区振华广场西120米梓木超级英雄电玩城|src=['wahlap']|g=['maimai_dx']|40.816652,111.659956 || B:梓木超级英雄电玩城|振华广场西侧露天停车场|src=['bemanicn']|g=['maimai_dx']|40.81662,111.661049",
+      "note": "near coords 梓木超级英雄. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5280,
+      "name": "潮范儿呼和浩特新华MALL店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 5284,
+        "partner_name": "潮范儿电玩（新华MALL店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4617",
+      "evidence_quote": "A:潮范儿呼和浩特新华MALL店|内蒙古呼和浩特市回民区新华MALL潮范儿电玩城|src=['wahlap']|g=['maimai_dx']|40.817653,111.661167 || B:潮范儿电玩（新华MALL店）|新华MALL地下一层T24号|src=['bemanicn']|g=['maimai_dx']|40.829152,111.693755",
+      "note": "same brand 新华MALL 潮范儿; pins 3km apart. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5560,
+      "name": "玩力湃潮玩馆",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 5561,
+        "partner_name": "玩力湃通辽壹方城店",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5846",
+      "evidence_quote": "A:玩力湃潮玩馆|平安路西侧壹方城商场2楼|src=['bemanicn']|g=['chunithm', 'maimai_dx']|43.629545,122.273916 || B:玩力湃通辽壹方城店|内蒙古自治区通辽市科尔沁区团结街道平安路与红胜大街交汇处天赐良缘（水晶郦湾）小区F2商业二层208铺位玩力湃|src=['wahlap']|g=['chunithm', 'maimai_dx']|43.629729,122.273032",
+      "note": "near coords 玩力湃 壹方城. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6413,
+      "name": "萌趣童堡游乐场乌兰浩特店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6415,
+        "partner_name": "萌趣童堡（欧亚购物中心店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5341",
+      "evidence_quote": "A:萌趣童堡游乐场乌兰浩特店|内蒙古自治区乌兰浩特市欧亚购物广场二楼萌趣童堡游乐场|src=['wahlap']|g=['maimai_dx']|46.05555,122.088898 || B:萌趣童堡（欧亚购物中心店）|欧亚购物广场2楼|src=['bemanicn']|g=['maimai_dx']|46.055928,122.089696",
+      "note": "near coords 萌趣童堡 欧亚. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6528,
+      "name": "赛博矩阵赤峰摩尔城店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6530,
+        "partner_name": "赛博矩阵（赤峰维多利摩尔城店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2860",
+      "evidence_quote": "A:赛博矩阵赤峰摩尔城店|赤峰市红山区桥北摩尔城四楼赛博矩阵电玩城|src=['wahlap']|g=['maimai_dx']|42.28658,118.948366 || B:赛博矩阵（赤峰维多利摩尔城店）|红山区新华大桥北侧维多利摩尔城4楼|src=['bemanicn']|g=['maimai_dx', 'other']|42.286679,118.946714",
+      "note": "near coords 赛博矩阵 赤峰摩尔城. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6630,
+      "name": "超能玩家呼和浩特赛店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6632,
+        "partner_name": "超能玩家（茂业摩尔城店）",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4964",
+      "evidence_quote": "A:超能玩家呼和浩特赛店|内蒙古自治区呼和浩特市赛罕区摩尔城A座8楼超能玩家电玩体验中心|src=['wahlap']|g=['chunithm', 'maimai_dx']|40.829019,111.703244 || B:超能玩家（茂业摩尔城店）|摩尔城A座8楼|src=['bemanicn']|g=['chunithm', 'maimai_dx']|40.829078,111.703091",
+      "note": "near coords 超能玩家 茂业摩尔城. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6861,
+      "name": "酷熊电玩",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6862,
+        "partner_name": "酷熊电玩呼伦贝尔友谊北方店",
+        "action": "merge"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6970",
+      "evidence_quote": "A:酷熊电玩|北方商厦3F|src=['bemanicn']|g=['maimai_dx']|49.59135,117.445502 || B:酷熊电玩呼伦贝尔友谊北方店|内蒙古自治区呼伦贝尔市满洲里市兴华街道五道街友谊北方商厦三楼酷熊电玩|src=['wahlap']|g=['maimai_dx']|49.59158,117.445773",
+      "note": "near coords 酷熊 满洲里. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6306,
+      "name": "菲克斯家庭娱乐中心巴彦淖尔维多利店",
+      "field": "other",
+      "current": {
+        "duplicate_pair": null
+      },
+      "proposed": {
+        "duplicate_of_or_with": 6307,
+        "partner_name": "菲克斯巴彦淖尔临河摩尔城店",
+        "action": "merge"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2631",
+      "evidence_quote": "A:菲克斯家庭娱乐中心巴彦淖尔维多利店|先锋街道维多利商厦(旧国泰)3楼菲克斯家庭娱乐中心|src=['bemanicn']|g=['maimai_dx']|40.746579,107.395396 || B:菲克斯巴彦淖尔临河摩尔城店|内蒙古巴彦淖尔市临河区摩尔城南区（原国泰）三层菲克斯儿童乐园|src=['wahlap']|g=['maimai_dx']|40.752889,107.412575",
+      "note": "possible same 菲克斯 国泰/维多利 rename; pins 1.5km. Prefer BCN-linked row; attach WAHLAP source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3577,
+      "name": "快乐星球巴彦淖尔维多利摩尔城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6543",
+      "evidence_quote": "partner hours 10:00-21:00",
+      "note": "only if merge with 4268",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

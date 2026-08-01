@@ -2595,6 +2595,20 @@ def run(raw_dir, out_dir, updated=None):
                             else:
                                 a.pop(key, None)
                                 a.pop("counts_src", None)
+                    # Pruning can strip away every stated quantity and
+                    # leave only ziv_listed placeholders, which a ziv row
+                    # is not allowed to publish (that rule is what
+                    # stopped the "x1 everywhere" bug). Drop the counts
+                    # rather than publish placeholders as real numbers.
+                    if a.get("counts_src") == "ziv":
+                        ev = a.get("count_evidence") or {}
+                        gcv = (a.get("game_counts") or {}).values()
+                        if not (any(e == "ziv_comment" for e in ev.values())
+                                or any(n >= 2 for n in gcv)):
+                            a.pop("game_counts", None)
+                            a.pop("count_evidence", None)
+                            a.pop("cab_models", None)
+                            a["counts_src"] = None
                     if a.get("cab_models"):
                         kept = {s: n for s, n in a["cab_models"].items()
                                 if CAB_MODEL_GAME[s] in games}

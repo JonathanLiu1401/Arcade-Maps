@@ -1,0 +1,1037 @@
+{
+  "shard": 104,
+  "checked": 72,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (maimai DX CN; 38 province=新疆)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (CHUNITHM CN; 14 province=新疆)",
+    "https://map.bemanicn.com/api/miniapp/common/region (Xinjiang city codes)",
+    "https://map.bemanicn.com/region/city/{code} Inertia for all 25 Xinjiang city codes (45 shops total)",
+    "https://map.bemanicn.com/s/{id} Inertia JSON for all 45 Xinjiang BemaniCN shops (status, arcades[], hours, comments, updated_at)",
+    "https://map.bemanicn.com/games (title_id map: 20=星光, 23=DANZBASE, 26=头文字D, 33=舞立方EVO, 28=湾岸MIDNIGHT, 31=太鼓之达人)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China (Xinjiang subset)",
+    "scrapers/bemanicn.py TITLE_GAME map (read-only)",
+    "scrapers/wahlap.py endpoints (read-only)"
+  ],
+  "corrections": [
+    {
+      "id": 1727,
+      "name": "云汇动感新疆阿图什店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1726
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1726,
+        "target_name": "云汇动感",
+        "reason": "WAHLAP 云汇动感新疆阿图什店 is the same 阿图什 云汇广场 4F shop as BemaniCN 7095 (d=0). Keep 1726."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7095",
+      "evidence_quote": "name=云汇动感; address=帕米尔西路帕米尔大桥旁云汇广场4F; status=1; maimai_dx qty=1; updated_at=2026-07-08T10:15:27.000000Z",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 云汇动感新疆阿图什店 is the same 阿图什 云汇广场 4F shop as BemaniCN 7095 (d=0). Keep 1726."
+    },
+    {
+      "id": 1851,
+      "name": "创游星际喀什明升国际广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 51.9,
+        "possible_duplicate_of": 1852
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1852,
+        "target_name": "创游星际电玩城（古城万达店）（原明升国际）",
+        "reason": "WAHLAP 创游星际喀什明升国际广场店 is the same 明升国际 5F unit as BemaniCN 1836 (d approx 52m). Keep 1852."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1836",
+      "evidence_quote": "name=创游星际电玩城（古城万达店）（原明升国际）; address=喀什市库木德尔瓦扎街道明升国际广场1号楼5层006号商铺; status=1; maimai_dx qty=1",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 创游星际喀什明升国际广场店 is the same 明升国际 5F unit as BemaniCN 1836 (d approx 52m). Keep 1852."
+    },
+    {
+      "id": 4086,
+      "name": "星际传奇乌鲁木齐吾悦广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 4175
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4175,
+        "target_name": "星际传奇（会展吾悦店）",
+        "reason": "WAHLAP 星际传奇乌鲁木齐吾悦广场店 is same 会展吾悦 3F as BemaniCN 2747 (d=0). Keep 4175 (has taiko+counts)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2747",
+      "evidence_quote": "name=星际传奇（会展吾悦店）; address=会展大道1666号会展吾悦广场3层Z312; status=1; maimai_dx=1 chunithm=2 taiko=1; updated_at=2026-07-19",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 星际传奇乌鲁木齐吾悦广场店 is same 会展吾悦 3F as BemaniCN 2747 (d=0). Keep 4175 (has taiko+counts)."
+    },
+    {
+      "id": 5125,
+      "name": "潮棱镜乌鲁木齐新市花田店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 61.1,
+        "possible_duplicate_of": 5124
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5124,
+        "target_name": "潮棱镜·潮玩街区（花田店）",
+        "reason": "WAHLAP 潮棱镜乌鲁木齐新市花田店 is same 花田小镇 B1 as BemaniCN 4839 (d approx 61m). Keep 5124."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4839",
+      "evidence_quote": "name=潮棱镜·潮玩街区（花田店）; address=长春南路KL星品汇L座-1层; status=1; maimai_dx qty=1; updated_at=2026-03-21",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 潮棱镜乌鲁木齐新市花田店 is same 花田小镇 B1 as BemaniCN 4839 (d approx 61m). Keep 5124."
+    },
+    {
+      "id": 5126,
+      "name": "潮棱镜乌鲁木齐沙依巴克德汇店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5123
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5123,
+        "target_name": "潮棱镜·潮玩街区（德汇万达店）",
+        "reason": "WAHLAP 潮棱镜乌鲁木齐沙依巴克德汇店 is same 德汇中心 B1 as BemaniCN 4722 (d=0). Keep 5123. (德汇 also hosts separate 环游嘉年华 5712 upstairs.)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4722",
+      "evidence_quote": "name=潮棱镜·潮玩街区（德汇万达店）; address=奇台路德汇中心商业D幢B1层; status=1; maimai_dx qty=1",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 潮棱镜乌鲁木齐沙依巴克德汇店 is same 德汇中心 B1 as BemaniCN 4722 (d=0). Keep 5123. (德汇 also hosts separate 环游嘉年华 5712 upstairs.)"
+    },
+    {
+      "id": 5663,
+      "name": "环游嘉年华乌鲁木齐沙依巴克德汇万达广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5712
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5712,
+        "target_name": "环游嘉年华（德汇万达店）",
+        "reason": "WAHLAP 环游嘉年华乌鲁木齐沙依巴克德汇万达广场店 is same 德汇万达 as BemaniCN 5219 (d=0). Keep 5712."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5219",
+      "evidence_quote": "name=环游嘉年华（德汇万达店）; address=奇台路658号德汇万达广场四楼; status=1; maimai_dx=1 chunithm=2; updated_at=2026-06-05",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华乌鲁木齐沙依巴克德汇万达广场店 is same 德汇万达 as BemaniCN 5219 (d=0). Keep 5712."
+    },
+    {
+      "id": 5673,
+      "name": "环游嘉年华库尔勒汇嘉时代店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5703
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5703,
+        "target_name": "环游嘉年华超乐场（库尔勒汇嘉时代广场店）",
+        "reason": "WAHLAP 环游嘉年华库尔勒汇嘉时代店 is same 汇嘉时代 5F as BemaniCN 6412 (d=0). Keep 5703."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6412",
+      "evidence_quote": "name=环游嘉年华超乐场（库尔勒汇嘉时代广场店）; address=朝阳路9号汇嘉时代广场5层; status=1; maimai_dx=3 jubeat=2; updated_at=2026-07-30",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华库尔勒汇嘉时代店 is same 汇嘉时代 5F as BemaniCN 6412 (d=0). Keep 5703."
+    },
+    {
+      "id": 5674,
+      "name": "环游嘉年华库尔勒领先领悦里店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5711
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5711,
+        "target_name": "环游嘉年华（库尔勒天百店）（商场已改名为领悦里）",
+        "reason": "WAHLAP 环游嘉年华库尔勒领先领悦里店 is same 领悦里 B1 as BemaniCN 7218 (d=0). Keep 5711."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7218",
+      "evidence_quote": "name=环游嘉年华（库尔勒天百店）（商场已改名为领悦里）; address=领先领悦里负一楼; status=1; maimai_dx=1; updated_at=2026-07-30",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华库尔勒领先领悦里店 is same 领悦里 B1 as BemaniCN 7218 (d=0). Keep 5711."
+    },
+    {
+      "id": 5689,
+      "name": "环游嘉年华超乐场乌鲁木齐卡乐士店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5709
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5709,
+        "target_name": "环游嘉年华（卡乐士店）",
+        "reason": "WAHLAP 环游嘉年华超乐场乌鲁木齐卡乐士店 is same 卡乐士 as BemaniCN 6963 (d=0). Keep 5709."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6963",
+      "evidence_quote": "name=环游嘉年华（卡乐士店）; address=新市区长春南路L座花田电影小镇商铺68号; status=1; maimai_dx=1 chunithm=2 jubeat=2; updated_at=2026-07-13",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场乌鲁木齐卡乐士店 is same 卡乐士 as BemaniCN 6963 (d=0). Keep 5709."
+    },
+    {
+      "id": 5701,
+      "name": "环游嘉年华超乐场沙依巴克钱塘江路店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5716
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5716,
+        "target_name": "环游嘉年华（酱园友好店）",
+        "reason": "WAHLAP 环游嘉年华超乐场沙依巴克钱塘江路店 is same 酱园友好 6F as BemaniCN 3802 (d=0). Keep 5716."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3802",
+      "evidence_quote": "name=环游嘉年华（酱园友好店）; address=钱塘江路168号友好购物中心六层; status=1; maimai_dx=1 taiko=1; updated_at=2026-04-15",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场沙依巴克钱塘江路店 is same 酱园友好 6F as BemaniCN 3802 (d=0). Keep 5716."
+    },
+    {
+      "id": 6220,
+      "name": "美迪乐乌鲁木齐米东店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 32.7,
+        "possible_duplicate_of": 6221
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6221,
+        "target_name": "美迪乐电玩城（米古里店）",
+        "reason": "WAHLAP 美迪乐乌鲁木齐米东店 is same 米古里 as BemaniCN 2569 (d approx 33m). Keep 6221."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2569",
+      "evidence_quote": "name=美迪乐电玩城（米古里店）; address=米古里北区商业体西域水游城二期商城2楼; status=1; maimai_dx=2; updated_at=2026-07-05",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 美迪乐乌鲁木齐米东店 is same 米古里 as BemaniCN 2569 (d approx 33m). Keep 6221."
+    },
+    {
+      "id": 6573,
+      "name": "超级星座乌鲁木齐天山店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 6592
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6592,
+        "target_name": "超级星座（万宴城店）",
+        "reason": "WAHLAP 超级星座乌鲁木齐天山店 is same 万宴城 3F as BemaniCN 4472 (d=0). Keep 6592."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4472",
+      "evidence_quote": "name=超级星座（万宴城店）; address=万宴城3层3F-3超级星座(万宴城店); status=1; maimai_dx=2; updated_at=2026-05-26",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 超级星座乌鲁木齐天山店 is same 万宴城 3F as BemaniCN 4472 (d=0). Keep 6592."
+    },
+    {
+      "id": 5697,
+      "name": "环游嘉年华超乐场奎屯友好店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 3106
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3106,
+        "target_name": "奎屯友好国际影城&环球嘉年华",
+        "reason": "WAHLAP 环游嘉年华超乐场奎屯友好店 is same 奎屯友好 4F as BemaniCN 2552 (d=0). Keep 3106 (has chunithm counts). Official WAHLAP maimai still lists the 环游嘉年华 name."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2552",
+      "evidence_quote": "name=奎屯友好国际影城&环球嘉年华; address=奎屯友好4楼; status=1; maimai_dx=1 chunithm=2; updated_at=2026-07-17",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场奎屯友好店 is same 奎屯友好 4F as BemaniCN 2552 (d=0). Keep 3106 (has chunithm counts). Official WAHLAP maimai still lists the 环游嘉年华 name."
+    },
+    {
+      "id": 5691,
+      "name": "环游嘉年华超乐场乌鲁木齐时代广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 90.3,
+        "possible_duplicate_of": 5702
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5702,
+        "target_name": "环游嘉年华超乐场（CCMALL时代广场）",
+        "reason": "WAHLAP 环游嘉年华超乐场乌鲁木齐时代广场店 shares unit F3-037 with BemaniCN 1903 (d approx 90m). Keep 5702."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1903",
+      "evidence_quote": "name=环游嘉年华超乐场（CCMALL时代广场）; address=光明路39号CCmall时代广场F3-037号; status=1; maimai_dx=2 chunithm=2; updated_at=2026-07-22",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场乌鲁木齐时代广场店 shares unit F3-037 with BemaniCN 1903 (d approx 90m). Keep 5702."
+    },
+    {
+      "id": 5699,
+      "name": "环游嘉年华超乐场新疆哈密伊州店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 90.2,
+        "possible_duplicate_of": 5704
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5704,
+        "target_name": "环游嘉年华超乐场（汇嘉店）",
+        "reason": "WAHLAP 环游嘉年华超乐场新疆哈密伊州店 is same 哈密汇嘉 5F as BemaniCN 4020 (d approx 90m). Keep 5704."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4020",
+      "evidence_quote": "name=环游嘉年华超乐场（汇嘉店）; address=哈密汇嘉时代商业广场5楼; status=1; maimai_dx=1 chunithm=2; updated_at=2026-05-18",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场新疆哈密伊州店 is same 哈密汇嘉 5F as BemaniCN 4020 (d approx 90m). Keep 5704."
+    },
+    {
+      "id": 5694,
+      "name": "环游嘉年华超乐场克拉玛依汇嘉店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 52.9,
+        "possible_duplicate_of": 5713
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5713,
+        "target_name": "环游嘉年华（滨河汇嘉店）",
+        "reason": "WAHLAP 环游嘉年华超乐场克拉玛依汇嘉店 is same 克拉玛依 幸福路汇嘉 as BemaniCN 2931 (d approx 53m). Keep 5713 (fresher count)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2931",
+      "evidence_quote": "name=环游嘉年华（滨河汇嘉店）; address=天山路街道幸福路戊一号(汇嘉时代购物中心)三楼3-2号; status=1; maimai_dx=2 chunithm=2; updated_at=2026-07-28",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场克拉玛依汇嘉店 is same 克拉玛依 幸福路汇嘉 as BemaniCN 2931 (d approx 53m). Keep 5713 (fresher count)."
+    },
+    {
+      "id": 5662,
+      "name": "环游嘉年华乌鲁木齐汇嘉店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 60.2,
+        "possible_duplicate_of": 5646
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5646,
+        "target_name": "环游嘉年华(北京路汇嘉店)",
+        "reason": "WAHLAP 环游嘉年华乌鲁木齐汇嘉店 is same 北京中路汇嘉 3F as BemaniCN 1087 (d approx 60m). Keep 5646. Comment notes old maimai cab moved to 高新万达; shop still lists maimai (华立新机) and WAHLAP still registers this name."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1087",
+      "evidence_quote": "name=环游嘉年华(北京路汇嘉店); address=北京中路147号汇嘉时代3F星聚汇书影城内邻; status=1; maimai_dx=1; updated_at=2026-04-15",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华乌鲁木齐汇嘉店 is same 北京中路汇嘉 3F as BemaniCN 1087 (d approx 60m). Keep 5646. Comment notes old maimai cab moved to 高新万达; shop still lists maimai (华立新机) and WAHLAP still registers this name."
+    },
+    {
+      "id": 5692,
+      "name": "环游嘉年华超乐场乌鲁木齐美美店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 218.6,
+        "possible_duplicate_of": 5714
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5714,
+        "target_name": "环游嘉年华（美美购物中心店）",
+        "reason": "WAHLAP 环游嘉年华超乐场乌鲁木齐美美店 address is 友好北路689号美美6层S-610; BemaniCN 5483 is same mall 南区6楼 (d approx 219m geocode spread). Keep 5714."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5483",
+      "evidence_quote": "name=环游嘉年华（美美购物中心店）; address=友好北路689号美美购物中心南区6楼; status=1; maimai_dx=1 chunithm=2; updated_at=2026-04-15",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场乌鲁木齐美美店 address is 友好北路689号美美6层S-610; BemaniCN 5483 is same mall 南区6楼 (d approx 219m geocode spread). Keep 5714."
+    },
+    {
+      "id": 5690,
+      "name": "环游嘉年华超乐场乌鲁木齐天山瑞悦街店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 172.5,
+        "possible_duplicate_of": 5710
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5710,
+        "target_name": "环游嘉年华（和瑞悦街店）",
+        "reason": "WAHLAP 环游嘉年华超乐场乌鲁木齐天山瑞悦街店 (碱泉二街80号和瑞悦街二层) is same venue as BemaniCN 7059 (d approx 173m). Keep 5710."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7059",
+      "evidence_quote": "name=环游嘉年华（和瑞悦街店）; address=碱泉二街德轩苑小区西侧约60米; status=1; maimai_dx=1; updated_at=2026-06-14",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华超乐场乌鲁木齐天山瑞悦街店 (碱泉二街80号和瑞悦街二层) is same venue as BemaniCN 7059 (d approx 173m). Keep 5710."
+    },
+    {
+      "id": 3967,
+      "name": "星环游昌吉长宁华洋广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 5666
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5666,
+        "target_name": "环游嘉年华华洋店",
+        "reason": "WAHLAP still registers maimai+CHUNITHM under name 星环游昌吉长宁华洋广场店 at the same 长宁南路111号华洋广场5楼 address as BemaniCN 环游嘉年华华洋店 (d=0). Keep 5666 (has jubeat+counts). Treat 星环游 as WAHLAP-facing name for the same shop."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6785",
+      "evidence_quote": "name=环游嘉年华华洋店; address=昌吉市长宁南路111号华洋广场五楼; status=1; maimai_dx=1 chunithm=2 jubeat=2; updated_at=2026-07-09",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP still registers maimai+CHUNITHM under name 星环游昌吉长宁华洋广场店 at the same 长宁南路111号华洋广场5楼 address as BemaniCN 环游嘉年华华洋店 (d=0). Keep 5666 (has jubeat+counts). Treat 星环游 as WAHLAP-facing name for the same shop."
+    },
+    {
+      "id": 5698,
+      "name": "环游嘉年华超乐场德港万达店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 45.4,
+        "possible_duplicate_of": 3147
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3147,
+        "target_name": "娱乐空间站",
+        "reason": "WAHLAP still lists 环游嘉年华超乐场德港万达店 but BemaniCN says the hall was renamed 娱乐空间站 (same 德港万达 6F, d approx 45m). Keep 3147."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/735",
+      "evidence_quote": "name=娱乐空间站; address=中亚南路198号德港万达6楼娱乐空间站; status=1; maimai_dx=1; updated_at=2026-07-21; comment=此机厅原环游嘉年华（德港店）",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP still lists 环游嘉年华超乐场德港万达店 but BemaniCN says the hall was renamed 娱乐空间站 (same 德港万达 6F, d approx 45m). Keep 3147."
+    },
+    {
+      "id": 3118,
+      "name": "好好次元伊宁山东路店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 1485.8,
+        "possible_duplicate_of": 3119
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3119,
+        "target_name": "好好次元（山东路家乡好店）",
+        "reason": "WAHLAP 好好次元伊宁山东路店 (山东路1501号家乡好三楼) and BemaniCN 6480 (家乡好山东路) are the same brand+mall. Geocodes differ by about 1.5km (approx pins). Keep 3119 (has taiko+counts)."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6480",
+      "evidence_quote": "name=好好次元（山东路家乡好店）; address=家乡好超市(山东路店); status=1; maimai_dx=1 taiko=1; updated_at=2026-07-27",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 好好次元伊宁山东路店 (山东路1501号家乡好三楼) and BemaniCN 6480 (家乡好山东路) are the same brand+mall. Geocodes differ by about 1.5km (approx pins). Keep 3119 (has taiko+counts)."
+    },
+    {
+      "id": 5127,
+      "name": "潮棱镜昌吉东方广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 810.8,
+        "possible_duplicate_of": 5121
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5121,
+        "target_name": "潮棱镜·潮玩街区（东方广场店）",
+        "reason": "WAHLAP 潮棱镜昌吉东方广场店 (延安北路198号东方广场裙楼三层) and BemaniCN 5599 (东方广场汇嘉3楼) are the same 昌吉 东方广场 mall (d approx 811m geocode spread on approx pins). Keep 5121."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5599",
+      "evidence_quote": "name=潮棱镜·潮玩街区（东方广场店）; address=东方广场汇嘉3楼; status=1; maimai_dx qty=1; updated_at=2026-03-02",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 潮棱镜昌吉东方广场店 (延安北路198号东方广场裙楼三层) and BemaniCN 5599 (东方广场汇嘉3楼) are the same 昌吉 东方广场 mall (d approx 811m geocode spread on approx pins). Keep 5121."
+    },
+    {
+      "id": 5687,
+      "name": "环游嘉年华石河子店",
+      "field": "other",
+      "current": {
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn_link": null,
+        "game_counts": null
+      },
+      "proposed": {
+        "bemanicn_id": 1602,
+        "bemanicn_url": "https://map.bemanicn.com/s/1602",
+        "name_live": "环游嘉年华超乐场 石河子友好店",
+        "game_counts": {
+          "chunithm": 2
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1602",
+      "evidence_quote": "name=环游嘉年华超乐场 石河子友好店; address=北三路友好时尚购物中心F5; status=1; chunithm qty=2; updated_at=2025-11-29",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP-only 5687 matches BemaniCN shop 1602 at 石河子 友好 5F. Link BM and apply chunithm count=2. Not a missing venue."
+    },
+    {
+      "id": 5693,
+      "name": "环游嘉年华超乐场乌鲁木齐高新万达店",
+      "field": "other",
+      "current": {
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn_link": null,
+        "game_counts": null
+      },
+      "proposed": {
+        "bemanicn_id": 6151,
+        "bemanicn_url": "https://map.bemanicn.com/s/6151",
+        "name_live": "环游嘉年华（高新万达店）",
+        "game_counts": {
+          "maimai_dx": 1
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6151",
+      "evidence_quote": "name=环游嘉年华（高新万达店）; address=长春北路668号高新万达广场2F-A; status=1; maimai_dx qty=1; updated_at=2026-08-01T08:10:08.000000Z; comment mentions cab moved from 北京路汇嘉",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 5693 is the official maimai listing for 高新万达; BemaniCN 6151 is the same shop and was updated 2026-08-01. Link and set count."
+    },
+    {
+      "id": 5696,
+      "name": "环游嘉年华超乐场友好时尚店",
+      "field": "location",
+      "current": {
+        "name": "环游嘉年华超乐场友好时尚店",
+        "addr": "新疆维吾尔自治区奎屯市友好时尚购物中心四楼环游嘉年华超乐场",
+        "lat": 41.174324,
+        "lng": 80.276013
+      },
+      "proposed": {
+        "name": "环游嘉年华超乐场(阿克苏友好店)",
+        "addr": "新疆维吾尔自治区阿克苏地区阿克苏市塔中4楼路2号新疆友好集团阿克苏天百时尚购物中心",
+        "lat": 41.174324,
+        "lng": 80.276013,
+        "note": "keep current pin (already in Aksu); rewrite name/address off BemaniCN 5230"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5230",
+      "evidence_quote": "name=环游嘉年华超乐场(阿克苏友好店); address=新疆维吾尔自治区阿克苏地区阿克苏市塔中4楼路2号新疆友好集团阿克苏天百时尚购物中心; status=1; maimai_dx=2 chunithm=2; updated_at=2026-07-20; comment references 塔大/阿克苏音游群",
+      "checked_at": "2026-08-01",
+      "note": "CRITICAL wrong-city label. App name/address say 奎屯市友好时尚购物中心 but linked BemaniCN shop 5230 and the pin (41.17N,80.28E) are in 阿克苏 天百. Separate Kuitun venue is 3106/5697 at 44.42N,84.91E. WAHLAP also still has a CHUNITHM-only row named 环游嘉年华超乐场友好时尚店 with a Kuitun address text (placeId 2364) which may be a stale/wrong WAHLAP address string for this Aksu store; do not trust the Kuitun city in the app name."
+    },
+    {
+      "id": 5688,
+      "name": "环游嘉年华维吾尔阿克苏店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 9.9,
+        "possible_duplicate_of": 5696
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5696,
+        "target_name": "环游嘉年华超乐场友好时尚店",
+        "reason": "WAHLAP 环游嘉年华维吾尔阿克苏店 is the official name for the 阿克苏 天百 4F shop already represented by 5696/BM 5230 (d approx 10m). Merge 5688 into corrected 5696."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=环游嘉年华维吾尔阿克苏店; address=阿克苏市新城街道迎宾路天百四楼环游嘉年华; province=新疆 (also on CHUNITHM list). BemaniCN twin shop 5230 is the same 天百 4F (d approx 10m to 5696 pin).",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP 环游嘉年华维吾尔阿克苏店 is the official name for the 阿克苏 天百 4F shop already represented by 5696/BM 5230 (d approx 10m). Merge 5688 into corrected 5696."
+    },
+    {
+      "id": 2268,
+      "name": "嘟比熊喀什新城南店",
+      "field": "location",
+      "current": {
+        "addr": "新疆维吾尔自治区喀什地区喀什市东城万达二号门负一楼",
+        "lat": 39.492495,
+        "lng": 76.081639,
+        "near_bemanicn_twin_id": 2269,
+        "distance_m_to_2269": 6863.3
+      },
+      "proposed": {
+        "action": "review_geocode_or_merge",
+        "likely_same_as": 2269,
+        "target_name": "嘟比熊（东城万达店）",
+        "target_addr": "新疆维吾尔自治区喀什地区喀什市新城南路东城万达广场负一层嘟比熊数字潮玩"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5453",
+      "evidence_quote": "BemaniCN 5453 嘟比熊（东城万达店） address=喀什市新城南路东城万达广场负一层; WAHLAP 2268 address also says 东城万达二号门负一楼 but pin is about 6.9km away from 2269",
+      "checked_at": "2026-08-01",
+      "note": "Both WAHLAP and BemaniCN describe 东城万达 负一楼 嘟比熊. Pins differ by about 6.9km (approx geocodes). Almost certainly one venue with a bad geocode on 2268, not two halls. Prefer 2269 pin/address; merge 2268 into 2269 after geocode check."
+    },
+    {
+      "id": 5713,
+      "name": "环游嘉年华（滨河汇嘉店）",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 4
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2931",
+      "evidence_quote": "maimai_dx quantity=2; chunithm quantity=2; comment '2026.7月中 新舞萌到店，现在机台数量为2舞萌2中二'; updated_at=2026-07-28T15:22:25.000000Z",
+      "checked_at": "2026-08-01",
+      "note": "App has maimai_dx=4; live BemaniCN (updated 2026-07-28) and shop comment both say 2 maimai + 2 chunithm."
+    },
+    {
+      "id": 5702,
+      "name": "环游嘉年华超乐场（CCMALL时代广场）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1903",
+      "evidence_quote": "arcades only: maimai_dx qty=2, chunithm qty=2; updated_at=2026-07-22. Comment still mentions 湾岸/极速5/A9 as racing cabs, not mapped rhythm titles.",
+      "checked_at": "2026-08-01",
+      "note": "App games include 'other'. Live BemaniCN shop 1903 has only maimai+chunithm in arcades[]. ZIv historically listed E舞/Wangan here; those are not in the current BemaniCN arcade list. Removing bare 'other' without a named title is safer."
+    },
+    {
+      "id": 983,
+      "name": "Bubble's Home",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "still_listed_bemanicn": true,
+        "on_wahlap_maimai": false,
+        "on_wahlap_chunithm": false,
+        "status_bemanicn": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6596",
+      "evidence_quote": "name=Bubble's Home; address=双河市明珠街道壹号公馆1单元; status=1; maimai_dx=1 chunithm=1; updated_at=2026-01-18",
+      "checked_at": "2026-08-01",
+      "note": "Still open on BemaniCN but NOT on official WAHLAP maimai/CHUNITHM location APIs for 新疆. Could be private/appointment shop or offline network. Last BM update 2026-01-18. Not a closure claim - just a network-status caveat for travellers."
+    },
+    {
+      "id": 7097,
+      "name": "霍普卡牌",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "still_listed_bemanicn": true,
+        "on_wahlap_maimai": false,
+        "on_wahlap_chunithm": false,
+        "status_bemanicn": 1,
+        "game_counts_live": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "ongeki": 1
+        }
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7015",
+      "evidence_quote": "name=霍普卡牌; status=1; maimai_dx=2 chunithm=2 ongeki=1; versions maimai 1.67 / chunithm 2.50-mate / ongeki 1.55; updated_at=2026-07-13; comment=KONAMI认证的游戏王公认店...音游区已正式运营，请加QQ群343555405",
+      "checked_at": "2026-08-01",
+      "note": "Card-shop/private rhythm area in 石河子. Not on WAHLAP official lists (versions look like JP/private builds, not CN WAHLAP). Travellers should contact QQ group first. Counts match app."
+    },
+    {
+      "id": 5702,
+      "name": "环游嘉年华超乐场（CCMALL时代广场）",
+      "field": "hours",
+      "current": "Mon-Sun 11:00-23:00",
+      "proposed": "11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1903",
+      "evidence_quote": "start_time=11; end_time=23; updated_at=2026-07-22T14:46:44.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5713,
+      "name": "环游嘉年华（滨河汇嘉店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2931",
+      "evidence_quote": "start_time=11; end_time=24; updated_at=2026-07-28T15:22:25.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5709,
+      "name": "环游嘉年华（卡乐士店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6963",
+      "evidence_quote": "start_time=12; end_time=24; updated_at=2026-07-13T16:28:35.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 4175,
+      "name": "星际传奇（会展吾悦店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2747",
+      "evidence_quote": "start_time=11; end_time=22; updated_at=2026-07-19T08:04:19.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5712,
+      "name": "环游嘉年华（德汇万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5219",
+      "evidence_quote": "start_time=11; end_time=22; updated_at=2026-06-05T13:05:17.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5666,
+      "name": "环游嘉年华华洋店",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6785",
+      "evidence_quote": "start_time=12; end_time=22; updated_at=2026-07-09T08:20:15.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 6221,
+      "name": "美迪乐电玩城（米古里店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2569",
+      "evidence_quote": "start_time=11; end_time=22; updated_at=2026-07-05T06:34:53.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 6592,
+      "name": "超级星座（万宴城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4472",
+      "evidence_quote": "start_time=11; end_time=24; updated_at=2026-05-26T09:24:28.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5703,
+      "name": "环游嘉年华超乐场（库尔勒汇嘉时代广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6412",
+      "evidence_quote": "start_time=10; end_time=24; updated_at=2026-07-30T06:51:58.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5708,
+      "name": "环游嘉年华阿克苏太百商场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-01:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6529",
+      "evidence_quote": "start_time=11; end_time=25; updated_at=2026-06-19T12:44:05.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 7018,
+      "name": "银河欢乐谷",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-01:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6604",
+      "evidence_quote": "start_time=11; end_time=25; updated_at=2026-07-28T13:00:21.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 3119,
+      "name": "好好次元（山东路家乡好店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6480",
+      "evidence_quote": "start_time=10; end_time=23; updated_at=2026-07-27T15:47:22.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 7097,
+      "name": "霍普卡牌",
+      "field": "hours",
+      "current": null,
+      "proposed": "24 hours",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7015",
+      "evidence_quote": "start_time=0; end_time=24; updated_at=2026-07-13T09:14:44.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 3147,
+      "name": "娱乐空间站",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/735",
+      "evidence_quote": "start_time=11; end_time=22; updated_at=2026-07-21T14:17:25.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 1726,
+      "name": "云汇动感",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7095",
+      "evidence_quote": "start_time=10; end_time=23; updated_at=2026-07-08T10:15:27.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5676,
+      "name": "环游嘉年华新疆阿图什店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7146",
+      "evidence_quote": "start_time=10; end_time=22; updated_at=2026-06-24T10:34:12.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5695,
+      "name": "环游嘉年华超乐场博乐友好店",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7313",
+      "evidence_quote": "start_time=12; end_time=24; updated_at=2026-07-24T06:46:29.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5714,
+      "name": "环游嘉年华（美美购物中心店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5483",
+      "evidence_quote": "start_time=12; end_time=23; updated_at=2026-04-15T03:43:10.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5716,
+      "name": "环游嘉年华（酱园友好店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3802",
+      "evidence_quote": "start_time=11; end_time=24; updated_at=2026-04-15T03:42:40.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5303,
+      "name": "火星局石河子万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4358",
+      "evidence_quote": "start_time=11; end_time=24; updated_at=2026-07-28T19:58:21.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 5646,
+      "name": "环游嘉年华(北京路汇嘉店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1087",
+      "evidence_quote": "start_time=11; end_time=24; updated_at=2026-04-15T03:43:27.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 1852,
+      "name": "创游星际电玩城（古城万达店）（原明升国际）",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1836",
+      "evidence_quote": "start_time=12; end_time=23; updated_at=2025-11-29T17:21:20.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": 3106,
+      "name": "奎屯友好国际影城&环球嘉年华",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2552",
+      "evidence_quote": "start_time=11; end_time=23; updated_at=2026-07-17T12:03:38.000000Z (BemaniCN integer hour convention; >24 means next day)",
+      "checked_at": "2026-08-01",
+      "note": "Community hours from BemaniCN, not an official chain page. Treat as likely, not certain. Some shops note seasonal/weekday variants in comments that this integer span cannot express."
+    },
+    {
+      "id": null,
+      "name": "好好次元（解放路万力店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "好好次元（解放路万力店）",
+        "addr": "伊宁市老城区解放路万力时尚mall3F好好次元",
+        "pref": "新疆",
+        "country": "China",
+        "games": [
+          "taiko"
+        ],
+        "game_counts": {
+          "taiko": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/7334",
+        "lat": null,
+        "lng": null,
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7334",
+      "evidence_quote": "name=好好次元（解放路万力店）; address=伊宁市老城区解放路万力时尚mall3F好好次元; status=1; taiko qty=1 (太鼓之达人·秋); updated_at=2026-07-28T12:57:45.000000Z",
+      "checked_at": "2026-08-01",
+      "note": "Present on BemaniCN 伊犁 city list; not in shard. Different mall floor from 银河欢乐谷 (also 万力, 5F maimai) and different shop from 好好次元山东路. Taiko only; no WAHLAP maimai/chunithm registration."
+    },
+    {
+      "id": null,
+      "name": "星河电玩俱乐部(Milky Way Game Club) 图木舒克",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "星河电玩俱乐部(Milky Way Game Club)",
+        "addr": "No. 39, Zhongshan Road, Ganqule Subdistrict, Tumushuke City / 中山路天昆国际酒店西40米处",
+        "pref": "新疆",
+        "country": "China",
+        "games": [
+          "taiko"
+        ],
+        "ziv_id": 9792,
+        "lat": null,
+        "lng": null,
+        "note": "ZIv lists 太鼓の達人14 only; very likely offline/stale CRT-era taiko - verify before adding as a live rhythm stop"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+      "evidence_quote": "ZIv id=9792 name=星河电玩俱乐部(Milky Way Game Club) city=Tumushuke City machines include 太鼓の達人14; Xinjiang Uygur Autonomous Region",
+      "checked_at": "2026-08-01",
+      "note": "Not on BemaniCN 图木舒克 city list (0 shops) and not on WAHLAP. ZIv-only, machine is old 太鼓の達人14. Do NOT add as a confident live venue without local confirmation."
+    }
+  ]
+}

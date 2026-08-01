@@ -1,9 +1,9 @@
 # Google Places photos (optional)
 
-Most arcades on this map still have no photo. Coverage is 38.4% overall and
+Most arcades on this map still have no photo. Coverage is 42.6% overall and
 3.3% in Japan, and the photos we do have come from community uploads that are
 often years old. China is the exception rather than the gap this doc was
-originally written around: the mirrored BemaniCN thumbnails put it at 51.1%,
+originally written around: the mirrored BemaniCN thumbnails put it at 65.3%,
 the best-covered major market on the map. Japan, Taiwan (3.4%) and the
 uncovered tail are where a venue photo is actually missing. This is the
 optional path that fills that gap using Google's own photo of the venue.
@@ -68,7 +68,7 @@ cost of not being wrong.
 | --- | --- | --- |
 | Japan only (~1,400) | 1,400 | **$0** (inside the free 5,000) |
 | Japan + Korea + Taiwan + SE Asia | ~2,700 | **$0** |
-| Everything (13,540 arcades) | 13,540 | ~**$273** |
+| Everything (11,967 arcades) | 11,967 | ~**$241** |
 | Everything, spread over 3 months | 4,500/month | **$0** |
 
 The script defaults to 200 arcades per run and refuses `--all` unless you also
@@ -93,7 +93,7 @@ that roughly **$0.007 per photo**.
 
 A photo is only fetched when someone actually opens a place panel for an
 arcade that has no photo of its own. Never on map load, never for a marker,
-never for the 13,540 stores nobody clicked. Reopening the same panel in the
+never for the 11,967 stores nobody clicked. Reopening the same panel in the
 same session is free.
 
 ### If the map gets popular
