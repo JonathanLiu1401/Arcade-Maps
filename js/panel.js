@@ -1414,6 +1414,32 @@ window.AM = window.AM || {};
      came from, so the name in the caption is the real one. */
   function communityCaption(a, e, fieldName) {
     var who = e && e.sources && e.sources[fieldName];
+    /* A re-checked field said "community data from verified, may be
+       outdated", which is nonsense. What it should say depends on WHERE
+       it was re-checked: 80% of the verification evidence is BemaniCN or
+       ZIv - the same community listings - so only the ~20% read from an
+       operator's own site earns the caveat being dropped. Saying
+       "verified" over a community re-read would be exactly the kind of
+       overclaim the approx-flag comment in merge.py refuses to make. */
+    if (who === "verified") {
+      var rec = (e && e.verified && e.verified[fieldName]) || {};
+      var host = "";
+      if (rec.url) {
+        var m = String(rec.url).match(/^https?:\/\/([^/]+)/i);
+        host = m ? m[1].replace(/^www\./, "") : "";
+      }
+      var community = /(^|\.)(?:zenius-i-vanisher\.com|bemanicn\.com)$/i
+        .test(host);
+      var cap = community
+        ? "re-checked on " + esc(host) + ", still community data"
+        : "checked against " +
+          (host ? esc(host) : "the operator's own listing");
+      if (rec.checked_at) cap += " (" + esc(rec.checked_at) + ")";
+      return rec.url
+        ? '<a href="' + esc(rec.url) + '" target="_blank" rel="noopener' +
+          ' noreferrer">' + cap + "</a>"
+        : cap;
+    }
     var label = who ? (C.SRC_LABEL[who] || who) : "community listings";
     var when = enrichedAt(a, e);
     return "community data from " + esc(label) + ", may be outdated" +
