@@ -1,0 +1,900 @@
+{
+  "shard": 91,
+  "checked": 98,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON for all 61 linked Yunnan shops (status, arcades[], hours, comments, updated_at)",
+    "https://map.bemanicn.com/region/city/{code} for all 16 Yunnan city codes (61 shops total; 0 missing from shard links)",
+    "https://map.bemanicn.com/games arcade_type title_id map",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (maimai DX CN; 54 province=云南)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (CHUNITHM CN; 6 province=云南)",
+    "scrapers/bemanicn.py TITLE_GAME map (read-only)",
+    "scrapers/wahlap.py endpoints (read-only)"
+  ],
+  "corrections": [
+    {
+      "id": 1185,
+      "name": "KM'Square昆明官渡店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1186
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1186,
+        "target_name": "KM·Square 昆明街区 星耀店",
+        "reason": "Same Xingyao Plaza 3F unit A010-012 as BemaniCN shop 2910. WAHLAP registers both KM'Square and 昆明街区 names for this pin."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2910",
+      "evidence_quote": "name=KM·Square 昆明街区 星耀店; address=云南省昆明市官渡区新亚洲体育城星耀广场3楼010－012; status=1; maimai DX qty=1; GROOVE COASTER qty=2; updated_at=2026-06-19",
+      "note": "WAHLAP maimai list also has exact name KM'Square昆明官渡店 at the same address. Keep 1186 (has counts + other). Merge 1185 and 3792 into 1186.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3792,
+      "name": "昆明街区昆明官渡星耀店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1186
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1186,
+        "target_name": "KM·Square 昆明街区 星耀店",
+        "reason": "Second WAHLAP name for the same Xingyao Plaza 3F KM Square / 昆明街区 shop (d=0 with 1186)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=昆明街区昆明官渡星耀店; address=云南省昆明市官渡区星耀广场三楼; province=云南 (and arcadeName=KM'Square昆明官渡店 same plaza unit)",
+      "note": "WAHLAP double-registers this venue under two names. Keep BemaniCN 1186.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3794,
+      "name": "昆明街区滨江店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1187
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1187,
+        "target_name": "KM·Square 昆明街区 滨江店",
+        "reason": "WAHLAP-only twin of BemaniCN 2807 at Binjiang Junfa Plaza (d=0). Official WAHLAP lists maimai+CHUNITHM under this name."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2807",
+      "evidence_quote": "name=KM·Square 昆明街区 滨江店; address=白云路 滨江·俊发广场; status=1; chunithm qty=2, maimai_dx qty=2",
+      "note": "Keep 1187 (has game_counts). WAHLAP CHUNITHM list also includes 昆明街区滨江店.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3791,
+      "name": "昆明街区动漫曲靖中枢店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1188
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1188,
+        "target_name": "KM•Square昆明街区（陆良店）",
+        "reason": "WAHLAP twin of BemaniCN 4188 at 中枢大厦 1F (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4188",
+      "evidence_quote": "name=KM•Square昆明街区（陆良店）; address=中枢街道中枢大厦1F; status=1; maimai DX qty=1",
+      "note": "WAHLAP name uses 昆明街区动漫曲靖中枢店; same shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5132,
+      "name": "潮漫娱乐场临沧临翔强力店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1283
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1283,
+        "target_name": "super101潮漫电玩",
+        "reason": "WAHLAP twin of BemaniCN 4354 at Qiangli Plaza 3F Lincang (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4354",
+      "evidence_quote": "name=super101潮漫电玩; address=汀旗路132号强力广场3层; status=1; maimai DX qty=1 ver=舞萌dx2024",
+      "note": "Same Lincang Qiangli Plaza shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1531,
+      "name": "中嘉动漫曲靖麒麟花柯不夜城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1530
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1530,
+        "target_name": "中嘉动漫城（曲靖店）",
+        "reason": "WAHLAP twin of BemaniCN 6837 at 花柯不夜城 (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6837",
+      "evidence_quote": "name=中嘉动漫城（曲靖店）; status=1; maimai DX qty=1",
+      "note": "WAHLAP still uses longer address name; same venue.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3579,
+      "name": "快乐星球昆明呈贡店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 2100
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2100,
+        "target_name": "呈贡区海乐星游乐园",
+        "reason": "WAHLAP twin at 云上小镇5栋36号 (d=0 with BemaniCN 4016)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4016",
+      "evidence_quote": "name=呈贡区海乐星游乐园; address=云南省昆明市呈贡区吴家营仕林街云上小镇5栋36号; status=1; maimai DX qty=1",
+      "note": "WAHLAP name 快乐星球 vs BemaniCN 海乐星; same unit 5栋36号.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2313,
+      "name": "嘻玩客昆明官渡星天地店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 2314
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2314,
+        "target_name": "嘻玩客潮玩娱乐中心（新亚洲体育中心）",
+        "reason": "WAHLAP twin of BemaniCN 6792 at 星天地 S21-07 (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6792",
+      "evidence_quote": "name=嘻玩客潮玩娱乐中心（新亚洲体育中心）; status=1; maimai DX qty=1",
+      "note": "Same Xingtiandi shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2514,
+      "name": "大凡曲靖麒麟店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 2515
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2515,
+        "target_name": "大凡欢乐馆",
+        "reason": "WAHLAP twin of BemaniCN 1793 at 寥廓南路218 (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1793",
+      "evidence_quote": "name=大凡欢乐馆; address=云南省曲靖市麒麟区寥廓南路218美食城旁大凡欢乐馆; status=1; maimai DX qty=1",
+      "note": "Same Dafan venue.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3797,
+      "name": "明日世界昆明五华西南广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 2730
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2730,
+        "target_name": "天空之城•明日世界（新西南店）",
+        "reason": "WAHLAP twin of BemaniCN 1446 at 昆百大新西南 4F (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1446",
+      "evidence_quote": "name=天空之城•明日世界（新西南店）; address=人民中路昆百大新西南4层E04F05; status=1; maimai DX qty=1",
+      "note": "Same Xinan Plaza shop. Nearby 4607 欢乐故事 is a DIFFERENT tenant (B1, drs/pump); do not merge 4607.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3798,
+      "name": "明日世界昆明和谐店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 2732
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2732,
+        "target_name": "天空之城•明日世界（昆明和谐店）",
+        "reason": "WAHLAP twin of BemaniCN 2140 at 和谐广场 C座 2F (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2140",
+      "evidence_quote": "name=天空之城•明日世界（昆明和谐店）; address=和谐广场C座二楼天空之城明日世界; status=1; maimai DX qty=1",
+      "note": "Same Hexie Plaza shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2966,
+      "name": "头号玩家昭通邵阳步行街店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 2965
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2965,
+        "target_name": "头号玩家昭通昭阳区步行街店",
+        "reason": "WAHLAP twin of BemaniCN 5731 at 东门步行街85/87 (d=0). WAHLAP typo 邵阳 vs 昭阳."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5731",
+      "evidence_quote": "name=头号玩家昭通昭阳区步行街店; address=东门步行街85，87号; status=1; maimai DX qty=1, taiko qty=1",
+      "note": "Keep 2965 (has taiko count). WAHLAP still lists maimai under misspelled 邵阳 name.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6279,
+      "name": "芒果乐园玉溪红塔青花店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 6278
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6278,
+        "target_name": "芒果乐园",
+        "reason": "WAHLAP twin of BemaniCN 4892 at 青花街 GS7-9 (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4892",
+      "evidence_quote": "name=芒果乐园; address=红塔大道95号青花街GS7GS8GS9号; status=1; maimai DX qty=1",
+      "note": "Same Yuxi shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6344,
+      "name": "菲玩不可昆明嵩明莱雅广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 6345
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6345,
+        "target_name": "菲玩不可潮玩城",
+        "reason": "WAHLAP twin of BemaniCN 7042 at 莱雅广场 (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7042",
+      "evidence_quote": "name=菲玩不可潮玩城; status=1; maimai DX qty=1 ver=Ver.CN1.55; community comments 2026.5",
+      "note": "Same Songming Laiya Plaza shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7268,
+      "name": "骇客码头昭通昭阳吾悦广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 7257
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7257,
+        "target_name": "骇客码头",
+        "reason": "WAHLAP twin of BemaniCN 5484 at Zhaotong Wuyue 3F (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5484",
+      "evidence_quote": "name=骇客码头; address=云南省昭通市昭阳区凤凰街道二环南路吾悦广场三楼骇客码头; status=1; maimai DX qty=1",
+      "note": "BemaniCN page uses short name 骇客码头; WAHLAP uses full Zhaotong Wuyue name.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2832,
+      "name": "天空之城昆明西山南悦城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 17.2,
+        "possible_duplicate_of": 2833
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2833,
+        "target_name": "天空之城明日世界（南悦城店）",
+        "reason": "WAHLAP twin of BemaniCN 7140 at 南悦城/爱琴海 2F (d=17m, same mall unit)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7140",
+      "evidence_quote": "name=天空之城明日世界（南悦城店）; address=云南省昆明市西山区广福路南悦城爱琴海城市广场2层F9202号商铺; status=1; maimai DX qty=1",
+      "note": "Nearby 7259 骇客码头金科爱琴海 is a DIFFERENT tenant (~40-50m); do not merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2310,
+      "name": "嘻游王国文山七都广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 62.9,
+        "possible_duplicate_of": 2309
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2309,
+        "target_name": "嘻游王国",
+        "reason": "WAHLAP twin of BemaniCN 6282 at 七都广场 (d~63m, geocode noise)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6282",
+      "evidence_quote": "name=嘻游王国; address=七都广场三楼; status=1; maimai DX qty=1",
+      "note": "Same Wenshan Qidu Plaza shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6522,
+      "name": "赛博浪潮蒙自南湖荟店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 90.4,
+        "possible_duplicate_of": 6521
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6521,
+        "target_name": "赛博浪潮",
+        "reason": "WAHLAP twin of BemaniCN 4469 at 南湖荟 C栋 (d~90m geocode)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4469",
+      "evidence_quote": "name=赛博浪潮; address=南湖南路南湖荟c栋一层F1-49-1; status=1; maimai DX qty=1",
+      "note": "Same Mengzi Nanhu Hui shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5245,
+      "name": "潮玩萌兽曲靖万达店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 103.9,
+        "possible_duplicate_of": 5248
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5248,
+        "target_name": "潮玩萌兽综合馆（曲靖店）",
+        "reason": "WAHLAP twin of BemaniCN 5342 at Qujing Wanda (d~104m; floor text 3F vs 2F2027 may be listing noise)."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5342",
+      "evidence_quote": "name=潮玩萌兽综合馆（曲靖店）; address=万达广场2F2027号; status=1; maimai DX qty=1",
+      "note": "WAHLAP address says 万达广场3楼; BemaniCN says 2F2027. Same mall brand; merge likely but floor discrepancy noted.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3793,
+      "name": "昆明街区昆明西山云纺店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 104.0,
+        "possible_duplicate_of": 3795
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3795,
+        "target_name": "昆明街区（云纺店）",
+        "reason": "WAHLAP twin of BemaniCN 6886 at Yunfang / 云纺国际商厦 (d~104m)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6886",
+      "evidence_quote": "name=昆明街区（云纺店）; address=云南省昆明市西山区海埂路辅路西山区云纺国际商厦A座; status=1; maimai DX qty=1 ver=2025",
+      "note": "WAHLAP says B座一楼; BemaniCN says A座. Same complex; keep 3795.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7267,
+      "name": "骇客码头昆明西山第壹城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 106.2,
+        "possible_duplicate_of": 7258
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7258,
+        "target_name": "骇客码头(南亚店)",
+        "reason": "WAHLAP twin of BemaniCN 3530 at 南亚风情第壹城/第壹MALL 3F (d~106m)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3530",
+      "evidence_quote": "name=骇客码头(南亚店); address=中国云南省昆明市西山区滇池路569号南亚风情第壹MALL 3F层; status=1; maimai DX qty=1, taiko(old) qty=1",
+      "note": "Keep 7258 (has taiko listing). Old taiko often powered off per comment.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7270,
+      "name": "骇客码头普洱思茅创基尚城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 11.4,
+        "possible_duplicate_of": 7273
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7273,
+        "target_name": "骇客码头（创基尚城C区店）",
+        "reason": "WAHLAP twin of BemaniCN 5577 at 创基尚城 3F (d=11m)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5577",
+      "evidence_quote": "name=骇客码头（创基尚城C区店）; address=林源路666号创基尚城C区三楼; status=1; maimai DX qty=1",
+      "note": "Same Pu'er Chuangji Shangcheng shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5417,
+      "name": "熠辉潮游昆明盘龙永和广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "possible_duplicate_of": 5416
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5416,
+        "target_name": "熠辉潮游",
+        "reason": "WAHLAP twin of BemaniCN 6066 at 永和广场 3F."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6066",
+      "evidence_quote": "name=熠辉潮游; address=永和广场c栋3楼; status=1; maimai DX qty=2",
+      "note": "Keep 5416 (qty=2). WAHLAP uses long address name.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6585,
+      "name": "超级星座普洱思茅店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "possible_duplicate_of": 6570
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6570,
+        "target_name": "超级星座",
+        "reason": "WAHLAP twin of BemaniCN 4319 at 阳光悦城 (same Super Constellation Pu'er shop)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4319",
+      "evidence_quote": "name=超级星座; address=思茅区茶都路10号(普洱阳光悦城); status=1; maimai DX qty=1",
+      "note": "Same Sunshine Yuecheng shop.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7272,
+      "name": "骇客码头西双版纳景洪店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 7274
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7274,
+        "target_name": "骇客码头（爱琴海店）",
+        "reason": "WAHLAP twin of BemaniCN 4268 at Jinghong Aegean mall (d=0)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4268",
+      "evidence_quote": "name=骇客码头（爱琴海店）; address=爱琴海购物中心; status=1; maimai DX qty=1, Initial D qty=2",
+      "note": "Do NOT merge with 6595 超级星座（爱琴海店） (BemaniCN 3775): separate tenant in same mall.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6590,
+      "name": "超级星座西双版纳景洪店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "possible_duplicate_of": 6595
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6595,
+        "target_name": "超级星座（爱琴海店）",
+        "reason": "WAHLAP twin of BemaniCN 3775 Super Constellation Jinghong Aegean (same brand)."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3775",
+      "evidence_quote": "name=超级星座（爱琴海店）; address=爱琴海购物中心三楼; status=1; maimai DX qty=1; comment=音游机子只有一台maimaiDX",
+      "note": "WAHLAP address text says 金版纳尚鼎城; BemaniCN says 爱琴海购物中心三楼. likely same shop; if two Super Constellation units exist this would be wrong.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2113,
+      "name": "和音屋昆明世纪广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.3,
+        "possible_duplicate_of": 2116
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2116,
+        "target_name": "和音屋（昆明南屏街店）",
+        "reason": "WAHLAP twin of BemaniCN 6171 at 世纪广场 C2幢17楼E (d=0.3m). Official WAHLAP lists maimai+CHUNITHM under 和音屋昆明世纪广场店."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6171",
+      "evidence_quote": "name=和音屋（昆明南屏街店）; address=五华区世纪广场C2幢17楼E; status=1; chunithm qty=2, maimai DX qty=1, ongeki qty=1; comment mentions 24小时营业",
+      "note": "Keep 2116 (has ongeki + counts).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1905,
+      "name": "千麦电玩楚雄银座花园城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 48.3,
+        "possible_duplicate_of": 3472
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3472,
+        "target_name": "幸运猩电玩",
+        "reason": "Same unit 四季银座 B04. WAHLAP still lists old name 千麦; BemaniCN lists renovated shop as 幸运猩."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5697",
+      "evidence_quote": "name=幸运猩电玩; address=永安路1号四季银座花园城商业广场负一楼B04号幸运猩电玩; status=1; maimai DX qty=1; comment=重新装修的新店...楚雄第二台舞萌DX",
+      "note": "Official WAHLAP maimai API still returns arcadeName=千麦电玩楚雄银座花园城店 at identical B04 unit. Community uses 幸运猩 after renovation. likely rename.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1880,
+      "name": "动物也疯狂大理昆百店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 1.3,
+        "possible_duplicate_of": 1879
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1879,
+        "target_name": "动物也疯狂",
+        "reason": "WAHLAP CHUNITHM-only listing for the same 动物也疯狂 brand at 昆百大泰业城 3F (d~1m with BemaniCN 711)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/711",
+      "evidence_quote": "name=动物也疯狂; address=泰安路93号泰业国际广场3楼; status=1; maimai DX qty=1, chunithm qty=1; updated_at=2026-07-31",
+      "note": "WAHLAP CHUNITHM API: arcadeName=动物也疯狂大理昆百店 address=云南省大理市昆百大泰业城3楼. Same brand/floor as 1879.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4201,
+      "name": "星际反斗蛙大理昆百大泰业城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 1.3,
+        "possible_duplicate_of": 4202
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4202,
+        "target_name": "星际反斗蛙（SUPER101大理店）",
+        "reason": "WAHLAP maimai twin of BemaniCN 416 at 昆百大泰业 5F (comment: 在昆百大5L)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/416",
+      "evidence_quote": "name=星际反斗蛙（SUPER101大理店）; address=泰业国际广场; status=1; maimai DX qty=1, chunithm qty=2, taiko qty=1; comment=在昆百大5L; updated_at=2026-07-22",
+      "note": "5F Super101 / 星际反斗蛙. Distinct from 3F 动物也疯狂 (1879).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3851,
+      "name": "星卉乐大理泰业广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 0.0,
+        "possible_duplicate_of": 1879
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1879,
+        "target_name": "动物也疯狂",
+        "reason": "WAHLAP maimai listing at 泰业广场三楼, d=0 with BemaniCN 动物也疯狂 which already has maimai+chunithm on 3F. Likely same 3F arcade under a different operator/brand name on the official list."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=星卉乐大理泰业广场店; address=云南省大理白族自治州大理市下关街道 建设东路21号泰业广场三楼; province=云南",
+      "note": "UNVERIFIED whether 星卉乐 is a separate counter vs rename of 动物也疯狂. Official WAHLAP splits 3F maimai under 星卉乐 and 3F CHUNITHM under 动物也疯狂大理昆百店, while BemaniCN attributes both games to 动物也疯狂. If they are two adjacent 3F tenants, do not merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4202,
+      "name": "星际反斗蛙（SUPER101大理店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "Yunnan CHUNITHM official list (province=云南) has only 6 venues: 动物也疯狂大理昆百店, 阿凡达&爱玩荟昆明店, 星际传奇昆明万象城店, super101昆明店, 昆明街区滨江店, 和音屋昆明世纪广场店. No 星际反斗蛙 / SUPER101 大理.",
+      "note": "BemaniCN shop 416 still shows chunithm qty=2 国行 (community). Official WAHLAP CHUNITHM locator does not list this 5F shop. Per precedence (official > community), remove chunithm until official lists it. maimai remains via WAHLAP twin 4201. taiko is non-WAHLAP so BemaniCN is best available source.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4607,
+      "name": "欢乐故事（昆明新西南店）",
+      "field": "games",
+      "current": [
+        "drs",
+        "other"
+      ],
+      "proposed": [
+        "drs",
+        "iidx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/254",
+      "evidence_quote": "arcades include title_id=5 quantity=1 version=未知 coin=3; title_id=10 DANCERUSH qty=1; title_id=19 PUMP IT UP qty=1",
+      "note": "scrapers/bemanicn.py TITLE_GAME maps title_id 5 -> iidx. Machine version empty. Community source only. Shop comment says many legacy cabs removed after move.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4607,
+      "name": "欢乐故事（昆明新西南店）",
+      "field": "game_counts",
+      "current": {
+        "drs": 1
+      },
+      "proposed": {
+        "drs": 1,
+        "iidx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/254",
+      "evidence_quote": "title_id=5 quantity=1; title_id=10 quantity=1",
+      "note": "Counts from BemaniCN quantities. IIDX cab condition/version not described.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2116,
+      "name": "和音屋（昆明南屏街店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h (free entry 12:00-22:00 per BemaniCN comment; start_time/end_time fields on site are 1/26 and look unreliable)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6171",
+      "evidence_quote": "comment: 24小时营业，12:00-22:00自由到店; start_time=1 end_time=26",
+      "note": "Prefer comment over numeric start/end (1 and 26 look like placeholder for 24h).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7186,
+      "name": "风云再起昆明金鹰店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/259",
+      "evidence_quote": "comment: 从10:00营业到0:00; start_time=10 end_time=24; updated_at=2026-07-29",
+      "note": "Comment and numeric hours agree.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4607,
+      "name": "欢乐故事（昆明新西南店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "weekdays 11:30-24:00; holidays 10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/254",
+      "evidence_quote": "comment: 营业时间：工作日：11:30-24:00，节假日：10:00-24:00。",
+      "note": "From BemaniCN shop comment; numeric start/end are generic 10-24.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7186,
+      "name": "风云再起昆明金鹰店",
+      "field": "other",
+      "current": {
+        "notes_snippet": "other games: 头文字D"
+      },
+      "proposed": {
+        "note": "BemaniCN shop comment 2026-07: 中二已经没了，舞萌和太鼓暂时还在. CHUNITHM already absent from app games (correct). Initial D still listed as other (qty=1 Zero, offline)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/259",
+      "evidence_quote": "comment: 风云全部死光光了~~~ （中二已经没了，舞萌和太鼓暂时还在）; arcades: maimai qty=2, taiko qty=1, Initial D Zero qty=1",
+      "note": "No app games change needed. Condition of maimai cabs described as poor in comments.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7259,
+      "name": "骇客码头(金科爱琴海店)",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "notes": "other games: 头文字D"
+      },
+      "proposed": {
+        "note": "BemaniCN comment 3.17: 太鼓没了. App correctly has no taiko. maimai still present."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5411",
+      "evidence_quote": "comment ends with 3.17 太鼓没了; arcades: maimai DX qty=1, Initial D Zero qty=2; no taiko title",
+      "note": "Informational; app games already match.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7265,
+      "name": "骇客码头昆明五华百大店",
+      "field": "other",
+      "current": {
+        "taiko": 1,
+        "count_evidence": "bemanicn_qty"
+      },
+      "proposed": {
+        "note": "BemaniCN taiko is old frame title_id=15 ver=14日; comment: 现在基本不开，变摆设了. Treat as often powered-off legacy cab, not a reliable playable taiko."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1191",
+      "evidence_quote": "taiko title_id=15 quantity=1 version=14日 comment: 现在基本不开，变摆设了",
+      "note": "Could justify removing taiko from games; left as note so maintainer can decide. Official WAHLAP still lists maimai here.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2335,
+      "name": "地心王国",
+      "field": "other",
+      "current": {
+        "games": [
+          "other",
+          "taiko"
+        ],
+        "notes": "other games: maimai, 头文字D"
+      },
+      "proposed": {
+        "note": "BemaniCN lists maimai title_id=2 (FiNALE offline) not maimai DX. App correctly does NOT list maimai_dx. Old taiko title_id=15 12亚 still listed. updated_at=2025-11-29 (stale relative to other Yunnan shops)."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1089",
+      "evidence_quote": "title_id=2 version=Finale quantity=1 comment=离线机，全解，机况很差; title_id=15 taiko 12亚 qty=1; title_id=26 Initial D qty=4",
+      "note": "Do not promote FiNALE to maimai_dx.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1280,
+      "name": "super101昆明店",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "note": "Still present on official WAHLAP CHUNITHM locator as of fetch 2026-08-01. No BemaniCN page linked. No evidence of closure."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName=super101昆明店; address=云南省昆明市盘龙区北京路同德广场负一层super101; province=云南",
+      "note": "Positive confirmation only; no field change.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2829,
+      "name": "天空之城昆明五华吾悦广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "near_pair_m": 86.9,
+        "possible_duplicate_of": 2731
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2731,
+        "target_name": "天空之城•明日世界（昆明吾悦店）",
+        "reason": "WAHLAP twin of BemaniCN 4559 天空之城 at 五华吾悦 3F (d~87m). 7264 骇客码头 at same mall is a DIFFERENT tenant (unit 3037)."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4559",
+      "evidence_quote": "name=天空之城•明日世界（昆明吾悦店）; address=王筇路吾悦广场三楼F3-6商铺; status=1; maimai DX qty=1",
+      "note": "WAHLAP address text mentions 多奇妙儿童乐园; BemaniCN unit F3-6. Same Sky City brand. Keep 7264 separate.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4120,
+      "name": "星际传奇昆明万象城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "chunithm": "3 coins/play",
+        "taiko": "14 coins / 3 songs",
+        "coin_unit_note": "shop uses gold coins; packages recommended per comment"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3150",
+      "evidence_quote": "chunithm coin=3; taiko coin=14 comment=目前14币/3首; shop comment=用的金色币，套餐和北京广州不通用",
+      "note": "Coin counts not CNY. shop.price=1 on BemaniCN (likely 1 CNY/coin but not verified against package pricing).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7186,
+      "name": "风云再起昆明金鹰店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "6 coins/play",
+        "taiko": "10 coins/play"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/259",
+      "evidence_quote": "maimai coin=6; taiko coin=10 comment=大概是在五一的时候从9币变成10币",
+      "note": "Silver coins (风云). CNY per coin not stated on page.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

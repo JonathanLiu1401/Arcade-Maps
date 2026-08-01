@@ -1,0 +1,391 @@
+{
+  "shard": 89,
+  "checked": 108,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Italy",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8774",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8775",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9119",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8859",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11695",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10108",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8776",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3099",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10290",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7301",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2141",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2140",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3250",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2143",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3178",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8847",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4590",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2158",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3376",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10762",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7357",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7504",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9246",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8102",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8632",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1801",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1800",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4591",
+    "https://www.loggames.it/",
+    "https://www.loggames.it/milano/",
+    "https://www.paradise-monsano.com/",
+    "https://bowlingvigevano.it/",
+    "https://www.sportpark.it/"
+  ],
+  "corrections": [
+    {
+      "id": 8163,
+      "name": "Sala Giochi Doro",
+      "field": "location",
+      "current": {
+        "lat": 42.147114459221015,
+        "lng": 14.348144531250002,
+        "addr": "Via Francesconi, 10 Caorle Venice, 30021, Caorle"
+      },
+      "proposed": {
+        "lat": 45.599095449715,
+        "lng": 12.886646365654,
+        "addr": "Via Francesconi, 10, Caorle, Venice, 30021"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8775",
+      "evidence_quote": "Sala Giochi Doro, Via Francesconi, 10, Caorle, Venice, 30021. ZIv API id=8775 coords lat 45.599095449715 lng 12.886646365654. Linked stub id=8774 carries wrong pin 42.147114459221015, 14.348144531250002 (Abruzzo, about 400 km south of Caorle).",
+      "checked_at": "2026-07-31",
+      "note": "Shard links ziv id=8774 which has empty machine list and the wrong lat/lng. ZIv id=8775 is the corrected duplicate of the same street address with machines and a Caorle-area pin. Maintainers should retarget the link to 8775 or merge the two ZIv rows and fix the pin. Current pin is a hard travel-killer."
+    },
+    {
+      "id": 8163,
+      "name": "Sala Giochi Doro",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8775",
+      "evidence_quote": "Machines on id=8775 (2024-11-29): Guitar Hero Arcade; Pump It Up NX (comment: Bootleg! Running Pump It Up NX Pro); Cruis'n Blast; MotoGP Arcade. id=8774 (the linked row) states No games at this location.",
+      "checked_at": "2026-07-31",
+      "note": "pump_it_up tag itself is correct IF the venue is the 8775 listing. Do not trust the empty 8774 row. Notes currently match 8775 machine list even though the link points at 8774."
+    },
+    {
+      "id": 8177,
+      "name": "SalaGiochi VIRTUAPLANET",
+      "field": "location",
+      "current": {
+        "lat": 44.07081379264684,
+        "lng": 12.521667480468752,
+        "addr": "Via Levantina, 166, 30016 Jesolo VE, Italy Jesolo 30016, Jesolo"
+      },
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9119",
+      "evidence_quote": "Address text: Via Levantina, 166, 30016 Jesolo VE, Italy / Jesolo / 30016. Stored coordinates latitude 44.07081379264684, longitude 12.521667480468752. Jesolo is about 45.53N, 12.64E; the stored pin sits on the Rimini riviera about 160 km away.",
+      "checked_at": "2026-07-31",
+      "note": "Pin is definitively wrong relative to the stated Jesolo address. Could not independently geocode Via Levantina 166 Jesolo to a verified lat/lng from an official source in this pass, so proposed is null (remove wrong pin / re-geocode). Do not keep the Rimini-area pin."
+    },
+    {
+      "id": 8177,
+      "name": "SalaGiochi VIRTUAPLANET",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9119",
+      "evidence_quote": "Information text: Lot's of games for children, tickets and a pump dx cab. Pads seem to be in a pretty well working condition. Games section: No games at this location. Last update 2024-07-11.",
+      "checked_at": "2026-07-31",
+      "note": "Only free-text evidence for a Pump It Up DX-class cab; not entered as a catalogued machine. Confidence is likely, not certain. No independent 2025/2026 confirmation."
+    },
+    {
+      "id": 8146,
+      "name": "Paradise Play Drink & Food",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8859",
+      "evidence_quote": "Music games listed: MAMBO A GO GO; PercussionFreaks 5thMIX (comment: CRT replaced with LCD); Pump It Up PRO (Deluxe Cab). No GITADORA, GuitarFreaks, or DrumMania cabinet appears. Last update 2024-10-31.",
+      "checked_at": "2026-07-31",
+      "note": "PercussionFreaks 5thMIX is the Korean-market DrumMania-era title, not modern GITADORA. Removing the gitadora tag is the correct action. Venue itself still operates (paradise-monsano.com active promotions into 2026) but official site does not list individual cabs."
+    },
+    {
+      "id": null,
+      "name": "Bowling Young Club",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Bowling Young Club",
+        "addr": "Viale Artigianato, 10 / Via Aguzzafame 60, Vigevano, Pavia, 27029, Italy",
+        "lat": 45.31869319099943,
+        "lng": 8.880150606092899,
+        "games": [
+          "other"
+        ],
+        "notes": "Cabs: In the Groove",
+        "hours_text": "Mon-Thu 20:30-01:30; Fri 20:30-02:30; Sat 14:30-02:30; Sun 20:00-01:30",
+        "website": "https://bowlingvigevano.it/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11695"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11695",
+      "evidence_quote": "Bowling Young Club, Viale Artigianato, 10, Vigevano, Pavia, 27029. Machine: In the Groove (condition Unknown). Last update 2026-07-31 21:23 (created same day). Official site bowlingvigevano.it lists address Via Aguzzafame 60 (Ang. Artigianato) and advertises Video Games.",
+      "checked_at": "2026-07-31",
+      "note": "Brand new ZIv listing. Official site confirms venue exists and has videogiochi but does not name In the Groove specifically, so cab list is ZIv-only (likely). Street address differs slightly between ZIv (Viale Artigianato 10) and official site (Via Aguzzafame 60 corner Artigianato); treat as same corner."
+    },
+    {
+      "id": 8170,
+      "name": "Sala Giochi LA SIRENETTA",
+      "field": "hours",
+      "current": null,
+      "proposed": "Seasonal: open June-September only (summer). Exact daily hours unknown on ZIv.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10108",
+      "evidence_quote": "Information: Only opened during the summer (June/July/August/September). Opening times listed as Unknown every day. Last update 2026-01-20. StepManiaX (65 inch Deluxe Cabinet) listed Perfect.",
+      "checked_at": "2026-07-31",
+      "note": "Showing this venue as year-round open would send players to a closed summer-only seaside arcade. Keep stepmaniax tag."
+    },
+    {
+      "id": 8172,
+      "name": "Sala Giochi Per Famiglie",
+      "field": "hours",
+      "current": "Sun closed",
+      "proposed": "Only open in Summer. Sunday closed. Exact weekday hours unknown on ZIv.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8776",
+      "evidence_quote": "Information: Only open in Summer. Sunday marked closed; Mon-Sat hours unknown. Last update 2024-09-05. Pump It Up NX comment: Bootleg! Running Pump It Up NX Pro.",
+      "checked_at": "2026-07-31",
+      "note": "Current hours_text only says Sun closed and omits the seasonal restriction. Seaside Caorle venue."
+    },
+    {
+      "id": 8180,
+      "name": "Sport Park",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3099",
+      "evidence_quote": "StepMania Converted Cabinet, condition Perfect, comment: A Pump It Up Bootleg called \"Pump It Up NX PRO\" in Italian language. Last update 2025-10-27. Official site sportpark.it confirms Sala Giochi still operating at Via Dante Alighieri 150, Fano.",
+      "checked_at": "2026-07-31",
+      "note": "Cabinet is catalogued as StepMania Converted but runs Italian PIU NX PRO bootleg software. Tagging pump_it_up is useful for players searching PIU. Not an official Andamiro-online cab."
+    },
+    {
+      "id": 8103,
+      "name": "Bowling Treviso (Lancenigo)",
+      "field": "other",
+      "current": "Cabs: Pump It Up NX2",
+      "proposed": "Cabs: Pump It Up NX PRO Italian bootleg (listed on ZIv as NX2 by mistake)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10290",
+      "evidence_quote": "Pump It Up NX2 comment: ATTENTION! is a NX PRO italian bootleg and not an NX2 sadly. Condition Moderate. Last update 2025-07-08.",
+      "checked_at": "2026-07-31",
+      "note": "games tag pump_it_up is fine. Notes/cab model name should not claim NX2."
+    },
+    {
+      "id": 8099,
+      "name": "Bowling Savona",
+      "field": "other",
+      "current": "Cabs: Pump It Up PRO (no condition note in app)",
+      "proposed": "Pump It Up PRO present but reported UNPLAYABLE (broken sensors, broken LCD, input delay). LCD-modded SD cab running NX Pro bootleg.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7301",
+      "evidence_quote": "Pump It Up PRO comment: UNPLAYABLE! Sensors completely broken, LCD broken with vertical lines, screen flickers blue sometimes, noticeable input delay, speakers suck. LCD-modded SD cab running NX Pro bootleg... Condition Bad. Last update 2025-05-18.",
+      "checked_at": "2026-07-31",
+      "note": "Keep pump_it_up tag if the map shows presence, but surface the unplayable status so players do not travel for it. Evidence is ZIv community report about 1 year old, not re-verified on site."
+    },
+    {
+      "id": 8109,
+      "name": "Centro Commerciale Latina Fiori",
+      "field": "status",
+      "current": "shown as open with ddr + other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2141",
+      "evidence_quote": "Last update 2012-01-13 23:35 (14 years ago). Machines: Dance Dance Revolution EXTREME; Puzzle Bobble. Opening times Unknown every day. No visitors, no pictures, no comments.",
+      "checked_at": "2026-07-31",
+      "note": "No evidence after 2012 that this venue or its DDR Extreme still exists. Supreme rule: do not state it is open. proposed null means remove or hard-flag as last-confirmed-2012 rather than present as current. Did not find an independent official confirmation either way."
+    },
+    {
+      "id": 8179,
+      "name": "Sonic Bowling",
+      "field": "status",
+      "current": "shown as open with ddr",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2140",
+      "evidence_quote": "Last update 2012-01-13 23:13 (14 years ago). Machines: Dance Dance Revolution EXTREME; DDRMAX2 -Dance Dance Revolution 7thMIX-. Opening times Unknown. No visitors, no pictures.",
+      "checked_at": "2026-07-31",
+      "note": "Same 2012-only Latina DDR cluster as Latina Fiori. No post-2012 confirmation. Treat as unverified presence."
+    },
+    {
+      "id": 8118,
+      "name": "Evolution arcade",
+      "field": "status",
+      "current": "shown as open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3250",
+      "evidence_quote": "Last update 2014-09-11 13:26 (11 years ago). Pump It Up PRO comment: It's a modded PIU PRO called Pump It Up PRO NX. Information: Enter the door, and you will be in a tabacconists shop. Climb down the stairs on your left and you will be in the arcade!",
+      "checked_at": "2026-07-31",
+      "note": "No evidence after 2014. Cannot confirm open or closed. Do not present as a reliable current destination."
+    },
+    {
+      "id": 8138,
+      "name": "Mazzini Bowling",
+      "field": "status",
+      "current": "shown as open with In the Groove 2",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2143",
+      "evidence_quote": "Last update 2012-01-13 23:47 (14 years ago). In the Groove 2 comment: It's not an ITG2 by Roxor Games. It's a simple upgrade of DDR Extreme.",
+      "checked_at": "2026-07-31",
+      "note": "14-year-stale ITG conversion listing. No independent confirmation."
+    },
+    {
+      "id": 8176,
+      "name": "Sala Giochi Top Ten",
+      "field": "status",
+      "current": "shown as open with ddr + other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3178",
+      "evidence_quote": "Last update 2014-07-24 16:48 (12 years ago). Dance Dance Revolution EXTREME listed among many cabs. Hours still shown Mon-Sun 15:00-00:00 in app from that era data.",
+      "checked_at": "2026-07-31",
+      "note": "12-year-stale. DDR Extreme presence today is unverified."
+    },
+    {
+      "id": 8139,
+      "name": "Messico e Nuvole",
+      "field": "status",
+      "current": "shown as open with ddr + other; DDR EXTREME in notes",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8847",
+      "evidence_quote": "Last update 2024-04-29. All six machines including Dance Dance Revolution EXTREME have condition 0 (Unknown). Opening times all 00:00-00:00 (effectively unset).",
+      "checked_at": "2026-07-31",
+      "note": "Listing exists but every cabinet is Unknown condition and hours are blank. Weaker than a positive current report. Do not treat as confirmed open with playable DDR."
+    },
+    {
+      "id": 8145,
+      "name": "New Park",
+      "field": "other",
+      "current": "Cabs: Dancing Stage Fusion; Time Crisis 4",
+      "proposed": "Dancing Stage Fusion present but reported unplayable (cut-off screen, input delay).",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4590",
+      "evidence_quote": "Dancing Stage Fusion comment: Dancing Stage Is unplayable, non original screen, player one left arrow is cut off and not visible on screen, noticeable input delay. Condition Bad. Last update 2024-11-13.",
+      "checked_at": "2026-07-31",
+      "note": "ddr tag can stay for presence, but players should know it was reported unplayable. Evidence about 1.5 years old."
+    },
+    {
+      "id": 8164,
+      "name": "Sala Giochi Eldorado",
+      "field": "other",
+      "current": "pump_it_up listed; notes include Pump It Up XX",
+      "proposed": "Pump It Up XX is on the ZIv list at condition Unknown (0). ITG x2 and Simply Arcade StepMania cab are better-supported. Confirm PIU before travelling for it.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2158",
+      "evidence_quote": "Pump It Up XX condition 0, location Third floor, near the ITG cabs. Two In the Groove 2 cabs condition 4; StepMania Converted Cabinet condition 5 First Simply Arcade Cabinet connected online. Last update 2026-01-12.",
+      "checked_at": "2026-07-31",
+      "note": "Venue is real (La Grande Mela, Verona, updated 6 months ago). PIU XX specifically is the weak claim. pump_it_up tag may still be ok if maintainers accept Unknown-condition machines as presence."
+    },
+    {
+      "id": 8134,
+      "name": "LOG Lot Of Games",
+      "field": "location",
+      "current": "Via Triboniano Milano Lombardia, 20156, Milano",
+      "proposed": "c/o Merlata Bloom Milano, Primo piano - Area Cinema, Viale Triboniano / angolo Via Pier Paolo Pasolini, Milano",
+      "confidence": "certain",
+      "evidence_url": "https://www.loggames.it/milano/",
+      "evidence_quote": "Official location text: c/o Merlata Bloom Milano Primo piano - Area Cinema Viale Triboniano / angolo Via Pier Paolo Pasolini Milano.",
+      "checked_at": "2026-07-31",
+      "note": "Venue chain is active. Address should mention Merlata Bloom / cinema floor. DDR A is still on ZIv (updated 2024-04-18, Local mode, pads are brand new) but official site does not list specific rhythm cabs, so DDR presence after Apr 2024 is not reconfirmed by an official source."
+    },
+    {
+      "id": 8114,
+      "name": "Crazy Games - Surbo",
+      "field": "other",
+      "current": "games include taiko; notes list ITG and taiko 12",
+      "proposed": "Taiko 12 and both ITG2 cabs are condition Unknown (0) on ZIv as of 2025-05-17. Presence claimed but not quality-checked.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3376",
+      "evidence_quote": "taiko no tatsujin 12 condition Unknown; two In the Groove 2 entries condition Unknown, comments DDR upgrade cab. Last update 2025-05-17 by Gabrimax98.",
+      "checked_at": "2026-07-31",
+      "note": "Do not claim these cabs are confirmed playable. Tags can remain but surface uncertainty."
+    },
+    {
+      "id": 8167,
+      "name": "Sala Giochi Golden Gate",
+      "field": "other",
+      "current": "games include taiko; notes list taiko 12",
+      "proposed": "taiko 12 and ITG2 are condition Unknown (0) on ZIv (last update 2025-12-14).",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10762",
+      "evidence_quote": "Machines include In the Groove 2 (cond 0, Converted from DDR. ITG-1.0-11262004-046) and taiko no tatsujin 12 (cond 0). Last update 2025-12-14.",
+      "checked_at": "2026-07-31",
+      "note": "Recently touched listing but no condition data. Unverified playability."
+    },
+    {
+      "id": 8137,
+      "name": "Maximo, Centro Commerciale",
+      "field": "other",
+      "current": "Cabs: Pump It Up Phoenix (2024)",
+      "proposed": "Pump It Up Phoenix (2024) still listed; comment: cab offline but playable, temporary screen installed. 1.00 EUR/play, Joyvillage 4th floor.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7357",
+      "evidence_quote": "Pump It Up Phoenix (2024) comment: Cab still offline but playable, a temporary screen has been installed while waiting for a replacement. Condition Great. Last update 2026-03-09. Hours Mon-Sun 10:00-00:00.",
+      "checked_at": "2026-07-31",
+      "note": "One of the few relatively fresh PIU Phoenix reports in Italy (ZIv Mar 2026). Keep pump_it_up. Offline-but-playable means no online features."
+    },
+    {
+      "id": 8086,
+      "name": "Big Ben Matic Playcenter",
+      "field": "other",
+      "current": "games other+pump_it_up+stepmaniax; notes list ITG, ITG2, PIU NX, SMX",
+      "proposed": "Only StepManiaX (65 inch Deluxe) is condition Perfect on ZIv. ITG, ITG2 and Pump It Up NX are condition Unknown (0), sourced from old tweets.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7504",
+      "evidence_quote": "StepManiaX (65 inch Deluxe Cabinet) condition 5. In the Groove cond 0 (tweet 2018); In the Groove 2 cond 0 (tweet 2023); Pump It Up NX cond 0 Pump It Up NX Pro Italian bootleg (tweet 2018). Last arcade update 2024-09-24.",
+      "checked_at": "2026-07-31",
+      "note": "SMX is the only well-supported claim. PIU/ITG presence is stale social-media sourced and Unknown condition."
+    },
+    {
+      "id": 8094,
+      "name": "Bowling Oltremare",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9246",
+      "evidence_quote": "Information: Bowling Alley that's open everyday from 10:00 'till late 02:00. Has only one Pump It Up NX Absolute cab. Machine comment: I'm not sure about the condition of the arcade. Last update 2024-08-31.",
+      "checked_at": "2026-07-31",
+      "note": "Explicit only one from ZIv info field. count_evidence should be ziv_info or similar, not ziv_listed placeholder. Condition uncertain per reporter."
+    }
+  ]
+}

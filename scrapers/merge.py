@@ -98,6 +98,7 @@ Pipeline rules (see README / task spec):
 """
 
 import argparse
+import collections
 import json
 import math
 import os
@@ -107,6 +108,7 @@ import unicodedata
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import build_corrections   # verified fleet corrections (see (o) in run())
 import china_place    # China approximate placement (see (l) in run())
 import common
 import enrich          # enrichment section (see (k) in run())
@@ -2556,6 +2558,73 @@ def run(raw_dir, out_dir, updated=None):
         # because ids are not stable across builds.
         for i, a in enumerate(ordered, 1):
             a["id"] = i
+
+    # (o) hand-verified corrections from the verification fleet.
+    #
+    # data/corrections.json is built by scrapers/build_corrections.py,
+    # which filters the fleet's proposals: a count is only accepted when
+    # its evidence QUOTES a quantity (167 proposals were the agent
+    # counting rows on a ZIv page, which is the placeholder tier behind
+    # the "x1 everywhere" bug), and free-text fields are held rather
+    # than half-applied. Keyed on source page url, never on arcade id.
+    corr_path = os.path.join(out_dir, "corrections.json")
+    if os.path.exists(corr_path):
+        try:
+            with open(corr_path, encoding="utf-8") as fh:
+                venues = json.load(fh).get("venues") or {}
+        except (OSError, ValueError):
+            venues = {}
+        applied = collections.Counter()
+        for a in ordered:
+            fields = (venues.get(build_corrections.venue_key(a))
+                      or {}).get("fields") or {}
+            for field, rec in sorted(fields.items()):
+                if field == "games":
+                    games = sorted(set(rec["value"]) & set(GAME_SLUGS))
+                    if not games or games == a["games"]:
+                        continue
+                    # A count for a game the venue no longer has is a
+                    # contradiction the invariants reject outright, so
+                    # dropping a game drops its count with it.
+                    for key in ("game_counts", "count_evidence"):
+                        if a.get(key):
+                            kept = {k: v for k, v in a[key].items()
+                                    if k in games}
+                            if kept:
+                                a[key] = kept
+                            else:
+                                a.pop(key, None)
+                                a.pop("counts_src", None)
+                    if a.get("cab_models"):
+                        kept = {s: n for s, n in a["cab_models"].items()
+                                if CAB_MODEL_GAME[s] in games}
+                        if kept:
+                            a["cab_models"] = kept
+                        else:
+                            a.pop("cab_models", None)
+                    a["games"] = games
+                    applied["games"] += 1
+                elif field == "game_counts":
+                    counts = {k: v for k, v in rec["value"].items()
+                              if k in a["games"]}
+                    if not counts:
+                        continue
+                    a["game_counts"] = dict(a.get("game_counts") or {},
+                                            **counts)
+                    # The filter above admitted this only because the
+                    # evidence quoted a quantity, which is exactly what
+                    # ziv_comment means: a human stated the number.
+                    ev = dict(a.get("count_evidence") or {})
+                    for slug in counts:
+                        ev[slug] = "ziv_comment"
+                    a["count_evidence"] = ev
+                    if not a.get("counts_src"):
+                        a["counts_src"] = "ziv"
+                    applied["game_counts"] += 1
+        if applied:
+            print("merge: applied verified corrections (%s)"
+                  % ", ".join("%s=%d" % kv for kv in sorted(applied.items())),
+                  file=sys.stderr)
 
     # ------- validation (hard fails) -------
     for a in ordered:

@@ -1,0 +1,650 @@
+{
+  "shard": 88,
+  "checked": 55,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Thailand",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1006",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1006",
+    "https://location.am-all.net/alm/location?gm=34&lang=en&ct=1006",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=21537&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=20594&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=19165&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=22393&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=20677&lang=en",
+    "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=18722&lang=en",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10374",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3561",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7023",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7929",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4683",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6813",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10674",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9651",
+    "https://www.gamesmiththailand.com/",
+    "https://hahama.co.th/storepages/",
+    "https://www.echogamesth.com/",
+    "https://aeonfantasy.co.th/store"
+  ],
+  "corrections": [
+    {
+      "id": 11122,
+      "name": "EX10(MBK)",
+      "field": "other",
+      "current": {
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10374",
+        "info_floor": "6th Floor G-Station",
+        "notes_mix": "G-Station cabs then MusicPod cabs"
+      },
+      "proposed": {
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+        "identity": "EX10 MUSICPOD MBK Center (7th floor SF Town), not G-Station"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+      "evidence_quote": "EX10 MUSICPOD MBK Center | Located on the 7th floor inside SF Town at MBK Center. operated by ME EX10. For arcades on the same building, please see Let's Play MBK Center (Hahama) and G-Station MBK Center (G-Station). lastUpdateTime=2026-07-31 13:12:55",
+      "note": "Shard 11122 name EX10(MBK) matches ALL.Net, but links.ziv points at G-Station #10374 (6th floor, tokens, old taiko 12 / HOTD). The BEMANI/SEGA list and chunithm counts belong to separate ZIv #1682 MusicPod on the 7th floor. Relink 11122 to ZIv 1682 and replace info/notes with MusicPod text. G-Station should be its own venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11122,
+      "name": "EX10(MBK)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 16,
+        "ddr": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 2,
+        "maimai_dx": 4,
+        "sdvx": 2,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 4,
+        "ddr": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 2,
+        "maimai_dx": 4,
+        "sdvx": 2,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+      "evidence_quote": "Four separate CHUNITHM X-VERSE-X machine rows (Cab A-1 Most-Left through A-4 Most-Right). Count 16 almost certainly misparsed 'support cab-to-cab play up to 4 cabs'. Also 2x IIDX Lightning, 4x maimai DX CiRCLE PLUS, 2x SDVX Valkyrie, 2x taiko Nijiiro Asia, 1x DDR WORLD 20th, 1x DRS, GF+DM Arena.",
+      "note": "Only valid if 11122 is treated as MusicPod (ZIv 1682). Linked ZIv 10374 G-Station has none of these games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11122,
+      "name": "EX10(MBK)",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "taiko_asia": null
+      },
+      "proposed": {
+        "ddr_gold": true,
+        "iidx_lm": true,
+        "sdvx_vm": true,
+        "taiko_asia": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+      "evidence_quote": "DanceDanceRevolution WORLD (20th anniversary model); beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL) x2; SOUND VOLTEX Valkyrie model x2; taiko Nijiiro Asia x2",
+      "note": "MusicPod MBK only. G-Station has legacy taiko 12 Asia, not Nijiiro.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11122,
+      "name": "EX10(MBK)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:00",
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=21537&lang=en",
+      "evidence_quote": "EX10(MBK) business hours: 10:00-22:00",
+      "note": "ALL.Net shop page says 10-22. ZIv MusicPod lists 10-21. Prefer official ALL.Net; community may lag.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11122,
+      "name": "EX10(MBK)",
+      "field": "location",
+      "current": {
+        "lat": 13.7443292698159,
+        "lng": 100.529997316579,
+        "floor_hint": "6th Floor under escalators (G-Station info_text)"
+      },
+      "proposed": {
+        "lat": 13.74394952517,
+        "lng": 100.53005399511,
+        "floor_hint": "7th floor SF Town (MusicPod)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+      "evidence_quote": "Located on the 7th floor inside SF Town at MBK Center. latitude=13.74394952517 longitude=100.53005399511",
+      "note": "ALL.Net map pin for EX10(MBK) is close. info_text wrongly describes G-Station 6th floor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "G-Station MBK Center",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "G-Station MBK Center",
+        "addr": "444 Phayathai Road, Wang Mai, Pathum Wan, Bangkok 10330",
+        "lat": 13.744288511729,
+        "lng": 100.52991537931,
+        "games": [
+          "taiko",
+          "other"
+        ],
+        "notes": "6th floor under escalators to SF Cinema. Tokens 10 THB. Legacy cabinets only; taiko is version 12 Asia (not Nijiiro).",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10374",
+        "hours": "Mon-Sun 10:00-21:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10374",
+      "evidence_quote": "G-Station MBK Center | Located on the 6th Floor under of Escalators to 7th Floor (SF Cinema zone) on MBK Center | machines include taiko 12 Asia, Initial D Version.3, HOTD 3/4, OutRun 2 | lastUpdateTime=2026-04-11",
+      "note": "Exists as ZIv 10374 and is currently mis-attached as links.ziv of shard 11122 EX10(MBK). After fixing 11122 to MusicPod, re-add G-Station as its own pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "EX10 MUSICPOD MBK Center",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "EX10 MUSICPOD MBK Center",
+        "addr": "444 Phaya Thai Road, Wang Mai, Pathum Wan, Bangkok 10330",
+        "lat": 13.74394952517,
+        "lng": 100.53005399511,
+        "games": [
+          "chunithm",
+          "ddr",
+          "drs",
+          "gitadora",
+          "iidx",
+          "maimai_dx",
+          "sdvx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 4,
+          "ddr": 1,
+          "drs": 1,
+          "gitadora": 2,
+          "iidx": 2,
+          "maimai_dx": 4,
+          "sdvx": 2,
+          "taiko": 2
+        },
+        "cab_models": {
+          "ddr_gold": true,
+          "iidx_lm": true,
+          "sdvx_vm": true,
+          "taiko_asia": true
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1682",
+        "allnet_name": "EX10(MBK)",
+        "hours": "Mon-Sun 10:00-21:00 (ZIv) / 10:00-22:00 (ALL.Net)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1006",
+      "evidence_quote": "store_name EX10(MBK); store_address MBK CENTERBLDG.,444 PHAYATHAI RD.,PATHUM WAN BANGKOK; map @13.7443292698159,100.529997316579; also listed under CHUNITHM intl (gm=104). ZIv #1682 updated 2026-07-31 with full BEMANI/SEGA floor.",
+      "note": "CRITICAL gap: Thailand largest EX10 MusicPod (MBK 7F) is not correctly represented. Either retarget existing id 11122 (preferred, keeps ALL.Net name) or insert this as new and demote 11122 to G-Station. Do not leave MusicPod game lists on the G-Station pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11120,
+      "name": "EX10(LADPRAO)",
+      "field": "location",
+      "current": {
+        "lat": 13.828598,
+        "lng": 100.559712,
+        "addr": "1693 PHAHOLYOTHIN RD. LADYAO,CHATUCHAK, BANGKOK"
+      },
+      "proposed": {
+        "lat": 13.817374438092,
+        "lng": 100.56161467962,
+        "addr": "1691, Central Ladprao 6th floor, Phahon Yothin Road, Chatuchak, Bangkok 10900",
+        "merge_with_id": 11118
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=20594&lang=en",
+      "evidence_quote": "EX10(LADPRAO) address 1693 PHAHOLYOTHIN RD. LADYAO,CHATUCHAK, BANGKOK; ALL.Net games: Initial D THE ARCADE, CHUNITHM International Version, maimai DX International Version; business hours 10:00-22:00. ZIv EX10 MUSICPOD Central Ladprao (#7929) is at Central Ladprao 6F with the same ALL.Net titles plus full BEMANI floor; coords 13.81737,100.56161.",
+      "note": "Only one live EX10/MusicPod Ladprao appears on ZIv. ALL.Net pin sits ~1.26 km N near Lat Yao while address text is Central Ladprao-ish (1693 Phaholyothin). Treat 11120 as duplicate of 11118 with bad geocode, or merge ALL.Net src into 11118 and remove 11120. Not certain a second physical store does not exist; none is documented on ZIv as of 2026-07-29.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11118,
+      "name": "EX10 MUSICPOD Central Ladprao",
+      "field": "hours",
+      "current": "Mon-Sun 10:30-21:00",
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=20594&lang=en",
+      "evidence_quote": "EX10(LADPRAO) business hours: 10:00-22:00",
+      "note": "ALL.Net hours for the Ladprao EX10 registration. ZIv community hours remain 10:30-21:00. Prefer official if same shop; flag for local confirm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11118,
+      "name": "EX10 MUSICPOD Central Ladprao",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "taiko_asia": null
+      },
+      "proposed": {
+        "iidx_lm": true,
+        "iidx_std": true,
+        "sdvx_vm": true,
+        "taiko_asia": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7929",
+      "evidence_quote": "beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL) Brand New JP installed May 8th 2025; beatmania IIDX 33 Sparkle Shower Korean Legacy (UNIANA) cab; SOUND VOLTEX Valkyrie model Brand new JP cabinet; taiko Nijiiro Asia; lastUpdate 2026-07-29",
+      "note": "Has both Lightning and legacy IIDX. game_counts already match ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11153,
+      "name": "GIGA PARK",
+      "field": "other",
+      "current": {
+        "src": [
+          "allnet"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "lat": 13.6542149,
+        "lng": 100.6772822
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 11154,
+        "target_name": "GIGA PARK Lotus's Bang Na-Trat"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1006",
+      "evidence_quote": "ALL.Net GIGA PARK addr No.14/9 Tesgo-Lutus Extra Bangna-Trad, Bang Kaseo Sub-Dist. @13.6542149,100.6772822. ZIv #6813 GIGA PARK Lotus's Bang Na-Trat @13.653134,100.678997 (~221 m) same Lotus Bang Na-Trat, maimai DX CiRCLE PLUS listed 2026-07-31.",
+      "note": "Only Thailand ALL.Net maimai location named GIGA PARK. Keep 11154 (richer ZIv data) and fold allnet src into it; remove or hide 11153.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11154,
+      "name": "GIGA PARK Lotus's Bang Na-Trat",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6813",
+      "evidence_quote": "maimai DX CiRCLE PLUS (1); Pump It Up Phoenix (1 CX); taiko Nijiiro Asia (1). Also offline maimai FiNALE (1) not network DX. lastUpdateTime=2026-07-31 13:17:05",
+      "note": "Also has offline FiNALE; do not count that as maimai_dx. ALL.Net confirms live DX network cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11154,
+      "name": "GIGA PARK Lotus's Bang Na-Trat",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6813",
+      "evidence_quote": "taiko Nijiiro Asia edition present; comment notes extremely bad condition for bashi sticks.",
+      "checked_at": "2026-07-31",
+      "note": "Asia Nijiiro taiko confirmed on ZIv 2026-07-31 for GIGA PARK Lotus Bang Na-Trat."
+    },
+    {
+      "id": 11154,
+      "name": "GIGA PARK Lotus's Bang Na-Trat",
+      "field": "other",
+      "current": "info_text claims this branch uses a different card system from echo/EX10",
+      "proposed": "Card system now same as echo/EX10 (as of ZIv 2026-07-31 update); QR PromptPay 60 THB minimum",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6813",
+      "evidence_quote": "Right now this arcade change card system. To same echo/EX10 branches. This arcade utilizes card system available at the front desk. Thai QR Payment (PromptPay) is available (60 THB minimum).",
+      "note": "Shard info_text is stale relative to July 31 2026 ZIv note.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11110,
+      "name": "ECHO GAMES(ZPELL)",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "taiko_asia": null
+      },
+      "proposed": {
+        "ddr_gold": true,
+        "iidx_lm": true,
+        "sdvx_vm": true,
+        "sdvx_nemsys": true,
+        "taiko_asia": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7023",
+      "evidence_quote": "IIDX 33 Sparkle Shower (LIGHTNING MODEL); DDR WORLD (20th anniversary model); SDVX EXCEED GEAR Legacy Nemsys Korea UNIANA; SDVX Valkyrie model x2 installed Jan 12 2026; taiko Nijiiro Asia x2. lastUpdate 2026-07-22",
+      "note": "game_counts already match ZIv (3 maimai, 2 chuni, 3 sdvx, etc.). ALL.Net confirms maimai, CHUNITHM, Project DIVA at ECHO GAMES(ZPELL).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11121,
+      "name": "EX10(MAYA CHIANGMAI)",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "taiko_asia": null
+      },
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_vm": true,
+        "taiko_asia": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4683",
+      "evidence_quote": "beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL) First IIDX Lightning Model cab in Chiang Mai; SOUND VOLTEX Valkyrie model Brand new; taiko Nijiiro Asia. lastUpdate 2026-07-30",
+      "note": "game_counts already match. ALL.Net lists EX10(MAYA CHIANGMAI) for maimai + CHUNITHM.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11121,
+      "name": "EX10(MAYA CHIANGMAI)",
+      "field": "hours",
+      "current": "Mon-Fri 11:00-21:00; Sat-Sun 10:00-21:00",
+      "proposed": "Mon-Sun 09:30-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=98&astep=1006&sid=22393&lang=en",
+      "evidence_quote": "EX10(MAYA CHIANGMAI) business hours: 09:30-23:00",
+      "note": "ALL.Net official hours longer than ZIv community hours (11-21 / 10-21). Could be mall hours vs staffed music floor. Mark likely, not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11116,
+      "name": "ECHO XPERIENCE",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1006",
+      "evidence_quote": "ECHO XPERIENCE listed on both maimai DX intl (gm=98) and CHUNITHM intl (gm=104). ZIv #9651 2026-07-22: CHUNITHM X-VERSE-X x2, maimai DX CiRCLE PLUS x1.",
+      "note": "No change needed to game list; confirmation that ALL.Net still services this venue as of 2026-07-31.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11182,
+      "name": "Let's Play MBK Center",
+      "field": "game_counts",
+      "current": {
+        "dance_evo": 1,
+        "ddr": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 1,
+        "popn": 1,
+        "pump_it_up": 4,
+        "sdvx": 3
+      },
+      "proposed": {
+        "dance_evo": 1,
+        "ddr": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 1,
+        "popn": 1,
+        "pump_it_up": 3,
+        "sdvx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3561",
+      "evidence_quote": "Pump It Up Phoenix (1 LXv1) + Pump It Up XX (2 TX) = 3 pump; SOUND VOLTEX EXCEED GEAR x2 (not 3). Also 2x offline maimai FiNALE (not maimai_dx). lastUpdateTime=2026-07-21 22:22:45",
+      "note": "Hahama official store list still includes Let's Play MBK floor 7. IIDX is legacy UNIANA not Lightning; sdvx is Nemsys not Valkyrie.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11152,
+      "name": "GAMESMITH",
+      "field": "prices",
+      "current": null,
+      "proposed": "Admission packages (not per-credit): Starter 299 THB/day or 125 THB/hr (arcade add-on 50 THB); Casual 399; Pro 749; G.O.A.T. 1099. Rhythm cabs free-play once package includes Arcade.",
+      "confidence": "certain",
+      "evidence_url": "https://www.gamesmiththailand.com/",
+      "evidence_quote": "Starter 299 THB or 125 THB/hour; Casual 399; Pro 749; G.O.A.T. 1099. Opening hours Sat-Sun 12:00-24:00 Mon-Fri 14:00-24:00. Location near The Circle Ratchaphruek 300 m.",
+      "note": "ZIv 2026-07-09 lists IIDX (offline UNIANA deluxe), CHUNITHM X-VERSE-X (online), SDVX EG, Nostalgia Op.3 (online), offline maimai FiNALE. Do not list FiNALE as maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11152,
+      "name": "GAMESMITH",
+      "field": "hours",
+      "current": "Mon-Fri 14:00-00:00; Sat-Sun 12:00-00:00",
+      "proposed": "Mon-Fri 14:00-24:00; Sat-Sun 12:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.gamesmiththailand.com/",
+      "evidence_quote": "Opening hours Sat-Sun 12:00-24:00 Mon-Fri 14:00-24:00 / Closing Time 24:00 every day",
+      "note": "Shard already essentially correct; official site confirms still open in 2026.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11110,
+      "name": "ECHO GAMES(ZPELL)",
+      "field": "website",
+      "current": "https://www.echogamesth.com",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://www.echogamesth.com/",
+      "evidence_quote": "Domain Default page - This is a default webpage generated for ... Plesk International GmbH (parked/default hosting page, no store content).",
+      "note": "Same dead host used on many echo/EX10 shard rows (11103-11119, 11154, etc.). Remove or replace when a new official URL appears. ALL.Net and ZIv remain valid location evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11134,
+      "name": "Fun City Central Udon",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_nemsys": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6534",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR x2 (not Valkyrie). GITADORA GALAXY WAVE GF+DM. Pump XX x2. Offline maimai FiNALE x1. lastUpdate 2026-06-30",
+      "note": "game_counts already match. No Lightning IIDX here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11195,
+      "name": "Molly Fantasy Gateway Ekkamai",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://aeonfantasy.co.th/store",
+      "evidence_quote": "Store list includes Gateway Ekamai (aeonfantasy.co.th/store/gateway_ekamai/)",
+      "note": "ZIv last update 2025-08-11 (11 months) still lists taiko Nijiiro Asia + offline maimai FiNALE. Official chain page still lists the store; rhythm cab presence not reconfirmed since Aug 2025.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11196,
+      "name": "Molly Fantasy Passione Rayong",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://aeonfantasy.co.th/store",
+      "evidence_quote": "Store list includes Passione Rayong (aeonfantasy.co.th/store/passione_rayong/)",
+      "note": "ZIv 2026-02-01 lists taiko Nijiiro Asia only. Chain page confirms store still listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11112,
+      "name": "Echo Karaoke @ Sunee Shopping Centre, Ubon Ratchathani",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8857",
+      "evidence_quote": "lastUpdateTime=2024-04-30 05:38:07 (2 years ago); machines list empty; information still mentions Pump It Up 2015 cab.",
+      "note": "Cannot confirm open or closed from any official source. Do not mark closed without primary evidence. Flag for local check; consider hiding from map until verified. proposed null means remove open assumption / deprioritize.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11146,
+      "name": "Fun Station Big C Supercenter Rama 2 Branch 1",
+      "field": "games",
+      "current": [
+        "jubeat"
+      ],
+      "proposed": [
+        "jubeat"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10985",
+      "evidence_quote": "jubeat copious | Uses 10 baht coins and not tokens. Coin does not get detected. lastUpdate 2026-03-28",
+      "note": "Ancient offline copious cab, condition note already bad. Presence not reconfirmed after March 2026. Keep but low confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11182,
+      "name": "Let's Play MBK Center",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://hahama.co.th/storepages/",
+      "evidence_quote": "Store directory includes Let's Play MBK floor 7",
+      "note": "Cross-checked with ZIv 2026-07-21 full machine list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11126,
+      "name": "Fun City Central Chiangmai",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://hahama.co.th/storepages/",
+      "evidence_quote": "Fun City Central Chiang Mai floor 4 listed on official Hahama storepages",
+      "note": "ZIv 2025-12-16 notes re-open after renovation 2025-08-06. Has Pump XX + offline maimai FiNALE.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11125,
+      "name": "Fun City Central Bangna",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://hahama.co.th/storepages/",
+      "evidence_quote": "Fun City Central Bangna floor 6 listed on official Hahama storepages",
+      "note": "ZIv 2026-06-30: Pump XX (comment 2 CX cabinets), offline maimai FiNALE.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11132,
+      "name": "Fun City Central Pinklao",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://hahama.co.th/storepages/",
+      "evidence_quote": "Fun City Central Pinklao floor 6 listed on official Hahama storepages",
+      "note": "ZIv still lists DanceEvolution ARCADE + Pump XX + offline FiNALE.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Fun City Central Phitsanulok",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Fun City Central Phitsanulok",
+        "addr": "Central Phitsanulok floor 4 (from Hahama store name)",
+        "games": [
+          "other"
+        ],
+        "source": "https://hahama.co.th/storepages/"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://hahama.co.th/storepages/",
+      "evidence_quote": "Fun City Central Phitsanulok floor 4 listed on official Hahama store directory",
+      "note": "Official Hahama directory lists this branch. No ZIv Thailand row found under this name in API dump (108 venues). Coordinates and rhythm lineup NOT verified - do not invent games. Add only as shell for maintainers to geocode.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11110,
+      "name": "ECHO GAMES(ZPELL)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=en&ct=1006",
+      "evidence_quote": "Thailand ALL.Net live set: maimai (gm98)= EX10(MBK), EX10(LADPRAO), ECHO XPERIENCE, GIGA PARK, ECHO GAMES(ZPELL), EX10(MAYA CHIANGMAI); CHUNITHM (gm104)= same except no GIGA PARK; Project DIVA (gm34)= ECHO GAMES(ZPELL) only; ONGEKI (gm88)= no Thailand locations.",
+      "note": "Official network confirms project_diva still only at Zpell among Thai venues. No correction to game list; verification only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11199,
+      "name": "Playerbox Banthat Thong Road (Chula soi 28)",
+      "field": "other",
+      "current": "notes list maimai FiNALE under Cabs; games only [other]",
+      "proposed": "Keep games as other only; offline FiNALE is not network maimai_dx. Admission 300 THB/hour free-play (ZIv).",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10461",
+      "evidence_quote": "maimai FiNALE | Offline, on event mode, no time limit, all song unlocked (up until FiNALE ofc). Admission THB 300 Baht per Hour. lastUpdate 2026-06-30",
+      "note": "Correct that it is not listed as maimai_dx. No game list change needed.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

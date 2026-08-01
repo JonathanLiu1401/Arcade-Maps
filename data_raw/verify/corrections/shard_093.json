@@ -1,0 +1,919 @@
+{
+  "shard": 93,
+  "checked": 94,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3083",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8528",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5211",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5799",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5310",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5221",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5209",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5208",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8363",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4812",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10576",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9658",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5134",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5532",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10811",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10812",
+    "https://neverland.com.ar/",
+    "https://clarck.net/",
+    "https://www.espaciotec.com.ar/",
+    "https://fichinbar.com/",
+    "https://go-play.com.ar/",
+    "https://bareldestello.com.ar/"
+  ],
+  "corrections": [
+    {
+      "id": 49,
+      "name": "Neverland Park @ Abasto Shopping",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3083",
+      "evidence_quote": "Three playable Pump It Up Phoenix (2024) LX cabs (conditions Great/Great/Perfect, ver 2.03.0, offline) plus one Pump It Up Jump! rated Not Working / Currently off. Last update 2026-07-16 by frn1.",
+      "note": "App has no game_counts. Count 3 is the currently playable Phoenix cabinets. Jump! is listed but off/unresponsive so not counted as playable. ZIv API also returns the same 4 PIU machine rows for arcade id 3083.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 49,
+      "name": "Neverland Park @ Abasto Shopping",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "1630 AR$ / 2 songs"
+      },
+      "proposed": {
+        "pump_it_up": "2200-2500 ARS / 1 credit / 4 hearts (Phoenix LX); Jump! 1630 AR$ / 2 songs (currently off)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3083",
+      "evidence_quote": "Phoenix prices: 2200 ARS | 1 Credit | 4 Hearts | Offline (two cabs) and 2500 AR$ | 1 Credit | 4 Hearts | Offline (one cab). Jump!: 1630 AR$ / 2 songs, Currently off.",
+      "note": "App price field only reflects the broken Jump! cab. Primary playable machines are Phoenix at 2200-2500 ARS as of 2026-07-16.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 49,
+      "name": "Neverland Park @ Abasto Shopping",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": [
+          "LX Phoenix x3 (modded pads, offline, ver 2.03.0)",
+          "Jump! (unresponsive / off)"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3083",
+      "evidence_quote": "LX Cab, modded pads... ver 2.03.0 (x3 Phoenix). Jump!: Very unresponsive. Currently off.",
+      "note": "Useful cab generation data for Argentina PIU scene.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 49,
+      "name": "Neverland Park @ Abasto Shopping",
+      "field": "hours",
+      "current": null,
+      "proposed": "Upper floor: Mon-Thu 15:00-21:30; Fri/pre-holiday 15:00-23:30; Sat 14:00-23:30; Sun/holiday 14:00-21:30. Lower floor: Mon-Thu 11:00-22:00; Fri/pre-holiday 11:00-23:00; Sat 10:00-00:00; Sun/holiday 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3083",
+      "evidence_quote": "Horarios - Planta Alta: Lunes a jueves, 15:00 hs a 21.30 hs. Viernes y visperas de feriados, 15:00 hs a 23.30 hs. Sabados, 14:00 hs a 23.30 hs. Domingos y feriados 14:00 hs a 21.30 hs. Horarios - Planta Baja: Lunes a jueves, 11 hs a 22 hs...",
+      "note": "Hours come from the ZIv information field (community-entered), not a live neverland.com.ar hours API. neverland.com.ar confirms the brand is active with ~30 branches but does not expose Abasto hours in static HTML. Treat as likely until confirmed on-site or via official branch page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 49,
+      "name": "Neverland Park @ Abasto Shopping",
+      "field": "other",
+      "current": "no note about Taiko",
+      "proposed": "Taiko no Tatsujin no longer present at Abasto (community reports since ~2025)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3083",
+      "evidence_quote": "Sept 2025 comment: staff indicated Taiko was likely moved to another location. Earlier comment: 'El Taiko no esta hace meses'.",
+      "note": "App never listed taiko in games[], so no games-field removal needed. Worth a maintainer note for anyone expecting Taiko from older community knowledge. Not certain of final disposition of the cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 92,
+      "name": "Zona Entretenimientos - COTO (Mar Del Tuyu)",
+      "field": "prices",
+      "current": {
+        "ddr": "ARS 1,320.00"
+      },
+      "proposed": {
+        "ddr": "ARS 1,520.00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5211",
+      "evidence_quote": "Dance Dance Revolution EXTREME priced ARS 1,520.00, condition Moderate. Last revision 2026-07-31 16:57 by Fillo (raised price from ARS 1,320.00).",
+      "note": "Only confirmed DDR in this Argentina shard. Pads kinda broken, P2 more playable; songs not unlocked; LCD replacement. Venue still listed active, updated day-of research.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 92,
+      "name": "Zona Entretenimientos - COTO (Mar Del Tuyu)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "DDR EXTREME (Japan) with LCD replacement; pads worn, P2 better for freezes"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5211",
+      "evidence_quote": "Dance Dance Revolution EXTREME (Japanese version)... LCD Screen replacement, works great. However, the step panels are kinda broken, P2 is the most playable but its hard to hold freeze arrows. Songs not unlocked.",
+      "note": "Legacy CRT-era Extreme with LCD swap, not white/gold modern DDR.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 33,
+      "name": "Go Play @ Lanus",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "LX running XX 2.08.0, modded pads, stage break off, time 80"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8363",
+      "evidence_quote": "Model: LX || Version: 2.08.0 || Time: 80 || Stage Break: Off || Additional notes: Modded pads, P1 fixed. Loud volume. Price 2000 ARS (1900 ARS VIP) / 5 Hearts. Last update 2026-07-24.",
+      "note": "One of the freshest PIU listings in Argentina (7 days before research). App prices already match. Website go-play.com.ar TLS cert was expired when fetched 2026-08-01 so site health is uncertain even though ZIv listing is current.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 33,
+      "name": "Go Play @ Lanus",
+      "field": "website",
+      "current": "https://go-play.com.ar/",
+      "proposed": "https://go-play.com.ar/",
+      "confidence": "unverified",
+      "evidence_url": "https://go-play.com.ar/",
+      "evidence_quote": "TLS certificate expired when fetched on 2026-08-01 (fetch failed with certificate has expired). ZIv still lists https://go-play.com.ar/ as website.",
+      "note": "Not proposing removal; flag that the corporate site TLS is broken. Venue listing itself was updated 2026-07-24 and looks active.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 52,
+      "name": "New Wonder",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade id 8833 New Wonder machines: Pump It Up Phoenix (Modified DX, TX-style pads, $1000ARS / 5 hearts) and Pump It Up XX (Modified SD, $250ARS / 5 hearts). lastUpdateTime 2025-06-09.",
+      "note": "Two distinct PIU cabs on ZIv. Update is ~1 year old so count is likely not certain. Prices differ substantially between the two cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 52,
+      "name": "New Wonder",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "$1000ARS per credit / 5 hearts / Stage break off"
+      },
+      "proposed": {
+        "pump_it_up": "Phoenix DX: $1000ARS / 5 hearts; XX SD: $250ARS / 5 hearts (both stage break off)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8833",
+      "evidence_quote": "Pump It Up Phoenix: $1000ARS per credit / 5 hearts / Stage break off. Pump It Up XX: $250ARS per credit / 5 hearts / Stage break off.",
+      "note": "App only stores the Phoenix price. XX is much cheaper per credit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 91,
+      "name": "VR Juegos",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 4823 VR Juegos: Pump It Up Fiesta 2 (SD) and Pump It Up PRIME 2 (SD + LCD replacement, TX-style pads). lastUpdateTime 2026-01-19 (~6 months before research).",
+      "note": "Both cabs priced 2 coins per credit / 3 songs / stage break off on ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 36,
+      "name": "Holiday's",
+      "field": "games",
+      "current": [
+        "gitadora"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5310",
+      "evidence_quote": "Only machine: DrumManiaV4 RockxRock - condition Not Working. Comment: 'Partially dismantled, without screen . In public display'. Last update 2024-01-14. No other machines listed.",
+      "note": "App tags the venue solely as gitadora. The sole machine is a dismantled display piece without a screen, not a playable GITADORA/GF/DM cab. Proposed null means remove the games claim (or replace with empty / other if venue still has non-rhythm games not logged). Could not independently verify whether the venue still exists in 2026; ZIv is 2 years stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 36,
+      "name": "Holiday's",
+      "field": "status",
+      "current": "listed open with gitadora",
+      "proposed": "unverified open; only known machine is a dismantled DrumMania V4 display piece (no screen)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5310",
+      "evidence_quote": "Partially dismantled, without screen . In public display. Opening times all Unknown. Last edit 2024-01-14 by intron. No comments.",
+      "note": "No independent confirmation of open/closed after 2024-01. Do not treat as a destination for playable GITADORA.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 87,
+      "name": "Space",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5209",
+      "evidence_quote": "PercussionFreaks (South Korea) - Not Working, price ???, note id 881404619. Pump It Up Fiesta 2 - Great. Last update 2024-01-14. Also Crazy Taxi and Jambo Safari Not Working.",
+      "note": "App maps PercussionFreaks to gitadora. Machine is explicitly Not Working on ZIv (2 years stale). PIU Fiesta 2 still listed Great. Removing gitadora tag is appropriate unless a later visit reconfirms a working GF/DM/PF cab. Confidence limited by staleness.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 67,
+      "name": "Playland Park Puerto Madryn",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "pump_it_up"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5221",
+      "evidence_quote": "Machines: PercussionFreaks (condition Unknown) and Pump It Up EXTRA (condition Unknown). Last update 2019-10-17. Located inside Portal De Madryn Mall. No comments, no pictures.",
+      "note": "Six-year-stale ZIv row. App labels PercussionFreaks as gitadora; there is no GITADORA-branded cab. Entire listing is too old to assert current games. proposed removes gitadora only as weak taxonomy; both games may be gone. Flag for re-survey.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 67,
+      "name": "Playland Park Puerto Madryn",
+      "field": "status",
+      "current": "listed open",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5221",
+      "evidence_quote": "lastUpdateTime 2019-10-17 (6 years ago). No visitor comments, no photos, hours unknown.",
+      "note": "Cannot confirm the mall arcade still exists or still has PIU/PF. proposed null for status means: do not claim closed, but do not treat as verified open either. Needs fresh check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11,
+      "name": "Clarck Entertaiment - Showroom",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "gitadora": [
+          "GUITARFREAKS (Japan) free play, Bad: key sound speakers broken, CDROM hardware error, music desync as of Aug 2024",
+          "PercussionFreaks (Korea) free play, Bad: CD system bad, audio desync"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5799",
+      "evidence_quote": "GUITARFREAKS Free Play condition Bad - Keysound speakers broken... Hardware error - CDROM. Last checked: Aug 2024. PercussionFreaks Free Play condition Bad - CD system in bad condition... Last checked Aug 2024. Also StepMania Converted Cabinet (PIU SD / SM3.9 NX theme) Free Play Moderate.",
+      "note": "Not modern GITADORA Arena hardware; classic GF + PF. App price free play is correct. clarck.net (copyright 2026) confirms public showroom at Anasco, CABA with 80+ machines; official site address Anasco 2277 vs ZIv/app 2267 Anasco (off-by-10). Hours Mon-Fri 09-17 on ZIv match showroom pattern.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11,
+      "name": "Clarck Entertaiment - Showroom",
+      "field": "website",
+      "current": "http://www.clarck.net",
+      "proposed": "https://clarck.net/",
+      "confidence": "certain",
+      "evidence_url": "https://clarck.net/",
+      "evidence_quote": "Site live with 2026 copyright. Leaders in sale, rental and repair of pinballs, arcades and vintage entertainment machines in Argentina. Address Anasco 2277, CABA. WhatsApp +54 9 11 4998-1278.",
+      "note": "Prefer https. Company still active as of 2026 site content.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 41,
+      "name": "K-PLAY",
+      "field": "website",
+      "current": "http://No website",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade id 9011 K-PLAY website field is the literal string 'http://No website'.",
+      "note": "Placeholder string, not a URL. Remove website claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 41,
+      "name": "K-PLAY",
+      "field": "other",
+      "current": "pump_it_up ARS 800",
+      "proposed": "PIU XX present (ZIv 2025-12-12) but pads miserable sensitivity especially P2; commenter suggests nearby Fiesta EX instead. Price ARS 800. Hours 11:00-03:00.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "both pads have miserable sensitivity, especially p2 side... (comment also says this may be inaccurate as of Oct 2025). lastUpdateTime 2025-12-12.",
+      "note": "Playability caveat for travelers.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4,
+      "name": "Bar El Destello",
+      "field": "location",
+      "current": "1460 Gascon Lisandro Olmos Buenos Aires, C1181, Lisandro Olmos (lat -34.59337, lng -58.42288)",
+      "proposed": "1460 Gascon, C1181, Ciudad Autonoma de Buenos Aires (Almagro area). Coords already point to CABA, not Lisandro Olmos (La Plata partido).",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5134",
+      "evidence_quote": "Address 1460 Gascon, postal C1181, lat -34.593368865253 lng -58.422875292599. City field on ZIv incorrectly says Lisandro Olmos. Hours and Instagram @bareldestello noted. Last ZIv update 2025-08-30.",
+      "note": "C1181 and the Gascon street coordinates are in CABA. Lisandro Olmos is a separate town near La Plata ~50km away. App address concatenates the bad city. bareldestello.com.ar domain now serves an online-casino comparison page (not the bar), so do not use that URL as venue evidence; ZIv still lists Instagram and phone +54 11 4863-7073. Open status after Aug 2025 not independently reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 78,
+      "name": "Sacoa @ RONDA (Dot Baires Shopping)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Chinese LX cabinet running PRIME 2 patch 2.05.1; pads great"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10576",
+      "evidence_quote": "Pump It Up PRIME 2 - Chinese LX Cab. Running 2.05.1 patch. Pads in great condition. 30cr ($3000 per credit) / Stage break off / 5 hearts. Last update 2025-10-26 by Tengu. New arcade at the Ronda area inside Dot Baires Shopping Mall.",
+      "note": "~9 months old. Price 3000 ARS per credit is notably high. App already has this price string.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 48,
+      "name": "Neverland (Dot Baires Shopping)",
+      "field": "status",
+      "current": "listed open (games: other only)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5269",
+      "evidence_quote": "Neverland Dot Baires lastUpdateTime 2020-05-05 (6 years ago). Meanwhile Sacoa @ RONDA (ZIv 10576) was added 2025-10 as a new arcade inside the same Dot Baires Shopping Mall (Vedia 3600).",
+      "note": "Cannot prove Neverland left Dot Baires. neverland.com.ar still advertises ~30 branches via a dynamic province selector (addresses not in static HTML). Flag for re-check: may still exist elsewhere in the mall, may have closed, or may have been partially displaced by Sacoa Ronda. Do NOT mark closed without stronger evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 47,
+      "name": "Neverland (Alcorta Shopping)",
+      "field": "status",
+      "current": "listed open",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5250",
+      "evidence_quote": "lastUpdateTime 2020-05-06 (6 years ago). Information: 'Nothing special, a typical redemption based arcade'.",
+      "note": "Six years without ZIv refresh. Brand neverland.com.ar is still alive (2025 copyright) with many branches, so Alcorta may still be one of them, but this specific row is unverified. Needs mall re-survey.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6,
+      "name": "Centerplay",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 5136 Centerplay machines include Pump It Up EXTRA and Pump It Up Zero (Modified SD). lastUpdateTime 2020-03-16 (6 years ago).",
+      "note": "Historical count only. Beach-town San Bernardo listing extremely stale. Do not treat as current without revisit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 8,
+      "name": "Centerplay (Villa Gesell)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 5210: Pump It Up EXTRA and Pump It Up Rebirth, both Modified SD. lastUpdateTime 2019-10-17 (6 years ago).",
+      "note": "Stale beach-town data. Count is what ZIv last recorded, not a 2026 confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 44,
+      "name": "Lucila's Games",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 4828: Pump It Up Fiesta 2 and Pump It Up PRIME, both Modified SD, 2 coins per credit. lastUpdateTime 2020-11-20 (5 years ago).",
+      "note": "Five-year-stale dual-PIU listing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 37,
+      "name": "Isla de La Fantasia (Boulevard Shopping)",
+      "field": "other",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": "At last ZIv log (2020-04-01): one PIU NX running StepMania SM3.9 NX theme (LCD), one degraded PIU NX2 (sunken arrows, blurry CRT). Not a modern networked PIU install.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up NX comment: Stepmania conversion running SM 3.9 with a PIU NX Theme... Pump It Up NX2: All arrows are sunk... CRT really blurry. lastUpdateTime 2020-04-01.",
+      "note": "App correctly tags pump_it_up only. Note is for cab quality/variant awareness. Six years stale; may be gone.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 32,
+      "name": "Go Play @ Av. Guemes",
+      "field": "other",
+      "current": "pump_it_up price 1500AR$ // 4 songs",
+      "proposed": "PIU XX LX present as of 2026-01-04 but pads 'worn and quite loose, making play almost impossible' (condition 2/Bad). Price 1500AR$ // 4 songs.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up XX - LX machine. Pads are worn and quite loose, making play almost impossible. displayPrice 1500AR$ // 4 songs. lastUpdateTime 2026-01-04.",
+      "note": "App price matches. Maintainer should know playability is poor; players may prefer Lanus or other Go Play sites.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1,
+      "name": "Acatraz Bar & Games",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "ARS 0.40"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8528",
+      "evidence_quote": "Pump It Up NX displayPrice ARS 0.40 with comment 'stepmania; fail off ; seem to work fine'. lastUpdateTime 2024-01-30. Cover: Entrada obligatoria 4usd que sirve como credito en comida.",
+      "note": "ARS 0.40 is not a plausible 2024-2026 per-credit PIU price (inflation). Likely a bad unit/legacy value from ZIv. Cab is described as StepMania on PIU NX hardware. proposed null = drop the price claim until reconfirmed. Venue itself not reconfirmed open after Jan 2024.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1,
+      "name": "Acatraz Bar & Games",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "PIU NX hardware running StepMania (fail off); floor -1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8528",
+      "evidence_quote": "Pump It Up NX - location floor -1 - comment: stepmania; fail off ; seem to work fine",
+      "note": "Not stock NX software.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5,
+      "name": "Carroussel Park",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "160/150 AR$ - 4 hearts (3 songs) [2023-08-27]"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up XX LX, displayPrice '160/150 AR$ - 4 hearts (3 songs) [2023-08-27]', lastUpdateTime 2023-08-27 (2 years ago). Comment notes offline LX, pads great, v2.07.0.",
+      "note": "Price embeds a 2023 date and is far below 2025-2026 Argentina PIU prices seen elsewhere (1000-2500 ARS). Remove or mark stale; do not present as current. Cab model LX XX still useful as historical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 73,
+      "name": "Sacoa (Villa Gesell)",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "45 AR$ / 4 songs / Stage break off"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up Fiesta EX Modified SD, displayPrice '45 AR$ / 4 songs / Stage break off'. lastUpdateTime 2025-02-11 for the arcade row but price text is classic pre-inflation ZIv residue.",
+      "note": "45 ARS for 4 songs is not credible next to other 2025 Sacoa prices (e.g. Monte Hermoso ARS 1100, Bahia Blanca ARS 1000). Prefer removing price until reconfirmed. Venue row itself was touched 2025-02-11 so may still exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 16,
+      "name": "Dino Park",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "ARS 150.00 for 3 songs"
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 11031 Dino Park Salta: Pump It Up XX, displayPrice ARS 150.00 for 3 songs, lastUpdateTime 2026-03-26.",
+      "note": "Update is recent (4 months) so the number may be real if they still use cheap tokens, but it is an extreme outlier vs Buenos Aires PIU pricing. Leave as unverified rather than certain; maintainer may want a human confirm. Not removing games claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 66,
+      "name": "Playland Park Ezeiza (Las Toscas Shopping)",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "28 AR$ / 3 songs / Stage break on"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up Fiesta EX Modified SD, 28 AR$ / 3 songs / Stage break on. lastUpdateTime 2020-07-26 (6 years ago).",
+      "note": "Pre-inflation price on a 6-year-stale row. Remove price; existence of PIU also unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 66,
+      "name": "Playland Park Ezeiza (Las Toscas Shopping)",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "lastUpdateDifference: 6 years ago (2020-07-26).",
+      "note": "Needs mall re-survey. Not marking closed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 17,
+      "name": "El Disco Rojo",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5282",
+      "evidence_quote": "ZIv lastUpdateTime 2019-11-04 (about 5-7 years before research). Last known cab note: Pump It Up NX2 SD. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 57,
+      "name": "Playland Park (Mar de Ajo)",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4827",
+      "evidence_quote": "ZIv lastUpdateTime 2019-03-24 (about 5-7 years before research). Last known cab note: Pump It Up PRIME. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 58,
+      "name": "Playland Park (Paseo De La Patagonia Shopping Center)",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5175",
+      "evidence_quote": "ZIv lastUpdateTime 2019-12-23 (about 5-7 years before research). Last known cab note: Pump It Up NX FX. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 68,
+      "name": "Playland Park San Bernardo",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5272",
+      "evidence_quote": "ZIv lastUpdateTime 2019-10-30 (about 5-7 years before research). Last known cab note: Pump It Up EXTRA. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 69,
+      "name": "Playland Park Santa Fe",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5188",
+      "evidence_quote": "ZIv lastUpdateTime 2019-10-09 (about 5-7 years before research). Last known cab note: Pump It Up Fiesta EX. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 80,
+      "name": "Sacoa Miramar",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5241",
+      "evidence_quote": "ZIv lastUpdateTime 2019-10-22 (about 5-7 years before research). Last known cab note: Pump It Up Fiesta EX. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 85,
+      "name": "Sass Entretenimientos (La Falda)",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5554",
+      "evidence_quote": "ZIv lastUpdateTime 2020-05-08 (about 5-7 years before research). Last known cab note: Pump It Up Exceed DX. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 86,
+      "name": "Sass Entretenimientos (Mina Clavero)",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5251",
+      "evidence_quote": "ZIv lastUpdateTime 2019-10-24 (about 5-7 years before research). Last known cab note: Pump It Up NX2 DX. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 88,
+      "name": "Top Center",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4815",
+      "evidence_quote": "ZIv lastUpdateTime 2020-05-18 (about 5-7 years before research). Last known cab note: Pump It Up PRIME. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 89,
+      "name": "Videojuegos @ Marcos Shopping Center",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5806",
+      "evidence_quote": "ZIv lastUpdateTime 2021-02-08 (about 5-7 years before research). Last known cab note: Pump It Up Fiesta EX DX LCD. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 90,
+      "name": "Videojuegos El Rayo",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4825",
+      "evidence_quote": "ZIv lastUpdateTime 2021-02-06 (about 5-7 years before research). Last known cab note: Pump It Up PRIME SD modded. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10,
+      "name": "Charlie's",
+      "field": "status",
+      "current": "listed open with pump_it_up (or related)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5137",
+      "evidence_quote": "ZIv lastUpdateTime 2021-02-06 (about 5-7 years before research). Last known cab note: Pump It Up PRIME Modified SD. No newer official Argentina rhythm locator exists; ZIv is the only structured source.",
+      "note": "Stale community row. Not evidence of closure and not evidence of current operation. Re-survey required before a traveler relies on it. proposed null = do not invent a closed/open flip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 25,
+      "name": "Flynn's Arcade Bar",
+      "field": "status",
+      "current": "listed open",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5532",
+      "evidence_quote": "Only machine: Multicade free play perfect, note 'There are 8 multicade machines in the bar'. lastUpdateTime 2020-07-26. No comments, no visitors, hours unknown.",
+      "note": "Six years stale. No rhythm games. Cannot confirm bar still open.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 38,
+      "name": "Jobs Arcade",
+      "field": "hours",
+      "current": "Mon closed; Tue-Wed 00:20-00:01; Thu-Sat 00:20-00:03; Sun 00:20-00:01",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 10475 Jobs Arcade openingTimes encode as start 00:20 end 00:01/00:03 which is nonsensical wall-clock data (likely a ZIv UI glitch). Information text: 'A small chain of bars. This business has arcades to play.'",
+      "note": "Remove broken hours claim. No trustworthy schedule found.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 20,
+      "name": "Espacio TEC (Museo de Informatica Interactivo)",
+      "field": "hours",
+      "current": "Mon-Fri closed; Sat-Sun 16:00-19:00",
+      "proposed": "Sat-Sun 16:00-19:00 (weekdays closed) - still matches official site 2026",
+      "confidence": "certain",
+      "evidence_url": "https://www.espaciotec.com.ar/",
+      "evidence_quote": "Sabados y Domingos de 16:00 a 19:00. Thompson 665, Bahia Blanca.",
+      "note": "Official museum site confirms weekend hours. Collection is computers/consoles/calculators, not coin-op rhythm cabs; app 'other' is appropriate. No rhythm-game correction.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 22,
+      "name": "Fichin Bar & Arcade",
+      "field": "other",
+      "current": "games: other only",
+      "proposed": "ZIv lists a StepMania Converted Cabinet (PIU SD running PIU Galaxy SM5 theme), condition unknown, price ???. Bar website fichinbar.com still presents as active Mar del Plata arcade bar (18+).",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 5555 machine: StepMania Converted Cabinet - PIU SD cab running PIU Galaxy SM5 Theme. lastUpdateTime 2025-12-11. Website http://fichinbar.com",
+      "note": "App does not tag pump_it_up (correct if only SM conversion). Optional: tag as other stays fine. fichinbar.com confirms bar-of-fichines framing; exact street address not in static homepage text (ZIv has 2019 Rawson, Mar del Plata).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 75,
+      "name": "Sacoa @ Av. San Martin",
+      "field": "other",
+      "current": "pump_it_up Fiesta EX; price ??? AR$ / 3 songs",
+      "proposed": "Still active as of 2026-03-22 ZIv update with ~30 catalogued machines. PIU is Fiesta EX modified SD near women's bathroom, stage break off, price still unknown on ZIv. Many non-rhythm cabs ~1400-1900 ARS.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4812",
+      "evidence_quote": "Last update 2026-03-22 by fs2004playeralt1. Pump It Up Fiesta EX Modified SD Cabinet, ??? AR$ / 3 songs / stage break off, condition Great. Website sacoa.com. Comments describe ground floor ~1900 pesos and mezzanine ~1400.",
+      "note": "One of the better-maintained Argentina arcade rows. Price field for PIU remains unknown - do not invent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 45,
+      "name": "Multijuegos (Shopping Del Siglo)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "PRIME 2 on Modified DX cabinet"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up PRIME 2 - Modified DX Cabinet. ARS 1,400.00 for 3 songs. lastUpdateTime 2025-05-11.",
+      "note": "App price already matches. ~1 year old.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 50,
+      "name": "Neverland Park @ Mendoza Shopping",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "LX Phoenix (2024), stock pads, offline"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX Cab, stock pads. AR$2200 | 4 Hearts | Offline. lastUpdateTime 2025-01-29.",
+      "note": "~1.5 years old.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 51,
+      "name": "Neverland Park @ Portal Rosario Shopping",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "LX Phoenix (2024), stock pads, 2.08 update, offline"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX Cab, stock pads. 2.08 Update. $2200 ARS | 4 hearts | Offline. lastUpdateTime 2025-06-23.",
+      "note": "~1 year old.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 54,
+      "name": "Playground @ Centenario Mall",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "CX Cabinet Phoenix (2024) ver 1.11.0, offline"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up Phoenix (2024) CX Cabinet. 1.11.0 ver. Currently offline. lastUpdateTime 2026-03-25.",
+      "note": "Relatively fresh (4 months).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 28,
+      "name": "Genesis Games",
+      "field": "other",
+      "current": "single Cruis'n World entry in ZIv 10811",
+      "proposed": "ZIv also has duplicate arcade id 10812 same name/coords/description (uploader noted accidental double upload). Only one physical venue in Coronel Pringles. No rhythm games. Submitter: mostly redemption + Cruis'n World + Pandora's Box candy cab; 1000 ARS/credit.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10811",
+      "evidence_quote": "only arcade in the city... mostly redemption games, alongside a cruisin' world and a candy cab with pandora's box 4... accidentally uploaded it twice (10812). lastUpdate 2025-12-31.",
+      "note": "No missing_venue add needed for 10812. App id 28 correctly covers the venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9,
+      "name": "Central Park",
+      "field": "hours",
+      "current": null,
+      "proposed": "Open only during holiday / summer season (per ZIv info)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 5248 Central Park information: 'Open only during holiday season / Abierto solamente durante temporada de vacaciones'. lastUpdateTime 2025-10-29. machines list empty.",
+      "note": "Miramar seasonal arcade. No machines currently catalogued on ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 23,
+      "name": "Flash (Miramar)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Open only during summer season",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Arcade 10782 Flash (Miramar) information: 'Abierto unicamente durante temporada de verano. Open only during summer season.' lastUpdateTime 2026-01-26.",
+      "note": "Seasonal note missing from app hours_text.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 63,
+      "name": "Playland Park @ Unicenter",
+      "field": "other",
+      "current": "games: other; historical photo of PIU Fiesta 2 on ZIv",
+      "proposed": "As of 2026-07-09 ZIv update the only catalogued machine is Guitar Hero Arcade (Great). A photo titled PIU Fiesta 2 exists on the page but PIU is NOT in the active machine list - do not add pump_it_up without a current machine row.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9658",
+      "evidence_quote": "Only game listed: Guitar Hero Arcade. Last update 2026-07-09 by Fillo. Pictures include 'PIU Fiesta 2 @ Playland Park - Unicenter' but games list has no PIU.",
+      "note": "App correctly omits pump_it_up. Note prevents a future false add from the old photo.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 65,
+      "name": "Playland Park Devoto (Devoto Shopping)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "PRIME upgraded from EXTRA; sunk steps; brackets interfere"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up PRIME - Upgraded from an Extra machine. Brackets get in the way due to how sunk in the steps are after 20+ years of use. Still works tho. ARS 980.00. lastUpdateTime 2024-09-30.",
+      "note": "~1.75 years old. Price may be stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2,
+      "name": "Ale-Play",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "PRIME 2 (2018 version) DX cabinet with replacement LCD"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up PRIME 2 - 2018 version. DX Cabinet with a replacement LCD screen. lastUpdateTime 2026-02-23 (~5 months).",
+      "note": "App price still '??? for 3 songs'.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 13,
+      "name": "Crazy Park",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "PRIME on DX cabinet"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up PRIME - DX Cabinet. lastUpdateTime 2026-01-19.",
+      "note": "~6 months old. Price unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 14,
+      "name": "Criatura",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "XX on SD Cabinet (1st Dance Floor machine with XX hardware)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "Pump It Up XX - SD Cabinet (1st Dance Floor machine with XX hardware). lastUpdateTime 2026-02-23.",
+      "note": "~5 months old.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 15,
+      "name": "Cyberplay Uno 420",
+      "field": "other",
+      "current": "games: other",
+      "proposed": "ZIv: StepMania Converted Cabinet (PIU SD running StepP1 with custom homemade pads), condition Bad. lastUpdate 2024-03-14.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Argentina",
+      "evidence_quote": "StepMania Converted Cabinet - PIU SD cab running StepP1 with custom homemade pads. condition 2. lastUpdateTime 2024-03-14.",
+      "note": "Not stock PIU. App other is fine. Stale 2+ years.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

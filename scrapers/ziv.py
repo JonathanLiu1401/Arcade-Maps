@@ -865,8 +865,27 @@ def _parse_arcades(payload, country, enrich_pictures=False):
         name = common.unescape(str(a.get("name") or ""))
         if not aid or not name:
             continue
-        info = str(a.get("info") or "")
-        if _CLOSED_RE.search(name) or _CLOSED_RE.search(info):
+        # NAME ONLY, deliberately. `_CLOSED_RE` is broad ("closed", "閉店")
+        # because a venue whose NAME says closed is unambiguous, and this used
+        # to also read a key called "info" that the live API does not send -
+        # the venue free-text field is "information". That made the second test
+        # dead code, and pointing it at the real field is NOT the fix.
+        # Measured over the 4,261 shipped info_text values: 135 contain
+        # "closed"/"閉店", and almost none of them mean the venue is gone.
+        # They are weekday closures ("closed on Thursdays"), seasonal ones
+        # ("closed during the off-season"), temporary ones that name the
+        # reopening date, a mall entrance being shut, the venue's own
+        # predecessor, and 一部23時50分閉店 (part of the floor shuts at 23:50).
+        # Tightening to a venue-subject permanent phrasing still leaves false
+        # positives that no regex can separate: Playland Arcade's blurb says
+        # "permanently closed" about a DIFFERENT arcade two sentences later,
+        # and dropping that pin would delete an open venue. Exactly one row in
+        # the whole file is a clean permanent closure. Deleting a real arcade
+        # is far worse than showing a stale one, so venue-level closure from
+        # free text is left to a human. `_inventory_not_current` already reads
+        # `information` for the narrow, well-anchored phrases it can trust, and
+        # withholds only the QUANTITIES.
+        if _CLOSED_RE.search(name):
             continue
         # `or` picks the fallback key on any FALSEY value, and 0.0 is falsey:
         # a venue on the equator or the prime meridian had that axis silently

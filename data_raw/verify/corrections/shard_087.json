@@ -1,0 +1,1945 @@
+{
+  "shard": 87,
+  "checked": 109,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (Inertia JSON, X-Inertia headers) for all 67 bemanicn-linked shops in shard",
+    "BemaniCN titles map (title_id -> name) embedded in shop page props",
+    "Cross-pin proximity analysis of all 109 shard rows (haversine) to detect WAHLAP/BemaniCN duplicates",
+    "Zenius-I-Vanisher API country=China (no usable Heilongjiang rhythm halls found; 0 relevant hits)",
+    "WAHLAP maimai/chunithm shop pages probed but only returned HTML shells (no machine-readable store list used)"
+  ],
+  "corrections": [
+    {
+      "id": 6996,
+      "name": "鑫业动漫电玩",
+      "field": "status",
+      "current": "open (listed with other/maimai in notes)",
+      "proposed": "closed_or_removed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6044",
+      "evidence_quote": "HTTP 404 body: {\"code\":-1,\"message\":\"Not found.\"} for shop id 6044",
+      "note": "BemaniCN shop page https://map.bemanicn.com/s/6044 returns Not found as of 2026-08-01. App notes say other games: maimai (legacy). Venue may have closed or been deleted from the community map. Could not independently confirm physical closure from another source. Do not treat as certain permanent closure without local confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7343,
+      "name": "鸡西万达大玩家",
+      "field": "other",
+      "current": "鸡西万达大玩家",
+      "proposed": "鸡西万达偶予星球",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2252",
+      "evidence_quote": "name=\"鸡西万达偶予星球\"; address=\"黑龙江省鸡西市鸡冠区万达广场三楼偶予星球\"; updated_at=2026-07-31T11:46:40.000000Z",
+      "note": "BemaniCN shop 2252 now titles the venue 鸡西万达偶予星球 (was 鸡西万达大玩家 in the app). Address remains 鸡西万达广场三楼. WAHLAP-only duplicate id 2649 (大玩家鸡西鸡冠万达店) is the same mall pin and should be merged into this record rather than kept as a separate 大玩家.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2650,
+      "name": "大玩家齐齐哈尔万达店",
+      "field": "other",
+      "current": "大玩家齐齐哈尔万达店",
+      "proposed": "大玩家齐齐哈尔万达广场店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3316",
+      "evidence_quote": "name=\"大玩家齐齐哈尔万达广场店\"; updated_at=2026-07-13T23:48:47.000000Z",
+      "note": "Minor official/community name update on BemaniCN (adds 广场).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5741,
+      "name": "环游电玩城哈尔滨松北店",
+      "field": "other",
+      "current": "环游电玩城哈尔滨松北店",
+      "proposed": "环游电玩城",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4366",
+      "evidence_quote": "name=\"环游电玩城\"; address=\"学院路志华地下商城C区1-8号\"",
+      "note": "BemaniCN short name omits 哈尔滨松北店; address still 学院路志华地下商城. Keep city in display name if desired.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5954,
+      "name": "神彩飞扬绥化肇东店",
+      "field": "other",
+      "current": "神彩飞扬绥化肇东店",
+      "proposed": "神彩飞扬绥化肇东靓时尚店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4491",
+      "evidence_quote": "name=\"神彩飞扬绥化肇东靓时尚店\"; address=\"肇东市正阳三道街靓时尚购物中心四楼\"; comment mentions 原一楼神彩飞扬已搬到四楼",
+      "note": "BemaniCN name includes 靓时尚; comment states venue moved from 1F to 4F of 靓时尚购物中心.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6576,
+      "name": "超级星座哈尔滨双城店",
+      "field": "other",
+      "current": "超级星座哈尔滨双城店",
+      "proposed": "超级星座（双城店）",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1390",
+      "evidence_quote": "name=\"超级星座（双城店）\"; address=\"承旭街道文昌大街（承旭街道昌盛街金街百悦城购物中心L2-029-052）\"; comment: 机厅已搬到二楼",
+      "note": "BemaniCN uses 超级星座（双城店）; comment notes move to 2F of 百悦城.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5360,
+      "name": "炫酷联盟电玩城",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "taiko",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1486",
+      "evidence_quote": "jubeat festo comment: \"问了店员，店员说上了吴丽芳之后没人玩了，给撤了 R.I.P\" (title_id=6 still listed qty=1 version=festo); shop comment: \"内有1台古代吴丽方，2017年的，版本停在2022，没网\"; updated_at=2026-05-05T02:23:46.000000Z",
+      "note": "BemaniCN still has a jubeat row but the machine comment (from 2023-06-13) says staff confirmed it was withdrawn after 舞立方/吴丽芳. Remaining live listings are 太鼓达人(旧代)x1 and 鼓王x1. App currently lists jubeat:1. Prefer remove jubeat from active games or mark unavailable; not certain the row was never re-added after 2023.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3498,
+      "name": "广汇电玩娱乐馆",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE 3.99 offline (not maimai DX)",
+        "taiko": "旧代 14 (not Nijiiro/国行虹框)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5227",
+      "evidence_quote": "shop comment: \"现有一台maimai Finale、一台太鼓14日版\"; arcade title_id=2 version=\"FiNALE 3.99\" comment includes \"机台未联网\"; title_id=15 version=\"14\"",
+      "note": "App lists games as other+taiko with notes 'other games: maimai'. That is directionally right (legacy FiNALE, not DX) but easy to misread as a live DX cab. Do NOT add maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6164,
+      "name": "红象乐园",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "legacy 精文世嘉 offline/half-dead (NOT maimai DX)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3322",
+      "evidence_quote": "shop comment: \"此机厅内舞萌旧框基本无人游玩...机器已经没有人维护，不建议出勤\"; arcade title_id=2 version=\"精文世嘉\" comment: \"因为店家没续网费导致无法游玩...半废机状态\"",
+      "note": "App correctly lists only 'other' (not maimai_dx). Surface unplayable/unmaintained status. BemaniCN points players to 东北亚三楼 (超级玩家七台河) for current DX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6164,
+      "name": "红象乐园",
+      "field": "status",
+      "current": "open with other/maimai",
+      "proposed": "open_but_rhythm_unplayable",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3322",
+      "evidence_quote": "comment: \"没人维护，不建议出勤\"; machine: \"无法游玩...半废机状态\"; status field still 1; updated_at=2026-07-14",
+      "note": "Venue page still open on BemaniCN but the only rhythm cab (legacy maimai) is described as unplayable. Not a clean 'closed' flag.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2657,
+      "name": "大玩家（哈尔滨哈西万达店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko",
+        "jubeat"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/63",
+      "evidence_quote": "shop comment: \"音乐魔方已移至门口\"; events include \"jubeat音乐魔方首批上市店铺\" (start_at=2026-05-01 end_at=2026-12-31); arcades[] currently lists only maimai DXx2, CHUNITHMx2, 太鼓之达人x2; updated_at=2026-07-18T14:02:11.000000Z",
+      "note": "Strong text evidence jubeat 音乐魔方 is on-site (event badge + floor description) but BemaniCN arcades[] has no jubeat quantity row, so count is UNKNOWN. Do not invent a count. App currently omits jubeat entirely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2653,
+      "name": "大玩家（中央公园店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko",
+        "jubeat"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4592",
+      "evidence_quote": "taiko machine comment 2026-07-30: \"背后音乐魔方声音太大了基本听不到太鼓声音只能目押\"; events include \"jubeat音乐魔方首批上市店铺\"; arcades[] lists maimai DXx1, CHUNITHMx2, 太鼓之达人x1 only",
+      "note": "jubeat present per player comment and event badge; quantity not in arcades[] so count unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6593,
+      "name": "超级星座（凯旋店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4x DX (per BC qty 4, version 随网更新)",
+        "taiko": "1x 国行/2025秋 (title_id 31) + 1x 旧代 12亚 (title_id 15)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/65",
+      "evidence_quote": "arcades: maimai DX quantity=4; 太鼓之达人 quantity=1 version=2025秋; 太鼓达人(旧代) quantity=1 version=12亚; updated_at=2026-07-23",
+      "note": "App game_counts taiko:2 matches total cabs but hides that one is pre-Nijiiro legacy. maimai_dx:4 confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3596,
+      "name": "快乐电堂动漫娱乐中心",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "1x (returned 2026-05-08)",
+        "taiko": "1x 国行最新 playable + 1x 旧代 12亚洲版 stacked in corner, temporarily unavailable"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1003",
+      "evidence_quote": "shop comment: \"26年5月8日，舞萌dx已回归\"; 太鼓之达人 qty=1 国行最新; 太鼓达人(旧代) qty=1 comment: \"〔！〕堆在角落，暂时不可用\"",
+      "note": "App taiko:2 overstates playable cabs if the legacy unit is still stored. maimai_dx:1 confirmed after return.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2164,
+      "name": "哈尔滨大玩家香坊万达店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "旧代 14+ only (not 国行虹框/Nijiiro)",
+        "maimai_dx": "1x version 2026"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/801",
+      "evidence_quote": "arcades: maimai DX qty=1 version=2026; 太鼓达人(旧代) qty=1 version=14+; 头文字D qty=4; comment notes \"现已迁址\"",
+      "note": "Also note shop comment says 现已迁址 from 衡山路17-1号; current BC address still 衡山路17号万达广场3F - treat relocate note as historical unless a new address appears.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2333,
+      "name": "圣斗士电玩城嫩江时代广场店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "太鼓达人(旧代) only (title_id 15), not 国行虹框"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4316",
+      "evidence_quote": "arcades list only 太鼓达人(旧代) quantity=1; updated_at=2026-06-19T17:00:05.000000Z",
+      "note": "App lists taiko which is correct as a family, but these are legacy Asian/old cabinets only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2457,
+      "name": "城市阳光动漫城",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "太鼓达人(旧代) only (title_id 15), not 国行虹框"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1025",
+      "evidence_quote": "arcades list only 太鼓达人(旧代) quantity=1; updated_at=2025-11-29T17:21:19.000000Z",
+      "note": "App lists taiko which is correct as a family, but these are legacy Asian/old cabinets only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6461,
+      "name": "街霸电玩台球厅",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "太鼓达人(旧代) only (title_id 15), not 国行虹框"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6639",
+      "evidence_quote": "arcades list only 太鼓达人(旧代) quantity=1; updated_at=2026-01-24T05:42:47.000000Z",
+      "note": "App lists taiko which is correct as a family, but these are legacy Asian/old cabinets only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6586,
+      "name": "超级星座游戏体验中心延寿店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "太鼓达人(旧代) only (title_id 15), not 国行虹框"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1557",
+      "evidence_quote": "arcades list only 太鼓达人(旧代) quantity=1; updated_at=2026-01-27T03:06:53.000000Z",
+      "note": "App lists taiko which is correct as a family, but these are legacy Asian/old cabinets only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6576,
+      "name": "超级星座哈尔滨双城店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "1x",
+        "taiko": "旧代 only"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1390",
+      "evidence_quote": "maimai DX qty=1; 太鼓达人(旧代) qty=1; updated_at=2026-07-06T10:56:05.000000Z",
+      "note": "App taiko:1 is fine; mark generation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2650,
+      "name": "大玩家齐齐哈尔万达店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "1x",
+        "taiko": "旧代 only",
+        "other": "星光 x2"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3316",
+      "evidence_quote": "maimai DX qty=1; 太鼓达人(旧代) qty=1; 星光 qty=2",
+      "note": "App other games note said 星光 - confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2657,
+      "name": "大玩家（哈尔滨哈西万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-21:30 (machines may cut power ~21:25)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/63",
+      "evidence_quote": "comment: \"实际营业时间：9:30-21:30，机厅可能会提前一定时间毫无征兆的瞬间全场断电（通常为9:25分）\"",
+      "note": "start_time/end_time fields are 9-21; comment is more precise.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2658,
+      "name": "大玩家（哈尔滨悦荟店）（江一）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00 (staff may wait past close for active players; comment also says 23:00 leave)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/61",
+      "evidence_quote": "start_time=9 end_time=22; comment: \"店内23点下班，店员比较好如果到关门点没打完会等到打完再拉闸\"",
+      "note": "Integer end_time 22 vs comment 23:00 下班 - slight conflict; keep as likely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2653,
+      "name": "大玩家（中央公园店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "workdays ~09:00-21:00; weekends ~09:00-21:30 (mall forced early close from 22:00)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4592",
+      "evidence_quote": "comment: \"因商场要求，所有机器由原来的运行到十点改为九点半（工作日为九点）\"",
+      "note": "App hours null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4631,
+      "name": "欢乐集合地中央店（江二）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/62",
+      "evidence_quote": "start_time=10 end_time=24",
+      "note": "BC integer hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5741,
+      "name": "环游电玩城哈尔滨松北店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4366",
+      "evidence_quote": "start_time=9 end_time=24",
+      "note": "BC integer hours; price field 0.5 yuan/coin baseline.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5081,
+      "name": "潮π大玩家（原让胡路万达大玩家）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-21:30",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7308",
+      "evidence_quote": "comment: \"营业时间：9:30-21:30\"",
+      "note": "Also note machines (湾岸/头D/GC) reported 未开机 as of 2026-07-23.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1034,
+      "name": "D迪卡丘家庭体验中心佳木斯万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00 (Fri/Sat to 21:30)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6398",
+      "evidence_quote": "comment: \"周五周六21:30闭店，其余时间21:00闭店\"; start_time=9 end_time=21",
+      "note": "New venue 2025-10-29 per BC comment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7352,
+      "name": "鹿鹿很忙电玩城绥化万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "open until 21:30 with mall",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6772",
+      "evidence_quote": "comment: \"本店铺实际营业结束时间为21:30分，与万达广场本体同步\"",
+      "note": "BC start/end 9-21; comment clarifies 21:30.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6580,
+      "name": "超级星座家庭娱乐中心(大庆星耀天地店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7006",
+      "evidence_quote": "comment: \"实际9:30分开门\"; start_time=9 end_time=22",
+      "note": "Checked BC updated_at 2026-08-01.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2567,
+      "name": "大玩家动漫娱乐中心（百盛购物中心太平桥店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1245",
+      "evidence_quote": "start_time=10 end_time=21",
+      "note": "Has jubeat 音乐魔方 x2 confirmed in arcades[].",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2664,
+      "name": "大玩家（西城红场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6505",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "Has jubeat 音乐魔方 x2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3596,
+      "name": "快乐电堂动漫娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1003",
+      "evidence_quote": "start_time=9 end_time=22",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6593,
+      "name": "超级星座（凯旋店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/65",
+      "evidence_quote": "start_time=9 end_time=22",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6596,
+      "name": "超级星座（金爵万象店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00 (mall exit via cinema corridor after close)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4751",
+      "evidence_quote": "start_time=9 end_time=22; comment: \"营业时间早9点至晚10点\"",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4778,
+      "name": "汤姆熊欢乐世界（中央公园店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4371",
+      "evidence_quote": "start_time=10 end_time=21",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2550,
+      "name": "大玩家(松北融创茂店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1252",
+      "evidence_quote": "start_time=10 end_time=21",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2656,
+      "name": "大玩家（卓展购物中心店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5565",
+      "evidence_quote": "start_time=10 end_time=21",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5616,
+      "name": "玩美攻略潮玩街区(哈西万达店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "day pass style ~10:00-23:00 (79 RMB day pass / 59 after 17:00 per comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2100",
+      "evidence_quote": "start_time=10 end_time=23; price field=79.0; comment: \"79块钱玩一天（17点入场后的夜场票为59元）\"",
+      "note": "Not a normal per-credit hall; flat day pass. Taiko is old-gen and poorly maintained per comment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2657,
+      "name": "大玩家（哈尔滨哈西万达店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/credit",
+        "chunithm": "3 coins/credit",
+        "taiko": "6 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/63",
+      "evidence_quote": "arcade coin fields: maimai coin=3, CHUNITHM coin=3, taiko coin=6; group-buy packages listed in comment (抖音 2026-02-03)",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2658,
+      "name": "大玩家（哈尔滨悦荟店）（江一）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/credit",
+        "chunithm": "4 coins/credit",
+        "taiko": "8 coins/credit (was promo 5)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/61",
+      "evidence_quote": "arcade coin: maimai=3, CHUNITHM=4, taiko=8; comment notes temporary 5-coin taiko promo then back to 8",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4631,
+      "name": "欢乐集合地中央店（江二）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/credit",
+        "taiko": "WeChat scan 3 RMB/credit (coin slot taped shut)",
+        "groove_coaster": "3 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/62",
+      "evidence_quote": "taiko comment: \"不能投币，投币口被胶带粘上了 只能微信扫码3元一局\"; maimai coin=4",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2567,
+      "name": "大玩家动漫娱乐中心（百盛购物中心太平桥店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins",
+        "taiko": "10 coins",
+        "jubeat": "4 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1245",
+      "evidence_quote": "arcade coin fields 4/10/4",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2664,
+      "name": "大玩家（西城红场店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins",
+        "taiko": "10 coins single / 20 double",
+        "jubeat": "4 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6505",
+      "evidence_quote": "arcade coin fields; taiko comment 单人10币3曲 双人20币4曲",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6593,
+      "name": "超级星座（凯旋店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins",
+        "taiko_new": "10 coins",
+        "taiko_old": "2 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/65",
+      "evidence_quote": "arcade coin fields 5/10/2",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5741,
+      "name": "环游电玩城哈尔滨松北店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins",
+        "chunithm": "5 coins",
+        "taiko": "10 coins",
+        "coin_value": "~0.25 RMB effective via 1:4 packages"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4366",
+      "evidence_quote": "arcade coin 5/5/10; comment 微信小程序买币常驻1:4; price field=0.5",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1034,
+      "name": "D迪卡丘家庭体验中心佳木斯万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6398",
+      "evidence_quote": "arcade coin=3",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7343,
+      "name": "鸡西万达大玩家",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2252",
+      "evidence_quote": "arcade coin=3 for maimai DX",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7352,
+      "name": "鹿鹿很忙电玩城绥化万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "6 coins",
+        "packages": "60CNY=100 coins etc."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6772",
+      "evidence_quote": "arcade coin=6; shop comment lists package tiers",
+      "note": "BemaniCN 'coin' is coins-per-credit, not RMB. RMB/coin varies by package and is often well below face value via Meituan/Douyin. Do not convert to RMB without a live package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1448,
+      "name": "七彩天空道里君康店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "哈尔滨市道里区群力第六大道君康大厦负一层七彩天空电玩",
+        "lat": 45.720226,
+        "lng": 126.524202
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1447,
+        "target_name": "七彩天空电玩城",
+        "target_bemanicn": "https://map.bemanicn.com/s/6732"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6732",
+      "evidence_quote": "WAHLAP-only id 1448 '七彩天空道里君康店' at (45.720226,126.524202) is within ~0-80m of bemanicn-linked id 1447 '七彩天空电玩城' at (45.720634,126.524102); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "七彩天空 君康/群力 same B1 pin | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1751,
+      "name": "偶予-大玩家卓展店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区上海街99号卓展购物中心哈尔滨店B座二层2B010",
+        "lat": 45.757617,
+        "lng": 126.598079
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2656,
+        "target_name": "大玩家（卓展购物中心店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/5565"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5565",
+      "evidence_quote": "WAHLAP-only id 1751 '偶予-大玩家卓展店' at (45.757617,126.598079) is within ~0-80m of bemanicn-linked id 2656 '大玩家（卓展购物中心店）' at (45.757617,126.598079); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "偶予-大玩家卓展 vs 大玩家卓展 - same 卓展 B座 2B010; prefer bemanicn 2656 | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1767,
+      "name": "偶予电玩哈尔滨道里凯德店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区埃德蒙顿路38号凯德广场4楼21号",
+        "lat": 45.732646,
+        "lng": 126.58809
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1753,
+        "target_name": "偶予动漫电玩体验中心（凯德广场店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/3274"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3274",
+      "evidence_quote": "WAHLAP-only id 1767 '偶予电玩哈尔滨道里凯德店' at (45.732646,126.58809) is within ~0-80m of bemanicn-linked id 1753 '偶予动漫电玩体验中心（凯德广场店）' at (45.732957,126.587795); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "偶予 凯德广场 same 埃德蒙顿路38号 4F | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1911,
+      "name": "华录乐园哈尔滨王府井店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区群力王府井购物中心3楼华录乐园",
+        "lat": 45.731711,
+        "lng": 126.559887
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1914,
+        "target_name": "华录动漫·娱乐（华录乐园）",
+        "target_bemanicn": "https://map.bemanicn.com/s/2381"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2381",
+      "evidence_quote": "WAHLAP-only id 1911 '华录乐园哈尔滨王府井店' at (45.731711,126.559887) is within ~0-80m of bemanicn-linked id 1914 '华录动漫·娱乐（华录乐园）' at (45.731711,126.559887); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx'].",
+      "note": "华录乐园 王府井 - wahlap/bemanicn pair, same coords | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2517,
+      "name": "大嘴猴哈尔滨铜锣湾店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区群力第五大道518号铜锣湾广场115号",
+        "lat": 45.732521,
+        "lng": 126.56213
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7007,
+        "target_name": "铜锣湾大嘴猴电玩中心",
+        "target_bemanicn": "https://map.bemanicn.com/s/4203"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4203",
+      "evidence_quote": "WAHLAP-only id 2517 '大嘴猴哈尔滨铜锣湾店' at (45.732521,126.56213) is within ~0-80m of bemanicn-linked id 7007 '铜锣湾大嘴猴电玩中心' at (45.732521,126.56213); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "大嘴猴 铜锣湾 same 群力第五大道518 | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2577,
+      "name": "大玩家哈尔滨南岗万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市南岗区哈西万达广场三楼大玩家",
+        "lat": 45.698565,
+        "lng": 126.581442
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2657,
+        "target_name": "大玩家（哈尔滨哈西万达店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/63"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/63",
+      "evidence_quote": "WAHLAP-only id 2577 '大玩家哈尔滨南岗万达店' at (45.698565,126.581442) is within ~0-80m of bemanicn-linked id 2657 '大玩家（哈尔滨哈西万达店）' at (45.698562,126.581227); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx', 'taiko'].",
+      "note": "大玩家 哈西万达 - wahlap incomplete games (missing taiko) vs bemanicn full | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2578,
+      "name": "大玩家哈尔滨南岗松雷商场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市南岗区东大直街329号松雷商场5楼大玩家",
+        "lat": 45.757163,
+        "lng": 126.637587
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2662,
+        "target_name": "大玩家（松雷商场店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4971"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4971",
+      "evidence_quote": "WAHLAP-only id 2578 '大玩家哈尔滨南岗松雷商场店' at (45.757163,126.637587) is within ~0-80m of bemanicn-linked id 2662 '大玩家（松雷商场店）' at (45.757163,126.637587); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "大玩家 松雷 5F same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2579,
+      "name": "大玩家哈尔滨南岗红博中央公园店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江哈尔滨南岗区红旗大街33号红博中央公园B1大玩家",
+        "lat": 45.755602,
+        "lng": 126.69243
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2653,
+        "target_name": "大玩家（中央公园店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4592"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4592",
+      "evidence_quote": "WAHLAP-only id 2579 '大玩家哈尔滨南岗红博中央公园店' at (45.755602,126.69243) is within ~0-80m of bemanicn-linked id 2653 '大玩家（中央公园店）' at (45.755602,126.69243); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx', 'taiko'].",
+      "note": "大玩家 红博中央公园 B1 - note 汤姆熊 4778 is a DIFFERENT operator in same mall | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2580,
+      "name": "大玩家哈尔滨南岗西城红场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "哈尔滨市南岗区西城红场负一楼大玩家",
+        "lat": 45.702221,
+        "lng": 126.584816
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2664,
+        "target_name": "大玩家（西城红场店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/6505"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6505",
+      "evidence_quote": "WAHLAP-only id 2580 '大玩家哈尔滨南岗西城红场店' at (45.702221,126.584816) is within ~0-80m of bemanicn-linked id 2664 '大玩家（西城红场店）' at (45.702059,126.586131); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['jubeat', 'maimai_dx', 'taiko'].",
+      "note": "大玩家 西城红场 - ~100m; same mall complex | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2581,
+      "name": "大玩家哈尔滨融创茂店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市松北区世茂大道融创茂三楼大玩家超乐场",
+        "lat": 45.800529,
+        "lng": 126.495712
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2550,
+        "target_name": "大玩家(松北融创茂店)",
+        "target_bemanicn": "https://map.bemanicn.com/s/1252"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1252",
+      "evidence_quote": "WAHLAP-only id 2581 '大玩家哈尔滨融创茂店' at (45.800529,126.495712) is within ~0-80m of bemanicn-linked id 2550 '大玩家(松北融创茂店)' at (45.801266,126.496799); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "大玩家 融创茂 - 118m; same 松北融创茂 3F | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2582,
+      "name": "大玩家哈尔滨道外区百盛店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道外区118号百盛三楼",
+        "lat": 45.781905,
+        "lng": 126.670265
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2567,
+        "target_name": "大玩家动漫娱乐中心（百盛购物中心太平桥店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/1245"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1245",
+      "evidence_quote": "WAHLAP-only id 2582 '大玩家哈尔滨道外区百盛店' at (45.781905,126.670265) is within ~0-80m of bemanicn-linked id 2567 '大玩家动漫娱乐中心（百盛购物中心太平桥店）' at (45.781905,126.670265); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['jubeat', 'maimai_dx', 'taiko'].",
+      "note": "大玩家 百盛太平桥 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2583,
+      "name": "大玩家哈尔滨道里悦荟店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨道里区友谊路187号悦荟广场C座一楼",
+        "lat": 45.776466,
+        "lng": 126.609805
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2658,
+        "target_name": "大玩家（哈尔滨悦荟店）（江一）",
+        "target_bemanicn": "https://map.bemanicn.com/s/61"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/61",
+      "evidence_quote": "WAHLAP-only id 2583 '大玩家哈尔滨道里悦荟店' at (45.776466,126.609805) is within ~0-80m of bemanicn-linked id 2658 '大玩家（哈尔滨悦荟店）（江一）' at (45.776677,126.609336); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx', 'taiko'].",
+      "note": "大玩家 悦荟/印象城 C座 same; also 2629 is wahlap chunithm-only fragment of same shop | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2629,
+      "name": "大玩家超乐场哈尔滨友谊店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区友谊路187号",
+        "lat": 45.776466,
+        "lng": 126.609805
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2658,
+        "target_name": "大玩家（哈尔滨悦荟店）（江一）",
+        "target_bemanicn": "https://map.bemanicn.com/s/61"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/61",
+      "evidence_quote": "WAHLAP-only id 2629 '大玩家超乐场哈尔滨友谊店' at (45.776466,126.609805) is within ~0-80m of bemanicn-linked id 2658 '大玩家（哈尔滨悦荟店）（江一）' at (45.776677,126.609336); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm'] vs bemanicn ['chunithm', 'maimai_dx', 'taiko'].",
+      "note": "大玩家超乐场友谊店 is CHUNITHM-only WAHLAP fragment of 悦荟/印象城 大玩家 | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2584,
+      "name": "大玩家哈尔滨香坊乐松广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市香坊区三大动力路乐松广场三楼大玩家",
+        "lat": 45.717631,
+        "lng": 126.642668
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2654,
+        "target_name": "大玩家（乐松店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/5463"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5463",
+      "evidence_quote": "WAHLAP-only id 2584 '大玩家哈尔滨香坊乐松广场店' at (45.717631,126.642668) is within ~0-80m of bemanicn-linked id 2654 '大玩家（乐松店）' at (45.717422,126.643265); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx', 'taiko'].",
+      "note": "大玩家 乐松广场 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2606,
+      "name": "大玩家牡丹江万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省牡丹江市西安区西七条路万达广场三楼大玩家",
+        "lat": 44.56838,
+        "lng": 129.594869
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2607,
+        "target_name": "大玩家牡丹江西安万达店",
+        "target_bemanicn": "https://map.bemanicn.com/s/1241"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1241",
+      "evidence_quote": "WAHLAP-only id 2606 '大玩家牡丹江万达店' at (44.56838,129.594869) is within ~0-80m of bemanicn-linked id 2607 '大玩家牡丹江西安万达店' at (44.56838,129.594869); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "大玩家 牡丹江万达 exact duplicate pair | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2628,
+      "name": "大玩家超乐场哈尔滨凯德店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市南岗区学府路1-1号凯德广场-学府3层16-19号",
+        "lat": 45.719319,
+        "lng": 126.603008
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1566,
+        "target_name": "乐园云·大玩家（学府凯德店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4239"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4239",
+      "evidence_quote": "WAHLAP-only id 2628 '大玩家超乐场哈尔滨凯德店' at (45.719319,126.603008) is within ~0-80m of bemanicn-linked id 1566 '乐园云·大玩家（学府凯德店）' at (45.719319,126.603008); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx', 'taiko'].",
+      "note": "大玩家超乐场学府凯德 = 乐园云·大玩家学府凯德 same unit 3F 16-19 | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2649,
+      "name": "大玩家鸡西鸡冠万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省鸡西市鸡冠区中心大街万达广场三楼大玩家",
+        "lat": 45.302469,
+        "lng": 130.978677
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7343,
+        "target_name": "鸡西万达大玩家",
+        "target_bemanicn": "https://map.bemanicn.com/s/2252"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2252",
+      "evidence_quote": "WAHLAP-only id 2649 '大玩家鸡西鸡冠万达店' at (45.302469,130.978677) is within ~0-80m of bemanicn-linked id 7343 '鸡西万达大玩家' at (45.302469,130.978677); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other'].",
+      "note": "大玩家鸡西万达 vs renamed 偶予星球 鸡西万达 - same mall 3F | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3602,
+      "name": "快乐电堂齐齐哈尔百大店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省齐齐哈尔市龙沙区卜奎大街55号齐齐哈尔百货大楼F6",
+        "lat": 47.342587,
+        "lng": 123.94869
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3596,
+        "target_name": "快乐电堂动漫娱乐中心",
+        "target_bemanicn": "https://map.bemanicn.com/s/1003"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1003",
+      "evidence_quote": "WAHLAP-only id 3602 '快乐电堂齐齐哈尔百大店' at (47.342587,123.94869) is within ~0-80m of bemanicn-linked id 3596 '快乐电堂动漫娱乐中心' at (47.342587,123.94869); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'taiko'].",
+      "note": "快乐电堂 齐齐哈尔百大 6F same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3654,
+      "name": "悦动电玩城鸡西万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省鸡西市万达3楼悦动电玩城",
+        "lat": 45.303537,
+        "lng": 130.979558
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7344,
+        "target_name": "鸡西悦动MAX家庭娱乐中心",
+        "target_bemanicn": "https://map.bemanicn.com/s/6206"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6206",
+      "evidence_quote": "WAHLAP-only id 3654 '悦动电玩城鸡西万达店' at (45.303537,130.979558) is within ~0-80m of bemanicn-linked id 7344 '鸡西悦动MAX家庭娱乐中心' at (45.303159,130.979054); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "悦动电玩城鸡西万达 vs 悦动MAX - same 万达 3F | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4632,
+      "name": "欢乐集合地哈尔滨道里万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区友谊路232号万达广场二楼欢乐集合地电玩城",
+        "lat": 45.777784,
+        "lng": 126.61112
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4631,
+        "target_name": "欢乐集合地中央店（江二）",
+        "target_bemanicn": "https://map.bemanicn.com/s/62"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/62",
+      "evidence_quote": "WAHLAP-only id 4632 '欢乐集合地哈尔滨道里万达店' at (45.777784,126.61112) is within ~0-80m of bemanicn-linked id 4631 '欢乐集合地中央店（江二）' at (45.777946,126.610682); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "欢乐集合地 道里万达/中央大街 same complex | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4719,
+      "name": "汤姆熊哈尔滨南岗中央公园店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市南岗区红旗大街339号红博中央公园B1层上区2号",
+        "lat": 45.756124,
+        "lng": 126.693295
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4778,
+        "target_name": "汤姆熊欢乐世界（中央公园店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4371"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4371",
+      "evidence_quote": "WAHLAP-only id 4719 '汤姆熊哈尔滨南岗中央公园店' at (45.756124,126.693295) is within ~0-80m of bemanicn-linked id 4778 '汤姆熊欢乐世界（中央公园店）' at (45.755602,126.69243); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "汤姆熊 中央公园 - wahlap vs bemanicn pair (NOT the 大玩家 in same mall) | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5305,
+      "name": "火星计划双鸭山宝清店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省双鸭山市宝清县谷兴商厦家乐购三楼火星计划家庭娱乐中心",
+        "lat": 46.329228,
+        "lng": 132.197526
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5306,
+        "target_name": "火星计划家庭娱乐中心（双鸭山宝清店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4882"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4882",
+      "evidence_quote": "WAHLAP-only id 5305 '火星计划双鸭山宝清店' at (46.329228,132.197526) is within ~0-80m of bemanicn-linked id 5306 '火星计划家庭娱乐中心（双鸭山宝清店）' at (46.329144,132.197357); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "火星计划 宝清 谷兴商厦 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5796,
+      "name": "畅想大玩家黑龙江伊春店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省伊春市卓越万象城畅想大玩家电玩城",
+        "lat": 47.72478,
+        "lng": 128.897437
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5794,
+        "target_name": "畅享大玩家电玩城",
+        "target_bemanicn": "https://map.bemanicn.com/s/5794"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5794",
+      "evidence_quote": "WAHLAP-only id 5796 '畅想大玩家黑龙江伊春店' at (47.72478,128.897437) is within ~0-80m of bemanicn-linked id 5794 '畅享大玩家电玩城' at (47.725149,128.898154); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx'].",
+      "note": "畅想/畅享大玩家 伊春 万象城 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5961,
+      "name": "神采飞扬双鸭集贤店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省双鸭山市集贤县福利泓晟生活广场三楼电玩城神采飞扬",
+        "lat": 46.734634,
+        "lng": 131.128284
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5967,
+        "target_name": "神采飞扬电玩城（集贤店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4826"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4826",
+      "evidence_quote": "WAHLAP-only id 5961 '神采飞扬双鸭集贤店' at (46.734634,131.128284) is within ~0-80m of bemanicn-linked id 5967 '神采飞扬电玩城（集贤店）' at (46.734634,131.128284); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "神采飞扬 集贤 泓晟 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6186,
+      "name": "维京传奇哈尔滨道里店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道里区石头道街118号五层F5S01号",
+        "lat": 45.76845,
+        "lng": 126.617908
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6184,
+        "target_name": "维京传奇动漫娱乐中心(新一百店)",
+        "target_bemanicn": "https://map.bemanicn.com/s/5171"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5171",
+      "evidence_quote": "WAHLAP-only id 6186 '维京传奇哈尔滨道里店' at (45.76845,126.617908) is within ~0-80m of bemanicn-linked id 6184 '维京传奇动漫娱乐中心(新一百店)' at (45.76845,126.617908); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "维京传奇 新一百/道里 石头道街118 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6363,
+      "name": "萌动洛克哈尔滨道外店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市道外区南勋街333号青龙商厦B座",
+        "lat": 45.779134,
+        "lng": 126.635147
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6362,
+        "target_name": "萌动洛克",
+        "target_bemanicn": "https://map.bemanicn.com/s/6244"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6244",
+      "evidence_quote": "WAHLAP-only id 6363 '萌动洛克哈尔滨道外店' at (45.779134,126.635147) is within ~0-80m of bemanicn-linked id 6362 '萌动洛克' at (45.779134,126.635147); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "萌动洛克 道外 南勋街333 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6410,
+      "name": "萌趣潮玩黑河爱辉华富店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省黑河市爱辉区华富商城五层A39-41、B61-81号",
+        "lat": 50.247801,
+        "lng": 127.492251
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6411,
+        "target_name": "萌趣潮玩（黑河爱辉区华富商城中央街店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/5704"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5704",
+      "evidence_quote": "WAHLAP-only id 6410 '萌趣潮玩黑河爱辉华富店' at (50.247801,127.492251) is within ~0-80m of bemanicn-linked id 6411 '萌趣潮玩（黑河爱辉区华富商城中央街店）' at (50.247801,127.492251); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "萌趣潮玩 黑河 华富商城 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6575,
+      "name": "超级星座哈尔滨南岗万象店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市南岗区中兴左街2号金爵万象商业广场B1层B017号超级星座",
+        "lat": 45.697063,
+        "lng": 126.577088
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6596,
+        "target_name": "超级星座（金爵万象店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4751"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4751",
+      "evidence_quote": "WAHLAP-only id 6575 '超级星座哈尔滨南岗万象店' at (45.697063,126.577088) is within ~0-80m of bemanicn-linked id 6596 '超级星座（金爵万象店）' at (45.697063,126.577088); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other', 'taiko'].",
+      "note": "超级星座 金爵万象 same B1 | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6577,
+      "name": "超级星座哈尔滨香坊店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市香坊区哈平路凯旋新生活购物广场三楼超级星座",
+        "lat": 45.718235,
+        "lng": 126.640135
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6593,
+        "target_name": "超级星座（凯旋店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/65"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/65",
+      "evidence_quote": "WAHLAP-only id 6577 '超级星座哈尔滨香坊店' at (45.718235,126.640135) is within ~0-80m of bemanicn-linked id 6593 '超级星座（凯旋店）' at (45.718565,126.639284); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'taiko'].",
+      "note": "超级星座 凯旋/香坊 凯旋广场 same 3F | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6579,
+      "name": "超级星座大庆星耀天地生活中心店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省大庆市龙凤区星耀天地生活中心三楼超级星座电玩城",
+        "lat": 46.563773,
+        "lng": 125.131009
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6580,
+        "target_name": "超级星座家庭娱乐中心(大庆星耀天地店)",
+        "target_bemanicn": "https://map.bemanicn.com/s/7006"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7006",
+      "evidence_quote": "WAHLAP-only id 6579 '超级星座大庆星耀天地生活中心店' at (46.563773,125.131009) is within ~0-80m of bemanicn-linked id 6580 '超级星座家庭娱乐中心(大庆星耀天地店)' at (46.563546,125.130797); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other'].",
+      "note": "超级星座 大庆星耀天地 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6601,
+      "name": "超级玩家七台河桃山店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省七台河市桃山区东北亚购物广场超级玩家",
+        "lat": 45.770401,
+        "lng": 130.99702
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6604,
+        "target_name": "超级玩家家庭娱乐中心七台河店",
+        "target_bemanicn": "https://map.bemanicn.com/s/4902"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4902",
+      "evidence_quote": "WAHLAP-only id 6601 '超级玩家七台河桃山店' at (45.770401,130.99702) is within ~0-80m of bemanicn-linked id 6604 '超级玩家家庭娱乐中心七台河店' at (45.770314,130.997153); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "超级玩家 七台河 东北亚 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6602,
+      "name": "超级玩家佳木斯前进店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省佳木斯市前进区长安东路671号大商·新玛特F6层超级玩家游戏体验中心",
+        "lat": 46.809781,
+        "lng": 130.361159
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6605,
+        "target_name": "超级玩家游戏体验中心（新玛特店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/2637"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2637",
+      "evidence_quote": "WAHLAP-only id 6602 '超级玩家佳木斯前进店' at (46.809781,130.361159) is within ~0-80m of bemanicn-linked id 6605 '超级玩家游戏体验中心（新玛特店）' at (46.809781,130.361159); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other'].",
+      "note": "超级玩家 佳木斯 新玛特 6F same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6709,
+      "name": "迪卡丘佳木斯万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省佳木斯市万达广场二楼迪卡丘",
+        "lat": 46.791913,
+        "lng": 130.329685
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1034,
+        "target_name": "D迪卡丘家庭体验中心佳木斯万达店",
+        "target_bemanicn": "https://map.bemanicn.com/s/6398"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6398",
+      "evidence_quote": "WAHLAP-only id 6709 '迪卡丘佳木斯万达店' at (46.791913,130.329685) is within ~0-80m of bemanicn-linked id 1034 'D迪卡丘家庭体验中心佳木斯万达店' at (46.79192,130.330205); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "迪卡丘/D迪卡丘 佳木斯万达 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6933,
+      "name": "酷玩联盟哈尔滨南岗黑域店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市南岗区哈西西城红场三楼",
+        "lat": 45.702059,
+        "lng": 126.586131
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3518,
+        "target_name": "开心季·酷玩联盟电玩城",
+        "target_bemanicn": "https://map.bemanicn.com/s/4461"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4461",
+      "evidence_quote": "WAHLAP-only id 6933 '酷玩联盟哈尔滨南岗黑域店' at (45.702059,126.586131) is within ~0-80m of bemanicn-linked id 3518 '开心季·酷玩联盟电玩城' at (45.702059,126.586131); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other'].",
+      "note": "酷玩联盟 西城红场 3F - same as 开心季·酷玩联盟 (NOT 大玩家西城红场 which is B1) | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6964,
+      "name": "金乐汇北安大润发店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省北安市上海路88号大润发超市二楼金乐汇电玩城",
+        "lat": 48.243625,
+        "lng": 126.510139
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6965,
+        "target_name": "金乐汇电玩城",
+        "target_bemanicn": "https://map.bemanicn.com/s/5936"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5936",
+      "evidence_quote": "WAHLAP-only id 6964 '金乐汇北安大润发店' at (48.243625,126.510139) is within ~0-80m of bemanicn-linked id 6965 '金乐汇电玩城' at (48.243912,126.51077); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'other'].",
+      "note": "金乐汇 北安 大润发 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7003,
+      "name": "鑫天空之城哈尔滨阿城区店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市阿城区鑫城街道印象城5楼鑫天空之城",
+        "lat": 45.53542,
+        "lng": 126.974545
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2752,
+        "target_name": "天空之城动漫体验中心",
+        "target_bemanicn": "https://map.bemanicn.com/s/1746"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1746",
+      "evidence_quote": "WAHLAP-only id 7003 '鑫天空之城哈尔滨阿城区店' at (45.53542,126.974545) is within ~0-80m of bemanicn-linked id 2752 '天空之城动漫体验中心' at (45.53542,126.974545); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'taiko'].",
+      "note": "鑫天空之城/天空之城 阿城 印象城 5F same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7022,
+      "name": "银泰城哈尔滨群里银泰城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省哈尔滨市群里银泰城大玩家",
+        "lat": 45.734774,
+        "lng": 126.533364
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2666,
+        "target_name": "大玩家（银泰城店）",
+        "target_bemanicn": "https://map.bemanicn.com/s/4889"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4889",
+      "evidence_quote": "WAHLAP-only id 7022 '银泰城哈尔滨群里银泰城店' at (45.734774,126.533364) is within ~0-80m of bemanicn-linked id 2666 '大玩家（银泰城店）' at (45.734876,126.533454); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx', 'taiko'].",
+      "note": "银泰城 群力 大玩家 same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7077,
+      "name": "阿拉丁绥化北林春天店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省绥化市北林区中兴春天购物广场4层阿拉丁电玩城",
+        "lat": 46.633629,
+        "lng": 126.985833
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7076,
+        "target_name": "阿拉丁电玩城",
+        "target_bemanicn": "https://map.bemanicn.com/s/1763"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1763",
+      "evidence_quote": "WAHLAP-only id 7077 '阿拉丁绥化北林春天店' at (46.633629,126.985833) is within ~0-80m of bemanicn-linked id 7076 '阿拉丁电玩城' at (46.633099,126.985757); addresses both reference the same mall/building. WAHLAP row has thinner game list ['chunithm', 'maimai_dx'] vs bemanicn ['chunithm', 'maimai_dx'].",
+      "note": "阿拉丁 绥化 中兴春天 4F same | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3771,
+      "name": "时之代游艺活动中心鹤岗店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "黑龙江省鹤岗市工农区时代广场四楼时之代游艺活动中心",
+        "lat": 47.323458,
+        "lng": 130.275563
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4676,
+        "target_name": "比优特时代广场",
+        "target_bemanicn": "https://map.bemanicn.com/s/5241"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5241",
+      "evidence_quote": "WAHLAP-only id 3771 '时之代游艺活动中心鹤岗店' at (47.323458,130.275563) is within ~0-80m of bemanicn-linked id 4676 '比优特时代广场' at (47.323542,130.275793); addresses both reference the same mall/building. WAHLAP row has thinner game list ['maimai_dx'] vs bemanicn ['maimai_dx'].",
+      "note": "时之代 鹤岗时代广场 vs 比优特时代广场 maimai - 20m; VERIFY before merge: names differ, may be same floor different operators | Pattern across Heilongjiang shard: WAHLAP and BemaniCN imported the same physical hall as two rows. Prefer the bemanicn-linked row (richer games/counts) and retire the wahlap-only stub after merge. Approx pins are expected for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1212,
+      "name": "MY泛娱乐中心鹤岗红星店",
+      "field": "location",
+      "current": "黑龙江省鹤岗市工农区新南街道解放路246号红星万象城3楼",
+      "proposed": "西解放路246号欣荟万象广场三楼",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1440",
+      "evidence_quote": "BC address=\"西解放路246号欣荟万象广场三楼\"",
+      "note": "App has 解放路246号红星万象城3楼; BC has 欣荟万象广场 - same complex, name variant. approx:true remains correct for China geocodes; not a wrong-city pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5954,
+      "name": "神彩飞扬绥化肇东店",
+      "field": "location",
+      "current": "黑龙江省绥化市肇东市神彩飞扬电玩城",
+      "proposed": "肇东市正阳三道街靓时尚购物中心四楼",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4491",
+      "evidence_quote": "BC address=\"肇东市正阳三道街靓时尚购物中心四楼\"",
+      "note": "App address only '神彩飞扬电玩城'; BC has full mall+floor and notes 1F->4F move. approx:true remains correct for China geocodes; not a wrong-city pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4676,
+      "name": "比优特时代广场",
+      "field": "location",
+      "current": "工交路与新鹤路交汇出南侧",
+      "proposed": "工交路与新鹤路交汇出南侧 (鹤岗时代广场/比优特)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5241",
+      "evidence_quote": "BC address=\"工交路与新鹤路交汇出南侧\"",
+      "note": "App address is vague intersection only; still weak. Keep approx. approx:true remains correct for China geocodes; not a wrong-city pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7343,
+      "name": "鸡西万达大玩家",
+      "field": "location",
+      "current": "黑龙江省鸡西市鸡冠区万达广场三楼大玩家",
+      "proposed": "黑龙江省鸡西市鸡冠区万达广场三楼偶予星球",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2252",
+      "evidence_quote": "BC address=\"黑龙江省鸡西市鸡冠区万达广场三楼偶予星球\"",
+      "note": "Operator rebrand reflected in address line. approx:true remains correct for China geocodes; not a wrong-city pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6580,
+      "name": "超级星座家庭娱乐中心(大庆星耀天地店)",
+      "field": "location",
+      "current": "龙祥路1号3楼超级星座家庭娱乐中心(大庆星耀天地店) 也就是死掉的世纪唐人中心",
+      "proposed": "龙祥路1号3楼超级星座家庭娱乐中心(大庆星耀天地店)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7006",
+      "evidence_quote": "BC address=\"龙祥路1号3楼超级星座家庭娱乐中心(大庆星耀天地店)\n也就是死掉的世纪唐人中心\"",
+      "note": "BC address cleaned vs app text that includes '也就是死掉的世纪唐人中心' editorial note. approx:true remains correct for China geocodes; not a wrong-city pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5081,
+      "name": "潮π大玩家（原让胡路万达大玩家）",
+      "field": "status",
+      "current": "open with other (GC, Initial D, Wangan)",
+      "proposed": "open_but_listed_cabs_powered_off",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7308",
+      "evidence_quote": "comment 2026-07-23: \"湾岸5dx+、头d0、节奏过山车没开机，店员说要等修好 鼓王2008似乎已撤机\"; each arcade row comment 未开机; status still 1",
+      "note": "Former 让胡路万达大玩家 rebrand. Rhythm cabs currently off per staff. Not closed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6993,
+      "name": "金街动漫城",
+      "field": "other",
+      "current": {
+        "games": [
+          "drs"
+        ],
+        "updated_hint": null
+      },
+      "proposed": {
+        "games_confirmed": [
+          "drs"
+        ],
+        "bemanicn_updated_at": "2025-11-29T17:21:18.000000Z",
+        "machine_note": "DANCERUSH 1.6; floor dirty, unmaintained per BC comment"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/68",
+      "evidence_quote": "DANCERUSH qty=1 version=1.6 comment: \"机况良好，机器没人维护地板非常脏需要自己清理\"; updated_at=2025-11-29T17:21:18.000000Z",
+      "note": "Only DRS venue in shard. BC last update 2025-11-29 is older; still status=1. Could not verify 2026 on-site condition from another source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7343,
+      "name": "鸡西万达大玩家",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "other_wangan_banks": "4x 3dx+ + 4x 5DX+ (two product rows)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2252",
+      "evidence_quote": "maimai DX quantity=2; 湾岸MIDNIGHT quantity=4 version=3dx+; 湾岸MIDNIGHT quantity=4 version=湾岸5DX+",
+      "note": "App already has maimai_dx:2. Other is 湾岸 with two versions totaling 8 cabs if both rows are physical units.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4631,
+      "name": "欢乐集合地中央店（江二）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 6,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 6,
+        "taiko": 2,
+        "other": {
+          "GROOVE COASTER": 1
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/62",
+      "evidence_quote": "maimai DX quantity=6; 太鼓之达人 quantity=2; GROOVE COASTER quantity=1; updated_at=2026-07-19",
+      "note": "App already has maimai_dx:6 and taiko:2 and other:GROOVE COASTER in notes - counts confirmed live.",
+      "checked_at": "2026-07-31"
+    }
+  ],
+  "summary_notes": {
+    "region": "China / 黑龙江 (Heilongjiang), 109 venues",
+    "bemanicn_linked": 67,
+    "bemanicn_live_status_1": 66,
+    "bemanicn_404": [
+      6044
+    ],
+    "wahlap_only": 42,
+    "primary_issue": "Systematic WAHLAP+BemaniCN double import: ~39 WAHLAP-only rows are the same physical hall as a bemanicn-linked row within 0-80m. Retire stubs after merge.",
+    "games_mostly_match": "For the 66 live BemaniCN shops, app games/game_counts largely match BC arcades[] (maimai_dx / chunithm / taiko / jubeat quantities). Material game issues are listed as corrections (jubeat missing at two 大玩家, jubeat withdrawn at 炫酷联盟, FiNALE/legacy marks).",
+    "not_verified": [
+      "Physical on-site visits - none",
+      "WAHLAP live official store locator machine lists (HTML only, not scraped)",
+      "Whether 404 shop 6044 (鑫业动漫 五大连池) is demolished vs merely delisted",
+      "jubeat cabinet counts at 哈西万达 and 中央公园大玩家 (present in text/events, absent from arcades[])",
+      "Whether 时之代鹤岗 (3771) and 比优特时代广场 (4676) are truly the same operator",
+      "Zenius has essentially no Heilongjiang coverage for cross-check",
+      "Hours/prices for WAHLAP-only stubs without BC page",
+      "Image licence status for BemaniCN uploads (not proposed)"
+    ],
+    "status_overview": "No broad wave of permanent closures detected among bemanicn-linked Heilongjiang halls. status=1 on 66/67 fetched shops, many with 2026-06/07 updates including 2026-07-31 and 2026-08-01."
+  }
+}

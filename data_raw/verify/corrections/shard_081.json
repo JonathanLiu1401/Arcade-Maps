@@ -1,0 +1,1418 @@
+{
+  "shard": 81,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+    "https://map.bemanicn.com/api/miniapp/common/region",
+    "https://map.bemanicn.com/region/city/610100000000",
+    "https://map.bemanicn.com/region/city/610300000000",
+    "https://map.bemanicn.com/region/city/610400000000",
+    "https://map.bemanicn.com/region/city/610500000000",
+    "https://map.bemanicn.com/region/city/610600000000",
+    "https://map.bemanicn.com/region/city/610700000000",
+    "https://map.bemanicn.com/region/city/610800000000",
+    "https://map.bemanicn.com/region/city/611000000000",
+    "https://map.bemanicn.com/s/207",
+    "https://map.bemanicn.com/s/618",
+    "https://map.bemanicn.com/s/1291",
+    "https://map.bemanicn.com/s/1315",
+    "https://map.bemanicn.com/s/1382",
+    "https://map.bemanicn.com/s/1637",
+    "https://map.bemanicn.com/s/1680",
+    "https://map.bemanicn.com/s/1789",
+    "https://map.bemanicn.com/s/1804",
+    "https://map.bemanicn.com/s/1915",
+    "https://map.bemanicn.com/s/2076",
+    "https://map.bemanicn.com/s/2226",
+    "https://map.bemanicn.com/s/2316",
+    "https://map.bemanicn.com/s/2493",
+    "https://map.bemanicn.com/s/2555",
+    "https://map.bemanicn.com/s/2607",
+    "https://map.bemanicn.com/s/2900",
+    "https://map.bemanicn.com/s/2968",
+    "https://map.bemanicn.com/s/3042",
+    "https://map.bemanicn.com/s/3215",
+    "https://map.bemanicn.com/s/3403",
+    "https://map.bemanicn.com/s/3730",
+    "https://map.bemanicn.com/s/3737",
+    "https://map.bemanicn.com/s/3753",
+    "https://map.bemanicn.com/s/3758",
+    "https://map.bemanicn.com/s/3990",
+    "https://map.bemanicn.com/s/4138",
+    "https://map.bemanicn.com/s/4398",
+    "https://map.bemanicn.com/s/4496",
+    "https://map.bemanicn.com/s/4534",
+    "https://map.bemanicn.com/s/4572",
+    "https://map.bemanicn.com/s/4579",
+    "https://map.bemanicn.com/s/4605",
+    "https://map.bemanicn.com/s/4608",
+    "https://map.bemanicn.com/s/4610",
+    "https://map.bemanicn.com/s/4666",
+    "https://map.bemanicn.com/s/4787",
+    "https://map.bemanicn.com/s/5102",
+    "https://map.bemanicn.com/s/5191",
+    "https://map.bemanicn.com/s/5244",
+    "https://map.bemanicn.com/s/5405",
+    "https://map.bemanicn.com/s/5430",
+    "https://map.bemanicn.com/s/5449",
+    "https://map.bemanicn.com/s/5553",
+    "https://map.bemanicn.com/s/5594",
+    "https://map.bemanicn.com/s/5597",
+    "https://map.bemanicn.com/s/5608",
+    "https://map.bemanicn.com/s/5657",
+    "https://map.bemanicn.com/s/5658",
+    "https://map.bemanicn.com/s/5778",
+    "https://map.bemanicn.com/s/5797",
+    "https://map.bemanicn.com/s/5799",
+    "https://map.bemanicn.com/s/5986",
+    "https://map.bemanicn.com/s/5987",
+    "https://map.bemanicn.com/s/6079",
+    "https://map.bemanicn.com/s/6377",
+    "https://map.bemanicn.com/s/6476",
+    "https://map.bemanicn.com/s/6576",
+    "https://map.bemanicn.com/s/6580",
+    "https://map.bemanicn.com/s/6617",
+    "https://map.bemanicn.com/s/6627",
+    "https://map.bemanicn.com/s/6662",
+    "https://map.bemanicn.com/s/7077",
+    "https://map.bemanicn.com/s/7101",
+    "https://map.bemanicn.com/s/7189"
+  ],
+  "corrections": [
+    {
+      "id": 2148,
+      "name": "哆啦星球(高新玫瑰ONE店)装修中(原小寨店)",
+      "field": "status",
+      "current": "open (listed with chunithm, jubeat, maimai_dx; name says 装修中)",
+      "proposed": "closed / not yet reopened at 玫瑰ONE (original 小寨店 permanently closed 2026-04-30; machines moved to 钟楼文商; new store renovation planned open 2026-10-01; cabs at 玫瑰ONE not confirmed)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5608",
+      "evidence_quote": "店铺搬迁至高新三期玫瑰ONE，哆啦星球小寨店店于2026年4月30日（星期四）正式停止营业。新店正在筹备装修中，预计开业时间2026年10月1日。目前原小寨店的舞萌中二已搬至钟楼店（文商），玫瑰ONE还有没有舞萌中二尚不明确。",
+      "note": "BemaniCN status field still 1 but operator comment is explicit. Do not send players to 玫瑰ONE yet. WAHLAP row 2150 is likely lagging.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2150,
+      "name": "哆啦星球西安雁塔小寨店",
+      "field": "status",
+      "current": "open (WAHLAP-listed maimai_dx at 西旅国际一楼)",
+      "proposed": "permanently closed / relocated (小寨 closed 2026-04-30; maimai/chunithm moved to 钟楼文商 哆啦乐图)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5608",
+      "evidence_quote": "哆啦星球小寨店店于2026年4月30日（星期四）正式停止营业。目前原小寨店的舞萌中二已搬至钟楼店（文商）",
+      "note": "WAHLAP official maimai list still contains this name as of research date. Prefer community closure note over stale WAHLAP.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1563,
+      "name": "乐动时空(M3碧乐城店)(暂停营业)",
+      "field": "status",
+      "current": "open-looking listing with name suffix (暂停营业); maimai_dx",
+      "proposed": "temporarily closed / suspended (BemaniCN name explicitly 暂停营业)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5658",
+      "evidence_quote": "乐动时空(M3碧乐城店)(暂停营业) | status=1 | updated_at=2026-07-19T08:50:09.000000Z | games: maimai_dx x1",
+      "note": "WAHLAP still lists twin 1564. Treat 1563/1564 as one venue; surface 暂停营业 until reopen confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2149,
+      "name": "哆啦星球主战场大旺城店",
+      "field": "status",
+      "current": "open with sdvx only",
+      "proposed": "likely no longer has playable SDVX (community note 2026-06-22: cabinet gone)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1804",
+      "evidence_quote": "钟楼文商搬过来的sdvx，也就只有这个了…… 机况较差 26.6.22补充 机子已消失，不知去向",
+      "note": "BemaniCN still indexes sdvx qty 1 status=1, but 2026-06-22 comment says cab gone.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2149,
+      "name": "哆啦星球主战场大旺城店",
+      "field": "games",
+      "current": [
+        "sdvx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1804",
+      "evidence_quote": "26.6.22补充 机子已消失，不知去向",
+      "note": "proposed null means remove the sdvx claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1365,
+      "name": "XAMG幻乐坊",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_evo",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "popn",
+        "pump_it_up",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3730",
+      "evidence_quote": "live BemaniCN arcades[] as of 2026-06-05 update: maimai_dx x1 + maimai_dx x2 + chunithm x2 only. Comment: 自助游玩，无需预约，首次进店需首充. No Konami/other titles currently listed.",
+      "note": "App inherits large ZIv cab list. Live BemaniCN only exposes maimai_dx and chunithm. Private membership venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1365,
+      "name": "XAMG幻乐坊",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "dance_evo": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "iidx": 2,
+        "jubeat": 1,
+        "maimai_dx": 3,
+        "popn": 1,
+        "pump_it_up": 1,
+        "sdvx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3730",
+      "evidence_quote": "maimai_dx quantities 1+2 (sum 3), chunithm quantity 2 on live BemaniCN shop payload",
+      "note": "Strip ziv_listed placeholder counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1365,
+      "name": "XAMG幻乐坊",
+      "field": "prices",
+      "current": {
+        "chunithm": "free play",
+        "dance_evo": "free play",
+        "ddr": "free play",
+        "gitadora": "free play",
+        "iidx": "free play",
+        "jubeat": "free play",
+        "maimai_dx": "free play",
+        "popn": "free play",
+        "pump_it_up": "free play",
+        "sdvx": "free play",
+        "taiko": "free play"
+      },
+      "proposed": {
+        "model": "membership time billing",
+        "note": "not free-play public; first visit requires top-up; ~CNY 15/hour average, daily cap 4 hours"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3730",
+      "evidence_quote": "自助游玩，无需预约，首次进店需首充（未首充通过他人赠送的P点不可进店），后续按分钟计费，平均一小时约15元，每日计费上限为四小时",
+      "note": "Replace inherited free-play claims from ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 896,
+      "name": "1号机长超乐场西安未央西咸万象城店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7189",
+      "evidence_quote": "西咸万象城1号机长 | maimai_dx x1 v=2026; chunithm x2 v=2026; taiko x1 v=最新 | updated 2026-07-22",
+      "note": "WAHLAP confirms maimai+chunithm. BemaniCN 7189 also lists taiko.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5220,
+      "name": "潮玩社西安华阳城店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "WAHLAP CHUNITHM CN Shaanxi list (province=陕西) does NOT include 潮玩社西安华阳城店. Only 潮玩社西安雁塔店 appears among 潮玩社 for chunithm. maimai WAHLAP does list 潮玩社西安华阳城店.",
+      "note": "BemaniCN s/7077 still lists chunithm x1. Official WAHLAP chunithm wins over community for SEGA titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2661,
+      "name": "大玩家（杨凌万达广场）",
+      "field": "location",
+      "current": {
+        "lat": 34.338215,
+        "lng": 108.694755,
+        "addr": "万达广场3层大玩家",
+        "approx": true
+      },
+      "proposed": {
+        "lat": null,
+        "lng": null,
+        "addr": "陕西省咸阳市杨凌区 / 杨凌农业高新技术产业示范区 杨凌万达广场3层大玩家 (street address incomplete)",
+        "note": "current pin is inside 咸阳秦都万达 area (~108.69E), NOT 杨凌 (~108.08E). Null until re-geocoded."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2226",
+      "evidence_quote": "name=大玩家（杨凌万达广场） address=万达广场3层大玩家 comment='欢迎来到杨陵！本机厅为杨陵首家有舞萌DX的机厅' updated 2026-07-20",
+      "note": "Geocoder snapped incomplete address to 秦都万达. Wrong city. Re-geocode 杨凌万达广场.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5555,
+      "name": "玩乐兽家庭娱乐中心（龙湖香醍天街店）",
+      "field": "location",
+      "current": {
+        "lat": 34.221652,
+        "lng": 108.88884,
+        "addr": "高楼路与沁水路交汇处东北侧龙湖香醍天街三层（原奥飞欢乐世界）"
+      },
+      "proposed": {
+        "lat": 34.26389,
+        "lng": 109.032696,
+        "note": "use WAHLAP twin 5556 pin. Current pin ~12 km west in 高新/丈八, not 灞桥香醍."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5244",
+      "evidence_quote": "玩乐兽家庭娱乐中心（龙湖香醍天街店） addr=高楼路与沁水路交汇处东北侧龙湖香醍天街三层. Twin WAHLAP 5556 玩乐兽西安灞桥龙湖店 lat=34.26389 lng=109.032696",
+      "note": "Duplicate 5555+5556. Prefer 5556 coords after merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1083,
+      "name": "G2潮玩街区(西安大兴龙湖店)",
+      "field": "other",
+      "current": "separate from 1099 g2街区西安莲湖店; both share lat/lng 34.287171,108.915057",
+      "proposed": "merge with id 1099 (same mall pin; WAHLAP name 莲湖区龙湖星悦汇, BemaniCN 大兴东路龙湖星悦荟3F)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP: g2街区西安莲湖店 | 莲湖区龙湖星悦汇三楼g2街区. BemaniCN s/4398: G2潮玩街区(西安大兴龙湖店) | 大兴东路2-26号龙湖星悦荟3F | maimai_dx x1.",
+      "note": "Keep WAHLAP name, attach bemanicn 4398 and qty 1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1358,
+      "name": "X-in空间动漫游戏体验中心",
+      "field": "other",
+      "current": "listed separately from id 1359 (X-in空间西安雁塔金辉广场店)",
+      "proposed": "duplicate / merge with id 1359",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3758",
+      "evidence_quote": "same 金辉广场 F0173; BC has taiko",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 金辉广场 F0173; BC has taiko",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1563,
+      "name": "乐动时空(M3碧乐城店)(暂停营业)",
+      "field": "other",
+      "current": "listed separately from id 1564 (乐动时空西安雁塔碧乐城店)",
+      "proposed": "duplicate / merge with id 1564",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5658",
+      "evidence_quote": "same M3碧乐城 B1",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same M3碧乐城 B1",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2120,
+      "name": "咔奇咔奇咸阳秦都万达店",
+      "field": "other",
+      "current": "listed separately from id 2122 (咔奇咔奇超乐场(咸阳万达店))",
+      "proposed": "duplicate / merge with id 2122",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6476",
+      "evidence_quote": "same 秦都万达; BC has taiko",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 秦都万达; BC has taiko",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2145,
+      "name": "哆啦乐图西安钟楼店",
+      "field": "other",
+      "current": "listed separately from id 2146 (哆啦乐图钟楼店（文商）)",
+      "proposed": "duplicate / merge with id 2146",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/207",
+      "evidence_quote": "same 文商/骡马市; BC has taiko + higher counts",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 文商/骡马市; BC has taiko + higher counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2237,
+      "name": "嗨爆公园(创意谷店)",
+      "field": "other",
+      "current": "listed separately from id 2238 (嗨爆公园西安曲江创意谷店)",
+      "proposed": "duplicate / merge with id 2238",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6079",
+      "evidence_quote": "same 创意谷 G-A-2",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 创意谷 G-A-2",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2552,
+      "name": "大玩家(西安高新万达店)",
+      "field": "other",
+      "current": "listed separately from id 2617 (大玩家西安雁塔万达店)",
+      "proposed": "duplicate / merge with id 2617",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5657",
+      "evidence_quote": "identical coords; 高新万达=科技七路万达",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). identical coords; 高新万达=科技七路万达",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2840,
+      "name": "天空之城汉中汉台吾悦广场店",
+      "field": "other",
+      "current": "listed separately from id 4698 (汉中吾悦广场天空之城)",
+      "proposed": "duplicate / merge with id 4698",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4138",
+      "evidence_quote": "same 汉中吾悦 3F 天空之城",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 汉中吾悦 3F 天空之城",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3037,
+      "name": "奇奇潮玩(华清广场店)",
+      "field": "other",
+      "current": "listed separately from id 3039 (奇奇潮玩西安碑林华清广场店)",
+      "proposed": "duplicate / merge with id 3039",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3737",
+      "evidence_quote": "same 华清广场 F3",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 华清广场 F3",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3040,
+      "name": "奇奇潮玩西安雁塔际华广场店",
+      "field": "other",
+      "current": "listed separately from id 3041 (奇奇潮玩（际华生活广场店）)",
+      "proposed": "duplicate / merge with id 3041",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6377",
+      "evidence_quote": "same 际华 5F",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 际华 5F",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3130,
+      "name": "好酷好玩动漫电玩城",
+      "field": "other",
+      "current": "listed separately from id 3131 (好酷好玩宝鸡高新财富大厦店)",
+      "proposed": "duplicate / merge with id 3131",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5987",
+      "evidence_quote": "same 财富大厦; BC has taiko",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 财富大厦; BC has taiko",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3492,
+      "name": "幻界之都潮玩街区",
+      "field": "other",
+      "current": "listed separately from id 3494 (幻界之都西安骡马店)",
+      "proposed": "duplicate / merge with id 3494",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5102",
+      "evidence_quote": "same 骡马市1号; BC has taiko",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 骡马市1号; BC has taiko",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3522,
+      "name": "开心季欢乐U约家庭娱乐中心(延安万达店)",
+      "field": "other",
+      "current": "listed separately from id 4610 (欢乐有约延安万达店)",
+      "proposed": "duplicate / merge with id 4610",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6576",
+      "evidence_quote": "same 延安万达 3F name variants",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 延安万达 3F name variants",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3556,
+      "name": "心相映亲子娱乐中心（韩城店）",
+      "field": "other",
+      "current": "listed separately from id 3557 (心相映韩城三立格之荟店)",
+      "proposed": "duplicate / merge with id 3557",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5405",
+      "evidence_quote": "same 三立格之荟 3F",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 三立格之荟 3F",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4830,
+      "name": "泛时空西安荟聚店",
+      "field": "other",
+      "current": "listed separately from id 4831 (泛时空西安雁塔荟聚店)",
+      "proposed": "duplicate / merge with id 4831",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3403",
+      "evidence_quote": "same 荟聚; BC has taiko + counts",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 荟聚; BC has taiko + counts",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4852,
+      "name": "泷威嘉年华(西安凯德广场·新地城店)",
+      "field": "other",
+      "current": "listed separately from id 4853 (泷威嘉年华西安雁塔店)",
+      "proposed": "duplicate / merge with id 4853",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1789",
+      "evidence_quote": "same 凯德新地城 3F",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 凯德新地城 3F",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4901,
+      "name": "润宝梦想潮玩娱乐(西安店)",
+      "field": "other",
+      "current": "listed separately from id 4919 (润宝梦西安未央龙湖天街店)",
+      "proposed": "duplicate / merge with id 4919",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4572",
+      "evidence_quote": "same 未央天街 4F; BC has taiko",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 未央天街 4F; BC has taiko",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5196,
+      "name": "潮玩社(西安万象城店)",
+      "field": "other",
+      "current": "listed separately from id 5221 (潮玩社西安雁塔店)",
+      "proposed": "duplicate / merge with id 5221",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4496",
+      "evidence_quote": "万象城 is the 雁塔 WAHLAP store",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). 万象城 is the 雁塔 WAHLAP store",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5402,
+      "name": "焕游星际家庭娱乐中心",
+      "field": "other",
+      "current": "listed separately from id 5405 (焕游星际西安雁塔立丰城店)",
+      "proposed": "duplicate / merge with id 5405",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5597",
+      "evidence_quote": "same 立丰城 3F; BC has taiko",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 立丰城 3F; BC has taiko",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5457,
+      "name": "爱玩嘉年华西安新城长乐龙湖店",
+      "field": "other",
+      "current": "listed separately from id 5458 (爱玩嘉年华西安龙湖长乐天街店)",
+      "proposed": "duplicate / merge with id 5458",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6617",
+      "evidence_quote": "same 长乐天街",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 长乐天街",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5640,
+      "name": "环游乐园渭南临渭店",
+      "field": "other",
+      "current": "listed separately from id 5642 (环游乐园（宏帆店）)",
+      "proposed": "duplicate / merge with id 5642",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2555",
+      "evidence_quote": "same 宏帆广场",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 宏帆广场",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1266,
+      "name": "SUPER ALL DAY潮玩运动街区（宝鸡金台万达店）",
+      "field": "other",
+      "current": "listed separately from id 5254 (潮玩街区宝鸡金台万达店)",
+      "proposed": "duplicate / merge with id 5254",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5553",
+      "evidence_quote": "same 金台万达 5F maimai",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 金台万达 5F maimai",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1275,
+      "name": "SUPER101壹零壹潮漫电玩(渭南吾悦店)",
+      "field": "other",
+      "current": "listed separately from id 2483 (壹零壹渭南临渭吾悦店)",
+      "proposed": "duplicate / merge with id 2483",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6580",
+      "evidence_quote": "same 渭南吾悦 5F",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 渭南吾悦 5F",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2472,
+      "name": "壹城潮玩榆林绥德联丰百货店",
+      "field": "other",
+      "current": "listed separately from id 2475 (壹城电玩)",
+      "proposed": "duplicate / merge with id 2475",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5797",
+      "evidence_quote": "same 绥德文化广场 2F",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 绥德文化广场 2F",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2728,
+      "name": "天空之城·多奇妙儿童乐园(西咸吾悦店)",
+      "field": "other",
+      "current": "listed separately from id 2900 (天空之城西安西咸吾悦店)",
+      "proposed": "duplicate / merge with id 2900",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4610",
+      "evidence_quote": "same 西咸吾悦 3F 多奇妙/天空之城",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 西咸吾悦 3F 多奇妙/天空之城",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2834,
+      "name": "天空之城李家村万达店",
+      "field": "other",
+      "current": "listed separately from id 2899 (天空之城西安碑林店)",
+      "proposed": "duplicate / merge with id 2899",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3215",
+      "evidence_quote": "same 李家村万达 2F-A-A",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 李家村万达 2F-A-A",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5555,
+      "name": "玩乐兽家庭娱乐中心（龙湖香醍天街店）",
+      "field": "other",
+      "current": "listed separately from id 5556 (玩乐兽西安灞桥龙湖店)",
+      "proposed": "duplicate / merge with id 5556",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5244",
+      "evidence_quote": "same 香醍天街 3F; fix pin via 5556",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 香醍天街 3F; fix pin via 5556",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1368,
+      "name": "Xin空间宝鸡高新店",
+      "field": "other",
+      "current": "listed separately from id 3367 (宝鸡X-in空间(星空间)动漫游戏体验中心(高新天下汇店))",
+      "proposed": "duplicate / merge with id 3367",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1291",
+      "evidence_quote": "same 高新天下汇 4F",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 高新天下汇 4F",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3561,
+      "name": "忆童乐榆林神木成业广场店",
+      "field": "other",
+      "current": "listed separately from id 3668 (愉乐星球 潮玩世界)",
+      "proposed": "duplicate / merge with id 3668",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3753",
+      "evidence_quote": "same 神木成业广场 3F; possible rebrand or co-list",
+      "note": "WAHLAP+BemaniCN dual listing or name-variant pair. Prefer WAHLAP-named row when both exist; attach bemanicn link and extra games (often taiko). same 神木成业广场 3F; possible rebrand or co-list",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4699,
+      "name": "汉中游戏大魔方吾悦广场店",
+      "field": "other",
+      "current": "same coords as 2840/4698 天空之城 and near 4966 游戏大魔方汉中汉台吾悦店",
+      "proposed": "likely same venue as id 4966 (游戏大魔方汉中汉台吾悦店); NOT the same as 天空之城 2840/4698",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2607",
+      "evidence_quote": "汉中游戏大魔方吾悦广场店 vs WAHLAP 游戏大魔方汉中汉台吾悦店 both at 吾悦广场3楼; 天空之城 is separate Z06铺",
+      "note": "汉中吾悦 hosts at least two rhythm venues: 天空之城 and 游戏大魔方. Collapse 4699 into 4966 only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2726,
+      "name": "天空之城·多奇妙儿童乐园",
+      "field": "other",
+      "current": "identical coords to 4957 游戏大魔方家庭娱乐MALL and near 2805/4956",
+      "proposed": "keep separate from 游戏大魔方 (different brand); merge 2726 with 2805 天空之城宝鸡渭滨吾悅广场店",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4666",
+      "evidence_quote": "天空之城·多奇妙儿童乐园 addr=吾悦广场三楼; 游戏大魔方家庭娱乐MALL s/5449 addr=渭滨大道吾悦广场二楼西厅 - different floors/brands",
+      "note": "宝鸡渭滨吾悦: 天空之城 on 3F, 游戏大魔方 on 2F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4957,
+      "name": "游戏大魔方家庭娱乐MALL",
+      "field": "other",
+      "current": "identical coords to 2726 天空之城; near 4956 游戏大魔方宝鸡渭滨吾悦店",
+      "proposed": "merge with id 4956 (游戏大魔方宝鸡渭滨吾悦店); keep separate from 天空之城",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5449",
+      "evidence_quote": "游戏大魔方家庭娱乐MALL addr=渭滨大道吾悦广场二楼西厅; WAHLAP 游戏大魔方宝鸡渭滨吾悦店 2楼",
+      "note": "Same brand twin at 宝鸡吾悦 2F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1359,
+      "name": "X-in空间西安雁塔金辉广场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3758",
+      "evidence_quote": "X-in空间动漫游戏体验中心 maimai_dx x2; chunithm x2; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2120,
+      "name": "咔奇咔奇咸阳秦都万达店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6476",
+      "evidence_quote": "咔奇咔奇超乐场(咸阳万达店) maimai_dx x2; chunithm x2; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2145,
+      "name": "哆啦乐图西安钟楼店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/207",
+      "evidence_quote": "哆啦乐图钟楼店（文商） maimai_dx x4; chunithm x4; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4831,
+      "name": "泛时空西安雁塔荟聚店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3403",
+      "evidence_quote": "泛时空西安荟聚店 maimai_dx x3; chunithm x2; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4919,
+      "name": "润宝梦西安未央龙湖天街店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4572",
+      "evidence_quote": "润宝梦想潮玩娱乐(西安店) maimai_dx x2; chunithm x2; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5405,
+      "name": "焕游星际西安雁塔立丰城店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5597",
+      "evidence_quote": "焕游星际家庭娱乐中心 maimai_dx x2; chunithm x2; taiko x1 | updated 2026-07-25",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2617,
+      "name": "大玩家西安雁塔万达店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5657",
+      "evidence_quote": "大玩家(西安高新万达店) maimai_dx x1; taiko x1 | updated 2026-07-30",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3131,
+      "name": "好酷好玩宝鸡高新财富大厦店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5987",
+      "evidence_quote": "好酷好玩动漫电玩城 maimai_dx x1; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3494,
+      "name": "幻界之都西安骡马店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5102",
+      "evidence_quote": "幻界之都潮玩街区 maimai_dx x1; taiko x1",
+      "note": "BemaniCN twin lists taiko; after merge include taiko on the kept row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2146,
+      "name": "哆啦乐图钟楼店（文商）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/207",
+      "evidence_quote": "start_time=11 end_time=24",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2428,
+      "name": "城市英雄西安熙地港店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1382",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2429,
+      "name": "城市英雄西安龙首印象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1915",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4830,
+      "name": "泛时空西安荟聚店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3403",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5402,
+      "name": "焕游星际家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5597",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2122,
+      "name": "咔奇咔奇超乐场(咸阳万达店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6476",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2134,
+      "name": "咖喱窝×未来盒子",
+      "field": "hours",
+      "current": null,
+      "proposed": "24 hours / self-serve membership",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1680",
+      "evidence_quote": "start_time=1 end_time=24; comment 目前为24h自助登记运营模式",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3989,
+      "name": "星界玩家(西安万象天地店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-03:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5986",
+      "evidence_quote": "start_time=10 end_time=3",
+      "note": "BemaniCN start_time/end_time integers. Community-maintained; mall hours may override late nights.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2146,
+      "name": "哆啦乐图钟楼店（文商）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": 0.5,
+        "maimai_dx": "5 coins/play (~CNY 2.50)",
+        "chunithm": "6 coins/play (~CNY 3.00)",
+        "taiko": "8 coins/play (~CNY 4.00)",
+        "pay": "card only (from ~2025-03-26 per comment)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/207",
+      "evidence_quote": "price=0.5; maimai coin=5; chunithm coin=6; taiko coin=8; comment: 从3月26日起，文商改用刷卡方式游玩，取消原有投币方式游玩",
+      "note": "Token unit and per-title coin counts from BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "电玩橙西安雁塔大悦城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电玩橙西安雁塔大悦城店",
+        "addr": "陕西省西安市雁塔区曲江新区慈恩路777号曲江大悦城购物中心L3-48号商铺",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2316",
+      "evidence_quote": "电玩橙西安雁塔大悦城店 | maimai_dx x2; chunithm x2 | also on WAHLAP maimai + chunithm | (原闪电部落)",
+      "note": "WAHLAP official for both titles + BemaniCN s/2316.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "电玩橙超乐场西安小寨国贸店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电玩橙超乐场西安小寨国贸店",
+        "addr": "西安市雁塔区小寨东路196号西安国际贸易中心众汇食代广场小寨国贸店二层L2-1-10号商铺",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6627",
+      "evidence_quote": "电玩橙超乐场（小寨国贸店） maimai_dx x1 | WAHLAP: 电玩橙超乐场西安小寨国贸店 | updated 2026-07-20",
+      "note": "Official WAHLAP maimai + live BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "电玩橙西安雁塔店 / 电玩橙西安莲湖元谷mall店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电玩橙西安雁塔店 / 电玩橙西安莲湖元谷mall店",
+        "addr": "陕西省西安市雁塔区昆明路616号3楼电玩橙元谷mall店",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3042",
+      "evidence_quote": "电玩橙西安莲湖元谷mall店 maimai_dx x2 | WAHLAP name 电玩橙西安雁塔店 same 昆明路616号3楼 | updated 2026-07-28",
+      "note": "WAHLAP and BemaniCN disagree on district label but same address 元谷mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "电玩橙西安曲江银泰店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电玩橙西安曲江银泰店",
+        "addr": "陕西省西安市曲江新区雁塔南路410号银泰城商业广场B1层B1-35号",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai: 电玩橙西安曲江银泰店 | 曲江新区雁塔南路410号银泰城商业广场B1层B1-35号",
+      "note": "WAHLAP official only in this research pass; no BemaniCN name match in live Shaanxi index.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玲珑锁西安雁塔大茂城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玲珑锁西安雁塔大茂城店",
+        "addr": "陕西省西安市雁塔区丈八北路大茂城5楼5012铺",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai + chunithm both list 玲珑锁西安雁塔大茂城店 | 丈八北路大茂城5楼5012铺",
+      "note": "Same mall also has BemaniCN 电玩橙大茂城 s/2968. Possibly rebrand or two operators.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "电玩橙西安雁塔大茂城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电玩橙西安雁塔大茂城店",
+        "addr": "丈八北路科技路口大茂城5F",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2968",
+      "evidence_quote": "电玩橙西安雁塔大茂城店 maimai_dx x1; chunithm x2; other x1 | updated 2026-07-24",
+      "note": "May be same floor as WAHLAP 玲珑锁. Decide merge vs two stores after name check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "顽楽引擎(西安大明宫万达店) / 顽樂引擎西安店 / 顽乐引擎西安大明宫店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "顽楽引擎(西安大明宫万达店) / 顽樂引擎西安店 / 顽乐引擎西安大明宫店",
+        "addr": "陕西省西安市未央区太华北路369号大明宫万达广场二楼 / 娱乐楼Z-2F-AA",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7101",
+      "evidence_quote": "顽楽引擎(西安大明宫万达店) maimai_dx x2; chunithm x2 | WAHLAP lists 顽樂引擎西安店 (maimai+chunithm) and 顽乐引擎西安大明宫店 (maimai)",
+      "note": "One venue with dual WAHLAP name spellings (樂/楽/乐). Not in shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "虎阿游咸阳秦都店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "虎阿游咸阳秦都店",
+        "addr": "陕西省咸阳市秦都区人民路29号秦都万达广场3楼3F-A虎阿游",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4579",
+      "evidence_quote": "虎阿游(咸阳秦都万达店) maimai_dx x1 | WAHLAP: 虎阿游咸阳秦都店 same 秦都万达 3F-A",
+      "note": "Different brand from 咔奇咔奇 on 2F of same mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "虎阿游渭南高新万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "虎阿游渭南高新万达店",
+        "addr": "陕西省渭南市高新技术产业开发区新区东路28号渭南高新万达2F-A虎阿游家庭游乐中心",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4787",
+      "evidence_quote": "虎阿游（渭南高新万达广场） maimai_dx x1 | WAHLAP: 虎阿游渭南高新万达店 | updated 2026-07-14",
+      "note": "Not the same as 游戏大魔方渭南临渭万达 (4969).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起咸阳店 / 风云再起（咸阳正兴广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起咸阳店 / 风云再起（咸阳正兴广场店）",
+        "addr": "咸阳市秦都区正兴广场三楼风云再起 / 电影院十字人民中路11号正兴广场3层",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/618",
+      "evidence_quote": "风云再起（咸阳正兴广场店） maimai_dx x2; taiko x1 | WAHLAP: 风云再起咸阳店 | comment 2025.10.1更新",
+      "note": "WAHLAP maimai + BemaniCN with taiko.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "都市玩家西安太白印象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "都市玩家西安太白印象城店",
+        "addr": "陕西省西安市碑林区太白印象城负一楼 / 二环南路西段155号太白印象城B1",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1315",
+      "evidence_quote": "都市玩家 家庭娱乐体验中心 maimai_dx x1 | WAHLAP: 都市玩家西安太白印象城店 | updated 2026-07-13",
+      "note": "Different from 大世界西安太白印象城店 (2507) which is L2 in same mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "识光机潮玩西安未央印象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "识光机潮玩西安未央印象城店",
+        "addr": "陕西省西安市未央区辛家庙浐灞印象城4楼识光机潮玩",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5594",
+      "evidence_quote": "识光机潮玩（印象城店） maimai_dx x1 | WAHLAP: 识光机潮玩西安未央印象城店 | comment 已经7月4日开业",
+      "note": "WAHLAP address text has typo 铲灞 vs 浐灞.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "疯狂集玩社西安卜蜂中心长和店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "疯狂集玩社西安卜蜂中心长和店",
+        "addr": "陕西省西安市未央区张家堡街道卜蜂中心长和店(西北门)三楼疯狂集玩社",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai: 疯狂集玩社西安卜蜂中心长和店 | 卜蜂中心长和店(西北门)三楼",
+      "note": "WAHLAP official only; not found under that name in BemaniCN Shaanxi city index.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "维鲸传奇渭南大荔悦荟店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "维鲸传奇渭南大荔悦荟店",
+        "addr": "陕西省渭南市大荔县悦荟广场二楼维鲸传奇家庭娱乐中心",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai: 维鲸传奇渭南大荔悦荟店 | 大荔县悦荟广场二楼",
+      "note": "Official WAHLAP; no BemaniCN match under that name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "西安市酷顽码头电玩城",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "西安市酷顽码头电玩城",
+        "addr": "陕西省西安市未央区艾斯广场一楼酷顽码头电玩城",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai: 西安市酷顽码头电玩城 | 未央区艾斯广场一楼",
+      "note": "WAHLAP official only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "游戏大魔方西安未央吾悦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "游戏大魔方西安未央吾悦店",
+        "addr": "陕西省西安市未央区和平村西咸吾悦广场6楼游戏大魔方",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai: 游戏大魔方西安未央吾悦店 | 西咸吾悦广场6楼游戏大魔方",
+      "note": "Distinct from 天空之城西安西咸吾悦店 (3F) and 游戏大魔方西安店 (乐荟).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "雁窝-西安小寨店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "雁窝-西安小寨店",
+        "addr": "陕西省西安市雁塔区世纪经典大厦A座1005",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "approx": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4608",
+      "evidence_quote": "雁窝-西安小寨店 maimai_dx x2; chunithm x1 | hours 0-24 | membership-style comment | updated 2026-06-09",
+      "note": "BemaniCN only (not on WAHLAP Shaanxi pull). Private/semi-private 24h listing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "西安元气满满益田假日店 (原闪电部落益田假日店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "西安元气满满益田假日店 (原闪电部落益田假日店)",
+        "addr": "长乐西路166号西安益田假日世界L3-13号商铺 / 新城区长乐东路益田假日广场F3",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5191",
+      "evidence_quote": "西安元气满满益田假日店 maimai_dx x1 | comment 已开业，原闪电部落（益田假日店） | WAHLAP still lists 闪电部落西安新城益田假日店",
+      "note": "Likely rebrand: WAHLAP 闪电部落 vs BemaniCN 元气满满 at 益田假日.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "韩城潮玩运动（阳光）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "韩城潮玩运动（阳光）",
+        "addr": "陕西省渭南市韩城市文化中心阳光超市1楼潮玩运动",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "maimai_dx"
+        ],
+        "approx": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4605",
+      "evidence_quote": "韩城潮玩运动（阳光） maimai_dx x1 | comment 韩城第一台舞萌dx落地了 | updated 2026-07-27",
+      "note": "BemaniCN only. Different from 心相映韩城 at 三立格之荟.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "绿野清风（汉中万邦店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "绿野清风（汉中万邦店）",
+        "addr": "汉中路街道天汉大道999号(太白路与天汉大道十字西北角)五楼",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "taiko"
+        ],
+        "approx": true
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1637",
+      "evidence_quote": "绿野清风（汉中万邦店） taiko x1 v=12亚洲版 | comment 就一台太鼓达人，机况差不多寄了 | updated 2025-11-29",
+      "note": "Taiko-only, community, last update Nov 2025. Cab condition nearly dead. Low priority.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "竞动力儿童游乐场（西安龙首印象城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "竞动力儿童游乐场（西安龙首印象城店）",
+        "addr": "张家堡街道未央路33号龙首印象城3楼 L3-15A-01铺位",
+        "country": "China",
+        "pref": "陕西",
+        "games": [
+          "taiko"
+        ],
+        "approx": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6662",
+      "evidence_quote": "竞动力儿童游乐场（西安龙首印象城店） taiko x1 v=国行虹版 | 真快活旗下 | updated 2026-07-30",
+      "note": "Taiko in same mall as 城市英雄龙首 (2429). Family entertainment, not full arcade.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

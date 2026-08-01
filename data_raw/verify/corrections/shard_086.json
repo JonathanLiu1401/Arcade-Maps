@@ -1,0 +1,975 @@
+{
+  "shard": 86,
+  "checked": 87,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001 (ALL.Net maimai intl Taiwan)",
+    "https://location.am-all.net/alm/location?gm=104 (ALL.Net CHUNITHM intl Taiwan, via cached allnet_tw.json)",
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12 (ALL.Net maimai JP Tokyo for WGC)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=South%20Korea",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+    "https://map.bemanicn.com/s/{id} (26 linked China shops via X-Inertia JSON)",
+    "https://x50.fun/",
+    "https://wgc.me/",
+    "https://wgc.me/access",
+    "https://www.tomsworld.com.tw/store_detail.aspx?storeid=92&modid=4&mnuid=1109",
+    "https://www.tomsworld.com.tw/store.aspx?mnuid=1109&modid=4"
+  ],
+  "corrections": [
+    {
+      "id": 11094,
+      "name": "湯姆熊高雄六合店 Tom's World",
+      "field": "location",
+      "current": {
+        "addr": "? Tainan City Tainan, ?, Tainan City",
+        "lat": 22.985213911755,
+        "lng": 120.23122049486
+      },
+      "proposed": {
+        "addr": "NO.132, LIUHE 2ND RD.,QIANJIN DISTRICT, KAOHSIUNG",
+        "city": "Kaohsiung",
+        "note": "Match ALL.Net TOM'S WORLD(LIUHE@KAOHSIUNG); pin must leave Tainan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(LIUHE@KAOHSIUNG) - NO.132, LIUHE 2ND RD.,QIANJIN DISTRICT, KAOHSIUNG",
+      "note": "App name is Kaohsiung Liuhe but ZIv row and pin are Tainan. Official Tom's World store list also includes 高雄六合店. Coordinates need re-geocode of the Liuhe address (do not invent coords).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11094,
+      "name": "湯姆熊高雄六合店 Tom's World",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "chunithm",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(LIUHE@KAOHSIUNG) appears on BOTH Taiwan maimai (gm=98) and CHUNITHM intl (gm=104) ALL.Net lists",
+      "note": "After fixing identity to Kaohsiung Liuhe, ALL.Net also lists CHUNITHM for this store. App currently omits chunithm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11083,
+      "name": "X50 MGS TAIPEI",
+      "field": "location",
+      "current": {
+        "lat": 25.0329694,
+        "lng": 121.5654177,
+        "addr": "No.49, Emei St., Wanhua Dist., Taipei City 108, Taiwan (R.O.C.)"
+      },
+      "proposed": {
+        "lat": null,
+        "lng": null,
+        "note": "Current pin is near Xinyi/Taipei 101 (~121.56), not Wanhua Emei St (~121.50). Re-geocode address; do not keep current lat/lng."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "X50 MGS TAIPEI addr No.49, Emei St., Wanhua Dist., Taipei City 108 (ALL.Net also carries the same wrong lat/lng 25.0329694,121.5654177)",
+      "note": "Address district is Wanhua; stored coordinates match Xinyi, not Wanhua. ALL.Net itself has the bad coords, so re-geocode from address text.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11082,
+      "name": "X50 MGS KAOHSIUNG",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "No.1-12, Chongcing St., Sanmin Dist., Kaohsiung City 807010"
+      },
+      "proposed": {
+        "note": "Needs geocode of Chongcing St / Sanmin Kaohsiung. ALL.Net has 0.0,0.0."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "X50 MGS KAOHSIUNG No.1-12, Chongcing St., Sanmin Dist., Kaohsiung City 807010 lat=0.0 lng=0.0",
+      "note": "Venue exists on ALL.Net for maimai and CHUNITHM but has no usable coordinates in app or ALL.Net.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11067,
+      "name": "TOM'S WORLD(SHANG-SHUN WORLD@MIAOLI)",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "6F., No.105, Zhongyang Rd., Toufen City, Miaoli County 35157"
+      },
+      "proposed": {
+        "note": "Geocode Toufen Shang-Shun address. ALL.Net also has null coords."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(SHANG-SHUN WORLD@MIAOLI) 6F., No.105, Zhongyang Rd., Toufen City, Miaoli County 35157 (still listed on maimai intl)",
+      "note": "Still on ALL.Net so likely open; pin missing in app.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11065,
+      "name": "TOM'S WORLD(MITSUKOSHI@ZUOYING 2F)",
+      "field": "location",
+      "current": {
+        "lat": 22.6877358,
+        "lng": 120.2916524,
+        "addr": "2F.No.123,GaotieRd.,Zuoying Dist.,KaohsiungCity81361"
+      },
+      "proposed": {
+        "note": "Same mall address as 10F entry (id 11064 at 22.6884719,120.3100475). 2F pin is ~2km west; should share mall footprint with 10F."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(MITSUKOSHI@ZUOYING 2F) and 10F both at No.123 Gaotie Rd Zuoying; both still on ALL.Net maimai (2F also on CHUNITHM)",
+      "note": "2F and 10F are different floors of the same Mitsukoshi Zuoying; large lng delta is almost certainly a bad geocode for 2F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11084,
+      "name": "X50 Music Game Station (First store)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "西門一店 ... SEGA maimaiDX 3組; KONAMI SDVX Valkyire 4 組; KONAMI DDR Gold 1 組; KONAMI Beatmania IIDX LM 1 組; KONAMI pop'n music 1 組; KONAMI Jubeat 1 組",
+      "note": "Official site lists 3x maimai DX at 一店. GITADORA is on ZIv (2025-04-19) but not on the official homepage machine list; leave gitadora unless maintainers prefer official-only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11084,
+      "name": "X50 Music Game Station (First store)",
+      "field": "game_counts",
+      "current": {
+        "ddr": 1,
+        "gitadora": 2,
+        "iidx": 2,
+        "jubeat": 1,
+        "popn": 1,
+        "sdvx": 4
+      },
+      "proposed": {
+        "ddr": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "maimai_dx": 3,
+        "popn": 1,
+        "sdvx": 4
+      },
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "maimaiDX 3組; SDVX Valkyire 4 組; DDR Gold 1 組; IIDX LM 1 組; pop'n 1 組; Jubeat 1 組",
+      "note": "Official: IIDX LM 1 (app has 2 from older ZIv comment '2 machines'). ZIv 2025-04 still says 2 IIDX streaming machines; official homepage says 1 LM. Prefer official for count, mark conflict in note. GITADORA count not on official site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11084,
+      "name": "X50 Music Game Station (First store)",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": 1,
+        "sdvx_vm": 1
+      },
+      "proposed": {
+        "ddr_gold": 1,
+        "iidx_lm": 1,
+        "sdvx_vm": 4
+      },
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "KONAMI SDVX Valkyire 4 組; KONAMI DDR Gold 1 組; KONAMI Beatmania IIDX LM 1 組",
+      "note": "sdvx_vm quantity 4 matches official Valkyrie count; app only stored flag-like 1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11085,
+      "name": "X50 Music Game Station (Second store)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "nostalgia",
+        "project_diva",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "nostalgia",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "西門二店 ... NAMCO 太鼓之達人 2組; SEGA maimaiDX 2組; SEGA CHUNITHM 6組; SEGA Project Diva Arcade 1 組; KONAMI Nostalgia 1 組",
+      "note": "Official site lists maimai DX at 二店; app omits it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11085,
+      "name": "X50 Music Game Station (Second store)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 6,
+        "nostalgia": 3,
+        "project_diva": 1,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 6,
+        "maimai_dx": 2,
+        "nostalgia": 1,
+        "project_diva": 1,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "太鼓之達人 2組; maimaiDX 2組; CHUNITHM 6組; Project Diva Arcade 1 組; Nostalgia 1 組",
+      "note": "Nostalgia official count is 1; app 3 comes from older ZIv comment (likely overcount or multi-cab misread).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11086,
+      "name": "X50 Music Game Station (Zeroth store)",
+      "field": "status",
+      "current": "listed open with maimai_dx x5",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "Official homepage only lists 西門一店 and 西門二店 (no zeroth/third store section)",
+      "note": "ZIv 9869 (updated 2025-03-23) still lists 5x maimai DX at Wuchang Sec.2 No.101, and a ZIv comment on first store said maimai moved to a 3rd location. Official site does not list it. Cannot confirm closed; flag for human check. ALL.Net separate entry X50 MGS TAIPEI is Emei St (id 11083), not this address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11084,
+      "name": "X50 Music Game Station (First store)",
+      "field": "hours",
+      "current": "Mon-Sun 00:00-23:59",
+      "proposed": "24H",
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "西門一店 ... 24H營業",
+      "note": "Official confirms 24H.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11085,
+      "name": "X50 Music Game Station (Second store)",
+      "field": "hours",
+      "current": "Mon-Sun 00:00-23:59",
+      "proposed": "24H",
+      "confidence": "certain",
+      "evidence_url": "https://x50.fun/",
+      "evidence_quote": "西門二店 ... 24H營業",
+      "note": "Official confirms 24H.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11092,
+      "name": "樂吉獅歡樂世界",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6758",
+      "evidence_quote": "ZIv machines: only maimai FiNALE; lastUpdateTime 2024-06-17. Not present on ALL.Net Taiwan maimai intl list (98 venues).",
+      "note": "FiNALE network ended 2019/2020. Venue not on current ALL.Net. 'other' claim is only the dead FiNALE row. Likely no live SEGA rhythm service; consider status closed or remove rhythm claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11092,
+      "name": "樂吉獅歡樂世界",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "unverified_possibly_closed",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "arcade id 6758 lastUpdateTime 2024-06-17, only machine maimai FiNALE; absent from ALL.Net TW maimai list",
+      "note": "Could not find an official live listing. Do not assert closed without a stronger local source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11087,
+      "name": "Xiang Ding Dang (响叮噹)",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "stale_unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "arcade id 4650 lastUpdateTime 2020-02-19; machines include 太鼓の達人12, Initial D 8, Mario Kart GP2",
+      "note": "More than 6 years since last ZIv update. Cannot verify still open. Travel risk high.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11070,
+      "name": "TOM'S WORLD(SKM PARK @KAOHSIUNGB1)",
+      "field": "other",
+      "current": {
+        "src": [
+          "allnet",
+          "ziv"
+        ],
+        "ziv_name": "FUNBOX (大魯閣新光outlet)",
+        "games": [
+          "maimai_dx",
+          "other"
+        ]
+      },
+      "proposed": {
+        "note": "ZIv 9283 is FUNBOX/Pri Chan and comment suspects closure (Samsonite replacement). ALL.Net still lists TOM'S WORLD SKM B1 for maimai. Do not merge ZIv Pri Chan 'other' as proof Tom's is closed."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "FUNBOX information: looks like a Samsonite store has replaced it; lastUpdate 2024-09-03; ALL.Net still has TOM'S WORLD(SKM PARK @KAOHSIUNGB1)",
+      "note": "Possible identity collision between FUNBOX and Tom's at SKM. Official ALL.Net still services maimai at Tom's SKM B1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11072,
+      "name": "TOM'S WORLD(TOM'S WORLD TAROKO MALL)",
+      "field": "other",
+      "current": {
+        "notes_mention_finale": true,
+        "games": [
+          "maimai_dx",
+          "other",
+          "pump_it_up",
+          "taiko"
+        ]
+      },
+      "proposed": {
+        "note": "Keep maimai_dx. App notes mention maimai FiNALE from ZIv; ALL.Net confirms live DX at Taroko Mall 10F."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(TOM'S WORLD TAROKO MALL) still on maimai DX intl list at 10 F, No.186, Sec.4, Fuxing Rd, East Dist, Taichung",
+      "note": "FiNALE note is stale. No game removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11089,
+      "name": "力堡遊樂園",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "ddr",
+          "gitadora",
+          "iidx",
+          "jubeat",
+          "maimai_dx",
+          "nostalgia",
+          "sdvx",
+          "taiko",
+          "wacca"
+        ]
+      },
+      "proposed": {
+        "note": "SEGA titles confirmed on ALL.Net as LIBAO COMPANY. Konami/WACCA/taiko still only from ZIv 2024-06."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "LIBAO COMPANY NO.50-1,SEC.1,ZHONGXIAO W.RD.,ZHONGZHENG DIST., TAIPEI CITY100 on maimai and CHUNITHM ALL.Net",
+      "note": "No removal. Alias: ALL.Net name is LIBAO COMPANY.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5778,
+      "name": "电玩橙西安曲江银泰店",
+      "field": "status",
+      "current": "open (wahlap maimai_dx)",
+      "proposed": "relocated_or_closed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3042",
+      "evidence_quote": "电玩橙西安莲湖元谷mall店 comment: 23年12月22日开业，机器从银泰搬过来的 (updated_at 2026-07-28; status=1)",
+      "note": "BemaniCN states machines at 元谷mall (id 5779) were moved from 银泰 in Dec 2023. WAHLAP-only 银泰 entry is likely a stale pre-move listing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5781,
+      "name": "电玩橙西安雁塔店",
+      "field": "location",
+      "current": {
+        "name": "电玩橙西安雁塔店",
+        "addr": "陕西省西安市雁塔区昆明路616号3楼电玩橙元谷mall店"
+      },
+      "proposed": {
+        "name": "电玩橙西安雁塔大茂城店",
+        "addr": "丈八北路科技路口大茂城5F"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2968",
+      "evidence_quote": "name=电玩橙西安雁塔大茂城店 address=丈八北路科技路口大茂城5F status=1 updated 2026-07-24; arcades maimai qty1 chunithm qty2 鼓王 qty1",
+      "note": "App address wrongly says 元谷mall and 昆明路; BemaniCN places this shop at 大茂城 5F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7031,
+      "name": "闪电部落西安新城益田假日店",
+      "field": "status",
+      "current": "open (wahlap)",
+      "proposed": "rebranded_or_duplicate_of_6471",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5191",
+      "evidence_quote": "西安元气满满益田假日店 address=长乐西路166号西安益田假日世界L3-13号商铺 comment: 已开业，原闪电部落（益田假日店）。 status=1 updated 2026-06-29",
+      "note": "Same mall pin as 6471 元气满满. BemaniCN says former 闪电部落. Keep 6471; 7031 is stale WAHLAP name for same venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6778,
+      "name": "都市玩家西安太白印象城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6769,
+        "same_latlng": [
+          34.236865,
+          108.917251
+        ]
+      },
+      "proposed": "merge_into_6769",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1315",
+      "evidence_quote": "都市玩家 家庭娱乐体验中心 address=二环南路西段155号太白印象城B1 status=1 maimai qty=1",
+      "note": "6769 (bemanicn) and 6778 (wahlap) share identical coordinates and mall. Duplicate rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7118,
+      "name": "顽乐引擎西安大明宫店",
+      "field": "other",
+      "current": {
+        "duplicate_cluster": [
+          7118,
+          7119,
+          7121
+        ],
+        "same_latlng": [
+          34.316891,
+          108.968036
+        ]
+      },
+      "proposed": "merge_into_7119",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7101",
+      "evidence_quote": "顽楽引擎(西安大明宫万达店) 大明宫街道太华北路369号大明宫万达商场2楼扶梯旁 status=1; maimai 2, CHUNITHM 2, maimai FiNALE 1",
+      "note": "Three rows for one Wanda shop: two WAHLAP spellings + one BemaniCN. Prefer 7119 (richest game data).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7121,
+      "name": "顽樂引擎西安店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7119
+      },
+      "proposed": "merge_into_7119",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7101",
+      "evidence_quote": "Same 大明宫万达 2F venue as 7119; WAHLAP alternate name only",
+      "note": "Duplicate of 7119.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7119,
+      "name": "顽楽引擎(西安大明宫万达店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7101",
+      "evidence_quote": "arcades: title_id 1 maimai DX qty 2; title_id 3 CHUNITHM qty 2; title_id 2 maimai FINALE qty 1",
+      "note": "Confirms chunithm+maimai_dx. FiNALE still listed as separate title_id 2 (legacy cab). app 'other' covers FiNALE.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7176,
+      "name": "风云再起太原老鼠街店",
+      "field": "status",
+      "current": "open (wahlap maimai)",
+      "proposed": "likely_replaced_by_7100",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6824",
+      "evidence_quote": "青丘山游乐（太原柳巷店） comment: 在原来风云再起柳巷店的右下面... 大部分是原来风云柳巷店和茂业店的机子; status=1 updated 2026-07-24; maimai 3 taiko 2",
+      "note": "Same pin as 7100 青丘山. Community text says machines came from former 风云再起 柳巷/老鼠街. Treat 7176 as closed/replaced by 7100.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7175,
+      "name": "风云再起太原东方商夏店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7226,
+        "same_latlng": [
+          37.867267,
+          112.560372
+        ]
+      },
+      "proposed": "merge_into_7226",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2800",
+      "evidence_quote": "风云再起（太原钟楼街店） address=柳巷街道钟楼10号L122-L322 status=1; maimai 3 CHUNITHM 2 taiko 1",
+      "note": "东方商夏 is the mall name for 钟楼街10号. Same coordinates as BemaniCN 钟楼街店 7226. Prefer 7226.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7351,
+      "name": "鸿艺忻州原平京原北路店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7350,
+        "same_latlng": [
+          38.729901,
+          112.714
+        ]
+      },
+      "proposed": "merge_into_7350",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7164",
+      "evidence_quote": "鸿艺动漫潮玩馆（原大渔玩家） 北城街道京原北路105号 status=1 maimai qty 1 updated 2026-07-22",
+      "note": "WAHLAP 7351 and BemaniCN 7350 are the same 原平 京原北路 shop.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7055,
+      "name": "阿凡达潮玩荟吕梁文水茂盛鑫都店",
+      "field": "other",
+      "current": {
+        "near_duplicate_of": 7053
+      },
+      "proposed": "merge_into_7053",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6630",
+      "evidence_quote": "阿凡达潮玩荟(文水店) 文水县凤城镇东大街十字路口西南角茂盛鑫都第06、07、08号商铺 status=1 maimai 1",
+      "note": "7053/7055 both 文水 茂盛鑫都, coords within ~80m. WAHLAP vs BemaniCN dual ingest.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7066,
+      "name": "阿凡达电玩山西太原柳巷店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7065
+      },
+      "proposed": "merge_into_7065",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/120",
+      "evidence_quote": "阿凡达电玩城（柳巷店） 柳巷南路长风剧场对面流行前线4楼 status=1; maimai 1 CHUNITHM 2 taiko 1 updated 2026-07-31",
+      "note": "Same 工贸大厦/流行前线 4F as WAHLAP 7066.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5782,
+      "name": "电玩橙超乐场西安小寨国贸店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6627",
+      "evidence_quote": "start_time=10 end_time=23; comment also 营业时间10:00-22:00 (comment conflicts with end_time 23)",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7080,
+      "name": "雁窝-西安小寨店",
+      "field": "hours",
+      "current": null,
+      "proposed": "00:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4608",
+      "evidence_quote": "start_time=0 end_time=24",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7226,
+      "name": "风云再起（太原钟楼街店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2800",
+      "evidence_quote": "start_time=10 end_time=24",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7065,
+      "name": "阿凡达电玩城（柳巷店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/120",
+      "evidence_quote": "start_time=10 end_time=24",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7100,
+      "name": "青丘山游乐（太原柳巷店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6824",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5779,
+      "name": "电玩橙西安莲湖元谷mall店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3042",
+      "evidence_quote": "status=1 start_time=10 end_time=22 updated_at 2026-07-28; maimai quantity 2",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5780,
+      "name": "电玩橙西安雁塔大悦城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2316",
+      "evidence_quote": "status=1 start_time=10 end_time=22; maimai qty 2 CHUNITHM qty 2 updated 2026-04-05",
+      "note": "BemaniCN start_time/end_time fields (hours as integers). Community source, not chain official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5748,
+      "name": "玲珑锁西安雁塔大茂城店",
+      "field": "other",
+      "current": {
+        "addr": "陕西省西安市雁塔区丈八北路大茂城5楼5012铺",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "note": "Same 大茂城 5F complex as 5781 电玩橙西安雁塔大茂城店. May be rebrand, neighbor, or dual operator. Do not auto-merge without chain confirmation."
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2968",
+      "evidence_quote": "电玩橙西安雁塔大茂城店 address 丈八北路科技路口大茂城5F with maimai+CHUNITHM",
+      "note": "WAHLAP 玲珑锁 vs BemaniCN 电玩橙 at same mall floor. Could be true co-tenancy or rename. Flag only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10823,
+      "name": "지큐브 오락실 (북수원 CGV)",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "stale_unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=South%20Korea",
+      "evidence_quote": "arcade id 2206 lastUpdateTime 2012-03-12; machines jubeat copious x2, DJMAX TECHNIKA3, EZ2DJ 7th",
+      "note": "Last ZIv update is 2012. Games are long-retired versions. Could not verify if arcade still exists at Buk-Suwon Fashion Outlet CGV. High travel risk.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10824,
+      "name": "화성침공",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "stale_unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=South%20Korea",
+      "evidence_quote": "arcade id 3175 lastUpdateTime 2014-07-06; Pump It Up Fiesta 2 / Fiesta EX, several EZ2DJ mixes",
+      "note": "Last ZIv update 2014. No newer official source found (web search budget exhausted). Status unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9584,
+      "name": "ＷＯＲＬＤ　ＧＡＭＥ　ＣＩＲＣＵＳ",
+      "field": "status",
+      "current": "open",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://wgc.me/access",
+      "evidence_quote": "〒190-0021 東京都立川市羽衣町2-4-13 羽衣長田ビル101 WGC; 平日/土日祝 10:00～24:00; 年中無休（年始を除く）",
+      "note": "Confirmed operating. ALL.Net Tokyo still lists WGC for maimai DX, CHUNITHM, ONGEKI at same address (35.6964221,139.4288034).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9584,
+      "name": "ＷＯＲＬＤ　ＧＡＭＥ　ＣＩＲＣＵＳ",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "crossbeats",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "museca",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "reflec",
+        "sdvx",
+        "stepmaniax",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "crossbeats",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "museca",
+        "ongeki",
+        "other",
+        "popn",
+        "pump_it_up",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+      "evidence_quote": "WGC id 3667 lastUpdate 2026-06-14 machine list includes CHUNITHM X-VERSE-X, maimai でらっくす CiRCLE, ONGEKI, DDR WORLD, IIDX 33 LM, SDVX Valkyrie, pop'n UniLab. No Project DIVA or Polaris Chord entries. StepManiaX comment: Temporary removed. WGC Muscle will be re-open in 2027. cond=0",
+      "note": "Remove polaris_chord and project_diva (absent from 2026-06 ZIv). Remove or mark stepmaniax offline per ZIv. ALL.Net independently confirms maimai/CHUNITHM/ONGEKI.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 9584,
+      "name": "ＷＯＲＬＤ　ＧＡＭＥ　ＣＩＲＣＵＳ",
+      "field": "game_counts",
+      "current": {
+        "stepmaniax": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3667",
+      "evidence_quote": "StepManiaX (All-In-One Cabinet Non-Coin) | Temporary removed. WGC Muscle will be re-open in 2027. | cond=0",
+      "note": "Clear ZIv offline flag. proposed null means remove count claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11069,
+      "name": "TOM'S WORLD(SHOWTIME WENXIN@TAICHUNG)",
+      "field": "hours",
+      "current": "Mon-Fri 11:00-22:00; Sat-Sun 10:30-22:00",
+      "proposed": "周一、五：11:00~22:00；周六、日(國定假日)：10:30~22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.tomsworld.com.tw/store_detail.aspx?storeid=92&modid=4&mnuid=1109",
+      "evidence_quote": "台中文心秀泰店 台中市南屯區文心南路289號4樓 周一、五：11:00~22:00；周六、日(國定假日)：10:30~22:00 代幣一枚5元",
+      "note": "Official Tom's page matches app hours closely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11069,
+      "name": "TOM'S WORLD(SHOWTIME WENXIN@TAICHUNG)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_TWD": 5,
+        "note": "per token; not per-credit game price"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.tomsworld.com.tw/store_detail.aspx?storeid=92&modid=4&mnuid=1109",
+      "evidence_quote": "本店代幣售價 : 代幣一枚5元",
+      "note": "Token price only; credits-per-game not stated.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11078,
+      "name": "Tom's World@Zhonghe Global Mall (湯姆熊歡樂世界@中和環球)",
+      "field": "other",
+      "current": {
+        "games": [
+          "taiko"
+        ]
+      },
+      "proposed": {
+        "note": "Official Tom's list includes 中和環球店; not present on ALL.Net TW maimai/CHUNITHM lists. taiko-only is expected."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.tomsworld.com.tw/store.aspx?mnuid=1109&modid=4",
+      "evidence_quote": "Official Tom's list includes 中和環球店",
+      "note": "Store exists as Tom's chain location. Rhythm claim is taiko-only from ZIv 2024-05.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7059,
+      "name": "阿凡达潮玩荟忻州泛华奥莱广场店",
+      "field": "other",
+      "current": {
+        "addr": "山西省忻州泛华奥莱广场1层阿凡达潮玩荟"
+      },
+      "proposed": {
+        "note": "Distinct from 7067 忻府区店. BemaniCN 7067 comment says 忻府区第一台/唯一一台 as of 2026-02, which may imply 7059 closed or never opened. Unverified."
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6166",
+      "evidence_quote": "阿凡达：潮玩荟（忻府区店） comment 2026.2.15: 新店铺开业，拥有忻府区第一台，也是唯一一台舞萌dx",
+      "note": "If 唯一一台 is accurate city-wide, WAHLAP 7059 泛华奥莱 may be wrong or closed. Needs local check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TOM'S WORLD(LIUHE@KAOHSIUNG)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TOM'S WORLD(LIUHE@KAOHSIUNG)",
+        "addr": "NO.132, LIUHE 2ND RD.,QIANJIN DISTRICT, KAOHSIUNG",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "source": "allnet"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(LIUHE@KAOHSIUNG) on maimai intl; also on CHUNITHM intl list",
+      "note": "If maintainers cannot repair 11094 identity, add clean Kaohsiung Liuhe row and delete the broken Tainan-pinned row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11093,
+      "name": "永淇樂園@Taipei City Mall",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "gitadora",
+          "groove_coaster",
+          "jubeat",
+          "maimai_dx",
+          "nostalgia",
+          "other",
+          "project_diva",
+          "sdvx",
+          "taiko",
+          "wacca"
+        ]
+      },
+      "proposed": {
+        "note": "Not found on ALL.Net TW maimai/CHUNITHM lists under this name. ZIv lastUpdate 2024-05-25. Needs field check; do not invent removals."
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "ZIv 4643 lastUpdate 2024-05-25 lists many cabs including maimai DX BUDDiES and maimai FiNALE; venue name not found on ALL.Net TW maimai (98) or CHUNITHM (61) lists",
+      "note": "SEGA titles lack official ALL.Net confirmation as of cached TW list. FiNALE entries on ZIv are stale tech.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11095,
+      "name": "百威娛樂城",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "stale_unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "ZIv 9497 lastUpdate 2024-11-26; machines include DrumManiaV8, GuitarFreaksV8, maimai FiNALE, REFLEC BEAT 悠久のリフレシア, Project DIVA Arcade, 太鼓14",
+      "note": "Many titles look offline/private-cab era (V8 GFDM, FiNALE). No ALL.Net presence. Status/operation model unclear.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11096,
+      "name": "音樂創劇 Music Game x Livehouse",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "ddr",
+          "iidx",
+          "jubeat",
+          "other",
+          "sdvx",
+          "taiko",
+          "wacca"
+        ]
+      },
+      "proposed": {
+        "note": "ZIv 2025-01-31 lists CHUNITHM/IIDX/SDVX etc; not matched on ALL.Net CHUNITHM TW list under this name. May be private network or different registered name."
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "ZIv 9661 lastUpdate 2025-01-31 lists CHUNITHM LUMINOUS 2 cabs, DDR WORLD, IIDX 32, SDVX 3, WACCA REVERSE, taiko 2",
+      "note": "Leave games; needs local confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6480,
+      "name": "识光机潮玩西安未央印象城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6481
+      },
+      "proposed": "merge_into_6481",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5594",
+      "evidence_quote": "识光机潮玩（印象城店） 未央区浐灞生态区北辰东路700号万科金域东郡西安浐灞印象城4楼 status=1 maimai 1",
+      "note": "WAHLAP 6480 and BemaniCN 6481 both 浐灞/未央 印象城 4F, coords ~100m apart. Prefer 6481.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7168,
+      "name": "风云再起咸阳店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7225
+      },
+      "proposed": "merge_into_7225",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/618",
+      "evidence_quote": "风云再起（咸阳正兴广场店） 电影院十字人民中路11号正兴广场3层 status=1 maimai 2 taiko 1",
+      "note": "WAHLAP 咸阳店 and BemaniCN 正兴广场 store share mall and near-identical coords.",
+      "checked_at": "2026-07-31"
+    }
+  ],
+  "summary": {
+    "taiwan": "33 venues. ALL.Net TW still lists pure-allnet Tom's/X50/VAN/WAWA/YOUNG KEY entries for maimai. Major bugs: 11094 Liuhe pinned in Tainan; 11083 X50 Taipei coords in wrong district; 11082/11067 missing coords; X50 official site adds maimai to first/second stores and corrects some counts; 11092/11087 very stale.",
+    "china": "51 venues. All 26 BemaniCN-linked shops returned status=1. Several WAHLAP-only rows are duplicates or pre-rebrand (银泰->元谷mall, 闪电部落->元气满满, 风云老鼠街->青丘山, triple 顽乐引擎, dual 都市玩家/鸿艺/阿凡达柳巷/钟楼街/识光机/咸阳风云).",
+    "korea": "2 venues both ZIv-only with last updates 2012 and 2014. Status unverified.",
+    "japan": "1 venue WGC Tachikawa confirmed open via official site + ALL.Net. Drop polaris_chord/project_diva and offline stepmaniax per 2026-06 ZIv.",
+    "not_fully_verified": "WAHLAP-only China shops without BemaniCN link (no individual WAHLAP page fetch beyond name presence in shard); Korea ground truth; several ZIv-only Taiwan private venues (百威/音樂創劇/永淇)."
+  }
+}

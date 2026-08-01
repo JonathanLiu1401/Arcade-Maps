@@ -69,6 +69,7 @@ it rewrites en/em dashes, and this is source data (same rule as
 bemanicn.py's local _clean).
 """
 
+import json
 import os
 import re
 import sys
@@ -76,6 +77,7 @@ from datetime import date
 from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import build_corrections as corrections_mod
 import common
 import photo_quality
 import photos as photos_mod
@@ -566,6 +568,17 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
     raw ziv rows), image coverage stays zero - that is the pre-fix state.
     """
     bemanicn_idx, ziv_idx = _index_raw(raw_dir)
+    # Absent-tolerant like every other sidecar here: a fresh clone that
+    # has never run build_corrections.py just gets the scraped values.
+    corrections = {}
+    _cpath = os.path.join(os.path.dirname(raw_dir), "data",
+                          "corrections.json")
+    if os.path.exists(_cpath):
+        try:
+            with open(_cpath, encoding="utf-8") as _fh:
+                corrections = json.load(_fh).get("venues") or {}
+        except (OSError, ValueError):
+            corrections = {}
     if photos_index is None:
         path = photos_path or os.path.join(raw_dir, PHOTOS_INDEX_FILE)
         photos_index = photos_mod.load_photos_index(path)
@@ -617,6 +630,27 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         entry = entry_from_rows(b_rows, z_rows, photos_index=photos_index,
                                 quality_probes=quality_probes,
                                 merged_images=merged_imgs)
+        # Hand-verified corrections (data/corrections.json, built by
+        # scrapers/build_corrections.py from the verification fleet's
+        # reports) override the scraped value, and say so: each one
+        # carries the url and quote it was read from, so a wrong entry
+        # can be traced to its source rather than argued about.
+        fixes = (corrections.get(corrections_mod.venue_key(a))
+                 or {}).get("fields") if corrections else None
+        if fixes:
+            if entry is None:
+                entry = {"sources": {}}
+            for field, rec in sorted(fixes.items()):
+                if field not in ("hours", "website"):
+                    continue      # games/game_counts live on arcades.json
+                key = "hours_text" if field == "hours" else field
+                entry[key] = rec["value"]
+                entry.setdefault("sources", {})[key] = "verified"
+                entry.setdefault("verified", {})[key] = {
+                    "url": rec.get("evidence_url"),
+                    "quote": rec.get("evidence_quote"),
+                    "checked_at": rec.get("checked_at"),
+                }
         if entry is None:
             continue
         out[str(a["id"])] = entry

@@ -1,0 +1,1043 @@
+{
+  "shard": 90,
+  "checked": 103,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON for 69 reachable Jilin shops (1x HTTP 404 for s/5869)",
+    "https://map.bemanicn.com/games title_id catalog",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location live 2026-08-01 province=吉林 (45)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location live 2026-08-01 province=吉林 (10)",
+    "data_raw/china_wahlap_maimai_dx.json snapshot compare",
+    "data_raw/china_bemanicn.json",
+    "scrapers/bemanicn.py TITLE_GAME mapping"
+  ],
+  "corrections": [
+    {
+      "id": 6162,
+      "name": "红旗街万达大玩家",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/76",
+      "evidence_quote": "舞萌已降价为3币1pc，目前处于关机状态; machine title_id=1 comment: 已被华立舞萌官网除名 不可能再次登录游玩 迟早会被撤机; title_id=15: 已关机 疑似不再开机. Live WAHLAP Jilin maimai list (2026-08-01) does not include this shop.",
+      "checked_at": "2026-08-01",
+      "note": "Official WAHLAP maimai locator (fetched 2026-08-01, 45 Jilin venues) has no 红旗街万达大玩家. BemaniCN status still 1 but shop and machine comments say maimai is powered off and delisted; old taiko (title_id 15) also powered off. 'other' was 星光 x2 also marked 已关机 on BN - consider clearing all rhythm claims. Not a working maimai/taiko destination."
+    },
+    {
+      "id": 6162,
+      "name": "红旗街万达大玩家",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "rhythm_games_unplayable; chain collapse risk noted",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/76",
+      "evidence_quote": "风险提示：鉴于全国大玩家目前经营状况请各位谨慎充值！！！如有余币及彩票请尽快使用以免店铺突然关门跑路造成财产损失！！！ 舞萌...目前处于关机状态",
+      "checked_at": "2026-08-01",
+      "note": "Shop page still status=1 on BemaniCN. Community warns of chain collapse and maimai is offline. Not proven fully closed as a mall arcade, but not a working rhythm stop."
+    },
+    {
+      "id": 6162,
+      "name": "红旗街万达大玩家",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/76",
+      "evidence_quote": "maimai: 已被华立舞萌官网除名 不可能再次登录游玩; taiko: 已关机 疑似不再开机",
+      "checked_at": "2026-08-01",
+      "note": "If games are removed, clear counts too. BN still shows qty 1 but machines unusable."
+    },
+    {
+      "id": 7024,
+      "name": "镇赉开心娱乐动漫城",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "closed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2050",
+      "evidence_quote": "（目前机厅倒闭了，留下这个作为纪念，白城这里真的是音游寒冬...）",
+      "checked_at": "2026-08-01",
+      "note": "BemaniCN status field still 1; updated_at=2025-11-29 (stale). Closing claim is only in the user comment, not an official notice. No WAHLAP listing (legacy taiko only). Treat as closed unless proven otherwise."
+    },
+    {
+      "id": 7024,
+      "name": "镇赉开心娱乐动漫城",
+      "field": "games",
+      "current": [
+        "taiko"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2050",
+      "evidence_quote": "目前机厅倒闭了; only machine was title_id 15 (旧代太鼓) qty 1",
+      "checked_at": "2026-08-01",
+      "note": "If venue is closed, remove game claims. Machine was legacy taiko, not Nijiiro."
+    },
+    {
+      "id": 4171,
+      "name": "星际传奇长春万象城店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "taiko",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2667",
+      "evidence_quote": "舞萌已搬到摩天活力城; shop.arcades only title_id 31 taiko qty1 and title_id 30 宝可梦加傲乐 qty2 (no title_id 1). Taiko comment 2026.6.13: 上述的舞萌已搬走",
+      "checked_at": "2026-08-01",
+      "note": "CONFLICT: live WAHLAP maimai API (2026-08-01) STILL lists 星际传奇长春万象城店 placeId=2441. BemaniCN (updated 2026-07-13) says maimai moved to 摩天活力城 and lists no maimai machine. Community on-site notes are strong about physical removal but official registration remains. Maintainer should check if WAHLAP is stale after a move toward 炫动四方摩天店 (ids 5325/5328). Confidence only likely."
+    },
+    {
+      "id": 6163,
+      "name": "红色星球嘉年华",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/214",
+      "evidence_quote": "目前机器已经不允许使用，无法游玩，长春市内均值定价相当贵的太鼓...频繁黑屏",
+      "checked_at": "2026-08-01",
+      "note": "BN still lists title_id 31 qty 1 but machine comment says play is no longer allowed. Propose remove taiko. 'other' is 头文字D x4 without a playability veto in the comment."
+    },
+    {
+      "id": 2175,
+      "name": "哎呦窝",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "temporarily_closed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5691",
+      "evidence_quote": "3月14号后暂停运营，恢复时间待定，勿跑空",
+      "checked_at": "2026-08-01",
+      "note": "Comment on page last updated 2026-03-08. No later update confirming reopening as of fetch 2026-08-01. Twin WAHLAP listing 哎呦玩家长春净月店 (id 2174) same 复地嘉年华 address still on live WAHLAP. Hand-cabs are not WAHLAP. Check QQ group 714736289 before travelling."
+    },
+    {
+      "id": 2162,
+      "name": "哈基窝",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "sdvx",
+        "iidx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5610",
+      "evidence_quote": "窝内有一对maimai，一台中二，一台音击，一台sdvx，一台iidx",
+      "checked_at": "2026-08-01",
+      "note": "Private/hand-cabinet nest (not on WAHLAP). BN arcades array only has title_id 1,3,27; sdvx/iidx only in shop comment. Counts maimai_dx=2 chunithm=1 ongeki=1 match structured data. Add sdvx/iidx only if comment-only evidence is accepted."
+    },
+    {
+      "id": 2162,
+      "name": "哈基窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "appointment / short-session billing via group 985687971 (not mall hours)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5610",
+      "evidence_quote": "短时计费4元/半小时，详细套餐及优惠请进群了解; 半自助手台窝; 哈基窝群：985687971",
+      "checked_at": "2026-08-01",
+      "note": "BN start_time/end_time are 26/26 (invalid placeholders). Access is group-based."
+    },
+    {
+      "id": 7028,
+      "name": "长春哈基窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-20:00; closed during winter/summer school holidays; appointment required",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6855",
+      "evidence_quote": "营业时间8:00至20:00，寒暑假期间不营业。来之前请先进群预约哦~ 群143961308",
+      "checked_at": "2026-08-01",
+      "note": "Hand-cabinet nest (maimai ADX, chunithm hand, taiko hand). Not on WAHLAP. BN updated 2026-03-07."
+    },
+    {
+      "id": 5325,
+      "name": "炫动四方摩天店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko",
+        "jubeat"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/4375",
+      "evidence_quote": "又新增两台Jubeat，吉林省首批，我们长春的也是玩上高档音游了哈哈",
+      "checked_at": "2026-08-01",
+      "note": "Shop comment claims 2x jubeat, but props.shop.arcades has only title_id 1 qty3, 3 qty4, 31 qty1 - no title_id 34/6. May be aspirational, outdated, or not yet entered. Do not treat as certain. Twin WAHLAP row is id 5328."
+    },
+    {
+      "id": 4566,
+      "name": "榆树市艺珑传奇动漫城",
+      "field": "status",
+      "current": "open with bemanicn link s/5869",
+      "proposed": "bemanicn_page_gone; merge_or_prefer twin id 6272 (艺珑传奇榆树长白山店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5869",
+      "evidence_quote": "HTTP 404 Not Found for https://map.bemanicn.com/s/5869 (fetched 2026-08-01)",
+      "checked_at": "2026-08-01",
+      "note": "BN shop 5869 is gone. Live WAHLAP still lists 艺珑传奇榆树长白山店 at 吉林省榆树市榆树大街长白山一楼 (placeId=4310) matching app id 6272. Same physical venue almost certainly; 4566 is a stale BN-side duplicate."
+    },
+    {
+      "id": 6194,
+      "name": "维京传奇延吉店",
+      "field": "location",
+      "current": "吉林省延吉市沿河西路万达广场店",
+      "proposed": "吉林省延吉市公园街沿河路与新民街交汇处万达广场",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7091",
+      "evidence_quote": "address: 公园街沿河路与新民街交汇处",
+      "checked_at": "2026-08-01",
+      "note": "App address is vague. BN has street intersection. approx:true pin expected for China."
+    },
+    {
+      "id": 3134,
+      "name": "威伲斯电玩城",
+      "field": "location",
+      "current": "威伲斯电玩城集贸店",
+      "proposed": "吉林省辽源市步行街东旺集贸三楼威伲斯电玩馆 (from twin WAHLAP id 3135)",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "威尼斯辽源东旺店|吉林省辽源市步行街东旺集贸三楼威伲斯电玩馆",
+      "checked_at": "2026-08-01",
+      "note": "BN address is just the shop name. Twin WAHLAP row gives full address. Same as 3135."
+    },
+    {
+      "id": 3447,
+      "name": "巷战英雄(欧亚新生活购物广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-22:00 (mall often closes 21:30; use cinema elevator after)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/80",
+      "evidence_quote": "机厅9点30开门 22点关门 由于商场21点30关门; start_time=9 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 5325,
+      "name": "炫动四方摩天店",
+      "field": "hours",
+      "current": null,
+      "proposed": "weekday 10:00-21:30 / weekend 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4375",
+      "evidence_quote": "营业时间：平日10：00--21：30，周末10：00--22：00",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 5324,
+      "name": "炫动四方居然店",
+      "field": "hours",
+      "current": null,
+      "proposed": "opens 09:30 (BN hours field 9:00-21:00)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2039",
+      "evidence_quote": "开店时间9点30分; start_time=9 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 4872,
+      "name": "海奥华星动漫城远大购物广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3894",
+      "evidence_quote": "营业时间：9：30--22：00",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 5307,
+      "name": "火火联盟上海路万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:30-21:30",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4576",
+      "evidence_quote": "营业时间：10:30-21:30",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 6199,
+      "name": "维京传奇（长春绿园店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:30 (power cut at 21:30)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6020",
+      "evidence_quote": "店铺21:30准时断电闭店; start_time=10 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 6194,
+      "name": "维京传奇延吉店",
+      "field": "hours",
+      "current": null,
+      "proposed": "opens 09:30; Mon-Thu close 21:00, Fri-Sun 21:30",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7091",
+      "evidence_quote": "开业时间与万达广场统一为早9:30 周一至周四晚9:00闭店 周五至周日晚9:30闭店",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 1217,
+      "name": "OK动漫城吉林龙潭店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00 (escalator stops 19:00 with mall)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5757",
+      "evidence_quote": "start_time=9 end_time=21; 扶梯将在晚上19.00和商场同时停运",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 4437,
+      "name": "极速玩家长春绿园吾悦二期店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6731",
+      "evidence_quote": "start_time=10 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 1512,
+      "name": "世宇乐园（吉林欧亚综合体）",
+      "field": "hours",
+      "current": null,
+      "proposed": "opens 09:30; weekday close ~20:00 / holiday ~20:30",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/73",
+      "evidence_quote": "9.30开店 正常情况工作日8点节假日8.30闭店，wiki只能写整数这里标注一下; start=9 end=20",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 2023,
+      "name": "及放运动潮玩空间",
+      "field": "hours",
+      "current": null,
+      "proposed": "mall ~09:30 open; weekday close 20:30 / weekend 21:30 (ticketed day-pass)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3109",
+      "evidence_quote": "商场9点30分开门...工作日8:30闭店，周末9:30; 本机厅为通票制",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 3446,
+      "name": "巷战英雄(欧亚万豪购物中心店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/712",
+      "evidence_quote": "start_time=9 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 3450,
+      "name": "巷战英雄长春亚泰新动力店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/782",
+      "evidence_quote": "start_time=10 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 5746,
+      "name": "现代嘉年华珲春现代百货店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-19:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/632",
+      "evidence_quote": "start_time=9 end_time=19",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 4035,
+      "name": "星际乐迪吉林白山店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6678",
+      "evidence_quote": "start_time=9 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 4783,
+      "name": "汤姆熊欢乐世界（延边）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/547",
+      "evidence_quote": "start_time=9 end_time=21; 在百货大楼8楼",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 1722,
+      "name": "事诚电竞（宽城万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h netbar setting (maimai daily login may end overnight)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6258",
+      "evidence_quote": "start_time=0 end_time=24; 是个网吧",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 1724,
+      "name": "事诚电竞（重庆路万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h shop but maimai login ends ~03:40",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6686",
+      "evidence_quote": "虽然店是24小时运营的，但是机器但是机器在凌晨3:40左右就会“今天的报名已结束”",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 6702,
+      "name": "迅驰嘉年华",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6404",
+      "evidence_quote": "start_time=10 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 6994,
+      "name": "金钻潮玩运动馆松原宁江店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7170",
+      "evidence_quote": "start_time=9 end_time=21",
+      "checked_at": "2026-08-01",
+      "note": "App hours_text is null. BemaniCN start/end are integer hours; free-text comment preferred when more precise. Community wiki fields, not official mall notices."
+    },
+    {
+      "id": 3447,
+      "name": "巷战英雄(欧亚新生活购物广场店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/pc",
+        "chunithm": "4 coins/pc",
+        "taiko": "11 coins/pc",
+        "token_note": "member card 38 RMB / 30 coins; Meituan/Douyin deals recommended"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/80",
+      "evidence_quote": "maimai coin=4; chunithm coin=4; taiko coin=11; 会员卡38元内附30币; 目前美团抖音都有团购",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 5325,
+      "name": "炫动四方摩天店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/pc",
+        "chunithm": "4 coins/pc",
+        "taiko": "8 coins/pc",
+        "card_deposit": "10 coins refundable"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4375",
+      "evidence_quote": "maimai coin=4; chunithm coin=4; taiko coin=8; 开卡押金为10币，退卡时会退押金",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 6199,
+      "name": "维京传奇（长春绿园店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": "about 0.25-0.38 CNY/coin",
+        "maimai_dx": "4 coins/pc",
+        "chunithm": "4 coins/pc",
+        "taiko": "10 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6020",
+      "evidence_quote": "套餐单币价格在0.38~0.25; maimai coin=4; chunithm coin=4; taiko coin=10; shop price=0.3",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 6194,
+      "name": "维京传奇延吉店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": "about 0.3 CNY/coin",
+        "maimai_dx": "6 coins/pc",
+        "chunithm": "9 coins/pc",
+        "taiko": "10 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7091",
+      "evidence_quote": "店内常驻套餐约合0.3元/币; maimai coin=6; chunithm coin=9; taiko coin=10",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 1217,
+      "name": "OK动漫城吉林龙潭店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": "~0.06-0.07 large packs; small pack 20R/100 coins",
+        "maimai_dx": "20 coins/pc card-or-scan only",
+        "taiko": "30 coins/pc card-or-scan only"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5757",
+      "evidence_quote": "大额币平均0.06一枚，小额套餐20R100枚; 舞萌20币1pc，太鼓30币1pc; 现舞萌DX与太鼓达人已改为刷卡或扫码代替投币",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 1724,
+      "name": "事诚电竞（重庆路万达店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "7 coins/pc",
+        "pack": "39 RMB / 200 coins (~1.4 CNY/pc)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6686",
+      "evidence_quote": "39块200个币，每次7个，约合1块4一次; coin=7",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 2023,
+      "name": "及放运动潮玩空间",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "entry": "day pass ~79-89 RMB (Douyin/Meituan); ticketed all-you-can-play, not per-credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3109",
+      "evidence_quote": "本机厅为通票制 不买票不能随意进入; 抖音美团有团购，正常为79 89; shop price=79",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 6162,
+      "name": "红旗街万达大玩家",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/pc (powered off / delisted)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/76",
+      "evidence_quote": "舞萌已降价为3币1pc，目前处于关机状态; coin=3",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 4872,
+      "name": "海奥华星动漫城远大购物广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/pc",
+        "chunithm": "5 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3894",
+      "evidence_quote": "maimai coin=5; chunithm coin=5",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 5307,
+      "name": "火火联盟上海路万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/pc",
+        "chunithm": "5 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4576",
+      "evidence_quote": "maimai coin=5; chunithm coin=5",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 4437,
+      "name": "极速玩家长春绿园吾悦二期店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "6 coins/pc (~2 CNY/pc reported)",
+        "jubeat": "6 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6731",
+      "evidence_quote": "coin=6 both; 价格较贵，约等于2块钱1pc",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 4424,
+      "name": "极速动漫公主岭华生店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "6 coins/pc",
+        "taiko": "10 coins/pc",
+        "jubeat": "7 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/921",
+      "evidence_quote": "maimai coin=6; taiko coin=10; jubeat coin=7",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 4783,
+      "name": "汤姆熊欢乐世界（延边）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/pc",
+        "taiko": "5 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/547",
+      "evidence_quote": "maimai coin=3; taiko coin=5",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 1512,
+      "name": "世宇乐园（吉林欧亚综合体）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/pc",
+        "taiko_legacy": "3 coins/pc"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/73",
+      "evidence_quote": "maimai coin=5; taiko title_id 15 coin=3",
+      "checked_at": "2026-08-01",
+      "note": "Coin-per-credit from BemaniCN machine.coin plus pack notes in comments. CNY/credit depends on token package and changes often."
+    },
+    {
+      "id": 1719,
+      "name": "事诚电玩重庆路万达店",
+      "field": "other",
+      "current": "separate venue from id 1724 (事诚电竞（重庆路万达店）)",
+      "proposed": "merge_with:1724",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Both Chongqing Rd Wanda; 1719 wahlap-only, 1724 BN s/6686; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 1720,
+      "name": "事诚电竞长春万达店",
+      "field": "other",
+      "current": "separate venue from id 1722 (事诚电竞（宽城万达店）)",
+      "proposed": "merge_with:1722",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Both Kuancheng Wanda; 1720 wahlap, 1722 BN s/6258; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 1721,
+      "name": "事诚电竞长春绿园车城万达店",
+      "field": "other",
+      "current": "separate venue from id 1723 (事诚电竞（车城万达店）)",
+      "proposed": "merge_with:1723",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Both Checheng Wanda; 1721 wahlap, 1723 BN s/6497; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 3448,
+      "name": "巷战英雄电玩长春欧亚万豪店",
+      "field": "other",
+      "current": "separate venue from id 3446 (巷战英雄(欧亚万豪购物中心店))",
+      "proposed": "merge_with:3446",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Ouya Wanhao 5F; 3448 wahlap, 3446 BN s/712; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 3449,
+      "name": "巷战英雄电玩长春欧亚新生活店",
+      "field": "other",
+      "current": "separate venue from id 3447 (巷战英雄(欧亚新生活购物广场店))",
+      "proposed": "merge_with:3447",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Ouya New Life 5F; 3449 wahlap+chunithm, 3447 BN s/80 with counts; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 5327,
+      "name": "炫动四方长春居然世界里店",
+      "field": "other",
+      "current": "separate venue from id 5324 (炫动四方居然店)",
+      "proposed": "merge_with:5324",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same 居然世界里; 5327 wahlap, 5324 BN s/2039; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 5328,
+      "name": "炫动四方长春摩天活力城店",
+      "field": "other",
+      "current": "separate venue from id 5325 (炫动四方摩天店)",
+      "proposed": "merge_with:5325",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Motian Vitality Mall; 5328 wahlap, 5325 BN s/4375; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 5308,
+      "name": "火火联盟长春万达店",
+      "field": "other",
+      "current": "separate venue from id 5307 (火火联盟上海路万达店)",
+      "proposed": "merge_with:5307",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Shanghai Rd Wanda 3F; 5308 wahlap, 5307 BN s/4576 maimai+chunithm x2; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6198,
+      "name": "维京传奇长春绿园吾悦广场店",
+      "field": "other",
+      "current": "separate venue from id 6199 (维京传奇（长春绿园店）)",
+      "proposed": "merge_with:6199",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Luyuan Wuyue; 6198 wahlap, 6199 BN s/6020; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6703,
+      "name": "迅驰嘉年华长春南关迅驰广场店",
+      "field": "other",
+      "current": "separate venue from id 6702 (迅驰嘉年华)",
+      "proposed": "merge_with:6702",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Xunchi Plaza; 6703 wahlap, 6702 BN s/6404; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 4873,
+      "name": "海奥华星长春远大购物广场店",
+      "field": "other",
+      "current": "separate venue from id 4872 (海奥华星动漫城远大购物广场店)",
+      "proposed": "merge_with:4872",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Yuanda C-3F; 4873 wahlap, 4872 BN s/3894 counts 3+2; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 2174,
+      "name": "哎呦玩家长春净月店",
+      "field": "other",
+      "current": "separate venue from id 2175 (哎呦窝)",
+      "proposed": "merge_with:2175",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same 复地嘉年华 A3A; 2174 wahlap maimai, 2175 BN nest (possibly paused); complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6272,
+      "name": "艺珑传奇榆树长白山店",
+      "field": "other",
+      "current": "separate venue from id 4566 (榆树市艺珑传奇动漫城)",
+      "proposed": "merge_with:4566",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Yushu Changbaishan; 6272 live WAHLAP, 4566 dead BN s/5869; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6997,
+      "name": "鑫乐迪家庭娱乐中心通化东昌万达广场店",
+      "field": "other",
+      "current": "separate venue from id 6999 (鑫乐迪家庭娱乐中心（通化万达店）)",
+      "proposed": "merge_with:6999",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Tonghua Wanda; 6997 wahlap, 6999 BN s/6594; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 7001,
+      "name": "鑫乐迪梅河口维港城店",
+      "field": "other",
+      "current": "separate venue from id 6998 (鑫乐迪家庭娱乐中心（梅河维港城店）)",
+      "proposed": "merge_with:6998",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Meihekou Weigangcheng; 7001 wahlap, 6998 BN s/6106; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 4458,
+      "name": "极限动漫延吉百利城店",
+      "field": "other",
+      "current": "separate venue from id 4459 (极限动漫（百利城店）)",
+      "proposed": "merge_with:4459",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Yanji Bailicheng 9F; 4458 wahlap, 4459 BN s/4310; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 4728,
+      "name": "汤姆熊延吉百货店",
+      "field": "other",
+      "current": "separate venue from id 4783 (汤姆熊欢乐世界（延边）)",
+      "proposed": "merge_with:4783",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Guangming St 608 dept store 8F; 4728 wahlap, 4783 BN s/547; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 1891,
+      "name": "十三嘉年华四平铁东万达店",
+      "field": "other",
+      "current": "separate venue from id 1890 (十三嘉年华(万达广场店))",
+      "proposed": "merge_with:1890",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Siping Tiedong Wanda 3F; 1891 wahlap, 1890 BN s/5325; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 5178,
+      "name": "潮玩时光吉林船营时代广场店",
+      "field": "other",
+      "current": "separate venue from id 5179 (潮玩时光运动街区)",
+      "proposed": "merge_with:5179",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Chuanying Times Plaza 3F; 5178 wahlap, 5179 BN s/6794; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 1941,
+      "name": "卡吉姆吉林昌邑店",
+      "field": "other",
+      "current": "separate venue from id 2076 (吉林卡吉姆动漫娱乐城)",
+      "proposed": "merge_with:2076",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Fortune Plaza 5F Changyi; 1941 wahlap, 2076 BN s/4228; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 2022,
+      "name": "及放运动吉林丰满店",
+      "field": "other",
+      "current": "separate venue from id 2023 (及放运动潮玩空间)",
+      "proposed": "merge_with:2023",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Ouya complex 6F; 2022 wahlap, 2023 BN s/3109; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 2077,
+      "name": "吉林市丰满区世宇乐园",
+      "field": "other",
+      "current": "separate venue from id 1512 (世宇乐园（吉林欧亚综合体）)",
+      "proposed": "merge_with:1512",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Ouya complex 3F; 2077 wahlap, 1512 BN s/73; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 2433,
+      "name": "城市英雄长春南关活力城店",
+      "field": "other",
+      "current": "separate venue from id 3554 (徐氏城市英雄长春重庆路活力城店)",
+      "proposed": "merge_with:3554",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Chongqing Rd Vitality City 4F; 2433 wahlap, 3554 BN s/5329; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 3135,
+      "name": "威尼斯辽源东旺店",
+      "field": "other",
+      "current": "separate venue from id 3134 (威伲斯电玩城)",
+      "proposed": "merge_with:3134",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Liaoyuan Dongwang 3F (威尼斯 vs 威伲斯 spelling); 3135 wahlap, 3134 BN s/1563; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 5764,
+      "name": "电玩帝国长春南关店",
+      "field": "other",
+      "current": "separate venue from id 5767 (电玩帝国（长春新天地店）)",
+      "proposed": "merge_with:5767",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Zhongdong Xintiandi area; 5764 wahlap, 5767 BN s/7090; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6269,
+      "name": "艺珑传奇吉林昌邑店",
+      "field": "other",
+      "current": "separate venue from id 6268 (艺珑传奇动漫娱乐中心（吉林财富购物广场店）)",
+      "proposed": "merge_with:6268",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Fortune Plaza 6F; 6269 wahlap, 6268 BN s/2150; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6270,
+      "name": "艺珑传奇延吉万达店",
+      "field": "other",
+      "current": "separate venue from id 6265 (艺珑传奇俱乐部(延边万达广场延河路店))",
+      "proposed": "merge_with:6265",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Yanji Wanda 2F; 6270 wahlap, 6265 BN s/3699; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 6271,
+      "name": "艺珑传奇昌邑吉林大街万达店",
+      "field": "other",
+      "current": "separate venue from id 6266 (艺珑传奇俱乐部吉林万达店)",
+      "proposed": "merge_with:6266",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Jilin City Wanda 3F; 6271 wahlap, 6266 BN s/6297; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    },
+    {
+      "id": 1800,
+      "name": "兄弟动漫城德惠新东方购物中心店",
+      "field": "other",
+      "current": "separate venue from id 1799 (兄弟动漫)",
+      "proposed": "merge_with:1799",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Same Dehui New Oriental 3F; 1800 wahlap, 1799 BN s/5010; complementary src (wahlap vs bemanicn) and shared mall landmarks.",
+      "checked_at": "2026-08-01",
+      "note": "Likely WAHLAP/BemaniCN duplicate for one physical shop. Prefer BN-linked id when it has machine counts; keep WAHLAP name as alias. Not certain without on-site visit for every pair."
+    }
+  ]
+}
