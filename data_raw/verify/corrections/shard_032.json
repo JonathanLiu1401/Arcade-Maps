@@ -1,0 +1,816 @@
+{
+  "shard": 32,
+  "checked": 95,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia shop partials for all 62 unique bemanicn-linked shops in shard (fetched 2026-08-01; 61 status=1 open, 1 HTTP 404)",
+    "https://map.bemanicn.com/games Inertia props.arcade_type title_id map (fetched 2026-08-01)",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-08-01, 3139 CN / 257 Jiangsu maimai)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-08-01, 583 CN / 47 Jiangsu chunithm)",
+    "Internal same-coordinate and mall/address matching across the 95-venue Jiangsu shard for wahlap vs bemanicn duplicate pairs; cross-checked 潮趣堂常州武进万达 already present as id 5292 in shard_027"
+  ],
+  "corrections": [
+    {
+      "id": 6284,
+      "name": "苏州火窝音游",
+      "field": "status",
+      "current": "listed open with chunithm+maimai_dx",
+      "proposed": "temporarily_closed",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6651",
+      "evidence_quote": "（装修中，暂不开放）音游窝，24小时营业。",
+      "checked_at": "2026-08-01",
+      "note": "BemaniCN shop status still 1 but operator comment on the live shop page (updated 2026-06-20) states under renovation and not open. Not present on live WAHLAP maimai or chunithm Jiangsu lists (private cafe). Do not send players here until reopened."
+    },
+    {
+      "id": 6286,
+      "name": "苏州趴窝",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7250",
+      "evidence_quote": "arcades: title_id 1 (maimai DX) qty 1 官机; title_id 1 qty 2 焊台; title_id 1 qty 1 mml. No title_id 27 音击/ongeki.",
+      "checked_at": "2026-08-01",
+      "note": "Live BemaniCN (updated 2026-07-29) lists only maimai DX cabinets (private cafe, invite-only). No ongeki entry. Remove ongeki claim."
+    },
+    {
+      "id": 6286,
+      "name": "苏州趴窝",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 3,
+        "ongeki": 1
+      },
+      "proposed": {
+        "maimai_dx": 4
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7250",
+      "evidence_quote": "title_id 1 quantities 1+2+1 = 4 maimai DX (官机/焊台/mml)",
+      "checked_at": "2026-08-01",
+      "note": "Sum of three maimai rows on live BemaniCN is 4, not 3. Drop ongeki count."
+    },
+    {
+      "id": 6894,
+      "name": "酷玩巅峰（常州武进万达店）",
+      "field": "status",
+      "current": "listed open maimai_dx/other/taiko via bemanicn s/6254",
+      "proposed": "closed_or_renamed",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6254",
+      "evidence_quote": "HTTP Error 404: Not Found (shop page removed)",
+      "checked_at": "2026-08-01",
+      "note": "BemaniCN shop 6254 is gone. Live WAHLAP at the same 武进万达 2F lists 潮趣堂常州武进万达 (maimai+chunithm), which is already on the map as id 5292 in another Jiangsu shard. Prefer merge/remove 6894 into 5292 rather than treating as a separate open venue."
+    },
+    {
+      "id": 6894,
+      "name": "酷玩巅峰（常州武进万达店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5292,
+        "pair_name": "潮趣堂常州武进万达"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5292,
+        "target_name": "潮趣堂常州武进万达"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=潮趣堂常州武进万达 address=江苏省常州市武进万达二楼潮趣堂",
+      "checked_at": "2026-08-01",
+      "note": "Same 武进万达 2F. Official WAHLAP maimai+chunithm use 潮趣堂常州武进万达 (id 5292). 酷玩巅峰 bemanicn page 404. Remove 6894 as a live pin."
+    },
+    {
+      "id": 7164,
+      "name": "风云再起南京金茂览秀城店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1874",
+      "evidence_quote": "太鼓之达人 quantity 2 国行新版; maimai DX quantity 2. Updated 2026-07-28.",
+      "checked_at": "2026-08-01",
+      "note": "Live BemaniCN lists 2 taiko, not 1. Comment: 店铺正大门是两个太鼓."
+    },
+    {
+      "id": 7207,
+      "name": "风云再起游乐汇(无锡苏宁广场店)",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4242",
+      "evidence_quote": "maimai DX quantity 2 ver 1.41-D; 太鼓之达人 quantity 1. Updated 2026-07-31.",
+      "checked_at": "2026-08-01",
+      "note": "Also a duplicate of WAHLAP-only id 7184 at the same coords; after merge apply count 2 to the surviving row."
+    },
+    {
+      "id": 6083,
+      "name": "第一回合苏州中心店",
+      "field": "other",
+      "current": {
+        "taiko": 1,
+        "note": "listed as playable"
+      },
+      "proposed": {
+        "taiko_status": "likely_powered_off_or_broken",
+        "keep_listed": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3208",
+      "evidence_quote": "太鼓 comment: 实际游玩一下 发现根本不开了 (also 1p右鼓面基本不反应). Updated 2026-07-21.",
+      "checked_at": "2026-08-01",
+      "note": "Cabinet still in BemaniCN machine list (qty 1) but recent player comment says it is not powered on. Not a full removal yet. Also: chunithm is on BemaniCN (qty 2) but this store name does not appear on the live WAHLAP chunithm Jiangsu list (only maimai 第一回合苏州中心店). Chu may be present physically but not confirmed on official WAHLAP midtr network."
+    },
+    {
+      "id": 5871,
+      "name": "盛泽天虹星城战记",
+      "field": "other",
+      "current": {
+        "name": "盛泽天虹星城战记",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "wahlap_chunithm_name": "星城战记苏州吴江店",
+        "maimai_on_official_wahlap": false
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName=星城战记苏州吴江店 address=江苏省苏州市吴江区盛泽镇舜湖西路天虹商场L2层A001号商铺星城战记",
+      "checked_at": "2026-08-01",
+      "note": "Official WAHLAP chunithm lists this mall as 星城战记苏州吴江店 (same 盛泽天虹). Live WAHLAP maimai Jiangsu list has NO 星城战记/盛泽天虹 entry (only nearby 怪兽娱乐中心苏州吴江店 at 凤凰荟, different mall). BemaniCN s/4649 still lists maimai DX x1 + chunithm x2 (updated 2026-02-19). Chu is official; maimai is community-only and may be non-network or not yet registered. Consider aliasing name to WAHLAP chu form; do not treat maimai as official-confirmed."
+    },
+    {
+      "id": 5930,
+      "name": "真快活电玩城无锡锡山开发无锡荟聚中心店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5876,
+        "pair_name": "真快活Coohoo Max(无锡荟聚店)"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5876,
+        "target_name": "真快活Coohoo Max(无锡荟聚店)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=真快活电玩城无锡锡山开发无锡荟聚中心店 address=无锡市锡山开发区团结中路3号无锡荟聚中心L14 层05A01-01真快活电玩城",
+      "checked_at": "2026-08-01",
+      "note": "Same 无锡荟聚 L4/05A01 coords (31.5849,120.3899) as 5876 and 5931. Live BemaniCN s/6495 has maimai 2 + chunithm 2 + taiko 3. Keep 5876 (richest cab data); merge 5930 (wahlap maimai-only row). Official WAHLAP maimai name can be stored as alias."
+    },
+    {
+      "id": 5931,
+      "name": "真快活电玩城无锡锡山开发荟聚中心店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5876,
+        "pair_name": "真快活Coohoo Max(无锡荟聚店)"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5876,
+        "target_name": "真快活Coohoo Max(无锡荟聚店)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName=真快活电玩城无锡锡山开发荟聚中心店 address=无锡市锡山开发区团结中路3号无锡荟聚中心L14 层05A01-01真快活电玩城",
+      "checked_at": "2026-08-01",
+      "note": "WAHLAP chunithm-only split row for the same 荟聚 shop as 5876/5930. Merge into 5876."
+    },
+    {
+      "id": 5941,
+      "name": "真快活苏州钟南永旺店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5938,
+        "pair_name": "真快活苏州园区永旺店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5938,
+        "target_name": "真快活苏州园区永旺店",
+        "or_keep_wahlap_name": "真快活苏州钟南永旺店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=真快活苏州钟南永旺店 address=江苏省苏州市吴中区工业园区胜浦街道钟南街永旺梦乐城",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords (31.3253,120.7536). BemaniCN s/3665 = 真快活苏州园区永旺店 with maimai 2 + taiko 1 (updated 2026-07-21). WAHLAP official name is 钟南永旺. One pin only; prefer official WAHLAP name on the surviving row and attach bemanicn counts/taiko."
+    },
+    {
+      "id": 5942,
+      "name": "真快活苏州高新永旺梦乐园店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5939,
+        "pair_name": "真快活苏州永旺新区店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5939,
+        "target_name": "真快活苏州永旺新区店",
+        "or_keep_wahlap_name": "真快活苏州高新永旺梦乐园店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=真快活苏州高新永旺梦乐园店 address=江苏省苏州市高新区城际路19号永旺梦乐园2楼真快活电玩",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords (31.3716,120.5258). BemaniCN s/2530 lists maimai 2 + taiko 1 + 头文字D x4 (other). Single venue."
+    },
+    {
+      "id": 6037,
+      "name": "童年搭档苏州姑苏龙湖天街店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6028,
+        "pair_name": "童年搭档 胥江天街店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6028,
+        "target_name": "童年搭档 胥江天街店",
+        "or_keep_wahlap_name": "童年搭档苏州姑苏龙湖天街店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=童年搭档苏州姑苏龙湖天街店 address includes 胥江龙湖天街北馆三楼",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~60m apart (31.2934 vs 31.2929). Same 胥江/龙湖天街北馆三楼. BemaniCN s/4753 maimai x2. One venue; WAHLAP official name is 童年搭档苏州姑苏龙湖天街店."
+    },
+    {
+      "id": 6248,
+      "name": "自游星空园区印象城店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6247,
+        "pair_name": "自游星空 印象城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6247,
+        "target_name": "自游星空 印象城店",
+        "or_keep_wahlap_name": "自游星空园区印象城店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=自游星空园区印象城店",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~40m (31.3197 vs 31.3199). Same 园区印象城3楼. BemaniCN s/6230 maimai x1 + other (炸弹少女/宝可梦). Single venue."
+    },
+    {
+      "id": 6336,
+      "name": "菲游乐苏州狮山龙湖天街店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6312,
+        "pair_name": "菲游乐 苏州龙湖狮山天街店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6312,
+        "target_name": "菲游乐 苏州龙湖狮山天街店",
+        "or_keep_wahlap_name": "菲游乐苏州狮山龙湖天街店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=菲游乐苏州狮山龙湖天街店",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/7031 maimai x2 + 头文字D x2. Single venue."
+    },
+    {
+      "id": 6320,
+      "name": "菲游乐南京建邺金陵天地店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6321,
+        "pair_name": "菲游乐南京金陵天地店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6321,
+        "target_name": "菲游乐南京金陵天地店",
+        "or_keep_wahlap_name": "菲游乐南京建邺金陵天地店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=菲游乐南京建邺金陵天地店",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~120m (31.9771 vs 31.9761). Same 金陵天地 L3. BemaniCN s/5647 maimai x2 + other. Single venue."
+    },
+    {
+      "id": 6331,
+      "name": "菲游乐淮安清浦万象城店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6330,
+        "pair_name": "菲游乐淮安万象城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6330,
+        "target_name": "菲游乐淮安万象城店",
+        "or_keep_wahlap_name": "菲游乐淮安清浦万象城店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=菲游乐淮安清浦万象城店",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/6037 maimai x3 (app already has 3 on 6330). Prefer WAHLAP official name on survivor."
+    },
+    {
+      "id": 6333,
+      "name": "菲游乐潮玩派对常熟印象城店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6341,
+        "pair_name": "菲游乐（常熟印象城店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6341,
+        "target_name": "菲游乐（常熟印象城店）",
+        "or_keep_wahlap_name": "菲游乐潮玩派对常熟印象城店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=菲游乐潮玩派对常熟印象城店 address=江苏省常熟市海虞南路88号印象城三楼菲游乐电玩城",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~70m. Same 常熟印象城3楼. BemaniCN s/4015 maimai x2."
+    },
+    {
+      "id": 6390,
+      "name": "萌多拉泰州海陵万达广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6382,
+        "pair_name": "萌哆啦（泰州万达店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6382,
+        "target_name": "萌哆啦（泰州万达店）",
+        "or_keep_wahlap_name": "萌多拉泰州海陵万达广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=萌多拉泰州海陵万达广场店 (also present on chunithm API under same name)",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/4284: maimai 1 + chunithm 2 + 舞立方EVO x1. Spelling 哆/多 variant. Prefer official WAHLAP 萌多拉 name on survivor."
+    },
+    {
+      "id": 6768,
+      "name": "都市幻想昆山花桥中骏世界城店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6394,
+        "pair_name": "萌多拉都市幻想（花桥中骏世界城店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6394,
+        "target_name": "萌多拉都市幻想（花桥中骏世界城店）",
+        "or_keep_wahlap_name": "都市幻想昆山花桥中骏世界城店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=都市幻想昆山花桥中骏世界城店 address=江苏昆山市花桥镇俞巷路19号花桥中骏世界城4楼都市幻想",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/6026: maimai 1 + chunithm 1 (comment: 本店为原上海嘉定信业店搬迁至此). WAHLAP currently lists maimai only under 都市幻想 name; chu remains community-confirmed. Also review id 6392 (bem s/1525 萌多拉都市幻想 2F, same mall coords) as possible stale second pin for the same mall."
+    },
+    {
+      "id": 6392,
+      "name": "萌多拉都市幻想",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "addr": "中骏·世界城购物中心2层",
+        "coords_near": "6394/6768 花桥中骏"
+      },
+      "proposed": {
+        "action": "likely_stale_or_duplicate_of",
+        "target_id": 6394,
+        "target_name": "萌多拉都市幻想（花桥中骏世界城店）"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1525",
+      "evidence_quote": "name=萌多拉都市幻想 address=中骏·世界城购物中心2层; maimai x1 only; updated 2025-11-29 (older than s/6026 2026-02-23 at 4F)",
+      "checked_at": "2026-08-01",
+      "note": "Geocode lands on same 花桥中骏 cluster as 6394/6768 (~80m). No city in address. WAHLAP only has the 4F 都市幻想 listing. Likely old 2F pin or brand alias rather than a second open shop. Not certain without on-site confirmation; do not invent a closure if maintainers prefer to keep both floors."
+    },
+    {
+      "id": 6455,
+      "name": "蜜享乐园扬州仪征店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6450,
+        "pair_name": "蜜享乐园"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6450,
+        "target_name": "蜜享乐园",
+        "or_keep_wahlap_name": "蜜享乐园扬州仪征店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=蜜享乐园扬州仪征店",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~130m (32.2810 vs 32.2807). BemaniCN s/4890 address 宝能环球汇三楼 = 仪征宝能. Single venue; prefer full WAHLAP name."
+    },
+    {
+      "id": 6454,
+      "name": "蜜享乐园徐州贾汪店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6453,
+        "pair_name": "蜜享乐园徐州淮海环球港店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6453,
+        "target_name": "蜜享乐园徐州淮海环球港店",
+        "or_keep_wahlap_name": "蜜享乐园徐州贾汪店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=蜜享乐园徐州贾汪店 address=...淮海环球港2楼蜜享乐园",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords and essentially identical address. Single venue."
+    },
+    {
+      "id": 6496,
+      "name": "贝芘熊盐城阜宁店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6495,
+        "pair_name": "贝芘熊欢乐王国（阜宁店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6495,
+        "target_name": "贝芘熊欢乐王国（阜宁店）",
+        "or_keep_wahlap_name": "贝芘熊盐城阜宁店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=贝芘熊盐城阜宁店",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. Same 久悦广场二楼. Single venue."
+    },
+    {
+      "id": 6538,
+      "name": "超乐趣玩堂常州武进店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6539,
+        "pair_name": "超乐趣玩堂（星河COCO CITY店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6539,
+        "target_name": "超乐趣玩堂（星河COCO CITY店）",
+        "or_keep_wahlap_name": "超乐趣玩堂常州武进店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=超乐趣玩堂常州武进店 address=...星河COCO City2楼 (also on chunithm API)",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~40m. BemaniCN s/5520: maimai 2 + chunithm 2 + taiko 1. WAHLAP row 6538 lacks taiko; transfer taiko onto survivor. Prefer official WAHLAP name."
+    },
+    {
+      "id": 6665,
+      "name": "趣玩汇南京湖北路店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6660,
+        "pair_name": "趣玩汇(南京狮子桥店)"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6660,
+        "target_name": "趣玩汇(南京狮子桥店)",
+        "or_keep_wahlap_name": "趣玩汇南京湖北路店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=趣玩汇南京湖北路店 address=江苏省南京市鼓楼区湖北路68号天狮百盛1楼",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/485: maimai 2 + taiko 1 + jubeat 2. Keep jubeat/taiko on survivor; WAHLAP-only row is maimai-only under 湖北路 name."
+    },
+    {
+      "id": 6663,
+      "name": "趣玩汇南京新街口店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6664,
+        "pair_name": "趣玩汇南京新街口正洪大厦店（原大风）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6664,
+        "target_name": "趣玩汇南京新街口正洪大厦店（原大风）",
+        "or_keep_wahlap_name": "趣玩汇南京新街口店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=趣玩汇南京新街口店 address=南京市秦淮区洪武路38号正洪大厦趣玩汇 (also on chunithm API same name)",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~25m. BemaniCN s/315: maimai 4 + chunithm 2 + taiko 1. Prefer WAHLAP short name; keep taiko from bemanicn."
+    },
+    {
+      "id": 6926,
+      "name": "酷玩空间盐城盐都店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 6929,
+        "pair_name": "酷玩空间（盐城盐都万达广场店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6929,
+        "target_name": "酷玩空间（盐城盐都万达广场店）",
+        "or_keep_wahlap_name": "酷玩空间盐城盐都店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=酷玩空间盐城盐都店 address=...西环路88号万达广场三楼酷玩空间",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/1803 maimai 1 + taiko 1 (updated 2026-07-18). Transfer taiko to survivor."
+    },
+    {
+      "id": 7015,
+      "name": "银河大冒险淮安清江浦万达广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7014,
+        "pair_name": "银河大冒险淮安水渡口万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7014,
+        "target_name": "银河大冒险淮安水渡口万达店",
+        "or_keep_wahlap_name": "银河大冒险淮安清江浦万达广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=银河大冒险淮安清江浦万达广场店",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~80m. Same 淮安水渡口/清江浦万达 cluster. BemaniCN s/6314 maimai x1. Single venue; prefer WAHLAP official name."
+    },
+    {
+      "id": 7165,
+      "name": "风云再起南京金鹰店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7135,
+        "pair_name": "风云再起(南京河西金鹰世界店)"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7135,
+        "target_name": "风云再起(南京河西金鹰世界店)",
+        "or_keep_wahlap_name": "风云再起南京金鹰店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=风云再起南京金鹰店 address=...应天大街888号河西金鹰3楼",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~80m. Same 河西金鹰3楼. BemaniCN s/612: maimai 2 + taiko 1 + 头文字D x4. Transfer taiko/other onto survivor."
+    },
+    {
+      "id": 7162,
+      "name": "风云再起南京浦口弘扬广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7161,
+        "pair_name": "风云再起南京弘阳广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7161,
+        "target_name": "风云再起南京弘阳广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=风云再起南京浦口弘扬广场店 address=...弘阳广场C3区三层 (note 弘扬 vs 弘阳 spelling)",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~350m but both are 南京弘阳广场 C馆/C3. 7161 already has bemanicn s/641 (maimai 2 + taiko 4) and is the better-named 弘阳 form. 7162 is a second WAHLAP spelling variant (弘扬). Merge."
+    },
+    {
+      "id": 7163,
+      "name": "风云再起南京软件谷店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7229,
+        "pair_name": "风云再起（雨花客厅店）"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7229,
+        "target_name": "风云再起（雨花客厅店）",
+        "or_keep_wahlap_name": "风云再起南京软件谷店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=风云再起南京软件谷店 address=...雨花客厅EPARK购物中心3楼",
+      "checked_at": "2026-08-01",
+      "note": "Coords ~150m. Same 雨花客厅 3F. BemaniCN s/1613 maimai 2 + taiko 1. Prefer one pin with WAHLAP name + taiko."
+    },
+    {
+      "id": 7181,
+      "name": "风云再起徐州鼓楼苏宁广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7180,
+        "pair_name": "风云再起徐州苏宁广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7180,
+        "target_name": "风云再起徐州苏宁广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "arcadeName=风云再起徐州鼓楼苏宁广场店 address=...苏宁广场3F326 (chunithm API). Maimai API uses 风云再起徐州苏宁广场店 same plaza.",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. Classic WAHLAP mai/chu name-split for one shop. BemaniCN s/1715 already has maimai 3 (2+1 rows) + chunithm 2 on 7180. Merge 7181 into 7180."
+    },
+    {
+      "id": 7184,
+      "name": "风云再起无锡苏宁广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7207,
+        "pair_name": "风云再起游乐汇(无锡苏宁广场店)"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7207,
+        "target_name": "风云再起游乐汇(无锡苏宁广场店)",
+        "or_keep_wahlap_name": "风云再起无锡苏宁广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=风云再起无锡苏宁广场店 address=...苏宁广场三层309E",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/4242 (updated 2026-07-31): maimai 2 + taiko 1 + 宝可梦明耀之星 x2. Apply maimai count 2 and taiko on survivor; prefer official WAHLAP name."
+    },
+    {
+      "id": 7348,
+      "name": "鸽屋咕咕咕南京金銮店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 7346,
+        "pair_name": "鸽屋咕咕咕"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7346,
+        "target_name": "鸽屋咕咕咕",
+        "or_keep_wahlap_name": "鸽屋咕咕咕南京金銮店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=鸽屋咕咕咕南京金銮店 address=...金銮大厦24楼c座鸽屋咕咕咕",
+      "checked_at": "2026-08-01",
+      "note": "Identical coords. BemaniCN s/447: maimai 2 (1 CN + 1 卖萌乐) + chunithm 2 Mate. WAHLAP lists maimai only; chu is private-cafe Mate (not on WAHLAP midtr). Keep chu as community/private, not official-network claim. Prefer WAHLAP full name on survivor."
+    },
+    {
+      "id": 7346,
+      "name": "鸽屋咕咕咕",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/447",
+      "evidence_quote": "start_time=12 end_time=24; comment: 12:00-24:00营业",
+      "checked_at": "2026-08-01",
+      "note": "Private rhythm cafe, not mall hours."
+    },
+    {
+      "id": 6284,
+      "name": "苏州火窝音游",
+      "field": "hours",
+      "current": null,
+      "proposed": "24 hours (when open); currently 装修中暂不开放",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6651",
+      "evidence_quote": "start_time=1 end_time=26; comment: （装修中，暂不开放）音游窝，24小时营业。",
+      "checked_at": "2026-08-01",
+      "note": "Hours only matter after reopening. Status temporarily_closed takes priority."
+    },
+    {
+      "id": 6285,
+      "name": "苏州被窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "24 hours (self-service after first visit)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7068",
+      "evidence_quote": "start_time=1 end_time=26; comment: 本店采用24小时自助计费系统",
+      "checked_at": "2026-08-01",
+      "note": "Private cafe. First visit needs reservation. Not on WAHLAP (maimai/chu private builds: majdataplay / MuNET)."
+    },
+    {
+      "id": 6286,
+      "name": "苏州趴窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "24 hours (invite / QQ group appointment)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7250",
+      "evidence_quote": "start_time=1 end_time=24; transport: 加群预约后获得详细地址; 不接待未成年人",
+      "checked_at": "2026-08-01",
+      "note": "Invite-only private venue. Address on map is intentionally vague (郭苑路地铁站旁)."
+    },
+    {
+      "id": 6664,
+      "name": "趣玩汇南京新街口正洪大厦店（原大风）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/315",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-08-01",
+      "note": "From live BemaniCN shop fields."
+    },
+    {
+      "id": 6660,
+      "name": "趣玩汇(南京狮子桥店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-01:00 (+1d)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/485",
+      "evidence_quote": "start_time=11 end_time=25",
+      "checked_at": "2026-08-01",
+      "note": "BemaniCN end_time 25 means 01:00 next day per site convention."
+    },
+    {
+      "id": 7183,
+      "name": "风云再起无锡清扬茂业天地店",
+      "field": "other",
+      "current": {
+        "notes_implied": "may still have 湾岸/Wangan"
+      },
+      "proposed": {
+        "wangan_midnight": "removed ~2025-12"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/299",
+      "evidence_quote": "悲报：湾岸最终没能坚持过25年12月，其实看着像是被水淋了以此理由直接撤机了。编辑日期：2026.1.3",
+      "checked_at": "2026-08-01",
+      "note": "App does not list wangan as a rhythm game; informational only. Live machines still maimai 3 + chunithm 2 + taiko 1. Venue open (status 1, on WAHLAP chu)."
+    }
+  ]
+}

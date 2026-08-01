@@ -1,0 +1,1016 @@
+{
+  "shard": 50,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (full CN maimai DX; 156 Henan with province==河南)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (full CN CHUNITHM; 35 Henan)",
+    "https://map.bemanicn.com/api/miniapp/common/region (Henan city codes)",
+    "https://map.bemanicn.com/region/city/{code} Inertia JSON (18 Henan cities, 189 shops)",
+    "https://map.bemanicn.com/s/{id} Inertia JSON (all 72 shard BemaniCN shops; all HTTP 200, all status=1)",
+    "https://map.bemanicn.com/games title_id map (2=maimai, 17=WACCA, 23=DANZBASE, 26=头文字D, 33=舞立方EVO)",
+    "shard_050.json embedded fields for app current state",
+    "data/arcades.json used only to confirm 壹号电玩 missing from full map"
+  ],
+  "corrections": [
+    {
+      "id": 4209,
+      "name": "星际小镇河南原阳店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4208,
+        "action": "merge_into",
+        "keep_id": 4208
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6367",
+      "evidence_quote": "BemaniCN s/6367 name 星际小镇新乡原阳县香港城店 addr 香港城4楼星际小镇; WAHLAP arcadeName 星际小镇河南原阳店 address 河南省原阳县香港城四楼星际小镇; both pins lat=35.055124 lng=113.955813",
+      "note": "Intra-shard cross-source duplicate (0 m). BemaniCN row 4208 has chunithm+maimai and live shop page; 4209 is wahlap-only twin of same 原阳香港城 store. Merge into 4208. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4210,
+      "name": "星际小镇焦作温县店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4207,
+        "action": "merge_into",
+        "keep_id": 4207
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4048",
+      "evidence_quote": "BemaniCN s/4048 name 星际小镇 address 河南省焦作市温县子夏大街与黄河路交叉口新胖发祥四楼星际小镇; WAHLAP 星际小镇焦作温县店 same address; both lat=34.941217 lng=113.09064",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 温县 新胖发祥 四楼 store. Merge wahlap 4210 into bemanicn 4207. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4302,
+      "name": "智游娱乐郑州航空港锦荣店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4303,
+        "action": "merge_into",
+        "keep_id": 4303
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6966",
+      "evidence_quote": "BemaniCN s/6966 智游娱乐（锦荣悦汇城店）; WAHLAP 智游娱乐郑州航空港锦荣店 address 河南郑州市航空港区雍州路锦荣悦汇城 2 楼; both lat=34.56684 lng=113.855997",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 锦荣悦汇城 store. Merge 4302 into 4303. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4304,
+      "name": "智游星期六郑州白沙店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4305,
+        "action": "merge_into",
+        "keep_id": 4305
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6959",
+      "evidence_quote": "BemaniCN s/6959 智游星期六（白沙双宇百货店） addr 敬业路与复兴路交叉口东北260米白沙双宇百货4楼, maimai_dx x1 chunithm x2 updated 2026-07-12; WAHLAP 智游星期六郑州白沙店 双宇百货四楼; pins 18 m apart",
+      "note": "Intra-shard cross-source duplicate (~18 m). Same 白沙 双宇百货 store. Merge 4304 into 4305 (richer BemaniCN record). Distance=18m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4540,
+      "name": "梦想之城郑州金水店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4539,
+        "action": "merge_into",
+        "keep_id": 4539
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3701",
+      "evidence_quote": "BemaniCN s/3701 梦想之城郑州信万广场店 addr 国基路丰庆路交叉口西南角信万广场五楼; WAHLAP 梦想之城郑州金水店 国基路信万广场5楼; pins 11 m apart",
+      "note": "Intra-shard cross-source duplicate (~11 m). Same 信万广场 5F store. Merge 4540 into 4539. Distance=11m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4558,
+      "name": "梦空间三门峡湖滨梦之城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4557,
+        "action": "merge_into",
+        "keep_id": 4557
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2197",
+      "evidence_quote": "BemaniCN s/2197 梦空间 addr 河南省三门峡市湖滨区和平路梦之城五楼梦幻传奇家庭娱乐中心, maimai_dx x1 status=1 updated 2026-06-28; WAHLAP 梦空间三门峡湖滨梦之城店 梦之城购物中心五楼506; both lat=34.778891 lng=111.194982",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 三门峡 梦之城 5F store. Merge 4558 into 4557. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4819,
+      "name": "沃的世界潮玩焦作武陟世博商厦店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4817,
+        "action": "merge_into",
+        "keep_id": 4817
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6710",
+      "evidence_quote": "BemaniCN s/6710 沃的世界 addr 龙源街道迎宾大道868号世博商厦二层; WAHLAP 沃的世界潮玩焦作武陟世博商厦店 same 世博商厦二层; both lat=35.104931 lng=113.428865",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 武陟 世博商厦 store. Merge 4819 into 4817. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4884,
+      "name": "海绵动物郑州金水印象汇店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4883,
+        "action": "merge_into",
+        "keep_id": 4883
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5590",
+      "evidence_quote": "BemaniCN s/5590 海绵动物郑州印象汇店 addr 中州大道1188号印象汇四楼; WAHLAP 海绵动物郑州金水印象汇店 same 印象汇四楼; both lat=34.749958 lng=113.718797",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 印象汇 store. Merge 4884 into 4883. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4889,
+      "name": "润宝梦商丘万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4905,
+        "action": "merge_into",
+        "keep_id": 4905
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5517",
+      "evidence_quote": "BemaniCN s/5517 润宝梦想潮玩娱乐（商丘港汇万达店）; WAHLAP 润宝梦商丘万达店 商丘港汇万达二楼; both lat=34.448264 lng=115.64212",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 港汇万达 store. Merge 4889 into 4905. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4898,
+      "name": "润宝梦想潮玩信阳点美店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4904,
+        "action": "merge_into",
+        "keep_id": 4904
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6388",
+      "evidence_quote": "BemaniCN s/6388 点美广场3楼; WAHLAP 润宝梦想潮玩信阳点美店 商城县点美广场3F; pins 11 m apart",
+      "note": "Intra-shard cross-source duplicate (~11 m). Same 商城 点美广场 store. Merge 4898 into 4904. Distance=11m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4937,
+      "name": "淘气贝比开封龙亭店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 3845,
+        "action": "merge_into",
+        "keep_id": 3845
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6316",
+      "evidence_quote": "BemaniCN s/6316 星光天地淘气贝比家庭娱乐中心 addr 开封市龙亭区星光天地购物中心A馆二楼; WAHLAP 淘气贝比开封龙亭店 星光天地A管2楼; pins ~114 m (same mall A馆/A管)",
+      "note": "Likely intra-shard cross-source duplicate (~114 m, same 星光天地 A馆 2F). A管 is almost certainly a typo for A馆. Merge 4937 into 3845. Distance=114m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4976,
+      "name": "游戏大魔方郑州中原万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4950,
+        "action": "merge_into",
+        "keep_id": 4950
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5681",
+      "evidence_quote": "BemaniCN s/5681 游戏大魔方(高新万达店) 郁香路37号高新万达二层 updated 2026-07-31; WAHLAP 游戏大魔方郑州中原万达店 高新万达广场2楼; pins 46 m apart",
+      "note": "Intra-shard cross-source duplicate (~46 m). 中原区高新万达 is the same mall. Merge 4976 into 4950. Distance=46m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5100,
+      "name": "潮可爱安阳文峰万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5099,
+        "action": "merge_into",
+        "keep_id": 5099
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5952",
+      "evidence_quote": "BemaniCN s/5952 潮可爱（文峰万达广场店） maimai_dx x3 chunithm x2 taiko x1 updated 2026-07-26; WAHLAP 潮可爱安阳文峰万达店; both lat=36.086808 lng=114.386268. App 5099 already has taiko+counts; 5100 is thinner wahlap twin.",
+      "note": "Intra-shard cross-source duplicate (0 m). Keep 5099 (has taiko and full counts from BemaniCN). Remove/merge 5100. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5105,
+      "name": "潮可爱电玩城驻马店上蔡店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5363,
+        "action": "merge_into",
+        "keep_id": 5363
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4929",
+      "evidence_quote": "BemaniCN s/4929 炫青春乐动城（潮可爱）(伟业城购物中心店) 伟业城购物中心4楼; WAHLAP 潮可爱电玩城驻马店上蔡店 上蔡县伟业城四楼; pins 44 m apart",
+      "note": "Intra-shard cross-source duplicate (~44 m). Same 上蔡 伟业城 4F 潮可爱. Merge 5105 into 5363. Distance=44m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5109,
+      "name": "潮可爱驻马店西平国贸店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5095,
+        "action": "merge_into",
+        "keep_id": 5095
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5014",
+      "evidence_quote": "BemaniCN s/5014 潮可爱 addr 御都国贸3楼; WAHLAP 潮可爱驻马店西平国贸店 西平县护城河路御都汇国贸三楼; both lat=33.385455 lng=114.020167",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 西平 御都国贸 store. Prefer keeping WAHLAP-style specific name 潮可爱驻马店西平国贸店 on the survivor. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5110,
+      "name": "潮可爱鹤壁淇滨万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5113,
+        "action": "merge_into",
+        "keep_id": 5113
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4267",
+      "evidence_quote": "BemaniCN s/4267 潮可爱（鹤壁万达店） 淇滨区闽江路与华夏南路交叉口万达广场 四楼, maimai_dx x2 updated 2026-07-22; WAHLAP 潮可爱鹤壁淇滨万达店 万达四楼; pins 96 m apart",
+      "note": "Likely intra-shard cross-source duplicate (~96 m, same 鹤壁万达 4F). Merge 5110 into 5113 (has quantity 2). Distance=96m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5115,
+      "name": "潮好玩周口市川汇店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5116,
+        "action": "merge_into",
+        "keep_id": 5116
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4427",
+      "evidence_quote": "BemaniCN s/4427 潮好玩潮人娱乐中心(周口五一地下广场果果茂店) 五一广场果果茂; WAHLAP 潮好玩周口市川汇店 五一文化广场果果茂店; pins 85 m apart",
+      "note": "Likely intra-shard cross-source duplicate (~85 m, same 五一广场 果果茂). Merge 5115 into 5116. Distance=85m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5287,
+      "name": "潮范动漫城许昌建安新合作广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5286,
+        "action": "merge_into",
+        "keep_id": 5286
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6719",
+      "evidence_quote": "WAHLAP arcadeName=潮范动漫城许昌建安新合作广场店 address=许昌市建安区新合作广场3楼潮范动漫城; shard 5286 潮范动漫城 and 5287 share identical coordinates",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 许昌 建安 新合作广场 store. Merge 5287 into 5286 and rename 5286 to the specific WAHLAP name. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5468,
+      "name": "爱玩星球郑州金水店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5465,
+        "action": "merge_into",
+        "keep_id": 5465
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1662",
+      "evidence_quote": "BemaniCN s/1662 爱玩星球瀚海海尚店 丰庆路东风路交叉口瀚海海尚负1楼; WAHLAP 爱玩星球郑州金水店 东风路瀚海海尚mall; both lat=34.802081 lng=113.640281",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 瀚海海尚 store. Merge 5468 into 5465 (has WACCA as other). Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5549,
+      "name": "王者宇宙郑州福都百货店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5550,
+        "action": "merge_into",
+        "keep_id": 5550
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6197",
+      "evidence_quote": "BemaniCN s/6197 王者宇宙（福都广场店） 航海东路银莺路交叉口福都百货四楼; WAHLAP 王者宇宙郑州福都百货店 same intersection 四楼; pins 93 m apart",
+      "note": "Likely intra-shard cross-source duplicate (~93 m, same 福都百货 4F). Merge 5549 into 5550. Distance=93m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5610,
+      "name": "玩美世界信阳光山佳乐购物广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5614,
+        "action": "merge_into",
+        "keep_id": 5614
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6675",
+      "evidence_quote": "BemaniCN s/6675 玩美世界超级游乐中心 光山县佳乐购物中心慧泉店三楼 maimai_dx x1 taiko x1 updated 2026-06-09; WAHLAP 玩美世界信阳光山佳乐购物广场店 same 佳乐/慧泉 三楼; pins 28 m",
+      "note": "Intra-shard cross-source duplicate (~28 m). Keep 5614 (has taiko). Merge 5610 into 5614. Distance=28m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5612,
+      "name": "玩美世界安阳文峰吾悦广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5609,
+        "action": "merge_into",
+        "keep_id": 5609
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2091",
+      "evidence_quote": "BemaniCN s/2091 玩美世界e动城（安阳吾悦店） 光明路安阳吾悦广场; WAHLAP 玩美世界安阳文峰吾悦广场店 光明路与同兴街吾悦广场三楼Z09; both lat=36.07822 lng=114.410017",
+      "note": "Intra-shard cross-source duplicate (0 m). Same 安阳吾悦 store. Merge 5612 into 5609. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5613,
+      "name": "玩美世界新乡大桥悦时代店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5606,
+        "action": "merge_into",
+        "keep_id": 5606
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2946",
+      "evidence_quote": "BemaniCN s/2946 玩美世界e动城新乡大桥店 大桥悦时代三楼 maimai_dx+taiko; WAHLAP 玩美世界新乡大桥悦时代店 same; both lat=35.285789 lng=113.896119",
+      "note": "Intra-shard cross-source duplicate (0 m). Keep 5606 (has taiko). Merge 5613 into 5606. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5705,
+      "name": "环游嘉年华郑州中原探十里店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4882,
+        "action": "merge_into",
+        "keep_id": 4882
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2954",
+      "evidence_quote": "BemaniCN s/2954 海港嘉年华（探十里店） addr 陇海路桐柏路探十里三楼环游嘉年华 maimai_dx x2; WAHLAP 环游嘉年华郑州中原探十里店 same 探十里三楼; both lat=34.736667 lng=113.609208. Comment on s/2044 notes 和探十里（海港嘉年华）的币不通用 confirming brand alias.",
+      "note": "Intra-shard cross-source duplicate (0 m). 海港嘉年华 is the BemaniCN name for 环游嘉年华 探十里. Merge 5705 into 4882. Distance=0m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5706,
+      "name": "环游嘉年华郑州二七店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 5679,
+        "action": "merge_into",
+        "keep_id": 5679
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2044",
+      "evidence_quote": "BemaniCN s/2044 环游嘉年华游乐体验中心（百年德化店） 德化街100号百年德化负一楼 maimai_dx x2 chunithm x2 jubeat x2 updated 2026-07-21; WAHLAP 环游嘉年华郑州二七店 same 百年德化负一楼; pins 45 m",
+      "note": "Intra-shard cross-source duplicate (~45 m). Keep 5679 (has jubeat + full counts). Merge 5706 into 5679. Distance=45m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3906,
+      "name": "星悦乐玩城濮阳华龙店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 3907,
+        "action": "merge_into",
+        "keep_id": 3907
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3652",
+      "evidence_quote": "WAHLAP 星悦乐玩城濮阳华龙店 address 河南省濮阳市华龙区水秀街5号楼; BemaniCN s/3652 星悦乐玩城（濮阳水秀店） 五一中路和开州北路交叉口水秀街星悦乐玩城 maimai_dx x2 updated 2026-07-31; pins 91 m apart on 水秀街",
+      "note": "Likely same 濮阳 水秀 星悦乐玩城 listed under 华龙店 (WAHLAP) and 水秀店 (BemaniCN). Merge 3906 into 3907. Distance=91m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4254,
+      "name": "星际玩家郑州百年德化购物公园店",
+      "field": "other",
+      "current": {
+        "duplicate_of": null,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "duplicate_of": 4258,
+        "action": "merge_into",
+        "keep_id": 4258
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5935",
+      "evidence_quote": "BemaniCN s/5935 星际玩家（郑州店） 德化街100号1层B139 maimai_dx x2 taiko x1 舞立方EVO updated 2026-07-21; WAHLAP 星际玩家郑州百年德化购物公园店 德化街100号1层B151; pins 69 m; unit B139 vs B151 may be adjacent units in same 星际玩家 hall",
+      "note": "Likely same 百年德化 1F 星际玩家 (unit numbers B139 vs B151 differ slightly; same mall floor brand). Prefer 4258 (richer machine list). Confidence likely not certain because unit numbers differ. Distance=69m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "建兴广场壹号电玩大世界",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "建兴广场壹号电玩大世界",
+        "addr": "河南省开封市尉氏县建兴广场三楼",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7329",
+        "hours": "09:00-22:00",
+        "notes": "Also listed on WAHLAP as 壹号电玩大世界开封尉氏建兴店. Comment: 尉氏舞萌破零, also 舞立方白秀. QQ 820365336."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7329",
+      "evidence_quote": "shop status=1 updated_at=2026-07-28T02:54:40Z name=建兴广场壹号电玩大世界 address=河南省开封市尉氏县建兴广场三楼 start_time=9 end_time=22 arcades: title_id=1 maimai_dx quantity=1 version=CN1.56B. Also on WAHLAP maidx location list as 壹号电玩大世界开封尉氏建兴店.",
+      "note": "Not present in full map when matching all Henan WAHLAP maimai against data/arcades.json. Add with geocode of 尉氏 建兴广场.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4318,
+      "name": "月宫",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki"
+        ],
+        "addr": "解放路地铁站，详细地址进群获得"
+      },
+      "proposed": {
+        "tag": "private_or_invite_only",
+        "network": "not_on_wahlap_cn",
+        "versions": {
+          "maimai_dx": "同步日服",
+          "chunithm": "同步日服",
+          "ongeki": "同步日服"
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6243",
+      "evidence_quote": "address=解放路地铁站，详细地址进群获得; versions all 同步日服; comment 加群 958483467 获取详细信息 / 所有游戏都是 n-0; status=1 updated 2026-07-15. Not present on WAHLAP maidx or midtr Henan lists.",
+      "note": "Private/invite-only room (address hidden behind QQ group) running Japan-sync builds, not China WAHLAP network. Maintainer may want to hide or mark as private. Lat/lng pin is unreliable (vague 解放路地铁站). City appears near Luoyang from nearby pins but city is UNVERIFIED.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5797,
+      "name": "畅梦妙妙屋",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki"
+        ],
+        "addr": "河南省商丘市梁园区华商世贸A座11层C01室"
+      },
+      "proposed": {
+        "tag": "private_or_invite_only",
+        "network": "not_on_wahlap_cn",
+        "versions": {
+          "maimai_dx": "Circle Plus",
+          "chunithm": "X-Verse-X",
+          "ongeki": "Re:fresh"
+        },
+        "pricing_note": "7 RMB/hour all-you-can-play style (BemaniCN price=7, comment 7r/小时, 提供包夜)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7245",
+      "evidence_quote": "shop 畅梦妙妙屋 address 河南省商丘市梁园区华商世贸A座11层C01室; versions maimai Circle Plus / chunithm X-Verse-X / ongeki Re:fresh; price=7; comment: 目前有舞萌DX 中二节奏（大四台）音击（源台） 提供包夜 7r/小时 交流群号 674323825; updated 2026-07-07. Not on WAHLAP CN location lists.",
+      "note": "Private-style venue on 11F office building with Japan software versions (Circle Plus / X-Verse-X / Re:fresh), not China WAHLAP network. Mark private/invite-only; do not treat as public mall arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4169,
+      "name": "星际传奇郑州郑东万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5563",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-07-11",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5099,
+      "name": "潮可爱安阳文峰万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5952",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-07-26",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5679,
+      "name": "环游嘉年华游乐体验中心（百年德化店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2044",
+      "evidence_quote": "start_time=10 end_time=24 (to 00:00 next day) updated 2026-07-21",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4305,
+      "name": "智游星期六（白沙双宇百货店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6959",
+      "evidence_quote": "start_time=10 end_time=23 updated 2026-07-12",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5757,
+      "name": "电动工坊洛阳涧西万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/119",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-07-18",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5406,
+      "name": "焕游星际郑州荥阳吾悦广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6674",
+      "evidence_quote": "start_time=10 end_time=21 updated 2026-07-07",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5614,
+      "name": "玩美世界超级游乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-18:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6675",
+      "evidence_quote": "start_time=9 end_time=18 updated 2026-06-09",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3907,
+      "name": "星悦乐玩城（濮阳水秀店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3652",
+      "evidence_quote": "start_time=10 end_time=23 updated 2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4557,
+      "name": "梦空间",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2197",
+      "evidence_quote": "start_time=10 end_time=24 updated 2026-06-28; comment notes 扶梯九点半关闭",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5311,
+      "name": "灵宝快乐星球",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7260",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-07-14",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5467,
+      "name": "爱玩星球郑州正弘汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2625",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-07-22",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4258,
+      "name": "星际玩家（郑州店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5935",
+      "evidence_quote": "start_time=10 end_time=24 updated 2026-07-21",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4915,
+      "name": "润宝梦潮玩娱乐南阳万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4456",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-04-18",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5466,
+      "name": "爱玩星球焦作解放店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5429",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-06-23",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5469,
+      "name": "爱玩星球驻马店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/832",
+      "evidence_quote": "start_time=10 end_time=22 updated 2026-07-09",
+      "note": "BemaniCN shop.start_time/end_time integers. Community-maintained; treat as likely not certain. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5797,
+      "name": "畅梦妙妙屋",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "note": "7 CNY/hour (time-based, not per-credit); overnight beds available per BemaniCN comment"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7245",
+      "evidence_quote": "price=7; comment: 7r/小时 / 提供包夜（有床，提供热水和基本洗漱用品）",
+      "note": "Hourly private room pricing, not standard coin pricing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3759,
+      "name": "新密市e舞成名游戏厅",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "note": "10 CNY flat day pass (前台交10RMB一天之内随便打) per BemaniCN comment; maimai is offline FiNALE-era cab"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/548",
+      "evidence_quote": "comment: 不用投币，前台交10RMB一天之内随便打。 maimai已经断网了。 jubeat 2025.8.5 配件没到齐，无法游玩 (may be fixed later; last shop update 2025-12-04).",
+      "note": "Also: title_id=2 maimai finale (offline, not DX network). jubeat status uncertain since Aug 2025 comment said parts missing; shop still lists jubeat quantity=1 as of 2025-12-04.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3759,
+      "name": "新密市e舞成名游戏厅",
+      "field": "other",
+      "current": {
+        "games": [
+          "jubeat",
+          "other"
+        ],
+        "notes_other": "maimai, DANZBASE"
+      },
+      "proposed": {
+        "offline_maimai_finale": true,
+        "jubeat_status": "uncertain_since_2025-08",
+        "last_bemanicn_update": "2025-12-04"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/548",
+      "evidence_quote": "other includes title_id=2 version=maimai finale and title_id=23 DANZBASE; comment 2025.8.5 jubeat配件没到齐，无法游玩; updated_at 2025-12-04 still lists jubeat qty=1 version 未知; maimai已经断网了",
+      "note": "Do not upgrade offline maimai finale cab to maimai_dx. jubeat operability since Aug 2025 is uncertain; leave listed but flag staleness (last update Dec 2025).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3751,
+      "name": "新乡市万达宝贝王",
+      "field": "other",
+      "current": {
+        "name": "新乡市万达宝贝王",
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "preferred_name": "宝贝王新乡牧野万达店",
+        "also_on_wahlap_as": "宝贝王新乡牧野万达店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP entry arcadeName=宝贝王新乡牧野万达店 address=河南省新乡市牧野区宏力大道万达广场三楼; BemaniCN s/5844 name=新乡市万达宝贝王 address=牧野区荣校路街道宏力大道万达广场3层 maimai_dx x1. Same mall floor.",
+      "note": "If full map still has a separate wahlap-only row for 宝贝王新乡牧野万达店, merge with this BemaniCN row. BemaniCN hours field 10-10 is nonsense (start=end); do not import that hours value. updated_at 2026-03-16 is somewhat stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5095,
+      "name": "潮可爱",
+      "field": "other",
+      "current": "潮可爱",
+      "proposed": "潮可爱驻马店西平国贸店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5014",
+      "evidence_quote": "BemaniCN address 御都国贸3楼; WAHLAP twin name 潮可爱驻马店西平国贸店 西平县护城河路御都汇国贸三楼",
+      "note": "Vague name 潮可爱 is ambiguous (many chain stores). Prefer WAHLAP-style specific name when merging with 5109.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5286,
+      "name": "潮范动漫城",
+      "field": "other",
+      "current": "潮范动漫城",
+      "proposed": "潮范动漫城许昌建安新合作广场店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6719",
+      "evidence_quote": "WAHLAP arcadeName=潮范动漫城许昌建安新合作广场店 address=许昌市建安区新合作广场3楼潮范动漫城; shard 5286 and 5287 share identical coordinates",
+      "note": "Rename vague 潮范动漫城 when merging with wahlap twin 5287.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4207,
+      "name": "星际小镇",
+      "field": "other",
+      "current": "星际小镇",
+      "proposed": "星际小镇焦作温县店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4048",
+      "evidence_quote": "BemaniCN address already 河南省焦作市温县...; WAHLAP name 星际小镇焦作温县店",
+      "note": "Rename vague 星际小镇 to include 温县 when merging with 4210.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4817,
+      "name": "沃的世界",
+      "field": "other",
+      "current": "沃的世界",
+      "proposed": "沃的世界潮玩焦作武陟世博商厦店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6710",
+      "evidence_quote": "BemaniCN addr 龙源街道迎宾大道868号世博商厦二层; WAHLAP name 沃的世界潮玩焦作武陟世博商厦店",
+      "note": "Rename vague 沃的世界 when merging with 4819.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4381,
+      "name": "极客星球济源店（GeeKPlanet）",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2195",
+      "evidence_quote": "BemaniCN status=1 maimai_dx x1 but updated_at=2025-11-29 (8+ months old). No matching WAHLAP Henan maidx location under 极客/GeeK/济源 except 星际梦想城济源宝龙广场店 (different venue).",
+      "note": "Cannot confirm still on China maimai network. Official WAHLAP list does not show this name. May be closed, renamed, or never networked. Do not delete on this evidence alone; flag for re-check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5311,
+      "name": "灵宝快乐星球",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 4.0,
+        "note": "BemaniCN price field=4.0 (unusually high unit; may mean 4 CNY/coin or mis-entered)"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/7260",
+      "evidence_quote": "price=4.0 pay_type=0; maimai_dx x1 updated 2026-07-14",
+      "note": "price=4 is an outlier vs typical 0.3-1 coin unit. Could be CNY per credit directly. Needs on-site confirmation before showing as fact.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5464,
+      "name": "爱玩星球洛阳西工店",
+      "field": "location",
+      "current": {
+        "lat": 34.669803,
+        "lng": 112.429786,
+        "addr": "河南省洛阳市西工区大卫天地九楼"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4570",
+      "evidence_quote": "shard id 5464 爱玩星球洛阳西工店 addr 河南省洛阳市西工区大卫天地九楼 and id 5799 畅玩星际洛阳西工大卫城店 addr 中洲路421号丹尼斯大卫城八楼 share identical lat=34.669803 lng=112.429786 despite different floors (9F vs 8F) and different brand names. BemaniCN for 5799: 中州路421号丹尼斯大卫天地八楼东南角畅玩星际.",
+      "note": "Geocode collision, not a venue merge. Both venues likely real inside the same 大卫城/大卫天地 complex on different floors. Pins should be offset or refined; do NOT merge these two records.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

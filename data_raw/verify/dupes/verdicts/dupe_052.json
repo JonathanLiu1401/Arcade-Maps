@@ -1,0 +1,291 @@
+{
+  "shard": 52,
+  "verdicts": [
+    {
+      "ids": [6229, 6231],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6229,
+      "canonical_name": "聚乐街区周口商水店",
+      "canonical_addr": "河南省周口市商水县城关乡阳城大道1451仟业广场负一层",
+      "reason": "Same brand at 仟业广场 B1 in Shangshui; wahlap branch name pairs with bemanicn bare name at identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/6527",
+      "evidence_quote": "聚乐街区游乐城 / 城关乡阳城大道1451仟业广场负1楼"
+    },
+    {
+      "ids": [6230, 6232],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6230,
+      "canonical_name": "聚乐街区周口项城店",
+      "canonical_addr": "河南省周口市项城市市标太格里购物中心4F001聚乐街区",
+      "reason": "Both list 太格里购物中心 4F in Xiangcheng about 30 m apart; Baidu shows one 聚乐街区电玩城(太格里店).",
+      "evidence_url": "https://map.bemanicn.com/s/4263",
+      "evidence_quote": "项城市光武大道与迎宾大道交汇处太格里购物中心4楼聚乐街区电玩城"
+    },
+    {
+      "ids": [6238, 6239],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6239,
+      "canonical_name": "肥猫电玩洛阳西工百脑汇店",
+      "canonical_addr": "洛阳市西工区中州路与王城大道路口百脑汇F3层",
+      "reason": "Same brand inside 洛阳西工百脑汇 F3; bare bemanicn name is the fuller wahlap branch at 12 m.",
+      "evidence_url": "https://map.bemanicn.com/s/6830",
+      "evidence_quote": "西工区中州中路300号百脑汇三楼绽放欢乐汇内"
+    },
+    {
+      "ids": [6247, 6248],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6248,
+      "canonical_name": "自游星空园区印象城店",
+      "canonical_addr": "江苏省苏州市工业园区现代大道1699号印象城3楼自游星空",
+      "reason": "Both are 印象城 3F on 现代大道1699 (wahlap has typo 现在); Baidu lists one 自游星空超级游乐汇(苏州印象城店).",
+      "evidence_url": "https://map.bemanicn.com/s/6230",
+      "evidence_quote": "工业园区现代大道1699号印象城商场3楼"
+    },
+    {
+      "ids": [6259, 6260],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6260,
+      "canonical_name": "航天动漫安顺南马广场店",
+      "canonical_addr": "贵州省安顺市经济技术开发区南马广场王府商城一层航天动漫",
+      "reason": "Identical coords and 南马广场; Baidu returns single 航天动漫城 at 王府商场一层.",
+      "evidence_url": "https://map.bemanicn.com/s/2856",
+      "evidence_quote": "南马广场航天动漫城"
+    },
+    {
+      "ids": [6261, 6274],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6274,
+      "canonical_name": "艺珑传奇（永川万达广场店）（前大玩家超乐场）",
+      "canonical_addr": "永川区万达广场3F",
+      "reason": "ZIv and BemaniCN both describe 艺珑传奇 at 永川万达广场 3F; Baidu has one 艺珑传奇(永川万达店).",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11645",
+      "evidence_quote": "3F, Wanda Plaza, Yongchuan District Chongqing"
+    },
+    {
+      "ids": [6262, 6267],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6262,
+      "canonical_name": "艺珑传奇三亚天涯店",
+      "canonical_addr": "海南省三亚市天涯区解放三路668号明珠广场3层艺珑传奇",
+      "reason": "Same 明珠广场 3F on 解放三路668号 under 艺珑传奇; Baidu shows one 艺珑传奇动漫城(三亚明珠广场店).",
+      "evidence_url": "https://map.bemanicn.com/s/3273",
+      "evidence_quote": "解放三路668号明珠广场3楼"
+    },
+    {
+      "ids": [6785, 6789],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6789,
+      "canonical_name": "酷乐光年辽阳友谊商场店",
+      "canonical_addr": "辽宁省辽阳市白塔区新运大街73号友谊商城一部5楼",
+      "reason": "Same street number 新运大街73号 友谊商城; Baidu unifies as 酷乐光年家庭游乐中心 on 5F of 友谊商城一部.",
+      "evidence_url": "https://map.bemanicn.com/s/3284",
+      "evidence_quote": "新运大街73号5楼"
+    },
+    {
+      "ids": [6276, 6277],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6276,
+      "canonical_name": "艾妮达家庭娱乐中心(金都宋华店)",
+      "canonical_addr": "山东省烟台市招远市温泉路295号金都宋华3楼艾妮达家庭娱乐中心",
+      "reason": "Both addresses are 温泉路295号金都宋华; wahlap branch label 丽悦广场 mismatches the shared address and Baidu only knows the 金都宋华店.",
+      "evidence_url": "https://map.bemanicn.com/s/6030",
+      "evidence_quote": "艾妮达家庭娱乐中心(金都宋华店) / 温泉路295号金都宋华"
+    },
+    {
+      "ids": [6278, 6279],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6279,
+      "canonical_name": "芒果乐园玉溪红塔青花店",
+      "canonical_addr": "云南省玉溪市红塔区红塔大道95号玉溪青花街GS7GS8GS9号",
+      "reason": "Identical unit numbers GS7-GS9 on 红塔大道95号 青花街 and identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/4892",
+      "evidence_quote": "红塔大道95号青花街GS7GS8GS9号"
+    },
+    {
+      "ids": [6308, 6315],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6315,
+      "canonical_name": "菲游乐上海奉贤宝龙店",
+      "canonical_addr": "上海市奉贤区南桥宝龙广场三楼菲游乐",
+      "reason": "ZIv FEFE SHEEP 奉贤宝龙店 and wahlap/bemanicn both place 菲游乐 on 3F of Nanqiao Baolong Plaza.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11499",
+      "evidence_quote": "3F, Baolong Plaza Nanqiao Fengxian District Shanghai"
+    },
+    {
+      "ids": [6312, 6336],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6312,
+      "canonical_name": "菲游乐 苏州龙湖狮山天街店",
+      "canonical_addr": "塔园路181号 龙湖狮山天街4楼",
+      "reason": "Same 龙湖狮山天街 4F at identical coords; Baidu has one 菲游乐(龙湖狮山天街店) at 塔园路181号.",
+      "evidence_url": "https://map.bemanicn.com/s/7031",
+      "evidence_quote": "塔园路181号 龙湖狮山天街4楼"
+    },
+    {
+      "ids": [6319, 6334],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6319,
+      "canonical_name": "菲游乐东阳银泰城店",
+      "canonical_addr": "浙江省金华市东阳市白云街道兴平西路428号银泰城三楼菲游乐",
+      "reason": "Both are 菲游乐 at 东阳银泰城 with identical coords; Baidu lists one at 兴平西路428号 F3.",
+      "evidence_url": "https://map.bemanicn.com/s/2218",
+      "evidence_quote": "银泰城（兴平西路428号）"
+    },
+    {
+      "ids": [6320, 6321],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6320,
+      "canonical_name": "菲游乐南京建邺金陵天地店",
+      "canonical_addr": "江苏省南京市建邺区中和路68号南京金陵天地L3层L366铺",
+      "reason": "Same 金陵天地 3F on 中和路; Baidu shows one 菲游乐 at 中和路68号金陵天地3楼.",
+      "evidence_url": "https://map.bemanicn.com/s/5647",
+      "evidence_quote": "中和路68号南京金陵天地L3层L366铺"
+    },
+    {
+      "ids": [6326, 6335],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6326,
+      "canonical_name": "菲游乐家庭娱乐中心(世纪大道万达店)",
+      "canonical_addr": "世纪大道与凤歧路交汇处济南世纪大道万达广场3F",
+      "reason": "Same 世纪大道万达 brand; floor disagrees (bemanicn 3F vs wahlap 2F) but shop comment says rhythm cabs are on 3F and there is one 菲游乐 in the mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6467",
+      "evidence_quote": "音游机在三楼; 乘电梯至三楼可以直接看到菲游乐"
+    },
+    {
+      "ids": [6329, 6342],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6329,
+      "canonical_name": "菲游乐浙江台州店",
+      "canonical_addr": "浙江省玉环经济开发区银湖大道22号玉环万达广场 2F",
+      "reason": "Both are 菲游乐 at 玉环万达广场 2F with identical coords; Baidu lists one 菲游乐(玉环万达广场店).",
+      "evidence_url": "https://map.bemanicn.com/s/2129",
+      "evidence_quote": "台州玉环万达广场2楼"
+    },
+    {
+      "ids": [6333, 6341],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6333,
+      "canonical_name": "菲游乐潮玩派对常熟印象城店",
+      "canonical_addr": "江苏省常熟市海虞南路88号印象城三楼菲游乐电玩城",
+      "reason": "Same 海虞南路88号印象城 3F branch under 菲游乐; Baidu has one 菲游乐(常熟印象城店).",
+      "evidence_url": "https://map.bemanicn.com/s/4015",
+      "evidence_quote": "常熟市琴川街道海虞南路88号印象城3楼"
+    },
+    {
+      "ids": [6344, 6345],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6344,
+      "canonical_name": "菲玩不可昆明嵩明莱雅广场店",
+      "canonical_addr": "云南省昆明市嵩明县杨林镇文苑路莱雅广场1栋3层20到22号",
+      "reason": "Same 嵩明杨林 莱雅广场 brand listing at identical coords; Baidu has one 菲玩不可潮玩城 at 莱雅广场.",
+      "evidence_url": "https://map.bemanicn.com/s/7042",
+      "evidence_quote": "文苑路与文轩路交汇处莱雅广场"
+    },
+    {
+      "ids": [6362, 6363],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6363,
+      "canonical_name": "萌动洛克哈尔滨道外店",
+      "canonical_addr": "黑龙江省哈尔滨市道外区南勋街333号青龙商厦B座",
+      "reason": "Same 南勋街333号 address and coords; bare bemanicn name is the wahlap 道外 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6244",
+      "evidence_quote": "道外区南勋街333号"
+    },
+    {
+      "ids": [6369, 6371],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6369,
+      "canonical_name": "萌可力潮玩娱乐(天成购物广场店)",
+      "canonical_addr": "湖北省襄阳市谷城县城关镇粉水路70号天成购物广场3楼3002号",
+      "reason": "Same unit 天成购物广场3楼3002 in Gucheng under 萌可力; 52 m is geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/7219",
+      "evidence_quote": "粉水路70号天成购物广场3楼3002号"
+    },
+    {
+      "ids": [6374, 6377],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6377,
+      "canonical_name": "萌吉拉广州花都狮岭店",
+      "canonical_addr": "广东省广州市花都区狮岭大道中1号合成广场二期狮岭新天地二楼",
+      "reason": "Same 合成广场二期 unit 2-(11-18) at identical coords; Baidu 萌吉拉家庭娱乐(合成店) matches.",
+      "evidence_url": "https://map.bemanicn.com/s/3181",
+      "evidence_quote": "狮岭大道中1号合成广场二期2层2-(11-18)"
+    },
+    {
+      "ids": [6376, 6381],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6376,
+      "canonical_name": "萌吉拉广州花都炭步店",
+      "canonical_addr": "广东省广州市花都区炭步镇繁华路与花都大道辅路交叉口东100米炭步永利广场三楼萌吉拉",
+      "reason": "bemanicn 万都超市3F is the supermarket inside 永利广场; Baidu places 萌吉拉家庭娱乐(炭步店) at 永利广场3楼.",
+      "evidence_url": "https://map.bemanicn.com/s/5373",
+      "evidence_quote": "炭步万都超市3F (Baidu: 萌吉拉家庭娱乐(炭步店) | 永利广场3楼)"
+    },
+    {
+      "ids": [6379, 6380],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6379,
+      "canonical_name": "萌吉拉广州花都街汇店",
+      "canonical_addr": "广东省广州市花都区新华街新街大道5号之一新街汇广场三楼萌吉拉",
+      "reason": "Same 新街汇广场 unit on 新街大道5号之一 3F; Baidu has one 萌吉拉家庭娱乐中心(新街汇店) at 323铺.",
+      "evidence_url": "https://map.bemanicn.com/s/3599",
+      "evidence_quote": "新华新街大道5号之一新街汇广场3层323"
+    },
+    {
+      "ids": [6384, 6385],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6385,
+      "canonical_name": "萌多拉上海奉贤港嘉店",
+      "canonical_addr": "上海市奉贤区四团镇港嘉路518号奉发宝龙广场2楼萌多拉",
+      "reason": "ZIv, BemaniCN and Baidu all place one 萌多拉 at 奉发宝龙广场 港嘉路518 2F; wahlap 277号 is a geocode/address-number error on the same plaza.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11509",
+      "evidence_quote": "2F, Fengfa Baolong Plaza, No.518 Gangjia Road, Situan Town"
+    },
+    {
+      "ids": [6386, 6387],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6386,
+      "canonical_name": "萌多拉南平建发悦城店",
+      "canonical_addr": "福建省南平市建瓯市建发悦城负一楼萌多拉",
+      "reason": "Both list 建瓯建发悦城 B1 萌多拉; Baidu has one 萌多拉(建瓯建发悦城店).",
+      "evidence_url": "https://map.bemanicn.com/s/4391",
+      "evidence_quote": "建瓯市建发悦城负一楼萌多拉都市幻想"
+    },
+    {
+      "ids": [6398, 6403],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6403,
+      "canonical_name": "萌宝熊家庭娱乐中心霍山居然之家店",
+      "canonical_addr": "安徽省六安市霍山县衡山镇中兴路与诸佛庵路交界口居然之家生活Mall 3F",
+      "reason": "Same 霍山 居然之家 on 中兴路 under 萌宝熊; branch suffix and mall name align across wahlap and bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/6909",
+      "evidence_quote": "中兴路与诸佛庵路交界口居然之家生活Mall 3F"
+    }
+  ]
+}

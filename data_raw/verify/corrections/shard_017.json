@@ -1,0 +1,1043 @@
+{
+  "shard": 17,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-07-31; 3139 China / 441 Guangdong maimai DX)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-07-31; 583 China / 112 Guangdong CHUNITHM)",
+    "https://map.bemanicn.com/s/{id} Inertia JSON for all 66 BemaniCN-linked shops in shard (fetched 2026-07-31)",
+    "scrapers/wahlap.py (documents official WAHLAP endpoints)",
+    "In-shard coordinate proximity + brand/mall matching for WAHLAP/BemaniCN dual imports"
+  ],
+  "corrections": [
+    {
+      "id": 5658,
+      "name": "环游嘉年华东莞长安店",
+      "field": "other",
+      "current": "separate venue id 5658 (twin of 5657)",
+      "proposed": "merge into id 5657; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/305",
+      "evidence_quote": "Dual import at 东莞长安万科广场. BemaniCN s/305 name='环游嘉年华东莞长安万科店（原城市英雄）' address='长青南路1号万科广场3层309' status=1 updated_at=2026-07-31T10:38:17.000000Z. Keep id 5657 '环游嘉年华东莞长安万科店（原城市英雄）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 5658 '环游嘉年华东莞长安店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5668,
+      "name": "环游嘉年华广州中华广场店",
+      "field": "other",
+      "current": "separate venue id 5668 (twin of 5659)",
+      "proposed": "merge into id 5659; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1437",
+      "evidence_quote": "Dual import at 广州越秀中华广场. BemaniCN s/1437 name='环游嘉年华中华广场店' address='中山三路33号中华广场3层' status=1 updated_at=2026-06-23T15:13:10.000000Z. Keep id 5659 '环游嘉年华中华广场店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 5668 '环游嘉年华广州中华广场店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5672,
+      "name": "环游嘉年华广州黄埔绿地店",
+      "field": "other",
+      "current": "separate venue id 5672 (twin of 5660)",
+      "proposed": "merge into id 5660; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/282",
+      "evidence_quote": "Dual import at 广州黄埔绿地缤纷城. BemaniCN s/282 name='环游嘉年华中新绿地店' address='知识城南区亿创街3号绿地缤纷城3层' status=1 updated_at=2026-07-04T10:37:10.000000Z. Keep id 5660 '环游嘉年华中新绿地店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 5672 '环游嘉年华广州黄埔绿地店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5684,
+      "name": "环游嘉年华番禺易发店",
+      "field": "other",
+      "current": "separate venue id 5684 (twin of 5677)",
+      "proposed": "merge into id 5677; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/38",
+      "evidence_quote": "Dual import at 番禺易发/新大新. BemaniCN s/38 name='环游嘉年华易发店（暂停营业至8月）' address='市桥光明北路32号易发商业中心5层' status=1 updated_at=2026-05-21T21:28:17.000000Z. Keep id 5677 '环游嘉年华易发店（暂停营业至8月）' src=['bemanicn'] games=['jubeat', 'taiko']. Drop id 5684 '环游嘉年华番禺易发店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5813,
+      "name": "疯狂牛仔城广州海珠万民星光城店",
+      "field": "other",
+      "current": "separate venue id 5813 (twin of 5804)",
+      "proposed": "merge into id 5804; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6997",
+      "evidence_quote": "Dual import at 海珠琶洲万民星光城. BemaniCN s/6997 name='疯狂牛仔城(琶洲万民星光城店)' address='琶洲大道180号201铺自编2001-2' status=1 updated_at=2026-07-15T14:42:34.000000Z. Keep id 5804 '疯狂牛仔城(琶洲万民星光城店)' src=['bemanicn'] games=['maimai_dx', 'taiko']. Drop id 5813 '疯狂牛仔城广州海珠万民星光城店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5807,
+      "name": "疯狂牛仔城佛山南海保利店",
+      "field": "other",
+      "current": "separate venue id 5807 (twin of 5806)",
+      "proposed": "merge into id 5806; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2999",
+      "evidence_quote": "Dual import at 佛山南海保利mall. BemaniCN s/2999 name='疯狂牛仔城佛山保利店' address='广东省佛山市南海区桂城灯湖东路20号保利水城东广场3楼20号' status=1 updated_at=2026-07-12T03:38:27.000000Z. Keep id 5806 '疯狂牛仔城佛山保利店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 5807 '疯狂牛仔城佛山南海保利店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5808,
+      "name": "疯狂牛仔城佛山南海南宇广场店",
+      "field": "other",
+      "current": "separate venue id 5808 (twin of 5824)",
+      "proposed": "merge into id 5824; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6502",
+      "evidence_quote": "Dual import at 佛山南海南宇/映月湖环宇城 L3-D5. BemaniCN s/6502 name='疯狂牛仔城（佛山映月湖环宇城店）' address='桂城街道石龙南路6号映月湖环宇城L3层D5' status=1 updated_at=2026-01-31T10:23:01.000000Z. Keep id 5824 '疯狂牛仔城（佛山映月湖环宇城店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 5808 '疯狂牛仔城佛山南海南宇广场店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5810,
+      "name": "疯狂牛仔城嘉州广场店",
+      "field": "other",
+      "current": "separate venue id 5810 (twin of 5809)",
+      "proposed": "merge into id 5809; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1193",
+      "evidence_quote": "Dual import at 佛山黄岐嘉洲/嘉州广场. BemaniCN s/1193 name='疯狂牛仔城佛山嘉洲广场店' address='黄岐广佛路98号嘉洲广场3层' status=1 updated_at=2025-11-29T17:21:19.000000Z. Keep id 5809 '疯狂牛仔城佛山嘉洲广场店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 5810 '疯狂牛仔城嘉州广场店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5816,
+      "name": "疯狂牛仔城广州白云百信广场店",
+      "field": "other",
+      "current": "separate venue id 5816 (twin of 5817)",
+      "proposed": "merge into id 5817; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3824",
+      "evidence_quote": "Dual import at 广州白云百信广场东区3楼. BemaniCN s/3824 name='疯狂牛仔城白云百信店' address='新市街道机场路1399号百信广场L3层' status=1 updated_at=2026-07-05T09:36:15.000000Z. Keep id 5817 '疯狂牛仔城广州白云百信店' src=['wahlap', 'bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 5816 '疯狂牛仔城广州白云百信广场店' src=['wahlap'] games=['chunithm']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5819,
+      "name": "疯狂牛仔城江门蓬江店",
+      "field": "other",
+      "current": "separate venue id 5819 (twin of 5825)",
+      "proposed": "merge into id 5825; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2210",
+      "evidence_quote": "Dual import at 江门万达二楼. BemaniCN s/2210 name='疯狂牛仔城（江门万达店）' address='江门万达广场二楼' status=1 updated_at=2026-06-10T05:35:02.000000Z. Keep id 5825 '疯狂牛仔城（江门万达店）' src=['bemanicn'] games=['maimai_dx']. Drop id 5819 '疯狂牛仔城江门蓬江店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5875,
+      "name": "相遇潮玩罗定大润发店",
+      "field": "other",
+      "current": "separate venue id 5875 (twin of 5873)",
+      "proposed": "merge into id 5873; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6268",
+      "evidence_quote": "Dual import at 罗定大润发/客都汇. BemaniCN s/6268 name='相遇潮玩' address='大润发(客都汇购物中心店)二楼' status=1 updated_at=2026-02-23T10:45:11.000000Z. Keep id 5873 '相遇潮玩' src=['bemanicn'] games=['maimai_dx']. Drop id 5875 '相遇潮玩罗定大润发店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5988,
+      "name": "福思特珠海香洲印象城店",
+      "field": "other",
+      "current": "separate venue id 5988 (twin of 5980)",
+      "proposed": "merge into id 5980; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4401",
+      "evidence_quote": "Dual import at 珠海香洲印象城福思特. BemaniCN s/4401 name='福思特动漫电玩世界（珠海香洲印象城店）' address='广东省珠海市香洲区凤山街道珠海印象城3楼福思特电玩城' status=1 updated_at=2026-07-19T11:35:59.000000Z. Keep id 5980 '福思特动漫电玩世界（珠海香洲印象城店）' src=['bemanicn'] games=['chunithm', 'maimai_dx']. Drop id 5988 '福思特珠海香洲印象城店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5991,
+      "name": "福斗星球珠海金湾店",
+      "field": "other",
+      "current": "separate venue id 5991 (twin of 5990)",
+      "proposed": "merge into id 5990; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5899",
+      "evidence_quote": "Dual import at 珠海金湾福斗星球. BemaniCN s/5899 name='福斗星球ODEK电玩城' address='三灶华晨商业广场1层' status=1 updated_at=2026-03-17T04:59:27.000000Z. Keep id 5990 '福斗星球ODEK电玩城' src=['bemanicn'] games=['maimai_dx']. Drop id 5991 '福斗星球珠海金湾店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5996,
+      "name": "福爪爪深圳南山店",
+      "field": "other",
+      "current": "separate venue id 5996 (twin of 5995)",
+      "proposed": "merge into id 5995; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3747",
+      "evidence_quote": "Dual import at 深圳蛇口招商花园城福爪爪. BemaniCN s/3747 name='福爪爪快乐街区（蛇口招商花园城店）' address='招商街道四海社区南海大道1090号蛇口花园城中心2楼' status=1 updated_at=2026-06-26T17:09:07.000000Z. Keep id 5995 '福爪爪快乐街区（蛇口招商花园城店）' src=['bemanicn'] games=['maimai_dx']. Drop id 5996 '福爪爪深圳南山店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6105,
+      "name": "米其动漫东莞虎门店",
+      "field": "other",
+      "current": "separate venue id 6105 (twin of 6106)",
+      "proposed": "merge into id 6106; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2045",
+      "evidence_quote": "Dual import at 东莞虎门地标广场米其. BemaniCN s/2045 name='米其动漫城（地标广场店）' address='连升路44号地标广场2栋1136米其动漫城' status=1 updated_at=2025-11-29T17:21:20.000000Z. Keep id 6106 '米其动漫城（地标广场店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6105 '米其动漫东莞虎门店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6108,
+      "name": "米其漫惠州惠城印象购物中心店",
+      "field": "other",
+      "current": "separate venue id 6108 (twin of 6114)",
+      "proposed": "merge into id 6114; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3348",
+      "evidence_quote": "Dual import at 惠州印象城米其漫. BemaniCN s/3348 name='米其漫游艺城（印象城购物中心店）' address='河南岸金山大道13号惠州印象城MB栋L2-41' status=1 updated_at=2026-05-31T08:37:34.000000Z. Keep id 6114 '米其漫游艺城（印象城购物中心店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6108 '米其漫惠州惠城印象购物中心店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6109,
+      "name": "米其漫深圳福田店",
+      "field": "other",
+      "current": "separate venue id 6109 (twin of 6115)",
+      "proposed": "merge into id 6115; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2799",
+      "evidence_quote": "Dual import at 深圳福田绿景佐阾红树林米其漫. BemaniCN s/2799 name='米其漫游艺城（绿景佐阾红树林购物中心店）' address='沙嘴路8号绿景佐阾红树林购物中心2层（客服中心旁）' status=1 updated_at=2026-07-16T04:59:58.000000Z. Keep id 6115 '米其漫游艺城（绿景佐阾红树林购物中心店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 6109 '米其漫深圳福田店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6113,
+      "name": "米其漫游艺城深圳龙华店",
+      "field": "other",
+      "current": "separate venue id 6113 (twin of 6112)",
+      "proposed": "merge into id 6112; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3862",
+      "evidence_quote": "Dual import at 深圳龙华红山六九七九米其漫. BemaniCN s/3862 name='米其漫游艺城(红山六九七九商业中心店)' address='龙华区民治街道红山社区红山六九七九二期7栋B117' status=1 updated_at=2026-06-26T07:46:07.000000Z. Keep id 6112 '米其漫游艺城(红山六九七九商业中心店)' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6113 '米其漫游艺城深圳龙华店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6130,
+      "name": "精灵岛佛山三水新动力店",
+      "field": "other",
+      "current": "separate venue id 6130 (twin of 6134)",
+      "proposed": "merge into id 6134; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3849",
+      "evidence_quote": "Dual import at 佛山三水新动力精灵岛. BemaniCN s/3849 name='精灵岛家庭娱乐中心（新动力广场店）' address='西青大道8号新动力广场AL24点位' status=1 updated_at=2026-07-07T02:29:54.000000Z. Keep id 6134 '精灵岛家庭娱乐中心（新动力广场店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 6130 '精灵岛佛山三水新动力店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6132,
+      "name": "精灵岛佛山南海店",
+      "field": "other",
+      "current": "separate venue id 6132 (twin of 6143)",
+      "proposed": "merge into id 6143; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2344",
+      "evidence_quote": "Dual import at 佛山狮山和信广场精灵岛. BemaniCN s/2344 name='精灵岛潮玩城（佛山和信广场店）' address='狮山镇博爱中路和信广场三楼' status=1 updated_at=2025-12-27T04:21:57.000000Z. Keep id 6143 '精灵岛潮玩城（佛山和信广场店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6132 '精灵岛佛山南海店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6136,
+      "name": "精灵岛广州白云江高亿达方圆荟店",
+      "field": "other",
+      "current": "separate venue id 6136 (twin of 6140)",
+      "proposed": "merge into id 6140; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5445",
+      "evidence_quote": "Dual import at 广州江高亿达方圆荟精灵岛. BemaniCN s/5445 name='精灵岛潮玩中心(亿达方圆荟店)' address='白云区江高镇广花三路399号亿达方圆荟三层' status=1 updated_at=2026-07-20T08:28:04.000000Z. Keep id 6140 '精灵岛潮玩中心(亿达方圆荟店)' src=['bemanicn'] games=['chunithm', 'maimai_dx']. Drop id 6136 '精灵岛广州白云江高亿达方圆荟店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6139,
+      "name": "精灵岛深圳龙岗锦泰城店",
+      "field": "other",
+      "current": "separate venue id 6139 (twin of 6145)",
+      "proposed": "merge into id 6145; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5909",
+      "evidence_quote": "Dual import at 深圳龙岗锦泰城精灵岛. BemaniCN s/5909 name='精灵岛电玩城（锦泰城店）' address='龙岗大道6001号锦泰城A206店铺' status=1 updated_at=2026-06-27T08:08:07.000000Z. Keep id 6145 '精灵岛电玩城（锦泰城店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6139 '精灵岛深圳龙岗锦泰城店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6148,
+      "name": "精灵岛韶关翁源龙湖店",
+      "field": "other",
+      "current": "separate venue id 6148 (twin of 6144)",
+      "proposed": "merge into id 6144; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3264",
+      "evidence_quote": "Dual import at 韶关翁源龙湖广场精灵岛. BemaniCN s/3264 name='精灵岛潮玩城（翁源店）' address='翁源县滨河东路9号龙湖广场二层s238商铺' status=1 updated_at=2026-04-26T15:47:56.000000Z. Keep id 6144 '精灵岛潮玩城（翁源店）' src=['bemanicn'] games=['maimai_dx']. Drop id 6148 '精灵岛韶关翁源龙湖店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6147,
+      "name": "精灵岛阳江阳春东湖公园店",
+      "field": "other",
+      "current": "separate venue id 6147 (twin of 6149)",
+      "proposed": "merge into id 6149; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5893",
+      "evidence_quote": "Dual import at 阳春东湖公园精灵岛. BemaniCN s/5893 name='精灵岛（东湖星荟购物中心店）' address='广东省阳江市阳春市春城街道东湖公园二期会展中心综合楼第二层自编第L2-217号商铺' status=1 updated_at=2026-06-16T11:57:07.000000Z. Keep id 6149 '精灵岛（东湖星荟购物中心店）' src=['bemanicn'] games=['maimai_dx']. Drop id 6147 '精灵岛阳江阳春东湖公园店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6350,
+      "name": "菲菲羊乐园东莞东城万达店",
+      "field": "other",
+      "current": "separate venue id 6350 (twin of 6357)",
+      "proposed": "merge into id 6357; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5717",
+      "evidence_quote": "Dual import at 东莞东城万达菲菲羊. BemaniCN s/5717 name='菲菲羊（东城万达店）' address='东纵路208号万达广场2楼' status=1 updated_at=2026-07-30T06:26:03.000000Z. Keep id 6357 '菲菲羊（东城万达店）' src=['bemanicn'] games=['maimai_dx']. Drop id 6350 '菲菲羊乐园东莞东城万达店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6377,
+      "name": "萌吉拉广州花都狮岭店",
+      "field": "other",
+      "current": "separate venue id 6377 (twin of 6374)",
+      "proposed": "merge into id 6374; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3181",
+      "evidence_quote": "Dual import at 花都狮岭合成广场萌吉拉. BemaniCN s/3181 name='萌吉拉合成店' address='狮岭大道中1号合成广场二期2层2-(11-18)' status=1 updated_at=2026-07-08T08:38:48.000000Z. Keep id 6374 '萌吉拉合成店' src=['bemanicn'] games=['maimai_dx']. Drop id 6377 '萌吉拉广州花都狮岭店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6376,
+      "name": "萌吉拉广州花都炭步店",
+      "field": "other",
+      "current": "separate venue id 6376 (twin of 6381)",
+      "proposed": "merge into id 6381; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5373",
+      "evidence_quote": "Dual import at 花都炭步永利/万都萌吉拉. BemaniCN s/5373 name='萌吉拉炭步永利广场' address='炭步万都超市3F' status=1 updated_at=2026-07-18T15:05:46.000000Z. Keep id 6381 '萌吉拉炭步永利广场' src=['bemanicn'] games=['maimai_dx']. Drop id 6376 '萌吉拉广州花都炭步店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6379,
+      "name": "萌吉拉广州花都街汇店",
+      "field": "other",
+      "current": "separate venue id 6379 (twin of 6380)",
+      "proposed": "merge into id 6380; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3599",
+      "evidence_quote": "Dual import at 花都新街汇萌吉拉. BemaniCN s/3599 name='萌吉拉新街汇店' address='新华新街大道5号之一新街汇广场3层323' status=1 updated_at=2026-07-18T15:07:21.000000Z. Keep id 6380 '萌吉拉新街汇店' src=['bemanicn'] games=['maimai_dx']. Drop id 6379 '萌吉拉广州花都街汇店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6443,
+      "name": "蓝鲸纵队超乐场深圳天虹商场新沙店",
+      "field": "other",
+      "current": "separate venue id 6443 (twin of 6441)",
+      "proposed": "merge into id 6441; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6611",
+      "evidence_quote": "Dual import at 深圳沙井新沙天虹蓝鲸. BemaniCN s/6611 name='蓝鲸纵队超乐场' address='宝安区沙井街道西环路2105号新沙天虹购物中心四层457号' status=1 updated_at=2026-01-11T14:12:33.000000Z. Keep id 6441 '蓝鲸纵队超乐场' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6443 '蓝鲸纵队超乐场深圳天虹商场新沙店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6447,
+      "name": "蚂蚁特工队汕尾海丰店",
+      "field": "other",
+      "current": "separate venue id 6447 (twin of 6448)",
+      "proposed": "merge into id 6448; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4833",
+      "evidence_quote": "Dual import at 汕尾海丰世纪广场蚂蚁特工队. BemaniCN s/4833 name='蚂蚁特工队（原天空之城）' address='海城镇世纪广场3层' status=1 updated_at=2026-05-16T12:44:15.000000Z. Keep id 6448 '蚂蚁特工队（原天空之城）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6447 '蚂蚁特工队汕尾海丰店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6548,
+      "name": "超时空惠州惠城佳兆业店",
+      "field": "other",
+      "current": "separate venue id 6548 (twin of 6549)",
+      "proposed": "merge into id 6549; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1844",
+      "evidence_quote": "Dual import at 惠州江北佳兆业超时空. BemaniCN s/1844 name='超时空电玩城' address='江北佳兆业广场3楼超时空电玩城' status=1 updated_at=2025-11-29T17:21:20.000000Z. Keep id 6549 '超时空电玩城' src=['bemanicn'] games=['maimai_dx']. Drop id 6548 '超时空惠州惠城佳兆业店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6606,
+      "name": "超级玩家湛江徐闻政诚大厦店",
+      "field": "other",
+      "current": "separate venue id 6606 (twin of 6607)",
+      "proposed": "merge into id 6607; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7198",
+      "evidence_quote": "Dual import at 湛江徐闻政诚大厦超级玩家. BemaniCN s/7198 name='超级玩家电玩城' address='广东省湛江市徐闻县东方一路100号超级玩家电玩城' status=1 updated_at=2026-07-23T06:18:57.000000Z. Keep id 6607 '超级玩家电玩城' src=['bemanicn'] games=['maimai_dx', 'taiko']. Drop id 6606 '超级玩家湛江徐闻政诚大厦店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6625,
+      "name": "超能星客广州白云店",
+      "field": "other",
+      "current": "separate venue id 6625 (twin of 6624)",
+      "proposed": "merge into id 6624; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2818",
+      "evidence_quote": "Dual import at 广州白云凯德云尚超能星客. BemaniCN s/2818 name='超能星客凯德广场店' address='白云新城云城西路890号凯德广场云尚3层14/34' status=1 updated_at=2025-11-29T17:21:21.000000Z. Keep id 6624 '超能星客凯德广场店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'other']. Drop id 6625 '超能星客广州白云店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6629,
+      "name": "超能玩家台山台城昌大昌店",
+      "field": "other",
+      "current": "separate venue id 6629 (twin of 6628)",
+      "proposed": "merge into id 6628; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5719",
+      "evidence_quote": "Dual import at 台山昌大昌超能玩家. BemaniCN s/5719 name='超能玩家·啵啵池(台山昌大昌店)' address='广东省江门市台山市台城街道台城舜德路133号金茂广场E座304、305室超能玩家·啵啵池(台山昌大昌店)' status=1 updated_at=2026-07-22T13:31:46.000000Z. Keep id 6628 '超能玩家·啵啵池(台山昌大昌店)' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 6629 '超能玩家台山台城昌大昌店' src=['wahlap'] games=['maimai_dx']. Pins are near each other.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5677,
+      "name": "环游嘉年华易发店（暂停营业至8月）",
+      "field": "status",
+      "current": "环游嘉年华易发店（暂停营业至8月）",
+      "proposed": "temporarily closed (暂停营业); re-verify after Aug 2026",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/38",
+      "evidence_quote": "BemaniCN name='环游嘉年华易发店（暂停营业至8月）' status=1 updated_at=2026-05-21T21:28:17.000000Z; machine title_ids=[31, 34, 6]",
+      "note": "Name includes 暂停营业至8月. Twin WAHLAP id 5684 still appears on live official maimai and CHUNITHM lists as 环游嘉年华番禺易发店. After merge, keep one record and re-check open status past August.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5677,
+      "name": "环游嘉年华易发店（暂停营业至8月）",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "taiko"
+      ],
+      "proposed": [
+        "jubeat",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/38",
+      "evidence_quote": "BemaniCN currently lists only: [{'title_id': 31, 'game': 'taiko', 'qty': 3, 'version': '国框最新最热', 'coin': 10}, {'title_id': 34, 'game': 'jubeat', 'qty': 2, 'version': '音乐魔方', 'coin': 10}, {'title_id': 6, 'game': 'jubeat', 'qty': 2, 'version': 'festo', 'coin': 3}] (no maimai/chunithm rows). App BCN-side games=['jubeat', 'taiko']. Twin WAHLAP 番禺易发店 remains on official maimai+chunithm locators.",
+      "note": "During pause, BCN machine list shows jubeat/taiko lineage only. Official WAHLAP still lists the twin name for maimai and chunithm. After merge, keep official SEGA titles unless locator drops them.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5677,
+      "name": "环游嘉年华易发店（暂停营业至8月）",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 4,
+        "taiko": 3
+      },
+      "proposed": {
+        "taiko": 3,
+        "jubeat": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/38",
+      "evidence_quote": "BemaniCN quantities {'taiko': 3, 'jubeat': 4} versions {'taiko': '国框最新最热', 'jubeat': 'festo'} updated_at=2026-05-21T21:28:17.000000Z",
+      "note": "count_evidence bemanicn_qty",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6351,
+      "name": "菲菲羊乐园东莞虎门店",
+      "field": "location",
+      "current": {
+        "lat": 22.836268,
+        "lng": 113.678227,
+        "addr": "广东省东莞市虎门镇连升路82号2060室菲菲羊乐园"
+      },
+      "proposed": "re-geocode to 虎门镇连升路82号; must not share coordinates with id 6352 长安万达",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official has two shops: 菲菲羊乐园东莞虎门店 address=广东省东莞市虎门镇连升路82号2060室菲菲羊乐园; 菲菲羊乐园东莞长安万达店 address=广东省东莞市长安万达广场二楼菲菲羊乐园. App pins BOTH id 6351 and 6352 at lat=22.836268 lng=113.678227.",
+      "note": "Two real Dongguan venues. Geocode collision, not a merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6475,
+      "name": "西虹市游艺厅",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4501",
+      "evidence_quote": "BemaniCN name='西虹市游艺厅' status=1 machines=[{'title_id': 2, 'game': 'maimai_dx', 'qty': 1, 'version': '茶旧框无印', 'coin': 2}] updated_at=2026-03-01T07:09:30.000000Z",
+      "note": "App only has 'other'; BCN lists maimai DX qty 1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6475,
+      "name": "西虹市游艺厅",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4501",
+      "evidence_quote": "BemaniCN maimai quantity=1 version=茶旧框无印 updated_at=2026-03-01T07:09:30.000000Z",
+      "note": "count_evidence bemanicn_qty",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6624,
+      "name": "超能星客凯德广场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2818",
+      "evidence_quote": "BemaniCN machines=[{'title_id': 1, 'game': 'maimai_dx', 'qty': 1, 'version': '国', 'coin': 3}, {'title_id': 3, 'game': 'chunithm', 'qty': 2, 'version': '2026', 'coin': 3}, {'title_id': 17, 'game': 'wacca', 'qty': 2, 'version': '国行', 'coin': 3}] updated_at=2025-11-29T17:21:21.000000Z (title_id 17 = WACCA in site titles map)",
+      "note": "App has other but not explicit wacca. BCN lists 2x WACCA.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6624,
+      "name": "超能星客凯德广场店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "wacca": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2818",
+      "evidence_quote": "BemaniCN quantities {'maimai_dx': 1, 'chunithm': 2, 'wacca': 2} coin {'maimai_dx': 3, 'chunithm': 3, 'wacca': 3} updated_at=2025-11-29T17:21:21.000000Z",
+      "note": "count_evidence bemanicn_qty; includes wacca:2",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5678,
+      "name": "环游嘉年华江门店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 2,
+        "maimai_dx": 3,
+        "sdvx": 2,
+        "taiko": 3
+      },
+      "proposed": {
+        "maimai_dx": 3,
+        "chunithm": 2,
+        "taiko": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/133",
+      "evidence_quote": "BemaniCN now lists only maimai_dx=3, chunithm=2, taiko=3 (versions {'maimai_dx': '舞萌DX2026', 'chunithm': '中二节奏2026', 'taiko': '2026秋'}). App game_counts still include jubeat=2 sdvx=2. updated_at=2026-07-22T08:47:21.000000Z",
+      "note": "Update counts from BCN. jubeat/sdvx absence on BCN is weak negative for removal of those game tags.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5678,
+      "name": "环游嘉年华江门店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/133",
+      "evidence_quote": "BemaniCN machine list on 2026-07-22 has title_ids [1, 3, 31] only; app still lists jubeat and sdvx.",
+      "note": "Possible removal of jubeat/sdvx if cabinets were removed. Not certain: community list can lag or omit. Official WAHLAP still lists this shop for maimai and chunithm as 环游嘉年华江门店.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6303,
+      "name": "莱华度假酒店奇妙世界",
+      "field": "game_counts",
+      "current": {
+        "drs": 1,
+        "sdvx": 1
+      },
+      "proposed": {
+        "sdvx": 1,
+        "drs": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1160",
+      "evidence_quote": "BemaniCN machines=[{'title_id': 4, 'game': 'sdvx', 'qty': 1, 'version': 'BOOTH', 'coin': 6}, {'title_id': 10, 'game': 'drs', 'qty': 1, 'version': '舞律炫步', 'coin': 6}] comment notes hotel-guest-only card. updated_at=2025-11-29T17:21:19.000000Z",
+      "note": "Hotel arcade; SDVX BOOTH + DRS. Access restricted to hotel guests per BCN comment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6226,
+      "name": "翡翠·立直麻将·音游",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "sdvx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "sdvx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5295",
+      "evidence_quote": "BemaniCN machines=[{'title_id': 1, 'game': 'maimai_dx', 'qty': 1, 'version': '同步国服', 'coin': 0}, {'title_id': 3, 'game': 'chunithm', 'qty': 2, 'version': '中二节奏2025', 'coin': 0}, {'title_id': 4, 'game': 'sdvx', 'qty': 1, 'version': 'Exceed Gear', 'coin': 0}] price=15.0 updated_at=2026-06-18T17:08:47.000000Z",
+      "note": "Not on WAHLAP official lists (likely private/card shop). BCN is best public source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5669,
+      "name": "环游嘉年华广州天河城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "9-11 coins/credit (cab1=11, others=9)",
+        "chunithm": "9 coins/credit",
+        "taiko": "10-12 coins/credit by cab"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/33",
+      "evidence_quote": "coin fields {'maimai_dx': 9, 'chunithm': 9, 'taiko': 10}; BCN comment: 一号机为每局11币，二三四号机为每局9币. updated_at=2026-07-22T13:27:29.000000Z",
+      "note": "Huanyou card/app only (no physical tokens) per shop comment. Coin-to-RMB depends on package.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "环游嘉年华东莞民盈国贸店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游嘉年华东莞民盈国贸店",
+        "addr": "广东省东莞市东城街道东泰社区鸿福东路1号民盈国贸城5号楼L3001-3003",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381863231563",
+        "placeId": "1073"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=环游嘉年华东莞民盈国贸店; address=广东省东莞市东城街道东泰社区鸿福东路1号民盈国贸城5号楼L3001-3003; id=1948316381863231563; placeId=1073",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "环游亲子嘉年华汇一城二店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游亲子嘉年华汇一城二店",
+        "addr": "广东省东莞市南城街道鸿福路200号汇一城三区A3313号铺",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381036953805",
+        "placeId": "2203"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=环游亲子嘉年华汇一城二店; address=广东省东莞市南城街道鸿福路200号汇一城三区A3313号铺; id=1948316381036953805; placeId=2203",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王广州白云安华汇店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王广州白云安华汇店",
+        "addr": "广东省广州市白云区白云大道北 880号安华汇北馆三楼",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381485744514",
+        "placeId": "3882"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=宝贝王广州白云安华汇店; address=广东省广州市白云区白云大道北 880号安华汇北馆三楼; id=1948316381485744514; placeId=3882",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王惠州大亚湾万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王惠州大亚湾万达店",
+        "addr": "广东省惠州市大亚湾万达广场三楼宝贝王",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381485744489",
+        "placeId": "3857"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=宝贝王惠州大亚湾万达店; address=广东省惠州市大亚湾万达广场三楼宝贝王; id=1948316381485744489; placeId=3857",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王东莞厚街万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王东莞厚街万达店",
+        "addr": "广东省东莞市厚街镇康乐北路8号万达广场一楼宝贝王",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381485744393",
+        "placeId": "3761"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=宝贝王东莞厚街万达店; address=广东省东莞市厚街镇康乐北路8号万达广场一楼宝贝王; id=1948316381485744393; placeId=3761",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王广州萝岗万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王广州萝岗万达店",
+        "addr": "广州市黄埔区科丰路89号萝岗万达广场2楼宝贝王",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381863231895",
+        "placeId": "1405"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=宝贝王广州萝岗万达店; address=广州市黄埔区科丰路89号萝岗万达广场2楼宝贝王; id=1948316381863231895; placeId=1405",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王深圳龙岗店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王深圳龙岗店",
+        "addr": "广东省深圳市龙岗区坂田街道星河worldcocopark一楼宝贝王家庭欢乐中心",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381485744277",
+        "placeId": "3645"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=宝贝王深圳龙岗店; address=广东省深圳市龙岗区坂田街道星河worldcocopark一楼宝贝王家庭欢乐中心; id=1948316381485744277; placeId=3645",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "宝贝王广州天河欢乐颂店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝贝王广州天河欢乐颂店",
+        "addr": "广东省广州天河区中山大道1116号欢乐颂三楼宝贝王乐园",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1990236581571084290",
+        "placeId": "4552"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=宝贝王广州天河欢乐颂店; address=广东省广州天河区中山大道1116号欢乐颂三楼宝贝王乐园; id=1990236581571084290; placeId=4552",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "反斗乐园广州花都骏壹万邦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "反斗乐园广州花都骏壹万邦店",
+        "addr": "广东省广州市花都区曙光路骏壹万邦3楼3401反斗乐园",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "2063875554670575617",
+        "placeId": "5126"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=反斗乐园广州花都骏壹万邦店; address=广东省广州市花都区曙光路骏壹万邦3楼3401反斗乐园; id=2063875554670575617; placeId=5126",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "反斗乐园广州花都融创茂店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "反斗乐园广州花都融创茂店",
+        "addr": "广东省广州市花都区凤凰北路融创茂1号门2楼反斗乐园",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381863231662",
+        "placeId": "1172"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=反斗乐园广州花都融创茂店; address=广东省广州市花都区凤凰北路融创茂1号门2楼反斗乐园; id=1948316381863231662; placeId=1172",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "反斗乐园深圳龙华天虹店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "反斗乐园深圳龙华天虹店",
+        "addr": "广东省深圳市龙华区民治街道人民路2020号天虹购物中心三楼反斗乐园",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1972561390489583618",
+        "placeId": "4455"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=反斗乐园深圳龙华天虹店; address=广东省深圳市龙华区民治街道人民路2020号天虹购物中心三楼反斗乐园; id=1972561390489583618; placeId=4455",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "反斗乐园深圳福田领展中心城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "反斗乐园深圳福田领展中心城店",
+        "addr": "福田区福田街道福华一路3号领展购物广场M层64B",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316397835141216",
+        "placeId": "4114"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=反斗乐园深圳福田领展中心城店; address=福田区福田街道福华一路3号领展购物广场M层64B; id=1948316397835141216; placeId=4114",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "反斗乐园深圳福田华强北店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "反斗乐园深圳福田华强北店",
+        "addr": "广东省深圳市福田区华强北街道君尚购物中心L511号铺",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381863231664",
+        "placeId": "1174"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=反斗乐园深圳福田华强北店; address=广东省深圳市福田区华强北街道君尚购物中心L511号铺; id=1948316381863231664; placeId=1174",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "反斗乐园深圳福田中心城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "反斗乐园深圳福田中心城店",
+        "addr": "广东省深圳市福田区福华一路怡景中心城UG层反斗乐园",
+        "country": "China",
+        "pref": "广东",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "wahlap_id": "1948316381863231503",
+        "placeId": "1013"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official arcadeName=反斗乐园深圳福田中心城店; address=广东省深圳市福田区福华一路怡景中心城UG层反斗乐园; id=1948316381863231503; placeId=1013",
+      "note": "On live official WAHLAP maimai Guangdong list. Not present as its own row in shard_017. May already exist in another China shard of the full map; add only if globally absent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5997,
+      "name": "福田购物公园宝贝王",
+      "field": "other",
+      "current": "福田购物公园宝贝王",
+      "proposed": "treat as same venue as official WAHLAP 宝贝王深圳福田cocopark店; keep single pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP: 宝贝王深圳福田cocopark店 | 广东省深圳市福田区福田星河Cocopark二期1F宝贝王家庭欢乐中心. App/BCN: 福田购物公园宝贝王 | 福田购物公园地铁站星河COCO Park二期 (BCN s/5744)",
+      "note": "COCO Park BabyBoss naming variants, likely one shop.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5667,
+      "name": "环游嘉年华奥园店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "WAHLAP maimai lists 环游嘉年华奥园店 at 广东省广州市番禺区福德路281号奥园广场三楼. WAHLAP CHUNITHM GD list (112 shops) has no 奥园 entry. BemaniCN s/37 still lists chunithm qty=2 version=2026 updated_at=2026-07-23T09:12:20.000000Z",
+      "note": "Do not remove chunithm solely because official midtr omits it; BCN reports live cabinets. Could be offline network, delayed registration, or name mismatch. Maintainer awareness only.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

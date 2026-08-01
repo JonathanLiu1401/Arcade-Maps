@@ -1,0 +1,334 @@
+{
+  "shard": 22,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=United%20Kingdom (live pull 2026-07-31, 728 UK arcades)",
+    "https://nq64.co.uk/ (official locations list)",
+    "https://namcofunscape.com/ and https://namcofunscape.com/locations",
+    "https://namcofunscape.com/locations/braintree",
+    "https://mfabowl.com/ (Ilkeston + Whitstable only; /yeovil/ 404)",
+    "https://www.mega-city.co.uk/activity/slough-arcade-arena",
+    "https://www.luckyclaw.co.uk/",
+    "https://lane7.com/venue/london-camden/ (WebFetch earlier in session; later curl 403)",
+    "Per-arcade ZIv pages linked from shard links.ziv fields"
+  ],
+  "corrections": [
+    {
+      "id": 11682,
+      "name": "NQ64 - Birmingham",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5468",
+      "evidence_quote": "maimai FiNALE listed; lastUpdate 2026-03-27; comment includes (25/03/25) P1 side insane misfiring finally fixed",
+      "note": "ZIv still lists legacy Dancing Stage / DDRMAX at most of these NQ64s as well; adding maimai because live ZIv machine rows (2025-2026 updates) list maimai FiNALE and the app omits it entirely. These are offline/bootleg FiNALE cabs (not DX network). ZIv is community-sourced so confidence is likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11684,
+      "name": "NQ64 - Leeds",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9668",
+      "evidence_quote": "maimai FiNALE listed; lastUpdate 2025-07-27; long condition comment including (27/07/2025)",
+      "note": "ZIv still lists legacy Dancing Stage / DDRMAX at most of these NQ64s as well; adding maimai because live ZIv machine rows (2025-2026 updates) list maimai FiNALE and the app omits it entirely. These are offline/bootleg FiNALE cabs (not DX network). ZIv is community-sourced so confidence is likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11685,
+      "name": "NQ64 - Northern Quarter",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4749",
+      "evidence_quote": "maimai FiNALE listed; lastUpdate 2026-06-25; comment (13/05/2026) P1 - Completely functional | P2 - ...",
+      "note": "ZIv still lists legacy Dancing Stage / DDRMAX at most of these NQ64s as well; adding maimai because live ZIv machine rows (2025-2026 updates) list maimai FiNALE and the app omits it entirely. These are offline/bootleg FiNALE cabs (not DX network). ZIv is community-sourced so confidence is likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11686,
+      "name": "NQ64 Cardiff",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6543",
+      "evidence_quote": "maimai FiNALE listed; lastUpdate 2026-03-12; comment Offline Chinese cab - All songs unlocked",
+      "note": "ZIv still lists legacy Dancing Stage / DDRMAX at most of these NQ64s as well; adding maimai because live ZIv machine rows (2025-2026 updates) list maimai FiNALE and the app omits it entirely. These are offline/bootleg FiNALE cabs (not DX network). ZIv is community-sourced so confidence is likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11689,
+      "name": "NQ64 Nottingham",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9895",
+      "evidence_quote": "maimai FiNALE listed; lastUpdate 2026-07-27; comment Bootleg Cab | Monitors are smaller than normal...",
+      "note": "ZIv still lists legacy Dancing Stage / DDRMAX at most of these NQ64s as well; adding maimai because live ZIv machine rows (2025-2026 updates) list maimai FiNALE and the app omits it entirely. These are offline/bootleg FiNALE cabs (not DX network). ZIv is community-sourced so confidence is likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11692,
+      "name": "NQ64 Soho",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6315",
+      "evidence_quote": "maimai FiNALE listed; lastUpdate 2026-03-22; comment about bar music drowning out cab volume",
+      "note": "ZIv still lists legacy Dancing Stage / DDRMAX at most of these NQ64s as well; adding maimai because live ZIv machine rows (2025-2026 updates) list maimai FiNALE and the app omits it entirely. These are offline/bootleg FiNALE cabs (not DX network). ZIv is community-sourced so confidence is likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11691,
+      "name": "NQ64 Shoreditch",
+      "field": "game_counts",
+      "current": {
+        "ddr": 3
+      },
+      "proposed": {
+        "ddr": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7177",
+      "evidence_quote": "Machines: DanceDanceRevolution SuperNOVA2; Dancing Stage EuroMIX (only two dance cabs). lastUpdateTime 2025-11-18. SuperNOVA2 comment: Tested on November 15th, 2025.",
+      "note": "App notes also list only SuperNOVA2 + EuroMIX, so game_counts ddr:3 is inconsistent with both the notes and live ZIv. cab_models ddr_legacy:2 already matches two cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11595,
+      "name": "Lane 7 Edinburgh",
+      "field": "game_counts",
+      "current": {
+        "ddr": 2
+      },
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10615",
+      "evidence_quote": "Only one dance cabinet: Dancing Stage EuroMIX with comment Euromix2 cab running Euromix 1. Other machines: Street Fighter Alpha; Tekken Tag Tournament; Connect 4 Hoops. lastUpdateTime 2025-12-14.",
+      "note": "App notes also list a single Dancing Stage EuroMIX. cab_models already has ddr_legacy:1. game_counts ddr:2 appears to be a bad parse.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11667,
+      "name": "Namco Funscape Braintree",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "ddr",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2131",
+      "evidence_quote": "Taiko no Tatsujin (2011 / Japanese name on ZIv) condition=1 comment: Machine is turned off and scheduled to be shipped out. lastUpdateTime 2026-02-17. DanceDanceRevolution A still listed.",
+      "note": "Official Namco Funscape site still lists Braintree as an open location (https://namcofunscape.com/locations). Rhythm impact is remove taiko only; DDR A remains on ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11680,
+      "name": "North Pier",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2264",
+      "evidence_quote": "StepManiaX (65 inch Deluxe Cabinet) comment: (2026 update) The machine is no longer at the North Pier I'd assume its now at the South Pier amusements since Prime 2 LX is in it's spot in the north and SMX is in Prime 2's spot. Pump It Up PRIME 2 comment: As of 2026, StepManiaX DX and Pump It Up Prime 2 LX have swapped places. lastUpdateTime 2026-03-08.",
+      "note": "Cross-check South Pier ZIv id=3581 (2026-04-27): StepManiaX comment says Game moved to South Pier but still in perfect working order. North Pier should keep pump_it_up; remove stepmaniax.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "South Pier (Blackpool)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "South Pier",
+        "addr": "501-507 Promenade, Blackpool, FY4 1BA, United Kingdom",
+        "lat": 53.795402495837,
+        "lng": -3.057391199217,
+        "games": [
+          "pump_it_up",
+          "stepmaniax",
+          "other"
+        ],
+        "country": "United Kingdom",
+        "ziv_id": 3581,
+        "ziv_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3581"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3581",
+      "evidence_quote": "name=South Pier; address=501-507 Promenade Blackpool FY4 1BA; lat=53.795402495837 lng=-3.057391199217; lastUpdateTime=2026-04-27; machines include Pump It Up PRIME 2 and StepManiaX (65 inch Deluxe Cabinet) with comment Game moved to South Pier but still in perfect working order.",
+      "note": "Not present in shard_022 (only North Pier is). SMX relocated here from North Pier per 2026 ZIv comments. Coordinates and machine list from live ZIv UK API 2026-07-31 pull.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11651,
+      "name": "MFA Bowl Yeovil",
+      "field": "status",
+      "current": "open (listed with ddr)",
+      "proposed": "likely closed or no longer an MFA location; verify before keeping as open",
+      "confidence": "likely",
+      "evidence_url": "https://mfabowl.com/",
+      "evidence_quote": "Official MFA site navigation LOCATIONS lists only ILKESTON and WHITSTABLE. Request to https://mfabowl.com/yeovil/ returned HTTP 404. ZIv lastUpdateTime for this arcade is 2015-10-19 (10 years ago) with only Dancing Stage EuroMIX.",
+      "note": "Could not find any current official MFA Yeovil page. ZIv row is a decade stale. Recommend marking closed or removing from open map until someone confirms a successor venue at Old Station Way Yeovil still has a DDR cab. Ilkeston and Whitstable MFA pages still 200 OK.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11645,
+      "name": "Mega City",
+      "field": "hours",
+      "current": "Mon-Thu 10:00-01:00; Fri-Sat 10:00-00:00; Sun 10:00-01:00",
+      "proposed": "Mon-Thu 10:00-23:00; Fri-Sat 10:00-00:00 (site text says 12pm, almost certainly meaning midnight); Sun 10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://www.mega-city.co.uk/activity/slough-arcade-arena",
+      "evidence_quote": "Opening times: Mon 10am to 11pm Tue 10am to 11pm Wed 10am to 11pm Thurs 10am to 11pm Fri 10am to 12pm Sat 10am to 12pm Sun 10am to 11pm. Location: 233/249 High St, Slough SL1 1BY.",
+      "note": "Official page is clear Mon-Thu and Sun close 11pm, not 01:00 as the app shows. Fri/Sat printed as 12pm which is almost certainly a midnight typo on their site (noon close would be absurd for this venue); app Fri-Sat 00:00 is the plausible reading. Venue itself confirmed open; ZIv 2026-07-12 lists DanceDanceRevolution WORLD.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11610,
+      "name": "Laser Quest Enfield",
+      "field": "website",
+      "current": "http:// lqenfield.co.uk",
+      "proposed": "http://lqenfield.co.uk",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5415",
+      "evidence_quote": "ZIv website field stored as 'http:// lqenfield.co.uk' (literal space after scheme). App copied that broken URL.",
+      "note": "Only fixing the obvious space typo. Did not independently confirm the domain still resolves or that the EuroMIX cab (ZIv lastUpdate 2020-01-03) is still present; that remains unverified/stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11593,
+      "name": "Kirkgate Market",
+      "field": "status",
+      "current": "open with ddr (Dancing Stage SuperNOVA)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2982",
+      "evidence_quote": "lastUpdateTime 2013-10-25 21:59:24 (12 years ago); sole machine Dancing Stage SuperNOVA; no website.",
+      "note": "Cannot confirm this SuperNOVA still exists in Bradford Kirkgate Market. No newer community or official confirmation found. proposed=null means: do not treat the open+ddr claim as reliable; maintainer should seek a fresh visit report or remove. Not asserting permanent closure either.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11673,
+      "name": "Namco Station",
+      "field": "status",
+      "current": "separate open venue (other)",
+      "proposed": "duplicate / old name of Namco Funscape Tamworth (id 11672); consider merging or delisting",
+      "confidence": "likely",
+      "evidence_url": "https://namcofunscape.com/locations",
+      "evidence_quote": "Official NAMCO Funscape locations list: Braintree, Metrocentre, Norwich, Romford, Tamworth, Trafford Centre. No separate Namco Station brand. ZIv Namco Station id=2139 lastUpdateTime 2012-01-13; coords ~52.63028,-1.69377 vs Funscape Tamworth ~52.62946,-1.69580 (same Castle Grounds / River Drive B79 7ND area).",
+      "note": "Classic rename leftover. Funscape Tamworth itself is also ZIv-stale (2019) but the brand page still lists Tamworth as a current Funscape site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11603,
+      "name": "Lane7 Camden",
+      "field": "other",
+      "current": "listed with playable pump_it_up",
+      "proposed": "Pump It Up present but reported unplayable (volume zero / offline) as of 2025-06 ZIv; re-check before treating as a working PIU destination",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9425",
+      "evidence_quote": "Pump It Up Phoenix (2024) condition=1 comment: As of 01/06/25, the cab was taken offline and the volume reduced to zero. Management has given no explanations for this change and stated they cannot raise the volume, making the cab utterly unplayable. Avoid this location. lastUpdateTime 2025-06-05.",
+      "note": "Official Lane7 Camden page still live and bookable (https://lane7.com/venue/london-camden/, hours Mon-Thu 11am-11pm etc.). Venue exists; the PIU cab quality claim is what is stale/wrong for trip planning. No newer than June 2025 confirmation either way.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11691,
+      "name": "NQ64 Shoreditch",
+      "field": "website",
+      "current": "https://nq64.co.uk/shoreditch-4/",
+      "proposed": "https://nq64.co.uk/shoreditch/",
+      "confidence": "certain",
+      "evidence_url": "https://nq64.co.uk/",
+      "evidence_quote": "Locations section links London Shoreditch to https://nq64.co.uk/shoreditch/ (not shoreditch-4).",
+      "note": "Fetched nq64.co.uk homepage 2026-07-31; location card href is /shoreditch/.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11690,
+      "name": "NQ64 Peter Street",
+      "field": "website",
+      "current": "https://nq64.co.uk/manchester-peter-street/",
+      "proposed": "https://nq64.co.uk/manchester-peter-st/",
+      "confidence": "certain",
+      "evidence_url": "https://nq64.co.uk/",
+      "evidence_quote": "Locations section links Manchester Peter Street to https://nq64.co.uk/manchester-peter-st/.",
+      "note": "Fetched nq64.co.uk homepage 2026-07-31.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11621,
+      "name": "Level X Middlesborough",
+      "field": "other",
+      "current": "name uses misspelling Middlesborough",
+      "proposed": "Level X Middlesbrough (standard spelling of the town)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6883",
+      "evidence_quote": "App name field is 'Level X Middlesborough'. Official English spelling of the town is Middlesbrough. Address: 55 Linthorpe Road Captain Cook Square Middlesborough England, TS1 5UA, Middlesborough. ZIv: https://zenius-i-vanisher.com/v5.2/arcade.php?id=6883.",
+      "note": "Cosmetic name fix. Venue is listed as other-only so low map impact for rhythm players.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

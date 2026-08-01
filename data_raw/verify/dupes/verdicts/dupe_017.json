@@ -1,0 +1,369 @@
+{
+  "shard": 17,
+  "verdicts": [
+    {
+      "ids": [
+        6392,
+        6394
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real 萌多拉都市幻想 branches in different cities that both sit in a 中骏世界城: BemaniCN s/1525 is the older 张家港金港 2F shop (comment cites 张家港 QQ group; Baidu lists 萌多拉(金港中骏世界城店)), while s/6026 is the 2025 昆山花桥 4F shop relocated from 嘉定信业. Shared coords are a geocode collision on the mall name, not one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/6026",
+      "evidence_quote": "本店为原上海嘉定信业店搬迁至此; 昆山市花桥镇光明路728号中骏世界城4楼 (vs s/1525 中骏·世界城2层 + 张家港音游交流群)"
+    },
+    {
+      "ids": [
+        3426,
+        3427
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3426,
+      "canonical_name": "山闪闪电玩城扬州邗江京华城店",
+      "canonical_addr": "江苏省扬州市邗江区京华城路168号京华城4层山闪闪电玩城",
+      "reason": "Same Jinghuacheng mall 4F branch; wahlap and bemanicn only differ on bounding street name (Jinghuacheng Rd vs Tongtai Rd).",
+      "evidence_url": "https://map.bemanicn.com/s/2170",
+      "evidence_quote": "江苏省扬州市邗江区同泰路京华城四楼山闪闪电玩城"
+    },
+    {
+      "ids": [
+        2002,
+        2003
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2002,
+      "canonical_name": "卡通尼杭州上城工联店",
+      "canonical_addr": "浙江省杭州市上城区延安路292号工联CC3楼309-310",
+      "reason": "Identical unit Gonglian CC 3F 309-310 at Yan'an Rd 292; 0 m, same brand branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2337",
+      "evidence_quote": "延安路292号工联CC3楼 309/310店铺"
+    },
+    {
+      "ids": [
+        4354,
+        4355
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4354,
+      "canonical_name": "未来妙觅青岛融创茂店",
+      "canonical_addr": "山东省青岛市黄岛区滨海大道2777号青岛东方影都融创茂二楼最东侧 未来妙觅",
+      "reason": "One Rongchuangmao 2F east-side shop; Baidu POI uses Binhai Ave 2777 (wahlap). BemaniCN 2109-77 is the same mall with a secondary street number.",
+      "evidence_url": "https://map.bemanicn.com/s/2882",
+      "evidence_quote": "山东省青岛市黄岛区滨海大道2109-77号黄岛区青岛东方影都融创茂"
+    },
+    {
+      "ids": [
+        2017,
+        2018
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2017,
+      "canonical_name": "即刻街区成都彭州沃尔玛店",
+      "canonical_addr": "四川省成都市彭州市金彭东路122号沃尔玛3楼即刻街区",
+      "reason": "Baidu lists a single Jike Jiequ Chao Wan Pengzhou Walmart store at Zhixin Yidu City 3F (above Walmart); Jinpeng East Rd 122 and Mudan West Rd 45 are two frontages of that same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6507",
+      "evidence_quote": "牡丹西路45号5栋3层（置信逸都城3楼）"
+    },
+    {
+      "ids": [
+        2025,
+        2036
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2036,
+      "canonical_name": "反斗乐园金光华店",
+      "canonical_addr": "人民南路2028号金光华广场L4层L4-001~007",
+      "reason": "ZIv 9948 explicitly tags BEMANICN ID 49 and the same L4-001~007 units at Kingglory Plaza; one physical Fundoland.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9948",
+      "evidence_quote": "BEMANICN ID: 49; 金光华购物广场4楼L4-001&L4-007"
+    },
+    {
+      "ids": [
+        2028,
+        2038
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2028,
+      "canonical_name": "反斗乐园广州花都骏壹万邦店",
+      "canonical_addr": "广东省广州市花都区曙光路骏壹万邦3楼3401反斗乐园",
+      "reason": "Same Junyi Wanbang unit 3F 3401; wahlap and bemanicn describe one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5375",
+      "evidence_quote": "曙光路81号骏壹万邦广场第三层3401"
+    },
+    {
+      "ids": [
+        5307,
+        5308
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5308,
+      "canonical_name": "火火联盟长春上海路万达店",
+      "canonical_addr": "吉林省长春市宽城区新发街道东三条街长春上海路万达广场3F火火联盟-炫动时空",
+      "reason": "Same Shanghai Rd Wanda 3F branch; wahlap short name and bemanicn full name for one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/4576",
+      "evidence_quote": "长春上海路万达广场3F火火联盟-炫动时空"
+    },
+    {
+      "ids": [
+        2041,
+        2043
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2043,
+      "canonical_name": "可可猩球南开大悦城店",
+      "canonical_addr": "天津市南开区南门外大街大悦城北区2楼1号可可猩球电玩",
+      "reason": "ZIv 2515 is Joy City Nankai 2F and cites BEMANICN ID 760; matches wahlap/bemanicn Nankai Joy City north zone 2F unit 1.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2515",
+      "evidence_quote": "BEMANICN ID: 760; Address 2nd Floor, Joy City Nankai District Tianjin"
+    },
+    {
+      "ids": [
+        2047,
+        2048
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2047,
+      "canonical_name": "可多梦北京丰台花乡奥莱店",
+      "canonical_addr": "北京市丰台区南四环西路76号花乡奥莱村13号楼13101-B号",
+      "reason": "Same Huaxiang Outlet Village building 13; wahlap unit 13101-B and bemanicn/ziv building 13 1F are one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2006",
+      "evidence_quote": "花乡奥莱村13号楼1楼（大牌子耀莱成龙影院）"
+    },
+    {
+      "ids": [
+        2049,
+        2050
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2050,
+      "canonical_name": "可心可丽家庭娱乐中心银川兴庆砂之船奥莱店",
+      "canonical_addr": "银川市兴庆区丽景南街砂之船奥莱B馆2楼可心可丽家庭娱乐中心",
+      "reason": "Identical Shazhichuan Outlet hall B 2F address; bare brand name vs full branch name.",
+      "evidence_url": null,
+      "evidence_quote": "丽景南街砂之船奥莱B馆2楼 (both members)"
+    },
+    {
+      "ids": [
+        2053,
+        2054
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2053,
+      "canonical_name": "可爱淘家庭游乐中心石家庄藁城时尚汇",
+      "canonical_addr": "河北省石家庄市藁城区工业东路 78 号时尚汇地下步行街",
+      "reason": "Same Gaocheng Fashion Hui underground street; bemanicn is a short form of the wahlap address.",
+      "evidence_url": "https://map.bemanicn.com/s/6702",
+      "evidence_quote": "时尚汇地下商业街"
+    },
+    {
+      "ids": [
+        2058,
+        2061
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2058,
+      "canonical_name": "合家欢威海威高广场店",
+      "canonical_addr": "山东省威海市环翠区威高广场A馆四楼合家欢家庭娱乐中心",
+      "reason": "Same Weigao Plaza hall A 4F next to Kaile cinema; street number only on bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/647",
+      "evidence_quote": "新威路17-5号威高广场A馆四楼开乐影城旁"
+    },
+    {
+      "ids": [
+        2059,
+        2062
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2062,
+      "canonical_name": "合家欢青岛市北利群店",
+      "canonical_addr": "山东省青岛市市北区台东利群广场4楼(万达影城旁)合家欢家庭娱乐中心",
+      "reason": "Same Taidong Liqun Plaza 4F (by Wanda cinema); classic wahlap vs bemanicn branch naming.",
+      "evidence_url": "https://map.bemanicn.com/s/5544",
+      "evidence_quote": "市北区台东利群广场4楼"
+    },
+    {
+      "ids": [
+        2064,
+        2065
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2065,
+      "canonical_name": "合成电玩广州花都狮岭店",
+      "canonical_addr": "广东省广州市花都区狮岭镇合成村合成北三街1号楼3楼3-08、3-09之一合成电玩城",
+      "reason": "Same Hecheng Plaza units 3-08/3-09 on 3F; official wahlap and community listing of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2311",
+      "evidence_quote": "狮岭合成三街1号合成广场3层3-08,3-09"
+    },
+    {
+      "ids": [
+        2066,
+        2067
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2066,
+      "canonical_name": "合电占mega南京浦口店",
+      "canonical_addr": "江苏省南京市浦口区江北新区浦口大道8号东方万汇城北区2层合电占 7-215-2商铺",
+      "reason": "Same Dongfang Wanhui City north zone 2F shop; bemanicn omits unit 7-215-2 that wahlap has.",
+      "evidence_url": "https://map.bemanicn.com/s/4176",
+      "evidence_quote": "东方万汇城北区2层"
+    },
+    {
+      "ids": [
+        2068,
+        2069
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2069,
+      "canonical_name": "合电占南京栖霞大融城店",
+      "canonical_addr": "江苏省南京市栖霞区中山门大街698号大融城3楼合电占",
+      "reason": "Same Maqun/Qixia Parc Central 3F branch (meta naming vs official branch name).",
+      "evidence_url": "https://map.bemanicn.com/s/5514",
+      "evidence_quote": "马群大融城3F"
+    },
+    {
+      "ids": [
+        2070,
+        2071
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2071,
+      "canonical_name": "合电占秦淮国际金融中心店",
+      "canonical_addr": "江苏省南京市秦淮区汉中路一号国际金融中心3楼",
+      "reason": "Same IFC/IFCX 3F shop at Hanzhong Rd 1; bare pan-entertainment name vs official branch.",
+      "evidence_url": "https://map.bemanicn.com/s/3064",
+      "evidence_quote": "南京国际金融中心ifcx3楼"
+    },
+    {
+      "ids": [
+        2072,
+        2073
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2072,
+      "canonical_name": "合电占金华义乌宝龙店",
+      "canonical_addr": "浙江省金华市义乌市江东街道青口宝龙广场第二层M1-L2-018商铺合电占·电玩·动漫娱乐空间(青口宝龙店)",
+      "reason": "Same Qingkou Powerlong Plaza shop; bemanicn adds unit M1-L2-018 on 2F.",
+      "evidence_url": "https://map.bemanicn.com/s/1426",
+      "evidence_quote": "青口宝龙广场第二层M1-L2-018商铺"
+    },
+    {
+      "ids": [
+        2092,
+        2093
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2092,
+      "canonical_name": "吾爱玩济南历下店",
+      "canonical_addr": "山东省济南市历下区奥体西路3699号龙湖天街A馆三F01A吾爱玩潮玩体验中心",
+      "reason": "Same Longfor Olympic Sky Street hall A 3F unit F01A at Olympic West Rd 3699.",
+      "evidence_url": "https://map.bemanicn.com/s/4415",
+      "evidence_quote": "奥体西路3699号龙湖济南奥体天街A馆3楼"
+    },
+    {
+      "ids": [
+        3805,
+        3831
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3805,
+      "canonical_name": "星世纪动漫台球体验中心七星店",
+      "canonical_addr": "湖南省株洲市芦淞区建设街道钟鼓岭路118号七星潮流购物公园负一楼星世纪动漫台球中心",
+      "reason": "Baidu and BemaniCN both place Star Century Qixing store at Qixing Trend Shopping Park B1; wahlap is the same mall/street without the floor.",
+      "evidence_url": "https://map.bemanicn.com/s/182",
+      "evidence_quote": "钟鼓岭路七星购物公园负一楼; 别名：星世纪七星店"
+    },
+    {
+      "ids": [
+        2095,
+        2096
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 2095,
+      "canonical_name": "呆毛熊泉州惠安禹悦汇店",
+      "canonical_addr": "福建省泉州市惠安县螺阳镇世纪大道1号泉州禹悦汇F2呆毛熊潮玩",
+      "reason": "Same 惠安螺阳 2F shop ~23 m apart; Baidu only knows 呆毛熊潮玩(泉州禹悦汇店). wahlap 禹州商场 is treated as the informal/older name of 禹悦汇 (禹州 brand mall).",
+      "evidence_url": "https://map.bemanicn.com/s/3235",
+      "evidence_quote": "惠安县螺阳镇世纪大道1号泉州禹悦汇F2"
+    },
+    {
+      "ids": [
+        2108,
+        2112
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2112,
+      "canonical_name": "和音屋成都武侯店",
+      "canonical_addr": "四川省成都市武侯区科华北路58号亚太广场C座1020和音屋",
+      "reason": "Identical unit Asia-Pacific Plaza C 1020; Chuanda Wangjiang vs Wuhou are nicknames for the same shop near Sichuan University Wangjiang.",
+      "evidence_url": "https://map.bemanicn.com/s/5550",
+      "evidence_quote": "亚太广场C座1020"
+    },
+    {
+      "ids": [
+        2113,
+        2116
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2113,
+      "canonical_name": "和音屋昆明世纪广场店",
+      "canonical_addr": "云南省昆明市五华区世纪广场C2幢17楼E号",
+      "reason": "Identical C2 building 17F unit E; Nanping St is the district nickname, Century Plaza is the building.",
+      "evidence_url": "https://map.bemanicn.com/s/6171",
+      "evidence_quote": "五华区世纪广场C2幢17楼E"
+    },
+    {
+      "ids": [
+        7131,
+        7186
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7186,
+      "canonical_name": "风云再起昆明金鹰店",
+      "canonical_addr": "云南省昆明市威远街168号金鹰购物广场B座F7层风云再起",
+      "reason": "Same Golden Eagle B F7 address; ZIv 4232 is a 2017 PIU-only listing of the same Fengyun Zaiqi, while wahlap/bemanicn hold the current lineup.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4232",
+      "evidence_quote": "昆明市五华区威远街168号金鹰购物广场B座F7层"
+    },
+    {
+      "ids": [
+        2118,
+        2119
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2118,
+      "canonical_name": "咔嘻龙包头萨拉齐店",
+      "canonical_addr": "内蒙古自治区包头市土默特右旗萨拉齐镇果园路九号金街229号喜玛特超市一楼",
+      "reason": "Same Salaqi Ximat 1F; wahlap full branch vs bare community name, 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/5761",
+      "evidence_quote": "喜玛特购物广场一楼"
+    }
+  ]
+}

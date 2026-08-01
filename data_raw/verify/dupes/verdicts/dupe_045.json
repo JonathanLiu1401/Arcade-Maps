@@ -1,0 +1,369 @@
+{
+  "shard": 45,
+  "verdicts": [
+    {
+      "ids": [
+        5212,
+        5213
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5212,
+      "canonical_name": "潮玩社潍坊奎文店",
+      "canonical_addr": "山东省潍坊市奎文区胜利东街4000号银座商城三层Z3001号商铺",
+      "reason": "Both list 胜利东街4000号银座商城3层Z3001; wahlap vs bemanicn branch-name variants (奎文店/银座店) for one shop unit.",
+      "evidence_url": "https://map.bemanicn.com/s/1889",
+      "evidence_quote": "潮玩社潍坊银座店 / 北海路街道胜利东街4000号银座商城3层Z3001"
+    },
+    {
+      "ids": [
+        5216,
+        5232
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5216,
+      "canonical_name": "潮玩社烟台蓬莱海情广场店",
+      "canonical_addr": "北关路133号悦动港湾利群海情广场2楼",
+      "reason": "利群海情广场 and 海情广场 are the same mall; both on 2F. 106 m is mall geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/2846",
+      "evidence_quote": "潮玩社（烟台蓬莱利群店） / 北关路133号悦动港湾利群海情广场2楼"
+    },
+    {
+      "ids": [
+        6224,
+        6225
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6224,
+      "canonical_name": "翡尔堡郑州二七万象城店",
+      "canonical_addr": "河南省郑州市二七区万象城3楼翡尔堡",
+      "reason": "Same 二七万象城 L3/3楼 venue; wahlap and bemanicn name variants at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/4642",
+      "evidence_quote": "翡尔堡（万象城店） / 郑州二七万象城L3层西侧"
+    },
+    {
+      "ids": [
+        5234,
+        5239
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5239,
+      "canonical_name": "潮玩空间黄石时代广场店",
+      "canonical_addr": "阳新县兴国大道130号阳新华联时代广场3层",
+      "reason": "Both are 阳新华联时代广场 3楼; 黄石时代广场 is the same branch under county vs city naming.",
+      "evidence_url": "https://map.bemanicn.com/s/3658",
+      "evidence_quote": "潮玩空间(华联时代广场店) / 阳新县兴国大道130号阳新华联时代广场3层"
+    },
+    {
+      "ids": [
+        5243,
+        5247
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5243,
+      "canonical_name": "潮玩萌兽六盘水钟山万达店",
+      "canonical_addr": "贵州省六盘水市钟山区万达广场二楼潮玩萌兽",
+      "reason": "Identical 钟山区万达广场 2楼 listing under short vs 综合馆 name, 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/4516",
+      "evidence_quote": "潮玩萌兽综合馆（六盘水店） / 贵州省六盘水市钟山区万达广场2L潮玩萌兽综合馆"
+    },
+    {
+      "ids": [
+        5245,
+        5248
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5245,
+      "canonical_name": "潮玩萌兽曲靖万达店",
+      "canonical_addr": "云南省曲靖市万达广场2F2027号",
+      "reason": "Same 曲靖万达 brand; wahlap says 3楼 while bemanicn/Baidu POI say 2F2027. One Baidu business only, so floor conflict is likely source error not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/5342",
+      "evidence_quote": "潮玩萌兽综合馆（曲靖店） / 万达广场2F2027号; Baidu POI also 2F2027号 only"
+    },
+    {
+      "ids": [
+        5251,
+        5262
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5251,
+      "canonical_name": "潮玩街区保定莲池万达店",
+      "canonical_addr": "河北省保定市莲池区东金庄乡七一路1999号负一层潮玩街区",
+      "reason": "未来石万达 is 万达广场(未来石店) at 七一东路1999号, same mall as wahlap 莲池万达; both B1.",
+      "evidence_url": "https://map.bemanicn.com/s/3693",
+      "evidence_quote": "潮玩街区（保定未来石万达店） / 未来石万达负一楼; Baidu 万达广场(未来石店) 七一东路1999号"
+    },
+    {
+      "ids": [
+        5252,
+        5258
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5252,
+      "canonical_name": "潮玩街区南充高坪王府井店",
+      "canonical_addr": "四川省南充市高坪区王府井负一层潮玩街区",
+      "reason": "Both 南充高坪王府井 B1; Baidu has single 潮玩街区(南充王府井店) there.",
+      "evidence_url": "https://map.bemanicn.com/s/5951",
+      "evidence_quote": "潮玩街区电玩娱乐中心 / 王府井购物中心负一楼B1区; Baidu 潮玩街区(南充王府井店) 五国风情街负一楼"
+    },
+    {
+      "ids": [
+        6476,
+        6477
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6476,
+      "canonical_name": "西部城市英雄南充高坪店",
+      "canonical_addr": "四川省南充市高坪区江东中路王府井广场五国风情街第LG层第28,29号西部城市英雄游乐场",
+      "reason": "Same 西部城市英雄 at 王府井五国风情街 LG 28-29; Baidu confirms one city-hero POI there.",
+      "evidence_url": "https://map.bemanicn.com/s/894",
+      "evidence_quote": "西部城市英雄游乐场 / 王府井五国风情街4号门负一楼; Baidu 城市英雄 LG层28-29号"
+    },
+    {
+      "ids": [
+        5255,
+        5263
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5255,
+      "canonical_name": "潮玩街区成都武侯来福士广场店",
+      "canonical_addr": "四川省成都市武侯区玉林街道人民南路四段3号来福士广场负一楼潮玩街区名创优品旁",
+      "reason": "Addresses match exactly (人民南路四段3号来福士广场 B1 名创优品旁).",
+      "evidence_url": "https://map.bemanicn.com/s/5538",
+      "evidence_quote": "潮玩街区（来福士广场店） / 人民南路四段3号来福士广场负1层名创优品旁"
+    },
+    {
+      "ids": [
+        5266,
+        5267
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5266,
+      "canonical_name": "潮玩谷广西崇左中都新世界店",
+      "canonical_addr": "广西壮族自治区崇左市扶绥县新宁镇空港大道2号中都新世界15号楼3楼",
+      "reason": "Same 空港大道2号中都新世界 3楼; 6 m apart, bare brand vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/6062",
+      "evidence_quote": "潮玩谷游艺中心 / 空港大道2号中都新世界15号楼3楼"
+    },
+    {
+      "ids": [
+        5269,
+        5270
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5270,
+      "canonical_name": "潮玩里西安碑林店",
+      "canonical_addr": "陕西省西安市碑林区长安路中贸广场B区三楼潮玩里",
+      "reason": "ZIv and wahlap both describe 中贸广场 B区 3楼 潮玩里 (ZIv unit B-3-2); 174 m is geocode drift.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9809",
+      "evidence_quote": "潮玩里ChaowanLi(中贸国际) Address B-3-2, 3rd Floor, Zone B, Zhongmao Plaza Shopping"
+    },
+    {
+      "ids": [
+        5272,
+        5273
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5273,
+      "canonical_name": "潮玩魔都南京桥北新店",
+      "canonical_addr": "江苏省南京市江北新区金像城购物中心2楼街区J-2F-03-05-06",
+      "reason": "Same 江北金象/金像城 2楼 shop; bare brand vs 桥北新店, 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/6047",
+      "evidence_quote": "潮玩魔都 / 金象城购物中心二楼"
+    },
+    {
+      "ids": [
+        5274,
+        5275
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5275,
+      "canonical_name": "潮白大玩家廊坊谭台生活广场店",
+      "canonical_addr": "河北省廊坊市大厂回族自治县谭台生活广场3楼潮白大玩家",
+      "reason": "Both 谭台生活广场 3楼; short name vs full branch, 43 m.",
+      "evidence_url": "https://map.bemanicn.com/s/4734",
+      "evidence_quote": "潮白大玩家 / 谭台生活广场三楼"
+    },
+    {
+      "ids": [
+        5286,
+        5287
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5287,
+      "canonical_name": "潮范动漫城许昌建安新合作广场店",
+      "canonical_addr": "河南省许昌市建安区新合作广场三楼潮范动漫城",
+      "reason": "Identical 建安新合作广场 3楼, 0 m, bare vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/6719",
+      "evidence_quote": "潮范动漫城 / 河南省许昌市建安区新合作广场三楼潮范动漫城"
+    },
+    {
+      "ids": [
+        6907,
+        6913
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6907,
+      "canonical_name": "酷玩猩球沧州黄骅金宝城市店",
+      "canonical_addr": "河北省沧州市黄骅市金宝城市广场二楼DF2S021号",
+      "reason": "Same 金宝城市广场 2楼; bemanicn adds unit DF2S021, 35 m.",
+      "evidence_url": "https://map.bemanicn.com/s/2543",
+      "evidence_quote": "酷玩猩球（金宝店） / 金宝城市广场二楼DF2S021号"
+    },
+    {
+      "ids": [
+        5305,
+        5306
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5305,
+      "canonical_name": "火星计划双鸭山宝清店",
+      "canonical_addr": "黑龙江省双鸭山市宝清县谷兴商厦家乐购三楼火星计划家庭娱乐中心",
+      "reason": "Same 谷兴商厦(家乐购) 三楼, short vs full family-center name, 16 m.",
+      "evidence_url": "https://map.bemanicn.com/s/4882",
+      "evidence_quote": "火星计划家庭娱乐中心（双鸭山宝清店） / 宝清县宝清镇谷兴商厦（家乐购）三楼北间"
+    },
+    {
+      "ids": [
+        5318,
+        5319
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5319,
+      "canonical_name": "炫动乐园成都双流店",
+      "canonical_addr": "成都市双流区九江街道海滨城天街一楼169号",
+      "reason": "Same brand at 双流海滨城天街 1楼; unit 168 vs 169 and 200 m geocode spread. Almost certainly one shop with unit-number source drift, not two arcades.",
+      "evidence_url": "https://map.bemanicn.com/s/5350",
+      "evidence_quote": "炫动乐园 / 双流区蛟龙港双流园区海滨城天街1楼168号"
+    },
+    {
+      "ids": [
+        5323,
+        5330
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5323,
+      "canonical_name": "炫动四方三亚天悦城店",
+      "canonical_addr": "海南省三亚市吉阳区月川中路8号天悦城三楼炫动四方",
+      "reason": "Baidu shows 天悦城 and 三亚万象汇 are the same complex at 月川中路8号; both 3楼, 5.6 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3016",
+      "evidence_quote": "炫动四方（三亚万象汇店） / 月川中路8号三亚万象汇三楼; Baidu 天悦城 and 万象汇 both 月川中路8号"
+    },
+    {
+      "ids": [
+        5324,
+        5327
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5327,
+      "canonical_name": "炫动四方长春居然世界里店",
+      "canonical_addr": "吉林省长春市高新区居然世界里三楼炫动四方电玩城",
+      "reason": "Same 长春高新区 居然/中商世界里 3楼 at 硅谷大街与锦湖大路; short 居然店 vs full branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2039",
+      "evidence_quote": "炫动四方居然店 / 硅谷大街与锦湖大路交汇 中商世界里三层"
+    },
+    {
+      "ids": [
+        5335,
+        5336
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5335,
+      "canonical_name": "炫动魔方成都双流店",
+      "canonical_addr": "四川省成都市双流区西航港街道韩国城喜乐齐超市二楼炫动魔方电玩城",
+      "reason": "Both 双流韩国城 shopping center; Baidu has one 炫动魔方(韩国城购物中心店). 159 m is mall geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/6899",
+      "evidence_quote": "炫动魔方电玩城（韩国城购物中心店） / 西航港街道珠江路与临港路五段交叉口东南180米"
+    },
+    {
+      "ids": [
+        6796,
+        6797
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6796,
+      "canonical_name": "酷乐思池州贵池同晖城市广场店",
+      "canonical_addr": "安徽省池州市贵池区同晖城市广场1楼106酷乐思电玩城",
+      "reason": "Identical 同晖城市广场1楼106 unit, 0 m, full branch vs bare name.",
+      "evidence_url": "https://map.bemanicn.com/s/6341",
+      "evidence_quote": "酷乐思电玩城 / 同晖城市广场1楼106酷乐思电玩城"
+    },
+    {
+      "ids": [
+        5352,
+        5353
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5353,
+      "canonical_name": "炫酷地带广安岳池店",
+      "canonical_addr": "四川省广安市岳池县瑞鼎星都会1-1炫酷地带",
+      "reason": "Same 岳池瑞鼎星都会 1楼; bare name vs full branch, 105 m.",
+      "evidence_url": "https://map.bemanicn.com/s/6334",
+      "evidence_quote": "炫酷地带(岳池店) / 广安市岳池县九龙街道瑞鼎·星都会1楼"
+    },
+    {
+      "ids": [
+        5435,
+        5437
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5435,
+      "canonical_name": "爱巴爱麻家庭娱乐中心江津爱琴海店",
+      "canonical_addr": "重庆市江津区双福街道爱琴海购物公园3楼",
+      "reason": "Same 江津双福爱琴海购物公园 F3, 0 m; 家庭娱乐中心 vs 电玩城 naming.",
+      "evidence_url": "https://map.bemanicn.com/s/2094",
+      "evidence_quote": "爱巴爱麻电玩城爱琴海店 / 江津区南北大道北段726号重庆双福爱琴海购物公园F3层"
+    },
+    {
+      "ids": [
+        5361,
+        5362
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5362,
+      "canonical_name": "炫酷风连云港灌云富园广场店",
+      "canonical_addr": "江苏省连云港市灌云县伊山镇富园广场步行街中间20号楼西首炫酷风游乐动漫城",
+      "reason": "Addresses are word-for-word the same building (富园广场20号楼西首); 104 m is geocode only.",
+      "evidence_url": "https://map.bemanicn.com/s/4736",
+      "evidence_quote": "炫酷风游乐动漫城 / 富园广场步行街中间20号楼西首炫酷风游乐动漫城"
+    },
+    {
+      "ids": [
+        5367,
+        5374
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5367,
+      "canonical_name": "热带时光中山南头海雅缤纷天地店",
+      "canonical_addr": "中山市南头镇海雅缤纷天地3楼热带时光家庭娱乐中心",
+      "reason": "Same 中山南头海雅缤纷天地 热带时光, 0 m; full branch vs family-center name.",
+      "evidence_url": "https://map.bemanicn.com/s/6465",
+      "evidence_quote": "热带时光家庭娱乐中心（中山南头海雅店） / 中山海雅缤纷天地热带时光(中山海雅缤纷天地店)"
+    }
+  ]
+}

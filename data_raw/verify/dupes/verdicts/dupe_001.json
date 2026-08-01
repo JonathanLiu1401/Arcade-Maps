@@ -1,0 +1,291 @@
+{
+  "shard": 1,
+  "verdicts": [
+    {
+      "ids": [7157, 7158, 7193],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real Fengyun Xidan branches: 7157 is 西单明珠商场 7F (横二条59号); 7158/7193 are 西西友谊/新一代 (西单北大街109号). Baidu lists both POIs. Do not collapse the whole cluster.",
+      "evidence_url": "https://map.bemanicn.com/s/1867",
+      "evidence_quote": "风云再起西单西西友谊店 | 西西友谊商城2楼; Baidu also: 风云再起游乐汇(西单明珠商场店) 横二条59号西单明珠7楼"
+    },
+    {
+      "ids": [2693, 2694, 2695],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2695,
+      "canonical_name": "天天玩Game（上海徐汇汇银广场店）",
+      "canonical_addr": "上海市徐汇区华山路2088号汇银广场南楼7M层天天玩",
+      "reason": "All three are 天天玩 at Huashan Road 2088 Huiyin Plaza south tower 7M; ziv/bemanicn/wahlap name variants of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/262",
+      "evidence_quote": "天天玩Game（上海徐汇汇银广场店） | 华山路2088号汇银广场南楼7M层"
+    },
+    {
+      "ids": [4703, 4739, 4775],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4703,
+      "canonical_name": "汤姆熊欢乐世界（上海中山公园龙之梦购物公园店）",
+      "canonical_addr": "上海市长宁区长宁路1018号中山公园龙之梦购物中心6楼汤姆熊",
+      "reason": "One Tom's World at Changning Road 1018 Cloud Nine / Longemont, red atrium unit 6202 / 6F.",
+      "evidence_url": "https://map.bemanicn.com/s/16",
+      "evidence_quote": "汤姆熊欢乐世界（上海中山公园龙之梦购物公园店） | 长宁路1018号龙之梦购物公园红中庭6202"
+    },
+    {
+      "ids": [4736, 4753, 4808],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4736,
+      "canonical_name": "汤姆熊成都锦江群光店",
+      "canonical_addr": "四川省成都市锦江区春熙南路南段8号群光广场7楼",
+      "reason": "One Tom's World at Chunxi Road South Section 8, Qunguang Plaza 7F across wahlap/ziv/bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/1206",
+      "evidence_quote": "汤姆熊（群光广场店） | 春熙路南段8号 群光广场7楼"
+    },
+    {
+      "ids": [1063, 5995, 5996],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5996,
+      "canonical_name": "福爪爪快乐街区（蛇口招商花园城店）",
+      "canonical_addr": "广东省深圳市南山区招商街道四海社区南海大道1090号蛇口招商花园城2楼福爪爪",
+      "reason": "One FULL-OFF / 福爪爪 at Shekou Garden City Center, Nanhai Avenue 1090, floor 2; 65 m is geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/3747",
+      "evidence_quote": "福爪爪快乐街区（蛇口招商花园城店） | 南海大道1090号蛇口花园城中心2楼"
+    },
+    {
+      "ids": [1066, 2032, 2039],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2032,
+      "canonical_name": "反斗乐园深圳福田华强北店",
+      "canonical_addr": "广东省深圳市福田区华强北街道君尚购物中心L511号铺",
+      "reason": "One FUNDOLAND / 反斗乐园 at Zhonghang City Junshang / Tianhong mall, unit L511 on floor 5.",
+      "evidence_url": "https://map.bemanicn.com/s/437",
+      "evidence_quote": "反斗乐园（天虹购物中心店） | 中航路1号中航城君尚购物中心5层"
+    },
+    {
+      "ids": [1147, 1148, 1149],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1149,
+      "canonical_name": "HOP-DX深圳中兴店",
+      "canonical_addr": "深圳市宝安区新安街道宝安中心前海HOP天地负一楼 HOP-DX",
+      "reason": "One HOP-DX at Qianhai HOP Mall / 前海HOP天地 B1; branch suffixes 前海天地/中兴 name the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5418",
+      "evidence_quote": "HOP-DX前海天地店 | 宝安区兴华一路与海秀路交界处"
+    },
+    {
+      "ids": [7171, 7172, 7197],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7171,
+      "canonical_name": "风云再起天津南京路店",
+      "canonical_addr": "天津市和平区南京路209号吉利大厦四楼",
+      "reason": "One Fengyun at Nanjing Road 209 Jili / Milaiou department store 4F; 南京路店 and 吉利大厦店 are the same unit.",
+      "evidence_url": "https://map.bemanicn.com/s/56",
+      "evidence_quote": "风云再起天津吉利大厦店 | 南京路209号米莱欧百货4层（吉利大厦里）"
+    },
+    {
+      "ids": [1758, 1771, 1777],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1771,
+      "canonical_name": "偶予电玩海口龙华友谊阳光城店",
+      "canonical_addr": "海南省海口市龙华区友谊阳光城4楼偶予电玩",
+      "reason": "One I GIVE / 偶予 at Youyi Sunshine City floor 4 (Jinlong Road 2). Distinct from 电玩森林 on 6A in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/2886",
+      "evidence_quote": "偶予电玩（友谊阳光城店） | 金龙路2号友谊阳光城4楼"
+    },
+    {
+      "ids": [5770, 5773, 5774],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5773,
+      "canonical_name": "电玩森林海口龙华金茂友谊阳光店",
+      "canonical_addr": "海南省海口市龙华区金贸街道金龙路2号友谊阳光城商场6A层6A002号商铺",
+      "reason": "One Arcade Forest / 电玩森林 at Youyi Sunshine City unit 6A002 on 6A; not the L4 偶予 shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5308",
+      "evidence_quote": "电玩森林（海口店） | 海南省海口市龙华区友谊阳光城6A楼"
+    },
+    {
+      "ids": [1242, 2989, 2998],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2989,
+      "canonical_name": "夸特游艺北京海淀西北旺店",
+      "canonical_addr": "北京市海淀区西北旺万象汇四楼夸特游艺",
+      "reason": "One Quart at Xibeiwang MixC / 西北旺万象汇 4F; 51 m is mall geocode spread.",
+      "evidence_url": "https://map.bemanicn.com/s/3646",
+      "evidence_quote": "夸特游艺（西北旺万象汇店） | 海淀区西北旺万象汇4F"
+    },
+    {
+      "ids": [1244, 2988, 2994],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2988,
+      "canonical_name": "夸特游艺北京朝阳长楹天街店",
+      "canonical_addr": "北京朝阳区常营地区 常通路1号院长楹天街购物中心-西区三楼夸特游艺",
+      "reason": "One Quart at Changying Paradise Walk / 长楹天街 west zone 3F; all three name the same west-zone unit.",
+      "evidence_url": "https://map.bemanicn.com/s/2698",
+      "evidence_quote": "夸特游艺（北京常营长楹天街店） | 长楹天街西区3楼"
+    },
+    {
+      "ids": [1248, 5379, 5395],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5379,
+      "canonical_name": "热带雨林丰台丰科万达店",
+      "canonical_addr": "北京市丰台区丰科万达3楼热带雨林",
+      "reason": "One Rainforest / 热带雨林 at Fengke Wanda Plaza 3F, Fengke Road 6; large-mall geocode explains 136 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3662",
+      "evidence_quote": "热带雨林（丰科万达3F） | 丰科路6号丰科万达广场3层"
+    },
+    {
+      "ids": [1267, 6573, 6592],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6573,
+      "canonical_name": "超级星座乌鲁木齐天山店",
+      "canonical_addr": "新疆乌鲁木齐市天山区万宴城3层超级星座",
+      "reason": "One Super Constellation at Jiefang North Road 222 Wanyan City 3F unit 3F-3.",
+      "evidence_url": "https://map.bemanicn.com/s/4472",
+      "evidence_quote": "超级星座（万宴城店） | 解放北路222号万宴城3层3F-3"
+    },
+    {
+      "ids": [1310, 2552, 2617],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2617,
+      "canonical_name": "大玩家西安雁塔万达店",
+      "canonical_addr": "陕西省西安市雁塔区科技七路万达广场二楼大玩家",
+      "reason": "One SuperPlayer / 大玩家 at Xi'an Gaoxin Wanda 2F; Mutazhai West Road 719 and 科技七路 are the same mall. Baidu has a single POI.",
+      "evidence_url": "https://map.bemanicn.com/s/5657",
+      "evidence_quote": "大玩家(西安高新万达店) | 木塔寨西路719号西安高新万达广场2层"
+    },
+    {
+      "ids": [1323, 2568, 2665],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2568,
+      "canonical_name": "大玩家北京丰台西铁营万达店",
+      "canonical_addr": "北京市丰台区南苑乡西铁营中路1号万达广场四层A",
+      "reason": "One 大玩家 at Xitieying Wanda Plaza 4F east side / unit A, Xitieying Middle Road 1.",
+      "evidence_url": "https://map.bemanicn.com/s/5095",
+      "evidence_quote": "大玩家（西铁营万达店） | 西铁营中路1号院万达广场4层东侧"
+    },
+    {
+      "ids": [6064, 6080, 6087],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6080,
+      "canonical_name": "第一回合渝中龙湖天街店",
+      "canonical_addr": "重庆市渝中区龙湖天街E馆5楼第一回合",
+      "reason": "All three place ROUND ONE / 第一回合 at Longfor Era Paradise Walk Building E / E馆 floor 5, Shiyou Road. 238 m is the large multi-building complex, not a second branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2181",
+      "evidence_quote": "第一回合（龙湖重庆时代天街店） | 石油路街道时代天街12号E馆5楼"
+    },
+    {
+      "ids": [1357, 1358, 1359],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1359,
+      "canonical_name": "X-in空间西安雁塔金辉广场店",
+      "canonical_addr": "陕西省西安市雁塔区雁塔南路885号金辉广场01-F01-73号",
+      "reason": "One X-in at Yanta South Road 885 Jinhui Plaza shop F0173 / 01-F01-73 on floor 1.",
+      "evidence_url": "https://map.bemanicn.com/s/3758",
+      "evidence_quote": "X-in空间动漫游戏体验中心 | 曲江新区雁塔南路885号金辉广场1楼F0173号商铺"
+    },
+    {
+      "ids": [3492, 3493, 3494],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3494,
+      "canonical_name": "幻界之都西安骡马店",
+      "canonical_addr": "陕西省西安市骡马市店碑林区骡马市1号幻界之都（playhouse楼下）",
+      "reason": "One 幻界之都 at Luomashi 1, unit 20131 / MINSUN Plaza; brand+unit match across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/5102",
+      "evidence_quote": "幻界之都潮玩街区 | 东大街骡马市1号1幢20131号门面"
+    },
+    {
+      "ids": [1439, 1444, 1446],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real Lin'an Powerlong branches: 1439/1444 are 锦北宝龙广场 2F; 1446 is 青山湖宝龙广场 3F (科技大道2588). Baidu lists both. Shared geocode does not make them one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3538",
+      "evidence_quote": "七彩天空乐园(临安宝龙店) | 杭州市临安宝龙广场2楼; Baidu also: 七彩天空主题乐园(青山店) 科技大道2588号宝龙广场3楼"
+    },
+    {
+      "ids": [1464, 1471, 1476],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1471,
+      "canonical_name": "万达宝贝王家庭娱乐中心上海金桥太茂广场店",
+      "canonical_addr": "上海市浦东新区金桥太茂商业广场二楼宝贝王",
+      "reason": "One Wanda Kid / 宝贝王 at Jinqiao Taimao Plaza, Jingao Road 1882, floor 2.",
+      "evidence_url": "https://map.bemanicn.com/s/6518",
+      "evidence_quote": "万达宝贝王金桥太茂广场店 | 金高路1882号金桥太茂商业广场2F"
+    },
+    {
+      "ids": [2188, 2189, 2193],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2189,
+      "canonical_name": "啵比特上海闵行浦江万达店",
+      "canonical_addr": "上海市闵行区永跃路360号浦江万达2层2F-A室啵比特家庭娱乐中心",
+      "reason": "One BOBITE / 啵比特 at Pujiang Wanda Plaza 2F unit 2F-A, Yongyue Road 360; matching game counts across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/6021",
+      "evidence_quote": "啵比特（上海浦江万达店） | 浦江万达广场2楼(瑞辛上面)"
+    },
+    {
+      "ids": [1509, 1512, 2077],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2077,
+      "canonical_name": "吉林市丰满区世宇乐园",
+      "canonical_addr": "吉林省吉林市吉林大街1~2号欧亚综合体三楼",
+      "reason": "One UNiS LAND / 世宇乐园 at Jilin Avenue 1-2 Eurasia complex floor 3.",
+      "evidence_url": "https://map.bemanicn.com/s/73",
+      "evidence_quote": "世宇乐园（吉林欧亚综合体） | 吉林大街1-2号 欧亚商都综合体3层"
+    },
+    {
+      "ids": [1514, 1515, 1516],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 1516,
+      "canonical_name": "世纪星球重庆开州店",
+      "canonical_addr": "重庆市开州区开州大道中段新世纪百货B区三楼世纪星球家庭娱乐中心",
+      "reason": "One Century Planet at Kaizhou Xinshiji / Century Myth Zone B. Floor 2 vs 3 conflict (ziv vs wahlap) is a source error; Baidu places the POI on floor 3 of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4051",
+      "evidence_quote": "世纪星球 | 开州区新世纪购物百货步行街(世纪神话B区); Baidu: 新世纪百货开州商都店C栋3-1号"
+    },
+    {
+      "ids": [1523, 1524, 1525],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real Anshan branches: 1523 is 碧乐城 二道街71号 7F; 1524/1525 are 站前店 五道街60号. Baidu and bemanicn list both as distinct shops about 25 m apart only by district density.",
+      "evidence_url": "https://map.bemanicn.com/s/2839",
+      "evidence_quote": "东方英雄嘉年华（碧乐城店） | 二道街71号7层7017; also 东方英雄嘉年华（站前店） | 铁东五道街60号"
+    },
+    {
+      "ids": [4923, 4924, 4925],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4923,
+      "canonical_name": "淘乐淘天津滨海新区店",
+      "canonical_addr": "天津市滨海新区万达巷永利街41号淘乐淘电玩娱乐城",
+      "reason": "One Taoletao at Yongli Street 41, Wanda Li / 万达巷, Binhai New Area.",
+      "evidence_url": "https://map.bemanicn.com/s/2445",
+      "evidence_quote": "淘乐淘电玩娱乐城 | 天津万达巷永利街41"
+    }
+  ]
+}

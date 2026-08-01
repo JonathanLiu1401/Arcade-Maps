@@ -1,0 +1,369 @@
+{
+  "shard": 50,
+  "verdicts": [
+    {
+      "ids": [
+        5938,
+        5941
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5941,
+      "canonical_name": "真快活苏州钟南永旺店",
+      "canonical_addr": "江苏省苏州市工业园区钟南街238号永旺梦乐城2楼",
+      "reason": "Same 园区/钟南永旺梦乐城 branch: bemanicn gives 钟南街238号2楼 and wahlap names the same AEON; Baidu lists one 真快活苏州园区店 there.",
+      "evidence_url": "https://map.bemanicn.com/s/3665",
+      "evidence_quote": "真快活苏州园区永旺店 / 工业园区钟南街238号2楼"
+    },
+    {
+      "ids": [
+        5939,
+        5942
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5942,
+      "canonical_name": "真快活苏州高新永旺梦乐园店",
+      "canonical_addr": "江苏省苏州市高新区城际路19号永旺梦乐园2楼真快活电玩",
+      "reason": "Both are the 苏州新区/高新永旺梦乐城 store at 城际路19号2楼; Baidu has a single 真快活苏州新区永旺店 at that address.",
+      "evidence_url": "https://map.bemanicn.com/s/2530",
+      "evidence_quote": "城际路19号永旺梦乐城(苏州新区店)2楼"
+    },
+    {
+      "ids": [
+        5956,
+        5957
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5957,
+      "canonical_name": "神秘国度西宁西门王府井店",
+      "canonical_addr": "青海省西宁市城中区王府井百货B馆负一楼神秘国度动漫游艺城",
+      "reason": "Identical full address in both sources (王府井B馆负一楼); bare brand name vs branch-suffixed name for one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/7119",
+      "evidence_quote": "青海省西宁市城中区王府井百货B馆负一楼神秘国度动漫游艺城"
+    },
+    {
+      "ids": [
+        5958,
+        5959
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5959,
+      "canonical_name": "神话动漫新洲摩尔城店",
+      "canonical_addr": "武汉市新洲区衡州大道100号新洲摩尔城四楼神话动漫",
+      "reason": "Same brand and same mall floor (新洲摩尔城4F); 82 m offset is typical approx geocode noise for one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/7214",
+      "evidence_quote": "衡州大道100号新洲摩尔城4F层"
+    },
+    {
+      "ids": [
+        5961,
+        5967
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5961,
+      "canonical_name": "神采飞扬双鸭集贤店",
+      "canonical_addr": "黑龙江省双鸭山市集贤县福利泓晟生活广场三楼电玩城神采飞扬",
+      "reason": "Both name 集贤 神采飞扬 at 泓晟生活广场3楼; wahlap fuller address, same 0 m pin.",
+      "evidence_url": "https://map.bemanicn.com/s/4826",
+      "evidence_quote": "泓晟生活广场3楼"
+    },
+    {
+      "ids": [
+        5965,
+        5974
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5965,
+      "canonical_name": "神采飞扬汉阳江腾店",
+      "canonical_addr": "湖北省武汉市汉阳区马鹦路江腾广场三楼",
+      "reason": "Same 江腾店 at 马鹦路江腾广场三楼 (A座); ~59 m geocode drift only.",
+      "evidence_url": "https://map.bemanicn.com/s/5707",
+      "evidence_quote": "马鹦路江腾广场A座三楼"
+    },
+    {
+      "ids": [
+        5971,
+        6068
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5971,
+      "canonical_name": "神采飞扬绍兴柯桥万达第一回合店",
+      "canonical_addr": "浙江省绍兴市柯桥区柯桥街道钱陶路799号万达广场四幢三层百货楼-3f-c",
+      "reason": "WAHLAP lists 神采飞扬...第一回合 and BemaniCN lists 第一回合 at the same 柯桥万达 钱陶路799号三楼; co-branded one shop, not two halls.",
+      "evidence_url": "https://map.bemanicn.com/s/3183",
+      "evidence_quote": "第一回合(柯桥万达店) / 浙江省绍兴市柯桥区钱陶路799号万达广场三楼; 机厅已搬到三楼"
+    },
+    {
+      "ids": [
+        5979,
+        5983
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5979,
+      "canonical_name": "福思特三明尤溪万达店",
+      "canonical_addr": "福建省三明市尤溪县万达广场二层福思特家庭游乐中心",
+      "reason": "Same 尤溪万达 2F 福思特 branch; addresses name the same plaza floor.",
+      "evidence_url": "https://map.bemanicn.com/s/6390",
+      "evidence_quote": "西城镇文公大道3号万达广场2F-1福思特家庭游乐中心"
+    },
+    {
+      "ids": [
+        5980,
+        5988
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5980,
+      "canonical_name": "福思特动漫电玩世界（珠海香洲印象城店）",
+      "canonical_addr": "广东省珠海市香洲区凤山街道珠海印象城3楼福思特电玩城",
+      "reason": "Both place 福思特 at 珠海印象城三楼 with matching chunithm+maimai lineup; 福斯思 is a typo variant of 福思特.",
+      "evidence_url": "https://map.bemanicn.com/s/4401",
+      "evidence_quote": "广东省珠海市香洲区凤山街道珠海印象城3楼福思特电玩城"
+    },
+    {
+      "ids": [
+        5982,
+        5984
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5984,
+      "canonical_name": "福思特晋中新建路万达店",
+      "canonical_addr": "山西省晋中市新建路万达广场三楼福思特",
+      "reason": "Same 新建万达三层 福思特; bare community addr vs official branch name for one store.",
+      "evidence_url": "https://map.bemanicn.com/s/5528",
+      "evidence_quote": "新建万达三层 / 福思特家庭娱乐中心(新建北路万达店)"
+    },
+    {
+      "ids": [
+        5986,
+        5989
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5986,
+      "canonical_name": "福思特湖州吴兴银泰百货店",
+      "canonical_addr": "浙江省湖州市吴兴区爱山街道银泰百货东吴店三楼福思特电玩城",
+      "reason": "Both are 湖州银泰百货(东吴)3楼 福思特; official address is fuller.",
+      "evidence_url": "https://map.bemanicn.com/s/4211",
+      "evidence_quote": "福思特电玩城（湖州银泰百货店） / 银泰百货3楼"
+    },
+    {
+      "ids": [
+        5992,
+        5993
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5993,
+      "canonical_name": "福熊电玩城大连沙河口店",
+      "canonical_addr": "辽宁省大连市沙河口区西南路888号冰山慧谷D4栋熊洞街",
+      "reason": "BemaniCN states the WAHLAP-registered name is 福熊电玩城 and that 熊爪爪/熊洞街 is the same hall inside 冰山慧谷; ~190 m is mall-complex geocode spread.",
+      "evidence_url": "https://map.bemanicn.com/s/6086",
+      "evidence_quote": "本机厅在华立官方网站的注册名字为福熊电玩城，但美团上只能搜到熊爪爪夹机社/熊洞街，实际两家为同一机厅"
+    },
+    {
+      "ids": [
+        6713,
+        6717
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6717,
+      "canonical_name": "迪卡丘菏泽曹县大润发店",
+      "canonical_addr": "山东省菏泽市曹县曹城街道湘江西路路北万基广场（大润发）三楼迪卡丘",
+      "reason": "Same 曹县大润发/万基广场 迪卡丘; branch suffix vs bare brand, 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/4463",
+      "evidence_quote": "山东省菏泽市曹县曹城街道湘江西路路北万基广场（大润发）"
+    },
+    {
+      "ids": [
+        6006,
+        6013
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6013,
+      "canonical_name": "积木熊菏泽牡丹店",
+      "canonical_addr": "山东省菏泽市牡丹区长江东路1266号万达广场三楼东南角积木熊",
+      "reason": "Same 牡丹区万达 积木熊; community lists bare brand, wahlap the branch, identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/3324",
+      "evidence_quote": "牡丹区长江东路1266号万达广场"
+    },
+    {
+      "ids": [
+        6007,
+        6009
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6009,
+      "canonical_name": "积木熊潮玩娱乐（抚州南丰凯升广场店）",
+      "canonical_addr": "江西省抚州市南丰县琴城镇桔苑北路凯升购物广场2楼积木熊",
+      "reason": "Addresses are word-for-word the same 凯升购物广场2楼 积木熊.",
+      "evidence_url": "https://map.bemanicn.com/s/7244",
+      "evidence_quote": "江西省抚州市南丰县琴城镇桔苑北路凯升购物广场2楼积木熊"
+    },
+    {
+      "ids": [
+        6008,
+        6014
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6014,
+      "canonical_name": "积木熊鹰潭月湖凯翔店",
+      "canonical_addr": "江西省鹰潭市月湖区凯翔购物广场三楼3035门面积木熊",
+      "reason": "Same unit 3035 on 凯翔新天地/凯翔购物广场三楼; bare brand vs 鹰潭月湖凯翔店.",
+      "evidence_url": "https://map.bemanicn.com/s/4962",
+      "evidence_quote": "胜利西路6号凯翔新天地三楼3035号门店"
+    },
+    {
+      "ids": [
+        6010,
+        6011
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6011,
+      "canonical_name": "积木熊荆门东宝店",
+      "canonical_addr": "湖北省荆门市东宝区泉口街道大桥社区民主街历史文化街区B1F-001/B1F-037",
+      "reason": "Same 民主街历史文化街区 basement 积木熊; unit B1F-045 vs B1F-037 is listing variance. Baidu has one 积木熊潮玩娱乐(荆门民主街店) at B1F-001/B1F-037.",
+      "evidence_url": "https://map.bemanicn.com/s/6043",
+      "evidence_quote": "民主街历史文化街区B1F-001/B1F-037"
+    },
+    {
+      "ids": [
+        6022,
+        6023
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6023,
+      "canonical_name": "竞趣大陆北京朝阳枫尚奥莱店",
+      "canonical_addr": "朝阳区京通苑30号楼枫尚城市奥特莱斯（京通店）3F星逸影城旁",
+      "reason": "Same 枫尚奥莱 京通苑30号楼 3F; 18 m apart with matching 竞趣大陆 name.",
+      "evidence_url": "https://map.bemanicn.com/s/6667",
+      "evidence_quote": "京通苑30号楼枫尚城市奥特莱斯（京通店）3F星逸影城旁"
+    },
+    {
+      "ids": [
+        6026,
+        6035
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6035,
+      "canonical_name": "童年搭档永川爱情广场店",
+      "canonical_addr": "重庆市永川区凤凰湖爱情广场二楼童年搭档（Z201商铺）",
+      "reason": "ZIv English 'Ai Qing Plaza / Love Plaza, Fenghuanghu, Yongchuan' is the same 凤凰湖爱情广场 as the wahlap/bemanicn listing.",
+      "evidence_url": "https://map.bemanicn.com/s/2688",
+      "evidence_quote": "重庆市永川区凤凰湖爱情广场二楼童年搭档（Z201商铺）"
+    },
+    {
+      "ids": [
+        6030,
+        6034
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6034,
+      "canonical_name": "童年搭档成都郫都店",
+      "canonical_addr": "四川省成都市郫都区郫筒街道望丛中路1199号龙湖蜀新天街A馆3F-26童年搭档",
+      "reason": "Identical unit 3F-26 in 龙湖蜀新天街; ~118 m is mall geocode noise. (4F 第一回合 is a different brand, not in this pair.)",
+      "evidence_url": "https://map.bemanicn.com/s/3993",
+      "evidence_quote": "郫都区郫筒街道龙湖蜀新天街3F-26; 楼上存在另一家机厅以分散玩家"
+    },
+    {
+      "ids": [
+        6075,
+        6084
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6075,
+      "canonical_name": "第一回合成都郫都龙湖天街店",
+      "canonical_addr": "四川省成都市郫都区望丛中路1199号龙湖蜀新天街A馆4楼第一回合",
+      "reason": "Both are 第一回合 on 蜀新龙湖天街 4楼 (separate from 3F 童年搭档); same brand and floor.",
+      "evidence_url": "https://map.bemanicn.com/s/2131",
+      "evidence_quote": "望丛中路1199号龙湖蜀新天街A馆4楼"
+    },
+    {
+      "ids": [
+        6031,
+        6040
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6031,
+      "canonical_name": "童年搭档万州星乐汇店",
+      "canonical_addr": "重庆市万州区太白路94号摩登星乐汇三楼",
+      "reason": "星乐汇/星乐荟 is one mall; Baidu has a single 童年搭档(星乐荟店) at 太白路94号三层. 94 vs 97 is address variance for the same complex.",
+      "evidence_url": "https://map.bemanicn.com/s/5316",
+      "evidence_quote": "万州区太白路94号 星乐汇3F; 童年搭档小程序上显示为 童年搭档万州店（一店）"
+    },
+    {
+      "ids": [
+        6032,
+        6041
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6032,
+      "canonical_name": "童年搭档南岸奥园店",
+      "canonical_addr": "重庆市南岸区天文大道159号3-10奥园广场3楼童年搭档",
+      "reason": "Same unit 3-10 at 天文大道159号 茶园奥园广场3楼 under both names.",
+      "evidence_url": "https://map.bemanicn.com/s/6424",
+      "evidence_quote": "天文大道159号茶园奥园广场3楼3-10号"
+    },
+    {
+      "ids": [
+        6043,
+        6044
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6044,
+      "canonical_name": "童悦世界济南济阳大丰店",
+      "canonical_addr": "山东省济南市济阳区济北街道济阳区大丰城市之星三楼童悦世界",
+      "reason": "Both are 童悦世界 on 大丰城市之星三楼; branch suffix vs bare name, ~38 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3954",
+      "evidence_quote": "大丰城市之星三楼"
+    },
+    {
+      "ids": [
+        6047,
+        6048
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6048,
+      "canonical_name": "童话王国百色田东店",
+      "canonical_addr": "广西百色市田东县中兴城二楼童话王国",
+      "reason": "Identical 中兴城(田东)二楼 童话王国 listing pair at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/2264",
+      "evidence_quote": "中兴城(田东店)二楼童话王国"
+    },
+    {
+      "ids": [
+        6056,
+        6057
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6056,
+      "canonical_name": "第e星球梧州长洲店",
+      "canonical_addr": "广西梧州市长洲区新兴三路30号神冠购物广场二楼第e星球",
+      "reason": "Both point at 神冠购物广场二楼; Baidu has one 第e星球潮玩汇(梧州店) there. ~130 m geocode spread only.",
+      "evidence_url": "https://map.bemanicn.com/s/3808",
+      "evidence_quote": "新兴三路30号二层商业神冠购物广场有限公司商场内"
+    }
+  ]
+}

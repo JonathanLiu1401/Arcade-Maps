@@ -1,0 +1,783 @@
+{
+  "shard": 19,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=United%20Kingdom",
+    "https://www.arcadeclub.co.uk/",
+    "https://www.arcadeclub.co.uk/blackpool/",
+    "https://www.arcadeclub.co.uk/leeds/",
+    "https://www.arcadeclub.co.uk/bury/opening-hours/",
+    "https://www.chief-coffee.com/",
+    "https://www.continuearcades.com/",
+    "https://www.continuearcades.com/derby",
+    "https://www.continuearcades.com/chichester",
+    "https://www.continuearcades.com/plymouth",
+    "https://www.continuearcades.com/hemel",
+    "https://www.aceoflanes.co.uk/",
+    "https://arcadiabarandgames.com/",
+    "https://www.bandainamcocrossstoreuk.com/",
+    "http://astrocityamusements.co.uk",
+    "https://airport-bowl.com/",
+    "https://www.bugsys.co.uk/",
+    "ZIv venue pages referenced in evidence_url fields"
+  ],
+  "corrections": [
+    {
+      "id": 11255,
+      "name": "Arcade Club Bury",
+      "field": "games",
+      "current": "maimai missing from games array",
+      "proposed": "add maimai",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4018",
+      "evidence_quote": "maimai FiNALE | Connected to private servers. Be gentle with it!",
+      "checked_at": "2026-08-01",
+      "note": "ZIv lists maimai. App machine_prices often already has maimai key. UK cabs are typically FiNALE on private servers, not live SEGA DX network."
+    },
+    {
+      "id": 11256,
+      "name": "Arcade Club Leeds",
+      "field": "games",
+      "current": "maimai missing from games array",
+      "proposed": "add maimai",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4930",
+      "evidence_quote": "maimai FiNALE | Online. Volume is good. Left speaker on P2 is broken.",
+      "checked_at": "2026-08-01",
+      "note": "ZIv lists maimai. App machine_prices often already has maimai key. UK cabs are typically FiNALE on private servers, not live SEGA DX network."
+    },
+    {
+      "id": 11254,
+      "name": "Arcade Club Blackpool",
+      "field": "games",
+      "current": "maimai missing from games array",
+      "proposed": "add maimai",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6358",
+      "evidence_quote": "maimai FiNALE | Online connected. Left side screen not working",
+      "checked_at": "2026-08-01",
+      "note": "ZIv lists maimai. App machine_prices often already has maimai key. UK cabs are typically FiNALE on private servers, not live SEGA DX network."
+    },
+    {
+      "id": 11259,
+      "name": "ArCains",
+      "field": "games",
+      "current": "maimai missing from games array",
+      "proposed": "add maimai",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5397",
+      "evidence_quote": "maimai FiNALE | P2 chassis is damaged but has been repaired, P1 feels amazing (1/3/26)",
+      "checked_at": "2026-08-01",
+      "note": "ZIv lists maimai. App machine_prices often already has maimai key. UK cabs are typically FiNALE on private servers, not live SEGA DX network."
+    },
+    {
+      "id": 11323,
+      "name": "Chief Coffee",
+      "field": "games",
+      "current": "maimai missing from games array",
+      "proposed": "add maimai",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5731",
+      "evidence_quote": "maimai | DO NOT EDIT!!! | price: JPY 100 / First play free",
+      "checked_at": "2026-08-01",
+      "note": "ZIv lists maimai. App machine_prices often already has maimai key. UK cabs are typically FiNALE on private servers, not live SEGA DX network."
+    },
+    {
+      "id": 11280,
+      "name": "Boneyard Arcade",
+      "field": "games",
+      "current": "maimai missing from games array",
+      "proposed": "add maimai",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11077",
+      "evidence_quote": "maimai FiNALE | price: GBP 0.80 for 3 songs | cond 5",
+      "checked_at": "2026-08-01",
+      "note": "ZIv lists maimai. App machine_prices often already has maimai key. UK cabs are typically FiNALE on private servers, not live SEGA DX network."
+    },
+    {
+      "id": 11254,
+      "name": "Arcade Club Blackpool",
+      "field": "games",
+      "current": [
+        "ddr",
+        "drs",
+        "groove_coaster",
+        "jubeat",
+        "museca",
+        "nostalgia",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": "add stepmaniax (StepMania Converted Cabinet on ZIv)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6358",
+      "evidence_quote": "StepMania Converted Cabinet | Speakers are broken, pads dont work well. Lights are always on. | cond 2",
+      "checked_at": "2026-08-01",
+      "note": "Converted pad cab, not retail StepManiaX. ZIv last update 2025-08-24."
+    },
+    {
+      "id": 11324,
+      "name": "Chill & Thrill",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": "add stepmaniax (StepMania Converted Cabinet)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10330",
+      "evidence_quote": "StepMania Converted Cabinet | Runs Stepmania 5.1, Has songs from 1st Mix to 7th Mix | Free Play | cond 3",
+      "checked_at": "2026-08-01",
+      "note": "ZIv last update 2025-07-22. Crewe retro diner/arcade."
+    },
+    {
+      "id": 11255,
+      "name": "Arcade Club Bury",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 7,
+        "count_evidence": "ziv_comment"
+      },
+      "proposed": {
+        "jubeat": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4018",
+      "evidence_quote": "jubeat beyond the Ave. | Four cabinets. English. Headphone amps and panel sticking issues recently fixed.",
+      "checked_at": "2026-08-01",
+      "note": "Comment says four cabinets. App 7 is likely a parse error. Arcade lastUpdateTime 2026-07-31."
+    },
+    {
+      "id": 11255,
+      "name": "Arcade Club Bury",
+      "field": "game_counts",
+      "current": {
+        "ddr": 3,
+        "popn": 2,
+        "sdvx": 2,
+        "museca": 2,
+        "taiko": 2,
+        "gitadora": 2,
+        "jubeat": 7,
+        "stepmaniax": 1
+      },
+      "proposed": {
+        "ddr": 3,
+        "popn": 2,
+        "sdvx": 2,
+        "museca": 2,
+        "taiko": 2,
+        "gitadora": 2,
+        "jubeat": 4,
+        "maimai": 1,
+        "iidx": 1,
+        "chunithm": 1,
+        "wacca": 1,
+        "drs": 1,
+        "nostalgia": 1,
+        "project_diva": 1,
+        "reflec": 1,
+        "crossbeats": 1,
+        "groove_coaster": 1,
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4018",
+      "evidence_quote": "lastUpdateTime 2026-07-31: IIDX x1, CHUNITHM x1, crossbeats x1, DDR EXTREME+A20+A3 x3, DRS x1, GF+DM x2, GC x1, jubeat Four cabinets, maimai x1, MUSECA x2, pop'n x2, RB x1, SDVX x2, SMX dedicated x1, WACCA x1, Nostalgia x1, Diva x1, Taiko 13+14 x2",
+      "checked_at": "2026-08-01",
+      "note": "stepmaniax=1 is the dedicated SMX only (2 extra StepMania converted cabs also present). jubeat from comment not row count."
+    },
+    {
+      "id": 11255,
+      "name": "Arcade Club Bury",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr": "A3 X-cab online + A20 offline + EXTREME; not all modern gold/white",
+        "iidx": "Cannon Ballers 60Hz upright (not Lightning Model)",
+        "sdvx": "EXCEED GEAR + IV HEAVENLY HAVEN (not confirmed Valkyrie)",
+        "maimai": "FiNALE private server",
+        "chunithm": "X-VERSE-X"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4018",
+      "evidence_quote": "beatmania IIDX 30 RESIDENT | 60Hz Cannon Ballers cab; DanceDanceRevolution A3 | X Cab, Online; maimai FiNALE; CHUNITHM X-VERSE-X; SOUND VOLTEX EXCEED GEAR + IV HEAVENLY HAVEN",
+      "checked_at": "2026-08-01",
+      "note": "UK private-network imports. Lightning/Valkyrie not indicated."
+    },
+    {
+      "id": 11256,
+      "name": "Arcade Club Leeds",
+      "field": "game_counts",
+      "current": "maimai missing from game_counts",
+      "proposed": {
+        "maimai": 1,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4930",
+      "evidence_quote": "maimai FiNALE x1; jubeat Ave. x2; lastUpdateTime 2026-07-27",
+      "checked_at": "2026-08-01",
+      "note": "Other existing game_counts match ZIv rows."
+    },
+    {
+      "id": 11256,
+      "name": "Arcade Club Leeds",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "Japanese DDR X cab running A3, network enabled",
+        "maimai": "FiNALE (P2 display replaced with TV per ZIv)",
+        "pump_it_up": "PRIME 2 CX cab"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4930",
+      "evidence_quote": "DanceDanceRevolution A3 | Japanese DDR X cab, Network Enabled; maimai FiNALE; Pump It Up PRIME 2 | CX cab",
+      "checked_at": "2026-08-01",
+      "note": "No Lightning IIDX at Leeds per ZIv list."
+    },
+    {
+      "id": 11254,
+      "name": "Arcade Club Blackpool",
+      "field": "game_counts",
+      "current": {
+        "ddr": 1,
+        "drs": 1,
+        "groove_coaster": 1,
+        "jubeat": 2,
+        "museca": 2,
+        "nostalgia": 1,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "ddr": 1,
+        "drs": 1,
+        "groove_coaster": 1,
+        "jubeat": 2,
+        "maimai": 1,
+        "museca": 2,
+        "nostalgia": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6358",
+      "evidence_quote": "maimai FiNALE x1; StepMania Converted Cabinet x1; jubeat Ave x2; MUSECA x2; lastUpdateTime 2025-08-24",
+      "checked_at": "2026-08-01",
+      "note": "Machine list older than Bury/Leeds (~11 months)."
+    },
+    {
+      "id": 11275,
+      "name": "Blackpool Bowl",
+      "field": "game_counts",
+      "current": {
+        "ddr": 24,
+        "count_evidence": "ziv_comment"
+      },
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2265",
+      "evidence_quote": "DanceDanceRevolution A3 | DDRA3 as of 12/12/24 Euromix cab Offline (single machine entry)",
+      "checked_at": "2026-08-01",
+      "note": "24 is almost certainly a misparse of a ZIv comment. Only one DDR cab listed. lastUpdateTime 2025-08-30."
+    },
+    {
+      "id": 11257,
+      "name": "Arcadia Bar & Games",
+      "field": "game_counts",
+      "current": {
+        "ddr": 2,
+        "count_evidence": "ziv_comment"
+      },
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8579",
+      "evidence_quote": "Dancing Stage EuroMIX2 | It's the EM2 cab moved from Codona's arcade. (single machine)",
+      "checked_at": "2026-08-01",
+      "note": "Comment describes relocation, not two cabs."
+    },
+    {
+      "id": 11257,
+      "name": "Arcadia Bar & Games",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": "keep ddr but mark stale/unverified until reconfirmed",
+      "confidence": "unverified",
+      "evidence_url": "https://arcadiabarandgames.com/",
+      "evidence_quote": "We have retro arcade games, plus skee-ball, air hockey and more!",
+      "checked_at": "2026-08-01",
+      "note": "Venue open per official hours. Official site never names DDR. ZIv last update 2024-02-18 (EuroMIX2). Do not remove without a visit."
+    },
+    {
+      "id": 11257,
+      "name": "Arcadia Bar & Games",
+      "field": "hours",
+      "current": "Mon-Thu 17:00-00:00; Fri 16:00-01:00; Sat 12:00-01:00; Sun 12:00-00:00",
+      "proposed": "Mon-Thu 17:00-23:00; Fri 17:00-01:00; Sat 12:00-01:00; Sun 12:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://arcadiabarandgames.com/",
+      "evidence_quote": "Mon - Thur 5-11pm; Fri 5pm-1am; Sat 12pm-1am; Sun 12-11pm",
+      "checked_at": "2026-08-01",
+      "note": "Official ends Thu/Sun 23:00 not 00:00; Fri starts 17:00 not 16:00."
+    },
+    {
+      "id": 11278,
+      "name": "Blackpool Tower",
+      "field": "location",
+      "current": "40a Bank Hey Street Haydon Bridge England, FY1 4RZ, Haydon Bridge",
+      "proposed": "40a Bank Hey Street, Blackpool, FY1 4RZ (city Blackpool, not Haydon Bridge)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7467",
+      "evidence_quote": "lat 53.81616 lng -3.05525 (Blackpool seafront); postcode FY1 4RZ Blackpool. ZIv city field says Haydon Bridge.",
+      "checked_at": "2026-08-01",
+      "note": "Haydon Bridge is in Northumberland. Pin is already Blackpool. Fix label only. ZIv machines last updated 2023-08-26 (stale)."
+    },
+    {
+      "id": 11246,
+      "name": "Ace Of Lanes",
+      "field": "location",
+      "current": "2 Anchor Street Bishops Stortford England, CM23 3BP",
+      "proposed": "4 Anchor Street, Bishops Stortford, CM23 3BP",
+      "confidence": "certain",
+      "evidence_url": "https://www.aceoflanes.co.uk/",
+      "evidence_quote": "4 Anchor Street, Bishops Stortford, CM23 3BP",
+      "checked_at": "2026-08-01",
+      "note": "Official address is 4 not 2. ZIv still lists DDR A20 PLUS updated 2026-07-15; official site does not advertise DDR."
+    },
+    {
+      "id": 11355,
+      "name": "Continue? Arcades",
+      "field": "hours",
+      "current": "Mon-Thu 11:30-09:00; Fri-Sat 11:30-11:00; Sun 11:30-09:00",
+      "proposed": "Mon-Thu 11:30-21:00; Fri 11:30-23:00; Sat 10:00-23:00; Sun 11:30-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.continuearcades.com/plymouth",
+      "evidence_quote": "Mon-Thu: 11:30 am - 9:00 pm; Fri: 11:30 am - 11:00 pm; Sat: 10:00 am - 11:00 pm; Sun: 11:30am - 8 pm",
+      "checked_at": "2026-08-01",
+      "note": "App stored 9pm/11pm as 09:00/11:00 (12-hour clock bug). Sat opens 10:00; Sun closes 20:00."
+    },
+    {
+      "id": 11355,
+      "name": "Continue? Arcades",
+      "field": "website",
+      "current": "https://www.continuearcades.com/",
+      "proposed": "https://www.continuearcades.com/plymouth",
+      "confidence": "certain",
+      "evidence_url": "https://www.continuearcades.com/plymouth",
+      "evidence_quote": "Plymouth location page; 4-6 Royal Parade, Plymouth, PL1 1DS",
+      "checked_at": "2026-08-01",
+      "note": "Location page is better than chain root."
+    },
+    {
+      "id": 11323,
+      "name": "Chief Coffee",
+      "field": "hours",
+      "current": "Mon-Fri 08:00-17:30; Sat 09:00-18:00; Sun 09:00-17:30",
+      "proposed": "Mon-Fri 08:00-17:30; Sat 09:00-18:00; Sun 10:00-17:30",
+      "confidence": "certain",
+      "evidence_url": "https://www.chief-coffee.com/",
+      "evidence_quote": "Monday - Friday 8am - 5.30pm; Saturday 9am - 6pm; Sunday 10am - 5.30pm",
+      "checked_at": "2026-08-01",
+      "note": "Sunday opens 10:00 not 09:00."
+    },
+    {
+      "id": 11323,
+      "name": "Chief Coffee",
+      "field": "cab_models",
+      "current": {
+        "taiko_jp": null
+      },
+      "proposed": {
+        "taiko": "Nijiiro (taiko no tatsujin Nijiiro Ver.)",
+        "chunithm": "X-VERSE 60Hz",
+        "maimai": "present (generation not clearly labeled beyond maimai on ZIv)",
+        "nostalgia": "Op.3"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5731",
+      "evidence_quote": "taiko no tatsujin Nijiiro Ver. | cond 4; CHUNITHM X-VERSE | 60hz; Nostalgia Op.3; lastUpdateTime 2026-05-09",
+      "checked_at": "2026-08-01",
+      "note": "Yen pricing via on-site exchange about GBP 1 = JPY 100. Official site confirms Japanese arcade floor without naming titles."
+    },
+    {
+      "id": 11262,
+      "name": "Bandai Namco Cross Store Camden",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-19:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.bandainamcocrossstoreuk.com/",
+      "evidence_quote": "Open daily Monday through Sunday 10:00 - 19:00; Provender Building Units 16-18 / 100-101 Stables Market, Chalk Farm Road, London NW1 8AH",
+      "checked_at": "2026-08-01",
+      "note": "Official chain page. StepManiaX still on ZIv (2025-01-06); official page does not name SMX."
+    },
+    {
+      "id": 11262,
+      "name": "Bandai Namco Cross Store Camden",
+      "field": "website",
+      "current": "https://www.bandainamcocrossstoreuk.com/?utm_source=Twitter",
+      "proposed": "https://www.bandainamcocrossstoreuk.com/",
+      "confidence": "certain",
+      "evidence_url": "https://www.bandainamcocrossstoreuk.com/",
+      "evidence_quote": "Bandai Namco Cross Store official UK site without utm tracking param",
+      "checked_at": "2026-08-01",
+      "note": "Drop tracking query."
+    },
+    {
+      "id": 11280,
+      "name": "Boneyard Arcade",
+      "field": "location",
+      "current": "180-182 Sidwelll Street Exeter Devon, EX4 6RD, Exeter",
+      "proposed": "180-182 Sidwell Street, Exeter, EX4 6RD",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11077",
+      "evidence_quote": "180-182 Sidwelll Street (triple-l in ZIv); postcode EX4 6RD Exeter; lastUpdateTime 2026-06-11",
+      "checked_at": "2026-08-01",
+      "note": "Standard Exeter spelling is Sidwell Street. Triple-l is likely a typo carried from ZIv. No official website found."
+    },
+    {
+      "id": 11255,
+      "name": "Arcade Club Bury",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open (confirmed)",
+      "confidence": "certain",
+      "evidence_url": "https://www.arcadeclub.co.uk/",
+      "evidence_quote": "Bury Ela Mill / Cork Street listed; OPEN TODAY / Open Weekly Thu-Sun on official site",
+      "checked_at": "2026-08-01",
+      "note": "No removal. Existence confirmed. ZIv machines updated 2026-07-31."
+    },
+    {
+      "id": 11256,
+      "name": "Arcade Club Leeds",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open; Abbey Retail Park / Savins Mill Way, Kirkstall, LS5 3RP",
+      "confidence": "certain",
+      "evidence_url": "https://www.arcadeclub.co.uk/leeds/",
+      "evidence_quote": "Arcade Club, Abbey Retail Park, Savins Mill Way, Leeds, LS5 3RP; Summer Holidays 2026 Open from 11am every Thursday, Friday, Saturday and Sunday from 24 July to 31 August",
+      "checked_at": "2026-08-01",
+      "note": "Summer hours may temporarily override stored Thu 16:00 open."
+    },
+    {
+      "id": 11254,
+      "name": "Arcade Club Blackpool",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open; 74 Bloomfield Road, Blackpool FY1 6JL",
+      "confidence": "certain",
+      "evidence_url": "https://www.arcadeclub.co.uk/blackpool/",
+      "evidence_quote": "OPEN TODAY; 74 Bloomfield Road Blackpool FY1 6JL; Summer Holidays 2026 open from 11am Thu-Sun 24 Jul-31 Aug",
+      "checked_at": "2026-08-01",
+      "note": "Confirmed open. Machine list on ZIv last updated 2025-08-24."
+    },
+    {
+      "id": 11352,
+      "name": "Continue Arcades: Retro Gaming Lounge",
+      "field": "status",
+      "current": "open (implied) with ddr",
+      "proposed": "open since about 3 July 2026; pay-entry free-play; Dancing Stage EuroMIX present",
+      "confidence": "certain",
+      "evidence_url": "https://www.continuearcades.com/derby",
+      "evidence_quote": "DERBY LOCATION OPENS 3 JULY!; 24-26 East Street Derby DE1 2AF; Mon-Thurs 11am-9pm Fri 11am-11pm Sat 10am-11pm Sun 11am-8pm",
+      "checked_at": "2026-08-01",
+      "note": "ZIv 2026-07-22 lists Dancing Stage EuroMIX on SuperNOVA cabinet. Official page does not name DDR."
+    },
+    {
+      "id": 11295,
+      "name": "Bugsy's Tenpin Bowling",
+      "field": "status",
+      "current": "separate venue with ddr",
+      "proposed": "likely duplicate of id 11294 at same Ethelbert Crescent CT9 2DY; physical bowling alley open",
+      "confidence": "likely",
+      "evidence_url": "https://www.bugsys.co.uk/",
+      "evidence_quote": "Bugsy's Tenpin Bowling, Ethelbert Crescent, Cliftonville, Margate, CT9 2DY; site lists bowling, AR darts, shuffleboard, diner/bar",
+      "checked_at": "2026-08-01",
+      "note": "Merge candidate with 11294 (ziv 2078)."
+    },
+    {
+      "id": 11295,
+      "name": "Bugsy's Tenpin Bowling",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4155",
+      "evidence_quote": "lastUpdateTime 2017-07-21 09:59:50; only machine Dancing Stage EuroMIX2; official bugsys.co.uk does not list dance games",
+      "checked_at": "2026-08-01",
+      "note": "Propose REMOVE ddr (proposed null). Nine years without confirmation."
+    },
+    {
+      "id": 11345,
+      "name": "Clydebank Leisure Centre",
+      "field": "status",
+      "current": "listed with stepmaniax",
+      "proposed": "UNVERIFIED whether StepManiaX still present; ZIv last update 2019-01-23",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4706",
+      "evidence_quote": "lastUpdateTime 2019-01-23; six StepManiaX (All-In-One Cabinet Non-Coin) rows, no later confirmation",
+      "checked_at": "2026-08-01",
+      "note": "Leisure centre building still exists as council facility. SMX after 7+ years unknown."
+    },
+    {
+      "id": 11345,
+      "name": "Clydebank Leisure Centre",
+      "field": "game_counts",
+      "current": {
+        "stepmaniax": 6,
+        "count_evidence": "ziv_listed"
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4706",
+      "evidence_quote": "6 StepManiaX rows, lastUpdateTime 2019-01-23 19:16:34",
+      "checked_at": "2026-08-01",
+      "note": "Propose remove or mark unknown rather than display 6 as current fact."
+    },
+    {
+      "id": 11260,
+      "name": "Astro City",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open as public free-play sessions (not all-day walk-in)",
+      "confidence": "certain",
+      "evidence_url": "http://astrocityamusements.co.uk",
+      "evidence_quote": "Public free play Fridays 7pm-9pm; Saturdays 1pm-3pm; selected school holiday Wednesdays 1pm-3pm; entry GBP 7.00 from 1 April 2026; site names Pump it Up, Dance Dance Revolution, and Pop'n Music",
+      "checked_at": "2026-08-01",
+      "note": "ddr/popn/pump_it_up confirmed on official site."
+    },
+    {
+      "id": 11260,
+      "name": "Astro City",
+      "field": "hours",
+      "current": null,
+      "proposed": "Public free-play sessions: Fri 19:00-21:00; Sat 13:00-15:00; selected school-holiday Wed 13:00-15:00 (check site for bank/school holidays). Not open all day every day.",
+      "confidence": "certain",
+      "evidence_url": "http://astrocityamusements.co.uk",
+      "evidence_quote": "Fridays: 7pm-9pm; Saturdays: 1pm-3pm; Selected school holiday Wednesdays: 1pm-3pm; Free play entry GBP 7.00 per person",
+      "checked_at": "2026-08-01",
+      "note": "Empty hours_text misleads travellers who expect daily retail hours."
+    },
+    {
+      "id": 11249,
+      "name": "Airport Bowl",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open (confirmed)",
+      "confidence": "certain",
+      "evidence_url": "https://airport-bowl.com/",
+      "evidence_quote": "Monday-Thursday 10am-1am; Friday 10am-3am; Saturday 8am-3am; Sunday 8am-1am; arcade listed among amenities; no permanent closure",
+      "checked_at": "2026-08-01",
+      "note": "App hours already match. No rhythm games claimed."
+    },
+    {
+      "id": 11259,
+      "name": "ArCains",
+      "field": "other",
+      "current": "taiko listed in games",
+      "proposed": "keep taiko but note ZIv condition 2 totally unplayable as of last report",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5397",
+      "evidence_quote": "taiko no tatsujin 14 | Hole in P1 skin and large dent in P2, dead spot on p2 left hand side and both incredibly unsensitive. Tiny sticks on short strings. Totally unplayable. | cond 2",
+      "checked_at": "2026-08-01",
+      "note": "Still listed present 2026-04-24. Do not travel for taiko alone."
+    },
+    {
+      "id": 11255,
+      "name": "Arcade Club Bury",
+      "field": "website",
+      "current": "http://www.arcadeclub.co.uk/",
+      "proposed": "https://www.arcadeclub.co.uk/bury/",
+      "confidence": "likely",
+      "evidence_url": "https://www.arcadeclub.co.uk/",
+      "evidence_quote": "Per-venue paths /bury/ /leeds/ /blackpool/ used on official site",
+      "checked_at": "2026-08-01",
+      "note": "Root still works; venue path is clearer."
+    },
+    {
+      "id": null,
+      "name": "Continue Arcades Hemel Hempstead",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Continue Arcades Hemel Hempstead",
+        "addr": "Unit 31-33 The Marlowes Centre, Hemel Hempstead, HP1 1DX",
+        "country": "United Kingdom",
+        "website": "https://www.continuearcades.com/hemel",
+        "hours": "Mon-Thu 11:30-21:00; Fri 11:30-23:00; Sat 10:00-23:00; Sun 11:30-20:00",
+        "games": "unknown (chain free-play arcade; rhythm not confirmed on page)",
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.continuearcades.com/hemel",
+      "evidence_quote": "Unit 31-33 The Marlowes Centre, Hemel Hempstead, HP1 1DX; Mon-Thu 11:30 am - 9:00 pm; Fri 11:30 am - 11:00 pm; Sat 10:00 am - 11:00 pm; Sun 11:30am - 8 pm",
+      "checked_at": "2026-08-01",
+      "note": "Not in shard_019 (A-C names). May already exist in a later UK shard. Coordinates not geocoded here. No confirmed rhythm titles on Hemel page."
+    },
+    {
+      "id": 11354,
+      "name": "Continue? Arcades",
+      "field": "website",
+      "current": "https://www.continuearcades.com/",
+      "proposed": "https://www.continuearcades.com/swansea",
+      "confidence": "likely",
+      "evidence_url": "https://www.continuearcades.com/",
+      "evidence_quote": "Chain location picker includes Swansea; location pages follow /swansea pattern used by /plymouth /derby /chichester /tenby",
+      "checked_at": "2026-08-01",
+      "note": "Did not fetch /swansea HTML this pass; path is established Continue pattern."
+    },
+    {
+      "id": 11353,
+      "name": "Continue?",
+      "field": "website",
+      "current": "https://www.continuearcades.com",
+      "proposed": "https://www.continuearcades.com/taunton",
+      "confidence": "likely",
+      "evidence_url": "https://www.continuearcades.com/",
+      "evidence_quote": "Taunton listed among Continue locations on chain home",
+      "checked_at": "2026-08-01",
+      "note": "Same pattern as other Continue venues."
+    },
+    {
+      "id": 11354,
+      "name": "Continue? Arcades",
+      "field": "game_counts",
+      "current": {
+        "ddr": 2,
+        "count_evidence": "ziv_comment"
+      },
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10799",
+      "evidence_quote": "Dancing Stage EuroMIX2 | Originally was a EM2 machine with EM1 firmware, now an EM2 machine. P2 left pad ... (single machine); lastUpdateTime 2026-04-21",
+      "checked_at": "2026-08-01",
+      "note": "Only one EuroMIX2 machine row. Count 2 is wrong."
+    },
+    {
+      "id": 11325,
+      "name": "CHS Frontier Amusements",
+      "field": "status",
+      "current": "listed open (other only)",
+      "proposed": "UNVERIFIED operation; ZIv last update 2015-04-21",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3422",
+      "evidence_quote": "lastUpdateTime 2015-04-21 13:24:49",
+      "checked_at": "2026-08-01",
+      "note": "Oldest ZIv row in this shard. No website. Do not send players without recheck."
+    },
+    {
+      "id": 11261,
+      "name": "Babylon Park Camden Town",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6351",
+      "evidence_quote": "Pump It Up Phoenix x2 | 5 Hearts, Stage Break Off, Online, Pads have been modded; lastUpdateTime 2023-09-10",
+      "checked_at": "2026-08-01",
+      "note": "About 2.9 years since ZIv update. Count useful if still present."
+    },
+    {
+      "id": 11358,
+      "name": "Coral Island",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2263",
+      "evidence_quote": "StepManiaX (65 inch Deluxe Cabinet) x2; comments dated 11/06/25; lastUpdateTime 2025-06-11",
+      "checked_at": "2026-08-01",
+      "note": "Large Blackpool complex. Official site https://www.coralisland.co.uk/"
+    },
+    {
+      "id": 11302,
+      "name": "Butlins Skegness",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5108",
+      "evidence_quote": "StepManiaX (65 inch Deluxe Cabinet) x2; lastUpdateTime 2025-07-04",
+      "checked_at": "2026-08-01",
+      "note": "Holiday camp; guest access may be required."
+    },
+    {
+      "id": 11286,
+      "name": "Brighton Pier (The Palace of Fun)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=452",
+      "evidence_quote": "DanceDanceRevolution A20 PLUS + Dancing Stage EuroMIX; lastUpdateTime 2026-06-16",
+      "checked_at": "2026-08-01",
+      "note": "Modern A20 PLUS plus legacy EuroMIX."
+    },
+    {
+      "id": 11269,
+      "name": "Bell's Arcade",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=217",
+      "evidence_quote": "Dancing Stage EuroMIX | Two machines, both with warn out pads; Dancing Stage Fusion | Machine not working; lastUpdateTime 2023-10-24",
+      "checked_at": "2026-08-01",
+      "note": "About 2.8 years stale. Seaside, seasonal. Fusion was OOO."
+    },
+    {
+      "id": 11280,
+      "name": "Boneyard Arcade",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr": "DDRMAX2 (7thMIX) legacy, not modern A/A20/A3",
+        "maimai": "FiNALE",
+        "sdvx": "EXCEED GEAR",
+        "ongeki": "bright MEMORY",
+        "wacca": "REVERSE",
+        "project_diva": "Future Tone Version B"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11077",
+      "evidence_quote": "DDRMAX2 -Dance Dance Revolution 7thMIX-; maimai FiNALE; SOUND VOLTEX EXCEED GEAR; WACCA REVERSE; ongeki bright MEMORY; Project DIVA Future Tone Version B; lastUpdateTime 2026-06-11",
+      "checked_at": "2026-08-01",
+      "note": "Token/credit system GBP 8 for 20 credits per ZIv info."
+    }
+  ],
+  "summary_notes": {
+    "region": "United Kingdom (alphabetically Ace Of Lanes through Crystal Palace Amusements)",
+    "method": "Full ZIv UK API pull (728 venues) matched to all 115 shard rows; official pages fetched for major chains and high-value rhythm venues.",
+    "no_closed_confirmed": "ZIv UK closed field empty for all shard venues. No official permanent-closure proof found for any of the 115 during this pass.",
+    "stale_risk": "Many seaside/holiday/bowling rows have ZIv ages of 2-11 years; absence of proof of closure is not proof of open dance cabs.",
+    "not_individually_rechecked_online": "Most seaside amusements, Butlins sub-venues, and bowling alleys with only 'other' games were covered via ZIv age/machine snapshot only, not per-venue official pages.",
+    "other_uk_rhythm_not_in_this_shard": "FreePlayCity, Funland London, Playback Bristol, NQ64 chain, Pixel Bar Manchester, Escape to Freight Island, Heart of Gaming Croydon, etc. appear in ZIv UK but outside A-C name range of this shard."
+  }
+}

@@ -643,6 +643,17 @@ window.AM = window.AM || {};
       var have = variantsOf(a);
       if (have.maimai_classic && !have.maimai_dx_cab) return "maimai (FiNALE / pre-DX)";
     }
+    /* The scraper's PRE-DX slug, which is spelled `maimai` against
+       `maimai_dx`. It never reaches a game chip - merge keeps it out of
+       games[] - but enrichment keys 249 machine_prices rows by it, and those
+       rows print a game name. Unlabelled it renders as the bare slug
+       "maimai", which on a store that also has a DX cab (37 of them, e.g. id
+       198 PARADIGM ZONE) puts an unexplained "maimai" row directly under
+       "maimai DX" at a different price, and on a classic-only store (id 170,
+       whose one title is "maimai ORANGE PLUS") says nothing about the cabinet
+       being pre-DX at all. Both cases are the same dead-network claim the
+       chips already make, so they read it from the same string. */
+    if (g === "maimai") return "maimai (FiNALE / pre-DX)";
     return GAME_LABEL[g] || g;
   }
 

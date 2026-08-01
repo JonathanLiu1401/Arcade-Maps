@@ -1,0 +1,2051 @@
+{
+  "shard": 52,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON (all 72 linked Hubei shops, status=1, fetched 2026-08-01)",
+    "https://map.bemanicn.com/games title_id map (maimai DX=1, maimai classic=2, CHUNITHM=3, WACCA=17, taiko old=15, taiko CN=31, jubeat魔方=34, GD=9, ...)",
+    "shard_052.json embedded fields (addr, games, game_counts, src, notes, links)",
+    "Cross-row wahlap/bemanicn coordinate+name pairing within shard"
+  ],
+  "corrections": [
+    {
+      "id": 2330,
+      "name": "国贸电玩城",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "other",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1069",
+      "evidence_quote": "title_id=17 (WACCA) quantity=2 version=Ver.3.50.00.CHN C [EDT] coin=5; title_id=26 (头文字D) quantity=4. shop status=1 updated_at=2025-11-29. comment: 华卡仅支持 刷卡/扫码支付 游玩",
+      "note": "App listed only other. BemaniCN has 2x WACCA (华卡) plus Initial D. Keep other for non-rhythm cabs.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2330,
+      "name": "国贸电玩城",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1069",
+      "evidence_quote": "title_id=17 quantity=2",
+      "note": "WACCA count from BemaniCN quantity field.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3400,
+      "name": "小玩家",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2729",
+      "evidence_quote": "title_id=17 (WACCA) quantity=2 version=Ver3.5 coin=5. comment: 华卡在舞立方与E舞对面 华卡应该是修过了 现在机况很好. status=1 updated_at=2026-02-07",
+      "note": "App listed only other. Live BemaniCN inventory is 2x WACCA. No maimai/chunithm/taiko rows.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3400,
+      "name": "小玩家",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2729",
+      "evidence_quote": "title_id=17 quantity=2 version=Ver3.5",
+      "note": "Counts from BemaniCN quantity.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2667,
+      "name": "大玩家（黄冈万达广场店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "MiLK Ver.1.90 (cracked JP classic cab; NOT DX network; shop strongly discourages play)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2421",
+      "evidence_quote": "title_id=2 version=MiLK Ver.1.90. machine comment: 同城有DX新框，非常不推荐游玩旧框，店家服务态度差...机器属于破解日文机；基本不能玩水平",
+      "note": "Venue has classic maimai only. App correctly does not list maimai_dx. Cab model note is the useful correction.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2667,
+      "name": "大玩家（黄冈万达广场店）",
+      "field": "other",
+      "current": null,
+      "proposed": "Has offline classic maimai MiLK 1.90 (not networked DX). Extremely poor condition per BemaniCN comments. Do not advertise as playable maimai_dx.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2421",
+      "evidence_quote": "title_id=2 MiLK Ver.1.90; 内外延迟巨高，且内屏触摸不灵敏...基本不能玩水平；机器会于每天21:20左右定时重启",
+      "note": "Operational warning for players who might travel based on residual classic cab listing elsewhere.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2228,
+      "name": "嗨森汇乐园电玩城(光谷店)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "国行 x3",
+        "maimai": "FiNALE x1 (offline chicken-disc outside shop; not networked)",
+        "taiko": "old green/12 Asia (title_id=15)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/580",
+      "evidence_quote": "title_id=1 qty=3 version=国行; title_id=15 qty=1 version=green; title_id=2 qty=1 version=FiNALE. FiNALE comment: 在店外面，鸡盘，不可刷卡，因为没联网所以版本比较旧. updated_at=2026-07-22",
+      "note": "App correctly lists maimai_dx+taiko+other. Extra classic FiNALE is offline and should not be counted as maimai_dx. taiko is old-gen (title_id 15) not Nijiiro.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3025,
+      "name": "奇奇乐园宜昌兴发店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/745",
+      "evidence_quote": "title_id=1 maimai DX qty=1; title_id=17 WACCA qty=1 version=华卡音舞 ver.2R; title_id=26 Initial D qty=2. status=1 updated_at=2026-06-25",
+      "note": "Add wacca. Keep other for Initial D. WACCA may need staff to power on.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3025,
+      "name": "奇奇乐园宜昌兴发店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/745",
+      "evidence_quote": "title_id=1 quantity=1; title_id=17 quantity=1",
+      "note": "BemaniCN quantities. App already had maimai_dx:1.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3027,
+      "name": "奇奇乐园武汉奥山世纪城店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3704",
+      "evidence_quote": "title_id=1 maimai DX qty=1; title_id=17 WACCA qty=2 version=Ver.3.0; title_id=26 Initial D qty=4. status=1 updated_at=2026-06-07",
+      "note": "Add wacca x2. Keep other for Initial D (some offline/broken).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3027,
+      "name": "奇奇乐园武汉奥山世纪城店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3704",
+      "evidence_quote": "title_id=1 quantity=1; title_id=17 quantity=2",
+      "note": "BemaniCN quantities.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3204,
+      "name": "宜昌奇奇乐园CBD店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/173",
+      "evidence_quote": "title_id=1 maimai DX qty=1; title_id=17 WACCA qty=1 version=华卡音舞 ver.2R; title_id=22 鼓王 qty=1 (废鼓). status=1 updated_at=2026-04-14",
+      "note": "Add wacca. Keep other for 鼓王 (marked 废鼓).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3204,
+      "name": "宜昌奇奇乐园CBD店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/173",
+      "evidence_quote": "title_id=1 quantity=1; title_id=17 quantity=1",
+      "note": "BemaniCN quantities.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2006,
+      "name": "卡通尼武汉金银潭店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5395",
+      "evidence_quote": "shop 卡通尼乐园金银潭永旺店 status=1 machines: title_id=31 taiko qty=1, title_id=32 pokemon qty=3. NO title_id=1 maimai. comment: 注意：这边舞萌搬到金桥永旺店了，想玩可以去楼上真快活。 updated_at=2026-05-27",
+      "note": "Wahlap-only twin of BemaniCN 1985. Community listing says maimai cabinets moved to 金桥永旺 (id 1984 / 2005). proposed null = remove false maimai_dx claim. Venue may remain as kids arcade without maimai.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2006,
+      "name": "卡通尼武汉金银潭店",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "maimai cabinets relocated to 卡通尼金桥永旺; venue may remain as kids arcade without maimai",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5395",
+      "evidence_quote": "comment: 注意：这边舞萌搬到金桥永旺店了，想玩可以去楼上真快活。 arcades list has no maimai row.",
+      "note": "Not a full permanent closure of the shop on BemaniCN (status=1 still), but the only rhythm claim the app shows for this wahlap row is maimai_dx which is gone.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1856,
+      "name": "刺窝",
+      "field": "other",
+      "current": null,
+      "proposed": "Private/home rhythm desk venue (手台), not a public full-cabinet arcade. Controllers: maimai DX desk x4, CHUNITHM desk x2, taiko desk x1; comment also lists SDVX/ONGEKI desks and Groove Coaster official cab. Contact via QQ group 1047311692. Address is approximate (汉阳万达附近, 卓鱼电竞旁f栋).",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5243",
+      "evidence_quote": "arcades all version=手台 coin=0. comment: 刺窝当前正在绝赞运营阶段...地址：武汉市汉阳区（汉阳万达附近）详情进群查看 设备：Maimai DX 手台 * 2 (ADX)... 可提供1~2人过夜 正常营业时间：8:00 - 22:00 群号：1047311692",
+      "note": "App shows full commercial-style game list/counts. These are desk controllers (手台). Players should not treat pin as a walk-in mall arcade.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1856,
+      "name": "刺窝",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "手台 (desk controllers) x4 (源台x2 + xin台x2), not full DX cabs",
+        "chunithm": "手台 x2 (Luna + 抬手乐)",
+        "taiko": "手台 (djdao)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5243",
+      "evidence_quote": "version=手台 for all three title rows; machine comments 源台x2 xin台×2 / Luna台，抬手乐 / djdao",
+      "note": "Critical variant info so map does not imply full commercial cabinets.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1856,
+      "name": "刺窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-22:00 (after 22:00 no external keys per shop comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5243",
+      "evidence_quote": "comment: 正常营业时间：8:00 - 22:00 晚上10点开始禁止外键。 (BemaniCN start_time=1 end_time=23 looks like placeholder noise)",
+      "note": "Prefer prose hours in comment over integer fields that say 1-23.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3525,
+      "name": "开心汇武汉江汉新佳丽店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2782",
+      "evidence_quote": "开心汇（原寻游纪嗨众电&潮玩世界MIX） arcades: title_id=31 taiko qty=1 version=2025秋; title_id=34 jubeat音乐魔方 qty=2. NO maimai row. comment: 本店已经搬迁完毕，现已开始营业。 updated_at=2026-06-08",
+      "note": "Wahlap-only twin of id 3526. BemaniCN sibling lists only taiko+jubeat after rebrand/move from 寻游纪. Remove maimai_dx claim on the wahlap row; prefer BemaniCN inventory on 3526.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3526,
+      "name": "开心汇（原寻游纪嗨众电&潮玩世界MIX）",
+      "field": "other",
+      "current": null,
+      "proposed": "Rebranded from 寻游纪嗨众/潮玩世界MIX; coin balance migrates to 开心汇电玩综合娱乐空间 mini-program. Sibling wahlap row id 3525 should merge into this BemaniCN-backed row.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2782",
+      "evidence_quote": "name=开心汇（原寻游纪嗨众电&潮玩世界MIX）; comment: 本店已经搬迁完毕，现已开始营业。新小程序名：开心汇电玩综合娱乐空间，原寻游纪的币使用新小程序登录后可继承。",
+      "note": "Merge candidate with 3525.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3405,
+      "name": "小酋长汉口店",
+      "field": "other",
+      "current": null,
+      "proposed": "Formerly 江汉路城市英雄 (rebranded/relocated context). Comment: 原江汉路城市英雄. Environment noisy, smoking common. New taiko 国行 as of 2026-07-25.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/501",
+      "evidence_quote": "comment starts with 原江汉路城市英雄. title_id=1 maimai qty=1; title_id=31 taiko qty=1 国行新框 (2026/7/25 update); title_id=33 舞立方EVO qty=1. updated_at=2026-07-25",
+      "note": "Wahlap row 2415 城市英雄武汉江汉店 at 佳丽广场负一层 may be stale branding of same operator/area; not proven same unit. Do not auto-delete 2415 without field check.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1938,
+      "name": "卡乐游游乐体验中心（荆州万达广场店）",
+      "field": "other",
+      "current": null,
+      "proposed": "Former 荆州万达大玩家 closed 2026-04-25; reopened under 卡乐游 brand with first local maimai DX. As of 2026-07-08 note on machine: staff said maimai would open in a few days (availability may still be intermittent).",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5689",
+      "evidence_quote": "comment: 前身为2026年4月25日停业的荆州万达大玩家，原址门店品牌更换为卡乐游，并新进了荆州区第一台舞萌dx. machine comment 7.8更新：舞萌没开，工作人员说要过几天才会开. updated_at=2026-07-18",
+      "note": "Brand change + possible intermittent maimai power-on. App name already 卡乐游 so OK; note is for maintainers/players.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3387,
+      "name": "寻游记嗨众(九全嘉国际广场店)",
+      "field": "other",
+      "current": null,
+      "proposed": "Shop comment says from 2024-11-18 do not upload machines other than maimai because area is remote; yet arcades still list title_id=9 GD DrumMania GALAXYWAVE qty=1 (开心汇搬来的机台). Treat gitadora as likely present but verify in field. App games gitadora+maimai_dx match BemaniCN rows.",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/942",
+      "evidence_quote": "comment: 自2024/11/18日起，机厅除舞萌外无任何可添加音游机台...; arcades still include title_id=9 version=GALAXYWAVE qty=1 comment 开心汇搬来的机台. updated_at=2026-05-26",
+      "note": "Conflict between prose comment and machine table. Not changing games without stronger evidence.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2531,
+      "name": "大明星超乐场",
+      "field": "other",
+      "current": null,
+      "proposed": "BemaniCN comment explicitly 没有mai. Inventory: old taiko (title_id=15 太鼓达人14) + Initial D. App games other+taiko is correct. start_time=end_time=26 is invalid placeholder; do not publish those hours.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1515",
+      "evidence_quote": "comment: 没有mai. arcades title_id=15 qty=1 version=太鼓达人14; title_id=26 qty=4. start_time=26 end_time=26. updated_at=2025-11-29",
+      "note": "Hours integers unusable. Stale update date.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1474,
+      "name": "万达宝贝王成长乐园（咸宁咸安万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:30",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6411",
+      "evidence_quote": "comment: 营业时间10:00-21:30 (integer fields start_time=9 end_time=10 look wrong). status=1 updated_at=2026-05-27",
+      "note": "Prefer prose hours in comment over BemaniCN integer pair 9-10.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2249,
+      "name": "嗨玩队长武汉光谷店",
+      "field": "location",
+      "current": {
+        "addr": "湖北省武汉市洪山区光谷步行街一期D区4楼",
+        "lat": 30.507337,
+        "lng": 114.397143
+      },
+      "proposed": {
+        "addr": "珞瑜路光谷步行街喷泉广场悦心汇4F"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1243",
+      "evidence_quote": "address field: 珞瑜路光谷步行街喷泉广场悦心汇4F. comment: 常被称为“新嗨”. App addr was 湖北省武汉市洪山区光谷步行街一期D区4楼",
+      "note": "Same mall area; BemaniCN address is more specific (悦心汇4F). approx pin OK for China; not claiming coord change.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1014,
+      "name": "C翻乐园武汉洪山大悦城店",
+      "field": "location",
+      "current": {
+        "addr": "湖北省武汉市洪山区高新大道718号大悦城3楼"
+      },
+      "proposed": {
+        "addr": "光谷大悦城三楼 (洪山区)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5054",
+      "evidence_quote": "address: 光谷大悦城三楼. App: 湖北省武汉市洪山区高新大道718号大悦城3楼. Both refer to Guanggu Joy City; BemaniCN short form matches common local name.",
+      "note": "Not a wrong-city pin. Optional address normalization only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3597,
+      "name": "快乐电堂孝感汉川汉海国际广场店",
+      "field": "location",
+      "current": {
+        "addr": "湖北省孝感市汉川市仙女山街道汉海国际广场5楼快乐电堂动漫娱乐中心快乐电堂家庭娱乐中心"
+      },
+      "proposed": {
+        "addr": "湖北省孝感市汉川市仙女山街道西正街汉海国际广场1栋G5021-1室快乐电堂(汉川店)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5209",
+      "evidence_quote": "address: 湖北省孝感市汉川市仙女山街道西正街汉海国际广场1栋G5021-1室快乐电堂(汉川店). App was longer less precise floor-only string. comment: 右机已搬走，左机机况良好. updated_at=2026-07-31",
+      "note": "Also note maimai count still 1 (右机搬走 matches qty=1). App counts already 1.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 901,
+      "name": "1号机长随州曾都店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=899 (1号机长超乐场（随州吾悦广场店）)",
+      "proposed": "duplicate/split of id 899 (1号机长超乐场（随州吾悦广场店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3566",
+      "evidence_quote": "Pairing evidence: same coords 31.739699,113.370673; names both 1号机长 吾悦. Keep id 899 as canonical (has BemaniCN link https://map.bemanicn.com/s/3566).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=1号机长 随州吾悦.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1015,
+      "name": "C翻乐园武汉群星城店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1018 (C翻群星城店)",
+      "proposed": "duplicate/split of id 1018 (C翻群星城店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3198",
+      "evidence_quote": "Pairing evidence: same coords; C翻乐园武汉群星城店 vs C翻群星城店. Keep id 1018 as canonical (has BemaniCN link https://map.bemanicn.com/s/3198).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=C翻 群星城.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1627,
+      "name": "乐玩之星武汉江汉店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1626 (乐玩之星动漫体验中心)",
+      "proposed": "duplicate/split of id 1626 (乐玩之星动漫体验中心); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1843",
+      "evidence_quote": "Pairing evidence: near-identical coords; 乐玩之星武汉江汉店 vs 乐玩之星动漫体验中心. Keep id 1626 as canonical (has BemaniCN link https://map.bemanicn.com/s/1843).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=乐玩之星 江汉/崇光.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1659,
+      "name": "乐玩家黄石阳新铜锣湾店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1658 (乐玩家超乐场（铜锣湾店）)",
+      "proposed": "duplicate/split of id 1658 (乐玩家超乐场（铜锣湾店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4764",
+      "evidence_quote": "Pairing evidence: near coords; 乐玩家黄石阳新铜锣湾店 vs 乐玩家超乐场（铜锣湾店）. Keep id 1658 as canonical (has BemaniCN link https://map.bemanicn.com/s/4764).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=乐玩家 阳新铜锣湾.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1960,
+      "name": "卡希尔武汉光谷星悦广场店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1958 (卡希尔乐园（星悦广场店）)",
+      "proposed": "duplicate/split of id 1958 (卡希尔乐园（星悦广场店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6565",
+      "evidence_quote": "Pairing evidence: near coords; wahlap lacks jubeat/taiko that BemaniCN has. Keep id 1958 as canonical (has BemaniCN link https://map.bemanicn.com/s/6565).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=卡希尔 星悦广场.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1963,
+      "name": "卡狸萌宜昌伍家岗长江店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1964 (卡狸萌家庭体验中心)",
+      "proposed": "duplicate/split of id 1964 (卡狸萌家庭体验中心); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5645",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 1964 as canonical (has BemaniCN link https://map.bemanicn.com/s/5645).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=卡狸萌 长江广场.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2005,
+      "name": "卡通尼武汉江岸永旺店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1984 (卡通尼乐园金桥永旺店)",
+      "proposed": "duplicate/split of id 1984 (卡通尼乐园金桥永旺店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7139",
+      "evidence_quote": "Pairing evidence: near coords 金桥永旺. Keep id 1984 as canonical (has BemaniCN link https://map.bemanicn.com/s/7139).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=卡通尼 金桥永旺.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2227,
+      "name": "嗨森汇乐园武汉东湖光谷店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2228 (嗨森汇乐园电玩城(光谷店))",
+      "proposed": "duplicate/split of id 2228 (嗨森汇乐园电玩城(光谷店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/580",
+      "evidence_quote": "Pairing evidence: near 嗨森汇乐园武汉东湖光谷店 vs 嗨森汇乐园电玩城(光谷店). Keep id 2228 as canonical (has BemaniCN link https://map.bemanicn.com/s/580).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=嗨森汇 光谷.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2414,
+      "name": "城市英雄武汉新荣天街店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2385 (城市英雄Party House(龙湖新荣天街店))",
+      "proposed": "duplicate/split of id 2385 (城市英雄Party House(龙湖新荣天街店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6233",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 2385 as canonical (has BemaniCN link https://map.bemanicn.com/s/6233).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=城市英雄 新荣天街.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2416,
+      "name": "城市英雄武汉滨江天街店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2386 (城市英雄Party House(龙湖滨江天街店))",
+      "proposed": "duplicate/split of id 2386 (城市英雄Party House(龙湖滨江天街店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6041",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 2386 as canonical (has BemaniCN link https://map.bemanicn.com/s/6041).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=城市英雄 滨江天街.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2479,
+      "name": "壹玖玖娱乐馆咸宁赤壁怡景大楼店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2478 (壹玖玖娱乐馆)",
+      "proposed": "duplicate/split of id 2478 (壹玖玖娱乐馆); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6624",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 2478 as canonical (has BemaniCN link https://map.bemanicn.com/s/6624).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=壹玖玖 赤壁怡景.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2530,
+      "name": "大明星武汉江汉世贸店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2532 (大明星超乐场世贸店)",
+      "proposed": "duplicate/split of id 2532 (大明星超乐场世贸店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2887",
+      "evidence_quote": "Pairing evidence: same coords; wahlap missing taiko. Keep id 2532 as canonical (has BemaniCN link https://map.bemanicn.com/s/2887).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=大明星 世贸.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2589,
+      "name": "大玩家宜昌伍家岗万达店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2588 (大玩家宜昌万达广场店)",
+      "proposed": "duplicate/split of id 2588 (大玩家宜昌万达广场店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/172",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 2588 as canonical (has BemaniCN link https://map.bemanicn.com/s/172).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=大玩家 宜昌万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2601,
+      "name": "大玩家武汉经开万达店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=2635 (大玩家超乐场（沌口店）)",
+      "proposed": "duplicate/split of id 2635 (大玩家超乐场（沌口店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/167",
+      "evidence_quote": "Pairing evidence: same coords 大玩家武汉经开万达店 vs 大玩家超乐场（沌口店）. Keep id 2635 as canonical (has BemaniCN link https://map.bemanicn.com/s/167).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=大玩家 经开/沌口.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2801,
+      "name": "天空之城孝感孝南吾悦店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3170 (孝感吾悦广场天空之城)",
+      "proposed": "duplicate/split of id 3170 (孝感吾悦广场天空之城); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3158",
+      "evidence_quote": "Pairing evidence: near; note 3171 潮玩街区 is a DIFFERENT 3F shop also at 吾悦. Keep id 3170 as canonical (has BemaniCN link https://map.bemanicn.com/s/3158).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=天空之城 孝感吾悦.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3026,
+      "name": "奇奇乐园宜昌西陵CBD店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3204 (宜昌奇奇乐园CBD店)",
+      "proposed": "duplicate/split of id 3204 (宜昌奇奇乐园CBD店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/173",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 3204 as canonical (has BemaniCN link https://map.bemanicn.com/s/173).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=奇奇乐园 宜昌CBD.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3028,
+      "name": "奇奇乐园武汉青山店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3027 (奇奇乐园武汉奥山世纪城店)",
+      "proposed": "duplicate/split of id 3027 (奇奇乐园武汉奥山世纪城店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3704",
+      "evidence_quote": "Pairing evidence: near 奥山世纪城. Keep id 3027 as canonical (has BemaniCN link https://map.bemanicn.com/s/3704).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=奇奇乐园 青山/奥山.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3029,
+      "name": "奇奇乐园襄阳樊城万达店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3033 (奇奇乐园襄阳高新万达广场店)",
+      "proposed": "duplicate/split of id 3033 (奇奇乐园襄阳高新万达广场店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/169",
+      "evidence_quote": "Pairing evidence: near coords 樊城万达 vs 高新万达 same complex naming. Keep id 3033 as canonical (has BemaniCN link https://map.bemanicn.com/s/169).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=奇奇乐园 襄阳万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3030,
+      "name": "奇奇乐园襄阳樊城南国店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3032 (奇奇乐园襄阳泛悦店)",
+      "proposed": "duplicate/split of id 3032 (奇奇乐园襄阳泛悦店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1658",
+      "evidence_quote": "Pairing evidence: near 泛悦. Keep id 3032 as canonical (has BemaniCN link https://map.bemanicn.com/s/1658).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=奇奇乐园 襄阳南国/泛悦.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3160,
+      "name": "子洋联盟宜昌水悦城店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3162 (子洋联盟家庭娱乐中心(宜昌水悦城店))",
+      "proposed": "duplicate/split of id 3162 (子洋联盟家庭娱乐中心(宜昌水悦城店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3276",
+      "evidence_quote": "Pairing evidence: same coords; wahlap split maimai/chunithm into two rows 3160+3161. Keep id 3162 as canonical (has BemaniCN link https://map.bemanicn.com/s/3276).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=子洋联盟 水悦城 chunithm half.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3161,
+      "name": "子洋联盟宜昌西陵水悦城店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3162 (子洋联盟家庭娱乐中心(宜昌水悦城店))",
+      "proposed": "duplicate/split of id 3162 (子洋联盟家庭娱乐中心(宜昌水悦城店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3276",
+      "evidence_quote": "Pairing evidence: near same water mall; merge both into 3162. Keep id 3162 as canonical (has BemaniCN link https://map.bemanicn.com/s/3276).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=子洋联盟 水悦城 maimai half.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3165,
+      "name": "子洋联盟潮玩汇黄石店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3164 (子洋联盟潮玩汇(黄石团城山万达店))",
+      "proposed": "duplicate/split of id 3164 (子洋联盟潮玩汇(黄石团城山万达店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5654",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 3164 as canonical (has BemaniCN link https://map.bemanicn.com/s/5654).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=子洋联盟 黄石万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3172,
+      "name": "孩皮吧咸宁咸安同惠店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3173 (孩皮吧（同惠国际广场店）)",
+      "proposed": "duplicate/split of id 3173 (孩皮吧（同惠国际广场店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3534",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 3173 as canonical (has BemaniCN link https://map.bemanicn.com/s/3534).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=孩皮吧 同惠.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3197,
+      "name": "宇宙队长黄冈武穴雅斯店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3201 (宇宙队长（雅斯店）)",
+      "proposed": "duplicate/split of id 3201 (宇宙队长（雅斯店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5686",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 3201 as canonical (has BemaniCN link https://map.bemanicn.com/s/5686).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=宇宙队长 武穴雅斯.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3249,
+      "name": "宝贝王咸宁咸安万达广场店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=1474 (万达宝贝王成长乐园（咸宁咸安万达广场店）)",
+      "proposed": "duplicate/split of id 1474 (万达宝贝王成长乐园（咸宁咸安万达广场店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6411",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 1474 as canonical (has BemaniCN link https://map.bemanicn.com/s/6411).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=宝贝王 咸宁万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3260,
+      "name": "宝贝王宜昌伍家岗万达广场店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3261 (宝贝王宜昌伍家岗万达店)",
+      "proposed": "duplicate/split of id 3261 (宝贝王宜昌伍家岗万达店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3882",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 3261 as canonical (has BemaniCN link https://map.bemanicn.com/s/3882).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=宝贝王 宜昌万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3326,
+      "name": "宝贝王襄阳樊城店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3033 (奇奇乐园襄阳高新万达广场店)",
+      "proposed": "duplicate/split of id 3033 (奇奇乐园襄阳高新万达广场店); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/169",
+      "evidence_quote": "Pairing evidence: near; CAUTION: 宝贝王 and 奇奇乐园 may be different tenants in same mall - verify before merge. Keep id 3033 as canonical (has BemaniCN link https://map.bemanicn.com/s/169).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=宝贝王 vs 奇奇 襄阳万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3386,
+      "name": "寻游纪嗨众武汉江夏店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3387 (寻游记嗨众(九全嘉国际广场店))",
+      "proposed": "duplicate/split of id 3387 (寻游记嗨众(九全嘉国际广场店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/942",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 3387 as canonical (has BemaniCN link https://map.bemanicn.com/s/942).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=寻游纪 江夏九全嘉.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3473,
+      "name": "幸运猩荆州监利天骄广场店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3521 (开心季幸运猩电玩)",
+      "proposed": "duplicate/split of id 3521 (开心季幸运猩电玩); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5557",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 3521 as canonical (has BemaniCN link https://map.bemanicn.com/s/5557).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=幸运猩 监利天骄.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3525,
+      "name": "开心汇武汉江汉新佳丽店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3526 (开心汇（原寻游纪嗨众电&潮玩世界MIX）)",
+      "proposed": "duplicate/split of id 3526 (开心汇（原寻游纪嗨众电&潮玩世界MIX）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2782",
+      "evidence_quote": "Pairing evidence: same complex. Keep id 3526 as canonical (has BemaniCN link https://map.bemanicn.com/s/2782).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=开心汇 新佳丽.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3598,
+      "name": "快乐电堂宜昌宜都店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3599 (快乐电堂家庭娱乐中心)",
+      "proposed": "duplicate/split of id 3599 (快乐电堂家庭娱乐中心); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3989",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 3599 as canonical (has BemaniCN link https://map.bemanicn.com/s/3989).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=快乐电堂 宜都.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3810,
+      "name": "星世纪咸宁游乐空间站店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3823 (星世纪电玩游戏体验中心(咸宁金诚店))",
+      "proposed": "duplicate/split of id 3823 (星世纪电玩游戏体验中心(咸宁金诚店)); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4200",
+      "evidence_quote": "Pairing evidence: same coords. Keep id 3823 as canonical (has BemaniCN link https://map.bemanicn.com/s/4200).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=星世纪 咸宁金诚.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4020,
+      "name": "星辉之城荆州购物公园店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=4021 (星辉之城（洪湖购物公园店）)",
+      "proposed": "duplicate/split of id 4021 (星辉之城（洪湖购物公园店）); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4898",
+      "evidence_quote": "Pairing evidence: near coords. Keep id 4021 as canonical (has BemaniCN link https://map.bemanicn.com/s/4898).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=星辉之城 洪湖购物公园.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1284,
+      "name": "super101潮漫电玩宜昌宜都万达店",
+      "field": "other",
+      "current": "wahlap-only or split row; sibling bemanicn id=3206 (宜都壹零壹潮漫电玩)",
+      "proposed": "duplicate/split of id 3206 (宜都壹零壹潮漫电玩); merge into BemaniCN-backed row and drop or demote this row",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5852",
+      "evidence_quote": "Pairing evidence: near coords 宜都万达 vs 陆城宜华大道 - VERIFY address match before merge. Keep id 3206 as canonical (has BemaniCN link https://map.bemanicn.com/s/5852).",
+      "note": "Dupe pattern common in China shard: WAHLAP store list + BemaniCN community page for same physical shop. Label=super101 / 壹零壹 宜都万达.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2801,
+      "name": "天空之城孝感孝南吾悦店",
+      "field": "other",
+      "current": "wahlap 天空之城 at same coords as bemanicn 3171 潮玩街区",
+      "proposed": "Prefer merge 2801 into id 3170 (天空之城 2F), NOT into 3171 (潮玩街区 3F). Two distinct shops in 孝感吾悦.",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3158",
+      "evidence_quote": "3170 address 吾悦广场二楼天空之城; 3171 address 吾悅广场孝感店3楼. Both status=1 with separate maimai rows.",
+      "note": "Overrides naive same-coord merge of 2801->3171. An earlier dupe row also points 2801->3170.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2228,
+      "name": "嗨森汇乐园电玩城(光谷店)",
+      "field": "other",
+      "current": "shares approx coords with 2249",
+      "proposed": "NOT a duplicate of id 2249. Community nicknames: 旧嗨 (2228 嗨森汇 世界城一期3F) vs 新嗨 (2249 嗨玩队长 悦心汇4F). Keep both.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/580",
+      "evidence_quote": "comment: 常被称为“旧嗨”。对应的“新嗨”指同一商圈内的“嗨玩队长武汉光谷店”。",
+      "note": "Prevent erroneous same-coord merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2588,
+      "name": "大玩家宜昌万达广场店",
+      "field": "other",
+      "current": "near 3261 coords",
+      "proposed": "NOT a duplicate of id 3261 宝贝王. 大玩家 is 2F; 宝贝王 is 3F of same 宜昌伍家岗万达. Keep both.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/172",
+      "evidence_quote": "2588 address 沿江大道特168号万达广场2楼; 3261 comment 位置在万达大玩家楼上（3F） and address 沿江大道166号万达广场3楼",
+      "note": "Prevent erroneous merge of different tenants.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1474,
+      "name": "万达宝贝王成长乐园（咸宁咸安万达广场店）",
+      "field": "other",
+      "current": "same coords as 1937",
+      "proposed": "NOT a duplicate of id 1937 卡乐游. Both at 咸宁万达 2F area but distinct operators (宝贝王 vs 卡乐游/原大玩家). Keep both.",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7112",
+      "evidence_quote": "1937 comment: 原大玩家，后来撤了...引进了太鼓旧框. 1474 is 万达宝贝王成长乐园 with its own maimai. Both status=1.",
+      "note": "Same-mall co-tenants.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 899,
+      "name": "1号机长超乐场（随州吾悦广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3566",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1014,
+      "name": "C翻乐园武汉洪山大悦城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5054",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1018,
+      "name": "C翻群星城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3198",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1168,
+      "name": "JOYMARK十堰茅箭寿康华悦城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6521",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1254,
+      "name": "SEER PARTY仙桃吾悦广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3004",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1626,
+      "name": "乐玩之星动漫体验中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-01:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1843",
+      "evidence_quote": "start_time=10 end_time=1 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1937,
+      "name": "卡乐游游乐体验中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7112",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1938,
+      "name": "卡乐游游乐体验中心（荆州万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5689",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1958,
+      "name": "卡希尔乐园（星悦广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6565",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1984,
+      "name": "卡通尼乐园金桥永旺店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7139",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1985,
+      "name": "卡通尼乐园金银潭永旺店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5395",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2228,
+      "name": "嗨森汇乐园电玩城(光谷店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/580",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2249,
+      "name": "嗨玩队长武汉光谷店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1243",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2276,
+      "name": "嘻品堂武汉青山印象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2509",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2354,
+      "name": "城市星空武汉汉阳店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3572",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2385,
+      "name": "城市英雄Party House(龙湖新荣天街店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6233",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2386,
+      "name": "城市英雄Party House(龙湖滨江天街店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6041",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2478,
+      "name": "壹玖玖娱乐馆",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6624",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2511,
+      "name": "大乐魔潮玩星球黄石摩尔城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3026",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2532,
+      "name": "大明星超乐场世贸店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2887",
+      "evidence_quote": "start_time=10 end_time=24 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2588,
+      "name": "大玩家宜昌万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/172",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2635,
+      "name": "大玩家超乐场（沌口店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/167",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2894,
+      "name": "天空之城荆州吾悦店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2646",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3025,
+      "name": "奇奇乐园宜昌兴发店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/745",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3027,
+      "name": "奇奇乐园武汉奥山世纪城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3704",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3031,
+      "name": "奇奇乐园襄阳樊城天元店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/841",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3033,
+      "name": "奇奇乐园襄阳高新万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/169",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3034,
+      "name": "奇奇乐园随州曾都店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/818",
+      "evidence_quote": "start_time=9 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3162,
+      "name": "子洋联盟家庭娱乐中心(宜昌水悦城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3276",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3170,
+      "name": "孝感吾悦广场天空之城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3158",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3171,
+      "name": "孝感吾悦广场潮玩街区",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3677",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3173,
+      "name": "孩皮吧（同惠国际广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3534",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3204,
+      "name": "宜昌奇奇乐园CBD店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/173",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3261,
+      "name": "宝贝王宜昌伍家岗万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3882",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3387,
+      "name": "寻游记嗨众(九全嘉国际广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/942",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3401,
+      "name": "小玩家潜江万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4522",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3405,
+      "name": "小酋长汉口店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/501",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3521,
+      "name": "开心季幸运猩电玩",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5557",
+      "evidence_quote": "start_time=11 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3526,
+      "name": "开心汇（原寻游纪嗨众电&潮玩世界MIX）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2782",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3575,
+      "name": "快乐星球大洋百货店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6488",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3597,
+      "name": "快乐电堂孝感汉川汉海国际广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5209",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3601,
+      "name": "快乐电堂黄冈黄州店",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4725",
+      "evidence_quote": "start_time=8 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3823,
+      "name": "星世纪电玩游戏体验中心(咸宁金诚店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4200",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4021,
+      "name": "星辉之城（洪湖购物公园店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4898",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4111,
+      "name": "星际传奇天地壹方南馆店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1491",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2242,
+      "name": "嗨玩星际乐园店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7142",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1077,
+      "name": "Funs趣玩咸宁赤壁摩尔城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4805",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1658,
+      "name": "乐玩家超乐场（铜锣湾店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4764",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1964,
+      "name": "卡狸萌家庭体验中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5645",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2004,
+      "name": "卡通尼武汉江夏永旺店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4424",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3196,
+      "name": "宇宙队长黄冈武穴好又多店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4540",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3200,
+      "name": "宇宙队长（武穴武商店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6697",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3201,
+      "name": "宇宙队长（雅斯店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5686",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3206,
+      "name": "宜都壹零壹潮漫电玩",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5852",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3397,
+      "name": "小海豚梦幻乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6474",
+      "evidence_quote": "start_time=9 end_time=20 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3400,
+      "name": "小玩家",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2729",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2330,
+      "name": "国贸电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1069",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2667,
+      "name": "大玩家（黄冈万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2421",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1711,
+      "name": "乖比兔家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1372",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 958,
+      "name": "903Psi玩家之家",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5364",
+      "evidence_quote": "start_time=11 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1021,
+      "name": "D7星空之城恩施星光里店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1923",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1967,
+      "name": "卡通尼safari非洲探索乐园武汉销品茂店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5841",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1995,
+      "name": "卡通尼儿童乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7084",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3021,
+      "name": "奇奇乐园(乐福天下商业广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5652",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3023,
+      "name": "奇奇乐园×都市玩家",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2730",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3164,
+      "name": "子洋联盟潮玩汇(黄石团城山万达店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5654",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3032,
+      "name": "奇奇乐园襄阳泛悦店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1658",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1939,
+      "name": "卡乐游（荆门万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1573",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integers; treat as approximate mall hours)",
+      "note": "Hours from BemaniCN start_time/end_time integers only. Not verified against mall official page.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1014,
+      "name": "C翻乐园武汉洪山大悦城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/credit (~CNY depends on coin package)",
+        "chunithm": "5 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5054",
+      "evidence_quote": "title_id=1 coin=4; title_id=3 coin=5",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2249,
+      "name": "嗨玩队长武汉光谷店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1243",
+      "evidence_quote": "title_id=1 coin=5; shop price field 0.3 (approx CNY/coin package rate)",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2386,
+      "name": "城市英雄Party House(龙湖滨江天街店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "6 coins/credit",
+        "chunithm": "6 coins/credit",
+        "taiko": "9 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6041",
+      "evidence_quote": "title_id=1 coin=6; title_id=3 coin=6; title_id=31 coin=9. electronic coin only",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1254,
+      "name": "SEER PARTY仙桃吾悦广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/credit",
+        "taiko": "10 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3004",
+      "evidence_quote": "title_id=1 coin=5; title_id=31 coin=10",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1168,
+      "name": "JOYMARK十堰茅箭寿康华悦城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "9 coins/credit",
+        "jubeat": "9 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6521",
+      "evidence_quote": "title_id=1 coin=9; title_id=34 coin=9; 仅支持取币投币",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3401,
+      "name": "小玩家潜江万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/credit",
+        "chunithm": "4 coins/credit",
+        "taiko": "8 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4522",
+      "evidence_quote": "title_id=1 coin=4; title_id=3 coin=4; title_id=31 coin=8. updated_at=2026-07-30",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3261,
+      "name": "宝贝王宜昌伍家岗万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/credit",
+        "chunithm": "5 coins/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3882",
+      "evidence_quote": "title_id=1 coin=4; title_id=3 coin=5",
+      "note": "Coin-per-credit from BemaniCN arcade.coin. CNY/credit depends on package rate in shop.price / comments; not converted here without a fixed package.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1021,
+      "name": "D7星空之城恩施星光里店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=年代久远的12亚洲版); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1923",
+      "evidence_quote": "title_id=15 quantity=1 version=年代久远的12亚洲版",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1937,
+      "name": "卡乐游游乐体验中心",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=12亚); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7112",
+      "evidence_quote": "title_id=15 quantity=1 version=12亚",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1964,
+      "name": "卡狸萌家庭体验中心",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=14); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5645",
+      "evidence_quote": "title_id=15 quantity=1 version=14",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2228,
+      "name": "嗨森汇乐园电玩城(光谷店)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=green); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/580",
+      "evidence_quote": "title_id=15 quantity=1 version=green",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2531,
+      "name": "大明星超乐场",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=太鼓达人14); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1515",
+      "evidence_quote": "title_id=15 quantity=1 version=太鼓达人14",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2532,
+      "name": "大明星超乐场世贸店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=12亚); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2887",
+      "evidence_quote": "title_id=15 quantity=1 version=12亚",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2588,
+      "name": "大玩家宜昌万达广场店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=12亚); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/172",
+      "evidence_quote": "title_id=15 quantity=1 version=12亚",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3023,
+      "name": "奇奇乐园×都市玩家",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=12亚); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2730",
+      "evidence_quote": "title_id=15 quantity=1 version=12亚",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3033,
+      "name": "奇奇乐园襄阳高新万达广场店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=12亚); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/169",
+      "evidence_quote": "title_id=15 quantity=1 version=12亚",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4021,
+      "name": "星辉之城（洪湖购物公园店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen (BemaniCN title_id=15, version=亚洲版); not CN Nijiiro (title_id=31)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4898",
+      "evidence_quote": "title_id=15 quantity=1 version=亚洲版",
+      "note": "title_id 15 is 太鼓达人(旧代); title_id 31 is 太鼓之达人 Nijiiro-era CN. App game key stays taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 958,
+      "name": "903Psi玩家之家",
+      "field": "other",
+      "current": null,
+      "proposed": "Console / private collection shop, not a public rhythm arcade. Only DanceEvolution-like 魔改 entry. Limited player relevance.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5364",
+      "evidence_quote": "comment: 电玩主机店，店家收藏了魔改的deac. arcade title_id=13 qty=1 version=魔改 coin=0. status=1",
+      "note": "App games=[other] is fine. Flag low map value.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3741,
+      "name": "放学后903电玩武汉市街道口店",
+      "field": "other",
+      "current": "wahlap maimai_dx at 街道口 near 903Psi",
+      "proposed": "Near id 958 (903Psi玩家之家) but different address (流行视窗A1502 vs 阜华大厦C903). Not proven same venue; wahlap-only maimai presence unverified against BemaniCN (958 has no maimai).",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5364",
+      "evidence_quote": "958 is 阜华大厦C座9楼C903 with no maimai; 3741 addr 流行视窗A1502 with wahlap maimai claim only.",
+      "note": "Could not independently verify 3741 without WAHLAP live store page access in this session.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1232,
+      "name": "playone武汉菱角湖万达店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1292,
+      "name": "superallday潮玩街区十堰茅箭店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2600,
+      "name": "大玩家武汉新洲万达店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2896,
+      "name": "天空之城襄阳樊城吾悦店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3337,
+      "name": "宝贝王黄石黄石港万达店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3633,
+      "name": "恒泰贝贝孝感安陆恒泰店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2415,
+      "name": "城市英雄武汉江汉店",
+      "field": "status",
+      "current": "open (implied by wahlap listing in app snapshot)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/games",
+      "evidence_quote": "No matching BemaniCN shop page in shard links; live WAHLAP store list was not re-fetched successfully this session (web search budget exhausted). App src=wahlap only.",
+      "note": "Could not reconfirm open/closed against live WAHLAP or BemaniCN. Do not mark closed. proposed null = no status change, flag only that verification is pending.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

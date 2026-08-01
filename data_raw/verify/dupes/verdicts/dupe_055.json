@@ -1,0 +1,291 @@
+{
+  "shard": 55,
+  "verdicts": [
+    {
+      "ids": [6669, 6670],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6669,
+      "canonical_name": "趣玩空间临汾尧都王府井店",
+      "canonical_addr": "山西省临汾市尧都区汾河路王府井尚城S区三层趣玩空间",
+      "reason": "Same complex at 河汾路/汾河路8号: 王府井尚城 S区 is co-located with 五洲国际时代广场. Baidu lists a single 趣玩空间潮玩馆(临汾王府井店) at 王府井S1区三层.",
+      "evidence_url": "https://map.bemanicn.com/s/5324",
+      "evidence_quote": "趣玩空间五洲王府井 / 五洲国际时代广场; Baidu POI: 趣玩空间潮玩馆(临汾王府井店) 河汾路8号王府井S1区三层L3-S1012"
+    },
+    {
+      "ids": [6671, 6674],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6674,
+      "canonical_name": "趣玩空间山西霍州香江广场店",
+      "canonical_addr": "山西省霍州市东大街香江广场二期三楼趣玩空间",
+      "reason": "Both at 霍州香江广场/香江城三楼 with identical coordinates; Baidu returns one 趣玩空间家庭娱乐中心(香江广场店).",
+      "evidence_url": "https://map.bemanicn.com/s/3686",
+      "evidence_quote": "趣玩空间亲子乐园 / 香江城香江购物中心三楼"
+    },
+    {
+      "ids": [6672, 6678],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6672,
+      "canonical_name": "趣玩空间侯马新田地店",
+      "canonical_addr": "山西省侯马市新田地下街趣玩空间潮玩街区",
+      "reason": "Same 侯马新田地下商业街 venue; bemanicn even notes entrance 12.13口, matching Baidu 新田地下街12号口.",
+      "evidence_url": "https://map.bemanicn.com/s/4778",
+      "evidence_quote": "趣玩空间（侯马新田地下商场12.13口） / 侯马新田地下商业街"
+    },
+    {
+      "ids": [6673, 6676],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6673,
+      "canonical_name": "趣玩空间山西晋中太谷店",
+      "canonical_addr": "山西省晋中市太谷区御锦新天地购物广场二楼东边趣玩空间",
+      "reason": "御锦新天地 and 御景新天地 are the same 太谷 mall (Baidu uses both spellings); identical coords, one POI.",
+      "evidence_url": "https://map.bemanicn.com/s/5752",
+      "evidence_quote": "趣玩空间潮玩馆(太谷御锦店) / 御景新天地; Baidu: 趣玩空间家庭娱乐中心(太谷店) 金谷广场御锦新天地购物广场"
+    },
+    {
+      "ids": [6684, 6685],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6685,
+      "canonical_name": "跑跑太空熊嘉兴南湖天地店",
+      "canonical_addr": "浙江省嘉兴市南湖区南湖天地跑跑太空熊 LG30",
+      "reason": "Both list 南湖天地 shopping center unit LG30; Baidu confirms one POI at B1层LG30.",
+      "evidence_url": "https://map.bemanicn.com/s/2738",
+      "evidence_quote": "跑跑太空熊Space家庭娱乐中心 / 南湖天地购物中心B1层LG30"
+    },
+    {
+      "ids": [6702, 6703],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6703,
+      "canonical_name": "迅驰嘉年华长春南关迅驰广场店",
+      "canonical_addr": "吉林省长春市南关区博学路1555号迅驰广场三楼迅驰嘉年华电玩城",
+      "reason": "Identical street number, plaza, floor, and coordinates; bare brand vs full branch name of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6404",
+      "evidence_quote": "迅驰嘉年华 / 博学路1555号迅驰广场三楼迅驰嘉年华电玩城"
+    },
+    {
+      "ids": [6704, 6705],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6705,
+      "canonical_name": "运动星球杭州上城店",
+      "canonical_addr": "浙江省杭州市上城区富春路80号全民健身中心",
+      "reason": "Baidu has a single 运动星球SPORTSPLANET at 富春路80号全民健身中心; bemanicn only stored the brand as address.",
+      "evidence_url": "https://map.bemanicn.com/s/2244",
+      "evidence_quote": "运动星球 SPORTSPLANET / 运动星球; Baidu: 富春路80号全民健身中心A栋101室"
+    },
+    {
+      "ids": [6710, 6716],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6716,
+      "canonical_name": "迪卡丘菏泽定陶店",
+      "canonical_addr": "山东省菏泽市定陶区青年路和美星悦城三楼迪卡丘",
+      "reason": "Both in 定陶 和美星悦城 (one adds 祥泰御府 complex name); ~192 m is geocode scatter for the same mall, not a second branch.",
+      "evidence_url": "https://map.bemanicn.com/s/7248",
+      "evidence_quote": "迪卡丘儿童娱乐 / 山东省菏泽市定陶区祥泰御府和美星悦城迪卡丘儿童娱乐"
+    },
+    {
+      "ids": [6711, 6718],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6718,
+      "canonical_name": "迪卡丘菏泽牡丹佳和城店",
+      "canonical_addr": "山东省菏泽市牡丹区中华路佳和城二楼迪卡丘",
+      "reason": "Same 佳和广场/佳和城 F2 at 中华路与牡丹路; Baidu lists one 迪卡丘家庭体验中心 at that plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/1090",
+      "evidence_quote": "迪卡丘嘉年华(佳和店) / 中华路与牡丹路交汇处西南角佳和广场二楼最西侧"
+    },
+    {
+      "ids": [6723, 6728],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6728,
+      "canonical_name": "迪芝尼梧州金苑梦之岛店",
+      "canonical_addr": "广西壮族自治区梧州市长洲区新兴三路3号梦之岛购物广场市政广场店3楼迪芝尼主题乐园",
+      "reason": "Identical 新兴三路3号 梦之岛购物广场 3楼 and identical coordinates; branch suffix vs bare brand.",
+      "evidence_url": "https://map.bemanicn.com/s/2046",
+      "evidence_quote": "迪芝尼主题乐园（梧州金苑梦之岛店） / 新兴三路3号梦之岛购物广场（市政广场店）3楼"
+    },
+    {
+      "ids": [6724, 6729],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6729,
+      "canonical_name": "迪芝尼梧州龙圩店",
+      "canonical_addr": "广西壮族自治区梧州市龙圩镇龙圩一路67号龙湖国际商业城三楼",
+      "reason": "Same 龙湖国际商业城 3楼 venue; street labels 龙湖路 vs 龙圩一路 name the same mall frontage.",
+      "evidence_url": "https://map.bemanicn.com/s/1270",
+      "evidence_quote": "迪芝尼主题乐园（梧州龙圩店） / 龙湖路龙湖国际商业城3楼北侧中庭"
+    },
+    {
+      "ids": [6725, 6730],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6725,
+      "canonical_name": "迪芝尼云浮盈信广场店",
+      "canonical_addr": "云浮市郁南县都城镇城中路10号盈信广场二层",
+      "reason": "Both at 都城镇盈信广场 2F with identical coordinates; bare 潮玩主场 vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/5856",
+      "evidence_quote": "迪芝尼潮玩主场 / 都城镇盈信广场2f"
+    },
+    {
+      "ids": [6726, 6731],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6726,
+      "canonical_name": "迪芝尼南宁南百ngs店",
+      "canonical_addr": "广西南宁市西乡塘区大学东路98号南百NGS三楼迪芝尼电玩城",
+      "reason": "One 南百NGS mall at 大学东路98号 (Baidu); bemanicn mistyped 大学西路 but same NGS 3楼 branch, ~120 m geocode offset.",
+      "evidence_url": "https://map.bemanicn.com/s/4177",
+      "evidence_quote": "迪芝尼潮玩主场（南百NGS店）已回归 / 大学西路98号南百NGS三楼; Baidu mall: 大学东路98号南百·NGS"
+    },
+    {
+      "ids": [6734, 6735],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6734,
+      "canonical_name": "迪迪玛特贵阳南明花果园店",
+      "canonical_addr": "贵州省贵阳市南明区花果园购物中心迪迪玛特超乐场",
+      "reason": "Same 花果园购物中心; bemanicn adds unit L1302 1F. Baidu has one 迪迪玛特超乐场 at that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6805",
+      "evidence_quote": "迪迪玛特超乐场 / 花果园大街1号花果园购物中心1F层L1302"
+    },
+    {
+      "ids": [6741, 6743],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6741,
+      "canonical_name": "遇见王国成都金牛店",
+      "canonical_addr": "四川省成都市金牛区华侨城欢乐谷儿童馆一楼遇见王国",
+      "reason": "Both are the 欢乐谷 branch in 金牛区; Baidu lists one 遇见王国亲子游乐中心(欢乐谷店). ~379 m is park-scale geocode noise, not a second mall.",
+      "evidence_url": "https://map.bemanicn.com/s/3422",
+      "evidence_quote": "遇见王国（欢乐谷店） / 遇见王国(欢乐谷店) 成都市金牛区; Baidu: 遇见王国亲子游乐中心(欢乐谷店) 成都欢乐谷"
+    },
+    {
+      "ids": [6742, 6744],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6742,
+      "canonical_name": "遇见王国达州财富中心店",
+      "canonical_addr": "四川省达州市渠县渠江街道财富中心三楼遇见王国",
+      "reason": "财富中心 and 财富广场 are the same 渠县 mall 3F; same brand branch, one POI pattern.",
+      "evidence_url": "https://map.bemanicn.com/s/6761",
+      "evidence_quote": "遇见王国（渠县财富中心店） / 财富广场3F"
+    },
+    {
+      "ids": [6751, 6755],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6755,
+      "canonical_name": "部落酷玩台州临海宝龙广场店",
+      "canonical_addr": "浙江省台州市临海市杜桥镇宝龙广场3楼部落酷玩",
+      "reason": "Same 临海杜桥 宝龙广场 F3 with identical coordinates; full street number 滨海路550号 aligns.",
+      "evidence_url": "https://map.bemanicn.com/s/3185",
+      "evidence_quote": "部落酷玩临海杜桥宝龙店 / 杜桥镇滨海路550号宝龙广场F3"
+    },
+    {
+      "ids": [6758, 6761],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6761,
+      "canonical_name": "部落酷玩金华武义店",
+      "canonical_addr": "浙江省金华市武义县壶山街道温泉北路6号金湖商业中心三楼L3025L3026",
+      "reason": "Same 温泉北路6号 金湖中心; Baidu POI is 三楼L3024 and unit codes L3025/L3026 are floor-3 numbers, so wahlap 1楼 is a floor typo.",
+      "evidence_url": "https://map.bemanicn.com/s/4985",
+      "evidence_quote": "部落酷玩武义金湖中心店 / 武义县金湖中心3楼; Baidu: 部落酷玩(金湖店) 温泉北路6号金湖中心三楼L3024"
+    },
+    {
+      "ids": [6781, 6783],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6783,
+      "canonical_name": "都市酷炫电玩城朔州怀仁元盛店",
+      "canonical_addr": "朔州市怀仁市云中大街元盛购物广场二楼",
+      "reason": "One 元盛购物广场 branch; 仁爱北路 vs 云中大街 are sides of the same plaza, identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/6648",
+      "evidence_quote": "都市酷炫 / 元盛购物广场(仁爱北路东); Baidu: 都市酷炫电玩城(元盛购物广场店)"
+    },
+    {
+      "ids": [6802, 6803],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6803,
+      "canonical_name": "酷乐王国廊坊固安万汇广场店",
+      "canonical_addr": "河北省廊坊市固安县万汇广场二期二楼酷乐王国",
+      "reason": "Both at 固安 万汇购物广场 2F (B座/二期 naming); Baidu returns a single 酷乐王国 there.",
+      "evidence_url": "https://map.bemanicn.com/s/3955",
+      "evidence_quote": "酷乐王国 / 新中街万汇购物广场B座二层北侧"
+    },
+    {
+      "ids": [6806, 6807],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6806,
+      "canonical_name": "酷乐电玩城",
+      "canonical_addr": "天津市西青区青远路60号青和大厦",
+      "reason": "Bemanicn and ZIv are the same shop: Qinghe Building No.60 Qingyuan Road Xiqing, 14.7 m apart.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+      "evidence_quote": "酷乐电玩城 Kule Arcade / Qinghe Building, No.60 Qingyuan Road, Xiqing District, Tianjin"
+    },
+    {
+      "ids": [6813, 6814],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6814,
+      "canonical_name": "酷力酷淮北杜集吾悦广场店",
+      "canonical_addr": "安徽省淮北市杜集区高岳街道吾悦广场四楼酷力酷家庭娱乐中心",
+      "reason": "Same 淮北吾悦广场 4楼 units 4046-4051; identical coordinates.",
+      "evidence_url": "https://map.bemanicn.com/s/5498",
+      "evidence_quote": "酷力酷家庭娱乐中心(淮北吾悦广场店) / 学院路与龙山路交叉口吾悦广场4楼4046-4051商铺"
+    },
+    {
+      "ids": [6818, 6820],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6820,
+      "canonical_name": "酷动乐园德州澳德乐店",
+      "canonical_addr": "山东省德州市经济开发区澳德乐时代广场酷动乐园",
+      "reason": "Same 澳德乐时代广场 F3 (东风东路1899号); Baidu lists one 酷动乐园(澳德乐时代广场店).",
+      "evidence_url": "https://map.bemanicn.com/s/541",
+      "evidence_quote": "酷动乐园 / 德城区东风东路1899号澳德乐时代广场F3"
+    },
+    {
+      "ids": [6823, 6824],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6823,
+      "canonical_name": "酷咔库潮玩街区济宁兖州店",
+      "canonical_addr": "山东省济宁市兖州区万象汇购物广场三楼",
+      "reason": "济宁万象汇 is one mall at 海川路77号, variously labeled 兖州/高新/任城. Baidu has one 酷咔库潮玩街区(济宁万象汇店) 3楼L301.",
+      "evidence_url": "https://map.bemanicn.com/s/4352",
+      "evidence_quote": "酷咔库潮玩街区（高新万象汇店） / 高新区海川路77号万象汇; Baidu: 酷咔库潮玩街区(济宁万象汇店) 万象汇3楼L301 兖州区"
+    },
+    {
+      "ids": [6830, 6831],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6830,
+      "canonical_name": "酷客领域廊坊广阳店",
+      "canonical_addr": "河北省廊坊市广阳区解放道街道新朝阳购物中心四楼酷客领域",
+      "reason": "Same 新朝阳购物中心 4F branch 31 m apart; district vs mall-name branch suffixes for one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4056",
+      "evidence_quote": "酷客领域廊坊新朝阳购物中心店 / 新朝阳购物中心一期四层"
+    },
+    {
+      "ids": [6838, 6839],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6839,
+      "canonical_name": "酷游猩球阜新细河万达广场店",
+      "canonical_addr": "辽宁省阜新市细河区解放大街甲17号万达广场三楼酷游猩球",
+      "reason": "Identical 解放大街甲17号 万达广场 3F address; Baidu has one 酷游猩球 there.",
+      "evidence_url": "https://map.bemanicn.com/s/7000",
+      "evidence_quote": "酷游猩球 / 万达广场3F 细河区解放大街甲17号室内3FA-B"
+    }
+  ]
+}

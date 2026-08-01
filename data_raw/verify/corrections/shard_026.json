@@ -1,0 +1,1016 @@
+{
+  "shard": 26,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-07-31; 3139 China / 257 Jiangsu maimai DX)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-07-31; 583 China / 47 Jiangsu CHUNITHM)",
+    "https://map.bemanicn.com/s/{id} Inertia JSON for all 68 BemaniCN-linked shops in shard (fetched 2026-07-31)",
+    "scrapers/wahlap.py (documents official WAHLAP endpoints)",
+    "scrapers/bemanicn.py (title_id mapping and status fields)",
+    "In-shard coordinate proximity + brand/mall matching for WAHLAP/BemaniCN dual imports"
+  ],
+  "corrections": [
+    {
+      "id": 2760,
+      "name": "天空之城南京浦口龙湖天街店",
+      "field": "other",
+      "current": "separate venue id 2760 (twin of 2929)",
+      "proposed": "merge into id 2929; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2032",
+      "evidence_quote": "Dual import at 南京浦口 龙湖天街 文景路99号. BemaniCN s/2032 name='天空之城（江北龙湖天街店）' address='浦口区文景路99号(星火路地铁站2A口步行150米)' status=1 updated_at=2025-12-18T23:53:14.000000Z. Keep id 2929 '天空之城（江北龙湖天街店）' src=['bemanicn'] games=['chunithm', 'maimai_dx']. Drop id 2760 '天空之城南京浦口龙湖天街店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2761,
+      "name": "天空之城南京秦淮水游城店",
+      "field": "other",
+      "current": "separate venue id 2761 (twin of 2763)",
+      "proposed": "merge into id 2763; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3855",
+      "evidence_quote": "Dual import at 南京秦淮 鹏欣水游城 建康/健康路1号. BemaniCN s/3855 name='天空之城南京鹏欣水游城店' address='夫子庙商圈水游城三楼天空之城（江苏省南京市秦淮区建康路1号鹏欣水游城铺位F3T02-T14）' status=1 updated_at=2026-04-30T05:10:51.000000Z. Keep id 2763 '天空之城南京鹏欣水游城店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'other']. Drop id 2761 '天空之城南京秦淮水游城店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2762,
+      "name": "天空之城南京雨花台万象天地店",
+      "field": "other",
+      "current": "separate venue id 2762 (twin of 2938)",
+      "proposed": "merge into id 2938; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4656",
+      "evidence_quote": "Dual import at 南京雨花万象天地 L301. BemaniCN s/4656 name='天空之城（雨花万象店）' address='向秀路1号·L3·L301' status=1 updated_at=2026-05-02T11:09:23.000000Z. Keep id 2938 '天空之城（雨花万象店）' src=['bemanicn'] games=['maimai_dx']. Drop id 2762 '天空之城南京雨花台万象天地店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2764,
+      "name": "天空之城南京鼓楼吾悦广场店",
+      "field": "other",
+      "current": "separate venue id 2764 (twin of 2870)",
+      "proposed": "merge into id 2870; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5555",
+      "evidence_quote": "Dual import at 南京鼓楼 湖北路51号吾悦广场3楼. BemaniCN s/5555 name='天空之城游乐体验世界(鼓楼吾悦店)' address='湖北路51号吾悦广场3楼3015号' status=1 updated_at=2026-07-09T05:47:16.000000Z. Keep id 2870 '天空之城游乐体验世界(鼓楼吾悦店)' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2764 '天空之城南京鼓楼吾悦广场店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2773,
+      "name": "天空之城南通永旺店",
+      "field": "other",
+      "current": "separate venue id 2773 (twin of 2721)",
+      "proposed": "merge into id 2721; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3560",
+      "evidence_quote": "Dual import at 南通 星湖大道1066号永旺梦乐城. BemaniCN s/3560 name='天空之城(永旺梦乐城店)' address='星湖大道1066号永旺梦乐城F2层' status=1 updated_at=2025-11-29T17:21:22.000000Z. Keep id 2721 '天空之城(永旺梦乐城店)' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2773 '天空之城南通永旺店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2788,
+      "name": "天空之城多奇妙南京迈皋桥万谷慧店",
+      "field": "other",
+      "current": "separate venue id 2788 (twin of 2725)",
+      "proposed": "merge into id 2725; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6444",
+      "evidence_quote": "Dual import at 南京栖霞 万谷慧 华电路1号. BemaniCN s/6444 name='天空之城·多奇妙乐园（南京万谷慧店）' address='栖霞区迈皋桥街道华电路1号万谷慧3层A-3F1018' status=1 updated_at=2026-07-24T12:04:56.000000Z. Keep id 2725 '天空之城·多奇妙乐园（南京万谷慧店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2788 '天空之城多奇妙南京迈皋桥万谷慧店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2807,
+      "name": "天空之城宿迁泗洪店",
+      "field": "other",
+      "current": "separate venue id 2807 (twin of 2924)",
+      "proposed": "merge into id 2924; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4404",
+      "evidence_quote": "Dual import at 宿迁泗洪 吾悦广场. BemaniCN s/4404 name='天空之城（宿迁泗洪吾悦广场店）' address='青阳南路吾悦广场二层' status=1 updated_at=2026-05-15T14:50:33.000000Z. Keep id 2924 '天空之城（宿迁泗洪吾悦广场店）' src=['bemanicn'] games=['maimai_dx']. Drop id 2807 '天空之城宿迁泗洪店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2809,
+      "name": "天空之城常州天宁店",
+      "field": "other",
+      "current": "separate venue id 2809 (twin of 2729)",
+      "proposed": "merge into id 2729; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3830",
+      "evidence_quote": "Dual import at 常州天宁 吾悦广场. BemaniCN s/3830 name='天空之城·多奇妙娱乐中心（常州天宁吾悦店）' address='天宁吾悦广场三楼（原多奇妙）' status=1 updated_at=2025-12-24T14:52:55.000000Z. Keep id 2729 '天空之城·多奇妙娱乐中心（常州天宁吾悦店）' src=['bemanicn'] games=['maimai_dx']. Drop id 2809 '天空之城常州天宁店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2810,
+      "name": "天空之城常州武进店",
+      "field": "other",
+      "current": "separate venue id 2810 (twin of 2796)",
+      "proposed": "merge into id 2796; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5925",
+      "evidence_quote": "Dual import at 常州武进 吾悦广场. BemaniCN s/5925 name='天空之城多奇妙（常州武进吾悦店）' address='湖塘镇武宜北路19号吾悦广场3楼' status=1 updated_at=2025-12-24T15:00:15.000000Z. Keep id 2796 '天空之城多奇妙（常州武进吾悦店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'other']. Drop id 2810 '天空之城常州武进店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2823,
+      "name": "天空之城扬州三盛店",
+      "field": "other",
+      "current": "separate venue id 2823 (twin of 2875)",
+      "proposed": "merge into id 2875; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1167",
+      "evidence_quote": "Dual import at 扬州邗江 三盛国际广场. BemaniCN s/1167 name='天空之城游乐体验世界（三盛店）' address='邗江中路358号三盛国际广场3楼' status=1 updated_at=2025-11-29T17:21:19.000000Z. Keep id 2875 '天空之城游乐体验世界（三盛店）' src=['bemanicn'] games=['maimai_dx']. Drop id 2823 '天空之城扬州三盛店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2824,
+      "name": "天空之城扬州安宜吾悦广场店",
+      "field": "other",
+      "current": "separate venue id 2824 (twin of 2923)",
+      "proposed": "merge into id 2923; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4477",
+      "evidence_quote": "Dual import at 扬州宝应 安宜吾悦. BemaniCN s/4477 name='天空之城（宝应吾悦广场店）' address='宝应吾悦广场二楼天空之城' status=1 updated_at=2025-12-01T03:52:50.000000Z. Keep id 2923 '天空之城（宝应吾悦广场店）' src=['bemanicn'] games=['maimai_dx']. Drop id 2824 '天空之城扬州安宜吾悦广场店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2825,
+      "name": "天空之城扬州邗江吾悦店",
+      "field": "other",
+      "current": "separate venue id 2825 (twin of 2794)",
+      "proposed": "merge into id 2794; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3673",
+      "evidence_quote": "Dual import at 扬州邗江 新城吾悦 竹西路29号. BemaniCN s/3673 name='天空之城多奇妙扬州邗江吾悦店' address='竹西路29号新城吾悅商场3楼天空之城' status=1 updated_at=2026-03-16T03:33:46.000000Z. Keep id 2794 '天空之城多奇妙扬州邗江吾悦店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'other']. Drop id 2825 '天空之城扬州邗江吾悦店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2826,
+      "name": "天空之城扬州金鹰广场店",
+      "field": "other",
+      "current": "separate venue id 2826 (twin of 2925)",
+      "proposed": "merge into id 2925; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3741",
+      "evidence_quote": "Dual import at 扬州江都 金鹰广场. BemaniCN s/3741 name='天空之城（扬州江都金鹰店）' address='江都区文昌中路1177号金鹰国际购物中心3层' status=1 updated_at=2026-02-22T21:05:28.000000Z. Keep id 2925 '天空之城（扬州江都金鹰店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2826 '天空之城扬州金鹰广场店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2827,
+      "name": "天空之城无锡万达店",
+      "field": "other",
+      "current": "separate venue id 2827 (twin of 2804)",
+      "proposed": "merge into id 2804; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2940",
+      "evidence_quote": "Dual import at 无锡宜兴 万达广场. BemaniCN s/2940 name='天空之城宜兴万达店' address='宜兴万达广场2楼' status=1 updated_at=2026-06-15T16:19:37.000000Z. Keep id 2804 '天空之城宜兴万达店' src=['bemanicn'] games=['chunithm', 'maimai_dx']. Drop id 2827 '天空之城无锡万达店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2842,
+      "name": "天空之城江苏沭阳店",
+      "field": "other",
+      "current": "separate venue id 2842 (twin of 2930)",
+      "proposed": "merge into id 2930; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1978",
+      "evidence_quote": "Dual import at 宿迁沭阳 吾悦广场. BemaniCN s/1978 name='天空之城（沭阳吾悦广场店）' address='沭阳吾悦广场2楼z202' status=1 updated_at=2025-11-29T17:21:20.000000Z. Keep id 2930 '天空之城（沭阳吾悦广场店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2842 '天空之城江苏沭阳店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2850,
+      "name": "天空之城泰州海陵店",
+      "field": "other",
+      "current": "separate venue id 2850 (twin of 2849)",
+      "proposed": "merge into id 2849; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4307",
+      "evidence_quote": "Dual import at 泰州海陵 中骏世界城. BemaniCN s/4307 name='天空之城泰州中骏店' address='京泰路街道迎春东路中骏世界城2楼' status=1 updated_at=2026-03-18T12:05:11.000000Z. Keep id 2849 '天空之城泰州中骏店' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2850 '天空之城泰州海陵店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2856,
+      "name": "天空之城淮安生态新城吾悦店",
+      "field": "other",
+      "current": "separate venue id 2856 (twin of 2795)",
+      "proposed": "merge into id 2795; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4692",
+      "evidence_quote": "Dual import at 淮安生态新城 吾悦广场. BemaniCN s/4692 name='天空之城多奇妙淮安新城吾悦广场店' address='吾悦广场3层' status=1 updated_at=2025-11-29T17:21:23.000000Z. Keep id 2795 '天空之城多奇妙淮安新城吾悦广场店' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2856 '天空之城淮安生态新城吾悦店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2884,
+      "name": "天空之城盐城中南店",
+      "field": "other",
+      "current": "separate venue id 2884 (twin of 2933)",
+      "proposed": "merge into id 2933; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2472",
+      "evidence_quote": "Dual import at 盐城盐都 解放南路278号中南城/大有境. BemaniCN s/2472 name='天空之城（盐城大有境店）' address='江苏省盐城市盐都区新都街道解放南路278号中南购物中心二楼' status=1 updated_at=2026-07-18T17:32:10.000000Z. Keep id 2933 '天空之城（盐城大有境店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 2884 '天空之城盐城中南店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2911,
+      "name": "天空之城镇江丹阳店",
+      "field": "other",
+      "current": "separate venue id 2911 (twin of 2753)",
+      "proposed": "merge into id 2753; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2015",
+      "evidence_quote": "Dual import at 镇江丹阳 新城吾悦广场. BemaniCN s/2015 name='天空之城动漫电玩世界' address='江苏省镇江市丹阳市金陵西路88号新城吾悦广场3F' status=1 updated_at=2026-05-11T02:27:32.000000Z. Keep id 2753 '天空之城动漫电玩世界' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 2911 '天空之城镇江丹阳店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2957,
+      "name": "太空球乐园无锡锡山店",
+      "field": "other",
+      "current": "separate venue id 2957 (twin of 2958)",
+      "proposed": "merge into id 2958; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7063",
+      "evidence_quote": "Dual import at 无锡锡山 九里仓商业中心. BemaniCN s/7063 name='太空球乐园（九里仓店）' address='锡山区安镇街道九里仓商业中心（瑞幸咖啡隔壁）' status=1 updated_at=2026-07-31T10:42:09.000000Z. Keep id 2958 '太空球乐园（九里仓店）' src=['bemanicn'] games=['maimai_dx']. Drop id 2957 '太空球乐园无锡锡山店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3087,
+      "name": "奇趣乐园句容吾悦广场店",
+      "field": "other",
+      "current": "separate venue id 3087 (twin of 3088)",
+      "proposed": "merge into id 3088; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7075",
+      "evidence_quote": "Dual import at 镇江句容 吾悦广场. BemaniCN s/7075 name='奇趣乐园（吾悦广场店）' address='江苏省镇江市句容市宁杭南路爵鼎国际汽车城东侧句容新城吾悦广场' status=1 updated_at=2026-06-14T06:01:54.000000Z. Keep id 3088 '奇趣乐园（吾悦广场店）' src=['bemanicn'] games=['maimai_dx']. Drop id 3087 '奇趣乐园句容吾悦广场店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3116,
+      "name": "好世界徐州新沂店",
+      "field": "other",
+      "current": "separate venue id 3116 (twin of 3115)",
+      "proposed": "merge into id 3115; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4549",
+      "evidence_quote": "Dual import at 徐州新沂 新悦广场. BemaniCN s/4549 name='好世界家庭娱乐中心' address='江苏省徐州市新沂市临沭路与段家巷步行街交叉口西北侧新悦广场2F，2-30号好世界家庭娱乐中心' status=1 updated_at=2026-07-08T14:00:43.000000Z. Keep id 3115 '好世界家庭娱乐中心' src=['bemanicn'] games=['maimai_dx', 'taiko']. Drop id 3116 '好世界徐州新沂店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3208,
+      "name": "宝乐城南京栖霞万达茂店",
+      "field": "other",
+      "current": "separate venue id 3208 (twin of 3207)",
+      "proposed": "merge into id 3207; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6513",
+      "evidence_quote": "Dual import at 南京栖霞 万达茂. BemaniCN s/6513 name='宝乐城南京万达茂店' address='江苏省南京市栖霞区茂民路栖霞区南京万达茂(茂民路东50米)' status=1 updated_at=2026-06-04T06:36:42.000000Z. Keep id 3207 '宝乐城南京万达茂店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 3208 '宝乐城南京栖霞万达茂店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3210,
+      "name": "宝乐城游乐园南京栖霞南京万达茂店",
+      "field": "other",
+      "current": "separate venue id 3210 (twin of 3207)",
+      "proposed": "merge into id 3207; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6513",
+      "evidence_quote": "Dual import at 南京栖霞 万达茂 (third twin). BemaniCN s/6513 name='宝乐城南京万达茂店' address='江苏省南京市栖霞区茂民路栖霞区南京万达茂(茂民路东50米)' status=1 updated_at=2026-06-04T06:36:42.000000Z. Keep id 3207 '宝乐城南京万达茂店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 3210 '宝乐城游乐园南京栖霞南京万达茂店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3212,
+      "name": "宝乐城游乐园沭阳吾悦广场店",
+      "field": "other",
+      "current": "separate venue id 3212 (twin of 3217)",
+      "proposed": "merge into id 3217; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5725",
+      "evidence_quote": "Dual import at 沭阳 吾悦广场 宝乐城. BemaniCN s/5725 name='宝乐城（沭阳吾悦广场店）' address='沭阳吾悦广场三楼北边往里走' status=1 updated_at=2025-11-29T17:21:24.000000Z. Keep id 3217 '宝乐城（沭阳吾悦广场店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 3212 '宝乐城游乐园沭阳吾悦广场店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3213,
+      "name": "宝乐城游乐园沭阳金王朝大酒店店",
+      "field": "other",
+      "current": "separate venue id 3213 (twin of 3215)",
+      "proposed": "merge into id 3215; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1154",
+      "evidence_quote": "Dual import at 沭阳 华氏大厦/金王朝大酒店 人民路. BemaniCN s/1154 name='宝乐城潮人电玩（沭阳华氏大厦店）' address='沭城街道人民路41号乐天玛特对面' status=1 updated_at=2026-06-10T11:03:02.000000Z. Keep id 3215 '宝乐城潮人电玩（沭阳华氏大厦店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 3213 '宝乐城游乐园沭阳金王朝大酒店店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3214,
+      "name": "宝乐城游乐园淮安万达店",
+      "field": "other",
+      "current": "separate venue id 3214 (twin of 3209)",
+      "proposed": "merge into id 3209; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6320",
+      "evidence_quote": "Dual import at 淮安 水渡口万达. BemaniCN s/6320 name='宝乐城淮安水渡口万达店' address='翔宇大道与水渡口交叉口东北角3楼' status=1 updated_at=2026-06-28T16:19:47.000000Z. Keep id 3209 '宝乐城淮安水渡口万达店' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 3214 '宝乐城游乐园淮安万达店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3220,
+      "name": "宝诺瓦南京浦口弘阳广场店",
+      "field": "other",
+      "current": "separate venue id 3220 (twin of 3221)",
+      "proposed": "merge into id 3221; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5548",
+      "evidence_quote": "Dual import at 南京浦口 弘阳广场 B馆3F-22 宝诺瓦. BemaniCN s/5548 name='宝诺瓦电玩世界' address='大桥北路48号弘阳广场B馆3F-22' status=1 updated_at=2025-11-29T17:21:24.000000Z. Keep id 3221 '宝诺瓦电玩世界' src=['bemanicn'] games=['maimai_dx']. Drop id 3220 '宝诺瓦南京浦口弘阳广场店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3243,
+      "name": "宝贝王南京雨花台万象天地店",
+      "field": "other",
+      "current": "separate venue id 3243 (twin of 3347)",
+      "proposed": "merge into id 3347; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4657",
+      "evidence_quote": "Dual import at 南京雨花万象 L312 宝贝王. BemaniCN s/4657 name='宝贝王（雨花万象店）' address='雨花台区向秀路1号·L3·L312' status=1 updated_at=2026-07-24T03:56:33.000000Z. Keep id 3347 '宝贝王（雨花万象店）' src=['bemanicn'] games=['maimai_dx', 'other', 'taiko']. Drop id 3243 '宝贝王南京雨花台万象天地店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3291,
+      "name": "宝贝王昆山天虹店",
+      "field": "other",
+      "current": "separate venue id 3291 (twin of 3271)",
+      "proposed": "merge into id 3271; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4911",
+      "evidence_quote": "Dual import at 昆山 天虹 宝贝王. BemaniCN s/4911 name='宝贝王家庭娱乐中心（昆山天虹店）' address='经济开发区中华园路1555号昆山天虹购物中心3楼' status=1 updated_at=2025-11-29T17:21:23.000000Z. Keep id 3271 '宝贝王家庭娱乐中心（昆山天虹店）' src=['bemanicn'] games=['maimai_dx']. Drop id 3291 '宝贝王昆山天虹店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3329,
+      "name": "宝贝王连云港市海州万达店",
+      "field": "other",
+      "current": "separate venue id 3329 (twin of 3293)",
+      "proposed": "merge into id 3293; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4052",
+      "evidence_quote": "Dual import at 连云港海州 万达 宝贝王极速时代. BemaniCN s/4052 name='宝贝王极速时代（万达广场店）' address='万达广场1楼' status=1 updated_at=2026-06-02T15:35:57.000000Z. Keep id 3293 '宝贝王极速时代（万达广场店）' src=['bemanicn'] games=['maimai_dx', 'other']. Drop id 3329 '宝贝王连云港市海州万达店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3426,
+      "name": "山闪闪电玩城扬州邗江店",
+      "field": "other",
+      "current": "separate venue id 3426 (twin of 3427)",
+      "proposed": "merge into id 3427; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2170",
+      "evidence_quote": "Dual import at 扬州邗江 京华城 山闪闪. BemaniCN s/2170 name='山闪闪电玩城（京华城店）' address='江苏省扬州市邗江区同泰路京华城四楼山闪闪电玩城' status=1 updated_at=2026-06-10T14:14:35.000000Z. Keep id 3427 '山闪闪电玩城（京华城店）' src=['bemanicn'] games=['chunithm', 'maimai_dx', 'taiko']. Drop id 3426 '山闪闪电玩城扬州邗江店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3533,
+      "name": "引力矩阵苏州常熟店",
+      "field": "other",
+      "current": "separate venue id 3533 (twin of 3535)",
+      "proposed": "merge into id 3535; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2573",
+      "evidence_quote": "Dual import at 苏州常熟 琴湖溪里 引力矩阵. BemaniCN s/2573 name='引力矩阵（常熟琴湖溪里店）' address='琴湖路88号 琴湖溪里花园城二期2层' status=1 updated_at=2026-07-02T16:56:03.000000Z. Keep id 3535 '引力矩阵（常熟琴湖溪里店）' src=['bemanicn'] games=['chunithm', 'maimai_dx']. Drop id 3533 '引力矩阵苏州常熟店' src=['wahlap'] games=['chunithm', 'maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3700,
+      "name": "拾趣潮玩徐州泉山国际广场店",
+      "field": "other",
+      "current": "separate venue id 3700 (twin of 3698)",
+      "proposed": "merge into id 3698; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5187",
+      "evidence_quote": "Dual import at 徐州泉山 三胞国际广场 拾趣潮玩. BemaniCN s/5187 name='拾趣潮玩(徐州三胞广场店)' address='泰山街道金山东路三胞国际广场3F' status=1 updated_at=2025-11-29T17:21:24.000000Z. Keep id 3698 '拾趣潮玩(徐州三胞广场店)' src=['bemanicn'] games=['maimai_dx']. Drop id 3700 '拾趣潮玩徐州泉山国际广场店' src=['wahlap'] games=['maimai_dx']. Pins/addresses match same mall.",
+      "note": "Classic WAHLAP-vs-BemaniCN dual import. Prefer BCN-linked id (richer games/counts). Confirm one physical shop before merge. Live WAHLAP official list still carries the WAHLAP-side name in many cases (name spelling differs; same mall).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3638,
+      "name": "悠窝音游",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "maimai_dx": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6679",
+      "evidence_quote": "arcades title_id=1 maimai DX quantity=3 version='maimoller和HDX' comment='一台HDX和两台maimoller'; updated_at=2026-07-30T15:31:18.000000Z",
+      "note": "BCN 2026-07-30 lists 3 maimai (1 HDX + 2 maimoller). App currently shows 2. Venue is self-service hourly; not on live WAHLAP official list under this name (private/self-op style).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3638,
+      "name": "悠窝音游",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "1x HDX + 2x maimoller (per BCN comment)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6679",
+      "evidence_quote": "title_id=1 quantity=3 version='maimoller和HDX' comment='一台HDX和两台maimoller'",
+      "note": "China-local cab variants; useful for players choosing a machine type.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3638,
+      "name": "悠窝音游",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00 (self-service)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6679",
+      "evidence_quote": "start_time=10 end_time=24; shop.comment: 营业时间10:00-24:00 期间全自助; updated_at=2026-07-30T15:31:18.000000Z",
+      "note": "Community-maintained hours on BemaniCN; no official chain page found.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3638,
+      "name": "悠窝音游",
+      "field": "prices",
+      "current": null,
+      "proposed": "rhythm games CNY 8/hour (self-service flat rate, not per-credit)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6679",
+      "evidence_quote": "shop.comment: 价格：音游:8元/小时 麻将9元/半庄",
+      "note": "Hourly self-service pricing, not coin-per-credit. App machine_prices is null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2968,
+      "name": "头号玩家泰州万象城店",
+      "field": "cab_models",
+      "current": {
+        "taiko": null
+      },
+      "proposed": {
+        "taiko": "legacy Asian-version (title_id 15 太鼓达人旧代, ver 12亚) - NOT Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6229",
+      "evidence_quote": "arcades: title_id=15 quantity=1 version='12亚' comment mentions 右鼓已修正; no title_id=31 Nijiiro entry; updated_at=2026-01-19T01:36:03.000000Z",
+      "note": "App slug taiko is present but this is old-gen, not 虹框/Nijiiro. Not on live WAHLAP maimai list (taiko-only venue).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3538,
+      "name": "弹指针亲子主题游乐园",
+      "field": "cab_models",
+      "current": {
+        "taiko": null
+      },
+      "proposed": {
+        "taiko": "legacy Asian-version (title_id 15, ver 11亚) - NOT Nijiiro; 1P sensor broken per BCN"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2529",
+      "evidence_quote": "title_id=15 qty=1 ver='11亚' comment='14年就有的鼓...1p传感器损坏未修'; also title_id=23 DANZBASE; updated_at=2025-11-29T17:21:21.000000Z",
+      "note": "Old cabinet. Not on live WAHLAP maimai/chunithm lists.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3425,
+      "name": "山闪闪 苏州悠方店",
+      "field": "other",
+      "current": "name=山闪闪 苏州悠方店",
+      "proposed": "also known as / WAHLAP official name: 三十六计苏州观前店 (same 悠方 2F218 address)",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai entry arcadeName='三十六计苏州观前店' address='江苏省苏州市吴中区金枫路悠方购物中心2F218' placeId=2801. BemaniCN s/6136 name='山闪闪 苏州悠方店' address='木渎镇 金枫路264号悠方购物中心2楼218' comment states 机台均由原三十六计观前街店搬来 / 三十六计旗下门店; updated_at=2025-11-29T17:21:25.000000Z",
+      "note": "Official WAHLAP still lists 三十六计苏州观前店 at this mall address. BCN lists operator brand 山闪闪. Same physical machines per BCN comment. Consider alias or rename to official WAHLAP name for searchability.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2751,
+      "name": "天空之城兴化临城吾悦店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "兴化市昭阳街道中和西路99号吾悦广场2楼Z08号商铺"
+      },
+      "proposed": "geocode from address 兴化市昭阳街道中和西路99号吾悦广场2楼 (still on live WAHLAP maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai: arcadeName='天空之城兴化临城吾悦店' address='兴化市昭阳街道中和西路99号吾悦广场2楼Z08号商铺' placeId=3376 province=江苏 (lat/lng not provided by API; app pin is null)",
+      "note": "Venue exists on official WAHLAP list but app has null coordinates. Approx geocode from 兴化吾悦广场 is appropriate (China approx:true expected).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3207,
+      "name": "宝乐城南京万达茂店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6513",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-06-04T06:36:42.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3215,
+      "name": "宝乐城潮人电玩（沭阳华氏大厦店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "summer 09:30-22:00 / winter 10:00-21:30 (weekends +1h)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1154",
+      "evidence_quote": "shop.comment: 夏季营业时间 9:30-22:00 / 冬季营业时间 10:00-21:30; start_time=10 end_time=22 updated_at=2026-06-10T11:03:02.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2854,
+      "name": "天空之城淮安万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6036",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-05-30T15:46:21.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2763,
+      "name": "天空之城南京鹏欣水游城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3855",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-04-30T05:10:51.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3427,
+      "name": "山闪闪电玩城（京华城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2170",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-06-10T14:14:35.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3535,
+      "name": "引力矩阵（常熟琴湖溪里店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00 (after 22:00 exit-only)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2573",
+      "evidence_quote": "shop.comment: 营业10时至24时 (22时后只出不进); start_time=10 end_time=22 updated_at=2026-07-02T16:56:03.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2958,
+      "name": "太空球乐园（九里仓店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7063",
+      "evidence_quote": "start_time=9 end_time=23 updated_at=2026-07-31T10:42:09.000000Z",
+      "note": "BemaniCN integer hour fields; community-maintained, may drift. Prefer chain official hours if found later.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2828,
+      "name": "天空之城无锡滨湖店",
+      "field": "other",
+      "current": "separate venue id 2828 (near id 2880 天空之城滨湖万象汇)",
+      "proposed": "investigate merge into id 2880 if same mall unit; WAHLAP live name is 天空之城无锡滨湖店",
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP exact name 天空之城无锡滨湖店 address matches WAHLAP-side listing. BemaniCN s/2964 name=天空之城滨湖万象汇 address=滨湖区太湖大道1688号万象汇4楼 status=1. App pins ~300m apart (2828 lat=31.545901 lng=120.253763; 2880 lat=31.543757 lng=120.256536). 2828 address text is 蠡园开发区标准写字楼 (older/vague).",
+      "note": "Likely same store under WAHLAP name vs BCN mall name, but address strings differ enough that confidence is unverified. Do not auto-merge without local confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3603,
+      "name": "快乐联盟无锡江南大悦城店",
+      "field": "other",
+      "current": "name=快乐联盟无锡江南大悦城店 (BCN); separate id 3604 快乐联盟无锡滨湖太湖店 (WAHLAP)",
+      "proposed": "verify whether 3603 and 3604 are one store; live WAHLAP only lists 快乐联盟无锡滨湖太湖店; BCN only lists 江南大悦城店",
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP live arcadeName=快乐联盟无锡滨湖太湖店 address=江苏省无锡市滨湖区太湖街道 placeId=5002. BemaniCN s/6396 name=快乐联盟无锡江南大悦城店 address=江南大悦城3F maimai qty=1 updated_at=2026-06-26. App 3604 lat/lng vs 3603 lat close but lng differs ~0.026 (~2.5km).",
+      "note": "Possible dual-name single store with bad geocode on WAHLAP-only pin. Unverified - needs local/map check before merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3105,
+      "name": "奈斯家庭娱乐中心苏州店",
+      "field": "other",
+      "current": "chunithm listed (qty 2)",
+      "proposed": "keep chunithm but note BCN: 断网，有一台机子无法开机 (one cab offline / offline network)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2793",
+      "evidence_quote": "title_id=3 quantity=2 version='旧框' comment='断网，有一台机子无法开机'; maimai qty=1; updated_at=2026-06-30T11:58:45.000000Z. Exact name not on live WAHLAP CHUNITHM API.",
+      "note": "Service quality flag, not a removal. Exact name also not on live WAHLAP CHUNITHM list (may still be networked under another account).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "SUPERBUDDY常州天宁华润店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "SUPERBUDDY常州天宁华润店",
+        "addr": "江苏省常州市天宁区离宫路329号华润国际花园100栋常州万象城四楼L459",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='SUPERBUDDY常州天宁华润店' address='江苏省常州市天宁区离宫路329号华润国际花园100栋常州万象城四楼L459' placeId=3499; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "e+潮玩南京江宁宝龙店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "e+潮玩南京江宁宝龙店",
+        "addr": "江苏省南京市江宁区麒麟街道青喜社区丹霞街169号宝龙广场F3",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='e+潮玩南京江宁宝龙店' address='江苏省南京市江宁区麒麟街道青喜社区丹霞街169号宝龙广场F3' placeId=4714; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "e+潮玩扬州邗江万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "e+潮玩扬州邗江万达店",
+        "addr": "江苏省扬州市邗江区万达广场3楼e+潮玩",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='e+潮玩扬州邗江万达店' address='江苏省扬州市邗江区万达广场3楼e+潮玩' placeId=4424; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "三十六计苏州吴中永旺店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "三十六计苏州吴中永旺店",
+        "addr": "苏州市吴中区苏震桃路188号永旺梦乐城3层NO.366三十六计",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='三十六计苏州吴中永旺店' address='苏州市吴中区苏震桃路188号永旺梦乐城3层NO.366三十六计' placeId=3089; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "合电占秦淮国际金融中心店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "合电占秦淮国际金融中心店",
+        "addr": "江苏省南京市秦淮区汉中路一号国际金融中心3楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='合电占秦淮国际金融中心店' address='江苏省南京市秦淮区汉中路一号国际金融中心3楼' placeId=2623; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "树屋音游无锡梁溪店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "树屋音游无锡梁溪店",
+        "addr": "江苏省无锡市梁溪区人民中路100号锡上MONO三楼树屋音游",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='树屋音游无锡梁溪店' address='江苏省无锡市梁溪区人民中路100号锡上MONO三楼树屋音游' placeId=3720; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "环游家族苏州太仓店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游家族苏州太仓店",
+        "addr": "江苏省苏州市太仓市城厢镇上海东路188号商业02室（2F）层",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='环游家族苏州太仓店' address='江苏省苏州市太仓市城厢镇上海东路188号商业02室（2F）层' placeId=4436; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "潮趣堂常州新北环球港店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮趣堂常州新北环球港店",
+        "addr": "江苏省常州市新北区通江中路江南环球港太阳大厅4楼L4111潮趣堂",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='潮趣堂常州新北环球港店' address='江苏省常州市新北区通江中路江南环球港太阳大厅4楼L4111潮趣堂' placeId=3740; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "潮趣堂常州武进万达",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮趣堂常州武进万达",
+        "addr": "江苏省常州市武进万达二楼潮趣堂",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='潮趣堂常州武进万达' address='江苏省常州市武进万达二楼潮趣堂' placeId=4011; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起苏州观前街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起苏州观前街店",
+        "addr": "江苏省苏州市姑苏区观前街粤海广场1号楼2层风云再起",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='风云再起苏州观前街店' address='江苏省苏州市姑苏区观前街粤海广场1号楼2层风云再起' placeId=1164; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起无锡清扬茂业天地店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起无锡清扬茂业天地店",
+        "addr": "江苏省无锡市梁溪区清扬路128号茂业天地3楼风云再起",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='风云再起无锡清扬茂业天地店' address='江苏省无锡市梁溪区清扬路128号茂业天地3楼风云再起' placeId=1397; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "趣玩汇南京新街口店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "趣玩汇南京新街口店",
+        "addr": "南京市秦淮区洪武路38号正洪大厦趣玩汇",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='趣玩汇南京新街口店' address='南京市秦淮区洪武路38号正洪大厦趣玩汇' placeId=4892; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "星世纪宿迁远洋未来广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "星世纪宿迁远洋未来广场店",
+        "addr": "江苏省宿迁市宿城区河滨街道宿支路远洋未来广场3F星世纪",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='星世纪宿迁远洋未来广场店' address='江苏省宿迁市宿城区河滨街道宿支路远洋未来广场3F星世纪' placeId=4383; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "超乐趣玩堂常州月季店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超乐趣玩堂常州月季店",
+        "addr": "江苏省常州市钟楼区怀德南路与月季路交汇中吴广场1楼超乐趣玩堂",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='超乐趣玩堂常州月季店' address='江苏省常州市钟楼区怀德南路与月季路交汇中吴广场1楼超乐趣玩堂' placeId=2667; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "元气之星徐州邳州中钰购物中心店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "元气之星徐州邳州中钰购物中心店",
+        "addr": "苏省邳州市中钰购物中心三楼元气之星",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Live WAHLAP maimai+chunithm: arcadeName='元气之星徐州邳州中钰购物中心店' address='苏省邳州市中钰购物中心三楼元气之星' placeId=3168; also on CHUNITHM location API",
+      "note": "Present on official WAHLAP location API (2026-07-31) for Jiangsu but absent from this shard. Coordinates not provided by WAHLAP API; geocode from address (approx). Many other Jiangsu WAHLAP venues are also absent; these are a curated multi-game sample, not a full gap list (~185 Jiangsu maimai names did not fuzzy-match this shard).",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

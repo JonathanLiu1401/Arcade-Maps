@@ -1,0 +1,674 @@
+{
+  "shard": 36,
+  "checked": 48,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1602",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1601",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11423",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10414",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9337",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11059",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11226",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3538",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9719",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3204",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7055",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1000"
+  ],
+  "corrections": [
+    {
+      "id": 492,
+      "name": "eSpot",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1602",
+      "evidence_quote": "maimai (Japan) near front desk; maimai FiNALE rear. Page lastUpdateTime 2026-07-29 23:02 by waingt.",
+      "note": "ZIv lists two maimai cabinets. App games array omits maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 492,
+      "name": "eSpot",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 3,
+        "ddr": 1,
+        "gitadora": 2,
+        "groove_coaster": 1,
+        "iidx": 1,
+        "jubeat": 2,
+        "nostalgia": 1,
+        "ongeki": 1,
+        "popn": 1,
+        "project_diva": 1,
+        "sdvx": 2,
+        "taiko": 2,
+        "wacca": 1
+      },
+      "proposed": {
+        "chunithm": 3,
+        "ddr": 1,
+        "gitadora": 2,
+        "groove_coaster": 1,
+        "iidx": 1,
+        "jubeat": 2,
+        "maimai_dx": 2,
+        "nostalgia": 1,
+        "ongeki": 1,
+        "popn": 1,
+        "project_diva": 1,
+        "sdvx": 2,
+        "taiko": 2,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1602",
+      "evidence_quote": "Two maimai machine rows on ZIv: maimai and maimai FiNALE.",
+      "note": "count_evidence for maimai_dx should be ziv_listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 449,
+      "name": "CHQ Entertainment",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "groove_coaster",
+        "ongeki",
+        "other",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "groove_coaster",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1601",
+      "evidence_quote": "maimai | Japan | 1 | Online, JP language. Please do not change this listing. condition Perfect. lastUpdateTime 2026-06-26 03:04.",
+      "note": "Operator-curated rhythm list. App omits maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 449,
+      "name": "CHQ Entertainment",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "drs": 1,
+        "groove_coaster": 1,
+        "ongeki": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 4,
+        "drs": 1,
+        "groove_coaster": 1,
+        "maimai_dx": 1,
+        "ongeki": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1601",
+      "evidence_quote": "maimai count 1 Perfect; CHUNITHM VERSE x4; WACCA REVERSE x2.",
+      "note": "Add maimai_dx:1 with count_evidence ziv_listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 413,
+      "name": "ARCstage",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "other",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10414",
+      "evidence_quote": "maimai | Japan | Behind Taiko and WACCA | 30 credits / 3 songs 1P | Perfect. lastUpdateTime 2026-04-02 04:40.",
+      "note": "notes and machine_prices already mention maimai but games[] omits maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 413,
+      "name": "ARCstage",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "ddr": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "project_diva": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "ddr": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "maimai_dx": 1,
+        "project_diva": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10414",
+      "evidence_quote": "maimai x1 Perfect; CHUNITHM LUMINOUS x2.",
+      "note": "Add maimai_dx:1 ziv_listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 476,
+      "name": "CLAW PLANET",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "563 boul des laurentides , laval quebec h7g2v3 canada"
+      },
+      "proposed": {
+        "lat": 45.571882717131,
+        "lng": -73.693563930662,
+        "addr": "563 Boulevard des Laurentides, Laval, Quebec H7G 2V3"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11423",
+      "evidence_quote": "Claw Planet/Planete Claw address 563 Boulevard des Laurentides, Laval, Quebec H7G2V3; latitude 45.571882717131 longitude -73.693563930662.",
+      "note": "ALL.Net-sourced duplicate of id 477. Pin has null lat/lng. Prefer merge into 477.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 476,
+      "name": "CLAW PLANET",
+      "field": "other",
+      "current": {
+        "src": [
+          "allnet"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": "merge_into_id_477",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11423",
+      "evidence_quote": "Same street address as Claw Planet/Planete Claw which lists maimai DX CiRCLE PLUS x2 among a full import lineup.",
+      "note": "ALL.Net maimai locator hit for same venue as ZIv 11423 / app id 477. ALL.Net form not fully scraped this pass.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 399,
+      "name": "1UP Games",
+      "field": "status",
+      "current": "listed open with retro cabs and hours Mon-Sat 10:00-08:00; Sun 12:00-06:00",
+      "proposed": "no_playable_machines_or_closed",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3538",
+      "evidence_quote": "Information: Arcade no longer has machines, in storage according to owner/guy at counter. Last update 2024-01-22 20:14 by OrangeSoda2000.",
+      "note": "App already has this sentence in info_text but still presents venue as open. 2024 report, not reconfirmed 2025/2026.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 400,
+      "name": "Algonquin College (no machines on campus)",
+      "field": "status",
+      "current": "games include ddr; name says no machines on campus",
+      "proposed": "not_a_public_arcade_remove_or_mark_historical",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3983",
+      "evidence_quote": "Name: Algonquin College (no machines on campus). Campus arcade removed by ~2019; DDR Solo alumni-owned NOT available on campus. Last update 2025-05-27.",
+      "note": "Should not appear as playable map pin with ddr.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 400,
+      "name": "Algonquin College (no machines on campus)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3983",
+      "evidence_quote": "The Dance Dance Revolution Solo machine is from Algonquin alumni, but it is NOT available on campus.",
+      "note": "Remove ddr and other claims for campus pin. Historical only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 405,
+      "name": "Amusements Jolin",
+      "field": "status",
+      "current": "listed with ITG2; info says temporarily closed until Sep 21 2023",
+      "proposed": "likely_closed_or_moved_unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7055",
+      "evidence_quote": "Info still says temporarily closed until September 21st 2023. Last page update 2023-06-20. Comment emmanu888 (~2 years ago): Is this still open? friend said location shut down and was moving.",
+      "note": "No 2024-2026 primary confirmation. Flag only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 439,
+      "name": "Canada's Wonderland (Crystal Arcade)",
+      "field": "other",
+      "current": "games=['ddr'], condition not stated; info only mentions Medieval Faire DDR removed",
+      "proposed": "ddr present but not working as of 2024-07 ZIv (dead RTC, fuzzy CRT)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3204",
+      "evidence_quote": "Dance Dance Revolution EXTREME listed condition Not Working; dead RTC battery, fuzzy CRT. Medieval Faire DDR indefinitely removed as of 2024 summer. Last update 2024-07-21.",
+      "note": "Prefer mark non-working or remove ddr until reconfirmed in later season.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 470,
+      "name": "Cine Starz Deluxe (Des Sources) (coming soon)",
+      "field": "status",
+      "current": "coming soon; games=['other']",
+      "proposed": "not_open_coming_soon_no_machines",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9719",
+      "evidence_quote": "Title includes (coming soon). Guzzo closed Dec 8 2024. Cine Starz will reopen as Deluxe this year. Zero machines listed. Last update 2025-02-13.",
+      "note": "Not verified whether Cine Starz reopened by Jul 2026 from official page. Keep coming-soon; not open playable.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 477,
+      "name": "Claw Planet/Planete Claw",
+      "field": "cab_models",
+      "current": {
+        "sdvx_vm": null
+      },
+      "proposed": {
+        "sdvx_vm": null,
+        "note": "ZIv title says Valkyrie model but comment describes Nemsys cab with upgraded monitor/tablet"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11423",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR (Valkyrie model) | comment: Nemsys cab with an upgraded monitor and added tablet, headphone jacks barely functional...",
+      "note": "Conflicting labels on same ZIv row. Flag only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Yume",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Yume",
+        "addr": "333 Spadina Ave, 2nd Floor, Toronto, Ontario M5T 2E9",
+        "country": "Canada",
+        "lat": 43.654753850041,
+        "lng": -79.39827445,
+        "games": [
+          "chunithm",
+          "ddr",
+          "iidx",
+          "maimai_dx",
+          "ongeki",
+          "project_diva",
+          "taiko",
+          "wacca",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "ddr": 1,
+          "iidx": 1,
+          "maimai_dx": 2,
+          "ongeki": 1,
+          "project_diva": 1,
+          "taiko": 1,
+          "wacca": 2
+        },
+        "hours_text": "Mon-Thu 17:00-23:00; Fri 17:00-01:00; Sat 12:00-01:00; Sun 12:00-23:00; closed first Sunday each month for maintenance",
+        "website": "https://yumearcade.ca/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9337"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9337",
+      "evidence_quote": "Ontario Premiere Japanese arcade at 333 Spadina Ave 2nd Floor Toronto. IIDX, CHUNITHM VERSE x2, DDR X3, maimai x2, WACCA x2, ONGEKI, Project DIVA, Taiko Nijiiro. Last update 2026-05-26 04:34. Website yumearcade.ca.",
+      "note": "Major downtown Toronto import arcade absent from map. High traveler value.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Pixel Paradise Arcade @ Bayfield Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Pixel Paradise Arcade @ Bayfield Mall",
+        "addr": "320 Bayfield St, Unit 201, Barrie, Ontario L4M 3C1",
+        "country": "Canada",
+        "lat": 44.400306871992,
+        "lng": -79.703112220299,
+        "games": [
+          "chunithm",
+          "ddr",
+          "iidx",
+          "jubeat",
+          "nostalgia",
+          "popn",
+          "pump_it_up",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "ddr": 2,
+          "iidx": 1,
+          "jubeat": 2,
+          "nostalgia": 1,
+          "popn": 2,
+          "pump_it_up": 1,
+          "taiko": 2
+        },
+        "website": "https://pixelparadisearcade.ca/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11059"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11059",
+      "evidence_quote": "Now open! 320 Bayfield St Unit 201 Barrie. IIDX, CHUNITHM x2, DDR 5thMIX + SuperNOVA2, jubeat x2, popn x2, Pump It Up Infinity, NOSTALGIA, Taiko 12 and 14. Last update 2026-07-03.",
+      "note": "Hours not published on ZIv (all Unknown). Do not invent hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Playdium Vaughan",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Playdium Vaughan",
+        "addr": "1 Bass Pro Mills Dr, Concord, Ontario L4K 5W4",
+        "country": "Canada",
+        "lat": 43.824309380747,
+        "lng": -79.541863084061,
+        "games": [
+          "maimai_dx",
+          "pump_it_up",
+          "stepmaniax",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "pump_it_up": 1,
+          "stepmaniax": 1,
+          "taiko": 1
+        },
+        "hours_text": "Mon-Thu 12:00-22:00; Fri 12:00-24:00; Sat 10:00-24:00; Sun 10:00-22:00",
+        "website": "https://www.playdium.com/vaughan",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11226"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11226",
+      "evidence_quote": "Opened Wednesday, June 17, 2026. maimai DX CiRCLE PLUS, Pump It Up Phoenix (2024), StepManiaX 65 Deluxe, Taiko Nijiro USA (2024). Last update 2026-07-30 11:21.",
+      "note": "Brand-new Playdium location; very recent ZIv update.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Waterloo Rhythm Arcade @ Waterloo Central Supermarket",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Waterloo Rhythm Arcade @ Waterloo Central Supermarket",
+        "addr": "140 University Ave W, Waterloo, Ontario N2L 6J3",
+        "country": "Canada",
+        "lat": 43.472976765909,
+        "lng": -80.535090528286,
+        "games": [
+          "maimai_dx",
+          "pump_it_up",
+          "wacca"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "pump_it_up": 1,
+          "wacca": 1
+        },
+        "hours_text": "Mon-Sun 09:00-23:00",
+        "website": "https://www.instagram.com/waterloorhythmarcade/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+      "evidence_quote": "Arcade inside Waterloo Central Supermarket. maimai DX CiRCLE (NA) CA$2.90/3 songs; Pump It Up PRIME 2 CA$1.25/3 songs; WACCA REVERSE CA$2.00/3 songs. Hours daily 09:00-23:00. Last update 2026-07-29 19:09.",
+      "note": "Inside supermarket; tap-to-pay.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quazar's Arcade",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quazar's Arcade",
+        "addr": "1215 Government Street, Victoria, British Columbia V8W 1Y5",
+        "country": "Canada",
+        "lat": 48.425889422324,
+        "lng": -123.36743835127,
+        "games": [
+          "chunithm",
+          "ddr",
+          "maimai_dx",
+          "sdvx",
+          "wacca",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "ddr": 1,
+          "maimai_dx": 1,
+          "sdvx": 1,
+          "wacca": 2
+        },
+        "hours_text": "Mon-Thu 12:00-22:00; Fri-Sat 10:00-23:00; Sun 10:00-22:00",
+        "website": "http://www.quazarsarcade.com/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4879"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+      "evidence_quote": "Quazar's Arcade Victoria BC ZIv id 4879: CHUNITHM VERSE x2, DDR, maimai FiNALE, SDVX EXCEED GEAR, WACCA REVERSE x2. lastUpdateTime 2026-01-25 02:11.",
+      "note": "Separate downtown Victoria venue with more modern rhythm than Deerland/Epic Games already in shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Mar's Mini Golf",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Mar's Mini Golf",
+        "addr": "609 1st Ave N, Saskatoon, Saskatchewan S7K 1X7",
+        "country": "Canada",
+        "lat": 52.136767556786,
+        "lng": -106.66202187538,
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko",
+          "wacca",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 1,
+          "maimai_dx": 1,
+          "taiko": 1,
+          "wacca": 1
+        },
+        "hours_text": "Mon-Thu 11:00-21:00; Fri-Sat 11:00-22:00; Sun 11:00-20:00",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10413"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+      "evidence_quote": "Mar's Mini Golf Saskatoon ZIv 10413: chunithm, maimai, taiko, wacca; lastUpdateTime 2026-04-11 20:50.",
+      "note": "Separate from Fun Factory Saskatoon (taiko only in shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "The Rec Room (Burnaby Brentwood)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "The Rec Room (Burnaby Brentwood)",
+        "addr": "1920 Willingdon Avenue, Unit 2106, Burnaby, British Columbia V5C 0K3",
+        "country": "Canada",
+        "lat": 49.267444006764,
+        "lng": -123.00214380774,
+        "games": [
+          "maimai_dx",
+          "pump_it_up",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "pump_it_up": 1,
+          "taiko": 1
+        },
+        "hours_text": "Mon-Thu 13:00-23:00; Fri 13:00-01:00; Sat 11:00-01:30; Sun 11:00-23:00",
+        "website": "https://www.therecroom.com/burnaby-brentwood",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5945"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+      "evidence_quote": "The Rec Room (Burnaby Brentwood) ZIv 5945: maimai, pump it up, taiko; lastUpdateTime 2026-07-08 05:49.",
+      "note": "Near CHQ Metrotown but different venue. Confirm age restrictions before travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "La Retro Arcade 2PM",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "La Retro Arcade 2PM",
+        "addr": "559 Route 131, Notre-Dame-des-Prairies, Quebec J0K 1M0",
+        "country": "Canada",
+        "lat": 46.062020320634,
+        "lng": -73.419517252494,
+        "games": [
+          "iidx",
+          "other"
+        ],
+        "game_counts": {
+          "iidx": 1
+        },
+        "hours_text": "Mon-Thu closed; Fri-Sat 11:00-00:00; Sun 11:00-17:00",
+        "website": "https://www.2pmretroarcade.com/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9240"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+      "evidence_quote": "La Retro Arcade 2PM ZIv 9240: IIDX present; lastUpdateTime 2026-03-10. Entry fee noted in info.",
+      "note": "Entry-fee freeplay venue with at least IIDX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "RetroMTL",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "RetroMTL",
+        "addr": "4023 Rue Hochelaga, Montreal, Quebec H1W 1K4",
+        "country": "Canada",
+        "lat": 45.552025889288,
+        "lng": -73.548697643641,
+        "games": [
+          "sdvx",
+          "other"
+        ],
+        "game_counts": {
+          "sdvx": 1
+        },
+        "hours_text": "Mon-Wed 10:00-17:00; Thu-Fri 10:00-20:00; Sat 10:00-17:00; Sun 12:00-17:00",
+        "website": "https://retromtl.com/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8317"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+      "evidence_quote": "RetroMTL Montreal ZIv 8317: SOUND VOLTEX listed; lastUpdateTime 2025-07-06; website retromtl.com.",
+      "note": "ZIv last update 2025-07. Confirm SDVX still present before treating as certain traveler destination.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

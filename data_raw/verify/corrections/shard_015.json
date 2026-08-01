@@ -1,0 +1,1178 @@
+{
+  "shard": 15,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (Inertia JSON for all 66 linked shops)",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live maimai CN, Guangdong filtered)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live CHUNITHM CN, Guangdong filtered)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China (spot checks)",
+    "https://map.bemanicn.com/games (title_id map)"
+  ],
+  "corrections": [
+    {
+      "id": 4297,
+      "name": "晴空进击社龙湖万象广场店",
+      "field": "other",
+      "current": "separate venue id 4297 beside id 4298",
+      "proposed": "merge into id 4298 (or mark duplicate of 4298)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2179",
+      "evidence_quote": "App pins nearly identical: 晴空进击社（汕头万象城店） @ 23.365679,116.712871 vs 晴空进击社龙湖万象广场店 @ 23.365679,116.712871; addr A=汕头市龙湖区长平路95号万象城B101 B=广东省汕头市龙湖区金环路万象广场负一楼B101",
+      "note": "Shantou MixC-area Qingkong: BN shop 2179 lists Wanxiangcheng/Changping Rd 95 with maimai+chunithm+taiko; WAHLAP lists Longhu Wanxiang Plaza at Jinhuan Rd. App pins BOTH at identical lat/lng 23.365679,116.712871.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4300,
+      "name": "晶灵玩家广州花都店",
+      "field": "other",
+      "current": "separate venue id 4300 beside id 4299",
+      "proposed": "merge into id 4299 (or mark duplicate of 4299)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1710",
+      "evidence_quote": "App pins nearly identical: 晶灵玩家 @ 23.424947,113.18406 vs 晶灵玩家广州花都店 @ 23.424947,113.18406; addr A=永发路14号雅乐城2-3层 B=广东省广州市花都区永发路14号雅乐城晶灵玩家",
+      "note": "Same Huadu Yalecheng Yongfa Rd 14 Jingling Players; BN+WAHLAP twins, identical coords.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4312,
+      "name": "智趣乐园梅州梅江客都汇店",
+      "field": "other",
+      "current": "separate venue id 4312 beside id 4313",
+      "proposed": "merge into id 4313 (or mark duplicate of 4313)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4198",
+      "evidence_quote": "App pins nearly identical: 智趣乐园（梅州客都汇店） @ 24.301543,116.128042 vs 智趣乐园梅州梅江客都汇店 @ 24.302025,116.12767; addr A=客都汇商业文化广场 B=广东省梅州市梅江区梅水路客都汇三楼智趣乐园",
+      "note": "Same Meizhou Kedu Hui Zhiqu Leyuan; BN+WAHLAP twins.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4328,
+      "name": "朗玩深圳壹方天地店",
+      "field": "other",
+      "current": "separate venue id 4328 beside id 4324",
+      "proposed": "merge into id 4324 (or mark duplicate of 4324)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1088",
+      "evidence_quote": "App pins nearly identical: 朗玩Round One(龙华壹方天地店) @ 22.649462,114.024093 vs 朗玩深圳壹方天地店 @ 22.646861,114.025287; addr A=龙华街道景龙社区壹方天地C区L1-001A-4001 B=广东省深圳市龙华区龙华街道景龙社区壹成中心花园三区E座壹方天地C区L1-001A~L4-001",
+      "note": "Same Langwan Longhua Uniworld; BN has taiko x3 extra vs WAHLAP-only twin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4327,
+      "name": "朗玩广州新塘永旺店",
+      "field": "other",
+      "current": "separate venue id 4327 beside id 4325",
+      "proposed": "merge into id 4325 (or mark duplicate of 4325)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1017",
+      "evidence_quote": "App pins nearly identical: 朗玩ROUND ONE新塘永旺梦乐城店 @ 23.162085,113.619594 vs 朗玩广州新塘永旺店 @ 23.162085,113.619594; addr A=宁西创新大道15号新塘永旺梦乐城1栋3层3084 B=广东省广州市增城区宁西街创新大道15号永旺梦乐城1栋3084朗玩文化",
+      "note": "Same Langwan Xintang AEON; BN has taiko x3.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4329,
+      "name": "朗玩深圳福田iN城市广场店",
+      "field": "other",
+      "current": "separate venue id 4329 beside id 4326",
+      "proposed": "merge into id 4326 (or mark duplicate of 4326)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4134",
+      "evidence_quote": "App pins nearly identical: 朗玩ROUND ONE（福田城市广场店） @ 22.542417,114.093641 vs 朗玩深圳福田iN城市广场店 @ 22.542417,114.093641; addr A=深南中路1095号城市广场·深圳3层 B=广东省深圳市福田区深南中路1095号iN城市广场L3-01朗玩",
+      "note": "Same Langwan Futian iN City Plaza; BN has taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4358,
+      "name": "未来狂想茂名茂悦东荟城店",
+      "field": "other",
+      "current": "separate venue id 4358 beside id 4357",
+      "proposed": "merge into id 4357 (or mark duplicate of 4357)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4359",
+      "evidence_quote": "App pins nearly identical: 未来狂想 @ 21.667165,110.945921 vs 未来狂想茂名茂悦东荟城店 @ 21.667165,110.945921; addr A=茂悦东荟城（东汇城）负一层 B=广东省茂名市茂南区油城十路1号大院茂悦东荟城负一楼",
+      "note": "Same Maoming Maoyue Donghui Cheng Weilai Kuangxiang.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4515,
+      "name": "梦幻之城深圳宝安店",
+      "field": "other",
+      "current": "separate venue id 4515 beside id 4372",
+      "proposed": "merge into id 4372 (or mark duplicate of 4372)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3865",
+      "evidence_quote": "App pins nearly identical: 松岗联投东方梦幻之城 @ 22.76371670580981,113.85387248800126 vs 梦幻之城深圳宝安店 @ 22.76349,113.853163; addr A=松岗街道联投东方东方新天地 B=广东省深圳市宝安区松岗街道东方大道36号东方新天地二层梦幻之城",
+      "note": "Same Songgang Dongfang Xintiandi Dream City (BN Songgang Liantou Oriental Dream City / WAHLAP Dream City Shenzhen Baoan). ZIv id 10053 also this site.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4375,
+      "name": "极力特广州番禺南村万达店",
+      "field": "other",
+      "current": "separate venue id 4375 beside id 4378",
+      "proposed": "merge into id 4378 (or mark duplicate of 4378)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4810",
+      "evidence_quote": "App pins nearly identical: 极力特番禺万达广场店 @ 23.009978,113.343572 vs 极力特广州番禺南村万达店 @ 23.009978,113.343572; addr A=万博汉溪大道东381,389,391号番禺万达广场2层213 B=广东省广州市番禺区南村万达二楼极力特",
+      "note": "Same Panyu Nancun Wanda Jilite.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4377,
+      "name": "极力特梦幻城惠州惠东天虹店",
+      "field": "other",
+      "current": "separate venue id 4377 beside id 4376",
+      "proposed": "merge into id 4376 (or mark duplicate of 4376)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1668",
+      "evidence_quote": "App pins nearly identical: 极力特梦幻城 @ 22.97725,114.709693 vs 极力特梦幻城惠州惠东天虹店 @ 22.977184,114.709893; addr A=华侨城大道15号创富广场天虹商场(惠东店)F3 B=广东省惠州市惠东县华侨城大道15号天虹商场三楼",
+      "note": "Same Huidong Rainbow Jilite Dream City. Also near/same mall as 4564 Sendi/Chaolehui - verify whether second brand is same unit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4390,
+      "name": "极客森深圳万科里店",
+      "field": "other",
+      "current": "separate venue id 4390 beside id 4405",
+      "proposed": "merge into id 4405 (or mark duplicate of 4405)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/877",
+      "evidence_quote": "App pins nearly identical: 极客森超乐场深圳万科里店 @ 22.72028,114.246186 vs 极客森深圳万科里店 @ 22.72028,114.246186; addr A=龙岗大道3999号龙岗区政府正对面万科里负一楼极客森 B=广东省深圳市龙岗区龙城万科里负一楼极客森",
+      "note": "Same Longgang Vanke Li Geek World.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4391,
+      "name": "极客森深圳南山宝能城店",
+      "field": "other",
+      "current": "separate venue id 4391 beside id 4410",
+      "proposed": "merge into id 4410 (or mark duplicate of 4410)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/605",
+      "evidence_quote": "App pins nearly identical: 极客森超乐场西丽宝能环球汇店 @ 22.594559,113.994825 vs 极客森深圳南山宝能城店 @ 22.594177,113.992224; addr A=西丽留仙大道塘朗地铁站D出口宝能城三楼 B=广东省深圳市南山区西丽留仙大道塘朗地铁站C出口宝能城三楼极客森超乐场",
+      "note": "Same Nanshan Baoneng City/Global Hub Geek World. BN+ZIv list chunithm; WAHLAP maimai name is Geek World Shenzhen Nanshan Baoneng City.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4392,
+      "name": "极客森深圳福田卓悦汇店",
+      "field": "other",
+      "current": "separate venue id 4392 beside id 4406",
+      "proposed": "merge into id 4406 (or mark duplicate of 4406)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4152",
+      "evidence_quote": "App pins nearly identical: 极客森超乐场深圳卓悦中心店 @ 22.539467,114.060331 vs 极客森深圳福田卓悦汇店 @ 22.540836,114.059997; addr A=福田街道岗厦社区深南大道2005号One Avenue·卓越中心北区B1层 B=广东省深圳市福田街道岗夏社区深南大道2005号卓悦汇深圳中心天元1期负一楼",
+      "note": "Same Futian Zhuoyuehui/One Avenue Geek World.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4426,
+      "name": "极速地带福田绿景店",
+      "field": "other",
+      "current": "separate venue id 4426 beside id 4427",
+      "proposed": "merge into id 4427 (or mark duplicate of 4427)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4128",
+      "evidence_quote": "App pins nearly identical: 极速地带（绿景佐阾虹湾购物中心店） @ 22.563471,114.034261 vs 极速地带福田绿景店 @ 22.563471,114.034261; addr A=福田区梅林街道北环大道6098号绿景佐阾虹湾购物中心3层3017B B=广东省深圳市福田区绿景佐阾虹湾购物中心三层L3017B",
+      "note": "Same Futian Lvjing Zuoling Hongwan Jisu Didai.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4451,
+      "name": "极限主场普宁万泰汇店",
+      "field": "other",
+      "current": "separate venue id 4451 beside id 4455",
+      "proposed": "merge into id 4455 (or mark duplicate of 4455)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/432",
+      "evidence_quote": "App pins nearly identical: 极限主场（流沙万泰汇店） @ 23.31498,116.157695 vs 极限主场普宁万泰汇店 @ 23.31498,116.157695; addr A=流沙北衔道御景社区广场西路（普宁广场西侧）万泰汇购物中心负一层 B=广东省普宁市万泰汇购物中心负一楼极限主场",
+      "note": "Same Puning Wantaihui Jixian Zhuchang.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4461,
+      "name": "极限派对江门恩平金沙时代广场店",
+      "field": "other",
+      "current": "separate venue id 4461 beside id 4460",
+      "proposed": "merge into id 4460 (or mark duplicate of 4460)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6807",
+      "evidence_quote": "App pins nearly identical: 极限派对家庭娱乐中心(金沙时代广场) @ 22.184284,112.305663 vs 极限派对江门恩平金沙时代广场店 @ 22.184284,112.305663; addr A=恩平市新平中路18号金沙时代广场三楼C16至C18号铺 B=广东省江门市恩平市恩平恩新平中路18号金沙时代广场三楼极限派对",
+      "note": "Same Enping Jinsha Times Jixian Paidui.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4476,
+      "name": "柒彩大玩家珠海香洲中安广场店",
+      "field": "other",
+      "current": "separate venue id 4476 beside id 4468",
+      "proposed": "merge into id 4468 (or mark duplicate of 4468)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5559",
+      "evidence_quote": "App pins nearly identical: 柒彩大玩家(中安广场店) @ 22.23287,113.52765 vs 柒彩大玩家珠海香洲中安广场店 @ 22.232641,113.526781; addr A=香洲区港昌路258号中安广场201铺17-18号铺 B=广东省珠海市香洲区港一路中安广场二楼柒彩大玩家",
+      "note": "Same Zhuhai Zhongan Plaza Qicai Dawan jia.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4510,
+      "name": "梦多拉湛江赤坎兴华广场店",
+      "field": "other",
+      "current": "separate venue id 4510 beside id 4509",
+      "proposed": "merge into id 4509 (or mark duplicate of 4509)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6826",
+      "evidence_quote": "App pins nearly identical: 梦多拉湛江兴华广场店 @ 21.277366,110.370454 vs 梦多拉湛江赤坎兴华广场店 @ 21.277366,110.370454; addr A=赤坎区海北路兴华购物广场 B=湛江市赤坎区海北路11-31号兴华广场三层",
+      "note": "Same Zhanjiang Xinghua Plaza Mengduola.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4512,
+      "name": "梦幻之城中山店",
+      "field": "other",
+      "current": "separate venue id 4512 beside id 4511",
+      "proposed": "merge into id 4511 (or mark duplicate of 4511)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2033",
+      "evidence_quote": "App pins nearly identical: 梦幻之城DREAM CITY体验馆 @ 22.607998,113.182142 vs 梦幻之城中山店 @ 22.607998,113.182142; addr A=中兴大道中1号华丰汇购物中心三层L3014-3016 B=广东省中山市中山古镇华丰汇三楼梦幻之城",
+      "note": "Same Zhongshan Guzhen Huafenghui Dream City.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4517,
+      "name": "梦幻乐园广州天河店",
+      "field": "other",
+      "current": "separate venue id 4517 beside id 4518",
+      "proposed": "merge into id 4518 (or mark duplicate of 4518)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4227",
+      "evidence_quote": "App pins nearly identical: 梦幻乐园金茂广场店 @ 23.173433,113.313657 vs 梦幻乐园广州天河店 @ 23.173433,113.313657; addr A=广州大道北980号金茂广场3层301-319 B=广东省广州市天河区天河大道北980号兴达金茂广场三层梦幻乐园",
+      "note": "Same Tianhe Jinmao Dream Park; BN adds taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4526,
+      "name": "梦幻猩球揭阳揭东博和城店",
+      "field": "other",
+      "current": "separate venue id 4526 beside id 4528",
+      "proposed": "merge into id 4528 (or mark duplicate of 4528)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5969",
+      "evidence_quote": "App pins nearly identical: 梦幻猩球（乔南博和城店） @ 23.555093,116.316714 vs 梦幻猩球揭阳揭东博和城店 @ 23.555093,116.316714; addr A=乔南博和城一楼（阳美路35号） B=广东省揭阳市揭东区磐东街道乔南博和城一楼梦幻猩球动漫城",
+      "note": "Same Jiedong Qiaonan Bohe Cheng Dream Star Ball.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4531,
+      "name": "梦幻谷游艺佛山禅城东方店",
+      "field": "other",
+      "current": "separate venue id 4531 beside id 4530",
+      "proposed": "merge into id 4530 (or mark duplicate of 4530)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/151",
+      "evidence_quote": "App pins nearly identical: 梦幻谷东方广场店 @ 23.040672,113.115046 vs 梦幻谷游艺佛山禅城东方店 @ 23.040795,113.11503; addr A=锦华路81号东方广场翡翠城-1层 B=广东省佛山市禅城区东方广场翡翠城负一楼梦幻谷",
+      "note": "Same Foshan Chancheng Oriental Plaza Dream Valley.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4555,
+      "name": "梦次元珠海斗门万达店",
+      "field": "other",
+      "current": "separate venue id 4555 beside id 4553",
+      "proposed": "merge into id 4553 (or mark duplicate of 4553)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4499",
+      "evidence_quote": "App pins nearly identical: 梦次元潮玩空间站 @ 22.169205,113.299055 vs 梦次元珠海斗门万达店 @ 22.169436,113.298335; addr A=广东省珠海市斗门区知行路118号珠海斗门世荣万达广场2F层梦次元潮玩空间站(斗门世荣万达店) B=广东省珠海市斗门区万达广场二楼梦次元潮玩站",
+      "note": "Same Zhuhai Doumen Wanda Mengciyuan; BN has chunithm+other, WAHLAP twin maimai only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4562,
+      "name": "棕泉酒店珠海香洲店",
+      "field": "other",
+      "current": "separate venue id 4562 beside id 4561",
+      "proposed": "merge into id 4561 (or mark duplicate of 4561)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6072",
+      "evidence_quote": "App pins nearly identical: 棕泉水疗酒店·保健足浴(夏湾店) @ 22.223202,113.541326 vs 棕泉酒店珠海香洲店 @ 22.223202,113.541326; addr A=拱北街道侨光路220-222号棕泉酒店2楼休息区 B=广东省珠海市香洲区拱北街道侨光路222号",
+      "note": "Same Zhuhai Gongbei Zongquan Hotel maimai point.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4596,
+      "name": "欢乐岛广州从化从城大道店",
+      "field": "other",
+      "current": "separate venue id 4596 beside id 4598",
+      "proposed": "merge into id 4598 (or mark duplicate of 4598)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4332",
+      "evidence_quote": "App pins nearly identical: 欢乐岛游乐城 @ 23.535671,113.584709 vs 欢乐岛广州从化从城大道店 @ 23.536199,113.58378; addr A=江埔从城大道113号欣荣广场A区A栋3层 B=广东省广州市从化区江埔街从城大道113号304铺",
+      "note": "Same Conghua Congcheng Ave Happy Island.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4605,
+      "name": "欢乐拾光韶关乐昌店",
+      "field": "other",
+      "current": "separate venue id 4605 beside id 4604",
+      "proposed": "merge into id 4604 (or mark duplicate of 4604)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4464",
+      "evidence_quote": "App pins nearly identical: 欢乐拾光家庭娱乐中心（乐昌店） @ 25.126788,113.347166 vs 欢乐拾光韶关乐昌店 @ 25.126788,113.347166; addr A=乐昌市新村横街与盐围街交叉口南60米 B=广东省韶关乐昌市乐城街道盐围街9号悦购时代广场欢乐拾光",
+      "note": "Same Lechang Happy Time.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4613,
+      "name": "欢乐潮玩东莞凤深店",
+      "field": "other",
+      "current": "separate venue id 4613 beside id 4614",
+      "proposed": "merge into id 4614 (or mark duplicate of 4614)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4193",
+      "evidence_quote": "App pins nearly identical: 欢乐潮玩（沃尔玛店） @ 22.749396,114.139794 vs 欢乐潮玩东莞凤深店 @ 22.749989,114.13943; addr A=凤深大道126号财富新地（沃尔玛东莞凤岗中心店）2楼256 B=广东省东莞市凤深大道126号256室",
+      "note": "Same Dongguan Fengshen Happy Chaoplay.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4665,
+      "name": "欢派大玩家河源龙川泰华城店",
+      "field": "other",
+      "current": "separate venue id 4665 beside id 4664",
+      "proposed": "merge into id 4664 (or mark duplicate of 4664)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6145",
+      "evidence_quote": "App pins nearly identical: 欢派大玩家 @ 24.112207,115.246575 vs 欢派大玩家河源龙川泰华城店 @ 24.113565,115.245687; addr A=广东省河源市龙川县老隆镇泰华城鑫鲜汇超市二楼内侧 B=广东省河源市龙川县泰华城欢派大玩家店",
+      "note": "Same Heyuan Longchuan Taihua Cheng Huanpai.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4812,
+      "name": "汤崎生活福田港城华庭裙楼店",
+      "field": "other",
+      "current": "separate venue id 4812 beside id 4811",
+      "proposed": "merge into id 4811 (or mark duplicate of 4811)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5959",
+      "evidence_quote": "App pins nearly identical: 汤崎·汤泉生活TENZ(福田口岸店) @ 22.519843,114.067615 vs 汤崎生活福田港城华庭裙楼店 @ 22.519843,114.067615; addr A=国花路港城华庭裙楼一层至五层 B=广东省深圳市福田区国花路港城华庭裙楼一至五楼",
+      "note": "Same Futian Port Chenghuating Tenz.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4880,
+      "name": "海洋联萌揭阳榕城店",
+      "field": "other",
+      "current": "separate venue id 4880 beside id 4877",
+      "proposed": "merge into id 4877 (or mark duplicate of 4877)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4719",
+      "evidence_quote": "App pins nearly identical: 海洋联盟（揭阳榕城惠丰广场店） @ 23.548167,116.365368 vs 海洋联萌揭阳榕城店 @ 23.548051,116.36557; addr A=榕城区榕华街道江南新城二期32-34幢榕城惠丰生活广场一层A1036商铺 B=广东省揭阳市榕城区榕华街道江南新城惠丰生活广场一楼海洋海洋联萌",
+      "note": "Same Jieyang Rongcheng Huifeng Ocean Lianmeng.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4879,
+      "name": "海洋联萌化州店",
+      "field": "other",
+      "current": "separate venue id 4879 beside id 4878",
+      "proposed": "merge into id 4878 (or mark duplicate of 4878)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7223",
+      "evidence_quote": "App pins nearly identical: 海洋联萌 @ 21.664206,110.65407 vs 海洋联萌化州店 @ 21.664715,110.653726; addr A=橘洲一号嘉荣购物广场 B=广东省茂名市化州市鉴江街道北京东三路茂和购物中心三楼海洋联萌",
+      "note": "Same Huazhou Ocean Lianmeng.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4927,
+      "name": "淘乐街区中山西区天悦店",
+      "field": "other",
+      "current": "separate venue id 4927 beside id 4926",
+      "proposed": "merge into id 4926 (or mark duplicate of 4926)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7277",
+      "evidence_quote": "App pins nearly identical: 淘乐街区(天悦城店) @ 22.524708,113.345441 vs 淘乐街区中山西区天悦店 @ 22.524708,113.345441; addr A=广东省中山市西区街道长洲社区富华道32号天悦城4楼淘乐街区(天悦城店) B=中山市西区街道长洲社区富华道32号天悦广场综合楼四层【L4001-L4003】",
+      "note": "Same Zhongshan Tianyue Taole Block; BN adds taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4311,
+      "name": "智趣乐园中山石岐店",
+      "field": "other",
+      "current": "separate from id 4310 with identical address and coords",
+      "proposed": "merge into id 4310 (or remove 4311)",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Both app rows use address Guangdong Zhongshan Shiqi Daxin Nanlu Daxin Phase II Building 3 Zhiqu Leyuan and lat/lng 22.533766,113.375822",
+      "note": "WAHLAP list contains both Zhiqu Leyuan Zhongshan Shiqi Daxin Phase II store and Zhiqu Leyuan Zhongshan Shiqi store with the same address string; map should keep one pin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4328,
+      "name": "朗玩深圳壹方天地店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1088",
+      "evidence_quote": "BN shop 1088 lists taiko title_id with quantity=3; twin BN id 4324 already has taiko",
+      "note": "If merged into BN id, keep taiko. Official WAHLAP endpoint does not list taiko (SEGA-only).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4327,
+      "name": "朗玩广州新塘永旺店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1017",
+      "evidence_quote": "BN shop 1017 lists taiko title_id with quantity=3; twin BN id 4325 already has taiko",
+      "note": "If merged into BN id, keep taiko. Official WAHLAP endpoint does not list taiko (SEGA-only).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4329,
+      "name": "朗玩深圳福田iN城市广场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4134",
+      "evidence_quote": "BN shop 4134 lists taiko title_id with quantity=2; twin BN id 4326 already has taiko",
+      "note": "If merged into BN id, keep taiko. Official WAHLAP endpoint does not list taiko (SEGA-only).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4297,
+      "name": "晴空进击社龙湖万象广场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2179",
+      "evidence_quote": "shop 2179 arcades: title_id 1 qty 2 (maimai), title_id 3 qty 2 (CHUNITHM), title_id 31 qty 2 (taiko); status=1 updated 2026-07-19",
+      "note": "Only if 4297 is treated as the same venue as BN Wanxiangcheng listing 4298. WAHLAP name for the chunithm+maimai site is Qingkong Longhu Wanxiang Plaza (Jinhuan Rd). Taiko is community (BN) not WAHLAP.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4517,
+      "name": "梦幻乐园广州天河店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4227",
+      "evidence_quote": "Dream Park Jinmao Plaza shop arcades include title_id 31 (taiko); status=1 updated 2026-07-01",
+      "note": "WAHLAP twin of BN 4518; merge should keep taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4927,
+      "name": "淘乐街区中山西区天悦店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7277",
+      "evidence_quote": "Taole Block Tianyue shop has title_id 31 taiko; updated 2026-07-30",
+      "note": "Pair with 4926.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4486,
+      "name": "柿柿潮玩云浮罗定客都汇店",
+      "field": "games",
+      "current": [
+        "chunithm"
+      ],
+      "proposed": [
+        "chunithm",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6636",
+      "evidence_quote": "Shishi Chaoplay arcades: title_id 3 qty 1 (CHUNITHM), title_id 31 qty 1 (taiko); no maimai",
+      "note": "WAHLAP has chunithm for Shishi Chaoplay Yunfu Luoding; taiko is BN-only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4555,
+      "name": "梦次元珠海斗门万达店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4499",
+      "evidence_quote": "Mengciyuan Chaoplay station (Doumen Wanda) lists title_id 3 CHUNITHM among arcades; status=1 updated 2026-07-26",
+      "note": "WAHLAP CHUNITHM list also has Chaoplay station Zhuhai Doumen Wanda. Twin BN 4553 has chunithm.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4410,
+      "name": "极客森超乐场西丽宝能环球汇店",
+      "field": "other",
+      "current": "games include chunithm as if fully serviced",
+      "proposed": "chunithm cabinets present but offline / not on WAHLAP serviced list (as of 2026-08-01); maimai online per WAHLAP Geek World Shenzhen Nanshan Baoneng City",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/605",
+      "evidence_quote": "2026/06 maimai network restored, CHUNITHM still offline; staff can power on when quiet",
+      "note": "WAHLAP midtr (CHUNITHM) API returned no matching Baoneng/Xili Geek World row. ZIv still lists cabinets (id 4962, updated ~2026-07-31).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4475,
+      "name": "柒彩大玩家珠海金湾南水店",
+      "field": "location",
+      "current": {
+        "lat": 22.053103,
+        "lng": 113.342988,
+        "addr": "广东省珠海市金湾区南水镇泰百货三楼柒彩大玩家"
+      },
+      "proposed": "re-geocode Zhuhai Jinwan Nanshui town (not Sanzao); do not share 22.053103,113.342988 with Sanzao store",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP: Qicai Dawan jia Zhuhai Jinwan Nanshui store address Guangdong Zhuhai Jinwan Nanshui town Taibaihuo 3F; separate row Sanzao store Pengtai Baihuo. App uses identical lat/lng for both.",
+      "note": "Nanshui and Sanzao are distinct towns in Jinwan. BN 6285 is Nanshui store.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4297,
+      "name": "晴空进击社龙湖万象广场店",
+      "field": "location",
+      "current": {
+        "lat": 23.365679,
+        "lng": 116.712871,
+        "addr": "广东省汕头市龙湖区金环路万象广场负一楼B101"
+      },
+      "proposed": "keep Jinhuan Rd Wanxiang Plaza pin; ensure 4298 (Changping Rd 95 Wanxiangcheng) is not forced to the same coordinates",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP Qingkong Longhu Wanxiang Plaza address Guangdong Shantou Longhu Jinhuan Rd Wanxiang Plaza B101; separate WAHLAP Interstellar Legend Shantou Wanxiangcheng at Changping Rd 95",
+      "note": "Wanxiang Plaza vs Wanxiangcheng appear as different mall names/addresses in official data. App currently uses one pin for both 4297 and 4298.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4298,
+      "name": "晴空进击社（汕头万象城店）",
+      "field": "location",
+      "current": {
+        "lat": 23.365679,
+        "lng": 116.712871,
+        "addr": "汕头市龙湖区长平路95号万象城B101"
+      },
+      "proposed": "geocode Shantou Longhu Changping Rd 95 Wanxiangcheng B101 independently from Jinhuan Rd Wanxiang Plaza",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2179",
+      "evidence_quote": "address: Shantou Longhu Changping Rd 95 Wanxiangcheng B101",
+      "note": "If BN mislabeled Wanxiang Plaza as Wanxiangcheng, then merge with 4297 instead. Not certain they are two shops.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4863,
+      "name": "浪骄动漫家庭娱乐中心",
+      "field": "location",
+      "current": {
+        "lat": 22.680804,
+        "lng": 113.988054,
+        "addr": "广东省深圳市龙华区华旺路后浪新天地后浪新天地-26栋一楼（星高度旁）"
+      },
+      "proposed": "verify: BN is Houlange New World; WAHLAP twin 4864 is Fenxiangcheng. Coords nearly identical (dlat~0.00004). One pin is wrong or shops are adjacent.",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/4740",
+      "evidence_quote": "BN address Shenzhen Longhua Huawang Rd Houlange New World Bldg 26 1F; WAHLAP Langjiao Anime Shenzhen Longhua Fenxiangcheng 3F",
+      "note": "Cannot confirm whether two active locations or a rename/move without on-site evidence.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4374,
+      "name": "极力特广州海珠万达店",
+      "field": "location",
+      "current": "广东省广州市海珠区万达广场3楼极力特",
+      "proposed": "Guangzhou Dadao Nan 978 Haizhu Wanda Plaza 3F west side",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5259",
+      "evidence_quote": "address: Guangzhou Dadao Nan 978 Haizhu Wanda Plaza 3F west; name Jilite (Haizhu Wanda)",
+      "note": "App address only says Haizhu Wanda Plaza 3F without street number.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4298,
+      "name": "晴空进击社（汕头万象城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2179",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4324,
+      "name": "朗玩Round One(龙华壹方天地店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1088",
+      "evidence_quote": "start_time=10 end_time=26 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4325,
+      "name": "朗玩ROUND ONE新塘永旺梦乐城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1017",
+      "evidence_quote": "start_time=10 end_time=24 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4326,
+      "name": "朗玩ROUND ONE（福田城市广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4134",
+      "evidence_quote": "start_time=10 end_time=24 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4406,
+      "name": "极客森超乐场深圳卓悦中心店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4152",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4410,
+      "name": "极客森超乐场西丽宝能环球汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/605",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4494,
+      "name": "核客电玩城深圳罗湖店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-01:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/48",
+      "evidence_quote": "start_time=10 end_time=25 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4511,
+      "name": "梦幻之城DREAM CITY体验馆",
+      "field": "hours",
+      "current": null,
+      "proposed": "07:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2033",
+      "evidence_quote": "start_time=7 end_time=24 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4553,
+      "name": "梦次元潮玩空间站",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4499",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4561,
+      "name": "棕泉水疗酒店·保健足浴(夏湾店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-03:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6072",
+      "evidence_quote": "start_time=11 end_time=3 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4811,
+      "name": "汤崎·汤泉生活TENZ(福田口岸店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5959",
+      "evidence_quote": "start_time=10 end_time=24 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4926,
+      "name": "淘乐街区(天悦城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7277",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4941,
+      "name": "深圳宝安福城万达漫谷拾光（原大玩家）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6923",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4348,
+      "name": "未来之影电玩城广州天河天娱广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6408",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4405,
+      "name": "极客森超乐场深圳万科里店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/877",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4409,
+      "name": "极客森超乐场游戏体验中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/976",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4485,
+      "name": "柿柿潮玩",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6636",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4372,
+      "name": "松岗联投东方梦幻之城",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:00",
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3865",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4408,
+      "name": "极客森超乐场深圳龙华星河iCO店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2745",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4382,
+      "name": "极客森(深圳光明蓝鲸世界店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2349",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4357,
+      "name": "未来狂想",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4359",
+      "evidence_quote": "start_time=10 end_time=26 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4518,
+      "name": "梦幻乐园金茂广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4227",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hours; end>24 means next day)",
+      "note": "Community hours field on BemaniCN, not a chain official page. 0-0 omitted. shop.price is CNY per coin, not per-credit.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4383,
+      "name": "极客森-沙井百佳华店",
+      "field": "other",
+      "current": "listed maimai_dx via bemanicn; not found on WAHLAP maimai API under this shop name",
+      "proposed": "keep venue but flag maimai network/official-registration uncertain; do not treat as WAHLAP-confirmed serviced",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2674",
+      "evidence_quote": "BN still status=1 with maimai version Ver.CN1.51-I (offline); WAHLAP maidx location list for Guangdong has no matching arcadeName for this site (checked 2026-08-01)",
+      "note": "BN notes unpaid offline network. Not present on WAHLAP maimai API under Shajing/BaijiaHua/Geek. ZIv 9981 updated 2026-07-31 still lists maimai DX 2026.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4382,
+      "name": "极客森(深圳光明蓝鲸世界店)",
+      "field": "other",
+      "current": "listed maimai_dx via bemanicn; not found on WAHLAP maimai API under this shop name",
+      "proposed": "keep venue but flag maimai network/official-registration uncertain; do not treat as WAHLAP-confirmed serviced",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2349",
+      "evidence_quote": "BN still status=1 with maimai version CN server; WAHLAP maidx location list for Guangdong has no matching arcadeName for this site (checked 2026-08-01)",
+      "note": "No WAHLAP maimai row for Guangming Blue Whale + Geek. BN status=1 updated 2026-07-25 still lists maimai qty 1. ZIv 9982 last update 2025-04.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4408,
+      "name": "极客森超乐场深圳龙华星河iCO店",
+      "field": "other",
+      "current": "listed maimai_dx via bemanicn; not found on WAHLAP maimai API under this shop name",
+      "proposed": "keep venue but flag maimai network/official-registration uncertain; do not treat as WAHLAP-confirmed serviced",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2745",
+      "evidence_quote": "BN still status=1 with maimai version maimai DX 2023; WAHLAP maidx location list for Guangdong has no matching arcadeName for this site (checked 2026-08-01)",
+      "note": "BN comment offline for over a month; no WAHLAP Galaxy iCO Geek row. ZIv 9986 last 2025-04.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4407,
+      "name": "极客森超乐场深圳宝能环球汇店",
+      "field": "other",
+      "current": "listed maimai_dx via bemanicn; not found on WAHLAP maimai API under this shop name",
+      "proposed": "keep venue but flag maimai network/official-registration uncertain; do not treat as WAHLAP-confirmed serviced",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1398",
+      "evidence_quote": "BN still status=1 with maimai version DX2024 Ver.CN1.41-B; WAHLAP maidx location list for Guangdong has no matching arcadeName for this site (checked 2026-08-01)",
+      "note": "Luohu Baoneng Global Hub; not WAHLAP-named. ZIv 9978 updated 2026-07-30 lists maimai DX 2026 with poor touch.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4409,
+      "name": "极客森超乐场游戏体验中心",
+      "field": "other",
+      "current": "listed maimai_dx via bemanicn; not found on WAHLAP maimai API under this shop name",
+      "proposed": "keep venue but flag maimai network/official-registration uncertain; do not treat as WAHLAP-confirmed serviced",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/976",
+      "evidence_quote": "BN still status=1 with maimai version CN cab; WAHLAP maidx location list for Guangdong has no matching arcadeName for this site (checked 2026-08-01)",
+      "note": "Eastern Star Yue World; no clear WAHLAP match. BN status=1 updated 2026-07-25.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4393,
+      "name": "极客森电玩深圳松岗店",
+      "field": "other",
+      "current": "listed maimai_dx via bemanicn; not found on WAHLAP maimai API under this shop name",
+      "proposed": "keep venue but flag maimai network/official-registration uncertain; do not treat as WAHLAP-confirmed serviced",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2004",
+      "evidence_quote": "BN still status=1 with maimai version Ver.CH1.51-C; WAHLAP maidx location list for Guangdong has no matching arcadeName for this site (checked 2026-08-01)",
+      "note": "Songgang YiZhan/Manfen area Geek; ZIv 9980 updated 2026-07-31 lists maimai. Distinct from floor-7 Xiaojinbao/MFPARTY.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4942,
+      "name": "深圳市宝安区松岗街道MFPARTY运动超乐场",
+      "field": "other",
+      "current": "name MFPARTY sports super play Songgang",
+      "proposed": "likely same site as WAHLAP Xiaojinbao Shenzhen Baoan Manjinghua Manfen Tiandi store (Manfen Tiandi 7F)",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName Xiaojinbao Shenzhen Baoan Manjinghua Manfen Tiandi store address Shenzhen Baoan Songgang Manjinghua Manfen Tiandi 7F Xiaojinbao sports super play (by elevator 5)",
+      "note": "BN shop 5971 still titled MFPARTY at Songgang Manfen Tiandi 7F, updated 2026-07-06. Same mall floor as WAHLAP Xiaojinbao. Possible rebrand; confirm before renaming.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4384,
+      "name": "极客森健康港星河COCOPARK店",
+      "field": "other",
+      "current": "name Geek World Health Port Galaxy COCOPARK (src bemanicn only)",
+      "proposed": "WAHLAP lists as cocopark Guangzhou Liwan Health Port store / Health Port Galaxy cocopark North Hall 3F Geek door - official maimai confirmed",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName cocopark Guangzhou Liwan Health Port store address Guangdong Guangzhou Liwan Health Port Galaxy cocopark North Hall 3F Geek store",
+      "note": "BN comment mentions long-term offline historically; still on official WAHLAP list so currently registered. City is Guangzhou Liwan, not Shenzhen.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4456,
+      "name": "极限主场（湛江华都汇店）",
+      "field": "other",
+      "current": "games [taiko] only",
+      "proposed": "taiko playability doubtful; BN historical 2024 note says Zhanjiang had no playable taiko / drum pad dead; last BN update 2025-11-29; no maimai",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/440",
+      "evidence_quote": "last taiko 12 Asia in Zhanjiang urban; 2024-04-10 2P left pad fully dead; comment text says currently no playable taiko in Zhanjiang",
+      "note": "Cannot confirm 2026 condition. BN status still 1. Not a firm closure.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4564,
+      "name": "森迪王国惠东天虹分店 X 潮乐汇潮玩运动馆",
+      "field": "other",
+      "current": "separate from Jilite Dream City 4376/4377 at same Huidong Rainbow F3 coords",
+      "proposed": "verify whether Sendi Kingdom / Chaolehui is same unit or second brand on same floor as Jilite Dream City",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2652",
+      "evidence_quote": "Sendi Kingdom Huidong Rainbow x Chaolehui address Huaqiaocheng Ave 15 Huidong Rainbow F3; Jilite BN 1668 same Huaqiaocheng Ave 15 Rainbow",
+      "note": "WAHLAP has Jilite Dream City Huizhou Huidong Rainbow and also Chaolehui Huizhou Rainbow as separate maimai rows. May be two shops in one mall.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "小金宝深圳宝安满金华满纷天地店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "小金宝深圳宝安满金华满纷天地店",
+        "addr": "深圳市宝安区松岗街道满京华满纷天地7楼小金宝运动超乐场（5号电梯旁）",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap_maidx",
+        "country": "China",
+        "pref": "广东"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 小金宝深圳宝安满金华满纷天地店 address 深圳市宝安区松岗街道满京华满纷天地7楼小金宝运动超乐场（5号电梯旁） province Guangdong placeId 5108",
+      "note": "Official WAHLAP maimai location. Not present under this exact name in shard_015; may exist in another shard - dedupe before insert. Xiaojinbao may be rebrand of MFPARTY id 4942.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "晴空进击社汕头龙湖万象汇店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "晴空进击社汕头龙湖万象汇店",
+        "addr": "广东省汕头市龙湖区东海岸万象汇409晴空进击社",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap_maidx",
+        "country": "China",
+        "pref": "广东"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 晴空进击社汕头龙湖万象汇店 address 广东省汕头市龙湖区东海岸万象汇409晴空进击社 province Guangdong placeId 3540",
+      "note": "Official WAHLAP maimai location. Not present under this exact name in shard_015; may exist in another shard - dedupe before insert. Xiaojinbao may be rebrand of MFPARTY id 4942.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "晴空超乐场汕头龙湖合胜百货店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "晴空超乐场汕头龙湖合胜百货店",
+        "addr": "广东省汕头市龙湖区长江路合胜百货负一层晴空超乐场",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap_maidx",
+        "country": "China",
+        "pref": "广东"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 晴空超乐场汕头龙湖合胜百货店 address 广东省汕头市龙湖区长江路合胜百货负一层晴空超乐场 province Guangdong placeId 2676",
+      "note": "Official WAHLAP maimai location. Not present under this exact name in shard_015; may exist in another shard - dedupe before insert. Xiaojinbao may be rebrand of MFPARTY id 4942.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "晴空超乐场汕头龙湖苏宁店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "晴空超乐场汕头龙湖苏宁店",
+        "addr": "广东省汕头市龙湖区长平路90苏宁广场第3F层302号商铺",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap_maidx",
+        "country": "China",
+        "pref": "广东"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 晴空超乐场汕头龙湖苏宁店 address 广东省汕头市龙湖区长平路90苏宁广场第3F层302号商铺 province Guangdong placeId 1987",
+      "note": "Official WAHLAP maimai location. Not present under this exact name in shard_015; may exist in another shard - dedupe before insert. Xiaojinbao may be rebrand of MFPARTY id 4942.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "星际传奇汕头万象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "星际传奇汕头万象城店",
+        "addr": "广东省汕头市龙湖区长平路95号华润大厦万象城L5A08和L5A16号商铺",
+        "games": [
+          "maimai_dx"
+        ],
+        "source": "wahlap_maidx",
+        "country": "China",
+        "pref": "广东"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName 星际传奇汕头万象城店 address 广东省汕头市龙湖区长平路95号华润大厦万象城L5A08和L5A16号商铺 province Guangdong placeId 1634",
+      "note": "Official WAHLAP maimai location. Not present under this exact name in shard_015; may exist in another shard - dedupe before insert. Xiaojinbao may be rebrand of MFPARTY id 4942.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4324,
+      "name": "朗玩Round One(龙华壹方天地店)",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx: 5 coins/play (~CNY 7.50) at 1.5 CNY/coin; chunithm: 6 coins/play (~CNY 9.00) at 1.5 CNY/coin; taiko: 7 coins/play (~CNY 10.50) at 1.5 CNY/coin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1088",
+      "evidence_quote": "shop.price=1.5 (CNY per coin); per-game coin fields on arcades; promo packs often cheaper on Meituan",
+      "note": "Coin unit price on BemaniCN is community-edited.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4494,
+      "name": "核客电玩城深圳罗湖店",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx: 4 coins/play (~CNY 6.00) at 1.5 CNY/coin; chunithm: 4 coins/play (~CNY 6.00) at 1.5 CNY/coin; taiko: 5 coins/play (~CNY 7.50) at 1.5 CNY/coin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/48",
+      "evidence_quote": "shop.price=1.5 (CNY per coin); per-game coin fields on arcades; promo packs often cheaper on Meituan",
+      "note": "Coin unit price on BemaniCN is community-edited.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4410,
+      "name": "极客森超乐场西丽宝能环球汇店",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx: 5 coins/play (~CNY 5.00) at 1.0 CNY/coin; chunithm: 6 coins/play (~CNY 6.00) at 1.0 CNY/coin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/605",
+      "evidence_quote": "shop.price=1 (CNY per coin); per-game coin fields on arcades; promo packs often cheaper on Meituan",
+      "note": "Coin unit price on BemaniCN is community-edited.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4348,
+      "name": "未来之影电玩城广州天河天娱广场店",
+      "field": "other",
+      "current": "未来之影电玩城广州天河天娱广场店",
+      "proposed": "未来之影广州天河天娱广场店 (BN live name)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6408",
+      "evidence_quote": "name: 未来之影广州天河天娱广场店; address Shipai Tianhe Rd 623 Tianyug Plaza 3F; app addr uses 625",
+      "note": "Minor naming/address number 623 vs 625.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

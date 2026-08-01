@@ -1,0 +1,369 @@
+{
+ "shard": 42,
+ "verdicts": [
+  {
+   "ids": [
+    4859,
+    4860
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4859,
+   "canonical_name": "派对街区黄石阳新城市广场店",
+   "canonical_addr": "湖北省黄石市阳新县兴国镇城市广场三楼派对街区",
+   "reason": "Same brand at Yangxin City Plaza 3F; WAHLAP and BemaniCN both name city plaza 3F. Baidu shows one venue at Xingguo Ave 1 Yangxin City Plaza F3.",
+   "evidence_url": "https://map.bemanicn.com/s/6893",
+   "evidence_quote": "派对街区（城市广场店） / 阳新城市广场3楼"
+  },
+  {
+   "ids": [
+    4863,
+    4864
+   ],
+   "verdict": "merge",
+   "confidence": "likely",
+   "canonical_id": 4864,
+   "canonical_name": "浪骄动漫深圳龙华纷享城店",
+   "canonical_addr": "广东省深圳市龙华区大浪商业中心后浪新天地一楼浪骄动漫",
+   "reason": "Baidu has only one 浪骄动漫(纷享城店) at 大浪商业中心后浪新天地一楼; 纷享城 and 后浪新天地 are the same complex. Floor 3 vs 1 is source noise; 5 m apart.",
+   "evidence_url": "https://map.bemanicn.com/s/4740",
+   "evidence_quote": "Baidu POI 浪骄动漫(纷享城店) at 后浪新天地一楼"
+  },
+  {
+   "ids": [
+    4867,
+    4868
+   ],
+   "verdict": "merge",
+   "confidence": "likely",
+   "canonical_id": 4868,
+   "canonical_name": "海乐儿重庆荣昌店",
+   "canonical_addr": "重庆市荣昌区昌元街道人民路12号海乐儿",
+   "reason": "Both list Rongchang Changyuan Renmin Rd / pedestrian street branch, not the separate Yingbin Ave main store. Baidu has one 人民步行街店; 473 m gap is approx geocode noise.",
+   "evidence_url": "https://map.bemanicn.com/s/6350",
+   "evidence_quote": "海乐儿欢乐城（步行街店） | 昌元街道人民路步行街"
+  },
+  {
+   "ids": [
+    4870,
+    5644
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 5644,
+   "canonical_name": "环游嘉年华 (龙华上邦百汇城)",
+   "canonical_addr": "海南省海口市龙华区金龙路5号上邦百汇城3号楼2楼",
+   "reason": "Same Shangbang Baihui City mall; ZIv page is one arcade at Building 3 F2 with the fuller cabinet list that includes the BemaniCN taiko lineup.",
+   "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10214",
+   "evidence_quote": "2nd Floor, Building 3, Shangbang Baihui City, No. 5 Jinlong Road"
+  },
+  {
+   "ids": [
+    4872,
+    4873
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4873,
+   "canonical_name": "海奥华星长春远大购物广场店",
+   "canonical_addr": "吉林省长春市南关区远大购物广场C座3F",
+   "reason": "Identical mall unit Yuanda Plaza Block C 3F, same games, identical 0 m coords from both sources.",
+   "evidence_url": "https://map.bemanicn.com/s/3894",
+   "evidence_quote": "海奥华星动漫城远大购物广场店 | 远大购物广场C座3F"
+  },
+  {
+   "ids": [
+    4877,
+    4880
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4880,
+   "canonical_name": "海洋联萌揭阳榕城店",
+   "canonical_addr": "广东省揭阳市榕城区榕华街道江南新城惠丰生活广场一楼海洋联萌",
+   "reason": "Same brand (联盟/联萌 spelling variant) at Rongcheng Huifeng Plaza 1F; addresses describe the same unit, 24 m apart.",
+   "evidence_url": "https://map.bemanicn.com/s/4719",
+   "evidence_quote": "海洋联盟（揭阳榕城惠丰广场店） | 榕城惠丰生活广场一层A1036商铺"
+  },
+  {
+   "ids": [
+    4878,
+    4879
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4879,
+   "canonical_name": "海洋联萌化州店",
+   "canonical_addr": "广东省茂名市化州市鉴江街道北京东三路茂和购物中心三楼海洋联萌",
+   "reason": "BemaniCN comment equates the malls: 茂和购物中心（橘洲一号）三楼 matches WAHLAP 茂和购物中心三楼.",
+   "evidence_url": "https://map.bemanicn.com/s/7223",
+   "evidence_quote": "店铺位置:茂和购物中心（橘洲一号）三楼 上楼后前往电影院右侧通道"
+  },
+  {
+   "ids": [
+    4883,
+    4884
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4884,
+   "canonical_name": "海绵动物郑州金水印象汇店",
+   "canonical_addr": "河南省郑州市金水区中州大道1188号印象汇四楼海绵动物家庭游乐中心",
+   "reason": "Exact same street number and floor (中州大道1188号印象汇四楼), 0 m coords, same maimai_dx.",
+   "evidence_url": "https://map.bemanicn.com/s/5590",
+   "evidence_quote": "海绵动物郑州印象汇店 | 中州大道1188号印象汇四楼"
+  },
+  {
+   "ids": [
+    4886,
+    4891
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4886,
+   "canonical_name": "润宝梦六安山水奥莱店",
+   "canonical_addr": "安徽省六安市金安区望城街道佛子岭中路永康路交叉口山水奥莱星河3楼润宝梦",
+   "reason": "Same intersection and mall (山水奥莱·星河 COCO City 3F); branch-name spelling 润宝梦/润宝梦想 only.",
+   "evidence_url": "https://map.bemanicn.com/s/6224",
+   "evidence_quote": "润宝梦想 | 佛子岭中路与永康路交叉口西北角山水奥莱·星河COCO City三楼"
+  },
+  {
+   "ids": [
+    4887,
+    4915
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4887,
+   "canonical_name": "润宝梦南阳宛城万达店",
+   "canonical_addr": "河南省南阳市宛城区仲景街道孔明路万达广场3楼润宝梦潮玩娱乐",
+   "reason": "Both are Nanyang Wanda Plaza 3F; Baidu lists one 润宝梦想潮玩娱乐 there. Complementary game counts (BemaniCN adds taiko).",
+   "evidence_url": "https://map.bemanicn.com/s/4456",
+   "evidence_quote": "润宝梦潮玩娱乐南阳万达店 | 新华东路1262号南阳万达广场"
+  },
+  {
+   "ids": [
+    4888,
+    4916
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4888,
+   "canonical_name": "润宝梦唐山路南万达店",
+   "canonical_addr": "河北省唐山市路南区万达广场2楼润宝梦",
+   "reason": "Same Lunan Wanda 2F west side; 0 m coords; Baidu has one 润宝梦想潮玩娱乐(唐山店) at 万达1号门二层.",
+   "evidence_url": "https://map.bemanicn.com/s/3247",
+   "evidence_quote": "润宝梦潮玩娱乐（唐山万达店） | 新华东道100号万达广场二层西侧"
+  },
+  {
+   "ids": [
+    6558,
+    6561
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 6558,
+   "canonical_name": "超爱顽唐山路南万达店",
+   "canonical_addr": "河北省唐山市路南区万达广场三号门二楼",
+   "reason": "Same brand 超爱顽 at Tangshan Lunan Wanda 2F east/gate 3; Baidu shows one 超爱顽潮玩街区 there. Distinct from co-located 润宝梦.",
+   "evidence_url": "https://map.bemanicn.com/s/6098",
+   "evidence_quote": "超爱顽潮玩街区（唐山路南万达店） | 新华东道100号万达广场二层东翼"
+  },
+  {
+   "ids": [
+    4889,
+    4905
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4889,
+   "canonical_name": "润宝梦商丘万达店",
+   "canonical_addr": "河南省商丘港汇万达二楼润宝梦",
+   "reason": "Same Shangqiu Ganghui Wanda 2F, 0 m coords, brand spelling variants only.",
+   "evidence_url": "https://map.bemanicn.com/s/5517",
+   "evidence_quote": "润宝梦想潮玩娱乐（商丘港汇万达店） | 商丘港汇万达广场二楼"
+  },
+  {
+   "ids": [
+    4890,
+    4908
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4890,
+   "canonical_name": "润宝梦四川泸州万达店",
+   "canonical_addr": "四川省泸州市龙马潭区万达广场3楼润宝梦",
+   "reason": "Same Luzhou Wanda Plaza 3F; short vs full brand name, 34 m geocode gap.",
+   "evidence_url": "https://map.bemanicn.com/s/3549",
+   "evidence_quote": "润宝梦想潮玩娱乐（泸州万达店） | 泸州万达广场三楼"
+  },
+  {
+   "ids": [
+    4892,
+    4893
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4893,
+   "canonical_name": "润宝梦想内江东兴万达店",
+   "canonical_addr": "四川省内江市东兴区万达广场三楼润宝梦想",
+   "reason": "Same Neijiang Dongxing Wanda 3F, identical coords, same brand.",
+   "evidence_url": "https://map.bemanicn.com/s/5624",
+   "evidence_quote": "润宝梦想内江万达店 | 东兴区汉安大道西段北侧万达广场内购物中心三楼"
+  },
+  {
+   "ids": [
+    4894,
+    4900
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4894,
+   "canonical_name": "润宝梦想无锡江阴店",
+   "canonical_addr": "江苏无锡市江阴市滨江东路18号江阴星河COCOCity3楼润宝梦",
+   "reason": "Same Jiangyin Xinghe COCO City 3F; Baidu has one 润宝梦潮玩娱乐(江阴店). Binjiang E Rd 18 and Qinwangshan Rd 19 are dual frontages of that mall.",
+   "evidence_url": "https://map.bemanicn.com/s/3107",
+   "evidence_quote": "润宝梦想潮玩娱乐(江阴星河店) | 江阴市秦望山路19号1幢L3-001-036"
+  },
+  {
+   "ids": [
+    4896,
+    4907
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4896,
+   "canonical_name": "润宝梦想樟树时代广场店",
+   "canonical_addr": "江西省樟树市杏佛路时代广场三楼",
+   "reason": "Same Zhangshu Times Plaza 3F (Xingfo Rd / Site Ave alias streets), 0 m coords.",
+   "evidence_url": "https://map.bemanicn.com/s/6713",
+   "evidence_quote": "润宝梦想潮玩娱乐（樟树时代广场店） | 四特大道时代广场3F"
+  },
+  {
+   "ids": [
+    4898,
+    4904
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4898,
+   "canonical_name": "润宝梦想潮玩信阳点美店",
+   "canonical_addr": "河南省信阳市商城县点美广场3F润宝梦想潮玩娱乐",
+   "reason": "Same Shangcheng County Dianmei Plaza 3F; 11 m apart; both sources name Dianmei Plaza.",
+   "evidence_url": "https://map.bemanicn.com/s/6388",
+   "evidence_quote": "润宝梦想潮玩娱乐商城点美广场店 | 赤城路与滨河路交叉口点美广场3楼"
+  },
+  {
+   "ids": [
+    6185,
+    6196
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 6196,
+   "canonical_name": "维京传奇资阳万达店",
+   "canonical_addr": "四川省资阳市雁江区万达广场三楼3031维京传奇卡牌动漫馆",
+   "reason": "Same unit number 3031 at Ziyang Wanda 3F; identical coords and brand.",
+   "evidence_url": "https://map.bemanicn.com/s/2829",
+   "evidence_quote": "维京传奇卡牌动漫馆 | 万达广场3031维京传奇卡牌动漫馆"
+  },
+  {
+   "ids": [
+    4921,
+    4922
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4922,
+   "canonical_name": "润宝梦邯郸万达广场店",
+   "canonical_addr": "河北省邯郸市邯山区陵园路万达广场三楼润宝梦",
+   "reason": "Same Hanshan Wanda 3F; Baidu 润宝梦潮玩娱乐(邯山万达店) at Fuhe South Ave 101 (mall at Fuhe/Lingyuan intersection).",
+   "evidence_url": "https://map.bemanicn.com/s/3054",
+   "evidence_quote": "润宝梦邯山万达店 | 滏河南大街101号万达广场3F"
+  },
+  {
+   "ids": [
+    4926,
+    4927
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4927,
+   "canonical_name": "淘乐街区中山西区天悦店",
+   "canonical_addr": "中山市西区街道长洲社区富华道32号天悦广场综合楼四层【L4001-L4003】",
+   "reason": "Same Fuhua Rd 32 Tianyue Plaza 4F unit, 0 m coords; BemaniCN adds taiko to shared maimai.",
+   "evidence_url": "https://map.bemanicn.com/s/7277",
+   "evidence_quote": "淘乐街区(天悦城店) | 富华道32号天悦城4楼"
+  },
+  {
+   "ids": [
+    4928,
+    4929
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4928,
+   "canonical_name": "淘气熊双桥金龙店",
+   "canonical_addr": "河北省承德市双桥区都统府大街金龙购物广场B座6楼淘气熊电玩城",
+   "reason": "Same Jinlong Shopping Plaza Block B 6F; Baidu has one 淘气熊电玩城(金龙店).",
+   "evidence_url": "https://map.bemanicn.com/s/4101",
+   "evidence_quote": "淘气熊电玩城（金龙店） | 都统府大街1号金龙购物广场B座6楼"
+  },
+  {
+   "ids": [
+    4930,
+    4933
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4933,
+   "canonical_name": "淘气狗德州宁津德百店",
+   "canonical_addr": "山东省德州市宁津县正阳路与黄河大街交叉口宁津德百西区三楼淘气狗家庭娱乐中心",
+   "reason": "Same Ningjin Debai west zone 3F at Huanghe/Zhengyang intersection; brand and floor match.",
+   "evidence_url": "https://map.bemanicn.com/s/5481",
+   "evidence_quote": "淘气狗乐园宁津德百店 | 黄河大街与正阳路交汇处西南角德百广场西区3F"
+  },
+  {
+   "ids": [
+    4931,
+    4934
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4934,
+   "canonical_name": "淘气狗德州齐河德百广场店",
+   "canonical_addr": "德州市齐河县齐河德百广场三楼淘气狗",
+   "reason": "Same Qihe Debai Plaza 3F, 0 m coords, same brand 淘气狗.",
+   "evidence_url": "https://map.bemanicn.com/s/6468",
+   "evidence_quote": "淘气狗乐园（齐河德百店） | 德百广场（齐河店）三楼西淘气狗乐园"
+  },
+  {
+   "ids": [
+    4932,
+    4935
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4935,
+   "canonical_name": "淘气狗禹城德百广场店",
+   "canonical_addr": "山东省德州市禹城市迎宾大道德百广场三楼淘气狗家庭娱乐中心",
+   "reason": "Same Yucheng Debai Plaza 3F; WAHLAP address is garbled (迎宾大饭店道) but still names Yucheng Debai; BemaniCN confirms 禹城德百广场3F.",
+   "evidence_url": "https://map.bemanicn.com/s/6210",
+   "evidence_quote": "淘气狗家庭娱乐中心（迎宾大道禹城德百广场店） | 禹城德百广场3F"
+  },
+  {
+   "ids": [
+    4938,
+    4939
+   ],
+   "verdict": "merge",
+   "confidence": "certain",
+   "canonical_id": 4939,
+   "canonical_name": "淘淘兔武穴永宁万达店",
+   "canonical_addr": "湖北省武穴市永宁大道123号万达广场四楼",
+   "reason": "Same Wuxue Wanda 4F; Baidu has one 淘淘兔家庭娱乐中心(万达店) at 永宁大道123号万达广场F4.",
+   "evidence_url": "https://map.bemanicn.com/s/3426",
+   "evidence_quote": "淘淘兔 | 武穴万达广场四楼"
+  }
+ ]
+}

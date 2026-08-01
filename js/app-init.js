@@ -108,6 +108,20 @@ window.AM = window.AM || {};
     });
   }
 
+  /* The event alone is not enough for one real case. shownCount is SEEDED at
+     0, and state.set is a no-op when the value has not changed, so a cold load
+     that legitimately shows nothing - "#3/0/0/games=", the link somebody
+     shares after turning every game off - writes 0 over 0, emits nothing, and
+     leaves the hint off. The map then looks exactly like failed tiles, which
+     is the single case the hint was added for. Reconciled once, after the
+     first applyFilters has run, so the flash-on-every-load the listener
+     comment warns about still cannot happen: by this point the count is the
+     real one, not the seed. */
+  function reconcileEmptyState() {
+    document.body.classList.toggle("am-empty",
+      AM.state.get("shownCount") === 0);
+  }
+
   function init(data) {
     ingest(data);
     $("meta-updated").textContent = "updated " + (data.updated || "?");
@@ -143,6 +157,9 @@ window.AM = window.AM || {};
     AM.panel.start();
     AM.settings.start();
     AM.nearby.start();
+
+    /* After markers.start(), which runs the first applyFilters. */
+    reconcileEmptyState();
 
     AM.map.startHashSync();
   }

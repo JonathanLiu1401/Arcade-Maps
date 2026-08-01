@@ -1,0 +1,291 @@
+{
+  "shard": 40,
+  "verdicts": [
+    {
+      "ids": [6395, 6396],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6396,
+      "canonical_name": "萌太极定州北门街万达店",
+      "canonical_addr": "河北省定州市北门街万达广场三楼萌太极家庭娱乐中心",
+      "reason": "Same Dingzhou Wanda Plaza 3F. Baidu lists one 萌太极 at 迎宾大道128号万达广场F3; 北门街 and 迎宾大道 are alternate streets for the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4075",
+      "evidence_quote": "迎宾大道万达广场三楼萌太极家庭娱乐中心"
+    },
+    {
+      "ids": [4571, 4573],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4573,
+      "canonical_name": "次元奥义长沙雨花店",
+      "canonical_addr": "湖南省长沙市雨花区洞井街道湘府中路48号高升大汉悦中心1栋1层1002号次元奥义电玩潮玩",
+      "reason": "Identical unit: 湘府中路48号大汉悦中心1栋1层1002号. Brand-only vs full branch name of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2085",
+      "evidence_quote": "湘府中路48号大汉悦中心1栋1层1002号"
+    },
+    {
+      "ids": [4575, 4576],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4576,
+      "canonical_name": "次元骇客遂宁银丰国际商业中心店",
+      "canonical_addr": "遂宁市银丰国际商业中心5楼次元骇客",
+      "reason": "Both at Suining 银丰国际; bemanicn short form and wahlap 5F branch name are the same venue.",
+      "evidence_url": "https://map.bemanicn.com/s/6661",
+      "evidence_quote": "商务区步行街银丰国际楼上"
+    },
+    {
+      "ids": [4580, 4581],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4581,
+      "canonical_name": "欢乐代码葫芦岛龙港财富街店",
+      "canonical_addr": "辽宁省葫芦岛市龙港区龙湾大街45号富尔沃财富街3F欢乐代码",
+      "reason": "Same 龙湾大街45号富尔沃财富街 3F. 103 m is geocode noise on one building.",
+      "evidence_url": "https://map.bemanicn.com/s/5619",
+      "evidence_quote": "龙湾大街45号富尔沃财富街三楼"
+    },
+    {
+      "ids": [4582, 4584],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 4582,
+      "canonical_name": "欢乐哆梦幻王国（远东店）",
+      "canonical_addr": "灵峰南路18号(远东江滨华府一期首层)",
+      "reason": "Baidu lists only one 欢乐哆 in Hezhou at 远东江滨华府首层; 远东财富中心 is an adjacent 远东 complex building, likely a wahlap mall-name mixup for the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2366",
+      "evidence_quote": "灵峰南路18号(远东江滨华府一期首层)"
+    },
+    {
+      "ids": [4583, 4585],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4585,
+      "canonical_name": "欢乐哆贺州八步麒麟广场店",
+      "canonical_addr": "广西壮族自治区贺州市八步区城东麒麟广场二楼欢乐哆",
+      "reason": "Both at 贺州麒麟广场 2F. Baidu also lists 欢乐哆梦幻王国(麒麟广场店) as one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/5327",
+      "evidence_quote": "城东新区F地块99号 麒麟广场2f"
+    },
+    {
+      "ids": [4601, 4602],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4601,
+      "canonical_name": "欢乐战纪成都印象城店",
+      "canonical_addr": "成都市成华区建设北二段133号印象城1栋2楼5号欢乐战记电玩城",
+      "reason": "Same Chengdu Chenghua Impression City 2F; short mall name vs full street address of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2163",
+      "evidence_quote": "成都印象城2F"
+    },
+    {
+      "ids": [4604, 4605],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4605,
+      "canonical_name": "欢乐拾光韶关乐昌店",
+      "canonical_addr": "广东省韶关乐昌市乐城街道盐围街9号悦购时代广场欢乐拾光",
+      "reason": "Same Lechang 盐围街 area; wahlap pins 悦购时代广场 unit, bemanicn uses nearby intersection of same plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/4464",
+      "evidence_quote": "乐昌市新村横街与盐围街交叉口南60米"
+    },
+    {
+      "ids": [7270, 7273],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7270,
+      "canonical_name": "骇客码头普洱思茅创基尚城店",
+      "canonical_addr": "云南省普洱市思茅区林源路666号创基尚城C区三楼骇客码头",
+      "reason": "Same 创基尚城 3F; C-zone detail from bemanicn matches official 创基尚城 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5577",
+      "evidence_quote": "林源路666号创基尚城C区三楼"
+    },
+    {
+      "ids": [4613, 4614],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4613,
+      "canonical_name": "欢乐潮玩东莞凤深店",
+      "canonical_addr": "广东省东莞市凤深大道126号财富新地（沃尔玛东莞凤岗中心店）2楼256室",
+      "reason": "Same unit 凤深大道126号 256; Walmart/财富新地 is the building label for that address.",
+      "evidence_url": "https://map.bemanicn.com/s/4193",
+      "evidence_quote": "凤深大道126号财富新地（沃尔玛东莞凤岗中心店）2楼256"
+    },
+    {
+      "ids": [4616, 4620],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4620,
+      "canonical_name": "欢乐猩球沈阳沈河万达店",
+      "canonical_addr": "辽宁省沈阳市沈河区文化路81号万达广场三楼",
+      "reason": "Same 文化路81号沈河万达 3F. One brand listing from wahlap and bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/3262",
+      "evidence_quote": "文化路81号万达广场F3"
+    },
+    {
+      "ids": [6433, 6434],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6433,
+      "canonical_name": "蓝猫精灵沈阳沈河万达店",
+      "canonical_addr": "辽宁省沈阳市沈河区文化路81号万达广场5楼蓝猫精灵潮玩中心",
+      "reason": "Same 蓝猫精灵 at 文化路81号万达 5F (distinct brand/floor from 欢乐猩球 3F in same mall).",
+      "evidence_url": "https://map.bemanicn.com/s/3096",
+      "evidence_quote": "文化路81号万达广场5楼"
+    },
+    {
+      "ids": [4617, 4621],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4621,
+      "canonical_name": "欢乐猩球沈阳浑南奥体店",
+      "canonical_addr": "辽宁省沈阳市浑南区营盘西街17号奥体万达广场二楼欢乐猩球",
+      "reason": "Same Olympic Sports Wanda 2F branch; short vs full street address.",
+      "evidence_url": "https://map.bemanicn.com/s/6071",
+      "evidence_quote": "万达广场沈阳奥体店二楼"
+    },
+    {
+      "ids": [4619, 4622],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4622,
+      "canonical_name": "欢乐猩球沈阳浑南龙湖天街",
+      "canonical_addr": "辽宁省沈阳市浑南区智慧四街5-24号A栋龙湖天街二楼欢乐猩球嘉年华(龙湖天街店)",
+      "reason": "Same Longfor Paradise Walk 2F; both names include 龙湖天街.",
+      "evidence_url": "https://map.bemanicn.com/s/7324",
+      "evidence_quote": "龙湖天街2F"
+    },
+    {
+      "ids": [4624, 4625],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4624,
+      "canonical_name": "欢乐玩国岳阳岳阳楼店",
+      "canonical_addr": "湖南省岳阳市岳阳楼区五里牌街道花板桥社区金虹大厦1552号一楼欢乐玩国花板桥店",
+      "reason": "Baidu confirms 欢乐玩国(花板桥店) at 金虹大厦1552号; 金虹广场 is the same complex as 金虹大厦.",
+      "evidence_url": "https://map.bemanicn.com/s/5073",
+      "evidence_quote": "金鹗中路502号岳阳楼区花板桥金虹广场(洞庭大道西)"
+    },
+    {
+      "ids": [4631, 4632],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4632,
+      "canonical_name": "欢乐集合地哈尔滨道里万达店",
+      "canonical_addr": "黑龙江省哈尔滨市道里区友谊路232号万达广场二楼欢乐集合地电玩城",
+      "reason": "Baidu places 欢乐集合地 at 中央大街232号印象城A座2楼; 友谊路232 and 中央大街232 are the same Wanda/Impression City block at Flood Control Monument.",
+      "evidence_url": "https://map.bemanicn.com/s/62",
+      "evidence_quote": "道里区中央大街232号万达影院A座2楼(近防洪纪念塔）"
+    },
+    {
+      "ids": [4634, 4635],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4634,
+      "canonical_name": "欢喜莲莲南充顺庆美宇店",
+      "canonical_addr": "四川省南充市顺庆区美宇1227购物广场9栋201号欢喜莲莲家庭娱乐中心",
+      "reason": "Baidu lists one 欢喜莲莲 at 红光路86号1227广场9幢2层1号; 美宇1227 is that mall (unit 201 / 9栋2层).",
+      "evidence_url": "https://map.bemanicn.com/s/5716",
+      "evidence_quote": "顺庆区红光路86号顺庆1227第9幢2层1号"
+    },
+    {
+      "ids": [4636, 4638],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4638,
+      "canonical_name": "欢喜莲莲成都新都苏宁广场店",
+      "canonical_addr": "四川省成都市新都区蜀龙大道中段1333号苏宁易购广场3楼326号欢喜莲莲",
+      "reason": "Identical unit 蜀龙大道中段1333号 3楼326 at Xindu Suning Plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/5663",
+      "evidence_quote": "蜀龙大道中段1333号1栋3层附326号"
+    },
+    {
+      "ids": [4647, 4653],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4653,
+      "canonical_name": "欢悦天堂武汉东湖光谷天地店",
+      "canonical_addr": "湖北省武汉市东湖高新区关山大道光谷天地2楼欢悦天堂",
+      "reason": "Same Optics Valley Tiandi 2F on Guanshan Ave; 1期 and cinema-adjacent note describe one store.",
+      "evidence_url": "https://map.bemanicn.com/s/1983",
+      "evidence_quote": "关东街道关山大道光谷天地1期2楼华谊电影院旁"
+    },
+    {
+      "ids": [4648, 4649],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4648,
+      "canonical_name": "欢悦天堂仙桃宏达新天地",
+      "canonical_addr": "湖北省仙桃市宏达路新天地国际广场3楼欢悦天堂",
+      "reason": "Same Xiantao 新天地国际广场 3F; zero distance and matching floor.",
+      "evidence_url": "https://map.bemanicn.com/s/4678",
+      "evidence_quote": "新天地国际广场3楼欢悦天堂"
+    },
+    {
+      "ids": [4650, 4655],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4655,
+      "canonical_name": "欢悦天堂武汉江汉南国北都泛悦店",
+      "canonical_addr": "湖北省武汉市江汉区姑嫂路南国北都泛悦城市广场三楼欢悦天堂南国店",
+      "reason": "Same 姑嫂树路/姑嫂路 泛悦Mall 北都 3F; street spelling variants for one plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/2008",
+      "evidence_quote": "姑嫂树路12号泛悦Mall（北都店）3楼"
+    },
+    {
+      "ids": [4652, 4658],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4658,
+      "canonical_name": "欢悦天堂武汉青山奥莱店",
+      "canonical_addr": "湖北省武汉市青山区武商城市奥5楼A馆",
+      "reason": "Same Wushang City Outlet 5F A-zone in Qingshan; zero distance.",
+      "evidence_url": "https://map.bemanicn.com/s/2869",
+      "evidence_quote": "建设二路武商城市奥莱5楼A区"
+    },
+    {
+      "ids": [4654, 4660],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4654,
+      "canonical_name": "欢悦天堂武汉江岸城市广场店",
+      "canonical_addr": "湖北省武汉市江岸区后湖大道汉口城市广场A区2楼欢悦天堂",
+      "reason": "Same Hankou City Plaza A-zone 2F on Houhu Ave; unit number 111 is the same plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/3919",
+      "evidence_quote": "后湖大道111号汉口城市广场A区1号楼二层"
+    },
+    {
+      "ids": [4664, 4665],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4665,
+      "canonical_name": "欢派大玩家河源龙川泰华城店",
+      "canonical_addr": "广东省河源市龙川县老隆镇泰华城鑫鲜汇超市二楼内侧",
+      "reason": "Same Longchuan 泰华城; bemanicn gives supermarket 2F detail for the official 泰华城 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6145",
+      "evidence_quote": "龙川县老隆镇泰华城鑫鲜汇超市二楼内侧"
+    },
+    {
+      "ids": [5520, 5530],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5520,
+      "canonical_name": "王者之风宁波北仑银泰店",
+      "canonical_addr": "浙江省宁波市北仑区新碶街道岷山路505号北仑银泰城四楼王者之风",
+      "reason": "Same Beilun Intime City 4F; unit 04196-B is the shop within that mall floor.",
+      "evidence_url": "https://map.bemanicn.com/s/6542",
+      "evidence_quote": "岷山路505号(银泰城)2幢505号四楼 04196-B铺位"
+    },
+    {
+      "ids": [4668, 4669],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4668,
+      "canonical_name": "欣动空间武汉东西湖中百店",
+      "canonical_addr": "武汉市东西湖区吴家山田园街中百百货2楼欣动空间",
+      "reason": "Same Dongxihu Zhongbai 2F; 田园街 and 田园大道108号 are the same shopping center.",
+      "evidence_url": "https://map.bemanicn.com/s/6199",
+      "evidence_quote": "东西湖区田园大道108号中百购物中心二楼"
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "shard": 7,
+  "checked": 62,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+    "C:/Users/jonny/Desktop/Arcade Maps/data_raw/ziv.json (enriched 2026-07-31)",
+    "C:/Users/jonny/Desktop/Arcade Maps/data_raw/maimai_intl.json",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9801",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11062",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6910",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=595",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3167",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1648",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=84",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6877",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9564",
+    "https://www.atlantanewsfirst.com/2025/09/25/popular-gwinnett-county-family-fun-center-shut-down-late-september/",
+    "https://www.11alive.com/article/news/local/gwinnett-county-family-fun-center-to-end-operations/85-5cb17b41-939d-4f22-ade9-6977224d96d1",
+    "https://kartdirectory.racing/us/circuit/malibu-norcross/",
+    "https://neondreamsarcade.com/",
+    "https://neondreamsarcade.com/our-games/",
+    "https://nest.cab/",
+    "https://www.maxfunlandny.com/broadway.html",
+    "https://marcade.us/",
+    "https://ohwownickelarcade.com/",
+    "https://ofwtinleypark.com/",
+    "https://www.oldnortharcade.com/huntington",
+    "https://www.oldnortharcade.com/columbus",
+    "https://nickelmaniaarcade.com/",
+    "https://www.museumofplay.org/",
+    "https://en.wikipedia.org/wiki/Uptown_Rapid",
+    "https://en.wikipedia.org/wiki/Main_Event_Entertainment",
+    "https://nominatim.openstreetmap.org/",
+    "https://www.aurcade.com/locations/view.aspx?id=1678"
+  ],
+  "corrections": [
+    {
+      "id": 12848,
+      "name": "Malibu Grand Prix",
+      "field": "status",
+      "current": "open (listed with DDR EXTREME + other)",
+      "proposed": "permanently closed (last day 2025-09-28; later branded Malibu Norcross)",
+      "confidence": "certain",
+      "evidence_url": "https://www.atlantanewsfirst.com/2025/09/25/popular-gwinnett-county-family-fun-center-shut-down-late-september/",
+      "evidence_quote": "Malibu Norcross' last day in business is Sunday, Sept. 28.",
+      "note": "Also confirmed by 11Alive and kartdirectory.racing (This Venue is Permanently Closed, ceased 2025-09-28). Herschend/Palace Entertainment exit. Same Norcross Brook Hollow site as shard listing (news/kart use 5400 Brook Hollow Pkwy; shard has 5295 - same complex). Do not send players here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12848,
+      "name": "Malibu Grand Prix",
+      "field": "website",
+      "current": "http://www.malibugrandprix.com/site/Norcross/index.html",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "http://www.malibugrandprix.com/site/Norcross/index.html",
+      "evidence_quote": "HTTP 521 from origin (Cloudflare could not reach origin host) when fetched 2026-07-31.",
+      "note": "Official Norcross subpage no longer serves content after permanent closure. proposed null = remove dead website claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12848,
+      "name": "Malibu Grand Prix",
+      "field": "location",
+      "current": {
+        "addr": "5295 Brook Hollow Parkway Norcross Georgia, 30071, Norcross"
+      },
+      "proposed": {
+        "addr": "5400 Brook Hollow Parkway, Norcross, GA 30071 (permanently closed)",
+        "note": "also seen as 5295 in older listings; same site"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://kartdirectory.racing/us/circuit/malibu-norcross/",
+      "evidence_quote": "Address: 5400 Brook Hollow Parkway, Oakbrook Station, Norcross, Gwinnett County, Georgia, GA 30071. Permanently Closed. Operations ended September 28, 2025.",
+      "note": "Status correction is the important one. Address discrepancy 5295 vs 5400 is secondary.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12856,
+      "name": "Max Funland (86th St)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "ongeki",
+        "other",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai",
+        "ongeki",
+        "other",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9801",
+      "evidence_quote": "maimai (Japan) - Left of DrumMania, Right of IIDX; Price 16 token / 1 credit; Condition Perfect. Page last updated 2026-07-25.",
+      "note": "NOT on SEGA ALL.Net NA maimai DX International locator, so treat as offline/import maimai (key maimai), not networked maimai_dx. machine_prices already has maimai key. Local ziv.json enriched 2026-07-31 also lists maimai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12856,
+      "name": "Max Funland (86th St)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "ddr": 1,
+        "gitadora": 1,
+        "iidx": 1,
+        "ongeki": 1,
+        "taiko": 2,
+        "wacca": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "ddr": 1,
+        "gitadora": 1,
+        "iidx": 1,
+        "maimai": 1,
+        "ongeki": 1,
+        "taiko": 2,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9801",
+      "evidence_quote": "Single maimai listing at Perfect; IIDX listed as beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL); 2x taiko Asian version.",
+      "note": "count_evidence should remain ziv_listed for these. IIDX Lightning model already in cab_models.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12858,
+      "name": "Max Funland (Broadway)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "maimai",
+        "ongeki",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11062",
+      "evidence_quote": "maimai (Japan) - Next to ongeki; 17 tokens; Perfect. Page updated 2026-07-26. Also 2x CHUNITHM VERSE, DDR WORLD Universal, 2x GITADORA GALAXY WAVE DELTA, 2x ONGEKI bright MEMORY (one Not Working).",
+      "note": "Not on ALL.Net NA maimai DX list. machine_prices already includes maimai. One ONGEKI cab marked Not Working as of 2026-07-26 - inventory still lists 2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12858,
+      "name": "Max Funland (Broadway)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "ddr": 1,
+        "gitadora": 2,
+        "ongeki": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "ddr": 1,
+        "gitadora": 2,
+        "maimai": 1,
+        "ongeki": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11062",
+      "evidence_quote": "maimai count 1; chunithm 2; gitadora 2 (DrumMania + GuitarFreaks); ongeki 2 (left Perfect, right Not Working).",
+      "note": "Official broadway page confirms address 47 Broadway NY 10006 and hours Mon-Sun 11am-10pm (matches shard).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12857,
+      "name": "Max Funland (Borough Park)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 1,
+        "ddr": 1,
+        "ongeki": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9564",
+      "evidence_quote": "Local ziv.json 2026-07-31 game_counts: chunithm 1, ddr 1, ongeki 1, taiko 1. Notes list CHUNITHM LUMINOUS, DDR WORLD Universal, ONGEKI, Taiko.",
+      "note": "No maimai at Borough Park (unlike 86th/Broadway). Counts are ziv_listed quality.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12901,
+      "name": "New Game Plus+",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_evo",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "museca",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_evo",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai",
+        "museca",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6910",
+      "evidence_quote": "maimai FiNALE (Japan) Free Play Great - New headphone jacks, bright displays, clean buttons. Edited 07/3/2026.",
+      "note": "Use key maimai (FiNALE offline), NOT maimai_dx. Not on ALL.Net NA DX locator. machine_prices already has maimai: free play. Visitor comments (older) warn some listed games may be offline - call 843-702-0103 before a long trip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12901,
+      "name": "New Game Plus+",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 1,
+        "dance_evo": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "groove_coaster": 1,
+        "iidx": 1,
+        "maimai": 1,
+        "museca": 1,
+        "popn": 1,
+        "project_diva": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6910",
+      "evidence_quote": "Local ziv dump 2026-07-31 game_counts match listed singles; GITADORA listed as DrumMania + GuitarFreaks (2). ZIv page last updated 2026-07-03.",
+      "note": "All count_evidence would be ziv_listed quality. Do not invent real floor counts beyond ZIv machine rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12901,
+      "name": "New Game Plus+",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null
+      },
+      "proposed": {
+        "iidx_lm": null,
+        "maimai_finale": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6910",
+      "evidence_quote": "maimai FiNALE (Japan); beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL).",
+      "note": "IIDX LM already present. FiNALE is pre-DX generation still running offline.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12901,
+      "name": "New Game Plus+",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.facebook.com/newgameplusflorence",
+      "confidence": "likely",
+      "evidence_url": "https://www.facebook.com/newgameplusflorence",
+      "evidence_quote": "Facebook page title New Game Plus+ | Florence SC; also listed in chamber/kineticist directories at 1653 W Palmetto St.",
+      "note": "No dedicated storefront domain found. Facebook is the public contact surface. Phone cited on ZIv: 8437020103.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12927,
+      "name": "ONE MORE EXTRA STAGE",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "1313 w El Camino Real , suite A, Mountain View , Ca 94040"
+      },
+      "proposed": {
+        "lat": 37.3882035,
+        "lng": -122.0897071,
+        "addr": "1313 W El Camino Real, Suite A, Mountain View, CA 94040"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://nominatim.openstreetmap.org/search?q=1313+W+El+Camino+Real+Mountain+View+CA+94040&format=json&limit=3",
+      "evidence_quote": "OSM way 382460068 building/retail at 1313 West El Camino Real, Mountain View CA: lat 37.3882035, lon -122.0897071 (also nearby house points ~37.38865,-122.08938).",
+      "note": "ALL.Net maimai_intl dump still has lat=0,lng=0 for this venue - that is why the app pin is missing. Suite A pin may be slightly off within the building; OSM retail footprint is best available. Still listed on SEGA ALL.Net NA maimai DX International as of 2026-07-31 fetch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12927,
+      "name": "ONE MORE EXTRA STAGE",
+      "field": "status",
+      "current": "open (allnet only, no coords)",
+      "proposed": "open (on SEGA ALL.Net maimai DX International NA list)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ONE MORE EXTRA STAGE - 1313 w El Camino Real , suite A, Mountain View , Ca 94040 appears on maimai DX International Version North America location list.",
+      "note": "Official network locator is strong evidence of a currently serviced maimai DX cab. No ZIv page. Hours/website still unknown - do not invent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12920,
+      "name": "Odyssey Fun World",
+      "field": "location",
+      "current": {
+        "addr": "Tinley Park Illinois, Tinley Park",
+        "lat": 41.541480423511,
+        "lng": -87.787471252254
+      },
+      "proposed": {
+        "addr": "19111 Oak Park Ave, Tinley Park, IL 60477",
+        "lat": 41.5421459,
+        "lng": -87.7871351
+      },
+      "confidence": "certain",
+      "evidence_url": "https://ofwtinleypark.com/",
+      "evidence_quote": "19111 Oak Park Ave Tinley Park, IL 60477 | Phone: (708) 429-3800",
+      "note": "Shard city-only address. Official site (redirect from odysseyfunworld.com) gives full street address. OSM nominatim for that address: 41.5421459,-87.7871351 (pin already nearly correct).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12920,
+      "name": "Odyssey Fun World",
+      "field": "hours",
+      "current": "Tue-Wed closed",
+      "proposed": "Mon-Thu 10:00-21:00; Fri 10:00-22:00; Sat 11:00-22:00; Sun 12:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://ofwtinleypark.com/",
+      "evidence_quote": "Monday-Thursday: 10am - 9pm; Friday: 10am - 10pm; Saturday: 11am -10pm; Sunday: 12pm - 9pm. Banner notes Indoor Park Limited Opening Sat & Sun Only for some attractions.",
+      "note": "Replaces incomplete ZIv hours. Copyright footer still shows 2019 so hours may drift - likely not certain. Pump It Up Fiesta last confirmed on ZIv 2023-08-28; official site mentions Arcade/Game Floor but does not name PIU - PIU presence is stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12920,
+      "name": "Odyssey Fun World",
+      "field": "website",
+      "current": null,
+      "proposed": "https://ofwtinleypark.com/",
+      "confidence": "certain",
+      "evidence_url": "https://ofwtinleypark.com/",
+      "evidence_quote": "Official Odyssey Fun World Tinley Park site with booking, attractions, address and hours.",
+      "note": "odysseyfunworld.com 301-redirects here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12865,
+      "name": "mDaWg's House",
+      "field": "status",
+      "current": {
+        "shown_as_map_venue": true,
+        "hours": "Mon-Sun closed",
+        "games": [
+          "other"
+        ]
+      },
+      "proposed": {
+        "private_residence": true,
+        "public_walkin": false,
+        "access": "contact first (Facebook/AIM per ZIv info); hours listed closed every day"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1827",
+      "evidence_quote": "People are welcome to come over and play, but I have to know about it first. Don't just show up expecting to play for free. Contact me on Facebook or AIM (thps4style) first. / ITG2 Dedicab. Hours Mon-Sun closed.",
+      "note": "Residential pin West Deptford NJ. Should not appear as a walk-in commercial arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12892,
+      "name": "My House",
+      "field": "status",
+      "current": {
+        "shown_as_map_venue": true,
+        "games": [
+          "other"
+        ],
+        "info": "DDR modded to ITG, call 706-263-4782"
+      },
+      "proposed": {
+        "private_residence": true,
+        "public_walkin": false,
+        "access": "text/call first"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3080",
+      "evidence_quote": "DDR Machine modded to in the groove. has over 4000 songs. want to come play text me or call at 706-263-4782. Address Calhoun Georgia.",
+      "note": "Explicit private home collection. City-only address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12926,
+      "name": "Omni's House",
+      "field": "status",
+      "current": {
+        "shown_as_map_venue": true,
+        "games": [
+          "other"
+        ]
+      },
+      "proposed": {
+        "private_residence": true,
+        "public_walkin": false,
+        "access": "call or Twitter DM for exact address; marker intentionally offset"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3382",
+      "evidence_quote": "Private cab ITG2 dedicab in home. Marker is slightly off for privacy. See Facebook for phone number and details. Please call or twitter DM for exact address.",
+      "note": "Private home. Do not treat as public arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12895,
+      "name": "Namco Time Out - Rushmore Mall",
+      "field": "status",
+      "current": "open (DDR SuperNOVA; hours listed)",
+      "proposed": "likely permanently closed / long-term non-operational (do not treat as a playable destination)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=595",
+      "evidence_quote": "Last updated 2013-07-24 by xEcho2949x (13 years ago). Single machine DanceDanceRevolution SuperNOVA. Comment: Pads are in poor shape... Do not come here.",
+      "note": "No hard 2025-2026 closure press release found. Aurcade listing last updated 2013-02-26. Mall rebranded Uptown Rapid (Wikipedia); Namco Cybertainment Time Out chain largely wound down. SuperNOVA-era food-court arcade is almost certainly gone. Confidence likely not certain because no explicit closed primary source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12891,
+      "name": "Muvico Starlight 20",
+      "field": "status",
+      "current": "open (Guitar Hero Arcade only)",
+      "proposed": "unverified / likely not a useful rhythm destination (ZIv last update 2015; brand Muvico defunct years ago)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=84",
+      "evidence_quote": "Last updated 2015-05-04 by Max (11 years ago). Only machine: Guitar Hero Arcade. No hours. No comments.",
+      "note": "Muvico chain was sold (Carmike/AMC era). Whether any theater still operates at 18002 Highwood Preserve Pkwy under a successor brand was not confirmed in this pass. Only non-rhythm GH arcade on file. Flag for recheck; do not invent closed without a primary source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12908,
+      "name": "Nickelmania - Orem",
+      "field": "hours",
+      "current": "Fri 11:00-12:00; Sat 10:00-12:00; Sun closed",
+      "proposed": "Mon-Thu 11:00-23:00; Fri 11:00-00:00; Sat 10:00-00:00; Sun closed",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6877",
+      "evidence_quote": "Monday: 11:00 -11:00; Tuesday: 11:00 - 11:00; Wednesday: 11:00 - 11:00; Thursady: 11:00 - 11:00; Friday: 11:00 - 12:00; Saturday: 10:00 - 12:00; Closed Sunday (Thanks Utah.). Page updated 2026-03-27.",
+      "note": "Shard hours dropped Mon-Thu. Same hours repeated in info_text. Official nickelmaniaarcade.com confirms Orem location at 1000 N State St active.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12924,
+      "name": "Old North Arcade",
+      "field": "location",
+      "current": {
+        "addr": "22 pullman square Huntington West Virginia, 25701, Huntington"
+      },
+      "proposed": {
+        "addr": "16 Pullman Square, Huntington, WV 25701"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.oldnortharcade.com/huntington",
+      "evidence_quote": "Address: 16 Pullman Square, Huntington, WV, 25701, United States",
+      "note": "Official site says 16 Pullman Square; shard has 22 pullman square. Same Pullman Square complex - verify unit number on-site if critical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12924,
+      "name": "Old North Arcade",
+      "field": "hours",
+      "current": "Mon-Thu 04:00-01:00; Fri 04:00-02:00; Sat-Sun 12:00-02:00",
+      "proposed": "Mon-Wed 17:00-01:00; Thu 17:00-01:00; Fri 17:00-02:00; Sat 13:00-02:00; Sun 13:00-01:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.oldnortharcade.com/huntington",
+      "evidence_quote": "Monday-Wednesday: 5pm-1am; Thursday: 5pm-1am; Friday: 5pm-2am; Saturday: 1pm-2am; Sunday: 1pm-1am",
+      "note": "Shard 04:00 open looks like a bad parse of 4pm or leftover. Official opens 5pm weekdays.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12925,
+      "name": "Old North Arcade",
+      "field": "hours",
+      "current": "Mon-Thu 16:00-01:00; Fri 16:00-02:30; Sat 12:00-02:30; Sun 12:00-01:00",
+      "proposed": "Mon-Wed 16:00-00:00; Thu 16:00-01:00; Fri 16:00-02:00; Sat 13:00-02:00; Sun 13:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.oldnortharcade.com/columbus",
+      "evidence_quote": "Monday-Wednesday: 4pm-12am; Thursday: 4pm-1am; Friday: 4pm-2am; Saturday: 1pm-2am; Sunday: 1pm-12am. Address 2591 North High Street, Columbus, OH 43202.",
+      "note": "Address already correct. Official closes midnight Sun-Wed not 1am; Sat opens 1pm not noon; Fri closes 2am not 2:30.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12925,
+      "name": "Old North Arcade",
+      "field": "website",
+      "current": "http://oldnortharcade.com/",
+      "proposed": "https://www.oldnortharcade.com/columbus",
+      "confidence": "likely",
+      "evidence_url": "https://www.oldnortharcade.com/columbus",
+      "evidence_quote": "Dedicated Columbus location page under www.oldnortharcade.com.",
+      "note": "Prefer https and city-specific path.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12876,
+      "name": "MIT - Walker Memorial",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "other",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4742",
+      "evidence_quote": "info_text: StepmaniaX cab, running SimplyLove. / The cabinet is located in the basement of Walker's Memorial. notes Cabs: StepMania Converted Cabinet.",
+      "note": "Access restricted to MIT ID / Discord guests. Building open to ID holders 6AM-2AM; listed hours 02:00-06:00 look inverted or special - recheck. ddr.mit.edu did not respond in this session.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12851,
+      "name": "Marcade (Rockaway Townsquare)",
+      "field": "status",
+      "current": "open (2nd location of Marcade)",
+      "proposed": "open; sole remaining Marcade location as of 2025-06-24 (Rockaway Mall only)",
+      "confidence": "certain",
+      "evidence_url": "https://marcade.us/",
+      "evidence_quote": "Marcade is only operating from the Rockaway Mall as of 6-24-25. Largest arcade yet. Right below the food court. Hours Sun 12pm-6pm; Mon-Thu 10am-8pm; Fri-Sat 10am-9pm.",
+      "note": "Hours in shard already match official. WACCA still on ZIv (2 cabs) but not named on official site - keep WACCA until disproved. Free-play pass pricing not per-game.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

@@ -32,9 +32,33 @@ window.AM = window.AM || {};
 
   /* ---------- game chips ---------- */
 
+  /* The number on a chip is "how many stores land on the map if I pick this
+     game", so it has to be computed under the SOURCE and CAB filters that are
+     live right now. AM.data.gameCounts is a build-time total that knows about
+     neither, and printing it meant the chip and the map disagreed out loud:
+     with only ZIv enabled and only SDVX picked, the chip read 1,031 while the
+     header and the omnibox both read 877. search.js already computes the
+     honest number for the omnibox rows and caches it, so all three surfaces
+     now read it from there rather than keeping a second, staler tally. */
+  function chipCount(g) {
+    if (AM.search && AM.search.visibleCountForGame) {
+      return AM.search.visibleCountForGame(g);
+    }
+    return (AM.data.gameCounts || {})[g] || 0;
+  }
+
+  function syncChipCounts() {
+    var box = $("game-chips");
+    if (!box) return;
+    var chips = box.children;
+    for (var i = 0; i < chips.length; i++) {
+      var n = chips[i].querySelector(".n");
+      if (n) n.textContent = U.num(chipCount(chips[i].dataset.g));
+    }
+  }
+
   function buildChips() {
     var box = $("game-chips");
-    var counts = AM.data.gameCounts;
     AM.data.gamesInData.forEach(function (g) {
       var b = document.createElement("button");
       b.className = "chip";
@@ -42,7 +66,7 @@ window.AM = window.AM || {};
       b.type = "button";
       b.style.setProperty("--c", C.GAME_COLOR[g] || C.GAME_COLOR.other);
       b.innerHTML = '<span class="dot"></span>' + esc(C.GAME_LABEL[g] || g) +
-        ' <span class="n tabnum">' + U.num(counts[g] || 0) + "</span>";
+        ' <span class="n tabnum">' + U.num(chipCount(g)) + "</span>";
       b.addEventListener("click", function () { AM.state.toggleGame(g); });
       box.appendChild(b);
     });
@@ -2155,6 +2179,14 @@ window.AM = window.AM || {};
   function start() {
     AM.state.on("selectedGames", syncChips);
     AM.state.on("selectedCabs", syncCabFilters);
+    /* Source and cab changes move what a chip's number would be, so the
+       numbers are re-read whenever they do. search.js subscribes to the same
+       two keys to clear its count cache, and it registers during
+       AM.search.build(), which app-init runs before any start() - so by the
+       time these listeners fire the cache is already empty and they read a
+       freshly computed number rather than the previous filter's answer. */
+    AM.state.on("enabledSources", syncChipCounts);
+    AM.state.on("selectedCabs", syncChipCounts);
     AM.state.on("shownCount", syncCount);
     /* A Google photo arrives after the panel has already painted, so it needs
        the same late-arrival re-render the enrichment fetch gets. Bumping

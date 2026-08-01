@@ -1,0 +1,291 @@
+{
+  "shard": 5,
+  "verdicts": [
+    {
+      "ids": [5120, 5123, 5126],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5126,
+      "canonical_name": "潮棱镜·潮玩街区（德汇万达店）",
+      "canonical_addr": "新疆维吾尔自治区乌鲁木齐市沙依巴克区奇台路德汇中心商业D幢B1层",
+      "reason": "All three point to Dehui Center Building D B1 / 德汇中心负一楼. ZIv, BemaniCN and WAHLAP are the same shop under different name styles.",
+      "evidence_url": "https://map.bemanicn.com/s/4722",
+      "evidence_quote": "潮棱镜·潮玩街区（德汇万达店） 奇台路德汇中心商业D幢B1层"
+    },
+    {
+      "ids": [5371, 5372, 5376],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5376,
+      "canonical_name": "热带时光家庭娱乐中心 深圳店",
+      "canonical_addr": "广东省深圳市宝安区福永街道怀德生活广场3楼热带时光",
+      "reason": "Baidu lists one Tropical Time at 怀德生活广场3楼, and 中科广场 is the same complex (same road address as 怀德生活广场). ZIv/BemaniCN Zhongke Plaza and WAHLAP Huaide Plaza are one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/4595",
+      "evidence_quote": "热带时光家庭娱乐中心 深圳店 中国广东省深圳市宝安区福永街道中科广场3楼; Baidu: 福永街道方元城3009号怀德生活广场3楼"
+    },
+    {
+      "ids": [5380, 5389, 5393],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5380,
+      "canonical_name": "热带雨林主题乐园清远清城壹悦城店",
+      "canonical_addr": "清远市清城区东湖路1号壹悦城三楼热带雨林",
+      "reason": "Two WAHLAP name variants plus BemaniCN all list 壹悦城 3F / 东湖路1号壹悦城3楼. Same mall floor, same brand.",
+      "evidence_url": "https://map.bemanicn.com/s/7029",
+      "evidence_quote": "热带雨林电玩空间 东湖路1号壹悦城3楼"
+    },
+    {
+      "ids": [5471, 5474, 5476],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5471,
+      "canonical_name": "爱玩荟家庭游乐中心（大望路店）",
+      "canonical_addr": "北京市朝阳区建国路93号万达广场A座新世界百货2楼东侧",
+      "reason": "All three are CBD Wanda Plaza Block A New World Department Store 2F at 建国路93号. Complementary game lists on one shop floor.",
+      "evidence_url": "https://map.bemanicn.com/s/5322",
+      "evidence_quote": "爱玩荟家庭游乐中心（大望路店） 建国路93号CBD万达广场A座（新世界百货（大望路店））2楼东侧"
+    },
+    {
+      "ids": [5497, 5502, 5504],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5502,
+      "canonical_name": "猩际争霸（吾悦广场云山道店）",
+      "canonical_addr": "天津市滨海新区吾悦广场2楼Z202猩际争霸",
+      "reason": "Same Binhai Wuyue Plaza 2F / 云山道819号. ZIv, WAHLAP and BemaniCN are one branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4637",
+      "evidence_quote": "猩际争霸（吾悦广场云山道店） 云山道819号滨海吾悦广场2楼"
+    },
+    {
+      "ids": [7133, 7149, 7214],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7149,
+      "canonical_name": "风云再起莘庄维璟印象城店",
+      "canonical_addr": "上海市闵行区七莘路1507号莘庄维璟印象城L4层",
+      "reason": "All list Xinzhuang Weijing INCITY / 维璟印象城 L4 at 七莘路1507号. Matching maimai/taiko counts across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/491",
+      "evidence_quote": "风云再起莘庄维璟印象城店 七莘路1507号莘庄维璟印象城L4层"
+    },
+    {
+      "ids": [5514, 5515, 5519],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5519,
+      "canonical_name": "王者之风 (永旺梦乐城购物中心店)",
+      "canonical_addr": "天津市滨海新区时尚东路29号永旺梦乐城2楼王者之风",
+      "reason": "Same AEON Mall / 永旺梦乐城 F2 at 时尚东路29号. Three sources, one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2215",
+      "evidence_quote": "王者之风 (永旺梦乐城购物中心店) 滨海新区泰达大街泰达时尚东路29号永旺梦乐城购物中心F2层"
+    },
+    {
+      "ids": [5517, 5529, 5532],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5517,
+      "canonical_name": "王者之风游乐体验中心(鲁能城店)",
+      "canonical_addr": "天津市南开区鲁能城购物中心B1F-B40王者之风电玩城（麦当劳对面）",
+      "reason": "All are Luneng City B1 shop B40. About 53 m spread is geocode noise on the same mall basement unit.",
+      "evidence_url": "https://map.bemanicn.com/s/3633",
+      "evidence_quote": "王者之风游乐体验中心贵和店(原鲁能城店) 鲁能城负一B1F-B40"
+    },
+    {
+      "ids": [5518, 5527, 5533],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5518,
+      "canonical_name": "王者之风游乐体验中心（大悦城店）",
+      "canonical_addr": "天津市和平区南京路189号和平大悦城3F-01号",
+      "reason": "Same Heping Joy City unit 3F-01 at 南京路189号. Matching chunithm/maimai lineups.",
+      "evidence_url": "https://map.bemanicn.com/s/2908",
+      "evidence_quote": "王者之风游乐体验中心（大悦城店） 五大道街道南京路189号和平大悦城3F-01号"
+    },
+    {
+      "ids": [5557, 5558, 5559],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5558,
+      "canonical_name": "玩乐猩球电玩城",
+      "canonical_addr": "广东省深圳市坪山区马峦街道比亚迪路4045号悦阾SPACE购物中心三楼玩乐猩球电玩城",
+      "reason": "All three list Yuelin SPACE / 悦阾SPACE 3F at 比亚迪路4045号. Same Pingshan branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4505",
+      "evidence_quote": "玩乐猩球电玩城 马峦街道比亚迪路4045号悦阾SPACE购物中心3层"
+    },
+    {
+      "ids": [5571, 5572, 5573],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5573,
+      "canonical_name": "玩宙电玩世界北京团结新里店",
+      "canonical_addr": "北京市朝阳区团结湖东里3-5号（团结新里内）",
+      "reason": "Baidu knows one 玩宙电玩世界 at 团结湖东里3-5号. Addresses all refer to Tuanjie Xinli cultural park; about 112 m is approx geocode scatter, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/6183",
+      "evidence_quote": "玩宙电玩世界 团结湖东里3-5号（团结新里内）; Baidu: 玩宙电玩世界 | 团结湖街道团结湖东里3-5号"
+    },
+    {
+      "ids": [5720, 5722, 5723],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5722,
+      "canonical_name": "环游地平线家庭娱乐中心",
+      "canonical_addr": "上海市松江区方松街道开元地中海商业广场北5门2楼东侧",
+      "reason": "Same Kaiyuan Mediterranean Plaza 2F east. Matching chunithm/maimai counts.",
+      "evidence_url": "https://map.bemanicn.com/s/3739",
+      "evidence_quote": "环游地平线家庭娱乐中心 新松江路开元地中海商业广场2楼东侧"
+    },
+    {
+      "ids": [5887, 5888, 5898],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5898,
+      "canonical_name": "真快活coohooMax（北京半岛万科广场店）",
+      "canonical_addr": "北京市房山区长阳广阳新路9号院1号楼2层201-L2001真快活电玩",
+      "reason": "Baidu lists one Coohoo Max at 房山印象城 广阳新路9号院1号楼2层. Fangshan INCITY, 半岛万科, and 印象城 are the same mall renaming; not two branches.",
+      "evidence_url": "https://map.bemanicn.com/s/2531",
+      "evidence_quote": "真快活coohooMax（北京半岛万科广场店） 北京市房山区张家场路北京房山印象城2层; Baidu: 真快活Coohoo Max(房山印象城店) 广阳新路9号院1号楼房山印象城2层201-L2001"
+    },
+    {
+      "ids": [5960, 5964, 5968],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5964,
+      "canonical_name": "神采飞扬硚口凯德店",
+      "canonical_addr": "湖北省武汉市硚口区武胜路/中山大道238号凯德广场7楼神采飞扬",
+      "reason": "Same CapitaLand Wusheng Plaza F7 at 中山大道238号/武胜路. Matching maimai/sdvx/taiko lineup.",
+      "evidence_url": "https://map.bemanicn.com/s/3409",
+      "evidence_quote": "神采飞扬硚口凯德店 中山大道238号凯德广场武胜路店F7层"
+    },
+    {
+      "ids": [6024, 6029, 6038],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6038,
+      "canonical_name": "童年搭档(万州鸿欧广场店)",
+      "canonical_addr": "重庆市万州区牌楼街道体育路200号鸿鸥/鸿欧广场F2层",
+      "reason": "Same Hong'ou Plaza F2 at 体育路200号. Matching chunithm/maimai counts.",
+      "evidence_url": "https://map.bemanicn.com/s/2479",
+      "evidence_quote": "童年搭档(万州鸿欧广场店) 体育路200号鸿鸥广场F2层"
+    },
+    {
+      "ids": [6109, 6111, 6115],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6109,
+      "canonical_name": "米其漫游艺城（绿景佐阾红树林购物中心店）",
+      "canonical_addr": "广东省深圳市福田区沙嘴路8号绿景佐阾红树林购物中心2层（客服中心旁）",
+      "reason": "Same Lvjing ZuoLing Mangrove mall 2F. Matching chunithm/maimai/taiko lineup.",
+      "evidence_url": "https://map.bemanicn.com/s/2799",
+      "evidence_quote": "米其漫游艺城（绿景佐阾红树林购物中心店） 沙嘴路8号绿景佐阾红树林购物中心2层（客服中心旁）"
+    },
+    {
+      "ids": [6110, 6112, 6113],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6113,
+      "canonical_name": "米其漫游艺城(红山六九七九商业中心店)",
+      "canonical_addr": "广东省深圳市龙华区民治街道红山社区红山六九七九二期7栋B117",
+      "reason": "Identical unit B117 at Hongshan 6979 phase 2. WAHLAP and BemaniCN addresses match character-for-character.",
+      "evidence_url": "https://map.bemanicn.com/s/3862",
+      "evidence_quote": "米其漫游艺城(红山六九七九商业中心店) 龙华区民治街道红山社区红山六九七九二期7栋B117"
+    },
+    {
+      "ids": [6128, 6131, 6146],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6131,
+      "canonical_name": "精灵岛 · 聚有引力家庭娱乐中心（里水嘉州广场店）",
+      "canonical_addr": "广东省佛山市南海区里水镇里水大道南29号/里水大道中76号 里水嘉州(佳明)广场三楼",
+      "reason": "Baidu maps 嘉州/嘉洲 and 佳明广场 as the same Lishui complex (里水大道). All three sources list 3F of that plaza; no second 精灵岛 branch nearby.",
+      "evidence_url": "https://map.bemanicn.com/s/3715",
+      "evidence_quote": "精灵岛 · 聚有引力家庭娱乐中心（里水嘉州广场店） 南海区里水大道南29号 里水嘉州广场 3楼; Baidu: 精灵岛潮玩城(佛山佳明广场店) 里水大道中76号里水嘉洲广场4栋第三层"
+    },
+    {
+      "ids": [6242, 6243, 6245],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6242,
+      "canonical_name": "胖东来时代广场动漫乐园",
+      "canonical_addr": "河南省许昌市魏都区七一路胖东来时代广场五楼动漫乐园",
+      "reason": "Two WAHLAP name variants and BemaniCN all list the same 胖东来时代广场 5F anime park. Exact same coordinates.",
+      "evidence_url": "https://map.bemanicn.com/s/308",
+      "evidence_quote": "胖东来时代广场动漫乐园 七一路中段胖东来时代广场"
+    },
+    {
+      "ids": [6255, 6256, 6257],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6256,
+      "canonical_name": "舞玩伏特（凯德闵行商业中心店）",
+      "canonical_addr": "上海市闵行区莘庄镇凯德闵行商业中心（凯德龙之梦）3楼舞玩伏特",
+      "reason": "CapitaLand Minhang / 凯德龙之梦 3F is one mall. All three sources describe the same Xinzhuang branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5581",
+      "evidence_quote": "舞玩伏特（凯德闵行商业中心店） 莘庄镇凯德闵行商业中心（凯德龙之梦）3楼"
+    },
+    {
+      "ids": [6309, 6313, 6318],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6318,
+      "canonical_name": "菲游乐(上海浦东禹悦汇店)",
+      "canonical_addr": "上海市浦东新区惠南镇沪南公路9968号上海浦东禹悦汇2层",
+      "reason": "Baidu only knows one FEFE SHEEP at 沪南公路9968号禹悦汇. WAHLAP 禹州商业广场 is the same Huinan complex under the developer name; floor 1 vs 2 is a minor source mismatch, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/5200",
+      "evidence_quote": "菲游乐(上海浦东禹悦汇店) 浦东新区惠南镇沪南公路9968号上海浦东禹悦汇2层; Baidu: 菲游乐(浦东禹悦汇店) 沪南公路9968号上海浦东禹悦汇"
+    },
+    {
+      "ids": [6310, 6316, 6322],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6316,
+      "canonical_name": "菲游乐奉贤龙湖天街店",
+      "canonical_addr": "上海市奉贤区南桥镇金海公路3800号A-3F-44b,A-3F-45a,A-3F-46幢",
+      "reason": "Same Longfor Tianjie unit A-3F-44b/45a/46 at 金海公路3800号. Matching chunithm 2 + maimai 3 counts.",
+      "evidence_url": "https://map.bemanicn.com/s/7028",
+      "evidence_quote": "菲游乐奉贤龙湖天街店 奉贤区南桥镇金海公路3800号A-3F-44b,A-3F-45a,A-3F-46幢"
+    },
+    {
+      "ids": [6311, 6317, 6325],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6317,
+      "canonical_name": "菲游乐宝杨宝龙广场店",
+      "canonical_addr": "上海市宝山区同济路669号宝龙广场3楼菲游乐",
+      "reason": "Same Baolong Plaza Block 1 3F at 同济路669号. Matching maimai count 2 across ZIv/BemaniCN.",
+      "evidence_url": "https://map.bemanicn.com/s/654",
+      "evidence_quote": "菲游乐宝杨宝龙广场店 上海市宝山区同济路669弄宝龙广场1幢4号F3-014(3楼走到底)"
+    },
+    {
+      "ids": [6543, 6544, 6545],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6544,
+      "canonical_name": "超吉乐玩家福清利桥古街店",
+      "canonical_addr": "福建省福清市江滨路东百利桥古街B1区负一层超吉乐",
+      "reason": "Identical B1 address on all three rows; 6544 and 6545 are pure WAHLAP duplicate name variants of the same Fuqing shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3870",
+      "evidence_quote": "超吉乐玩家福清利桥古街店 江滨路东百利桥古街B1区负一层超吉乐"
+    },
+    {
+      "ids": [6663, 6664, 6666],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6663,
+      "canonical_name": "趣玩汇南京新街口正洪大厦店（原大风）",
+      "canonical_addr": "南京市秦淮区洪武路38号正洪大厦1~2层趣玩汇",
+      "reason": "Baidu has only one 趣玩汇 at 洪武路38号正洪大厦. ZIv's Tianfeng/No.26 is a bad English address for the same Xinjiekou shop.",
+      "evidence_url": "https://map.bemanicn.com/s/315",
+      "evidence_quote": "趣玩汇南京新街口正洪大厦店（原大风） 洪武路38号正洪大厦102栋; Baidu: 趣玩汇电玩(新街口店) 洪武路38号正洪大厦1~2层"
+    },
+    {
+      "ids": [6693, 6694, 6695],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6694,
+      "canonical_name": "蹦蹦乐园南桥百联店",
+      "canonical_addr": "上海市奉贤区南桥镇百齐路288号百联南桥购物中心3楼",
+      "reason": "Baidu lists one 蹦蹦乐园 at 百齐路288 百联南桥3楼. 288 vs 588 are phase/entrance numbers for the same Bailian Nanqiao center; not two parks.",
+      "evidence_url": "https://map.bemanicn.com/s/2668",
+      "evidence_quote": "蹦蹦乐园南桥百联店 百齐路588号百联南桥购物中心F3; Baidu: 蹦蹦乐园(南桥百联店) 南桥镇百齐路288号百联南桥购物中心3楼"
+    }
+  ]
+}

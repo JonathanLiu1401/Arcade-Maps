@@ -1,0 +1,546 @@
+{
+  "shard": 30,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON (69 shops OK, 1 HTTP 404)",
+    "https://map.bemanicn.com/games title_id map",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China (670 arcades; all 115 shard ZIv IDs matched)",
+    "shard_030.json embedded info_text / notes / prices"
+  ],
+  "corrections": [
+    {
+      "id": 2545,
+      "name": "大玩家 Super Player（西铁营万达店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5095",
+      "evidence_quote": "arcades: title_id=1 (maimai DX) quantity=2 version=国行2025 coin=5; title_id=31 (太鼓之达人) quantity=1 version=2026年春 coin=6. shop status=1 updated_at=2026-06-01. comment: 26.4新添太鼓一台...26.6新添舞萌一台。",
+      "note": "App listed only other. BemaniCN status=1 shows 2x maimai DX and 1x Nijiiro taiko. ZIv has 0 machines but lastUpdate 2026-07-06; prefer BemaniCN machine list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2545,
+      "name": "大玩家 Super Player（西铁营万达店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5095",
+      "evidence_quote": "title_id=1 quantity=2; title_id=31 quantity=1. Comments: 左机是26.6疑似从通万宝贝计划搬来的新机器; 26.4新添太鼓一台。",
+      "note": "Counts from BemaniCN quantity fields.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2545,
+      "name": "大玩家 Super Player（西铁营万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5095",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN hour integers only. App hours_text was empty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4044,
+      "name": "星际传奇 STAR LEGEND (光环购物中心店)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1146",
+      "evidence_quote": "title_id=1 (maimai DX) quantity=1 version=国行 coin=4; status=1 updated_at=2026-07-27T08:13:01Z. Machine comment 7月27实况 about hard buttons.",
+      "note": "App notes still say Cabs: maimai PiNK and prices key is classic maimai. BemaniCN classifies the live cab as maimai DX (title_id 1). ZIv still names maimai PiNK (stale name). Prefer BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4044,
+      "name": "星际传奇 STAR LEGEND (光环购物中心店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1146",
+      "evidence_quote": "title_id=1 quantity=1",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4044,
+      "name": "星际传奇 STAR LEGEND (光环购物中心店)",
+      "field": "prices",
+      "current": {
+        "maimai": "CN¥3.00 for 3 songs"
+      },
+      "proposed": {
+        "maimai_dx": "4 coins per credit (BemaniCN coin=4; shop price field=1.5 yuan/coin)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1146",
+      "evidence_quote": "arcade coin=4 for maimai DX; shop price=1.5",
+      "note": "Price key should move from maimai to maimai_dx. Absolute CNY depends on package rate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4044,
+      "name": "星际传奇 STAR LEGEND (光环购物中心店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1146",
+      "evidence_quote": "comment: 营业时间早上10点到晚上10点",
+      "note": "Free-text hours on BemaniCN. Integer end_time=10 is ambiguous alone; free text is clear.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2707,
+      "name": "天空之城 Sky City Amusement World (南京鹏欣水游城店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 9
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3855",
+      "evidence_quote": "title_id=1 quantity=3 version=Ver.CN1.51-D comment: 共3台机台. title_id=3 quantity=2. ZIv also lists exactly 3x 舞萌DX 2026 with the same 共3台 comment; lastUpdate 2026-07-25.",
+      "note": "App maimai_dx=9 is far above both BemaniCN and ZIv. chunithm=2 matches. Count 9 looks like a data error.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3523,
+      "name": "开心季潮范儿电玩 Chao Fan-er Arcade",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4617",
+      "evidence_quote": "title_id=1 quantity=1 version=CN1.56-A comment: 12.17 撤走一台; shop comment: 12.17 舞萌撤走一台; updated_at=2026-06-30.",
+      "note": "ZIv still lists 2x maimai (lastUpdate 2026-07-19) without the removal note. BemaniCN has explicit removal and quantity=1. Prefer BemaniCN for count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1815,
+      "name": "全境方舟 Ark of the Realm (信和·东门商厦)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "title_id=1 qty=1; title_id=31 qty=1 version=国行虹版; title_id=15 qty=1 version=12亚. Total taiko=2. updated 2026-07-01.",
+      "note": "Taiko total = 1 Nijiiro + 1 Asian 12 old. Old unit comment says 目前关机.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1815,
+      "name": "全境方舟 Ark of the Realm (信和·东门商厦)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": [
+          "nijiiro",
+          "asia_12_old"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "title_id=31 version=国行虹版; title_id=15 version=12亚 comment: 目前关机",
+      "note": "Players care about Nijiiro vs old Asian unit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1815,
+      "name": "全境方舟 Ark of the Realm (信和·东门商厦)",
+      "field": "prices",
+      "current": {
+        "maimai_dx": "CN¥5.00 for 3 songs / CN¥5.00 to continue",
+        "taiko": "CN¥2.00 for 3 songs / CN¥2.00 to continue"
+      },
+      "proposed": {
+        "maimai_dx": "5 coins/credit",
+        "taiko_nijiiro": "14 coins (comment: 4 songs)",
+        "taiko_old_12asia": "3 coins"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "maimai coin=5; nijiiro coin=14 comment 4曲; old taiko coin=3; shop price field=1.0",
+      "note": "App single taiko price CN¥2 matches only the old 12亚 unit if coin~CN¥1, not Nijiiro at 14 coins.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3350,
+      "name": "宝贝计划(怀柔店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6498",
+      "evidence_quote": "title_id=1 quantity=2 version=2025 comment: 新机 机况较好",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4043,
+      "name": "星际传奇京基水贝KK TIME店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3871",
+      "evidence_quote": "title_id=31 quantity=1 version=国行 comment: 新增一台新框; title_id=15 quantity=1 version=12亚. Total taiko=2.",
+      "note": "1 Nijiiro + 1 old Asian 12.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4043,
+      "name": "星际传奇京基水贝KK TIME店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": [
+          "nijiiro",
+          "asia_12_old"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3871",
+      "evidence_quote": "title_id=31 国行; title_id=15 12亚 框体11亚，本体12亚",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1816,
+      "name": "全境方舟 Ark of the Realm (深圳天河城)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-23:00",
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4065",
+      "evidence_quote": "start_time=10 end_time=22; updated_at=2026-04-11",
+      "note": "BemaniCN integer hours. App had 23:00 close.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1816,
+      "name": "全境方舟 Ark of the Realm (深圳天河城)",
+      "field": "prices",
+      "current": {
+        "maimai_dx": "CN¥5.00 for 3 songs / CN¥5.00 to continue",
+        "taiko": "CN¥12.00 for 3 songs / CN¥12.00 to continue"
+      },
+      "proposed": {
+        "maimai_dx": "5 coins",
+        "taiko": "10 coins (BemaniCN coin field)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4065",
+      "evidence_quote": "maimai coin=5; taiko coin=10; shop price=1.0",
+      "note": "App taiko CN¥12 may assume a different coin-to-yuan rate. Primary fact is 10 coins.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1816,
+      "name": "全境方舟 Ark of the Realm (深圳天河城)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4065",
+      "evidence_quote": "title_id=1 quantity=1; title_id=31 quantity=1",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1639,
+      "name": "乐玩客潮玩城 Fun Guest (沙坪坝店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 09:30-22:30",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2722",
+      "evidence_quote": "shop comment: 营业时间9:30-22:30; updated_at=2026-07-16",
+      "note": "Free-text hours on BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1509,
+      "name": "世宇乐园 UNiS LAND",
+      "field": "hours",
+      "current": "Mon-Sun 09:00-20:00",
+      "proposed": "Opens 09:30; close ~20:00 weekdays / ~20:30 holidays (BemaniCN free text)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/73",
+      "evidence_quote": "comment: 9.30开店 正常情况工作日8点节假日8.30闭店，wiki只能写整数这里标注一下; start_time=9 end_time=20",
+      "note": "App 09:00-20:00 is close. Free text says 9:30 open and weekday close 8pm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1509,
+      "name": "世宇乐园 UNiS LAND",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": [
+          "asia_12_crt"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/73",
+      "evidence_quote": "title_id=15 version=12亚 comment: CRT版本 不是很清晰",
+      "note": "Not Nijiiro.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1509,
+      "name": "世宇乐园 UNiS LAND",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/73",
+      "evidence_quote": "title_id=1 quantity=1; title_id=15 quantity=1",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2144,
+      "name": "哆啦乐图 DORALETU ★",
+      "field": "hours",
+      "current": "Mon-Sun 11:00-23:00",
+      "proposed": "Mon-Sun 11:00-00:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/207",
+      "evidence_quote": "start_time=11 end_time=24; updated_at=2026-07-19",
+      "note": "BemaniCN end_time 24 typically means midnight. jubeat/wacca/pump still valid via ZIv 2026-07-25 even though BemaniCN only lists maimai/chu/taiko.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3958,
+      "name": "星河风云 GALAXY TRIBE (五角场店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/3280",
+      "evidence_quote": "BemaniCN: chunithm qty=2, taiko qty=1, maimai qty=2, updated 2026-06-04. ZIv lastUpdate 2026-07-19: 4x 中二节奏2026 + 2x 太鼓 + 2x 舞萌DX machine rows.",
+      "note": "SOURCE CONFLICT. Newer ZIv supports app counts (4 chu, 2 taiko). Older BemaniCN lists 2 and 1. proposed=null: do not change until human re-check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2693,
+      "name": "天天玩Game（上海徐汇汇银广场店）",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "gitadora": 1,
+        "iidx": 4,
+        "jubeat": 2,
+        "maimai_dx": 7,
+        "sdvx": 4,
+        "taiko": 3
+      },
+      "proposed": {
+        "maimai_dx": 7,
+        "chunithm": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/262",
+      "evidence_quote": "BemaniCN: maimai qty=7, chunithm qty=4, taiko title_id=31 qty=1 with comment 和两台2024春在一起. ZIv 2026-07-15 lists Lightning IIDX x4, SDVX, jubeat音乐魔方 x2, GITADORA.",
+      "note": "Do NOT remove iidx/sdvx/jubeat/gitadora: BemaniCN omits Konami titles here but ZIv and taiko comment reference them. maimai=7 and chunithm=4 confirmed. taiko app=3 may be correct if 1 Nijiiro + 2 old units; BemaniCN only tracks title_id 31 as 1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2384,
+      "name": "城市英雄Party House(熙地港)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 2,
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1,
+        "jubeat": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1382",
+      "evidence_quote": "BemaniCN taiko title_id=31 quantity=1 updated 2026-07-26. ZIv 2026-07-07 lists 2x jubeat音乐魔方.",
+      "note": "Reduce taiko 2->1 per BemaniCN. Keep jubeat: ZIv still has 2 jubeat CN cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1506,
+      "name": "世嘉华翰 SEGAWORLD Beijing",
+      "field": "status",
+      "current": "open (implied; games=['other'])",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1507",
+      "evidence_quote": "ZIv lastUpdateTime=2010-11-15 15:01:09 (15 years ago); machines=[]; no BemaniCN ID.",
+      "note": "Extremely stale ZIv entry with zero machines. Cannot confirm permanent closure. Flag for maintainer recheck. proposed=null means do not invent a closed flag without primary evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1704,
+      "name": "乐酷电玩俱乐部(金源燕莎店)",
+      "field": "status",
+      "current": "open with gitadora/iidx/sdvx/stepmaniax",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5166",
+      "evidence_quote": "ZIv lastUpdateTime=2019-10-09; machines IIDX 26 Rootage, GITADORA EXCHAIN, SDVX VIVID WAVE. No BemaniCN ID. ~6 years stale.",
+      "note": "Listed game versions are many generations behind. Existence and current lineup unverified. Strong candidate for recheck; do not treat listed games as current.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2411,
+      "name": "城市英雄株洲店",
+      "field": "status",
+      "current": "open with gitadora/jubeat/other including maimai ORANGE PLUS",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2407",
+      "evidence_quote": "ZIv lastUpdateTime=2017-08-31 (8 years ago). Machines: maimai ORANGE PLUS, DrumManiaXG, GuitarFreaksXG, jubeat. No BemaniCN ID.",
+      "note": "maimai ORANGE PLUS is pre-DX; Chinese live maimai is DX. Entire row almost certainly obsolete. Cannot prove closed from sources alone.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2424,
+      "name": "城市英雄电玩(汉口店)",
+      "field": "status",
+      "current": "open with jubeat/other; notes include classic maimai",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2608",
+      "evidence_quote": "ZIv lastUpdateTime=2018-06-04. Machines include 舞萌 (maimai classic), jubeat, TOP STAR. No BemaniCN ID.",
+      "note": "Decade-stale ZIv row. Unverified existence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1742,
+      "name": "佐佐佑佑电玩城",
+      "field": "status",
+      "current": "open with drs/maimai_dx/pump/sdvx",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5613",
+      "evidence_quote": "ZIv lastUpdateTime=2022-02-08; machines: DRS, PIU XX, SDVX VIVID WAVE, maimai classic, maimai DX 2021. No BemaniCN ID.",
+      "note": "4 years stale; classic maimai still listed with DX 2021. Unverified current state.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2081,
+      "name": "吉睿潮玩 JIRUI Fashion Play（祥云小镇 Shine Hills）",
+      "field": "other",
+      "current": {
+        "info_text_bemanicn_id": 5628,
+        "games": [
+          "maimai_dx",
+          "other",
+          "taiko"
+        ]
+      },
+      "proposed": {
+        "bemanicn_id": null,
+        "note": "BemaniCN page gone; ZIv still live as of 2026-07-07"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5628",
+      "evidence_quote": "HTTP 404 Not Found for /s/5628. ZIv arcade still returns lastUpdateTime=2026-07-07 with maimai DX, taiko Nijiiro, Initial D x4, etc.",
+      "note": "Do NOT mark venue closed. BemaniCN ID 5628 is dead or renumbered. ZIv still shows active rhythm cabs in July 2026. Drop or refresh BEMANICN ID in info_text.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1630,
+      "name": "乐玩客 Fun Guest (潮玩城大融城店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1997",
+      "evidence_quote": "BemaniCN lists maimai DX quantity=1 and taiko quantity=1; status=1 updated 2026-05-16.",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1968,
+      "name": "卡通尼· Fun Forward（东莞大朗）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1927",
+      "evidence_quote": "title_id=1 quantity=1; title_id=31 quantity=1; updated_at=2026-07-28",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1934,
+      "name": "卡乐比乐园",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4214",
+      "evidence_quote": "title_id=1 quantity=1; title_id=31 quantity=1",
+      "note": null,
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

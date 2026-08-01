@@ -1,0 +1,795 @@
+{
+  "shard": 16,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON for all 71 bemanicn-linked venues",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China (Guangdong subset)",
+    "Address/coordinate cross-check of wahlap vs bemanicn dual-source rows",
+    "WAHLAP maimai.wahlap.com attempted but HTTP 567 edge block - wahlap-only open status not reconfirmed live"
+  ],
+  "corrections": [
+    {
+      "id": 5089,
+      "name": "潮乐里佛山南海云峰店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4935",
+      "evidence_quote": "2026.7.6编辑 中二两台机子均已撤走，只剩下舞萌和e舞",
+      "note": "BemaniCN shop page updated 2026-07-24 lists only maimai DX (qty 1). Comment explicitly states both CHUNITHM cabs were removed on 2026-07-06. e舞 remains as non-catalog other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5276,
+      "name": "潮立方游乐城",
+      "field": "status",
+      "current": "open (implied; listed with maimai_dx)",
+      "proposed": "unknown / possibly closed - verify before visiting",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5656",
+      "evidence_quote": "2025.9.13 因聚众db再次停业 现况：对于是否再次开业尚未知晓",
+      "note": "BemaniCN still has status=1 and lists 1x maimai DX, but the shop comment (last page update 2025-11-29) says the venue closed again on 2025-09-13 after a prior fire-safety shutdown, and reopening is unknown. High traveler risk. No newer confirmation in this pass.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5347,
+      "name": "炫次方深圳南山宝能太古城店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4835",
+      "evidence_quote": "arcades include WACCA quantity 2 version ver. 3 plus maimai DX qty 1",
+      "note": "BemaniCN lists 2x WACCA (CN ver.3). App currently only has maimai_dx and other. BemaniCN updated 2026-01-31.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5347,
+      "name": "炫次方深圳南山宝能太古城店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4835",
+      "evidence_quote": "WACCA quantity:2; maimai DX quantity:1",
+      "note": "Add wacca:2 from BemaniCN. maimai count unchanged.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5619,
+      "name": "玩美攻略（深圳世纪汇）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5843",
+      "evidence_quote": "maimai DX qty 2, WACCA qty 2, 头文字D qty 4; comment: 里面有舞萌、华卡、头文字D Zero、极品飞车",
+      "note": "华卡 = WACCA. BemaniCN lists 2x WACCA CN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5619,
+      "name": "玩美攻略（深圳世纪汇）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5843",
+      "evidence_quote": "WACCA quantity:2; maimai DX quantity:2",
+      "note": "Counts from BemaniCN arcades list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5619,
+      "name": "玩美攻略（深圳世纪汇）",
+      "field": "prices",
+      "current": null,
+      "proposed": "Day pass (一票通玩): weekday CNY 268, holiday CNY 298 (not per-credit). Ticket then QR entry.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5843",
+      "evidence_quote": "一票通玩一天的店铺，平日268，节假日298",
+      "note": "Also applies to wahlap twin id 5618 if kept separate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5089,
+      "name": "潮乐里佛山南海云峰店",
+      "field": "location",
+      "current": "广东省佛山市南海区丹灶镇云峰路8号",
+      "proposed": "广东省佛山市南海区丹灶镇云峰路8号佰汇盈广场B座3楼",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4935",
+      "evidence_quote": "丹灶镇云峰路8号佰汇盈广场B座3楼",
+      "note": "App address omits mall name and floor. approx:true pin remains acceptable for China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4943,
+      "name": "渔乐玩家湛江霞山店",
+      "field": "other",
+      "current": "separate venue from id 4944; same exact address",
+      "proposed": "merge into id 4944 (bemanicn 2098) or mark as duplicate of 渔乐玩家（上悦城店）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2098",
+      "evidence_quote": "渔乐玩家（上悦城店） 广东省湛江市霞山区东新路6号银地上悦广场二层2-2124号商铺; maimai DX qty 1; status=1; updated 2026-03-30",
+      "note": "id 4943 (wahlap-only) and id 4944 (bemanicn) share the identical address string and identical lat/lng (unit 2-2124). Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5380,
+      "name": "热带雨林主题乐园清远清城壹悦城店",
+      "field": "other",
+      "current": "duplicate of id 5389 at same lat/lng; both wahlap-only maimai_dx",
+      "proposed": "merge 5380 with 5389; prefer richer bemanicn id 5393 (bem 7029) at same 壹悦城 3F",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7029",
+      "evidence_quote": "热带雨林电玩空间 东湖路1号壹悦城3楼; maimai DX qty 2, 太鼓 qty 1, jubeat音乐魔方 qty 2; updated 2026-07-23",
+      "note": "5380 and 5389 are the same venue under two wahlap name variants (identical coords 23.712255,113.030282). id 5393 is the bemanicn record for the same 壹悦城 3F store with fuller game list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5389,
+      "name": "热带雨林清远清城壹悦城店",
+      "field": "other",
+      "current": "duplicate of 5380; incomplete vs bemanicn 5393",
+      "proposed": "remove or merge into 5393",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7029",
+      "evidence_quote": "热带雨林电玩空间 东湖路1号壹悦城3楼",
+      "note": "See correction on 5380. 5389 is pure wahlap duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5348,
+      "name": "炫次方深圳宝安海岸城店",
+      "field": "other",
+      "current": "wahlap-only twin of id 5344 at same 万丰海岸城 A馆 E515",
+      "proposed": "merge into id 5344 (bemanicn 3833); retain 5344 games chunithm:2 maimai_dx:1",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3833",
+      "evidence_quote": "炫次方万丰海岸城店 ...万丰海岸城购物中心A馆五层E515; maimai DX 1, CHUNITHM 2; updated 2026-06-15",
+      "note": "Near-identical address (E515 五楼). ZIv 9683 X3-Play 炫次方 (万丰海岸城) updated 2026-07-31 confirms chunithm:2 maimai:1 at same mall unit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4971,
+      "name": "游戏大魔方珠海香洲宝龙店",
+      "field": "other",
+      "current": "wahlap-only twin of id 4984",
+      "proposed": "merge into id 4984 (bemanicn 1807)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1807",
+      "evidence_quote": "游戏大魔方（珠海宝龙城店） 高新区金峰北路88号宝龙城L3-032 (前星际传奇店址); maimai DX qty 1; status=1",
+      "note": "Same 宝龙城 L3-032 unit. id 5340 炫彩大玩家 is a DIFFERENT unit L3-020 in the same mall (separate bemanicn 6128); do not merge with 游戏大魔方.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5071,
+      "name": "漫游胖达广州时尚天河店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3083",
+      "evidence_quote": "漫游胖达 ...时尚天河... maimai DX 1, CHUNITHM 2, 太鼓之达人 1; updated 2026-07-17",
+      "note": "wahlap twin of bemanicn id 5070 at same 时尚天河中五街046. Prefer merge into 5070.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5071,
+      "name": "漫游胖达广州时尚天河店",
+      "field": "other",
+      "current": "wahlap twin of 5070",
+      "proposed": "merge into id 5070 (bemanicn 3083)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3083",
+      "evidence_quote": "天河路299号时尚天河商业广场-1层中区中五街046",
+      "note": "Same unit 046. Dual-source duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5041,
+      "name": "源盛玩家湛江霞山爱琴海购物中心店",
+      "field": "location",
+      "current": "湛江市霞山区东新路2号爱琴海购物中心二楼",
+      "proposed": "prefer bemanicn floor: 爱琴海国际广场3楼 (id 5040); sources disagree 2F vs 3F",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6520",
+      "evidence_quote": "源盛玩家 广东省湛江市霞山区东新路2号爱琴海国际广场3楼; maimai DX qty 2; updated 2026-05-01",
+      "note": "wahlap row says 二楼; bemanicn row 5040 says 3楼. Same mall 爱琴海. Likely one venue. Canonical should be bemanicn 3F with maimai:2 after floor confirm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5041,
+      "name": "源盛玩家湛江霞山爱琴海购物中心店",
+      "field": "other",
+      "current": "wahlap twin near id 5040",
+      "proposed": "merge into id 5040 after resolving 2F vs 3F floor",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6520",
+      "evidence_quote": "源盛玩家 ...爱琴海国际广场3楼; maimai DX qty 2",
+      "note": "Near-identical coords to 5040. Floor text differs between sources.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5185,
+      "name": "潮玩派对惠州惠城瑞峰广场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4432",
+      "evidence_quote": "潮玩派对 河南岸演达一路1号瑞峰广场天虹商场五楼; maimai 1, CHUNITHM 2, 太鼓 1; updated 2026-07-27",
+      "note": "wahlap twin of 5183 missing taiko. Prefer merge into 5183.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5185,
+      "name": "潮玩派对惠州惠城瑞峰广场店",
+      "field": "other",
+      "current": "wahlap twin of 5183",
+      "proposed": "merge into id 5183",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4432",
+      "evidence_quote": "河南岸演达一路1号瑞峰广场天虹商场五楼",
+      "note": "Same 瑞峰广场天虹 5F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5506,
+      "name": "猫窝（东圃）",
+      "field": "prices",
+      "current": null,
+      "proposed": "Hourly room rental ~CNY 12/h (cap 70); not per-credit. Join QQ for access. Minors not allowed.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5281",
+      "evidence_quote": "12/h封顶70 了解详情请加群：1035414508 未成年不给进; price field 12.0 pay_type=3",
+      "note": "Private-room style. Address intentionally vague (加群).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5505,
+      "name": "猫窝布吉店",
+      "field": "prices",
+      "current": null,
+      "proposed": "Hourly ~CNY 18/h (BemaniCN price field); private room, contact QQ group 725517082",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6916",
+      "evidence_quote": "price:18.0 pay_type:3; comment: 详情请加群:725517082; hours start=1 end=26",
+      "note": "No explicit 18/h prose; price field 18.0 with pay_type=3 (same as 东圃 which documents 12/h) makes hourly pricing likely. Address only 龙岗区.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5507,
+      "name": "猫窝（京溪）",
+      "field": "prices",
+      "current": null,
+      "proposed": "Hourly ~CNY 15/h (BemaniCN price field); private room, QQ 259920617",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6033",
+      "evidence_quote": "price:15 pay_type:3; comment: 配有5台大洋化学八口...加群:259920617",
+      "note": "Same private-room pricing pattern as other 猫窝 branches.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5508,
+      "name": "猫窝（大石店）",
+      "field": "prices",
+      "current": null,
+      "proposed": "Hourly ~CNY 15/h (BemaniCN price field); private room, QQ 417310826",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4418",
+      "evidence_quote": "price:15 pay_type:3; comment: 更多资讯加群：417310826（yz窝）",
+      "note": "Address is only 大石地铁站 - private venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5344,
+      "name": "炫次方万丰海岸城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu & Sun 10:00-21:30; Fri-Sat 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3833",
+      "evidence_quote": "周一至周四，周日10:00到21:30 周五六10:00到22:00",
+      "note": "Also applies to wahlap twin 5348 if kept.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5347,
+      "name": "炫次方深圳南山宝能太古城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Open 09:30; close 22:00 Sun-Thu, 22:30 Fri-Sat",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4835",
+      "evidence_quote": "营业时间：早上9:30开门 周日、周一到周四22:00闭店 周五、周六22:30闭店",
+      "note": "Prose hours on BemaniCN comment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5237,
+      "name": "潮玩空间站珠海斗门去万达店",
+      "field": "location",
+      "current": "广东省珠海市斗门去万达二楼梦次元潮玩空间站",
+      "proposed": "广东省珠海市斗门区万达二楼梦次元潮玩空间站 (fix 去->区); full mall name not verified",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "App address string contains 斗门去万达; standard Chinese admin unit is 斗门区. No BemaniCN page linked for this wahlap-only row.",
+      "note": "Typo in source scrape (区 vs 去). WAHLAP official site returned HTTP 567 from this environment so live WAHLAP listing could not be re-fetched. Open status UNVERIFIED (wahlap-only).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5063,
+      "name": "漫奈斯广州天河广百广场店",
+      "field": "other",
+      "current": "wahlap twin of 5065 漫奈斯智慧城广百店",
+      "proposed": "merge into id 5065 (bemanicn 1136); maimai_dx:2",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1136",
+      "evidence_quote": "漫奈斯智慧城广百店 华观路1932号智慧城广百广场3层303-311; maimai DX qty 2; updated 2026-07-23",
+      "note": "Same 华观路1932 广百广场. 智慧城广百 is the mall name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5064,
+      "name": "漫奈斯广州白云金铂店",
+      "field": "other",
+      "current": "wahlap twin of 5060 漫奈斯同和店",
+      "proposed": "merge into id 5060 (bemanicn 1321)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1321",
+      "evidence_quote": "漫奈斯同和店 同和大街1号同和金铂广场A座2层A220; maimai DX qty 1; updated 2026-07-27",
+      "note": "Same 同和金铂天地/广场 A座 2F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4989,
+      "name": "游梦岛佛山南海富弘店",
+      "field": "other",
+      "current": "wahlap twin of bemanicn id 4996",
+      "proposed": "merge into id 4996",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3719",
+      "evidence_quote": "游梦岛家庭娱乐中心（罗村店） 狮山镇罗村沿江北路1号富弘广场二楼; maimai 1",
+      "note": "Same coords/mall unit as bemanicn counterpart. Dual-source duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4990,
+      "name": "游梦岛佛山禅城兆阳店",
+      "field": "other",
+      "current": "wahlap twin of bemanicn id 4994",
+      "proposed": "merge into id 4994",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5285",
+      "evidence_quote": "游梦岛家庭娱乐中心（兆阳广场店） ...兆阳广场三楼; maimai 1",
+      "note": "Same coords/mall unit as bemanicn counterpart. Dual-source duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4991,
+      "name": "游梦岛佛山禅城同心荟广场店",
+      "field": "other",
+      "current": "wahlap twin of bemanicn id 4995",
+      "proposed": "merge into id 4995",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4825",
+      "evidence_quote": "游梦岛家庭娱乐中心（同心荟店） 人民西路13号同心荟商业广场F3层; maimai 2",
+      "note": "Same coords/mall unit as bemanicn counterpart. Dual-source duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4992,
+      "name": "游梦岛佛山禅城店",
+      "field": "other",
+      "current": "wahlap twin of bemanicn id 4993",
+      "proposed": "merge into id 4993",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3414",
+      "evidence_quote": "游梦岛家庭娱乐中心 南庄二马路吉利购物广场三楼; maimai 1",
+      "note": "Same coords/mall unit as bemanicn counterpart. Dual-source duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4997,
+      "name": "游漫岛东莞南城宏二路1号蜂汇广场1店",
+      "field": "other",
+      "current": "wahlap twin of bemanicn id 4998",
+      "proposed": "merge into id 4998",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6228",
+      "evidence_quote": "游漫岛蜂汇广场店 宏二路1号蜂汇广场三楼; maimai 2",
+      "note": "Same coords/mall unit as bemanicn counterpart. Dual-source duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5161,
+      "name": "潮玩宝贝肇庆端州益华店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5159 (潮玩宝贝)",
+      "proposed": "merge into id 5159",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6833",
+      "evidence_quote": "潮玩宝贝 ...益华国际广场二楼; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5163,
+      "name": "潮玩宣言连州顺盈广场店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5162 (潮玩宣言)",
+      "proposed": "merge into id 5162",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6483",
+      "evidence_quote": "潮玩宣言 连州顺盈广场三楼; maimai+taiko",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5279,
+      "name": "潮能空间广州增城店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5277 (潮能空间)",
+      "proposed": "merge into id 5277",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3311",
+      "evidence_quote": "潮能空间 东汇城2层; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5345,
+      "name": "炫次方广州天河正佳店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5346 (炫次方正佳广场店)",
+      "proposed": "merge into id 5346",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4361",
+      "evidence_quote": "炫次方正佳广场店 5D113-114; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5367,
+      "name": "热带时光中山南头海雅缤纷天地店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5374 (热带时光家庭娱乐中心（中山南头海雅店）)",
+      "proposed": "merge into id 5374",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6465",
+      "evidence_quote": "热带时光 ...中山海雅缤纷天地; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5368,
+      "name": "热带时光佛山东基禅西环宇城店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5373 (热带时光家庭娱乐中心禅西环宇城店)",
+      "proposed": "merge into id 5373",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4804",
+      "evidence_quote": "热带时光 ...禅西环宇城; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5369,
+      "name": "热带时光佛山西樵店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5370 (热带时光家庭娱乐中心)",
+      "proposed": "merge into id 5370",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3256",
+      "evidence_quote": "热带时光 西樵星元汇; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5424,
+      "name": "爱吉乐中山石岐华发店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5425 (爱吉乐家庭娱乐中心)",
+      "proposed": "merge into id 5425",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2553",
+      "evidence_quote": "爱吉乐 华发广场3层; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5427,
+      "name": "爱吉乐广州白云店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5426 (爱吉乐家庭娱乐中心(石井国际店))",
+      "proposed": "merge into id 5426",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5242",
+      "evidence_quote": "爱吉乐 石井国际3楼; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5428,
+      "name": "爱吉乐广州花都茶园新天地店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5423 (爱吉乐(茶园新天地店))",
+      "proposed": "merge into id 5423",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4894",
+      "evidence_quote": "爱吉乐 茶园新天地3楼; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5439,
+      "name": "爱淘王国中山小榄时代店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5440 (爱淘玩国家庭游乐中心（中山小榄百汇店）)",
+      "proposed": "merge into id 5440",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4521",
+      "evidence_quote": "爱淘玩国 百汇时代广场3楼; maimai+taiko",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5456,
+      "name": "爱玩嘉年华深圳龙华店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5462 (爱玩嘉年华（壹方天地店）)",
+      "proposed": "merge into id 5462",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6750",
+      "evidence_quote": "爱玩嘉年华 壹方天地A区 L2-045; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5489,
+      "name": "特爱玩电玩城天河新天地店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5488 (特爱玩电玩城)",
+      "proposed": "merge into id 5488",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2407",
+      "evidence_quote": "特爱玩电玩城 天河新天地3层; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5512,
+      "name": "猿计划游艺mall南海万科店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5511 (猿计划南海万科店)",
+      "proposed": "merge into id 5511",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/600",
+      "evidence_quote": "猿计划 南海万科广场3层; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5558,
+      "name": "玩乐猩球深圳坪山店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5559 (玩乐猩球电玩城)",
+      "proposed": "merge into id 5559",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4505",
+      "evidence_quote": "玩乐猩球 悦阾SPACE 3层; maimai DX 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5568,
+      "name": "玩嘉来了东莞虎门天虹店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5567 (玩嘉来了)",
+      "proposed": "merge into id 5567",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4620",
+      "evidence_quote": "玩嘉来了 地标广场213; maimai 2 + chunithm 2",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5618,
+      "name": "玩美攻略福田深南中路店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5619 (玩美攻略（深圳世纪汇）)",
+      "proposed": "merge into id 5619",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5843",
+      "evidence_quote": "玩美攻略 世纪汇; maimai 2 + WACCA 2",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5094,
+      "name": "潮光年茂名茂南店",
+      "field": "other",
+      "current": "wahlap-only twin of bemanicn id 5092 (潮光年)",
+      "proposed": "merge into id 5092",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3297",
+      "evidence_quote": "潮光年 茂悦东荟城3F; maimai 1 + taiko 1",
+      "note": "Same mall unit / near-identical coordinates as bemanicn counterpart. Keep bemanicn row as canonical.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5057,
+      "name": "漫卡生活佛山万民金海城店",
+      "field": "other",
+      "current": "wahlap maimai_dx at same coords as bemanicn 5056 which only lists taiko",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5978",
+      "evidence_quote": "漫卡生活x华立潮品万民金海城店 乐从镇裕和路万民金海城-B1; arcades: 太鼓之达人 qty 1 only; updated 2026-07-20",
+      "note": "Same lat/lng as 5057. 猿计划 5513 is a DIFFERENT floor (2F) of 万民金海城 with maimai. 5057 may be stale wahlap for maimai that moved, or a co-brand counter. WAHLAP site unreachable (HTTP 567) so maimai presence at 漫卡 B1 is UNVERIFIED.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5164,
+      "name": "潮玩家庭娱乐中心（惠城店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "旧代/亚洲版 (not Nijiiro); BemaniCN title 太鼓达人(旧代) ver 14日"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4980",
+      "evidence_quote": "title 太鼓达人(旧代) version 14日; comment: 鼓面接触有点问题，高频率击打会断触",
+      "note": "Legacy Asian taiko, not 虹版/Nijiiro. Condition poor per comment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5165,
+      "name": "潮玩家庭娱乐中心（隆江店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "旧代/亚洲版12代 (not Nijiiro)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4981",
+      "evidence_quote": "title 太鼓达人(旧代) version 12亚",
+      "note": "Legacy Asian 12, not national Nijiiro build.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5470,
+      "name": "爱玩汇欢乐堡游戏厅",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "旧代/亚洲版12 (not Nijiiro); screen severely discolored"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3974",
+      "evidence_quote": "太鼓达人(旧代) version 12亚洲版; comment: 屏幕严重变色，发紫有黑斑",
+      "note": "Legacy Asian 12. Also prose hours 09:00-23:00.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5470,
+      "name": "爱玩汇欢乐堡游戏厅",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3974",
+      "evidence_quote": "营业时间早上九点至晚上十一点",
+      "note": "BemaniCN start_time/end_time fields show 9-11 which conflicts with prose; prose is authoritative.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5396,
+      "name": "热带雨林（小榄店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "旧代/亚洲版12代 (not Nijiiro)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/422",
+      "evidence_quote": "太鼓达人(旧代) version 亚洲版12代; comment: 145曲，屏幕体验极差",
+      "note": "Legacy Asian 12 with only 145 songs. Not modern Nijiiro China.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5070,
+      "name": "漫游胖达",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00 (BemaniCN start_time/end_time; confirm locally)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3083",
+      "evidence_quote": "start_time:10 end_time:22; updated 2026-07-17",
+      "note": "Numeric hour fields on BemaniCN, not prose. Treated as likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5643,
+      "name": "环游亲子嘉年华汇一城二店",
+      "field": "other",
+      "current": "wahlap-only chunithm+maimai at 汇一城三区A3313; nearby 5633 is 2区5栋103 1F with fuller counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1302",
+      "evidence_quote": "环游·运动嘉年华东莞汇一城店 is 2区5栋103，1楼 with maimai:4 chunithm:4 taiko:8 - different unit from 三区A3313",
+      "note": "Could be a second Funland unit in the same mega-mall, or a stale/wrong wahlap pin. No BemaniCN page for 三区A3313 found. Do not merge blindly with 5633. Open status of 5643 is UNVERIFIED (wahlap-only, WAHLAP site HTTP 567).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5183,
+      "name": "潮玩派对",
+      "field": "prices",
+      "current": null,
+      "proposed": "Promo packs e.g. 19.9 CNY=40 coins; event 199 CNY=1000 coins. Taiko 15 coins or CNY 3 scan-pay.",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4432",
+      "evidence_quote": "19.9r=40币; 现在搞活动，199r=1000币; 太鼓 15币或3元",
+      "note": "Promotional pricing changes often. Not stable per-credit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5378,
+      "name": "热带雨林 中山古镇镇店",
+      "field": "other",
+      "current": "games=['other'] only; still listed open",
+      "proposed": "keep open with other-only; note 湾岸5DX+ removed - not a maimai/chunithm destination",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1227",
+      "evidence_quote": "当家游戏湾岸5DX+已撤机，可以不用再去了，有高刷舞立方白秀和舞立方二代，e舞，舞战绩; updated 2026-07-15",
+      "note": "No maimai/chunithm/taiko on BemaniCN. App correctly has only other.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

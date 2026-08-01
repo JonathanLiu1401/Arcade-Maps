@@ -1,0 +1,1243 @@
+{
+  "shard": 35,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (maimai DX China official; 3139 rows; 205 province=浙江)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (CHUNITHM China official; 583 rows; 30 province=浙江)",
+    "https://map.bemanicn.com/s/{id} Inertia partial Shop/Show (63 of 64 BemaniCN-linked shops in shard; s/4147 returned HTTP 404)",
+    "C:/Users/jonny/Desktop/Arcade Maps/scrapers/bemanicn.py TITLE_GAME mapping (title_id 1=maimai_dx, 3=chunithm, 4=sdvx, 6=jubeat, 15/31=taiko, 27=ongeki)",
+    "C:/Users/jonny/Desktop/Arcade Maps/scrapers/wahlap.py endpoint docs",
+    "Cross-check: Zhejiang venues also present in shards 33/34/39 (total ~375 ZJ rows) so WAHLAP ZJ names absent from THIS shard are usually not map-wide missing"
+  ],
+  "corrections": [
+    {
+      "id": 5454,
+      "name": "爱玩嘉年华杭州钱塘店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5450,
+        "pair_name": "爱玩嘉年华(龙湖杭州金沙天街店)",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5450,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5882",
+      "evidence_quote": "shop.name=爱玩嘉年华(龙湖杭州金沙天街店); address=金沙大道560号龙湖杭州金沙天街L3层3F-01; status=1; updated_at=2026-07-22",
+      "note": "Same mall unit 金沙大道560号龙湖/金沙天街 3F. Pins 107m apart. WAHLAP official name is 爱玩嘉年华杭州钱塘店 (id 5454). Merge into one venue; keep both src.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5520,
+      "name": "王者之风宁波北仑银泰店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5530,
+        "pair_name": "王者之风游乐体验中心(宁波北仑银泰城店)",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5530,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6542",
+      "evidence_quote": "shop.name=王者之风游乐体验中心(宁波北仑银泰城店); address=新碶街道岷山路505号(银泰城)2幢505号四楼; maimai qty=2; status=1",
+      "note": "Same 北仑银泰城 4F store. Pins 95m apart. WAHLAP lists 王者之风宁波北仑银泰店. Merge; keep bemanicn qty=2.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5521,
+      "name": "王者之风宁波海曙店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5526,
+        "pair_name": "王者之风海曙印象城店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5526,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2165",
+      "evidence_quote": "shop.name=王者之风海曙印象城店; address=中山西路3666号印象城3F3-01; maimai qty=1 + title_id=32 qty=2; status=1; updated_at=2026-06-05",
+      "note": "Same 海曙印象城 3F. Pins 84m. WAHLAP name 王者之风宁波海曙店. Merge; keep bemanicn games (maimai+other).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5522,
+      "name": "王者之风宁波鄞州店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5545,
+        "pair_name": "王者之风鄞州印象城店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5545,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2960",
+      "evidence_quote": "shop.name=王者之风鄞州印象城店; address=中河街道钱湖北路288号（鄞州印象城3楼）; maimai=1 taiko=2; status=1",
+      "note": "Same 鄞州印象城 3F. Pins 83m. Merge; keep bemanicn games including taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5523,
+      "name": "王者之风慈溪爱琴海店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5546,
+        "pair_name": "王者之风（慈溪环创爱琴海购物中心店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5546,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3664",
+      "evidence_quote": "shop.name=王者之风（慈溪环创爱琴海购物中心店）; address=慈溪市北三环东路1888号慈溪环创爱琴海购物公园2楼; maimai qty=2; status=1",
+      "note": "Identical mall address 北三环东路1888号爱琴海. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5525,
+      "name": "王者之风杭州招商花园城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5538,
+        "pair_name": "王者之风电玩城(杭州城北招商花园城店)",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5538,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6361",
+      "evidence_quote": "shop.name=王者之风电玩城(杭州城北招商花园城店); address=临平区崇文街招商花园城3楼3019铺; maimai qty=2; status=1; updated_at=2026-06-10",
+      "note": "Same 招商花园城 3F. Pins 0m. Note slight street name 崇杭街 vs 崇文街 in sources. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5761,
+      "name": "电燃风云杭州萧山金帝店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5762,
+        "pair_name": "电燃风云（金帝T-ONE MO店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5762,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6123",
+      "evidence_quote": "shop.name=电燃风云（金帝T-ONE MO店）; maimai qty=1; status=1; updated_at=2026-06-21. WAHLAP: 电燃风云杭州萧山金帝店 建设四路189号金帝t-one mo 三层07号",
+      "note": "Same 金帝 T-ONE MO 3F. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5986,
+      "name": "福思特湖州吴兴银泰百货店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5989,
+        "pair_name": "福思特电玩城（湖州银泰百货店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5989,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4211",
+      "evidence_quote": "shop.name=福思特电玩城（湖州银泰百货店）; maimai qty=1; status=1; updated_at=2026-05-15. WAHLAP: 福思特湖州吴兴银泰百货店 爱山街道银泰百货东吴店三楼",
+      "note": "Same 湖州银泰百货/东吴店 3F. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5969,
+      "name": "神采飞扬第一回合义乌天地店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6066,
+        "pair_name": "第一回合&木马王国（义乌天地店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6066,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3842",
+      "evidence_quote": "shop.name=第一回合&木马王国（义乌天地店）; maimai=1 taiko=1 pokemon=2; status=1. WAHLAP: 神采飞扬第一回合义乌天地店 园路2-1号3楼LA301-2",
+      "note": "Same 义乌天地 3F 第一回合/木马王国. Pins 66m. Merge; keep bemanicn taiko+other.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5970,
+      "name": "神采飞扬第一回合绍兴天地店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6086,
+        "pair_name": "第一回合（绍兴天地店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6086,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4296",
+      "evidence_quote": "shop.name=第一回合（绍兴天地店）; address=北海街道马臻南路18号绍兴天地C厂2层L239B; maimai=1 taiko=2; status=1. WAHLAP: 神采飞扬第一回合绍兴天地店 马臻南路18号、28号C厂2楼232号",
+      "note": "Same 绍兴天地 C厂 2F. Merge; keep taiko counts.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5971,
+      "name": "神采飞扬绍兴柯桥万达第一回合店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6068,
+        "pair_name": "第一回合(柯桥万达店)",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6068,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3183",
+      "evidence_quote": "shop.name=第一回合(柯桥万达店); address=浙江省绍兴市柯桥区钱陶路799号万达广场三楼; maimai=2 taiko=2; status=1; updated_at=2026-07-26. WAHLAP: 神采飞扬绍兴柯桥万达第一回合店 钱陶路799号万达广场",
+      "note": "Same 柯桥万达 钱陶路799号. Pins 0m. Merge; keep bemanicn game_counts.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6074,
+      "name": "第一回合宁波鄞州万达店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5972,
+        "pair_name": "神采飞扬鄞州万达店（第一回合）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5972,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/340",
+      "evidence_quote": "shop.name=神采飞扬鄞州万达店（第一回合）; address=四明中路999号鄞州万达广场1层; maimai=2 chunithm=2 taiko=2; status=1; updated_at=2026-07-23. WAHLAP MAI+CHU: 第一回合宁波鄞州万达店 四明中路999号万达广场二楼 placeId=1448",
+      "note": "Same 鄞州万达 四明中路999. Pins 0m. Floor text differs (1F vs 2F) across sources. Merge; keep richer bemanicn games+counts. Official WAHLAP confirms both maimai and chunithm.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6073,
+      "name": "第一回合宁波江北万象城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 5966,
+        "pair_name": "神采飞扬江北万象城店（第一回合/木马王国）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5966,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4230",
+      "evidence_quote": "shop.name=神采飞扬江北万象城店（第一回合/木马王国）; address=清河路265号（江北万象城）3层K301-K304; maimai=1 chunithm=2 taiko=1; status=1. WAHLAP MAI+CHU: 第一回合宁波江北万象城店 清河路265号万象城三楼K303 placeId=3291",
+      "note": "Same 江北万象城 K301-K304/K303. Pins 131m. Merge; keep taiko from bemanicn.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6072,
+      "name": "第一回合嘉兴八佰伴店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6071,
+        "pair_name": "第一回合嘉兴中山八佰伴店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6071,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1713",
+      "evidence_quote": "shop.name=第一回合嘉兴中山八佰伴店; address=中山路1360号嘉兴八佰伴购物中心B1层; maimai=2 taiko=1; status=1; updated_at=2026-07-03. WAHLAP: 第一回合嘉兴八佰伴店 same address B1",
+      "note": "Same 嘉兴八佰伴 B1 中山路1360. Pins 0m. Merge; keep taiko.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6081,
+      "name": "第一回合湖州吴兴爱山银泰店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6082,
+        "pair_name": "第一回合湖州店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6082,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1473",
+      "evidence_quote": "shop.name=第一回合湖州店; address=南街558-590爱山银泰2f; maimai=2; status=1; updated_at=2026-07-16. WAHLAP: 第一回合湖州吴兴爱山银泰店 南街558号爱山银泰城2楼",
+      "note": "Same 爱山银泰 2F. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6059,
+      "name": "第e玩+台州黄岩吾悦广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6058,
+        "pair_name": "第e玩+",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6058,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7023",
+      "evidence_quote": "shop.name=第e玩+; address=浙江省台州市黄岩区吾悦广场三楼; maimai=1 chunithm=2; status=1; updated_at=2026-07-25. WAHLAP MAI+CHU: 第e玩+台州黄岩吾悦广场店 大桥路1号吾悦广场（3楼3010号） placeId=5019",
+      "note": "Same 黄岩吾悦 3F. Pins 0m. Merge; keep bemanicn counts.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6090,
+      "name": "第一玩家金华银泰百货店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6060,
+        "pair_name": "第e玩+（第一玩家）金华之心店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6060,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2735",
+      "evidence_quote": "shop.name=第e玩+（第一玩家）金华之心店; address=浙江省金华市婺城区李渔路金华之心银泰百货商场3楼; maimai=1; status=1; updated_at=2026-06-10. WAHLAP: 第一玩家金华银泰百货店 金华之心银泰百货三层第e玩+",
+      "note": "Same 金华之心银泰 3F 第e玩+/第一玩家. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6089,
+      "name": "第一玩家温州银泰店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6091,
+        "pair_name": "第一玩家（第e玩+）平阳银泰店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6091,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3639",
+      "evidence_quote": "shop.name=第一玩家（第e玩+）平阳银泰店; address=平阳银泰城3F; maimai=1; status=1. WAHLAP: 第一玩家温州银泰店 平阳银泰城3楼第一玩家",
+      "note": "Same 平阳银泰城 3F (温州平阳). Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6119,
+      "name": "米吉姆宁波鄞州银泰店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6118,
+        "pair_name": "米吉姆宁波环球银泰城店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6118,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1805",
+      "evidence_quote": "shop.name=米吉姆宁波环球银泰城店; address=环球银泰城3层; maimai=1 chunithm=2; status=1; updated_at=2026-03-03. WAHLAP MAI+CHU: 米吉姆宁波鄞州银泰店 天童南路1088号句章东路999号银泰环球城 3F placeId=1869",
+      "note": "Same 银泰环球城 3F (鄞州). Pins 46m. Merge; keep chunithm counts from bemanicn.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6685,
+      "name": "跑跑太空熊嘉兴南湖天地店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6684,
+        "pair_name": "跑跑太空熊Space家庭娱乐中心",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6684,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2738",
+      "evidence_quote": "shop.name=跑跑太空熊Space家庭娱乐中心; address=南湖天地购物中心B1层LG30; maimai=1; status=1; updated_at=2026-07-26. WAHLAP: 跑跑太空熊嘉兴南湖天地店 南湖天地跑跑太空熊 LG30",
+      "note": "Same 南湖天地 LG30. Pins 89m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6329,
+      "name": "菲游乐浙江台州店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6342,
+        "pair_name": "菲游乐（玉环万达店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6342,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2129",
+      "evidence_quote": "shop.name=菲游乐（玉环万达店）; address=银湖大道与漩港路交叉口西北220米台州玉环万达广场2楼; maimai=1; status=1; updated_at=2026-07-18. WAHLAP: 菲游乐浙江台州店 玉环万达广场 2F",
+      "note": "Same 玉环万达 2F. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6319,
+      "name": "菲游乐东阳银泰城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6334,
+        "pair_name": "菲游乐电玩城",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6334,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2218",
+      "evidence_quote": "shop.name=菲游乐电玩城; address=银泰城（兴平西路428号）; maimai=1 taiko=1; status=1; updated_at=2026-07-20. WAHLAP: 菲游乐东阳银泰城店 东阳市白云街道银泰城三楼",
+      "note": "Same 东阳银泰城. Pins 0m. Merge; keep taiko from bemanicn.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6755,
+      "name": "部落酷玩台州临海宝龙广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6751,
+        "pair_name": "部落酷玩临海杜桥宝龙店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6751,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3185",
+      "evidence_quote": "shop.name=部落酷玩临海杜桥宝龙店; address=杜桥镇滨海路550号宝龙广场F3; maimai=1; status=1; updated_at=2026-06-27. WAHLAP: 部落酷玩台州临海宝龙广场店 临海市杜桥镇宝龙广场3楼",
+      "note": "Same 临海杜桥宝龙 3F. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6761,
+      "name": "部落酷玩金华武义店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6758,
+        "pair_name": "部落酷玩武义金湖中心店",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6758,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4985",
+      "evidence_quote": "shop.name=部落酷玩武义金湖中心店; address=武义县金湖中心3楼; maimai=1; status=1; updated_at=2026-04-03. WAHLAP: 部落酷玩金华武义店 温泉北路6号金湖商业中心",
+      "note": "Same 武义金湖中心/金湖商业中心. Pins 0m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6875,
+      "name": "酷玩e族杭州拱墅吾悦广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6880,
+        "pair_name": "酷玩e族（吾悦广场店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6880,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4574",
+      "evidence_quote": "shop.name=酷玩e族（吾悦广场店）; address=同协路地铁站杭玻街368号吾悦广场负一层; maimai=2; status=1; updated_at=2026-07-19. WAHLAP: 酷玩e族杭州拱墅吾悦广场店 拱墅区吾悦广场负一楼",
+      "note": "Same 拱墅吾悦 B1. Pins 38m. Merge; keep qty=2.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6877,
+      "name": "酷玩e族绍兴嵊州和悦时代广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6881,
+        "pair_name": "酷玩e族（和悦广场店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6881,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3612",
+      "evidence_quote": "shop.name=酷玩e族（和悦广场店）; address=和悦时代广场购物中心三楼3013号; maimai=1; status=1; updated_at=2026-07-13. WAHLAP: 酷玩e族绍兴嵊州和悦时代广场店 嵊州市和悦时代广场三楼",
+      "note": "Same 嵊州和悦 3F. Pins 30m. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6687,
+      "name": "路桥博鑫台州中盛店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6902,
+        "pair_name": "酷玩派游艺园",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6902,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6191",
+      "evidence_quote": "shop.name=酷玩派游艺园; address=路桥区路桥街道银座街508号中盛城市广场南区地下室商业B1E-023-024-01; maimai=1; status=1; updated_at=2026-07-20. WAHLAP: 路桥博鑫台州中盛店 中盛城市广场负一楼盒马旁酷玩派",
+      "note": "Same 路桥中盛 B1 酷玩派. Pins 0m. Official WAHLAP name is 路桥博鑫; community uses 酷玩派. Merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6705,
+      "name": "运动星球杭州上城店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6704,
+        "pair_name": "运动星球 SPORTSPLANET",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6704,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2244",
+      "evidence_quote": "shop.name=运动星球 SPORTSPLANET; address=运动星球; maimai=1; status=1; updated_at=2025-11-29. WAHLAP: 运动星球杭州上城店 富春路80号全民健身中心 placeId=2195",
+      "note": "Same brand+city; pins 78m. BemaniCN address is placeholder 运动星球; WAHLAP has real 富春路80号. Merge; prefer WAHLAP address.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6658,
+      "name": "趣玩机地金华义乌店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6659,
+        "pair_name": "趣玩机地（义乌宾王商贸区店）",
+        "role": "wahlap_twin"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6659,
+        "keep_src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5739",
+      "evidence_quote": "shop.name=趣玩机地（义乌宾王商贸区店）; address=稠城街道宾王商贸区六街53号2楼; status=1; comment mentions 店家称机台返厂维修; arcades only title_id=33 (not maimai). WAHLAP: 趣玩机地金华义乌店 宾王商贸区六街宾王印象二楼 still listed for maimai placeId=4268",
+      "note": "Same 义乌宾王商贸区 2F. Pins 49m. Merge records. Game status conflict: official WAHLAP still lists maimai; BemaniCN 2026-06-08 says cab under repair / only non-maimai title_id=33 present. Do not strip maimai without on-site check.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6152,
+      "name": "糕窝",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6996",
+      "evidence_quote": "arcades: title_id=1 qty=3 version=麦萌乐; title_id=1 qty=1 version=舞萌2025; title_id=3 qty=1 version=xvx. No title_id=27 ongeki. updated_at=2026-07-30T06:23:52Z status=1",
+      "note": "Private self-service venue (not on WAHLAP official network). Live BemaniCN 2026-07-30 lists 4 maimai (3 private + 1 华立国服) and 1 CHUNITHM (new 抬手乐plus 2026-07-29). No ONGEKI row. App ongeki is stale; chunithm missing. Private cab versions are community-labeled.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6152,
+      "name": "糕窝",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 4,
+        "ongeki": 1
+      },
+      "proposed": {
+        "maimai_dx": 4,
+        "chunithm": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6996",
+      "evidence_quote": "title_id=1 quantities 3+1=4; title_id=3 quantity=1; no ongeki. updated_at=2026-07-30",
+      "note": "Replace ongeki:1 with chunithm:1. maimai total 4 still matches.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6354,
+      "name": "菲菲羊乐园温州苍南银泰城店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5112",
+      "evidence_quote": "comment: 音游等机台已迁至同层菲游乐; arcades only title_id=32 qty=2 (宝可梦). No maimai. status=1 updated_at=2026-07-06. Sibling shop s/7073 菲游乐（苍南银泰店） has maimai qty=2 + sdvx qty=2 and comment 从原菲菲羊升级出来 / 原位于菲菲羊乐园",
+      "note": "CONFLICT: official WAHLAP maimai API still lists 菲菲羊乐园温州苍南银泰城店 (placeId=3765, 玉苍路1088号银泰城3楼) as of 2026-08-01 fetch. Community BemaniCN 2026-07-06 states rhythm cabs moved to same-floor 菲游乐 (id 6343 / s/7073). Prefer community recency for machine location; flag for human: either WAHLAP registration not renamed, or machines returned. Do not delete venue (still has other/pokemon; WAHLAP still registers name).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6354,
+      "name": "菲菲羊乐园温州苍南银泰城店",
+      "field": "other",
+      "current": {
+        "relation": "same_mall_as_6343",
+        "maimai_registration": "wahlap_under_菲菲羊"
+      },
+      "proposed": {
+        "maimai_physical_host": 6343,
+        "wahlap_name_still": "菲菲羊乐园温州苍南银泰城店",
+        "note": "machines moved within 苍南银泰城 3F"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7073",
+      "evidence_quote": "菲游乐 comment: 从原菲菲羊升级出来; maimai comment: 原位于菲菲羊乐园; 2台舞萌. updated_at=2026-07-25",
+      "note": "Not a pure duplicate: two brand names in same 苍南银泰城 3F after cab transfer. Pins 56m. Keep both rows but maimai gameplay should point players to 6343 菲游乐.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6486,
+      "name": "谷噜谷子台州店",
+      "field": "other",
+      "current": {
+        "bemanicn": "https://map.bemanicn.com/s/4147"
+      },
+      "proposed": {
+        "bemanicn": null,
+        "reason": "HTTP 404"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4147",
+      "evidence_quote": "HTTP Error 404: Not Found when fetching Inertia shop JSON on 2026-08-01",
+      "note": "Dead BemaniCN shop id 4147. Venue still on official WAHLAP maimai list: 谷噜谷子台州店 浙江省台州市天台县赤城街道百花路24号 placeId=3494. Keep open/maimai from WAHLAP; drop dead link.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5441,
+      "name": "爱游乐第e玩家绍兴新昌店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1750",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-01-01",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5450,
+      "name": "爱玩嘉年华(龙湖杭州金沙天街店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5882",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-22",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5530,
+      "name": "王者之风游乐体验中心(宁波北仑银泰城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:30 weekdays (comment); site fields 10-21",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6542",
+      "evidence_quote": "start_time=10 end_time=21; comment: 周一至周四 10:00-21:30 周五 10:00-22:00 周六周日 09:30-22:00 updated_at=2026-03-18",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5972,
+      "name": "神采飞扬鄞州万达店（第一回合）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/340",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-23",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6065,
+      "name": "第一回合&木马王国(大悦城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-25",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6067,
+      "name": "第一回合(杭州天虹购物中心店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/872",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-27",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6068,
+      "name": "第一回合(柯桥万达店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3183",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-26",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6085,
+      "name": "第一回合（温州印象城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1421",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-31",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6151,
+      "name": "糕小窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h self-service (comment: 白天8:00-22:00 晚上22:00-8:00)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5865",
+      "evidence_quote": "comment: 营业时间：白天8:00-22:00 晚上22:00-8:00 24h自助; start_time/end_time site fields are junk (1/26)",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6152,
+      "name": "糕窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h self-service (comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6996",
+      "evidence_quote": "comment: 24h营业 自助非预约制; 早八8-12 / 日场12-22 / 夜场22-次日8; updated_at=2026-07-30",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6305,
+      "name": "菜窝喵喵喵",
+      "field": "hours",
+      "current": null,
+      "proposed": "日场9:00-22:00 / 夜场22:00-次日9:00 (comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5093",
+      "evidence_quote": "comment: 日场9:00–22:00 夜场（通宵）22:00–次日9:00; updated_at=2026-07-29",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6334,
+      "name": "菲游乐电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2218",
+      "evidence_quote": "start_time=9 end_time=21 updated_at=2026-07-20",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6343,
+      "name": "菲游乐（苍南银泰店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7073",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-25",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6880,
+      "name": "酷玩e族（吾悦广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4574",
+      "evidence_quote": "start_time=10 end_time=21 updated_at=2026-07-19",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6902,
+      "name": "酷玩派游艺园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6191",
+      "evidence_quote": "start_time=9 end_time=21 updated_at=2026-07-20",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6927,
+      "name": "酷玩空间绍兴大悦城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3084",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-28",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6684,
+      "name": "跑跑太空熊Space家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2738",
+      "evidence_quote": "start_time=10 end_time=22 updated_at=2026-07-26",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6252,
+      "name": "至尊玩家杭州千岛湖店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4293",
+      "evidence_quote": "start_time=10 end_time=22; shop.name on bm=至尊玩家千岛湖银泰店",
+      "note": "App hours_text is null. BemaniCN start_time/end_time (and/or shop.comment) used. Community-maintained; treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5441,
+      "name": "爱游乐第e玩家绍兴新昌店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/play (~CNY 3) when unit price=1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1750",
+      "evidence_quote": "price=1 pay_type=4; maimai coin=3; comment mentions 店内目前2台机. updated_at=2026-01-01",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5450,
+      "name": "爱玩嘉年华(龙湖杭州金沙天街店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/play (~CNY 5) when unit price=1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5882",
+      "evidence_quote": "price=1; maimai coin=5; updated_at=2026-07-22",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5530,
+      "name": "王者之风游乐体验中心(宁波北仑银泰城店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4 coins/play (~CNY 4) when unit price=1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6542",
+      "evidence_quote": "price=1.0; maimai coin=4; updated_at=2026-03-18",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5972,
+      "name": "神采飞扬鄞州万达店（第一回合）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "8 coins/play",
+        "chunithm": "8 coins/play",
+        "taiko": "35 coins/play",
+        "unit_hint": "price field=0.2 (package rate, not simple CNY/coin)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/340",
+      "evidence_quote": "price=0.2; maimai coin=8 chunithm coin=8 taiko coin=35; updated_at=2026-07-23. Unit 0.2 suggests prepaid package; do not multiply naively to CNY without package context.",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6065,
+      "name": "第一回合&木马王国(大悦城店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "8 coins temp card / 6 member",
+        "chunithm": "6 coins non-member / 5 member",
+        "taiko": "18 coins / 15 member"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "maimai coin=8 comment 临时卡8币 会员卡6币; chunithm coin=6 comment 会员5币 非会员6币; taiko coin=18; price=1; updated_at=2026-07-25",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6343,
+      "name": "菲游乐（苍南银泰店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 coins/play (~CNY 1.8-3 depending on package)",
+        "sdvx": "3 coins/play",
+        "unit": "official ~CNY 1/coin"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7073",
+      "evidence_quote": "price=1.0; maimai coin=3 sdvx coin=3; comment 官方币价1r 常驻套餐约0.6-0.8r; updated_at=2026-07-25",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6902,
+      "name": "酷玩派游艺园",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins/play; community note ~0.38-0.4 CNY/coin via coin sellers"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6191",
+      "evidence_quote": "price=1; maimai coin=5; comment 有0.4-0.38的币哥; updated_at=2026-07-20",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6704,
+      "name": "运动星球 SPORTSPLANET",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "access": "ticketed all-day / timed sessions, not simple per-credit",
+        "day": "CNY 199 single / 379 double",
+        "maimai_friday_hour": "CNY 40/hour"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2244",
+      "evidence_quote": "comment: 门票制 单人199一天 双人379一天; 周五开放舞萌单项票，40元一小时; updated_at=2025-11-29",
+      "note": "BemaniCN coin + venue price fields. Package rates mean effective CNY/play varies. Not official chain price list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6704,
+      "name": "运动星球 SPORTSPLANET",
+      "field": "location",
+      "current": {
+        "addr": "运动星球"
+      },
+      "proposed": {
+        "addr": "浙江省杭州市上城区富春路80号全民健身中心"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai: arcadeName=运动星球杭州上城店 address=浙江省杭州市上城区富春路80号全民健身中心 province=浙江 placeId=2195",
+      "note": "App address is placeholder brand name only. Official WAHLAP has full address. Twin id 6705 already carries the good address; after merge prefer that text. approx geocode may need refresh.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5989,
+      "name": "福思特电玩城（湖州银泰百货店）",
+      "field": "location",
+      "current": {
+        "addr": "银泰百货3楼"
+      },
+      "proposed": {
+        "addr": "浙江省湖州市吴兴区爱山街道银泰百货东吴店三楼福思特电玩城"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP: 福思特湖州吴兴银泰百货店 | 浙江省湖州市吴兴区爱山街道银泰百货东吴店三楼福思特电玩城",
+      "note": "BemaniCN row has incomplete address 银泰百货3楼. Twin wahlap id 5986 has full address. Prefer full text on merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6334,
+      "name": "菲游乐电玩城",
+      "field": "location",
+      "current": {
+        "addr": "银泰城（兴平西路428号）"
+      },
+      "proposed": {
+        "addr": "浙江省金华市东阳市白云街道银泰城三楼菲游乐 (兴平西路428号)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP: 菲游乐东阳银泰城店 | 浙江省金华市东阳市白云街道银泰城三楼菲游乐",
+      "note": "BemaniCN short address omits city. Twin 6319 has full Zhejiang/Dongyang address. Merge should keep city-qualified address. I did not independently verify 兴平西路428号 beyond BemaniCN string.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6151,
+      "name": "糕小窝",
+      "field": "other",
+      "current": {
+        "src": [
+          "bemanicn"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki"
+        ],
+        "wahlap": false
+      },
+      "proposed": {
+        "type": "private_self_service",
+        "wahlap_official": false,
+        "status_bemanicn": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5865",
+      "evidence_quote": "status=1; comment 预约群663246883 24h自助; arcades maimai x2 chunithm x1 ongeki x1 with private version labels (Maimoller/抬手乐普拉斯/dao台). Not present in WAHLAP maidx/midtr province=浙江 lists (205+30 rows) as of 2026-08-01",
+      "note": "Not a WAHLAP official location. Private/home-cab style venue. Keep on map but players need QQ group/appointment. Do not treat WAHLAP absence as closed.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6159,
+      "name": "繁水屋Club",
+      "field": "other",
+      "current": {
+        "src": [
+          "bemanicn"
+        ],
+        "addr": "万昌路站a口200m内"
+      },
+      "proposed": {
+        "type": "private_self_service",
+        "address_unreliable": true,
+        "wahlap_official": false
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5690",
+      "evidence_quote": "status=1; comment: 除Jubeat均为手台 ... 请入群了解具体信息/预约738497858 地图乱标的 找管理获取地址; updated_at=2026-07-29; price field junk 114514",
+      "note": "Community explicitly says map pin/address is wrong; contact group for real address. Games are private handcabs. Not on WAHLAP official lists.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6305,
+      "name": "菜窝喵喵喵",
+      "field": "other",
+      "current": {
+        "src": [
+          "bemanicn"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "type": "private_self_service",
+        "wahlap_official": false,
+        "note": "comment mentions 7.23-7.27 relocation half-price event"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5093",
+      "evidence_quote": "status=1; comment 不需要预约，来便玩。7.23-7.27有搬迁新店半价活动; arcades maimai x1 华立正版国服 + maimai x1 mml + chunithm x1; updated_at=2026-07-29",
+      "note": "May have relocated around late July 2026 per comment. Address in app may be old. Not on WAHLAP. Flag for address re-check; I could not verify new address from this source alone.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6659,
+      "name": "趣玩机地（义乌宾王商贸区店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP still lists twin 趣玩机地金华义乌店 宾王商贸区六街宾王印象二楼 placeId=4268. BemaniCN s/5739 (2026-06-08): only title_id=33 qty=1; comment 店家称机台返厂维修，别跑空了 and 店内除舞萌外还有一台舞立方秀",
+      "note": "If records are merged with 6658, maimai stays from WAHLAP. As standalone, app currently only has other. Conflict: official says maimai yes; community says under repair / not listed in arcades array. Prefer official for presence, caveat for playability. confidence unverified for live playability.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

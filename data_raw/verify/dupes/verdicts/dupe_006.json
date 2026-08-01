@@ -1,0 +1,291 @@
+{
+  "shard": 6,
+  "verdicts": [
+    {
+      "ids": [6983, 6986, 6988],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two different malls on 小东路: 6983 is 中街新玛特 (小东路1号7F) while 6986/6988 are 中街大悦城 B馆4楼 (小东路5号). BemaniCN arcade comments say machines were moved from 新玛特 to 大悦城, so they are not one live venue. Note 6986+6988 alone would merge as one 大悦城 shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6070",
+      "evidence_quote": "金色年华电玩沙龙（中街大悦城店） 东中街大悦城B馆四楼; maimai comment: 其中一台为中街新玛特店搬运过来"
+    },
+    {
+      "ids": [7132, 7141, 7145],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7145,
+      "canonical_name": "风云再起上海中环百联店",
+      "canonical_addr": "上海市普陀区真光路1288号中环百联3楼风云再起",
+      "reason": "All three name the same mall and floor: 百联中环/中环百联 at 真光路1288号 3F. ZIv, BemaniCN and WAHLAP of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/583",
+      "evidence_quote": "风云再起(百联中环购物广场) 真光路1288号百联中环购物广场F3"
+    },
+    {
+      "ids": [7159, 7194, 7223],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7159,
+      "canonical_name": "风云再起北京西长安中骏世界城店",
+      "canonical_addr": "北京市门头沟区石龙东路与新城东街交叉口北京西长安中骏世界城4层M456B风云再起",
+      "reason": "Same brand, same mall 西长安中骏世界城, same 4F. WAHLAP, ZIv and BemaniCN all describe one Mentougou branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2299",
+      "evidence_quote": "风云再起（北京门头沟中骏世界城店） 西长安中骏世界城4楼"
+    },
+    {
+      "ids": [7278, 7280, 7283],
+      "verdict": "keep_separate",
+      "confidence": "likely",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "7278 and 7283 are the same 富兴时代/CFC富兴 钻石庭3楼 shop, but 7280 is labeled 开福大悦城 LG层南馆, a different mall. Baidu lists 骑士玩国(富兴店) and no 大悦城 branch, so do not collapse the whole cluster into one pin.",
+      "evidence_url": "https://map.bemanicn.com/s/2536",
+      "evidence_quote": "骑士玩国(富兴店) 芙蓉中路311号富兴时代购物中心钻石庭L3"
+    },
+    {
+      "ids": [7306, 7307, 7308],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7308,
+      "canonical_name": "魔力嘟嘟城绍兴上虞店",
+      "canonical_addr": "浙江省绍兴市上虞区曹娥街道上百万悦城购物中心3F",
+      "reason": "All three are 魔力嘟嘟城 at 上虞 上百万悦城 3F with identical coordinates. Two WAHLAP rows plus BemaniCN of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4119",
+      "evidence_quote": "魔力嘟嘟城(万悦城店) 浙江省绍兴市上虞区曹娥街道五星东路上百万悦城购物中心3F"
+    },
+    {
+      "ids": [2512, 2513],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2512,
+      "canonical_name": "大兵小将石家庄桥西店",
+      "canonical_addr": "河北省石家庄市桥西区西美花街生活工场二楼西头",
+      "reason": "Same brand and same building: 西美花街生活工场 2楼西头. WAHLAP 桥西店 and BemaniCN 西美花街店 are one venue at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3056",
+      "evidence_quote": "大兵小将（西美花街店） 红旗大街西美·花街生活工场2楼西头"
+    },
+    {
+      "ids": [871, 877],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 877,
+      "canonical_name": "1-7play电玩天津东丽万达店",
+      "canonical_addr": "天津市东丽区先锋东路6号万达广场(东丽店)3楼1-7play一起玩嘉年华电玩城（东丽万达店）",
+      "reason": "Both are 1-7play at 东丽万达 3楼. Branch suffix matches; BemaniCN/ZIv and WAHLAP of one store.",
+      "evidence_url": "https://map.bemanicn.com/s/4543",
+      "evidence_quote": "1-7play一起玩家庭娱乐中心（天津东丽万达店） 东丽万达广场①入口3楼直达"
+    },
+    {
+      "ids": [873, 874],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 873,
+      "canonical_name": "1-7PLAY唐山世界城店",
+      "canonical_addr": "河北省唐山市开平区中骏世界城二层1-7PLAY家庭娱乐中心",
+      "reason": "Same brand and mall: 唐山中骏世界城 二层. WAHLAP and BemaniCN names/addresses agree.",
+      "evidence_url": "https://map.bemanicn.com/s/3031",
+      "evidence_quote": "1-7PLAY家庭娱乐中心(中骏世界城店) 普光道北侧规划新开路西侧中骏世界城(唐山店)二层西南角"
+    },
+    {
+      "ids": [878, 879],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 879,
+      "canonical_name": "101潮玩中心厦门思明店",
+      "canonical_addr": "福建省厦门市思明区湖光路101-29号105室、106室、107室",
+      "reason": "Bare brand vs full branch name at the same 湖光路101 / 101聚厂 address and identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/5839",
+      "evidence_quote": "101潮玩中心 湖光路101号101聚厂B栋1楼101潮玩中心"
+    },
+    {
+      "ids": [880, 881],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 881,
+      "canonical_name": "11Lab超乐场天津东丽店",
+      "canonical_addr": "天津市东丽区环河北路168号SM天津滨海城市广场一楼11Lab超乐场",
+      "reason": "Both are 11Lab at SM 滨海城市广场 / SM城市广场 环河北路168号 一层. SM广场店 and 东丽店 are naming variants of one mall; BemaniCN notes 中二已撤机, matching the chunithm-only WAHLAP row as the same shop over time.",
+      "evidence_url": "https://map.bemanicn.com/s/2906",
+      "evidence_quote": "11LAB超乐场 东丽区环河北路168号SM滨海城市广场一层D1052; comment: 中二已撤机"
+    },
+    {
+      "ids": [882, 885],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 885,
+      "canonical_name": "1号机长南通海安中央广场店",
+      "canonical_addr": "江苏省南通市海安市中坝中路41号喜润城3楼C3015号1号机长",
+      "reason": "Bare brand 1号机长 at 海安中央广场 vs full WAHLAP branch at 喜润城 (中坝中路41号), which Baidu shows is the 中央广场 complex. One shop about 23 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/4526",
+      "evidence_quote": "1号机长 海安中央广场"
+    },
+    {
+      "ids": [884, 895],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 895,
+      "canonical_name": "1号机长超乐场茂名化州店",
+      "canonical_addr": "广东省茂名市化州市万达广场三楼1号机长",
+      "reason": "Both place 1号机长 on 3F of 化州万达广场. BemaniCN and WAHLAP of the same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2650",
+      "evidence_quote": "1号机长化州万达店 万达广场(茂名化州店)三楼"
+    },
+    {
+      "ids": [890, 893],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 890,
+      "canonical_name": "1号机长常德澧县店",
+      "canonical_addr": "湖南省常德市澧县欢乐城22号入口1号机长超乐场",
+      "reason": "Same brand and same landmark 欢乐城22号入口. WAHLAP and BemaniCN of one 澧县 store.",
+      "evidence_url": "https://map.bemanicn.com/s/1717",
+      "evidence_quote": "1号机长超乐场常德澧县店 欢乐城22号入口下"
+    },
+    {
+      "ids": [892, 898],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 892,
+      "canonical_name": "1号机长怀化溆浦万达店",
+      "canonical_addr": "湖南省怀化市溆浦县卢峰镇万达广场三楼1号机长",
+      "reason": "Both are 1号机长 at 溆浦万达 with identical coords. BemaniCN comment places the hall on 3F, matching WAHLAP.",
+      "evidence_url": "https://map.bemanicn.com/s/1925",
+      "evidence_quote": "1号机长超乐场（溆浦店） 溆浦县万达广场一号; comment: 机厅位于商城3楼"
+    },
+    {
+      "ids": [894, 902],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 894,
+      "canonical_name": "1号机长超乐场芜湖inPARK店",
+      "canonical_addr": "安徽省芜湖市镜湖区中山路步行街inPARK商场4楼1号机长超乐场",
+      "reason": "Same brand and mall: 芜湖 中山路 inPARK 4楼. WAHLAP and BemaniCN of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/7154",
+      "evidence_quote": "1号机长（芜湖镜湖inPARK店） 中山路步行街48号inPARK4楼"
+    },
+    {
+      "ids": [899, 901],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 901,
+      "canonical_name": "1号机长随州曾都店",
+      "canonical_addr": "湖北省随州市曾都区交通大道466号吾悦广场3楼1号机长",
+      "reason": "Same brand and mall: 随州曾都 吾悦广场 3楼 at 交通大道. Identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/3566",
+      "evidence_quote": "1号机长超乐场（随州吾悦广场店） 曾都区交通大道吾悦广场三楼"
+    },
+    {
+      "ids": [905, 906],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 906,
+      "canonical_name": "1号赢家亳州谯城万达店",
+      "canonical_addr": "安徽省亳州市谯城区万达广场2F-6",
+      "reason": "BemaniCN address 人民路与汤王大道交汇处 is the Baidu location of 亳州谯城万达广场, matching WAHLAP 谯城万达店. Same coords; bare brand vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/6990",
+      "evidence_quote": "1号赢家 人民路与汤王大道交汇处; comment: 亳州首家双舞萌机厅"
+    },
+    {
+      "ids": [908, 909],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 909,
+      "canonical_name": "365PLAY潮玩沧州任丘万达店",
+      "canonical_addr": "河北省沧州市任丘市万达广场二楼365PLAY潮玩",
+      "reason": "Same brand 365PLAY潮玩 at 任丘万达; bare name vs full branch, about 0 m apart. Distinct from 大玩家 also in that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5566",
+      "evidence_quote": "365PLAY潮玩 昆仑南道与北站西路交叉口东北角 任丘市万达广场"
+    },
+    {
+      "ids": [2602, 2631],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2602,
+      "canonical_name": "大玩家沧州任丘万达店",
+      "canonical_addr": "河北省沧州市任丘市万达广场二楼大玩家",
+      "reason": "Same brand 大玩家 at 任丘万达 2F. Baidu also lists 大玩家(沧州任丘万达店) separately from 365PLAY in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1349",
+      "evidence_quote": "大玩家超乐场（任丘万达店） 昆仑南道与北站西路交叉口东北角"
+    },
+    {
+      "ids": [910, 911],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 911,
+      "canonical_name": "37度邯郸和平店",
+      "canonical_addr": "河北省邯郸市邯山区和平路搜购购物广场二楼",
+      "reason": "Same brand 37度 at 邯郸 和平路 搜购购物中心/广场 2层. Identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/3464",
+      "evidence_quote": "37度家庭娱乐中心搜购店 和平路路南搜购购物中心2层"
+    },
+    {
+      "ids": [6987, 6991],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6991,
+      "canonical_name": "金色年华皇城恒隆广场店",
+      "canonical_addr": "辽宁省沈阳市沈河区中街路128号恒隆广场3楼",
+      "reason": "Same brand and mall: 皇城恒隆/中街恒隆 中街路128号 3楼. BemaniCN has unit numbers; WAHLAP is the official branch row.",
+      "evidence_url": "https://map.bemanicn.com/s/2741",
+      "evidence_quote": "金色年华潮玩中心（皇城恒隆店） 辽宁省沈阳市沈河区皇城街道中街路128号皇城恒隆广场3楼300-302&346号铺位"
+    },
+    {
+      "ids": [915, 932],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 915,
+      "canonical_name": "51区南京浦口天悦城店",
+      "canonical_addr": "江苏省南京市浦口区沿江街道百润路9号天悦城2楼 51区超级乐园",
+      "reason": "Same brand 51区 and same mall 天悦城 at 百润路9号 2F. WAHLAP and BemaniCN of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6354",
+      "evidence_quote": "51区超级乐园 天悦城店 江苏省南京市浦口区沿江街道百润路9号天悦城二层"
+    },
+    {
+      "ids": [923, 936],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 936,
+      "canonical_name": "51区超级乐园天津津南店",
+      "canonical_addr": "天津市津南区辛庄永旺3楼五十一区超级乐园",
+      "reason": "ZIv AEON/Shente Plaza Jinnan and WAHLAP/BemaniCN 津南永旺/深特广场 are the same 辛庄 永旺梦乐城 3F shop.",
+      "evidence_url": "https://map.bemanicn.com/s/781",
+      "evidence_quote": "51区超级乐园天津津南店 辛庄镇深特广场1号楼永旺梦乐城3层"
+    },
+    {
+      "ids": [926, 939],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 939,
+      "canonical_name": "51区超级乐园梅江永旺店",
+      "canonical_addr": "西青区友谊南路111号永旺梦乐城F2层",
+      "reason": "ZIv AEON Mall 友谊南路 and BemaniCN 梅江永旺 are the same 西青 永旺梦乐城 F2 shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3809",
+      "evidence_quote": "51区超级乐园梅江永旺店 西青区友谊南路111号永旺梦乐城F2层"
+    },
+    {
+      "ids": [927, 940],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 940,
+      "canonical_name": "51区超级乐园梅江环宇城店",
+      "canonical_addr": "天津市河西区-解放南路689号中海天津环宇城购物中心",
+      "reason": "ZIv Zhonghai UniPark and BemaniCN 梅江环宇城 are the same 解放南路689号 中海环宇城 shop.",
+      "evidence_url": "https://map.bemanicn.com/s/7233",
+      "evidence_quote": "51区超级乐园梅江环宇城店 天津市河西区-解放南路689号中海天津环宇城购物中心"
+    },
+    {
+      "ids": [933, 935],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 935,
+      "canonical_name": "51区超级乐园南京鼓楼店",
+      "canonical_addr": "江苏省南京市鼓楼区草场门大街99号龙江新城市广场一期第三层A305号（51区超级乐园）",
+      "reason": "Same brand and mall: 新城市广场 / 龙江新城市广场 at 草场门大街99号. BemaniCN and WAHLAP of one 鼓楼 store.",
+      "evidence_url": "https://map.bemanicn.com/s/2854",
+      "evidence_quote": "51区超级乐园(新城市广场店) 鼓楼区草场门大街99号新城市广场; transport: 进商场后上三楼"
+    }
+  ]
+}

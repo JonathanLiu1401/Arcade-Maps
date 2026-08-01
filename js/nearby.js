@@ -185,10 +185,16 @@ window.AM = window.AM || {};
       return selGames.has(g) && AM.markers.matchesForGame(a, g, selCabs);
     });
     var shown = hits.slice(0, 3);
+    /* gameLabelFor, not the raw GAME_LABEL table: a store whose only known
+       maimai cabinet is the pre-DX one must not be labelled "maimai DX" here
+       when the panel, popup and search rows all call it FiNALE. This list was
+       the last surface still printing the raw label, which made the same
+       store read as a live DX venue in the one place a phone user scans
+       fastest. */
     var h = shown.map(function (g) {
       return '<span class="gc" style="--c:' +
         (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-        esc(C.GAME_LABEL[g] || g) + "</span>";
+        esc(U.gameLabelFor(a, g)) + "</span>";
     }).join("");
     if (hits.length > shown.length) {
       h += '<span class="nb-more tabnum">+' + (hits.length - shown.length) + "</span>";

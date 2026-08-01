@@ -1,0 +1,2081 @@
+{
+  "shard": 27,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-07-31, 3139 CN / 257 Jiangsu maimai)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-07-31, 583 CN / 47 Jiangsu chunithm)",
+    "https://map.bemanicn.com/s/{id} Inertia shop partials for all 78 bemanicn-linked venues in shard (live 2026-07-31)",
+    "Internal coord/name matching across the 115-venue Jiangsu shard for wahlap vs bemanicn duplicate pairs"
+  ],
+  "corrections": [
+    {
+      "id": 3769,
+      "name": "无锡树屋音游·Cafe",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4489,
+        "pair_name": "树屋音游无锡梁溪店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4489,
+        "target_name": "树屋音游无锡梁溪店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "树屋音游无锡梁溪店",
+      "checked_at": "2026-07-31",
+      "note": "Same 锡上MONO 3F (coords ~56m). Live WAHLAP maimai+chunithm use 树屋音游无锡梁溪店. Keep 4489 (official WAHLAP name); merge 3769 (bemanicn s/5088 has richer cab counts: mai 3 / chu 3 / taiko 2 - transfer those onto 4489)."
+    },
+    {
+      "id": 3817,
+      "name": "星世纪游乐空间站",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 3812,
+        "pair_name": "星世纪宿迁远洋未来广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3812,
+        "target_name": "星世纪宿迁远洋未来广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星世纪宿迁远洋未来广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 宿迁远洋未来/远洋广场三楼 (coords 0m). Live WAHLAP maimai+chunithm list 星世纪宿迁远洋未来广场店. Keep 3812; merge 3817 (bn s/6840)."
+    },
+    {
+      "id": 3828,
+      "name": "星世纪（常州高铁新城星耀城吾悦广场店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 3819,
+        "pair_name": "星世纪游乐空间站星耀城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3819,
+        "target_name": "星世纪游乐空间站星耀城店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星世纪游乐空间站星耀城店",
+      "checked_at": "2026-07-31",
+      "note": "Same 常州星耀城吾悦 (coords 0m). Live WAHLAP maimai lists 星世纪游乐空间站星耀城店. Keep 3819; merge 3828 (bn s/6418). Note: 4959 游戏大魔方 is a DIFFERENT shop on the same mall 3F (also on live WAHLAP) - not a dupe of 星世纪."
+    },
+    {
+      "id": 3910,
+      "name": "星悦潮玩(宜兴八佰伴购物中心店)",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 3911,
+        "pair_name": "星悦潮玩无锡宜兴店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3911,
+        "target_name": "星悦潮玩无锡宜兴店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星悦潮玩无锡宜兴店",
+      "checked_at": "2026-07-31",
+      "note": "Same 宜兴八佰伴 解放东路288号 3F (coords ~33m). Live WAHLAP maimai: 星悦潮玩无锡宜兴店. Keep 3911; merge 3910 but transfer taiko+other from bn s/3604 onto keeper."
+    },
+    {
+      "id": 3913,
+      "name": "星悦蓝海",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 3914,
+        "pair_name": "星悦蓝海无锡梁溪店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3914,
+        "target_name": "星悦蓝海无锡梁溪店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星悦蓝海无锡梁溪店",
+      "checked_at": "2026-07-31",
+      "note": "Identical address 崇安寺步行街一期负一楼78号 (coords ~111m geocode drift). Live WAHLAP: 星悦蓝海无锡梁溪店. Keep 3914; merge 3913."
+    },
+    {
+      "id": 3940,
+      "name": "星河奇迹（昆山青阳万达店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 3937,
+        "pair_name": "星河奇迹苏州昆山万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3937,
+        "target_name": "星河奇迹苏州昆山万达店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星河奇迹苏州昆山万达店",
+      "checked_at": "2026-07-31",
+      "note": "Same 昆山周市青阳万达 3F (coords 0m). Live WAHLAP: 星河奇迹苏州昆山万达店. Keep 3937; merge 3940 (bn s/5659 reports maimai qty 2 - transfer count)."
+    },
+    {
+      "id": 4014,
+      "name": "星贝尼家庭娱乐中心",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4016,
+        "pair_name": "星贝尼苏州张家港万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4016,
+        "target_name": "星贝尼苏州张家港万达店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星贝尼苏州张家港万达店",
+      "checked_at": "2026-07-31",
+      "note": "Same 张家港杨舍万达三楼 (coords 0m). Live WAHLAP: 星贝尼苏州张家港万达店. Keep 4016; merge 4014."
+    },
+    {
+      "id": 4099,
+      "name": "星际传奇南京万象汇店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4100,
+        "pair_name": "星际传奇南京城北万象汇店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4100,
+        "target_name": "星际传奇南京城北万象汇店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星际传奇南京城北万象汇店",
+      "checked_at": "2026-07-31",
+      "note": "Same 南京城北万象汇 B馆三楼. Live WAHLAP maimai name is 星际传奇南京城北万象汇店; live WAHLAP chunithm name is the shorter 星际传奇南京万象汇店 (same place). Keep 4100 (has maimai+chunithm+taiko); merge 4099."
+    },
+    {
+      "id": 4189,
+      "name": "星际传奇（淮安店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4136,
+        "pair_name": "星际传奇淮安清江浦店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4136,
+        "target_name": "星际传奇淮安清江浦店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "星际传奇淮安清江浦店",
+      "checked_at": "2026-07-31",
+      "note": "Same 淮安清江浦 华信Mall 三楼 (coords 0m). Live WAHLAP: 星际传奇淮安清江浦店. Keep 4136; merge 4189."
+    },
+    {
+      "id": 4435,
+      "name": "极速时代盱眙店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4433,
+        "pair_name": "极速时代淮安盱眙中央商场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4433,
+        "target_name": "极速时代淮安盱眙中央商场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "极速时代淮安盱眙中央商场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 盱眙金源北路20号中央商城/商场 F3 (coords ~20m). Live WAHLAP: 极速时代淮安盱眙中央商场店. Keep 4433; merge 4435."
+    },
+    {
+      "id": 4499,
+      "name": "梁溪万达盖世玩家",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5867,
+        "pair_name": "盖世玩家无锡梁溪店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5867,
+        "target_name": "盖世玩家无锡梁溪店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "盖世玩家无锡梁溪店",
+      "checked_at": "2026-07-31",
+      "note": "Same 无锡梁溪万达 2F (coords ~64m). Live WAHLAP: 盖世玩家无锡梁溪店. Keep 5867; merge 4499."
+    },
+    {
+      "id": 4691,
+      "name": "汇嘻熊徐州万科新淮店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4692,
+        "pair_name": "汇嘻熊徐州云龙店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4692,
+        "target_name": "汇嘻熊徐州云龙店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "汇嘻熊徐州云龙店",
+      "checked_at": "2026-07-31",
+      "note": "Same 徐州万科新淮中心 (coords ~226m). Live WAHLAP only lists 汇嘻熊徐州云龙店 for this site. Keep 4692; merge 4691."
+    },
+    {
+      "id": 4693,
+      "name": "汇嘻熊徐州人民广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4697,
+        "pair_name": "汇嘻熊潮玩徐州泉山生活广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4697,
+        "target_name": "汇嘻熊潮玩徐州泉山生活广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "汇嘻熊潮玩徐州泉山生活广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 徐州徐宝商业街/徐宝生活广场 area (coords 0m). Live WAHLAP: 汇嘻熊潮玩徐州泉山生活广场店. Keep 4697; merge 4693 (bn claims maimai qty 2)."
+    },
+    {
+      "id": 4695,
+      "name": "汇嘻熊徐州金地商都店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4696,
+        "pair_name": "汇嘻熊徐州鼓楼大润发店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4696,
+        "target_name": "汇嘻熊徐州鼓楼大润发店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "汇嘻熊徐州鼓楼大润发店",
+      "checked_at": "2026-07-31",
+      "note": "Same 徐州鼓楼中山北路6号金地商都/大润发 负一层 (coords ~71m). Live WAHLAP: 汇嘻熊徐州鼓楼大润发店. Keep 4696; merge 4695. Note: 5785/5786 电玩猩彭城壹号 is a DIFFERENT shop nearby, not this venue."
+    },
+    {
+      "id": 4700,
+      "name": "江宁区电玩猩电玩城",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5783,
+        "pair_name": "电玩猩南京江宁义乌小商品市场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5783,
+        "target_name": "电玩猩南京江宁义乌小商品市场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "电玩猩南京江宁义乌小商品市场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 南京江宁义乌小商品城/市场 A区 (coords ~87m). Live WAHLAP: 电玩猩南京江宁义乌小商品市场店. Keep 5783; merge 4700."
+    },
+    {
+      "id": 4781,
+      "name": "汤姆熊欢乐世界（大悦春风里）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4804,
+        "pair_name": "汤姆熊苏州大悦城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4804,
+        "target_name": "汤姆熊苏州大悦城店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "汤姆熊苏州大悦城店",
+      "checked_at": "2026-07-31",
+      "note": "Same 苏州相城大悦春风里 御窑路1999号 三楼 (coords 0m). Live WAHLAP: 汤姆熊苏州大悦城店. Keep 4804; merge 4781 but transfer taiko (bn qty 2) onto keeper."
+    },
+    {
+      "id": 4792,
+      "name": "汤姆熊欢乐世界（绿宝广场）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4805,
+        "pair_name": "汤姆熊苏州绿宝店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4805,
+        "target_name": "汤姆熊苏州绿宝店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "汤姆熊苏州绿宝店",
+      "checked_at": "2026-07-31",
+      "note": "Same 苏州高新绿宝广场 长江路436号 3F (coords ~74m). Live WAHLAP: 汤姆熊苏州绿宝店. Keep 4805; merge 4792 but transfer taiko."
+    },
+    {
+      "id": 4900,
+      "name": "润宝梦想潮玩娱乐(江阴星河店)",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 4894,
+        "pair_name": "润宝梦想无锡江阴店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4894,
+        "target_name": "润宝梦想无锡江阴店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "润宝梦想无锡江阴店",
+      "checked_at": "2026-07-31",
+      "note": "Same 江阴星河 COCO City 3F area (coords ~81m; addresses 滨江东路18号 vs 秦望山路19号 are the same mall complex). Live WAHLAP: 润宝梦想无锡江阴店. Keep 4894; merge 4900."
+    },
+    {
+      "id": 5079,
+      "name": "潘朵拉乐园",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5080,
+        "pair_name": "潘朵拉动漫乐园连云港灌云九龙港店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5080,
+        "target_name": "潘朵拉动漫乐园连云港灌云九龙港店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "潘朵拉动漫乐园连云港灌云九龙港店",
+      "checked_at": "2026-07-31",
+      "note": "Same 连云港灌云九龙港广场 (coords ~25m). Live WAHLAP: 潘朵拉动漫乐园连云港灌云九龙港店. Keep 5080; merge 5079."
+    },
+    {
+      "id": 5272,
+      "name": "潮玩魔都",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5273,
+        "pair_name": "潮玩魔都南京桥北新店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5273,
+        "target_name": "潮玩魔都南京桥北新店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "潮玩魔都南京桥北新店",
+      "checked_at": "2026-07-31",
+      "note": "Same 南京江北金像/金象城购物中心 2F (coords 0m). Live WAHLAP: 潮玩魔都南京桥北新店. Keep 5273; merge 5272."
+    },
+    {
+      "id": 5294,
+      "name": "潮趣堂超级乐园（常州吾悦国际店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5289,
+        "pair_name": "潮趣堂常州吾悦广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5289,
+        "target_name": "潮趣堂常州吾悦广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "潮趣堂常州吾悦广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 常州钟楼延陵西路123号吾悦广场 (coords ~37m). Live WAHLAP maimai lists 潮趣堂常州吾悦广场店 only (no separate 超级乐园). Keep 5289; merge 5294 but transfer bn chunithm (qty 1) + maimai qty 2 + other from s/6501. Note: live WAHLAP chunithm does NOT list this 吾悦 store (only 环球港/武进/溧阳 for 潮趣堂 chu), so chunithm is community-only."
+    },
+    {
+      "id": 5295,
+      "name": "潮趣堂（常州环球港店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5291,
+        "pair_name": "潮趣堂常州新北环球港店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5291,
+        "target_name": "潮趣堂常州新北环球港店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "潮趣堂常州新北环球港店",
+      "checked_at": "2026-07-31",
+      "note": "Same 常州新北江南环球港 L4 (coords 0m). Live WAHLAP maimai+chunithm: 潮趣堂常州新北环球港店. Keep 5291; merge 5295 but transfer jubeat from bn s/4977 onto keeper."
+    },
+    {
+      "id": 5361,
+      "name": "炫酷风游乐动漫城",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5362,
+        "pair_name": "炫酷风连云港灌云富园广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5362,
+        "target_name": "炫酷风连云港灌云富园广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "炫酷风连云港灌云富园广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 灌云富园广场步行街 (coords ~120m). Live WAHLAP: 炫酷风连云港灌云富园广场店. Keep 5362; merge 5361."
+    },
+    {
+      "id": 5551,
+      "name": "玖号玩家 海星生活广场店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5553,
+        "pair_name": "玖号玩家苏州吴中海星广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5553,
+        "target_name": "玖号玩家苏州吴中海星广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "玖号玩家苏州吴中海星广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 苏州吴中海星生活广场 2F (coords ~38m). Live WAHLAP: 玖号玩家苏州吴中海星广场店. Keep 5553; merge 5551."
+    },
+    {
+      "id": 5595,
+      "name": "玩家风暴（南京紫荆广场店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5594,
+        "pair_name": "玩家风暴南京雨花台紫荆广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5594,
+        "target_name": "玩家风暴南京雨花台紫荆广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "玩家风暴南京雨花台紫荆广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 南京雨花紫荆广场花漫里 2F (coords ~25m). Live WAHLAP: 玩家风暴南京雨花台紫荆广场店. Keep 5594; merge 5595."
+    },
+    {
+      "id": 5724,
+      "name": "环游家族·宝贝王(滨湖万达店)",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5728,
+        "pair_name": "环游家族无锡滨湖万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5728,
+        "target_name": "环游家族无锡滨湖万达店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "环游家族无锡滨湖万达店",
+      "checked_at": "2026-07-31",
+      "note": "Same 无锡滨湖万达 1F (coords 0m). Live WAHLAP: 环游家族无锡滨湖万达店. Keep 5728; merge 5724."
+    },
+    {
+      "id": 5733,
+      "name": "环游家族（崇川万达店）",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5725,
+        "pair_name": "环游家族南通万达广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5725,
+        "target_name": "环游家族南通万达广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "环游家族南通万达广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 南通崇川深南路9号万达 3F (coords 0m). Live WAHLAP: 环游家族南通万达广场店. Keep 5725; merge 5733 but transfer taiko from bn s/3669 onto keeper."
+    },
+    {
+      "id": 5785,
+      "name": "电玩猩彭城壹号店",
+      "field": "other",
+      "current": {
+        "status": "listed_as_separate_venue",
+        "pair_id": 5786,
+        "pair_name": "电玩猩徐州鼓楼南门广场店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5786,
+        "target_name": "电玩猩徐州鼓楼南门广场店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "电玩猩徐州鼓楼南门广场店",
+      "checked_at": "2026-07-31",
+      "note": "Same 徐州鼓楼彭城一号/南门广场 三楼 (coords ~385m geocode; same complex). Live WAHLAP: 电玩猩徐州鼓楼南门广场店. Keep 5786; merge 5785."
+    },
+    {
+      "id": 4823,
+      "name": "泗洲吾悦飞马王国",
+      "field": "other",
+      "current": {
+        "name": "泗洲吾悦飞马王国",
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "name": "飞马王国宿迁泗洪店",
+        "add_src": "wahlap"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "飞马王国宿迁泗洪店",
+      "checked_at": "2026-07-31",
+      "note": "Live WAHLAP maimai lists 飞马王国宿迁泗洪店 at 江苏省宿迁市泗洪县泗洲吾悅三楼飞马王国. BemaniCN s/4643 is the same shop under a different name. Keep as separate from 5315 炫e潮玩 (also on that mall)."
+    },
+    {
+      "id": 5316,
+      "name": "炫一潮玩（原一同潮玩）",
+      "field": "other",
+      "current": {
+        "name": "炫一潮玩（原一同潮玩）",
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "name": "一同潮玩连云港店",
+        "add_src": "wahlap",
+        "also_known_as": "炫一潮玩（原一同潮玩）"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "一同潮玩连云港店",
+      "checked_at": "2026-07-31",
+      "note": "Live WAHLAP maimai: 一同潮玩连云港店 at 江苏省连云港市海州区灌通北路58号苏宁广场3楼301一同潮玩. Matches bn s/1536 address 连云港苏宁广场3F. Venue is still serviced; prefer official name."
+    },
+    {
+      "id": 5397,
+      "name": "焊窝×7shop",
+      "field": "other",
+      "current": {
+        "name": "焊窝×7shop",
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "add_src": "wahlap",
+        "wahlap_name": "7shop南京栖霞康桥圣菲店"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "7shop南京栖霞康桥圣菲店",
+      "checked_at": "2026-07-31",
+      "note": "Live WAHLAP maimai lists 7shop南京栖霞康桥圣菲店 at 江苏省南京市栖霞区文范路9号 康桥圣菲. Same as bn s/5595 焊窝×7shop. Official lists maimai only; bn also claims chunithm+ongeki (community)."
+    },
+    {
+      "id": 5729,
+      "name": "环游家族苏州吴江万宝店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "live WAHLAP chunithm Jiangsu list has no 环游家族苏州吴江万宝店 (maimai list does)",
+      "checked_at": "2026-07-31",
+      "note": "Official WAHLAP CHUNITHM locator (2026-07-31) does not list this store. Live BemaniCN s/2508 still claims chunithm qty 2 version 2026. Precedence: official WAHLAP over community. Propose drop chunithm until WAHLAP re-lists it. maimai stays (on live WAHLAP maimai)."
+    },
+    {
+      "id": 5298,
+      "name": "潮酷王国宿迁沭阳吾悦店",
+      "field": "status",
+      "current": {
+        "listed_games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "maimai_on_official_wahlap": false,
+        "still_on_bemanicn": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "live WAHLAP maimai Jiangsu (257 stores) contains no 潮酷王国",
+      "checked_at": "2026-07-31",
+      "note": "Shard marks src wahlap but live official maimai locator has zero 潮酷王国 entries in Jiangsu. BemaniCN s/3915 still shows maimai qty 1 version 国服2024. Possible delist/rename/closed for network play. Do not invent a closed status; flag for maintainer review. Nearby 沭阳吾悦 still has other WAHLAP stores (天空之城江苏沭阳店, 宝乐城游乐园沭阳吾悦广场店)."
+    },
+    {
+      "id": 4489,
+      "name": "树屋音游无锡梁溪店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 3,
+        "chunithm": 3,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5088",
+      "evidence_quote": "arcades: maimai_dx qty=3, chunithm qty=3, taiko qty=2",
+      "checked_at": "2026-07-31",
+      "note": "After merging 3769: live BemaniCN s/5088 reports these quantities. Community source; confidence likely not certain. Also add taiko to games list if missing on 4489 (currently chunithm,maimai_dx only)."
+    },
+    {
+      "id": 4489,
+      "name": "树屋音游无锡梁溪店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5088",
+      "evidence_quote": "title_id 31 taiko quantity 2",
+      "checked_at": "2026-07-31",
+      "note": "Live BemaniCN lists taiko; WAHLAP does not track taiko. Community evidence only."
+    },
+    {
+      "id": 3911,
+      "name": "星悦潮玩无锡宜兴店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3604",
+      "evidence_quote": "maimai_dx qty=1, taiko qty=1, other tid=35 qty=1",
+      "checked_at": "2026-07-31",
+      "note": "From bn pair 3910 s/3604 after merge."
+    },
+    {
+      "id": 3911,
+      "name": "星悦潮玩无锡宜兴店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3604",
+      "evidence_quote": "maimai_dx quantity 1, taiko quantity 1",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN community qty."
+    },
+    {
+      "id": 3937,
+      "name": "星河奇迹苏州昆山万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5659",
+      "evidence_quote": "maimai_dx quantity 2",
+      "checked_at": "2026-07-31",
+      "note": "From bn pair 3940; also other tid=26 qty=4."
+    },
+    {
+      "id": 4804,
+      "name": "汤姆熊苏州大悦城店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1401",
+      "evidence_quote": "maimai_dx qty=1, taiko qty=2",
+      "checked_at": "2026-07-31",
+      "note": "From bn pair 4781."
+    },
+    {
+      "id": 4804,
+      "name": "汤姆熊苏州大悦城店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1401",
+      "evidence_quote": "maimai_dx quantity 1, taiko quantity 2",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN community qty."
+    },
+    {
+      "id": 4805,
+      "name": "汤姆熊苏州绿宝店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/933",
+      "evidence_quote": "maimai_dx qty=1, taiko qty=2",
+      "checked_at": "2026-07-31",
+      "note": "From bn pair 4792."
+    },
+    {
+      "id": 4805,
+      "name": "汤姆熊苏州绿宝店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/933",
+      "evidence_quote": "maimai_dx quantity 1, taiko quantity 2",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN community qty."
+    },
+    {
+      "id": 5291,
+      "name": "潮趣堂常州新北环球港店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "jubeat"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4977",
+      "evidence_quote": "jubeat title_id 34 quantity 1 version 国行",
+      "checked_at": "2026-07-31",
+      "note": "From bn pair 5295; WAHLAP does not list jubeat. Community only."
+    },
+    {
+      "id": 5291,
+      "name": "潮趣堂常州新北环球港店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "jubeat": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4977",
+      "evidence_quote": "maimai_dx=1 chunithm=2 jubeat=1",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN community qty; chunithm also confirmed on live WAHLAP midtr for this store name."
+    },
+    {
+      "id": 5725,
+      "name": "环游家族南通万达广场店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3669",
+      "evidence_quote": "maimai_dx qty=1, taiko qty=1",
+      "checked_at": "2026-07-31",
+      "note": "From bn pair 5733."
+    },
+    {
+      "id": 5397,
+      "name": "焊窝×7shop",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "7shop南京栖霞康桥圣菲店 (maimai only on WAHLAP); no chunithm entry for this store on WAHLAP midtr",
+      "checked_at": "2026-07-31",
+      "note": "Official WAHLAP only confirms maimai. BemaniCN s/5595 still lists chunithm Verse qty 1 and ongeki Re:fresh qty 1. Leaving games as-is; flag that chunithm/ongeki are community-only. hours on BN look odd (01:00-02:00+1d) - private room style cafe, treat carefully."
+    },
+    {
+      "id": 3769,
+      "name": "无锡树屋音游·Cafe",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5088",
+      "evidence_quote": "start_time=10 end_time=26",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 4100,
+      "name": "星际传奇南京城北万象汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3032",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 5292,
+      "name": "潮趣堂常州武进万达",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5487",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 5293,
+      "name": "潮趣堂常州溧阳万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4652",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 5730,
+      "name": "环游家族苏州太仓店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6557",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 3861,
+      "name": "星城战记泰州天虹购物中心店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3757",
+      "evidence_quote": "start_time=10 end_time=21",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 3912,
+      "name": "星悦潮玩无锡店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/730",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 5552,
+      "name": "玖号玩家动漫城苏州相城永金广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5391",
+      "evidence_quote": "start_time=10 end_time=26",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN shop.start_time/end_time (community). end>24 means next day. Not an official chain hours page."
+    },
+    {
+      "id": 4694,
+      "name": "汇嘻熊徐州天赋广场店",
+      "field": "status",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "maimai_on_official_wahlap": false,
+        "still_on_bemanicn": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "no 天赋广场 汇嘻熊 on live WAHLAP maimai Jiangsu list (only 云龙/大润发/泉山 汇嘻熊)",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN s/7256 still lists maimai qty 2 version 2026. Not on official WAHLAP. Possible independent/delisted cabinet. Flag for review; do not auto-delete."
+    },
+    {
+      "id": 5264,
+      "name": "潮玩街区（盐都吾悦店）",
+      "field": "status",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "maimai_on_official_wahlap": false,
+        "still_on_bemanicn": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "no 潮玩街区盐都 on live WAHLAP maimai; other 潮玩街区 (东台德润/如皋吾悦/盐城财富) are listed",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN s/5440 still claims maimai. Official locator has no 盐都吾悦 潮玩街区. Flag; do not auto-delete."
+    },
+    {
+      "id": 5349,
+      "name": "炫游邦家庭娱乐中心",
+      "field": "status",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "maimai_on_official_wahlap": false,
+        "still_on_bemanicn": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "宝贝王徐州睢宁万达店 | 江苏省徐州市睢宁县永昶路万达广场二楼宝贝王家庭娱乐中心",
+      "checked_at": "2026-07-31",
+      "note": "No 炫游邦 on live WAHLAP. BemaniCN s/7319 claims maimai at 睢宁万达. Possible rename to 宝贝王 or separate shop in same mall. Unverified whether 炫游邦 still exists as a name. proposed.note: same mall has 宝贝王徐州睢宁万达店 on WAHLAP."
+    },
+    {
+      "id": 5547,
+      "name": "王者之风（昆山招商花园城店）",
+      "field": "status",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "maimai_on_official_wahlap": false,
+        "still_on_bemanicn": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "no 王者之风 on live WAHLAP maimai Jiangsu list",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN s/7299 claims maimai qty 2 version dx2026. Not on official WAHLAP. Flag for review."
+    },
+    {
+      "id": 4320,
+      "name": "朋克星球超乐场（龙信广场店）",
+      "field": "status",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "maimai_on_official_wahlap": false,
+        "still_on_bemanicn": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "no 朋克星球 on live WAHLAP maimai; 海门龙信 has 嗨倍堂超级乐园南通店 on WAHLAP",
+      "checked_at": "2026-07-31",
+      "note": "BemaniCN s/1125 still lists maimai (hours look suspicious 09:00-10:00). Live WAHLAP has 嗨倍堂超级乐园南通店 at 海门龙信广场3楼 instead. Possible replacement operator; unverified."
+    },
+    {
+      "id": null,
+      "name": "e+潮玩南京江宁宝龙店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "e+潮玩南京江宁宝龙店",
+        "addr": "江苏省南京市江宁区麒麟街道青喜社区丹霞街169号宝龙广场F3",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "e+潮玩南京江宁宝龙店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "真快活电玩城无锡锡山开发荟聚中心店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "真快活电玩城无锡锡山开发荟聚中心店",
+        "addr": "无锡市锡山开发区团结中路3号无锡荟聚中心L14 层05A01-01真快活电玩城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "真快活电玩城无锡锡山开发荟聚中心店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "超级兔宿迁泓宇广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级兔宿迁泓宇广场店",
+        "addr": "江苏省宿迁市苏宿大道宏宇广场一楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "超级兔宿迁泓宇广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "宝乐城南京栖霞万达茂店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝乐城南京栖霞万达茂店",
+        "addr": "江苏省南京市栖霞区南京万达茂1号门三楼宝乐城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "宝乐城南京栖霞万达茂店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "宝乐城游乐园淮安万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝乐城游乐园淮安万达店",
+        "addr": "江苏省淮安市万达广场三楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "宝乐城游乐园淮安万达店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "e+潮玩扬州邗江万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "e+潮玩扬州邗江万达店",
+        "addr": "江苏省扬州市邗江区万达广场3楼e+潮玩",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "e+潮玩扬州邗江万达店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "e加潮玩宿迁宿城吾悦广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "e加潮玩宿迁宿城吾悦广场店",
+        "addr": "江苏省宿迁市宿城区吾悦广场e加潮玩",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "e加潮玩宿迁宿城吾悦广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "超乐趣玩堂常州武进店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超乐趣玩堂常州武进店",
+        "addr": "江苏省常州市武进区湖塘镇星河COCO City2楼超乐趣玩堂",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "超乐趣玩堂常州武进店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "宝乐城游乐园沭阳吾悦广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "宝乐城游乐园沭阳吾悦广场店",
+        "addr": "江苏省宿迁市沭阳县台州南路吾悦广场1号门三楼宝乐城游乐园",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "宝乐城游乐园沭阳吾悦广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "酷玩空间宿迁宝龙广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩空间宿迁宝龙广场店",
+        "addr": "江苏省宿迁市宿城区宝龙广场四楼酷玩空间",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "酷玩空间宿迁宝龙广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "SUPERBUDDY常州天宁华润店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "SUPERBUDDY常州天宁华润店",
+        "addr": "江苏省常州市天宁区离宫路329号华润国际花园100栋常州万象城四楼L459",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "SUPERBUDDY常州天宁华润店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "萌多拉泰州海陵万达广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "萌多拉泰州海陵万达广场店",
+        "addr": "江苏省泰州市海陵区万达广场",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "萌多拉泰州海陵万达广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "三十六计苏州吴中永旺店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "三十六计苏州吴中永旺店",
+        "addr": "苏州市吴中区苏震桃路188号永旺梦乐城3层NO.366三十六计",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "三十六计苏州吴中永旺店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城南京秦淮水游城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城南京秦淮水游城店",
+        "addr": "江苏省南京市秦淮区健康路1号水游城三楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城南京秦淮水游城店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "兔子团苏州吴中万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "兔子团苏州吴中万达店",
+        "addr": "江苏省苏州市吴中区石湖西路188号苏州吴中万达广场步行街3层娱乐3F-A",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "兔子团苏州吴中万达店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城扬州邗江吾悦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城扬州邗江吾悦店",
+        "addr": "江苏省扬州市邗江区竹西路29号新城吾悅商场3楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城扬州邗江吾悦店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "元气之星徐州邳州中钰购物中心店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "元气之星徐州邳州中钰购物中心店",
+        "addr": "苏省邳州市中钰购物中心三楼元气之星",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "元气之星徐州邳州中钰购物中心店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "奈得斯动漫城昆山北门路店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "奈得斯动漫城昆山北门路店",
+        "addr": "江苏省昆山市北门路388号温莎堡假日广场二楼奈得斯动漫城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "奈得斯动漫城昆山北门路店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "萌多拉扬州SM广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "萌多拉扬州SM广场店",
+        "addr": "江苏省扬州市广陵区曲江街道运河北路77号SM广场3楼萌多拉A3008铺",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "萌多拉扬州SM广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "超乐趣玩堂常州月季店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超乐趣玩堂常州月季店",
+        "addr": "江苏省常州市钟楼区怀德南路与月季路交汇中吴广场1楼超乐趣玩堂",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "超乐趣玩堂常州月季店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "合电占秦淮国际金融中心店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "合电占秦淮国际金融中心店",
+        "addr": "江苏省南京市秦淮区汉中路一号国际金融中心3楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "合电占秦淮国际金融中心店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城无锡万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城无锡万达店",
+        "addr": "江苏省无锡市宜兴市宜城街道万达广场1号娱乐楼Z-2F-A点位天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城无锡万达店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "引力矩阵苏州常熟店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "引力矩阵苏州常熟店",
+        "addr": "江苏省苏州市常熟市琴湖溪里二期二楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "引力矩阵苏州常熟店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城盐城中南店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城盐城中南店",
+        "addr": "江苏省盐城市盐都区解放南路278号中南城购物中心二楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城盐城中南店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城南通圆融店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城南通圆融店",
+        "addr": "江苏省南通市崇川区工农路57号圆融广场三楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城南通圆融店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城常州钟楼吾悦广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城常州钟楼吾悦广场店",
+        "addr": "江苏省常州市钟楼区延陵西路吾悦国际广场3楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城常州钟楼吾悦广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城常州武进店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城常州武进店",
+        "addr": "江苏省常州市武进区湖塘镇吾悦广场4幢301铺",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城常州武进店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "风云再起苏州观前街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起苏州观前街店",
+        "addr": "江苏省苏州市姑苏区观前街粤海广场1号楼2层风云再起",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "风云再起苏州观前街店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城镇江吾悦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城镇江吾悦店",
+        "addr": "江苏省镇江市新区丁卯桥路223号吾悦商场3楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城镇江吾悦店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城建邺吾悦广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城建邺吾悦广场店",
+        "addr": "江苏省南京市建邺区汉中门大街299号吾悦广场二楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城建邺吾悦广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "天空之城南京浦口龙湖天街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "天空之城南京浦口龙湖天街店",
+        "addr": "江苏省南京市浦口区文景路99号龙湖天街3楼天空之城",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "天空之城南京浦口龙湖天街店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "风云再起徐州鼓楼苏宁广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起徐州鼓楼苏宁广场店",
+        "addr": "江苏省徐州市鼓楼区淮海东路29号苏宁广场3F326",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "风云再起徐州鼓楼苏宁广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "风云再起无锡清扬茂业天地店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起无锡清扬茂业天地店",
+        "addr": "江苏省无锡市梁溪区清扬路128号茂业天地3楼风云再起",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "风云再起无锡清扬茂业天地店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "趣玩汇南京新街口店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "趣玩汇南京新街口店",
+        "addr": "南京市秦淮区洪武路38号正洪大厦趣玩汇",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "趣玩汇南京新街口店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP locator (2026-07-31) and not found in shard_027 (the Jiangsu shard of the map). Coordinates not provided by WAHLAP API; geocode from address. Dual-listed on chunithm API too."
+    },
+    {
+      "id": null,
+      "name": "潮趣堂张家港万达广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮趣堂张家港万达广场店",
+        "addr": "江苏省苏州市张家港市杨舍镇人民东路万达广场3楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "潮趣堂张家港万达广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP maimai locator (2026-07-31) and not found in shard_027. Coordinates not in API; geocode from address. Sample of larger Jiangsu gap (live WAHLAP has ~257 Jiangsu maimai vs 115 shard venues including dupes)."
+    },
+    {
+      "id": null,
+      "name": "风云再起无锡苏宁广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起无锡苏宁广场店",
+        "addr": "无锡市梁溪区人民中路111号无锡苏宁广场三层309E号商铺",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "风云再起无锡苏宁广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP maimai locator (2026-07-31) and not found in shard_027. Coordinates not in API; geocode from address. Sample of larger Jiangsu gap (live WAHLAP has ~257 Jiangsu maimai vs 115 shard venues including dupes)."
+    },
+    {
+      "id": null,
+      "name": "风云再起镇江苏宁广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起镇江苏宁广场店",
+        "addr": "江苏省镇江市京口区解放路111号苏宁广场三楼风云再起",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "风云再起镇江苏宁广场店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP maimai locator (2026-07-31) and not found in shard_027. Coordinates not in API; geocode from address. Sample of larger Jiangsu gap (live WAHLAP has ~257 Jiangsu maimai vs 115 shard venues including dupes)."
+    },
+    {
+      "id": null,
+      "name": "趣玩汇南京湖北路店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "趣玩汇南京湖北路店",
+        "addr": "江苏省南京市鼓楼区湖北路68号天狮百盛1楼",
+        "country": "China",
+        "pref": "江苏",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "趣玩汇南京湖北路店",
+      "checked_at": "2026-07-31",
+      "note": "Present on live WAHLAP maimai locator (2026-07-31) and not found in shard_027. Coordinates not in API; geocode from address. Sample of larger Jiangsu gap (live WAHLAP has ~257 Jiangsu maimai vs 115 shard venues including dupes)."
+    }
+  ]
+}

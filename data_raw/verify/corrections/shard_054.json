@@ -1,0 +1,1353 @@
+{
+  "shard": 54,
+  "checked": 74,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+    "https://map.bemanicn.com/s/{id} Inertia JSON (all 43 bemanicn-linked shops)",
+    "scrapers/bemanicn.py TITLE_GAME mapping",
+    "scrapers/wahlap.py endpoint docs"
+  ],
+  "corrections": [
+    {
+      "id": 6097,
+      "name": "第五季潮玩洛阳涧西王府井购物中心店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "洛阳市涧西区南昌路王府井购物中心三楼第五季潮玩",
+        "lat": 34.645597,
+        "lng": 112.401921,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6096,
+        "reason": "Same Luoyang Jianxi Wangfujing 5th Season store. WAHLAP split chunithm-only name variant from maimai name."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6163",
+      "evidence_quote": "WAHLAP/bemanicn both describe 洛阳涧西王府井购物中心三楼第五季潮玩; bemanicn shop 6163 has maimai DX x1 + CHUNITHM x2; identical coords 34.645597,112.401921",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6096 (第五季潮玩洛阳涧西区王府井购物中心店). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6245,
+      "name": "胖东来许昌魏都时代广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省许昌市魏都区七一路胖东来时代广场五楼动漫乐园",
+        "lat": 34.019983,
+        "lng": 113.827181,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6243,
+        "reason": "Same Xuchang Weidu Pangdonglai Era Square anime park. Extra WAHLAP name variant."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/308",
+      "evidence_quote": "Identical coords 34.019983,113.827181 with 6242/6243; bemanicn 308 is 胖东来时代广场动漫乐园",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6243 (胖东来时代广场动漫乐园). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6242,
+      "name": "胖东来动漫乐园魏都时代广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省许昌市魏都区七一路胖东来时代广场五楼动漫乐园",
+        "lat": 34.019983,
+        "lng": 113.827181,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6243,
+        "reason": "Same Xuchang Weidu Pangdonglai Era Square anime park as bemanicn record."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/308",
+      "evidence_quote": "Identical coordinates 34.019983,113.827181; WAHLAP 胖东来动漫乐园魏都时代广场店 vs bemanicn 胖东来时代广场动漫乐园",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6243 (胖东来时代广场动漫乐园). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6465,
+      "name": "裕隆动漫城鹤壁淇滨裕隆爱之城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省鹤壁市淇滨区鹤煤大道与兴鹤大街交叉口裕隆爱之城动漫城",
+        "lat": 35.733166,
+        "lng": 114.287167,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6464,
+        "reason": "Same Hebi Qibin Yulong Aizhicheng. WAHLAP maimai vs chunithm name variants created a twin row."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/744",
+      "evidence_quote": "Identical coordinates 35.733166,114.287167 and same 鹤煤大道与兴鹤大街交叉口裕隆爱之城 address",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6464 (裕隆动漫城鹤壁店). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6224,
+      "name": "翡尔堡郑州二七万象城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省郑州市二七区万象城3楼翡尔堡",
+        "lat": 34.75694,
+        "lng": 113.656963,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6225,
+        "reason": "Same Zhengzhou Erqi MIXC Feelburg. WAHLAP and bemanicn each created one row."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4642",
+      "evidence_quote": "Identical coordinates 34.75694,113.656963; WAHLAP 翡尔堡郑州二七万象城店; bemanicn 4642 翡尔堡（万象城店）",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6225 (翡尔堡（万象城店）). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6229,
+      "name": "聚乐街区周口商水店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省周口市商水县仟业广场负一层",
+        "lat": 33.557561,
+        "lng": 114.610155,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6231,
+        "reason": "Same Zhoukou Shangshui Qianye Plaza Jule block."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6527",
+      "evidence_quote": "Identical coordinates 33.557561,114.610155; WAHLAP 聚乐街区周口商水店 vs bemanicn 聚乐街区游乐城 at 仟业广场负1楼",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6231 (聚乐街区游乐城). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6230,
+      "name": "聚乐街区周口项城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省周口市项城市市标太格里购物中心4F001聚乐街区",
+        "lat": 33.44626,
+        "lng": 114.878973,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6232,
+        "reason": "Same Xiangcheng Taigeli mall Jule block."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4263",
+      "evidence_quote": "Coords 33.44626 vs 33.446023; both 太格里购物中心4楼聚乐街区",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6232 (聚乐街区电玩城). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6239,
+      "name": "肥猫电玩洛阳西工百脑汇店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "洛阳市西工区中州路与王城大道路口百脑汇F3层",
+        "lat": 34.668446,
+        "lng": 112.420817,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6238,
+        "reason": "Same Luoyang Xigong Buynow Fat Cat."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6830",
+      "evidence_quote": "Coords 34.668446 vs 34.668511; both 百脑汇三楼肥猫电玩",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6238 (肥猫电玩). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6858,
+      "name": "酷炫电玩安阳华强新天地店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省安阳市文峰区华强新天地酷炫电玩",
+        "lat": 36.052816,
+        "lng": 114.370967,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6857,
+        "reason": "Same Anyang Huaqiang Xintiandi Cool Xuan."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4164",
+      "evidence_quote": "Identical coordinates 36.052816,114.370967",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6857 (酷炫电玩). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6931,
+      "name": "酷玩竞界郑州郑东新区店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省郑州市郑东新区太格茂购物中心三层酷玩竞界",
+        "lat": 34.794299,
+        "lng": 113.795362,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6932,
+        "reason": "Same Zhengzhou Zhengdong Taigemao Cool Play Arena."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4348",
+      "evidence_quote": "Identical coordinates 34.794299,113.795362",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6932 (酷玩竞界（太格茂店）). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 7216,
+      "name": "风云再起郑州七天地店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省郑州市郑东新区商务内环众意西路丹尼斯7天地BF层",
+        "lat": 34.77902,
+        "lng": 113.716704,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7152,
+        "reason": "Same Zhengzhou Dennis 7 Tiandi Fyza."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/473",
+      "evidence_quote": "Identical coordinates 34.77902,113.716704",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 7152 (风云再起丹尼斯七天地店). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 7241,
+      "name": "飞翔乐园驻马店环球港店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省驻马店市天中环球港3楼",
+        "lat": 33.001328,
+        "lng": 113.983207,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7242,
+        "reason": "Same Zhumadian Global Harbor Flying Paradise."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4142",
+      "evidence_quote": "Identical coordinates 33.001328,113.983207",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 7242 (飞翔乐园：聚有引力（驿城区环球港店）). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 7302,
+      "name": "魅影苍穹许昌长葛宇龙广场店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省许昌市长葛市长社路街道宇龙广场三楼3107-3109号",
+        "lat": 34.224889,
+        "lng": 113.764143,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7299,
+        "reason": "Same Changge Yulong Plaza Shadow Sky / Gravity brand."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3878",
+      "evidence_quote": "Coords 34.224889 vs 34.224346; both 宇龙广场三楼3107",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 7299 (魅影苍穹潮玩城·聚有引力). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 7108,
+      "name": "青鸾动漫郑州金水店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省郑州市金水区中方园路86号翰宇天悦城3号楼1单元二楼",
+        "lat": 34.830275,
+        "lng": 113.648092,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6750,
+        "reason": "Same Zhengzhou Jinshui Hanyu Tianyuecheng Qingluan."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5549",
+      "evidence_quote": "Coords 34.830275 vs 34.830278; both 中方园路86号翰宇天悦城3号楼",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6750 (郑州青鸾动漫城). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6510,
+      "name": "赛博时空周口川汇万达店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省周口市川汇区文昌万达三楼3020-3022商铺赛博时空",
+        "lat": 33.634152,
+        "lng": 114.66775,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6511,
+        "reason": "Same Zhoukou Wenchang Wanda Cyber Space."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5592",
+      "evidence_quote": "Coords 33.634152 vs 33.634517; both 文昌万达三楼赛博时空",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6511 (赛博时空周口文昌万达店). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6478,
+      "name": "视界游乐中心新乡辉县店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省新乡市辉县市百泉路中段路西9号新田360广场B115号商铺",
+        "lat": 35.471727,
+        "lng": 113.784853,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6699,
+        "reason": "Same Huixian Xintian 360. WAHLAP name 视界游乐中心 vs bemanicn 沃的世界."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4135",
+      "evidence_quote": "Identical coordinates 35.471727,113.784853; both 新田360",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6699 (辉县·沃的世界). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 7037,
+      "name": "阳光狮乐园信阳西亚和悦店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省信阳潢川县南城弋阳路西亚和悦广场",
+        "lat": 32.129508,
+        "lng": 115.05153,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7039,
+        "reason": "WAHLAP name says Xinyang Xiyue but address is Huangchuan Xiyue; same pin as bemanicn Huangchuan store."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3430",
+      "evidence_quote": "Identical coordinates 32.129508,115.05153; WAHLAP address 潢川县...西亚和悦广场; bemanicn 阳光狮乐园潢川和悦店",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 7039 (阳光狮乐园潢川和悦店). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 7247,
+      "name": "飞象动漫商丘梁园正弘汇店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "河南省商丘市梁园区神火大道与凯四街交叉口正弘汇五楼飞象动漫",
+        "lat": 34.438579,
+        "lng": 115.650763,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7246,
+        "reason": "Same Shangqiu Zhenghonghui Flying Elephant."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4614",
+      "evidence_quote": "Coords 34.438579 vs 34.438807; both 正弘汇五楼飞象",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 7246 (飞象动漫). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6095,
+      "name": "第五季潮玩",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "新都会购物三楼楼东侧",
+        "lat": 34.672152,
+        "lng": 112.428637,
+        "src": [
+          "bemanicn"
+        ],
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6098,
+        "reason": "bemanicn short name 第五季潮玩 at 新都会 is the same place as WAHLAP 第五季潮玩街区洛阳新都汇店."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "Coords 34.672152 vs 34.672391; WAHLAP still lists 第五季潮玩街区洛阳新都汇店 for maimai and chunithm at 洛阳市西工区新都汇购物公园",
+      "checked_at": "2026-07-31",
+      "note": "Duplicate of id 6098 (第五季潮玩街区洛阳新都汇店). Prefer keeping the bemanicn-linked or richer record and folding the WAHLAP-only twin into it."
+    },
+    {
+      "id": 6225,
+      "name": "翡尔堡（万象城店）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "WAHLAP CHUNITHM location: arcadeName=翡尔堡郑州二七万象城店, address=河南省郑州市二七区万象城3楼翡尔堡, province=河南",
+      "checked_at": "2026-07-31",
+      "note": "Official WAHLAP midtr list includes CHUNITHM here. bemanicn row currently omits it; twin 6224 had it. After merge into 6225, keep chunithm."
+    },
+    {
+      "id": 7034,
+      "name": "阳光狮乐园信阳光山店",
+      "field": "other",
+      "current": {
+        "bemanicn": "https://map.bemanicn.com/s/2539",
+        "addr": "河南省信阳市光山县二环路与健康路交叉口西亚城市广场五楼阳光狮乐园",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "other"
+        ]
+      },
+      "proposed": {
+        "bemanicn_link_issue": "https://map.bemanicn.com/s/2539 is Luoshan Xiyameiyue, not Guangshan",
+        "keep_wahlap_addr": "河南省信阳市光山县二环路与健康路交叉口西亚城市广场五楼阳光狮乐园",
+        "wahlap_maimai": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2539",
+      "evidence_quote": "shop.name=阳光狮乐园; shop.address=罗山西亚美悦广场六楼; arcades title_ids=[3, 2, 26]; updated_at=2026-07-27T14:13:02.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "App WAHLAP address is Guangshan Xiyashicheng 5F. Linked bemanicn shop address is Luoshan Xiyameiyue 6F (same wording as id 7040). Do not trust bemanicn games/counts on 7034 until re-linked. WAHLAP still lists 阳光狮乐园信阳光山店 for maimai_dx."
+    },
+    {
+      "id": 6467,
+      "name": "西亚丽宝广场4L阳光狮乐园",
+      "field": "location",
+      "current": {
+        "addr": "西亚",
+        "lat": 32.11535,
+        "lng": 114.113142,
+        "notes": "other games: WACCA, maimai; region: 河南省 信阳市 | position from address: geocoded to address precision by baidu"
+      },
+      "proposed": {
+        "problem": "addr is only '西亚'; pin equals 6469 Pingqiao; comment QQ group is Xixian",
+        "candidates": [
+          "阳光狮乐园信阳息县丽宝店 (WAHLAP chunithm)",
+          "duplicate of 6469 西亚城信阳平桥店"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2520",
+      "evidence_quote": "shop.name=西亚丽宝广场4L阳光狮乐园; shop.address=西亚; comment contains 息县本地小小音游群：883281545; app pin identical to id 6469",
+      "checked_at": "2026-07-31",
+      "note": "WAHLAP has separate 阳光狮乐园信阳息县丽宝店 (chunithm) and 西亚城信阳平桥店 (maimai+chunithm). Re-resolve 6467 against those two official entries."
+    },
+    {
+      "id": 7090,
+      "name": "零零壹动漫乐园",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5263",
+      "evidence_quote": "shop.status=1; shop.arcades=[]; updated_at=2026-07-30T06:22:24.000000Z; not found on WAHLAP maimai Henan list under this name",
+      "checked_at": "2026-07-31",
+      "note": "Community page updated 2026-07-30 with empty machines. Official WAHLAP does not list this shop. Clear games until re-confirmed; venue status itself may still be open (status=1)."
+    },
+    {
+      "id": 7090,
+      "name": "零零壹动漫乐园",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5263",
+      "evidence_quote": "shop.arcades=[] as of updated_at 2026-07-30T06:22:24.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "Remove maimai_dx count of 1; source no longer lists cabinets."
+    },
+    {
+      "id": 6408,
+      "name": "萌次方",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "on_wahlap_maimai": false
+      },
+      "proposed": {
+        "networked_maimai_dx": "unverified",
+        "bemanicn_version": "手台",
+        "coin": 0
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6164",
+      "evidence_quote": "maimai DX quantity=1 version=手台 coin=0; also WACCA x2; updated_at=2026-06-28T11:53:38.000000Z; no matching WAHLAP maimai Henan arcadeName",
+      "checked_at": "2026-07-31",
+      "note": "Do not treat as a normal WAHLAP-serviced DX without local confirmation. Not removing solely from WAHLAP absence."
+    },
+    {
+      "id": 7333,
+      "name": "鱼窝",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "maimai_dx": 4,
+          "ongeki": 1
+        }
+      },
+      "proposed": {
+        "venue_type": "private/community (鱼窝)",
+        "not_on_wahlap": true,
+        "entry": "scan QR; minors not supported"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4417",
+      "evidence_quote": "shop.price=114514; start_time=1 end_time=25; versions HDX+MaiMoller / Tasoller & Chuni-Frame / SimGetro; comment: 暂不支持未成年人入窝游玩。入窝游玩请扫图片的二维码",
+      "checked_at": "2026-07-31",
+      "note": "Counts match bemanicn (mai 4 / chu 2 / ongeki 1). Not a public mall WAHLAP store."
+    },
+    {
+      "id": 7337,
+      "name": "鲨鱼电玩体验店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "NS/Switch drums (title_id 15 旧代, version=ns版 全dlc) - not Nijiiro arcade"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1453",
+      "evidence_quote": "title_id=15 quantity=2 version=ns版 comment=全dlc; shop.comment mentions PS4/PS5 timed play and two physical drums",
+      "checked_at": "2026-07-31",
+      "note": "Players expecting arcade Nijiiro taiko will be misled."
+    },
+    {
+      "id": 6437,
+      "name": "蓝精灵儿童游乐中心(万达金街店)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "旧代/亚洲版 (title_id 15, version=14亚) - not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4837",
+      "evidence_quote": "title_id=15 quantity=1 version=14亚",
+      "checked_at": "2026-07-31",
+      "note": "Old-generation taiko only."
+    },
+    {
+      "id": 6449,
+      "name": "蚂蚁运动潮玩街区",
+      "field": "cab_models",
+      "current": {
+        "games": [
+          "other",
+          "taiko"
+        ]
+      },
+      "proposed": {
+        "maimai": "FiNALE legacy (title_id=2)",
+        "taiko": "旧代 亚洲版 x2 (title_id 15)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4895",
+      "evidence_quote": "title_id=15 qty=2 version=亚洲版; title_id=2 maimai qty=1 version=finale",
+      "checked_at": "2026-07-31",
+      "note": "App correctly has other+taiko without maimai_dx."
+    },
+    {
+      "id": 6449,
+      "name": "蚂蚁运动潮玩街区",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "pricing_model": "timed flat rate",
+        "text": "60 CNY per hour unlimited (not coin)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4895",
+      "evidence_quote": "shop.price=60; comment: 此机厅60元一小时随便玩并非投币制",
+      "checked_at": "2026-07-31",
+      "note": "Local currency CNY."
+    },
+    {
+      "id": 7036,
+      "name": "阳光狮乐园信阳淮滨店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon/Wed/Thu 10:00-20:30; Tue 14:30-21:30 (morning closed for cleaning); Fri-Sun and holidays 10:00-21:30",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2363",
+      "evidence_quote": "comment: 营业时间：周一，周三，周四 10:00-20:30 | 周二 14:30-21:30 上午机厅闭店对机台进行消毒维护 | 周五-周日 10:00-21:30 | 法定节假日期间 10:00-21:30",
+      "checked_at": "2026-07-31",
+      "note": "Community hours on bemanicn; not mall-official."
+    },
+    {
+      "id": 6720,
+      "name": "迪咔嗨玩嘉年华长垣店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Weekdays 13:00-22:00; holidays 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1682",
+      "evidence_quote": "comment: 营业时间：工作日13:00-22:00，节假日10:00-22:00",
+      "checked_at": "2026-07-31",
+      "note": "Structured bemanicn hours 10-10 are unusable; comment is clearer. Phone 0373-8070005 on page."
+    },
+    {
+      "id": 6464,
+      "name": "裕隆动漫城鹤壁店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-22:30",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/744",
+      "evidence_quote": "comment: 机厅营业时间为9：30-22：30。 shop.start_time=8 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Prefer comment over integer fields."
+    },
+    {
+      "id": 6750,
+      "name": "郑州青鸾动漫城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-03:00 (+1d); maimai and taiko usually power off after 00:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5549",
+      "evidence_quote": "comment: 实际营业时间为9:30到次日3:00...大部分机器十二点后就关机，包括舞萌和太鼓。",
+      "checked_at": "2026-07-31",
+      "note": "Late-night players should know maimai may be off after midnight."
+    },
+    {
+      "id": 7217,
+      "name": "风云再起郑州大上海城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-00:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/112",
+      "evidence_quote": "shop.start_time=10 shop.end_time=24 updated_at=2026-07-29T09:51:27.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "bemanicn integer hour convention; end>=24 means next day. Community-maintained."
+    },
+    {
+      "id": 7217,
+      "name": "风云再起郑州大上海城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 1.0,
+        "note": "bemanicn shop.price is coin unit CNY; multiply by per-title coin field for per-credit cost"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/112",
+      "evidence_quote": "shop.price=1; sample coins=[{'title_id': 1, 'coin': 5, 'qty': 3}, {'title_id': 3, 'coin': 5, 'qty': 2}, {'title_id': 31, 'coin': 6, 'qty': 1}]",
+      "checked_at": "2026-07-31",
+      "note": "Group-buy packages often cheaper than face coin unit."
+    },
+    {
+      "id": 7218,
+      "name": "风云再起郑州大卫城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/280",
+      "evidence_quote": "shop.start_time=10 shop.end_time=23 updated_at=2026-07-27T05:03:52.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "bemanicn integer hour convention; end>=24 means next day. Community-maintained."
+    },
+    {
+      "id": 7218,
+      "name": "风云再起郑州大卫城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 1.0,
+        "note": "bemanicn shop.price is coin unit CNY; multiply by per-title coin field for per-credit cost"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/280",
+      "evidence_quote": "shop.price=1; sample coins=[{'title_id': 1, 'coin': 6, 'qty': 2}, {'title_id': 31, 'coin': 6, 'qty': 1}, {'title_id': 26, 'coin': 5, 'qty': 2}]",
+      "checked_at": "2026-07-31",
+      "note": "Group-buy packages often cheaper than face coin unit."
+    },
+    {
+      "id": 7152,
+      "name": "风云再起丹尼斯七天地店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/473",
+      "evidence_quote": "shop.start_time=10 shop.end_time=26 updated_at=2026-04-13T19:16:58.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "bemanicn integer hour convention; end>=24 means next day. Community-maintained."
+    },
+    {
+      "id": 7152,
+      "name": "风云再起丹尼斯七天地店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 1.0,
+        "note": "bemanicn shop.price is coin unit CNY; multiply by per-title coin field for per-credit cost"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/473",
+      "evidence_quote": "shop.price=1; sample coins=[{'title_id': 1, 'coin': 6, 'qty': 2}, {'title_id': 31, 'coin': 10, 'qty': 1}, {'title_id': 26, 'coin': 4, 'qty': 2}]",
+      "checked_at": "2026-07-31",
+      "note": "Group-buy packages often cheaper than face coin unit."
+    },
+    {
+      "id": 6225,
+      "name": "翡尔堡（万象城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4642",
+      "evidence_quote": "shop.start_time=10 shop.end_time=22 updated_at=2026-05-11T07:36:31.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "bemanicn integer hour convention; end>=24 means next day. Community-maintained."
+    },
+    {
+      "id": 6225,
+      "name": "翡尔堡（万象城店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 1.0,
+        "note": "bemanicn shop.price is coin unit CNY; multiply by per-title coin field for per-credit cost"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4642",
+      "evidence_quote": "shop.price=1; sample coins=[{'title_id': 1, 'coin': 5, 'qty': 1}, {'title_id': 31, 'coin': 10, 'qty': 1}, {'title_id': 32, 'coin': 27, 'qty': 1}]",
+      "checked_at": "2026-07-31",
+      "note": "Group-buy packages often cheaper than face coin unit."
+    },
+    {
+      "id": 6243,
+      "name": "胖东来时代广场动漫乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/308",
+      "evidence_quote": "shop.start_time=9 shop.end_time=21 updated_at=2026-05-13T14:34:10.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "bemanicn integer hour convention; end>=24 means next day. Community-maintained."
+    },
+    {
+      "id": 6243,
+      "name": "胖东来时代广场动漫乐园",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 1.0,
+        "note": "bemanicn shop.price is coin unit CNY; multiply by per-title coin field for per-credit cost"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/308",
+      "evidence_quote": "shop.price=1; sample coins=[{'title_id': 1, 'coin': 3, 'qty': 1}, {'title_id': 31, 'coin': 4, 'qty': 1}, {'title_id': 17, 'coin': 3, 'qty': 2}]",
+      "checked_at": "2026-07-31",
+      "note": "Group-buy packages often cheaper than face coin unit."
+    },
+    {
+      "id": 6562,
+      "name": "超爱顽潮玩街区（永城金博大店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7144",
+      "evidence_quote": "shop.start_time=10 shop.end_time=22 updated_at=2026-07-13T12:41:04.000000Z",
+      "checked_at": "2026-07-31",
+      "note": "bemanicn integer hour convention; end>=24 means next day. Community-maintained."
+    },
+    {
+      "id": 6562,
+      "name": "超爱顽潮玩街区（永城金博大店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "coin_unit_cny": 1.0,
+        "note": "bemanicn shop.price is coin unit CNY; multiply by per-title coin field for per-credit cost"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7144",
+      "evidence_quote": "shop.price=1.0; sample coins=[{'title_id': 1, 'coin': 5, 'qty': 1}, {'title_id': 3, 'coin': 5, 'qty': 2}, {'title_id': 31, 'coin': 15, 'qty': 1}]",
+      "checked_at": "2026-07-31",
+      "note": "Group-buy packages often cheaper than face coin unit."
+    },
+    {
+      "id": null,
+      "name": "星际传奇郑州郑东万象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "星际传奇郑州郑东万象城店",
+        "addr": "河南省郑州市金水区金水东路67号郑东万象城6楼星际传奇",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=星际传奇郑州郑东万象城店 address=河南省郑州市金水区金水东路67号郑东万象城6楼星际传奇 province=河南 | midtr: arcadeName=星际传奇郑州郑东万象城店 address=河南省郑州市金水区金水东路67号郑东万象城6楼星际传奇 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "头号玩家郑州正弘城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "头号玩家郑州正弘城店",
+        "addr": "河南省郑州市金水区文化路街道正弘城四楼头号玩家",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=头号玩家郑州正弘城店 address=河南省郑州市金水区文化路街道正弘城四楼头号玩家 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "头号玩家郑州龙湖锦艺城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "头号玩家郑州龙湖锦艺城店",
+        "addr": "河南省郑州市新郑市龙湖镇锦艺城购物中心三楼头号玩家",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=头号玩家郑州龙湖锦艺城店 address=河南省郑州市新郑市龙湖镇锦艺城购物中心三楼头号玩家 province=河南 | midtr: arcadeName=头号玩家郑州龙湖锦艺城店 address=河南省郑州市新郑市龙湖镇锦艺城购物中心三楼头号玩家 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "嘟玛宝郑州金水店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "嘟玛宝郑州金水店",
+        "addr": "河南省郑州市金水区花园路39号新田360广场D103+D203号嘟玛宝",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=嘟玛宝郑州金水店 address=河南省郑州市金水区花园路39号新田360广场D103+D203号嘟玛宝 province=河南 | midtr: arcadeName=嘟玛宝郑州金水店 address=河南省郑州市金水区花园路39号新田360广场D103+D203号嘟玛宝 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "壹零壹嘻游大玩家郑州金水店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "壹零壹嘻游大玩家郑州金水店",
+        "addr": "河南省郑州市金水区正弘城6楼店壹零壹嘻游大玩家",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=壹零壹嘻游大玩家郑州金水店 address=河南省郑州市金水区正弘城6楼店壹零壹嘻游大玩家 province=河南 | midtr: arcadeName=壹零壹嘻游大玩家郑州金水店 address=河南省郑州市金水区正弘城6楼店壹零壹嘻游大玩家 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "电动工坊洛阳涧西万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电动工坊洛阳涧西万达店",
+        "addr": "河南省洛阳市涧西区辽宁路万达广场二楼io电动工坊",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=电动工坊洛阳涧西万达店 address=河南省洛阳市涧西区辽宁路万达广场二楼io电动工坊 province=河南 | midtr: arcadeName=电动工坊洛阳涧西万达店 address=河南省洛阳市涧西区辽宁路万达广场二楼io电动工坊 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "嗨party洛阳西工万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "嗨party洛阳西工万达店",
+        "addr": "河南省洛阳市西工区中州万达广场5楼嗨party运动娱乐中心",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=嗨party洛阳西工万达店 address=河南省洛阳市西工区中州万达广场5楼嗨party运动娱乐中心 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "HIHIKOKO快乐制造地新乡胖东来店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "HIHIKOKO快乐制造地新乡胖东来店",
+        "addr": "河南省新乡市胖东来HIHIKOKO快乐制造地",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=HIHIKOKO快乐制造地新乡胖东来店 address=河南省新乡市胖东来HIHIKOKO快乐制造地 province=河南 | midtr: arcadeName=HIHIKOKO快乐制造地新乡胖东来店 address=河南省新乡市胖东来HIHIKOKO快乐制造地 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "潮可爱安阳文峰万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮可爱安阳文峰万达店",
+        "addr": "河南省安阳市文峰区万达三楼潮可爱店",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=潮可爱安阳文峰万达店 address=河南省安阳市文峰区万达三楼潮可爱店 province=河南 | midtr: arcadeName=潮可爱安阳文峰万达店 address=河南省安阳市文峰区万达三楼潮可爱店 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "大玩家周口文昌万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "大玩家周口文昌万达店",
+        "addr": "河南省周口市文昌大道与大庆路交叉口周口东新万达广场2F-A商铺大玩家",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=大玩家周口文昌万达店 address=河南省周口市文昌大道与大庆路交叉口周口东新万达广场2F-A商铺大玩家 province=河南 | midtr: arcadeName=大玩家周口文昌万达店 address=河南省周口市文昌大道与大庆路交叉口周口东新万达广场2F-A商铺大玩家 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "润宝梦南阳宛城万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "润宝梦南阳宛城万达店",
+        "addr": "河南省南阳市宛城区仲景街道孔明路万达广场3楼润宝梦潮玩娱乐",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=润宝梦南阳宛城万达店 address=河南省南阳市宛城区仲景街道孔明路万达广场3楼润宝梦潮玩娱乐 province=河南 | midtr: arcadeName=润宝梦南阳宛城万达店 address=河南省南阳市宛城区仲景街道孔明路万达广场3楼润宝梦潮玩娱乐 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "潮玩嘉年华漯河丹尼斯店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩嘉年华漯河丹尼斯店",
+        "addr": "河南省漯河市人民路丹尼斯2楼潮玩嘉年华",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=潮玩嘉年华漯河丹尼斯店 address=河南省漯河市人民路丹尼斯2楼潮玩嘉年华 province=河南 | midtr: arcadeName=潮玩嘉年华漯河丹尼斯店 address=河南省漯河市人民路丹尼斯2楼潮玩嘉年华 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "环游嘉年华郑州二七店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游嘉年华郑州二七店",
+        "addr": "河南省郑州市二七区德化街100号百年德化负一楼环游嘉年华游乐体验中心（百年德化店）",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=环游嘉年华郑州二七店 address=河南省郑州市二七区德化街100号百年德化负一楼环游嘉年华游乐体验中心（百年德化店） province=河南 | midtr: arcadeName=环游嘉年华郑州二七店 address=河南省郑州市二七区德化街100号百年德化负一楼环游嘉年华游乐体验中心（百年德化店） province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "智游星期六郑州白沙店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "智游星期六郑州白沙店",
+        "addr": "郑州市中牟县白沙镇双宇百货四楼智游星期六",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=智游星期六郑州白沙店 address=郑州市中牟县白沙镇双宇百货四楼智游星期六 province=河南 | midtr: arcadeName=智游星期六郑州白沙店 address=郑州市中牟县白沙镇双宇百货四楼智游星期六 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    },
+    {
+      "id": null,
+      "name": "星际小镇河南原阳店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "星际小镇河南原阳店",
+        "addr": "河南省原阳县香港城四楼星际小镇",
+        "country": "China",
+        "pref": "河南",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "wahlap"
+        ],
+        "approx": true,
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maidx: arcadeName=星际小镇河南原阳店 address=河南省原阳县香港城四楼星际小镇 province=河南 | midtr: arcadeName=星际小镇河南原阳店 address=河南省原阳县香港城四楼星际小镇 province=河南",
+      "checked_at": "2026-07-31",
+      "note": "On official WAHLAP Henan list and not matched to any row in shard 54. No coordinates from WAHLAP API. Cross-check other shards before insert; Henan has ~120 additional WAHLAP maimai names not covered here (sample only)."
+    }
+  ]
+}

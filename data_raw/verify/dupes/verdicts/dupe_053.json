@@ -1,0 +1,369 @@
+{
+  "shard": 53,
+  "verdicts": [
+    {
+      "ids": [
+        6399,
+        6401
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6401,
+      "canonical_name": "萌宝熊合肥悦方店",
+      "canonical_addr": "安徽省合肥市包河区紫云路与庐州大道交叉口东200米悦方3楼",
+      "reason": "Same Yuefang IDMALL 3F in Baohe, Hefei; complementary chunithm/maimai listings of one shop. Baidu shows a single Mengbaoxiong at Yuefang.",
+      "evidence_url": "https://map.bemanicn.com/s/3023",
+      "evidence_quote": "萌宝熊合肥悦方店 / 紫云路与庐州大道交叉口东200米悦方3楼"
+    },
+    {
+      "ids": [
+        6402,
+        6406
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6406,
+      "canonical_name": "萌宝熊金寨港荣广场店",
+      "canonical_addr": "安徽省金寨县港荣广场三楼萌宝熊游乐园",
+      "reason": "Both are Mengbaoxiong at Gangrong Plaza 3F in Jinzhai; bare community name vs full WAHLAP branch, identical coordinates.",
+      "evidence_url": "https://map.bemanicn.com/s/6564",
+      "evidence_quote": "萌宝熊家庭娱乐中心(金寨港荣店) / 港荣广场3楼"
+    },
+    {
+      "ids": [
+        6410,
+        6411
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6410,
+      "canonical_name": "萌趣潮玩黑河爱辉华富店",
+      "canonical_addr": "黑龙江省黑河市爱辉区华富商城五层A39-41、B61-81号",
+      "reason": "Same Huafu mall in Heihe Aihui; WAHLAP has unit numbers, BemaniCN short name for the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5704",
+      "evidence_quote": "萌趣潮玩（黑河爱辉区华富商城中央街店） / 华富商城"
+    },
+    {
+      "ids": [
+        6412,
+        6414
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real branches in Baicheng: Zhongrun Shopping Center 2F (older cabinets only) vs Eurasia Shopping Center 3F (maimai). Baidu lists both POIs separately; different malls and floors despite ~18 m geocode proximity.",
+      "evidence_url": "https://map.bemanicn.com/s/6122",
+      "evidence_quote": "萌趣童堡白城欧亚店 / 欧亚购物中心三楼115号; Baidu also has 萌趣童堡(中润购物中心店) at 海明东路123号中润二层"
+    },
+    {
+      "ids": [
+        6413,
+        6415
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6413,
+      "canonical_name": "萌趣童堡游乐场乌兰浩特店",
+      "canonical_addr": "内蒙古自治区乌兰浩特市欧亚购物广场二楼萌趣童堡游乐场",
+      "reason": "Same Eurasia shopping plaza 2F in Ulanhot; WAHLAP full branch vs BemaniCN mall-only name, ~75 m geocode drift.",
+      "evidence_url": "https://map.bemanicn.com/s/5341",
+      "evidence_quote": "萌趣童堡（欧亚购物中心店） / 欧亚购物广场2楼"
+    },
+    {
+      "ids": [
+        6421,
+        6422
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6422,
+      "canonical_name": "葩菈蒂潮玩岳阳湘阴店",
+      "canonical_addr": "湖南省岳阳市湘阴县正对万兴佳亿往右手边走 老步步高位置",
+      "reason": "Single Paladi brand in Xiangyin county; WAHLAP branch label vs BemaniCN local landmark directions, ~220 m geocode noise. No second branch signal.",
+      "evidence_url": "https://map.bemanicn.com/s/3294",
+      "evidence_quote": "葩菈蒂潮玩体验中心 / 正对万兴佳亿往右手边走 老步步高位置"
+    },
+    {
+      "ids": [
+        6427,
+        6429
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6429,
+      "canonical_name": "蓝梦日记石家庄栖栖谷",
+      "canonical_addr": "河北省石家庄市裕华区峨眉街与槐安东路交叉口栖栖谷二层A区",
+      "reason": "Both pins name Qiqigu and geocode to the same Qiqigu mall 2F in Yuhua. Baidu has one Lanmeng Riji Qiqigu shop there. Note: 6429 also carries a polluted bemanicn link to the separate Qiaoxi/Beiguo Weilai City shop, but the pin itself is the Qiqigu venue.",
+      "evidence_url": "https://map.bemanicn.com/s/6192",
+      "evidence_quote": "蓝梦日记家庭娱乐中心(栖栖谷店) / 槐安路和峨眉街交口路东北，交投时代·栖栖谷二楼"
+    },
+    {
+      "ids": [
+        6435,
+        6436
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6436,
+      "canonical_name": "蓝皮猫游乐园漳州芗城店",
+      "canonical_addr": "漳州市芗城区丹霞路122号印象汇三楼02～09铺",
+      "reason": "Same Yinxianghui mall 3F in Zhangzhou; Nanchang Rd 49 and Danxia Rd 122 are two frontages of one mall (Baidu confirms both doors).",
+      "evidence_url": "https://map.bemanicn.com/s/3836",
+      "evidence_quote": "蓝皮猫乐园 / 福建省漳州市芗城区南昌路49号印象汇F3层"
+    },
+    {
+      "ids": [
+        6442,
+        6444
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6444,
+      "canonical_name": "蓝鲸纵队银川兴庆新百中心店",
+      "canonical_addr": "宁夏回族自治区银川市兴庆区新华东街97号新百中心5楼蓝鲸纵队超乐场",
+      "reason": "Same Xinbai Center 5F in Xingqing, Yinchuan; short community name vs full WAHLAP street address.",
+      "evidence_url": "https://map.bemanicn.com/s/5204",
+      "evidence_quote": "蓝鲸纵队超乐场新百中心店 / 兴庆区新百中心五楼"
+    },
+    {
+      "ids": [
+        6447,
+        6448
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6447,
+      "canonical_name": "蚂蚁特工队汕尾海丰店",
+      "canonical_addr": "广东省汕尾市海丰县海城镇世纪广场三楼蚂蚁特工队",
+      "reason": "Same Century Plaza 3F in Haifeng; WAHLAP branch vs BemaniCN rename note (former Sky City).",
+      "evidence_url": "https://map.bemanicn.com/s/4833",
+      "evidence_quote": "蚂蚁特工队（原天空之城） / 海城镇世纪广场3层"
+    },
+    {
+      "ids": [
+        6450,
+        6455
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6455,
+      "canonical_name": "蜜享乐园扬州仪征店",
+      "canonical_addr": "江苏省扬州市仪征市宝能环球汇三楼电影院旁边",
+      "reason": "Same Yizheng Baoneng complex (Huanqiu Hui / City Plaza aliases for one mall); one brand, ~126 m geocode drift.",
+      "evidence_url": "https://map.bemanicn.com/s/4890",
+      "evidence_quote": "蜜享乐园 / 宝能环球汇三楼电影院旁边"
+    },
+    {
+      "ids": [
+        6453,
+        6454
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6453,
+      "canonical_name": "蜜享乐园徐州淮海环球港店",
+      "canonical_addr": "江苏省徐州市贾汪区开发区徐海路8号淮海环球港2楼蜜享乐园",
+      "reason": "Identical address string at Huaihai Global Port 2F; Huaihai Huanqiugang vs Jiawang are branch-suffix variants of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4261",
+      "evidence_quote": "蜜享乐园徐州淮海环球港店 / 徐海路8号淮海环球港2楼蜜享乐园"
+    },
+    {
+      "ids": [
+        6464,
+        6465
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6464,
+      "canonical_name": "裕隆动漫城鹤壁淇滨裕隆爱之城店",
+      "canonical_addr": "河南省鹤壁市淇滨区鹤煤大道与兴鹤大街交叉口裕隆爱之城动漫城",
+      "reason": "Identical address at Yulong Love City; short Hebi store vs full Qibin Yulong Aizhicheng store, complementary game counts (jubeat on community entry).",
+      "evidence_url": "https://map.bemanicn.com/s/744",
+      "evidence_quote": "裕隆动漫城(鹤壁) / 河南省鹤壁市淇滨区鹤煤大道辅路裕隆·爱之城"
+    },
+    {
+      "ids": [
+        6480,
+        6481
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6480,
+      "canonical_name": "识光机潮玩西安未央印象城店",
+      "canonical_addr": "陕西省西安市未央区浐灞生态区北辰东路700号西安浐灞印象城4楼",
+      "reason": "Same Chanba Impression City 4F (Baidu: Beichen East Rd 700); WAHLAP and BemaniCN branch labels for one shop, ~322 m geocode drift.",
+      "evidence_url": "https://map.bemanicn.com/s/5594",
+      "evidence_quote": "识光机潮玩（印象城店） / 北辰东路700号万科金域东郡西安浐灞印象城4楼"
+    },
+    {
+      "ids": [
+        6487,
+        6488
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6487,
+      "canonical_name": "豆丁星球吕梁临县店",
+      "canonical_addr": "山西省吕梁市临县临泉镇太和北路恒圆丽都购物中心一层",
+      "reason": "Identical mall floor (Hengyuan Lidu 1F) and game set; full WAHLAP branch vs bare community brand name.",
+      "evidence_url": "https://map.bemanicn.com/s/5818",
+      "evidence_quote": "豆丁星球家庭娱乐中心 / 临县临泉镇太和北路恒圆丽都购物中心一层"
+    },
+    {
+      "ids": [
+        6491,
+        6492
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6492,
+      "canonical_name": "贝乐谷安庆桐城梧桐店",
+      "canonical_addr": "安徽省安庆市桐城市龙腾街道梧桐国际购物中心二楼贝乐谷",
+      "reason": "Same Wutong International 2F in Tongcheng; bare brand vs full branch, complementary taiko on community entry.",
+      "evidence_url": "https://map.bemanicn.com/s/5319",
+      "evidence_quote": "贝乐谷 / 安徽省安庆市桐城市龙腾街道梧桐国际二楼贝乐谷"
+    },
+    {
+      "ids": [
+        6493,
+        6494
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6494,
+      "canonical_name": "贝塔潮玩上海嘉定大融城店",
+      "canonical_addr": "上海市嘉定区马陆镇宝安公路3386号310室",
+      "reason": "Exact same room 310 at Bao'an Hwy 3386, Malu, Jiading; ZIv English listing vs WAHLAP/BemaniCN Chinese branch.",
+      "evidence_url": "https://map.bemanicn.com/s/7172",
+      "evidence_quote": "贝塔潮玩上海嘉定大融城店 / 上海市嘉定区马陆镇宝安公路3386号310室"
+    },
+    {
+      "ids": [
+        6495,
+        6496
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6496,
+      "canonical_name": "贝芘熊盐城阜宁店",
+      "canonical_addr": "江苏省盐城市阜宁县香港路久悦广场二楼",
+      "reason": "Same Jiuyue Plaza 2F in Funing; community Funing store vs full WAHLAP Yancheng Funing store.",
+      "evidence_url": "https://map.bemanicn.com/s/4289",
+      "evidence_quote": "贝芘熊欢乐王国（阜宁店） / 阜城镇久悦广场二楼"
+    },
+    {
+      "ids": [
+        6501,
+        6503
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6501,
+      "canonical_name": "贝贝侠黄冈红安万达广场店",
+      "canonical_addr": "湖北省黄冈市红安县盛地万达四楼贝贝侠",
+      "reason": "Same Shengdi Wanda 4F in Hong'an; WAHLAP and BemaniCN both name that one mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6776",
+      "evidence_quote": "贝贝侠（红安盛地万达店） / 红安县盛地万达4楼"
+    },
+    {
+      "ids": [
+        7217,
+        7218
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two distinct Fengyun Zaiqi branches: Dashanghai City 1F (Guancheng, Dong Taikang Rd) vs David City 6F (Jinshui, Xi Taikang Rd). Different malls, floors, and lineups; Baidu lists both POIs.",
+      "evidence_url": "https://map.bemanicn.com/s/112",
+      "evidence_quote": "大上海城店 东太康路28号F1; 大卫城店 西太康路与二七路交汇处大卫城6楼"
+    },
+    {
+      "ids": [
+        6509,
+        6517
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6517,
+      "canonical_name": "赛博时空（天津蓟州万达店）",
+      "canonical_addr": "蓟州万达广场3楼赛博时空（原大玩家店址）",
+      "reason": "ZIv and BemaniCN both describe the same Jizhou Wanda 3F shop (ex-Dawanja), matching name and floor.",
+      "evidence_url": "https://map.bemanicn.com/s/7149",
+      "evidence_quote": "赛博时空（天津蓟州万达店） / 蓟州万达广场3楼赛博时空（原大玩家店址）"
+    },
+    {
+      "ids": [
+        6510,
+        6511
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6510,
+      "canonical_name": "赛博时空周口川汇万达店",
+      "canonical_addr": "河南省周口市川汇区文昌万达三楼3020-3022商铺赛博时空",
+      "reason": "Chuanhui Wanda and Wenchang Wanda are the same mall (Wenchang Wanda in Chuanhui district); same 3F, ~47 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/5592",
+      "evidence_quote": "赛博时空周口文昌万达店 / 文昌万达广场3F"
+    },
+    {
+      "ids": [
+        6514,
+        6518
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6514,
+      "canonical_name": "赛博时空枣庄市中店",
+      "canonical_addr": "山东省枣庄市市中区吾悦广场二楼Z201赛博时空",
+      "reason": "Same Wuyue Plaza 2F in Zaozhuang Shizhong; Z201 vs 203 are unit-label variants of one Cyber Spacetime shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4539",
+      "evidence_quote": "赛博时空（枣庄吾悦店） / 吾悦广场2楼203"
+    },
+    {
+      "ids": [
+        6515,
+        6519
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6515,
+      "canonical_name": "赛博时空淄博张店吾悦广场店",
+      "canonical_addr": "山东省淄博市张店区鑫马吾悦广场二楼Z203商铺赛博时空",
+      "reason": "Same Xinma Wuyue Plaza 2F east side in Zhangdian, Zibo; 7.9 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/5554",
+      "evidence_quote": "赛博时空（鑫马吾悦店） / 张店区华光路288号 鑫马吾悦广场二楼东侧"
+    },
+    {
+      "ids": [
+        6521,
+        6522
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6522,
+      "canonical_name": "赛博浪潮蒙自南湖荟店",
+      "canonical_addr": "云南省红河哈尼族彝族自治州蒙自市南湖荟C栋一层F1-49-1赛博浪潮电玩城",
+      "reason": "Same Nanhu Hui Building C in Mengzi; bare brand vs full WAHLAP branch with unit F1-49-1.",
+      "evidence_url": "https://map.bemanicn.com/s/4469",
+      "evidence_quote": "赛博浪潮 / 南湖南路南湖荟c栋一层F1-49-1"
+    },
+    {
+      "ids": [
+        6523,
+        6524
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6524,
+      "canonical_name": "赛博猩球贵阳紫林庵店",
+      "canonical_addr": "贵州省贵阳市云岩区星悦茂地铁商业街（紫林庵地铁站EF出口）赛博猩球",
+      "reason": "Yunyan Xingyuemao subway commercial street and Zilin'an metro EF exit describe the same underground mall around Zilin'an station. Baidu only knows one Cyber Xingqiu in Guiyang (Zilin'an metro E exit).",
+      "evidence_url": "https://map.bemanicn.com/s/3290",
+      "evidence_quote": "赛博猩球贵阳紫林庵店 / 地铁2号线紫林庵地铁站EF出口处; Baidu: 赛博猩球(紫林庵地铁E口店) 瑞金北路1号联建大楼"
+    }
+  ]
+}

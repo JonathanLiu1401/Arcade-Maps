@@ -1,0 +1,369 @@
+{
+  "shard": 18,
+  "verdicts": [
+    {
+      "ids": [
+        2121,
+        2123
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2121,
+      "canonical_name": "咔奇咔奇超乐场（裕华万达店）",
+      "canonical_addr": "河北省石家庄市裕华区槐安东路123号裕华万达广场三楼",
+      "reason": "Same brand at 裕华万达 3F; wahlap branch name and bemanicn street address describe one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5766",
+      "evidence_quote": "咔奇咔奇超乐场（裕华万达店） / 裕华区槐安东路123号万达广场三楼"
+    },
+    {
+      "ids": [
+        2127,
+        2128
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2128,
+      "canonical_name": "咕咕岛儿童乐园保定涞源信誉商厦店",
+      "canonical_addr": "保定市涞源县信誉商厦一楼咕咕岛儿童乐园",
+      "reason": "Same 信誉商厦 venue; short name vs full 涞源 branch, 11 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/6814",
+      "evidence_quote": "咕咕岛儿童乐园 / 广平大街信誉商厦"
+    },
+    {
+      "ids": [
+        2129,
+        2131
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2129,
+      "canonical_name": "咕咕岛涿州京通大奥莱店",
+      "canonical_addr": "河北省涿州市京通大奥莱3楼咕咕岛超级乐园",
+      "reason": "Both at 京通大奥莱; wahlap has branch+floor, bemanicn has street number for same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4646",
+      "evidence_quote": "咕咕岛超级乐园 / 范阳西路129号 京通大奥莱"
+    },
+    {
+      "ids": [
+        2135,
+        2136
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2136,
+      "canonical_name": "咖来乐济南万虹广场店",
+      "canonical_addr": "济南市历城区工业北路万虹广场2楼南侧",
+      "reason": "Identical 0 m coords; both 万虹广场 2F 咖来乐, unit 2F081-100C matches south side.",
+      "evidence_url": "https://map.bemanicn.com/s/6322",
+      "evidence_quote": "咖来乐·电玩嘉年华 / 万虹广场南门2楼 2F081-100C"
+    },
+    {
+      "ids": [
+        2139,
+        2140
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2139,
+      "canonical_name": "哆力王国唐山丰南港岛中心店",
+      "canonical_addr": "河北省唐山市丰南区港岛中心A座2层哆力王国",
+      "reason": "Same 港岛中心 A座2层 brand; wahlap and bemanicn are dual listings.",
+      "evidence_url": "https://map.bemanicn.com/s/4925",
+      "evidence_quote": "哆力王国（唐山丰南港岛中心店） / 港岛中心A座2层"
+    },
+    {
+      "ids": [
+        2142,
+        2143
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 2143,
+      "canonical_name": "哆哆咪电玩城贺州八步嘉年豪庭店",
+      "canonical_addr": "广西省贺州市八步区凤灵路51号哆哆咪电玩城",
+      "reason": "Same #51 on 灵凤路/凤灵路 (character-order variant of one street) and same brand; 232 m is geocode scatter.",
+      "evidence_url": "https://map.bemanicn.com/s/6582",
+      "evidence_quote": "哆哆咪电玩 / 灵凤路51号"
+    },
+    {
+      "ids": [
+        2151,
+        2152
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2152,
+      "canonical_name": "哇哇哇游乐城广州天河正佳店",
+      "canonical_addr": "广东省广州市天河区天河路228号正佳广场七楼7A001、7B002",
+      "reason": "Same 正佳广场 7F unit; community listing has unit codes, wahlap has official branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/35",
+      "evidence_quote": "哇哇哇游乐城 / 天河路228号正佳广场7层7A001、7B002"
+    },
+    {
+      "ids": [
+        5345,
+        5346
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5345,
+      "canonical_name": "炫次方广州天河正佳店",
+      "canonical_addr": "广东省广州市天河区正佳广场5楼5D113-114铺炫次方",
+      "reason": "Exact same unit 5D113-114 on 正佳广场 5F at 0 m; not the 7F 哇哇哇 venue.",
+      "evidence_url": "https://map.bemanicn.com/s/4361",
+      "evidence_quote": "炫次方正佳广场店 / 天河路228号正佳广场5层5D113-114"
+    },
+    {
+      "ids": [
+        2153,
+        2154
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2154,
+      "canonical_name": "哈乐谷潮玩南宁朝阳店",
+      "canonical_addr": "广西南宁市朝阳路39号百货大楼朝阳店南楼三楼",
+      "reason": "Identical building floor and brand at 0 m; branch vs bare brand naming only.",
+      "evidence_url": "https://map.bemanicn.com/s/3043",
+      "evidence_quote": "哈乐谷潮玩中心（南宁百货大楼店） / 朝阳路39号南宁百货大楼朝阳店南楼3楼"
+    },
+    {
+      "ids": [
+        2166,
+        2167
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2167,
+      "canonical_name": "哈森梦台州温岭万达店",
+      "canonical_addr": "浙江省台州市温岭万达广场3楼哈森梦",
+      "reason": "Same 温岭万达 3F 哈森梦; bare brand vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/4207",
+      "evidence_quote": "哈森梦 / 城东街道横湖东路北侧万达广场三楼哈森梦"
+    },
+    {
+      "ids": [
+        2179,
+        2180
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2180,
+      "canonical_name": "哒卟溜莆田涵江天虹店",
+      "canonical_addr": "福建省莆田市涵江区天虹水韵城三楼",
+      "reason": "Same 天虹水韵城 venue at 0 m; both name the 涵江天虹 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5480",
+      "evidence_quote": "哒卟溜欢乐王国涵江水韵城天虹店 / 福建省莆田市涵江区天虹水韵城"
+    },
+    {
+      "ids": [
+        2184,
+        4848
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2184,
+      "canonical_name": "唛乐岛泰迪熊家庭世界台州天台祥生世纪店",
+      "canonical_addr": "浙江省台州市天台县天台祥生世纪广场三楼",
+      "reason": "泰迪熊家庭世界 is the short brand of 唛乐岛泰迪熊 at the same 祥生世纪广场 3F 中庭.",
+      "evidence_url": "https://map.bemanicn.com/s/5955",
+      "evidence_quote": "泰迪熊家庭世界 / 祥生世纪广场3F中庭位置"
+    },
+    {
+      "ids": [
+        4218,
+        4229
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4218,
+      "canonical_name": "星际梦想城嘉兴南湖龙鼎万达店",
+      "canonical_addr": "浙江省嘉兴市南湖区龙鼎万达三楼星际梦想城",
+      "reason": "Same 龙鼎万达 B座三楼 branch listed by both sources.",
+      "evidence_url": "https://map.bemanicn.com/s/3420",
+      "evidence_quote": "星际梦想城（龙鼎万达店） / 万达广场（嘉兴龙鼎店）B座三楼"
+    },
+    {
+      "ids": [
+        2190,
+        2191
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2191,
+      "canonical_name": "啵比特动漫游乐世界温州瓯海店",
+      "canonical_addr": "浙江省温州市瓯海区梧田街道D1-201-1啵比特动漫游乐世界",
+      "reason": "Exact same unit D1-201-1 梧田老街; 梧田老街店 equals 瓯海店.",
+      "evidence_url": "https://map.bemanicn.com/s/3286",
+      "evidence_quote": "啵比特动漫游乐世界(梧田老街店) / 瓯海区-梧田老街D1-201-1号"
+    },
+    {
+      "ids": [
+        2194,
+        2195
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2195,
+      "canonical_name": "喜漫游上海浦东龙光蓝鲸店",
+      "canonical_addr": "上海市浦东新区龙光蓝鲸世界购物中心L3-49喜漫游",
+      "reason": "Same unit L3-49 at 龙光蓝鲸世界; 4.5 m and matching suite number.",
+      "evidence_url": "https://map.bemanicn.com/s/5510",
+      "evidence_quote": "喜漫游·潮玩中心（上海临港蓝鲸世界店） / 龙光蓝鲸世界购物中心L3-49室"
+    },
+    {
+      "ids": [
+        2206,
+        2207
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2206,
+      "canonical_name": "嗨之星修水欢乐海岸店",
+      "canonical_addr": "江西省修水县欢乐海岸三楼嗨之星动漫",
+      "reason": "Same 欢乐海岸购物广场三楼; bare brand vs 修水 branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/4085",
+      "evidence_quote": "嗨之星动漫 / 欢乐海岸购物广场三楼"
+    },
+    {
+      "ids": [
+        2211,
+        2217
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 2211,
+      "canonical_name": "嗨倍堂常州新北江南环球港店",
+      "canonical_addr": "常州市新北区衡山路江南环球港二楼嗨倍堂",
+      "reason": "Both are 嗨倍堂 on 江南环球港 2F (north side); 420 m is dual geocode anchors of one large mall, not a second branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6720",
+      "evidence_quote": "嗨倍堂（常州环球港店） / 通江路黄河路江南环球港2F最北边"
+    },
+    {
+      "ids": [
+        5291,
+        5295
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5291,
+      "canonical_name": "潮趣堂常州新北环球港店",
+      "canonical_addr": "江苏省常州市新北区通江中路598号江南环球港太阳大厅4楼L4111潮趣堂",
+      "reason": "Same brand and mall 4F at 0 m; unit L4111 vs L4181 is source disagreement on suite number, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/4977",
+      "evidence_quote": "潮趣堂（常州环球港店） / 江南环球港L4层花园中庭L4181"
+    },
+    {
+      "ids": [
+        3157,
+        3158
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3158,
+      "canonical_name": "子洋联盟娄底娄星吾悦广场店",
+      "canonical_addr": "娄底市娄星区娄底吾悦广场子洋联盟",
+      "reason": "Same 吾悦广场 3F brand at 0 m; short vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/3067",
+      "evidence_quote": "子洋联盟吾悦广场店 / 氐星路吾悦广场三楼"
+    },
+    {
+      "ids": [
+        2218,
+        2219
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2219,
+      "canonical_name": "嗨嗨电玩邢台新都鸿胜店",
+      "canonical_addr": "河北省邢台市信都区中兴西大街与钢铁北路交叉口东80米鸿胜商城2层",
+      "reason": "Same corner and 2F; 鸿盛/鸿胜 is a spelling variant of one mall name.",
+      "evidence_url": "https://map.bemanicn.com/s/5050",
+      "evidence_quote": "嗨嗨电玩娱乐城 / 钢铁北路与中兴西大街交叉口东北80米体育馆北鸿盛商城2楼"
+    },
+    {
+      "ids": [
+        2689,
+        2690
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2689,
+      "canonical_name": "天乐动漫邢台信都天乐城店",
+      "canonical_addr": "河北省邢台市信都区天乐城B座3层天乐动漫",
+      "reason": "Same 天乐城 B座3层; distinct from nearby 嗨嗨电玩 at 鸿胜商城.",
+      "evidence_url": "https://map.bemanicn.com/s/6921",
+      "evidence_quote": "天乐动漫（天乐城） / 中兴西大街466号天乐城b座3层"
+    },
+    {
+      "ids": [
+        2222,
+        2225
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2222,
+      "canonical_name": "嗨客玩家东莞常平翔龙天地店",
+      "canonical_addr": "广东省东莞市常平镇翔龙天地购物中心二楼",
+      "reason": "Same 翔龙天地 常平 branch at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3749",
+      "evidence_quote": "嗨客玩家（常平店） / 常平镇翔龙天地"
+    },
+    {
+      "ids": [
+        2223,
+        2224
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2223,
+      "canonical_name": "嗨客玩家东莞桥头店",
+      "canonical_addr": "广东省东莞市桥头镇上悦汇购物中心B区三楼嗨客玩家电玩城",
+      "reason": "Same 上悦汇 B区三楼; different town from 常平, but these two records are one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2605",
+      "evidence_quote": "嗨客玩家电玩城（东莞桥头上悦汇店） / 上悦汇购物中心B区三楼"
+    },
+    {
+      "ids": [
+        2227,
+        2228
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2227,
+      "canonical_name": "嗨森汇乐园武汉东湖光谷店",
+      "canonical_addr": "湖北省武汉市东湖高新区光谷世界城3楼嗨森汇乐园",
+      "reason": "光谷世界城 and 世界城光谷步行街一期 are the same complex; both 3F 嗨森汇.",
+      "evidence_url": "https://map.bemanicn.com/s/580",
+      "evidence_quote": "嗨森汇乐园电玩城(光谷店) / 珞喻路726号世界城光谷步行街一期3楼"
+    },
+    {
+      "ids": [
+        2229,
+        2232
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2229,
+      "canonical_name": "嗨森汇山东烟台大悦城店",
+      "canonical_addr": "山东省烟台市芝罘区北马路150号大悦城4楼",
+      "reason": "Same 烟台大悦城 4F; bemanicn notes former name 悦动先锋 for the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/968",
+      "evidence_quote": "嗨森汇（原悦动先锋）山东烟台大悦城店 / 北马路150号大悦城4层"
+    },
+    {
+      "ids": [
+        2230,
+        2231
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2231,
+      "canonical_name": "嗨森汇广州越秀店",
+      "canonical_addr": "广东省广州市越秀区北京路168号天河城A区三楼B336-B340嗨森汇",
+      "reason": "Exact same suite B336-340 at 北京路天河城 A区3F.",
+      "evidence_url": "https://map.bemanicn.com/s/4064",
+      "evidence_quote": "嗨森汇广州北京路天河城店 / 北京路168号北京路天河城A区3层B336-340"
+    }
+  ]
+}

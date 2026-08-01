@@ -1,0 +1,75 @@
+{
+  "shard": 59,
+  "verdicts": [
+    {
+      "ids": [
+        7328,
+        7330
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7328,
+      "canonical_name": "魔逗潮玩社（紫金天街店）",
+      "canonical_addr": "重庆市江津区紫金天街C馆1064号",
+      "reason": "Same brand in Jiangjin; Baidu lists only one shop 魔逗潮玩社(紫金天街店). WAHLAP 紫荆广场 is a near-homophone misspelling of the real mall 紫金天街 (61 m, same district).",
+      "evidence_url": "https://map.bemanicn.com/s/4978",
+      "evidence_quote": "name: 魔逗潮玩社（紫金天街店）; address: 江津区紫金天街c馆1064号. Baidu: 魔逗潮玩社(紫金天街店) at 紫金天街C-1069室; no 紫荆广场 hit for this brand."
+    },
+    {
+      "ids": [
+        7346,
+        7348
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7348,
+      "canonical_name": "鸽屋咕咕咕南京金銮店",
+      "canonical_addr": "江苏省南京市秦淮区中山南路101号金銮大厦24楼c座",
+      "reason": "Identical building and floor (金銮大厦24楼, 中山南路101号). BemaniCN has fuller game list (chunithm+maimai); WAHLAP is official maimai listing of the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/447",
+      "evidence_quote": "name: 鸽屋咕咕咕; address: 中山南路101号 金銮大厦24楼 出电梯右转. Baidu: 鸽屋咕咕咕(金銮大厦店) at 中山南路101号金銮大厦24楼电梯右侧C座."
+    },
+    {
+      "ids": [
+        7353,
+        7356
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7353,
+      "canonical_name": "麦兜熊嘉峪关名嘉汇店",
+      "canonical_addr": "甘肃省嘉峪关市名嘉汇时尚中心二楼麦兜熊潮玩空间",
+      "reason": "Addresses are character-for-character identical (名嘉汇时尚中心二楼); 0 m apart; branch names are the same mall (名嘉汇店).",
+      "evidence_url": "https://map.bemanicn.com/s/4281",
+      "evidence_quote": "name: 麦兜熊潮玩空间（名嘉汇店）; address: 甘肃省嘉峪关市名嘉汇时尚中心二楼麦兜熊潮玩空间"
+    },
+    {
+      "ids": [
+        7354,
+        7355
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7354,
+      "canonical_name": "麦兜熊宣城缤纷环球城店",
+      "canonical_addr": "安徽省宣城市泾县交通路93号缤纷环球城二楼麦兜熊潮玩空间",
+      "reason": "Same mall and floor (泾县缤纷环球城 2F); Baidu lists a single 麦兜熊潮玩空间(泾县缤纷环球城店). WAHLAP and BemaniCN are the same branch ~25 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/2857",
+      "evidence_quote": "name: 麦兜熊潮玩空间; address: 泾县交通路缤纷环球城2楼. Baidu: 麦兜熊潮玩空间(泾县缤纷环球城店) at 交通路93号泾县缤纷环球城F2."
+    },
+    {
+      "ids": [
+        7359,
+        7361
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7359,
+      "canonical_name": "麦酷潮玩山东安丘店",
+      "canonical_addr": "山东省安丘市新安路与世贸大街交叉口茂街新天地3楼麦酷潮玩",
+      "reason": "Both point at the same intersection and mall (茂街新天地 3F). Baidu has only one 麦酷潮玩空间(茂街新天地店); 151 m is geocode scatter on an intersection-level vs mall address.",
+      "evidence_url": "https://map.bemanicn.com/s/4783",
+      "evidence_quote": "name: 麦酷潮玩空间; address: 新安路与世贸大街交叉路口. Baidu: 麦酷潮玩空间(茂街新天地店) at 茂街新天地三楼麦酷潮玩空间3001."
+    }
+  ]
+}

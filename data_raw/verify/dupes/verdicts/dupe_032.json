@@ -1,0 +1,369 @@
+{
+  "shard": 32,
+  "verdicts": [
+    {
+      "ids": [
+        3598,
+        3599
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3598,
+      "canonical_name": "快乐电堂宜昌宜都店",
+      "canonical_addr": "湖北省宜昌市宜都市陆城街道清江大道雅斯国际广场三楼快乐电堂",
+      "reason": "Both list 雅斯国际三楼 on 清江大道 in 宜都; branch vs bare brand naming of the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3989",
+      "evidence_quote": "快乐电堂家庭娱乐中心 / 清江大道与长江大道交叉口西120米雅斯国际三楼"
+    },
+    {
+      "ids": [
+        4520,
+        4521
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4521,
+      "canonical_name": "梦幻嘻游黄冈黄州店",
+      "canonical_addr": "湖北省黄冈市黄州区赤壁街道居然之家三楼梦幻嘻游潮玩娱乐",
+      "reason": "Same brand in 居然之家 3F (bemanicn unit 3-018); wahlap and bemanicn are the same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6048",
+      "evidence_quote": "梦幻嘻游潮玩动漫乐园 / 八一路与东门路交汇处居然之家3楼3-018"
+    },
+    {
+      "ids": [
+        5446,
+        5463
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5463,
+      "canonical_name": "爱玩嘉年华（重庆西城天街店）（maimai已撤）",
+      "canonical_addr": "龙湖重庆西城天街3楼",
+      "reason": "ZIv and BemaniCN both describe Longhu Xicheng Paradise Walk 3F; ZIv even cross-references BemaniCN id 556.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2418",
+      "evidence_quote": "爱玩嘉年华 iPlay World (西城天街); 3rd Floor, Longhu Xicheng Paradise Walk; BEMANICN ID 556"
+    },
+    {
+      "ids": [
+        3611,
+        3621
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3621,
+      "canonical_name": "快乐街区长沙天心印象城店",
+      "canonical_addr": "湖南省长沙市天心区坡子街216号悦方ID MALL(中心印象城)三楼快乐街区",
+      "reason": "悦方ID MALL and 中心印象城 are the same Pozi Street mall after rename; both entries are L3 of that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/3948",
+      "evidence_quote": "快乐街区(长沙中心印象城店/悦方ID MALL店) / 坡子街216号长沙悦方ID MALL店L3"
+    },
+    {
+      "ids": [
+        3615,
+        3618
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3615,
+      "canonical_name": "快乐街区宁波鄞州店",
+      "canonical_addr": "浙江省宁波市鄞州区中山东路与中山东路辅路交叉口南k11购物中心快乐街区",
+      "reason": "Both point at 鄞州 K11 购物中心; 210 m is geocode scatter of the same mall, not a second branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4507",
+      "evidence_quote": "快乐街区电玩（鄞州K11 购物中心3楼）"
+    },
+    {
+      "ids": [
+        3628,
+        3629
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3629,
+      "canonical_name": "怪力电玩安顺西秀店",
+      "canonical_addr": "贵州省安顺市西秀区小十字顾府街3号怪力电玩",
+      "reason": "Bare brand on 顾府街 vs branch with house number 顾府街3号; one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6948",
+      "evidence_quote": "怪力电玩 / 贵州省安顺市西秀区顾府街"
+    },
+    {
+      "ids": [
+        3646,
+        3647
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3647,
+      "canonical_name": "悦享潮玩四会广场店",
+      "canonical_addr": "广东省四会市东城街道玉城居委会四会大道南19号四会广场1座二层2075号悦享潮玩电玩城",
+      "reason": "Both are 悦享潮玩 on 2F of 四会广场; wahlap has the full unit.",
+      "evidence_url": "https://map.bemanicn.com/s/6176",
+      "evidence_quote": "悦享潮玩 / 四会广场二楼靠近6号门处"
+    },
+    {
+      "ids": [
+        3650,
+        3652
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3650,
+      "canonical_name": "悦动湃嘉年华南宁朝阳店",
+      "canonical_addr": "广西壮族自治区南宁市兴宁区朝阳路80号升喜朝阳里L330悦动湃嘉年华",
+      "reason": "Identical 0 m coords and same 朝阳路80号升喜朝阳里 3F/L330 address.",
+      "evidence_url": "https://map.bemanicn.com/s/3759",
+      "evidence_quote": "悦动湃嘉年华（升喜朝阳里店） / 朝阳路80号升喜朝阳里 3F"
+    },
+    {
+      "ids": [
+        3655,
+        3656
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Different counties and malls: 南阳市万悦城 vs 淅川县万悦汇. Shared coords are a geocode collision, not one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/6090",
+      "evidence_quote": "悦动空间（淅川县万悦汇店） / 淅川县万悦汇富强路与北三环路交叉口东100米"
+    },
+    {
+      "ids": [
+        3658,
+        3659
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3659,
+      "canonical_name": "悦界潮玩义乌佛堂宝龙店",
+      "canonical_addr": "浙江省义乌市佛堂宝龙广场三楼（现名翔龙里·佛堂之心）",
+      "reason": "佛堂宝龙广场 was renamed 翔龙里·佛堂之心; both entries are 3F of that single mall.",
+      "evidence_url": "https://m.18qiang.com/read.php?tid=848227",
+      "evidence_quote": "原义乌佛堂宝龙广场变更为翔龙里·佛堂之心"
+    },
+    {
+      "ids": [
+        3673,
+        3674
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3673,
+      "canonical_name": "慢车道南昌铜锣湾T16店",
+      "canonical_addr": "江西省南昌市红谷滩区庐山南大道369号南昌铜锣湾广场主体商业三层L3-29,L3-30铺位",
+      "reason": "Both are 慢车道 on 3F of 南昌铜锣湾; bemanicn supplies the precise unit.",
+      "evidence_url": "https://map.bemanicn.com/s/3630",
+      "evidence_quote": "慢车道电玩(铜锣湾店) / 庐山南大道369号南昌铜锣湾广场...三层L3-29,L3-30"
+    },
+    {
+      "ids": [
+        3677,
+        3678
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3678,
+      "canonical_name": "战神争锋深圳光明凤凰英荟城店",
+      "canonical_addr": "深圳市光明区凤凰街道甲子塘社区凤凰英荟城4栋338（n次方商场3楼）",
+      "reason": "n次方 is the commercial mall for 凤凰英荟城 at the same 光侨路/科裕路 corner; same brand and game mix ~46 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/6478",
+      "evidence_quote": "战神争锋光明n次方店 / 光侨路与科裕路交汇处东北方向(长圳地铁站A出口)n次方3楼"
+    },
+    {
+      "ids": [
+        3679,
+        3680
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3679,
+      "canonical_name": "战神争锋深圳光明百佳华店",
+      "canonical_addr": "中国广东省深圳市光明区公明街道公明办事处公明镇长春南路西1号百佳华3楼",
+      "reason": "Same 公明百佳华 3F branch; 长春南路/中路 and 佳漾邻 are alternate labels for the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/7232",
+      "evidence_quote": "战神争锋（公明百佳华店） / 长春中路百佳华佳漾邻公明店3F"
+    },
+    {
+      "ids": [
+        3685,
+        3686
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3685,
+      "canonical_name": "拉菲熊永州宁远印山花园店",
+      "canonical_addr": "湖南省永州市宁远县印山花园超市一楼拉菲熊电玩城",
+      "reason": "Both are 拉菲熊 on 1F of 印山花园 shopping plaza/supermarket.",
+      "evidence_url": "https://map.bemanicn.com/s/5600",
+      "evidence_quote": "拉菲熊电玩城 / 印山花园购物广场一楼"
+    },
+    {
+      "ids": [
+        3690,
+        3694
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3690,
+      "canonical_name": "拾光派对沈阳沈河店",
+      "canonical_addr": "辽宁省沈阳市沈河区青年大街173号佳兆业广场三楼拾光派对",
+      "reason": "Same 佳兆业广场 3F on 青年大街; branch vs mall nickname.",
+      "evidence_url": "https://map.bemanicn.com/s/4363",
+      "evidence_quote": "拾光派对（佳兆业店） / 沈河区青年大街173号佳兆业广场3F"
+    },
+    {
+      "ids": [
+        5791,
+        5792
+      ],
+      "verdict": "unsure",
+      "confidence": "unsure",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Same brand in 久柏埠 underground, but unit F154 vs F145 and ~462 m apart; could be one shop or two units. Not safe to merge.",
+      "evidence_url": "https://map.bemanicn.com/s/4249",
+      "evidence_quote": "电顽橙子潮玩体验中心 / 渤海路久柏埠商场负一F154室"
+    },
+    {
+      "ids": [
+        3695,
+        3696
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3696,
+      "canonical_name": "拾光潮玩韶关新丰东盛新城店",
+      "canonical_addr": "广东省韶关市新丰县丰城镇人民东路4号东盛新城小区2区B2008至B2013",
+      "reason": "东盛广场 is the commercial face of 东盛新城 on 人民东路; same 新丰 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5023",
+      "evidence_quote": "拾光潮玩乐园(新丰店) / 丰城街道人民东路东盛广场二楼"
+    },
+    {
+      "ids": [
+        3697,
+        3699
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3699,
+      "canonical_name": "拾趣潮玩上饶婺源绘广场店",
+      "canonical_addr": "上饶市婺源县紫阳镇詹天佑大道北侧苏宁人和婺源荟广场7号楼2F-拾趣潮玩",
+      "reason": "芸/绘/荟 are spelling variants of 苏宁人和婺源荟广场 2F; one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6572",
+      "evidence_quote": "拾趣潮玩 / 苏宁人和婺源芸广场二楼"
+    },
+    {
+      "ids": [
+        3698,
+        3700
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3698,
+      "canonical_name": "拾趣潮玩(徐州三胞广场店)",
+      "canonical_addr": "江苏省徐州市泉山区金山东路三胞国际广场3F",
+      "reason": "Both address 金山东路三胞国际广场 3F; wahlap's 泉山国际广场 name is a mislabel of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5187",
+      "evidence_quote": "拾趣潮玩(徐州三胞广场店) / 泰山街道金山东路三胞国际广场3F"
+    },
+    {
+      "ids": [
+        3706,
+        3707
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3707,
+      "canonical_name": "捣蛋计划重庆渝北兰亭新都汇店",
+      "canonical_addr": "重庆市渝北区兰亭新都汇三楼捣蛋计划",
+      "reason": "Identical 0 m coords and same 兰亭新都汇 3F address.",
+      "evidence_url": "https://map.bemanicn.com/s/6782",
+      "evidence_quote": "捣蛋计划 / 两江新区兰亭新都汇3F 2-3-1"
+    },
+    {
+      "ids": [
+        3714,
+        3715
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3714,
+      "canonical_name": "探趣童味电玩城东方八所万福隆店",
+      "canonical_addr": "东方市八所镇解放西路1号万福隆商厦4楼",
+      "reason": "Identical 解放西路1号万福隆商厦四楼 address at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/6976",
+      "evidence_quote": "探趣童味电玩城（东方店） / 八所镇解放西路1号万福隆商厦四楼"
+    },
+    {
+      "ids": [
+        3721,
+        3723
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3723,
+      "canonical_name": "摩儿大狂欢镇江丹徒宝龙店",
+      "canonical_addr": "江苏省镇江市丹徒区谷阳中大道75号镇江丹徒宝龙广场三楼摩儿大狂欢",
+      "reason": "Same 丹徒宝龙广场 3F branch; bemanicn has the full street number.",
+      "evidence_url": "https://map.bemanicn.com/s/5306",
+      "evidence_quote": "摩儿大狂欢 / 谷阳中大道75号镇江丹徒宝龙广场三楼"
+    },
+    {
+      "ids": [
+        3725,
+        3727
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3725,
+      "canonical_name": "摩兜欢乐商丘睢阳吾悦广场店",
+      "canonical_addr": "河南省商丘市睢阳区吾悦广场3楼Z305摩兜欢乐",
+      "reason": "Both cite 吾悦广场 3F unit Z305; one physical shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5688",
+      "evidence_quote": "摩兜欢乐岛(商丘店) / 睢阳区吾悦广场三楼西侧Z305号"
+    },
+    {
+      "ids": [
+        3734,
+        3735
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3735,
+      "canonical_name": "摩星乐园通辽科尔沁店",
+      "canonical_addr": "内蒙古自治区通辽市科尔沁区维多利摩尔城三楼魔星乐园",
+      "reason": "Same 维多利摩尔城; bare brand vs 科尔沁 branch of one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/3973",
+      "evidence_quote": "摩星乐园 / 桥北胜利北路东侧 维多利摩尔城"
+    },
+    {
+      "ids": [
+        3744,
+        3745
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3744,
+      "canonical_name": "斗罗时空威海九龙城广场店",
+      "canonical_addr": "山东省威海市经济技术开发区皇冠街道大庆路53号威海九龙城休闲购物广场三层L326、L342店铺",
+      "reason": "Identical 大庆路53号九龙城 3F; 九龙城广场 vs 经区九龙城 are naming variants.",
+      "evidence_url": "https://map.bemanicn.com/s/3911",
+      "evidence_quote": "斗罗时空威海经区九龙城店 / 大庆路53号威海九龙城购物广场3楼"
+    },
+    {
+      "ids": [
+        3746,
+        3747
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3747,
+      "canonical_name": "斯坦之城莆田荔城店",
+      "canonical_addr": "福建省莆田市荔城区镇海街道荔园东路1688号正荣财富中心商铺A区349室斯坦之城",
+      "reason": "Same 荔园东路1688号正荣财富中心; 正荣店 vs 荔城店 are alternate branch labels for one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4148",
+      "evidence_quote": "斯坦之城莆田正荣店 / 荔园东路1688号正荣财富中心购物广场F3"
+    }
+  ]
+}

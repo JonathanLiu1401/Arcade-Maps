@@ -145,7 +145,20 @@ def check_raw(raw_dir, source_drop, problems):
         print("       %-34s %7s -> %-7s%s"
               % (os.path.basename(path), "{:,}".format(old_rows),
                  "{:,}".format(new_rows), flag))
-        if old_rows >= SMALL_SOURCE and d > source_drop:
+        # A file that still parses but holds nothing is a total loss whatever
+        # its size, so it is refused before the percentage rule gets a say.
+        # SMALL_SOURCE exists because a percentage of a handful of rows is
+        # noise - but it was also letting a SMALL file go to zero unremarked:
+        # museca ships 6 rows and dance_evo 12, so both could be emptied by a
+        # broken parser and still sail through as "too small to judge". The
+        # existing disappearance check does not cover it either, since the file
+        # is still on disk and still valid JSON. Vanishing coverage is exactly
+        # what this guard is for, and it is the one judgement that does not
+        # need a threshold.
+        if old_rows > 0 and new_rows == 0:
+            problems.append("raw %s is empty after the build (was %s rows)"
+                            % (path, "{:,}".format(old_rows)))
+        elif old_rows >= SMALL_SOURCE and d > source_drop:
             problems.append("raw %s fell %.1f%% (%s -> %s rows), limit %.1f%%"
                             % (path, d, "{:,}".format(old_rows),
                                "{:,}".format(new_rows), source_drop))
@@ -177,10 +190,19 @@ def main():
                     help="freshly built arcades.json (default: %s)" % DEFAULT_DATA)
     ap.add_argument("--baseline",
                     help="compare against this file instead of the committed version")
+    # argparse percent-expands help text itself, so a literal percent sign has
+    # to survive as "%%" all the way into add_argument. Interpolating with the
+    # % operator here collapsed it to a single "%" first, and argparse then read
+    # "% d" (from "% drop") as an int conversion: TypeError, re-raised by
+    # Python 3.14 as "badly formed help string" at add_argument time, which
+    # made the whole regression gate unrunnable on 3.14 and broke --help
+    # everywhere. .format() fills the default without touching the percent.
     ap.add_argument("--total-drop", type=float, default=TOTAL_DROP_PCT,
-                    help="max tolerated %% drop in total arcades (default: %.1f)" % TOTAL_DROP_PCT)
+                    help="max tolerated %% drop in total arcades "
+                         "(default: {:.1f})".format(TOTAL_DROP_PCT))
     ap.add_argument("--source-drop", type=float, default=SOURCE_DROP_PCT,
-                    help="max tolerated %% drop per source (default: %.1f)" % SOURCE_DROP_PCT)
+                    help="max tolerated %% drop per source "
+                         "(default: {:.1f})".format(SOURCE_DROP_PCT))
     ap.add_argument("--raw-dir", default="data_raw",
                     help="per-source raw directory to check (default: data_raw)")
     ap.add_argument("--skip-raw", action="store_true",

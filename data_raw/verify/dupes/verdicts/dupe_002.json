@@ -1,0 +1,395 @@
+{
+  "shard": 2,
+  "verdicts": [
+    {
+      "ids": [
+        1637,
+        1641,
+        1652
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1652,
+      "canonical_name": "乐玩客潮玩城云领天街店",
+      "canonical_addr": "重庆市九龙坡区迎宾大道37号龙湖云领天街A馆3楼",
+      "reason": "Same brand at Longhu Yunling Paradise Walk Building A 3F (unit 3F-17). ZIv, BemaniCN and WAHLAP are three source listings of one shop; Baidu lists a single 乐玩客潮玩城(云领天街店).",
+      "evidence_url": "https://map.bemanicn.com/s/3771",
+      "evidence_quote": "乐玩客潮玩城云领天街店 | 二郎街道迎宾大道37号A馆-3F-17"
+    },
+    {
+      "ids": [
+        5167,
+        5173,
+        5176
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5173,
+      "canonical_name": "潮玩无界（云领天街店）",
+      "canonical_addr": "重庆市九龙坡区迎宾大道37号A馆5楼",
+      "reason": "All three name the same 5F A-building shops at Yunling Paradise Walk No.37 Yingbin (WAHLAP 5F-04, BemaniCN 5F-04/05/38). Geocode scatter ~250m is mall-level; Baidu has one 潮玩无界(云领天街店).",
+      "evidence_url": "https://map.bemanicn.com/s/3876",
+      "evidence_quote": "潮玩无界（云领天街店） | 迎宾大道37号A馆-5 F-38、A馆-5 F-04号、A馆-5 F-05号店铺"
+    },
+    {
+      "ids": [
+        4344,
+        4345,
+        4346
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Baidu and BemaniCN list two distinct Taiyuan branches: 商贸店 at 柳巷南路63号柳巷商贸5层 vs 钟楼街店 at 桥头街160号 (~471 m). 4345 and 4346 are the same 钟楼 shop, but 4344 is a real second venue, so the trio must not be merged.",
+      "evidence_url": "https://map.bemanicn.com/s/6650",
+      "evidence_quote": "未来不二动漫城（商贸店）|柳巷南路63号 vs 钟楼街店|桥头街160号"
+    },
+    {
+      "ids": [
+        1783,
+        1787,
+        1791
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1787,
+      "canonical_name": "元气总动员（时代天街店）",
+      "canonical_addr": "四川省成都市郫都区合作路89号龙湖时代天街B馆3楼",
+      "reason": "Identical Longhu Times Paradise Walk Block B 3F branch; ZIv/WAHLAP/BemaniCN only differ in romanization and game coverage completeness.",
+      "evidence_url": "https://map.bemanicn.com/s/4648",
+      "evidence_quote": "元气总动员（时代天街店） | 合作路89号龙湖时代天街B馆3楼"
+    },
+    {
+      "ids": [
+        1816,
+        1821,
+        1824
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1821,
+      "canonical_name": "全境方舟深圳罗湖天河城店",
+      "canonical_addr": "广东省深圳市罗湖区布心路2018号粤海置地深圳天河城N205、N206、N207",
+      "reason": "Same Shenzhen Teemall south-zone units N205-N207; 太白路3009 and 布心路2018 are dual frontages of one mall. BemaniCN unit N205 matches WAHLAP.",
+      "evidence_url": "https://map.bemanicn.com/s/4065",
+      "evidence_quote": "全境方舟（深圳天河城店） | 太白路3009号深圳天河城购物中心南区2楼N205"
+    },
+    {
+      "ids": [
+        4723,
+        4752,
+        4793
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4723,
+      "canonical_name": "汤姆熊欢乐世界（罗斯福店）",
+      "canonical_addr": "辽宁省大连市沙河口区西安路139号天兴罗斯福购物广场四楼",
+      "reason": "One Tom's World Roosevelt branch; WAHLAP uses 西安路139号 while community sources use 黄河路677号 for the same 天兴罗斯福 plaza 4F. Baidu returns a single 汤姆熊欢乐世界(罗斯福店).",
+      "evidence_url": "https://map.bemanicn.com/s/96",
+      "evidence_quote": "汤姆熊欢乐世界（罗斯福店） | 黄河路677号罗斯福天兴国际中心F4"
+    },
+    {
+      "ids": [
+        1927,
+        2718,
+        2770
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 2770,
+      "canonical_name": "天空之城(南通圆融购物中心店)",
+      "canonical_addr": "江苏省南通市崇川区工农路57号圆融广场3楼314-315号",
+      "reason": "WAHLAP and BemaniCN match 圆融广场3楼 units 314-315. ZIv only says 圆融广场3楼 with an older PIU-only machine list and a drifted geocode, but same brand and mall; Baidu shows one shop there.",
+      "evidence_url": "https://map.bemanicn.com/s/466",
+      "evidence_quote": "天空之城(南通圆融购物中心店) | 工农路57号圆融广场3楼314-315号"
+    },
+    {
+      "ids": [
+        1934,
+        1935,
+        1936
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1935,
+      "canonical_name": "卡乐比乐园（上海世博源店）",
+      "canonical_addr": "上海市浦东新区世博大道1368号世博源三区G层3G13-3G15",
+      "reason": "Exact same Expo Source Zone 3 G-floor unit 3G13-3G15 across ZIv, WAHLAP and BemaniCN.",
+      "evidence_url": "https://map.bemanicn.com/s/4214",
+      "evidence_quote": "卡乐比乐园（上海世博源店） | 世博大道1368号世博源3区G层3G13-3G15"
+    },
+    {
+      "ids": [
+        5876,
+        5930,
+        5931
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5930,
+      "canonical_name": "真快活Coohoo Max(无锡荟聚店)",
+      "canonical_addr": "无锡市锡山开发区团结中路3号无锡荟聚中心L4层05A01号",
+      "reason": "Two WAHLAP rows are maimai vs chunithm splits of one shop at 荟聚 05A01; BemaniCN holds both plus taiko at L4 05A01. WAHLAP 'L14' is a floor typo vs Baidu/BemaniCN L4.",
+      "evidence_url": "https://map.bemanicn.com/s/6495",
+      "evidence_quote": "真快活Coohoo Max(无锡荟聚店) | 团结中路3号无锡荟聚中心L4层05A01号"
+    },
+    {
+      "ids": [
+        2042,
+        2045,
+        2046
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2045,
+      "canonical_name": "可可猩球（天津陆家嘴中心店）",
+      "canonical_addr": "天津市红桥区大丰路25-29号陆家嘴中心L305-L306",
+      "reason": "Same Lujiazui Center units L305-L306; WAHLAP '大丰路2529号' is a collapsed form of 25-29. All three sources describe one 3F shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6890",
+      "evidence_quote": "可可猩球（天津陆家嘴中心店) | 大丰路25-29号天津陆家嘴中心L305-L306"
+    },
+    {
+      "ids": [
+        2081,
+        2082,
+        2083
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2083,
+      "canonical_name": "吉睿潮玩(顺义祥云小镇店)",
+      "canonical_addr": "北京市顺义区安泰大街6号院祥云小镇南区11号楼二层",
+      "reason": "All list Shine Hills / 祥云小镇 Block 11 2F at 安泰大街6号院; brand and floor match across ZIv, BemaniCN and WAHLAP.",
+      "evidence_url": "https://map.bemanicn.com/s/5628",
+      "evidence_quote": "吉睿潮玩(顺义祥云小镇店) | 安泰大街6号院祥云小镇南区11号楼二层"
+    },
+    {
+      "ids": [
+        2102,
+        2104,
+        2105
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2105,
+      "canonical_name": "呱呱乐园深圳宝安科兴店",
+      "canonical_addr": "广东省深圳市宝安区西乡街道劳动社区前海科兴科学园二楼",
+      "reason": "Same Qianhai Kexing Science Park branch in Xixiang; ZIv unit 1-006A and WAHLAP 二楼 are the same venue, BemaniCN bare brand name is incomplete labeling of that shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5288",
+      "evidence_quote": "呱呱乐园 | 西乡街道前海科兴科学园"
+    },
+    {
+      "ids": [
+        2110,
+        2111,
+        2115
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2110,
+      "canonical_name": "和音屋（合肥之心城店）",
+      "canonical_addr": "安徽省合肥市蜀山区之心城环球中心B座1501",
+      "reason": "WAHLAP maimai and chunithm rows plus BemaniCN all share 之心城环球中心B座1501; Baidu lists one 和音屋 at that unit.",
+      "evidence_url": "https://map.bemanicn.com/s/3653",
+      "evidence_quote": "和音屋（合肥之心城店） | 之心城环球中心B座1501"
+    },
+    {
+      "ids": [
+        2144,
+        2145,
+        2146
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2145,
+      "canonical_name": "哆啦乐图钟楼店（文商）",
+      "canonical_addr": "陕西省西安市碑林区骡马市60号文商大厦一层",
+      "reason": "Same 文商/Wenshang 1F Zhonglou landmark; BemaniCN describes the east side of Kaiyuan Mall parking entrance which is the same building Baidu calls 东隆文商大厦店.",
+      "evidence_url": "https://map.bemanicn.com/s/207",
+      "evidence_quote": "哆啦乐图钟楼店（文商） | 东大街开元商城外东侧停车场入口对面一层"
+    },
+    {
+      "ids": [
+        4390,
+        4400,
+        4405
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4390,
+      "canonical_name": "极客森超乐场深圳万科里店",
+      "canonical_addr": "广东省深圳市龙岗区龙岗大道3999号万科里负一楼",
+      "reason": "Single Geek World at Longgang Vanke Li B1 opposite the district government; ZIv/BemaniCN/WAHLAP only differ in English branding.",
+      "evidence_url": "https://map.bemanicn.com/s/877",
+      "evidence_quote": "极客森超乐场深圳万科里店 | 龙岗大道3999号龙岗区政府正对面万科里负一楼极客森"
+    },
+    {
+      "ids": [
+        2713,
+        2851,
+        2931
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2851,
+      "canonical_name": "天空之城（海口龙湖天街店）",
+      "canonical_addr": "海南省海口市龙华区金宇街道南海大道15号龙湖时代天街一期3楼A-3F-01a号",
+      "reason": "Unit A-3F-01a is identical on WAHLAP and BemaniCN; ZIv '龙湖光年' is the same Longhu Haikou Times Paradise Walk Phase I 3F shop under an alternate mall name.",
+      "evidence_url": "https://map.bemanicn.com/s/4090",
+      "evidence_quote": "天空之城（海口龙湖天街店） | 南海大道15号龙湖时代天街一期3楼A-3F-01a号"
+    },
+    {
+      "ids": [
+        2710,
+        2789,
+        2800
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2800,
+      "canonical_name": "天空之城天津津南吾悦店",
+      "canonical_addr": "天津市津南区咸水沽镇聚兴道7号1号楼524-20天津津南吾悦广场二层Z08-2016号商铺",
+      "reason": "All three are the Jinnan Wuyue Plaza 2F Sky City; WAHLAP has the unit number Z08-2016, BemaniCN and ZIv are coarser mall+floor labels.",
+      "evidence_url": "https://map.bemanicn.com/s/3933",
+      "evidence_quote": "天空之城多奇妙家庭娱乐中心 | 津南吾悦广场二楼"
+    },
+    {
+      "ids": [
+        7139,
+        7140,
+        7188
+      ],
+      "verdict": "keep_separate",
+      "confidence": "likely",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "7140 and 7188 share metro unit JH2-009 (same 江汉路站 shop), but 7139 is labeled 大汉口城店 at 前进五路 with a different ZIv history. Baidu currently shows only one 风云再起 at 江汉路; without a source proving 大汉口城 is the same physical store, do not merge the trio.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4715",
+      "evidence_quote": "风云再起(武汉大汉口城店) 2 Qianjin 5th Road vs 江汉路站JH2-009"
+    },
+    {
+      "ids": [
+        6627,
+        6630,
+        6632
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6630,
+      "canonical_name": "超能玩家（茂业摩尔城店）",
+      "canonical_addr": "内蒙古自治区呼和浩特市赛罕区摩尔城A座8楼",
+      "reason": "Same Maoye Moore City Block A 8F Super Player; WAHLAP short name '赛店' is Saihan district abbreviation of that mall branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4964",
+      "evidence_quote": "超能玩家（茂业摩尔城店） | 摩尔城A座8楼"
+    },
+    {
+      "ids": [
+        2768,
+        2769,
+        2865
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2769,
+      "canonical_name": "天空之城游乐体验世界(南昌高新吾悦店)",
+      "canonical_addr": "江西省南昌市高新区艾溪湖北路77号新城吾悦广场三楼3006-1商铺",
+      "reason": "Two WAHLAP rows are name-length/game-catalog splits of one 新城吾悦 3F unit 3006-1, confirmed by BemaniCN at the same unit.",
+      "evidence_url": "https://map.bemanicn.com/s/5535",
+      "evidence_quote": "天空之城游乐体验世界(南昌高新吾悦店) | 艾溪湖北路77号新城吾悦广场3楼3006-1商铺"
+    },
+    {
+      "ids": [
+        7294,
+        7297,
+        7300
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7297,
+      "canonical_name": "魅影苍穹潮玩城（坂田百佳华店）",
+      "canonical_addr": "广东省深圳市龙岗区坂田街道吉华路635号百佳华领汇广场三楼",
+      "reason": "Same Jiahua Link Plaza 3F at 吉华路635号; ZIv 坂田百佳华, WAHLAP 龙岗店 and BemaniCN 坂田百佳华店 are one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/5269",
+      "evidence_quote": "魅影苍穹潮玩城（坂田百佳华店） | 吉华路635号佳华领汇广场三楼"
+    },
+    {
+      "ids": [
+        6347,
+        6355,
+        6356
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6356,
+      "canonical_name": "菲菲羊乐园（周浦万达店）",
+      "canonical_addr": "上海市浦东新区周浦镇年家浜路518号万达广场2层娱乐楼F-01",
+      "reason": "Zhoupu Wanda Plaza entertainment building unit F-01 on floor 2; ZIv, BemaniCN and WAHLAP all describe that single FEFE SHEEP branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6914",
+      "evidence_quote": "菲菲羊乐园（周浦万达店） | 年家浜路518号万达广场2层娱乐楼-2 F-01号铺位"
+    },
+    {
+      "ids": [
+        2583,
+        2629,
+        2658
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2583,
+      "canonical_name": "大玩家（哈尔滨悦荟店）",
+      "canonical_addr": "黑龙江省哈尔滨市道里区友谊路187号印象城C座（原悦荟C座）1F",
+      "reason": "WAHLAP maimai '悦荟店' and chunithm '友谊店' plus BemaniCN all sit at 友谊路187号 C座 1F; mall rebrand 悦荟 to 印象城 does not create a second venue.",
+      "evidence_url": "https://map.bemanicn.com/s/61",
+      "evidence_quote": "大玩家（哈尔滨悦荟店）（江一） | 友谊路187号印象城C座（原悦荟C座）1F"
+    },
+    {
+      "ids": [
+        6266,
+        6270,
+        6271
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "6266/6271 are 吉林市昌邑区吉林大街万达 3F. 6270 is 延吉市万达广场二楼 (Yanji, a different city ~200 km away) with a bad shared geocode. Baidu confirms separate 吉林万达 and 延吉万达 branches.",
+      "evidence_url": "https://map.bemanicn.com/s/6297",
+      "evidence_quote": "艺珑传奇俱乐部吉林万达店 | 吉林大街518号昌邑区万达广场3F (vs 延吉市万达二楼)"
+    },
+    {
+      "ids": [
+        2707,
+        2761,
+        2763
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2761,
+      "canonical_name": "天空之城南京鹏欣水游城店",
+      "canonical_addr": "江苏省南京市秦淮区建康路1号鹏欣水游城三楼F3T02-T14",
+      "reason": "Same Pengxin Aqua City 3F at 建康/健康路1号; unit F3T02-T14 on BemaniCN matches WAHLAP 水游城三楼.",
+      "evidence_url": "https://map.bemanicn.com/s/3855",
+      "evidence_quote": "天空之城南京鹏欣水游城店 | 建康路1号鹏欣水游城铺位F3T02-T14"
+    },
+    {
+      "ids": [
+        2709,
+        2857,
+        2872
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2857,
+      "canonical_name": "天空之城游乐体验世界深圳龙岗店",
+      "canonical_addr": "广东省深圳市龙岗区龙城街道大运星河COCO PARK三楼",
+      "reason": "Same Galaxy COCO Park Longgang 3F Sky City across ZIv, WAHLAP and BemaniCN.",
+      "evidence_url": "https://map.bemanicn.com/s/2342",
+      "evidence_quote": "天空之城游乐体验世界深圳龙岗店 | 星河COCO Park(龙岗店)三楼天空之城"
+    }
+  ]
+}

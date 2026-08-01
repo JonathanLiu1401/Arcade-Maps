@@ -1,0 +1,571 @@
+{
+  "shard": 48,
+  "checked": 72,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Philippines",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9337",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1381",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=300",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3791",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4949",
+    "https://yumearcade.ca/",
+    "https://yumearcade.ca/arcade",
+    "https://yumearcade.ca/prices",
+    "https://glitchgaming.ca/",
+    "https://glitchgaming.ca/play/",
+    "https://www.zedeighty.com/",
+    "https://www.zedeighty.com/games-list",
+    "https://www.worldoffun.com.ph/",
+    "https://www.worldoffun.com.ph/locations",
+    "https://map.bemanicn.com/s/7254",
+    "https://map.bemanicn.com/s/4368",
+    "https://map.bemanicn.com/s/2679",
+    "https://map.bemanicn.com/s/2809",
+    "https://map.bemanicn.com/s/2702",
+    "https://map.bemanicn.com/s/7215",
+    "https://map.bemanicn.com/s/6051",
+    "https://map.bemanicn.com/s/6046",
+    "https://map.bemanicn.com/s/6155",
+    "https://map.bemanicn.com/s/3634",
+    "https://map.bemanicn.com/s/5361",
+    "https://map.bemanicn.com/s/2180",
+    "https://map.bemanicn.com/s/529",
+    "https://map.bemanicn.com/s/241",
+    "https://map.bemanicn.com/s/4783",
+    "https://map.bemanicn.com/s/6864",
+    "https://map.bemanicn.com/s/4035"
+  ],
+  "corrections": [
+    {
+      "id": 767,
+      "name": "Yume",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "ongeki",
+        "other",
+        "project_diva",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "maimai",
+        "ongeki",
+        "other",
+        "project_diva",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://yumearcade.ca/arcade",
+      "evidence_quote": "MaiMai listed on official /arcade page as the \"washing machine game\" that \"finally lives in Ontario!\"",
+      "note": "Official /arcade page lists MaiMai. ZIv arcade 9337 (updated 2026-05-26) lists two maimai machines. App notes also include maimai, but games[] omits it. Clearest Canada data bug.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 767,
+      "name": "Yume",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "ddr": 1,
+        "iidx": 1,
+        "ongeki": 1,
+        "project_diva": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "ddr": 1,
+        "iidx": 1,
+        "maimai": 2,
+        "ongeki": 1,
+        "project_diva": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9337",
+      "evidence_quote": "maimai x2 (both cond Perfect, comment \"Do not change the game version or comment.\"); lastUpdateTime 2026-05-26 04:34:19",
+      "note": "ZIv lists two distinct maimai machine rows. Official site confirms presence but not quantity; count comes from ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 753,
+      "name": "Xscape (Scotiabank Theatre Edmonton)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1381",
+      "evidence_quote": "DanceDanceRevolution SuperNOVA comment: \"Same cab as in WEM, probably the same one as it is now missing\"; In the Groove 2 comment: \"CURRENTLY MISSING. POTENTIALLY REMOVED.\" lastUpdate 2026-01-19",
+      "note": "ZIv still has SuperNOVA as a machine row (cond 3) but the comment implies the cab may already be gone. ITG is explicitly missing. Recommend removing ddr until a newer visit confirms SuperNOVA is still on the floor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 753,
+      "name": "Xscape (Scotiabank Theatre Edmonton)",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1381",
+      "evidence_quote": "SuperNOVA comment \"probably the same one as it is now missing\"; ITG \"CURRENTLY MISSING. POTENTIALLY REMOVED.\"",
+      "note": "Paired with games correction: if ddr is dropped, ddr_legacy cab_models claim should be removed too.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 768,
+      "name": "Zap Zone",
+      "field": "other",
+      "current": "info_text claims \"DDR Extreme machine is in great condition...\"",
+      "proposed": "Remove DDR Extreme claim from info_text; machines list only Deal or No Deal (ZIv lastUpdate 2024-07-30)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=300",
+      "evidence_quote": "machines: Deal or No Deal only; lastUpdateTime 2024-07-30 01:32:52. information still contains historical DDR Extreme text.",
+      "note": "info_text is stale relative to the machine list. No independent 2025-2026 visit found. Do not re-add DDR without a fresh source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 770,
+      "name": "¡Glitch! Gaming Lounge",
+      "field": "hours",
+      "current": "Mon closed; Tue-Thu 15:00-22:00; Fri 15:00-01:00; Sat 11:00-01:00; Sun 12:00-22:00",
+      "proposed": "Mon-Tue closed; Wed-Thu 15:00-22:00; Fri 15:00-late; Sat 11:00-late; Sun 12:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://glitchgaming.ca/",
+      "evidence_quote": "Mon & Tues: CLOSED; Weds & Thurs: 3pm - 10pm; Fri: 3PM - late (no minors after 8pm); Sat: 11am - late; Sun: 12PM - 8pM",
+      "note": "Official site closes Tuesday (app currently shows Tue open) and Sunday ends 8pm not 10pm. Fri/Sat \"late\" is not a fixed clock time on the site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6863,
+      "name": "酷熊趣乐园（旧框舞萌）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7254",
+      "evidence_quote": "arcades: title_id=2 (maimai) quantity=1 version=2025 comment=\"有点旧\"; shop name includes 旧框舞萌; updated_at 2026-07-07T08:25:54Z; status=1",
+      "note": "BemaniCN title_id 2 is classic/old-frame maimai, NOT maimai DX (title_id 1). App put it under other. Do not label as maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6863,
+      "name": "酷熊趣乐园（旧框舞萌）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7254",
+      "evidence_quote": "quantity=1 for title_id=2 maimai",
+      "note": "bemanicn_qty for old-frame maimai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6915,
+      "name": "酷玩社电玩城",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko_legacy": "AC15亚洲版"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2679",
+      "evidence_quote": "title_id=15 太鼓达人(旧代) version=AC15亚洲版 quantity=1; not title_id=31",
+      "note": "App games=[taiko] is acceptable as a family tag, but this is legacy/old-gen taiko (title_id 15), not CN Nijiiro-class (title_id 31).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7222,
+      "name": "风云再起青岛金狮广场店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/241",
+      "evidence_quote": "太鼓之达人 x1 (title_id 31, ver 2026 春); 太鼓达人(旧代) x1 (title_id 15, ver 12亚洲版). maimai DX x2 ver=2026. updated 2026-06-26",
+      "note": "App counted both taiko cabs as taiko:2. Only one is current 太鼓之达人; the other is legacy 旧代. maimai_dx:2 matches.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7222,
+      "name": "风云再起青岛金狮广场店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko_legacy": "12亚洲版",
+        "taiko": "2026 春"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/241",
+      "evidence_quote": "title_id 31 ver 2026 春; title_id 15 ver 12亚洲版",
+      "note": "Split modern vs legacy taiko variants.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7025,
+      "name": "镜之屋（暂时关服）",
+      "field": "status",
+      "current": "listed as open venue with chunithm/maimai_dx/taiko",
+      "proposed": "temporarily closed / services suspended (暂时关服); verify before travel",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5361",
+      "evidence_quote": "shop name \"镜之屋（暂时关服）\"; status field still 1; updated_at 2025-11-29; taiko comment \"雷音祭Steam版+虹2025曲包\"",
+      "note": "Name itself is the community status flag. BemaniCN numeric status remains 1 (listed), so not a hard deletion. taiko entry is a PC/Steam build, not a physical Nijiiro cab. Highest-risk travel-to-closed item in China slice.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7025,
+      "name": "镜之屋（暂时关服）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5361",
+      "evidence_quote": "太鼓之达人 version=PC comment=\"雷音祭Steam版+虹2025曲包\"; maimai comment \"adx\"; CHUNITHM version VERSE",
+      "note": "Remove taiko from public rhythm map if schema is physical arcade cabs only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7376,
+      "name": "（已断网）宾果无限城阳家佳源店",
+      "field": "status",
+      "current": "listed open with maimai_dx",
+      "proposed": "open but network offline (已断网); online features unavailable",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4035",
+      "evidence_quote": "shop name \"（已断网）宾果无限城阳家佳源店\"; arcade comment \"25年4月 机厅没交网费处于离线模式\"; \"25年7月 疑似有传言说机厅要倒闭了\"; updated_at 2026-07-11; still status=1 with maimai DX qty 1",
+      "note": "Still listed and updated July 2026, so not confirmed closed. Network is offline per name and machine comment. 2025-07 closure rumor is unverified; do not mark permanently closed without newer evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6945,
+      "name": "酷龙奇纪 沂水银座",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 6945 + bemanicn id 6947",
+      "proposed": "merge into bemanicn record id 6947 (keep richer game_counts); retire wahlap-only duplicate id 6945",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6046",
+      "evidence_quote": "shard 6945 wahlap and 6947 bemanicn share lat/lng 35.784783,118.619808 and 银座商城三楼",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6949,
+      "name": "酷龙奇纪 莒县正基",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 6949 + bemanicn id 6948",
+      "proposed": "merge into bemanicn record id 6948 (keep richer game_counts); retire wahlap-only duplicate id 6949",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6155",
+      "evidence_quote": "shard 6949 wahlap and 6948 bemanicn share ~35.5786,118.8254 正基时代广场5楼",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6950,
+      "name": "酷龙奇纪 桓台惠仟佳",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 6950 + bemanicn id 6946",
+      "proposed": "merge into bemanicn record id 6946 (keep richer game_counts); retire wahlap-only duplicate id 6950",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6051",
+      "evidence_quote": "shard 6950 wahlap and 6946 bemanicn are the same 惠仟佳 4F venue (coords ~36.96,118.08)",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7012,
+      "name": "银河壹号 印象济南/西美",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 7012 + bemanicn id 7013",
+      "proposed": "merge into bemanicn record id 7013 (keep richer game_counts); retire wahlap-only duplicate id 7012",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3634",
+      "evidence_quote": "shard 7012 wahlap and 7013 bemanicn identical lat/lng 36.677615,116.903229 and same 西美/印象济南 address",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7092,
+      "name": "雷霆1号 临沂兰山泰盛",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 7092 + bemanicn id 7093",
+      "proposed": "merge into bemanicn record id 7093 (keep richer game_counts); retire wahlap-only duplicate id 7092",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2180",
+      "evidence_quote": "shard 7092 wahlap and 7093 bemanicn identical lat/lng 35.068248,118.324732 泰盛广场二期负一楼",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6925,
+      "name": "酷玩空间 烟台芝罘吾悦",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 6925 + bemanicn id 6928",
+      "proposed": "merge into bemanicn record id 6928 (keep richer game_counts); retire wahlap-only duplicate id 6925",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2702",
+      "evidence_quote": "shard 6925 wahlap and 6928 bemanicn same 吾悦广场3楼 coords ~37.5505,121.3645",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7359,
+      "name": "麦酷潮玩 安丘茂街",
+      "field": "other",
+      "current": "duplicate pair: wahlap id 7359 + bemanicn id 7361",
+      "proposed": "merge into bemanicn record id 7361 (keep richer game_counts); retire wahlap-only duplicate id 7359",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4783",
+      "evidence_quote": "shard 7359 wahlap and 7361 bemanicn same 新安路与世贸大街 / 茂街新天地 area ~36.456,119.218",
+      "note": "Same physical store ingested twice from WAHLAP store name vs BemaniCN shop name. Prefer bemanicn row for quantities; keep wahlap as src on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6908,
+      "name": "酷玩狞球济宁吾悦店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4368",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN shop start_time/end_time (or free-text comment for 7104). Community-maintained; treat as approximate mall-arcade hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6922,
+      "name": "酷玩空间东营吾悦广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2809",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN shop start_time/end_time (or free-text comment for 7104). Community-maintained; treat as approximate mall-arcade hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6928,
+      "name": "酷玩空间（烟台芝罘吾悦店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2702",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN shop start_time/end_time (or free-text comment for 7104). Community-maintained; treat as approximate mall-arcade hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7013,
+      "name": "银河壹号电玩城(印象济南店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-26:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3634",
+      "evidence_quote": "start_time=10 end_time=26",
+      "note": "BemaniCN shop start_time/end_time (or free-text comment for 7104). Community-maintained; treat as approximate mall-arcade hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7104,
+      "name": "青春飞扬动漫城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/529",
+      "evidence_quote": "shop comment \"营业时间 9:30-22：00\" (start_time/end_time fields say 9-21; prefer comment text)",
+      "note": "BemaniCN shop start_time/end_time (or free-text comment for 7104). Community-maintained; treat as approximate mall-arcade hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7222,
+      "name": "风云再起青岛金狮广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/241",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "BemaniCN shop start_time/end_time (or free-text comment for 7104). Community-maintained; treat as approximate mall-arcade hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10481,
+      "name": "World Of Fun, Waltermart Subic",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": "likely closed or no longer a WoF branch (absent from official locations list)",
+      "confidence": "likely",
+      "evidence_url": "https://www.worldoffun.com.ph/locations",
+      "evidence_quote": "Official locations list includes many WalterMart branches (Gapan, Sta Maria, Tanauan, etc.) but no Waltermart Subic / Subic entry anywhere (fetched 2026-07-31).",
+      "note": "ZIv lastUpdateTime for this arcade is 2019-06-16. Pump It Up Fiesta EX claim is from that 2019 snapshot only. Strong candidate for removal or unverified/closed flag.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10481,
+      "name": "World Of Fun, Waltermart Subic",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4949",
+      "evidence_quote": "Pump It Up Fiesta EX listed; lastUpdateTime 2019-06-16 23:09:46 (no newer machine updates)",
+      "note": "Even if the branch still exists, the PIU claim is 7+ years stale. Remove pump_it_up until a 2025-2026 confirmation. machine_prices pump_it_up PHP 10.00 should go with it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10480,
+      "name": "World Of Fun, SM City Batangas",
+      "field": "games",
+      "current": [
+        "gitadora"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3791",
+      "evidence_quote": "Only machine: DrumManiaV6 BLAZING!!!!; lastUpdateTime 2016-06-18 15:22:10",
+      "note": "Branch still listed on https://www.worldoffun.com.ph/locations as \"SM City Batangas - 2nd Level\", so venue existence is fine. The sole rhythm claim (DrumMania V6 / gitadora) has no evidence after 2016. proposed null means remove the gitadora game claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10471,
+      "name": "World Of Fun SM City Sta. Mesa",
+      "field": "location",
+      "current": "4F SM City Santa Mesa ... (info: Moved to 4th floor)",
+      "proposed": "Confirm floor: official WoF locations says 3rd Level; ZIv 2026-06-28 still says Moved to 4th floor / addr 4F",
+      "confidence": "unverified",
+      "evidence_url": "https://www.worldoffun.com.ph/locations",
+      "evidence_quote": "SM City Sta. Mesa - 3rd Level (official). ZIv id 3819 information \"Moved to 4th floor\", address \"4F SM City Santa Mesa\", lastUpdate 2026-06-28",
+      "note": "Conflicting floor numbers between operator site and recent ZIv. Pin coords likely still the mall; floor signage needs a visitor check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10464,
+      "name": "World Of Fun SM City Masinag",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10468,
+      "name": "World Of Fun SM City Pampanga",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10471,
+      "name": "World Of Fun SM City Sta. Mesa",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10474,
+      "name": "World Of Fun SM Megamall",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10478,
+      "name": "World Of Fun, Robinsons Place Dumaguete",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10479,
+      "name": "World Of Fun, SM City Baliwag",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10480,
+      "name": "World Of Fun, SM City Batangas",
+      "field": "website",
+      "current": "http://worldoffun.com.ph or http://worldoffun.ph/",
+      "proposed": "https://www.worldoffun.com.ph/",
+      "confidence": "certain",
+      "evidence_url": "https://www.worldoffun.com.ph/",
+      "evidence_quote": "Canonical operator site is https://www.worldoffun.com.ph/ (locations at /locations). Live 200 response 2026-07-31.",
+      "note": "Several rows use bare worldoffun.com.ph or worldoffun.ph without www/https. Prefer the live canonical URL.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

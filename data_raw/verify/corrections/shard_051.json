@@ -1,0 +1,1182 @@
+{
+  "shard": 51,
+  "checked": 77,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1007",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+    "https://www.timezonegames.com/id-id/lokasi/",
+    "https://www.timezonegames.com/id-id/lokasi/sumatera/sun-plaza-lt-4/",
+    "https://www.timezonegames.com/id-id/lokasi/bali/mal-bali-galeria/",
+    "https://www.timezonegames.com/id-id/lokasi/kalimantan/duta-mall-banjarmasin/",
+    "https://www.timezonegames.com/id-id/lokasi/kalimantan/duta-mall-palangka-raya/",
+    "https://www.timezonegames.com/id-id/lokasi/jawa-timur/galaxy-mall-1/",
+    "https://www.timezonegames.com/id-id/lokasi/jawa-barat/festlink-bandung/",
+    "https://www.timezonegames.com/id-id/lokasi/jawa-barat/bandung-indah-plaza/",
+    "https://www.timezonegames.com/id-id/lokasi/kalimantan/big-mall-samarinda/",
+    "https://www.timezonegames.com/id-id/lokasi/sumatera/bencoolen-mall/",
+    "https://www.timezonegames.com/id-id/lokasi/sumatera/boemi-kedaton-mall/",
+    "https://www.timezonegames.com/id-id/lokasi/jakarta/k-mall-at-menara-jakarta/",
+    "https://www.timezonegames.com/id-id/lokasi/jakarta/tokyo-hub-shopping-town-pik-2/",
+    "https://www.timezonegames.com/id-id/lokasi/jawa-barat/living-world-kota-wisata-cibubur/"
+  ],
+  "corrections": [
+    {
+      "id": 7925,
+      "name": "TIMEZONE GALAXY MAL 1",
+      "field": "location",
+      "current": {
+        "lat": -3.3175996,
+        "lng": 114.6035484,
+        "addr": "Jl. Dharmahusada Indah Timur No. 37, 3rd Floor, Surabaya"
+      },
+      "proposed": {
+        "lat": -7.2748985651887,
+        "lng": 112.78250366449,
+        "addr": "Lantai 3, Jl. Dharmahusada Indah Timur No. 37, Mulyorejo, Surabaya 60115"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "TIMEZONE GALAXY MAL 1 | Jl. Dharmahusada Indah Timur No. 37, 3rd Floor, Surabaya | maps q=@-3.3175996,114.6035484 (coords are in Banjarmasin, not Surabaya)",
+      "note": "Address city is Surabaya but ALL.Net GPS and the app pin place the venue in Banjarmasin (~484 km away, ~0.6 km from Duta Mall Banjarmasin). ZIv id=477 Timezone - GM (Galaxy Mall) at -7.2749,112.7825 is the correct Surabaya pin. Official Timezone lokasi lists Galaxy Mall 1 in Jawa Timur/Surabaya. Prefer ZIv/Surabaya coords; ALL.Net GPS for this sid is wrong.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7925,
+      "name": "TIMEZONE GALAXY MAL 1",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-timur/galaxy-mall-1/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jawa-timur/galaxy-mall-1/",
+      "evidence_quote": "LocalBusiness name: Galaxy Mall 1; Jl. Dharmahusada Indah Timur No. 37, Mulyorejo, Surabaya 60115",
+      "note": "Official Timezone store page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7926,
+      "name": "TIMEZONE GALERIA BALI",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "Indonesia maimai DX International store list (52 stores) contains no GALERIA / Mal Bali Galeria entry. Nearby Bali entries: TIMEZONE TRANS STUDIO MAL BALI, TIMEZONE LEVEL 21 only.",
+      "note": "Venue still exists as official Timezone Mal Bali Galeria (timezonegames.com, dateModified 2026-06-14). App lists maimai_dx via allnet but it is not on the live ALL.Net Indonesia maimai list as of check date. Prefer removing maimai_dx until ALL.Net lists it again; do not delete the venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7926,
+      "name": "TIMEZONE GALERIA BALI",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/bali/mal-bali-galeria/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/bali/mal-bali-galeria/",
+      "evidence_quote": "LocalBusiness name: Mal Bali Galeria; Jl. Raya By Pass I Gusti Ngurah Rai, Simpang Dewa Ruci, Kuta, Denpasar, Bali 80361; dateModified 2026-06-14",
+      "note": "Official page confirms Timezone branch still listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7966,
+      "name": "TIMEZONE SUN PLAZA LT.4",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "Indonesia maimai list has TIMEZONE MEDAN FAIR LT.4 NEW and TIMEZONE CENTRE POINT in Medan, but no SUN PLAZA entry.",
+      "note": "Conflict: ZIv id=10270 updated 2025-06-30 lists maimai DX PRiSM at Sun Plaza; official Timezone page sun-plaza-lt-4 exists (dateModified 2026-06-14). ALL.Net does not currently list it for maimai. Do not invent a removal with certainty. Flag for maintainer confirmation of network status. Taiko has no official locator evidence either way.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7966,
+      "name": "TIMEZONE SUN PLAZA LT.4",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sumatera/sun-plaza-lt-4/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/sumatera/sun-plaza-lt-4/",
+      "evidence_quote": "LocalBusiness name: Sun Plaza Lt. 4; Jl. KH. Zainul Arifin No. 7, Medan, Sumatera Utara 20152; dateModified 2026-06-14",
+      "note": "Official store page; venue open as a Timezone branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7918,
+      "name": "Timezone Duta Mall Banjarmasin (5th Floor)",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "No Banjarmasin / Duta Mall entry on ALL.Net Indonesia maimai list (52 stores).",
+      "note": "ZIv id=9746 updated 2026-07-18 lists maimai DX CiRCLE New Cab plus Pump It Up Phoenix. Official Timezone page duta-mall-banjarmasin exists. ALL.Net absence is a soft negative only. Keep games; do not invent counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7919,
+      "name": "TIMEZONE Duta Mall Palangka Raya",
+      "field": "other",
+      "current": "separate from id 7920 TIMEZONE DUTA PALANGKARAYA",
+      "proposed": "likely same physical Timezone Duta Mall Palangka Raya as id 7920 (merge candidates)",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/kalimantan/duta-mall-palangka-raya/",
+      "evidence_quote": "Official single listing: Duta Mall Palangka Raya. ALL.Net name TIMEZONE DUTA PALANGKARAYA. ZIv id=10572 TIMEZONE Duta Mall Palangka Raya with maimai DX CiRCLE (upd 2026-03-30).",
+      "note": "Shard has both allnet-only 7920 (lat -2.2227,113.9258) and ziv 7919 (lat -2.2481,113.9234), ~2.8 km apart. Official Timezone also lists a separate Mega Town Square Palangkaraya; these two shard rows both appear to target Duta Mall. Recommend merge.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7920,
+      "name": "TIMEZONE DUTA PALANGKARAYA",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/kalimantan/duta-mall-palangka-raya/",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/kalimantan/duta-mall-palangka-raya/",
+      "evidence_quote": "LocalBusiness name: Duta Mall Palangka Raya; dateModified 2025-10-10",
+      "note": "ALL.Net row name matches Duta Palangkaraya; pair with 7919.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7923,
+      "name": "Timezone Festival Citylink",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "store_name: FESTIVAL CITYLINK BANDUNG | store_address: Jl.Peta, No.241, Suka Asih, Kec.Bojongloa Kaler, Kota Bandung (sid=18354)",
+      "note": "Official Timezone page festlink-bandung also lists this branch (dateModified 2026-06-12). ALL.Net has no GPS (0,0). App currently omits maimai_dx despite live ALL.Net listing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7923,
+      "name": "Timezone Festival Citylink",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/festlink-bandung/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/festlink-bandung/",
+      "evidence_quote": "LocalBusiness name: Festlink Bandung; Jl. Peta No.241, Suka Asih, Kec. Bojongloa Kaler, Kota Bandung, Jawa Barat 40232",
+      "note": "Official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7928,
+      "name": "TIMEZONE JAMBI",
+      "field": "other",
+      "current": "separate from id 7929 Timezone Jambi Town Square",
+      "proposed": "same venue as 7929 (Jamtos / Jambi Town Square); merge candidates",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official listing Jamtos | Lantai 2, Jl. Kapt. A. Bakaruddin No.88, Jambi. ALL.Net TIMEZONE JAMBI uses same No.88 Simpang IV Sipin address.",
+      "note": "7928 is allnet-only; 7929 is ziv with richer fields. ~1.6 km pin difference. Keep one row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7929,
+      "name": "Timezone Jambi Town Square",
+      "field": "website",
+      "current": "https://www.timezonegames.com/id-id/",
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sumatera/jamtos/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official lokasi entry: Jamtos | Lantai 2, Jl. Kapt. A. Bakaruddin No.88, Jambi | /id-id/lokasi/sumatera/jamtos/",
+      "note": "Replace generic homepage with specific store page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7950,
+      "name": "TIMEZONE MENARA JAKARTA",
+      "field": "other",
+      "current": "separate from id 7930 Timezone K Mall at Menara Jakarta",
+      "proposed": "same venue as 7930 (K Mall at Menara Jakarta); merge candidates",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jakarta/k-mall-at-menara-jakarta/",
+      "evidence_quote": "LocalBusiness name: K Mall at Menara Jakarta; Jl. Kota Baru Bandar Kemayoran Gunung Sahari; Lantai 2F on lokasi list",
+      "note": "ALL.Net name TIMEZONE MENARA JAKARTA; ZIv and official use K Mall at Menara Jakarta. Pins ~0.3 km.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7930,
+      "name": "Timezone K Mall at Menara Jakarta",
+      "field": "website",
+      "current": "https://www.timezonegames.com/en-id/",
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/k-mall-at-menara-jakarta/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jakarta/k-mall-at-menara-jakarta/",
+      "evidence_quote": "Wahana Bermain di Kemayoran : Timezone K Mall at Menara Jakarta; dateModified 2026-05-20",
+      "note": "Specific store page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7937,
+      "name": "TIMEZONE LIPPO MALL KEMANG",
+      "field": "other",
+      "current": "separate from id 7938 Timezone Lippo Mall Kemang Village",
+      "proposed": "same venue as 7938; merge candidates",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jakarta/lippo-mall-kemang/",
+      "evidence_quote": "Official: Lippo Mall Kemang | Lantai 3, Jl. Pangeran Antasari No.36, Jakarta Selatan",
+      "note": "7937 allnet maimai-only; 7938 ziv has maimai+pump+other. Pins ~0.2 km.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7947,
+      "name": "TIMEZONE MEDAN FAIR LT.4 NEW",
+      "field": "other",
+      "current": "separate from id 7958 Timezone Plaza Medan Fair",
+      "proposed": "same venue as 7958; merge candidates",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official lokasi: Medan Fair | Medan Fair Lantai 4 | /id-id/lokasi/sumatera/medan-fair/",
+      "note": "ALL.Net and ZIv dual rows. Pins ~4.3 km apart. Prefer ALL.Net coords for maimai cab + ZIv machine list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7948,
+      "name": "TIMEZONE MEGA MAL BATAM",
+      "field": "other",
+      "current": "separate from id 7949 Timezone Mega Mall Batam",
+      "proposed": "same venue as 7949; merge candidates",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official lokasi: Mega Mall Batam | Lantai 1, Jl. Engkau Putri | /id-id/lokasi/sumatera/mega-mall-batam/",
+      "note": "Pins ~2 km apart. Merge allnet+ziv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7954,
+      "name": "TIMEZONE PARIS VAN JAVA",
+      "field": "other",
+      "current": "separate from id 7955 Timezone Paris Van Java (PVJ)",
+      "proposed": "same venue as 7955; merge candidates",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/paris-van-java/",
+      "evidence_quote": "Official: Paris Van Java | Jl. Sukajadi 131-139 Bandung",
+      "note": "7954 allnet chunithm+maimai; 7955 ziv adds drs, pump, other. Pins ~0.7 km.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7939,
+      "name": "TIMEZONE LIPPO MALL PURI",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/lippo-mall-puri-2/",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official lists Lippo Mall Puri 1 (Lantai UG) and Lippo Mall Puri 2 (Lantai 1) as separate Timezone venues.",
+      "note": "7939 is the L1 rhythm-heavy floor (maimai, chunithm, taiko). 7940 is UG with pump/other only. Keep both.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7940,
+      "name": "Timezone Lippo Mall Puri UG",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/lippo-mall-puri-1/",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Lippo Mall Puri 1 | Lantai UG, Kembangan Selatan 07, Jl. Kembangan Raya No. 3, Jakarta Barat",
+      "note": "Separate arcade from L1 per ZIv info_text. No maimai/chunithm on this floor in ZIv (last update 2025-01).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7939,
+      "name": "TIMEZONE LIPPO MALL PURI",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "chunithm": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7032",
+      "evidence_quote": "CHUNITHM VERSE comment: 1 Cabinet. maimai DX CiRCLE comment: 2 cabinet (Probably temporary, new machine name is Timezone Q-Mall). lastUpdateTime 2026-07-16.",
+      "note": "ZIv community counts, not official.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7956,
+      "name": "TIMEZONE PLAZA AMBARUKMO",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5014",
+      "evidence_quote": "maimai DX CiRCLE comment: ONLINE, 2 Cabinets, Cab to Cab is enabled. lastUpdateTime 2026-07-10.",
+      "note": "Also lists maimai FiNALE offline dead condition=0; do not add FiNALE as a live game.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7958,
+      "name": "Timezone Plaza Medan Fair",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3109",
+      "evidence_quote": "maimai DX PRiSM comment: 4 player / 2 cab. lastUpdateTime 2025-07-09.",
+      "note": "ZIv count; pair with allnet 7947.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7965,
+      "name": "TIMEZONE SUMMARECON SERPONG",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=493",
+      "evidence_quote": "maimai DX CiRCLE: 2 CABS. Left/Back cabs are slightly older. Pump It Up Phoenix: 1 LX Cab, Online V1.06.0. lastUpdateTime 2026-07-11.",
+      "note": "ZIv community counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7967,
+      "name": "TIMEZONE SUPERMALL KARAWACI",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3837",
+      "evidence_quote": "CHUNITHM X-VERSE-X: 2 cabs, all silver/white cabs. maimai DX CiRCLE: 2 cabs are available. lastUpdateTime 2026-07-11.",
+      "note": "ZIv community counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7952,
+      "name": "TIMEZONE PACIFIC PLACE",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9471",
+      "evidence_quote": "maimai DX PRiSM comment: Single cab, beware of longer queues. lastUpdateTime 2025-07-21.",
+      "note": "ZIv; slightly older update.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7934,
+      "name": "TIMEZONE LA PIAZZA",
+      "field": "game_counts",
+      "current": null,
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9182",
+      "evidence_quote": "maimai DX CiRCLE comment: Location has multiple cabinets (no exact number). lastUpdateTime 2026-04-03.",
+      "note": "Cannot determine exact count from sources; leave null. Do not invent a number.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7945,
+      "name": "TIMEZONE MANADO TOWN SQUARE LT1",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": [
+          "maimai_dx",
+          "maimai_finale_present_condition_poor"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6165",
+      "evidence_quote": "machines include maimai DX CiRCLE and maimai FiNALE (comment: 2P touch panel does not work, condition 3). lastUpdateTime 2026-06-05.",
+      "note": "Live DX is on ALL.Net. FiNALE may still be physically present as non-networked cab; map should not treat FiNALE as primary networked product.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7949,
+      "name": "Timezone Mega Mall Batam",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": [
+          "maimai_dx_prism_plus",
+          "maimai_finale_offline"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5855",
+      "evidence_quote": "maimai DX PRiSM PLUS (cond 5) and maimai FiNALE (cond 2: Hard, malfunctioning buttons... Offline song selection). lastUpdateTime 2026-05-05.",
+      "note": "Primary networked game is DX per ALL.Net TIMEZONE MEGA MAL BATAM.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TIMEZONE BANDUNG INDAH PLASA",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TIMEZONE BANDUNG INDAH PLASA",
+        "addr": "Lantai 3, Jl. Merdeka No. 56, Bandung 40117",
+        "lat": -6.9085663,
+        "lng": 107.6107996,
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "pump_it_up",
+          "other"
+        ],
+        "country": "Indonesia",
+        "website": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/bandung-indah-plaza/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "TIMEZONE BANDUNG INDAH PLASA | Jl. Merdeka No. 56, Bandung 40117 | @-6.9085663,107.6107996 (also on CHUNITHM intl list)",
+      "note": "Not in shard_051 (nearest PVJ ~2.7 km). ZIv id=381 updated 2026-04-20 lists CHUNITHM X-VERSE, maimai DX CiRCLE, Pump It Up Phoenix. Official Timezone page exists.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TIMEZONE BIG MALL SAMARINDA",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TIMEZONE BIG MALL SAMARINDA",
+        "addr": "Lantai LG, Jl. Untung Suropati No. 8, Karang Asam Ulu, Sungai Kunjang, Samarinda, Kalimantan Timur",
+        "lat": -0.5050225,
+        "lng": 117.1099903,
+        "games": [
+          "maimai_dx",
+          "pump_it_up",
+          "other"
+        ],
+        "country": "Indonesia",
+        "website": "https://www.timezonegames.com/id-id/lokasi/kalimantan/big-mall-samarinda/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "TIMEZONE BIG MALL SAMARINDA | No.8KarangAsamUlu,SungaiKujang,Samarinda,KalimantanTimur | @-0.5050225,117.1099903",
+      "note": "Absent from entire shard. ZIv id=7849 (2026-03-27) lists maimai DX CiRCLE NEW MACHINE. ONLINE. 1x Cab only and Pump It Up Phoenix.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TIMEZONE BENCOOLEN",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TIMEZONE BENCOOLEN",
+        "addr": "Jl. Pariwisata No.1, Penurunan, Kec. Ratu Samban, Kota Bengkulu, Bengkulu 38223",
+        "lat": -3.8148175,
+        "lng": 102.270578,
+        "games": [
+          "maimai_dx"
+        ],
+        "country": "Indonesia",
+        "website": "https://www.timezonegames.com/id-id/lokasi/sumatera/bencoolen-mall/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "TIMEZONE BENCOOLEN | JL.Pariwisata No.1 Penurunan Kec. Ratu Samban, Bengkulu | @-3.8148175,102.270578",
+      "note": "Missing from shard. Official Timezone Bencoolen Mall page exists (dateModified 2026-06-14). Only maimai confirmed via ALL.Net.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "TIMEZONE BOEMI KEDATON",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "TIMEZONE BOEMI KEDATON",
+        "addr": "Lantai 2, Jl. Teuku Umar, Sultan Agung No. 1, Kedaton, Lampung 35132",
+        "lat": -5.3823988,
+        "lng": 105.2591307,
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ],
+        "country": "Indonesia",
+        "website": "https://www.timezonegames.com/id-id/lokasi/sumatera/boemi-kedaton-mall/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "TIMEZONE BOEMI KEDATON | Jl. Teuku Umar, Sultan Agung No. 1, Kedaton, Lampung 35132 | @-5.3823988,105.2591307",
+      "note": "Missing from shard. ZIv id=9204 (2025-02-21) also lists Pump It Up Phoenix (2024).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "CPCM MALL OF INDONESIA",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "CPCM MALL OF INDONESIA",
+        "addr": "Jl.Boulevard Bar.Raya No.12, RT.18/RW.19, Klp.Gading Bar., Jakarta Utara",
+        "lat": -6.153693,
+        "lng": 106.893036,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "country": "Indonesia"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM MALL OF INDONESIA on maimai list @-6.153693,106.893036; also on CHUNITHM intl list sid=18757",
+      "note": "Cow Play Cow Moo chain, not Timezone. Not in shard. Nearest shard venue La Piazza ~0.6 km is different operator.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "CPCM ELYSEE",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "CPCM ELYSEE",
+        "addr": "LOT 21, JL. SCBD NO. KAV 52-53, KOTA JAKARTA SELATAN",
+        "lat": -6.2243508,
+        "lng": 106.8094982,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "country": "Indonesia"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM ELYSEE on maimai and chunithm Indonesia lists @-6.2243508,106.8094982",
+      "note": "Not in shard. Distinct from TIMEZONE PACIFIC PLACE (~0.14 km).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "CPCM LIPPO MALL NUSANTARA",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "CPCM LIPPO MALL NUSANTARA",
+        "addr": "Jl. Jend. Sudirman Kav. 50, Karet Semanggi, Setiabudi",
+        "lat": -6.2201667,
+        "lng": 106.8143752,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "country": "Indonesia"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM LIPPO MALL NUSANTARA on maimai+chunithm lists @-6.2201667,106.8143752",
+      "note": "Not in shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "CPCM PIK",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "CPCM PIK",
+        "addr": "Jl.Pantai Indah Kapuk, Kamal Muara, Kec.Penjaringan, Jakarta Utara",
+        "lat": -6.1026441,
+        "lng": 106.7411622,
+        "games": [
+          "maimai_dx"
+        ],
+        "country": "Indonesia"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM PIK | Jl.Pantai Indah Kapuk... | @-6.1026441,106.7411622",
+      "note": "Not in shard. maimai only on ALL.Net for this row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "COW PLAY COW MOO CARSTENSZ MALL",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "COW PLAY COW MOO CARSTENSZ MALL",
+        "addr": "Jalan jend sudirman no1. Cihuni. Kec pagedangan",
+        "lat": -6.2697615,
+        "lng": 106.6304198,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "country": "Indonesia"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "COW PLAY COW MOO CARSTENSZ MALL on maimai and chunithm lists @-6.2697615,106.6304198",
+      "note": "Not in shard. Near BSD / Serpong area.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PIK 1 KITA",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PIK 1 KITA",
+        "addr": "Kawasan Pantai Kita, Jl. Ebony 2, Jkt Utara",
+        "lat": -6.1519684,
+        "lng": 106.9188253,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "country": "Indonesia",
+        "website": "https://www.timezonegames.com/id-id/lokasi/jakarta/pantai-kita-pik/"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "PIK 1 KITA on maimai+chunithm lists @-6.1519684,106.9188253. Official Timezone also lists Pantai Kita PIK.",
+      "note": "ALL.Net name is PIK 1 KITA. Official lokasi has Pantai Kita PIK. Not in shard. Confirm operator branding before final name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "PRIZE SPOT PALO BLOK M",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "PRIZE SPOT PALO BLOK M",
+        "addr": "Jl Bulungan No76 Lt.5 Kramat Pela Kec Kebayoran Baru",
+        "lat": -6.2428317,
+        "lng": 106.7964001,
+        "games": [
+          "maimai_dx"
+        ],
+        "country": "Indonesia"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "PRIZE SPOT PALO BLOK M | Jl Bulungan No76 Lt.5 Kramat Pela Kec Kebayoran Baru | @-6.2428317,106.7964001",
+      "note": "Not in shard. maimai only confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone Tokyo Hub Shopping Town PIK 2",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Tokyo Hub Shopping Town PIK 2",
+        "addr": "Apartemen Tokyo Riverside PIK2 / Tokyo Hub Shopping Town PIK 2",
+        "lat": null,
+        "lng": null,
+        "games": [],
+        "country": "Indonesia",
+        "website": "https://www.timezonegames.com/id-id/lokasi/jakarta/tokyo-hub-shopping-town-pik-2/"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/jakarta/tokyo-hub-shopping-town-pik-2/",
+      "evidence_quote": "LocalBusiness name: Tokyo Hub Shopping Town PIK 2; dateModified 2026-05-20; on official lokasi list under Jakarta",
+      "note": "Official Timezone branch not in shard. No ALL.Net maimai/chunithm listing under this name. Coords unknown. Rhythm games unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7981,
+      "name": "Trencity Miami Fried Chicken Singosari",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=3632 lastUpdateTime 2016-01-27, machines: Pump It Up Infinity only",
+      "note": "Only source is decade-old ZIv. Could not independently verify still open or still has PIU.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7982,
+      "name": "Waka Waka Games-Pejaten Village",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=1768 lastUpdateTime 2011-06-06, Pump It Up Fiesta",
+      "note": "ZIv last update 2011. Existence and games unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7987,
+      "name": "Zone 2000 - Cinere Square",
+      "field": "status",
+      "current": "listed open with gitadora, pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=1730 lastUpdateTime 2011-05-12, GUITARFREAKS 2ndMIX + Pump It Up NX ABSOLUTE",
+      "note": "2011 ZIv row. Games listed are extremely outdated models. Unverified whether venue still exists.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7989,
+      "name": "Zone 2000 - Ramayana Cibinong",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=3151 lastUpdateTime 2014-06-10, Pump It Up NX ABSOLUTE",
+      "note": "2014 ZIv only. Unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7991,
+      "name": "Zone 2000 - Robinson Cibinong City Point",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=3149 lastUpdateTime 2014-06-10, Pump It Up Fiesta EX",
+      "note": "2014 ZIv only. Unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7992,
+      "name": "Zone 2000 - Tamini Square",
+      "field": "status",
+      "current": "listed open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=3391 lastUpdateTime 2015-03-21, Pump It Up Fiesta 2",
+      "note": "2015 ZIv only. Unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7984,
+      "name": "XXI Arcade Room MTA",
+      "field": "status",
+      "current": "listed open with other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+      "evidence_quote": "ZIv arcade id=3400 lastUpdateTime 2015-06-24; machines Tekken Tag 2, IDAS8, Mario Kart GP DX, Wangan MT5",
+      "note": "2015 ZIv. Mal Taman Anggrek still has official Timezone (id 7968) which is a different operator/venue. XXI arcade room existence unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7957,
+      "name": "Timezone Plaza Andalas",
+      "field": "status",
+      "current": "listed open with other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official lokasi Sumatera lists Centre Point, Medan Fair, Sun Plaza, Jamtos, Boemi Kedaton, Mega Mall Batam, Bencoolen, Transmall Padang, etc. - no Plaza Andalas entry.",
+      "note": "ZIv id=6735 lastUpdateTime 2022-11-15; only machine maimai FiNALE condition 0. Not on ALL.Net maimai list. Status unverified; may be closed or rebranded.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7969,
+      "name": "Timezone Tentrem Mall",
+      "field": "status",
+      "current": "listed open with other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Official lokasi Jawa Tengah lists Armada Town Square, Duta Pertiwi, Grand Mall Solo, Pekalongan Plaza, Klaten Plaza, 23 Semarang - no Tentrem Mall entry.",
+      "note": "ZIv id=6064 lastUpdateTime 2022-05-01, no rhythm games. Official Timezone locator omits Tentrem. Possibly closed; unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7941,
+      "name": "Timezone Living World Kota Wisata",
+      "field": "other",
+      "current": "src ziv only; games include maimai_dx",
+      "proposed": "maimai also listed on ALL.Net as MOLLY FANTASY LIVING WORLD KOTA WISATA (same mall coords ~0.3 km)",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "MOLLY FANTASY LIVING WORLD KOTA WISATA | Jl Blvd Kota Wisata Lt 1-43B Ciangsana... | @-6.3713106,106.9570403",
+      "note": "Official Timezone page living-world-kota-wisata-cibubur exists and ZIv lists maimai under Timezone branding. ALL.Net store name is Molly Fantasy at same mall - may be co-located rebrand or dual branding.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7960,
+      "name": "TIMEZONE Q-MALL",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "TIMEZONE Q-MALL | Jl. Ahmad Yani KM 38, Banjarbaru 70714 | on maimai list @-3.4300034,114.8490017",
+      "note": "ALL.Net confirms maimai. ZIv id=9397 (2025-02-21) only listed PIU+Wangan without maimai - community stale relative to official. Keep maimai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7917,
+      "name": "TIMEZONE CENTRE POINT",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sumatera/centre-point/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Centre Point | Lantai 3, Jl. Jawa No. 8, Medan",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7931,
+      "name": "TIMEZONE KELAPA GADING 3 LT 3",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/summarecon-mall-kelapa-gading-3-lt-3/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Summarecon Mall Kelapa Gading 3 Lt. 3 | Jl. Boulevard Raya, Jakarta Utara",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7932,
+      "name": "TIMEZONE KELAPA GADING MALL3",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/summarecon-mall-kelapa-gading-3-lt2/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Summarecon Mall Kelapa Gading 3 Lt.2 | Jl. Boulevard Raya, North Jakarta",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7934,
+      "name": "TIMEZONE LA PIAZZA",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/la-piazza/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "La Piazza | Lantai 2, Jl. Boulevard Raya, Jakarta Utara",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7952,
+      "name": "TIMEZONE PACIFIC PLACE",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/pacific-place/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Pacific Place | Level 2, Jl. Jenderal Sudirman",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7968,
+      "name": "TIMEZONE TAMAN ANGGREK",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/mal-taman-anggrek/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Mal Taman Anggrek | Ground Fl Unit : F05, F06, F12",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7942,
+      "name": "TIMEZONE MAL CIPUTRA CIBUBUR",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/mal-ciputra-cibubur/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Mal Ciputra Cibubur | Lantai 2, Jl. Alternatif Cibubur No. Km 4",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7943,
+      "name": "TIMEZONE MAL RATU INDAH",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sulawesi/mall-ratu-indah/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Mall Ratu Indah | Lantai 3, Jl. DR. Ratulangi No. 35, Makassar",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7951,
+      "name": "TIMEZONE NIPAH",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sulawesi/nipah-park/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Nipah Park | Lantai 1, Jalan Urip Sumoharjo Km 5, Makassar",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7953,
+      "name": "TIMEZONE PAKUWON",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-timur/pakuwon-supermall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Pakuwon Supermall | Lantai 1, Jl. Raya Lontar Timur, Surabaya",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7960,
+      "name": "TIMEZONE Q-MALL",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/kalimantan/q-mall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Q-Mall | Lantai 1, Jl. Ahmad Yani KM 38, Banjarbaru",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7963,
+      "name": "TIMEZONE SUMMARECON BANDUNG",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/summarecon-mall-bandung/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Summarecon Mall Bandung | Lantai 1, Jalan Bulevar Barat No. 75-89, Bandung",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7971,
+      "name": "TIMEZONE TRANS STUDIO MAL BALI",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/bali/trans-studio-mall-bali/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Trans Studio Mall Bali | Lt. F1 - Unit 20",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7972,
+      "name": "TRANS STUDIO MALL MAKASSAR",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sulawesi/trans-studio-mall-makassar/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Trans Studio Mall Makassar | Lantai 1, Trans Studio Mall.",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7921,
+      "name": "TIMEZONE DUTA PERTIWI",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-tengah/duta-pertiwi-mall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Duta Pertiwi Mall | Lantai 2, Jalan Pemuda No. 150, Semarang",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7924,
+      "name": "TIMEZONE GALAXY 3 NEW",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-timur/galaxy-mall-3/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Galaxy Mall 3 | Lantai 4, Jl Dr IR H Soekarno No. 178, Surabaya",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7935,
+      "name": "TIMEZONE LEVEL 21",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/bali/level-21/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Level 21 | Lantai 1, Jl. Teuku Umar No. 1 Denpasar",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7936,
+      "name": "TIMEZONE LIPPO MALL CIKARANG",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/mall-lippo-cikarang/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Mall Lippo Cikarang | Jalan MH. Thamrin, Cikarang",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7946,
+      "name": "TIMEZONE MARGO CITY MALL",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/margocity-lt-3/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Margocity Lt. 3 | Lantai 3, Jl. Margonda Raya No 358",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7959,
+      "name": "TIMEZONE PLUIT EMPORIUM",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jakarta/emporium-pluit-mall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Emporium Pluit Mall | Lantai 4, Jl. Pluit Selatan Raya, Jakarta Utara",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7964,
+      "name": "TIMEZONE SUMMARECON BEKASI",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/summarecon-mall-bekasi-lt-3/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Summarecon Mall Bekasi Lt. 3",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7965,
+      "name": "TIMEZONE SUMMARECON SERPONG",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/summarecon-mal-serpong/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Summarecon Mal Serpong | Lantai 2, Jl. Boulevard Centra Gading Serpong",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7967,
+      "name": "TIMEZONE SUPERMALL KARAWACI",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/supermal-karawaci/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Supermal Karawaci | Lantai Dasar, 105 Bulevar Diponegoro",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7956,
+      "name": "TIMEZONE PLAZA AMBARUKMO",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jogja/ambarrukmo-plaza/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Ambarrukmo Plaza | Lantai 3, Jl. Laksda Adi Sucipto Jogjakarta",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7945,
+      "name": "TIMEZONE MANADO TOWN SQUARE LT1",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/sulawesi/mantos-lt-1/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Mantos Lt. 1 | Lantai 1, Jl. Piere Tendean, Manado",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7970,
+      "name": "TIMEZONE TRANS STUDIO BANDUNG",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jawa-barat/trans-studio-mall-bandung/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Trans Studio Mall Bandung | Lantai 2",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7922,
+      "name": "Timezone Epicentrum",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/bali/lombok-epicentrum-mall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Lombok Epicentrum Mall | Lantai 2, Jalan Sriwijaya No.333, Mataram",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7962,
+      "name": "Timezone Sleman City Hall",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/id-id/lokasi/jogja/sleman-city-hall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/id-id/lokasi/",
+      "evidence_quote": "Sleman City Hall | Lantai 2, Jl. Magelang Km 9.6 No. 18",
+      "note": "Official Timezone Indonesia lokasi directory entry for this branch.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

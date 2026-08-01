@@ -1,0 +1,291 @@
+{
+  "shard": 47,
+  "verdicts": [
+    {
+      "ids": [5531, 5540],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5540,
+      "canonical_name": "王者之风石家庄桥西店",
+      "canonical_addr": "河北省石家庄市桥西区天元名品商城一层",
+      "reason": "Same brand at 天元名品商城 1F; bemanicn branch suffix 湾里庙步行街店 is the same mall. 124 m is geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/4199",
+      "evidence_quote": "王者之风游乐体验中心(湾里庙步行街店) / 桥西区湾里庙步行街新天元名品商城一层"
+    },
+    {
+      "ids": [5534, 5537],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5537,
+      "canonical_name": "王者之风潍坊诸城爱琴海店",
+      "canonical_addr": "山东省潍坊市诸城市和平路80号爱琴海购物中心2楼王者之风",
+      "reason": "Both name 诸城爱琴海购物中心 2F; 0 m apart. Street number variants (红星路1号 vs 和平路80号) are dual mall frontages, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/3070",
+      "evidence_quote": "王者之风游乐体验中心（潍坊诸城爱琴海店） / 舜王街道红星路1号诸城爱琴海购物中心2楼2001号"
+    },
+    {
+      "ids": [5549, 5550],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5549,
+      "canonical_name": "王者宇宙郑州福都百货店",
+      "canonical_addr": "郑州市航海路与银莺路交叉口福都百货四楼王者宇宙",
+      "reason": "Both place 王者宇宙 on 福都百货 4F at 航海/银莺 junction; branch 福都广场店 is the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6197",
+      "evidence_quote": "王者宇宙（福都广场店） / 航海东路银莺路交叉口福都百货四楼"
+    },
+    {
+      "ids": [5551, 5553],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5553,
+      "canonical_name": "玖号玩家苏州吴中海星广场店",
+      "canonical_addr": "江苏省苏州市吴中区城南街道海星生活广场2幢02-90、玖号玩家海星店",
+      "reason": "Same 玖号玩家 at 海星生活广场 2F in 吴中 城南街道; 33 m geocode offset only.",
+      "evidence_url": "https://map.bemanicn.com/s/5924",
+      "evidence_quote": "玖号玩家 海星生活广场店 / 城南街道 海星生活广场2楼"
+    },
+    {
+      "ids": [5564, 5565],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5565,
+      "canonical_name": "玩咖联萌南充北湖广场店",
+      "canonical_addr": "四川省南充市顺庆文法路164号北湖广场1幢3层2号3号",
+      "reason": "Baidu knows a single 玩咖联萌 at 文化路164号环形商场3楼; wahlap lists 文法路164号北湖广场 3F with unit numbers. Mall-name variants for one 164号 building, matching games; 268 m is mall-scale geocode spread.",
+      "evidence_url": "https://map.bemanicn.com/s/4334",
+      "evidence_quote": "玩咖联萌 / 南充市顺庆区环形中心3楼; Baidu POI: 极致玩咖联萌电玩城 文化路164号环形商场3楼"
+    },
+    {
+      "ids": [5567, 5568],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5568,
+      "canonical_name": "玩嘉来了东莞虎门天虹店",
+      "canonical_addr": "广东省东莞市虎门镇连升路天虹购物中心二楼玩嘉来了电玩城",
+      "reason": "地标广场 hosts 天虹; Baidu POI 玩嘉来了·电玩世界(虎门天虹店) is 连升路44号213室, matching both listings.",
+      "evidence_url": "https://map.bemanicn.com/s/4620",
+      "evidence_quote": "玩嘉来了 / 连升路44号地标广场213; Baidu: 虎门镇连升路44号213室"
+    },
+    {
+      "ids": [6105, 6106],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6105,
+      "canonical_name": "米其动漫东莞虎门店",
+      "canonical_addr": "广东省东莞市虎门镇连升中路44号地标广场（天虹商场）2号楼1层",
+      "reason": "Same 米其动漫 brand at 地标广场 2栋 unit 1136 / 2号楼1层. Distinct from nearby 玩嘉来了 (unit 213).",
+      "evidence_url": "https://map.bemanicn.com/s/2045",
+      "evidence_quote": "米其动漫城（地标广场店） / 连升路44号地标广场2栋1136米其动漫城"
+    },
+    {
+      "ids": [5569, 5570],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5570,
+      "canonical_name": "玩嘉来了荆州松滋万达店",
+      "canonical_addr": "湖北省荆州市滋市新江口街道万达广场1F玩嘉来了",
+      "reason": "One 玩嘉来了 at 松滋万达. Floor conflict (bemanicn 3F vs wahlap/Baidu 1F) is listing noise; Baidu confirms single 1F shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6118",
+      "evidence_quote": "玩嘉来了亲子乐园松滋万达店 / 松滋万达广场3楼; Baidu: 玩嘉来了潮玩运动(松滋万达广场店) 万达广场1F次主1号"
+    },
+    {
+      "ids": [5575, 5576],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5575,
+      "canonical_name": "玩家岛大连弘源购物广场店",
+      "canonical_addr": "辽宁省大连市瓦房店市弘源购物广场5层",
+      "reason": "Both at 弘源购物广场 5F, 0 m apart; bare 玩家岛电玩城 is the same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/3020",
+      "evidence_quote": "玩家岛电玩城 / 弘源购物广场五楼"
+    },
+    {
+      "ids": [5579, 5580],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5580,
+      "canonical_name": "玩家搭档成都大邑店",
+      "canonical_addr": "四川省成都市大邑县润驰国际广场一楼玩家搭档动漫城",
+      "reason": "Same 玩家搭档 at 大邑 润驰国际广场 1F; unit detail on bemanicn matches the mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6238",
+      "evidence_quote": "玩家搭档动漫城（大邑店） / 晋原街道润驰国际广场1号楼...124号、125号、126号"
+    },
+    {
+      "ids": [5581, 5582],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5581,
+      "canonical_name": "玩家搭档赣州龙南店",
+      "canonical_addr": "江西省赣州市龙南市万达广场三楼玩家搭档",
+      "reason": "Both are 玩家搭档 at 龙南万达广场 3F; 25 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/5637",
+      "evidence_quote": "玩家搭档（龙南万达广场店） / 龙南万达广场"
+    },
+    {
+      "ids": [5583, 5585],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5585,
+      "canonical_name": "玩家来也沈阳铁西万达店",
+      "canonical_addr": "辽宁省沈阳市铁西区北一路万达广场3楼玩家来也",
+      "reason": "北一路万达店 and 铁西万达店 are the same 铁西区北一路万达广场 3F venue.",
+      "evidence_url": "https://map.bemanicn.com/s/5256",
+      "evidence_quote": "玩家来也家庭娱乐中心（北一路万达店） / 北一路万达广场三楼"
+    },
+    {
+      "ids": [5594, 5595],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5594,
+      "canonical_name": "玩家风暴南京雨花台紫荆广场店",
+      "canonical_addr": "江苏省南京市雨花台区雨花街道紫荆广场花漫里二楼玩家风暴",
+      "reason": "Same 玩家风暴 at 紫荆广场花漫里 2F; street number 雨花东路158号 matches the mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5202",
+      "evidence_quote": "玩家风暴（南京紫荆广场店） / 雨花东路158号紫荆广场花漫里2F"
+    },
+    {
+      "ids": [5596, 5597],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5596,
+      "canonical_name": "玩星汇",
+      "canonical_addr": "两江新区观音桥街道北城天街9号",
+      "reason": "Both at 重庆北城天街 (Paradise Walk); Baidu has one 玩星汇 POI. Games differ (sdvx vs racing) as partial multi-source coverage of one hall.",
+      "evidence_url": "https://map.bemanicn.com/s/7307",
+      "evidence_quote": "玩星汇 / 两江新区观音桥街道北城天街9号; Baidu: 玩星汇(天街电玩城) same address"
+    },
+    {
+      "ids": [5598, 5599],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5598,
+      "canonical_name": "玩派嘉年华西宁力盟店",
+      "canonical_addr": "青海省西宁市城西区力盟商业街6号楼一楼玩派嘉年华",
+      "reason": "Two wahlap-style names for the same 力盟商业街6号楼 shop at 0 m; 5598 already carries bemanicn detail.",
+      "evidence_url": "https://map.bemanicn.com/s/6477",
+      "evidence_quote": "玩派嘉年华（力盟商业巷店） / 城西区...力盟商业巷6号楼1层21-102,103,6-107号"
+    },
+    {
+      "ids": [5602, 5603],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5603,
+      "canonical_name": "玩熊街区江油地下商场店",
+      "canonical_addr": "四川省江油市纪念碑地下商城D区",
+      "reason": "Exact same 纪念碑地下商城D区 address at 0 m; bare brand vs branch suffix.",
+      "evidence_url": "https://map.bemanicn.com/s/6113",
+      "evidence_quote": "玩熊街区 / 四川省江油市纪念碑地下商城D区鱼市口方向"
+    },
+    {
+      "ids": [5606, 5613],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5613,
+      "canonical_name": "玩美世界新乡大桥悦时代店",
+      "canonical_addr": "河南省新乡市高新区新飞大道大桥悦时代三楼西北角玩美世界",
+      "reason": "Both 玩美世界 at 大桥悦时代 3F, 0 m; e动城 brand variant is the same chain listing.",
+      "evidence_url": "https://map.bemanicn.com/s/2946",
+      "evidence_quote": "玩美世界e动城新乡大桥店 / 大桥悦时代三楼"
+    },
+    {
+      "ids": [5609, 5612],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5612,
+      "canonical_name": "玩美世界安阳文峰吾悦广场店",
+      "canonical_addr": "河南省安阳市文峰区光明路与同兴街交汇处吾悦广场三楼Z09",
+      "reason": "Both at 安阳吾悦广场 on 光明路, 0 m; 文峰吾悦 is the district-qualified same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/2091",
+      "evidence_quote": "玩美世界e动城（安阳吾悦店） / 光明路安阳吾悦广场"
+    },
+    {
+      "ids": [5610, 5614],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5610,
+      "canonical_name": "玩美世界信阳光山佳乐购物广场店",
+      "canonical_addr": "河南省信阳市光山县九龙中路佳乐购物广场(光山慧泉店）三楼玩美世界",
+      "reason": "佳乐购物广场 光山慧泉店 and 慧泉广场 佳乐购物中心 are the same 3F mall site in 光山县.",
+      "evidence_url": "https://map.bemanicn.com/s/6675",
+      "evidence_quote": "玩美世界超级游乐中心 / ...慧泉广场商业楼101号佳乐购物中心慧泉店三楼"
+    },
+    {
+      "ids": [5618, 5619],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5618,
+      "canonical_name": "玩美攻略福田深南中路店",
+      "canonical_addr": "深圳市福田区深南中路3018号世纪玩美攻略WonderMeet",
+      "reason": "Both at 深南中路3018号世纪汇; 深南中路店 and 深圳世纪汇 are one multi-floor 玩美攻略.",
+      "evidence_url": "https://map.bemanicn.com/s/5843",
+      "evidence_quote": "玩美攻略（深圳世纪汇） / 深南中路3018号世纪汇商场1层101、2层201..."
+    },
+    {
+      "ids": [5620, 5622],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5622,
+      "canonical_name": "玩者归来上海浦东康桥店",
+      "canonical_addr": "上海市浦东新区秀浦路668号新田360广场（上海康桥店）3楼303玩者归来",
+      "reason": "Exact same 秀浦路668号新田360 3F303; bemanicn/ziv 企萌 alternate name is the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/1197",
+      "evidence_quote": "玩者归来/企萌电玩上海新田360店 / 秀浦路668号新田360广场上海康桥店3F303"
+    },
+    {
+      "ids": [5623, 5624],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5623,
+      "canonical_name": "玩者归来上海闵行爱琴海店",
+      "canonical_addr": "上海闵行区吴中路1588号爱琴海四楼F428-F435玩者归来(爱琴海店)",
+      "reason": "Same 吴中路1588号爱琴海 4F; unit F428-F435 is the fuller official address.",
+      "evidence_url": "https://map.bemanicn.com/s/4421",
+      "evidence_quote": "玩者归来游乐mall上海爱琴海店 / 吴中路1588号爱琴海购物公园4F"
+    },
+    {
+      "ids": [5631, 5632],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5631,
+      "canonical_name": "玩里挑一漳浦店",
+      "canonical_addr": "福建省漳浦县绥安镇麦市街西183-114号",
+      "reason": "Identical street number 麦市街西183-114号 at 0 m; 漳浦店 and 漳浦绥安店 are duplicate wahlap-style names for one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3310",
+      "evidence_quote": "玩里挑一漳浦店 / 绥安镇麦市街西183-114号"
+    },
+    {
+      "ids": [5636, 5641],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5636,
+      "canonical_name": "环游乐园北京丰台店",
+      "canonical_addr": "北京市丰台区马家堡东路101号银泰百货B1层环游电玩城",
+      "reason": "Same 银泰百货大红门/丰台 B1 at 马家堡东路101号; branch suffixes name the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/2130",
+      "evidence_quote": "环游乐园（北京银泰百货大红门店） / 马家堡东路101号银泰百货B1层"
+    },
+    {
+      "ids": [5645, 5654],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5654,
+      "canonical_name": "环游嘉年华上海环球港店",
+      "canonical_addr": "上海市普陀区中山北路3300号月星环球港3楼L3163",
+      "reason": "Well-known single 环球港 L3163 hall; ziv and wahlap/bemanicn both place it at 中山北路3300号 3F. 170 m is geocode offset.",
+      "evidence_url": "https://map.bemanicn.com/s/23",
+      "evidence_quote": "环游嘉年华（上海环球港店） / 中山北路3300号(近宁夏路)月星环球港3楼(L3163)"
+    },
+    {
+      "ids": [5646, 5662],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5662,
+      "canonical_name": "环游嘉年华乌鲁木齐汇嘉店",
+      "canonical_addr": "新疆维吾尔自治区乌鲁木齐新市区北京中路汇嘉三楼环游嘉年华超乐场",
+      "reason": "Same 汇嘉 3F on 北京中路; 北京路汇嘉店 is the community short name for this branch.",
+      "evidence_url": "https://map.bemanicn.com/s/1087",
+      "evidence_quote": "环游嘉年华(北京路汇嘉店) / 北京中路147号汇嘉时代3F星聚汇书影城内邻"
+    }
+  ]
+}

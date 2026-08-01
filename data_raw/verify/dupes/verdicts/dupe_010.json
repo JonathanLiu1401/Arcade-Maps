@@ -1,0 +1,291 @@
+{
+  "shard": 10,
+  "verdicts": [
+    {
+      "ids": [4901, 4919],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4919,
+      "canonical_name": "润宝梦想潮玩娱乐(西安未央龙湖天街店)",
+      "canonical_addr": "陕西省西安市未央区景云路与凤城八路交叉口东北方向龙湖天街4F润宝梦",
+      "reason": "Same brand at Longfor Weiyang Sky Street 4F; bemanicn unit 4F-01/37 and wahlap both point at the same mall floor, coords identical.",
+      "evidence_url": "https://map.bemanicn.com/s/4572",
+      "evidence_quote": "景云路与仁宇路交汇处龙湖西安未央天街A馆4F-01、4F-37"
+    },
+    {
+      "ids": [1259, 1260],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1260,
+      "canonical_name": "SSG电玩浙江金华店",
+      "canonical_addr": "浙江省金华市婺城区三江街道李渔路888号金华世贸城市广场3楼SSG电玩",
+      "reason": "Both name SSG at Jinhua World Trade City Plaza 3F; Baidu has a single SSG listing there.",
+      "evidence_url": "https://map.bemanicn.com/s/2256",
+      "evidence_quote": "世贸城市广场3楼"
+    },
+    {
+      "ids": [1262, 4097],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4097,
+      "canonical_name": "星际传奇北京丽泽天地店",
+      "canonical_addr": "北京市丰台区丰台北路丽泽天地购物中心3层03-30",
+      "reason": "ZIv STAR LEGEND and wahlap/bemanicn 星际传奇 both at Lize Tiandi 3F; 16 m apart, same games.",
+      "evidence_url": "https://map.bemanicn.com/s/2027",
+      "evidence_quote": "丽泽天地购物中心3楼"
+    },
+    {
+      "ids": [1263, 4072],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4072,
+      "canonical_name": "星际传奇(西安MOMOPARK店)",
+      "canonical_addr": "小寨路街道小寨西路216号MOMO PARK艺术购物中心F3-9-10",
+      "reason": "Identical unit code F3-9-10 at MOMO PARK; ZIv and bemanicn describe the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/1790",
+      "evidence_quote": "小寨西路216号MOMO PARK艺术购物中心F3-9-10"
+    },
+    {
+      "ids": [1264, 1266],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1266,
+      "canonical_name": "SUPER ALL DAY潮玩运动街区（宝鸡金台万达店）",
+      "canonical_addr": "陕西省宝鸡市金台区万达广场五楼",
+      "reason": "Same brand SUPER ALL DAY at Baoji Jintai Wanda 5F; ZIv and bemanicn are the same venue 74 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/5553",
+      "evidence_quote": "万达广场五楼"
+    },
+    {
+      "ids": [1269, 1282],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1282,
+      "canonical_name": "SUPER101潮漫北流店",
+      "canonical_addr": "广西壮族自治区玉林市北流市北流万达3F-B ，SUPER101",
+      "reason": "Both SUPER101 at Beiliu Wanda 3F-B with identical coordinates; Baidu shows one SUPER101 there.",
+      "evidence_url": "https://map.bemanicn.com/s/2144",
+      "evidence_quote": "二环北路159号北流万达广场3F-B"
+    },
+    {
+      "ids": [2271, 2277],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2277,
+      "canonical_name": "嘻品堂电玩长沙万家丽店",
+      "canonical_addr": "湖南省长沙市万家丽中路99号万家丽国际购物广场五楼嘻品堂电玩",
+      "reason": "Same 嘻品堂 at Wanjiali International Mall 5F (中路99号); Baidu lists one shop there.",
+      "evidence_url": "https://map.bemanicn.com/s/635",
+      "evidence_quote": "万家丽路99号万家丽国际购物广场5楼"
+    },
+    {
+      "ids": [7275, 7281],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Different malls: 丽发国际广场 (Tianxin, 万家丽南路) vs 万家丽国际购物广场 (Furong, 万家丽中路99号 8F). Baidu lists both; coords wrongly shared at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/1621",
+      "evidence_quote": "骑士玩国(丽发店) 万家丽南路丽发国际广场步步高商场2楼 vs 骑士玩国(万家丽店) 万家丽中路99号"
+    },
+    {
+      "ids": [1274, 1281],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1281,
+      "canonical_name": "super101湛江赤坎店",
+      "canonical_addr": "广东省湛江市赤坎区椹川大道376号湛江印象汇第MA栋第L3层第03-32A号",
+      "reason": "Same SUPER101 at Zhanjiang Yinxianghui 3F (unit 03-32A); 11 m, Baidu one listing.",
+      "evidence_url": "https://map.bemanicn.com/s/2915",
+      "evidence_quote": "椹川大道376号湛江印象汇第MA栋第L3层第03-32A号"
+    },
+    {
+      "ids": [1536, 1537],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1537,
+      "canonical_name": "丰华动漫湛江赤坎店",
+      "canonical_addr": "广东省湛江市赤坎区椹川大道376号湛江印象汇B1-29~33号丰华动漫",
+      "reason": "Same 丰华动漫 at Yinxianghui B1 (units 29-33); different brand/floor from SUPER101 above in same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/2617",
+      "evidence_quote": "印象汇负一楼"
+    },
+    {
+      "ids": [3313, 3322],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3313,
+      "canonical_name": "宝贝王烟台芝罘万达店",
+      "canonical_addr": "山东省烟台市芝罘区西关南街6号万达广场2F层",
+      "reason": "Same 宝贝王 at Yantai Zhifu Wanda 2F; Baidu has one POI; complementary games.",
+      "evidence_url": "https://map.bemanicn.com/s/4519",
+      "evidence_quote": "西关南街6号万达广场2F层"
+    },
+    {
+      "ids": [3377, 3379],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3379,
+      "canonical_name": "宾果无限青岛胶州龙城市广场店",
+      "canonical_addr": "山东省青岛市胶州市福州南路97号宝龙城市广场3楼宾果无限游乐场",
+      "reason": "Same 宾果无限 at Jiaozhou Powerlong/Baolong City Plaza 3F; 龙城 is the plaza nickname, not a different mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4313",
+      "evidence_quote": "福州南路与扬州东路交汇处宝龙城市广场三楼"
+    },
+    {
+      "ids": [1287, 1289],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1289,
+      "canonical_name": "super101诸暨万风新天地店",
+      "canonical_addr": "浙江省诸暨市万风新天地东楼负一层super101潮漫",
+      "reason": "Same SUPER101 at Zhuji Wanfeng Xintiandi B1 east building; 84 m geocode drift only.",
+      "evidence_url": "https://map.bemanicn.com/s/6024",
+      "evidence_quote": "诸暨市苎萝东路555号万风新天地负一楼"
+    },
+    {
+      "ids": [6214, 6215],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6215,
+      "canonical_name": "美乐彼成都金牛店",
+      "canonical_addr": "四川省成都市金牛区一环路北三段1号1栋3层3015、3016号",
+      "reason": "Identical unit numbers 3015-3016 at Jinniu Wanda 3F; Baidu one MERRYBE POI.",
+      "evidence_url": "https://map.bemanicn.com/s/2719",
+      "evidence_quote": "金牛万达广场三层3015-3016"
+    },
+    {
+      "ids": [1301, 2632],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2632,
+      "canonical_name": "大玩家超乐场（南川万达）",
+      "canonical_addr": "重庆市南川区渝南大道16号南川万达",
+      "reason": "Same SuperPlayer/大玩家 at Nanchuan Wanda, Yunan Ave 16; Groove Coaster on both.",
+      "evidence_url": "https://map.bemanicn.com/s/1654",
+      "evidence_quote": "渝南大道16号"
+    },
+    {
+      "ids": [3225, 3297],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3297,
+      "canonical_name": "宝贝王榆林榆阳万达店",
+      "canonical_addr": "陕西省榆林市榆阳区长兴路175号万达广场2层",
+      "reason": "Both 宝贝王 at Yulin Yuyang Wanda; Baidu one POI at Changxing Rd 175 2F. Floor note 3rd vs 2nd is weak, treat as one store.",
+      "evidence_url": "https://map.bemanicn.com/s/4664",
+      "evidence_quote": "万达广场2楼宝贝王"
+    },
+    {
+      "ids": [1303, 2659],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 1303,
+      "canonical_name": "SuperPlayer大玩家 (拉萨城关万达)",
+      "canonical_addr": "西藏自治区拉萨市城关区纳金东路56号万达广场二楼",
+      "reason": "Same 大玩家 at Lhasa Chengguan Wanda on Najin East Rd; 410 m is geocode scatter on approx coords, Baidu has one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/1185",
+      "evidence_quote": "纳金街道纳金东路(拉萨市公安局纳金路安居园); Baidu: 纳金东路56号万达广场二楼"
+    },
+    {
+      "ids": [1311, 2661],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Different cities: ZIv is 咸阳秦都万达 (人民西路29号 2F) while bemanicn is 杨凌万达 (渭惠路37号 3F). Baidu lists both as distinct SuperPlayer stores; 142 m is bad geocoding of Yangling onto Xianyang.",
+      "evidence_url": "https://map.bemanicn.com/s/2226",
+      "evidence_quote": "大玩家（杨凌万达广场） vs ZIv SuperPlayer 咸阳秦都万达 人民西路29号"
+    },
+    {
+      "ids": [2120, 2122],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2120,
+      "canonical_name": "咔奇咔奇咸阳秦都万达店",
+      "canonical_addr": "陕西省咸阳市人民西路29号万达广场2F-次主1号商铺",
+      "reason": "Same 咔奇咔奇 at Xianyang Qindu Wanda 2F; Baidu one POI, B-hall note is the same complex.",
+      "evidence_url": "https://map.bemanicn.com/s/6476",
+      "evidence_quote": "秦都万达b馆"
+    },
+    {
+      "ids": [5402, 5405],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5405,
+      "canonical_name": "焕游星际西安雁塔立丰城店",
+      "canonical_addr": "陕西省西安市雁塔区丈八东路与子午大道西南角立丰城三楼焕游星际（3030商铺）",
+      "reason": "Same 焕游星际 at Lifengcheng 3F unit 0303/3030; Baidu one POI.",
+      "evidence_url": "https://map.bemanicn.com/s/5597",
+      "evidence_quote": "子午大道与丈八东路西南角立丰城3楼0303号商铺"
+    },
+    {
+      "ids": [1319, 4795],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4795,
+      "canonical_name": "汤姆熊欢乐世界（西安阳光城店）",
+      "canonical_addr": "西安市长安区博士路60号阳光天地购物中心B1",
+      "reason": "Same Tom's World at Xi'an Sunshine City B1; matching taiko count 2.",
+      "evidence_url": "https://map.bemanicn.com/s/4797",
+      "evidence_quote": "西安阳光天地购物中心B1"
+    },
+    {
+      "ids": [1320, 1321],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1320,
+      "canonical_name": "Top City佛山祖庙店",
+      "canonical_addr": "广东省佛山市祖庙街道祖庙路29号NOVA岭南站6楼Top City",
+      "reason": "Same Top City at NOVA Lingnan Station 6F Zumiao Rd 29; coords identical.",
+      "evidence_url": "https://map.bemanicn.com/s/3956",
+      "evidence_quote": "祖庙路29号nova岭南站第6层"
+    },
+    {
+      "ids": [4091, 4092],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4092,
+      "canonical_name": "星际传奇佛山禅城祖庙店",
+      "canonical_addr": "广东省佛山市禅城区祖庙街道祖庙路17号MELANDSPORT星际传奇",
+      "reason": "Same Star Legend / MELANDSPORT at Zumiao Rd 17; 岭南天地 vs 禅城祖庙 are two names for one branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4936",
+      "evidence_quote": "祖庙街道祖庙路17号MELANDSPORT"
+    },
+    {
+      "ids": [6636, 6637],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6637,
+      "canonical_name": "趣动空间银川金凤店",
+      "canonical_addr": "宁夏银川市金凤区北京中路192号亲水商业广场DE102室ccpark第E馆一层EC-06",
+      "reason": "Same 趣动空间 at Yinchuan ccpark E-hall 1F EC-06; Baidu one POI.",
+      "evidence_url": "https://map.bemanicn.com/s/6818",
+      "evidence_quote": "北京中路192号亲水商业广场DE102室ccpark店第E馆一层EC-06"
+    },
+    {
+      "ids": [4596, 4598],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4596,
+      "canonical_name": "欢乐岛广州从化从城大道店",
+      "canonical_addr": "广东省广州市从化区江埔街从城大道113号欣荣广场A区A栋3层304铺",
+      "reason": "Same 欢乐岛 at Conghua Congcheng Ave 113 unit 304 / Xinrong Plaza A3F; Baidu one listing.",
+      "evidence_url": "https://map.bemanicn.com/s/4332",
+      "evidence_quote": "江埔从城大道113号欣荣广场A区A栋3层"
+    },
+    {
+      "ids": [1332, 1333],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1333,
+      "canonical_name": "U享魔方兴义星悦茂店",
+      "canonical_addr": "贵州省黔西南布依族自治州兴义市云南路星悦茂地下商业街a区U享魔方",
+      "reason": "Same U享魔方 at Xingyi Xingyuemao underground street A zone; identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/5684",
+      "evidence_quote": "兴义市黄草街道云南路星悦茂地下商业街A547-581、B547"
+    }
+  ]
+}

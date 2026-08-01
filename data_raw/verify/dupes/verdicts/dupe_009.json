@@ -1,0 +1,291 @@
+{
+  "shard": 9,
+  "verdicts": [
+    {
+      "ids": [6769, 6778],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6778,
+      "canonical_name": "都市玩家西安太白印象城店",
+      "canonical_addr": "陕西省西安市碑林区二环南路西段155号太白印象城负一楼",
+      "reason": "Same mall and floor (太白印象城 B1/负一楼); Baidu lists one 都市玩家 at that address; wahlap and bemanicn cross-source pair at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/1315",
+      "evidence_quote": "都市玩家 家庭娱乐体验中心 / 二环南路西段155号太白印象城B1"
+    },
+    {
+      "ids": [5861, 5862],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5861,
+      "canonical_name": "益启趣玩钦州钦南年年丰广场店",
+      "canonical_addr": "广西壮族自治区钦州市钦南区年年丰广场1号门负一楼益启趣玩娱乐中心",
+      "reason": "Same 年年丰广场 B1 branch; street-number and mall-name forms of one address at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3097",
+      "evidence_quote": "益启趣玩（年年丰店） / 钦州湾大道36号年年丰广场负一层"
+    },
+    {
+      "ids": [1140, 1141],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1141,
+      "canonical_name": "HIHIKOKO快乐制造地新乡胖东来店",
+      "canonical_addr": "河南省新乡市平原路469号胖东来三胖2楼",
+      "reason": "Same brand at 胖东来三胖 2F; wahlap and bemanicn names are short vs full forms of one shop ~30 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/6567",
+      "evidence_quote": "HIHI KOKO / 平原路469号胖东来三胖2楼"
+    },
+    {
+      "ids": [6784, 6786],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6786,
+      "canonical_name": "酷乐光年沈阳和平店",
+      "canonical_addr": "辽宁省沈阳市和平区太原北街95号玖伍文化城一楼酷乐光年家庭游乐中心",
+      "reason": "Both place the shop on 1F of 玖伍文化城; branch suffix 和平店 vs 玖伍文化城店 for the same venue.",
+      "evidence_url": "https://map.bemanicn.com/s/5439",
+      "evidence_quote": "酷乐光年家庭娱乐中心（玖伍文化城店） / 太原北街95号玖伍文化城一楼"
+    },
+    {
+      "ids": [1145, 1146],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1145,
+      "canonical_name": "HOOLIPAY年轻力聚场合肥蜀山店",
+      "canonical_addr": "安徽省合肥市蜀山区望江西路蜀山区新粮仓28号仓",
+      "reason": "Identical building unit 新粮仓28号仓 at 0 m; 蜀山店 and 新粮仓店 are alternate branch labels.",
+      "evidence_url": "https://map.bemanicn.com/s/7287",
+      "evidence_quote": "HOOLIPAY新粮仓店虎力场 / 安徽省合肥市蜀山区望江西路蜀山区新粮仓28号仓"
+    },
+    {
+      "ids": [1153, 1154],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1153,
+      "canonical_name": "io电动工坊太原小店万达店",
+      "canonical_addr": "山西省太原市小店区龙城大街130号万达广场二层",
+      "reason": "Same street number 龙城大街130号 and same 万达 2F; 小店万达 and 龙城万达 name the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6926",
+      "evidence_quote": "io电动工坊太原龙城万达店 / 龙城大街130号龙城万达广场2楼"
+    },
+    {
+      "ids": [1163, 2080],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2080,
+      "canonical_name": "吉睿游艺（悠唐中心店）",
+      "canonical_addr": "朝阳区朝阳门外大街三丰北里2号悠唐购物中心三楼",
+      "reason": "Identical Chinese branch name and 悠唐中心 3F; ZIv English address is the same mall ~75 m away by geocode.",
+      "evidence_url": "https://map.bemanicn.com/s/4338",
+      "evidence_quote": "吉睿游艺（悠唐中心店） / 朝阳区朝阳门外大街三丰北里2号悠唐购物中心三楼"
+    },
+    {
+      "ids": [1164, 2085],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2085,
+      "canonical_name": "吉睿潮玩（海淀学清路店）",
+      "canonical_addr": "学清路8号新辰里（学清路店）3楼",
+      "reason": "Same name and 学清路8号新辰里 3F; ZIv and BemaniCN of one shop at ~29 m.",
+      "evidence_url": "https://map.bemanicn.com/s/4325",
+      "evidence_quote": "吉睿潮玩（海淀学清路店） / 学清路8号新辰里（学清路店）3楼"
+    },
+    {
+      "ids": [1167, 1170],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1170,
+      "canonical_name": "Joymark（大唐西市店）",
+      "canonical_addr": "莲湖区桃园路街道劳动南路118号西市城购物中心负1层3格",
+      "reason": "西市城 and 大唐西市 are the same Tang West mall B1; ZIv and BemaniCN pair.",
+      "evidence_url": "https://map.bemanicn.com/s/7317",
+      "evidence_quote": "Joymark（大唐西市店） / 莲湖区桃园路街道劳动南路118号西市城购物中心负1层3格"
+    },
+    {
+      "ids": [1172, 1173],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1173,
+      "canonical_name": "Kidz Amaze儿童乐园(阳光城店)",
+      "canonical_addr": "海南省海口市龙华区友谊阳光城3楼",
+      "reason": "Kids/Kidz Amaze spelling variants of one brand on 友谊阳光城 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/3688",
+      "evidence_quote": "Kidz Amaze儿童乐园(阳光城店) / 友谊阳光城3楼"
+    },
+    {
+      "ids": [5320, 5326],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5326,
+      "canonical_name": "炫动四方海口友谊阳光城店",
+      "canonical_addr": "海南省海口市龙华区友谊阳光城3楼炫动四方",
+      "reason": "Same 炫动四方 brand on 友谊阳光城 3F; ZIv vs wahlap+bemanicn of one venue (distinct from Kidz Amaze in same mall).",
+      "evidence_url": "https://map.bemanicn.com/s/3077",
+      "evidence_quote": "炫动四方（海口龙华友谊阳光城店） / 友谊阳光城3楼（4号、9号或10号楼电梯上来出门就是机厅）"
+    },
+    {
+      "ids": [1175, 3035],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3035,
+      "canonical_name": "奇奇乐园（盛龙广场店）",
+      "canonical_addr": "未央路80号盛龙广场B区二层",
+      "reason": "Same 未央路80号盛龙广场 B区 2F address under KiKi Game Club / 奇奇乐园.",
+      "evidence_url": "https://map.bemanicn.com/s/3312",
+      "evidence_quote": "奇奇乐园（盛龙广场店） / 未央路80号盛龙广场B区二层"
+    },
+    {
+      "ids": [1187, 3794],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3794,
+      "canonical_name": "昆明街区滨江店",
+      "canonical_addr": "云南省昆明市盘龙区联盟街道办事处滨江·俊发广场",
+      "reason": "KM·Square 昆明街区 and 昆明街区滨江店 both at 滨江·俊发广场, 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/2807",
+      "evidence_quote": "KM·Square 昆明街区 滨江店 / 白云路 滨江·俊发广场"
+    },
+    {
+      "ids": [4852, 4853],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4853,
+      "canonical_name": "泷威嘉年华西安雁塔店",
+      "canonical_addr": "陕西省西安市雁塔区南二环西段66号凯德广场·新地城3层",
+      "reason": "凯德广场·新地城 on 南二环西段66号 is the same CapitaMall as wahlap 崇业路凯德广场 3F; ~18 m.",
+      "evidence_url": "https://map.bemanicn.com/s/1789",
+      "evidence_quote": "泷威嘉年华(西安凯德广场·新地城店) / 城南南二环西段66号凯德广场新地城3层"
+    },
+    {
+      "ids": [1196, 5478],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5478,
+      "canonical_name": "爱玩荟电玩家庭娱乐中心（北苑店）",
+      "canonical_addr": "朝阳区北苑路42号K酷时尚广场F4层",
+      "reason": "Same 北苑路42号 K-OOL/K酷 F4; ZIv English name is the same shop as BemaniCN.",
+      "evidence_url": "https://map.bemanicn.com/s/4476",
+      "evidence_quote": "爱玩荟电玩家庭娱乐中心（北苑店） / 朝阳区北苑路42号K酷时尚广场F4层"
+    },
+    {
+      "ids": [1199, 1200],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1200,
+      "canonical_name": "M8潮玩街区（时尚摩尔地下街店）",
+      "canonical_addr": "中山路海亮广场B1层茂业时尚摩尔地下街夜上海街区",
+      "reason": "Baidu has one M8潮玩街区 at 海亮广场 B1; wahlap 海亮负一层 is the same underground street.",
+      "evidence_url": "https://map.bemanicn.com/s/3466",
+      "evidence_quote": "M8潮玩街区（时尚摩尔地下街店） / 中山路海亮广场B1层茂业时尚摩尔地下街夜上海街区"
+    },
+    {
+      "ids": [1201, 1202],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1201,
+      "canonical_name": "M9潮玩街区张家口市桥东店",
+      "canonical_addr": "河北省张家口市桥东区百盛五楼M9潮玩街区",
+      "reason": "Same 百盛 5F branch; 桥东店 and 张家口百盛店 are alternate labels at ~1.6 m.",
+      "evidence_url": "https://map.bemanicn.com/s/5441",
+      "evidence_quote": "M9潮玩街区（张家口百盛店） / 桥东区百盛购物广场5楼"
+    },
+    {
+      "ids": [4733, 4807],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4733,
+      "canonical_name": "汤姆熊（成都温江合生汇店）",
+      "canonical_addr": "四川省成都市温江区光华大道三段1588号合生汇4层L403、404、405",
+      "reason": "Both addresses are 光华大道三段1588号合生汇 4F; wahlap name wrongly says 珠江广场 but Baidu only knows the 合生汇 store.",
+      "evidence_url": "https://map.bemanicn.com/s/266",
+      "evidence_quote": "汤姆熊（成都温江合生汇店） / 光华大道三段1588号合生汇4层L403、404、405"
+    },
+    {
+      "ids": [5412, 5414],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5414,
+      "canonical_name": "熊开心福州台江店",
+      "canonical_addr": "福建省福州市台江区西环中路691号万象九宜城二楼熊开心家庭娱乐",
+      "reason": "万象九宜城 and 万象城 F2 at 西环中路691号 are the same mall unit at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/6853",
+      "evidence_quote": "熊开心家庭娱乐电玩城(万象九宜城店) / 福建省福州市台江区西环中路691号万象城F2-216A"
+    },
+    {
+      "ids": [4070, 4158],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4158,
+      "canonical_name": "星际传奇漳州龙文店",
+      "canonical_addr": "福建省漳州市龙文区迎宾大道吾悦广场3层",
+      "reason": "Same 吾悦广场 3F in 龙文; branch suffix 吾悦广场店 vs 龙文店 for one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2851",
+      "evidence_quote": "星际传奇(漳州吾悦广场店) / 漳州龙文迎宾大道吾悦广场3楼"
+    },
+    {
+      "ids": [4952, 4979],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4979,
+      "canonical_name": "游戏大魔方银川兴庆吾悦广场",
+      "canonical_addr": "宁夏银川市兴庆区友爱街与北京路交叉口吾悦广场二楼Z202游戏大魔方",
+      "reason": "Short 吾悦广场二楼 listing is the same 兴庆吾悦 Z202 shop as the full wahlap address at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3567",
+      "evidence_quote": "游戏大魔方吾悦广场店 / 吾悦广场二楼"
+    },
+    {
+      "ids": [1218, 1219],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1219,
+      "canonical_name": "OWANGE运动超乐场珠海横琴华发商都店",
+      "canonical_addr": "广东省珠海市横琴合作区横琴华发商都B馆/南区二楼B2001铺",
+      "reason": "Baidu lists one OWANGE at 华发商都南区2楼 B2001; B馆 and 南区 are the same wing.",
+      "evidence_url": "https://map.bemanicn.com/s/5235",
+      "evidence_quote": "OWANGE运动超乐场 / 横琴粤澳深度合作区横琴华发商都B馆2楼B2001铺"
+    },
+    {
+      "ids": [1221, 1225],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1225,
+      "canonical_name": "PKPARTYKING贵阳观山湖万达店",
+      "canonical_addr": "贵州省贵阳市观山湖区云潭南路2号万达广场1BF-AB号",
+      "reason": "云潭南路2号万达 is 观山湖万达; same brand at 0 m B1 unit.",
+      "evidence_url": "https://map.bemanicn.com/s/7044",
+      "evidence_quote": "PK PARTY KING家庭娱乐中心 / 云潭南路2号万达广场"
+    },
+    {
+      "ids": [3352, 3358],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3358,
+      "canonical_name": "宝贝计划北京顺义隆华店",
+      "canonical_addr": "北京市顺义区新顺南大街11号隆华购物中心三层宝贝计划",
+      "reason": "Same 新顺南大街11号隆华 3F; Wanda Kids English ZIv title is 宝贝计划.",
+      "evidence_url": "https://map.bemanicn.com/s/4917",
+      "evidence_quote": "宝贝计划（顺义隆华店） / 新顺南大街11号隆华购物中心（站前街店）3F东北侧"
+    },
+    {
+      "ids": [1243, 2995],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2995,
+      "canonical_name": "夸特游艺（北苑天街店）",
+      "canonical_addr": "北苑龙湖天街A区4F西侧",
+      "reason": "Quart World 北苑店 is 夸特游艺 at 龙湖北苑天街 A区 4F west; 6 m.",
+      "evidence_url": "https://map.bemanicn.com/s/2768",
+      "evidence_quote": "夸特游艺（北苑天街店） / 北苑龙湖天街A区4F西侧"
+    },
+    {
+      "ids": [2992, 2993],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2992,
+      "canonical_name": "夸特游艺门头沟长安天街店",
+      "canonical_addr": "北京市门头沟区金安路长安天街三楼夸特游艺",
+      "reason": "Both list 门头沟长安天街 3F with near-identical address text; Baidu knows only one 夸特游艺(门头沟店) there, so 267 m is dual-geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/3295",
+      "evidence_quote": "夸特游艺（门头沟店） / 新城东街17号院2号楼（新城大街与金安路交叉口）龙湖北京长安天街三层"
+    }
+  ]
+}

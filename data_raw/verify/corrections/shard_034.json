@@ -1,0 +1,1368 @@
+{
+  "shard": 34,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-08-01, 3139 CN / 205 Zhejiang maimai)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-08-01, 583 CN / 30 Zhejiang CHUNITHM)",
+    "https://map.bemanicn.com/s/{id} Inertia shop props (live 2026-08-01, 64 shops + title map /games)",
+    "data_raw/china_wahlap_maimai_dx.json and china_wahlap_chunithm.json (committed, placeId-identical to live for Zhejiang)",
+    "data_raw/china_bemanicn.json",
+    "data_raw/verify/cn_near_pairs.json",
+    "data_raw/ziv.json (China Zhejiang subset)",
+    "cross-shard Zhejiang arcades in shards 33/34/35/39 for rename/dupe resolution"
+  ],
+  "corrections": [
+    {
+      "id": 4948,
+      "name": "游戏大魔方",
+      "field": "location",
+      "current": {
+        "lat": 22.384816372425,
+        "lng": 113.54573965073,
+        "addr": "沈半路宝龙广场二楼",
+        "approx": null
+      },
+      "proposed": {
+        "note": "pin is near Macau/Zhuhai (~22.38N 113.55E), not Zhejiang. Address text is incomplete (no city). Do not trust this coordinate. Needs re-geocode to the correct Shenban-road Baolong Plaza in Zhejiang once city is known, or remove pin.",
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3616",
+      "evidence_quote": "name 游戏大魔方 address 沈半路宝龙广场二楼; map app stores lat=22.384816372425 lng=113.54573965073 which is outside Zhejiang (Zhejiang ~27-31N, 118-123E)",
+      "note": "App coordinate is catastrophically wrong (Macau area). BemaniCN address has no city. ZIv also contributes this row. Travellers would go to the wrong province.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4948,
+      "name": "游戏大魔方",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3616",
+      "evidence_quote": "live shop.arcades = only title_id 17 (WACCA) qty 2 version v3; comment '仅剩两台华卡，版本3.0'; game_counts empty for mapped rhythm titles; not present in live WAHLAP maimai Zhejiang list (205 stores)",
+      "note": "Remove maimai_dx. Venue appears to be WACCA-only now per live BemaniCN. Also absent from official WAHLAP maimai locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4121,
+      "name": "星际传奇杭州萧山万象汇店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "live WAHLAP CHUNITHM Zhejiang (30 stores) has no Xiaoshan MixC / 星际传奇杭州萧山万象汇店. Same placeId 4031 appears only on maimai REST as 星际传奇杭州萧山万象汇店. BemaniCN s/1854 still lists chunithm:2 maimai:1 taiko:1",
+      "note": "Official CN CHUNITHM locator does not currently service this store. maimai remains official (WAHLAP maidx placeId 4031). BemaniCN still claims 2 CHUNITHM; treat as community-only / possible delist. Prefer official: drop chunithm until midtr lists it.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4235,
+      "name": "星际潮玩社金华万达店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+      "evidence_quote": "live WAHLAP CHUNITHM Zhejiang has zero Jinhua entries and no 星际潮玩社. maimai REST does list placeId 5097 星际潮玩社金华万达店. BemaniCN s/5722 still lists chunithm:2 maimai:1",
+      "note": "maimai official via WAHLAP. CHUNITHM only on BemaniCN, not on official midtr. Remove chunithm under official-source precedence.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4369,
+      "name": "杭州熊熊雀庄",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "maimai official: placeId 5055 熊熊雀庄杭州拱墅店 浙江省杭州市拱墅区米市巷街道华龙商务大厦502室. CHUNITHM official Zhejiang list has no Xiongxiong/Hualong. BemaniCN s/6924 lists maimai:3 chunithm:1",
+      "note": "Same venue as map id 5415 (shard 35) 熊熊雀庄杭州拱墅店. Merge candidates across shards. CHUNITHM not on official locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3740,
+      "name": "摸窝",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "no WAHLAP maimai or CHUNITHM Zhejiang entry matches 摸窝 / 东海曙光大厦 / 中山东路455. Live BemaniCN s/5474 still lists maimai:2 chunithm:1, type=3, updated_at 2025-11-29",
+      "note": "Community-only listing with no official WAHLAP service record. Possibly private/offline room or delisted. proposed null = remove both network-game claims until official evidence appears. Do not invent replacement games.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3642,
+      "name": "悠米泛娱乐乐园",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5081",
+      "evidence_quote": "maimai:1 on BN; no WAHLAP hit for Youmi / Gaoxin Yuanda Baolong; live WAHLAP maidx Zhejiang 205-store list has no matching arcadeName/address (checked 2026-08-01)",
+      "note": "BemaniCN still shows the shop page (status=1) with maimai qty, but official WAHLAP maimai locator does not list this venue. Under official-over-community precedence, maimai_dx should not be shown as a serviced cabinet until WAHLAP lists it. Confidence likely not certain because BN page is still live.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4413,
+      "name": "极客森超乐场（杭州永旺梦乐城店）",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7192",
+      "evidence_quote": "maimai:1 on BN; zero WAHLAP Zhejiang hits for AEON Mall or Jikesen; live WAHLAP maidx Zhejiang 205-store list has no matching arcadeName/address (checked 2026-08-01)",
+      "note": "BemaniCN still shows the shop page (status=1) with maimai qty, but official WAHLAP maimai locator does not list this venue. Under official-over-community precedence, maimai_dx should not be shown as a serviced cabinet until WAHLAP lists it. Confidence likely not certain because BN page is still live.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4874,
+      "name": "海宁市银泰天空之城（三楼）",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3588",
+      "evidence_quote": "maimai:1 on BN; WAHLAP has 真快活嘉兴海宁银泰城店 at Haining Intime but no Sky City there; live WAHLAP maidx Zhejiang 205-store list has no matching arcadeName/address (checked 2026-08-01)",
+      "note": "BemaniCN still shows the shop page (status=1) with maimai qty, but official WAHLAP maimai locator does not list this venue. Under official-over-community precedence, maimai_dx should not be shown as a serviced cabinet until WAHLAP lists it. Confidence likely not certain because BN page is still live.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4947,
+      "name": "游戏大亨（台州临海店）",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2339",
+      "evidence_quote": "maimai:1 on BN; no WAHLAP hit for Youxi Daheng / Linhai Xingyue Plaza; live WAHLAP maidx Zhejiang 205-store list has no matching arcadeName/address (checked 2026-08-01)",
+      "note": "BemaniCN still shows the shop page (status=1) with maimai qty, but official WAHLAP maimai locator does not list this venue. Under official-over-community precedence, maimai_dx should not be shown as a serviced cabinet until WAHLAP lists it. Confidence likely not certain because BN page is still live.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4986,
+      "name": "游戏大魔方（织里吾悦广场店）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2643",
+      "evidence_quote": "maimai:1 on BN; no WAHLAP hit for Youxi Damofang / Zhili; live WAHLAP maidx Zhejiang 205-store list has no matching arcadeName/address (checked 2026-08-01)",
+      "note": "BemaniCN still shows the shop page (status=1) with maimai qty, but official WAHLAP maimai locator does not list this venue. Under official-over-community precedence, maimai_dx should not be shown as a serviced cabinet until WAHLAP lists it. Confidence likely not certain because BN page is still live.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5087,
+      "name": "潮乐潮南浔吾悦店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai at Nanxun Wuyue is placeId 1941 摩兜欢乐岛湖州南浔店 浙江省湖州市南浔区吾悦广场三楼摩兜欢乐岛. No Chaolechao on WAHLAP. BemaniCN s/7288 still lists maimai:1 for 潮乐潮南浔吾悦店. Same-geocode pair with map 1926/3729 摩兜欢乐岛",
+      "note": "Likely wrong brand or replaced by 摩兜欢乐岛 (shard ids 3729 / 1926). Do not merge blindly without floor-level confirmation; remove maimai claim on 潮乐潮 or mark closed/replaced.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4260,
+      "name": "星际第三区(万联购物中心店)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7302",
+      "evidence_quote": "live shop.arcades title_id 1 maimai_dx quantity 1; also official WAHLAP placeId 5251 星际第三区嘉兴嘉善万联店 (dupe pair with id 4261)",
+      "note": "App shows only other; live BN and WAHLAP both confirm maimai_dx. Merge with 4261.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4260,
+      "name": "星际第三区(万联购物中心店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7302",
+      "evidence_quote": "live quantity maimai_dx:1; committed china_bemanicn had empty game_counts, live now has maimai",
+      "note": "count_evidence bemanicn_qty",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4190,
+      "name": "星际传奇（玉兰广场店）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5188",
+      "evidence_quote": "live shop.arcades include title_id 31 taiko qty 1 and maimai_dx qty 1; address 中心大道555号青悦城",
+      "note": "Same building as 4104 星际传奇台州星悦城店 (WAHLAP placeId 5140, 中心大道555号2楼). Strong same-venue dupe candidate; keep richer machine list on survivor.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4190,
+      "name": "星际传奇（玉兰广场店）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5188",
+      "evidence_quote": "live game_counts maimai_dx:1 taiko:1 (title_id 31 qty 1)",
+      "note": "count_evidence should be bemanicn_qty for taiko",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5090,
+      "name": "潮人电玩温州店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/343",
+      "evidence_quote": "live BemaniCN arcades: maimai_dx qty 2 (国行), taiko title_id 31 qty 1 (华立国行), taiko title_id 15 qty 1 (14日本版). No title_id 19 PUMP IT UP. pump_it_up in app is count_evidence ziv_listed",
+      "note": "Remove pump_it_up or mark unverified. ZIv still lists PIU historically; live BemaniCN does not. Official WAHLAP confirms maimai at this brand/area only as network evidence for maimai.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5090,
+      "name": "潮人电玩温州店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "pump_it_up": 1,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/343",
+      "evidence_quote": "live quantities maimai_dx=2 taiko=2 (1x华立国行 + 1x14日本版); no PIU row",
+      "note": "taiko count 2 confirmed as two distinct cab generations on BN",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3381,
+      "name": "富佳潮玩大润发店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3382,
+        "paired_name": "富佳潮玩杭州桐庐大润发店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3382,
+        "reason": "same lat/lng 29.795924,119.683537; same Tonglu RT-Mart; WAHLAP placeId 4754 name 富佳潮玩杭州桐庐大润发店; BN s/6645"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng 29.795924,119.683537; same Tonglu RT-Mart; WAHLAP placeId 4754 name 富佳潮玩杭州桐庐大润发店; BN s/6645",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3490,
+      "name": "幻游时空",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3491,
+        "paired_name": "幻游时空台州意得店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3491,
+        "reason": "same lat/lng; both 天和路88号意得广场三楼; WAHLAP listing under 3491 name"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng; both 天和路88号意得广场三楼; WAHLAP listing under 3491 name",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3555,
+      "name": "德清银泰城比特王店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4680,
+        "paired_name": "比特王湖州德清店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4680,
+        "reason": "same lat/lng; both Deqing Intime 中兴南路899号; WAHLAP placeId 3270; BN s/4255 has maimai:2 taiko:1 (keep counts on survivor)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng; both Deqing Intime 中兴南路899号; WAHLAP placeId 3270; BN s/4255 has maimai:2 taiko:1 (keep counts on survivor)",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3581,
+      "name": "快乐星球泛娱乐体验中心(万象世界购物广场店)",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3582,
+        "paired_name": "快乐星球湖州安吉万象世界店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3582,
+        "reason": "same mall Anji MixWorld; WAHLAP placeId 3864; near coords; BN s/5300"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same mall Anji MixWorld; WAHLAP placeId 3864; near coords; BN s/5300",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3618,
+      "name": "快乐街区电玩（鄞州K11 购物中心3楼）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3615,
+        "paired_name": "快乐街区宁波鄞州店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3615,
+        "reason": "same K11 Yinzhou brand; coords ~170m apart (geocode variance); WAHLAP placeId 3403 under 3615 name"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same K11 Yinzhou brand; coords ~170m apart (geocode variance); WAHLAP placeId 3403 under 3615 name",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3658,
+      "name": "悦界潮玩",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3659,
+        "paired_name": "悦界潮玩义乌佛堂宝龙店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3659,
+        "reason": "same lat/lng; BN s/7310 returns HTTP 404 (shop gone from BemaniCN); WAHLAP placeId 5315 on 3659 with maimai; 3658 games=['other'] only"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng; BN s/7310 returns HTTP 404 (shop gone from BemaniCN); WAHLAP placeId 5315 on 3659 with maimai; 3658 games=['other'] only",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3871,
+      "name": "星城战记（湖州南太湖吾悦广场店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3862,
+        "paired_name": "星城战记湖州吴兴店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3862,
+        "reason": "same lat/lng Nan Taihu Wuyue; WAHLAP maimai+chunithm placeId 5268 under 3862 name; BN s/7207 counts chunithm:2 maimai:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng Nan Taihu Wuyue; WAHLAP maimai+chunithm placeId 5268 under 3862 name; BN s/7207 counts chunithm:2 maimai:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3951,
+      "name": "星河部落乐堤港店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 3956,
+        "paired_name": "星河部落远洋乐提港店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 3956,
+        "reason": "same lat/lng Sino-Ocean Liti Port; WAHLAP under 3956; BN s/2822 has maimai:2 taiko:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng Sino-Ocean Liti Port; WAHLAP under 3956; BN s/2822 has maimai:2 taiko:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4156,
+      "name": "星际传奇温州瓯海万象城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4155,
+        "paired_name": "星际传奇温州万象城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4155,
+        "reason": "identical address 温州市瓯海区温瑞大道万象城三楼; same lat/lng. NOTE: WAHLAP itself has TWO placeIds for same address (1015 星际传奇温州万象城店 and 5279 星际传奇温州瓯海万象城店). App mirrored the official double row. BN s/5485 maimai:2 taiko:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "identical address 温州市瓯海区温瑞大道万象城三楼; same lat/lng. NOTE: WAHLAP itself has TWO placeIds for same address (1015 星际传奇温州万象城店 and 5279 星际传奇温州瓯海万象城店). App mirrored the official double row. BN s/5485 maimai:2 taiko:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4227,
+      "name": "星际梦想城（南湖万达店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4217,
+        "paired_name": "星际梦想城嘉兴南湖广益万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4217,
+        "reason": "same lat/lng Jiaxing Nanhu Wanda; WAHLAP under 4217; BN s/3421 maimai:2"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng Jiaxing Nanhu Wanda; WAHLAP under 4217; BN s/3421 maimai:2",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4228,
+      "name": "星际梦想城（舟山宝龙店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4224,
+        "paired_name": "星际梦想城舟山定海宝龙店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4224,
+        "reason": "same Zhoushan Baolong B hall; BN s/2962 vs WAHLAP 4224"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Zhoushan Baolong B hall; BN s/2962 vs WAHLAP 4224",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4229,
+      "name": "星际梦想城（龙鼎万达店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4218,
+        "paired_name": "星际梦想城嘉兴南湖龙鼎万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4218,
+        "reason": "same Jiaxing Longding Wanda; BN s/3420 vs WAHLAP 4218"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Jiaxing Longding Wanda; BN s/3420 vs WAHLAP 4218",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4260,
+      "name": "星际第三区(万联购物中心店)",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4261,
+        "paired_name": "星际第三区嘉兴嘉善万联店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4261,
+        "reason": "same Jiashan Wanlian; WAHLAP placeId 5251; BN s/7302 now maimai:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Jiashan Wanlian; WAHLAP placeId 5251; BN s/7302 now maimai:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4337,
+      "name": "木马王国杭州西溪印象城店",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4336,
+        "paired_name": "木马王国杭州余杭印象城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4336,
+        "reason": "same lat/lng and same address 五常大道一号西溪印象城三楼; WAHLAP placeId 3172 under 4336 name; BN s/4077 adds taiko:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng and same address 五常大道一号西溪印象城三楼; WAHLAP placeId 3172 under 4336 name; BN s/4077 adds taiko:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4331,
+      "name": "木马王国(杭州丁桥天街店)",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4332,
+        "paired_name": "木马王国上城丁桥龙湖天街店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4332,
+        "reason": "same Dingqiao Longfor Sky Street 3F Muma; WAHLAP placeId 4997 under 4332; BN s/4607 maimai:1 taiko:1. Nearby 5300 is 4F Chaoku/Feiyoule (different floor, keep separate)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Dingqiao Longfor Sky Street 3F Muma; WAHLAP placeId 4997 under 4332; BN s/4607 maimai:1 taiko:1. Nearby 5300 is 4F Chaoku/Feiyoule (different floor, keep separate)",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4379,
+      "name": "极客引力",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4380,
+        "paired_name": "极客引力台州路桥吾悦店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4380,
+        "reason": "same lat/lng Luqiao Wuyue; WAHLAP under 4380; BN s/7237"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng Luqiao Wuyue; WAHLAP under 4380; BN s/7237",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4503,
+      "name": "梦の超玩场",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4504,
+        "paired_name": "梦之超玩绍兴上虞店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4504,
+        "reason": "same Shangyu Times Tide City 市民大道621号; WAHLAP maimai+chunithm placeId 2227 under 4504; BN s/2454 counts chunithm:2 maimai:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Shangyu Times Tide City 市民大道621号; WAHLAP maimai+chunithm placeId 2227 under 4504; BN s/2454 counts chunithm:2 maimai:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4679,
+      "name": "比特王欢乐世界",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4678,
+        "paired_name": "比特王台州温岭宝龙店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4678,
+        "reason": "same Wenling Central Ave Baolong 3F Bit King; WAHLAP placeId 2063 under 4678; BN s/1999 maimai:2"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Wenling Central Ave Baolong 3F Bit King; WAHLAP placeId 2063 under 4678; BN s/1999 maimai:2",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4849,
+      "name": "泰迪熊家庭世界（椒江万达店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4847,
+        "paired_name": "泰迪熊台州椒江万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4847,
+        "reason": "same Jiaojiang Wanda 2F Teddy Bear; WAHLAP under 4847 placeId 5107; BN s/6137"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Jiaojiang Wanda 2F Teddy Bear; WAHLAP under 4847 placeId 5107; BN s/6137",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4850,
+      "name": "泰迪熊家庭乐园（拱墅万达广场店）（原萌可力）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4851,
+        "paired_name": "泰迪熊杭州拱墅万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4851,
+        "reason": "same Gongshu Wanda 2F; WAHLAP maimai placeId 4096 泰迪熊杭州拱墅万达店; BN s/5634. Related: CHUNITHM official lists placeId 3039 萌可力杭州拱墅万达店 at same mall (map id 6367 other shard) - possible brand split or rename for chunithm"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Gongshu Wanda 2F; WAHLAP maimai placeId 4096 泰迪熊杭州拱墅万达店; BN s/5634. Related: CHUNITHM official lists placeId 3039 萌可力杭州拱墅万达店 at same mall (map id 6367 other shard) - possible brand split or rename for chunithm",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5049,
+      "name": "满载客动漫娱乐",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 5053,
+        "paired_name": "满载客舟山百悦店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5053,
+        "reason": "same lat/lng Zhoushan Baiyue Life Plaza 3F; WAHLAP placeId 3527 under 5053; BN s/4126"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same lat/lng Zhoushan Baiyue Life Plaza 3F; WAHLAP placeId 3527 under 5053; BN s/4126",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5381,
+      "name": "热带雨林主题乐园（义乌万达店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 5383,
+        "paired_name": "热带雨林义乌市万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5383,
+        "reason": "same Yiwu Wanda 3F Tropical Rainforest; WAHLAP placeId 4431 under 5383; BN s/6089"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Yiwu Wanda 3F Tropical Rainforest; WAHLAP placeId 4431 under 5383; BN s/6089",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5404,
+      "name": "焕游星际电玩娱乐中心",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 5401,
+        "paired_name": "焕游星际宁波奉化店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5401,
+        "reason": "same Fenghua Wanda 中山东路299号; WAHLAP maimai+chunithm placeId 4454 under 5401; BN s/6232 adds taiko:1 counts chunithm:2 maimai:1"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Fenghua Wanda 中山东路299号; WAHLAP maimai+chunithm placeId 4454 under 5401; BN s/6232 adds taiko:1 counts chunithm:2 maimai:1",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4181,
+      "name": "星际传奇（奥体印象城店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4122,
+        "paired_name": "星际传奇杭州萧山奥体店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4122,
+        "reason": "same Olympic Impression City; WAHLAP maimai+chunithm placeId 1646 under 4122; BN s/1342 has maimai:1 taiko:1 (no chunithm on that BN page - prefer WAHLAP for chunithm presence on 4122)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "same Olympic Impression City; WAHLAP maimai+chunithm placeId 1646 under 4122; BN s/1342 has maimai:1 taiko:1 (no chunithm on that BN page - prefer WAHLAP for chunithm presence on 4122)",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4190,
+      "name": "星际传奇（玉兰广场店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "paired_with": 4104,
+        "paired_name": "星际传奇台州星悦城店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 4104,
+        "reason": "both Taizhou Jiaojiang 中心大道555号 (Qingyue/Xingyue naming); WAHLAP placeId 5140 under 4104; BN s/5188 under Yulan/Qingyue"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "both Taizhou Jiaojiang 中心大道555号 (Qingyue/Xingyue naming); WAHLAP placeId 5140 under 4104; BN s/5188 under Yulan/Qingyue",
+      "note": "Prefer survivor that carries WAHLAP source and/or richer BN game_counts. After merge, copy non-null game_counts/taiko/hours from the absorbed row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3471,
+      "name": "幸运星（鄞州龙湖天街店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "cross_shard_target_id": 1198,
+        "cross_shard_target_name": "luckystar宁波鄞州龙湖天街店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 1198,
+        "reason": "WAHLAP placeId 2721 luckystar宁波鄞州龙湖天街店 Yinzhou Longfor Sky Street 3F; BN s/3265 name 幸运星（鄞州龙湖天街店） same mall floor"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP placeId 2721 luckystar宁波鄞州龙湖天街店 Yinzhou Longfor Sky Street 3F; BN s/3265 name 幸运星（鄞州龙湖天街店） same mall floor",
+      "note": "Target id is outside shard 34 (other Zhejiang shard). Maintainer should merge across shards.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3515,
+      "name": "开心季·唛乐岛超级电玩（新昌万达店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "cross_shard_target_id": 2185,
+        "cross_shard_target_name": "唛乐岛绍兴新昌万达店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2185,
+        "reason": "WAHLAP placeId 4430 唛乐岛绍兴新昌万达店; BN s/6124; d=0 near-pair"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP placeId 4430 唛乐岛绍兴新昌万达店; BN s/6124; d=0 near-pair",
+      "note": "Target id is outside shard 34 (other Zhejiang shard). Maintainer should merge across shards.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4688,
+      "name": "永康之芯城市购物广场肥猫部落乐园",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "cross_shard_target_id": 6237,
+        "cross_shard_target_name": "肥猫乐园永康永康之芯店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6237,
+        "reason": "WAHLAP placeId 4848 肥猫乐园永康永康之芯店 溪心街308号永康之芯3楼; BN s/7166"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP placeId 4848 肥猫乐园永康永康之芯店 溪心街308号永康之芯3楼; BN s/7166",
+      "note": "Target id is outside shard 34 (other Zhejiang shard). Maintainer should merge across shards.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4330,
+      "name": "木马王国&第一回合（滨江宝龙城店）",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "cross_shard_target_id": 6078,
+        "cross_shard_target_name": "第一回合杭州滨江宝龙店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6078,
+        "reason": "WAHLAP placeId 1749 第一回合杭州滨江宝龙店 Binjiang Baolong Plaza 3F; BN s/992 木马王国&第一回合（滨江宝龙城店）"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP placeId 1749 第一回合杭州滨江宝龙店 Binjiang Baolong Plaza 3F; BN s/992 木马王国&第一回合（滨江宝龙城店）",
+      "note": "Target id is outside shard 34 (other Zhejiang shard). Maintainer should merge across shards.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4848,
+      "name": "泰迪熊家庭世界",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "cross_shard_target_id": 2184,
+        "cross_shard_target_name": "唛乐岛泰迪熊家庭世界台州天台祥生世纪店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 2184,
+        "reason": "WAHLAP placeId 5173 唛乐岛泰迪熊家庭世界台州天台祥生世纪店 Xiangsheng Century Plaza 3F; BN s/5955 泰迪熊家庭世界 祥生世纪广场3F"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP placeId 5173 唛乐岛泰迪熊家庭世界台州天台祥生世纪店 Xiangsheng Century Plaza 3F; BN s/5955 泰迪熊家庭世界 祥生世纪广场3F",
+      "note": "Target id is outside shard 34 (other Zhejiang shard). Maintainer should merge across shards.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4369,
+      "name": "杭州熊熊雀庄",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "cross_shard_target_id": 5415,
+        "cross_shard_target_name": "熊熊雀庄杭州拱墅店"
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 5415,
+        "reason": "WAHLAP placeId 5055 熊熊雀庄杭州拱墅店 华龙商务大厦502室; BN s/6924 same building"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP placeId 5055 熊熊雀庄杭州拱墅店 华龙商务大厦502室; BN s/6924 same building",
+      "note": "Target id is outside shard 34 (other Zhejiang shard). Maintainer should merge across shards.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5300,
+      "name": "潮酷电顽(原菲游乐杭州丁桥天街店)",
+      "field": "other",
+      "current": {
+        "note": "same geocode as 4331 Muma Dingqiao Sky Street 3F"
+      },
+      "proposed": {
+        "note": "keep separate: Muma is 3F, this is 4F Feiyoule/Chaoku; WAHLAP still lists placeId 1619 菲游乐杭州丁桥龙湖天街店 at 丁城路515号A幢4楼02号"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "placeId 1619 菲游乐杭州丁桥龙湖天街店 丁兰街道丁城路515号A幢4楼02号; placeId 4997 木马王国上城丁桥龙湖天街店 3楼; BN s/1313 address 丁桥龙湖天街四楼",
+      "note": "Not a dupe of 4331/4332. Optional rename toward Feiyoule WAHLAP name.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3415,
+      "name": "尖峰玩家杭州余杭万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6798",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4121,
+      "name": "星际传奇杭州萧山万象汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1854",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4155,
+      "name": "星际传奇温州万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5485",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4334,
+      "name": "木马王国杭州临平银泰城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6753",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5090,
+      "name": "潮人电玩温州店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/343",
+      "evidence_quote": "shop.start_time=10 end_time=24 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3951,
+      "name": "星河部落乐堤港店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2822",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3871,
+      "name": "星城战记（湖州南太湖吾悦广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7207",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5404,
+      "name": "焕游星际电玩娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6232",
+      "evidence_quote": "shop.start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4503,
+      "name": "梦の超玩场",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2454",
+      "evidence_quote": "shop.start_time=9 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4848,
+      "name": "泰迪熊家庭世界",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5955",
+      "evidence_quote": "shop.start_time=9 end_time=22 (BemaniCN integer hour fields)",
+      "note": "Community hours from BemaniCN; may be stale. App currently has hours_text null.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4341,
+      "name": "木马王国（萧山银隆店）",
+      "field": "other",
+      "current": {
+        "name": "木马王国（萧山银隆店）",
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "name": "神采飞扬木马王国杭州萧山银隆店",
+        "src_add": "wahlap",
+        "wahlap_placeId": "4063"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "placeId 4063 神采飞扬木马王国杭州萧山银隆店 浙江省杭州市萧山区市心中路268号银隆百货商场内主楼B楼三层B305-B308号商铺木马王国店",
+      "note": "Official WAHLAP match for this BN venue; address number 268 vs BN 288 is minor geocode text variance at same Yinlong department store.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4340,
+      "name": "木马王国（绍兴苏宁广场店）",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other",
+          "taiko"
+        ],
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "review": "BN live maimai:2 taiko:2 but no WAHLAP Zhejiang hit for Shaoxing Suning Plaza Muma"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/7186",
+      "evidence_quote": "BN live maimai:2 taiko:2; no WAHLAP Zhejiang hit for Suning Plaza / Shaoxing Muma",
+      "note": "NOT proposing game removal because BN is detailed with counts, but official WAHLAP omission is a red flag. Flag for maintainer review only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4680,
+      "name": "比特王湖州德清店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4255",
+      "evidence_quote": "BN s/4255 (absorbed id 3555) maimai:2 taiko:1; survivor 4680 currently has null counts",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3862,
+      "name": "星城战记湖州吴兴店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7207",
+      "evidence_quote": "BN s/7207 (absorbed id 3871) chunithm:2 maimai:1",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3956,
+      "name": "星河部落远洋乐提港店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2822",
+      "evidence_quote": "BN s/2822 (absorbed id 3951) maimai:2 taiko:1",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4217,
+      "name": "星际梦想城嘉兴南湖广益万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3421",
+      "evidence_quote": "BN s/3421 (absorbed id 4227) maimai:2",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4336,
+      "name": "木马王国杭州余杭印象城店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4077",
+      "evidence_quote": "BN s/4077 (absorbed id 4337) maimai:1 taiko:1",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4332,
+      "name": "木马王国上城丁桥龙湖天街店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4607",
+      "evidence_quote": "BN s/4607 (absorbed id 4331) maimai:1 taiko:1",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4504,
+      "name": "梦之超玩绍兴上虞店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2454",
+      "evidence_quote": "BN s/2454 (absorbed id 4503) chunithm:2 maimai:1",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4678,
+      "name": "比特王台州温岭宝龙店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1999",
+      "evidence_quote": "BN s/1999 (absorbed id 4679) maimai:2",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5401,
+      "name": "焕游星际宁波奉化店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6232",
+      "evidence_quote": "BN s/6232 (absorbed id 5404) chunithm:2 maimai:1 taiko:1",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4122,
+      "name": "星际传奇杭州萧山奥体店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1342",
+      "evidence_quote": "BN s/1342 (absorbed id 4181) maimai:1 taiko:1; WAHLAP also lists chunithm for placeId 1646 so keep chunithm on games list",
+      "note": "Apply after merge so survivor keeps bemanicn_qty counts from absorbed BN row.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4122,
+      "name": "星际传奇杭州萧山奥体店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1342",
+      "evidence_quote": "BN s/1342 (奥体印象城) live maimai:1 taiko:1; WAHLAP midtr placeId 1646 confirms chunithm + maimai for 星际传奇杭州萧山奥体店",
+      "note": "Add taiko from BN twin 4181; chunithm remains official via WAHLAP.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3956,
+      "name": "星河部落远洋乐提港店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2822",
+      "evidence_quote": "BN s/2822 live maimai:2 taiko:1 for 星河部落乐堤港店 (merge source 3951)",
+      "note": "Add taiko when merging 3951 into 3956.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4336,
+      "name": "木马王国杭州余杭印象城店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4077",
+      "evidence_quote": "BN s/4077 live maimai:1 taiko:1 for 木马王国杭州西溪印象城店",
+      "note": "Add taiko when merging 4337 into 4336.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4332,
+      "name": "木马王国上城丁桥龙湖天街店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4607",
+      "evidence_quote": "BN s/4607 live maimai:1 taiko:1 for 木马王国(杭州丁桥天街店)",
+      "note": "Add taiko when merging 4331 into 4332.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5401,
+      "name": "焕游星际宁波奉化店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6232",
+      "evidence_quote": "BN s/6232 live maimai:1 chunithm:2 taiko:1; WAHLAP lists both maimai and chunithm placeId 4454",
+      "note": "Add taiko when merging 5404 into 5401.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4680,
+      "name": "比特王湖州德清店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4255",
+      "evidence_quote": "BN s/4255 live maimai:2 taiko:1 for 德清银泰城比特王店",
+      "note": "Add taiko when merging 3555 into 4680.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

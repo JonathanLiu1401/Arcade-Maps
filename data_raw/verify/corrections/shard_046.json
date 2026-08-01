@@ -1,0 +1,662 @@
+{
+  "shard": 46,
+  "checked": 115,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1007",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7499",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9630",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9104",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10048",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10450",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10829",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6902",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5526",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1957",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=425",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1729",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1436",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7364",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11052",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11057",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4673",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3496",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4107",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2654",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=125",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6967",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8017",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3131",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=573",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=507",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=119",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1658",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2985",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1728",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3390",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1752",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2024",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3835",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3836",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4445"
+  ],
+  "corrections": [
+    {
+      "id": 7732,
+      "name": "CPCM MALL OF INDONESIA",
+      "field": "status",
+      "current": "separate venue with games ['chunithm','maimai_dx'] only, src=allnet",
+      "proposed": "merge into id 7725 (Cow Play Cow Moo Mall of Indonesia); keep 7725 as primary",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM MALL OF INDONESIA | Jl.Boulevard Bar.Raya No.12,RT.18/RW.19,Klp.Gading Bar.,Kec.Klp. | -6.153693,106.893036 (also on CHUNITHM gm=104 Indonesia list). Same mall as ZIv 9630 Cow Play Cow Moo Mall of Indonesia.",
+      "note": "ALL.Net import created a second pin for the same CPCM MOI store already present as ZIv id 7725 with full Konami/SEGA lineup. Do not delete maimai_dx/chunithm from 7725.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7729,
+      "name": "CPCM ELYSEE",
+      "field": "status",
+      "current": "separate venue games ['chunithm','maimai_dx'] src=allnet",
+      "proposed": "merge into id 7728 (Cow Play Cow Moo ELYSEE SCBD)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM ELYSEE | LOT 21, JL. SCBD NO. KAV 52-53,KOTA JAKARTA SELATAN | -6.2243508,106.8094982; also on CHUNITHM Indonesia list. ZIv 10450 is Cow Play Cow Moo ELYSEE SCBD same SCBD address.",
+      "note": "Duplicate of 7728. 7728 has full game list from ZIv updated 2026-04-10.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7734,
+      "name": "CPCM PIK2 (PANTAI INDAH KAPUK)",
+      "field": "status",
+      "current": "separate venue games=['chunithm'] lat=null lng=null src=allnet",
+      "proposed": "merge into id 7726 (Cow Play Cow Moo PIK2); use 7726 lat/lng on survivor",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1007",
+      "evidence_quote": "CPCM PIK2 (PANTAI INDAH KAPUK) | Entertainment District PIK 2, Blok A6, Jl. Rasuna Said, PIK 2 | coords 0,0 on ALL.Net HTML. ZIv 10048 Cow Play Cow Moo PIK2 same address block, lat -6.046285, lng 106.705329.",
+      "note": "ALL.Net CHUNITHM-only stub with missing coordinates. Primary record is 7726. ALL.Net maimai list does not currently show CPCM PIK2; maimai_dx on 7726 is ZIv evidence (3 cabs, 2026-05-16), not ALL.Net-certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7734,
+      "name": "CPCM PIK2 (PANTAI INDAH KAPUK)",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "Entertainment District PIK 2, Blok A6, Jl. Rasuna Said, PIK 2,"
+      },
+      "proposed": {
+        "lat": -6.046285070366627,
+        "lng": 106.7053287707168,
+        "addr": "Entertainment District PIK 2, Blok A6, Jl. Rasuna Said Pantai Indah Kapuk, Tangerang Banten 15214"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10048",
+      "evidence_quote": "Cow Play Cow Moo PIK2 address Entertainment District PIK 2, Blok A6, Jl. Rasuna Said; latitude -6.046285070366627 longitude 106.7053287707168",
+      "note": "Only needed if 7734 is kept separate. ALL.Net returned 0,0 for this store.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7735,
+      "name": "CPCM PLUIT VILLAGE MALL",
+      "field": "status",
+      "current": "separate venue games=['chunithm'] src=allnet lat=-6.1147451 lng=106.7986648",
+      "proposed": "treat as ALL.Net network alias; reconcile with 7727 before treating as second arcade",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9630",
+      "evidence_quote": "CHUNITHM X-VERSE comment on Cow Play Cow Moo Mall of Indonesia: \"4 Cabs (In ALL.Net tracker under the name 'CPCM PLUIT VILLAGE MALL')\"",
+      "note": "ALL.Net shop name CPCM PLUIT VILLAGE MALL may be a mis-registered operator name for MOI CHUNITHM cabinets. Physical CPCM at Pluit is 7727 with 3x CHUNITHM X-VERSE-X. Pins differ by about 1.2km. Confidence likely because Pluit also genuinely has CHUNITHM.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7733,
+      "name": "CPCM PIK",
+      "field": "other",
+      "current": "games=['maimai_dx'] only; src=allnet; lat=-6.1026441 lng=106.7411622 addr Jl.Pantai Indah Kapuk...",
+      "proposed": "do not treat as confirmed standalone public arcade at PIK1 without more evidence; ZIv states Pluit maimai registers under this ALL.Net name",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9104",
+      "evidence_quote": "maimai DX CiRCLE comment at Cow Play Cow Moo Pluit Village Mall: \"3 CABS. Machine currently under the name \\\"CPCM PIK\\\" in ALL.Net maimai DX International Ver. Listing\"",
+      "note": "ALL.Net shows CPCM PIK with maimai and a Pantai Indah Kapuk address. Community ZIv says those networked maimai cabinets are physically at Pluit Village (7727). Possible operator registration lag. 7730 CPCM INDONESIA DESIGN DISTRICT is a different ALL.Net maimai location.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7744,
+      "name": "FESTIVAL CITYLINK BANDUNG",
+      "field": "status",
+      "current": "separate venue games=['maimai_dx'] lat=null lng=null src=allnet",
+      "proposed": "same mall as id 7743 Festival Citylink (Game Master); merge maimai_dx onto 7743 or keep 7744 with fixed coords",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "FESTIVAL CITYLINK BANDUNG | Jl.Peta, No.241, Suka Asih, Kec.Bojongloa Kaler, Kota Bandung | 0,0. Same street address as ZIv 1957 Festival Citylink (Game Master).",
+      "note": "ALL.Net confirms networked maimai DX at this address. ZIv Game Master entry still lists maimai FiNALE as TEMPORARY REMOVED (update 2025-04-05). Official ALL.Net listing is stronger for current maimai DX presence.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7744,
+      "name": "FESTIVAL CITYLINK BANDUNG",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": -6.9296992126261,
+        "lng": 107.58595705032
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1957",
+      "evidence_quote": "Festival Citylink (Game Master) JL. Peta No 241 Bandung lat -6.9296992126261 lng 107.58595705032",
+      "note": "ALL.Net entry had 0,0 coordinates.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7743,
+      "name": "Festival Citylink (Game Master)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "groove_coaster",
+        "other",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "proposed": [
+        "ddr",
+        "groove_coaster",
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "FESTIVAL CITYLINK BANDUNG listed among Indonesia maimai DX International Version locations (52 locations).",
+      "note": "If 7744 is merged into 7743, 7743 must gain maimai_dx. ZIv still shows old FiNALE row as temporarily removed; ALL.Net is current official list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7724,
+      "name": "COW PLAY COW MOO CARSTENSZ MALL",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": null,
+        "sdvx_vm": 1
+      },
+      "proposed": {
+        "ddr_gold": null,
+        "iidx_lm": 1,
+        "sdvx_vm": 1,
+        "sdvx_standard": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7499",
+      "evidence_quote": "beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL) | 1 Lightning Model Asia; SOUND VOLTEX EXCEED GEAR | 1 x Nemsys Model; SOUND VOLTEX Valkyrie model | 1 Valkyrie Model Cab. Updated 2026-07-18.",
+      "note": "iidx_lm was present but null; confirm as 1. Also has Nemsys + Valkyrie SDVX.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7725,
+      "name": "Cow Play Cow Moo Mall of Indonesia",
+      "field": "other",
+      "current": "src=['ziv'] only; ALL.Net name CPCM MALL OF INDONESIA not linked",
+      "proposed": "add src allnet; note ALL.Net CHUNITHM may appear under wrong shop name CPCM PLUIT VILLAGE MALL",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM MALL OF INDONESIA on maimai DX Indonesia list and CHUNITHM Indonesia list. ZIv CHUNITHM comment: In ALL.Net tracker under the name 'CPCM PLUIT VILLAGE MALL'.",
+      "note": "Primary community listing is correct for physical store. ALL.Net aliases messy.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7726,
+      "name": "Cow Play Cow Moo PIK2",
+      "field": "other",
+      "current": "maimai_dx listed; ALL.Net maimai Indonesia list has no CPCM PIK2 entry",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "Indonesia maimai DX list (52 locations) includes CPCM PIK and CPCM PIK2 is absent; CHUNITHM list (19 locations) includes CPCM PIK2 (PANTAI INDAH KAPUK).",
+      "note": "proposed null does NOT mean remove maimai_dx: ZIv 2026-05-16 still lists 3 maimai DX cabs. Flag only that official maimai locator does not show PIK2.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7703,
+      "name": "Amazone - Megamas",
+      "field": "games",
+      "current": [
+        "iidx",
+        "other",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5526",
+      "evidence_quote": "App/ZIv price text: IIDX 'Pindah ke Amazone Mantos, telah deupdate ke IIDX 33 Sparkle Shower'; SDVX 'Pindah ke Amazone Mantos'; SDVX comment 'Tidak ada lagi'. ZIv update 2026-06-05.",
+      "note": "Strong community evidence IIDX and SDVX left for Amazone Mantos (not in this shard). maimai FiNALE still on ZIv offline. Confidence likely because ZIv machine rows were not fully deleted.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7703,
+      "name": "Amazone - Megamas",
+      "field": "prices",
+      "current": {
+        "iidx": "Pindah ke Amazone Mantos...",
+        "sdvx": "Pindah ke Amazone Mantos"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5526",
+      "evidence_quote": "Price strings themselves state machines moved to Amazone Mantos.",
+      "note": "If iidx/sdvx games removed, clear stale price claims.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7702,
+      "name": "Amazone - Manado Town Square 3",
+      "field": "games",
+      "current": [
+        "iidx",
+        "other",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "proposed": [
+        "gitadora",
+        "iidx",
+        "other",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6902",
+      "evidence_quote": "ZIv lastUpdateTime 2026-07-31 20:45:27 lists GuitarFreaksV7, DrumManiaV7, beatmania IIDX 33 Sparkle Shower, Pump It Up PRIME 2, SOUND VOLTEX EXCEED GEAR, maimai FiNALE.",
+      "note": "Add gitadora from GF/DM V7. Offline maimai FiNALE exists but is NOT maimai_dx (Timezone Manado has DX in other shards).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7702,
+      "name": "Amazone - Manado Town Square 3",
+      "field": "other",
+      "current": "no maimai in games",
+      "proposed": "offline maimai FiNALE present per ZIv (not networked DX); do not add maimai_dx",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6902",
+      "evidence_quote": "maimai FiNALE | cond=1 | Setengah layar tidak berfungsi | frame layer pecah. Updated 2026-07-31.",
+      "note": "Optional finale note for travelers. ALL.Net Timezone Manado is different operator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7710,
+      "name": "Amazone Jatinangor Town Square",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "gitadora",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1436",
+      "evidence_quote": "ZIv machines as of last update 2023-12-17: drummania 10thMIX, Pump It Up PRIME 2, plus non-music cabs. No DDR machine row remains.",
+      "note": "ZIv is 2+ years stale so confidence only likely. Clear ddr_legacy if ddr removed.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7710,
+      "name": "Amazone Jatinangor Town Square",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1436",
+      "evidence_quote": "No DDR machine listed on ZIv machine list at last update 2023-12-17.",
+      "note": "Remove legacy DDR cab model claim with ddr game.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7694,
+      "name": "Amazone - Carrefour MT Haryono",
+      "field": "status",
+      "current": "shown as open with games ddr, other",
+      "proposed": "mark closed or unlisted / remove rhythm-game claim; last community update 2013 and comment THE MACHINE IS GONE",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=425",
+      "evidence_quote": "Last update 2013-06-23. Comment: UPDATE: THE MACHINE IS GONE! Info text mentions relocation near BAKSO ATOM.",
+      "note": "13-year-stale ZIv with explicit machine is gone. Confidence likely not certain for full arcade closure vs machines only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7695,
+      "name": "Amazone - Cilandak Mall",
+      "field": "status",
+      "current": "shown with ddr",
+      "proposed": "mark unverified/stale; last ZIv update 2011-05-11 with DDRMAX2 / Solo 4thMIX only",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1729",
+      "evidence_quote": "Last update 2011-05-11 18:30. Machines: Dance Dance Revolution Solo 4thMIX, DDRMAX2. Hours unknown.",
+      "note": "15 years without update. Do not assert open.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7709,
+      "name": "Amazone Hermes Palace",
+      "field": "status",
+      "current": "games=['taiko']",
+      "proposed": "mark unverified/stale; ZIv last update 2014-05-13",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3131",
+      "evidence_quote": "lastUpdateTime 2014-05-13 16:27:27 (12 years ago); machines list stale for taiko claim.",
+      "note": "Cannot confirm taiko still present.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7719,
+      "name": "Amazone-Plaza Pondok Gede 2",
+      "field": "status",
+      "current": "games gitadora, other, pump_it_up",
+      "proposed": "mark unverified/stale; ZIv last update 2011-05-28",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=573",
+      "evidence_quote": "lastUpdateTime 2011-05-28 21:44:13 (15 years ago). Machines include drummania 10thMIX, Pump It Up Fiesta EX.",
+      "note": "No modern confirmation.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7720,
+      "name": "Balaraja Plaza",
+      "field": "status",
+      "current": "games=['ddr'] hours Mon-Sun 09:00-21:00",
+      "proposed": "mark unverified/stale; ZIv last update 2011-02-20 notes under construction",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=507",
+      "evidence_quote": "lastUpdateTime 2011-02-20 21:26:24. Information: The place is under construction..",
+      "note": "15-year-old single DDR listing.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7741,
+      "name": "EMI - Gajah Mada Plaza",
+      "field": "status",
+      "current": "games ddr, gitadora, other",
+      "proposed": "mark unverified/stale; ZIv last update 2014-05-09",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=119",
+      "evidence_quote": "lastUpdateTime 2014-05-09. Info mentions DMGF turned into V7, Mambo AGOGO removed.",
+      "note": "No 2020s confirmation of EMI Gajah Mada rhythm floor.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7742,
+      "name": "EMI - Seasons City",
+      "field": "status",
+      "current": "games=['ddr']",
+      "proposed": "mark unverified/stale; ZIv last update 2013-07-02",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1658",
+      "evidence_quote": "lastUpdateTime 2013-07-02 01:13:44. Information: Unknown conditions.. 1 machine.",
+      "note": "13 years without update.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7736,
+      "name": "Element - Jatinegara X'tainment",
+      "field": "status",
+      "current": "games=['pump_it_up']",
+      "proposed": "mark unverified/stale; ZIv last update 2013-10-30",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2985",
+      "evidence_quote": "lastUpdateTime 2013-10-30 14:45:13. Machine: Pump It Up Fiesta 2 only.",
+      "note": "12-year-old PIU Fiesta 2 listing.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7764,
+      "name": "Fun World - Cinere Mall",
+      "field": "status",
+      "current": "games=['ddr']",
+      "proposed": "mark unverified/stale; ZIv last update 2011-05-11",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1728",
+      "evidence_quote": "lastUpdateDifference 15 years ago; 2 machines historically.",
+      "note": "Ancient DDR-only Fun World entry.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7770,
+      "name": "Fun World - Tamini Square",
+      "field": "status",
+      "current": "games ddr, pump_it_up",
+      "proposed": "mark unverified/stale; ZIv last update about 2015",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3390",
+      "evidence_quote": "lastUpdateDifference 11 years ago; Pump It Up Fiesta 2 era machines.",
+      "note": "No modern confirmation.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7783,
+      "name": "Fun World-Metropolitan Mall",
+      "field": "status",
+      "current": "games ddr, gitadora, pump_it_up",
+      "proposed": "mark unverified/stale; ZIv last update 2014-08-12",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1752",
+      "evidence_quote": "lastUpdateTime 2014-08-12 10:19:19. Machines DrumManiaV7, GuitarFreaksV7, Pump It Up Fiesta 2.",
+      "note": "11 years stale. Mall Fun World may exist but rhythm list is not trustworthy.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7760,
+      "name": "Fun World - Buaran Plaza",
+      "field": "status",
+      "current": "games other, pump_it_up",
+      "proposed": "mark unverified/stale; ZIv last update 2013-04-13",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2024",
+      "evidence_quote": "lastUpdateTime 2013-04-13. Pump It Up Fiesta 2 CX cab notes.",
+      "note": "13 years stale.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7708,
+      "name": "Amazone Dream Island - Mall Balekota Tangerang",
+      "field": "status",
+      "current": "games ddr, gitadora, other, pump_it_up",
+      "proposed": "mark unverified/stale; ZIv last update 2016-07-17",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3835",
+      "evidence_quote": "lastUpdateTime 2016-07-17 11:54:22. Machines include DrumManiaV6, Pump It Up Fiesta EX.",
+      "note": "10 years stale; games versions pre-2017.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7771,
+      "name": "Fun World - Tangerang City Mall",
+      "field": "status",
+      "current": "games other, pump_it_up",
+      "proposed": "mark unverified/stale; ZIv last update 2016-07-17",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3836",
+      "evidence_quote": "lastUpdateTime 2016-07-17 12:00:15. Pump It Up PRIME era.",
+      "note": "10 years stale.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7754,
+      "name": "Fun City, Mayofield Mall",
+      "field": "status",
+      "current": "games=['pump_it_up']",
+      "proposed": "mark unverified/stale; ZIv last update 2018-05-16",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4445",
+      "evidence_quote": "lastUpdateTime 2018-05-16 15:46:03. Pump It Up PRIME 2 only.",
+      "note": "8 years stale.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7713,
+      "name": "Amazone Mega Mall Ayani",
+      "field": "status",
+      "current": "separate from 7705 Amazone Ayani Mega Mall (~51m) and 7757 Fun Station Mega Mall Ayani",
+      "proposed": "likely same Amazone location as 7705; merge or mark duplicate of 7705",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8017",
+      "evidence_quote": "Amazone Mega Mall Ayani ZIv id 8017 vs Amazone Ayani Mega Mall ZIv 9159; pins about 51m apart, both games=['other'], empty/low machine lists. Fun Station Mega Mall Ayani is third pin about 58m (different brand).",
+      "note": "Two Amazone name variants for Mega Mall Ayani Pontianak. Fun Station is separate operator. Neither Amazone entry has current rhythm machines on ZIv.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7716,
+      "name": "Amazone Pluit Village Mall",
+      "field": "other",
+      "current": "games ddr, other, sdvx on 1st floor; 29m from CPCM Pluit 7727",
+      "proposed": "keep both; different operators/floors (Amazone 1F vs CPCM 2F)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6967",
+      "evidence_quote": "Amazone Pluit Village info: 1st Floor of Pluit Village. CPCM Pluit ZIv: 2nd Floor soft opening 2024-07-27. Both updated 2026.",
+      "note": "Not a duplicate. Amazone still has offline FiNALE + SDVX Booth + DDR WORLD.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7717,
+      "name": "Amazone Samarinda Central Plaza",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7364",
+      "evidence_quote": "ZIv last update 2024-12-01 machines include Pump It Up XX and non-music cabs; no Taiko machine row remains while app games still lists taiko.",
+      "note": "Remove taiko unless another source confirms. Fun City same mall (7753) is separate.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7774,
+      "name": "Fun World - Trans Studio Mall Makassar",
+      "field": "other",
+      "current": "games=['other'] empty ZIv machines",
+      "proposed": "do not attach ALL.Net maimai at TRANS STUDIO MALL MAKASSAR to this Fun World id; that is Timezone",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11052",
+      "evidence_quote": "Timezone - Trans Studio Mall Makassar has maimai DX CiRCLE; Fun World - Trans Studio Mall Makassar (11057) has machines=[].",
+      "note": "Avoid cross-brand merge at same mall.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7724,
+      "name": "COW PLAY COW MOO CARSTENSZ MALL",
+      "field": "hours",
+      "current": "Mon-Sun 00:00-23:59",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7499",
+      "evidence_quote": "App shows 00:00-23:59 which is effectively 24h. No independent official hours confirmation in this research pass.",
+      "note": "Cannot verify true hours from official CPCM page here. 24h claim is suspicious for a mall arcade; proposed null means remove claim if maintainer prefers unknown over fake 24h.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7730,
+      "name": "CPCM INDONESIA DESIGN DISTRICT",
+      "field": "other",
+      "current": "src=allnet only, no ZIv link, games maimai_dx only",
+      "proposed": "keep; appears to be a real distinct CPCM/IDD maimai location not duplicated under a ZIv Cow Play name in this shard",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM INDONESIA DESIGN DISTRICT present on official maimai DX International Indonesia locator with coords -6.0676077,106.6967904.",
+      "note": "Unlike CPCM ELYSEE/MOI/PIK2 stubs, no ZIv twin found in shard 046.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7687,
+      "name": "23Paskal (Game Master)",
+      "field": "other",
+      "current": "games list omits maimai; notes/cabs may mention FiNALE",
+      "proposed": "keep offline FiNALE in notes/cabs only; do NOT upgrade to maimai_dx",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4107",
+      "evidence_quote": "maimai FiNALE listed 2025-11-21; not on ALL.Net maimai Indonesia list under this name",
+      "note": "Indonesia still has many offline FiNALE cabs. Official ALL.Net maimai DX list is the authority for networked DX.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7688,
+      "name": "Amazing Carribean - Kota Kasablanka",
+      "field": "other",
+      "current": "games list omits maimai; notes/cabs may mention FiNALE",
+      "proposed": "keep offline FiNALE in notes/cabs only; do NOT upgrade to maimai_dx",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2654",
+      "evidence_quote": "maimai FiNALE Offline. The upper half of the touch screens are unusable. ZIv update 2024-07-10",
+      "note": "Indonesia still has many offline FiNALE cabs. Official ALL.Net maimai DX list is the authority for networked DX.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7701,
+      "name": "Amazone - Mall Artha Gading",
+      "field": "other",
+      "current": "games list omits maimai; notes/cabs may mention FiNALE",
+      "proposed": "keep offline FiNALE in notes/cabs only; do NOT upgrade to maimai_dx",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=125",
+      "evidence_quote": "maimai FiNALE OFFLINE. Updated 2026-07-16. Not maimai DX.",
+      "note": "Indonesia still has many offline FiNALE cabs. Official ALL.Net maimai DX list is the authority for networked DX.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7699,
+      "name": "Amazone - Lotte Shopping Avenue",
+      "field": "other",
+      "current": "notes list DanceDanceRevolution X and older titles; games include iidx",
+      "proposed": "ZIv 2025-09-03 still lists IIDX 32 Pinky Crush, maimai FiNALE offline, SDVX Booth SEA, GITADORA XG3 offline eAmuse ended",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3496",
+      "evidence_quote": "beatmania IIDX 32 Pinky Crush; maimai FiNALE some area of the screen does not work; GuitarFreaksXG3 Offline (eAmuse support has already ended).",
+      "note": "Still a major Jakarta Amazone for Konami as of 2025-09. Informational.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7788,
+      "name": "Funstation - E-Walk",
+      "field": "other",
+      "current": "games iidx, other, pump_it_up, sdvx",
+      "proposed": "offline maimai FiNALE still on ZIv 2025-12-18; IIDX 31 EPOLIS marked On maintenance; SDVX VIVID WAVE not Exceed Gear",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4673",
+      "evidence_quote": "maimai FiNALE Offline...; beatmania IIDX 31 EPOLIS On maintenance; SOUND VOLTEX VIVID WAVE pricing comment.",
+      "note": "Optional notes refresh. Do not add maimai_dx.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7727,
+      "name": "Cow Play Cow Moo Pluit Village Mall",
+      "field": "website",
+      "current": null,
+      "proposed": "https://cpcm.id",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9104",
+      "evidence_quote": "ZIv page links website cpcm.id and Twitter @cpcmId for CPCM Pluit.",
+      "note": "Chain website; apply to other CPCM rows if desired.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

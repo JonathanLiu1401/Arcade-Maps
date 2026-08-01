@@ -738,6 +738,12 @@ window.AM = window.AM || {};
     getResults: function () { return arcadeRows.slice(); },
     /* omnibox additions */
     getRows: function () { return rows.slice(); },
+    /* Exported so the filter chips and the settings source list print the
+       SAME number the omnibox does. All three answer "how many stores land on
+       the map if I pick this game", and before this they did not agree: the
+       chips printed a build-time total that ignored the source and cab
+       filters entirely. */
+    visibleCountForGame: visibleCountForGame,
     queryGames: queryGames,
     queryPlaces: queryPlaces,
     placeIndex: function () { return placeIndex.slice(); },

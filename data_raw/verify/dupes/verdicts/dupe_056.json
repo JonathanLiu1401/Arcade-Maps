@@ -1,0 +1,291 @@
+{
+  "shard": 56,
+  "verdicts": [
+    {
+      "ids": [6843, 6846],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6846,
+      "canonical_name": "酷漫地带成都金牛龙湖天街店",
+      "canonical_addr": "一环路内侧与人民北路交口处龙湖上城天街A馆-3F3334B",
+      "reason": "Both are 酷漫地带 on 3F of Chengdu Longhu Shangcheng Tianjie (龙湖上城天街); wahlap and bemanicn branch names describe the same mall unit.",
+      "evidence_url": "https://map.bemanicn.com/s/2077",
+      "evidence_quote": "酷漫地带（成都龙湖上城店） 一环路内侧与人民北路交口处龙湖上城天街A馆-3F3334B"
+    },
+    {
+      "ids": [6857, 6858],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6858,
+      "canonical_name": "酷炫电玩安阳华强新天地店",
+      "canonical_addr": "河南省安阳市文峰区华强新天地酷炫电玩",
+      "reason": "0 m pair: bare brand 酷炫电玩 vs full branch at 华强新天地; Baidu returns a single 酷炫电玩世界 at that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4164",
+      "evidence_quote": "酷炫电玩; Baidu: 酷炫电玩世界 @ 华强新天地"
+    },
+    {
+      "ids": [6859, 6860],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6860,
+      "canonical_name": "酷炫缤纷佛山高明盈信店",
+      "canonical_addr": "高明大道东490号高明盈信广场二楼2011-2013铺",
+      "reason": "Same brand on 2F of Gaoming Yingxin Plaza (盈信广场); wahlap branch suffix matches bemanicn mall name and unit.",
+      "evidence_url": "https://map.bemanicn.com/s/5939",
+      "evidence_quote": "酷炫缤纷（盈信广场店） 高明大道东490号高明盈信广场二楼2011-2013铺"
+    },
+    {
+      "ids": [6861, 6862],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6862,
+      "canonical_name": "酷熊电玩呼伦贝尔友谊北方店",
+      "canonical_addr": "内蒙古自治区呼伦贝尔市满洲里市兴华街道五道街友谊北方商厦三楼酷熊电玩",
+      "reason": "Both place 酷熊电玩 on 3F of 北方商厦 in Manzhouli; short community address expands to the full wahlap address.",
+      "evidence_url": "https://map.bemanicn.com/s/6970",
+      "evidence_quote": "酷熊电玩 北方商厦3F"
+    },
+    {
+      "ids": [6864, 6865],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6864,
+      "canonical_name": "酷熊酷玩（彩虹湾店）",
+      "canonical_addr": "上海市虹口区江湾镇街道虹湾路99弄金泽元拾光里三楼酷熊酷玩(彩虹湾店)",
+      "reason": "ZIv and BemaniCN both describe 酷熊酷玩 on 3F of Jinzeyuan Shiguangli, Lane 99 Hongwan Road, Hongkou.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11566",
+      "evidence_quote": "3F, Jinzeyuan Shiguangli, Lane 99 Hongwan Road, Jiangwan Town, Hongkou District Shanghai"
+    },
+    {
+      "ids": [6866, 6867],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6867,
+      "canonical_name": "酷猫电玩城韶关翁源新都汇店",
+      "canonical_addr": "韶关市翁源县龙仙镇锦绣路46号锦绣新都汇二楼",
+      "reason": "Same 酷猫电玩城 on 2F of 锦绣新都汇 in Wengyuan; branch naming differs only in length.",
+      "evidence_url": "https://map.bemanicn.com/s/7014",
+      "evidence_quote": "酷猫电玩城锦绣新都汇店 广东省韶关市翁源县锦绣新都汇二层酷猫电玩城"
+    },
+    {
+      "ids": [6873, 6883],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6873,
+      "canonical_name": "酷玩e族宿州埇桥万达店",
+      "canonical_addr": "安徽省宿州市埇桥区CBD万达广场4楼酷玩e族",
+      "reason": "0 m pair: both are 酷玩e族 on 4F of Suzhou CBD Wanda Plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/5582",
+      "evidence_quote": "酷玩e族（宿州CBD万达店） 埇桥区淮海中路埇桥街道CBD万达广场四楼"
+    },
+    {
+      "ids": [6875, 6880],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6875,
+      "canonical_name": "酷玩e族杭州拱墅吾悦广场店",
+      "canonical_addr": "同协路地铁站杭玻街368号吾悦广场负一层",
+      "reason": "Both are 酷玩e族 on B1 of Gongshu Wuyue Plaza; wahlap and bemanicn describe the same Hangzhou branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4574",
+      "evidence_quote": "酷玩e族（吾悦广场店） 同协路地铁站杭玻街368号吾悦广场负一层"
+    },
+    {
+      "ids": [6876, 6884],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6884,
+      "canonical_name": "酷玩e族淮北相山碧乐城",
+      "canonical_addr": "长山北路与桓谭路交叉口东北角碧乐城三楼（淮北火车站路东侧）",
+      "reason": "Both are 酷玩e族 on 3F of Huaibei Bilecheng (碧乐城) at 桓谭路; one mall, one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3080",
+      "evidence_quote": "酷玩e族（淮北碧乐城店） 长山北路与桓谭路交叉口东北角碧乐城三楼"
+    },
+    {
+      "ids": [6877, 6881],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6877,
+      "canonical_name": "酷玩e族绍兴嵊州和悦时代广场店",
+      "canonical_addr": "和悦时代广场购物中心三楼3013号",
+      "reason": "Same 酷玩e族 on 3F of Shengzhou Heyue Times Plaza; unit 3013 confirms a single storefront.",
+      "evidence_url": "https://map.bemanicn.com/s/3612",
+      "evidence_quote": "酷玩e族（和悦广场店） 和悦时代广场购物中心三楼3013号"
+    },
+    {
+      "ids": [6886, 6887],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6886,
+      "canonical_name": "酷玩嘉年华上饶信州万力时代店",
+      "canonical_addr": "江西省上饶市信州区滨江东路66号万力时代三楼酷玩",
+      "reason": "0 m pair: both are 酷玩嘉年华 at Wanli Times (万力时代) on Binjiang East Road, Shangrao.",
+      "evidence_url": "https://map.bemanicn.com/s/3928",
+      "evidence_quote": "酷玩嘉年华(上饶市信州区万力时代店) 信州区东市街道滨江东路66号"
+    },
+    {
+      "ids": [6891, 6892],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6891,
+      "canonical_name": "酷玩地带呼伦贝尔海拉尔店",
+      "canonical_addr": "内蒙古自治区呼伦贝尔市海拉尔区胜利街道龙凤新天地购物广场四层F4-045号",
+      "reason": "0 m pair: both are 酷玩地带 on 4F of Hailar Longfeng Xintiandi (龙凤新天地).",
+      "evidence_url": "https://map.bemanicn.com/s/5291",
+      "evidence_quote": "酷玩地带电玩城（龙凤新天地购物广场店） 诺敏路龙凤新天地广场内4F"
+    },
+    {
+      "ids": [6898, 6899],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6899,
+      "canonical_name": "酷玩时代海口新城吾悦广场店",
+      "canonical_addr": "海口市龙华区椰海大道吾悦广场商场内三层3020-1-1、3020-2号商铺",
+      "reason": "Dual wahlap/community listings of the same 3F unit range 3020 at Haikou Xincheng Wuyue; Baidu shows one 酷玩时代 business there.",
+      "evidence_url": "https://map.bemanicn.com/s/6452",
+      "evidence_quote": "酷玩时代（海口新城吾悦广场店） 新城吾悦广场3楼3020-1-1、3020-2号商铺; Baidu: 酷玩时代(新城吾悦广场店) only"
+    },
+    {
+      "ids": [6903, 6911],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6911,
+      "canonical_name": "酷玩猩球保定曲阳永宁店",
+      "canonical_addr": "曲阳县恒州镇南环路7号永宁生活广场 F3 10-1号",
+      "reason": "Same 酷玩猩球 on F3 of Quyang Yongning Plaza; bemanicn unit 10-1 matches the wahlap mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5477",
+      "evidence_quote": "酷玩猩球（曲阳永宁生活广场店） 曲阳县恒州镇南环路7号永宁生活广场 F3 10-1号"
+    },
+    {
+      "ids": [6906, 6910],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6910,
+      "canonical_name": "酷玩猩球沧州黄骅华贸店",
+      "canonical_addr": "骅中街道信誉楼大街华贸商厦负一层北侧",
+      "reason": "Same 酷玩猩球 on B1 of Huanghua Huamao Department Store (华贸商厦).",
+      "evidence_url": "https://map.bemanicn.com/s/3517",
+      "evidence_quote": "酷玩猩球（华贸商厦店） 骅中街道信誉楼大街华贸商厦负一层北侧"
+    },
+    {
+      "ids": [6916, 6921],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6921,
+      "canonical_name": "酷玩空间上海爱琴海缤纷里店",
+      "canonical_addr": "上海市金山区枫泾镇乐纷路268号爱琴海·缤纷里AEGEAN BINGO F2",
+      "reason": "ZIv labels the site LEGOLAND area while BemaniCN uses 爱琴海缤纷里; Baidu confirms one 酷玩空间 at Lefen Rd 268 Aegean Bingo next to LEGOLAND.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11569",
+      "evidence_quote": "酷玩空间 Coolplay Space (SHANGHAI LEGOLAND) Lefen Road (LEGOLAND area); Baidu: 酷玩空间(爱琴海·缤纷里AEGEAN BINGO店) 乐纷路268号"
+    },
+    {
+      "ids": [6917, 6919],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6919,
+      "canonical_name": "酷玩空间上海世纪汇店",
+      "canonical_addr": "上海市浦东新区世纪大道1192号世纪汇负一楼酷玩空间",
+      "reason": "Identical Century Link Plaza / 世纪汇 B1 (LG1) address and matching machine counts (maimai 6, taiko 8, chunithm 2).",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11480",
+      "evidence_quote": "B1 (LG1), Century Link Plaza, No.1192 Century Avenue; bemanicn: 世纪大道1192号世纪汇广场负一楼（LG1）"
+    },
+    {
+      "ids": [6925, 6928],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6925,
+      "canonical_name": "酷玩空间烟台吾悦广场店",
+      "canonical_addr": "山东省烟台市芝罘区芝罘屯路吾悦广场3楼酷玩空间",
+      "reason": "Same 酷玩空间 on 3F of Yantai Zhifu Wuyue Plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/2702",
+      "evidence_quote": "酷玩空间（烟台芝罘吾悦店） 芝罘屯路与建设路交汇处吾悦广场3楼"
+    },
+    {
+      "ids": [6926, 6929],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6926,
+      "canonical_name": "酷玩空间盐城盐都万达广场店",
+      "canonical_addr": "江苏省盐城市盐都区西环路88号万达广场三楼酷玩空间",
+      "reason": "0 m pair: both at 西环路88号 Yancheng Yandu Wanda Plaza 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/1803",
+      "evidence_quote": "酷玩空间（盐城盐都万达广场店） 西环路88号"
+    },
+    {
+      "ids": [6934, 6935],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6934,
+      "canonical_name": "酷玩街区合肥大唐国际店",
+      "canonical_addr": "安徽省合肥市蜀山区望江西路大唐国际购物广场2号门一楼酷玩街区",
+      "reason": "0 m pair: 大唐国际店 and 蜀山店 both on 1F of Hefei Datang International mall on Wangjiang West Road.",
+      "evidence_url": "https://map.bemanicn.com/s/4170",
+      "evidence_quote": "酷玩街区合肥大唐国际店 望江西路与潜山路交叉口东南角大唐国际购物中心1层"
+    },
+    {
+      "ids": [6937, 6938],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6938,
+      "canonical_name": "酷豆番荆州沙市店",
+      "canonical_addr": "湖北省荆州市沙市区人信汇负一楼酷豆番电玩公社",
+      "reason": "Both are 酷豆番 on B1 of Jingzhou Renxinhui (人信汇); branch vs city labeling only.",
+      "evidence_url": "https://map.bemanicn.com/s/727",
+      "evidence_quote": "酷豆番电玩公社（荆州） 北京中路人信汇负一楼"
+    },
+    {
+      "ids": [6943, 6944],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6943,
+      "canonical_name": "酷风游乐场绍兴越城颐高广场店",
+      "canonical_addr": "绍兴市越城区颐高广场 3 楼酷风游乐场",
+      "reason": "0 m pair: both are 酷风游乐场 on 3F of Shaoxing Yuecheng Ego Plaza (颐高广场).",
+      "evidence_url": "https://map.bemanicn.com/s/6485",
+      "evidence_quote": "酷风游乐场（颐高广场店） 灵芝街道颐高广场商场3楼"
+    },
+    {
+      "ids": [6945, 6947],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6945,
+      "canonical_name": "酷龙奇纪临沂沂水银座店",
+      "canonical_addr": "山东省临沂市沂水县银座商城三楼酷龙奇纪",
+      "reason": "0 m pair: both are 酷龙奇纪 on 3F of Yishui Intime/Yinzuo mall (银座商城).",
+      "evidence_url": "https://map.bemanicn.com/s/6046",
+      "evidence_quote": "酷龙奇纪家庭娱乐中心(沂水店) 沂城街道银座商城三楼"
+    },
+    {
+      "ids": [6946, 6950],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 6950,
+      "canonical_name": "酷龙奇纪淄博桓台店",
+      "canonical_addr": "山东省淄博市桓台县城区街道中心大街1650号惠仟佳商场四楼南部东区",
+      "reason": "Both place 酷龙奇纪 on 4F of Huantai Huiqianjia (惠仟佳); Baidu lists one business. ~300 m gap is approx geocode noise for the same mall, not two branches.",
+      "evidence_url": "https://map.bemanicn.com/s/6051",
+      "evidence_quote": "酷龙奇纪家庭娱乐中心(桓台店) 少海街道少海路惠仟佳4楼; Baidu: 酷龙奇纪家庭娱乐中心(桓台店) 惠仟佳商场四楼 only"
+    },
+    {
+      "ids": [6948, 6949],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6949,
+      "canonical_name": "酷龙奇纪日照莒县店",
+      "canonical_addr": "山东省日照市莒县正基时代广场正基商场5楼酷龙奇纪家庭娱乐中心",
+      "reason": "4.8 m pair: both are 酷龙奇纪 on 5F of Juxian Zhengji Times Plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/6155",
+      "evidence_quote": "酷龙奇纪家庭娱乐中心（莒县店） 正基时代广场5楼酷龙奇纪家庭娱乐中心"
+    },
+    {
+      "ids": [6952, 6955],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6955,
+      "canonical_name": "量子攻略游戏体验中心(新奥购物中心店)",
+      "canonical_addr": "湖景东路9号新奥购物中心B1层H1-01",
+      "reason": "Same 量子攻略 on B1 of Beijing Chaoyang Xin'ao Shopping Center; Baidu shows one POI at that mall.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11247",
+      "evidence_quote": "湖景东路9号新奥购物中心B1层H1-01; Baidu: 量子攻略(新奥店) only"
+    }
+  ]
+}

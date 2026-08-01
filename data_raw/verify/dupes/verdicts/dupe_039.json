@@ -1,0 +1,369 @@
+{
+  "shard": 39,
+  "verdicts": [
+    {
+      "ids": [
+        4468,
+        4476
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4476,
+      "canonical_name": "柒彩大玩家珠海香洲中安广场店",
+      "canonical_addr": "广东省珠海市香洲区港昌路258号中安广场201铺17-18号铺",
+      "reason": "Same Zhongan Plaza branch: bemanicn and wahlap both place 柒彩大玩家 on 2F of 中安广场. Baidu has a single POI at 港昌路258号中安广场201铺17-18.",
+      "evidence_url": "https://map.bemanicn.com/s/5559",
+      "evidence_quote": "柒彩大玩家(中安广场店) | 香洲区港昌路258号中安广场201铺17-18号铺; Baidu same unit"
+    },
+    {
+      "ids": [
+        4469,
+        4478
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4478,
+      "canonical_name": "柒彩大玩家赣州上犹店",
+      "canonical_addr": "江西省赣州市上犹县东山镇建设一路正和广场鹏泰百货3楼",
+      "reason": "Baidu shows one shop 柒彩大玩家(上犹正和广场店) at 建设一路正和广场鹏泰百货3楼; 鹏泰百货 is inside 正和广场, so bemanicn 鹏泰 and wahlap 正和广场 are the same venue. Note: 4478 also carries a mismatched bemanicn s/6074 note for a different city (红都广场) which is a merge-artifact, not a second Shangyou shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4766",
+      "evidence_quote": "Baidu 柒彩大玩家(上犹正和广场店) | 东山镇建设一路正和广场鹏泰百货3楼00305号店铺; 鹏泰百货(正和广场店)"
+    },
+    {
+      "ids": [
+        4471,
+        4472
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4471,
+      "canonical_name": "柒彩大玩家吉安吉州店",
+      "canonical_addr": "江西省吉安市吉州区广场北路莱斯百货3-253号",
+      "reason": "Both at 莱斯百货 3F in Jizhou; complementary game lists (4471 maimai+chunithm+taiko, 4472 chunithm only) from dual wahlap/bemanicn coverage of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4442",
+      "evidence_quote": "柒彩大玩家吉安吉州店 | 莱斯百货3楼; wahlap 广场北路莱斯百货3-253号"
+    },
+    {
+      "ids": [
+        4473,
+        4482
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4473,
+      "canonical_name": "柒彩大玩家宜春高安店",
+      "canonical_addr": "江西省宜春市高安市高安大道456号鹏泰百货三楼柒彩大玩家",
+      "reason": "0 m apart; both at Gaoan 鹏泰百货. Baidu lists 鹏泰百货(高安店) at 高安大道456号 matching wahlap.",
+      "evidence_url": "https://map.bemanicn.com/s/7316",
+      "evidence_quote": "柒彩大玩家（鹏泰百货店）| 锦惠中路高安市鹏泰百货(高安店); Baidu 鹏泰百货(高安店)|高安大道456号"
+    },
+    {
+      "ids": [
+        4474,
+        4475
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real WAHLAP branches: 三灶店 at 金海岸大道257号鹏泰百货三楼 vs 南水店 at 南水镇南港路17号南水市场3楼. Shared coords are geocode collapse; Baidu lists both POIs.",
+      "evidence_url": "https://map.bemanicn.com/s/2460",
+      "evidence_quote": "Baidu 柒彩大玩家(三灶店)|金海岸大道257号鹏泰百货三楼; 开心季柒彩大玩家(南水店)|南水镇南港路17号南水市场3楼001号商铺"
+    },
+    {
+      "ids": [
+        5990,
+        5991
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5991,
+      "canonical_name": "福斗星球珠海金湾店",
+      "canonical_addr": "广东省珠海市金湾区三灶镇金海岸大道西211号华晨商业广场1层",
+      "reason": "One 福斗星球 at 三灶华晨商业广场 on 金海岸大道; bemanicn mall name and wahlap road number describe the same plaza. Baidu single POI L110.",
+      "evidence_url": "https://map.bemanicn.com/s/5899",
+      "evidence_quote": "福斗星球ODEK电玩城 | 三灶华晨商业广场1层; Baidu 福斗星球|金海岸大道西211号华晨商业广场L110"
+    },
+    {
+      "ids": [
+        4485,
+        4486
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4486,
+      "canonical_name": "柿柿潮玩云浮罗定客都汇店",
+      "canonical_addr": "云浮市罗定市龙园路客都汇负一楼柿柿潮玩",
+      "reason": "Same brand at 客都汇 B1 / 负一楼 on 龙园路; bare-name community listing vs full WAHLAP branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/6636",
+      "evidence_quote": "柿柿潮玩 | 龙园东路客都汇负一层; wahlap 龙园路客都汇负一楼"
+    },
+    {
+      "ids": [
+        5873,
+        5875
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5875,
+      "canonical_name": "相遇潮玩罗定大润发店",
+      "canonical_addr": "广东省云浮市罗定市罗城街道龙园路133号二楼相遇潮玩",
+      "reason": "Same 相遇潮玩 on 2F of 客都汇/大润发 at 龙园路133号; Baidu confirms single POI at 客都汇F2 (distinct from B1 柿柿潮玩).",
+      "evidence_url": "https://map.bemanicn.com/s/6268",
+      "evidence_quote": "相遇潮玩 | 大润发(客都汇购物中心店)二楼; Baidu 相遇潮玩|龙园路133号客都汇购物中心F2"
+    },
+    {
+      "ids": [
+        4491,
+        4492
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4492,
+      "canonical_name": "栗子星球石家庄鹿泉北国奥特莱斯店",
+      "canonical_addr": "石家庄市鹿泉区北国奥特莱斯栗子星球",
+      "reason": "0 m; both at Luquan Beiguo Outlets. Branch suffix vs bare brand at identical mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6445",
+      "evidence_quote": "栗子星球 | 北国奥特莱斯; wahlap 鹿泉区北国奥特莱斯栗子星球"
+    },
+    {
+      "ids": [
+        4493,
+        4494
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4494,
+      "canonical_name": "核客电玩城深圳罗湖店",
+      "canonical_addr": "广东省深圳市罗湖区深南东路3020号百货广场大厦西座一楼",
+      "reason": "ZIv 4726 and WAHLAP/BemaniCN both at Department Store Plaza / 百货广场大厦 深南东路3020. ZIv page even cites BEMANICN id 48.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4726",
+      "evidence_quote": "核客电玩城 Hacker E-game | L1 Department Store Plaza Building No.3020 Shennan East Road; BEMANICN ID 48"
+    },
+    {
+      "ids": [
+        4506,
+        4507
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4507,
+      "canonical_name": "梦哆哆星球福州仓山世纪金源店",
+      "canonical_addr": "福建省福州市仓山区潘墩路188号世纪金源购物中心二楼梦哆哆星球",
+      "reason": "Identical 潘墩路188号世纪金源购物中心 2F; bare branch vs full WAHLAP Fuzhou Cangshan name.",
+      "evidence_url": "https://map.bemanicn.com/s/5915",
+      "evidence_quote": "梦哆哆星球世纪金源购物中心店 | 潘墩路188号世纪金源购物中心2楼"
+    },
+    {
+      "ids": [
+        4509,
+        4510
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4510,
+      "canonical_name": "梦多拉湛江赤坎兴华广场店",
+      "canonical_addr": "湛江市赤坎区海北路11-31号兴华广场三层",
+      "reason": "0 m; same 兴华广场 on 海北路 in Chikan. WAHLAP has fuller street number and floor.",
+      "evidence_url": "https://map.bemanicn.com/s/6826",
+      "evidence_quote": "梦多拉湛江兴华广场店 | 赤坎区海北路兴华购物广场; wahlap 海北路11-31号兴华广场三层"
+    },
+    {
+      "ids": [
+        4511,
+        4512
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4512,
+      "canonical_name": "梦幻之城中山店",
+      "canonical_addr": "广东省中山市中山古镇华丰汇三楼梦幻之城",
+      "reason": "0 m; both at 华丰汇 3F (bemanicn unit L3014-3016). Same Zhongshan Guzhen branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2033",
+      "evidence_quote": "梦幻之城DREAM CITY体验馆 | 中兴大道中1号华丰汇购物中心三层L3014-3016"
+    },
+    {
+      "ids": [
+        4514,
+        4516
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4514,
+      "canonical_name": "梦幻之城海口日月广场店",
+      "canonical_addr": "海南省海口市日月广场东4白羊座2楼",
+      "reason": "Same 日月广场 白羊座 2F; ~192 m is mall-size geocode drift. Baidu has one 梦幻之城超乐场(海口日月广场店).",
+      "evidence_url": "https://map.bemanicn.com/s/4840",
+      "evidence_quote": "梦幻之城超乐场（海口日月广场店）| 国兴大道8号日月广场白羊座二楼; Baidu 日月广场东4白羊座2楼"
+    },
+    {
+      "ids": [
+        4517,
+        4518
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4517,
+      "canonical_name": "梦幻乐园广州天河店",
+      "canonical_addr": "广东省广州市天河区广州大道北980号信达金茂广场三层",
+      "reason": "One venue at 信达金茂广场 3F; wahlap miswrote 天河大道/兴达, bemanicn and Baidu use 广州大道北980号/信达金茂广场.",
+      "evidence_url": "https://map.bemanicn.com/s/4227",
+      "evidence_quote": "梦幻乐园金茂广场店 | 广州大道北980号金茂广场3层301-319; Baidu 梦幻乐园(金茂广场店)|信达金茂广场3楼"
+    },
+    {
+      "ids": [
+        4526,
+        4528
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4526,
+      "canonical_name": "梦幻猩球揭阳揭东博和城店",
+      "canonical_addr": "广东省揭阳市揭东区磐东街道乔南博和城一楼梦幻猩球动漫城",
+      "reason": "0 m; both at 乔南博和城 1F (阳美路35号). Full WAHLAP Jieyang branch vs parenthetical community name.",
+      "evidence_url": "https://map.bemanicn.com/s/5969",
+      "evidence_quote": "梦幻猩球（乔南博和城店）| 乔南博和城一楼（阳美路35号）"
+    },
+    {
+      "ids": [
+        4530,
+        4531
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4531,
+      "canonical_name": "梦幻谷游艺佛山禅城东方店",
+      "canonical_addr": "广东省佛山市禅城区东方广场翡翠城负一楼梦幻谷",
+      "reason": "Same 东方广场翡翠城 B1 / -1F on 锦华路81号; branch naming variants only.",
+      "evidence_url": "https://map.bemanicn.com/s/151",
+      "evidence_quote": "梦幻谷东方广场店 | 锦华路81号东方广场翡翠城-1层"
+    },
+    {
+      "ids": [
+        4533,
+        4535
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4535,
+      "canonical_name": "梦幻雨林铜仁大十字店",
+      "canonical_addr": "贵州省铜仁市大十字西门悦萃城二楼梦幻雨林娱乐中心",
+      "reason": "Same 悦萃城 2F in Tongren Bijiang (三江/大十字西门 are local names for the same mall area).",
+      "evidence_url": "https://map.bemanicn.com/s/1248",
+      "evidence_quote": "梦幻雨林 | 碧江区三江悦萃城2楼; wahlap 大十字西门悦萃城二楼"
+    },
+    {
+      "ids": [
+        4536,
+        4537
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4537,
+      "canonical_name": "梦想之城周口沈丘店",
+      "canonical_addr": "河南省周口市沈丘县快乐小镇三楼梦想之城家庭游乐中心",
+      "reason": "Both at 快乐小镇 / 上亿快乐小镇 3F in Shenqiu; same brand and floor, ~164 m geocode drift on a small-town mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1890",
+      "evidence_quote": "梦想之城动漫游戏体验中心 | 上亿快乐小镇3楼梦想之城电玩城"
+    },
+    {
+      "ids": [
+        4539,
+        4540
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4540,
+      "canonical_name": "梦想之城郑州金水店",
+      "canonical_addr": "郑州市金水区国基路信万广场5楼梦想之城家庭亲子游乐中心",
+      "reason": "Same 信万广场 5F at 国基路 (Jinshui). 信万广场店 and 金水店 are alternate branch labels for one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3701",
+      "evidence_quote": "梦想之城郑州信万广场店 | 国基路丰庆路交叉口西南角信万广场五楼"
+    },
+    {
+      "ids": [
+        4541,
+        4542
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4541,
+      "canonical_name": "梦想街区大连周水子万达店",
+      "canonical_addr": "辽宁省大连市甘井子区虹韵路6号甘井子万达广场2F梦想街区",
+      "reason": "0 m; 周水子万达 is the local name for 甘井子万达广场. Same 2F store, bemanicn has the street number.",
+      "evidence_url": "https://map.bemanicn.com/s/6463",
+      "evidence_quote": "梦想街区大连周水子万达店 | 虹韵路6号甘井子万达广场2F梦想街区(甘井子万达广场店)"
+    },
+    {
+      "ids": [
+        4543,
+        4544
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4543,
+      "canonical_name": "梦想街区大连金州佰都荟购物广场店",
+      "canonical_addr": "大连市金州区胜利路184号栢都荟2楼梦想街区",
+      "reason": "0 m; 佰都荟/栢都荟 spelling variants of the same Jinzhou mall on 胜利路 2F.",
+      "evidence_url": "https://map.bemanicn.com/s/6383",
+      "evidence_quote": "梦想街区（大连金州栢都荟店）| 胜利路184号栢都荟2楼梦想街区"
+    },
+    {
+      "ids": [
+        4553,
+        4555
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4553,
+      "canonical_name": "梦次元潮玩空间站(斗门世荣万达店)",
+      "canonical_addr": "广东省珠海市斗门区知行路118号珠海斗门世荣万达广场2F层梦次元潮玩空间站",
+      "reason": "Same 斗门世荣万达 2F; bemanicn has full street and unit detail, wahlap short form.",
+      "evidence_url": "https://map.bemanicn.com/s/4499",
+      "evidence_quote": "梦次元潮玩空间站 | 知行路118号珠海斗门世荣万达广场2F层梦次元潮玩空间站(斗门世荣万达店)"
+    },
+    {
+      "ids": [
+        4557,
+        4558
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4558,
+      "canonical_name": "梦空间三门峡湖滨梦之城店",
+      "canonical_addr": "河南省三门峡市湖滨区梦之城购物中心五楼506",
+      "reason": "0 m; both at 梦之城 5F in Hubin Sanmenxia (bemanicn also notes 梦幻传奇 inside). One shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2197",
+      "evidence_quote": "梦空间 | 湖滨区和平路梦之城五楼梦幻传奇家庭娱乐中心; wahlap 梦之城购物中心五楼506"
+    },
+    {
+      "ids": [
+        4559,
+        4560
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4560,
+      "canonical_name": "棒多多家庭娱乐中心长沙浏阳店",
+      "canonical_addr": "湖南省长沙市浏阳市淮川街道北正西购物中心三楼棒多多家庭娱乐中心浏阳店",
+      "reason": "Same 北正西 shopping center 3F in Liuyang; Baidu single POI L322. 九方北正西 is the mall branding.",
+      "evidence_url": "https://map.bemanicn.com/s/3563",
+      "evidence_quote": "棒多多(浏阳北正西店)|浏阳九方北正西店; Baidu 棒多多家庭娱乐中心|北正西购物中心三楼L322"
+    },
+    {
+      "ids": [
+        4567,
+        4569
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4567,
+      "canonical_name": "榜上英雄定州北城万达店",
+      "canonical_addr": "河北省定州市北城区定州万达广场三楼",
+      "reason": "0 m; both at Dingzhou Wanda F3 / 三楼. Official WAHLAP branch vs parenthetical community name.",
+      "evidence_url": "https://map.bemanicn.com/s/4583",
+      "evidence_quote": "榜上英雄（定州万达店）| 迎宾大道定州万达广场F3"
+    }
+  ]
+}

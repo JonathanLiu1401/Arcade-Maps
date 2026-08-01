@@ -1,0 +1,1029 @@
+{
+  "shard": 31,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php (per-venue pages via API ids)",
+    "https://map.bemanicn.com/s/{id} (Inertia JSON: X-Inertia:true)",
+    "BemaniCN title_id map inferred from version strings: 1=maimai DX, 3=CHUNITHM, 31=taiko, 17=WACCA, 4=SDVX, 34=jubeat, 33=DanceEvolution"
+  ],
+  "corrections": [
+    {
+      "id": 6061,
+      "name": "第一回合",
+      "field": "location",
+      "current": {
+        "addr": "Changbing Rd, Xiacheng 3rd floor, No.1 Xingcheng Bulding Hangzhou Shi Zhejiang Sheng, 310000, Hangzhou Shi",
+        "lat": 30.321325531213212,
+        "lng": 120.1788236141225
+      },
+      "proposed": {
+        "addr": "莫干山路813号大悦城购物中心3楼（靠近6号门）, Gongshu District, Hangzhou, Zhejiang",
+        "lat": 30.303994669341,
+        "lng": 120.12503713919
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "name: 第一回合&木马王国(大悦城店); address: 莫干山路813号大悦城购物中心3楼（靠近6号门）; status:1; updated_at:2026-07-25T04:01:31Z",
+      "note": "App pin is about 5-6 km away near Xiacheng/Changbing Rd (old/wrong site). Live ZIv (2026-07-30) and BemaniCN both place this venue at Hangzhou Joy City on Moganshan Rd. ZIv coords used for proposed lat/lng.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6061,
+      "name": "第一回合",
+      "field": "other",
+      "current": "第一回合",
+      "proposed": "第一回合×木马王国 Round One × Bruce Ma (杭州大悦城)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4547",
+      "evidence_quote": "ZIv name field (updated 2026-07-30 20:42:25): 第一回合×木马王国 Round One × Bruce Ma (杭州大悦城); BemaniCN shop 1897 name: 第一回合&木马王国(大悦城店)",
+      "note": "field is name/rename. Venue co-branded with Bruce Ma at Joy City.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6061,
+      "name": "第一回合",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "arcades: title_id=1(maimai) qty=1; title_id=3(中二节奏2026) qty=2; title_id=31(太鼓之达人) qty=1",
+      "note": "Also confirmed on ZIv machines list updated 2026-07-30: 2x CHUNITHM VERSE, 1x Taiko Nijiiro, 1x maimai DX PRiSM PLUS.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6061,
+      "name": "第一回合",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "quantity fields: maimai(title_id=1)=1, chunithm(title_id=3)=2, taiko(title_id=31)=1",
+      "note": "BemaniCN quantities. ZIv lists the same cabinet counts for these three titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6061,
+      "name": "第一回合",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "BemaniCN hours only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6061,
+      "name": "第一回合",
+      "field": "prices",
+      "current": {
+        "maimai": "4 credit / 3 songs",
+        "maimai_dx": "8 credit / 3 songs (Solo) / 4 songs (Multi)"
+      },
+      "proposed": {
+        "maimai_dx": "8 coins temp card / 6 coins member",
+        "chunithm": "6 coins non-member / 5 coins member",
+        "taiko": "18 coins non-member / 15 coins VIP"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1897",
+      "evidence_quote": "maimai coin=8 comment:临时卡8币 会员卡6币; chunithm coin=6 comment:会员5币 非会员6币; taiko coin=18 comment:会员15币",
+      "note": "Remove obsolete plain maimai price if no classic cab remains. Tokens; BemaniCN price field=1 CNY/token.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6062,
+      "name": "第一回合 (ROUND ONE) in77店",
+      "field": "location",
+      "current": {
+        "addr": "258 Yan'an Rd. Area C, B1 Hangzhou Shi Zhejiang Sheng, 310025, Hangzhou Shi",
+        "lat": 30.253575281634,
+        "lng": 120.16450269266
+      },
+      "proposed": {
+        "addr": "西溪天街3楼, Xihu District, Hangzhou, Zhejiang (Xixi Longfor Paradise Walk)",
+        "lat": 30.296241657009,
+        "lng": 120.06394736397
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3655",
+      "evidence_quote": "name: 木马王国（西溪天街店）; address: 西溪天街3楼; status:1; updated_at:2026-07-23T04:56:56Z",
+      "note": "App still points at in77 / Yan'an Rd (about 10+ km away). Live ZIv (2026-07-30) and BemaniCN both say Xixi Paradise Walk. Large wrong-district pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6062,
+      "name": "第一回合 (ROUND ONE) in77店",
+      "field": "other",
+      "current": "第一回合 (ROUND ONE) in77店",
+      "proposed": "木马王国 Bruce Ma (西溪天街)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5141",
+      "evidence_quote": "ZIv name (updated 2026-07-30 22:26:58): 木马王国 Bruce Ma (西溪天街); BemaniCN shop 3655: 木马王国（西溪天街店）",
+      "note": "field is name/rename. No longer branded as ROUND ONE in77.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6062,
+      "name": "第一回合 (ROUND ONE) in77店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3655",
+      "evidence_quote": "arcades: title_id=1 qty=2 (DX2025); title_id=31 qty=1 (taiko); title_id=30 qty=4",
+      "note": "ZIv also lists 1x Taiko Nijiiro + 2x maimai DX PRiSM PLUS (2026-07-30).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6062,
+      "name": "第一回合 (ROUND ONE) in77店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3655",
+      "evidence_quote": "maimai quantity=2; taiko quantity=1",
+      "note": "Matches ZIv machine rows for these titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6062,
+      "name": "第一回合 (ROUND ONE) in77店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3655",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "BemaniCN hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6062,
+      "name": "第一回合 (ROUND ONE) in77店",
+      "field": "prices",
+      "current": {
+        "maimai_dx": "8 tokens / 3 songs Single / 4 songs Multi"
+      },
+      "proposed": {
+        "maimai_dx": "8 coins non-member / 6 coins member per play",
+        "taiko": "18 coins (15 VIP per ZIv comment)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+      "evidence_quote": "ZIv information for id 5141: Members: 6 credits per play; Non-members: 8 credits per play. Taiko comment: 15 coins for VIP Card. BemaniCN maimai coin=8, taiko coin=18.",
+      "note": "Credits shared with other First and Wood Kingdom Hangzhou locations per ZIv notes.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6287,
+      "name": "英雄汇 Heroes Gathering",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10185",
+      "evidence_quote": "ZIv machines updated 2026-07-31 03:44:58: E5 ONLINE; Dance Battle; DANCE3 2; Overtake x4; Asphalt 9 DX x5; Monster Eye 2. No Taiko row.",
+      "note": "App notes still claim taiko 12 Asia. Fresh ZIv inventory has no taiko. Remove taiko unless a newer visit reconfirms.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6287,
+      "name": "英雄汇 Heroes Gathering",
+      "field": "other",
+      "current": "英雄汇 Heroes Gathering",
+      "proposed": "英雄汇 Hero Hub",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10185",
+      "evidence_quote": "ZIv name field (2026-07-31): 英雄汇 Hero Hub",
+      "note": "field is name. English subtitle updated on ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4493,
+      "name": "核客电玩城 Hacker E-game",
+      "field": "games",
+      "current": [
+        "drs",
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/48",
+      "evidence_quote": "arcades include title_id=3 中二节奏2026 quantity=2 coin=4; updated_at 2026-07-27T17:19:04Z; status=1",
+      "note": "BemaniCN tracks Wahlap network titles. ZIv 2026-07-30 still lists SDVX, WACCA, DRS, PIU so those stay. Add chunithm qty 2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4493,
+      "name": "核客电玩城 Hacker E-game",
+      "field": "game_counts",
+      "current": {
+        "drs": 1,
+        "maimai_dx": 2,
+        "pump_it_up": 1,
+        "sdvx": 2,
+        "taiko": 2,
+        "wacca": 3
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 2,
+        "drs": 1,
+        "sdvx": 2,
+        "wacca": 2,
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/48",
+      "evidence_quote": "BemaniCN: maimai qty=2, chunithm qty=2, taiko qty=2. ZIv 2026-07-30 lists 2x WACCA REVERSE (app had 3), 2x SDVX, 1x DRS, 1x PIU XX.",
+      "note": "WACCA count from ZIv rows is 2 not 3. pump_it_up remains ZIv-only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4047,
+      "name": "星际传奇 STAR LEGEND (宝安大仟里)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/283",
+      "evidence_quote": "title_id=1 qty=1 ver=Ver.CH1.53-J; title_id=31 qty=1 ver=2025春; status=1 updated 2026-01-28",
+      "note": "ZIv 2026-07-27 also shows 1 maimai DX + 1 taiko. App games already include both; counts were null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4397,
+      "name": "极客森超乐场 GEEK WORLD (宝能环球汇)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 3,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/605",
+      "evidence_quote": "title_id=1 maimai qty=2; title_id=3 chunithm qty=2; updated_at 2026-07-29T09:58:03Z",
+      "note": "ZIv 2026-07-31 has 2 maimai DX + 2 CHUNITHM + 1 taiko. App maimai_dx=3 is high. Keep taiko=1 from ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5645,
+      "name": "环游嘉年华 Funloop Land (上海环球港 Global Harbor)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "jubeat": 2,
+        "maimai_dx": 11,
+        "taiko": 4
+      },
+      "proposed": {
+        "chunithm": 4,
+        "maimai_dx": 6,
+        "taiko": 6,
+        "jubeat": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/23",
+      "evidence_quote": "title_id=1 maimai qty=6 coin=8; title_id=3 chunithm qty=4; title_id=31 taiko qty=6 ver=2026春 coin=10; updated_at 2026-07-31T08:53:08Z status=1",
+      "note": "App maimai_dx=11 came from ziv_comment aggregate. BemaniCN 2026-07-31 lists 6/6/4. Keep jubeat=2 from ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5365,
+      "name": "烈火游戏机娱乐",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1611",
+      "evidence_quote": "ZIv machines (updated 2026-07-10): IIDX Pinky Crush x2 + Lightning, GITADORA x2, GC 4MAX, jubeat beyond, SDVX EXCEED x3 + Valkyrie, CHUNITHM LUMINOUS, taiko 13/14, maimai DX/FiNALE. No DDR, no NOSTALGIA, no ONGEKI rows.",
+      "note": "App notes mention DDR WORLD, structured machines list does not. BemaniCN shop 1 is open. Remove ddr/nostalgia/ongeki until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5365,
+      "name": "烈火游戏机娱乐",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "groove_coaster": 1,
+        "iidx": 2,
+        "jubeat": 1,
+        "maimai_dx": 10,
+        "nostalgia": 1,
+        "ongeki": 1,
+        "sdvx": 4,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 9,
+        "chunithm": 5,
+        "taiko": 2,
+        "iidx": 3,
+        "sdvx": 4,
+        "gitadora": 2,
+        "jubeat": 1,
+        "groove_coaster": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "BemaniCN shop 1 街机烈火: maimai qty=9 ver=舞萌DX2025; chunithm qty=5 ver=中二节奏2026; taiko qty=2; updated 2026-07-30T08:29:42Z",
+      "note": "maimai/chunithm/taiko from BemaniCN. iidx=3 and sdvx=4 from ZIv rows. App maimai 10 was an estimate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4825,
+      "name": "泛时空 FUNSPACE BEIJING (北京荟聚西红门Livat)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_evo",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_evo",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9754",
+      "evidence_quote": "ZIv machines updated 2026-07-15: IIDX 33 x2, GITADORA x2, jubeat x3, SDVX Valkyrie, CHUNITHM VERSE x2, taiko x2, maimai DX x4, DanceEvolution. No DDR row.",
+      "note": "BemaniCN shop 2287 only tracks Wahlap titles; do not remove Konami games from Bem omission. Only ddr lacks ZIv support.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4825,
+      "name": "泛时空 FUNSPACE BEIJING (北京荟聚西红门Livat)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "dance_evo": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "iidx": 2,
+        "jubeat": 3,
+        "maimai_dx": 4,
+        "sdvx": 1,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "dance_evo": 1,
+        "gitadora": 2,
+        "iidx": 2,
+        "jubeat": 3,
+        "maimai_dx": 4,
+        "sdvx": 1,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2287",
+      "evidence_quote": "BemaniCN: maimai qty=4, chunithm qty=2, taiko qty=2. ZIv matches those plus Konami cabs.",
+      "note": "Drop ddr count only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5484,
+      "name": "牛玩牛叫 Cow Play Cow Moo (龙之梦店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-00:00",
+      "proposed": "Mon-Sun 10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6272",
+      "evidence_quote": "start_time:10 end_time:24; ZIv information also states Hours: 10:00-24:00",
+      "note": "Normalize awkward 10:00-00:00 to 10:00-24:00.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5510,
+      "name": "猫鼓旗舰店 Taiko Catz",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-20:00",
+      "proposed": "Mon-Sun 13:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6791",
+      "evidence_quote": "start_time:13 end_time:23; updated_at 2026-06-05T05:48:54Z; status=1",
+      "note": "BemaniCN hours for shop 6791.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5510,
+      "name": "猫鼓旗舰店 Taiko Catz",
+      "field": "prices",
+      "current": {
+        "taiko": "CNY1.00 for 3 songs / CNY1.00 to continue"
+      },
+      "proposed": {
+        "taiko": "CNY2.8 per credit (scan-to-pay); 3 songs solo / 4 songs pair when logged in"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6791",
+      "evidence_quote": "shop.price=2.8; title_id=31 qty=2 coin=1; ZIv comment: 2.8 RMB per play, scan-to-pay. 3 songs solo / 4 songs pair (login).",
+      "note": "App CNY1.00 price is wrong.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4739,
+      "name": "汤姆熊欢乐世界 Tom's World (上海龙之梦店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/16",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours missing in app.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5473,
+      "name": "爱玩荟家庭娱乐中心 Love the game together (望京店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4942",
+      "evidence_quote": "start_time:10 end_time:24",
+      "note": "BemaniCN shop hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5474,
+      "name": "爱玩荟家庭游乐中心 Love the game together (大望路店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-24:00",
+      "proposed": "Mon-Sun 10:00-25:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5322",
+      "evidence_quote": "start_time:10 end_time:25",
+      "note": "BemaniCN end_time 25 means 01:00 next day.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4738,
+      "name": "汤姆熊欢乐世界 Tom's World (上海荟聚店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 09:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4208",
+      "evidence_quote": "start_time:9 end_time:22",
+      "note": "BemaniCN open time is 09:00 not 10:00.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6024,
+      "name": "童年搭档 Childhood Buddies (万州鸿欧广场店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 09:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2479",
+      "evidence_quote": "start_time:9 end_time:21",
+      "note": "BemaniCN shop hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6203,
+      "name": "绿蜻蜓美吉熊(天通苑)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 09:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1565",
+      "evidence_quote": "start_time:9 end_time:21 name=美吉熊绿蜻蜓昌平天通苑店",
+      "note": "BemaniCN shop hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4323,
+      "name": "朗玩 Round1 Bowling and Arcade (龙华店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 3,
+        "dance_around": 2,
+        "maimai_dx": 12,
+        "pump_it_up": 1,
+        "taiko": 3,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 3,
+        "maimai_dx": 12,
+        "taiko": 3,
+        "dance_around": 2,
+        "wacca": 2,
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1088",
+      "evidence_quote": "maimai qty=12 ver=国行联网最新 coin=5; chunithm qty=3; taiko qty=3; updated 2026-07-24; ZIv 2026-07-30 still lists 12 maimai DX rows + DANCE aROUND x2 + WACCA x2 + PIU XX",
+      "note": "Counts match; upgrade ziv_listed placeholders for Wahlap titles to BemaniCN quantities.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4702,
+      "name": "汤姆熊(流行视窗店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2616",
+      "evidence_quote": "ZIv lastUpdateTime=2012-12-02 13:29:52 (13 years ago); machines:[] empty; lastUpdateTime 2012-12-02",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5934,
+      "name": "真快活美乐园(光谷天地店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2613",
+      "evidence_quote": "ZIv lastUpdateTime=2012-12-02 13:16:47 (13 years ago); only jubeat; last update 2012",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5936,
+      "name": "真快活美乐园(王家湾店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2610",
+      "evidence_quote": "ZIv lastUpdateTime=2012-12-02 02:58:02 (13 years ago); PIU NX2 / jubeat / REFLEC / taiko12 Asia; last update 2012",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5935,
+      "name": "真快活美乐园(司门口店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2405",
+      "evidence_quote": "ZIv lastUpdateTime=2013-02-19 00:02:44 (13 years ago); IIDX China / jubeat / TECHNIKA3; last update 2013",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6158,
+      "name": "紫光游戏广场",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2842",
+      "evidence_quote": "ZIv lastUpdateTime=2013-07-31 21:32:41 (13 years ago); popn music 16 / IDAS5 / WMMT3; last update 2013",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6254,
+      "name": "舞彩缤纷电玩",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2615",
+      "evidence_quote": "ZIv lastUpdateTime=2012-12-02 13:21:57 (13 years ago); all machine condition=0; last update 2012",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5932,
+      "name": "真快活电玩城（珞珈创意城）",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3557",
+      "evidence_quote": "ZIv lastUpdateTime=2018-06-04 12:04:31 (8 years ago); jubeat knit / maimai MURASAKi / IIDX China / taiko12; last update 2018",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5937,
+      "name": "真快活美乐园（国广店）",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2609",
+      "evidence_quote": "ZIv lastUpdateTime=2018-06-04 12:03:52 (8 years ago); SDVX II / maimai PiNK / GFDM V7; last update 2018",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4068,
+      "name": "星际传奇(南昌铜锣湾店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3968",
+      "evidence_quote": "ZIv lastUpdateTime=2018-06-04 12:14:36 (8 years ago); DJMAX TECHNIKA / taiko12 Asia / WMMT4; last update 2018",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5350,
+      "name": "炫烽超级电玩(步行街店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4189",
+      "evidence_quote": "ZIv lastUpdateTime=2018-06-04 12:00:05 (8 years ago); PIU PRIME 2 / Danz Base; last update 2018",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4556,
+      "name": "梦游仙境游乐园(岗顶店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4764",
+      "evidence_quote": "ZIv lastUpdateTime=2019-02-27 15:03:06 (7 years ago); BeatStream / GFDM XG / maimai MURASAKi fan-server / taiko 11-12 Asia; last update 2019",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4846,
+      "name": "泰格本色",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4762",
+      "evidence_quote": "ZIv lastUpdateTime=2019-02-27 05:32:14 (7 years ago); GFDM XG / SDVX IV / jubeat / classic maimai; last update 2019",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4612,
+      "name": "欢乐海洋",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2409",
+      "evidence_quote": "ZIv lastUpdateTime=2019-08-04 17:30:00 (6 years ago); IIDX 25 / jubeat festo / REFLEC / taiko12; last update 2019",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5180,
+      "name": "潮玩星球 (Chaowan Planet)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5643",
+      "evidence_quote": "ZIv lastUpdateTime=2020-07-25 03:23:38 (6 years ago); all machines condition=0; last update 2020",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5653,
+      "name": "环游嘉年华(永旺梦乐城店)",
+      "field": "status",
+      "current": "listed as open with game lineup from ZIv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4765",
+      "evidence_quote": "ZIv lastUpdateTime=2019-02-27 15:02:43 (7 years ago); Danz Base / taiko12 Asia / Aikatsu; last update 2019",
+      "note": "NO positive closure proof found. Multi-year stale community data only. Do NOT mark closed solely from age. Seek 2025-2026 visit or Dianping/Meituan listing before trusting the pin for travel.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4759,
+      "name": "汤姆熊欢乐世界 Tom's World (金山店)",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1717",
+      "evidence_quote": "machines include maimai FiNALE condition=0 comment asking visitors to confirm on-site; taiko Nijiiro condition=0 same; lastUpdate 2026-07-04",
+      "note": "Condition 0 with please-verify comments. App has taiko not maimai. Unverified field-work flag only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4049,
+      "name": "星际传奇 STAR LEGEND (欢乐港湾)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1147",
+      "evidence_quote": "start_time:10 end_time:10 (identical; almost certainly bad data). shop updated_at 2025-11-29. App currently shows 10:00-22:00.",
+      "note": "Do not replace app hours with BemaniCN 10-10. proposed=null means leave claim alone, not remove hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4046,
+      "name": "星际传奇 STAR LEGEND (宝安壹方城店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 2,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 2,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/552",
+      "evidence_quote": "BemaniCN maimai=1 chunithm=2 taiko=2. ZIv 2026-07-27 still lists 2x WACCA REVERSE so keep wacca=2.",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4048,
+      "name": "星际传奇 STAR LEGEND (松江印象城店)",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "taiko": 3
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1424",
+      "evidence_quote": "BemaniCN quantities maimai=2 taiko=3",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4052,
+      "name": "星际传奇 STAR LEGEND X meland (上海合生汇)",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/22",
+      "evidence_quote": "BemaniCN quantities maimai=2 taiko=2",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4737,
+      "name": "汤姆熊欢乐世界 Tom's World (上海南方店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 3,
+        "taiko": 3
+      },
+      "proposed": {
+        "maimai_dx": 3,
+        "chunithm": 2,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/24",
+      "evidence_quote": "BemaniCN maimai=3 chunithm=2 taiko=2 (app taiko was 3)",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4739,
+      "name": "汤姆熊欢乐世界 Tom's World (上海龙之梦店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 2,
+        "maimai_dx": 4,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 4,
+        "chunithm": 2,
+        "taiko": 2,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/16",
+      "evidence_quote": "BemaniCN maimai=4 chunithm=2 taiko=2; ZIv 2x jubeat",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4826,
+      "name": "泛时空 FUNSPACE XI'AN (西安荟萃Livat)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 2,
+        "maimai_dx": 3,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 3,
+        "chunithm": 2,
+        "taiko": 1,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3403",
+      "evidence_quote": "BemaniCN maimai=3 chunithm=2 taiko=1; jubeat from ZIv",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6063,
+      "name": "第一回合 Round One (苏州中心)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3208",
+      "evidence_quote": "BemaniCN maimai=1 chunithm=2 taiko=1",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6025,
+      "name": "童年搭档 Childhood Buddies (凯德九章店)",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3472",
+      "evidence_quote": "BemaniCN maimai=1; title_id=17 WACCA qty=2",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5473,
+      "name": "爱玩荟家庭娱乐中心 Love the game together (望京店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4942",
+      "evidence_quote": "BemaniCN maimai=1 chunithm=2 taiko=1",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 5474,
+      "name": "爱玩荟家庭游乐中心 Love the game together (大望路店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 2,
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5322",
+      "evidence_quote": "BemaniCN maimai=1 chunithm=2; title_id=34 jubeat qty=2",
+      "note": "Real quantities from BemaniCN shop.arcades[].quantity (not ziv_listed placeholders).",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

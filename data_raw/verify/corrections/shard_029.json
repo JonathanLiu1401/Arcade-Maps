@@ -1,0 +1,585 @@
+{
+  "shard": 29,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php (per-id pages)",
+    "https://map.bemanicn.com/s/{id} (Inertia JSON props.shop for 60 linked IDs)"
+  ],
+  "corrections": [
+    {
+      "id": 1030,
+      "name": "DORAPLANET 哆啦星球 (高新玫瑰ONE)",
+      "field": "status",
+      "current": "shown as open venue with full rhythm lineup",
+      "proposed": "temporarily closed / under renovation; expected reopen 2026-10-01 (Rose ONE Gaoxin Phase III). Former Xiaozhai store permanently closed 2026-04-30.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2554",
+      "evidence_quote": "The arcade has relocated to Rose ONE (Gaoxin Phase III). Dora Planet Xiaozhai permanently closed on Apr. 30, 2026 (Thursday). The new location is currently under renovation and is expected to open on Oct. 1, 2026. It is currently unknown whether the new Rose ONE location will have maimai DX or CHUNITHM.",
+      "note": "ZIv lastUpdate 2026-07-07. Machine list on ZIv still shows old inventory (maimai/CHUNITHM/SDVX/WACCA/DRS) but info text says cabs from Xiaozhai moved to Zhonglou (Wenshang) and Rose ONE inventory is unknown. Do not send players here until reopen is confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1030,
+      "name": "DORAPLANET 哆啦星球 (高新玫瑰ONE)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2554",
+      "evidence_quote": "It is currently unknown whether the new Rose ONE location will have maimai DX or CHUNITHM. The maimai DX and CHUNITHM cabinets from the former Xiaozhai location have been moved to the Zhonglou (Wenshang) branch.",
+      "note": "While venue is under renovation, claiming a live rhythm lineup is misleading. proposed null means clear/remove current game claims until post-reopen inventory is verified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1074,
+      "name": "Funloop Land (Joy City Mall Chaoyang Beijing)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4",
+      "evidence_quote": "shop status=1; arcades: maimai DX quantity=4 (国行2026), CHUNITHM quantity=2 (国行2025), 太鼓之达人 quantity=2 (2025春); updated_at=2026-07-16T13:39:06.000000Z; comment: 机厅装修完成已开业",
+      "note": "App only lists other. BemaniCN shop 4 (环游嘉年华北京朝阳大悦城店) is the same venue (ZIv id 1506 info cites BEMANICN ID 4). ZIv machine list is incomplete but BemaniCN is definitive for CN rhythm inventory.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1074,
+      "name": "Funloop Land (Joy City Mall Chaoyang Beijing)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 4,
+        "chunithm": 2,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4",
+      "evidence_quote": "maimai DX quantity=4 coin=5; CHUNITHM quantity=2 coin=4; 太鼓之达人 quantity=2 coin=5; updated 2026-07-16",
+      "note": "Real counts from BemaniCN, not ziv_listed placeholders.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1074,
+      "name": "Funloop Land (Joy City Mall Chaoyang Beijing)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "CNY 5 per credit (BemaniCN coin=5)",
+        "chunithm": "CNY 4 per credit (BemaniCN coin=4)",
+        "taiko": "CNY 5 per credit solo / CNY 10 duo, 3 songs (BemaniCN)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4",
+      "evidence_quote": "maimai coin=5; CHUNITHM coin=4; 太鼓 comment: 一台二手机一台新机 单人5币/pc，双人10币/pc；3首/pc",
+      "note": "Coin values from BemaniCN; CNY assumes 1 coin ~ 1 RMB base (packages may be cheaper).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1074,
+      "name": "Funloop Land (Joy City Mall Chaoyang Beijing)",
+      "field": "images",
+      "current": 0,
+      "proposed": "BemaniCN thumb: oss.bemanicn.com/arcademap/img/PaNbezyUSNFzxca3PJKWbEfghnn233kWtqFn6pC6.jpg (licence/rights NOT confirmed for reuse)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4",
+      "evidence_quote": "image_thumb.url points at oss.bemanicn.com/arcademap/img/PaNbezyUSNFzxca3PJKWbEfghnn233kWtqFn6pC6.jpg-thumbnail",
+      "note": "n_images=0. Not Google. Rights unclear; maintainer must check licence before use.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1125,
+      "name": "Green Dragonfly Meijixiong (Tiantongyuan Guotai)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1565",
+      "evidence_quote": "美吉熊绿蜻蜓昌平天通苑店 status=1; maimai DX quantity=2 version=CN1.55 coin=4; WACCA quantity=2 version=Ver3.50 coin=4; updated_at=2026-07-10T16:23:13.000000Z",
+      "note": "ZIv id 11299 has empty machines[] but BEMANICN ID 1565 is cited in app info and has current inventory.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1125,
+      "name": "Green Dragonfly Meijixiong (Tiantongyuan Guotai)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1565",
+      "evidence_quote": "maimai DX quantity=2; WACCA quantity=2; updated 2026-07-10",
+      "note": "",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1125,
+      "name": "Green Dragonfly Meijixiong (Tiantongyuan Guotai)",
+      "field": "hours",
+      "current": "info_text Hours: 10:00 - 22:00 (hours_text null)",
+      "proposed": "Mon-Sun 09:00-21:00 (forced power-off ~20:50)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1565",
+      "evidence_quote": "start_time=9 end_time=21; comment: 营业时间9点～21点，机厅在20：50断电且强制闭店",
+      "note": "App info_text still says 10:00-22:00 which is stale vs BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1369,
+      "name": "X3-Play 炫次方 (万丰海岸城)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9683",
+      "evidence_quote": "lastUpdateTime=2026-07-31 01:12:27 (18 hrs ago); machines include CHUNITHM VERSE x2, maimai DX PRiSM PLUS x1, no WACCA/华卡 entries",
+      "note": "App game_counts still has wacca:2. Fresh ZIv pull has zero WACCA cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1369,
+      "name": "X3-Play 炫次方 (万丰海岸城)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9683",
+      "evidence_quote": "CHUNITHM VERSE x2; 舞萌DX 2026 (maimai DX PRiSM PLUS) x1; no WACCA rows; lastUpdate 2026-07-31",
+      "note": "Drop wacca count entirely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1164,
+      "name": "JIRUI 吉睿潮玩（海淀学清路店）",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4325",
+      "evidence_quote": "吉睿潮玩（海淀学清路店） maimai DX quantity=1 version=Ver.CN1.53-N coin=4; CHUNITHM quantity=4; 太鼓之达人 quantity=1; updated_at=2026-05-30T12:51:16.000000Z",
+      "note": "ZIv 11374 (2026-07-02) lists CHUNITHM x4 + taiko but omits maimai. BemaniCN lists 1 maimai. Prefer adding maimai as likely present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1164,
+      "name": "JIRUI 吉睿潮玩（海淀学清路店）",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 4,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4325",
+      "evidence_quote": "maimai DX quantity=1; CHUNITHM quantity=4; 太鼓之达人 quantity=1",
+      "note": "CHUNITHM and taiko counts already match ZIv+BEM.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 927,
+      "name": "51区超级乐园 AREA-51 SUPER PARK (梅江环宇城店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7233",
+      "evidence_quote": "51区超级乐园梅江环宇城店 updated_at=2026-07-27T05:06:06.000000Z; maimai DX x2; CHUNITHM x2; 太鼓之达人 x1 coin=10",
+      "note": "ZIv 11624 (2026-07-24) lists only chuni x2 + maimai x2 (no taiko). BemaniCN update 3 days later adds taiko x1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 927,
+      "name": "51区超级乐园 AREA-51 SUPER PARK (梅江环宇城店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7233",
+      "evidence_quote": "太鼓之达人 quantity=1 version=国服 coin=10; maimai DX quantity=2; CHUNITHM quantity=2",
+      "note": "",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1222,
+      "name": "PKBoys 潮玩嘉年华",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 4,
+        "maimai_dx": 4,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "jubeat": 4,
+        "maimai_dx": 3,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6394",
+      "evidence_quote": "PKBoy潮玩嘉年华北京湾里奥莱店 updated_at=2026-07-21T09:08:48.000000Z; maimai DX quantity=3 version=国行2025; CHUNITHM quantity=2; 太鼓之达人 quantity=2",
+      "note": "ZIv 11403 (2026-07-06) still lists 4 maimai + 4 jubeat. Newer BemaniCN (2026-07-21) says maimai x3 and omits jubeat rows. Kept jubeat=4 from ZIv; reduced maimai to 3 per newer BEM.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1230,
+      "name": "PLAYCE插电师 (王府井银泰店)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": "Lightning Model (beatmania IIDX 32 Pinky Crush)",
+        "sdvx": "Valkyrie model (SOUND VOLTEX EXCEED GEAR)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11260",
+      "evidence_quote": "machines: beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL) x2; SOUND VOLTEX EXCEED GEAR (Valkyrie model) x2; lastUpdateTime=2026-07-08 14:23:47",
+      "note": "App games/counts already match ZIv. BemaniCN shop 4940 is locked=1 and only lists maimai/chuni/taiko (incomplete for Konami cabs). Prefer ZIv for IIDX/SDVX model tags.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1230,
+      "name": "PLAYCE插电师 (王府井银泰店)",
+      "field": "images",
+      "current": 0,
+      "proposed": "BemaniCN thumb oss.bemanicn.com/arcademap/img/5Dum2lhSS6p0WXBd7Exy5UpDZs3Qo4ox7HBm6Agl.jpg (licence unverified)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4940",
+      "evidence_quote": "image_thumb filename 5Dum2lhSS6p0WXBd7Exy5UpDZs3Qo4ox7HBm6Agl.jpg on oss.bemanicn.com",
+      "note": "n_images=0. Licence not confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1196,
+      "name": "Love the game together 爱玩荟电玩家庭娱乐中心（北苑店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Store posted 09:30-24:30; most rhythm cabs stop ~21:30",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4476",
+      "evidence_quote": "店家公示的营业时间：9:30-24:30，但音游机等大部分机台会在21:30关闭; updated_at=2026-05-30",
+      "note": "Critical for night visits. App hours_text is null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1112,
+      "name": "Game Zone Arcade Club 盖姆龙电玩俱乐部（新辰里）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE (private/offline chicken-disc style; not DX network)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11346",
+      "evidence_quote": "maimai FiNALE | cond=3 | comment=Chicken disc（鸡盘）, not networked, no stool. Last update Aug 2024. Bad feel...; lastUpdateTime=2026-07-01 17:31:28",
+      "note": "App games are only other+taiko (no maimai_dx). Correct: do NOT add maimai_dx. BemaniCN 2922 lists title maimai (not maimai DX) quantity=1 version=Finale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1112,
+      "name": "Game Zone Arcade Club 盖姆龙电玩俱乐部（新辰里）",
+      "field": "other",
+      "current": "taiko listed without generation",
+      "proposed": "taiko is 太鼓の達人12 亞洲版 (legacy Asia), not Nijiiro",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11346",
+      "evidence_quote": "太鼓の達人12 亞洲版 | cond=2 | comment=1. Screen is very dark, drum surface not responsive...; BemaniCN title 太鼓达人(旧代) version=12亚",
+      "note": "Generation matters for players.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1375,
+      "name": "YiXiQingShan Experience Store (一袭青衫-二次元体验中心)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE x2 (ticketed unlimited play venue, not DX network)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9771",
+      "evidence_quote": "machines: maimai FiNALE x2; information: CNY 98.00 per ticket, Unlimited play from 11am to 8pm; lastUpdateTime=2025-02-27 19:51:36",
+      "note": "App games only [other]. Do not tag as maimai_dx. Last ZIv update ~1 year ago; existence/open status not reconfirmed since 2025-02.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1375,
+      "name": "YiXiQingShan Experience Store (一袭青衫-二次元体验中心)",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-20:00 (ticket unlimited play window)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9771",
+      "evidence_quote": "CNY 98.00 per ticket, Unlimited play from 11am to 8pm; openingTimes all days 11:00-20:00",
+      "note": "Based on ZIv 2025-02 data; not reconfirmed in 2026.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 914,
+      "name": "51区动漫游戏主题乐园",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "mix of 舞萌DX (WeChat login) + maimai FiNALE (fan server) + offline 舞萌 with black spots"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4727",
+      "evidence_quote": "maimai FiNALE comment=Update by Fan Server; 舞萌 (maimai) cond=2 comment=Black spots under the screen. Offline; 舞萌DX comment=Login only possible via WeChat; lastUpdateTime=2024-08-08 17:52:40 (1 year ago)",
+      "note": "App correctly has maimai_dx from 舞萌DX row. Stale ZIv (1 year). Presence today unverified; do not invent newer counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1204,
+      "name": "Mass Cinema/Happy Place",
+      "field": "status",
+      "current": "listed open with games=[other]",
+      "proposed": "existence and open status unverified; ZIv last update 2011-02-14 with empty machines",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1615",
+      "evidence_quote": "lastUpdateTime=2011-02-14 15:51:59 (15 years ago); machines=[]; openingTimes all 00:00-00:00",
+      "note": "No newer confirmation found in this pass. Strong candidate for delist if maintainers cannot reconfirm. Address: North Sichuan Road (Qiujiang Road) 1552-1F, Hongkou, Shanghai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1131,
+      "name": "Happy Hero 欢乐英雄",
+      "field": "status",
+      "current": "listed open with gitadora/jubeat/pump_it_up/other",
+      "proposed": "existence and open status unverified; ZIv last update 2019-04-17 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4877",
+      "evidence_quote": "lastUpdateTime=2019-04-17 13:13:34 (7 years ago); Opened April, 2019; machines include DrumManiaV7, GuitarFreaksV7, jubeat clan, Pump It Up PRO 2, Pump It Up XX",
+      "note": "Zhanjiang, Guangdong. No BemaniCN ID in app. Game list and open status may be a decade stale. Could not reconfirm 2026 status.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1031,
+      "name": "DORAPLANET: Main Battlefield (哆啦星球主战场·四海唐人街)",
+      "field": "status",
+      "current": "listed with games=[other]",
+      "proposed": "machines empty on ZIv; last update 2025-03-15; rhythm inventory and current open status unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9835",
+      "evidence_quote": "lastUpdateTime=2025-03-15 19:07:48; machines=[]; information empty; openingTimes all 00:00-00:00",
+      "note": "Related to DORAPLANET chain; Xiaozhai closed and Rose ONE under renovation. This Chinatown branch may still exist as non-rhythm / unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1243,
+      "name": "Quart World 夸特游艺（北苑店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11333",
+      "evidence_quote": "lastUpdateTime=2026-06-30 16:57:33; machines: 舞萌DX 2026 (maimai DX PRiSM PLUS) x1; BemaniCN 2768 also maimai DX quantity=1",
+      "note": "App has maimai_dx in games but no game_counts. Both ZIv and BemaniCN agree on 1 cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 964,
+      "name": "AIKBAGO 北京朝阳微博IN",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Weekdays 10:00-21:00; weekends/holidays 10:00-22:00 (BemaniCN free text). Shop fields start=10 end=21.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6832",
+      "evidence_quote": "工作日营业至晚9点，周末及节假日营业至晚10点; start_time=10 end_time=21; updated_at=2026-05-31T06:57:18.000000Z",
+      "note": "App flat 10-22 overstates weekday hours. Inside Chaoyang Park; extreme weather park closures also close the mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1241,
+      "name": "Quart Gaming 夸特游艺（望京店）",
+      "field": "other",
+      "current": "info_text BEMANICN ID: 2872",
+      "proposed": "BEMANICN ID 2872 is 夸特世界（亦庄龙湖天街店）, NOT the Wangjing shop; do not merge inventories",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2872",
+      "evidence_quote": "name=夸特世界（亦庄龙湖天街店） address=兴海路1号院1号楼龙湖亦庄天街三层3F-25、3F-26; maimai DX x1 only",
+      "note": "App venue ZIv 11352 (2026-07-17) for Wangjing lists chuni x2, maimai x2, taiko x1 matching app games. BEM 2872 is a different Quart location in Yizhuang. Cross-link in info_text is wrong.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "BitCity (Shenzhen HUA / 大中华国际交易广场 B1)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "B1 Floor, HUA (大中华国际交易广场) No. 1 Fuhua 1st Road, Futian, Shenzhen, Guangdong",
+        "lat": 22.538601269681,
+        "lng": 114.05696332455,
+        "games": [
+          "chunithm",
+          "groove_coaster",
+          "jubeat",
+          "maimai_dx",
+          "other",
+          "taiko"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "groove_coaster": 2,
+          "jubeat": 2,
+          "maimai_dx": 3,
+          "taiko": 4
+        },
+        "ziv_id": 9990
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9990",
+      "evidence_quote": "BitCity lastUpdateTime=2026-07-21 23:43:59; jubeat x2, CHUNITHM VERSE x2, Taiko Nijiiro x4, maimai DX PRiSM PLUS x3, Groove Coaster 4EX x2",
+      "note": "NOT in shard_029. May already exist in another shard; if absent from full map, high-value Shenzhen downtown venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "AKIBAGO（上海杨浦百联ZX造趣场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "2F, Bailian ZX Zaoqu Chang, No.2500 Siping Road, Yangpu District, Shanghai",
+        "lat": 31.300361302906882,
+        "lng": 121.51151328348887,
+        "games": [
+          "chunithm",
+          "jubeat",
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "jubeat": 2,
+          "maimai_dx": 7
+        },
+        "ziv_id": 11511,
+        "bemanicn_id": 4720
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11511",
+      "evidence_quote": "AKIBAGO（上海杨浦百联ZX造趣场店） lastUpdateTime=2026-07-17 16:16:37; jubeat x2, CHUNITHM VERSE x2, maimai DX PRiSM PLUS x7; BEMANICN ID 4720; hours 10:00-21:50",
+      "note": "Not in shard_029. Major Shanghai maimai venue near Fudan/Wujiaochang. Check other shards before adding duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "1-7play 一起玩家庭娱乐中心（天津东丽万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "3F, Dongli Wanda Plaza, Gate 1, Tianjin",
+        "lat": 39.079373,
+        "lng": 117.321877,
+        "games": [
+          "maimai_dx",
+          "other",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "ziv_id": 11603
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11603",
+      "evidence_quote": "1-7play 一起玩家庭娱乐中心（天津东丽万达店） lastUpdateTime=2026-07-23 13:01:53; 太鼓の達人12 亞洲版; maimai DX PRiSM PLUS; plus Initial D / Asphalt 9",
+      "note": "Not in shard_029. Taiko comment on ZIv notes possible cab death as of 2026.5 update - recheck before publishing taiko.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "11LAB超乐场 (天津 SM City Binhai)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "1F, Shop D1052, SM City Binhai, No.168 Huanhe North Road, Dongli District, Tianjin",
+        "lat": 39.156623,
+        "lng": 117.412447,
+        "games": [
+          "maimai_dx",
+          "other",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "ziv_id": 11585,
+        "bemanicn_id": 2906
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11585",
+      "evidence_quote": "11LAB超乐场 lastUpdateTime=2026-07-22 20:58:54; BEMANICN ID 2906; 太鼓の達人12 亞洲版; maimai DX PRiSM PLUS; Asphalt 9 x4",
+      "note": "Not in shard_029. Check other shards for duplicate.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

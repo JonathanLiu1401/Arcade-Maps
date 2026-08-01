@@ -1,0 +1,985 @@
+{
+  "shard": 44,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Philippines",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1010",
+    "https://www.timezonegames.com/en-ph/locations/",
+    "https://www.timezonegames.com/en-ph",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2978",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10730",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4113",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3715",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3732",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1581",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=410",
+    "http://quantumamusement.com.ph"
+  ],
+  "corrections": [
+    {
+      "id": 10266,
+      "name": "QUANTUM SM GENERAL SANTOS",
+      "field": "status",
+      "current": "shown as open with games maimai_dx,other; linked to ZIv 10730 Token Fun Station",
+      "proposed": "closed_or_under_repair (use ZIv 2978 Quantum SM City General Santos, not 10730)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2978",
+      "evidence_quote": "Quantum SM City General Santos marked CLOSED; information section states THIS ARCADE IS GETTING REPAIRED; last update 2026-07-30. Neighbor Token Fun Station (id=10730) text: located between Ace Hardware Store and Quantum (CLOSED).",
+      "note": "Shard incorrectly links to ZIv 10730 (Token Fun Station), a different arcade next door. Real Quantum entry is ZIv 2978. ALL.Net maimai PH list (47 locations) does not include General Santos.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10266,
+      "name": "QUANTUM SM GENERAL SANTOS",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "Philippines maimai DX International Version: 47 locations. No QUANTUM SM GENERAL SANTOS / GenSan entry among store_name list.",
+      "note": "Official ALL.Net omits GenSan. ZIv 2978 still lists maimai DX CiRCLE but venue is CLOSED/under repair and history notes possible cab relocation. Remove maimai_dx until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10266,
+      "name": "QUANTUM SM GENERAL SANTOS",
+      "field": "other",
+      "current": {
+        "links.ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10730"
+      },
+      "proposed": {
+        "links.ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2978"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10730",
+      "evidence_quote": "Token Fun Station SM City General Santos ... located between Ace Hardware Store and Quantum (CLOSED) [arcade.php?id=2978]. Machines: Overtake - The Elite Challenge; Storm Racer G only.",
+      "note": "Wrong ZIv target: 10730 is Token Fun Station, not Quantum.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10276,
+      "name": "QUANTUM SM SEASIDE CEBU",
+      "field": "other",
+      "current": {
+        "links.ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3715",
+        "name": "QUANTUM SM SEASIDE CEBU",
+        "games": [
+          "gitadora",
+          "maimai_dx",
+          "other",
+          "pump_it_up"
+        ]
+      },
+      "proposed": "Relink/merge with id 10277 Quantum SM Seaside City Cebu (ZIv 3732). Current ZIv 3715 is Bibo SM Seaside City Cebu, a different operator.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3715",
+      "evidence_quote": "Bibo SM Seaside City Cebu - 3rd floor near ice skating wing. Machines include DrumManiaV7, Pump It Up Phoenix, Wangan Midnight Maximum Tune 6RR. No maimai.",
+      "note": "ALL.Net lists QUANTUM SM SEASIDE CEBU for maimai at 10.2816376,123.8815772. Actual Quantum ZIv with maimai DX CiRCLE is 3732 (shard 10277). Bibo is a different arcade in the same mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10276,
+      "name": "QUANTUM SM SEASIDE CEBU",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3732",
+      "evidence_quote": "Quantum SM Seaside City Cebu machines include maimai DX CiRCLE; SOUND VOLTEX (3 units). Bibo (3715) has DrumManiaV7 and Pump It Up Phoenix, not maimai.",
+      "note": "If 10276 is kept as the ALL.Net Quantum row, games should match Quantum (maimai_dx, sdvx, other) not Bibo (gitadora, pump). Prefer merging into 10277. proposed null = do not keep Bibo-derived game set on this Quantum-named row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10286,
+      "name": "QUANTUM(SM STA.MESA)",
+      "field": "other",
+      "current": {
+        "links.ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1581",
+        "games": [
+          "maimai_dx",
+          "other"
+        ]
+      },
+      "proposed": "Duplicate of id 10257 Quantum SM City Sta. Mesa (ZIv 410). Current ZIv 1581 is Tom's World SM City Sta. Mesa (no maimai).",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1581",
+      "evidence_quote": "Tom's World SM City Sta. Mesa - There are currently 3 Tom's World branches in this mall. Machines: Pandora Saga Plus DX; Bigfoot Smash; Overtake; Jurassic Park Arcade; Storm Shot. No maimai.",
+      "note": "ALL.Net QUANTUM(SM STA.MESA) maimai pin 14.6055525,121.0186901 matches Quantum SM City Sta. Mesa (10257 / ZIv 410), reopened 2025-12-16 with maimai DX CiRCLE PLUS, SDVX, taiko. Merge 10286 into 10257.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10263,
+      "name": "QUANTUM SM CLARK",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10235",
+      "proposed": "merge into id 10235 (Quantum SM City Clark); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM CLARK | SM CLARK M.A.ROXAS ST.,MALABANIAS,ANGELES CITY @15.1690253,120.580085; also on CHUNITHM list gm=104",
+      "note": "Same mall/operator as shard id 10235. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10264,
+      "name": "QUANTUM SM DASMARINAS",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10237",
+      "proposed": "merge into id 10237 (Quantum SM City Dasmariñas); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM DASMARINAS | Dasmarinas, 4114 Cavite, Phillipines @14.2990183,120.9589699",
+      "note": "Same mall/operator as shard id 10237. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10265,
+      "name": "QUANTUM SM FAIRVIEW",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10239",
+      "proposed": "merge into id 10239 (Quantum SM City Fairview); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM FAIRVIEW | UGF/GF/FF, ANNEX 2, SM City Fairview (coords 0,0 on ALL.Net)",
+      "note": "Same mall/operator as shard id 10239. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10267,
+      "name": "QUANTUM SM GRAND CENTRAL",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10240",
+      "proposed": "merge into id 10240 (Quantum SM City Grand Central); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM GRAND CENTRAL | 5TH Fl., Sm Grand Central, Rizal Ave., Caloocan City @14.6143876,120.9826056",
+      "note": "Same mall/operator as shard id 10240. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10268,
+      "name": "QUANTUM SM LIPA",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10243",
+      "proposed": "merge into id 10243 (Quantum SM City Lipa); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM LIPA | 2nd FL. SM LIPA,BATANGAS CITY @13.9540966,121.1635398; also CHUNITHM list",
+      "note": "Same mall/operator as shard id 10243. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10270,
+      "name": "QUANTUM SM MANILA",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10244",
+      "proposed": "merge into id 10244 (Quantum SM City Manila); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM MANILA | CORNER ARROCEROS, ERMITA, METROMANILA @14.5910393,120.9818685; also CHUNITHM",
+      "note": "Same mall/operator as shard id 10244. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10271,
+      "name": "QUANTUM SM MARIKINA",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10245",
+      "proposed": "merge into id 10245 (Quantum SM City Marikina); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM MARIKINA | BARANGAY CALUMPANG, BARANGKA, MARIKINA CITY @14.6249216,121.0865346",
+      "note": "Same mall/operator as shard id 10245. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10274,
+      "name": "QUANTUM SM PAMPANGA",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10250",
+      "proposed": "merge into id 10250 (Quantum SM City Pampanga); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM PAMPANGA | 3rd Floor, San Jose, San Fernando (ALL.Net map pin wrongly 37.33874,-121.8852525 California)",
+      "note": "Same mall/operator as shard id 10250. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10275,
+      "name": "QUANTUM SM SAN LAZARO",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10255",
+      "proposed": "merge into id 10255 (Quantum SM City San Lazaro); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM SAN LAZARO | A.H LACSON STREET, SAN LAZARO,METRO MANILA @14.610796,120.9917042; also CHUNITHM",
+      "note": "Same mall/operator as shard id 10255. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10285,
+      "name": "QUANTUM UPTOWN MALL BGC",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10284",
+      "proposed": "merge into id 10284 (Quantum Uptown Mall); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM UPTOWN MALL BGC | Uptown Mall,9th Ave cor36th St,Fort Bonifacio,Taguig @14.5565479,121.054103",
+      "note": "Same mall/operator as shard id 10284. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10338,
+      "name": "TIMEZONE MANILA BAY",
+      "field": "other",
+      "current": "allnet-only (or allnet) row parallel to id 10316",
+      "proposed": "merge into id 10316 (Timezone Ayala Malls Manila Bay); keep ALL.Net as confirming source for maimai_dx (and chunithm where listed)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "TIMEZONE MANILA BAY | 3rd Floor Ayala Malls Manila Bay, Macapagal Blvd., Brgy. Tambo (coords 0,0 on ALL.Net)",
+      "note": "Same mall/operator as shard id 10316. Duplicate pins confuse map users. Prefer the ZIv-enriched record and attach allnet as src.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10267,
+      "name": "QUANTUM SM GRAND CENTRAL",
+      "field": "location",
+      "current": {
+        "lat": 14.6143876,
+        "lng": 120.9826056,
+        "addr": "5TH Fl., Sm Grand Central, Rizal Ave., Caloocan City"
+      },
+      "proposed": {
+        "lat": 14.655288298051,
+        "lng": 120.98485708237,
+        "note": "use ZIv/10240 pin; ALL.Net pin is ~4.5km south near San Lazaro"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6118",
+      "evidence_quote": "Quantum SM City Grand Central address L5, SM Grand Central, Rizal Avenue Ext. cor. Bustamante St. Caloocan; ZIv lat/lng 14.655288298051, 120.98485708237. ALL.Net lists 14.6143876,120.9826056 which is near San Lazaro/Manila not Caloocan Grand Central.",
+      "note": "If 10267 is merged into 10240, apply correct Caloocan coords on the survivor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10274,
+      "name": "QUANTUM SM PAMPANGA",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "notes": "source geocode rejected (outside country); coordinates removed"
+      },
+      "proposed": {
+        "lat": 15.052117916544,
+        "lng": 120.69884777069,
+        "addr": "3F SM CITY Pampanga San Fernando Pampanga"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=364",
+      "evidence_quote": "Quantum SM City Pampanga lat 15.052117916544 lng 120.69884777069; address 3F SM CITY Pampanga San Fernando. ALL.Net had rejected out-of-country geocode (observed raw pin 37.33874,-121.8852525).",
+      "note": "Duplicate of 10250 which already has correct coords. If kept, copy 10250 location.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10265,
+      "name": "QUANTUM SM FAIRVIEW",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": 14.733921741263,
+        "lng": 121.0564501251,
+        "addr": "2F Annex 2, SM City Fairview Quirino Highway, Novaliches Quezon City"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3785",
+      "evidence_quote": "Quantum SM City Fairview coordinates 14.733921741263, 121.0564501251 (ZIv id 3785 / shard 10239).",
+      "note": "ALL.Net Fairview entry has 0,0 coords. Duplicate of 10239.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10338,
+      "name": "TIMEZONE MANILA BAY",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": 14.523196849076,
+        "lng": 120.98943736987,
+        "addr": "Level 3, Ayala Malls Manila Bay Diosdado Macapagal Blvd., Aseana City Paranaque"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4961",
+      "evidence_quote": "Timezone Ayala Malls Manila Bay lat 14.523196849076 lng 120.98943736987. Official Timezone site lists Ayala Malls Manila Bay 3rd Floor.",
+      "note": "Duplicate of 10316. ALL.Net coords were 0,0.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10262,
+      "name": "Quantum SM City Valenzuela",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "other",
+        "sdvx"
+      ],
+      "proposed": "add offline maimai FiNALE (not maimai_dx networked). Notes already list maimai FiNALE but games[] omits it.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4113",
+      "evidence_quote": "maimai FiNALE (Asia) listed; comment: Machine from SM North EDSA (Previously from SM Marilao); condition Bad; price PHP 20.00. Updated 2026-07-17. NOT listed as maimai DX. ALL.Net maimai PH list does not include Valenzuela.",
+      "note": "Cabinet is offline FiNALE, not networked maimai DX. If schema only has maimai_dx, omit or add with cab_models finale_offline so the app does not imply ALL.Net DX service.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10262,
+      "name": "Quantum SM City Valenzuela",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE offline (not DX/networked)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4113",
+      "evidence_quote": "game name maimai FiNALE; sensors faulty; P2 B2 broken; dim display.",
+      "note": "Do not label as maimai DX CiRCLE/PLUS.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10290,
+      "name": "Quantum, Starmall San Jose del Monte",
+      "field": "status",
+      "current": "shown open; games other; hours Mon-Sun 10:00-21:00",
+      "proposed": "relocated/closed at this address (unverified if successor exists)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3878",
+      "evidence_quote": "information: STORE RELOCATED. lastUpdateTime 2016-09-05 13:27:28 (about 9-10 years ago). Machines are vintage (Tekken 5, Initial D 3, etc.).",
+      "note": "ZIv explicitly says STORE RELOCATED and has not been updated since 2016. High risk of a dead pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10287,
+      "name": "Quantum, Metro Gaisano Colon",
+      "field": "status",
+      "current": "shown open with popn",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3742",
+      "evidence_quote": "lastUpdateTime 2016-07-23 02:47:40; machines include pop'n music 18 and other cab lists from that era. No updates in ~10 years.",
+      "note": "Cannot confirm the arcade still exists or still has pop'n. Community data is a decade stale. proposed null: do not assert open; consider hiding or flagging stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10304,
+      "name": "Timezone (LGF) faiview terraces",
+      "field": "status",
+      "current": "shown open with gitadora (GuitarFreaksV3/DrumManiaV3)",
+      "proposed": "remove or mark closed/stale; official Timezone Fairview Terraces listing is 2nd floor only",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Fairview Terraces listed as 2nd floor, Fairview Terraces Mall (Metro Manila). No LGF Fairview Terraces branch on the official locations index. ZIv id 3146 lastUpdateTime 2015-12-06 11:37:27 with GuitarFreaksV3/DrumManiaV3 only.",
+      "note": "Separate LGF ZIv entry is 10 years stale. Main Fairview Terraces Timezone is id 10325 and is on the official site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10304,
+      "name": "Timezone (LGF) faiview terraces",
+      "field": "games",
+      "current": [
+        "gitadora"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3146",
+      "evidence_quote": "machines: DrumManiaV3; GuitarFreaksV3. lastUpdate 2015-12-06.",
+      "note": "V3 GF/DM from 2015 is not trustworthy evidence of current gitadora. Prefer removing gitadora claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10324,
+      "name": "Timezone Eastwood CityWalk",
+      "field": "status",
+      "current": "shown open on map",
+      "proposed": "unverified / possibly closed or rebranded; not on official Timezone PH locations list as of fetch",
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Metro Manila official list includes 35 venues (SM Southmall, Manila Bay, Trinoma, Fairview Terraces, Magnolia, Festival, Robinsons Manila, Greenbelt 3/5, Glorietta 2/4, Feliz, Market Market, Megamall, MOA, Alabang Town Center, Aura, Galleria, Gateway, Circuit, Greenhills, The 30th, Riverbanks, Cloverleaf, Vista Mall Taguig, Vertis North, SM North EDSA, Gateway 2, The Block, Venice Grand Canal, UP Town Center, Lucky Chinatown, Arca South). Eastwood CityWalk is not among them.",
+      "note": "Official site claims 100+ PH venues; absence from the published index is weak negative evidence (index may be incomplete). confidence unverified. Worth maintainer check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10341,
+      "name": "Timezone One Ayala",
+      "field": "status",
+      "current": "shown open on map",
+      "proposed": "unverified / possibly closed or rebranded; not on official Timezone PH locations list as of fetch",
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "One Ayala is not present on the official Timezone Philippines locations index (Metro Manila 35 venues + other regions).",
+      "note": "Official site claims 100+ PH venues; absence from the published index is weak negative evidence (index may be incomplete). confidence unverified. Worth maintainer check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10336,
+      "name": "Timezone Island Central Mactan",
+      "field": "status",
+      "current": "shown open on map",
+      "proposed": "unverified / possibly closed or rebranded; not on official Timezone PH locations list as of fetch",
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Visayas official list: Shangrila Cebu, Ayala Center Cebu Cinema, Ayala Center Cebu, Central Bloc, Capitol Central, Nustar, Festive Walk. Island Central Mactan not listed.",
+      "note": "Official site claims 100+ PH venues; absence from the published index is weak negative evidence (index may be incomplete). confidence unverified. Worth maintainer check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10340,
+      "name": "Timezone Olivarez Plaza Mall",
+      "field": "status",
+      "current": "shown open on map",
+      "proposed": "unverified / possibly closed or rebranded; not on official Timezone PH locations list as of fetch",
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Olivarez Plaza / Los Banos not present on official Timezone PH locations index (South Luzon list has Serin, Robinsons General Trias, Robinsons Lipa, Solenad 3, Legazpi, Vermosa).",
+      "note": "Official site claims 100+ PH venues; absence from the published index is weak negative evidence (index may be incomplete). confidence unverified. Worth maintainer check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10317,
+      "name": "Timezone Ayala Malls Marikina",
+      "field": "status",
+      "current": "shown open on map",
+      "proposed": "unverified / possibly closed or rebranded; not on official Timezone PH locations list as of fetch",
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Ayala Malls Marikina not present on official Timezone PH Metro Manila locations list.",
+      "note": "Official site claims 100+ PH venues; absence from the published index is weak negative evidence (index may be incomplete). confidence unverified. Worth maintainer check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station Power Plant Mall (Rockwell)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station Power Plant Mall (Rockwell)",
+        "addr": "AMAPOLA STREET, POBLACION, MAKATI CITY",
+        "lat": 14.5631709,
+        "lng": 121.0406843,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "Q POWER STATION ROCKWELL | AMAPOLA STREET, POBLACION, MAKATI CITY @14.5631709,121.0406843; ZIv id 189 with CHUNITHM X-VERSE-X (2 cabs), maimai DX CiRCLE (2 cabs), SDVX",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum SM City Calamba",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum SM City Calamba",
+        "addr": "NATIONAL HIGHWAY BRGY.REAL.CALAMBA CITY",
+        "lat": 14.2204469,
+        "lng": 121.1393586,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "gitadora"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM CALAMBA on maimai and CHUNITHM PH lists @14.2204469,121.1393586; ZIv id 1796 lists maimai DX CiRCLE PLUS 2 cabs, CHUNITHM X-VERSE-X, GITADORA GALAXY WAVE DrumMania, SDVX EXCEED GEAR",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum SM City Bacoor",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum SM City Bacoor",
+        "addr": "LGF SM BACOOR, CORNER AGUINALDO& TIRONA HWAY, BACOOR CAVITE",
+        "lat": 14.4448137,
+        "lng": 120.9517372,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "sdvx",
+          "gitadora"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM BACOOR on maimai PH list @14.4448137,120.9517372; ZIv id 202 lists maimai DX CiRCLE 2 cabs, SDVX, GF/DM V8",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station Shangri-La Plaza",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station Shangri-La Plaza",
+        "addr": "EASTWING EDSA CORNER SHAW BOULEVARD, MANDALUYONG CITY",
+        "lat": 14.5812818,
+        "lng": 121.0538687,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "gitadora"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1010",
+      "evidence_quote": "Q POWER STATION SHANGRILA on maimai and CHUNITHM lists; ZIv id 3693 updated 2026-07-23 with CHUNITHM, GITADORA GALAXY WAVE, maimai DX CiRCLE PLUS, SDVX EXCEED GEAR",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station SM Mall of Asia",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station SM Mall of Asia",
+        "addr": "3/F North Wing Expansion Area, SM Mall of Asia,OceanDrive,PASAY",
+        "lat": 14.5349838,
+        "lng": 120.9826825,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "gitadora"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "Q POWER STATION MALL OF ASIA on maimai+chunithm lists @14.5349838,120.9826825; ZIv 3985: CHUNITHM, GITADORA GALAXY WAVE, maimai DX CiRCLE PLUS 2 cabs, SDVX",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station The Podium",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station The Podium",
+        "addr": "4TH FL.,THE PODIUM MALL,18ADB AVE.CORJULIA VARGAS, MANDALUYONG",
+        "lat": 14.585312,
+        "lng": 121.0592867,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "Q-POWER STATION PODIUM on maimai+chunithm; ZIv 4699: CHUNITHM 2 cabs, maimai DX CiRCLE PLUS 2 cabs, SDVX",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum SM City Baguio",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum SM City Baguio",
+        "addr": "3/F SM BAGUIO, LUNETA HILL SESSION ROAD, BAGUIO CITY",
+        "lat": 16.4088814,
+        "lng": 120.5991997,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx",
+          "gitadora",
+          "pump_it_up"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM BAGUIO on maimai+chunithm @16.4088814,120.5991997; ZIv 365: CHUNITHM 2 cabs, GITADORA GALAXY WAVE, maimai DX CiRCLE 3 cabs, Pump It Up PHOENIX 2, SDVX EXCEED GEAR",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum SM City Bataan",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum SM City Bataan",
+        "addr": "2nd Level, Sm City Bataan, Balanga, Bataan",
+        "lat": 14.6824965,
+        "lng": 120.5381408,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM BATAAN on maimai list @14.6824965,120.5381408; ZIv 8737 maimai DX CiRCLE online",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum SM City BF Paranaque",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum SM City BF Paranaque",
+        "addr": "2nd Floor, SM BF, Dr Arcadio Santos Ave, Paranaque, 1700 PH",
+        "lat": 14.4576524,
+        "lng": 121.0332604,
+        "country": "Philippines",
+        "games": [
+          "chunithm"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM CITY BF PARANAQUE on CHUNITHM PH list (16 locations) @14.4576524,121.0332604",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station Park Triangle Mall BGC",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station Park Triangle Mall BGC",
+        "addr": "4F Park Triangle Mall, Fort Bonifacio Global City, Taguig, 1634",
+        "lat": null,
+        "lng": null,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "sdvx"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3015",
+      "evidence_quote": "Opened June 20, 2026. CHUNITHM X-VERSE-X; maimai DX CiRCLE PLUS; SOUND VOLTEX EXCEED GEAR. On ALL.Net maimai+chunithm lists (coords 0,0 on ALL.Net).",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone TriNoma",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone TriNoma",
+        "addr": "4/F TriNoma, EDSA, Quezon City",
+        "lat": 14.6533554,
+        "lng": 121.0333699,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "TIMEZONE TRINOMA MALL on maimai list; official Timezone site newest venues includes Trinoma; ZIv 411 maimai DX CiRCLE PLUS 2 cabs, Pump It Up Phoenix",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone SM Megamall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone SM Megamall",
+        "addr": "L Ground Fl Bldg B Megamall Edsa J Vargas Wack Wack Greenhills",
+        "lat": 14.5922687,
+        "lng": 121.0535762,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "pump_it_up"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "TIMEZONE SM MEGAMALL on maimai list @14.5922687,121.0535762; ZIv 3702 maimai DX CiRCLE, Pump It Up Phoenix",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone UP Town Center",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone UP Town Center",
+        "addr": "2F UP Town Center Phase 2 Katipunan Ave. U.P. Campus, Diliman",
+        "lat": 14.6507347,
+        "lng": 121.0746778,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "TIMEZONE UP TOWN CENTER on maimai list @14.6507347,121.0746778; official Timezone newest venues includes U.P. Town Center",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Timezone SM Mall of Asia",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone SM Mall of Asia",
+        "addr": "3rd Level SM Mall of Asia Bldg., J.W Diokno Blvd., Barangay 76",
+        "lat": null,
+        "lng": null,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "TIMEZONE SM MALL OF ASIA on maimai PH list (coords 0,0). Official Timezone site lists SM Mall of Asia Level 3 South Main Mall and SM Mall of Asia 2 North Entertainment Mall.",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station SM J Mall Cebu",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station SM J Mall Cebu",
+        "addr": "165 A.S. Fortuna St, Mandaue City",
+        "lat": 10.335407,
+        "lng": 123.9336908,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "Q POWER STATION SM JMALL CEBU on maimai list @10.335407,123.9336908; ZIv 3580 maimai DX CiRCLE 2 machines",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum Greenhills",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum Greenhills",
+        "addr": "L547 & L549 5F Greenhills Shopping Center, San Juan City,1502",
+        "lat": null,
+        "lng": null,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM GREENHILLS on maimai+chunithm lists (coords 0,0). Distinct from TIMEZONE GREENHILLS MALL which is already in shard as 10334.",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Quantum SM Bacolod EXP",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Quantum SM Bacolod EXP",
+        "addr": "SM BACOLOD EXP, SM CITY BACOLOD, RECLAMATION AREA, BACOLOD CITY",
+        "lat": 10.6707928,
+        "lng": 122.9426587,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "QUANTUM SM BACOLOD EXP on maimai+chunithm PH lists @10.6707928,122.9426587",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Q Power Station Santolan Town Plaza",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Q Power Station Santolan Town Plaza",
+        "addr": "3RD FL., SANTOLAN TOWN PLAZA MALL, LITTLE BAGUIO, SAN JUAN CITY",
+        "lat": 14.6041985,
+        "lng": 121.0339139,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "Q POWER STATION SANTOLAN on maimai PH list @14.6041985,121.0339139",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Club Synergy SM Megamall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Club Synergy SM Megamall",
+        "addr": "LGF SM MEGAMALL, JULIA VARGAS COR EDSA, MANDALUYONG CITY",
+        "lat": 14.5851052,
+        "lng": 121.0569621,
+        "country": "Philippines",
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "CLUB SYNERGY SM MEGAMALL on maimai PH list @14.5851052,121.0569621",
+      "note": "Present on official ALL.Net international locator and/or recently updated ZIv, but not under this name in shard 44. May exist in another PH shard; if not on the map at all, add. Coordinates null means ALL.Net had 0,0 - use ZIv/geocode before importing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10235,
+      "name": "Quantum SM City Clark",
+      "field": "website",
+      "current": "http://quantumamusement.com.ph",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "http://quantumamusement.com.ph",
+      "evidence_quote": "HTTP fetch redirects to http://ww1.quantumamusement.com.ph/ (domain-parking style host), not a working Quantum store site.",
+      "note": "Same dead URL is stored on many Quantum rows (10237,10250,10277,10284,10287,10290, etc.). Prefer Facebook QuantumAmusementCorporation or remove website field.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10244,
+      "name": "Quantum SM City Manila",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "gitadora": 2,
+        "groove_coaster": 1,
+        "maimai_dx": 2,
+        "sdvx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=117",
+      "evidence_quote": "maimai DX CiRCLE PLUS comment: 2025/10: 2 cabs, fully operational. Updated 2026-07-23.",
+      "note": "Only proposing maimai_dx count from explicit ZIv comment. Other titles lack reliable numeric comments in the snapshot. Merge with existing game_counts if any.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10272,
+      "name": "QUANTUM SM NORTH EDSA",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=88",
+      "evidence_quote": "maimai DX CiRCLE PLUS: 2025/11: 2 cabs; CHUNITHM X-VERSE-X: 2025/04: 1 cab. Updated 2026-07-23.",
+      "note": "Set real counts from ZIv comments.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10278,
+      "name": "QUANTUM SM SOUTHMALL",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "gitadora": 1,
+        "maimai_dx": 2,
+        "sdvx": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "gitadora": 1,
+        "maimai_dx": 2,
+        "sdvx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3955",
+      "evidence_quote": "maimai DX CiRCLE: 2 cabinets (Other cab transferred from Greenhills branch); CHUNITHM X-VERSE-X: 2024/06: Bottom left corner of the screen has cosmetic damage (1 cab implied).",
+      "note": "",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10255,
+      "name": "Quantum SM City San Lazaro",
+      "field": "other",
+      "current": "info may mention STORE RELOCATED from older note",
+      "proposed": "still operating at SM City San Lazaro per ZIv 2026-07-23 and ALL.Net maimai+chunithm listings",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=66",
+      "evidence_quote": "lastUpdateTime 2026-07-23 19:11:21; machines CHUNITHM X-VERSE-X, DDR WORLD, maimai DX CiRCLE PLUS; information still contains historical STORE RELOCATED line from 2018 token change era.",
+      "note": "Do not treat STORE RELOCATED as current closure; venue is live. Historical note only.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

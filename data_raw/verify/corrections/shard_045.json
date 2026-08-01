@@ -1,0 +1,598 @@
+{
+  "shard": 45,
+  "checked": 40,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Philippines",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1010",
+    "https://www.timezonegames.com/en-ph/locations/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-gateway-2/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-trinoma/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-north-edsa/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-megamall/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-mall-of-asia/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-mall-of-asia-2/",
+    "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-up-town-center-2/",
+    "https://www.wonderpark.ph/",
+    "https://maps.app.goo.gl/fHam24Sic5qyQ4Et7"
+  ],
+  "corrections": [
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "other",
+      "current": "name: TIMEZONE TIMEZONE GATEWAY",
+      "proposed": "Timezone Gateway 2",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-gateway-2/",
+      "evidence_quote": "Arcade at Cubao, Quezon City: Timezone Gateway 2; Address: Level 3, New Gateway Mall 2, Araneta Center, Cubao, Quezon City",
+      "note": "ALL.Net still prints the doubled name TIMEZONE TIMEZONE GATEWAY. Official Timezone site and ZIv both use Timezone Gateway 2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "L3 GatewayMall 2 General Araneta Av, Araneta City, Brgy. Socorro"
+      },
+      "proposed": {
+        "lat": 14.6200192,
+        "lng": 121.0530499,
+        "addr": "Level 3, New Gateway Mall 2, Araneta Center, Cubao, Quezon City"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.google.com/maps/place/Timezone+Gateway+2/@14.6200244,121.050475,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b72c5438b381:0x2ba97ea69712c2e1!8m2!3d14.6200192!4d121.0530499",
+      "evidence_quote": "Timezone Gateway 2 @ 14.6200192,121.0530499 (resolved from official maps link maps.app.goo.gl/fHam24Sic5qyQ4Et7 on timezonegames.com venue page). ZIv id 8509 also has 14.619580334176,121.05335223377.",
+      "note": "Shard currently has null coordinates and a name-only Google Maps search link. Prefer Google Maps pin (official page link) or ZIv coords; they agree within ~50 m.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "hours",
+      "current": null,
+      "proposed": "Sun-Thu 10:00-21:00; Fri-Sat 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-gateway-2/",
+      "evidence_quote": "Sunday-Thursday: 10:00 AM - 09:00 PM; Friday-Saturday: 10:00 AM - 10:00 PM",
+      "note": "Official Timezone venue page. Matches ZIv openingTimes for id 8509 (Mon-Thu/Sun 10-21, Fri-Sat 10-22).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-gateway-2/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-gateway-2/",
+      "evidence_quote": "Timezone venue detail page for Gateway 2 under /en-ph/locations/metro-manila/",
+      "note": "Also listed on the official PH locations directory as Gateway 2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "pump_it_up"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "ALL.Net maimai DX International Philippines (47 locations) includes TIMEZONE TIMEZONE GATEWAY. ZIv arcade id 8509 (Timezone Gateway 2, lastUpdate 2026-07-12) lists machines: maimai DX CiRCLE (ONLINE; Not updated yet.) and Pump It Up Phoenix (2024).",
+      "note": "maimai confirmed by official ALL.Net. pump_it_up from ZIv community listing updated 2026-07-12; not verified on a brand official PIU locator. Also wire links.ziv to https://zenius-i-vanisher.com/v5.2/arcade.php?id=8509 (currently null).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "PHP 60 = 1 credit; Normal 1P=3 songs / 2P=4 songs; Course 4 songs",
+        "pump_it_up": "PHP 38 NORMAL / PHP 76 PREMIUM"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8509",
+      "evidence_quote": "maimai DX CiRCLE displayPrice: PHP 60 = 1 Credit [NORMAL MODE] 1 Credit / 1 Player = 3 songs; Pump It Up Phoenix (2024) displayPrice: PHP 38.00 / NORMAL, PHP 76.00 / PREMIUM",
+      "note": "Community ZIv pricing only. No official per-credit price published on the Timezone venue page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10358,
+      "name": "TIMEZONE TIMEZONE GATEWAY",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8509",
+      "evidence_quote": "One maimai DX CiRCLE machine row and one Pump It Up Phoenix (2024) machine row listed; no multi-cab comment.",
+      "note": "Implicit single-cab from ZIv rows. Not an explicit N cabinets count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10355,
+      "name": "Timezone SM North EDSA",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1010",
+      "evidence_quote": "ALL.Net maimai DX International Philippines lists 47 locations. SM North EDSA appears only as QUANTUM SM NORTH EDSA. There is no TIMEZONE SM NORTH EDSA entry. Official Timezone PH venue page for SM North EDSA Foodcourt lists Arcade/Prize Shop/Videoke and names Air Hockey, Tower of Tickets, Slam N Jam Extreme only; no maimai.",
+      "note": "ZIv id 4868 (updated 2026-07-31) still has a maimai DX CiRCLE row with condition 0, price ???, empty comment. That is weak community evidence against official ALL.Net omission at the same mall where Quantum IS listed. Prefer remove until a player confirms a live Timezone cab or ALL.Net adds it. Shard info_text correctly mentions two Timezone branches (Foodcourt LGF and The Block 5F) but they appear collapsed into one map pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10355,
+      "name": "Timezone SM North EDSA",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-north-edsa/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-north-edsa/",
+      "evidence_quote": "Foodcourt, SM North EDSA, North Avenue, corner Epifanio de los Santos Ave, Quezon City; Monday - Sunday: 10:00 AM - 10:00 PM; enquiries (02) 07-282-6343",
+      "note": "Official Foodcourt branch page. Separate The Block branch is listed on the locations directory as SM North The Block.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10354,
+      "name": "TIMEZONE SM MEGAMALL",
+      "field": "location",
+      "current": {
+        "addr": "L Ground Fl Bldg B Megamall Edsa J Vargas Wack Wack Greenhills",
+        "lat": 14.5922687,
+        "lng": 121.0535762
+      },
+      "proposed": {
+        "addr": "Lower Ground Floor Bldg. A Bridgeway, SM Megamall, Mandaluyong City",
+        "lat": 14.5922687,
+        "lng": 121.0535762
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-megamall/",
+      "evidence_quote": "Address: Lower Ground Floor Bldg. A Bridgeway, SM Megamall, Mandaluyong City; Monday - Sunday: 10:00 AM - 10:00 PM",
+      "note": "Official Timezone page says Bldg A Bridgeway. ALL.Net and the shard still say Bldg B. Pin coords from ALL.Net match the shard; ZIv pin (14.5839,121.0571) is about 1 km away and should NOT be preferred over ALL.Net. Maintainer should verify building letter on-site; do not move the pin solely from ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10354,
+      "name": "TIMEZONE SM MEGAMALL",
+      "field": "website",
+      "current": "http://www.timezone.com.ph",
+      "proposed": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-megamall/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-megamall/",
+      "evidence_quote": "Timezone SM Megamall venue page on timezonegames.com (legacy timezone.com.ph redirects to timezonegames.com/en-ph).",
+      "note": "Old domain still works only as a redirect.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10354,
+      "name": "TIMEZONE SM MEGAMALL",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": null,
+        "maimai_dx": "CiRCLE",
+        "pump_it_up": "Phoenix FX upgraded"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3702",
+      "evidence_quote": "maimai DX CiRCLE comment: 1 cab from Timezone Greenhills Mall branch... 2025/09: Online and fully up to date; Pump It Up Phoenix (2024) comment: Upgraded FX cabinet. running ver V 2.10.0; taiko Nijiiro Asia.",
+      "note": "Community ZIv machine titles/comments. ALL.Net confirms the venue has networked maimai but does not publish cab generation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10359,
+      "name": "TIMEZONE TRINOMA MALL",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-21:00; Sat-Sun 10:00-22:00",
+      "proposed": "Mon-Thu 11:00-22:00; Fri-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-trinoma/",
+      "evidence_quote": "Monday-Thursday: 11:00 AM - 10:00 PM; Friday-Sunday: 10:00 AM - 10:00 PM; Address: 4/F TriNoma, EDSA, Quezon City; enquiries (02) 7-901-3536",
+      "note": "Official venue page hours differ from ZIv/shard (which say weekday open 10:00 and weekday close 21:00). Prefer official.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10359,
+      "name": "TIMEZONE TRINOMA MALL",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": null,
+        "maimai_dx": "CiRCLE PLUS",
+        "pump_it_up": "Phoenix"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=411",
+      "evidence_quote": "maimai DX CiRCLE PLUS comment: 2025/03: 2 cabs...; Pump It Up Phoenix; taiko Nijiiro Asia New cab. game_counts already maimai_dx:2 from ziv_comment.",
+      "note": "ALL.Net confirms venue for maimai. Cab generation and 2-cab count are community ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10360,
+      "name": "TIMEZONE UP TOWN CENTER",
+      "field": "website",
+      "current": "http://www.timezone.com.ph",
+      "proposed": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-up-town-center-2/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-up-town-center-2/",
+      "evidence_quote": "Level 2 Phase 2, U.P. Town Center, Katipunan Ave., Brgy. UP Campus, Quezon City; Mon-Thu 10:00 AM-9:00 PM; Fri-Sun 10:00 AM-10:00 PM",
+      "note": "Hours in shard already match official. ALL.Net lists TIMEZONE UP TOWN CENTER for maimai at 14.6507347,121.0746778 (matches shard). Do not remove maimai_dx.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10360,
+      "name": "TIMEZONE UP TOWN CENTER",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": null,
+        "maimai_dx": "CiRCLE PLUS",
+        "pump_it_up": "Phoenix (2024)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3774",
+      "evidence_quote": "maimai DX CiRCLE PLUS; Pump It Up Phoenix (2024); taiko Nijiiro Asia lastUpdate 2026-07-23",
+      "note": "Community ZIv models.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10360,
+      "name": "TIMEZONE UP TOWN CENTER",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3774",
+      "evidence_quote": "One machine row each for maimai DX CiRCLE PLUS, Pump It Up Phoenix (2024), and taiko Nijiiro Asia.",
+      "note": "Implicit singles from ZIv; not an explicit quantity comment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10353,
+      "name": "TIMEZONE SM MALL OF ASIA",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-mall-of-asia/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-mall-of-asia/",
+      "evidence_quote": "Level 3, South Main Mall, SM Mall of Asia, Pasay City; Mon-Thu 10:00 AM-09:00 PM; Fri-Sun 10:00 AM-10:00 PM; enquiries (02) 8-421-5699. Separate North Entertainment Mall branch page exists as timezone-sm-mall-of-asia-2.",
+      "note": "Shard info_text correctly notes two MOA Timezone branches collapsed into one pin. ALL.Net lists TIMEZONE SM MALL OF ASIA for maimai. maimai/taiko at Main branch per ZIv id 191 (2026-07-31).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10353,
+      "name": "TIMEZONE SM MALL OF ASIA",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-21:00; Sat-Sun 10:00-22:00",
+      "proposed": "Mon-Thu 10:00-21:00; Fri-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-mall-of-asia/",
+      "evidence_quote": "Monday - Thursday: 10:00 AM - 09:00 PM; Friday - Sunday: 10:00 AM - 10:00 PM",
+      "note": "Official has Friday open until 22:00 (shard currently treats Friday as weekday 21:00 close).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10353,
+      "name": "TIMEZONE SM MALL OF ASIA",
+      "field": "cab_models",
+      "current": {
+        "taiko_asia": null
+      },
+      "proposed": {
+        "taiko_asia": null,
+        "maimai_dx": "CiRCLE PLUS"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=191",
+      "evidence_quote": "maimai DX CiRCLE PLUS comment: New cab; Online and updated. loc=Main branch; taiko Nijiiro Asia New cab, online play. lastUpdate 2026-07-31",
+      "note": "ALL.Net confirms networked maimai at this Timezone name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10349,
+      "name": "Timezone Robinsons Place Manila",
+      "field": "website",
+      "current": "http://www.timezone.com.ph",
+      "proposed": "https://www.timezonegames.com/en-ph",
+      "confidence": "likely",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Locations directory lists Robinsons Place Manila 2F and Robinsons Place Manila 4F as active Metro Manila venues. Legacy timezone.com.ph 301-redirects to timezonegames.com/en-ph.",
+      "note": "Could not confirm a dedicated per-venue slug for the Pedro Gil 2F PIU branch from fetches; brand homepage is still better than the dead old hostname as a bare URL. PIU Phoenix remains on ZIv id 47 (updated 2026-05-02).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10361,
+      "name": "Timezone Venice Grand Canal Mall",
+      "field": "website",
+      "current": "http://www.timezone.com.ph",
+      "proposed": "https://www.timezonegames.com/en-ph/locations/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Official PH locations directory lists Venice Grand Canal Mall, Vista Mall Taguig, and Serin among active venues. timezone.com.ph redirects to timezonegames.com/en-ph.",
+      "note": "Brand domain migration. Per-venue slugs not re-fetched for every branch; locations index is the safe official URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10363,
+      "name": "Timezone Vista Mall Taguig",
+      "field": "website",
+      "current": "http://www.timezone.com.ph",
+      "proposed": "https://www.timezonegames.com/en-ph/locations/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Official PH locations directory lists Venice Grand Canal Mall, Vista Mall Taguig, and Serin among active venues. timezone.com.ph redirects to timezonegames.com/en-ph.",
+      "note": "Brand domain migration. Per-venue slugs not re-fetched for every branch; locations index is the safe official URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10364,
+      "name": "Timezone, Ayala Malls Serin",
+      "field": "website",
+      "current": "http://www.timezone.com.ph",
+      "proposed": "https://www.timezonegames.com/en-ph/locations/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Official PH locations directory lists Venice Grand Canal Mall, Vista Mall Taguig, and Serin among active venues. timezone.com.ph redirects to timezonegames.com/en-ph.",
+      "note": "Brand domain migration. Per-venue slugs not re-fetched for every branch; locations index is the safe official URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10362,
+      "name": "Timezone Vista Mall Bataan",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-ph/locations/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Central Luzon region lists Vista Mall Bataan (2/F) with Arcade, Videoke tags among official venues.",
+      "note": "Official directory confirms the brand still lists this branch. ZIv id 6426 lastUpdate 2022-07-28 (4 years) so machine list in notes is stale; no rhythm titles claimed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10350,
+      "name": "Timezone Shangri-La's Mactan Resort and Spa",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.timezonegames.com/en-ph/locations/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Visayas region lists Shangrila Cebu - Punta Engano, Mactan, Lapu Lapu City, Cebu (Arcade tag).",
+      "note": "Official directory confirms the venue still exists under Shangrila Cebu. ZIv lastUpdate 2025-07-16. No networked rhythm games claimed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10422,
+      "name": "Wonderpark Baguio Center Mall",
+      "field": "games",
+      "current": [
+        "crossbeats",
+        "dance_evo",
+        "other"
+      ],
+      "proposed": [
+        "crossbeats",
+        "dance_evo",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4296",
+      "evidence_quote": "machines include maimai FiNALE comment: JP import version with less songs; P1 sensor is poor + input delay... condition 2; price PHP 12.00. Also crossbeats REV. Sunrise (2 machines) and DanceEvolution ARCADE. lastUpdate 2026-01-24.",
+      "note": "NOT on ALL.Net Philippines maimai list (offline FiNALE import). App game key maimai_dx will show as maimai; pair with cab_models noting FiNALE offline so players do not expect CiRCLE network. machine_prices already has maimai: PHP 12.00 while games array omitted it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10422,
+      "name": "Wonderpark Baguio Center Mall",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "FiNALE offline JP import"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4296",
+      "evidence_quote": "maimai FiNALE: JP import version with less songs; screen is overall dim",
+      "note": "Community source only. Do not treat as networked DX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10427,
+      "name": "Wonderpark SM City Olongapo",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=471",
+      "evidence_quote": "maimai FiNALE listed; price 4 tokens = 1 credit / PHP 5 = 1 token; condition 4; lastUpdate 2026-01-11. notes already list maimai FiNALE; machine_prices has maimai key; games array does not.",
+      "note": "Offline FiNALE, not on ALL.Net. Consistency fix: notes/prices already claim maimai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10427,
+      "name": "Wonderpark SM City Olongapo",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "FiNALE offline"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=471",
+      "evidence_quote": "game name maimai FiNALE; lastUpdate 2026-01-11 05:28:56",
+      "note": "Community ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10432,
+      "name": "Wonderpark Waltermart Malolos",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6570",
+      "evidence_quote": "maimai FiNALE comment: Event Mode... UPDATE: P2 Sensors are broken; condition 3; taiko 13; lastUpdate 2025-08-02. notes list maimai FiNALE; machine_prices has maimai; games array omits it.",
+      "note": "Offline FiNALE, not on ALL.Net. Taiko is version 13 legacy Asia, not Nijiiro. ZIv about 12 months old; sensor-broken comment means playability is poor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10432,
+      "name": "Wonderpark Waltermart Malolos",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "FiNALE offline (sensors degraded)",
+        "taiko": "taiko 13 legacy"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6570",
+      "evidence_quote": "maimai FiNALE ... P2 Sensors are broken; taiko 13 inconsistent left drum with a dent... broken bacchi on right drum",
+      "note": "Both cabs reported in bad condition on ZIv. Players should not travel solely for these.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10433,
+      "name": "Wonderpark Waltermart Subic",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6582",
+      "evidence_quote": "maimai FiNALE comment: Machine from SM Olongapo branch; lastUpdate 2023-04-24 (3 years ago). notes list only maimai FiNALE.",
+      "note": "ZIv is 3 years stale. May have moved again. Not on ALL.Net. Propose games consistency only if maintainer keeps the venue; status itself is unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10387,
+      "name": "Tom's World Robinsons Place North Tacloban",
+      "field": "status",
+      "current": "open (implied); games=['ddr']; cab_models ddr_legacy",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4427",
+      "evidence_quote": "lastUpdateTime 2022-06-20 11:27:03 (4 years ago); only machine DanceDanceRevolution X3 VS 2ndMIX; no newer confirmation found in this research pass.",
+      "note": "Cannot confirm the arcade or the DDR cab still exist. Do not treat as a travel destination without a local recheck. proposed null means no positive status claim; consider marking stale or removing ddr until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10387,
+      "name": "Tom's World Robinsons Place North Tacloban",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4427",
+      "evidence_quote": "Only source is ZIv last updated 2022-06-20 listing DanceDanceRevolution X3 VS 2ndMIX. No official Konami PH locator covers this (e-amusement facility search is Japan-only).",
+      "note": "Recommend REMOVE ddr claim (proposed null) until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10421,
+      "name": "Wakuland, Zabarte Mall",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3833",
+      "evidence_quote": "lastUpdateTime 2016-09-05 13:43:21 (9 years ago); DrumManiaV6 BLAZING!!!! listed. website http://wakulandamusement.com not revalidated this pass.",
+      "note": "gitadora claim is nearly a decade old. proposed null = remove gitadora until reconfirmed. Venue existence also unverified in 2026 sources.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10390,
+      "name": "Tom's World Robinsons Town Mall Malabon",
+      "field": "status",
+      "current": "open (implied); games=['other']; empty notes/machines",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3097",
+      "evidence_quote": "lastUpdateTime 2014-12-07 15:21:15 (11 years ago); machines: [] empty.",
+      "note": "Oldest ZIv row in this shard with zero machines. Strong candidate for closed/removed if no other source. I did not find an official Tom's World PH store list this pass. Do not send players here without local confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10447,
+      "name": "World Of Fun Limketkai Cagayan de Oro",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-09:00",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1933",
+      "evidence_quote": "Shard hours_text is Mon-Sun 10:00-09:00 which is almost certainly a data error (closes before it opens unless meant as 10:00-21:00 / overnight). ZIv lastUpdate 2024-01-30. No official World of Fun hours found this pass.",
+      "note": "Remove or blank the broken hours rather than invent a replacement. proposed null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10435,
+      "name": "Wonderpark WMall Muntinlupa",
+      "field": "other",
+      "current": "info_text: Opened June 2026; games sdvx+wacca; hours null",
+      "proposed": "Keep games; hours still unknown from official sources",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11575",
+      "evidence_quote": "Opened June 2026; machines SOUND VOLTEX VIVID WAVE, WACCA REVERSE, Synchronica, Initial D Arcade Stage 7 AA X; lastUpdate 2026-07-22 08:13:37 (9 days ago).",
+      "note": "ZIv is recent so sdvx/wacca claims look good. wonderpark.ph has no store locator listing this mall by name. No official hours. No cab generation (Valkyrie vs NEMSYS) stated; VIVID WAVE title implies non-Valkyrie-era software on unknown hardware.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 10352,
+      "name": "Timezone SM City Rosales",
+      "field": "other",
+      "current": "games=['gitadora','other']; DrumManiaV6 on ZIv",
+      "proposed": "Keep venue; treat gitadora as weakly evidenced offline GFDM only",
+      "confidence": "unverified",
+      "evidence_url": "https://www.timezonegames.com/en-ph/locations/",
+      "evidence_quote": "Official locations directory lists SM Rosales as active Arcade. ZIv lastUpdate 2024-11-05 lists DrumManiaV6 BLAZING!!!! with condition 0 and price ???.",
+      "note": "No correction that changes a field value. Existence supported by official directory. gitadora is a single weak ZIv row, not live GITADORA network.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

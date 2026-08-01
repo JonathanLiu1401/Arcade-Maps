@@ -394,10 +394,18 @@ window.AM = window.AM || {};
     var have = U.variantsOf(a);
     h += '<div class="pp-row">';
     a.games.forEach(function (g) {
+      var label = U.gameLabelFor(a, g);
+      /* Same rule the panel applies: once the chip has been RENAMED to the
+         variant, the offline pill only repeats it, so "maimai (FiNALE /
+         pre-DX)" would be followed by a "FiNALE / pre-DX" badge saying the
+         same thing twice. The badge qualifies a game name; it is dropped
+         when it IS the game name. */
+      var renamed = label !== (C.GAME_LABEL[g] || g);
       h += '<span class="gc" style="--c:' + (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-        esc(U.gameLabelFor(a, g)) + "</span>";
+        esc(label) + "</span>";
       (C.VARIANTS_BY_GAME[g] || []).forEach(function (v) {
         if (v.chipOnly || !v.badge) return;
+        if (renamed && v.offline) return;
         if (!Object.prototype.hasOwnProperty.call(have, v.id)) return;
         h += '<span class="badge cab' + (v.offline ? " dead" : "") + '">' +
           esc(v.badge) + "</span>";

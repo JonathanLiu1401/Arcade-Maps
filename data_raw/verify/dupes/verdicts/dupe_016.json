@@ -1,0 +1,291 @@
+{
+  "shard": 16,
+  "verdicts": [
+    {
+      "ids": [1893, 1900],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1900,
+      "canonical_name": "十二星球长沙芙蓉店",
+      "canonical_addr": "湖南省长沙市芙蓉区东岸街道长沙龙湖天街3楼",
+      "reason": "Both name the same 龙湖芙蓉/长沙龙湖天街 3F branch; identical coords and Baidu returns a single 十二星球(芙蓉店) there.",
+      "evidence_url": "https://map.bemanicn.com/s/2450",
+      "evidence_quote": "十二星球(龙湖时代天街店) / 东岸街道龙湖芙蓉天街3楼; Baidu: 十二星球(芙蓉店) 人民东路龙湖长沙芙蓉天街3F-27号"
+    },
+    {
+      "ids": [1901, 1902],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1901,
+      "canonical_name": "千哆啦三亚吉阳店",
+      "canonical_addr": "海南省三亚市吉阳区荔枝路01号乐天城千哆啦动漫体验工厂",
+      "reason": "Same 千哆啦 at 三亚乐天城; wahlap and bemanicn are branch-name variants of one mall store (~60 m geocode noise).",
+      "evidence_url": "https://map.bemanicn.com/s/3985",
+      "evidence_quote": "千哆啦动漫体验工厂（乐天城店） 荔枝沟路868号乐天城1号楼1F01号; Baidu: 千哆啦动漫体验工厂 荔枝沟路868号乐天城1号楼1F层A01号"
+    },
+    {
+      "ids": [1903, 1904],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1904,
+      "canonical_name": "千机幻城番禺四海城店",
+      "canonical_addr": "广东省广州市番禺区汉溪大道东390号四海城商业广场东区F2层01铺",
+      "reason": "Identical street number and mall floor (汉溪大道东390号四海城 2F); bemanicn bare brand vs wahlap full branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5444",
+      "evidence_quote": "千机幻城 汉溪大道东390号四海城2楼恐龙公园入口; Baidu: 千机幻城·电玩城(番禺四海城店) 汉溪大道东390号四海城东区2层01号铺"
+    },
+    {
+      "ids": [1906, 1907],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1906,
+      "canonical_name": "午夜战车杭州富阳店",
+      "canonical_addr": "浙江省杭州市富阳富春街道东方茂D座一楼午夜战车",
+      "reason": "Both are 午夜战车 at 杭州富阳东方茂; Baidu lists only one 午夜战车游艺室(东方茂店). 305 m is geocode scatter of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/3165",
+      "evidence_quote": "午夜战车游乐世界（杭州富阳东方茂店） 富阳区金桥北路与横凉亭路交叉口西北角东北茂一楼; Baidu: 午夜战车游艺室(东方茂店)"
+    },
+    {
+      "ids": [1912, 1913],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1912,
+      "canonical_name": "华录乐园荣成九龙城店",
+      "canonical_addr": "威海市荣成市九龙城购物广场三楼3F-02",
+      "reason": "Same 荣成九龙城 3F arcade; 0 m apart; wahlap unit number is more specific.",
+      "evidence_url": "https://map.bemanicn.com/s/5071",
+      "evidence_quote": "华录乐园荣成店 荣成市悦湖路91号荣成九龙城休闲购物广场三楼; Baidu: 华录乐园(荣成店) 悦湖路九龙城休闲购物广场3层"
+    },
+    {
+      "ids": [1923, 1924],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1923,
+      "canonical_name": "南梦园三亚金润阳光店",
+      "canonical_addr": "海南省三亚市天涯区河西路金润阳光三楼南梦园",
+      "reason": "Same 南梦园 on 3F of 金润阳光 on 河西路; branch suffix 河西店 vs 金润阳光店 name the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/310",
+      "evidence_quote": "南梦园电子游艺厅（河西店） 河西路100号金润阳光购物广场F3层; Baidu: 南梦园电子游艺厅(金润广场店) 河西路金润阳光购物广场三楼A316号"
+    },
+    {
+      "ids": [6370, 6373],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6373,
+      "canonical_name": "萌可力荆门掇刀万达店",
+      "canonical_addr": "湖北省荆门市掇刀区漳河万达广场二楼萌可力",
+      "reason": "Same 萌可力 at 荆门漳河万达 2F; 漳河万达店 and 掇刀万达店 are alternate labels for one Wanda mall branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5546",
+      "evidence_quote": "萌可力潮玩娱乐（漳河万达店） 象山大道南端38号万达广场2F-A; Baidu: 萌可力潮玩(漳河万达店) 漳河万达2楼"
+    },
+    {
+      "ids": [6268, 6269],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6269,
+      "canonical_name": "艺珑传奇吉林昌邑店",
+      "canonical_addr": "吉林省吉林市昌邑区吉林东市商贸示范区财富购物广场店6楼艺珑传奇",
+      "reason": "Same 艺珑传奇 at 吉林财富购物广场 ~6F; 12 m apart; community and wahlap name the same mall store.",
+      "evidence_url": "https://map.bemanicn.com/s/2150",
+      "evidence_quote": "艺珑传奇动漫娱乐中心（吉林财富购物广场店） 吉林大街173号财富广场F6-南区"
+    },
+    {
+      "ids": [1945, 1947],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1947,
+      "canonical_name": "卡奇部落达州罗浮广场店",
+      "canonical_addr": "四川省达州市通川区西外镇罗浮广场4楼卡奇部落",
+      "reason": "Same 卡奇部落 on 4F of 达州罗浮广场; wahlap 通州 is a mislabel of 通川 (correct district in the address). Prefer 罗浮广场 branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/1860",
+      "evidence_quote": "卡奇部落达州罗浮广场店 西外镇罗浮广场4楼卡奇部落; Baidu: 卡奇部落电玩城(罗浮广场店) 朝阳街道永兴路罗浮广场4层"
+    },
+    {
+      "ids": [1948, 1949],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1949,
+      "canonical_name": "卡希尔乐享汇成都金牛招商花园城店",
+      "canonical_addr": "四川省成都市金牛区金牛招商花园城4F卡希尔乐享汇",
+      "reason": "Bare brand vs full branch at the same 金牛招商花园城 4F; Baidu has one POI.",
+      "evidence_url": "https://map.bemanicn.com/s/4685",
+      "evidence_quote": "卡希尔乐享汇 成都金牛招商花园城4f; Baidu: 卡希尔乐享汇(金牛招商花园城店) 天高路108号金牛招商花园城L3-3028号"
+    },
+    {
+      "ids": [1951, 1957],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1951,
+      "canonical_name": "卡希尔乐享汇温州龙湾万达店",
+      "canonical_addr": "浙江省温州市龙湾区万达广场二楼卡希尔乐享汇",
+      "reason": "Both are 卡希尔乐享汇 at 温州龙湾万达 2F (ex-大玩家 on bemanicn); same mall branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5328",
+      "evidence_quote": "卡希尔乐享汇（龙湾万达店）（原大玩家超乐场） 永定路1188号温州龙湾万达广场2F（麦当劳隔壁）"
+    },
+    {
+      "ids": [1952, 1955],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1952,
+      "canonical_name": "卡希尔乐享汇盐城爱琴海店",
+      "canonical_addr": "江苏省盐城响水爱琴海购物中心卡希尔乐享汇",
+      "reason": "Same 卡希尔 at 响水爱琴海 shopping center; 盐城爱琴海店 and 响水爱琴海店 are the same branch (响水 is under 盐城).",
+      "evidence_url": "https://map.bemanicn.com/s/3998",
+      "evidence_quote": "卡希尔乐享汇（响水爱琴海店） 爱琴海购物中心3F; Baidu: 卡希尔乐园(东海路店) 响水爱琴海购物中心F3层"
+    },
+    {
+      "ids": [1954, 1956],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1954,
+      "canonical_name": "卡希尔乐享汇重庆奉节万达广场店",
+      "canonical_addr": "重庆市奉节县夔州西路万达广场2F次主-3号商铺",
+      "reason": "Identical unit 万达广场2F次主-3号商铺; 夔州西路店 is the street-name form of the 奉节万达 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6456",
+      "evidence_quote": "卡希尔乐享汇（夔州西路店） 万达广场2F次主-3号商铺"
+    },
+    {
+      "ids": [1958, 1960],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1960,
+      "canonical_name": "卡希尔武汉光谷星悦广场店",
+      "canonical_addr": "湖北省武汉市东湖新技术开发区高新六路与流芳一路交叉口光谷星悦广场3F-01商铺",
+      "reason": "Same 卡希尔 at 光谷星悦广场 3F; Baidu returns one 卡希尔游乐 there. 231 m is dual-geocode scatter of one mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6565",
+      "evidence_quote": "卡希尔乐园（星悦广场店） 高新六路与流芳路交汇口，伟星光谷星悦广场3楼; Baidu: 卡希尔游乐 佛祖岭街道光谷伟星星悦广场3F卡希尔"
+    },
+    {
+      "ids": [1959, 1961],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1961,
+      "canonical_name": "卡希尔淮南寿县环球港店",
+      "canonical_addr": "安徽省淮南市寿县环球港卡希尔家庭娱乐中心",
+      "reason": "Bare brand 卡希尔家庭娱乐中心 and wahlap 寿县环球港店 share address at 环球港 2F with identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/4555",
+      "evidence_quote": "卡希尔家庭娱乐中心 状元路与楚都大道交叉口西南环球港二楼; Baidu: 卡希尔家庭娱乐中心(宾阳大道店) 状元路与楚都大道交叉口西南038号"
+    },
+    {
+      "ids": [1963, 1964],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1963,
+      "canonical_name": "卡狸萌宜昌伍家岗长江店",
+      "canonical_addr": "湖北省宜昌市伍家岗区长江广场三楼",
+      "reason": "Same 卡狸萌 on 3F of 宜昌长江广场 / 方圆荟长江广场; bare brand vs full branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5645",
+      "evidence_quote": "卡狸萌家庭体验中心 方圆荟长江广场3F; Baidu: 卡狸萌家庭体验中心 城东大道112号长江广场3楼3026铺"
+    },
+    {
+      "ids": [1965, 1966],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1965,
+      "canonical_name": "卡迪龙合肥瑶海保利店",
+      "canonical_addr": "安徽省合肥市瑶海区郎溪路保利广场三楼",
+      "reason": "Same 卡迪龙 at 合肥瑶海保利广场 3F unit 3006-3007; 0 m and one Baidu POI.",
+      "evidence_url": "https://map.bemanicn.com/s/6290",
+      "evidence_quote": "卡迪龙奇幻世界（保利广场店） 郎溪路保利广场三楼东南侧3006-3007号"
+    },
+    {
+      "ids": [4797, 4798],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4798,
+      "canonical_name": "汤姆熊武汉销品茂店",
+      "canonical_addr": "湖北省武汉市徐东大街18号销品茂4楼汤姆熊",
+      "reason": "Same Tom's Bear at 武汉徐东销品茂 / 中商世界里 (former 销品茂); Baidu lists that one mall branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4104",
+      "evidence_quote": "汤姆熊欢乐世界（销品茂店） 中商世界里智慧生活mall（原销品茂）; Baidu: 汤姆熊欢乐世界(销品茂店) 徐东大街18号销品茂4层"
+    },
+    {
+      "ids": [5894, 5912],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5894,
+      "canonical_name": "真快活亲橙万象汇店",
+      "canonical_addr": "湖北省武汉市武昌区徐东大街66号亲橙万象汇3层L329A商铺",
+      "reason": "Same 真快活 on 3F of 武汉亲橙万象汇 (徐东); street number 66 vs 6 is address noise but coords and mall match exactly.",
+      "evidence_url": "https://map.bemanicn.com/s/4483",
+      "evidence_quote": "真快活武汉徐东万象汇店 武昌区徐东路6号武汉亲橙万象汇3楼"
+    },
+    {
+      "ids": [1968, 1973],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1973,
+      "canonical_name": "卡通尼东莞大朗店",
+      "canonical_addr": "广东省东莞市大朗镇名座广场项目里悦里购物中心商铺L3-001三楼卡通尼乐园",
+      "reason": "ZIv 卡通尼 Fun Forward 东莞大朗 and wahlap/bemanicn 卡通尼东莞大朗店 are the same L3 shop at 里悦里 / Lily Garden Mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1927",
+      "evidence_quote": "卡通尼东莞大朗店 名座广场项目里悦里购物中心商铺L3-001三楼; Baidu: 卡通尼·Fun Forward(东莞大朗碧桂园里悦里店) 碧桂园里悦里购物中心3层301"
+    },
+    {
+      "ids": [4825, 4828],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4828,
+      "canonical_name": "泛时空北京西红门荟聚店",
+      "canonical_addr": "西红门欣宁街15号荟聚购物中心2楼（近地铁口）",
+      "reason": "ZIv FUNSPACE 北京荟聚西红门 Livat and bemanicn 泛时空北京西红门荟聚店 are one 2F venue at 欣宁街15号荟聚; game lists complement.",
+      "evidence_url": "https://map.bemanicn.com/s/2287",
+      "evidence_quote": "泛时空北京西红门荟聚店 西红门欣宁街15号荟聚购物中心2楼（近地铁口）; ZIv: FUNSPACE BEIJING (北京荟聚西红门Livat) Second Floor, Livat No.15 Xinning Street"
+    },
+    {
+      "ids": [1980, 1996],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1996,
+      "canonical_name": "卡通尼南京江宁店",
+      "canonical_addr": "江苏省南京市江宁区双龙大道1698号景枫中心三楼卡通尼",
+      "reason": "Same 卡通尼 on 3F of 南京江宁景枫中心 at 双龙大道1698号; 0 m and one Baidu POI.",
+      "evidence_url": "https://map.bemanicn.com/s/4108",
+      "evidence_quote": "卡通尼乐园景枫中心店 双龙大道1698号景枫中心3楼（CGV影城对过）; Baidu: 卡通尼乐园(景枫中心店) 双龙大道1698号景枫中心三层"
+    },
+    {
+      "ids": [1984, 2005],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2005,
+      "canonical_name": "卡通尼武汉江岸永旺店",
+      "canonical_addr": "湖北省武汉市江岸区金桥大道15号永旺梦乐城3F卡通尼乐园",
+      "reason": "Same 卡通尼 at 武汉金桥永旺梦乐城 3F (金桥大道15号); branch labels 金桥永旺 and 江岸永旺 are the same store.",
+      "evidence_url": "https://map.bemanicn.com/s/7139",
+      "evidence_quote": "卡通尼乐园金桥永旺店 金桥大道15号永旺梦乐城(武汉金桥店)F3-347; Baidu: 卡通尼·超级欢乐屋(武汉金桥永旺梦乐城店) 金桥大道15号永旺梦乐城3层"
+    },
+    {
+      "ids": [1985, 2006],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2006,
+      "canonical_name": "卡通尼武汉金银潭店",
+      "canonical_addr": "湖北省武汉市东西湖区永旺金银潭店3F卡通尼乐园",
+      "reason": "Same 卡通尼 at 金银潭永旺 3F; complementary game lists (bemanicn taiko, wahlap maimai) for one store. Distinct from 真快活 on 4F of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5395",
+      "evidence_quote": "卡通尼乐园金银潭永旺店 金银潭大道1号永旺梦乐城(武汉金银潭店)3F层332; Baidu: 卡通尼乐园(金银潭大道永旺店) 金银潭大道1号永旺梦乐城3楼332"
+    },
+    {
+      "ids": [5880, 5947],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5947,
+      "canonical_name": "真快活金银潭永旺店",
+      "canonical_addr": "湖北省武汉市东西湖区将军路街办事处金银潭大道1号金银潭永旺梦乐城4楼真快活电玩城",
+      "reason": "Same 真快活 / Coohoo Max on 4F of 金银潭永旺; Baidu has one 真快活coohoo Max(永旺梦乐城店). Separate brand from 卡通尼 on 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/6208",
+      "evidence_quote": "真快活Coohoo Max(金银潭永旺店) 金银潭大道1号永旺梦乐城武汉金银潭店4F层; Baidu: 真快活coohoo Max(永旺梦乐城店) 金银潭大道1号永旺商场4楼"
+    },
+    {
+      "ids": [1986, 2012],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2012,
+      "canonical_name": "卡通尼靖江滨江新城店",
+      "canonical_addr": "江苏省靖江市滨江新城晨阳路81号印象城南面3楼卡通尼乐园",
+      "reason": "Same 卡通尼 on 3F of 靖江印象城; 滨江新城 is the district label of the 印象城 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2464",
+      "evidence_quote": "卡通尼乐园靖江印象城店 印象城3楼; Baidu: 卡通尼乐园(印象城店) 晨阳路81号3楼03-16（印象城3楼）"
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "shard": 21,
+  "checked": 55,
+  "sources_used": [
+    "https://www.highscorearcades.co.uk/",
+    "https://www.highscorearcades.co.uk/farnborough",
+    "https://www.highscorearcades.co.uk/southampton",
+    "https://www.highscorearcades.co.uk/swindon",
+    "https://www.highscorearcades.co.uk/worcester",
+    "https://www.highscorearcades.co.uk/andover",
+    "https://www.highscorearcades.co.uk/newport",
+    "https://www.highscorearcades.co.uk/bracknell",
+    "https://highscorearcades.co.uk/offers/newbury-offers/",
+    "https://www.hollywoodbowl.co.uk/centres",
+    "https://www.hollywoodbowl.co.uk/ashford",
+    "https://www.hollywoodbowl.co.uk/bournemouth-branksome",
+    "https://www.hollywoodbowl.co.uk/glasgow",
+    "https://www.hollywoodbowl.co.uk/bracknell",
+    "https://www.insanityarcade.com/home",
+    "https://www.insanityarcadedevon.com/",
+    "https://www.junkyardgolfclub.co.uk/",
+    "https://tedscrazygolf.co.uk/oxford/",
+    "https://www.harbourpark.com/",
+    "https://www.holdsworthsamusementsfiley.co.uk/",
+    "https://www.haven.com/parks/kent/kent-coast",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=United%20Kingdom",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5781",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8450",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5899",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8731",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8730",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10394",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7250",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9474",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2113",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2120",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2946",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2065"
+  ],
+  "corrections": [
+    {
+      "id": 11495,
+      "name": "High Score Newbury",
+      "field": "status",
+      "current": "listed as open free-play arcade with ddr + groove_coaster",
+      "proposed": "closed (permanently closed after 26 April 2026)",
+      "confidence": "certain",
+      "evidence_url": "https://highscorearcades.co.uk/offers/newbury-offers/",
+      "evidence_quote": "Our Newbury branch will be closing on 26th April 2026. We will be trading as normal up until this date.",
+      "note": "As of 2026-08-01 the closure date has passed. Newbury is absent from the official Pick Your Location list (Andover, Bracknell, Farnborough, Newport, Southampton, Swindon, Worcester). Dedicated domain highscorenewbury.co.uk no longer resolves (DNS failure). ZIv listing still shows Dancing Stage Fusion + Groove Coaster 4 but lastUpdate 2025-09-21 and is community-stale relative to official closure notice.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11495,
+      "name": "High Score Newbury",
+      "field": "website",
+      "current": "https://www.highscorenewbury.co.uk/",
+      "proposed": "https://highscorearcades.co.uk/offers/newbury-offers/",
+      "confidence": "certain",
+      "evidence_url": "https://highscorearcades.co.uk/offers/newbury-offers/",
+      "evidence_quote": "Our Newbury branch will be closing on 26th April 2026.",
+      "note": "Old dedicated domain DNS fails. Residual offers page on the chain site documents the closure.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11498,
+      "name": "High Score Swindon",
+      "field": "status",
+      "current": "listed open with no note of planned closure",
+      "proposed": "open until 2 September 2026 (scheduled permanent closure)",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/swindon",
+      "evidence_quote": "Our Swindon branch will be closing on 2nd September 2026. We will be trading as normal up until this date.",
+      "note": "Still open as of research date 2026-08-01. Maintainers should flag planned closure or re-check after 2026-09-02.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11498,
+      "name": "High Score Swindon",
+      "field": "location",
+      "current": "The Plaza 29a Brunel Centre Swindon SN1 1LF, Swindon",
+      "proposed": "Brunel Plaza, Unit 14 & 15, Swindon, Wiltshire, SN1 1LF",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/swindon",
+      "evidence_quote": "Brunel Plaza, Unit 14 & 15, Swindon, Wiltshire, SN1 1LF",
+      "note": "Official page uses Brunel Plaza Units 14 & 15, not \"The Plaza 29a Brunel Centre\".",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11498,
+      "name": "High Score Swindon",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu closed; Fri 16:00-20:00; Sat 10:00-20:00; Sun 10:00-18:30 (school/bank hols Mon-Sat 10:00-20:00, Sun 10:00-18:30; may close 30 min early if no final booking)",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/swindon",
+      "evidence_quote": "Monday-Thursday: closed; Friday: 16:00-20:00*; Saturday: 10:00-20:00*; Sunday: 10:00-18:30*",
+      "note": "Official hours. Shopping centre access constraints after 6pm weekdays also noted on page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11498,
+      "name": "High Score Swindon",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.highscorearcades.co.uk/swindon",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/swindon",
+      "evidence_quote": "High Score Swindon location page with Book Now and hours",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11498,
+      "name": "High Score Swindon",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8730",
+      "evidence_quote": "Dancing Stage EuroMIX2 | condition Unknown | comment: Info from email asking if they had any dance games in their locations",
+      "note": "ZIv only has a second-hand email claim for EuroMIX2 with condition 0 and lastUpdate 2024-03-30. Official site does not list machines. Recommend removing confident ddr claim rather than inventing a replacement.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11496,
+      "name": "High Score Poole",
+      "field": "status",
+      "current": "listed as High Score chain venue with ddr",
+      "proposed": "not listed on official High Score locations (status uncertain; possibly closed or never a public branch)",
+      "confidence": "likely",
+      "evidence_url": "https://www.highscorearcades.co.uk/",
+      "evidence_quote": "Pick Your Location lists only: Andover, Bracknell, Farnborough, Newport (Wales), Southampton, Swindon, Worcester",
+      "note": "Poole is absent from official High Score site location nav and footer. /poole returns 403. ZIv still has a 2026-03-15 edit with Dancing Stage EuroMIX free play but no website, hours unknown, and no independent confirmation. Do not treat as a confirmed open High Score branch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11496,
+      "name": "High Score Poole",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8731",
+      "evidence_quote": "Dancing Stage EuroMIX | Free Play | condition Great; opening times all Unknown; no comments; no pictures",
+      "note": "Only community listing supports the cab. Official chain does not list Poole. Prefer remove or flag unverified over keeping a firm ddr claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11494,
+      "name": "High Score Farnborough",
+      "field": "games",
+      "current": [
+        "ddr",
+        "drs",
+        "other"
+      ],
+      "proposed": [
+        "ddr",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8450",
+      "evidence_quote": "DANCERUSH STARDOM | condition Unknown | Was working for a while. no longer in public access.",
+      "note": "Venue itself is open on official site. DDR 3rdMIX Ver.KOREA remains listed in Back Room. DRS should not be presented as publicly playable. Official site does not name machines.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11494,
+      "name": "High Score Farnborough",
+      "field": "hours",
+      "current": "Mon-Thu closed; Fri 16:00-20:00; Sat-Sun 10:00-20:00",
+      "proposed": "Mon-Thu closed; Fri 16:00-20:00; Sat 10:00-20:00; Sun 10:00-18:30 (school/bank hols Mon-Sat 10:00-20:00, Sun 10:00-18:30; may close 30 min early if no final booking)",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/farnborough",
+      "evidence_quote": "Friday: 16:00 - 20:00*; Saturday: 10:00 - 20:00*; Sunday: 10:00 - 18:30*",
+      "note": "Sunday official end is 18:30 not 20:00.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11494,
+      "name": "High Score Farnborough",
+      "field": "location",
+      "current": "9 Kingsmead Unit 29 Farnborough England, GU14 7SL, Farnborough",
+      "proposed": "The Meads Shopping Centre, Unit 29, Farnborough, Hampshire, GU14 7SL",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/farnborough",
+      "evidence_quote": "The Meads Shopping Centre, Unit 29, Farnborough, Hampshire, GU14 7SL",
+      "note": "Official address names The Meads Shopping Centre. Postcode GU14 7SL unchanged.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11497,
+      "name": "High Score Southampton",
+      "field": "games",
+      "current": [
+        "ddr",
+        "drs",
+        "other",
+        "popn"
+      ],
+      "proposed": [
+        "ddr",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5899",
+      "evidence_quote": "DANCERUSH STARDOM condition Unknown (no comment); pop'n music condition Unknown; Dancing Stage SuperNOVA condition Moderate pads might drop every now and then but they are playable",
+      "note": "Only SuperNOVA has a playable condition note. DRS and popn are listed with condition 0/Unknown and no positive recent play reports on the machines table. Commenter ExtincTay said updating is a pain because lineup shifts. Official site names no machines. Prefer keep ddr (legacy SuperNOVA) + other; drop firm drs/popn claims until reconfirmed. ZIv lastUpdate 2026-02-01.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11492,
+      "name": "High Score Arcade Newport",
+      "field": "other",
+      "current": "games ddr + pump_it_up with cab_models ddr_legacy",
+      "proposed": "ddr is Dancing Stage Fusion (legacy); pump_it_up is Pump It Up Jump! only, not a mainline PIU cabinet",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10394",
+      "evidence_quote": "Dancing Stage Fusion | condition Great; Pump It Up Jump! | Unusual choice to have that and not have a main PIU game in the same building",
+      "note": "Keep games tags only if map treats Dancing Stage / PIU Jump as ddr/pump_it_up. If tags imply modern networked DDR A/A3 or mainline Pump It Up Phoenix/XX, they overstate. Venue open on official site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11492,
+      "name": "High Score Arcade Newport",
+      "field": "location",
+      "current": "Chartist Tower Upper Dock Street Newport Wales, NP20 1DY, Newport",
+      "proposed": "Unit 1, Chartist Tower, Upper Dock Street, Newport, NP20 1DY",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/newport",
+      "evidence_quote": "Unit 1, Chartist Tower, Upper Dock Street, Newport, NP20 1DY",
+      "note": "Official unit number was missing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11492,
+      "name": "High Score Arcade Newport",
+      "field": "website",
+      "current": "http://highscorearcades.co.uk",
+      "proposed": "https://www.highscorearcades.co.uk/newport",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/newport",
+      "evidence_quote": "High Score Newport location page",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11491,
+      "name": "High Score Andover",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.highscorearcades.co.uk/andover",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/andover",
+      "evidence_quote": "Unit 16-18 Chantry Centre, Chantry St, Andover, SP10 1RL; Free-play arcade fun for everyone!",
+      "note": "Venue open. Hours in app already match official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11499,
+      "name": "High Score Worcester",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu closed; Fri 16:00-20:00; Sat 10:00-20:00; Sun 10:00-18:30 (school/bank hols Mon-Sat 10:00-20:00, Sun 10:00-18:30; may close 30 min early if no final booking)",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/worcester",
+      "evidence_quote": "Mon-Thurs: Closed; Friday: 16:00 - 20:00; Saturday: 10:00 - 20:00; Sunday: 10:00 - 18:30",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11499,
+      "name": "High Score Worcester",
+      "field": "website",
+      "current": "https://www.highscorearcades.co.uk/",
+      "proposed": "https://www.highscorearcades.co.uk/worcester",
+      "confidence": "certain",
+      "evidence_url": "https://www.highscorearcades.co.uk/worcester",
+      "evidence_quote": "Friary Walk Shopping Centre (Formally known as Crowngate), Worcester, WR1 3LE",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11513,
+      "name": "Hollywood Bowl Ashford",
+      "field": "status",
+      "current": "separate open venue at 43 Station Road",
+      "proposed": "duplicate of id 11514 (same Ashford centre); remove or merge",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/ashford",
+      "evidence_quote": "Hollywood Bowl Ashford,43/79 Station Road, Ashford, Kent, TN23 1PP",
+      "note": "Official site has one Ashford centre. Shard has 11513 (ZIv 4307, lastUpdate 2019, 43 Station Road) and 11514 (ZIv 2062, lastUpdate 2026-07-28, 43/79 Station Road). Coordinates about 50m apart. Keep 11514 as canonical; retire 11513.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11518,
+      "name": "Hollywood Bowl Bracknell",
+      "field": "status",
+      "current": "listed open Mon-Sun 10:00-26:00",
+      "proposed": "closed or no longer a Hollywood Bowl centre",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/centres",
+      "evidence_quote": "Centres list includes Basildon, Basingstoke, Birmingham Broadway Plaza and many others, but no Bracknell entry among the published A-Z centres.",
+      "note": "Also https://www.hollywoodbowl.co.uk/bracknell returns HTTP 404. ZIv id 2065 has \"No games at this location\" and stale generic hours. Website field points at dead Our-Centres/Bracknell.htm path. High Score Bracknell (id 11493) in The Lexicon is a different venue and is open.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11503,
+      "name": "Hollywood Bowl",
+      "field": "other",
+      "current": "name: Hollywood Bowl; addr 382 Poole Rd Poole",
+      "proposed": "name: Hollywood Bowl Bournemouth Branksome (same site)",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/bournemouth-branksome",
+      "evidence_quote": "Hollywood Bowl Bournemouth Branksome,382 Poole Road, Poole, Dorset, BH12 1DA",
+      "note": "Still open under Bournemouth Branksome branding. Also present on /centres list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11503,
+      "name": "Hollywood Bowl",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.hollywoodbowl.co.uk/bournemouth-branksome",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/bournemouth-branksome",
+      "evidence_quote": "Hollywood Bowl Bournemouth Branksome,382 Poole Road, Poole, Dorset, BH12 1DA",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11533,
+      "name": "Hollywood Bowl Glasgow",
+      "field": "other",
+      "current": "name: Hollywood Bowl Glasgow at Showcase Leisure Park Barrbridge Road G69 7TZ",
+      "proposed": "name: Hollywood Bowl Glasgow Coatbridge (official centre name)",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/glasgow",
+      "evidence_quote": "Glasgow Coatbridge - Showcase Leisure Park, Barrbridge Road, Coatbridge, Lanarkshire, G69 7TZ",
+      "note": "Distinct from Hollywood Bowl - Springfield Quay (id 11512). City label Glasgow is ambiguous; Coatbridge is the official centre name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11506,
+      "name": "Hollywood Bowl",
+      "field": "website",
+      "current": "http://www.bowlplex.co.uk/locations/dunfermline/dunfermline.aspx",
+      "proposed": "https://www.hollywoodbowl.co.uk/dunfermline",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/centres",
+      "evidence_quote": "Dunfermline - 2 Fife Leisure Park, 16 Whimbrel Place (listed on Hollywood Bowl centres)",
+      "note": "Bowlplex brand retired; Hollywood Bowl still operates Dunfermline.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11506,
+      "name": "Hollywood Bowl",
+      "field": "games",
+      "current": [
+        "other",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2113",
+      "evidence_quote": "StepManiaX (65\" Deluxe Cabinet) | condition Unknown | This is an unconfirmed location - Based on a tweet here -- https://x.com/stevesmart236/status/1813618998413853133",
+      "note": "Do not present SMX as confirmed at Dunfermline until a primary visit report or official source confirms it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11507,
+      "name": "Hollywood Bowl",
+      "field": "website",
+      "current": "http://www.bowlplex.co.uk/locations/cwmbran/cwmbran.aspx",
+      "proposed": "https://www.hollywoodbowl.co.uk/cwmbran",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/centres",
+      "evidence_quote": "Cwmbran listed among Hollywood Bowl centres",
+      "note": "Stale Bowlplex URL.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11559,
+      "name": "Hollywood Bowl Tunbridge Wells",
+      "field": "games",
+      "current": [
+        "other",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2120",
+      "evidence_quote": "StepManiaX (65\" Deluxe Cabinet) | condition Unknown | This is an unconfirmed location - Based on a tweet here -- https://x.com/stevesmart236/status/1813618998413853133",
+      "note": "Same unconfirmed-tweet SMX claim as Dunfermline. Centre itself is on official Hollywood Bowl list; only the SMX claim is weak.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11502,
+      "name": "Holdsworth Amusements",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7250",
+      "evidence_quote": "Dancing Stage EuroMIX2 | Not Working | Currently dismantled upstairs | According to the staff the euromix is dismantled awaiting parts. I played on the machine 4 or 5 years ago.",
+      "note": "Venue website still open all year as Holdsworths Funland Amusements Filey, but no machine list. ZIv lastUpdate 2023-06-28. Do not advertise ddr as playable.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11502,
+      "name": "Holdsworth Amusements",
+      "field": "website",
+      "current": "http://www.holdsworthsamusementsfiley.co.uk/",
+      "proposed": "https://www.holdsworthsamusementsfiley.co.uk/",
+      "confidence": "certain",
+      "evidence_url": "https://www.holdsworthsamusementsfiley.co.uk/",
+      "evidence_quote": "Holdsworths Funland Amusements Filey - Open all year round.",
+      "note": "Venue open year-round per own site; no machine list there.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11580,
+      "name": "Junkyard Golf Oxford",
+      "field": "status",
+      "current": "Junkyard Golf Oxford open",
+      "proposed": "rebranded/taken over as Ted's Crazy Golf from 1 August 2026 (venue continues at Castle St)",
+      "confidence": "certain",
+      "evidence_url": "https://tedscrazygolf.co.uk/oxford/",
+      "evidence_quote": "UNTIL 31st JULY: We say goodbye to Junkyard at the end of July! FROM 1st AUGUST: Ted's Crazy Golf is taking over! Find out more.",
+      "note": "As of 2026-08-01 Ted's takeover window has started. junkyardgolfclub.co.uk/oxford/ 301-redirects to tedscrazygolf.co.uk/oxford/.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11580,
+      "name": "Junkyard Golf Oxford",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9474",
+      "evidence_quote": "Pointer2720 (1 year ago): The DDR cab was removed to make room for karaoke booths.",
+      "note": "ZIv still lists DDR A3 + Guitar Hero but comment indicates DDR removed. No independent reconfirmation after Ted's takeover. Prefer remove ddr claim.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11580,
+      "name": "Junkyard Golf Oxford",
+      "field": "website",
+      "current": "https://www.junkyardgolfclub.co.uk/oxford/",
+      "proposed": "https://tedscrazygolf.co.uk/oxford/",
+      "confidence": "certain",
+      "evidence_url": "https://tedscrazygolf.co.uk/oxford/",
+      "evidence_quote": "Ted's Crazy Golf is taking over! Find out more.",
+      "note": "Old Junkyard URL redirects here.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11580,
+      "name": "Junkyard Golf Oxford",
+      "field": "other",
+      "current": "name: Junkyard Golf Oxford",
+      "proposed": "name: Ted's Crazy Golf Oxford (formerly Junkyard Golf)",
+      "confidence": "certain",
+      "evidence_url": "https://tedscrazygolf.co.uk/oxford/",
+      "evidence_quote": "We say goodbye to Junkyard at the end of July! Ted's Crazy Golf is taking over!",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11571,
+      "name": "Insanity Gaming Arcade Newton Abbot",
+      "field": "hours",
+      "current": "Mon 11:00-18:00; Tue closed; Wed 12:00-18:00; Thu-Sun 11:00-18:00",
+      "proposed": "Mon closed; Tue closed; Wed 11:00-18:00; Thu 11:00-18:00; Fri often closed for maintenance; Sat 11:00-17:00; Sun 11:00-16:00 (open Tue-Sun during school holidays; private functions can override)",
+      "confidence": "certain",
+      "evidence_url": "https://www.insanityarcadedevon.com/",
+      "evidence_quote": "Monday: closed; Tuesday: closed; Wednesday: 11AM - 6PM; Thursday: 11AM - 6PM; Friday: *Planned Maintenance *; Saturday: 11AM - 5PM; Sunday: 11AM - 4PM. Open Tues - Sun during school holidays.",
+      "note": "Official site confirms venue operating and lists Dance Stage EuroMix 2 among machines. App hours do not match (especially Monday open and weekend ends).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11572,
+      "name": "Insanity Gaming Arcade Poole",
+      "field": "hours",
+      "current": "Mon 11:00-16:00; Tue-Wed 11:00-20:00; Thu 11:00-18:00; Fri-Sat 11:00-22:00; Sun 11:00-18:00",
+      "proposed": "Mon-Thu 10:00-19:00; Fri-Sat 10:00-22:00; Sun 10:00-18:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.insanityarcade.com/home",
+      "evidence_quote": "Mon-Thu: 10.00 - 19.00; Fri-Sat: 10.00 - 22.00; Sun: 10.00 - 18.00",
+      "note": "Official site open with BOOK NOW. Explicitly names \"import rhythm games like Jubeat\". DDR not named on homepage (ZIv still lists EuroMIX).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11572,
+      "name": "Insanity Gaming Arcade Poole",
+      "field": "games",
+      "current": [
+        "ddr",
+        "jubeat",
+        "other"
+      ],
+      "proposed": [
+        "jubeat",
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://www.insanityarcade.com/home",
+      "evidence_quote": "from classics like PacMan and Sega Rally, to modern hits like Star Wars Battle Pod and import rhythm games like Jubeat!",
+      "note": "Jubeat confirmed by operator site. DDR/Dancing Stage not named there; only ZIv community list (condition 0 entries). Prefer drop ddr rather than invent certainty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11585,
+      "name": "King Alfreds",
+      "field": "status",
+      "current": "listed open leisure-centre arcade",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2946",
+      "evidence_quote": "Last update: 2013-09-18. Information: The whole area is now run down, the council have given up on it. a few arcade cabs left over from the amusements.",
+      "note": "No update since 2013. Cannot confirm whether any arcade cabs remain at King Alfred Leisure Centre Brighton. Website field is a dead Freedom Leisure centres.asp deep link. Flag for human re-check or removal if no modern evidence appears. Not marking closed without primary source.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11476,
+      "name": "Harbour Park",
+      "field": "hours",
+      "current": "Mon-Sun 10:30-19:00",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://www.harbourpark.com/",
+      "evidence_quote": "Arcade: 10am - 8pm (example day listed for Tuesday 7 April 2026); Soft Play 10am-6pm; Rides 11am-6pm; please check our ride Opening Times page before visiting",
+      "note": "Venue open. Fixed Mon-Sun 10:30-19:00 is too rigid; park publishes seasonal/day-variable arcade hours (example 10-20). Prefer hours_text pointing at seasonal schedule or clearing the fixed string.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11573,
+      "name": "Jack Murpheys",
+      "field": "other",
+      "current": "ddr present",
+      "proposed": "cab note: Dancing Stage EuroMIX, CARD PAYMENTS ONLY; P1 select button broken",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9769",
+      "evidence_quote": "Dancing Stage EuroMIX | The cab uses CARD PAYMENTS ONLY / Custom artwork for the location / P1 select button doesn't work | lastUpdate 2025-12-12",
+      "note": "Sports bar still listed with recent ZIv update. No independent official site found under that spelling. Not a status change.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11583,
+      "name": "Kent Coast Holiday Park",
+      "field": "other",
+      "current": "name Kent Coast Holiday Park; ddr present",
+      "proposed": "confirm still Haven Kent Coast (formerly Allhallows); FunWorks arcade still advertised",
+      "confidence": "certain",
+      "evidence_url": "https://www.haven.com/parks/kent/kent-coast",
+      "evidence_quote": "Kent Coast (formerly Allhallows Leisure Park). The FunWorks amusement arcade is full of fun for all the family and recently had a fresh new look!",
+      "note": "Park open. DDR A claim remains ZIv-only (2021 data, local mode, lastUpdate 2024-10-08). Not removing ddr but confidence of the cab itself is only community-level; official page does not name DDR.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11493,
+      "name": "High Score Bracknell",
+      "field": "other",
+      "current": "games: other; notes Cabs: OpenITG",
+      "proposed": "keep games without ddr; OpenITG is a homemade ITG cab not official DDR",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10660",
+      "evidence_quote": "OpenITG | condition Perfect | Home made cabinet",
+      "note": "Correct that map does not tag ddr. Optional note for maintainers so nobody upgrades this to ddr from notes alone. Venue open official.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11521,
+      "name": "Hollywood Bowl Bury",
+      "field": "website",
+      "current": "http://www.amfbowling.co.uk/Our-Centres/Bury.htm",
+      "proposed": "https://www.hollywoodbowl.co.uk/bury",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/centres",
+      "evidence_quote": "Bury listed among Hollywood Bowl centres",
+      "note": "Stale AMF Bowling URL; brand long since Hollywood Bowl.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11543,
+      "name": "Hollywood Bowl Peterborough",
+      "field": "website",
+      "current": "http://www.amfbowling.co.uk/Our-Centres/Peterborough.htm",
+      "proposed": "https://www.hollywoodbowl.co.uk/peterborough",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/centres",
+      "evidence_quote": "Peterborough listed among Hollywood Bowl centres",
+      "note": "Stale AMF Bowling URL; brand long since Hollywood Bowl.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11564,
+      "name": "Hollywood Bowl Wellingborough",
+      "field": "website",
+      "current": "http://www.amfbowling.co.uk/Our-Centres/Wellingborough.htm",
+      "proposed": "https://www.hollywoodbowl.co.uk/wellingborough",
+      "confidence": "certain",
+      "evidence_url": "https://www.hollywoodbowl.co.uk/centres",
+      "evidence_quote": "Wellingborough listed among Hollywood Bowl centres",
+      "note": "Stale AMF Bowling URL; brand long since Hollywood Bowl.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

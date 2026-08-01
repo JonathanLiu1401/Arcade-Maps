@@ -1,0 +1,291 @@
+{
+  "shard": 33,
+  "verdicts": [
+    {
+      "ids": [3748, 3749],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3748,
+      "canonical_name": "斯跑曼兰州七里河店",
+      "canonical_addr": "甘肃省兰州市七里河区万达茂斯跑曼主题体育乐园",
+      "reason": "Same Wanda Mao complex at identical coords: WAHLAP branch name vs BemaniCN venue name inside 斯跑曼运动主题公园 1F. One physical arcade.",
+      "evidence_url": "https://map.bemanicn.com/s/2462",
+      "evidence_quote": "斯跑曼潮玩电竞馆 / 万达茂1F 斯跑曼运动主题公园 斯跑曼潮玩电竞馆"
+    },
+    {
+      "ids": [3786, 3789],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3789,
+      "canonical_name": "时空龙骑士绵阳江油圣明国际店",
+      "canonical_addr": "四川省绵阳市江油市圣明国际3楼时空龙骑士",
+      "reason": "Identical shop: bare brand vs full branch name, both at 圣明国际 3楼 with same geocode.",
+      "evidence_url": "https://map.bemanicn.com/s/2918",
+      "evidence_quote": "时空龙骑士 / 圣明国际三楼时空龙骑士"
+    },
+    {
+      "ids": [3788, 3790],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3788,
+      "canonical_name": "时空龙骑士九江濂溪万达店",
+      "canonical_addr": "江西省九江市濂溪区万达广场666号时空龙骑士",
+      "reason": "Same Jiujiang Lianxi Wanda: WAHLAP full address and BemaniCN 1B unit are the same mall branch (~85 m geocode noise).",
+      "evidence_url": "https://map.bemanicn.com/s/3761",
+      "evidence_quote": "时空龙骑士（九江万达店） / 濂溪区万达广场1B层1B-次主2铺位"
+    },
+    {
+      "ids": [3793, 3795],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3793,
+      "canonical_name": "昆明街区昆明西山云纺店",
+      "canonical_addr": "云南省昆明市西山区永昌街道云纺国际商厦B座一楼昆明街区",
+      "reason": "Same brand and Yunfang mall complex; Baidu lists one KMsquare/昆明街区 云纺店 at ring road 668. A/B seat labels differ but likely one venue, not two shops.",
+      "evidence_url": "https://api.map.baidu.com/?qt=s&c=1&wd=%E6%98%86%E6%98%8E%E8%A1%97%E5%8C%BA%20%E4%BA%91%E7%BA%BA&rn=8&ie=utf-8&oue=1&fromproduct=jsapi&res=api",
+      "evidence_quote": "KMsquare昆明街区(云纺店) | 环城南路668号云纺国际商厦商场第1F第36号; 昆明街区动漫游艺中心(云纺店) same unit"
+    },
+    {
+      "ids": [3801, 3802],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3801,
+      "canonical_name": "易游未尽广州从化金汇城店",
+      "canonical_addr": "广东省广州市从化区环市东路688号金汇城商业广场三层易游未尽",
+      "reason": "Same Jinhui City L3 unit: both list 环市东路688号金汇城 3层; community name is venue style, WAHLAP is branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4865",
+      "evidence_quote": "易游未尽酷玩城 / 江埔环市东路688号金汇城3层L3-001-5"
+    },
+    {
+      "ids": [3803, 3807],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3807,
+      "canonical_name": "星世纪动漫游戏体验中心邵阳店",
+      "canonical_addr": "湖南省邵阳市双清区友阿国际广场三楼星世纪动漫游戏体验中心",
+      "reason": "Both at 友阿国际广场 三楼 in Shuangqing, Shaoyang; short community name vs full WAHLAP branch.",
+      "evidence_url": "https://map.bemanicn.com/s/185",
+      "evidence_quote": "星世纪(友阿国际广场店) / 邵阳市双清区友阿国际广场三楼中心处"
+    },
+    {
+      "ids": [3804, 3820],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3804,
+      "canonical_name": "星世纪九江浔阳步行街店",
+      "canonical_addr": "江西省九江市浔阳区湓浦街道大中路步行街444号信华广场1号楼",
+      "reason": "Identical building address 大中路步行街444号信华广场1号; 380 m gap is dual geocode of same plaza, not two branches.",
+      "evidence_url": "https://map.bemanicn.com/s/1879",
+      "evidence_quote": "星世纪电玩 / 浔阳区湓浦街道大中路步行街444号信华广场1号"
+    },
+    {
+      "ids": [3808, 3811],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3811,
+      "canonical_name": "星世纪娄底娄星万豪店",
+      "canonical_addr": "湖南省娄底市娄星区氐星路万豪城市广场2楼星世纪动漫游戏体验中心",
+      "reason": "Same Wanhao City Plaza F2 branch in Loudi; BemaniCN and WAHLAP describe one 星世纪 at 氐星路万豪城市广场.",
+      "evidence_url": "https://map.bemanicn.com/s/6432",
+      "evidence_quote": "星世纪动漫电玩台球中心（娄底万豪店） / 氐星路1217号万豪城市广场F2"
+    },
+    {
+      "ids": [3810, 3823],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3810,
+      "canonical_name": "星世纪咸宁游乐空间站店",
+      "canonical_addr": "湖北省咸宁市咸宁国家高新开发区温泉路35号金诚沃尔玛负一楼B-12号",
+      "reason": "Same 温泉路35号金诚沃尔玛 B1 unit at 0 m; WAHLAP unit B-12 and BemaniCN 金诚店 are one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/4200",
+      "evidence_quote": "星世纪电玩游戏体验中心(咸宁金诚店) / 温泉路35号金诚沃尔玛负一楼"
+    },
+    {
+      "ids": [3812, 3817],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3812,
+      "canonical_name": "星世纪宿迁远洋未来广场店",
+      "canonical_addr": "江苏省宿迁市宿城区河滨街道宿支路远洋未来广场3F星世纪",
+      "reason": "Same 远洋(未来)广场 3F at identical coords; short community name vs full WAHLAP branch; shared chunithm+maimai lineup.",
+      "evidence_url": "https://map.bemanicn.com/s/6840",
+      "evidence_quote": "星世纪游乐空间站 / 河滨街道远洋广场三楼"
+    },
+    {
+      "ids": [3815, 3830],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3815,
+      "canonical_name": "星世纪株洲天元神农城店",
+      "canonical_addr": "湖南省株洲市天元区珠江南路599号神农太阳城购物中心南座上层A305/A306号",
+      "reason": "神农太阳城 and 神农万达 are the same Zhuzhou complex (珠江南路599号). Baidu places 神农万达 inside 神农太阳城. One branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2384",
+      "evidence_quote": "Baidu: 株洲神农万达广场 / 珠江南路神农太阳城; both lists use 珠江南路599号"
+    },
+    {
+      "ids": [3818, 3826],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3826,
+      "canonical_name": "星世纪铜陵铜官吾悦店",
+      "canonical_addr": "安徽铜陵市铜官区翠湖二路东段88号吾悦广场三楼星世纪",
+      "reason": "Same Tongling Wuyue Plaza 星世纪 on 翠湖二路; street numbers 789 vs 88 conflict but both name the same mall and sit ~64 m apart, so one geocode pair for one branch.",
+      "evidence_url": "https://map.bemanicn.com/s/7272",
+      "evidence_quote": "星世纪游乐空间站·电玩游戏 / 翠湖二路789号吾悦广场 vs WAHLAP 翠湖二路东段88号吾悦广场三楼"
+    },
+    {
+      "ids": [3819, 3828],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3819,
+      "canonical_name": "星世纪游乐空间站星耀城店",
+      "canonical_addr": "江苏省常州市新北区新桥街道星耀城吾悦广场星世纪2楼",
+      "reason": "Same 星耀城吾悦广场 at 0 m; BemaniCN uses longer district-style branch name for the identical mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6418",
+      "evidence_quote": "星世纪（常州高铁新城星耀城吾悦广场店） / 高铁新城星耀城吾悦广场"
+    },
+    {
+      "ids": [3839, 3840],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3840,
+      "canonical_name": "星光之城上饶鄱阳文和里店",
+      "canonical_addr": "江西省上饶市鄱阳县饶州街道文合里南街区一号楼/二层",
+      "reason": "Baidu has one 星光之城电玩城 at 文和里南街区1号楼; BemaniCN intersection description is the same Poyang complex as WAHLAP 文和里.",
+      "evidence_url": "https://map.bemanicn.com/s/4716",
+      "evidence_quote": "Baidu: 星光之城电玩城 | 文和里南街区1号楼一/二层; BemaniCN: 饶州北大道与建设路交叉口北200米"
+    },
+    {
+      "ids": [3843, 3844],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3844,
+      "canonical_name": "星光嘉年华潍坊高新店",
+      "canonical_addr": "山东省潍坊市高新区清池街道健康东街与惠贤路东北角谷德茂三楼",
+      "reason": "Same 谷德茂 3F at 健康东街与惠贤路, 0 m apart; full family-entertainment name vs short WAHLAP branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2276",
+      "evidence_quote": "星光嘉年华家庭娱乐中心（谷德茂购物中心高新店） / 健康东街与惠贤路交叉口东北角谷德茂3楼L336"
+    },
+    {
+      "ids": [3846, 3847],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3846,
+      "canonical_name": "星光联盟动漫潮玩体验中心阜阳临泉爱琴海购物公园店",
+      "canonical_addr": "安徽省阜阳市临泉县爱琴海购物公园二楼",
+      "reason": "Same Linquan Aegean Sea shopping park branch at 0 m; WAHLAP names the mall/floor, BemaniCN names the road intersection of that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6587",
+      "evidence_quote": "星光联盟（爱琴海店） / 临泉县光明路与霞光大道交叉口(临泉体育场南)"
+    },
+    {
+      "ids": [3849, 3850],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3849,
+      "canonical_name": "星动潮玩钦州钦南世贸广场店",
+      "canonical_addr": "广西省钦州市钦南区长融世贸广场3楼星动潮玩",
+      "reason": "Same 长融世贸广场 3F in Qinzhou; two near-identical branch labels from WAHLAP and BemaniCN (~28 m).",
+      "evidence_url": "https://map.bemanicn.com/s/5585",
+      "evidence_quote": "星动潮玩钦州长融世贸广场店 / 长融世贸广场3楼"
+    },
+    {
+      "ids": [3862, 3871],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3862,
+      "canonical_name": "星城战记湖州吴兴店",
+      "canonical_addr": "浙江湖州市吴兴区湖州南太湖吾悦广场三楼星城战记",
+      "reason": "Same 南太湖吾悦广场 3F at 0 m with matching chunithm+maimai lineup; bare branch vs full mall branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/7207",
+      "evidence_quote": "星城战记（湖州南太湖吾悦广场店） / 南太湖吾悦广场3F"
+    },
+    {
+      "ids": [3867, 3872],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3867,
+      "canonical_name": "星城战记衡阳财富广场店",
+      "canonical_addr": "湖南省衡阳市衡东县万上财富广场",
+      "reason": "Same 万上财富广场 in Hengdong at 0 m; WAHLAP city-style name vs BemaniCN 衡东店 unit 222.",
+      "evidence_url": "https://map.bemanicn.com/s/3278",
+      "evidence_quote": "星城战记（衡东店） / 衡东大道万上财富广场二楼222号"
+    },
+    {
+      "ids": [6835, 6837],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6837,
+      "canonical_name": "酷洛潮漫郴州北湖店",
+      "canonical_addr": "湖南省郴州市北湖区人民路街道国庆北路步步高置业新天地1200一楼B馆1002A商铺",
+      "reason": "Same Bubugao Xintiandi on 国庆北路, 0 m; BemaniCN notes rename from 酷洛小镇 and shorter address.",
+      "evidence_url": "https://map.bemanicn.com/s/1165",
+      "evidence_quote": "酷洛潮漫 步步高新天地店（酷洛小镇改名） / 国庆北路10号"
+    },
+    {
+      "ids": [3873, 3874],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3874,
+      "canonical_name": "星奇8茂名高州金港湾店",
+      "canonical_addr": "广东省茂名市高州市文明路金港湾商场3楼星奇8家庭娱乐中心",
+      "reason": "Same 文明路金港湾 mall (~22 m); bare community name vs WAHLAP floor-specific branch.",
+      "evidence_url": "https://map.bemanicn.com/s/7279",
+      "evidence_quote": "星奇8娱乐中心 / 文明路6号金港湾 vs WAHLAP 文明路金港湾商场3楼"
+    },
+    {
+      "ids": [3877, 3879],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3879,
+      "canonical_name": "星奇多合肥蜀山唯品会2店",
+      "canonical_addr": "安徽省合肥市蜀山区安粮唯品会三楼星奇多潮玩世界",
+      "reason": "Baidu lists a single 星奇多潮玩世界(蜀山唯品会店) at 唯品会城市奥莱 3F; WAHLAP '2店' is the same mall branch as BemaniCN, not a second store.",
+      "evidence_url": "https://map.bemanicn.com/s/3537",
+      "evidence_quote": "Baidu: 星奇多潮玩世界(蜀山唯品会店) | 金寨南路811号唯品会城市奥莱3楼F3001; BemaniCN 唯品会合肥蜀山城市奥莱三楼"
+    },
+    {
+      "ids": [3886, 3893],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3893,
+      "canonical_name": "星奇多潮玩合肥蜀山店",
+      "canonical_addr": "安徽省合肥市蜀山区莲花社区正大广场四楼星奇多潮玩世界",
+      "reason": "Same Hefei Zhengda Plaza 4F 星奇多; Baidu one POI. 442 m is dual geocode of the large mall, not two branches.",
+      "evidence_url": "https://map.bemanicn.com/s/1747",
+      "evidence_quote": "Baidu: 星奇多潮玩世界(正大广场店) | 芙蓉路与金寨南路交叉口东南角正大广场4楼4015-4016"
+    },
+    {
+      "ids": [3887, 3892],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3892,
+      "canonical_name": "星奇多潮玩合肥包河店",
+      "canonical_addr": "安徽省合肥市包河区徽州大道878号漫乐城2楼",
+      "reason": "Identical 漫乐城 2F at 0 m; BemaniCN mall name vs WAHLAP district branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/3229",
+      "evidence_quote": "星奇多潮玩世界合肥漫乐城店 / 徽州大道漫乐城2楼"
+    },
+    {
+      "ids": [3888, 3895],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3895,
+      "canonical_name": "星奇多芜湖弋江万达店",
+      "canonical_addr": "安徽省芜湖市弋江区万达3楼星奇多潮玩世界",
+      "reason": "Same Wuhu Yijiang Wanda 3F 星奇多; 九华南路800号 matches both sources (~69 m).",
+      "evidence_url": "https://map.bemanicn.com/s/4545",
+      "evidence_quote": "星奇多潮玩世界弋江万达店 / 九华南路800号万达广场三楼"
+    },
+    {
+      "ids": [6397, 6404],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6404,
+      "canonical_name": "萌宝熊芜湖弋江万达店",
+      "canonical_addr": "安徽省芜湖市弋江区九华南路与大工山路交叉口万达广场3层-2号萌宝熊儿童乐园",
+      "reason": "Same 萌宝熊 brand at Yijiang Wanda 3F unit; BemaniCN and WAHLAP are the same child-park arcade, not two venues (distinct from nearby 星奇多 in same mall).",
+      "evidence_url": "https://map.bemanicn.com/s/4556",
+      "evidence_quote": "萌宝熊SUPER潮玩空间弋江万达店 / 九华南路800号万达广场三楼"
+    }
+  ]
+}

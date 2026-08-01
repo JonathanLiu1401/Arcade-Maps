@@ -179,6 +179,27 @@ window.AM = window.AM || {};
     box.appendChild(ring);
   }
 
+  /* Same number the filter chips and the omnibox print: stores that land on
+     the map for this game under the live source and cab filters. Reading the
+     build-time AM.data.gameCounts here would put a second, different total
+     next to the same colour the chips use. */
+  function gameCountFor(g) {
+    if (AM.search && AM.search.visibleCountForGame) {
+      return AM.search.visibleCountForGame(g);
+    }
+    return (AM.data.gameCounts || {})[g] || 0;
+  }
+
+  function syncColorCounts() {
+    var grid = document.getElementById("sd-color-counts");
+    if (!grid) return;
+    var items = grid.children;
+    for (var i = 0; i < items.length; i++) {
+      var n = items[i].querySelector(".sd-count");
+      if (n) n.textContent = U.num(gameCountFor(items[i].dataset.g));
+    }
+  }
+
   /* ---------- panes ---------- */
 
   var srcInputs = {};
@@ -253,13 +274,15 @@ window.AM = window.AM || {};
     pane.appendChild(el("p", "sd-note",
       "A store with several games takes the colour of the first selected game it has, in the order below. The tier icons above are all drawn in one sample colour; on the map each takes its store's game colour."));
     var grid = el("div", "sd-colors");
+    grid.id = "sd-color-counts";
     AM.data.gamesInData.forEach(function (g) {
       var item = el("div", "sd-color");
+      item.dataset.g = g;
       var sw = el("span", "sd-swatch");
       sw.style.background = C.GAME_COLOR[g] || C.GAME_COLOR.other;
       item.appendChild(sw);
       item.appendChild(el("span", "sd-color-name", C.GAME_LABEL[g] || g));
-      item.appendChild(el("span", "sd-count tabnum", U.num((AM.data.gameCounts || {})[g] || 0)));
+      item.appendChild(el("span", "sd-count tabnum", U.num(gameCountFor(g))));
       grid.appendChild(item);
     });
     pane.appendChild(grid);
@@ -626,6 +649,8 @@ window.AM = window.AM || {};
 
   function start() {
     AM.state.on("enabledSources", syncSources);
+    AM.state.on("enabledSources", syncColorCounts);
+    AM.state.on("selectedCabs", syncColorCounts);
     AM.state.on("shownCount", syncShown);
     PREFS.forEach(function (p) { AM.state.on(p.key, syncPrefs); });
     /* The About legend draws the sizes the map is drawing, so it has to follow
@@ -637,6 +662,7 @@ window.AM = window.AM || {};
     syncSources();
     syncPrefs();
     syncShown();
+    syncColorCounts();
   }
 
   AM.settings = {

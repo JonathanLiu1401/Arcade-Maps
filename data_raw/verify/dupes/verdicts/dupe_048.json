@@ -1,0 +1,291 @@
+{
+  "shard": 48,
+  "verdicts": [
+    {
+      "ids": [6918, 6920],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6920,
+      "canonical_name": "酷玩空间上海普陀环球港店",
+      "canonical_addr": "中山北路3300号(近宁夏路)月星环球港负一楼",
+      "reason": "Same Global Harbor B1 Coolplay Space: ZIv English listing and WAHLAP/BemaniCN Chinese listing share mall, floor, and maimai/chunithm/taiko counts; Baidu lists one shop there.",
+      "evidence_url": "https://map.bemanicn.com/s/4712",
+      "evidence_quote": "酷玩空间上海普陀环球港店 / 中山北路3300号(近宁夏路)月星环球港负一楼"
+    },
+    {
+      "ids": [5657, 5658],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5658,
+      "canonical_name": "环游嘉年华东莞长安万科店（原城市英雄）",
+      "canonical_addr": "广东省东莞市长安镇长青南路1号7栋万科广场三楼3039室环游嘉年华",
+      "reason": "Same Dongguan Chang'an Vanke Plaza 3F branch: BemaniCN unit 309 and WAHLAP unit 3039 are the same shop; Baidu has one 环游嘉年华 at that address.",
+      "evidence_url": "https://map.bemanicn.com/s/305",
+      "evidence_quote": "环游嘉年华东莞长安万科店（原城市英雄） / 长青南路1号万科广场3层309"
+    },
+    {
+      "ids": [5659, 5668],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5668,
+      "canonical_name": "环游嘉年华广州中华广场店",
+      "canonical_addr": "广东省广州市越秀区中山三路33号中华广场三层3002A号环游嘉年华",
+      "reason": "Identical Zhongshan 3rd Rd No.33 China Plaza 3F; Baidu returns a single 环游嘉年华(广州中华广场店).",
+      "evidence_url": "https://map.bemanicn.com/s/1437",
+      "evidence_quote": "环游嘉年华中华广场店 / 中山三路33号中华广场3层"
+    },
+    {
+      "ids": [5660, 5672],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5672,
+      "canonical_name": "环游嘉年华广州黄埔绿地店",
+      "canonical_addr": "广东省广州市黄埔区亿创大街3号绿地缤纷城3楼301铺",
+      "reason": "Same Sino-Singapore Knowledge City GreenLand Binfen City 3F shop (中新绿地 vs 黄埔绿地 naming).",
+      "evidence_url": "https://map.bemanicn.com/s/282",
+      "evidence_quote": "环游嘉年华中新绿地店 / 知识城南区亿创街3号绿地缤纷城3层"
+    },
+    {
+      "ids": [5673, 5703],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5673,
+      "canonical_name": "环游嘉年华超乐场（库尔勒汇嘉时代广场店）",
+      "canonical_addr": "新疆维吾尔自治区巴音郭楞蒙古自治州库尔勒市朝阳路9号汇嘉时代5楼",
+      "reason": "0 m apart; both at Chaoyang Rd 9 Huijia Times 5F Korla; Baidu one 环游嘉年华·超乐场(库尔勒汇嘉店).",
+      "evidence_url": "https://map.bemanicn.com/s/6412",
+      "evidence_quote": "环游嘉年华超乐场（库尔勒汇嘉时代广场店） / 朝阳路9号汇嘉时代广场5层"
+    },
+    {
+      "ids": [5674, 5711],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5674,
+      "canonical_name": "环游嘉年华库尔勒领先领悦里店",
+      "canonical_addr": "库尔勒人民东路1号领先领悦里负一层",
+      "reason": "0 m; BemaniCN explicitly notes former 天百 mall renamed 领悦里, same basement shop as WAHLAP 领先领悦里.",
+      "evidence_url": "https://map.bemanicn.com/s/7218",
+      "evidence_quote": "环游嘉年华（库尔勒天百店）（商场已改名为领悦里） / 人民东路领先领悦里负一楼"
+    },
+    {
+      "ids": [5677, 5684],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5684,
+      "canonical_name": "环游嘉年华番禺易发店",
+      "canonical_addr": "广东省广州市番禺区市桥街易发商业街新大新百货5楼",
+      "reason": "Same Panyu Shiqiao Yifa / Xin Daxin 5F; complementary game lists (jubeat/taiko vs chunithm/maimai) indicate one venue across sources; Baidu one 易发店.",
+      "evidence_url": "https://map.bemanicn.com/s/38",
+      "evidence_quote": "环游嘉年华易发店（暂停营业至8月） / 市桥光明北路32号易发商业中心5层"
+    },
+    {
+      "ids": [5688, 5696],
+      "verdict": "keep_separate",
+      "confidence": "likely",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Addresses name two different cities: Aksu Tianbai (阿克苏天百) vs Kuitun Youhao Fashion (奎屯友好时尚). ~10 m stack is geocode collision; Baidu lists both an Aksu and a Kuitun branch as real venues. Merging would erase one city.",
+      "evidence_url": "https://map.bemanicn.com/s/5230",
+      "evidence_quote": "环游嘉年华超乐场(阿克苏友好店) vs member name 奎屯市友好时尚购物中心; Baidu also has 奎屯友好店"
+    },
+    {
+      "ids": [5690, 5710],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5690,
+      "canonical_name": "环游嘉年华超乐场乌鲁木齐天山瑞悦街店",
+      "canonical_addr": "新疆乌鲁木齐市天山区碱泉二街80号和瑞悦街二层01.02.08.09商铺",
+      "reason": "Same Urumqi Herui Yue Street branch; Baidu 环游嘉年华(和瑞店) at 碱泉二街80号和瑞悦街二层.",
+      "evidence_url": "https://map.bemanicn.com/s/7059",
+      "evidence_quote": "环游嘉年华（和瑞悦街店） / 碱泉二街德轩苑小区西侧约60米"
+    },
+    {
+      "ids": [5691, 5702],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5691,
+      "canonical_name": "环游嘉年华超乐场乌鲁木齐时代广场店",
+      "canonical_addr": "新疆维吾尔自治区乌鲁木齐市天山区光明路39号时代广场3楼F3-037号环游嘉年华超乐场",
+      "reason": "Exact same unit F3-037 at Guangming Rd 39 CCMALL Times Plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/1903",
+      "evidence_quote": "环游嘉年华超乐场（CCMALL时代广场） / 光明路39号CCmall时代广场F3-037号"
+    },
+    {
+      "ids": [5692, 5714],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5692,
+      "canonical_name": "环游嘉年华超乐场乌鲁木齐美美店",
+      "canonical_addr": "新疆维吾尔自治区乌鲁木齐市沙依巴克区友好北路689号美美购物中心6层S-610环游嘉年华",
+      "reason": "Same Meimei Shopping Center 6F S-610; Baidu one 环游嘉年华(乌市美美店).",
+      "evidence_url": "https://map.bemanicn.com/s/5483",
+      "evidence_quote": "环游嘉年华（美美购物中心店） / 友好北路689号美美购物中心南区6楼"
+    },
+    {
+      "ids": [5694, 5713],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5694,
+      "canonical_name": "环游嘉年华超乐场克拉玛依汇嘉店",
+      "canonical_addr": "新疆维吾尔自治区克拉玛依市克拉玛依区幸福路戊1号汇嘉时代购物中心3层环游嘉年华超乐场",
+      "reason": "Same Karamay Huijia Times 3F unit (滨河汇嘉 is local name for this mall); Baidu 幸福路店 at 3-2.",
+      "evidence_url": "https://map.bemanicn.com/s/2931",
+      "evidence_quote": "环游嘉年华（滨河汇嘉店） / 幸福路戊一号(汇嘉时代购物中心)三楼3-2号"
+    },
+    {
+      "ids": [5699, 5704],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5699,
+      "canonical_name": "环游嘉年华超乐场新疆哈密伊州店",
+      "canonical_addr": "新疆哈密市伊州区中山北路与广场南路交汇处汇嘉时代一期5楼L5011",
+      "reason": "Same Hami Huijia Times phase-1 5F L5011; Baidu 环游嘉年华超乐场(哈密汇嘉店) matches unit.",
+      "evidence_url": "https://map.bemanicn.com/s/4020",
+      "evidence_quote": "环游嘉年华超乐场（汇嘉店） / 哈密汇嘉时代商业广场5楼"
+    },
+    {
+      "ids": [5701, 5716],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5701,
+      "canonical_name": "环游嘉年华超乐场沙依巴克钱塘江路店",
+      "canonical_addr": "新疆乌鲁木齐沙依巴克区钱塘江路168号友好购物中心6楼",
+      "reason": "0 m; identical Qiantangjiang Rd 168 Youhao Shopping Center 6F (酱园友好 is local nickname).",
+      "evidence_url": "https://map.bemanicn.com/s/3802",
+      "evidence_quote": "环游嘉年华（酱园友好店） / 钱塘江路168号友好购物中心六层"
+    },
+    {
+      "ids": [5724, 5728],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5728,
+      "canonical_name": "环游家族无锡滨湖万达店",
+      "canonical_addr": "江苏省无锡市滨湖区河埒接到万达广场1楼",
+      "reason": "0 m; same Wuxi Binhu Wanda 1F 环游家族 / 宝贝王 listing pair.",
+      "evidence_url": "https://map.bemanicn.com/s/5365",
+      "evidence_quote": "环游家族·宝贝王(滨湖万达店) / 滨湖区万达广场1楼"
+    },
+    {
+      "ids": [5725, 5733],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5725,
+      "canonical_name": "环游家族南通万达广场店",
+      "canonical_addr": "江苏省南通市崇川区深南路9号万达广场三楼环游家族",
+      "reason": "0 m; same Nantong Chongchuan Wanda 3F; Baidu 环游家族(崇川万达店).",
+      "evidence_url": "https://map.bemanicn.com/s/3669",
+      "evidence_quote": "环游家族（崇川万达店） / 崇川区深南路9号万达广场3F"
+    },
+    {
+      "ids": [5731, 5732],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5731,
+      "canonical_name": "环游家族（上海金山万达店）/酷玩巅峰",
+      "canonical_addr": "上海市金山区龙皓路1088号金山万达广场2F/3F东侧",
+      "reason": "Longhao Rd 1088 is Jinshan Wanda Plaza; WAHLAP 龙皓店 and BemaniCN/ZIv 金山万达店 are 5 m apart at same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4357",
+      "evidence_quote": "环游家族（上海金山万达店）/酷玩巅峰 / 金山万达广场2F/3F东侧"
+    },
+    {
+      "ids": [5735, 5736],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5736,
+      "canonical_name": "环游时光南宁江南万达店",
+      "canonical_addr": "广西壮族自治区南宁市江南区亭洪路48-1号万达广场（江南店）三楼环游时光",
+      "reason": "0 m; same Nanning Jiangnan Wanda 3F; Baidu 环游时光(万达广场南宁江南店).",
+      "evidence_url": "https://map.bemanicn.com/s/6941",
+      "evidence_quote": "环游时光 / 亭洪路48-1号万达广场（江南店）三楼环游时光"
+    },
+    {
+      "ids": [5739, 5740],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5740,
+      "canonical_name": "环游派超乐场贵港港北中山路地下商业街店",
+      "canonical_addr": "贵港市港北区地下商业街六区",
+      "reason": "0 m; BemaniCN address field is literally the WAHLAP branch name for Guigang underground street shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6685",
+      "evidence_quote": "环游派游乐场 address=环游派超乐场贵港港北中山路地下商业街店"
+    },
+    {
+      "ids": [5742, 5745],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5742,
+      "canonical_name": "环游艺派南宁五象航洋城店",
+      "canonical_addr": "广西壮族自治区南宁市良庆区五象大道401号南宁五象航洋城2号楼3楼环游艺派娱乐馆",
+      "reason": "Same Nanning Wuxiang Hopson One 3F 环游艺派; Baidu one 五象航洋店.",
+      "evidence_url": "https://map.bemanicn.com/s/5425",
+      "evidence_quote": "环游艺派（南宁市良庆区五象总部基地航洋店） / 五象大道401号...3楼"
+    },
+    {
+      "ids": [5747, 5748],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5748,
+      "canonical_name": "玲珑锁西安雁塔大茂城店",
+      "canonical_addr": "陕西省西安市雁塔区丈八北路大茂城5楼5012铺",
+      "reason": "Same Xi'an Yanta DaMaoCity 5F Exquisite Locker; ZIv and WAHLAP; Baidu one 玲珑锁游乐城(大茂城店).",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9796",
+      "evidence_quote": "5th Floor, DaMaoCity Shopping, No. 466 Zhangba North Road"
+    },
+    {
+      "ids": [5753, 5754],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5754,
+      "canonical_name": "瓜瓜亲子家庭娱乐中心阳城县宇佳广场店",
+      "canonical_addr": "阳城县凤城镇金阳街1号宇佳时代广场B1楼",
+      "reason": "0 m same Yangcheng Yujia plaza brand 瓜瓜; street no. 1 vs 5 and B1 vs 1F disagree slightly, but Baidu only lists one 瓜瓜 at 金阳街1号宇佳 B1, so likely one venue with address variance.",
+      "evidence_url": "https://map.bemanicn.com/s/7182",
+      "evidence_quote": "瓜瓜亲子乐园 / 金阳街1号宇佳时代广场B1楼; Baidu 瓜瓜亲子乐园(金阳街店) same"
+    },
+    {
+      "ids": [5761, 5762],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5761,
+      "canonical_name": "电燃风云杭州萧山金帝店",
+      "canonical_addr": "杭州市萧山区北干街道建设四路189号金帝t-one mo 三层07号",
+      "reason": "Same Hangzhou Xiaoshan Jindi T-ONE MO 3F branch; ~350 m is dual geocode of same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6123",
+      "evidence_quote": "电燃风云（金帝T-ONE MO店） / 建设四路...金帝T-ONEMo三楼"
+    },
+    {
+      "ids": [5764, 5767],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5764,
+      "canonical_name": "电玩帝国长春南关店",
+      "canonical_addr": "吉林省长春市南关区亚泰大街1138号中东城市购物广场4楼电玩帝国",
+      "reason": "0 m; 中东城市购物广场 and 中东新天地购物公园 are the same Yatai Ave 1138 complex; Baidu 电玩帝国(新天地购物公园店) B4.",
+      "evidence_url": "https://map.bemanicn.com/s/7090",
+      "evidence_quote": "电玩帝国（长春新天地店） / 亚泰大街辅路中东新天地购物公园"
+    },
+    {
+      "ids": [5771, 5775],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5771,
+      "canonical_name": "电玩森林廊坊天洋店",
+      "canonical_addr": "河北省廊坊市三河市燕郊镇天洋广场C馆B1层",
+      "reason": "Same Yanjiao Tianyong Plaza/City B1 电玩森林; WAHLAP C-hall B1 and BemaniCN 天洋城 B1.",
+      "evidence_url": "https://map.bemanicn.com/s/5238",
+      "evidence_quote": "电玩森林（燕郊天洋城店） / 燕郊天洋城B1"
+    },
+    {
+      "ids": [5772, 5776],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5772,
+      "canonical_name": "电玩森林成都锦江店",
+      "canonical_addr": "四川省成都市锦江区锦华路一段68号1栋3层365号附369-A号",
+      "reason": "Jinhua Rd Sec.1 No.68 is Chengdu Jinhua Wanda; Baidu shows both address strings for the same 电玩森林(万达广场锦华路店) 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/6359",
+      "evidence_quote": "电玩森林（锦华万达店） / 二环路东五段万达广场3楼"
+    }
+  ]
+}

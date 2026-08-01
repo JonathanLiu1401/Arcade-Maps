@@ -1,0 +1,369 @@
+{
+  "shard": 30,
+  "verdicts": [
+    {
+      "ids": [
+        5226,
+        5233
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5226,
+      "canonical_name": "潮玩社黄石港万达店",
+      "canonical_addr": "湖北省黄石市黄石港区花湖大道30号万达广场三楼",
+      "reason": "Same brand on Huangshi Wanda 3F; wahlap and bemanicn name variants of one shop. Baidu lists a single ChaoWanShe at that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5727",
+      "evidence_quote": "潮玩社（黄石港万达店） 花湖大道30号万达广场三楼"
+    },
+    {
+      "ids": [
+        6498,
+        6502
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two different BeiBeiXia branches: Huangshi Wanda B1 vs Walmart/Moor City B1 unit 8007. Baidu has both POIs; malls differ even though geocodes are about 93 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/3489",
+      "evidence_quote": "Baidu: 贝贝侠家庭欢乐PARTY(万达广场店) 花湖大道30号黄石港万达广场B1层; 贝贝侠家庭欢乐PARTY(黄石摩尔城店) 摩尔城负一楼8007室"
+    },
+    {
+      "ids": [
+        6350,
+        6357
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6350,
+      "canonical_name": "菲菲羊乐园东莞东城万达店",
+      "canonical_addr": "广东省东莞市东城街道东城区东纵大道208号万达广场2层菲菲羊乐园",
+      "reason": "Same Dongcheng Wanda 2F at Dongzong Road 208; bare branch name vs full wahlap branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/5717",
+      "evidence_quote": "菲菲羊（东城万达店） 东纵路208号万达广场2楼"
+    },
+    {
+      "ids": [
+        7295,
+        7298
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7295,
+      "canonical_name": "魅影苍穹东莞东城万达店",
+      "canonical_addr": "广东省东莞市东城街道主山社区东纵路208号万达广场3楼魅影苍穹",
+      "reason": "Both place Meiying Cangqiong on Dongcheng Wanda 3F at Dongzong Road 208; only name length differs.",
+      "evidence_url": "https://map.bemanicn.com/s/4943",
+      "evidence_quote": "魅影苍穹潮玩城(东城万达店) 广东省东莞市东城街道主山社区东纵路208号万达广场3楼"
+    },
+    {
+      "ids": [
+        3346,
+        6871
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6871,
+      "canonical_name": "酷玩e族宝贝王绍兴上虞万达店",
+      "canonical_addr": "浙江省绍兴市上虞区百官街道称山北路399号万达广场1F",
+      "reason": "Same Shangyu Wanda 1F Baby King; Baidu has one Wanda Baby King POI. wahlap name is operator+brand, bemanicn is brand+branch.",
+      "evidence_url": "https://map.bemanicn.com/s/3890",
+      "evidence_quote": "宝贝王（绍兴上虞万达广场店） 百官街道称山北路399号万达广场1F; Baidu: 万达宝贝王(绍兴上虞店)"
+    },
+    {
+      "ids": [
+        6489,
+        6490
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6490,
+      "canonical_name": "贝乐童话(北京怀柔万达广场店)",
+      "canonical_addr": "北京市怀柔区府前西街1号院怀柔万达广场3层",
+      "reason": "ZIv and bemanicn both describe Beile Tonghua on Huairou Wanda 3F with taiko and Pokemon MEZASTAR; English ZIv title is the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5074",
+      "evidence_quote": "贝乐童话(北京怀柔万达广场店) 府前西街1号院怀柔万达广场3层"
+    },
+    {
+      "ids": [
+        3351,
+        3355
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3355,
+      "canonical_name": "宝贝计划北京延庆万达店",
+      "canonical_addr": "北京市延庆区庆园街59号万达广场二层宝贝计划",
+      "reason": "ZIv page for 3351 explicitly lists BEMANICN ID 6275, matching the bemanicn link on 3355; same Yanqing Wanda 2F.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11441",
+      "evidence_quote": "BEMANICN ID: 6275. Address 2F, Yanqing Wanda Plaza, No.59 Qingyuan Street"
+    },
+    {
+      "ids": [
+        3356,
+        3361
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3356,
+      "canonical_name": "宝贝计划北京朝阳华联店",
+      "canonical_addr": "北京市朝阳区常营华联购物中心东区2-46",
+      "reason": "Identical address string Changying Hualian East 2-46; ZIv notes BEMANICN #4002 for the same shop.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11251",
+      "evidence_quote": "BEMANICN ID: #4002 Address 北京市朝阳区常营华联购物中心东区2-46"
+    },
+    {
+      "ids": [
+        3381,
+        3382
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3382,
+      "canonical_name": "富佳潮玩杭州桐庐大润发店",
+      "canonical_addr": "浙江省杭州市桐庐县城南街道迎春南路359号大润发一楼富佳潮玩",
+      "reason": "Both are Tonglu RT-Mart 1F Fujia Chaowan; short vs full branch name, same coords.",
+      "evidence_url": "https://map.bemanicn.com/s/6645",
+      "evidence_quote": "富佳潮玩大润发店 中国浙江省杭州市桐庐县迎春南路359号大润发一楼"
+    },
+    {
+      "ids": [
+        3384,
+        3385
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3385,
+      "canonical_name": "富虹动漫城明山富虹广场店",
+      "canonical_addr": "辽宁省本溪市明山区太子城富虹广场三楼富虹动漫城",
+      "reason": "Same Benxi Mingshan Fuhong Plaza 3F arcade; short vs full branch naming.",
+      "evidence_url": "https://map.bemanicn.com/s/3905",
+      "evidence_quote": "富虹动漫城 翠西路48-1栋太子城富虹广场3楼"
+    },
+    {
+      "ids": [
+        3394,
+        3395
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3394,
+      "canonical_name": "小洋人宝贝王定州南城店",
+      "canonical_addr": "河北省定州市南城区中山中路时代广场三楼小洋人宝贝王",
+      "reason": "Both Dingzhou Zhongshan Middle Road Times Plaza 3F Xiaoyangren Baby King; Nancheng and Times Plaza labels are the same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4074",
+      "evidence_quote": "小洋人宝贝王定州时代广场店 南城区中山中路时代广场三楼"
+    },
+    {
+      "ids": [
+        3398,
+        3399
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3399,
+      "canonical_name": "小猪泰德大连中央大道店",
+      "canonical_addr": "辽宁省大连市沙河口区西安路中央大道三层西侧小猪泰德家庭娱乐中心",
+      "reason": "Nearly identical address text on Zhongyang Dadao 3F west side; about 105 m is geocode noise for the same mall unit.",
+      "evidence_url": "https://map.bemanicn.com/s/6553",
+      "evidence_quote": "小猪泰德儿童乐园 辽宁省大连市沙河口区西安路中央大道三层西侧小猪泰德家庭娱乐中心"
+    },
+    {
+      "ids": [
+        6179,
+        6181
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6179,
+      "canonical_name": "终极梦想大连沙河口吾悦广场店",
+      "canonical_addr": "辽宁省大连市沙河口区西安路街道中央大道吾悦广场三楼终极梦想电玩",
+      "reason": "Both list Shahekou Zhongyang Dadao Wuyue Plaza 3F Zhongji Mengxiang; Zhongyang Dadao store is that mall branch. Distance 366 m is mall geocode drift, not a second venue.",
+      "evidence_url": "https://map.bemanicn.com/s/3129",
+      "evidence_quote": "终极梦想电玩（中央大道店） 辽宁省大连市沙河口区西安路街道中央大道吾悦广场三楼终极梦想电玩(中央大道店)"
+    },
+    {
+      "ids": [
+        3402,
+        3403
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3402,
+      "canonical_name": "小神童济宁金乡诚信店",
+      "canonical_addr": "山东省济宁市金乡县文峰路与奎星路交汇处西南角诚信购物中心一楼",
+      "reason": "Same Jinxiang Chengxin Shopping 1F Xiaoshentong; wahlap short mall name matches bemanicn full center name.",
+      "evidence_url": "https://map.bemanicn.com/s/4785",
+      "evidence_quote": "小神童（诚信购物中心店） 文峰路与奎星路交汇处西南角诚信购物中心一楼"
+    },
+    {
+      "ids": [
+        3404,
+        3406
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3406,
+      "canonical_name": "小酋长湘潭雨湖店",
+      "canonical_addr": "湖南省湘潭市雨湖区九华步步高新天地商场四楼4002小酋长动漫游戏",
+      "reason": "Both Xiangtan Jiuhua Bubugao New World 4F Xiaoqiuzhang; Yuhu vs Xiangtan naming, same mall unit despite large geocode gap.",
+      "evidence_url": "https://map.bemanicn.com/s/1447",
+      "evidence_quote": "小酋长动漫游戏湘潭店 九华示范区步步高新天地4楼"
+    },
+    {
+      "ids": [
+        3409,
+        3422
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3422,
+      "canonical_name": "尖峰玩家莆田城厢万达店",
+      "canonical_addr": "福建省莆田市城厢区霞林街道荔华东大道万达广场2楼",
+      "reason": "Bare Jianfeng Wanjia at Putian Chengxiang Wanda 2F vs full branch name; same 0 m geocode and mall floor.",
+      "evidence_url": "https://map.bemanicn.com/s/5138",
+      "evidence_quote": "尖峰玩家 万达广场（莆田城厢店）2楼"
+    },
+    {
+      "ids": [
+        6169,
+        6175
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6175,
+      "canonical_name": "纷享星球福州仓山万达店",
+      "canonical_addr": "福建省福州市仓山区浦上大道272号仓山万达三楼纷享星球",
+      "reason": "Same Cangshan Wanda 3F Fenxiang Xingqiu; door numbers 276/272/274 are the same plaza. Baidu has one Fenxiang Xingqiu Wanda POI.",
+      "evidence_url": "https://map.bemanicn.com/s/7229",
+      "evidence_quote": "纷享星球家庭娱乐中心（仓山万达店） 仓山区金山街道浦上大道276号仓山万达1号门3F"
+    },
+    {
+      "ids": [
+        3437,
+        3438
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3438,
+      "canonical_name": "巅峰极限成都青羊新城市店",
+      "canonical_addr": "四川省成都市青羊区西大街一号新城市广场A栋三楼",
+      "reason": "Same Chengdu Qingyang West Street 1 New City Plaza Building A 3F Dianfeng Jixian.",
+      "evidence_url": "https://map.bemanicn.com/s/3583",
+      "evidence_quote": "巅峰极限嘉年华（新城市广场店） 西大街1号新城市广场A栋3楼"
+    },
+    {
+      "ids": [
+        3439,
+        3440
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3440,
+      "canonical_name": "巅峰玩家惠州佳兆业广场店",
+      "canonical_addr": "广东省惠州市惠城区江北佳兆业广场5楼巅峰玩家",
+      "reason": "Same Huizhou Jiangbei Kaisa Plaza 5F Dianfeng Wanjia; short name vs full branch. Distinct from Chaospace on 3F of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5898",
+      "evidence_quote": "巅峰玩家 江北佳兆业广场5F"
+    },
+    {
+      "ids": [
+        6548,
+        6549
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6548,
+      "canonical_name": "超时空惠州惠城佳兆业店",
+      "canonical_addr": "广东省惠州市惠城区江北街道佳兆业广场3楼超时空乐场",
+      "reason": "Same Kaisa Plaza 3F Chaospace; bare ChaoShiKong vs official branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/1844",
+      "evidence_quote": "超时空电玩城 江北佳兆业广场3楼超时空电玩城"
+    },
+    {
+      "ids": [
+        3441,
+        3442
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3441,
+      "canonical_name": "巅峰玩家惠州惠城汇乐城店",
+      "canonical_addr": "广东省惠州市惠城区水口街道龙湖东四路10号汇乐城3楼巅峰玩家",
+      "reason": "Same Huilecheng 3F Dianfeng Wanjia branch; addresses agree, about 0.1 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/6531",
+      "evidence_quote": "巅峰玩家（汇乐城店） 中国广东省惠州市惠城区水口街道办事处龙湖东四路10号汇乐城3F"
+    },
+    {
+      "ids": [
+        3446,
+        3448
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3448,
+      "canonical_name": "巷战英雄电玩长春欧亚万豪店",
+      "canonical_addr": "吉林省长春市二道区洋浦大街6088号欧亚万豪购物中心5楼巷战英雄电玩城",
+      "reason": "Same Changchun Eurasia Marriott 5F Xiangzhan Yingxiong; bemanicn and wahlap branch labels match.",
+      "evidence_url": "https://map.bemanicn.com/s/712",
+      "evidence_quote": "巷战英雄(欧亚万豪购物中心店) 洋浦大街6088号欧亚万豪购物中心5楼巷战英雄电玩城"
+    },
+    {
+      "ids": [
+        3447,
+        3449
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3449,
+      "canonical_name": "巷战英雄电玩长春欧亚新生活店",
+      "canonical_addr": "吉林省长春市朝阳区红旗街新民广场欧亚新生活购物广场C区5楼巷战英雄电玩城",
+      "reason": "Same Eurasia New Life 5F shop; wahlap unit text says Chengshi Yingxiong but brand name is still Xiangzhan Yingxiong, matching bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/80",
+      "evidence_quote": "巷战英雄(欧亚新生活购物广场店) 工农大路与延安大街交汇（新民广场）欧亚新生活购物广场C区5楼"
+    },
+    {
+      "ids": [
+        3453,
+        3454
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3454,
+      "canonical_name": "布丁电玩城北京石景山店",
+      "canonical_addr": "北京市石景山区八角街道阜石路165号当代商城鼎城店四层",
+      "reason": "ZIv arcade 11375 lists BEMANICN ID 4333, which is the bemanicn page for 3454; same Dangdai Shopping Dingcheng 4F.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11375",
+      "evidence_quote": "BEMANICN ID: 4333. Address No.165 Fushi Road, Dangdai Shopping (Dingcheng), 4F"
+    },
+    {
+      "ids": [
+        3459,
+        3460
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3460,
+      "canonical_name": "希美潮玩邯郸丛台美乐城店",
+      "canonical_addr": "河北省邯郸市丛台区人民东路456号美乐城负一楼",
+      "reason": "Same Handan Meilecheng Ximei Chaowan; Baidu has one B1 POI. Different brand and floor from Tropical Rainforest on 5F in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1561",
+      "evidence_quote": "希美潮玩 人民东路美乐城; Baidu: 希美潮玩(美乐城店) 人民东路456号美乐城B1层B146号"
+    },
+    {
+      "ids": [
+        5382,
+        5394
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5394,
+      "canonical_name": "热带雨林邯郸丛台店",
+      "canonical_addr": "河北省邯郸市丛台区人民东路环球中心美乐城五层热带雨林主题乐园",
+      "reason": "Same Meilecheng 5F Tropical Rainforest theme park; short bemanicn name vs full wahlap branch.",
+      "evidence_url": "https://map.bemanicn.com/s/1053",
+      "evidence_quote": "热带雨林主题乐园（美乐城店） 人民路456号美乐城五楼"
+    }
+  ]
+}

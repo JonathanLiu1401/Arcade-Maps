@@ -1,0 +1,369 @@
+{
+  "shard": 27,
+  "verdicts": [
+    {
+      "ids": [
+        2962,
+        2970
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2962,
+      "canonical_name": "头号玩家潮玩运动馆SM厦门海沧城市广场店",
+      "canonical_addr": "福建省厦门市海沧区sm城市广场2楼头号玩家",
+      "reason": "Same SM Xiamen Haicang mall 2F branch; wahlap and bemanicn names are brand vs full branch forms at identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/6245",
+      "evidence_quote": "SM厦门海沧城市广场。商场北门进来直接上扶梯就到了，机厅在二楼右手边"
+    },
+    {
+      "ids": [
+        2964,
+        2971
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2964,
+      "canonical_name": "头号玩家琶洲保利广场店",
+      "canonical_addr": "广东省广州市海珠区新港东路保利广场三楼头号玩家",
+      "reason": "Pazhou Poly Plaza is the Haizhu Poly Plaza; Baidu lists one shop at Xingangdong Poly Plaza 3F; addresses match within 60 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3640",
+      "evidence_quote": "琶洲蟠龙新街2号保利广场3层C302B"
+    },
+    {
+      "ids": [
+        2965,
+        2966
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2966,
+      "canonical_name": "头号玩家昭通昭阳区步行街店",
+      "canonical_addr": "云南省昭通市昭阳区东门步行街85、87号门面",
+      "reason": "Identical unit numbers Dongmen pedestrian street 85/87; wahlap Shaoyang is a typo for Zhaoyang. Same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/5731",
+      "evidence_quote": "东门步行街85，87号"
+    },
+    {
+      "ids": [
+        2974,
+        2979
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2974,
+      "canonical_name": "头号玩家郑州龙湖锦艺城店",
+      "canonical_addr": "河南省郑州市新郑市龙湖镇锦艺城购物中心三楼头号玩家",
+      "reason": "Both are Longhu Jinyi City 3F; Baidu has one Touhao Wanjia there. ~391 m is geocode scatter on approx coords.",
+      "evidence_url": "https://map.bemanicn.com/s/6110",
+      "evidence_quote": "龙湖镇锦艺城3楼"
+    },
+    {
+      "ids": [
+        2985,
+        2997
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2997,
+      "canonical_name": "夸特游艺（熙悦店）",
+      "canonical_addr": "良乡东路与长于大街交汇处熙悦天街B区4F L4-13",
+      "reason": "Same shop unit L4-13 in Xiyue Paradise Walk B-zone 4F; ZIv English address is the same mall/unit as bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/1354",
+      "evidence_quote": "良乡东路与长于大街交汇处熙悦天街B区4F L4-13"
+    },
+    {
+      "ids": [
+        2986,
+        2990
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Different malls and districts: ZIv is Mentougou Longfor Chang'an Paradise, wahlap/bemanicn is Shijingshan Wanda. Baidu lists both shops. Coords wrongly clustered.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11363",
+      "evidence_quote": "No.17 Xincheng East Street, Building 2, Longfor Chang'an Paradis Mentougou District"
+    },
+    {
+      "ids": [
+        3002,
+        3003
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3003,
+      "canonical_name": "夹满嘟广州番禺厦滘店",
+      "canonical_addr": "广东省广州市番禺区厦滘岭南电商园三街一楼47号夹满嘟",
+      "reason": "Same Xiajiao Lingnan shopping area 3-street 1F brand; Baidu shows one Jiamandu Xiajiao store. Unit 37-43 vs 47 is likely span/renumber of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3436",
+      "evidence_quote": "厦滘迎宾路19号厦滘商务区A区广州岭南购物城3街1层37-43"
+    },
+    {
+      "ids": [
+        3016,
+        3017
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3017,
+      "canonical_name": "奇享玩邯郸丛台天鸿广场店",
+      "canonical_addr": "河北省邯郸市丛台区联纺东路阳光天鸿广场B301奇享玩",
+      "reason": "Same Yangguang Tianhong Plaza B301 unit; bare brand name vs branch name at identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/5239",
+      "evidence_quote": "联纺东路505号阳光天鸿广场B301号"
+    },
+    {
+      "ids": [
+        5816,
+        5817
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5817,
+      "canonical_name": "疯狂牛仔城广州白云百信店",
+      "canonical_addr": "广东省广州市白云区新市街道百信广场东区3楼疯狂牛仔城百信店",
+      "reason": "Both Baixin Plaza East 3F same chain; Baidu has one Fengkuang Niuzai Cheng Baiyun Baixin. Two wahlap rows are duplicate listings of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3824",
+      "evidence_quote": "新市街道机场路1399号百信广场L3层"
+    },
+    {
+      "ids": [
+        3024,
+        3036
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3024,
+      "canonical_name": "奇奇乐园上海闵行龙盛广场店",
+      "canonical_addr": "上海市闵行区都市路龙盛商业广场一楼奇奇乐园",
+      "reason": "Same Longsheng International Commercial Plaza 1F; ZIv and bemanicn match wahlap branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2461",
+      "evidence_quote": "龙盛国际商业广场3759号一楼"
+    },
+    {
+      "ids": [
+        3027,
+        3028
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3028,
+      "canonical_name": "奇奇乐园武汉奥山世纪城店",
+      "canonical_addr": "湖北省武汉市青山区和平大道奥山世纪广场3楼",
+      "reason": "Qingshan is the district of Aoshan Century City on Heping Ave; same 3F mall branch under alternate names.",
+      "evidence_url": "https://map.bemanicn.com/s/3704",
+      "evidence_quote": "和平大道819号奥山世纪城3层"
+    },
+    {
+      "ids": [
+        3029,
+        3033
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3029,
+      "canonical_name": "奇奇乐园襄阳樊城万达店",
+      "canonical_addr": "湖北省襄阳市樊城区长虹路万达广场三楼奇奇乐园",
+      "reason": "Baidu has a single Qiqi Leyuan Xiangyang Wanda at Changhong North Road 9 Wanda 3F; Fancheng Wanda and Gaoxin Wanda name that one mall.",
+      "evidence_url": "https://map.bemanicn.com/s/169",
+      "evidence_quote": "紫贞街道长虹北路9号"
+    },
+    {
+      "ids": [
+        3030,
+        3032
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3030,
+      "canonical_name": "奇奇乐园襄阳樊城南国店",
+      "canonical_addr": "湖北省襄阳市樊城区长虹路泛悦4楼奇奇乐园",
+      "reason": "Baidu lists Qiqi Leyuan Fanyue Mall Changhong at Nanguo City Plaza 4F; Nanguo and Fanyue are the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1658",
+      "evidence_quote": "泛悦malL长虹店"
+    },
+    {
+      "ids": [
+        3040,
+        3041
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3040,
+      "canonical_name": "奇奇潮玩西安雁塔际华广场店",
+      "canonical_addr": "陕西省西安市雁塔区昆明池路际华广场5楼",
+      "reason": "Same Jihua Plaza 5F on Kunmingchi Road; brand vs mall-suffix naming at identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/6377",
+      "evidence_quote": "昆明路际华生活广场5楼"
+    },
+    {
+      "ids": [
+        3042,
+        3050
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3050,
+      "canonical_name": "奇妙之城宜宾成悦广场店",
+      "canonical_addr": "四川省宜宾市江安县成悦广场二楼",
+      "reason": "Same Jiang'an Liya Chengyue Plaza 2F; bemanicn unit Z202 is the same mall floor as wahlap.",
+      "evidence_url": "https://map.bemanicn.com/s/6464",
+      "evidence_quote": "江安县迎宾大道与小坝路交叉口西80米丽雅成悦广场2楼Z202"
+    },
+    {
+      "ids": [
+        3043,
+        3046
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3046,
+      "canonical_name": "奇妙之城佛山嘉州广场店",
+      "canonical_addr": "广东省佛山市三水区乐平镇乐平大道嘉州广场二楼",
+      "reason": "Jiazhou/Jiazhou is spelling variation of one Leping mall 2F shop; same brand and floor.",
+      "evidence_url": "https://map.bemanicn.com/s/2427",
+      "evidence_quote": "乐平嘉洲广场二楼"
+    },
+    {
+      "ids": [
+        3044,
+        3059
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3059,
+      "canonical_name": "奇妙之城深圳龙华店",
+      "canonical_addr": "广东省深圳市龙华区民治街道星河cococity 2楼奇妙之城",
+      "reason": "Both Galaxy COCO City / Xinghe Shengshi 2F in Minzhi Longhua; full theme name vs official branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/5730",
+      "evidence_quote": "民治街道民泰社区星河盛世B1-86栋二层L2-099号"
+    },
+    {
+      "ids": [
+        3045,
+        3058
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3058,
+      "canonical_name": "奇妙之城深圳宝安店",
+      "canonical_addr": "广东省深圳市宝安区宏发大世界b区三楼奇妙之城",
+      "reason": "Same Hongfa World Arena Zone B 3F; ZIv and bemanicn confirm Hongfa Bao'an.",
+      "evidence_url": "https://map.bemanicn.com/s/4209",
+      "evidence_quote": "宝安区石岩宏发大世界主场B区3楼"
+    },
+    {
+      "ids": [
+        3054,
+        3066
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3054,
+      "canonical_name": "奇妙之城梅州天虹店",
+      "canonical_addr": "广东省梅州市梅县区扶大镇天虹购物中心3楼",
+      "reason": "Same Meizhou Tianhong mall in Fuda; identical coords and matching branch names.",
+      "evidence_url": "https://map.bemanicn.com/s/6280",
+      "evidence_quote": "扶大镇剑英大道梅州天虹购物中心"
+    },
+    {
+      "ids": [
+        3055,
+        3065
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3055,
+      "canonical_name": "奇妙之城江门东汇城店",
+      "canonical_addr": "广东省江门市开平市长沙街道开平大道一号富港东汇城4F奇妙之城",
+      "reason": "Same Kaiping Donghui City 4F; Jiangmen Donghui and Kaiping Donghui name the same Kaiping mall.",
+      "evidence_url": "https://map.bemanicn.com/s/3206",
+      "evidence_quote": "开平大道1号东汇城4楼奇妙之城"
+    },
+    {
+      "ids": [
+        3077,
+        3078
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3077,
+      "canonical_name": "奇幻王国电玩城北京大兴环宇坊店",
+      "canonical_addr": "北京市大兴区瀛海路环宇坊4楼奇幻王国电玩城",
+      "reason": "wahlap and bemanicn both say Yinghai Huanyufang 4F same brand; ZIv English address mentions Jiugong but Chinese sources agree. Treat as one shop with messy ZIv geocode.",
+      "evidence_url": "https://map.bemanicn.com/s/6625",
+      "evidence_quote": "瀛海环宇坊4楼"
+    },
+    {
+      "ids": [
+        3080,
+        3082
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3082,
+      "canonical_name": "奇幻空间广州花都来又来店",
+      "canonical_addr": "广东省广州市花都区龙珠路39号来又来商场3楼奇幻空间电玩城",
+      "reason": "Same Huadu Laiyoulai mall arcade; Guangfeng Road and Longzhu Road are adjacent mall frontages for one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/5614",
+      "evidence_quote": "广东省广州市花都区光凤路来又来时尚购物广场"
+    },
+    {
+      "ids": [
+        3081,
+        3083
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3081,
+      "canonical_name": "奇幻空间东莞寮步万润广场店",
+      "canonical_addr": "广东省东莞市寮步镇万润广场3楼C区",
+      "reason": "Same Liaobu Wanrun Plaza / Wanrun Fortune Center 3F C-area shop under matching brand and branch names.",
+      "evidence_url": "https://map.bemanicn.com/s/3201",
+      "evidence_quote": "寮步镇香市路80号万润财富中心1栋322室"
+    },
+    {
+      "ids": [
+        3087,
+        3088
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3087,
+      "canonical_name": "奇趣乐园句容吾悦广场店",
+      "canonical_addr": "江苏省句容市吾悦广场二楼奇趣乐园",
+      "reason": "Same Jurong Wuyue Plaza 2F; fuller bemanicn address is the same mall as wahlap.",
+      "evidence_url": "https://map.bemanicn.com/s/7075",
+      "evidence_quote": "江苏省镇江市句容市宁杭南路爵鼎国际汽车城东侧句容新城吾悦广场"
+    },
+    {
+      "ids": [
+        3091,
+        3092
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3091,
+      "canonical_name": "奇趣超乐园岳阳平江店",
+      "canonical_addr": "湖南省岳阳市平江县天岳大道与长冲路交叉口奇趣超乐园",
+      "reason": "Same intersection Tianyue Ave and Changchong Road in Pingjiang; Hanchang subdistrict contains that corner.",
+      "evidence_url": "https://map.bemanicn.com/s/5412",
+      "evidence_quote": "湖南省岳阳市平江县汉昌街道天岳大道与长冲路交叉口西北侧一楼维尔纳酒店附近"
+    },
+    {
+      "ids": [
+        3097,
+        3099
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3097,
+      "canonical_name": "奇迹未来城玉林玉州万达广场店",
+      "canonical_addr": "广西壮族自治区玉林市玉州区万达广场二楼奇迹未来城",
+      "reason": "Same Yulin Wanda 2F; both name Yulin Wanda and sit ~95 m with matching brand.",
+      "evidence_url": "https://map.bemanicn.com/s/6473",
+      "evidence_quote": "名山街道金玉路与胜利路交叉口万达广场2楼"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "shard": 28,
+  "verdicts": [
+    {
+      "ids": [
+        3100,
+        3101
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3101,
+      "canonical_name": "奇迹童年株洲天元奥特莱斯店",
+      "canonical_addr": "湖南省株洲市天元区天台路80号润鲨奥特莱斯二楼2010",
+      "reason": "Same brand at Zhuzhou Tianyuan Outlets 2F: bemanicn names Runsha Outlets 2F and wahlap names unit 2010 at the same outlets, 8.5 m apart. One shop, two source name styles.",
+      "evidence_url": "https://map.bemanicn.com/s/4928",
+      "evidence_quote": "奇迹童年家庭娱乐中心（奥特莱斯店） | 嵩山路街道天台路80号润鲨奥特莱斯2楼"
+    },
+    {
+      "ids": [
+        3107,
+        3108
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3108,
+      "canonical_name": "奕部落金华义乌爱琴海店",
+      "canonical_addr": "浙江省金华市义乌市廿三里街道爱琴海购物公园三楼奕部落科技动漫城",
+      "reason": "Identical 0 m pin; both place Yibuluo on 3F of Yiwu Aiqinhai Shopping Park. Bare brand name vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/1497",
+      "evidence_quote": "奕部落科技动漫城 | 商城大道与武溪北街交叉口爱琴海购物公园3楼"
+    },
+    {
+      "ids": [
+        3109,
+        3110
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3109,
+      "canonical_name": "奥尔曼嘉年华北京龙旗广场店",
+      "canonical_addr": "北京市昌平区黄平路19号龙旗购物中心F2层",
+      "reason": "Both list exact same street address Huangping Rd 19 Longqi F2. ZIv and BemaniCN describe one shop on F2; 83 m gap is geocode drift of approx wahlap pin.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11282",
+      "evidence_quote": "奥尔曼嘉年华北京龙旗广场店 | 北京市昌平区黄平路19号龙旗购物中心F2层"
+    },
+    {
+      "ids": [
+        3115,
+        3116
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3116,
+      "canonical_name": "好世界徐州新沂店",
+      "canonical_addr": "江苏省徐州市新沂市新悦广场2F,2-30号好世界家庭娱乐中心",
+      "reason": "Both cite Xinyue Plaza 2F unit 2-30 for Haoshijie in Xinyi. Same unit code is decisive.",
+      "evidence_url": "https://map.bemanicn.com/s/4549",
+      "evidence_quote": "好世界家庭娱乐中心 | 新沂市...新悦广场2F，2-30号好世界家庭娱乐中心"
+    },
+    {
+      "ids": [
+        3127,
+        3129
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3129,
+      "canonical_name": "好玩谷唐山市丰润区万达广场店",
+      "canonical_addr": "河北省唐山市丰润区万达广场2F-B好玩谷(唐山丰润万达店)",
+      "reason": "Both are Haowangu at Tangshan Fengrun Wanda unit 2F-B. Branch suffix vs mall-only naming of one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/6718",
+      "evidence_quote": "好玩谷动漫游乐（唐山丰润万达店） | 河北省唐山市丰润区万达广场2F-B好玩谷"
+    },
+    {
+      "ids": [
+        3136,
+        3139
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3139,
+      "canonical_name": "威龙传奇松江万达店",
+      "canonical_addr": "上海市松江区万达广场二号门二楼威龙传奇",
+      "reason": "ZIv and BemaniCN both place Viking Glory on 2F west of Songjiang Wanda with matching maimai count (3). English ZIv title is the same shop as wahlap/bemanicn Songjiang Wanda.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11524",
+      "evidence_quote": "威龙传奇 Viking Glory | 2F West, Wanda Plaza Songjiang; bemanicn: 松江万达广场2F西侧"
+    },
+    {
+      "ids": [
+        3143,
+        3144
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3143,
+      "canonical_name": "威龙传奇潍坊奎文泰华新天地店",
+      "canonical_addr": "山东省潍坊市奎文区东风东街360号泰华城新天地三楼威龙传奇电玩城",
+      "reason": "Exact same address string at Taihua Xintiandi 3F and 0 m apart. Short branch label vs full branch name for one venue.",
+      "evidence_url": "https://map.bemanicn.com/s/811",
+      "evidence_quote": "威龙传奇潍坊奎文店 | 山东省潍坊市奎文区东风东街360号泰华城新天地三楼"
+    },
+    {
+      "ids": [
+        3145,
+        3146
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3145,
+      "canonical_name": "娱乐侠泰安泰山万达店",
+      "canonical_addr": "山东省泰安市泰山区泰山大街566号3F",
+      "reason": "Both name Taian Wanda 3F Yulexia with complementary game lists. 334 m gap is consistent with vague bemanicn geocode of 'Wanda 3F' vs official Taishan Dajie 566; one mall branch, not two.",
+      "evidence_url": "https://map.bemanicn.com/s/6387",
+      "evidence_quote": "娱乐侠（泰安万达店） | 万达广场3楼; comment: 泰安首家引入中二节奏的机厅"
+    },
+    {
+      "ids": [
+        3148,
+        3151
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3148,
+      "canonical_name": "娱乐至上成都武侯世豪店",
+      "canonical_addr": "四川省成都市武侯区剑南大道中段998号世豪广场四楼C411",
+      "reason": "Shihao Plaza is at Jiannan Ave Middle 998; wahlap says Wuhou Shihao 4F and bemanicn gives the street number plus unit C411 on 4F. District label differs but mall, floor and brand match.",
+      "evidence_url": "https://map.bemanicn.com/s/2858",
+      "evidence_quote": "娱乐至上（世豪广场店） | 高新区剑南大道中段998号1栋4层C411"
+    },
+    {
+      "ids": [
+        3156,
+        3168
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3168,
+      "canonical_name": "子洋联盟长沙望城奥莱店",
+      "canonical_addr": "湖南省长沙市望城区金星北路砂之船奥莱3楼子洋联盟动漫体验中心",
+      "reason": "Both are Ziyang Alliance at Changsha Wangcheng Sandboat Outlets L3 next to UME. Same outlet branch listed twice.",
+      "evidence_url": "https://map.bemanicn.com/s/1076",
+      "evidence_quote": "子洋联盟(砂之船店) | 月亮岛路与金星北路交汇处砂之船奥特莱斯L3层UME影城旁"
+    },
+    {
+      "ids": [
+        3164,
+        3165
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3165,
+      "canonical_name": "子洋联盟潮玩汇黄石店",
+      "canonical_addr": "湖北省黄石市下陆区团城山万达广场2楼子洋联盟潮玩汇",
+      "reason": "Same brand and same Tuanchengshan Wanda 2F (bemanicn adds Guangzhou Rd and unit -A). One Huangshi Wanda branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5654",
+      "evidence_quote": "子洋联盟潮玩汇(黄石团城山万达店) | 下陆区广州路30路团城山万达广场2F层-A铺"
+    },
+    {
+      "ids": [
+        3170,
+        3171
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two distinct BemaniCN shops inside Xiaogan Wuyue Plaza on different floors: Tiankongzhicheng on 2F vs Chaowan Block on 3F. Cross-comment on Chaowan explicitly points players to 2F Tiankong for farming, proving both exist.",
+      "evidence_url": "https://map.bemanicn.com/s/3677",
+      "evidence_quote": "潮玩街区 | 吾悅广场孝感店3楼; comment: 跑图就到2楼的天空之城比较合适"
+    },
+    {
+      "ids": [
+        3172,
+        3173
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3172,
+      "canonical_name": "孩皮吧咸宁咸安同惠店",
+      "canonical_addr": "湖北省咸宁市咸安区同惠国际广场三楼孩皮吧",
+      "reason": "0 m apart; both Haipiba on 3F of Xianning Tonghui International Plaza. Full street intersection vs mall-only naming.",
+      "evidence_url": "https://map.bemanicn.com/s/3534",
+      "evidence_quote": "孩皮吧（同惠国际广场店） | 咸安区温泉咸宁大道与银泉大道交汇口同惠国际广场3楼"
+    },
+    {
+      "ids": [
+        3181,
+        3198
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3181,
+      "canonical_name": "宇宙队长上饶广信万慧店",
+      "canonical_addr": "上饶市广信区旭日北大道12号万慧广场二楼2F-A宇宙队长",
+      "reason": "0 m; both Cosmic Captain at Shangrao Wanhui Plaza 2F (unit 2F-A / units 2020-2022). Same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6817",
+      "evidence_quote": "宇宙队长（上饶万慧店） | 旭日北大道万慧广场2020,2021,2022号"
+    },
+    {
+      "ids": [
+        3190,
+        3194
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3190,
+      "canonical_name": "宇宙队长成都云欣广场店",
+      "canonical_addr": "四川省成都市邛崃市瑞云欣广场二楼宇宙队长",
+      "reason": "Both Cosmic Captain on 2F of Qionglai Ruiyunxin Plaza (wahlap shortens to Yunxin). One Qionglai branch.",
+      "evidence_url": "https://map.bemanicn.com/s/3528",
+      "evidence_quote": "宇宙队长电玩城（邛崃店） | 邛崃市瑞云欣广场二楼"
+    },
+    {
+      "ids": [
+        3195,
+        3199
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3195,
+      "canonical_name": "宇宙队长赣州全南江畔湾店",
+      "canonical_addr": "江西省赣州市全南县江畔湾广场宏昌超市1楼",
+      "reason": "Only Cosmic Captain listing in Quannan county; wahlap pins Jiangpanwan Plaza Hongchang supermarket 1F and bemanicn says beside Jialai cinema in the same plaza, 85 m. Small-county single branch with two landmark labels.",
+      "evidence_url": "https://map.bemanicn.com/s/7278",
+      "evidence_quote": "宇宙队长（全南店） | 宇宙队长全南店（嘉莱影城旁边）; comment: 2026.7.18开业"
+    },
+    {
+      "ids": [
+        3197,
+        3201
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3197,
+      "canonical_name": "宇宙队长黄冈武穴雅斯店",
+      "canonical_addr": "湖北省黄冈市武穴市武穴街道雅斯广场3楼F3-1宇宙队长店铺",
+      "reason": "Both cite Yasi Plaza unit F3-1 on 3F in Wuxue. Unit code match is decisive.",
+      "evidence_url": "https://map.bemanicn.com/s/5686",
+      "evidence_quote": "宇宙队长（雅斯店） | 北川路雅斯广场3层F3-1"
+    },
+    {
+      "ids": [
+        3213,
+        3215
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3213,
+      "canonical_name": "宝乐城游乐园沭阳金王朝大酒店店",
+      "canonical_addr": "江苏省宿迁市沭阳县人民中路41号金王朝大酒店一楼沭阳宝乐城",
+      "reason": "Baidu shows Huashi Jinwangchao Hotel and Huashi Department Store share Renmin Zhonglu / Renmin Rd 41; bemanicn Huashi Building store and wahlap Jinwangchao Hotel store are two names for the same building. Same brand Baolecheng at that address.",
+      "evidence_url": "https://map.bemanicn.com/s/1154",
+      "evidence_quote": "宝乐城潮人电玩（沭阳华氏大厦店） | 沭城街道人民路41号乐天玛特对面; Baidu: 华氏金王朝大酒店 | 人民中路41号"
+    },
+    {
+      "ids": [
+        7135,
+        7165
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7165,
+      "canonical_name": "风云再起南京金鹰店",
+      "canonical_addr": "江苏省南京市建邺区应天大街888号河西金鹰3楼",
+      "reason": "Both Fengyun Zaiqi at Nanjing Hexi Golden Eagle Yingtian Ave 888 3F (Jinying World = Hexi Jinying).",
+      "evidence_url": "https://map.bemanicn.com/s/612",
+      "evidence_quote": "风云再起(南京河西金鹰世界店) | 河西中央商务区应天大街888号金鹰世界3楼"
+    },
+    {
+      "ids": [
+        3220,
+        3221
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3220,
+      "canonical_name": "宝诺瓦南京浦口弘阳广场店",
+      "canonical_addr": "江苏省南京市浦口区大桥北路48号弘阳广场B1-3F-22铺位",
+      "reason": "0 m; both Baonuowa at Pukou Hongyang Plaza unit 3F-22 / Building B 3F-22 on Daqiao North Rd 48.",
+      "evidence_url": "https://map.bemanicn.com/s/5548",
+      "evidence_quote": "宝诺瓦电玩世界 | 大桥北路48号弘阳广场B馆3F-22"
+    },
+    {
+      "ids": [
+        3222,
+        3223
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3222,
+      "canonical_name": "宝贝乐翻天温州银泰店",
+      "canonical_addr": "浙江省温州市大南街道荷花路世贸银泰B馆三楼3009号",
+      "reason": "0 m; Yintai store and Shimao store are the same Shimao Intime Building B 3F venue (unit 3009).",
+      "evidence_url": "https://map.bemanicn.com/s/5883",
+      "evidence_quote": "宝贝乐翻天（温州世贸店） | 世贸银泰B座3楼"
+    },
+    {
+      "ids": [
+        3232,
+        3280
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3280,
+      "canonical_name": "宝贝王广州萝岗万达店",
+      "canonical_addr": "广州市黄埔区科丰路89号萝岗万达广场2楼宝贝王",
+      "reason": "Both Baby King at Luogang Wanda Kefeng Rd 89 2F (Huangpu). Same Wanda branch.",
+      "evidence_url": "https://map.bemanicn.com/s/5080",
+      "evidence_quote": "宝贝王乐园(萝岗万达店) | 萝岗科丰路89号萝岗万达广场2层"
+    },
+    {
+      "ids": [
+        5826,
+        5828
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5828,
+      "canonical_name": "疯狂街区芜湖南陵店",
+      "canonical_addr": "安徽省芜湖市南陵县雄风购物中心二楼疯狂街区电玩城",
+      "reason": "Bare brand vs full Nanling branch name; both at Xiongfeng Shopping Center 2F.",
+      "evidence_url": "https://map.bemanicn.com/s/4874",
+      "evidence_quote": "疯狂街区 | 雄风购物中心二楼"
+    },
+    {
+      "ids": [
+        3234,
+        3318
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3318,
+      "canonical_name": "宝贝王绵阳涪城万达广场店",
+      "canonical_addr": "四川省绵阳市涪城区花园路9号万达广场三楼宝贝王乐园",
+      "reason": "Both Baby King at Mianyang Fucheng Wanda Huayuan Rd, 3F / Z-1-3F. Same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4926",
+      "evidence_quote": "宝贝王乐园（涪城万达店） | 涪城区花园路万达广场百货楼Z-1-3F-A-B"
+    },
+    {
+      "ids": [
+        3246,
+        3340
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3246,
+      "canonical_name": "宝贝王（合肥巢湖万达店）",
+      "canonical_addr": "安徽省合肥市巢湖市东塘路80号万达广场三楼万达宝贝王",
+      "reason": "Both Baby King on 3F of Chaohu Wanda (Dongtang Rd 80). WAHLAP city label Hefei vs branch Chaohu is the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/3033",
+      "evidence_quote": "宝贝王（合肥巢湖万达店） | 巢湖万达广场三楼宝贝王"
+    },
+    {
+      "ids": [
+        4645,
+        4646
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4646,
+      "canonical_name": "欢心谷合肥巢湖万达店",
+      "canonical_addr": "安徽省合肥市巢湖市太湖山路与东塘路交叉口万达二楼欢心谷",
+      "reason": "Both Huanxingu on F2 of Chaohu Wanda (Dongtang Rd 80). Bare name vs full branch; note this is a different brand from Baby King (3F) in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5693",
+      "evidence_quote": "欢心谷 | 中国安徽省合肥市巢湖市东塘路80号万达广场合肥巢湖店F2层"
+    }
+  ]
+}

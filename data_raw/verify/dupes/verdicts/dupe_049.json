@@ -1,0 +1,369 @@
+{
+  "shard": 49,
+  "verdicts": [
+    {
+      "ids": [
+        5787,
+        5788
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5787,
+      "canonical_name": "电电猫家庭娱乐中心北海老新力店",
+      "canonical_addr": "广西壮族自治区北海市海城区新力购物广场（老新力）三楼电电猫家庭娱乐中心",
+      "reason": "Same mall (旧/老新力 = 新力购物广场) floor 3; 0 m; wahlap and bemanicn name the same branch with different spellings.",
+      "evidence_url": "https://map.bemanicn.com/s/7145",
+      "evidence_quote": "电电猫家庭娱乐中心（北海海城旧新力店） / 北部湾西路2号旧新力（新力购物广场）3楼"
+    },
+    {
+      "ids": [
+        7246,
+        7247
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7247,
+      "canonical_name": "飞象动漫商丘梁园正弘汇店",
+      "canonical_addr": "河南省商丘市梁园区神火大道与凯四街交叉口正弘汇五楼飞象动漫",
+      "reason": "Both at 正弘汇 5F; bare brand vs full branch name; ~39 m geocode noise on same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4614",
+      "evidence_quote": "飞象动漫 / 河南省商丘市梁园区前进街道神火大道辅路大商集团商丘正弘汇5层"
+    },
+    {
+      "ids": [
+        5802,
+        5803
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5803,
+      "canonical_name": "疯狂派对城万州长江之星店",
+      "canonical_addr": "重庆市万州长江之星二期A区S02商铺79",
+      "reason": "Baidu lists a single 疯狂派对城(万州店) at 长江之星二期; 南滨大道1777号 is that complex street address (neighbor shops confirm). 354 m is large-complex geocode spread, not two venues.",
+      "evidence_url": "https://map.bemanicn.com/s/6107",
+      "evidence_quote": "疯狂派对城 / 万州区南滨大道1777号; Baidu: 疯狂派对城(万州店) 陈家坝街道长江之星二期商业"
+    },
+    {
+      "ids": [
+        5804,
+        5813
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5813,
+      "canonical_name": "疯狂牛仔城广州海珠万民星光城店",
+      "canonical_addr": "广东省广州市海珠区琶洲大道180号201铺疯狂牛仔城",
+      "reason": "Identical unit 琶洲大道180号201铺 / 万民星光城; community vs official branch naming.",
+      "evidence_url": "https://map.bemanicn.com/s/6997",
+      "evidence_quote": "疯狂牛仔城(琶洲万民星光城店) / 琶洲大道180号201铺自编2001-2"
+    },
+    {
+      "ids": [
+        5806,
+        5807
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5807,
+      "canonical_name": "疯狂牛仔城佛山南海保利店",
+      "canonical_addr": "广东省佛山市南海区桂城灯湖东路20号保利水城东广场3楼20号",
+      "reason": "Same 保利水城/保利mall 3F branch; bemanicn has the fuller street address of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/2999",
+      "evidence_quote": "疯狂牛仔城佛山保利店 / 桂城灯湖东路20号保利水城东广场3楼20号"
+    },
+    {
+      "ids": [
+        6624,
+        6625
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6625,
+      "canonical_name": "超能星客广州白云店",
+      "canonical_addr": "广州市白云区云城西路890号凯德云尚广场三楼超能星客",
+      "reason": "Same 云城西路890号 凯德云尚/凯德广场 3F; branch suffix vs bare mall name.",
+      "evidence_url": "https://map.bemanicn.com/s/2818",
+      "evidence_quote": "超能星客凯德广场店 / 白云新城云城西路890号凯德广场云尚3层14/34"
+    },
+    {
+      "ids": [
+        5819,
+        5825
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5819,
+      "canonical_name": "疯狂牛仔城江门蓬江店",
+      "canonical_addr": "广东省江门市蓬江区万达广场二楼疯狂牛仔城",
+      "reason": "Both at 江门万达广场 2F; 蓬江店 and 江门万达店 are the same branch naming variants.",
+      "evidence_url": "https://map.bemanicn.com/s/2210",
+      "evidence_quote": "疯狂牛仔城（江门万达店） / 江门万达广场二楼"
+    },
+    {
+      "ids": [
+        5830,
+        5831
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5830,
+      "canonical_name": "疯玩乐动临沂兰山万达广场店",
+      "canonical_addr": "临沂市兰山区万达广场三楼疯玩乐动",
+      "reason": "临沂上海路万达 = 兰山万达; both 3F. Different street labels for the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/7058",
+      "evidence_quote": "疯玩乐动家庭娱乐中心（上海路万达店） / 孝河路80号临沂上海路万达广场三楼西南角"
+    },
+    {
+      "ids": [
+        5847,
+        5848
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5848,
+      "canonical_name": "皮皮熊天津宝坻店",
+      "canonical_addr": "天津市宝坻区环城南路26号怡购宝鑫商场二楼皮皮熊主题乐园",
+      "reason": "Same 环城南路26号 怡购宝鑫商场 2F; ZIv English transliteration vs Chinese sources.",
+      "evidence_url": "https://map.bemanicn.com/s/2537",
+      "evidence_quote": "皮皮熊宝坻店 / 环城南路26号怡购宝鑫商场2楼"
+    },
+    {
+      "ids": [
+        5852,
+        5855
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5852,
+      "canonical_name": "益启趣玩南宁宾阳宾州店",
+      "canonical_addr": "广西壮族自治区南宁市宾阳县宾州镇临浦路华莱士店门口地下街电玩城益启趣玩",
+      "reason": "Same 宾州镇临浦路 underground commercial street arcade; ~18 m apart.",
+      "evidence_url": "https://map.bemanicn.com/s/5764",
+      "evidence_quote": "益启趣玩家庭娱乐中心（宾阳店） / 宾阳县宾州镇临浦路地下商业街A区A1至A21号"
+    },
+    {
+      "ids": [
+        5854,
+        5860
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5860,
+      "canonical_name": "益启趣玩遵义桐梓店",
+      "canonical_addr": "桐梓县海校街道人民路259地下商业街F区",
+      "reason": "0 m; 人民路/人名路 typo of same underground street in 桐梓; bare brand vs 遵义桐梓店 branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4561",
+      "evidence_quote": "益启趣玩家庭娱乐中心 / 桐梓县海校街道人民路259地下商业街F区"
+    },
+    {
+      "ids": [
+        5877,
+        5884
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5884,
+      "canonical_name": "真快活coohooMax武汉汉阳店",
+      "canonical_addr": "湖北省武汉市汉阳区汉阳大道408号万科未来中心3号门L4层真快活coohooMax",
+      "reason": "Both at 汉阳大道408号 万科未来中心 L4; Baidu has one Coohoo Max there. Community branch page matches wahlap 汉阳店.",
+      "evidence_url": "https://map.bemanicn.com/s/2505",
+      "evidence_quote": "真快活Coohoo Max(武汉万科未来中心店) / 汉阳区汉阳大道408号万科未来中心L4层2021号商铺"
+    },
+    {
+      "ids": [
+        5878,
+        5924
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5924,
+      "canonical_name": "真快活武汉白沙天街店",
+      "canonical_addr": "湖北省武汉市烽胜路龙湖天街A馆4楼真快活Coohoomax",
+      "reason": "Same 白沙洲/白沙 龙湖天街 A馆 4F; branch naming variants.",
+      "evidence_url": "https://map.bemanicn.com/s/2084",
+      "evidence_quote": "真快活coohoo Max(武汉白沙洲天街店) / 白沙三与白沙六路交汇处白沙龙湖天街A馆4楼"
+    },
+    {
+      "ids": [
+        5879,
+        5926
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5926,
+      "canonical_name": "真快活武汉经开永旺店",
+      "canonical_addr": "湖北省武汉市经济开发区江城大道388号B馆3楼真快活动漫体验中心",
+      "reason": "Same 永旺梦乐城 B馆 3F; 江城大道388/408 are the complex address pair. Baidu lists one Coohoo Max at B馆 B307.",
+      "evidence_url": "https://map.bemanicn.com/s/2798",
+      "evidence_quote": "真快活Coohoo Max(永旺梦乐城店) / 汉阳区江城大道408号永旺梦乐城B馆3层B307"
+    },
+    {
+      "ids": [
+        5881,
+        5920
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5920,
+      "canonical_name": "真快活武汉洪山万科店",
+      "canonical_addr": "湖北武汉市洪山区张家湾街道白沙洲万科城市之光东(白沙二路西)3楼",
+      "reason": "Same 白沙洲 万科广场/城市之光 3F (洪山万科); community and official branch names.",
+      "evidence_url": "https://map.bemanicn.com/s/2231",
+      "evidence_quote": "真快活CooHoo Max白沙洲万科店 / 青菱乡长征村范家村68号洪山万科广场L3层3839"
+    },
+    {
+      "ids": [
+        5882,
+        5892
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5892,
+      "canonical_name": "真快活九江浔阳招商花园城",
+      "canonical_addr": "江西省九江市浔阳区长虹西大道101号招商花园城三楼真快活电玩城",
+      "reason": "0 m; same 招商花园城 3F. Complementary game split (taiko-only vs maimai-only) is one venue across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/5437",
+      "evidence_quote": "真快活coohoo max（招商花园城店） / 九江招商花园城3F"
+    },
+    {
+      "ids": [
+        5885,
+        5891
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5891,
+      "canonical_name": "真快活三河燕郊永旺店",
+      "canonical_addr": "河北省三河市燕郊镇永旺梦乐城负一楼真快活美乐园",
+      "reason": "0 m; same 燕郊 永旺梦乐城 B1; bare CoohooMax listing vs full branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/1061",
+      "evidence_quote": "真快活CoohooMax电玩城 / 京哈公路27号(102国道北)永旺梦乐城B1层B101"
+    },
+    {
+      "ids": [
+        5886,
+        5893
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5893,
+      "canonical_name": "真快活九龙坡谢家湾万象城店",
+      "canonical_addr": "重庆市九龙坡区谢家湾万象城南区华润广场a座b1层真快活",
+      "reason": "Baidu has one Coohoo Max at 重庆万象城 南区 B140/负一层; 谢家湾正街 numbers and 383 m gap are the large mall geocode, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/5605",
+      "evidence_quote": "真快活coohoomax重庆万象城店 / 九龙坡区谢家湾街道谢家湾正街45-49-51-53号B140; Baidu: 万象城南区负一层B140号（6号门）"
+    },
+    {
+      "ids": [
+        5889,
+        5907
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5907,
+      "canonical_name": "真快活恩施九立方店",
+      "canonical_addr": "湖北省恩施土家族苗族自治州恩施市东风大道276号",
+      "reason": "0 m; both named 恩施九立方店; wahlap has street number, bemanicn has mall floor detail of same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/6205",
+      "evidence_quote": "真快活CoohooMax（恩施九立方店） / 舞阳坝街道九立方7楼-B-10"
+    },
+    {
+      "ids": [
+        5901,
+        5902
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5902,
+      "canonical_name": "真快活十堰茅箭六堰人民商场店",
+      "canonical_addr": "湖北省十堰市茅箭区六堰人民商场8层8C-01号",
+      "reason": "0 m; both 十堰 人民商场/人民商城 8F 茅箭; slight name variants of one store.",
+      "evidence_url": "https://map.bemanicn.com/s/303",
+      "evidence_quote": "真快活十堰茅箭人民商城店 / 武商集团十堰人民商场8楼"
+    },
+    {
+      "ids": [
+        5909,
+        5915
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5915,
+      "canonical_name": "真快活武汉汉阳摩尔城店",
+      "canonical_addr": "湖北省武汉市汉阳区龙阳大道王家湾摩尔城B座5楼真快活动漫体验中心",
+      "reason": "0 m; same 龙阳大道 摩尔城 5F; bare 摩尔城店 vs full 汉阳摩尔城店.",
+      "evidence_url": "https://map.bemanicn.com/s/288",
+      "evidence_quote": "真快活摩尔城店 / 龙阳大道特6号摩尔城5层"
+    },
+    {
+      "ids": [
+        5910,
+        5913
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5913,
+      "canonical_name": "真快活武汉梦时代店",
+      "canonical_addr": "湖北省武汉市武昌区武珞路628号武商梦时代B座801真快活电玩",
+      "reason": "Same 武商梦时代 F8/B座801; 武珞路598 vs 628 are multi-building mall street numbers for one complex.",
+      "evidence_url": "https://map.bemanicn.com/s/2083",
+      "evidence_quote": "真快活武商梦时代店 / 中南路街道武珞路598号武商梦时代F8层"
+    },
+    {
+      "ids": [
+        6328,
+        6332
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6332,
+      "canonical_name": "菲游乐湖北武汉万象城店",
+      "canonical_addr": "湖北省武汉市江岸区汉口万象城3楼菲游乐",
+      "reason": "Identical address string and 0 m; pure wahlap duplicate of the wahlap+bemanicn entry for 汉口万象城 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/5467",
+      "evidence_quote": "菲游乐（武汉万象城店） / 建设大道668号华润万象城西区3楼K320号商铺"
+    },
+    {
+      "ids": [
+        5921,
+        5933
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5921,
+      "canonical_name": "真快活武汉洪山佰港城店",
+      "canonical_addr": "湖北省武汉市洪山区丁字桥南路维佳佰港城3楼",
+      "reason": "0 m; same 维佳佰港城 3F; 丁字桥南路 vs 文楚路 are adjacent street labels for one mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1445",
+      "evidence_quote": "真快活维佳佰港城店 / 文楚路维佳佰港城3楼"
+    },
+    {
+      "ids": [
+        5925,
+        5944
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5925,
+      "canonical_name": "真快活武汉硚口荟聚店",
+      "canonical_addr": "湖北省武汉市硚口区荟聚中心3楼",
+      "reason": "Same 荟聚中心 3F; 园博大道1号 is the street address of that mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1264",
+      "evidence_quote": "真快活荟聚中心店 / 园博大道1号荟聚中心3楼"
+    },
+    {
+      "ids": [
+        5929,
+        5943
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5943,
+      "canonical_name": "真快活荆门东宝银泰城店",
+      "canonical_addr": "湖北省荆门市东宝区龙泉街道象山一路6号银泰城七楼真快活美乐园",
+      "reason": "Same 象山一路6号 银泰城 7F; ~13 m; bare 荆门店 vs full 东宝银泰城店.",
+      "evidence_url": "https://map.bemanicn.com/s/579",
+      "evidence_quote": "真快活电玩乐园（荆门店） / 象山一路6号银泰城7F"
+    }
+  ]
+}

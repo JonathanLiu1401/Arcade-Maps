@@ -1,0 +1,369 @@
+{
+  "shard": 46,
+  "verdicts": [
+    {
+      "ids": [
+        5368,
+        5373
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5368,
+      "canonical_name": "热带时光佛山东基禅西环宇城店",
+      "canonical_addr": "佛山市禅城区张槎街道东基环宇城二楼热带时光家庭娱乐中心",
+      "reason": "Same brand at Dongji Chanxi Uniworld City (禅西环宇城) 2F; Baidu lists a single POI. WAHLAP and BemaniCN are official vs community of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/4804",
+      "evidence_quote": "name=热带时光家庭娱乐中心禅西环宇城店; addr=石湾街道东基禅西环宇城东馆二楼"
+    },
+    {
+      "ids": [
+        5369,
+        5370
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5369,
+      "canonical_name": "热带时光佛山西樵店",
+      "canonical_addr": "广东省佛山市南海区西樵镇轻纺城东区樵金南路215号星元汇大厦三层3019",
+      "reason": "Identical address including building unit 3019 at Xingyuanhui, Xiqiao; 0 m and same brand.",
+      "evidence_url": "https://map.bemanicn.com/s/3256",
+      "evidence_quote": "addr=南海区西樵镇轻纺城东区樵金南路215号星元汇大厦三层3019"
+    },
+    {
+      "ids": [
+        5375,
+        5377
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5377,
+      "canonical_name": "热带时光邯郸邯山店",
+      "canonical_addr": "河北省邯郸市邯山区未来石购物中心三层热带时光",
+      "reason": "Both place the shop on 3F of Weilai Shi shopping center in Handan Hanshan; identical coords and brand branch of one mall store.",
+      "evidence_url": "https://map.bemanicn.com/s/5561",
+      "evidence_quote": "name=热带时光家庭娱乐中心（未来石店）; addr=未来石购物中心3层东侧"
+    },
+    {
+      "ids": [
+        5398,
+        5400
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Different cities and malls. BemaniCN s/5454 is Chongqing Shapingba Xuandi 7 Street; s/7217 and ZIv 11568 are Shanghai Lingang Wanda. They only sit 30 m apart because 5398 inherited Shanghai ZIv coords while keeping a Chongqing address.",
+      "evidence_url": "https://map.bemanicn.com/s/5454",
+      "evidence_quote": "province_code=500000 (Chongqing); address=渝碚路街道天陈路1号附2号炫地7街...; Baidu: 焕游星际(重庆沙坪坝店)"
+    },
+    {
+      "ids": [
+        5401,
+        5404
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5401,
+      "canonical_name": "焕游星际宁波奉化店",
+      "canonical_addr": "浙江省宁波市奉化区中山东路299号万达广场二楼焕游星际",
+      "reason": "Same Zhongshan East Road 299 / Fenghua Wanda Plaza 2F listing under WAHLAP and BemaniCN; 49 m geocode scatter only.",
+      "evidence_url": "https://map.bemanicn.com/s/6232",
+      "evidence_quote": "name=焕游星际电玩娱乐中心; addr=奉化区岳林街道中山东路299号"
+    },
+    {
+      "ids": [
+        5409,
+        5410
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 5410,
+      "canonical_name": "熊孩子游乐场池州东至新天地店",
+      "canonical_addr": "池州市东至县新天地二楼",
+      "reason": "Both name Dongzhi Xintiandi 2F; Baidu has a single 熊孩子游乐场(东至·新天地店). 357 m gap is geocode scatter on approx coords, not a second branch.",
+      "evidence_url": "https://map.bemanicn.com/s/7134",
+      "evidence_quote": "name=熊孩子游乐场; addr=东至永辉超市新天地2楼; Baidu: 至德大道新天地二楼"
+    },
+    {
+      "ids": [
+        5416,
+        5417
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5417,
+      "canonical_name": "熠辉潮游昆明盘龙永和广场店",
+      "canonical_addr": "云南省昆明市盘龙区金辰街道办事处罗丰社区居委会北京路1126号永和广场三层B-L3-3号",
+      "reason": "Same Yonghe Plaza 3F in Kunming Panlong; WAHLAP has unit B-L3-3 and BemaniCN short form c-block 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/6066",
+      "evidence_quote": "name=熠辉潮游; addr=永和广场c栋3楼"
+    },
+    {
+      "ids": [
+        5419,
+        5420
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5419,
+      "canonical_name": "爱上潮玩游艺娱乐东营广饶店",
+      "canonical_addr": "东营市广饶县乐安大街鲁商城市广场3号楼二层",
+      "reason": "Both at Guangrao Lushang City Plaza 2F; branch suffixes name the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/5670",
+      "evidence_quote": "name=爱上潮玩（鲁商城市广场店）; addr=广饶鲁商城市广场南门（兰州拉面旁边电梯上2楼）"
+    },
+    {
+      "ids": [
+        6840,
+        6841
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6841,
+      "canonical_name": "酷漫地带德阳旌阳店",
+      "canonical_addr": "四川省德阳市旌阳区洋洋百货五楼",
+      "reason": "Identical Yangyang Department Store 5F in Deyang; 0 m and same brand.",
+      "evidence_url": "https://map.bemanicn.com/s/2526",
+      "evidence_quote": "name=酷漫地带; addr=洋洋百货(南街店)五楼"
+    },
+    {
+      "ids": [
+        5423,
+        5428
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5428,
+      "canonical_name": "爱吉乐广州花都茶园新天地店",
+      "canonical_addr": "广东省广州市花都区新华街道茶园路15号茶园新天地3楼爱吉乐潮玩游乐中心",
+      "reason": "Same Chayuan Xintiandi, Chayuan Rd 15, 3F in Huadu; WAHLAP and BemaniCN name the same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/4894",
+      "evidence_quote": "name=爱吉乐(茶园新天地店); addr=新华街道茶园路15号茶园新天地3楼"
+    },
+    {
+      "ids": [
+        5424,
+        5425
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5424,
+      "canonical_name": "爱吉乐中山石岐华发店",
+      "canonical_addr": "广东省中山市石岐区中山二路3号华发商都三楼爱吉乐",
+      "reason": "Same Zhongshan Er Lu Huafa complex 3F (华发商都/华发广场 are the same mall); BemaniCN unit 7-14 matches WAHLAP branch.",
+      "evidence_url": "https://map.bemanicn.com/s/2553",
+      "evidence_quote": "name=爱吉乐家庭娱乐中心; addr=中山二路3号华发广场3层7-14卡"
+    },
+    {
+      "ids": [
+        5426,
+        5427
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5427,
+      "canonical_name": "爱吉乐广州白云店",
+      "canonical_addr": "广东省广州市白云区石沙路86号石井国际3楼爱吉乐",
+      "reason": "Identical Shisha Rd 86 Shijing International 3F address; 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/5242",
+      "evidence_quote": "name=爱吉乐家庭娱乐中心(石井国际店); addr=广东省广州市白云区石沙路86号石井国际3楼"
+    },
+    {
+      "ids": [
+        5430,
+        5431
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5431,
+      "canonical_name": "爱婴城堡福州长乐店",
+      "canonical_addr": "福建省福州市长乐区金峰镇胪东二路1号好莱钨商场二层爱婴城堡游乐场",
+      "reason": "Same Ludong Er Lu 1 Haolaiwu mall 2F in Changle Jinfeng; 29 m geocode scatter.",
+      "evidence_url": "https://map.bemanicn.com/s/5147",
+      "evidence_quote": "name=爱婴城堡; addr=金峰镇胪东二路1号好莱钨商场2楼"
+    },
+    {
+      "ids": [
+        5432,
+        5433
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5433,
+      "canonical_name": "爱尚潮玩沧州黄骅店",
+      "canonical_addr": "河北省沧州市黄骅市学院西路信源购物广场4楼",
+      "reason": "Same Xinyuan shopping plaza/building 4F in Huanghua; 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/1870",
+      "evidence_quote": "name=爱尚潮玩; addr=信源商厦4楼爱尚潮玩（电影院旁边）"
+    },
+    {
+      "ids": [
+        5450,
+        5454
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5454,
+      "canonical_name": "爱玩嘉年华杭州钱塘店",
+      "canonical_addr": "浙江省杭州市钱塘区金沙大道560号金沙龙湖天街3楼爱玩嘉年华",
+      "reason": "Same Longfor Jinsha Sky Street, Jinsha Ave 560, L3; WAHLAP QianTang branch and BemaniCN Longhu Jinsha listing.",
+      "evidence_url": "https://map.bemanicn.com/s/5882",
+      "evidence_quote": "name=爱玩嘉年华(龙湖杭州金沙天街店); addr=金沙大道560号龙湖杭州金沙天街L3层3F-01"
+    },
+    {
+      "ids": [
+        5456,
+        5462
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5456,
+      "canonical_name": "爱玩嘉年华深圳龙华店",
+      "canonical_addr": "广东省深圳市龙华区壹方天地A区二楼爱玩嘉年华",
+      "reason": "Same Uniwalk (壹方天地) Zone A L2 in Longhua; BemaniCN unit L2-045 is the unit-level form of the WAHLAP branch.",
+      "evidence_url": "https://map.bemanicn.com/s/6750",
+      "evidence_quote": "name=爱玩嘉年华（壹方天地店）; addr=龙华街道景龙社区壹方天地A区L2-045号"
+    },
+    {
+      "ids": [
+        5457,
+        5458
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5457,
+      "canonical_name": "爱玩嘉年华西安新城长乐龙湖店",
+      "canonical_addr": "陕西省西安市新城区胡家庙街道万寿北路58号龙湖西安长乐天街 爱玩嘉年华",
+      "reason": "Same Longfor Changle Sky Street at Wanshou North Rd 58; names are word-order variants of one branch (BemaniCN adds B-hall B3 unit).",
+      "evidence_url": "https://map.bemanicn.com/s/6617",
+      "evidence_quote": "name=爱玩嘉年华西安龙湖长乐天街店; addr=新城区万寿北路58号西安龙湖长乐天街B馆B3层-21-22"
+    },
+    {
+      "ids": [
+        5465,
+        5468
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5468,
+      "canonical_name": "爱玩星球郑州金水店",
+      "canonical_addr": "河南省郑州市金水区东风路瀚海海尚mall-B146号爱玩星球",
+      "reason": "Same Hanhai Haishang mall on Dongfeng Rd in Jinshui; 0 m and complementary brand/branch names.",
+      "evidence_url": "https://map.bemanicn.com/s/1662",
+      "evidence_quote": "name=爱玩星球瀚海海尚店; addr=丰庆路东风路交叉口瀚海海尚负1楼"
+    },
+    {
+      "ids": [
+        5473,
+        5475
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5475,
+      "canonical_name": "爱玩荟家庭游乐中心北京望京店",
+      "canonical_addr": "北京市朝阳区广顺南大街16号院1号楼3层301内044号",
+      "reason": "Same New World Department Store Wangjing 3F on Guangshun South Ave 16; Baidu has one Wangjing POI; ZIv and WAHLAP/BemaniCN share lineup counts.",
+      "evidence_url": "https://map.bemanicn.com/s/4942",
+      "evidence_quote": "name=爱玩荟家庭娱乐中心（望京店）; addr=广顺南大街16号新世界百货（望京店）3F东南侧"
+    },
+    {
+      "ids": [
+        5488,
+        5489
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5489,
+      "canonical_name": "特爱玩电玩城天河新天地店",
+      "canonical_addr": "广东省广州市天河区天源路5号天河新天地3楼",
+      "reason": "Identical Tianyuan Rd 5 Tianhe Xintiandi 3F; 0 m. BemaniCN adds unit L323-330.",
+      "evidence_url": "https://map.bemanicn.com/s/2407",
+      "evidence_quote": "name=特爱玩电玩城; addr=天源路5号天河新天地3层L323-330"
+    },
+    {
+      "ids": [
+        5498,
+        5500
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5500,
+      "canonical_name": "猩际争霸天津武清万达店",
+      "canonical_addr": "天津市武清区福源道万达广场三楼猩际争霸3056猩际争霸",
+      "reason": "Same Wuqing Wanda Plaza unit 3056; ZIv English form and WAHLAP/BemaniCN Chinese form of one shop.",
+      "evidence_url": "https://map.bemanicn.com/s/3965",
+      "evidence_quote": "name=猩际争霸武清万达店; addr=福源道万达广场3056幸运猩"
+    },
+    {
+      "ids": [
+        5509,
+        5510
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5509,
+      "canonical_name": "猫鼓旗舰店 Taiko Catz",
+      "canonical_addr": "七莘路1599弄平金中心B2",
+      "reason": "Same Pingjin Center B2 at Qixin Rd 1599 lane; both list only taiko x2. BemaniCN and ZIv of one specialty store.",
+      "evidence_url": "https://map.bemanicn.com/s/6791",
+      "evidence_quote": "name=猫鼓旗舰店; addr=七莘路1599弄平金中心B2"
+    },
+    {
+      "ids": [
+        5511,
+        5512
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5512,
+      "canonical_name": "猿计划游艺mall南海万科店",
+      "canonical_addr": "广东省佛山市南海区桂澜中路23号南海万科广场3楼猿计划游艺MALL",
+      "reason": "Identical Guilan Middle Rd 23 Nanhai Vanke Plaza 3F; 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/600",
+      "evidence_quote": "name=猿计划南海万科店; addr=桂城桂澜中路23号南海万科广场3层"
+    },
+    {
+      "ids": [
+        5522,
+        5545
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5522,
+      "canonical_name": "王者之风宁波鄞州店",
+      "canonical_addr": "浙江省宁波市鄞州区中河街道钱湖北路288号鄞州印象城3楼王者之风",
+      "reason": "Same Yinzhou Impression City 3F; WAHLAP and BemaniCN branch labels for one mall store.",
+      "evidence_url": "https://map.bemanicn.com/s/2960",
+      "evidence_quote": "name=王者之风鄞州印象城店; addr=中河街道钱湖北路288号（鄞州印象城3楼）"
+    },
+    {
+      "ids": [
+        5523,
+        5546
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5523,
+      "canonical_name": "王者之风慈溪爱琴海店",
+      "canonical_addr": "浙江省慈溪市北三环东路1888号爱琴海购物公园二楼C区王者之风",
+      "reason": "Identical Beisanhuang East Rd 1888 Aegean Sea shopping park 2F; 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3664",
+      "evidence_quote": "name=王者之风（慈溪环创爱琴海购物中心店）; addr=慈溪市北三环东路1888号慈溪环创爱琴海购物公园2楼"
+    },
+    {
+      "ids": [
+        5525,
+        5538
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5525,
+      "canonical_name": "王者之风杭州招商花园城店",
+      "canonical_addr": "浙江省杭州市临平区崇贤街道崇杭街招商花园城3楼王者之风",
+      "reason": "Same China Merchants Garden City 3F unit 3019 in Linping; Baidu has one POI. Chonghang/Chongwen is a street-name variant of the same mall entrance.",
+      "evidence_url": "https://map.bemanicn.com/s/6361",
+      "evidence_quote": "name=王者之风电玩城(杭州城北招商花园城店); addr=临平区崇文街招商花园城3楼3019铺"
+    }
+  ]
+}

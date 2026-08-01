@@ -1,0 +1,1117 @@
+{
+  "shard": 28,
+  "checked": 77,
+  "sources_used": [
+    "https://map.bemanicn.com/s/* (Inertia JSON for all 31 BemaniCN-linked Guangdong shops in shard)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=United%20Kingdom",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6539",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9675",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5288",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=307",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2271",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3368",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=222",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6692",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6394",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10670",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10054",
+    "https://www.topgolf.com/uk/watford/",
+    "https://urban-fun.co.uk/",
+    "http://tottonarcade.co.uk",
+    "http://vertigovr.co.uk",
+    "https://location.am-all.net/alm/location?gm=98&lang=en (no mainland China / UK coverage)"
+  ],
+  "corrections": [
+    {
+      "id": 6725,
+      "name": "迪芝尼云浮盈信广场店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 6730 also listed",
+      "proposed": "duplicate of id 6730 (迪芝尼潮玩主场); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 6730)",
+      "evidence_quote": "identical lat/lng 23.241768,111.531417; both Yunfu Yunan Yinxin Plaza 2F; wahlap-only entry is the official-network twin of BemaniCN 5856",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6852,
+      "name": "酷炫娱乐中心东莞樟木头店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 6853 also listed",
+      "proposed": "duplicate of id 6853 (酷炫家庭娱乐中心（汇景香樟公馆店）); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 6853)",
+      "evidence_quote": "same Huijing Xiangzhang Gongguan Building 13 unit 201 address text; ~0.14-1.4km geocode jitter; same chain store",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6859,
+      "name": "酷炫缤纷佛山高明盈信店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 6860 also listed",
+      "proposed": "duplicate of id 6860 (酷炫缤纷（盈信广场店）); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 6860)",
+      "evidence_quote": "same Gaoming Yinxin Plaza 2F; coords within ~30m",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6867,
+      "name": "酷猫电玩城韶关翁源新都汇店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 6866 also listed",
+      "proposed": "duplicate of id 6866 (酷猫电玩城锦绣新都汇店); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 6866)",
+      "evidence_quote": "same Wengyuan Jinxiu Xinduhui 2F; coords within ~30m; wahlap twin of BemaniCN 7014",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6901,
+      "name": "酷玩时代肇庆四会吾悦广场店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 6896 also listed",
+      "proposed": "duplicate of id 6896 (酷玩时代); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 6896)",
+      "evidence_quote": "identical lat/lng; both Sihui OurHours Plaza F3",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7234,
+      "name": "风云潮玩社潮州饶平康德广场店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7232 also listed",
+      "proposed": "duplicate of id 7232 (风云潮玩社(康德广场)); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7232)",
+      "evidence_quote": "same Raoping Kande Plaza; coords within ~100m; floor wording differs (wahlap 1F vs bem basement mall)",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7288,
+      "name": "骑趣乐园广州海珠燕汇旗舰店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7289 also listed",
+      "proposed": "duplicate of id 7289 (骑趣乐园广州燕汇店); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7289)",
+      "evidence_quote": "identical lat/lng Yanhui Plaza; wahlap twin of BemaniCN 4748 (now renamed Mailerfang)",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7290,
+      "name": "骑趣乐园广州花都花邻荟店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7293 also listed",
+      "proposed": "duplicate of id 7293 (骑趣乐园（花山花邻荟店）); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7293)",
+      "evidence_quote": "identical lat/lng Hualinhui 2F",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7295,
+      "name": "魅影苍穹东莞东城万达店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7298 also listed",
+      "proposed": "duplicate of id 7298 (魅影苍穹潮玩城(东城万达店)); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7298)",
+      "evidence_quote": "same Dongcheng Wanda 3F; coords within ~60m",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7296,
+      "name": "魅影苍穹深圳宝安店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7301 also listed",
+      "proposed": "duplicate of id 7301 (魅影苍穹潮玩城（宝安华强广场店）); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7301)",
+      "evidence_quote": "same Huaqiang Times Square L3-06 address; coords within ~10m",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7297,
+      "name": "魅影苍穹深圳龙岗店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7300 also listed",
+      "proposed": "duplicate of id 7300 (魅影苍穹潮玩城（坂田百佳华店）); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7300)",
+      "evidence_quote": "identical lat/lng; same Jihua Rd 635 Baijiahua/Jiahua Linghui 3F",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7372,
+      "name": "齐悦儿梅州客都汇店",
+      "field": "other",
+      "current": "separate open venue (src=wahlap only); sibling id 7373 also listed",
+      "proposed": "duplicate of id 7373 (齐悦儿（客都汇商业文化广场店）); merge into the BemaniCN-backed row and drop or mark this WAHLAP-only twin",
+      "confidence": "likely",
+      "evidence_url": "shard internal cross-check + https://map.bemanicn.com/s/ (sibling BemaniCN page for id 7373)",
+      "evidence_quote": "same Keduhui; coords within ~50m",
+      "note": "WAHLAP official locator and BemaniCN community map both list the same physical mall store under slightly different names. Pins coincide. Prefer keeping the BemaniCN-backed row (richer game counts) and merging sources onto it. WAHLAP site itself returned HTTP 503 during this research pass, so WAHLAP-only existence was not reconfirmed from the live locator.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7289,
+      "name": "骑趣乐园广州燕汇店",
+      "field": "other",
+      "current": "name: 骑趣乐园广州燕汇店",
+      "proposed": "name: 迈乐方电玩广州燕汇广场店（原骑趣乐园）",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4748",
+      "evidence_quote": "shop.name = 迈乐方电玩广州燕汇广场店（原骑趣乐园）; comment: 店铺即将更名迈乐方; updated_at 2026-07-28",
+      "note": "BemaniCN already shows the new name with (原骑趣乐园). WAHLAP twin 7288 still uses 骑趣乐园.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7288,
+      "name": "骑趣乐园广州海珠燕汇旗舰店",
+      "field": "other",
+      "current": "name: 骑趣乐园广州海珠燕汇旗舰店",
+      "proposed": "name should track rename to 迈乐方 if this row is kept; better merge into 7289",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4748",
+      "evidence_quote": "迈乐方电玩广州燕汇广场店（原骑趣乐园）",
+      "note": "Duplicate of 7289; if not merged, rename.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6730,
+      "name": "迪芝尼潮玩主场",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5856",
+      "evidence_quote": "arcades: title_id 1 maimai DX qty=1; title_id 17 WACCA qty=1 ver=无 coin=3; title_id 15 太鼓达人(旧代) qty=1",
+      "note": "WACCA is currently only mentioned in notes as 'other games: WACCA'. Project already uses game key 'wacca' elsewhere. Old-gen taiko (title_id 15) not Nijiiro.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6730,
+      "name": "迪芝尼潮玩主场",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5856",
+      "evidence_quote": "WACCA quantity:1",
+      "note": "taiko is old-gen 12 Asia (title_id 15), not CN Nijiiro.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7068,
+      "name": "阿奇拉汤泉",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5312",
+      "evidence_quote": "title_id 1 maimai DX qty=2; title_id 17 WACCA qty=2 ver=国行3.5; title_id 15 太鼓达人(旧代) qty=1",
+      "note": "Spa/admission venue. Comment also says maimai network offline and taiko under repair as of 2026-06-05 - operational caveat, not closed.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7068,
+      "name": "阿奇拉汤泉",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5312",
+      "evidence_quote": "WACCA quantity:2",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7341,
+      "name": "鲸奇动漫城",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3794",
+      "evidence_quote": "title_id 1 maimai DX qty=1; title_id 17 WACCA qty=1 ver=V3.5; title_id 26 Initial D qty=4; shop comment: one maimai, one WACCA",
+      "note": "WACCA currently only under notes 'other games: WACCA'. Keep other for Initial D.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7341,
+      "name": "鲸奇动漫城",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3794",
+      "evidence_quote": "WACCA quantity:1 coin=3",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6696,
+      "name": "车库窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5997",
+      "evidence_quote": "start_time:8 end_time:22; comment also 12 CNY/h 5h cap, QQ-group reservation required",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6697,
+      "name": "轩轩窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/720",
+      "evidence_quote": "start_time:10 end_time:22; comment: normal hours AM 10 - PM 22:00",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6706,
+      "name": "运气贩卖便利店中山假日广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3825",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6730,
+      "name": "迪芝尼潮玩主场",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5856",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6739,
+      "name": "遂溪电玩音游窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6225",
+      "evidence_quote": "start_time:9 end_time:22; comment: 10 CNY/hour",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6809,
+      "name": "酷乐窝宝安店",
+      "field": "hours",
+      "current": null,
+      "proposed": "01:00-02:00 next day (near 24h; BemaniCN start=1 end=26)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7038",
+      "evidence_quote": "start_time:1 end_time:26 (end 26 encodes 02:00+1)",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6821,
+      "name": "酷动玩家",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7195",
+      "evidence_quote": "start_time:10 end_time:22; updated_at 2026-07-29; comment: new hall in Yuewangli",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6853,
+      "name": "酷炫家庭娱乐中心（汇景香樟公馆店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 next day",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5087",
+      "evidence_quote": "start_time:10 end_time:26",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6860,
+      "name": "酷炫缤纷（盈信广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5939",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6866,
+      "name": "酷猫电玩城锦绣新都汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7014",
+      "evidence_quote": "start_time:10 end_time:24",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6896,
+      "name": "酷玩时代",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00 (Fri/Sat/holidays to 22:30 per comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5416",
+      "evidence_quote": "start_time:10 end_time:22; comment: weekdays 10:00-22:00, Fri/Sat/holidays 22:30 close",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6923,
+      "name": "酷玩空间佛山顺德印象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3432",
+      "evidence_quote": "start_time:10 end_time:22; comment: hall is open for attendance as normal",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7016,
+      "name": "银河奇遇妙妙屋",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5767",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7068,
+      "name": "阿奇拉汤泉",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-02:00 next day (maimai free-play window stated 10:00-02:00 in comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5312",
+      "evidence_quote": "start_time:11 end_time:26; comment: two maimai DX free play (10:00-02:00)",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7073,
+      "name": "阿尔法星球广州东篱梦时代店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5115",
+      "evidence_quote": "start_time:10 end_time:21; comment: closes about 21:30 / auto power-off ~21:35",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7081,
+      "name": "雁窝（广州昌岗店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "24h (BemaniCN start=1 end=26); 15 CNY/hour with day/night caps",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5892",
+      "evidence_quote": "start_time:1 end_time:26; comment: 15 CNY/hour, 24h open; day cap 35 / night cap 68",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7232,
+      "name": "风云潮玩社(康德广场)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-02:00 next day",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5492",
+      "evidence_quote": "start_time:9 end_time:26; comment: opens 9am, can play until late night",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7233,
+      "name": "风云潮玩社揭阳揭东晟旺家购物广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 next day",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5194",
+      "evidence_quote": "start_time:10 end_time:26",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7256,
+      "name": "香霖堂KOURINDOU",
+      "field": "hours",
+      "current": null,
+      "proposed": "07:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3390",
+      "evidence_quote": "start_time:7 end_time:24",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7289,
+      "name": "骑趣乐园广州燕汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4748",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7293,
+      "name": "骑趣乐园（花山花邻荟店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00 (comment: opens 09:30)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7061",
+      "evidence_quote": "start_time:10 end_time:22; comment: opens 09:30, enter mall via side alley door",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7298,
+      "name": "魅影苍穹潮玩城(东城万达店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4943",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7300,
+      "name": "魅影苍穹潮玩城（坂田百佳华店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5269",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7323,
+      "name": "魔童猫",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6434",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7341,
+      "name": "鲸奇动漫城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3794",
+      "evidence_quote": "start_time:10 end_time:24",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7342,
+      "name": "鸟窝｜黄边",
+      "field": "hours",
+      "current": null,
+      "proposed": "near-24h (BemaniCN start=1 end=25)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6929",
+      "evidence_quote": "start_time:1 end_time:25",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7373,
+      "name": "齐悦儿（客都汇商业文化广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4377",
+      "evidence_quote": "start_time:10 end_time:22",
+      "note": "Hours taken from BemaniCN shop start_time/end_time (and free-text comment when present). Community-maintained; treat as likely not certain. end_time>24 means past midnight.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7301,
+      "name": "魅影苍穹潮玩城（宝安华强广场店）",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:00",
+      "proposed": "keep 10:00-21:00 or note conflict: BemaniCN end_time=22 vs ZIv 10:00-21:00",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/4204",
+      "evidence_quote": "BemaniCN start_time:10 end_time:22; ZIv arcade.php?id=10054 lists open daily 10:00-21:00 (updated 2026-07-31)",
+      "note": "App and ZIv agree on 21:00 close. BemaniCN says 22. Do not blindly overwrite; maintainer should pick one after a live check.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7338,
+      "name": "鲸喜汇乐园．电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6162",
+      "evidence_quote": "start_time:9 end_time:11",
+      "note": "BemaniCN encodes only 09:00-11:00 which is almost certainly incomplete or a data-entry error for a mall arcade. Do NOT publish as hours. Leave null until a real schedule is found.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6821,
+      "name": "酷动玩家",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx: 3 coins/credit; coin ~0.3 CNY (comment 0.3/coin, 3 coins per credit)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7195",
+      "evidence_quote": "coin:3; comment: third maimai in Yuancheng; coin price 0.3/1, 3 coins per credit",
+      "note": "Per-credit local currency estimate ~0.9 CNY/credit if 0.3/coin * 3.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6853,
+      "name": "酷炫家庭娱乐中心（汇景香樟公馆店）",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx/chunithm: 5 coins/credit; jubeat: 1 coin/credit (promo)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5087",
+      "evidence_quote": "maimai coin:5; chunithm coin:5; jubeat title_id 34 coin:1 comment: promo 1 coin per credit for about one month",
+      "note": "jubeat promo may be temporary.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7289,
+      "name": "骑趣乐园广州燕汇店",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx/chunithm: 4 coins/credit; taiko: 6 coins; bulk 300CNY=580 coins",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4748",
+      "evidence_quote": "maimai coin:4; chunithm coin:4; taiko coin:6; comment: since 2025-06-01 now 4 coins per credit; 300 CNY = 580 coins",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7298,
+      "name": "魅影苍穹潮玩城(东城万达店)",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx/chunithm: 3 coins/credit",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4943",
+      "evidence_quote": "maimai coin:3; chunithm coin:3; comment: very cheap coin price; local group bulk ~0.5/credit",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7301,
+      "name": "魅影苍穹潮玩城（宝安华强广场店）",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai_dx/chunithm: 3 coins/credit (Wed member day 2 coins/PC); Initial D: 5 coins",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4204",
+      "evidence_quote": "maimai coin:3 comment Wed member day 2 coins/PC; chunithm coin:3; Initial D coin:5; ZIv also: 3 tokens per 3 songs, members 2-credit Wed",
+      "note": "Also card/QR only for maimai and CHUNITHM per ZIv/BemaniCN.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6706,
+      "name": "运气贩卖便利店中山假日广场店",
+      "field": "prices",
+      "current": null,
+      "proposed": "taiko: 6 coins single / 12 double (weekday package single4/double4; weekend single3/double4); coin packages listed 1CNY=1 coin up to bulk",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3825",
+      "evidence_quote": "taiko coin:6 comment: single 6 / double 12; weekday single4 double4; weekend single3 double4; shop comment coin packages 1 CNY = 1 coin ...",
+      "note": null,
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7081,
+      "name": "雁窝（广州昌岗店）",
+      "field": "prices",
+      "current": null,
+      "proposed": "time-based: 15 CNY/hour; day-session cap 35 CNY (07-12); night-session cap 68 CNY (22-next 07); not per-credit coin play for SEGA cabs",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5892",
+      "evidence_quote": "price:15; comment: 15 CNY/hour, 24h open; day session 07-12 cap 35; night session 22-next07 cap 68",
+      "note": "Private nest (type 3). coin fields on machines are 0.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6696,
+      "name": "车库窝",
+      "field": "prices",
+      "current": null,
+      "proposed": "time-based: 12 CNY/hour, 5h cap; QQ-group reservation required",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5997",
+      "evidence_quote": "price:12; comment: 12/h 5h cap; must join QQ group to reserve",
+      "note": "Private nest. No SEGA maimai here (comment warns explicitly).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6696,
+      "name": "车库窝",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "Valkyrie-style hand unit (enamel/hand cab per comment)",
+        "iidx": "standard (BJM net, ver 33)",
+        "gitadora": "GuitarFreaks GALAXY WAVE (GF only listed, not Drum)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5997",
+      "evidence_quote": "SDVX version updated gen7 comment hand unit; IIDX version 33 comment bjm; GF title_id 8 GALAXY WAVE",
+      "note": "Only GuitarFreaks (title_id 8) is listed, not DrumMania. App maps both to gitadora which is fine.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11942,
+      "name": "Treasure Island (Barry Island)",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr_a3": 2,
+        "ddr_legacy_euromix2": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6539",
+      "evidence_quote": "DanceDanceRevolution A3 x2 (comments updated 02/05/26 by NoBar); Dancing Stage EuroMIX2 x1; lastUpdate 2026-05-02",
+      "note": "App game_counts ddr:3 with ziv_listed is correct quantity. cab_models only had ddr_legacy:null; venue actually runs two A3 cabs plus one EuroMIX2 legacy. Not e-amusement online.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11942,
+      "name": "Treasure Island (Barry Island)",
+      "field": "game_counts",
+      "current": {
+        "ddr": 3
+      },
+      "proposed": {
+        "ddr": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6539",
+      "evidence_quote": "three DDR-family machine rows: 2x DDR A3 + 1x EuroMIX2, comments dated 2026-05-02",
+      "note": "Confirming current count is real (not a ziv_listed placeholder of 1). Leave value 3; upgrade evidence quality if schema allows.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11947,
+      "name": "UK Superbowl",
+      "field": "status",
+      "current": "open (listed, games=['other'], empty machine notes)",
+      "proposed": "existence/status unverified; ZIv entry empty of games and last updated 2010-01-17",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=307",
+      "evidence_quote": "No games at this location. Last updated 2010-01-17. Opening times Unknown. Comment 16 years ago: Machine is now gone.",
+      "note": "Do not send players here for rhythm games. ZIv has no current machine evidence. Venue-level open/closed not independently confirmed in this pass.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11941,
+      "name": "Treasure Island (Cleveleys)",
+      "field": "status",
+      "current": "open (listed, games=['other'], empty notes)",
+      "proposed": "rhythm-game presence unverified; ZIv has no machines and last update 2018-04-05",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2271",
+      "evidence_quote": "No games at this location. Last updated 2018-04-05. Opening times Unknown.",
+      "note": "Address is only 'Cleveleys Lancashire' with no street. Pin may still be a seaside amusements site, but no evidence of any listed machines today.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11959,
+      "name": "Williams's Amusements",
+      "field": "status",
+      "current": "open (listed, games=['other'], empty notes)",
+      "proposed": "machine list empty; ZIv last updated 2015-11-15",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=222",
+      "evidence_quote": "No games at this location. Last updated 2015-11-15. Opening times Unknown.",
+      "note": "Seaside amusement arcade may still exist; no current machine evidence on ZIv.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11949,
+      "name": "Vertigo VR",
+      "field": "status",
+      "current": "open with listed hours and games=['other']",
+      "proposed": "venue website still live but ZIv machine list last updated 2019-11-06; arcade cabinet presence today is unverified",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5288",
+      "evidence_quote": "ZIv last update 2019-11-06; machines Tekken 6, Storm Racer G, Storm Rider, Luigi's Mansion, Transformers HA, Sonic Dash Extreme, Hockey Table. Website vertigovr.co.uk still serves Milton Keynes pages with opening hours (HTML also contains COVID-era Temporary Closure comment text).",
+      "note": "Primary business is VR centre. Do not treat 2019 ZIv cab list as current.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11958,
+      "name": "Widnes Superbowl",
+      "field": "status",
+      "current": "open; hours Mon-Sun 09:00-00:00; games=['other']",
+      "proposed": "no rhythm games on ZIv; note from 2018 says DDR X gone",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3368",
+      "evidence_quote": "No games at this location. Last update 2018-05-08. Description: as of May 2018 converted to Sega game zone; DDR X gone...Sonic statue present instead.",
+      "note": "Bowling alley may still be open; rhythm interest is gone per 2018 note. No newer source found.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11961,
+      "name": "Woking Superbowl",
+      "field": "games",
+      "current": [
+        "other",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "other",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6692",
+      "evidence_quote": "StepManiaX (43 inch Dedicated Cabinet) comment: Offline as of 18 Dec 2022. Also unfortunate is it's next to Hungry Hippos. Last update 2023-10-08.",
+      "note": "Keep stepmaniax listed but flag as possibly offline since Dec 2022. No newer confirmation either way.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11967,
+      "name": "Ye Olde King & Queen",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-12:00",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10670",
+      "evidence_quote": "ZIv opening times Mon-Sun 10:00-12:00; description: Pub with a few games; last update 2025-11-13",
+      "note": "A two-hour daily window for a Brighton pub is almost certainly a ZIv data-entry error (or lunch-only misread). Prefer removing published hours (proposed null) until a real schedule is confirmed. Machines (SF2, HOTD, bootleg Mario Kart upstairs, Simpsons pin) still listed Great as of 2025-11-13.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11948,
+      "name": "Urban Fun",
+      "field": "hours",
+      "current": "Mon-Wed 10:00-22:00; Thu 10:00-23:00; Fri-Sat 10:00-00:00; Sun 10:00-22:00",
+      "proposed": "official site FAQ: Sun-Thu 10:00-22:00; Fri-Sat 10:00-00:00 (footer sometimes shows 10-22 every day; Queens Walk entrance only after 18:00)",
+      "confidence": "likely",
+      "evidence_url": "https://urban-fun.co.uk/",
+      "evidence_quote": "What are your opening times? Urban Fun Reading is open Sunday to Thursday 10am - 10 pm, and Friday & Saturday 10am until midnight. (Queens Walk entrance only after 6pm)",
+      "note": "Venue confirmed open (flagship Reading page live 2026). ZIv DDR A20 PLUS still listed (updated 2026-04-28). Official site does not mention DDR by name.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11937,
+      "name": "Totton Arcade",
+      "field": "hours",
+      "current": "Mon-Fri closed; Sat-Sun 10:00-19:00",
+      "proposed": "term time: Mon-Fri closed, Sat-Sun 10:00-19:00; school/bank holidays: daily 10:00-19:00",
+      "confidence": "certain",
+      "evidence_url": "http://tottonarcade.co.uk",
+      "evidence_quote": "Opening Time During the school term time, Monday to Friday, Closed, Saturday and Sunday, 10am to 7pm. School and bank holidays, we open daily, from 10am to 7pm. Address 14 Water Lane, Totton, Hampshire, SO40 3DP",
+      "note": "App omits holiday daily-open rule. Venue website live and booking pages present.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11936,
+      "name": "TopGolf Watford",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu 10:00-23:00; Fri 10:00-00:00; Sat 09:00-00:00; Sun 09:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.topgolf.com/uk/watford/",
+      "evidence_quote": "Hours Mon-Thu: 10AM - 11PM Fri: 10AM - 12AM Sat: 9AM - 12AM Sun: 9AM - 11PM. Address Bushey Mill Lane Watford Herts WD24 7AB",
+      "note": "Confirmed open on official Topgolf site. Games are entertainment arcade (Mario Kart etc), not Konami/SEGA rhythm network titles.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6697,
+      "name": "轩轩窝",
+      "field": "location",
+      "current": "addr=美宜佳; lat/lng city centroid Shenzhen approx=true",
+      "proposed": "keep approx=true; address remains incomplete (only Meiyijia convenience-store landmark). City Shenzhen area per city_code 440300 county 440309 - do not treat pin as door-level",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/720",
+      "evidence_quote": "address: 美宜佳; city_code 440300000000 county_code 440309000000; locked:1",
+      "note": "Private nest, locked listing. Pin is city/district centroid by design (approx true is correct).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6809,
+      "name": "酷乐窝宝安店",
+      "field": "location",
+      "current": "addr=美宜佳; district centroid Bao'an approx=true",
+      "proposed": "keep approx=true; address only Meiyijia; Bao'an district centroid is intentional",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7038",
+      "evidence_quote": "address: 美宜佳; city 440300 county 440306; locked:1",
+      "note": "Private nest. Do not report approx as an error.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7232,
+      "name": "风云潮玩社(康德广场)",
+      "field": "location",
+      "current": "addr basement mall A12-18; sibling wahlap 7234 says 1F",
+      "proposed": "prefer BemaniCN basement address 地下商城A12-18; comment also describes front and rear entrances",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5492",
+      "evidence_quote": "address: Raoping Huanggang Yanhe Rd Kande Plaza underground mall A12-18; comment describes main entrance and rear parking entrance",
+      "note": "Duplicate pair with 7234 (wahlap 1F). Floor conflict unresolved without a visit; basement wording is more specific.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6923,
+      "name": "酷玩空间佛山顺德印象城店",
+      "field": "other",
+      "current": "name: 酷玩空间佛山顺德印象城店",
+      "proposed": "name: 酷玩空间（顺德印象城店）",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3432",
+      "evidence_quote": "shop.name: 酷玩空间（顺德印象城店）; address: Daliang Dongle Rd 268 Impression City 3F",
+      "note": "Cosmetic rename to match BemaniCN. Address in app is fuller (includes province/city) which is fine.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7233,
+      "name": "风云潮玩社揭阳揭东晟旺家购物广场店",
+      "field": "other",
+      "current": "name: 风云潮玩社揭阳揭东晟旺家购物广场店",
+      "proposed": "name: 风云潮玩社（晟旺家购物广场店）",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5194",
+      "evidence_quote": "shop.name: 风云潮玩社（晟旺家购物广场店）",
+      "note": "Cosmetic.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7068,
+      "name": "阿奇拉汤泉",
+      "field": "status",
+      "current": "open",
+      "proposed": "open (spa admission model); maimai network offline and taiko under repair per 2026-06-05 comment - still listed status=1",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5312",
+      "evidence_quote": "status:1; comment: ticket mode 179 for 8h free play; currently maimai has no network, taiko under repair; updated_at 2026-06-05",
+      "note": "Not a permanent closure. Players should expect free-play maimai possibly offline and taiko maybe down. Ticket ~179 CNY / 8h.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7301,
+      "name": "魅影苍穹潮玩城（宝安华强广场店）",
+      "field": "status",
+      "current": "open",
+      "proposed": "open (confirmed recently)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10054",
+      "evidence_quote": "ZIv last update 2026-07-31; open daily 10:00-21:00; 2x maimai DX 2026, 2x CHUNITHM 2026; transformers installed 2026-07-20 restored cab condition",
+      "note": "Positive confirmation only; no change required beyond optional hours/price notes already filed. BemaniCN status=1 updated 2026-07-27.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11948,
+      "name": "Urban Fun",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9675",
+      "evidence_quote": "DanceDanceRevolution A20 PLUS x1, condition Great, Offline, Perfectly levelled as of 01/06/2025; record updated 2026-04-28",
+      "note": "App has games including ddr but no game_counts. Single A20+ cab, e-amusement offline.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11950,
+      "name": "Walton Pier",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr_legacy": "DanceDanceRevolution X2 (pad issues noted)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=United%20Kingdom",
+      "evidence_quote": "Walton Pier ziv id 5904 machines include DanceDanceRevolution X2 comment: P1 side down/right not registering correctly and P2 left not registering; lastUpdate 2024-07-28",
+      "note": "cab_models key was present but null. Stale-ish 2024 update.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 11951,
+      "name": "War Room Laser Tag",
+      "field": "status",
+      "current": "open with ddr + hours",
+      "proposed": "open per ZIv hours, but machine list last updated 2023-06-06 and several cabs marked condition 0 / unsure if still present",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7178",
+      "evidence_quote": "Dancing Stage EuroMIX (condition 0); comments note some machines may not still be on site from newer photos; last update 2023-06-06",
+      "note": "Website warroomlasertag.co.uk referenced on ZIv; not re-fetched this pass.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6706,
+      "name": "运气贩卖便利店中山假日广场店",
+      "field": "game_counts",
+      "current": {
+        "taiko": 2
+      },
+      "proposed": {
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3825",
+      "evidence_quote": "title_id 31 taiko quantity:2 version 2026 autumn; also Pokemon Meza Star quantity:2",
+      "note": "Confirming taiko count 2 is real. Pokemon is non-rhythm 'other'.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6936,
+      "name": "酷豆家族",
+      "field": "status",
+      "current": "open; games=['other'] (notes: Top Star / Xingguang)",
+      "proposed": "open on BemaniCN status=1 but only hosts Top Star x2 (non-rhythm); limited rhythm-map value",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4958",
+      "evidence_quote": "status:1; arcades: title_id 20 Top Star quantity:2; comment: old taiko removed, only domestic machines left",
+      "note": "No taiko remaining. App correctly only has other.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7319,
+      "name": "魔方习题（小榄百汇店）",
+      "field": "hours",
+      "current": null,
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1646",
+      "evidence_quote": "start_time:0 end_time:0; status:1; taiko title_id 15 old-gen qty=1; Initial D qty=4; Wangan qty=2; updated_at 2025-11-29",
+      "note": "No usable hours. Last BemaniCN update batch 2025-11-29. Old-gen taiko only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7122,
+      "name": "顽猩超乐场惠州惠城华贸天地店",
+      "field": "status",
+      "current": "open (src=wahlap only, no BemaniCN link)",
+      "proposed": "existence not reconfirmed this pass; WAHLAP site returned HTTP 503",
+      "confidence": "unverified",
+      "evidence_url": "https://maimai.wahlap.com/",
+      "evidence_quote": "curl to maimai.wahlap.com returned HTTP 503 during research; venue only present via prior WAHLAP scrape in this dataset",
+      "note": "Not saying closed. Official WAHLAP locator was down, so no live confirm/deny. Keep listed until WAHLAP is reachable again.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7179,
+      "name": "风云再起广州海珠富力店",
+      "field": "status",
+      "current": "open (src=wahlap only, no BemaniCN link)",
+      "proposed": "existence not reconfirmed this pass; WAHLAP site returned HTTP 503",
+      "confidence": "unverified",
+      "evidence_url": "https://maimai.wahlap.com/",
+      "evidence_quote": "curl to maimai.wahlap.com returned HTTP 503 during research; venue only present via prior WAHLAP scrape in this dataset",
+      "note": "Not saying closed. Official WAHLAP locator was down, so no live confirm/deny. Keep listed until WAHLAP is reachable again.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

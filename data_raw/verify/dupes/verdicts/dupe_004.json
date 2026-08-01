@@ -1,0 +1,395 @@
+{
+  "shard": 4,
+  "verdicts": [
+    {
+      "ids": [
+        4047,
+        4110,
+        4144
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4144,
+      "canonical_name": "星际传奇深圳宝安大仟里店",
+      "canonical_addr": "广东省深圳市宝安区坪洲大仟里3楼",
+      "reason": "All three name the same Star Legend at Bao'an Pingzhou Daqianli/Maxland 3F; 大千里 is a spelling variant of 大仟里. Same games across ziv/bemanicn/wahlap.",
+      "evidence_url": "https://map.bemanicn.com/s/283",
+      "evidence_quote": "星际传奇大仟里店 | 宝安大道和海城路交汇处(地铁1号线坪洲站A出口)坪洲大仟里3楼"
+    },
+    {
+      "ids": [
+        4053,
+        4081,
+        4174
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4081,
+      "canonical_name": "星际传奇上海闵行七宝领展广场店",
+      "canonical_addr": "上海市闵行区七宝镇漕宝路3366号七宝领展广场L301",
+      "reason": "All three cite Caobao Road 3366 Qibao Link Plaza 3F / L301. Same branch under different brand-suffix styles.",
+      "evidence_url": "https://map.bemanicn.com/s/1888",
+      "evidence_quote": "星际传奇（七宝领展广场店） | 漕宝路3366号七宝领展广场3楼"
+    },
+    {
+      "ids": [
+        4055,
+        4082,
+        4193
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4082,
+      "canonical_name": "星际传奇上海闵行虹桥万象城店",
+      "canonical_addr": "上海市闵行区吴中路1799号万象城(吴中路店)L4层431b",
+      "reason": "One MixC Shanghai shop unit 431b on L4. WAHLAP lists 1599 while bemanicn/ziv/Baidu list 1799; 1599 and 1799 are the same MixC complex, and unit 431b matches across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/5653",
+      "evidence_quote": "星际传奇（虹桥万象城店） | 闵行区虹桥镇吴中路1799号万象城(吴中路店)L4层; Baidu: L4层431b"
+    },
+    {
+      "ids": [
+        4057,
+        4094,
+        4137
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4137,
+      "canonical_name": "星际传奇深圳光明大仟里店",
+      "canonical_addr": "广东省深圳市光明区公明街道天汇城一期商业裙楼三楼L323-325号商铺",
+      "reason": "Baidu maps 星际传奇(光明大仟里店) to 光明大仟里 L323-325, which is the same unit as WAHLAP's 天汇城 L323-325; 大仟里 and 天汇城 are the same Guangming mall complex.",
+      "evidence_url": "https://api.map.baidu.com/?qt=s&c=1&wd=%E6%B7%B1%E5%9C%B3%E5%85%89%E6%98%8E%E5%A4%A7%E4%BB%9F%E9%87%8C%20%E6%98%9F%E9%99%85%E4%BC%A0%E5%A5%87",
+      "evidence_quote": "星际传奇(光明大仟里店) | 公明街道光明大仟里L3层L323-325"
+    },
+    {
+      "ids": [
+        4061,
+        4124,
+        4148
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4148,
+      "canonical_name": "星际传奇深圳福田卓悦汇店",
+      "canonical_addr": "广东省深圳市福田区梅林街道中康路126号卓悦汇购物中心L3层17号",
+      "reason": "All three are Star Legend at Meilin Joy City / 卓悦汇, Zhongkang Road 126, floor 3; 0 m between bemanicn and wahlap geocodes.",
+      "evidence_url": "https://map.bemanicn.com/s/45",
+      "evidence_quote": "星际传奇梅林卓悦汇店 | 中康路126号卓悦汇购物中心3L"
+    },
+    {
+      "ids": [
+        4296,
+        4297,
+        4298
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real nearby branches: 4296 is 长平合胜广场 3F (长平路98号); 4297/4298 are MixC/万象城 B101 (长平路95号 / 金环路). Baidu lists both as distinct POIs. Do not collapse the whole cluster.",
+      "evidence_url": "https://map.bemanicn.com/s/2179",
+      "evidence_quote": "Baidu: 晴空进击社(万象城店) 长平路95号万象城B101; 晴空乐园旗舰店(合胜广场长平店) 长平路98号合胜广场F3"
+    },
+    {
+      "ids": [
+        4307,
+        4312,
+        4313
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4312,
+      "canonical_name": "智趣乐园梅州梅江客都汇店",
+      "canonical_addr": "广东省梅州市梅江区梅水路客都汇三楼智趣乐园",
+      "reason": "Same brand 智趣乐园 at Meizhou Keduhui / 客都汇, floor 3. Distinct from nearby 齐悦儿 in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4198",
+      "evidence_quote": "智趣乐园（梅州客都汇店） | 客都汇商业文化广场"
+    },
+    {
+      "ids": [
+        7371,
+        7372,
+        7373
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7372,
+      "canonical_name": "齐悦儿梅州客都汇店",
+      "canonical_addr": "广东省梅州市梅水路客都汇二楼齐悦儿家庭娱乐中心",
+      "reason": "Same brand 齐悦儿 at Keduhui floor 2; all three share mall name and maimai. Different venue from 智趣乐园 on floor 3 of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4377",
+      "evidence_quote": "齐悦儿（客都汇商业文化广场店） | 客都汇商业文化广场"
+    },
+    {
+      "ids": [
+        7175,
+        7176,
+        7226
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Baidu shows two real 风云再起 branches in Liuxiang: 钟楼街店 at 钟楼10号/东方商夏 (7175+7226) and 老鼠街/柳巷店 at 铜锣湾老鼠街尚品购物中心 3F (7176). Different malls a short walk apart.",
+      "evidence_url": "https://map.bemanicn.com/s/2800",
+      "evidence_quote": "Baidu: 风云再起游乐汇(太原钟楼街店) 钟楼10号L122-L322; 风云再起游乐汇(太原柳巷店) 柳巷老鼠街尚品购物中心3楼"
+    },
+    {
+      "ids": [
+        4391,
+        4397,
+        4410
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4391,
+      "canonical_name": "极客森超乐场深圳南山宝能城店",
+      "canonical_addr": "广东省深圳市南山区西丽留仙大道塘朗地铁站宝能城三楼极客森超乐场",
+      "reason": "All three are Geek World / 极客森 at Nanshan Xili Baoneng City (宝能城/宝能环球汇) 3F near Tanglang metro; shared chunithm/maimai lineup.",
+      "evidence_url": "https://map.bemanicn.com/s/605",
+      "evidence_quote": "极客森超乐场西丽宝能环球汇店 | 西丽留仙大道塘朗地铁站D出口宝能城三楼"
+    },
+    {
+      "ids": [
+        4392,
+        4394,
+        4406
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4392,
+      "canonical_name": "极客森深圳福田卓悦中心店",
+      "canonical_addr": "广东省深圳市福田街道岗厦社区深南大道2005号卓悦汇/One Avenue卓越中心北区负一楼",
+      "reason": "Same address 深南大道2005 B1 north zone; 卓悦汇中心天元, OneAvenue 卓越中心 and 卓悦中心 are names for the same Futian complex.",
+      "evidence_url": "https://map.bemanicn.com/s/4152",
+      "evidence_quote": "极客森超乐场深圳卓悦中心店 | 深南大道2005号One Avenue·卓越中心北区B1层"
+    },
+    {
+      "ids": [
+        4425,
+        4426,
+        4427
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4426,
+      "canonical_name": "极速地带福田绿景店",
+      "canonical_addr": "广东省深圳市福田区北环大道6098号绿景佐阾虹湾购物中心三层L3017B",
+      "reason": "Identical unit L3017B at Lvjing Zuo'an Hongwan / L.gem Zoll, Beihuan 6098, floor 3.",
+      "evidence_url": "https://map.bemanicn.com/s/4128",
+      "evidence_quote": "极速地带（绿景佐阾虹湾购物中心店） | 北环大道6098号绿景佐阾虹湾购物中心3层3017B"
+    },
+    {
+      "ids": [
+        4705,
+        4745,
+        4772
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4705,
+      "canonical_name": "汤姆熊欢乐世界打浦桥日月光店",
+      "canonical_addr": "上海市黄浦区徐家汇路618号2楼徐家汇区10室（2F-XJH10）",
+      "reason": "All three name Tom's World at SML/日月光 618 Xujiahui Road room 2F-XJH10.",
+      "evidence_url": "https://map.bemanicn.com/s/3863",
+      "evidence_quote": "汤姆熊欢乐世界打浦桥日月光店 | 徐家汇路618号2楼徐家汇区10号（2F-XJH10室）"
+    },
+    {
+      "ids": [
+        4707,
+        4749,
+        4767
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4707,
+      "canonical_name": "汤姆熊欢乐世界上海正大广场店",
+      "canonical_addr": "上海市浦东新区陆家嘴西路168号正大广场2楼",
+      "reason": "One Tom's World at Super Brand Mall / 正大广场. ZIv still lists 6F but Baidu and bemanicn both place it on 2F; floor conflict is stale data not a second venue.",
+      "evidence_url": "https://map.bemanicn.com/s/10",
+      "evidence_quote": "汤姆熊欢乐世界(正大广场店) | 陆家嘴西路168号正大广场2F层; Baidu: 正大广场2层34-35"
+    },
+    {
+      "ids": [
+        4709,
+        4756,
+        4769
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4709,
+      "canonical_name": "汤姆熊欢乐世界上海虹口店",
+      "canonical_addr": "上海市虹口区西江湾路388号凯德龙之梦B座五楼",
+      "reason": "All three cite 西江湾路388 Block B 5F (CapitaMall / 凯德龙之梦).",
+      "evidence_url": "https://map.bemanicn.com/s/19",
+      "evidence_quote": "汤姆熊欢乐世界(虹口店) | 西江湾路388号凯德龙之梦B座5楼"
+    },
+    {
+      "ids": [
+        4710,
+        4757,
+        4777
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4777,
+      "canonical_name": "汤姆熊欢乐世界上海虹桥南丰城店",
+      "canonical_addr": "上海市长宁区遵义路100号虹桥南丰城南区L3层SL301",
+      "reason": "Same Tom's World at Hongqiao Nan Fung Plaza / 虹桥南丰城 L3; bemanicn has the unit code SL301.",
+      "evidence_url": "https://map.bemanicn.com/s/17",
+      "evidence_quote": "汤姆熊欢乐世界（上海虹桥南丰城店） | 遵义路100号虹桥南丰城南区L3层SL301"
+    },
+    {
+      "ids": [
+        4711,
+        4738,
+        4776
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4776,
+      "canonical_name": "汤姆熊欢乐世界上海荟聚店",
+      "canonical_addr": "上海市长宁区金钟路788号L3层03A02",
+      "reason": "Same Livat / 宜家荟聚 Tom's World at Jinzhong 788 unit L3-03A02.",
+      "evidence_url": "https://map.bemanicn.com/s/4208",
+      "evidence_quote": "汤姆熊欢乐世界（上海荟聚店） | 上海长宁区金钟路788号L3层03A02"
+    },
+    {
+      "ids": [
+        4713,
+        4737,
+        4788
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4713,
+      "canonical_name": "汤姆熊欢乐世界上海南方商城店",
+      "canonical_addr": "上海市闵行区沪闵路7388号南方商城一区五楼",
+      "reason": "All three are Tom's World at Bailian Nanfang / 南方商城 沪闵路7388 5F; bemanicn's 万源路 wording is the adjacent road of the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/24",
+      "evidence_quote": "汤姆熊欢乐世界（百联南方购物中心店）; wahlap: 沪闵路7388号南方商城一区五楼"
+    },
+    {
+      "ids": [
+        4715,
+        4758,
+        4770
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4715,
+      "canonical_name": "汤姆熊欢乐世界上海虹桥天地店",
+      "canonical_addr": "上海市闵行区新虹街道申长路688号虹桥天地购物中心3楼L3-03&05",
+      "reason": "Identical Hongqiao Tiandi units L3-03&05 across all three sources.",
+      "evidence_url": "https://map.bemanicn.com/s/2060",
+      "evidence_quote": "汤姆熊欢乐世界(虹桥天地店) | 虹桥天地购物中心L3-03&05"
+    },
+    {
+      "ids": [
+        4716,
+        4760,
+        4779
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4716,
+      "canonical_name": "汤姆熊欢乐世界上海静安久光中心店",
+      "canonical_addr": "上海市静安区共和新路2188号久光中心m317-3",
+      "reason": "Same Jiuguang Center / 久光 at Gonghexin 2188; WAHLAP carries the unit code m317-3.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11494",
+      "evidence_quote": "3F, Jiuguang Center, No.2188 Gonghexin Road"
+    },
+    {
+      "ids": [
+        4717,
+        4746,
+        4785
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4785,
+      "canonical_name": "汤姆熊欢乐世界新世界城店",
+      "canonical_addr": "上海市黄浦区南京西路2-68号新世界城L8层",
+      "reason": "All three are Tom's World on floor 8 of New World City / 新世界城 on Nanjing West Road.",
+      "evidence_url": "https://map.bemanicn.com/s/3724",
+      "evidence_quote": "汤姆熊欢乐世界（新世界店） | 南京西路2-68号新世界城L8层"
+    },
+    {
+      "ids": [
+        4732,
+        4734,
+        4744
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4732,
+      "canonical_name": "汤姆熊成都武侯王府井科华店",
+      "canonical_addr": "四川省成都市武侯区科华中路王府井购物中心（科华店）3楼L03079",
+      "reason": "One Tom's World at Wangfujing Kehua branch 3F; road numbers 2 and 9 are alternate door numbers for the same mall, and ziv/bemanicn share the full bemani lineup.",
+      "evidence_url": "https://map.bemanicn.com/s/2777",
+      "evidence_quote": "汤姆熊成都王府井 | 科华中路9路王府井购物中心（科华店）3楼"
+    },
+    {
+      "ids": [
+        4754,
+        4781,
+        4804
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4804,
+      "canonical_name": "汤姆熊苏州大悦春风里店",
+      "canonical_addr": "江苏省苏州市相城区元和街道御窑路1999号大悦春风里购物中心三楼L3-20",
+      "reason": "Same shop L3-20 at Joy Breeze / 大悦春风里 御窑路1999; WAHLAP short-name 大悦城 is the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/1401",
+      "evidence_quote": "汤姆熊欢乐世界（大悦春风里） | 御窑路1999号大悦春风里购物中心L3-20商铺"
+    },
+    {
+      "ids": [
+        4755,
+        4792,
+        4805
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4805,
+      "canonical_name": "汤姆熊苏州绿宝店",
+      "canonical_addr": "江苏省苏州市高新区长江路436号绿宝广场3层",
+      "reason": "Same Tom's World at Green Gem / 绿宝广场 Phase 2, Changjiang 436, floor 3.",
+      "evidence_url": "https://map.bemanicn.com/s/933",
+      "evidence_quote": "汤姆熊欢乐世界（绿宝广场） | 长江路436号绿宝广场2期3楼"
+    },
+    {
+      "ids": [
+        4902,
+        4912,
+        4920
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4912,
+      "canonical_name": "润宝梦想潮玩资阳雁江万达店",
+      "canonical_addr": "四川省资阳市雁江区万达广场三楼中庭",
+      "reason": "Three listings of the same 润宝梦/润宝梦想潮玩 shop in Ziyang Wanda atrium 3F; two WAHLAP name variants plus bemanicn, all at identical coords.",
+      "evidence_url": "https://map.bemanicn.com/s/3512",
+      "evidence_quote": "润宝梦想潮玩娱乐(资阳店) | 万达广场三楼中庭"
+    },
+    {
+      "ids": [
+        4948,
+        4971,
+        4984
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4971,
+      "canonical_name": "游戏大魔方珠海香洲宝龙店",
+      "canonical_addr": "广东省珠海市香洲区唐家湾镇金峰北路88号宝龙广场三楼L3032",
+      "reason": "One 游戏大魔方 at Zhuhai Powerlong L3-032. 4948 wrongly carries a Hangzhou 沈半路 address and 浙江 pref but its coords and linked ZIv 7544 are Zhuhai Powerlong; bemanicn s/1807 and WAHLAP match L3032.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7544",
+      "evidence_quote": "L3-032, 3rd Floor, Zhuhai Powerlong Mall (珠海宝龙城3楼 L3-032)"
+    }
+  ]
+}

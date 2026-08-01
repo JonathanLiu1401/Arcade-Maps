@@ -1,0 +1,703 @@
+{
+  "shard": 23,
+  "checked": 55,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/v5.2/arcade.php (per-venue pages)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=United%20Kingdom (truncated; used only as existence check)",
+    "https://www.playbackarcade.co.uk/",
+    "https://www.pixel-bar.co.uk/manchester",
+    "https://pixelbusters.co.uk/",
+    "https://playboxliverpool.co.uk/",
+    "https://www.retrodome.co.uk/",
+    "https://www.retroidsarcadebar.co.uk/",
+    "https://www.retro-replay.games/",
+    "https://starpins.co.uk/location/liverpool-school-lane/",
+    "https://www.coinlesscavernarcade.co.uk/ (404)"
+  ],
+  "corrections": [
+    {
+      "id": 11725,
+      "name": "Pixel Bar Manchester",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "jubeat",
+        "maimai",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9665",
+      "evidence_quote": "maimai FiNALE (Asia) - ground floor near the stairs behind seating. 2 tokens / 3 songs, Perfect. Last updated 2026-07-25 by Shane_ITG_.",
+      "note": "App notes and machine_prices already list maimai FiNALE, but games[] omits maimai. Official site also markets DDR AND MAIMAI. ZIv visitor 2026-07-25 confirms maimai FiNALE still present. DDR is claimed on the official page but was NOT in the ZIv machine list as of 2026-07-25; do not add ddr without a floor confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11725,
+      "name": "Pixel Bar Manchester",
+      "field": "other",
+      "current": "games list omits maimai despite notes/prices; official site also claims DDR",
+      "proposed": "Official page claims DDR AND MAIMAI. Investigate whether DDR cab is real or marketing. Do not auto-add ddr.",
+      "confidence": "unverified",
+      "evidence_url": "https://www.pixel-bar.co.uk/manchester",
+      "evidence_quote": "MODERN GAMING BOOTHS, RETRO ARCADE MACHINES( INCLUDING DDR AND MAIMAI!), GAMING PCS",
+      "note": "Official marketing claims DDR. ZIv 2026-07-25 lists only jubeat festo, maimai FiNALE, Pump It Up PRIME 2 among music games. Treat DDR as unverified until a visitor confirms.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11763,
+      "name": "Retrodome",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "groove_coaster",
+        "nostalgia",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "gitadora",
+        "groove_coaster",
+        "maimai",
+        "nostalgia",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4952",
+      "evidence_quote": "maimai FiNALE (JP) - Right on entry by the dance games; V1.99B online; condition Great. Last updated 2026-06-21 by verde2hu.",
+      "note": "App machine_prices already has maimai: free play and notes list maimai FiNALE, but games[] omits it. Also has a StepMania/ITGmania convert (not SMX) and Rhythm Tengoku; those stay under other unless a separate tag exists.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11731,
+      "name": "Playback Arcade",
+      "field": "games",
+      "current": [
+        "ddr",
+        "drs",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "project_diva",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "ddr",
+        "drs",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "project_diva",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7510",
+      "evidence_quote": "maimai FiNALE (Asia) - Online; free play; condition Great. ZIv last updated 2026-07-31 by gatchamix. App machine_prices already lists maimai free play.",
+      "note": "games[] omits maimai despite prices and notes. Venue still open with bookable freeplay through Aug 2026 per official site. Pay-to-play Konami area uses Paseli. Recent ZIv history: DanceManiaX deleted, pop'n UniLab reclassified to pop'n 18, ONGEKI upgraded to Re:Fresh, IIDX 32 Pinky Crush.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11730,
+      "name": "Play 2 Win (Gerrard Street)",
+      "field": "status",
+      "current": "listed open with games=['other']",
+      "proposed": "closed_as_arcade / remove from map as rhythm venue (gambling only since ~2003; ZIv: No games at this location)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2049",
+      "evidence_quote": "Games section: No games at this location. Information: became gambling only after 2003. Visitor comment: There are now no games, it is all gambling.",
+      "note": "Worst-class map failure if someone travels here for arcade games. ZIv last updated 2019-12-28 but info text is clear and long-standing. Website still familyleisure.london but not an arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11776,
+      "name": "Roxy Arcade",
+      "field": "status",
+      "current": "listed open with games=['other'], hours present",
+      "proposed": "effectively closed as arcade (only 2 basketball machines remain)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5138",
+      "evidence_quote": "All the arcade machines are gone now, all they have left are 2 basketball machines. Last updated 2025-07-27 by verde2hu.",
+      "note": "App already carries this sentence in info_text but still shows the venue as a normal open arcade. Prefer status flag or demote heavily so phone users are not misled.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11775,
+      "name": "Roxy Amusements And Cafe",
+      "field": "status",
+      "current": "listed open, hours Mon-Fri 11:00-23:00; Sat-Sun 12:00-23:00, games=['ddr']",
+      "proposed": "cafe/venue may be closed; ZIv info: 'Cafe Is Closed For Now' (as of 2025-07 listing)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10305",
+      "evidence_quote": "Cafe Is Closed For Now. Created 2025-07-12, last updated 2025-07-14 by Krazy0w0. One Dancing Stage EuroMIX2 listed.",
+      "note": "Could mean cafe only or whole venue. No newer confirmation either way. Do not mark certain-closed; flag for re-check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11808,
+      "name": "South Pier",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "other",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3581",
+      "evidence_quote": "Pump It Up PRIME 2 comment (2026 update): cabinet has since relocated to the North Pier. TOPHERTHEPB (~4 months before 2026-07-31): At least PIU isn't on a slop anymore. SMX 65\" Deluxe still listed at front entrance, Perfect, offline.",
+      "note": "ZIv still lists PIU on the page but the machine comment and community say it moved to North Pier. Prefer remove pump_it_up from South Pier and ensure North Pier (other shard) gets it. StepManiaX remains. Last ZIv update 2026-04-27.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11811,
+      "name": "Space Bar",
+      "field": "location",
+      "current": "effsdfseffv Sunderland SR1 1TR, Sunderland",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8753",
+      "evidence_quote": "street field contains obvious junk data - effsdfseffv - followed by Sunderland, SR1 1TR. ZIv last updated 2026-02-07.",
+      "note": "Street line is placeholder garbage in both app and ZIv. City+postcode SR1 1TR may be usable but exact street is unknown. proposed:null means remove the fake street token; do NOT invent a street. ZIv also advises avoid: miserable staff, many machines off/broken.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11712,
+      "name": "Parkdean Resorts - Vauxhall Holiday Park",
+      "field": "website",
+      "current": "http:// vauxhall-holiday-park.co.uk",
+      "proposed": "https://www.parkdeanresorts.co.uk/location/east-anglia-lincolnshire/vauxhall-holiday-park/",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4095",
+      "evidence_quote": "website listed as vauxhall-holiday-park.co.uk; app currently has a broken URL with a space after http://. SMX 65\" Deluxe confirmed updated 2026-07-10.",
+      "note": "Broken URL (space after scheme). Prefer Parkdean Resorts official location page if still live; at minimum strip the space. Exact parkdeanresorts path not re-fetched end-to-end in this pass (WebSearch budget exhausted); treat proposed URL as likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11765,
+      "name": "Richardson's Family Entertainment Centre",
+      "field": "website",
+      "current": "http:// richardsonsholidayparks.co.uk",
+      "proposed": "https://www.richardsonsholidayparks.co.uk/",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4099",
+      "evidence_quote": "App website field contains a space after http://. Domain appears to be richardsonsholidayparks.co.uk.",
+      "note": "Obvious URL typo. Did not re-verify live page content this pass.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11779,
+      "name": "Sand Le Mere Holiday Village Entertainment Venue",
+      "field": "website",
+      "current": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjyhZPs5dnzAhVTBWMBHf0CBFkQFnoECAMQAQ&url=https%3A%2F%2Fwww.parkholidays.com%2Four-parks%2Fyorkshire%2Fsand-le-mere%2Fcaravan-holidays&usg=AOvVaw0Z8MCZAP5V_rpR97aaTlV8",
+      "proposed": "https://www.parkholidays.com/our-parks/yorkshire/sand-le-mere/caravan-holidays",
+      "confidence": "certain",
+      "evidence_url": "https://www.parkholidays.com/our-parks/yorkshire/sand-le-mere/caravan-holidays",
+      "evidence_quote": "App website is a Google redirect wrapper whose embedded target is https://www.parkholidays.com/our-parks/yorkshire/sand-le-mere/caravan-holidays",
+      "note": "Replace Google /url? wrapper with the real Park Holidays URL. Did not re-verify DDR inventory at this park this pass.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11762,
+      "name": "Retroblast coffee",
+      "field": "website",
+      "current": "https://www.coinlesscavernarcade.co.uk/",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://www.coinlesscavernarcade.co.uk/",
+      "evidence_quote": "HTTP 404 Not Found when fetched 2026-07-31/08-01.",
+      "note": "Website dead. ZIv last updated 2023-10-19; hours mostly Unknown. Venue open/closed status unverified - do not mark closed without more evidence, but remove dead website.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11815,
+      "name": "Star Pins",
+      "field": "hours",
+      "current": "Mon-Thu 12:00-23:00; Fri 12:00-01:00; Sat 11:00-01:00; Sun 12:00-23:00",
+      "proposed": "Mon-Thu 12:00-22:00; Fri 12:00-22:30; Sat 10:00-22:30; Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://starpins.co.uk/location/liverpool-school-lane/",
+      "evidence_quote": "Opening hours Mon-Thu: 12:00-22:00; Fri: 12:00-22:30; Sat: 10:00-22:30; Sun: 10:00-21:00. Address 7 School Lane, Liverpool L1 3AQ.",
+      "note": "Official Star Pins page beats older ZIv hours. Venue open. DDR A20 still listed on ZIv (2026-06-01) after internal relocation near stairs; official page does not name DDR specifically.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11764,
+      "name": "Retroids Arcade Bar",
+      "field": "hours",
+      "current": "Mon-Wed 12:00-10:00; Thu-Sat 12:00-00:00; Sun 12:00-10:00",
+      "proposed": "Mon-Wed 12:00-22:00; Thu-Sat 12:00-00:00; Sun 12:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9631",
+      "evidence_quote": "Information: midday to 10PM Monday-Wednesday, midday - Midnight Thursday-Saturday, midday to 10PM Sunday. Opening Times table shows 12:00 - 10:00 for Mon-Wed/Sun (ambiguous AM/PM encoding).",
+      "note": "App encodes 10PM as 10:00 which reads as 10am (closes before open). Should be 22:00. Last ZIv update 2025-05-30. DDR family cab is Dancing Stage EuroMIX only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11753,
+      "name": "Quay Amusements",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1905",
+      "evidence_quote": "Last updated 2011-09-12 by Brazen. Only machine: Dancing Stage EuroMIX. Created 2011-09-11. No newer confirmation.",
+      "note": "14+ year stale ZIv row. Cannot support a live DDR claim today. proposed:null means remove the ddr claim until re-verified in person; do not invent a replacement game list.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11720,
+      "name": "Pencnwc Holiday Park",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5662",
+      "evidence_quote": "Created and updated 2020-08-05 by spring93. Dancing Stage EuroMIX only. Opening hours all Unknown. ~5 years with no re-check.",
+      "note": "Holiday-park EuroMIX last confirmed 2020. proposed:null = remove unsupported live claim, or keep with strong staleness flag if the app has such a UI.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11812,
+      "name": "Sportsland Amusement Arcade",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4462",
+      "evidence_quote": "Last updated 2021-03-02 by Gyltan. DanceDanceRevolution A (Europe), condition Bad. Hours all Unknown.",
+      "note": "~5 years stale. Only known DDR Ace in NI region per old comments, but presence today is unverified. proposed:null until re-confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11748,
+      "name": "Potters Leisure Resort",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4077",
+      "evidence_quote": "Last updated 2020-02-09 by derole. Dancing Stage EuroMIX Moderate. Access restricted unless hotel guest outside 8am-8pm.",
+      "note": "~6 years stale. Time Crisis 4 already noted Not Working / off as of 2020. Do not assert current ddr without a new visit.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11801,
+      "name": "Skirlington Holiday Park",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5670",
+      "evidence_quote": "Last updated 2022-10-02 by SocialDragon322. DanceDanceRevolution SuperNOVA Moderate. Hours all Unknown. Be prepared for a few problems.",
+      "note": "~3-4 years stale SuperNOVA claim. proposed:null for the ddr assertion until re-checked.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11806,
+      "name": "Smith's",
+      "field": "other",
+      "current": "listed with ddr EuroMIX + EuroMIX2, last community data ~2021",
+      "proposed": "mark highly stale; re-verify before trusting pad condition or presence",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4067",
+      "evidence_quote": "Last updated 2021-11-09 by mitth-bev-nuruodo. Information: Almost all the games are in a state of disrepair; doesn't seem to have changed in years.",
+      "note": "Keeping games as-is is OK only with a staleness flag. Venue is out-of-the-way beachfront and historically neglected.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11780,
+      "name": "Sandown Pier",
+      "field": "other",
+      "current": "ddr listed as if playable",
+      "proposed": "Dancing Stage EuroMIX Not Working (CDROM failure) per ZIv 2026-07-20. Also StepMania Converted Cabinet (ex-SuperNOVA) condition Bad - Not very playable.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3334",
+      "evidence_quote": "Dancing Stage EuroMIX - Not Working (CDROM failure). Updated 2026-07-20 by blitzen. Also StepMania Converted Cabinet (ex-SuperNOVA) condition Bad - Not very playable.",
+      "note": "Do not remove ddr from the list without maintainer policy, but surface Not Working. App prices/notes currently imply a playable EuroMIX. Also has ITGmania convert, not a true SMX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11732,
+      "name": "Playbox",
+      "field": "other",
+      "current": "pump_it_up listed as present, price £1.00 / 3 Songs",
+      "proposed": "Pump It Up Phoenix marked Offline on ZIv as of 2025-10-23; unconfirmed by some contributors who did not enter",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9329",
+      "evidence_quote": "Pump It Up Phoenix (Int'l) - Offline. Right of the bar. Last updated 2025-10-23 by TOPHERTHEPB. Info: machines shown on venue website remain unconfirmed.",
+      "note": "Venue website live with 2026 copyright. Official site did not name PIU on the home page fetch. Keep pump_it_up but flag offline/uncertain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11726,
+      "name": "Pixel Busters",
+      "field": "other",
+      "current": "games=['other','pump_it_up'], free play",
+      "proposed": "confirm PIU Exceed still present; only ZIv 2025-07-20 evidence. Venue open weekends.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10325",
+      "evidence_quote": "Pump It Up Exceed; Guitar Hero Arcade (Fake cabinet). Freeplay £7.50 entry. Sat 12:30-22:30 Sun 12:30-17:30. Last updated 2025-07-20 by verde2hu.",
+      "note": "Official site only says generic dance machine. ZIv is the only named PIU source. Status: appears open (book tickets / hours pages exist).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11749,
+      "name": "Premier Inn - The Windmill",
+      "field": "status",
+      "current": "listed as arcade games=['other'] with claw + stacker",
+      "proposed": "demote / remove: hotel restaurant kids play area with 2 redemption machines only; last ZIv update 2018-02-28",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4375",
+      "evidence_quote": "Restaurant and hotel with play area and a few games for kids. Machines: Claw Machine, Stacker. Created and last updated 2018-02-28 by lmaosamsddr.",
+      "note": "No rhythm games. 8 years stale. Not useful on a rhythm-game travel map.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11731,
+      "name": "Playback Arcade",
+      "field": "status",
+      "current": "open",
+      "proposed": "open (confirmed)",
+      "confidence": "certain",
+      "evidence_url": "https://www.playbackarcade.co.uk/",
+      "evidence_quote": "Bookable freeplay entry dates running through August 2026. Address Broadmead Gallery, Unit 20, The Galleries, Broadmead, Bristol BS1 3XB. Hours Thu-Fri 12:00-18:00 Sat 11:00-18:00 Sun 11:00-17:00; Tue/Wed school holidays.",
+      "note": "Major UK rhythm venue still operating. Official homepage does not enumerate rhythm titles (points to Games page which 404'd on fetch); ZIv 2026-07-31 is the strong machine list source. Consider adding maimai to games[] as separate correction.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11774,
+      "name": "Rowans Tenpin Bowl",
+      "field": "other",
+      "current": "pump_it_up XX listed; historical DDR X2 photos still on ZIv but not in machine list",
+      "proposed": "PIU XX condition Bad / don't waste your time (stock LX, undersensitive). DDR X2 no longer in machine list (comment ~3y: wtf no more X2).",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4280",
+      "evidence_quote": "Pump It Up XX - condition Bad. stock LX cab, 4 hearts, offline running XX 2.07... pads extremely undersensitive, don't waste your time. Last updated 2024-04-02. Photos show old DDR X2 no longer listed.",
+      "note": "ZIv ~2 years stale. Keep pump_it_up only with condition caveat. Do not re-add DDR from old photos.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11816,
+      "name": "Star Pins",
+      "field": "status",
+      "current": "open with DDR A20 PLUS",
+      "proposed": "open (confirmed via ZIv 2026-06-05)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9527",
+      "evidence_quote": "DanceDanceRevolution A20 PLUS (Europe) - 20 credits, Perfect. Last updated 2026-06-05 by holdmyapplejuice. 100% cashless.",
+      "note": "No correction needed beyond confirmation. Hours in app match ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11819,
+      "name": "Stardust Arcade",
+      "field": "status",
+      "current": "open with DDR A20 PLUS",
+      "proposed": "open; A20 PLUS still present per ZIv 2025-12-07 (brand new 2024 cab, never e-amusement)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=718",
+      "evidence_quote": "DanceDanceRevolution A20 PLUS (Europe) - Brand new!! 2022 software, manufactured March 2024. £1 for 2 songs. e-amusement will never be added. Last updated 2025-12-07.",
+      "note": "~7 months since last update at research time. Multiple regulars praise cab. No change required unless maintainer wants cab_models A20 PLUS white cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11729,
+      "name": "Planet Fun",
+      "field": "other",
+      "current": "ddr listed (EuroMIX)",
+      "proposed": "still has Dancing Stage EuroMIX (relocated off stage area as of July 2025); no longer has a dancing stage platform",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=263",
+      "evidence_quote": "As of July 2025, the venue No longer has a dancing 'stage', with the three Euromix cabinets relocated to the rear. Last updated 2025-08-24 by smig_is_okay.",
+      "note": "Keep ddr. Info text should note stage removal / rear relocation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11734,
+      "name": "Playland",
+      "field": "status",
+      "current": "open with DDR A",
+      "proposed": "open; DDR A present but poorly maintained / downgraded to 2019 data (ZIv 2026-06-21)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4195",
+      "evidence_quote": "DanceDanceRevolution A (Europe), Great. Machine fixed, downgraded to 2019 data. P2 down select button gets stuck. Not really a great venue for DDR. Last updated 2026-06-21 by lmaosamsddr.",
+      "note": "Confirmation not a field change. X2 long gone (2019).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11744,
+      "name": "Pleasurewood Hills",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4217",
+      "evidence_quote": "Two Dancing Stage EuroMIX listed: (1) Inside arcade building - Great, runs EuroMIX under EuroMIX2 branding. (2) Beside Sharky's Fish & Chips - Not Working hardware failure. Last updated 2024-05-19.",
+      "note": "If app implies any count, only 1 working. Second cab Not Working. Data ~2 years old.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11790,
+      "name": "Shell Island - Arcade",
+      "field": "other",
+      "current": "stepmaniax listed, no price, no hours",
+      "proposed": "SMX presence from SMX locator only; never visited per ZIv submitter. Condition Unknown.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11632",
+      "evidence_quote": "StepManiaX 55\" Standard Cabinet. Assuming to be 55\" version. Unknown information as found on SMX locator. Not visited. Created 2026-07-26 by StaticFish.",
+      "note": "Very new ZIv stub. Keep SMX with unverified confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11736,
+      "name": "Playnation",
+      "field": "other",
+      "current": "mostly redemption",
+      "proposed": "Dance Cube removed mid-June (year of ZIv note); site bought by Genda. Still open per ZIv 2026-06-21.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4615",
+      "evidence_quote": "Dance Cube has been removed from the location around mid June. Mostly redemption and coin pushers. bought by Genda. Last updated 2026-06-21 by Iamuss76.",
+      "note": "No rhythm games. Confirmation only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11727,
+      "name": "Pixel-ate Diner",
+      "field": "status",
+      "current": "listed open, only MAME board",
+      "proposed": "barely an arcade; only MAME/Pandora's box cabs as of 2024-02-26 ZIv; no rhythm",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8467",
+      "evidence_quote": "just looks like mame/ pandora's box cabinets as of now. Last updated 2024-02-26 by TOPHERTHEPB.",
+      "note": "Low value for rhythm map. Consider demote.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11800,
+      "name": "Skegness Pier",
+      "field": "other",
+      "current": "stepmaniax listed £1/1 song",
+      "proposed": "SMX present but heavily criticized (pads dangerous/poor setup). Older DDRs gone (SN moved to Fantasy Island Pyramid). Community often advises avoid.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=219",
+      "evidence_quote": "StepManiaX 43\" dedicated Moderate. Neither DDR machine remains; SuperNOVA moved to Fantasy Island's Pyramid. Last updated 2026-06-07 by OliverExists.",
+      "note": "Keep stepmaniax. Do not re-add ddr.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11738,
+      "name": "Pleasure Beach Amusements",
+      "field": "status",
+      "current": "stepmaniax seasonal",
+      "proposed": "open seasonally May-Oct; SMX 43\" Great, running May 2026 update, QR works (ZIv 2026-06-07)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=421",
+      "evidence_quote": "StepManiaX 43\" dedicated, £1 for 2 songs, Great. Running update from May 2026. Seasonal May-October. Last updated 2026-06-07 by OliverExists.",
+      "note": "No field bug; confirmation. Pads overly sensitive per comments.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11707,
+      "name": "Paignton Pier",
+      "field": "status",
+      "current": "stepmaniax £1",
+      "proposed": "open; SMX 65\" Deluxe Moderate, not online, undersensitive pads (ZIv 2025-09-15). Replaced former DDR X2 spot.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=231",
+      "evidence_quote": "StepManiaX 65\" Deluxe Cabinet £1 Moderate. Not online and not linked. very undersensitive requiring extra force. Last updated 2025-09-15 by StaticFish.",
+      "note": "~10 months since last update. No correction beyond confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11784,
+      "name": "Seal Bay Resort",
+      "field": "other",
+      "current": "stepmaniax listed no price",
+      "proposed": "SMX 65\" Deluxe listed with price ??? condition Unknown on ZIv (2025-04-25). Formerly Bunn Leisure.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5428",
+      "evidence_quote": "StepManiaX (65\" Deluxe Cabinet) price ??? condition Unknown. Last updated 2025-04-25 by toto.",
+      "note": "Presence asserted without visit detail. Keep with low confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11786,
+      "name": "Seawick Holiday Park",
+      "field": "other",
+      "current": "stepmaniax £1 Perfect",
+      "proposed": "ZIv last update 2023-04-06 only; SMX 43\" claim is ~3 years old",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5362",
+      "evidence_quote": "StepManiaX 43\" Dedicated Cabinet £1 Perfect. Last updated 2023-04-06 by SocialDragon322.",
+      "note": "Stale but not proven wrong.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11712,
+      "name": "Parkdean Resorts - Vauxhall Holiday Park",
+      "field": "status",
+      "current": "stepmaniax, website broken",
+      "proposed": "open per ZIv 2026-07-10; SMX 65\" Deluxe Moderate Online not linked £2 for 2 songs",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4095",
+      "evidence_quote": "StepManiaX 65\" Deluxe Cabinet Towards the back. £2.00 for two songs. Online, not linked. Last updated 2026-07-10 by OliverExists.",
+      "note": "Status OK. Website field separate correction.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11767,
+      "name": "Riverside amusements",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6574",
+      "evidence_quote": "Now has two DDRs!!!! DanceDanceRevolution X2 (Europe) and Dancing Stage EuroMIX. Last updated 2025-12-27 by Technolotl.",
+      "note": "True count 2 if both still there. Price ???. Hours Unknown.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11769,
+      "name": "Riverside Bowling",
+      "field": "other",
+      "current": "ddr Fusion listed",
+      "proposed": "Dancing Stage Fusion condition Bad Completely unplayable per ZIv 2024-03-03; venue described as unpleasant",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8629",
+      "evidence_quote": "Dancing Stage Fusion - £1.00, Bad. Completely unplayable. Don't waste your time and money. Last updated 2024-03-03 by TOPHERTHEPB.",
+      "note": "Keep ddr only with strong quality warning. ~2.5y since update.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11761,
+      "name": "Retro Replay",
+      "field": "status",
+      "current": "open freeplay with DDR 5thMIX + EuroMIX2",
+      "proposed": "open freeplay; adult £13.50 / child £10.00. EuroMIX2 Great (pads Feb 2025), 5thMIX Bad. Last ZIv 2026-05-28. Website footer 2019-2026.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5079",
+      "evidence_quote": "Dance Dance Revolution 5thMIX Bad; Dancing Stage EuroMIX2 Great Currently set to 3 songs per play. Wristband £13.50 adults £10 children. Last updated 2026-05-28 by Wackyman171.",
+      "note": "No structural correction. Hours in app match ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11728,
+      "name": "Pizza Pilgrims West India Quay",
+      "field": "other",
+      "current": "retro freeplay downstairs if you buy a drink",
+      "proposed": "ZIv only 2023-06-12; no rhythm games. Status today unverified.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7193",
+      "evidence_quote": "Last updated 2023-06-12 by kidburla. Free Play Perfect retro cabs downstairs after purchase.",
+      "note": "Low priority for rhythm map.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11706,
+      "name": "Oxygen Freejumping at The O2",
+      "field": "other",
+      "current": "hours and trampoline access notes from ZIv 2023",
+      "proposed": "ZIv last update 2023-11-04; official site fetch returned 403. Booking/access caveats may still apply but inventory stale.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6058",
+      "evidence_quote": "Last updated 2023-11-04 by lmaosamsddr. Trampoline centre with arcade machines. Booking may be required to reach arcade area.",
+      "note": "No rhythm games. Website field still points at official page which blocked automated fetch.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11756,
+      "name": "Rainbow Park Arcade",
+      "field": "other",
+      "current": "ddr EuroMIX2 with coin note in prices",
+      "proposed": "keep; ZIv 2023-09-07 is ~3y stale. Modern £1 coin rejection noted historically.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6412",
+      "evidence_quote": "Dancing Stage EuroMIX2 Moderate. Screen jitters; sticky panels; coin mechanism does not detect modern £1 coins. Last updated 2023-09-07.",
+      "note": "Staleness only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11754,
+      "name": "QuaySide Amusements",
+      "field": "status",
+      "current": "ddr EuroMIX Great",
+      "proposed": "open per ZIv 2025-05-10; EuroMIX Great, non-LCD, P2 sensors need replacing",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6140",
+      "evidence_quote": "Dancing Stage EuroMIX Great. Back of right hand corridor. Last updated 2025-05-10 by Earthbadger.",
+      "note": "~14 months. No structural fix.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11743,
+      "name": "Pleasureland Arbroath",
+      "field": "other",
+      "current": "ddr EuroMIX",
+      "proposed": "ZIv last 2023-09-15; EuroMIX Great but ~3y stale",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6886",
+      "evidence_quote": "Dancing Stage EuroMIX £1=3 Songs Great. Euromix 2 cabinet running euromix. Last updated 2023-09-15 by SegataSanahiro94.",
+      "note": "Staleness.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11737,
+      "name": "Plaza",
+      "field": "other",
+      "current": "ddr only, Bells Leisure, machines moved to Empire",
+      "proposed": "only EuroMIX remains per ZIv 2023-08-07 (P1 unplayable). Whole line moved next door to Empire except DDR. ~3y stale.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3754",
+      "evidence_quote": "Owned by Bells Leisue. operator relocated everything besides the DDR machine to neighbouring Empire arcade. Dancing Stage EuroMIX Moderate LCD conversion, P1 unplayable. Last updated 2023-08-07.",
+      "note": "Stale. Empire arcade may deserve its own entry if not already mapped (not researched this pass).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11818,
+      "name": "Stardust Amusements",
+      "field": "other",
+      "current": "stepmaniax 43\" Perfect, ZIv also mentions Euromix2 in prose but not in games list",
+      "proposed": "SMX only in machine list (ZIv 2023-01-09). Info text mentions Decent and playable Euromix2 but no DDR in games array - do not add ddr from prose alone without list entry.",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=228",
+      "evidence_quote": "StepManiaX 43\" Dedicated Perfect. Info: Decent and playable Euromix2 at the mo - but games list has no DDR entry. Last updated 2023-01-09. Decade-old comment asked if still operating.",
+      "note": "Contradictory ZIv info vs machine list. Prefer machine list (SMX only). ~3.5y stale.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

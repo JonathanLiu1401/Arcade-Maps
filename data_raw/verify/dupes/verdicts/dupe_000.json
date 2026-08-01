@@ -1,0 +1,291 @@
+{
+  "shard": 0,
+  "verdicts": [
+    {
+      "ids": [4725, 4726, 4727, 4742, 4743],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real Tom's World branches: Tianhecheng (Heping Rd 263, 5F 501-504) vs Hang Lung Plaza (Xing'an Rd 166, 3F 3006-3008). Baidu lists both POIs; bemanicn s/739 and s/4360 give distinct mall addresses.",
+      "evidence_url": "https://map.bemanicn.com/s/739",
+      "evidence_quote": "汤姆熊天津天河城店 | 和平路263号天河城购物中心5楼501; 汤姆熊天津恒隆店 | 兴安路166号恒隆广场3楼3006-3008"
+    },
+    {
+      "ids": [913, 924, 938, 947],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "913/924/938 are the Zhongbei AEON Mall (Fusheng Rd 1) branch; 947 is WAHLAP's separate Meijiang AEON branch. Official source lists two distinct stores even though 947 geocoded near Zhongbei.",
+      "evidence_url": "https://map.bemanicn.com/s/267",
+      "evidence_quote": "51区超级乐园天津西青曹庄店 | 阜盛道1号永旺梦乐城2楼51区动漫游乐场; 947 addr 梅江永旺"
+    },
+    {
+      "ids": [1630, 1634, 1643, 1656],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "1630/1643/1656 are Fun Guest at Darongcheng LG; 1634 is a different branch at Yuandongcheng B1. Baidu has separate POIs for 大融城店 and 远东城店.",
+      "evidence_url": "https://map.bemanicn.com/s/1997",
+      "evidence_quote": "乐玩客潮玩城大融城店 | 两江新区观音桥大融城LG层; Baidu 乐玩客潮玩城(远东城店) | 观音桥东环路7号远东城内B1楼"
+    },
+    {
+      "ids": [5447, 5448, 5455, 5460],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Explicitly numbered sister shops: 一店 at Beicheng Tianjie / Tiantian Shangjie vs 二店 at Guanyinqiao pedestrian street 8-12 Darongcheng outdoor plaza. BemaniCN and ZIv both list two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/864",
+      "evidence_quote": "爱玩嘉年华江北观音桥一店 | 两江新区北城天街2号(近天天尚街); 爱玩嘉年华重庆江北二店 | 观音桥步行街8号附12号大融城1楼(外广场)"
+    },
+    {
+      "ids": [1070, 1071, 5640, 5642],
+      "verdict": "keep_separate",
+      "confidence": "likely",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "1071/5640/5642 agree on Hongfan Plaza (宏帆) with maimai; 1070 is ZIv 渭南信达 with a different cab list and no maimai. Baidu only finds 宏帆店 (and 铜锣湾店), not 信达. Cluster is not a single venue; leave 信达 alone rather than risk deleting a historical listing.",
+      "evidence_url": "https://map.bemanicn.com/s/2555",
+      "evidence_quote": "环游乐园（宏帆店） | 渭南宏帆广场; ZIv 9889 titled 渭南信达 with addr 前进路华润万家购物中心三楼"
+    },
+    {
+      "ids": [3688, 3689, 3692, 3693],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two malls on Zhongjie: Dayuecheng/Joy City A426 4F (3688/3693) vs Wuyue Plaza B1 (3689/3692). Different buildings and floors; WAHLAP and BemaniCN both list both branches.",
+      "evidence_url": "https://map.bemanicn.com/s/2891",
+      "evidence_quote": "拾光派对（中街大悦城店） | 小东路6号，大悦城4楼 A426; 拾光派对超级乐园 | 中街吾悦广场负一楼，杨格汉堡旁边"
+    },
+    {
+      "ids": [1639, 1640, 1647, 1657],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "1639/1640/1647 are Sanxia Square / Rongxin Building (渝碚路50-6); 1657 is a different WAHLAP branch at Jinsha Paradise Walk A3F-15. Baidu confirms both POIs.",
+      "evidence_url": "https://map.bemanicn.com/s/2722",
+      "evidence_quote": "乐玩客潮玩城(沙坪坝店) | 重庆市沙坪坝区渝碚路三峡广场50-6号; Baidu 乐玩客潮玩城(金沙天街店) | 金沙天街A馆3F-15室"
+    },
+    {
+      "ids": [4239, 4249, 4250, 4256],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Same Longfor Paradise Walk hosts two Star Player units: C-3F-34/35 (4239/4249/4256) and a separate 潮玩 shop at A-5F-05 (4250). Baidu lists both floors as distinct businesses.",
+      "evidence_url": "https://map.bemanicn.com/s/4081",
+      "evidence_quote": "星际玩家（海口龙湖天街店） | 龙湖天街商场C-3F-34、35; 星际玩家潮玩（海口龙湖天街店） | 海口龙湖天街A-5F-05"
+    },
+    {
+      "ids": [2577, 2580, 2657, 2664],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two malls in Nangang: Haxi Wanda 3F (2577/2657) vs Xicheng Red Plaza B1 (2580/2664). Different addresses, different game mixes (jubeat only at Red Plaza).",
+      "evidence_url": "https://map.bemanicn.com/s/63",
+      "evidence_quote": "大玩家（哈尔滨哈西万达店） | 中兴大道168号哈西万达广场3层; 大玩家（西城红场店） | 西城红场-1楼下沉广场"
+    },
+    {
+      "ids": [4276, 4277, 4284, 4285],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Explicit A-zone and B-zone shops in Nanfengli / Fortune Center 3F. BemaniCN names them 南风里A店 and 南风里B店; WAHLAP mirrors both. Different game counts.",
+      "evidence_url": "https://map.bemanicn.com/s/2988",
+      "evidence_quote": "晴空超乐场 南风里A店 | 新风路财富中心南风里A区三楼; 晴空超乐场 南风里B店 | 新风路财富中心南风里B区三楼"
+    },
+    {
+      "ids": [6025, 6027, 6036, 6039],
+      "verdict": "keep_separate",
+      "confidence": "likely",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "6025/6027/6036 are Kaide Jiuzhang (Yubei). 6039 is WAHLAP's 江北店 at Guanyinqiao Tiantian Shangjie with only chunithm. Different branch names and districts; Baidu also shows a Tiantian Shangjie company listing separate from Kaide.",
+      "evidence_url": "https://map.bemanicn.com/s/3472",
+      "evidence_quote": "童年搭档 凯德九章店 | 两江新区余溪西路与福泉路交叉口西南20米 凯德广场1楼; 6039 addr 观音桥天天尚街"
+    },
+    {
+      "ids": [5496, 5501, 5503],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5501,
+      "canonical_name": "猩际争霸（中北永旺店）",
+      "canonical_addr": "天津市西青区中北工业园阜盛道1号永旺购物中心(中北店)2F层猩际争霸",
+      "reason": "All three are ApeCraft at AEON Mall Zhongbei 2F. Same mall, matching maimai+taiko counts, Baidu has a single POI.",
+      "evidence_url": "https://map.bemanicn.com/s/6768",
+      "evidence_quote": "猩际争霸（中北永旺店） | 西青区阜盛道 AEON MALL; Baidu 猩际争霸(永旺购物中心天津中北店) | 阜盛道1号永旺购物中心F2"
+    },
+    {
+      "ids": [916, 931, 934],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 916,
+      "canonical_name": "51区超级乐园·solo park（天津南开大悦城店）",
+      "canonical_addr": "天津市南开区南门外大街2号天津大悦城购物中心3楼",
+      "reason": "Single Area-51 at Nankai Joy City 3F. WAHLAP, BemaniCN and ZIv describe the same Nanmenwai Street 2 mall floor.",
+      "evidence_url": "https://map.bemanicn.com/s/3807",
+      "evidence_quote": "51区超级乐园·solo park | 南门外大街2号天津大悦城购物中心3楼"
+    },
+    {
+      "ids": [917, 929, 944],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 917,
+      "canonical_name": "51区超级乐园熙悦汇店",
+      "canonical_addr": "天津市南开区黄河道513号熙悦汇F3层",
+      "reason": "One Area-51 at Xi Yue Hui 3F, Huanghe Road 513. All three sources name the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/4225",
+      "evidence_quote": "51区超级乐园熙悦汇店 | 南开区黄河道513号熙悦汇F3层"
+    },
+    {
+      "ids": [918, 930, 948],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 918,
+      "canonical_name": "51区超级乐园（社会山店）",
+      "canonical_addr": "天津市西青区张家窝镇知景道321号社会山广场2层51区超级乐园",
+      "reason": "One Area-51 at Shehuishan Plaza 2F. WAHLAP, BemaniCN and ZIv all say social-hill / Zhangjiawo 2F.",
+      "evidence_url": "https://map.bemanicn.com/s/6321",
+      "evidence_quote": "51区超级乐园（社会山店） | 张家窝镇社会山购物中心2楼"
+    },
+    {
+      "ids": [919, 920, 925],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 920,
+      "canonical_name": "51区天津西青枫雅印象城店",
+      "canonical_addr": "天津市西青区张家窝镇枫雅道198号天津枫雅印象城购物中心F2层",
+      "reason": "One Area-51 at Fengya Impression City 2F. WAHLAP 风雅 is a spelling variant of 枫雅; street number 198 matches across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/3279",
+      "evidence_quote": "51区天津西青枫雅印象城店 | 张家窝镇枫雅道198号天津枫雅印象城购物中心F2层"
+    },
+    {
+      "ids": [928, 937, 941],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 937,
+      "canonical_name": "51区超级乐园天津红桥水游城店",
+      "canonical_addr": "天津市红桥区大丰路鹏欣水游城A馆2F",
+      "reason": "One Area-51 at Pengxin Aqua City Building A 2F. Same mall name across WAHLAP/BemaniCN/ZIv with matching chunithm+maimai+taiko.",
+      "evidence_url": "https://map.bemanicn.com/s/6305",
+      "evidence_quote": "51区超级乐园水游城店 | 天津市红桥区大丰路鹏欣水游城A馆2F"
+    },
+    {
+      "ids": [2397, 2410, 2437],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Three different street addresses: 司门口 解放西路147 (2397), 春天百货 黄兴中路63-65 (2410), and ZIv 黄兴中路92 (2437) with an old Bemani-heavy lineup and no maimai. Baidu confirms two live City Hero POIs at 解放西路 and 春天百货.",
+      "evidence_url": "https://map.bemanicn.com/s/321",
+      "evidence_quote": "城市英雄(长沙司门口店) | 解放西路147号; 城市英雄(长沙春天百货店) | 黄兴中路63-65号春天百货负一层"
+    },
+    {
+      "ids": [4052, 4077, 4130],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4077,
+      "canonical_name": "星际传奇上海合生汇店",
+      "canonical_addr": "上海市杨浦区翔殷路1099号合生汇三楼星际传奇",
+      "reason": "All three point at Global Harbor 合生汇 3F (Xiangyin Rd 1099 / Songhu Rd 77). 4130's name wrongly says 沈阳中海环宇城 but its address is the Shanghai 合生汇 shop; Baidu has one POI.",
+      "evidence_url": "https://map.bemanicn.com/s/22",
+      "evidence_quote": "星际传奇（上海合生汇店） | 翔殷路1099号上海合生国际广场3楼"
+    },
+    {
+      "ids": [4708, 4750, 4789],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4708,
+      "canonical_name": "汤姆熊欢乐世界（百联又一城购物中心店）",
+      "canonical_addr": "上海市杨浦区淞沪路8号百联又一城购物中心5层北区01-62",
+      "reason": "One Tom's World at Bailian Youyicheng Songhu Rd 8. WAHLAP floor 8楼 conflicts with BemaniCN/ZIv/Baidu 5F; keep the more specific 5F community address.",
+      "evidence_url": "https://map.bemanicn.com/s/21",
+      "evidence_quote": "汤姆熊欢乐世界（百联又一城购物中心店） | 淞沪路8号百联又一城购物中心5层北区01-62; Baidu F5"
+    },
+    {
+      "ids": [1815, 1820, 1823],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1820,
+      "canonical_name": "全境方舟深圳东门店",
+      "canonical_addr": "广东省深圳市罗湖区东门街道城东社区东门中路2010号信和东门商厦201（2楼整层）",
+      "reason": "Single venue filling F2 of Xinhe Dongmen Building, Dongmen Middle Rd 2010. WAHLAP, BemaniCN and ZIv agree on the building.",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "全境方舟（信和·东门商厦店） | 东门中路2010号信和·东门商厦F2层"
+    },
+    {
+      "ids": [981, 982, 4940],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4940,
+      "canonical_name": "深圳BitCity次元小镇",
+      "canonical_addr": "广东省深圳市福田区福华一路1号大中华国际交易广场G层",
+      "reason": "One BitCity / 次元小镇 at HUA / Grand China Plaza G/B1, Fuhua 1st Rd 1. Matching chunithm and maimai counts across sources.",
+      "evidence_url": "https://map.bemanicn.com/s/1535",
+      "evidence_quote": "BitCity大中华广场(次元小镇) | 会展福华一路1号大中华HUA广场G层"
+    },
+    {
+      "ids": [2031, 2033, 2037],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 2033,
+      "canonical_name": "反斗乐园深圳福田领展中心城店",
+      "canonical_addr": "福田区福田街道福华一路3号领展购物广场M层64B",
+      "reason": "Baidu only knows one 反斗乐园 at Link REIT Central Walk M64B (福华一路3号). 2031's 怡景中心城 is the prior mall name for the same 中心城 complex; identical coords to 2037 and same unit 64B on 2033/2037.",
+      "evidence_url": "https://map.bemanicn.com/s/46",
+      "evidence_quote": "反斗乐园领展中心城店 | 福华一路3号领展中心城M层64B; Baidu only one 反斗乐园(领展中心城店)"
+    },
+    {
+      "ids": [4826, 4830, 4831],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4831,
+      "canonical_name": "泛时空西安雁塔荟聚店",
+      "canonical_addr": "陕西省西安市雁塔区子午大道6号西安荟聚2F",
+      "reason": "One FUNSPACE at Xi'an Livat/荟聚 2F, Ziwu Ave 6. 荟萃 is a transliteration variant of 荟聚; matching chunithm+maimai counts.",
+      "evidence_url": "https://map.bemanicn.com/s/3403",
+      "evidence_quote": "泛时空西安荟聚店 | 近西部大道，子午大道，西安荟聚2F 02C007号商铺"
+    },
+    {
+      "ids": [1116, 3573, 3585],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3573,
+      "canonical_name": "快乐星球北京大兴凯德茂店",
+      "canonical_addr": "北京市大兴区天宫院华佗路2号大兴凯德MALL4层",
+      "reason": "One GameO/快乐星球 at CapitaLand Mall Daxing 4F. All three sources name the same Tiangongyuan Huatuo Rd mall floor.",
+      "evidence_url": "https://map.bemanicn.com/s/3301",
+      "evidence_quote": "快乐星球（北京凯德大兴4F） | 天宫院华佗路2号大兴凯德MALL4层"
+    },
+    {
+      "ids": [4500, 4501, 4502],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4500,
+      "canonical_name": "梓木超级英雄呼和浩特回民店",
+      "canonical_addr": "内蒙古自治区呼和浩特市回民区振华广场西120米梓木超级英雄电玩城",
+      "reason": "One outdoor-lot arcade west of Zhenhua Plaza. WAHLAP, BemaniCN and ZIv describe the same parking-lot site; Baidu has a single POI.",
+      "evidence_url": "https://map.bemanicn.com/s/5672",
+      "evidence_quote": "梓木超级英雄电玩城 | 振华广场西侧露天停车场"
+    }
+  ]
+}

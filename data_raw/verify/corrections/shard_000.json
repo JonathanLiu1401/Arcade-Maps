@@ -1,0 +1,652 @@
+{
+  "shard": 0,
+  "checked": 42,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+    "https://www.akihabaraarcade.com/gamelist",
+    "https://www.akihabaraarcade.com/tournaments-special-events",
+    "https://www.akihabaraarcade.com/",
+    "https://www.nightcityarcade.com/",
+    "https://www.nightcityarcade.com/faq",
+    "https://www.nightcityarcade.com/arcade",
+    "https://austinspark.com/",
+    "https://arcadeufo.com/",
+    "https://arcadegalactic.com/",
+    "https://arcadegalactic.com/arcade-galactic-games/",
+    "https://www.arcademonsters.com/",
+    "https://www.arcademonsters.com/murrieta",
+    "https://www.arcademonsters.com/international-drive",
+    "https://www.arcadetimeusa.com/",
+    "https://www.bhopesports.com/",
+    "https://www.bhopesports.com/hawthorn",
+    "https://bellinghamarcade.com/",
+    "https://7rangesentertainment.com/",
+    "https://aftershockclassicarcade.com/",
+    "https://artcadekeene.com/",
+    "https://backpocketpinandpixel.com/",
+    "https://www.akibahouse.com/resources",
+    "https://shop.bandainamco-am.com/locations/detail/bandai-namco-cross-store-brooklyn-new-york/",
+    "https://barcade.com/",
+    "https://cidercade.com/austin/",
+    "https://monroevillemall.com/store/aces_break_away_and_play"
+  ],
+  "corrections": [
+    {
+      "id": 12063,
+      "name": "AUSTINS PARK & PIZZA",
+      "field": "status",
+      "current": {
+        "status": "open separate venue",
+        "addr": "16234 N Interstate 35 Pflugerville tx 78660",
+        "lat": 30.4610411,
+        "lng": -97.6677476,
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 12062,
+        "reason": "same physical venue as AUSTIN'S PARK; ALL.Net address 16234 is a number typo vs venue official 16231"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://austinspark.com/",
+      "evidence_quote": "Address: 16231 IH-35, Pflugerville, TX 78660 | Phone: 512-670-9600; Open Today 10:00 AM - 11:00 PM",
+      "note": "ALL.Net lists maimai DX at AUSTINS PARK & PIZZA 16234 N Interstate 35. Official Austin's Park site uses 16231. Pins for 12062 and 12063 are only about 290m apart (same complex). Keep 12062 (richer ZIv data + website + stepmaniax) and fold ALL.Net src/maimai onto it; remove or hide 12063 as a duplicate.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12063,
+      "name": "AUSTINS PARK & PIZZA",
+      "field": "location",
+      "current": {
+        "addr": "16234 N Interstate 35 Pflugerville tx 78660",
+        "lat": 30.4610411,
+        "lng": -97.6677476
+      },
+      "proposed": {
+        "addr": "16231 IH-35, Pflugerville, TX 78660",
+        "note": "use official address if row is kept; prefer merge into 12062"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://austinspark.com/",
+      "evidence_quote": "16231 IH-35, Pflugerville, TX 78660",
+      "note": "ALL.Net store_address is 16234; operator site is 16231. Do not invent coords; 12062 already geocodes 16231.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12024,
+      "name": "Arcade Galactic",
+      "field": "status",
+      "current": {
+        "status": "separate open venue",
+        "addr": "West Valley City Utah, 84119",
+        "games": [
+          "other",
+          "stepmaniax"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 12025,
+        "reason": "same Valley Fair Mall location as Arcade Galactic (formerly Game Grid); official site is one location"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://arcadegalactic.com/",
+      "evidence_quote": "3601 Constitution Blvd, STE G114, West Valley City, UT 84119 - inside Valley Fair Mall, north end near Ulta and JCPenney. AS OF JANUARY 2023, WE ARE BACK TO ONE LOCATION [West Valley] (Ogden closed).",
+      "note": "12024 and 12025 pins are about 36m apart. 12025 has the full mall address. 12024 is a bare city-only ZIv stub. Prefer keep 12025, add website arcadegalactic.com, drop stale gamegridarcade.com.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12025,
+      "name": "Arcade Galactic (formerly Game Grid Arcade)",
+      "field": "website",
+      "current": "http://www.gamegridarcade.com",
+      "proposed": "https://arcadegalactic.com/",
+      "confidence": "certain",
+      "evidence_url": "https://arcadegalactic.com/",
+      "evidence_quote": "Arcade Galactic - Video Arcade & Pinball Gaming at Valley Fair Mall in West Valley City, Utah",
+      "note": "Name changed from Game Grid to Arcade Galactic around 2020; live site is arcadegalactic.com. Old gamegridarcade paths still appear as legacy URLs on the new site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12025,
+      "name": "Arcade Galactic (formerly Game Grid Arcade)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "other",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://arcadegalactic.com/arcade-galactic-games/",
+      "evidence_quote": "Step ManiaX appears in the game gallery. No DDR or ReRave is mentioned anywhere on the page.",
+      "note": "ZIv notes still list Dance Dance Revolution EXTREME. Official games page only shows StepManiaX among dance titles. Propose removing ddr unless a newer floor photo reconfirms it. confidence likely not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12070,
+      "name": "Backpocket Pin & Pixel",
+      "field": "location",
+      "current": {
+        "lat": 42.277308774237,
+        "lng": -91.494140625,
+        "addr": "6205 Merle Hay Rd Johnston Iowa, 50131, Johnston"
+      },
+      "proposed": {
+        "lat": 41.673625055602,
+        "lng": -93.69732567775,
+        "note": "or merge into 12071"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://backpocketpinandpixel.com/",
+      "evidence_quote": "6205 Merle Hay Rd., Johnston, IA 50131; Bar 11am-10pm Sun-Thu, 11am-12am Fri-Sat",
+      "note": "App info_text already says this pin shows NNE of Cedar Rapids incorrectly. Haversine from current pin to 12071 is about 194km. 12070 and 12071 are duplicate ZIv rows for the same Johnston taproom; 12071 coords match Merle Hay Rd / Johnston. Prefer merge into 12071 and delete 12070.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12070,
+      "name": "Backpocket Pin & Pixel",
+      "field": "status",
+      "current": "open separate venue",
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 12071
+      },
+      "confidence": "certain",
+      "evidence_url": "https://backpocketpinandpixel.com/",
+      "evidence_quote": "6205 Merle Hay Rd., Johnston, IA 50131",
+      "note": "Same name and same street address as 12071. 12071 has Suite 100 and correct coords.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11973,
+      "name": "[PRIVATE] Night City",
+      "field": "status",
+      "current": {
+        "info": "private rental only at 31362 N Ellis Dr Unit 210 Volo",
+        "hours_text": "Mon-Sun closed"
+      },
+      "proposed": {
+        "status": "private_rental_paused_relocating",
+        "note": "do not present as a walk-in open arcade"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.nightcityarcade.com/",
+      "evidence_quote": "Our Private Arcade rentals will return soon, we are moving locations. Stay tuned!",
+      "note": "Homepage states private rentals are paused while moving. FAQ still lists 31362 N Ellis Dr Unit 210 Volo with bookable windows, so the old address may be stale. Travelling convention arcade continues. Keep PRIVATE flag. hours_text Mon-Sun closed already reflects no walk-ins.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11973,
+      "name": "[PRIVATE] Night City",
+      "field": "games",
+      "current": [
+        "ddr",
+        "jubeat",
+        "other",
+        "project_diva",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": [
+        "ddr",
+        "jubeat",
+        "maimai",
+        "other",
+        "project_diva",
+        "sdvx",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9798",
+      "evidence_quote": "notes/cabs include maimai FiNALE; machine_prices already has maimai free play during rental",
+      "note": "games[] omits maimai even though notes and prices list it. Offline FiNALE, not ALL.Net maimai DX. Mark as maimai (FiNALE/offline) not maimai_dx. Could not re-verify cab list after move announcement; confidence likely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11968,
+      "name": "1-Up Lounge",
+      "field": "website",
+      "current": "http://1-uplounge.com/",
+      "proposed": "https://bellinghamarcade.com/",
+      "confidence": "certain",
+      "evidence_url": "https://bellinghamarcade.com/",
+      "evidence_quote": "Bellingham's only cocktail lounge with video games. 1121 McKenzie Avenue, Bellingham, WA 98225. Copyright through 2026.",
+      "note": "1-uplounge.com 301-redirects to mangiaitalianrestaurant.com (unrelated). Live lounge site is bellinghamarcade.com.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11968,
+      "name": "1-Up Lounge",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Tue closed; Wed-Thu 16:00-22:00; Fri 16:00-23:00; Sat 12:00-23:00; Sun 12:00-22:00 (sidebar also lists Fri/Sat to 23:30)",
+      "confidence": "certain",
+      "evidence_url": "https://bellinghamarcade.com/",
+      "evidence_quote": "Mon-Tue closed; Wed-Thu 4 PM - 10 PM; Fri 4 PM - 11 PM; Sat 12 PM - 11 PM; Sun 12 PM - 10 PM",
+      "note": "Page has two slightly different Fri/Sat close times (11 vs 11:30). Did not re-confirm DDR/WACCA on the website (console-arcade marketing copy only); leave games as ZIv-sourced until a floor photo is found.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11970,
+      "name": "7 Ranges Entertainment",
+      "field": "hours",
+      "current": "Mon 11:00-23:00; Tue-Wed closed; Thu-Fri 11:00-23:00; Sat-Sun 11:00-25:00",
+      "proposed": "Mon-Thu 11:00-22:00; Fri-Sat 11:00-01:00; Sun 11:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://7rangesentertainment.com/",
+      "evidence_quote": "We're Now Open 7 Days a Week! Monday-Thursday 11:00 AM - 10:00 PM; Friday-Saturday 11:00 AM - 1:00 AM; Sunday 11:00 AM - 10:00 PM. 100 Mall Drive, Suite 5, Steubenville, OH 43952",
+      "note": "App hours still show Tue-Wed closed and overnight Sat-Sun to 25:00. Official site is open daily with earlier closes. StepManiaX not named on site; leave games as-is (ZIv).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12032,
+      "name": "Arcade Monsters (Murrieta)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-00:00",
+      "proposed": "Mon-Sun 09:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.arcademonsters.com/murrieta",
+      "evidence_quote": "9am - 12am Everyday. 39809 Avenida Acacias Suite C, Murrieta, CA 92563",
+      "note": "Official page hours start at 9am, not 10am. Venue is open (info_text still says Opening December 22, 2025; that soft-open note is now historical).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12032,
+      "name": "Arcade Monsters (Murrieta)",
+      "field": "other",
+      "current": "info_text Opening December 22, 2025",
+      "proposed": "remove opening-soon language; venue is operating",
+      "confidence": "certain",
+      "evidence_url": "https://www.arcademonsters.com/murrieta",
+      "evidence_quote": "largest and most ambitious location to date; booking/menu/gift-card links live; 9am-12am Everyday",
+      "note": "Yelp and chain site present Murrieta as open. Keep admission pricing from site ($29.99/$39.99 on chain home page).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12086,
+      "name": "BHOP Esports (Hawthorn)",
+      "field": "hours",
+      "current": "Mon-Thu 14:00-00:00; Fri-Sat 11:00-03:00; Sun 11:00-00:00",
+      "proposed": "Mon-Thu 15:00-00:00; Fri-Sat 11:00-03:00; Sun 11:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.bhopesports.com/",
+      "evidence_quote": "BHOP Hawthorn Mall hours: Monday-Thursday 3pm-12am; Friday-Saturday 11am-3am; Sunday 11am-12am. 506 Hawthorn Ctr, Vernon Hills, IL 60061",
+      "note": "App has Mon-Thu opening 14:00; official home page says 3pm.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11993,
+      "name": "Akihabara",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "groove_coaster",
+        "jubeat",
+        "other",
+        "popn",
+        "project_diva",
+        "reflec",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "nostalgia",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.akihabaraarcade.com/gamelist",
+      "evidence_quote": "Game list updated 04/08/2026 includes: Pop'n Music HD (new), Taiko no Tatsujin HD (new), Beatmania IIDX (new), Dance Rush Stardom (new), CHUNITHM (4 cabinets, new), WACCA (2), Project Diva, maimai Finale, Final Fantasy Theatrhythm, Rhythm Tengoku, DDR A3 (new), Groove Coaster, jubeat (2), Nostalgia, Sound Voltex. No Reflec Beat on the list.",
+      "note": "Official list adds iidx, drs, nostalgia, maimai (FiNALE offline). Removes reflec relative to app games[]. maimai is offline FiNALE not ALL.Net maimai_dx. Tournaments page has events scheduled through Dec 2026 so venue is active.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11993,
+      "name": "Akihabara",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 4,
+        "wacca": 2,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.akihabaraarcade.com/gamelist",
+      "evidence_quote": "CHUNITHM - 4 cabinets; WACCA - 2 cabinets; jubeat - 2 cabinets; Initial D 8 Infinity - 4 cabinets",
+      "note": "Only counts the official page states explicitly. Do not invent counts for other titles.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11993,
+      "name": "Akihabara",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr": "A3",
+        "maimai": "FiNALE (offline)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.akihabaraarcade.com/gamelist",
+      "evidence_quote": "DDR A3 - marked new; maimai - the Finale version",
+      "note": "ddr_legacy (SuperNOVA2-era tag) is wrong for current floor; official list says DDR A3. maimai remains FiNALE offline.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12043,
+      "name": "Arcade UFO",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "jubeat",
+        "other",
+        "popn",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "other",
+        "popn",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://arcadeufo.com/",
+      "evidence_quote": "Arcade list includes Beatmania IIDX; Chunithm (x2); DrumMania; GuitarFreaks; Jubeat (x2); Nostalgia Op.3; Pop'n Music; Pump It Up XX; Sound Voltex. Hours Mon-Thu 6pm-12am; Fri-Sat 1pm-2am; Sun 1pm-12am.",
+      "note": "Official site lists IIDX and Nostalgia Op.3 which are missing from games[]. CHUNITHM x2 and jubeat x2 match existing game_counts. Official does not name SDVX Valkyrie; keep sdvx_vm only if separately evidenced. Hours in app match site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12043,
+      "name": "Arcade UFO",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "gitadora": 2,
+        "jubeat": 2,
+        "popn": 1,
+        "pump_it_up": 1,
+        "sdvx": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://arcadeufo.com/",
+      "evidence_quote": "Chunithm (x2); Jubeat (x2); Initial D Zero (x2). Other titles unmarked.",
+      "note": "Official page only multiplies Chunithm, Jubeat, Initial D Zero, SFIII 3rd Strike. gitadora:2 / popn:1 / pump:1 / sdvx:1 from ZIv are not restated on the site; leave them if you keep ZIv evidence, or drop to only the site-confirmed multipliers.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11972,
+      "name": "8 On The Break",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "pump_it_up",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai",
+        "other",
+        "pump_it_up",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=213",
+      "evidence_quote": "notes Cabs include maimai FiNALE; machine_prices has maimai $1 for 3 songs",
+      "note": "games[] omits maimai while notes and prices include it. Offline FiNALE not ALL.Net DX. Venue appears open per Yelp/Pinball Map (2026 listings) but official thebreak.net TLS is broken; confidence likely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11992,
+      "name": "Akiba House (Chinatown)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai",
+        "other",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10526",
+      "evidence_quote": "notes: Cabs: CHUNITHM VERSE; Claw Machine; Skill Fall Revolution; WACCA REVERSE; maimai; machine_prices maimai 2 tokens",
+      "note": "Retail site https://www.akibahouse.com/resources confirms Chinatown store 116 Bowery, Mon-Sun 10:00am-10:00pm, but does not list arcade cabinets. maimai remains ZIv-only evidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11992,
+      "name": "Akiba House (Chinatown)",
+      "field": "hours",
+      "current": "Mon-Thu 11:00-20:00; Fri-Sat 10:00-21:00; Sun 11:00-20:00",
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.akibahouse.com/resources",
+      "evidence_quote": "116 Bowery / New York, NY 10013, Mon - Sun / 10:00 am - 10:00 pm",
+      "note": "Replace app hours_text with store-resources hours if different.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11996,
+      "name": "Akihabari",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other",
+        "project_diva",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": [
+        "ddr",
+        "maimai",
+        "other",
+        "project_diva",
+        "sdvx",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9085",
+      "evidence_quote": "notes Cabs include maimai FiNALE; prices maimai US$1.00 for 3 songs",
+      "note": "games[] omits maimai present in notes/prices. Offline FiNALE. Website is only Instagram Alley 51; could not get a 2026 floor list. confidence likely.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 11995,
+      "name": "Akihabara Electric Entertainment",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "crossbeats",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "other",
+        "popn",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "crossbeats",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "other",
+        "popn",
+        "pump_it_up",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1692",
+      "evidence_quote": "notes Cabs include maimai FiNALE; prices maimai free play; info_text THIS IS A PRIVATE ARCADE AT MY HOUSE",
+      "note": "Keep PRIVATE/home-arcade flag. games[] omits maimai listed in notes/prices. No public verification path beyond Discord.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "Arcade Monsters (International Drive / Orlando)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Arcade Monsters (International Drive)",
+        "addr": "6362 International Drive, Orlando, FL 32819",
+        "country": "United States",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "src": [
+          "allnet"
+        ],
+        "website": "https://www.arcademonsters.com/international-drive",
+        "hours_text": "Mon-Sun 10:00-02:00",
+        "note": "ALL.Net lists maimai DX here; chain page says 10am-2am Everyday, free-play admission"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ARCADE MONSTERS | 6362 INTERNATIONAL DR ORLANDO FL 32819",
+      "note": "Shard has Lake Mary, Lido Beach, Melbourne, Murrieta, Oviedo, San Diego Arcade Monsters but not I-Drive. Official chain page confirms address and hours. Rhythm game list beyond maimai_dx not published on chain page; do not invent.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "ARCADE TIME ENTERTAINMENT ORLANDO",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Arcade Time Entertainment Orlando",
+        "addr": "6464 International Drive, Orlando, FL 32819",
+        "country": "United States",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "src": [
+          "allnet"
+        ],
+        "website": "https://www.arcadetimeusa.com/",
+        "note": "ALL.Net maimai DX listing; chain home page marks Orlando I-Drive NOW OPEN"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ARCADE TIME ENTERTAINMENT ORLANDO | 6464 International Drive Orlando FL 32819",
+      "note": "Shard has Arcade Time Wellington, Avenues Mall Jacksonville, Falls Mall Miami, but not Orlando I-Drive. Pump It Up and other games not confirmed from ALL.Net alone; only maimai_dx is certain from official locator.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "CIDERCADE AUSTIN",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Cidercade Austin",
+        "addr": "600 E Riverside Dr, Austin, TX 78704",
+        "country": "United States",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "src": [
+          "allnet"
+        ],
+        "website": "https://cidercade.com/austin/",
+        "hours_text": "Mon-Sun 10:00-00:00",
+        "note": "ALL.Net maimai DX; free-play with admission per cidercade.com/austin"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "CIDERCADE AUSTIN | 600 e riverside Dr Austin tx 78704",
+      "note": "Reporting because ALL.Net NA list was fully parsed for this US shard and Austin-area maimai is relevant next to Austin's Park / Arcade UFO. Venue open per cidercade.com (10am-Midnight Every Day). Full rhythm inventory beyond maimai_dx not listed on the marketing page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12041,
+      "name": "ARCADE TIME ENTERTAINMENT WELLINGTON",
+      "field": "other",
+      "current": "maimai_dx listed",
+      "proposed": "maimai_dx confirmed still live on ALL.Net (no change to games)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ARCADE TIME ENTERTAINMENT WELLINGTON | 10300 Forest hill Blvd #122 Wellington , Fl 33414",
+      "note": "Positive confirmation only. Yelp hours snippets differ from app 10am-3am claim; did not get a clean official hours page, so no hours correction.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12062,
+      "name": "AUSTIN'S PARK",
+      "field": "other",
+      "current": "maimai_dx listed",
+      "proposed": "maimai_dx confirmed via ALL.Net under AUSTINS PARK & PIZZA spelling; attach allnet src to 12062 when merging 12063",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "AUSTINS PARK & PIZZA | 16234 N Interstate 35 Pflugerville tx 78660",
+      "note": "Positive confirmation of maimai_dx via ALL.Net. Official site address is 16231 not 16234. stepmaniax remains ZIv-only (not on operator homepage).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12052,
+      "name": "Artcade",
+      "field": "location",
+      "current": "116 Main St Keene 03431, Keene",
+      "proposed": "116 Main St, Keene, NH 03431",
+      "confidence": "certain",
+      "evidence_url": "https://artcadekeene.com/",
+      "evidence_quote": "116 Main St., Keene, NH 03431 - historic Downtown Keene. Lineup includes Dance Dance Revolution.",
+      "note": "Cosmetic address cleanup; DDR listed on official site supports games.ddr. Hours not published on homepage body.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12076,
+      "name": "Barcade (FiDi)",
+      "field": "location",
+      "current": "10 Cortlandt Street Manhattan New York New York, 10003, New York",
+      "proposed": {
+        "addr_note": "ZIP 10003 is East Village; FiDi/Cortlandt is typically 10007. Confirm and fix ZIP.",
+        "street": "10 Cortlandt Street"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://barcade.com/",
+      "evidence_quote": "Location listed as New York - FiDi at /location/new-york-fidi (page body did not return address text in fetch)",
+      "note": "Street 10 Cortlandt Street is FiDi; ZIP 10003 in the app is inconsistent with that neighborhood (10003 is St. Marks area). Could not get address body from barcade.com location page (empty shell). Flag for maintainer geocode check. Venue exists in Barcade location list.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

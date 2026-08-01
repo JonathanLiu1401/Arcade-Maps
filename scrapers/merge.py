@@ -484,6 +484,189 @@ def bemanicn_region(note):
     return prov, city
 
 
+_CN_DIGITS = {"零": "0", "一": "1", "二": "2", "两": "2", "三": "3",
+              "四": "4", "五": "5", "六": "6", "七": "7", "八": "8",
+              "九": "9", "十": "10"}
+
+
+def cn_digits(s):
+    """Chinese numerals -> ASCII, so 江北一店 and 江北1店 compare equal."""
+    s = s or ""
+    for k, v in _CN_DIGITS.items():
+        s = s.replace(k, v)
+    return s
+
+
+# A "container" is the mall/building a venue sits inside. The 2-5 chars
+# immediately before one are its name, which is the single most reliable
+# thing distinguishing two branches of one chain in the same district.
+# Deliberately NO bare 城 / 中心 / 乐园 here. Those are the generic words
+# Chinese arcades put in their own names - 电玩城 means "arcade" and
+# 家庭娱乐中心 means "family entertainment centre" - so treating them as
+# building names made "酷玩时代兰州城关店" and "酷玩时代电玩城" look like
+# two different buildings (兰州城 vs 电玩城) and rejected a true
+# duplicate. A container word only counts when it can only be a venue.
+_CN_CONTAINER = (r"(?:购物公园|购物中心|商业广场|广场|天街|大悦城|万达|"
+                 r"吾悦|印象城|荟聚|银泰|龙湖|万象城|大融城|红场|奥莱|"
+                 r"奥特莱斯|百货|商场|商城|大厦|步行街|生活广场)")
+_CN_LANDMARK_RE = re.compile(r"[一-鿿]{2,5}?" + _CN_CONTAINER)
+# Bare chain-container words that are themselves the landmark: every
+# 万达广场 in a city is a different 万达广场, but "万达" vs "吾悦" in one
+# district is decisive on its own.
+_CN_BARE_LANDMARKS = ("大悦城", "万达", "吾悦", "印象城", "荟聚", "银泰",
+                      "万象城", "大融城", "红场", "天街", "永旺", "梦乐城",
+                      "恒隆", "天河城", "三峡广场", "世界城", "香港城",
+                      "悦荟", "水游城", "禧欢里", "南风里", "苏宁",
+                      "合胜", "金沙", "龙湖", "凯德", "宝龙", "百盛",
+                      "步行街", "新天地", "奥莱", "SM广场", "KKMALL",
+                      "INPARK", "MIXC", "IN99")
+# Branch discriminator: 一店/二店, A店/B店, 1号店. These are how a chain
+# says "this is our OTHER shop in the same mall", so a disagreement here
+# is a hard reject no matter how similar the names are.
+_CN_BRANCH_RE = re.compile(r"(?<![0-9])([0-9]{1,2}|[A-Za-z])号?店")
+
+
+_CN_ADMIN_RE = re.compile(r"(省|自治区|特别行政区|市辖区|市|区|县|镇|乡|"
+                          r"街道|新区|店)")
+
+
+def cn_landmarks(text):
+    """Building/mall tokens named by `text`."""
+    out = set()
+    s = cn_digits(text or "")
+    up = s.upper()
+    for m in _CN_LANDMARK_RE.finditer(s):
+        if len(m.group(0)) >= 3:
+            out.add(m.group(0))
+    for k in _CN_BARE_LANDMARKS:
+        if k in s or (k.isascii() and k in up):
+            out.add(k)
+    return out
+
+
+def cn_branch_markers(name):
+    return set(_CN_BRANCH_RE.findall(cn_digits(name or "")))
+
+
+def cn_brand_key(name):
+    """Chain name with branch parenthetical and romanized echo removed.
+
+    "乐玩客潮玩城 Fun Guest (沙坪坝店)" -> "乐玩客潮玩城". Two listings of
+    one venue almost always agree on a long prefix of this; two branches
+    of one chain agree on a SHORTER one and then diverge into different
+    place names, which is what the residue test below reads.
+    """
+    s = unicodedata.normalize("NFKC", cn_digits(name or ""))
+    s = re.sub(r"[（(].*?[)）]", "", s)
+    return re.sub(r"[A-Za-z0-9\s\-–—_,，。、·'\"!]+", "", s)
+
+
+def cn_full_key(name):
+    """Like cn_brand_key but KEEPING parenthetical text - the branch name
+    frequently lives only in there ("宝贝王（禧欢里店）")."""
+    s = unicodedata.normalize("NFKC", cn_digits(name or ""))
+    s = s.replace("（", "(").replace("）", ")")
+    return re.sub(r"[A-Za-z0-9\s\-–—_,，。、·'\"!()]+", "", s)
+
+
+def _common_prefix_len(a, b):
+    n = 0
+    while n < len(a) and n < len(b) and a[n] == b[n]:
+        n += 1
+    return n
+
+
+# A place name is the 2-3 chars immediately before an admin suffix.
+# This only fires on the explicit forms (荆州市 / 洪湖市 / 江津区), which
+# is the conservative direction: a missed city cannot cause a false
+# merge, it just falls through to the landmark and distance tests.
+_CN_PLACE_RE = re.compile(r"([一-鿿]{2,3})(?:市|县|区|州|盟|旗)")
+# Words that are part of a district name rather than a place: every city
+# has a 新区 and an 开发区, so they carry no discriminating information.
+_CN_PLACE_SKIP = {"新区", "城区", "郊区", "开发", "高新"}
+
+
+def cn_place_names(text):
+    return {m for m in _CN_PLACE_RE.findall(cn_digits(text or ""))
+            if m not in _CN_PLACE_SKIP}
+
+
+def _landmarks_overlap(la, lb):
+    """Substring containment counts as agreement: "南岗区哈西万达"
+    contains "万达", and both mean the same building."""
+    for x in la:
+        for y in lb:
+            if x in y or y in x:
+                return True
+    return False
+
+
+CN_BRAND_MIN = 3      # CJK chars of shared brand prefix required
+# A big Chinese mall is 200-500 m across and the two sources pin
+# different doors of it, so same-building pairs routinely sit 100-400 m
+# apart. The median confirmed-duplicate separation is 31 m, the 99th
+# percentile 383 m.
+CN_MAX_M = 500.0
+# ...but a shared brand with no building evidence is much weaker, so
+# that case gets a tighter gate. Measured over all China pairs passing
+# the name test: the 60-200 m band is 402 pairs and reads as almost
+# entirely one-venue-two-rows ("汤姆熊欢乐世界 Tom's World (金山店)" vs
+# "汤姆熊欢乐世界（金山店）"), because the two sources pin different
+# doors of one mall. Past ~200 m brand-only pairs start being genuinely
+# different shops of one chain, so that is where this stops.
+CN_BRAND_ONLY_M = 200.0
+
+
+def cn_same_venue_evidence(a_name, b_name):
+    """(compatible, reason) for two nearby China listings.
+
+    Name similarity gets this exactly backwards, which is why the rule
+    does not use it: "爱玩嘉年华(重庆江北一店)" and "爱玩嘉年华(重庆江北
+    二店)" score 0.95 similar and are two different shops, while
+    "51区天津南开大悦城店" and "51区超级乐园 AREA-51 (Tianjin)" share
+    almost no characters and are one shop.
+
+    What actually decides it is two independent tests:
+      1. do the names share a real chain-brand prefix, and
+      2. does the text AFTER that brand name a different building or a
+         different numbered branch?
+    Test 2 is the rejector, and it is read only off the NAMES. Addresses
+    are not trustworthy enough to reject on here - the two sources
+    routinely disagree about the building because one fell back to a
+    district-level geocode, and rejecting on that discarded true
+    duplicates sitting 0 m apart (宝贝王石家庄西桥禧欢里店 vs
+    宝贝王（禧欢里店）, whose addresses name 禧欢里商业广场 and an
+    unrelated 翰林大厦).
+
+    Hand-checked against both addresses on 17 pairs spanning every
+    failure mode seen in the reported bug; see test_china_dedupe.py.
+    """
+    ka, kb = cn_brand_key(a_name), cn_brand_key(b_name)
+    blen = _common_prefix_len(ka, kb)
+    if blen < CN_BRAND_MIN:
+        return False, "brand_differs"
+    ba, bb = cn_branch_markers(a_name), cn_branch_markers(b_name)
+    if ba and bb and not (ba & bb):
+        return False, "branch_marker_conflict"
+    # Residue = what each name says after the shared brand. Admin words
+    # (市/区/县/街道) are dropped: one source writes the full postal
+    # hierarchy and the other does not, and that is not a disagreement.
+    fa, fb = cn_full_key(a_name), cn_full_key(b_name)
+    # Two rows that name DIFFERENT cities/counties are never one venue,
+    # however close their pins landed: "星辉之城荆州购物公园店" and
+    # "星辉之城（洪湖购物公园店）" are 60 m apart only because one of
+    # them was geocoded to the wrong city.
+    ca, cb = cn_place_names(fa[blen:]), cn_place_names(fb[blen:])
+    if ca and cb and not (ca & cb):
+        return False, "city_conflict"
+    ra = _CN_ADMIN_RE.sub("", fa[blen:])
+    rb = _CN_ADMIN_RE.sub("", fb[blen:])
+    la, lb = cn_landmarks(ra), cn_landmarks(rb)
+    if la and lb and not _landmarks_overlap(la, lb):
+        return False, "landmark_conflict"
+    return True, ("landmark_agree" if (la and lb) else "brand_only")
+
+
 def _china_dice(ca, cb):
     if not ca or not cb:
         return 0.0
@@ -1631,10 +1814,279 @@ def cluster_units(units, log):
                                 "similarity": round(best[0], 3),
                                 "province": prov,
                                 "a": unit_ref(j), "b": unit_ref(i)})
+    # ---- China co-located tier ---------------------------------------
+    #
+    # Reported bug: Shenzhen and every other Chinese city shows the same
+    # arcade two or three times, one pin per source. The proximity tier
+    # above cannot reach these for two independent reasons:
+    #   1. its hard gate is PROXIMITY_MAX_M = 30 m, and the median
+    #      separation of a real China duplicate pair is 31 m - the two
+    #      sources geocode the same mall to different doors, and a big
+    #      Chinese mall is 200-500 m across;
+    #   2. it only considers official-vs-community pairs, and China's
+    #      duplicates are overwhelmingly bemanicn x wahlap (1409 of the
+    #      1493 confirmed cases) - by that scoping, both community.
+    # Widening the global gate is not an option (it is doing real work
+    # at 120 m elsewhere and two Tokyo arcades 200 m apart are two
+    # arcades), so this tier is scoped to China rows only.
+    #
+    # The evidence is NOT name similarity, which is actively misleading
+    # here: sibling branches of one chain differ by a single character
+    # ("江北一店" vs "江北二店", 0.95 similar, two shops) while one shop
+    # listed by two sources can share almost nothing ("51区天津南开大悦城
+    # 店" vs "51区超级乐园 AREA-51 SUPER PARK (Tianjin)"). What actually
+    # separates them is whether the two rows name the same BUILDING and
+    # the same numbered branch - see cn_same_venue_evidence.
+    cn_idx = [i for i, u in enumerate(units)
+              if u["country"] == "China" and u["lat"] is not None]
+    if cn_idx:
+        ccell = 0.006      # ~660 m: a 500 m ball fits the 3x3 window
+        cgrid = {}
+        for i in cn_idx:
+            u = units[i]
+            cgrid.setdefault((math.floor(u["lat"] / ccell),
+                              math.floor(u["lng"] / ccell)), []).append(i)
+        cn_pairs = {}
+        for (cx, cy), members in cgrid.items():
+            cand = []
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    cand.extend(cgrid.get((cx + dx, cy + dy), ()))
+            for i in members:
+                ui = units[i]
+                for j in cand:
+                    if j <= i or uf.find(i) == uf.find(j):
+                        continue
+                    uj = units[j]
+                    dist = haversine_m(ui["lat"], ui["lng"],
+                                       uj["lat"], uj["lng"])
+                    if dist > CN_MAX_M:
+                        continue
+                    ok, why = cn_same_venue_evidence(ui["name"], uj["name"])
+                    if not ok:
+                        continue
+                    # A shared brand with NO building evidence either way
+                    # is the weakest case ("酷玩时代兰州城关店" vs
+                    # "酷玩时代电玩城"): plausible, but a chain can also
+                    # run two shops in one district. Allow it only when
+                    # the pins are close enough to be one storefront.
+                    if why != "landmark_agree" and dist > CN_BRAND_ONLY_M:
+                        continue
+                    sim = china_name_similarity(
+                        ui["name"], uj["name"], ui.get("cn_prov"),
+                        ui.get("cn_city"), uj.get("cn_city"))
+                    cn_pairs[(i, j)] = (sim, dist, why)
+        # Mutual-best per (unit, other-source): a shop listed once by
+        # wahlap and once by bemanicn should claim exactly one partner
+        # per source, so a row of neighbouring shops cannot daisy-chain
+        # into one blob through a shared counterpart.
+        cbest = {}
+        for (i, j), (sim, dist, _w) in cn_pairs.items():
+            for a, b in ((i, j), (j, i)):
+                key = (a, units[b]["source"])
+                cand = (sim, -dist, b)
+                if key not in cbest or cand > cbest[key]:
+                    cbest[key] = cand
+        for (i, j), (sim, dist, why) in sorted(
+                cn_pairs.items(), key=lambda kv: (-kv[1][0], kv[1][1])):
+            if (cbest[(i, units[j]["source"])][2] != j
+                    or cbest[(j, units[i]["source"])][2] != i):
+                continue
+            if uf.union(i, j):
+                log.append({"rule": "china_colocated",
+                            "evidence": why,
+                            "distance_m": round(dist, 1),
+                            "similarity": round(sim, 3),
+                            "a": unit_ref(i), "b": unit_ref(j)})
+    # ---- END China co-located tier -----------------------------------
+
     groups = {}
     for i in range(n):
         groups.setdefault(uf.find(i), []).append(i)
     return groups
+
+
+# -------------------------------------------- China co-located dedupe ------
+
+# Evidence rank for choosing which of two counts to keep. Mirrors the
+# tiers used when units are merged, so the second pass cannot silently
+# downgrade a count the first pass had already justified.
+_CE_RANK = {"bemanicn_qty": 3, "ziv_comment": 2, "ziv_listed": 1}
+
+
+def _merge_two_china(keep, drop):
+    """Union `drop` into `keep`, in place. Nothing is discarded.
+
+    A dedupe that PICKS one row and deletes the other is worse than the
+    duplicate pins it removes: dropping a links.ziv orphans that venue's
+    photos (they join on the source URL), and dropping a games slug makes
+    the arcade vanish from a filter it belongs in. So every list-valued
+    and dict-valued field is unioned, and the scalar fields prefer
+    whichever row actually has a value.
+    """
+    for key in ("games", "cabs", "src"):
+        seen = list(keep.get(key) or [])
+        for v in (drop.get(key) or []):
+            if v not in seen:
+                seen.append(v)
+        keep[key] = seen
+    links = dict(keep.get("links") or {})
+    for k, v in (drop.get("links") or {}).items():
+        if v and not links.get(k):
+            links[k] = v
+    keep["links"] = links
+    # Counts: keep the better-evidenced number per game, not the first.
+    # counts_src must end up naming the source that actually justifies
+    # the surviving numbers. Taking it from whichever row happened to be
+    # the survivor produced entries labelled counts_src="ziv" whose only
+    # remaining count came from bemanicn, which trips the publish-rule
+    # assertion further down (correctly - the label would be a lie).
+    gc = dict(keep.get("game_counts") or {})
+    ce = dict(keep.get("count_evidence") or {})
+    src_of = {}
+    for slug in gc:
+        src_of[slug] = keep.get("counts_src")
+    for slug, n in (drop.get("game_counts") or {}).items():
+        their = (drop.get("count_evidence") or {}).get(slug)
+        if slug not in gc or _CE_RANK.get(their, 0) > _CE_RANK.get(
+                ce.get(slug), 0):
+            gc[slug] = n
+            src_of[slug] = drop.get("counts_src")
+            if their:
+                ce[slug] = their
+            else:
+                ce.pop(slug, None)
+    if gc:
+        keep["game_counts"] = gc
+        keep["count_evidence"] = {s: e for s, e in ce.items() if s in gc}
+        if not keep["count_evidence"]:
+            keep.pop("count_evidence")
+        # bemanicn publishes explicit quantities; prefer it whenever any
+        # surviving count came from there.
+        srcs = {s for s in src_of.values() if s}
+        keep["counts_src"] = ("bemanicn" if "bemanicn" in srcs
+                              else (sorted(srcs)[0] if srcs else None))
+    cm = dict(keep.get("cab_models") or {})
+    for slug, n in (drop.get("cab_models") or {}).items():
+        if slug not in cm or (cm[slug] is None and n is not None):
+            cm[slug] = n
+    if cm:
+        keep["cab_models"] = cm
+    # A real pin beats an approximated one; keep the caveat only if the
+    # surviving coordinate is still the approximate one.
+    if keep.get("approx") and not drop.get("approx") and drop.get("lat"):
+        keep["lat"], keep["lng"] = drop["lat"], drop["lng"]
+        keep.pop("approx", None)
+        keep.pop("approx_level", None)
+    for key in ("addr", "pref", "counts_src"):
+        if not keep.get(key) and drop.get(key):
+            keep[key] = drop[key]
+    na, nb = keep.get("notes") or "", drop.get("notes") or ""
+    if nb and nb not in na:
+        keep["notes"] = (na + " | " + nb) if na else nb
+    return keep
+
+
+def dedupe_china_colocated(entries, log, max_m=None, brand_only_m=None):
+    """Merge China entries that two sources listed as separate pins.
+
+    Runs on built entries rather than source units because the Chinese
+    sources publish no coordinates - see the call site. Returns a new
+    list; `entries` is not mutated in place beyond the survivors.
+    """
+    max_m = CN_MAX_M if max_m is None else max_m
+    brand_only_m = (CN_BRAND_ONLY_M if brand_only_m is None
+                    else brand_only_m)
+    idx = [i for i, a in enumerate(entries)
+           if a.get("country") == "China" and a.get("lat") is not None]
+    if not idx:
+        return entries
+    cell = 0.006          # ~660 m, so a 500 m ball fits the 3x3 window
+    grid = {}
+    for i in idx:
+        a = entries[i]
+        grid.setdefault((math.floor(a["lat"] / cell),
+                         math.floor(a["lng"] / cell)), []).append(i)
+    pairs = {}
+    for (cx, cy), members in grid.items():
+        cand = []
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                cand.extend(grid.get((cx + dx, cy + dy), ()))
+        for i in members:
+            ai = entries[i]
+            for j in cand:
+                if j <= i or (i, j) in pairs:
+                    continue
+                aj = entries[j]
+                dist = haversine_m(ai["lat"], ai["lng"],
+                                   aj["lat"], aj["lng"])
+                if dist > max_m:
+                    continue
+                # Distance is only evidence when the pins are real.
+                # 5.7k China rows have no published coordinate and sit on
+                # a district or city CENTROID, so two of them are 0.0 m
+                # apart by construction - "七彩天空杭州临安锦北宝龙店" and
+                # "七彩天空杭州临安青山湖宝龙店" are two different malls
+                # sharing one approximated point. Requiring at least one
+                # real pin means proximity means what the rule assumes.
+                both_approx = ai.get("approx") and aj.get("approx")
+                if both_approx and (ai.get("approx_level") != "address"
+                                    or aj.get("approx_level") != "address"):
+                    continue
+                ok, why = cn_same_venue_evidence(ai["name"], aj["name"])
+                if not ok:
+                    continue
+                if why != "landmark_agree" and dist > brand_only_m:
+                    continue
+                pairs[(i, j)] = (dist, why)
+    if not pairs:
+        return entries
+    # Union-find over entry indices, so a venue listed by three sources
+    # collapses to one pin rather than to two.
+    parent = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    # Closest first: when a chain has several shops in one mall, the
+    # tightest pair is the one most likely to be the true duplicate.
+    for (i, j), (dist, why) in sorted(pairs.items(),
+                                      key=lambda kv: kv[1][0]):
+        ri, rj = find(i), find(j)
+        if ri == rj:
+            continue
+        parent[rj] = ri
+        log.append({"rule": "china_colocated", "evidence": why,
+                    "distance_m": round(dist, 1),
+                    "a": {"name": entries[i]["name"],
+                          "addr": entries[i].get("addr"),
+                          "src": entries[i].get("src")},
+                    "b": {"name": entries[j]["name"],
+                          "addr": entries[j].get("addr"),
+                          "src": entries[j].get("src")}})
+    clusters = {}
+    for i in list(parent):
+        clusters.setdefault(find(i), []).append(i)
+    dropped = set()
+    for root, members in clusters.items():
+        if len(members) < 2:
+            continue
+        # The survivor is the row with the most sources, then the one
+        # with a real (non-approximate) pin, then the longest name -
+        # which in this data is the one that spells out the branch.
+        members.sort(key=lambda i: (-len(entries[i].get("src") or []),
+                                    bool(entries[i].get("approx")),
+                                    -len(entries[i]["name"] or "")))
+        keep = entries[members[0]]
+        for i in members[1:]:
+            _merge_two_china(keep, entries[i])
+            dropped.add(i)
+    return [a for i, a in enumerate(entries) if i not in dropped]
 
 
 # -------------------------------------------------------------------- merge -
@@ -1972,6 +2424,36 @@ def run(raw_dir, out_dir, updated=None):
               % (len(approx_log), lv.get("district", 0), lv.get("city", 0)),
               file=sys.stderr)
     # --- end China approximate placement ------------------------------
+
+    # (n) China co-located dedupe, SECOND pass.
+    #
+    # cluster_units() cannot do this one. Both Chinese sources are
+    # coordinate-less by construction, so at clustering time these rows
+    # have no lat/lng at all and every distance-based rule silently
+    # skips them; their coordinates only exist after geocode_cn above.
+    # That is why the reported bug survived every earlier fix: the tier
+    # that should have caught it was structurally blind to China.
+    #
+    # So the dedupe runs here, on built entries, and merges them with
+    # merge_entries() - a union, not a pick-one - so no games, counts,
+    # links or photos are lost.
+    cn_log = []
+    ordered = dedupe_china_colocated(ordered, cn_log)
+    if cn_log:
+        by = {}
+        for rec in cn_log:
+            by[rec["evidence"]] = by.get(rec["evidence"], 0) + 1
+        print("merge: china_colocated merged %d duplicate China pins (%s)"
+              % (len(cn_log),
+                 ", ".join("%s=%d" % kv for kv in sorted(by.items()))),
+              file=sys.stderr)
+        merge_decisions.extend(cn_log)
+        # ids were assigned before this pass, so renumber. Nothing keyed
+        # to an id survives this function, and several joins downstream
+        # (photos, manual China coords) key on source URLs precisely
+        # because ids are not stable across builds.
+        for i, a in enumerate(ordered, 1):
+            a["id"] = i
 
     # ------- validation (hard fails) -------
     for a in ordered:

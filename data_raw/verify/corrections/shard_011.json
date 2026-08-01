@@ -1,0 +1,1281 @@
+{
+  "shard": 11,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (Inertia JSON, all 79 BCN-linked shops in shard)",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (official 舞萌DX store list; 440 Guangdong entries)",
+    "https://wc.wahlap.net/maidx/location/index.html (WAHLAP locator UI referencing the API)",
+    "Cross-check against full data/arcades.json China GD maimai coverage (799 app vs 440 official; all 440 official present somewhere in full map)"
+  ],
+  "corrections": [
+    {
+      "id": 895,
+      "name": "1号机长 化州万达",
+      "field": "other",
+      "current": "separate venue id 895 (wahlap-sourced twin of 884)",
+      "proposed": "merge into id 884; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=1号机长超乐场茂名化州店; address=广东省茂名市化州市万达广场三楼1号机长. BCN: 1号机长化州万达店 / 万达广场(茂名化州店)三楼 / status=1 / maimai_dx qty=1",
+      "note": "Near-duplicate of id 884 (1号机长 化州万达). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 884 (richer game list) and merging wahlap source into it; remove or hide id 895.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 971,
+      "name": "ALL IN 深圳国贸",
+      "field": "other",
+      "current": "separate venue id 971 (wahlap-sourced twin of 970)",
+      "proposed": "merge into id 970; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=ALL IN极限潮玩馆深圳罗湖国贸广场二期店; address=深圳市罗湖区南湖街道嘉北社区南湖路3007号国贸 广场（二期）二层F2-01. BCN: ALL IN 次元电玩城 / 国贸商业大厦2f / maimai_dx=2,chunithm=2,taiko=1",
+      "note": "Near-duplicate of id 970 (ALL IN 深圳国贸). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 970 (richer game list) and merging wahlap source into it; remove or hide id 971.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1064,
+      "name": "FUN VALLEY 星寰",
+      "field": "other",
+      "current": "separate venue id 1064 (wahlap-sourced twin of 1065)",
+      "proposed": "merge into id 1065; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=FUN VALLEY潮玩广州越秀侨光西路店; address=广东省广州市越秀区侨光西路11号星寰国际商业中心三楼L3-01-1. BCN: FUN WLLEY星寰店 / 侨光西路11号星寰国际商业中心3层 / maimai_dx=3,chunithm=2,taiko=1",
+      "note": "Near-duplicate of id 1065 (FUN VALLEY 星寰). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1065 (richer game list) and merging wahlap source into it; remove or hide id 1064.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1089,
+      "name": "G2街区 钻汇星城",
+      "field": "other",
+      "current": "separate venue id 1089 (wahlap-sourced twin of 1094)",
+      "proposed": "merge into id 1094; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=G2街区广州番禺钻汇星城店; address=广州市番禺区市桥街桥兴大道134号钻汇星城负一层B区1077 1078 1079铺. BCN: G2街区潮玩娱乐-钻汇星城店 / maimai_dx qty=2",
+      "note": "Near-duplicate of id 1094 (G2街区 钻汇星城). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1094 (richer game list) and merging wahlap source into it; remove or hide id 1089.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1149,
+      "name": "HOP-DX 前海天地",
+      "field": "other",
+      "current": "separate venue id 1149 (wahlap-sourced twin of 1148)",
+      "proposed": "merge into id 1148; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=HOP-DX深圳中兴店; address=深圳市宝安区新安街道宝安中心前海HOP天地负一楼 HOP-DX. BCN: HOP-DX前海天地店 / maimai_dx=1,gitadora=1",
+      "note": "Near-duplicate of id 1148 (HOP-DX 前海天地). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1148 (richer game list) and merging wahlap source into it; remove or hide id 1149.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1179,
+      "name": "kikis其趣 丽影广场",
+      "field": "other",
+      "current": "separate venue id 1179 (wahlap-sourced twin of 1177)",
+      "proposed": "merge into id 1177; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=Kikis其趣客村丽影店; address=广东省广州市海珠区客村地铁站D出口丽影广场三楼Kiki’s其趣. BCN: kikisland其趣丽影广场店 / maimai_dx=1,taiko=2",
+      "note": "Near-duplicate of id 1177 (kikis其趣 丽影广场). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1177 (richer game list) and merging wahlap source into it; remove or hide id 1179.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1181,
+      "name": "kikis其趣 同和/金铂",
+      "field": "other",
+      "current": "separate venue id 1181 (wahlap-sourced twin of 1178)",
+      "proposed": "merge into id 1178; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=kikis其趣游乐广州白云店; address=广东省广州市白云区同和大道金铂天地2层kikis其趣游乐体验世界. BCN: Kikis其趣同和店 / 同和大街1号金铂广场A座2层 / maimai_dx=1,chunithm=2,taiko=1",
+      "note": "Near-duplicate of id 1178 (kikis其趣 同和/金铂). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1178 (richer game list) and merging wahlap source into it; remove or hide id 1181.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1182,
+      "name": "kikis其趣 白云湖金铂",
+      "field": "other",
+      "current": "separate venue id 1182 (wahlap-sourced twin of 1183)",
+      "proposed": "merge into id 1183; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=kikis其趣游玩广州白云湖金铂广场店; address=广东省广州市白云区机场路2829号白云湖金铂天地. BCN: KiKis其趣白云湖金铂中心店 / maimai_dx=1,taiko=1",
+      "note": "Near-duplicate of id 1183 (kikis其趣 白云湖金铂). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1183 (richer game list) and merging wahlap source into it; remove or hide id 1182.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1219,
+      "name": "OWANGE 横琴华发商都",
+      "field": "other",
+      "current": "separate venue id 1219 (wahlap-sourced twin of 1218)",
+      "proposed": "merge into id 1218; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=OWANGE运动超乐场珠海横琴华发商都店; address=广东省珠海市横琴合作区横琴华发商都南区二楼OWANGE运动超乐场. BCN: OWANGE运动超乐场 / maimai_dx=2,chunithm=2,taiko=1",
+      "note": "Near-duplicate of id 1218 (OWANGE 横琴华发商都). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1218 (richer game list) and merging wahlap source into it; remove or hide id 1219.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1320,
+      "name": "Top City 佛山岭南/祖庙",
+      "field": "other",
+      "current": "separate venue id 1320 (wahlap-sourced twin of 1321)",
+      "proposed": "merge into id 1321; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=Top City佛山祖庙店; address=广东省佛山市祖庙街道祖庙路29NOVA岭南站6楼Top City. BCN: Top City家庭主题乐园(佛山岭南店) / maimai_dx=3,taiko=1",
+      "note": "Near-duplicate of id 1321 (Top City 佛山岭南/祖庙). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1321 (richer game list) and merging wahlap source into it; remove or hide id 1320.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1412,
+      "name": "一同潮玩 石厦/福田马成",
+      "field": "other",
+      "current": "separate venue id 1412 (wahlap-sourced twin of 1411)",
+      "proposed": "merge into id 1411; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=一同潮玩深圳福田店; address=广东省深圳市福田区石夏北二街89号马成时代广场. BCN: 一同潮玩深圳石厦时代广场店 / 石厦北二街89号马成时代广场2层 / maimai_dx=1",
+      "note": "Near-duplicate of id 1411 (一同潮玩 石厦/福田马成). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1411 (richer game list) and merging wahlap source into it; remove or hide id 1412.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1052,
+      "name": "E码潮玩 北滘商业广场",
+      "field": "other",
+      "current": "separate venue id 1052 (wahlap-sourced twin of 1884)",
+      "proposed": "merge into id 1884; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=e码潮玩佛山顺德北滘店; address=广东省佛山市顺德区北滘商业广场3楼e码潮玩. BCN: 北滘商业广场E码潮玩 / maimai_dx=1",
+      "note": "Near-duplicate of id 1884 (E码潮玩 北滘商业广场). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1884 (richer game list) and merging wahlap source into it; remove or hide id 1052.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1632,
+      "name": "乐玩客 罗定天润",
+      "field": "other",
+      "current": "separate venue id 1632 (wahlap-sourced twin of 1635)",
+      "proposed": "merge into id 1635; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=乐玩客天润泰德广场店; address=广东省云浮市罗定市天润广场三楼乐玩客. BCN: 乐玩客泰德天润广场店 / maimai_dx=1",
+      "note": "Near-duplicate of id 1635 (乐玩客 罗定天润). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1635 (richer game list) and merging wahlap source into it; remove or hide id 1632.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1633,
+      "name": "乐玩客 普宁万泰新天地",
+      "field": "other",
+      "current": "separate venue id 1633 (wahlap-sourced twin of 1648)",
+      "proposed": "merge into id 1648; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=乐玩客揭阳普宁新天地店; address=广东揭阳市普宁市万泰新天地2楼乐玩客潮玩城. BCN: 乐玩客潮玩城（万泰新天地店） / maimai_dx=1",
+      "note": "Near-duplicate of id 1648 (乐玩客 普宁万泰新天地). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1648 (richer game list) and merging wahlap source into it; remove or hide id 1633.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1678,
+      "name": "乐趣时代 坦洲优越城",
+      "field": "other",
+      "current": "separate venue id 1678 (wahlap-sourced twin of 1682)",
+      "proposed": "merge into id 1682; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=乐趣时代中山坦洲店; address=广东省中山市坦洲镇优越城购物中心3楼乐趣时代1.2卡. BCN: 乐趣时代（坦洲优越城店） / maimai_dx=1",
+      "note": "Near-duplicate of id 1682 (乐趣时代 坦洲优越城). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1682 (richer game list) and merging wahlap source into it; remove or hide id 1678.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1680,
+      "name": "乐趣时代 汕头星汇",
+      "field": "other",
+      "current": "separate venue id 1680 (wahlap-sourced twin of 1684)",
+      "proposed": "merge into id 1684; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=乐趣时代汕头星汇店; address=广东省汕头市东厦北路175号. BCN: 乐趣时代（汕头星汇国际广场店） / maimai_dx=2,chunithm=2",
+      "note": "Near-duplicate of id 1684 (乐趣时代 汕头星汇). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1684 (richer game list) and merging wahlap source into it; remove or hide id 1680.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1818,
+      "name": "全境方舟 南沙悦方城",
+      "field": "other",
+      "current": "separate venue id 1818 (wahlap-sourced twin of 1819)",
+      "proposed": "merge into id 1819; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=全境方舟广州南沙店; address=广东省广州市南沙区黄阁镇悦方城3楼. BCN: 全境方舟悦方城店 / maimai_dx=1,taiko=1",
+      "note": "Near-duplicate of id 1819 (全境方舟 南沙悦方城). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1819 (richer game list) and merging wahlap source into it; remove or hide id 1818.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1820,
+      "name": "全境方舟 深圳东门信和",
+      "field": "other",
+      "current": "separate venue id 1820 (wahlap-sourced twin of 1823)",
+      "proposed": "merge into id 1823; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=全境方舟深圳东门店; address=广东省深圳市罗湖区东门街道城东社区东门中路2010号信和东门商厦201（2楼整层）. BCN: 全境方舟（信和·东门商厦店） / maimai_dx=1,taiko(niji)=1,taiko_old=1",
+      "note": "Near-duplicate of id 1823 (全境方舟 深圳东门信和). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1823 (richer game list) and merging wahlap source into it; remove or hide id 1820.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1821,
+      "name": "全境方舟 深圳天河城",
+      "field": "other",
+      "current": "separate venue id 1821 (wahlap-sourced twin of 1824)",
+      "proposed": "merge into id 1824; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=全境方舟深圳罗湖天河城店; address=广东省深圳市罗湖区东晓街道东晓社区布心路2018号粤海置地深圳天河城N205、N206、N207. BCN: 全境方舟（深圳天河城店） / maimai_dx=1,taiko=1",
+      "note": "Near-duplicate of id 1824 (全境方舟 深圳天河城). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1824 (richer game list) and merging wahlap source into it; remove or hide id 1821.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1843,
+      "name": "冰河世纪 东莞华南Mall",
+      "field": "other",
+      "current": "separate venue id 1843 (wahlap-sourced twin of 1842)",
+      "proposed": "merge into id 1842; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=冰河世纪动漫城东莞华南摩尔店; address=广东省东莞市万江区华南摩尔D区三楼冰河世纪动漫城. BCN: 冰河世纪动漫城 东莞华南Mall店 / maimai_dx=1,taiko_old=1",
+      "note": "Near-duplicate of id 1842 (冰河世纪 东莞华南Mall). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1842 (richer game list) and merging wahlap source into it; remove or hide id 1843.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1870,
+      "name": "动漫の族 河源坚基",
+      "field": "other",
+      "current": "separate venue id 1870 (wahlap-sourced twin of 1873)",
+      "proposed": "merge into id 1873; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=动漫e族河源坚基广场店; address=广东省河源市源城区东埔街道越王大道坚基购物中心2F中庭动漫の族. BCN: 动漫の族 / maimai_dx=2,taiko=1",
+      "note": "Near-duplicate of id 1873 (动漫の族 河源坚基). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1873 (richer game list) and merging wahlap source into it; remove or hide id 1870.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1872,
+      "name": "动漫の族 电白万达",
+      "field": "other",
+      "current": "separate venue id 1872 (wahlap-sourced twin of 1874)",
+      "proposed": "merge into id 1874; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=动漫e族茂名电白万达广场店; address=广东省茂名市电白区万达广场3楼. BCN: 动漫の族（电白万达店） / maimai_dx=2,taiko=1",
+      "note": "Near-duplicate of id 1874 (动漫の族 电白万达). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1874 (richer game list) and merging wahlap source into it; remove or hide id 1872.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1904,
+      "name": "千机幻城 番禺四海城",
+      "field": "other",
+      "current": "separate venue id 1904 (wahlap-sourced twin of 1903)",
+      "proposed": "merge into id 1903; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=千机幻城番禺四海城店; address=广东省广州市番禺区汉溪大道东390号四海城商业广场东区F2层01铺. BCN: 千机幻城 / maimai_dx=1,chunithm=2,taiko=2",
+      "note": "Near-duplicate of id 1903 (千机幻城 番禺四海城). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1903 (richer game list) and merging wahlap source into it; remove or hide id 1904.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2030,
+      "name": "反斗乐园 南山海岸城",
+      "field": "other",
+      "current": "separate venue id 2030 (wahlap-sourced twin of 2026)",
+      "proposed": "merge into id 2026; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3545",
+      "evidence_quote": "BCN: 反斗乐园π海岸城店 / chunithm=2,taiko=2,InitialD=4; coords identical to wahlap-only 2030. Same lat/lng as wahlap-only twin; not on maimai WAHLAP list (venue is CHUNITHM/taiko focused).",
+      "note": "Near-duplicate of id 2026 (反斗乐园 南山海岸城). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 2026 (richer game list) and merging wahlap source into it; remove or hide id 2030.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1281,
+      "name": "super101 湛江印象汇",
+      "field": "other",
+      "current": "separate venue id 1281 (wahlap-sourced twin of 1274)",
+      "proposed": "merge into id 1274; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=super101湛江赤坎店; address=广东省湛江市赤坎区印象汇三楼. BCN: super101壹零壹潮漫电玩 / 印象汇 L3 / maimai_dx=1",
+      "note": "Near-duplicate of id 1274 (super101 湛江印象汇). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1274 (richer game list) and merging wahlap source into it; remove or hide id 1281.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1537,
+      "name": "丰华动漫 湛江印象汇",
+      "field": "other",
+      "current": "separate venue id 1537 (wahlap-sourced twin of 1536)",
+      "proposed": "merge into id 1536; drop duplicate pin",
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP official: arcadeName=丰华动漫湛江赤坎店; address=广东省湛江市赤坎区椹川大道376号湛江印象汇B1-29~33号丰华动漫. BCN: 丰华动漫城 / 印象汇负一楼 / maimai_dx=1",
+      "note": "Near-duplicate of id 1536 (丰华动漫 湛江印象汇). Official WAHLAP maimai locator and/or BemaniCN point to the same place. Coords are within ~100m. Prefer keeping BCN-linked id 1536 (richer game list) and merging wahlap source into it; remove or hide id 1537.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1274,
+      "name": "super101壹零壹潮漫电玩",
+      "field": "other",
+      "current": "same mall pin cluster as 丰华动漫城 (1536/1537) may look like one venue",
+      "proposed": "keep as distinct from 丰华动漫: WAHLAP lists both super101 (印象汇三楼) and 丰华动漫 (印象汇B1) separately",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP GD entries: super101湛江赤坎店 | 广东省湛江市赤坎区印象汇三楼; 丰华动漫湛江赤坎店 | 广东省湛江市赤坎区椹川大道376号湛江印象汇B1-29~33号丰华动漫",
+      "note": "Do not merge super101 with 丰华. They are different floors of 印象汇. Only merge each with its own wahlap/bcn twin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1677,
+      "name": "乐趣时代·智趣乐园（石岐大信店）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "chunithm": 1,
+        "jubeat": 2
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 1,
+        "jubeat": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/692",
+      "evidence_quote": "arcades: title_id=1 maimai_dx quantity=1 version=舞萌DX2026; title_id=3 chunithm quantity=1; title_id=34 jubeat_cn 音乐魔方 quantity=2; updated_at=2026-07-31T09:24:25Z",
+      "note": "Live BemaniCN qty for maimai is 1 (app has 2). jubeat on BCN is title_id 34 音乐魔方 (CN jubeat family), not JP jubeat; counts still 2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1331,
+      "name": "Unity Power窝",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE (offline/title_id=2) plus 1x maimai_dx 国服; ongeki Re:Fresh"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4049",
+      "evidence_quote": "title_id=2 game=maimai version=Finale quantity=1; title_id=1 maimai_dx version=国服 quantity=1; title_id=27 ongeki version=Re:Fresh quantity=1; updated_at=2026-03-30",
+      "note": "BemaniCN still lists a FiNALE (old maimai network) cabinet alongside DX. Do not treat FiNALE as live network maimai; it is a separate offline/old cab. App game_counts maimai_dx=1 is correct for DX only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1519,
+      "name": "东方棕泉深圳福田店",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版12 (title_id=15, not Nijiiro)",
+        "other": "WACCA 音舞Ver.2 (title_id=17)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6339",
+      "evidence_quote": "title_id=15 taiko_old version=12亚洲版 quantity=1; title_id=17 wacca version=音舞Ver.2 quantity=1; title_id=1 maimai_dx quantity=1; updated_at=2026-06-28",
+      "note": "App lists taiko without generation. BCN says old-gen taiko (title_id 15), not 虹版/Nijiiro (31). other correctly covers WACCA.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1823,
+      "name": "全境方舟（信和·东门商厦店）",
+      "field": "cab_models",
+      "current": {
+        "taiko": 2
+      },
+      "proposed": {
+        "taiko_nijiiro": 1,
+        "taiko_old": 1,
+        "note": "old unit currently powered off per BCN comment"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "title_id=31 taiko version=国行虹版 quantity=1; title_id=15 taiko_old version=12亚 quantity=1 comment='目前关机'; updated_at=2026-07-01",
+      "note": "App game_counts taiko=2 combines Nijiiro + old Asian 12. One of the two (old) is reported powered off. Prefer showing 1 live Nijiiro + 1 old/off.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1677,
+      "name": "乐趣时代·智趣乐园（石岐大信店）",
+      "field": "cab_models",
+      "current": {
+        "jubeat": "generic"
+      },
+      "proposed": {
+        "jubeat": "音乐魔方 (CN jubeat / title_id=34), not JP jubeat"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/692",
+      "evidence_quote": "title_id=34 version=音乐魔方 quantity=2 comment='可店内匹配，首发新机手感不错'",
+      "note": "China-local jubeat variant (音乐魔方). If the app maps jubeat_cn to jubeat that is fine for filter purposes, but cab_models should say 音乐魔方.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 977,
+      "name": "A级玩家",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 亚洲版12 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7099",
+      "evidence_quote": "title_id=15 taiko_old version=亚洲版12 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 978,
+      "name": "baby go梦幻乐园",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 亚洲版12 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3859",
+      "evidence_quote": "title_id=15 taiko_old version=亚洲版12 quantity=2",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1340,
+      "name": "V-Play超能星客",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 14 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5422",
+      "evidence_quote": "title_id=15 taiko_old version=14 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1451,
+      "name": "七彩糖亲子乐园",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 12亚 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2554",
+      "evidence_quote": "title_id=15 taiko_old version=12亚 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1560,
+      "name": "乐动乐享世博店",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 14 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/911",
+      "evidence_quote": "title_id=15 taiko_old version=14 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1842,
+      "name": "冰河世纪动漫城 东莞华南Mall店",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 12亚 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1842",
+      "evidence_quote": "title_id=15 taiko_old version=12亚 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1847,
+      "name": "凯泰·KTxBingo美式社交主题电玩城",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 旧 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7010",
+      "evidence_quote": "title_id=15 taiko_old version=旧 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1919,
+      "name": "南国游乐场（井岸店）",
+      "field": "cab_models",
+      "current": {
+        "taiko": "unspecified (app lists as taiko)"
+      },
+      "proposed": {
+        "taiko": "旧代/亚洲版 11亚 (BemaniCN title_id=15), not Nijiiro"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/147",
+      "evidence_quote": "title_id=15 taiko_old version=11亚 quantity=1",
+      "note": "App collapses old taiko into game key taiko. Veterans should know this is not 虹版/Nijiiro. Quantity matches app unless noted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1483,
+      "name": "万达宝贝王（虎门万达店）",
+      "field": "location",
+      "current": {
+        "addr": "在二楼喵",
+        "lat": 23.124856,
+        "lng": 113.715629
+      },
+      "proposed": {
+        "addr": "东莞市虎门镇连升北路388号万达广场（楼层见现场；BCN community note says 门口/店外 with 舞立方）",
+        "note": "coords appear Dongguan-area but address text is a joke placeholder"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3886",
+      "evidence_quote": "name=万达宝贝王（虎门万达店） address=在二楼喵 comment mentions 虎门万达 / 三楼大玩家装修 / 舞萌在店门口; city_code=441900 (Dongguan); updated 2026-07-02",
+      "note": "Address string is unusable ('在二楼喵'). BemaniCN itself has the same bad address. Official WAHLAP maimai list has 宝贝王东莞厚街万达店 but NOT a 虎门万达 宝贝王 entry under that name; BCN community still asserts a maimai at 虎门万达 as of 2026-06-30. Geocode should be rechecked against 虎门万达 (连升北路) rather than 厚街万达. Confidence likely, not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1536,
+      "name": "丰华动漫城",
+      "field": "location",
+      "current": {
+        "addr": "印象汇负一楼"
+      },
+      "proposed": {
+        "addr": "广东省湛江市赤坎区椹川大道376号湛江印象汇B1-29~33号丰华动漫"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "丰华动漫湛江赤坎店 | 广东省湛江市赤坎区椹川大道376号湛江印象汇B1-29~33号丰华动漫",
+      "note": "App address is floor-only. Official WAHLAP has full address. BCN shop 2617 still says 印象汇负一楼.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 884,
+      "name": "1号机长化州万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2650",
+      "evidence_quote": "start_time=10 end_time=22; comment notes 节假日双休延长至22:30; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 968,
+      "name": "AKIBAGO深圳罗湖新白马·次元店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6896",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 970,
+      "name": "ALL IN 次元电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7190",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 982,
+      "name": "BitCity大中华广场(次元小镇)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1535",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1050,
+      "name": "E号玩家顺德大融城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/502",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1065,
+      "name": "FUN WLLEY星寰店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2889",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1094,
+      "name": "G2街区潮玩娱乐-钻汇星城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6940",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1148,
+      "name": "HOP-DX前海天地店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5418",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1177,
+      "name": "kikisland其趣丽影广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6129",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1178,
+      "name": "Kikis其趣同和店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1685",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1183,
+      "name": "KiKis其趣白云湖金铂中心店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5370",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1203,
+      "name": "MAGIC畅想城（番禺亚运城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5985",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1218,
+      "name": "OWANGE运动超乐场",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5235",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1288,
+      "name": "Super101茂南万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3075",
+      "evidence_quote": "start_time=9 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1321,
+      "name": "Top City家庭主题乐园(佛山岭南店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3956",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1322,
+      "name": "Top City家庭主题乐园(荔湾领展店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5867",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1329,
+      "name": "UFOCENTER广州从化欣荣店",
+      "field": "hours",
+      "current": null,
+      "proposed": "14:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1683",
+      "evidence_quote": "start_time=14 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1399,
+      "name": "一号玩家阳江阳西凯旋店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5671",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1462,
+      "name": "万达大玩家（大亚湾万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5294",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1491,
+      "name": "三华里の漫音屋（广州花都店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2890",
+      "evidence_quote": "start_time=11 end_time=23; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1519,
+      "name": "东方棕泉深圳福田店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6339",
+      "evidence_quote": "start_time=10 end_time=24; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1671,
+      "name": "乐缤纷游艺室次元嘉年华（原疯狂牛仔城上下九店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/284",
+      "evidence_quote": "start_time=11 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1677,
+      "name": "乐趣时代·智趣乐园（石岐大信店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/692",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1684,
+      "name": "乐趣时代（汕头星汇国际广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6084",
+      "evidence_quote": "start_time=10 end_time=23; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1695,
+      "name": "乐逸超乐场广州增城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2360",
+      "evidence_quote": "start_time=10 end_time=24; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1715,
+      "name": "九州城梦乐园阳江阳东店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3184",
+      "evidence_quote": "start_time=9 end_time=23; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1794,
+      "name": "元气满满广州白云万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6384",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1817,
+      "name": "全境方舟佛山三水店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5178",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1822,
+      "name": "全境方舟萝岗万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/669",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1823,
+      "name": "全境方舟（信和·东门商厦店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "start_time=10 end_time=23; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1824,
+      "name": "全境方舟（深圳天河城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4065",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1826,
+      "name": "全民头号玩家虎门万达广场店（原大玩家）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1215",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1838,
+      "name": "冒险岛深圳南山方大城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/296",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1873,
+      "name": "动漫の族",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3857",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1874,
+      "name": "动漫の族（电白万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6159",
+      "evidence_quote": "start_time=9 end_time=23; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1903,
+      "name": "千机幻城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5444",
+      "evidence_quote": "start_time=10 end_time=24; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1973,
+      "name": "卡通尼东莞大朗店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1927",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2026,
+      "name": "反斗乐园π海岸城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3545",
+      "evidence_quote": "start_time=10 end_time=22; source=BemaniCN shop props start_time/end_time (community-maintained, not chain-official)",
+      "note": "App hours_text is null. BemaniCN stores open/close hours as integers. Treat as likely, not certain: community-edited and sometimes stale. Holiday exceptions may apply.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 884,
+      "name": "1号机长化州万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "4币/局; 代币约1元/币 (BCN price=1) => ~4元/局 typical",
+        "note": "comment says 活动币 0.3-0.4r also common"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2650",
+      "evidence_quote": "maimai_dx coin=4; shop price=1 (元/币); comment mentions 活动币多 0.3-0.4r",
+      "note": "BCN price field is yuan per token/coin; games[].coin is coins per credit. Real cost = price * coin, but bulk/activity rates often cheaper. Not chain-official.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1677,
+      "name": "乐趣时代·智趣乐园（石岐大信店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "9币/局",
+        "chunithm": "6币/局",
+        "jubeat_cn": "8币/局",
+        "token": "约1.5元/币 (BCN price=1.5)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/692",
+      "evidence_quote": "maimai coin=9, chunithm coin=6, jubeat_cn coin=8; price=1.5",
+      "note": "BCN price field is yuan per token/coin; games[].coin is coins per credit. Real cost = price * coin, but bulk/activity rates often cheaper. Not chain-official.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1823,
+      "name": "全境方舟（信和·东门商厦店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5币/局",
+        "taiko_nijiiro": "14币/局",
+        "taiko_old": "3币/局",
+        "token": "约1元/币"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3172",
+      "evidence_quote": "maimai coin=5, taiko nijiiro coin=14, taiko_old coin=3; price=1.0",
+      "note": "BCN price field is yuan per token/coin; games[].coin is coins per credit. Real cost = price * coin, but bulk/activity rates often cheaper. Not chain-official.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1403,
+      "name": "一同潮玩AcePlay东莞店",
+      "field": "other",
+      "current": "一同潮玩AcePlay东莞店",
+      "proposed": "一同潮玩AcePlay塘厦天虹店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1259",
+      "evidence_quote": "name=一同潮玩AcePlay塘厦天虹店",
+      "note": "App name drops 塘厦/天虹; city-level '东莞店' is ambiguous. BCN name is more precise.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1050,
+      "name": "E号玩家顺德大融城店",
+      "field": "other",
+      "current": "E号玩家顺德大融城店",
+      "proposed": "E号玩家（原大玩家顺德大融城店）",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/502",
+      "evidence_quote": "name=E号玩家（原大玩家顺德大融城店） updated_at=2026-02-24",
+      "note": "Rename/rebrand from 大玩家 reflected on BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1817,
+      "name": "全境方舟佛山三水店",
+      "field": "other",
+      "current": "全境方舟佛山三水店",
+      "proposed": "全境方舟三水万达店",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5178",
+      "evidence_quote": "name=全境方舟三水万达店",
+      "note": "BCN name includes 万达 which matches the actual mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1065,
+      "name": "FUN WLLEY星寰店",
+      "field": "other",
+      "current": "FUN WLLEY星寰店",
+      "proposed": "FUN VALLEY星寰店 / FUN VALLEY潮玩广州越秀侨光西路店",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=FUN VALLEY潮玩广州越秀侨光西路店 address=...星寰国际商业中心三楼L3-01-1",
+      "note": "App/BCN name has typo WLLEY instead of VALLEY. Official WAHLAP spelling is VALLEY.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1019,
+      "name": "D 窝",
+      "field": "status",
+      "current": "listed open (app)",
+      "proposed": "still listed open on BemaniCN (status=1); NOT present on official WAHLAP 舞萌DX store locator (private/activity-room style venues often omitted)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4318",
+      "evidence_quote": "BemaniCN status=1 counts=maimai_dx=1,chunithm=2,taiko=1; cross-check: not found as a named entry in WAHLAP official maimai GD list (440 stores) via name/address search on 2026-07-31",
+      "note": "Absence from official WAHLAP does not prove closed: private 窝 venues are frequently off the public locator. Do not remove solely for that reason. BCN still marks open. Hours on BCN for these are often 0-24 or overnight and may mean by appointment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1126,
+      "name": "GuNe火窝",
+      "field": "status",
+      "current": "listed open (app)",
+      "proposed": "still listed open on BemaniCN (status=1); NOT present on official WAHLAP 舞萌DX store locator (private/activity-room style venues often omitted)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2780",
+      "evidence_quote": "BemaniCN status=1 counts=maimai_dx=1,chunithm=2,ongeki=1; cross-check: not found as a named entry in WAHLAP official maimai GD list (440 stores) via name/address search on 2026-07-31",
+      "note": "Absence from official WAHLAP does not prove closed: private 窝 venues are frequently off the public locator. Do not remove solely for that reason. BCN still marks open. Hours on BCN for these are often 0-24 or overnight and may mean by appointment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1193,
+      "name": "LBF活动室",
+      "field": "status",
+      "current": "listed open (app)",
+      "proposed": "still listed open on BemaniCN (status=1); NOT present on official WAHLAP 舞萌DX store locator (private/activity-room style venues often omitted)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7138",
+      "evidence_quote": "BemaniCN status=1 counts=maimai_dx=2,chunithm=1,sdvx=1; cross-check: not found as a named entry in WAHLAP official maimai GD list (440 stores) via name/address search on 2026-07-31",
+      "note": "Absence from official WAHLAP does not prove closed: private 窝 venues are frequently off the public locator. Do not remove solely for that reason. BCN still marks open. Hours on BCN for these are often 0-24 or overnight and may mean by appointment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1331,
+      "name": "Unity Power窝",
+      "field": "status",
+      "current": "listed open (app)",
+      "proposed": "still listed open on BemaniCN (status=1); NOT present on official WAHLAP 舞萌DX store locator (private/activity-room style venues often omitted)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4049",
+      "evidence_quote": "BemaniCN status=1 counts=maimai_dx=1,ongeki=1,maimai_Finale=1; cross-check: not found as a named entry in WAHLAP official maimai GD list (440 stores) via name/address search on 2026-07-31",
+      "note": "Absence from official WAHLAP does not prove closed: private 窝 venues are frequently off the public locator. Do not remove solely for that reason. BCN still marks open. Hours on BCN for these are often 0-24 or overnight and may mean by appointment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1352,
+      "name": "WIN窝 | 赢窝",
+      "field": "status",
+      "current": "listed open (app)",
+      "proposed": "still listed open on BemaniCN (status=1); NOT present on official WAHLAP 舞萌DX store locator (private/activity-room style venues often omitted)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6376",
+      "evidence_quote": "BemaniCN status=1 counts=maimai_dx=3,chunithm=1; cross-check: not found as a named entry in WAHLAP official maimai GD list (440 stores) via name/address search on 2026-07-31",
+      "note": "Absence from official WAHLAP does not prove closed: private 窝 venues are frequently off the public locator. Do not remove solely for that reason. BCN still marks open. Hours on BCN for these are often 0-24 or overnight and may mean by appointment.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1171,
+      "name": "Joypolis广州华夏世嘉都市乐园",
+      "field": "status",
+      "current": "listed with maimai_dx x2",
+      "proposed": "BemaniCN still status=1 with maimai_dx qty=2 (updated 2026-03-26); not found on official WAHLAP 舞萌DX GD list under Joypolis/钧明/华夏世嘉 names",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1263",
+      "evidence_quote": "status=1 counts={'maimai_dx': 2, 'title_26': 2} updated_at=2026-03-26T09:31:40Z; hours 11-18",
+      "note": "Could not confirm on official WAHLAP locator. May be closed, renamed, or machines removed from network. Needs on-site or newer community confirmation. Confidence unverified for 'still has maimai today'.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1908,
+      "name": "华和智慧天地",
+      "field": "status",
+      "current": "listed with maimai_dx x1",
+      "proposed": "BemaniCN status=1 maimai_dx=1 updated 2026-07-23; not found on official WAHLAP GD list under 华和/梅菉 names",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/4809",
+      "evidence_quote": "status=1 counts={'maimai_dx': 1} updated_at=2026-07-23T08:52:08Z address=梅菉沿江路华和智慧天地",
+      "note": "Recent BCN update but missing from official WAHLAP list is a conflict. Do not delete yet; flag for follow-up.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1483,
+      "name": "万达宝贝王（虎门万达店）",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3886",
+      "evidence_quote": "2026.6.30更新 SDVX已撤走，现只有舞立方和舞萌了... 由于三楼的大玩家正在转生装修，现在整个万达只有这一台舞萌了; maimai_dx quantity=1 version=CN 1.51-C",
+      "note": "Keep maimai. BCN community note 2026-06-30 says SDVX removed, maimai remains. Not on official WAHLAP under this exact shop name (possible 宝贝王 vs 大玩家 operator confusion at 虎门万达). Address still garbage (see location correction).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2026,
+      "name": "反斗乐园π海岸城店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3545",
+      "evidence_quote": "arcades: chunithm qty=2, taiko qty=2, title_26 (Initial D) qty=4; no title_id=1 maimai; updated 2026-07-27",
+      "note": "Confirmed no maimai on BCN. Official WAHLAP maimai list also has no 反斗乐园 at 南山海岸城 (only other 反斗 locations). App games list is correct. Twin id 2030 is wahlap-sourced chunithm-only duplicate pin.",
+      "checked_at": "2026-07-31"
+    }
+  ],
+  "summary": {
+    "region": "China / 广东 (115 venues in shard)",
+    "method": "Fetched live BemaniCN for every BCN-linked shop (79/79 status=1). Fetched official WAHLAP maimai national location API and filtered 广东 (440 stores). Matched shard maimai venues to official list; clustered near-duplicate WAHLAP+BCN pairs by coords (<120m) and shared mall/brand.",
+    "key_findings": [
+      "No BemaniCN shop in this shard reports status!=1 (none marked closed on BCN as of fetch).",
+      "26 near-duplicate pin pairs (wahlap-only + bemanicn row for same mall/store). Recommend merge into BCN-linked id.",
+      "super101 and 丰华动漫 at 湛江印象汇 are TWO real stores (L3 vs B1), both on official WAHLAP; do not merge across brands.",
+      "game_counts real mismatch found: id 1677 maimai_dx 2->1 per live BCN 2026-07-31.",
+      "Several taiko entries are old-gen (title_id 15), not Nijiiro; Unity Power窝 still lists a FiNALE cab alongside DX.",
+      "Address '在二楼喵' for id 1483 is unusable; WAHLAP lacks a clear 虎门万达宝贝王 maimai row.",
+      "Private 窝 venues (D窝/火窝/LBF/Unity/WIN) are BCN-open but absent from official WAHLAP locator; do not auto-delete.",
+      "Joypolis 华夏世嘉 and 华和智慧天地 conflict: BCN open vs missing from official WAHLAP; marked unverified.",
+      "Hours: app is null everywhere; BCN has start/end for most shops - filled likely hours for ~38 public mall venues; skipped nonsense 0-24 private-room values.",
+      "Missing venues: official WAHLAP has 440 GD maimai stores; full app already contains all 440 (this shard alone is only a slice of GD). No shard-local missing_venue additions required for maimai. CHUNITHM-only official list not publicly fetchable (401 without token)."
+    ],
+    "not_verified": [
+      "On-site open/closed for private 窝 and for Joypolis/华和 (no official WAHLAP hit).",
+      "Exact live coin prices after promotions (BCN coin*price is approximate).",
+      "CHUNITHM/ONGEKI official WAHLAP store lists (API returned invalid token).",
+      "Coordinate precision inside malls (approx:true expected for China).",
+      "Photo licensing beyond BCN thumbs already in app (n_images).",
+      "Whether id 1483 pin is 虎门万达 vs wrong Dongguan Wanda."
+    ]
+  }
+}

@@ -1,0 +1,700 @@
+{
+  "shard": 39,
+  "checked": 96,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11649",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4316",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2848",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7258",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5031",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4188",
+    "https://map.bemanicn.com/s/6485",
+    "https://map.bemanicn.com/s/3983",
+    "https://map.bemanicn.com/s/4087",
+    "https://map.bemanicn.com/s/6421",
+    "https://map.bemanicn.com/s/3048",
+    "https://map.bemanicn.com/s/5879",
+    "https://map.bemanicn.com/s/5216",
+    "https://map.bemanicn.com/s/4119",
+    "https://map.bemanicn.com/s/7201",
+    "https://map.bemanicn.com/s/4558",
+    "https://map.bemanicn.com/s/6340",
+    "https://map.bemanicn.com/s/4853",
+    "https://map.bemanicn.com/s/6682",
+    "https://map.bemanicn.com/s/2929",
+    "https://map.bemanicn.com/s/4909",
+    "https://map.bemanicn.com/s/2402",
+    "https://map.bemanicn.com/s/5099",
+    "https://nominatim.openstreetmap.org/search?q=Jianou%20Nanping%20Fujian%20China&format=json",
+    "https://www.wahlap.com/"
+  ],
+  "corrections": [
+    {
+      "id": 6393,
+      "name": "萌多拉都市幻想 Mengduola Urban Fantasy (建瓯建发悦城店)",
+      "field": "location",
+      "current": {
+        "lat": 32.687642525201,
+        "lng": 102.81176181517,
+        "approx": null,
+        "addr": "No. 2 Nanhuan Rd., Jianfa Yuecheng B1 Nanping City Jian'ou City, 353199, Nanping City"
+      },
+      "proposed": {
+        "lat": 27.04567,
+        "lng": 118.49441,
+        "approx": true,
+        "note": "City-level pin for Jian'ou (Nanping, Fujian). Exact Jianfa Yuecheng mall coordinates not independently verified."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11649",
+      "evidence_quote": "Address: No. 2 Nanhuan Rd., Jianfa Yuecheng B1, Nanping City, Jian'ou City, 353199; latitude/longitude currently 32.687642525201, 102.81176181517 (same values in ZIv API). OSM Nominatim places Jian'ou City at 27.0456736, 118.4944139.",
+      "note": "Address is Jian'ou City, Nanping, Fujian. Current pin is ~1500+ km west near Aba/Sichuan (lng ~102.8). ZIv has the same wrong coordinates. OSM county centroid used as proposed approx pin. Mall-level pin still needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6943,
+      "name": "酷风游乐场绍兴越城颐高广场店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6944,
+        "src": [
+          "wahlap"
+        ],
+        "lat": 30.027023,
+        "lng": 120.576777
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6944,
+        "reason": "same mall/coords as bemanicn 6485"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6485",
+      "evidence_quote": "shop name 酷风游乐场（颐高广场店） address 灵芝街道颐高广场商场3楼; status=1; maimai DX quantity=1; same lat/lng 30.027023,120.576777 as wahlap id 6943",
+      "note": "WAHLAP and BemaniCN rows for the same Shaoxing Yigao Plaza store. Prefer keeping bemanicn-linked 6944 (has shop id and quantity).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6960,
+      "name": "量子空间杭州东站西广场C座店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 6961,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 6961
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3983",
+      "evidence_quote": "量子空间竞技主题乐园（杭州东站店） address includes 杭州火车东站西广场C座G002; status=1; maimai DX qty=1; coords ~30.2935,120.2037 match wahlap 6960",
+      "note": "Same Hangzhou East Station West Plaza C building store.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7089,
+      "name": "零点潮玩杭州滨江店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7088,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7088
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6421",
+      "evidence_quote": "零点潮玩 address 浦沿街道浦沿路773号江南汇生活娱乐广场2楼; identical coords 30.174926,120.14128 to wahlap 7089",
+      "note": "Same Binjiang store.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7307,
+      "name": "魔力嘟嘟城绍兴上虞店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7306,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7306
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4119",
+      "evidence_quote": "魔力嘟嘟城(万悦城店) at Shangyu Wanyuecheng 3F; maimai DX qty=2, CHUNITHM qty=2; same coords 30.018702,120.856953 as wahlap 7307/7308",
+      "note": "Two WAHLAP clones (7307,7308) of bemanicn 7306.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7308,
+      "name": "魔力嘟嘟城绍兴上虞店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7306,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7306
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4119",
+      "evidence_quote": "魔力嘟嘟城(万悦城店) same mall and coords 30.018702,120.856953 as both wahlap entries 7307 and 7308",
+      "note": "Exact WAHLAP self-duplicate of 7307 and of bemanicn 7306.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7312,
+      "name": "魔力空间杭州龙湖天街店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7314,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7314,
+        "note": "7314 has fuller games including taiko"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6340",
+      "evidence_quote": "魔力空间（上城天街店） 上城区科城街368号上城天街A-3F-09; 2 maimai DX, 2 CHUNITHM, 1 taiko; coords ~30.3336,120.274 match wahlap 7312 Longfor Tianjie 368",
+      "note": "Same Longfor Shangcheng Tianjie mall. Keep bemanicn 7314.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7227,
+      "name": "风云再起（杭州新天地购物中心店）",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7202,
+        "src": [
+          "bemanicn"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7202,
+        "keep_bemanicn_link": "https://map.bemanicn.com/s/5216"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4316",
+      "evidence_quote": "ZIv Fengyun Hangzhou Xintiandi at 5F 718 Changbin Road, lat 30.325064498762, lng 120.17512181362; BemaniCN shop 5216 same 长浜路718号新天地, lat 30.324982, lng 120.175417",
+      "note": "Same venue as ZIv 7202 and BemaniCN 7227. Merge and attach bemanicn link to 7202. WAHLAP 7187 is a third candidate but its pin is ~9 km south (separate location note).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7187,
+      "name": "风云再起杭州店",
+      "field": "location",
+      "current": {
+        "lat": 30.248993,
+        "lng": 120.205366,
+        "addr": "浙江省杭州市下城区新天地购物中心五楼风云再起"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4316",
+      "evidence_quote": "Confirmed Hangzhou Xintiandi Fengyun is at ~30.32506,120.17512 (Changbin Road 718). WAHLAP-sourced 7187 claims the same Xintiandi 5F but is geocoded to 30.248993,120.205366 (~9 km away).",
+      "note": "Likely a bad Baidu geocode or a different/old store name reused. If same Xintiandi store, merge into 7202. Live maimai.wahlap.com locator returned HTTP 567 during research.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7360,
+      "name": "麦酷潮玩杭州拱墅银泰店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 7377,
+        "src": [
+          "wahlap"
+        ],
+        "games": [
+          "chunithm"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "target_id": 7377,
+        "note": "same Chengxi Intime Fengtan Road 380; bemanicn shows rebrand to Zhenkuaile"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5099",
+      "evidence_quote": "（闭店升级中，原城西麦酷）真快活（城西银泰店） address 拱墅区-丰谭路380号银泰百货杭州城西店2F; coords ~30.30176,120.10276 match wahlap Maiku 7360",
+      "note": "Same mall unit. BemaniCN records rebrand from Chengxi Maiku to Zhenkuaile.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7377,
+      "name": "（闭店升级中，原城西麦酷）真快活（城西银泰店）",
+      "field": "status",
+      "current": "listed open (no status field; shown as normal venue with games)",
+      "proposed": "temporarily_closed_or_unknown: BemaniCN comment says closed for upgrade from 2026-05-06, expected early July 2026 reopen; reopen not confirmed after 2026-05-10 update",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5099",
+      "evidence_quote": "comment: 2026.5.6闭店升级中，预计2026.7初开业; name prefix includes 闭店升级中; updated_at 2026-05-10T09:28:48.000000Z; status field still 1",
+      "note": "Do not treat as permanently closed. Source last updated 2026-05-10 predicting early-July 2026 reopen; no newer confirmation either way. Name already carries closed-for-upgrade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6807,
+      "name": "酷乐电玩城 Kule Arcade",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+      "evidence_quote": "machines include maimai FiNALE (cond=4, CNY 3.00 for 3 songs); lastUpdateTime 2026-07-24 18:10:05; info: maimai FiNALE at 3 coins/pc. BEMANICN ID: 6881",
+      "note": "Live ZIv lists classic maimai FiNALE, not DX. App games only has other despite notes/prices mentioning maimai FiNALE. Use game key maimai (not maimai_dx) if schema supports it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6807,
+      "name": "酷乐电玩城 Kule Arcade",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+      "evidence_quote": "machine game name: maimai FiNALE",
+      "note": "China still has some offline FiNALE cabs; this is not maimai DX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7202,
+      "name": "风云再起游乐汇 Fengyun Arcade (杭州新天地)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "DX PRiSM PLUS (x3)",
+        "maimai": "FiNALE (x1, poor condition)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4316",
+      "evidence_quote": "3x 舞萌DX 2026 (maimai DX PRiSM PLUS); 1x maimai FiNALE cond=2; lastUpdateTime 2026-07-30 18:14:10. BemaniCN s/5216 also lists title_id 2 maimai FINALE qty=1 plus maimai DX qty=3",
+      "note": "game_counts maimai_dx:3 is correct for DX cabinets. Optional: also expose legacy maimai FiNALE as separate game/cab. BemaniCN 7227 is the same store.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7202,
+      "name": "风云再起游乐汇 Fengyun Arcade (杭州新天地)",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "maimai",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5216",
+      "evidence_quote": "arcades: title_id 1 maimai DX quantity=3; title_id 31 taiko quantity=1; title_id 2 maimai FINALE quantity=1",
+      "note": "Add legacy maimai only if schema distinguishes it from maimai_dx. FiNALE is still physically present per both ZIv and BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7203,
+      "name": "风云再起游乐汇 Fengyun Arcade (苏州观前街店)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "DX PRiSM PLUS (x4)",
+        "maimai": "FiNALE offline, no camera"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2848",
+      "evidence_quote": "4x 舞萌DX 2026; 1x maimai FiNALE comment: Offline. No camera. The left screen seems a little bad.; lastUpdateTime 2026-07-26 05:02:09",
+      "note": "App game_counts maimai_dx:4 matches the four DX cabinets. FiNALE is an extra offline classic cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7228,
+      "name": "风云再起（石老人）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 4,
+        "pump_it_up": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "maimai_dx": null,
+        "pump_it_up": null,
+        "taiko": null,
+        "wacca": null
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7258",
+      "evidence_quote": "lastUpdateTime 2023-07-01 14:36:53; only one 舞萌DX 2022 machine row with comment '4 Machines total'; other rows include Pump It Up XX, 2x WACCA REVERSE (cond=0), taiko 2011 cond=0",
+      "note": "Count 4 for maimai is from a 2023 ZIv comment on a single machine row, and several other machines show cond=0. No 2024-2026 confirmation found. Safer to clear counts or mark unverified than keep as facts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7228,
+      "name": "风云再起（石老人）",
+      "field": "status",
+      "current": "listed open",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7258",
+      "evidence_quote": "lastUpdateTime 2023-07-01 14:36:53 (about 3 years old as of research)",
+      "note": "No newer community or official update found. Do not assert closed; assert that current operation is unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6574,
+      "name": "超级星座动漫体验中心",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5165",
+      "evidence_quote": "lastUpdateTime 2019-10-07 09:57:36; machines snapshot: Pump It Up PRIME",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6600,
+      "name": "超级玩家(新会美吉特广场)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4769",
+      "evidence_quote": "lastUpdateTime 2019-02-27 06:05:50; machines snapshot: taiko 12 Asia; MuziBox",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7004,
+      "name": "鑫汇动漫城",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4767",
+      "evidence_quote": "lastUpdateTime 2019-02-27 06:02:04; machines snapshot: DJMAX TECHNIKA; jubeat",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7131,
+      "name": "风云再起",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4232",
+      "evidence_quote": "lastUpdateTime 2017-09-27 10:15:53; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7134,
+      "name": "风云再起(华润苏果店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4720",
+      "evidence_quote": "lastUpdateTime 2019-02-01 18:16:13; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7136,
+      "name": "风云再起(南宁店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4718",
+      "evidence_quote": "lastUpdateTime 2019-02-01 18:09:48; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7137,
+      "name": "风云再起(合肥店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4188",
+      "evidence_quote": "lastUpdateTime 2022-02-06 23:22:30; machines snapshot: maimai MiLK PLUS; DX 2021; WACCA LILY R; PIU XX; DanceEvolution",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7138,
+      "name": "风云再起(昆明官渡古镇店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4717",
+      "evidence_quote": "lastUpdateTime 2019-02-01 18:07:33; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7139,
+      "name": "风云再起(武汉大汉口城店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4715",
+      "evidence_quote": "lastUpdateTime 2019-02-01 17:36:27; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7140,
+      "name": "风云再起(武汉店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4322",
+      "evidence_quote": "lastUpdateTime 2019-02-01 17:37:39; machines snapshot: maimai MiLK; Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7142,
+      "name": "风云再起(福州店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4728",
+      "evidence_quote": "lastUpdateTime 2019-02-01 18:38:22; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7143,
+      "name": "风云再起(长沙宁乡店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4729",
+      "evidence_quote": "lastUpdateTime 2019-02-01 18:40:14; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7144,
+      "name": "风云再起(长沙店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4186",
+      "evidence_quote": "lastUpdateTime 2019-09-29 16:04:51; machines snapshot: maimai MURASAKi; Pump It Up XX; Danz Base",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7155,
+      "name": "风云再起动漫电玩",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4190",
+      "evidence_quote": "lastUpdateTime 2019-02-01 17:38:23; machines snapshot: 0 machines listed",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7210,
+      "name": "风云再起电玩(二七广场店)",
+      "field": "status",
+      "current": "listed open with games from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4325",
+      "evidence_quote": "lastUpdateTime 2018-01-08 10:48:30; machines snapshot: Pump It Up PRIME 2",
+      "note": "ZIv last update is years old (pre-2024, most 2017-2019). Official WAHLAP/BemaniCN confirmation not found in this pass. Do NOT mark closed without primary evidence; flag as stale/unverified so travellers are not sent to dead listings with high confidence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7137,
+      "name": "风云再起(合肥店)",
+      "field": "games",
+      "current": [
+        "dance_evo",
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "wacca"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4188",
+      "evidence_quote": "lastUpdateTime 2022-02-06 23:22:30; machines include maimai MiLK PLUS, 舞萌DX 2021, WACCA LILY R, Pump It Up XX, DanceEvolution ARCADE",
+      "note": "Even the ZIv snapshot is from 2022 with DX 2021 / MiLK PLUS era names. No 2024-2026 confirmation. proposed null means remove high-confidence presentation of these games as current.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6995,
+      "name": "金银岛电玩游戏中心",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5031",
+      "evidence_quote": "lastUpdateTime 2026-07-27 16:34:31; machines: [] (empty). Information text still describes Chaoyang Joy City F8 location.",
+      "note": "ZIv was updated in July 2026 with zero machines. Rhythm-game listing is not supported by current machine list. Venue may still exist as a general arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7311,
+      "name": "魔力空间临平万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Daily until 22:00 hard close (comment: 10点准时拉闸); exact open time not stated",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4558",
+      "evidence_quote": "comment includes: 10点准时拉闸，请及时保存游戏数据; 店内有:3mai2chu1太鼓",
+      "note": "Close time noted as 22:00 sharp. Opening time not clearly stated on BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6961,
+      "name": "量子空间竞技主题乐园（杭州东站店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun approx 10:30-19:00 (weekends sometimes to 20:00 per player notes)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3983",
+      "evidence_quote": "comment: 早上10:30开门，晚上7点关门。在周末晚上会晚点关门，大概到8点。 ... 2026.6.28 ... 今天周日依旧是七点关店",
+      "note": "Community-reported hours on BemaniCN, not a chain official page. updated_at 2026-07-29.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6961,
+      "name": "量子空间竞技主题乐园（杭州东站店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 coins per credit (as of 2026-06-28 notes); packages e.g. 20RMB=50 coins, 50RMB=150, 100RMB=400"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3983",
+      "evidence_quote": "2026.6.28 舞萌为5币1pc 目前店内20r＝50币 50r＝150币 100r＝400币; arcade coin field=5",
+      "note": "Coin packages change often; treat as approximate player report.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 6459,
+      "name": "行运士多 Lucky Store",
+      "field": "location",
+      "current": {
+        "addr": "LG Floor, Glory Mall (国瑞购物中心) No.18 Chongwenmen Wai Avenue Xicheng District Beijing"
+      },
+      "proposed": {
+        "addr_fix": "Chongwenmen area is Dongcheng District, not Xicheng; pin lat/lng 39.8974,116.4138 may still be usable"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1505",
+      "evidence_quote": "Address text: LG Floor, Glory Mall (国瑞购物中心) No.18 Chongwenmen Wai Avenue Xicheng District Beijing; lastUpdateTime 2026-07-05; info notes former AKIBAGO, now snack park with 5 Pokemon machines",
+      "note": "District label Xicheng is almost certainly wrong for Chongwenmenwai. Not a wrong-city pin. Low severity.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7084,
+      "name": "雄霸风云丽水莲都店",
+      "field": "status",
+      "current": "listed open (wahlap-only source in app)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.wahlap.com/",
+      "evidence_quote": "App source is wahlap only for this row; address in app: 浙江省丽水市莲都区中广未来城雄霸风云. Live maimai.wahlap.com locator was not reachable (HTTP 567) during research, so this WAHLAP listing could not be re-confirmed today.",
+      "note": "Not saying closed. Official locator unreachable in this session; no BemaniCN twin found in shard. Treat as unreconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7107,
+      "name": "青芒游乐温州鹿城店",
+      "field": "status",
+      "current": "listed open (wahlap-only source in app)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.wahlap.com/",
+      "evidence_quote": "App source is wahlap only for this row; address in app: 浙江省温州市鹿城区南汇街道府东路333号温印商业中心. Live maimai.wahlap.com locator was not reachable (HTTP 567) during research, so this WAHLAP listing could not be re-confirmed today.",
+      "note": "Not saying closed. Official locator unreachable in this session; no BemaniCN twin found in shard. Treat as unreconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7190,
+      "name": "风云再起浙江丽水银泰城店",
+      "field": "status",
+      "current": "listed open (wahlap-only source in app)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.wahlap.com/",
+      "evidence_quote": "App source is wahlap only for this row; address in app: 浙江省丽水市莲都区宇雷路789号丽水银泰城店地上2层L2002室. Live maimai.wahlap.com locator was not reachable (HTTP 567) during research, so this WAHLAP listing could not be re-confirmed today.",
+      "note": "Not saying closed. Official locator unreachable in this session; no BemaniCN twin found in shard. Treat as unreconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7303,
+      "name": "魔兜欢乐岛台州椒江店",
+      "field": "status",
+      "current": "listed open (wahlap-only source in app)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.wahlap.com/",
+      "evidence_quote": "App source is wahlap only for this row; address in app: 浙江省台州市椒江区黄海路5号宝龙城. Live maimai.wahlap.com locator was not reachable (HTTP 567) during research, so this WAHLAP listing could not be re-confirmed today.",
+      "note": "Not saying closed. Official locator unreachable in this session; no BemaniCN twin found in shard. Treat as unreconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 7313,
+      "name": "魔力空间潮玩社绍兴上虞店",
+      "field": "status",
+      "current": "listed open (wahlap-only source in app)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.wahlap.com/",
+      "evidence_quote": "App source is wahlap only for this row; address in app: 浙江省绍兴市上虞区上百万和城二楼魔力空间潮玩社. Live maimai.wahlap.com locator was not reachable (HTTP 567) during research, so this WAHLAP listing could not be re-confirmed today.",
+      "note": "Not saying closed. Official locator unreachable in this session; no BemaniCN twin found in shard. Treat as unreconfirmed.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "shard": 24,
+  "verdicts": [
+    {
+      "ids": [
+        2685,
+        2686
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2685,
+      "canonical_name": "天下电玩浙江石桥银泰店",
+      "canonical_addr": "浙江省杭州市拱墅区石桥街道石祥路138号中大银泰城购物中心F3层天下电玩",
+      "reason": "Same mall and floor (中大银泰城 F3, 石祥路138号); wahlap branch name vs bemanicn alias 原嘻游记 with unit 3018/3019. One venue.",
+      "evidence_url": "https://map.bemanicn.com/s/5314",
+      "evidence_quote": "天下电玩（原嘻游记）（中大银泰城店） 东新街道石祥路138号中大银泰城购物中心F3层3018、3019号"
+    },
+    {
+      "ids": [
+        2703,
+        2765
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2765,
+      "canonical_name": "天空之城南京鼓楼宜悦里店",
+      "canonical_addr": "江苏省南京市鼓楼区新模范马路宜悦里2F天空之城",
+      "reason": "Same 宜悦里 / 新模范马路38号 2F shop; Baidu lists one 天空之城 at 2F-30. wahlap vs bemanicn rename.",
+      "evidence_url": "https://map.bemanicn.com/s/4195",
+      "evidence_quote": "天空之城 (南瑞路宜悦里店) 新模范马路38号2F-30商铺"
+    },
+    {
+      "ids": [
+        2704,
+        2736
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2736,
+      "canonical_name": "天空之城上海青浦吾悦店",
+      "canonical_addr": "上海青浦区淀山湖大道218号吾悦广场2楼",
+      "reason": "Same Qingpu Wuyue branch; ZIv lists 3F while bemanicn/Baidu list 2F, but one business at 淀山湖大道吾悦. ~33 m is geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/1604",
+      "evidence_quote": "天空之城上海青浦吾悦店 淀山湖大道218号上海青浦吾悦广场2楼"
+    },
+    {
+      "ids": [
+        2705,
+        2733
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2733,
+      "canonical_name": "天空之城上海万嘉广场店",
+      "canonical_addr": "上海市浦东新区东靖路1881号万嘉广场2楼天空之城",
+      "reason": "Identical mall/floor/street number (东靖路1881号万嘉广场2楼); ZIv English address matches wahlap/bemanicn. Same game counts.",
+      "evidence_url": "https://map.bemanicn.com/s/2611",
+      "evidence_quote": "天空之城上海万嘉广场店 东靖路1881号万嘉商业广场2楼"
+    },
+    {
+      "ids": [
+        2706,
+        2735
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2735,
+      "canonical_name": "天空之城上海招商花园店",
+      "canonical_addr": "上海市浦东新区顾唐路99号招商花园城三楼天空之城",
+      "reason": "Same 招商花园城 L3-018 / 顾唐路99号; Baidu single POI 天空之城(招商花园城店). ZIv and wahlap/bemanicn same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/2948",
+      "evidence_quote": "天空之城上海招商花园城店 上海市浦东新区顾唐路99号招商花园城L3-018"
+    },
+    {
+      "ids": [
+        2708,
+        2782
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2782,
+      "canonical_name": "天空之城商洛商州万达店",
+      "canonical_addr": "陕西省商洛市商州区万达广场1A天空之城",
+      "reason": "Same Shangluo Wanda F1A; Baidu one 天空之城游乐体验世界(商洛万达广场店). ZIv vs wahlap/bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/3168",
+      "evidence_quote": "天空之城商洛商州万达店 商洛万达广场F1A层"
+    },
+    {
+      "ids": [
+        3037,
+        3039
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3039,
+      "canonical_name": "奇奇潮玩西安碑林华清广场店",
+      "canonical_addr": "陕西省西安市碑林区李家村华清广场3楼奇奇潮玩",
+      "reason": "Same 华清广场 F3; Baidu one 奇奇潮玩(李家村华清广场店). wahlap full branch vs bemanicn/ziv short name.",
+      "evidence_url": "https://map.bemanicn.com/s/3737",
+      "evidence_quote": "奇奇潮玩(华清广场店) 雁塔路99号华清广场F3"
+    },
+    {
+      "ids": [
+        2714,
+        2907
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2907,
+      "canonical_name": "天空之城重庆北碚吾悦店",
+      "canonical_addr": "重庆市北碚区天生街道劳动村37号吾悦广场二楼天空之城",
+      "reason": "Same Beibei Wuyue 2F shop 2005; Baidu one POI. ZIv vs wahlap/bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/2406",
+      "evidence_quote": "天空之城（北碚吾悦店） 北碚吾悦广场2层2005"
+    },
+    {
+      "ids": [
+        2716,
+        2893
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2893,
+      "canonical_name": "天空之城苏州龙湖店",
+      "canonical_addr": "江苏省苏州市工业园区亭谊街38号龙湖星湖天街店A-2F-35",
+      "reason": "Same 龙湖星湖天街 A座2楼 unit; Baidu one 天空之城动漫电玩世界(龙湖星湖天街店). 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3145",
+      "evidence_quote": "天空之城 星湖天街店 工业园区唯亭街道亭谊街38号 龙湖星湖天街A座2楼"
+    },
+    {
+      "ids": [
+        2719,
+        2779
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2779,
+      "canonical_name": "天空之城启东汇龙店",
+      "canonical_addr": "江苏省南通市启东市汇龙镇 建设南路88号吾悦广场三楼天空之城",
+      "reason": "Same 建设南路88号 新城吾悦 3F; Baidu one 天空之城 at that address. 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/2627",
+      "evidence_quote": "天空之城(启东新城吾悦广场店) 汇龙镇建设南路88号新城吾悦广场三楼"
+    },
+    {
+      "ids": [
+        2721,
+        2773
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2773,
+      "canonical_name": "天空之城南通永旺店",
+      "canonical_addr": "江苏省南通市开发区新开街道星湖大道1066号永旺梦乐城南通星湖店2F228-A",
+      "reason": "Same 永旺梦乐城 星湖大道1066号 F2 unit 228-A; Baidu matches wahlap unit. 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3560",
+      "evidence_quote": "天空之城(永旺梦乐城店) 星湖大道1066号永旺梦乐城F2层"
+    },
+    {
+      "ids": [
+        2722,
+        2847
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2847,
+      "canonical_name": "天空之城泰安泰山吾悦广场店",
+      "canonical_addr": "山东省泰安市泰山区徐家楼街道青年路556号泰汶吾悦广场Z202号商铺",
+      "reason": "Same 泰汶吾悦 / 青年路556号 unit Z202; Baidu one POI (street number 566 vs 556 is listing noise). Same branch.",
+      "evidence_url": "https://map.bemanicn.com/s/3779",
+      "evidence_quote": "天空之城(泰汶吾悦店) 泰山区青年路556号吾悦广场(泰安泰汶店)"
+    },
+    {
+      "ids": [
+        2724,
+        2910
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2910,
+      "canonical_name": "天空之城钦州吾悦广场店",
+      "canonical_addr": "广西壮族自治区钦州市钦南区金海湾东大街1号新城吾悦广场3楼天空之城多奇妙",
+      "reason": "Same Qinzhou Wuyue F3 Z20 多奇妙/天空之城; Baidu one 天空之城 and co-named 多奇妙 at F3. Distinct from 风云再起 on F4.",
+      "evidence_url": "https://map.bemanicn.com/s/3200",
+      "evidence_quote": "天空之城/多奇妙乐园（钦州吾悦店） 钦南区金海湾东大街1号新城吾悦广场三层Z20商铺（原多奇妙位置）"
+    },
+    {
+      "ids": [
+        7209,
+        7219
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7219,
+      "canonical_name": "风云再起钦州店",
+      "canonical_addr": "广西钦州市钦南区金海湾东大街1号新城吾悦广场第四层Z12风云再起",
+      "reason": "Same Qinzhou Wuyue F4 Z12 风云再起; Baidu one POI on 4F. Separate brand from 天空之城 F3 in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/483",
+      "evidence_quote": "风云再起游乐汇（钦州吾悦） 金海湾东大街1号新城吾悦广场第四层Z12区"
+    },
+    {
+      "ids": [
+        2725,
+        2788
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2788,
+      "canonical_name": "天空之城多奇妙南京迈皋桥万谷慧店",
+      "canonical_addr": "江苏省南京市栖霞区华电路1号万谷·慧生活广场",
+      "reason": "Same 万谷慧 华电路1号 3F unit A-3F1018; Baidu one 天空之城游乐体验世界(南京万谷慧店). 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/6444",
+      "evidence_quote": "天空之城·多奇妙乐园（南京万谷慧店） 栖霞区迈皋桥街道华电路1号万谷慧3层A-3F1018"
+    },
+    {
+      "ids": [
+        2731,
+        2829
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2829,
+      "canonical_name": "天空之城昆明五华吾悦广场店",
+      "canonical_addr": "云南省昆明市五华区吾悦广场三楼多奇妙儿童乐园",
+      "reason": "Same 五华吾悦 F3; Baidu one 天空之城 at 王筇路五华吾悦 F3 with co-brand 多奇妙. ~87 m geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/4559",
+      "evidence_quote": "天空之城•明日世界（昆明吾悦店） 王筇路吾悦广场三楼F3-6商铺"
+    },
+    {
+      "ids": [
+        2739,
+        2879
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2739,
+      "canonical_name": "天空之城东莞南城汇一城店",
+      "canonical_addr": "广东省东莞市南城街道鸿福路200号第一国际汇一城3区5号门2楼天空之城",
+      "reason": "Same 汇一城/海德汇一城 鸿福路200号 3区 2楼; Baidu one POI. ~141 m is geocode spread, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/4727",
+      "evidence_quote": "天空之城游艺体验世界（东莞汇一城店） 鸿福路200号海德汇一城3区2楼"
+    },
+    {
+      "ids": [
+        2743,
+        2754
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2743,
+      "canonical_name": "天空之城九江浔阳联盛店",
+      "canonical_addr": "江西省九江市浔阳区联盛快乐城2F天空之城",
+      "reason": "Same 联盛快乐城 2F; Baidu one 天空之城·电玩 at 快乐城2楼. 0 m wahlap vs bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/4582",
+      "evidence_quote": "天空之城动漫电玩世界（快乐城店） 京九路9号九江·联盛快乐城"
+    },
+    {
+      "ids": [
+        2744,
+        2920
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2744,
+      "canonical_name": "天空之城云浮吾悦店",
+      "canonical_addr": "广东省云浮市云城区吾悦广场z306",
+      "reason": "Same 云城吾悦 unit Z306 / 环市西路102号 3F; Baidu one 天空之城(云浮吾悦店). ~37 m.",
+      "evidence_url": "https://map.bemanicn.com/s/3729",
+      "evidence_quote": "天空之城（云浮云城吾悦广场店） 环市西路102号吾悦广场3楼"
+    },
+    {
+      "ids": [
+        2746,
+        2798
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2746,
+      "canonical_name": "天空之城佛山南海大沥店",
+      "canonical_addr": "广东省佛山市南海区大沥镇广佛路黄岐金铂天地二楼天空之城游乐体验世界",
+      "reason": "Same 金铂天地(黄岐) 广佛路121号 2F; not the nearby 嘉洲广场 疯狂牛仔城. ~74 m geocode.",
+      "evidence_url": "https://map.bemanicn.com/s/1552",
+      "evidence_quote": "天空之城大沥店 黄岐广佛路121号金铂天地二楼"
+    },
+    {
+      "ids": [
+        5809,
+        5810
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5810,
+      "canonical_name": "疯狂牛仔城嘉州广场店",
+      "canonical_addr": "广东省佛山市广佛一路98号嘉州广场三楼疯狂牛仔城",
+      "reason": "Same 嘉洲/嘉州广场 广佛路98号 3F 疯狂牛仔城; Baidu one POI. 洲/州 spelling variant, not two venues.",
+      "evidence_url": "https://map.bemanicn.com/s/1193",
+      "evidence_quote": "疯狂牛仔城佛山嘉洲广场店 黄岐广佛路98号嘉洲广场3层"
+    },
+    {
+      "ids": [
+        2747,
+        2909
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2747,
+      "canonical_name": "天空之城佛山南海金沙洲店",
+      "canonical_addr": "广东省佛山市南海区金沙洲建设大道金铂天地3楼天空之城游艺世界",
+      "reason": "Same 金沙洲金铂天地 建设大道33号 3F; different mall from 大沥金铂天地. 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/1551",
+      "evidence_quote": "天空之城金沙洲店 金沙洲建设大道33号金铂天地3层"
+    },
+    {
+      "ids": [
+        2749,
+        2756
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2749,
+      "canonical_name": "天空之城佛山顺德悦然店",
+      "canonical_addr": "广东省佛山市顺德区北滘镇诚德路美的悦然广场3楼天空之城",
+      "reason": "Same 美的悦然广场 3F; Baidu one 天空之城游乐体验世界(美的悦然店). 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/1914",
+      "evidence_quote": "天空之城北滘美的悦然广场 北滘诚德路1号美的悦然广场3层"
+    },
+    {
+      "ids": [
+        2750,
+        2864
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2750,
+      "canonical_name": "天空之城兰州店",
+      "canonical_addr": "甘肃省兰州市安宁区吾悦广场3楼天空之城",
+      "reason": "Same 兰州安宁吾悦 3F Z301; Baidu one POI 银安路252号. ~182 m is dual geocode of same mall, not two branches.",
+      "evidence_url": "https://map.bemanicn.com/s/2185",
+      "evidence_quote": "天空之城游乐体验世界(兰州吾悦店) 银安路252号吾悦广场3层Z301号商铺"
+    },
+    {
+      "ids": [
+        4099,
+        4100
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4100,
+      "canonical_name": "星际传奇南京城北万象汇店",
+      "canonical_addr": "江苏省南京市栖霞区迈皋桥街道栖霞大道106号南京城北万象汇B馆L3118B星际传奇",
+      "reason": "Both are 城北万象汇 B馆 3F 星际传奇 at same coords; Baidu one shop L3118B. Short wahlap name vs fuller branch entry.",
+      "evidence_url": "https://map.bemanicn.com/s/3032",
+      "evidence_quote": "星际传奇（南京栖霞城北万象汇店） 城北万象汇B馆3层L3118B"
+    },
+    {
+      "ids": [
+        2760,
+        2929
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2760,
+      "canonical_name": "天空之城南京浦口龙湖天街店",
+      "canonical_addr": "江苏省南京市浦口区文景路99号龙湖天街3楼天空之城",
+      "reason": "Same 江北/浦口 龙湖天街 文景路99号 3F; Baidu one 天空之城游乐体验世界(江北龙湖店). ~205 m still same mall (not 雨山天街).",
+      "evidence_url": "https://map.bemanicn.com/s/2032",
+      "evidence_quote": "天空之城（江北龙湖天街店） 浦口区文景路99号(星火路地铁站2A口步行150米)"
+    }
+  ]
+}

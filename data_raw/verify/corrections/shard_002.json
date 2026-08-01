@@ -1,0 +1,355 @@
+{
+  "shard": 2,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/v5.2/arcade.php (all 115 ZIv pages by arcade id)",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009 (maimai DX International North America official locator, 111 stores)",
+    "https://cidercade.com/arlington/",
+    "https://cidercade.com/dallas/",
+    "https://cidercade.com/dallas/faq/",
+    "https://cidercade.com/dallas/about/",
+    "https://cidercade.com/austin/",
+    "https://claw-cade.com/",
+    "https://www.continuesarcade.com/",
+    "https://cobraarcadebar.com/tucson/",
+    "https://crowbararcade.com/",
+    "https://thecircuitsocial.com/",
+    "https://www.daveandbusters.com/us/en/about/locations/honolulu-ala-moana"
+  ],
+  "corrections": [
+    {
+      "id": 12205,
+      "name": "Cidercade (Dallas)",
+      "field": "location",
+      "current": {
+        "addr": "2759 Irving Boulevard Service Road Dallas Texas, 75207, Dallas",
+        "lat": 32.805785315108,
+        "lng": -96.845817056877
+      },
+      "proposed": {
+        "addr": "2777 Irving Blvd #200, Dallas, TX 75207"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/dallas/",
+      "evidence_quote": "2777 Irving Blvd Dallas, TX, 75207. Located two miles from downtown Dallas in the Design District.",
+      "checked_at": "2026-07-31",
+      "note": "Official site and FAQ both use 2777 Irving Blvd. App still has the older ZIv form 2759 Irving Boulevard Service Road. Re-geocode the pin to 2777."
+    },
+    {
+      "id": 12205,
+      "name": "Cidercade (Dallas)",
+      "field": "hours",
+      "current": "Mon-Thu 12:00-00:00; Fri 12:00-01:00; Sat 10:00-01:00; Sun 12:00-00:00",
+      "proposed": "10:00-00:00 every day",
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/dallas/",
+      "evidence_quote": "10am-Midnight Every Day",
+      "checked_at": "2026-07-31",
+      "note": "Official hours supersede ZIv hours (ZIv last updated 2024-12-15)."
+    },
+    {
+      "id": 12205,
+      "name": "Cidercade (Dallas)",
+      "field": "prices",
+      "current": "$10/DAY or $15/MONTH Free Play / 21+ after 8pm",
+      "proposed": "Admission $12 ages 5+ for all-day free play. Kid-friendly daytime, strictly 18+ at 9pm; guests under 16 with adult always. Card-only payment.",
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/dallas/faq/",
+      "evidence_quote": "Ages 5 and up are required to pay $12 for admission. We are kid-friendly during the day, but strictly 18+ at 9pm.",
+      "checked_at": "2026-07-31",
+      "note": "Stale $10 day / $15 month and 21+ after 8pm claims should be replaced from official FAQ."
+    },
+    {
+      "id": 12205,
+      "name": "Cidercade (Dallas)",
+      "field": "website",
+      "current": "https://www.cidercade.com/",
+      "proposed": "https://cidercade.com/dallas/",
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/dallas/",
+      "evidence_quote": "Dallas location page with address, hours, and tickets.",
+      "checked_at": "2026-07-31",
+      "note": "Location-specific page is better than brand root."
+    },
+    {
+      "id": 12204,
+      "name": "Cidercade (Arlington)",
+      "field": "hours",
+      "current": "Mon-Thu 10:00-00:00; Fri-Sat 10:00-01:00; Sun 10:00-00:00",
+      "proposed": "10:00-00:00 every day",
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/arlington/",
+      "evidence_quote": "10am-Midnight Every Day",
+      "checked_at": "2026-07-31",
+      "note": "Official site does not list Fri-Sat 1am close. Kitchen closes 11:45pm."
+    },
+    {
+      "id": 12204,
+      "name": "Cidercade (Arlington)",
+      "field": "other",
+      "current": "Family-friendly during the day, but 21+ starting at 8pm. / Guests under 16 must be attended at all times by parent/guardian.",
+      "proposed": "Kid-friendly during the day, strictly 18+ at 9pm. Guests under 16 must be accompanied by an adult at all times. Admission about $12 all-day free play (275+ games).",
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/arlington/",
+      "evidence_quote": "We are kid-friendly during the day, but strictly 18+ at 9pm. ... unlimited play on Over 275 arcade games for only $12",
+      "checked_at": "2026-07-31",
+      "note": "App says 21+ at 8pm; official is 18+ at 9pm."
+    },
+    {
+      "id": 12204,
+      "name": "Cidercade (Arlington)",
+      "field": "location",
+      "current": "500 E. Division St. Arlington Texas, 76010, Arlington",
+      "proposed": "500 E. Division St., Arlington, TX 76011",
+      "confidence": "likely",
+      "evidence_url": "https://cidercade.com/arlington/",
+      "evidence_quote": "500 E. Division St. / Arlington, TX 76011",
+      "checked_at": "2026-07-31",
+      "note": "Official page lists ZIP 76011; app has 76010. Street and coords look fine."
+    },
+    {
+      "id": 12204,
+      "name": "Cidercade (Arlington)",
+      "field": "games",
+      "current": {
+        "games": ["jubeat", "other", "pump_it_up", "sdvx", "stepmaniax"],
+        "machine_prices_includes_maimai": true
+      },
+      "proposed": {
+        "note": "Do not treat as maimai_dx. ZIv 2024-07-29 lists 2x offline maimai FiNALE (Asia, guest only), UBeat, Pump It Up XX, SDVX VIVID WAVE offline, StepManiaX 65\". NOT on ALL.Net NA maimai list (only CIDERCADE AUSTIN and HOUSTON appear).",
+        "jubeat": "only via UBeat US cab if still present (stale)",
+        "maimai_status": "private FiNALE offline if still present, not networked DX"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7647",
+      "evidence_quote": "maimai FiNALE (Asia) Offline. Guest Play Only. SOUND VOLTEX VIVID WAVE Guest play only. no card scanner. Offline. UBeat (North America). Updated 2024-07-29.",
+      "checked_at": "2026-07-31",
+      "note": "machine_prices has maimai free play while games[] omits maimai. Official site only says generic rhythm dance-offs. ZIv is about one year old."
+    },
+    {
+      "id": 12206,
+      "name": "CIDERCADE AUSTIN",
+      "field": "prices",
+      "current": "Price is $12.99 for all day unlimited play.",
+      "proposed": "$12 all-day unlimited free play",
+      "confidence": "certain",
+      "evidence_url": "https://cidercade.com/austin/",
+      "evidence_quote": "We offer unlimited play on 150+ arcade games for only $12 ... every game, attraction and activity is 100% free to play!",
+      "checked_at": "2026-07-31",
+      "note": "App info_text $12.99 is stale versus official $12."
+    },
+    {
+      "id": 12206,
+      "name": "CIDERCADE AUSTIN",
+      "field": "hours",
+      "current": "Mon-Thu 10:00-00:00; Fri-Sat 10:00-01:00; Sun 10:00-00:00",
+      "proposed": "10:00-00:00 every day (official site); kitchen closes 11:45pm",
+      "confidence": "likely",
+      "evidence_url": "https://cidercade.com/austin/",
+      "evidence_quote": "10am-Midnight Every Day",
+      "checked_at": "2026-07-31",
+      "note": "Official brand site says midnight every day. ZIv updated 2026-07-26 still has Fri-Sat to 01:00. Prefer official unless a local source confirms late close."
+    },
+    {
+      "id": 12206,
+      "name": "CIDERCADE AUSTIN",
+      "field": "game_counts",
+      "current": {"sdvx": 2},
+      "proposed": {"sdvx": 1},
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7204",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR (Asia) Right cab ... (04/17/26) This cab is missing as their is only the left cab I believe. Condition Bad. Updated 2026-07-26.",
+      "checked_at": "2026-07-31",
+      "note": "Two SDVX rows remain on ZIv but April 2026 comment says right cab is gone. Count 1 is safer until re-verified in person."
+    },
+    {
+      "id": 12206,
+      "name": "CIDERCADE AUSTIN",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "maimai DX CiRCLE PLUS (International)",
+        "chunithm": "CHUNITHM PARADISE LOST x2 (Japan, online)",
+        "ongeki": "オンゲキ bright (Japan, online)",
+        "jubeat": "jubeat Ave. x2",
+        "sdvx": "SOUND VOLTEX EXCEED GEAR (Asia)",
+        "wacca": "WACCA REVERSE",
+        "pump_it_up": "Pump It Up Phoenix",
+        "stepmaniax": "65 inch Deluxe"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "CIDERCADE AUSTIN | 600 e riverside Dr Austin tx 78704",
+      "checked_at": "2026-07-31",
+      "note": "ALL.Net official confirms live maimai at Austin. ZIv 2026-07-26 has full cab list (FiNALE deleted, CiRCLE PLUS update). games[] tags themselves look right."
+    },
+    {
+      "id": 12206,
+      "name": "CIDERCADE AUSTIN",
+      "field": "other",
+      "current": "stepmaniax listed as normal free-play cab",
+      "proposed": "StepManiaX 65 inch Deluxe condition Not Working as of ZIv 2026-07-26 (changed from Perfect). Keep in games list but surface broken if UI allows.",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7204",
+      "evidence_quote": "StepManiaX (65\" Deluxe Cabinet) Free Play Not Working. Updated 2026-07-26 00:30 by jjrocks. Condition changed from Perfect to Not Working.",
+      "checked_at": "2026-07-31",
+      "note": "Recent community report. May be temporary outage."
+    },
+    {
+      "id": 12220,
+      "name": "Circuit Social",
+      "field": "location",
+      "current": {
+        "addr": "258 Granby St Norfolk Virginia, 23510, Norfolk",
+        "lat": 40.94370830192513,
+        "lng": -83.23046531875168
+      },
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://thecircuitsocial.com/",
+      "evidence_quote": "258 Granby St. Norfolk, VA 23510",
+      "checked_at": "2026-07-31",
+      "note": "CRITICAL pin error: lat/lng 40.94,-83.23 is northwest Ohio, not Norfolk VA. Sister row id 12221 has the same address with correct Norfolk coords 36.8496,-76.2905 and fresher ZIv data (6858, updated 2025-08-17). 12220 maps to stale ZIv 6100 (2021-10-25)."
+    },
+    {
+      "id": 12220,
+      "name": "Circuit Social",
+      "field": "status",
+      "current": "shown as open separate venue",
+      "proposed": "duplicate of id 12221; remove or merge",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6858",
+      "evidence_quote": "Circuit Social, 258 Granby Street, Norfolk Virginia (ZIv 6858 updated 2025-08-17) vs ZIv 6100 same name/address updated 2021-10-25",
+      "checked_at": "2026-07-31",
+      "note": "Two app rows for one physical barcade. Keep 12221."
+    },
+    {
+      "id": 12253,
+      "name": "Dairy Queen",
+      "field": "games",
+      "current": ["ddr"],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1449",
+      "evidence_quote": "Dance Dance Revolution EXTREME only machine. Updated 2010-10-07 19:25.",
+      "checked_at": "2026-07-31",
+      "note": "Only source is ZIv last touched in 2010. No 2020s confirmation a DDR still exists at this Dairy Queen. Prefer removing the ddr claim over presenting a 16-year-old list as current."
+    },
+    {
+      "id": 12212,
+      "name": "Cinemark Imax",
+      "field": "games",
+      "current": ["ddr"],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2779",
+      "evidence_quote": "Dance Dance Revolution EXTREME. Updated 2013-05-13 02:24. Condition Bad. Has Max 2 decals and marquee, only Trip Machine Survivor is unlocked.",
+      "checked_at": "2026-07-31",
+      "note": "ZIv last update 2013. No newer source found. Strong candidate to drop ddr or flag historical."
+    },
+    {
+      "id": 12208,
+      "name": "Cinemark (Pittsburgh Mills Mall)",
+      "field": "games",
+      "current": ["pump_it_up"],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=631",
+      "evidence_quote": "Pump It Up PRO. Updated 2010-07-19 14:27.",
+      "checked_at": "2026-07-31",
+      "note": "ZIv last update 2010. Pump It Up PRO era claim is almost certainly obsolete."
+    },
+    {
+      "id": 12250,
+      "name": "Cyber Zone, Ho-Chunk Casino",
+      "field": "games",
+      "current": ["ddr", "other"],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3474",
+      "evidence_quote": "Dance Dance Revolution EXTREME; The Fast and the Furious (2P). Updated 2015-06-11 21:58.",
+      "checked_at": "2026-07-31",
+      "note": "ZIv last update 2015. No newer confirmation of DDR at Ho-Chunk Cyber Zone."
+    },
+    {
+      "id": 12222,
+      "name": "Circus Arcade",
+      "field": "games",
+      "current": ["ddr"],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3705",
+      "evidence_quote": "DanceDanceRevolution SuperNOVA2. Updated 2016-04-05 21:25.",
+      "checked_at": "2026-07-31",
+      "note": "ZIv last update 2016. No newer source. Treat ddr presence as unconfirmed."
+    },
+    {
+      "id": 12271,
+      "name": "Dave & Buster's (Gainesville)",
+      "field": "games",
+      "current": ["ddr"],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5808",
+      "evidence_quote": "No machines currently listed. Updated 2022-05-26 20:19.",
+      "checked_at": "2026-07-31",
+      "note": "ZIv machine list empty since mid-2022 while app still shows ddr / A20 PLUS notes. Do not assert still present without a recent visit report."
+    },
+    {
+      "id": 12242,
+      "name": "Continues Arcade",
+      "field": "hours",
+      "current": "Mon closed; Tue-Fri 17:00-22:00; Sat-Sun 11:00-22:00",
+      "proposed": "Multi-service hours on continuesarcade.com: dinner Tue-Sun 5PM-CLOSE; brunch Sat-Sun 11AM-3PM; lunch Wed-Fri 11AM-2PM; Warp Zone morning hours also listed. Core arcade evening is roughly Tue-Sun from 5pm.",
+      "confidence": "likely",
+      "evidence_url": "https://www.continuesarcade.com/",
+      "evidence_quote": "Dinner: Tuesday-Sunday 5PM-CLOSE. Brunch: Saturday-Sunday 11AM-3PM. Lunch: Wednesday-Friday 11AM-2PM.",
+      "checked_at": "2026-07-31",
+      "note": "Venue is open (site, Resy). Hours are more complex than the simple ZIv block. DDR A3 and Groove Coaster 4EX still listed on ZIv as of 2026-07-15."
+    },
+    {
+      "id": 12231,
+      "name": "Cobra Arcade",
+      "field": "website",
+      "current": "http://cobraarcadebar.com/",
+      "proposed": "https://cobraarcadebar.com/tucson/",
+      "confidence": "certain",
+      "evidence_url": "https://cobraarcadebar.com/tucson/",
+      "evidence_quote": "63 E Congress St, Tucson, AZ 85701. Tuesday - Sunday: 4pm - 2am. Copyright 2026 Cobra Arcade Bar.",
+      "checked_at": "2026-07-31",
+      "note": "Venue open. Prefer HTTPS Tucson page. Official site does not name DDR; ZIv still lists DDR EXTREME only (2024-11-26)."
+    },
+    {
+      "id": 12226,
+      "name": "Claw Daddy",
+      "field": "cab_models",
+      "current": "taiko (no model detail)",
+      "proposed": "太鼓の達人10 (old private generation, not Nijiiro network)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11455",
+      "evidence_quote": "太鼓の達人10 — only machine listed. Updated 2026-07-16 00:18.",
+      "checked_at": "2026-07-31",
+      "note": "Still listed mid-2026 on ZIv as Taiko 10. Do not expect a current networked Nijiiro build."
+    },
+    {
+      "id": null,
+      "name": "CIDERCADE HOUSTON",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Cidercade Houston",
+        "addr": "2320 Canal St #100, Houston, TX 77003",
+        "lat": 29.7575862,
+        "lng": -95.346493,
+        "games": ["maimai_dx", "other"],
+        "website": "https://cidercade.com/houston/",
+        "source": "ALL.Net maimai DX International NA locator"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "CIDERCADE HOUSTON | 2320 canal st  #100 Houston TX 77003",
+      "checked_at": "2026-07-31",
+      "note": "On official ALL.Net NA maimai list with coords. Not present in shard_002 (only Arlington/Dallas/Austin Cidercades). May already exist in another shard; if absent from the full dataset, add it. Other rhythm titles not verified here."
+    }
+  ]
+}

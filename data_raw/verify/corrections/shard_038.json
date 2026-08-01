@@ -1,0 +1,1075 @@
+{
+  "shard": 38,
+  "checked": 115,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Canada",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+    "https://www.thefunfactor.ca/",
+    "https://www.thearcadiumgp.ca/",
+    "https://www.thearcadium.ca/",
+    "https://vicsquarearcade.ca/",
+    "https://www.woodgrovearcade.com/",
+    "https://www.tagekarting.com/",
+    "https://speeders.ca/chinook/",
+    "https://ferniemovies.com/",
+    "https://tilttoronto.com/",
+    "https://tilt.bar/",
+    "https://thefactorylondon.ca",
+    "https://x-play.ca/",
+    "https://stoked.splitsvillebowl.ca/",
+    "https://www.instagram.com/waterloorhythmarcade/",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5945",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8333",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10961",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6922",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8371",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5121",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6024",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5061",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11234",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8934",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7691",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9467",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9804",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5003",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4803",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7497",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9221",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7803",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9446",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9252",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5413",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3389",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9135",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7538",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10994",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10733",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4037",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4850",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4804"
+  ],
+  "corrections": [
+    {
+      "id": 681,
+      "name": "WATERLOO RHYTHM ARCADE",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "140 University Ave W, Unit 2-5 Waterloo, On N2L6J3 Canada"
+      },
+      "proposed": {
+        "lat": 43.472976765909,
+        "lng": -80.535090528286,
+        "addr": "140 University Ave W, Unit 2-5 Waterloo, On N2L6J3 Canada"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "WATERLOO RHYTHM ARCADE / 140 University Ave W, Unit 2-5 Waterloo, On N2L6J3 Canada (maimai DX International Version North America list, 111 locations total)",
+      "note": "ALL.Net row has no coordinates. Same street address as shard id 682 (ZIv 11201), whose coords are 43.472976765909, -80.535090528286. This ALL.Net-only row is almost certainly a duplicate of 682 and should be merged rather than left as a second pin with null lat/lng.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 681,
+      "name": "WATERLOO RHYTHM ARCADE",
+      "field": "other",
+      "current": "separate venue from id 682",
+      "proposed": "merge into id 682 (same physical venue)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+      "evidence_quote": "Waterloo Rhythm Arcade @ Waterloo Central Supermarket | 140 University Ave W | machines: maimai DX CiRCLE; Pump It Up PRIME 2; WACCA REVERSE | lastUpdateTime 2026-07-29 19:09:40",
+      "note": "681 is the ALL.Net scrape of the same supermarket arcade that ZIv tracks as 682. Keeping both creates a double pin. Prefer 682 as the canonical row (richer game list) and keep ALL.Net as an additional source on 682.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 681,
+      "name": "WATERLOO RHYTHM ARCADE",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "pump_it_up",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+      "evidence_quote": "MACHINE: maimai DX CiRCLE; MACHINE: Pump It Up PRIME 2; MACHINE: WACCA REVERSE",
+      "note": "If 681 is kept as a standalone row, its game list is incomplete. ALL.Net only indexes networked SEGA titles, so maimai alone is expected from that source, but the venue also has PIU and WACCA per ZIv update 2 days before research.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 682,
+      "name": "Waterloo Rhythm Arcade @ Waterloo Central Supermarket",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "maimai DX CiRCLE",
+        "pump_it_up": "Pump It Up PRIME 2",
+        "wacca": "WACCA REVERSE"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+      "evidence_quote": "maimai DX CiRCLE; Pump It Up PRIME 2; WACCA REVERSE (lastUpdateTime 2026-07-29 19:09:40)",
+      "note": "Versions confirmed on ZIv. Instagram bio also says open with Prime 2 Pump It Up. ALL.Net North America list independently confirms maimai at this address under name WATERLOO RHYTHM ARCADE.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 682,
+      "name": "Waterloo Rhythm Arcade @ Waterloo Central Supermarket",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "pump_it_up": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11201",
+      "evidence_quote": "Three distinct machine rows: maimai DX CiRCLE; Pump It Up PRIME 2; WACCA REVERSE (one each)",
+      "note": "True counts of 1 each from ZIv machine list, not ziv_listed placeholders.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 657,
+      "name": "The Rec Room (Burnaby Brentwood)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "maimai DX CiRCLE",
+        "pump_it_up": "Pump It Up Phoenix (2024) LX",
+        "taiko": "Taiko no Tatsujin Nijiro USA (2024)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5945",
+      "evidence_quote": "maimai DX CiRCLE | comment='Online (As of June 7th, 2026 the Aime card reader is online and working again and the buttons)' | Pump It Up Phoenix (2024) | Taiko no Tatsujin Nijiro USA (2024) | lastUpdateTime 2026-07-08 05:49:16",
+      "note": "Also listed on official ALL.Net maimai DX International North America locator as THE REC ROOM BRENTWOOD, 1920 wellington ave unit 21-06 Burnaby BC v5c 0k3 (ALL.Net address typos Willingdon as wellington).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 657,
+      "name": "The Rec Room (Burnaby Brentwood)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5945",
+      "evidence_quote": "One maimai DX CiRCLE, one Pump It Up Phoenix (2024), one Taiko no Tatsujin Nijiro USA (2024)",
+      "note": "One of each on ZIv as of 2026-07-08.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 657,
+      "name": "The Rec Room (Burnaby Brentwood)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu 13:00-23:00; Fri 13:00-01:00; Sat 11:00-01:30; Sun 11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5945",
+      "evidence_quote": "openingTimes [['13:00','23:00'],['13:00','23:00'],['13:00','23:00'],['13:00','23:00'],['13:00','01:00'],['11:00','01:30'],['11:00','23:00']] | lastUpdateTime 2026-07-08",
+      "note": "Shard hours_text was null. These are ZIv community hours, not pulled from therecroom.com (site 403 from this environment). Prefer official page if maintainers can fetch it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 648,
+      "name": "The Arcadium Grande Prairie",
+      "field": "hours",
+      "current": "Mon-Thu 14:00-21:00; Fri-Sat 11:00-23:00; Sun 11:00-21:00",
+      "proposed": "Mon-Thu 11:00-21:00; Fri-Sat 11:00-23:00; Sun 11:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.thearcadiumgp.ca/",
+      "evidence_quote": "Monday-Thursday: 11:00am - 9:00pm; Friday: 11:00am - 11:00pm; Saturday: 11:00am - 11:00pm; Sunday: 11:00am - 9:00pm",
+      "note": "Official site opens Mon-Thu at 11:00, not 14:00. ZIv openingTimes still had 14:00 weekday open, which is what the app currently shows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 648,
+      "name": "The Arcadium Grande Prairie",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "gitadora": "DrumMania XG2 only (no GuitarFreaks listed)",
+        "taiko": "bootleg taiko no tatsujin 14"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8333",
+      "evidence_quote": "MACHINE: DrumManiaXG2; MACHINE: taiko no tatsujin 14 comment='Bootleg cabinet' (lastUpdateTime 2026-02-25 07:01:24)",
+      "note": "App tags games as gitadora + taiko. ZIv has only DrumManiaXG2 (not a GF+DM pair) and explicitly marks taiko as bootleg. Not a licensed Nijiiro network cab. (Original ZIv name uses Japanese characters for taiko.)",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 648,
+      "name": "The Arcadium Grande Prairie",
+      "field": "location",
+      "current": "11012 100 Street Grande Prairie AB, T8V 2N1, Grande Prairie",
+      "proposed": "Unit 109 - 11012 100th Street, Grande Prairie, AB T8V 2N1 (Center 100 Mall)",
+      "confidence": "certain",
+      "evidence_url": "https://www.thearcadiumgp.ca/",
+      "evidence_quote": "Unit 109 - 11012 100th Street, Grande Prairie, AB T8V 2N1; over 8000 square feet in the Center 100 Mall",
+      "note": "Add unit number from official site. Pin coords from ZIv still look consistent with Center 100 Mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 649,
+      "name": "The Arcadium Lethbridge",
+      "field": "hours",
+      "current": "Mon-Thu 10:00-21:00; Fri-Sat 09:00-23:00; Sun 10:00-21:00",
+      "proposed": "Mon-Thu 10:00-21:00; Fri 10:00-23:00; Sat 09:00-23:00; Sun 09:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.thearcadium.ca/",
+      "evidence_quote": "Arcade Hours: Monday-Thursday 10:00am - 9:00pm; Friday 10:00am - 11:00pm; Saturday 9:00am - 11:00pm; Sunday 9:00am - 9:00pm",
+      "note": "Official arcade hours: Fri opens 10 not 9; Sun opens 9 not 10. Playground hours differ and are shorter.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 649,
+      "name": "The Arcadium Lethbridge",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "StepManiaX 65 inch Deluxe",
+        "taiko": "bootleg Taiko no Tatsujin 12 Asian Edition cab running JP Taiko 14"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10961",
+      "evidence_quote": "StepManiaX (65\" Deluxe Cabinet) comment='Online, no DLC...'; taiko no tatsujin 14 comment='Bootleg \"Taiko no Tatsujin 12 Asian Edition\" cab running JP Taiko 14...' (lastUpdateTime 2026-04-11 14:47:57)",
+      "note": "Taiko is bootleg, not Nijiiro USA. StepManiaX is a real SMX deluxe cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 649,
+      "name": "The Arcadium Lethbridge",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10961",
+      "evidence_quote": "One StepManiaX (65\" Deluxe Cabinet); one taiko no tatsujin 14 bootleg",
+      "note": "Also has Super Dance Station 5 (Kinect/Dance Central mod) which is not mapped to a standard game tag.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 653,
+      "name": "The Fun Factor Family Fun Centre",
+      "field": "hours",
+      "current": "Mon-Thu 11:00-22:00; Fri 11:00-23:00; Sat 10:00-23:00; Sun 10:00-22:00",
+      "proposed": "Mon-Thu 12:00-22:00; Fri 12:00-23:00; Sat 10:00-23:00; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.thefunfactor.ca/",
+      "evidence_quote": "OPEN 7 DAYS A WEEK; Monday-Thursday: 12:00pm - 10:00pm; Friday: 12:00pm - 11:00pm; Saturday: 10:00am - 11:00pm; Sunday: 10:00am - 10:00pm",
+      "note": "Venue is open (official site, attractions marked OPEN). Weekday open shifted from 11:00 to 12:00 on the official page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 653,
+      "name": "The Fun Factor Family Fun Centre",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5121",
+      "evidence_quote": "Dance Dance Revolution EXTREME | cond=1 | lastUpdateTime of arcade 2020-01-11 01:43:50 (6 years ago)",
+      "note": "Venue still open per https://www.thefunfactor.ca/ but ZIv DDR Extreme entry is 6 years stale with condition 1. Official site only says selection of games is always changing and does not list DDR. Cannot confirm DDR is still on the floor. proposed=null means remove the ddr claim until re-verified; keep venue as other/family arcade.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 680,
+      "name": "Vogue Theater",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://ferniemovies.com/",
+      "evidence_quote": "Open 7 days a week @ 6:15 pm weeknights & 2:15 pm weekends; two 3D movie screens and a concession stand. No arcade or DDR mentioned on the current theatre site.",
+      "note": "Theatre itself appears open. ZIv DDR 3rdMIX row is from images dated August 2017, machine location 'Arcade To Book', arcade lastUpdateTime 2021-09-19. Not safe to show as a current public DDR destination. proposed=null removes the ddr claim; venue may still have private-book arcade stock that we cannot verify.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 680,
+      "name": "Vogue Theater",
+      "field": "status",
+      "current": "open with ddr",
+      "proposed": "theatre open; public ddr presence unverified (likely private-book only or gone)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6024",
+      "evidence_quote": "Small arcade in lobby, but larger arcade available to book ... machines listed are from images taken in August 2017 ... Dance Dance Revolution 3rdMIX | loc=Arcade To Book",
+      "note": "If status field is binary open/closed, leave open. The risk is a player travelling for DDR.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 646,
+      "name": "TAG E-Karting & Amusement",
+      "field": "location",
+      "current": "300 Rue Sicard Sainte-Therese Quebec, J7E 3X4, Sainte-Therese",
+      "proposed": "270 rue Sicard, Sainte-Therese, Qc, J7E 3X4",
+      "confidence": "likely",
+      "evidence_url": "https://www.tagekarting.com/",
+      "evidence_quote": "270 rue Sicard, Sainte-Therese, Qc, J7E 3X4 | (450) 594-2359",
+      "note": "Official site uses 270; ZIv/shard use 300. Same street and postal code. Coords may still be acceptable if they pin the complex, but street number should match the official page. Venue is operating (arcade listed among attractions). Official page does not name DDR.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 646,
+      "name": "TAG E-Karting & Amusement",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "DanceDanceRevolution X2 dedicab (Betson/Raw Thrills, no e-Amuse, classic panels)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6922",
+      "evidence_quote": "DanceDanceRevolution X2 | comment='It is a DDR X2 dedicab with marquee, and no e-Amuse readers. Classic panels are used in lieu of DDR X panels.' | cond=3 | lastUpdateTime 2025-06-01 22:14:36",
+      "note": "About 1 year since ZIv update. Not independently reconfirmed on the operator site. Treat as likely still present, not certain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 678,
+      "name": "Vic Square Arcade",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "Chinese bootleg taiko no tatsujin 14 (screen stretched 4:3)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8371",
+      "evidence_quote": "taiko no tatsujin 14 | comment='Chinese bootleg cabinet. Drum feels fine, screen is stretched 4:3.' | lastUpdateTime 2026-02-20 01:26:49",
+      "note": "Venue open per https://vicsquarearcade.ca/ (We are finally OPEN). Not a licensed Nijiiro cab. Original ZIv uses Japanese characters for the machine name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 678,
+      "name": "Vic Square Arcade",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8371",
+      "evidence_quote": "One taiko no tatsujin 14 Chinese bootleg cabinet",
+      "note": "Also has Danz Base and Dance Battle, not mapped to standard app tags.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 683,
+      "name": "Woodgrove Arcade",
+      "field": "hours",
+      "current": "Mon-Thu 11:00-09:00; Sat 10:00-12:00; Sun 10:00-09:00",
+      "proposed": "Mon-Thu 11:00-21:00; Fri 11:00-23:00; Sat 10:00-00:00; Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.woodgrovearcade.com/",
+      "evidence_quote": "Monday-Thursday: 11:00am - 9:00pm; Friday: 11:00am - 11:00pm; Saturday: 10:00am - 12:00am; Sunday: 10:00am - 9:00pm",
+      "note": "Current hours look like a 12h/24h parse bug (09:00 instead of 21:00, 12:00 instead of 00:00) and omit Friday. Venue open at 154-6631 Island Highway North, Nanaimo.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 676,
+      "name": "University of Waterloo DDR Club",
+      "field": "status",
+      "current": "listed open with games=['other']",
+      "proposed": "inactive / not a public arcade destination",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5061",
+      "evidence_quote": "Club is pretty dead post-COVID, however there is a small community of ITG players who go to Pin Up Arcade Bar | lastUpdateTime 2023-03-31 18:42:07",
+      "note": "Not a commercial arcade. ZIv itself says the club is pretty dead. Should not appear as a playable destination on a travel map, or should be hard-flagged non-public.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 672,
+      "name": "Tilt Arcade Bar",
+      "field": "status",
+      "current": "open with ddr",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8934",
+      "evidence_quote": "Tilt Arcade Bar | London | Dance Dance Revolution EXTREME | lastUpdateTime 2024-05-28 05:18:10 (2 years ago) | website empty | hours all closed zeros",
+      "note": "Toronto Tilt (id 671) is still active (tilttoronto.com / tilt.bar). London Tilt has no website in ZIv, last update 2 years ago, empty hours. Could not independently confirm the London location still exists. proposed=null on status means consider removing or marking closed/unverified until reconfirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 629,
+      "name": "Soo Blaster",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7691",
+      "evidence_quote": "Soo Blaster | Pump It Up Phoenix comment='New cab.' | lastUpdateTime 2023-10-18 03:10:45 (2 years ago) | website empty",
+      "note": "No official website found. Only evidence is a 2-year-old ZIv row. Do not mark closed without proof, but also do not treat as certain. proposed=null flags the open/PIU claim as unsupported by current sources.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 632,
+      "name": "Speeders Calgary Chinook",
+      "field": "website",
+      "current": null,
+      "proposed": "https://speeders.ca/chinook/",
+      "confidence": "certain",
+      "evidence_url": "https://speeders.ca/chinook/",
+      "evidence_quote": "324 58 Ave SE #4000, Calgary, AB T2H 1K1; Mon-Thu 11AM-10PM; Fri 11AM-12AM; Sat 10AM-12AM; Sun 10AM-10PM",
+      "note": "ZIv had https://chinook.speeders.ca/ which 301s to https://speeders.ca/chinook/. Venue open.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 632,
+      "name": "Speeders Calgary Chinook",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LXv3 online"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9467",
+      "evidence_quote": "Pump It Up Phoenix (2024) | comment='LXv3 cab, online, up to date. Pads are modded...' | cond=5 | lastUpdateTime 2025-10-15 23:04:05",
+      "note": "About 9 months old but detailed player report. Official site confirms arcade but does not name PIU.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 632,
+      "name": "Speeders Calgary Chinook",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu 11:00-22:00; Fri 11:00-00:00; Sat 10:00-00:00; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://speeders.ca/chinook/",
+      "evidence_quote": "Monday-Thursday: 11AM - 10PM; Friday: 11AM - 12AM; Saturday: 10AM - 12AM; Sunday: 10AM - 10PM",
+      "note": "Shard hours_text was null. ZIv had slightly different Sat open (11 vs official 10).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 644,
+      "name": "Stoked by Splitsville Bowl",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up XX LX (reported offline)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9804",
+      "evidence_quote": "Pump It Up XX | comment='LX cab that is offline. Technician recently fixed the pads...' | cond=4 | lastUpdateTime 2025-07-20 20:28:30",
+      "note": "Venue open per https://stoked.splitsvillebowl.ca/. Version is XX not Phoenix. Offline status may have changed since July 2025.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 664,
+      "name": "The Rec Room (St. John's Avalon)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up XX LX (not Phoenix)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5003",
+      "evidence_quote": "Pump It Up XX | comment='LX cab. Online. Panels range from undersensitive to worse...' | lastUpdateTime 2025-01-05 19:58:02",
+      "note": "Several other Rec Rooms in this shard are on Phoenix 2024; St. John's was still XX as of early 2025.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 652,
+      "name": "The Factory",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up XX (last ZIv note Sept 2023)"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4803",
+      "evidence_quote": "Pump It Up XX | comment='Last modded September 26 2023.' | lastUpdateTime 2023-11-29 02:41:18",
+      "note": "Venue open per https://thefactorylondon.ca (arcade listed) but PIU presence not reconfirmed for ~2.5 years. Do not invent a count.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 684,
+      "name": "X-Play",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up XX LX (P2 pad reported dead as of Mar 2024)"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7497",
+      "evidence_quote": "Pump It Up XX | comment='LX cab... P2 side is disconnected/not working' | lastUpdateTime 2024-03-26 23:02:50",
+      "note": "Venue open per https://x-play.ca/. PIU status ~2 years stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 677,
+      "name": "Valhalla Games",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "DanceDanceRevolution SuperNOVA (horrible disrepair as of Aug 2024)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9221",
+      "evidence_quote": "DanceDanceRevolution SuperNOVA | comment=\"In horrible disrepair. Pads currently sunken, most sensors insensitive/doesn't work and double steps...\" | cond=2 | lastUpdateTime 2024-08-20 18:03:14",
+      "note": "Still listed as present but barely playable. No newer confirmation. Hobby shop / arcade hybrid.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 671,
+      "name": "Tilt Arcade Bar",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "Dance Dance Revolution EXTREME (DDRMAX2 marquee, LCD, free-play venue)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7803",
+      "evidence_quote": "Dance Dance Revolution EXTREME | comment='DDRMAX2 marquee but running Extreme on an LCD... (April 2024)' | lastUpdateTime 2026-04-25 02:39:45; Tilt free play $10 cash entry",
+      "note": "Venue confirmed via tilttoronto.com (1255 Queen Street West). ZIv arcade page updated 2026-04-25; DDR comment text still dated April 2024.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 671,
+      "name": "Tilt Arcade Bar",
+      "field": "website",
+      "current": "https://tilt.bar/",
+      "proposed": "https://tilttoronto.com/",
+      "confidence": "likely",
+      "evidence_url": "https://tilttoronto.com/",
+      "evidence_quote": "1255 Queen Street West, Toronto; Canada's Largest Retro Arcade; $10 cash free-play entry",
+      "note": "tilt.bar still resolves as brand site and links to Toronto. tilttoronto.com is the location-specific site. Either is fine; Toronto-specific URL is clearer.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 670,
+      "name": "The Zone",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "Dance Dance Revolution EXTREME K-cab (Megamix marquee; pads extremely sunken, no red on screen)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9446",
+      "evidence_quote": "Dance Dance Revolution EXTREME | comment='K-cab with Megamix marquee, screen has no red color and pads are extremely sunken' | cond=2 | lastUpdateTime 2025-05-27 20:05:51",
+      "note": "About 1 year old. No official website. Presence likely, condition poor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 634,
+      "name": "Splitsville (Hamilton)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3389",
+      "evidence_quote": "One StepManiaX 65 inch Deluxe machine row on ZIv (arcade lastUpdateTime around 2025-09-06)",
+      "note": "Single SMX cabinet listed per venue on ZIv Canada API snapshot.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 634,
+      "name": "Splitsville (Hamilton)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "StepManiaX 65 inch Deluxe"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3389",
+      "evidence_quote": "StepManiaX 65 inch Deluxe",
+      "note": "Model string from ZIv machine name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 638,
+      "name": "Splitsville (Waterloo)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9135",
+      "evidence_quote": "One StepManiaX 65 inch Deluxe machine row on ZIv (arcade lastUpdateTime around 2026-02-08)",
+      "note": "Single SMX cabinet listed per venue on ZIv Canada API snapshot.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 638,
+      "name": "Splitsville (Waterloo)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "StepManiaX 65 inch Deluxe"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9135",
+      "evidence_quote": "StepManiaX 65 inch Deluxe",
+      "note": "Model string from ZIv machine name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 639,
+      "name": "Splitsville (Woodbridge)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7538",
+      "evidence_quote": "One StepManiaX 43 inch Dedicated machine row on ZIv (arcade lastUpdateTime around 2025-08-24)",
+      "note": "Single SMX cabinet listed per venue on ZIv Canada API snapshot.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 639,
+      "name": "Splitsville (Woodbridge)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "StepManiaX 43 inch Dedicated"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7538",
+      "evidence_quote": "StepManiaX 43 inch Dedicated",
+      "note": "Model string from ZIv machine name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 640,
+      "name": "Splitsville Bowl",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10994",
+      "evidence_quote": "One StepManiaX 65 inch Deluxe (brand new as of Mar 2026 update) machine row on ZIv (arcade lastUpdateTime around 2026-03-11)",
+      "note": "Single SMX cabinet listed per venue on ZIv Canada API snapshot.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 640,
+      "name": "Splitsville Bowl",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "StepManiaX 65 inch Deluxe (brand new as of Mar 2026 update)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10994",
+      "evidence_quote": "StepManiaX 65 inch Deluxe (brand new as of Mar 2026 update)",
+      "note": "Model string from ZIv machine name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 641,
+      "name": "Splitsville Bowl Riverport",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "stepmaniax": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10733",
+      "evidence_quote": "One StepManiaX 65 inch Deluxe (new as of Nov 2025) machine row on ZIv (arcade lastUpdateTime around 2025-12-06)",
+      "note": "Single SMX cabinet listed per venue on ZIv Canada API snapshot.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 641,
+      "name": "Splitsville Bowl Riverport",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "StepManiaX 65 inch Deluxe (new as of Nov 2025)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10733",
+      "evidence_quote": "StepManiaX 65 inch Deluxe (new as of Nov 2025)",
+      "note": "Model string from ZIv machine name.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 639,
+      "name": "Splitsville (Woodbridge)",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.splitsvillebowl.ca/",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7538",
+      "evidence_quote": "Splitsville (Woodbridge) | website empty on ZIv | address 171 Marycroft Avenue Vaughan",
+      "note": "Chain site exists for other Splitsville locations. Exact Woodbridge page path not confirmed in this pass; only root domain proposed as best available, confidence unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 679,
+      "name": "VicVR",
+      "field": "status",
+      "current": "open",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4037",
+      "evidence_quote": "VicVR | lastUpdateTime 2017-03-27 20:39:18 | machines empty | VR arcade HTC Vive note",
+      "note": "9-year-old ZIv row, no machines, VR-only. Low value for a rhythm map; presence unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 643,
+      "name": "Stillwell Bar",
+      "field": "status",
+      "current": "open with pinball/other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4850",
+      "evidence_quote": "Stillwell Bar | lastUpdateTime 2019-04-02 19:31:02 | Metallica; Terminator 2: Judgment Day",
+      "note": "7-year-old ZIv row, no rhythm games. Not priority for this map; open status unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 675,
+      "name": "Truro Mall",
+      "field": "status",
+      "current": "open with claw/stacker",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4804",
+      "evidence_quote": "Truro Mall | lastUpdateTime 2019-03-23 05:30:04 | Claw Machine; Stacker",
+      "note": "7-year-old mall arcade stub. No rhythm games. Open status unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 686,
+      "name": "Xscape (Cineplex Cinemas at The Centre)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "Dance Dance Revolution EXTREME"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9252",
+      "evidence_quote": "Dance Dance Revolution EXTREME | comment='TBA' | cond=3 | lastUpdateTime 2026-07-26 22:44:49",
+      "note": "Very recent ZIv touch (4 days before research) so presence is likely, but comment is TBA and condition only 3. No cabinet-count beyond 1 listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 686,
+      "name": "Xscape (Cineplex Cinemas at The Centre)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9252",
+      "evidence_quote": "One Dance Dance Revolution EXTREME machine row",
+      "note": "Single cab listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 716,
+      "name": "Xscape (Cineplex Cinemas Vaughan)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr": "Dance Dance Revolution EXTREME (P1 Up dead as of Oct 2024 report)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5413",
+      "evidence_quote": "Dance Dance Revolution EXTREME | comment='P1 Up is dead. P2 pad is OK...' (Oct. 2024) | lastUpdateTime 2026-07-25 01:42:42",
+      "note": "Arcade page touched 2026-07-25; detailed pad note is from Oct 2024.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 656,
+      "name": "The Rec Room (Barrie Park Place)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5980",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX on ZIv (arcade lastUpdateTime around 2025-01-05)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 656,
+      "name": "The Rec Room (Barrie Park Place)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5980",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 658,
+      "name": "The Rec Room (Calgary Deerfoot)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX online"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4239",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX online on ZIv (arcade lastUpdateTime around 2026-07-26)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 658,
+      "name": "The Rec Room (Calgary Deerfoot)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4239",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 659,
+      "name": "The Rec Room (Granville)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX online"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9385",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX online on ZIv (arcade lastUpdateTime around 2026-06-26)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 659,
+      "name": "The Rec Room (Granville)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9385",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 660,
+      "name": "The Rec Room (London Masonville)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX (pads reported bad)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4755",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX (pads reported bad) on ZIv (arcade lastUpdateTime around 2025-03-19)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 660,
+      "name": "The Rec Room (London Masonville)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4755",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 661,
+      "name": "The Rec Room (Mississauga Square One)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX online"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4794",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX online on ZIv (arcade lastUpdateTime around 2025-03-19)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 661,
+      "name": "The Rec Room (Mississauga Square One)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4794",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 662,
+      "name": "The Rec Room (Royalmount)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) online"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9486",
+      "evidence_quote": "Pump It Up Phoenix (2024) online on ZIv (arcade lastUpdateTime around 2025-11-02)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 662,
+      "name": "The Rec Room (Royalmount)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9486",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 663,
+      "name": "The Rec Room (South Edmonton)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix LX online"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4151",
+      "evidence_quote": "Pump It Up Phoenix LX online on ZIv (arcade lastUpdateTime around 2026-07-26)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 663,
+      "name": "The Rec Room (South Edmonton)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4151",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 665,
+      "name": "The Rec Room (Toronto Roundhouse)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX online"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4420",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX online on ZIv (arcade lastUpdateTime around 2026-06-09)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 665,
+      "name": "The Rec Room (Toronto Roundhouse)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4420",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 666,
+      "name": "The Rec Room (West Edmonton Mall)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix LX online"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4294",
+      "evidence_quote": "Pump It Up Phoenix LX online on ZIv (arcade lastUpdateTime around 2025-01-05)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 666,
+      "name": "The Rec Room (West Edmonton Mall)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4294",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 667,
+      "name": "The Rec Room (Winnipeg Tuxedo)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "pump_it_up": "Pump It Up Phoenix (2024) LX online"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5494",
+      "evidence_quote": "Pump It Up Phoenix (2024) LX online on ZIv (arcade lastUpdateTime around 2026-07-08)",
+      "note": "Rec Room chain PIU model annotation from ZIv Canada API. Counts not claimed beyond single cab unless noted elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 667,
+      "name": "The Rec Room (Winnipeg Tuxedo)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5494",
+      "evidence_quote": "One Pump It Up machine row on ZIv",
+      "note": "Single PIU listed per Rec Room in this shard.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

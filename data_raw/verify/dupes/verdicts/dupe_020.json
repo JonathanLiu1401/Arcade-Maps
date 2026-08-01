@@ -1,0 +1,369 @@
+{
+  "shard": 20,
+  "verdicts": [
+    {
+      "ids": [
+        2318,
+        2319
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2319,
+      "canonical_name": "嘿鹿鹿江阴虹桥南路店",
+      "canonical_addr": "江苏省江阴市虹桥南路258号嘿鹿鹿主题乐园",
+      "reason": "Same brand at Jiangyin Babaiban (Hongqiao South Rd 256-282). Baidu returns one POI; 256 vs 258 is unit-range noise on the same mall floor.",
+      "evidence_url": "https://map.bemanicn.com/s/2271",
+      "evidence_quote": "嘿鹿鹿主题乐园 / 虹桥南路256八佰伴; Baidu: 嘿鹿鹿主题乐园(江阴南门八佰伴店) 虹桥南路256-282号八佰伴A馆3楼"
+    },
+    {
+      "ids": [
+        2321,
+        2322
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2321,
+      "canonical_name": "噜彼熊嘉年华北京东城店",
+      "canonical_addr": "北京市东城区东直门外大街48号东方银座商场三层L3-10-11-12",
+      "reason": "Identical mall unit: Oriental Yinzuo / Dongfang Yinzuo No.48 Dongzhimen Outer St L3. ZIv is the English mirror of the WAHLAP listing.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11344",
+      "evidence_quote": "L3 Floor, Oriental Yinzuo Mall, No.48 Dongzhimen Outer Street Dongcheng District Beijing"
+    },
+    {
+      "ids": [
+        2325,
+        2326
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2325,
+      "canonical_name": "噜彼熊超级乐园（营口万达店）",
+      "canonical_addr": "辽宁省营口市站前区万达广场F4-B-B",
+      "reason": "0 m apart; same Yingkou Zhanqian Wanda unit F4-B-B / yule lou 4F_B-B under the same Lubixiong brand.",
+      "evidence_url": "https://map.bemanicn.com/s/4801",
+      "evidence_quote": "噜彼熊超级乐园（营口万达店） 辽宁省营口市站前区万达商业广场娱乐楼4F_B-B"
+    },
+    {
+      "ids": [
+        2339,
+        2340
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Different malls in Zhangjiajie: Zhongshang Plaza vs Qifeng Plaza. BemaniCN shop 4654 notes one maimai was moved to Qifeng, proving two distinct branches (and distinct game lineups).",
+      "evidence_url": "https://map.bemanicn.com/s/4654",
+      "evidence_quote": "解放路151号中商广场三楼; maimai comment: 另一台搬去奇峰广场三楼. Shop 6530: 奇峰广场商场3层L333号"
+    },
+    {
+      "ids": [
+        2342,
+        2343
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2343,
+      "canonical_name": "城市宝贝衡阳珠晖万达广场店",
+      "canonical_addr": "湖南省衡阳市珠晖区酃湖万达广场3楼城市宝贝",
+      "reason": "0 m; bare brand Chengshi Baobei and full branch name both point at Linghu Wanda 3F Hengyang.",
+      "evidence_url": "https://map.bemanicn.com/s/4524",
+      "evidence_quote": "城市宝贝 / 酃湖万达广场三楼"
+    },
+    {
+      "ids": [
+        3864,
+        3869
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3864,
+      "canonical_name": "星城战记衡阳万达店",
+      "canonical_addr": "湖南省衡阳市珠晖区酃湖万达广场2楼星城战记",
+      "reason": "Same brand at Linghu Wanda 2F. BemaniCN short address (Hengzhou Ave 50) is the mall road; Baidu confirms one Xingcheng Zhanji at Linghu Wanda 2F.",
+      "evidence_url": "https://map.bemanicn.com/s/1158",
+      "evidence_quote": "星城战记酃湖万达店; Baidu: 星城战记游戏体验中心(酃湖店) 衡州大道酃湖万达广场2F层"
+    },
+    {
+      "ids": [
+        2346,
+        2349
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2349,
+      "canonical_name": "城市星空合肥包河店",
+      "canonical_addr": "安徽省合肥市包河区滨湖新区方圆荟3楼C区城市星空动漫体验中心",
+      "reason": "Same Fangyuanhui Binhu shop: B/C zone 3F vs 3F C zone. About 119 m is mall geocode drift.",
+      "evidence_url": "https://map.bemanicn.com/s/2488",
+      "evidence_quote": "城市星空 / 徽州大道与紫云路交口方圆荟B区/C区3层"
+    },
+    {
+      "ids": [
+        2348,
+        2357
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2348,
+      "canonical_name": "城市星空电玩（南京六合天街店）",
+      "canonical_addr": "江苏省南京市六合区龙湖天街三楼城市星空",
+      "reason": "0 m; both are Chengshi Xingkong at Longfor Nanjing Luhe Paradise Walk 3F (A-3F-16).",
+      "evidence_url": "https://map.bemanicn.com/s/7066",
+      "evidence_quote": "城市星空电玩（南京六合天街店） 雄州街道景兰路2号龙湖南京六合天街A-3F-16号"
+    },
+    {
+      "ids": [
+        5758,
+        5759
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5759,
+      "canonical_name": "电波屋合肥滨湖店",
+      "canonical_addr": "安徽省合肥市包河区滨湖世纪城世纪金源公寓",
+      "reason": "0 m; same Dianbowu at Century Jinyuan apartments opposite Fangyuanhui north gate. Community vs WAHLAP branch naming only.",
+      "evidence_url": "https://map.bemanicn.com/s/6912",
+      "evidence_quote": "电波屋 / 滨湖世纪城世纪金源国际公寓（方圆荟北门对面，具体门牌号加群了解）"
+    },
+    {
+      "ids": [
+        2350,
+        2356
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2350,
+      "canonical_name": "城市星空电玩城（合肥北城店）",
+      "canonical_addr": "安徽省合肥市长丰县双墩镇北城世纪城购物中心四楼城市星空店",
+      "reason": "0 m; same Chengshi Xingkong at Beicheng Century / Jinyuan shopping center building B 4F.",
+      "evidence_url": "https://map.bemanicn.com/s/7132",
+      "evidence_quote": "城市星空电玩城（合肥北城店） 北城世纪金源购物中心b栋4楼"
+    },
+    {
+      "ids": [
+        3891,
+        3894
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3894,
+      "canonical_name": "星奇多潮玩合肥长丰店",
+      "canonical_addr": "安徽省合肥市长丰县双墩镇北城世纪金源购物中心B座2楼2005铺星奇多潮玩世界",
+      "reason": "Same Xingqido at Beicheng Jinyuan building B 2F unit 2005. Different brand/floor from nearby Chengshi Xingkong 4F, not a cross-brand merge.",
+      "evidence_url": "https://map.bemanicn.com/s/2159",
+      "evidence_quote": "星奇多潮玩世界（合肥北城店） 北城世纪金源购物中心B座2楼"
+    },
+    {
+      "ids": [
+        3881,
+        3882
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3881,
+      "canonical_name": "星奇多合肥高新店",
+      "canonical_addr": "安徽省合肥市高新区龙湖天街三楼星奇多潮玩世界",
+      "reason": "Same Xingqido at Hefei Gaoxin Longfor Paradise Walk 3F; branch suffix vs short mall addr only.",
+      "evidence_url": "https://map.bemanicn.com/s/4234",
+      "evidence_quote": "星奇多合肥高新龙湖天街店 / 高新区龙湖天街3楼"
+    },
+    {
+      "ids": [
+        2352,
+        2359
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2359,
+      "canonical_name": "城市星空金华兰溪店",
+      "canonical_addr": "浙江省金华市兰溪市宝龙广场3楼城市星空",
+      "reason": "0 m; same Chengshi Xingkong unit at Lanxi Baolong Plaza 3F (M1-L3-027).",
+      "evidence_url": "https://map.bemanicn.com/s/4033",
+      "evidence_quote": "城市星空家庭娱乐中心（兰溪宝龙广场店） 振兴路299号兰溪宝龙广场M1-L3-027号商铺"
+    },
+    {
+      "ids": [
+        2366,
+        2368
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2368,
+      "canonical_name": "城市猩球潮州饶平唐商广场店",
+      "canonical_addr": "广东省潮州市饶平县黄冈镇沿河南路唐商广场商业11号（2层Z209商铺）",
+      "reason": "0 m; identical unit Tangshang Plaza commercial 11 2F Z209, bare vs full Raoping branch name.",
+      "evidence_url": "https://map.bemanicn.com/s/3313",
+      "evidence_quote": "城市猩球(唐商广场店) 沿河南路唐商广场商业11号(2层Z209商铺)"
+    },
+    {
+      "ids": [
+        2372,
+        2398
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2398,
+      "canonical_name": "城市英雄天津津南吾悦广场店",
+      "canonical_addr": "天津市津南区吾悦广场三楼城市英雄",
+      "reason": "Same Chengshi Yingxiong at Jinnan Wuyue Plaza 3F; ZIv English listing matches WAHLAP/BemaniCN games (2 CHU, 2 maimai, 1 taiko).",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11622",
+      "evidence_quote": "3F, Jinnan Wuyue Plaza, Xianshuigu Town Jinnan District Tianjin; BemaniCN: 津南吾悦广场三楼"
+    },
+    {
+      "ids": [
+        2373,
+        2422
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2422,
+      "canonical_name": "城市英雄渝北龙湖礼嘉天街店",
+      "canonical_addr": "重庆市渝北区龙湖礼嘉天街A馆负一楼",
+      "reason": "Same Longfor Lijia Paradise Walk Building A B1; matching maimai+taiko counts.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11641",
+      "evidence_quote": "B1 Floor, Building A, Longfor Lijia Paradise Walk; BemaniCN: 两江新区龙湖礼嘉天街A馆负一楼"
+    },
+    {
+      "ids": [
+        2374,
+        2393
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2393,
+      "canonical_name": "城市英雄北京海淀大悦城店",
+      "canonical_addr": "北京市海淀区西北旺海淀大悦城3楼城市英雄",
+      "reason": "Same Chengshi Yingxiong at Haidian Joy City 3F; ZIv and WAHLAP/BemaniCN share jubeat 2 / maimai 2 / taiko 2.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11380",
+      "evidence_quote": "海淀大悦城3F; BemaniCN: 海淀区海淀大悦城3F"
+    },
+    {
+      "ids": [
+        2376,
+        2435
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2435,
+      "canonical_name": "城市英雄长沙岳麓万达店",
+      "canonical_addr": "长沙岳麓区银盆岭街道岳麓大道57号万达广场3号口3层3-1.3-2号城市英雄商铺",
+      "reason": "0 m; same Chengshi Yingxiong at Yinpenling Wanda 3F Changsha (Yinpenling Wanda = Yuelu Wanda).",
+      "evidence_url": "https://map.bemanicn.com/s/5496",
+      "evidence_quote": "城市英雄(银盆岭万达店) 长沙市岳麓区银盆岭万达广场3楼"
+    },
+    {
+      "ids": [
+        2377,
+        2434
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2434,
+      "canonical_name": "城市英雄长沙岳麓万象城店",
+      "canonical_addr": "湖南省长沙市岳麓区万象城L5 553城市英雄",
+      "reason": "Same unit MixC L553 / L5 553 Chengshi Yingxiong; about 38 m mall geocode noise.",
+      "evidence_url": "https://map.bemanicn.com/s/4611",
+      "evidence_quote": "城市英雄(长沙万象城店) 桐梓坡路万象城L553号店铺"
+    },
+    {
+      "ids": [
+        2378,
+        2438
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2438,
+      "canonical_name": "城市英雄长沙开福北辰荟店",
+      "canonical_addr": "湖南省长沙市开福区湘江路1500号北辰荟购物中心3楼",
+      "reason": "0 m; same Chengshi Yingxiong at Beichenhui, Xiangjiang Rd 1500 3F.",
+      "evidence_url": "https://map.bemanicn.com/s/1335",
+      "evidence_quote": "城市英雄(长沙北辰荟店) 湘江北路1500号长沙北辰荟3F"
+    },
+    {
+      "ids": [
+        2380,
+        2439
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2439,
+      "canonical_name": "城市英雄长沙梅溪湖步步高店",
+      "canonical_addr": "湖南省长沙市岳麓区梅溪湖步步高负一层城市英雄",
+      "reason": "Same Chengshi Yingxiong at Meixihu BBK / Bubugao Meixihu New World B1 (Fenglin 3rd Rd 1099). About 240 m is large-mall geocode spread, not a second branch.",
+      "evidence_url": "https://map.bemanicn.com/s/314",
+      "evidence_quote": "城市英雄(长沙梅溪湖新天地店) 枫林三路1099号步步高梅溪湖新天地B1层"
+    },
+    {
+      "ids": [
+        2381,
+        2436
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2436,
+      "canonical_name": "城市英雄长沙岳麓金茂店",
+      "canonical_addr": "湖南省长沙市岳麓区天顶街道金茂览秀城LG层28号",
+      "reason": "0 m; identical unit Jinmao Lanxiu City LG28 Chengshi Yingxiong.",
+      "evidence_url": "https://map.bemanicn.com/s/2542",
+      "evidence_quote": "城市英雄(长沙金茂览秀城店) 梅溪湖路金茂览秀城LG层LG28号"
+    },
+    {
+      "ids": [
+        3612,
+        3622
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3622,
+      "canonical_name": "快乐街区长沙岳麓金茂店",
+      "canonical_addr": "湖南省长沙市岳麓区天顶街道金茂览秀城二楼快乐街区",
+      "reason": "0 m; same Kuaile Jiequ brand at Jinmao Lanxiu City (Huanhu Rd 1177). Distinct from Chengshi Yingxiong LG in the same mall.",
+      "evidence_url": "https://map.bemanicn.com/s/3856",
+      "evidence_quote": "快乐街区(长沙金茂览秀城) 梅溪湖环湖路1177号"
+    },
+    {
+      "ids": [
+        2384,
+        2428
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2428,
+      "canonical_name": "城市英雄西安熙地港店",
+      "canonical_addr": "陕西省西安市未央区凤城七路熙地港购物中心五楼",
+      "reason": "Same Chengshi Yingxiong at CityOn / Xidigang 5F Weiyang Xian; ZIv and WAHLAP/BemaniCN agree on mall and floor.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9698",
+      "evidence_quote": "5th Floor, CityOn(熙地港), Rd. Weiyang; BemaniCN: 未央路熙地港购物中心五层"
+    },
+    {
+      "ids": [
+        2385,
+        2414
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2414,
+      "canonical_name": "城市英雄武汉新荣天街店",
+      "canonical_addr": "湖北省武汉市江岸区后湖大道355号武汉新荣天街4F",
+      "reason": "0 m; same unit Xinrong Paradise Walk A-4F-25/26/27 at Houhu Ave 355.",
+      "evidence_url": "https://map.bemanicn.com/s/6233",
+      "evidence_quote": "城市英雄Party House(龙湖新荣天街店) 后湖大道355号新荣天街A-4F-25,A-4F-26,A-4F-27"
+    },
+    {
+      "ids": [
+        2386,
+        2416
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2416,
+      "canonical_name": "城市英雄武汉滨江天街店",
+      "canonical_addr": "湖北省武汉市武昌区徐家棚街道滨江天街4楼城市英雄",
+      "reason": "0 m; same Chengshi Yingxiong at Longfor Wuhan Riverside Paradise Walk 4F (Heping Ave 659 shops 13-16).",
+      "evidence_url": "https://map.bemanicn.com/s/6041",
+      "evidence_quote": "城市英雄Party House(龙湖滨江天街店) 和平大道659号龙湖武汉滨江天街4层13、14、15、16号商铺"
+    }
+  ]
+}

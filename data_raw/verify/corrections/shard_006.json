@@ -1,0 +1,838 @@
+{
+  "shard": 6,
+  "checked": 42,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9367",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4657",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5830",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7271",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5430",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10246",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11206",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10175",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8571",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1536",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10743",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11258",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11227",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11456",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11418",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9174",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11256",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11257",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5513",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4540",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3600",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3615",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3671",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9514",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10857",
+    "https://www.insertcoinwa.com/olympia",
+    "https://www.insertcoinwa.com/",
+    "https://leaderboardarcade.com/",
+    "https://junglefunisland.com/",
+    "https://srqlivingstons.com/",
+    "https://www.luckystrikeent.com/location/lucky-strike-aliso-viejo",
+    "shard_006.json snapshot fields"
+  ],
+  "corrections": [
+    {
+      "id": 12781,
+      "name": "Livingston's Amusements",
+      "field": "status",
+      "current": {
+        "open": true,
+        "games": [
+          "ddr"
+        ],
+        "notes": "DDR EXTREME"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3600",
+      "evidence_quote": "Last update 2015-12-05 by VocaloidFandom (10 years ago); single machine Dance Dance Revolution EXTREME. Same street address as active ZIv id=3615 (map id 12780) updated 2026-05-17 with DanceDanceRevolution X.",
+      "note": "Likely duplicate of id 12780 (same address 5947 Clark Center Ave Sarasota). Recommend merge/remove 12781.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12781,
+      "name": "Livingston's Amusements",
+      "field": "location",
+      "current": {
+        "lat": 27.69161722572314,
+        "lng": -82.10073165649413,
+        "addr": "5947 Clark Center Avenue Sarasota Florida, 34238"
+      },
+      "proposed": {
+        "lat": 27.269090120371,
+        "lng": -82.502295785309,
+        "note": "or remove as duplicate of 12780"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://srqlivingstons.com/",
+      "evidence_quote": "Address: 5947 Clark Center Ave, Sarasota, FL 34238. Official site of the single Livingston Amusements venue.",
+      "note": "Current pin is about 61 km from the real Clark Center Ave address (and from sibling entry 12780). Wrong-city-scale wrong even if not deleted.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12780,
+      "name": "Livingston's Amusements",
+      "field": "website",
+      "current": "https://www.livingstonsamusements.com",
+      "proposed": "https://srqlivingstons.com/",
+      "confidence": "certain",
+      "evidence_url": "https://srqlivingstons.com/",
+      "evidence_quote": "livingstonsamusements.com 301-redirects to srqlivingstons.com; site shows open venue at 5947 Clark Center Ave with current hours and renovations notice.",
+      "note": "Old domain still redirects; prefer the live host.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12780,
+      "name": "Livingston's Amusements",
+      "field": "other",
+      "current": {
+        "notes": "Cabs: DanceDanceRevolution X"
+      },
+      "proposed": {
+        "ddr_condition": "bad",
+        "detail": "Raw Thrills cab; P1 right sticky; P2 up/left issues per ZIv 2026-05"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3615",
+      "evidence_quote": "DanceDanceRevolution X (North America) condition Bad; Raw Thrills cabinet with panel problems, P1 right sticky and gets stuck; issues with P2 up and left arrows. Last update 2026-05-17.",
+      "note": "Venue still open per official site 2026. Cabinet exists but playability is poor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12708,
+      "name": "Jeremy's Downtown Arcade",
+      "field": "games",
+      "current": [
+        "dance_evo",
+        "drs",
+        "groove_coaster",
+        "other",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "dance_evo",
+        "drs",
+        "groove_coaster",
+        "maimai",
+        "other",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4657",
+      "evidence_quote": "maimai FiNALE (Japan) listed Great condition; free play. Page last update 2026-07-17. machine_prices in shard already has key maimai: free play.",
+      "note": "App games omits maimai even though notes/prices and ZIv list maimai FiNALE (offline JP cab, not maimai_dx network).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12708,
+      "name": "Jeremy's Downtown Arcade",
+      "field": "game_counts",
+      "current": {
+        "dance_evo": 1,
+        "drs": 1,
+        "groove_coaster": 4,
+        "sdvx": 2,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "proposed": {
+        "dance_evo": 1,
+        "drs": 1,
+        "groove_coaster": 4,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 1,
+        "maimai": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4657",
+      "evidence_quote": "SOUND VOLTEX EXCEED GEAR listed once (Nemsys Gen 2). Groove Coaster 4MAX listed x4. maimai FiNALE x1. Last update 2026-07-17.",
+      "note": "App sdvx:2 does not match ZIv single SDVX entry. Groove Coaster x4 confirmed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12708,
+      "name": "Jeremy's Downtown Arcade",
+      "field": "status",
+      "current": {
+        "open": true
+      },
+      "proposed": {
+        "open": true,
+        "admission": " all-day unlimited / 0 monthly"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4657",
+      "evidence_quote": "Open; /day unlimited all ages; 0 unlimited month. Last update 2026-07-17. Hours noon-11pm (midnight Fri-Sat).",
+      "note": "Also supported by independent listings describing active 2025-2026 operation at 206C 12th Ave S Nampa.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12769,
+      "name": "Leaderboard 2 Arcade Bar & Pizzeria (Shad)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "museca",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "museca",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "project_diva",
+        "pump_it_up",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7271",
+      "evidence_quote": "maimai FiNALE x2 (Japan) at 9.0 credits, Perfect. Page updated 2026-05-17 by Kevviz. machine_prices already has maimai: 9.0 credits.",
+      "note": "Also ZIv lists Synchronica and Love Live SIF Next Stage not in games. Venue open; $25 all-day.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12769,
+      "name": "Leaderboard 2 Arcade Bar & Pizzeria (Shad)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "ddr": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 1,
+        "jubeat": 2,
+        "museca": 1,
+        "nostalgia": 1,
+        "ongeki": 1,
+        "project_diva": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 2,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "ddr": 1,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 1,
+        "jubeat": 2,
+        "maimai": 2,
+        "museca": 1,
+        "nostalgia": 1,
+        "ongeki": 1,
+        "project_diva": 1,
+        "pump_it_up": 1,
+        "sdvx": 1,
+        "taiko": 2,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7271",
+      "evidence_quote": "maimai FiNALE listed twice. CHUNITHM VERSE x2, jubeat Ave x2, WACCA REVERSE x2, taiko Green + taiko 14 (2), GITADORA FUZZ-UP GF+DM (2).",
+      "note": "Counts otherwise match ZIv well. Pump listed as Pump It Up Phoenix on ZIv.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12769,
+      "name": "Leaderboard 2 Arcade Bar & Pizzeria (Shad)",
+      "field": "status",
+      "current": {
+        "open": true
+      },
+      "proposed": {
+        "open": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://leaderboardarcade.com/",
+      "evidence_quote": "Official site promotes Shad Road and Wells Road locations with packages, menus, games pages; active business branding 2026.",
+      "note": "Cross-checked with ZIv updates May-Jun 2026 and community posts listing three Jax locations including Blanding.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12770,
+      "name": "Leaderboard 3 (Lakeshore)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "drs",
+        "other",
+        "popn",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "ddr",
+        "drs",
+        "maimai",
+        "other",
+        "popn",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10246",
+      "evidence_quote": "maimai (Japan) 14.0 credits, front of arcade beside skeeball, online; warning not to update the version. Last update 2026-04-29 by HolyAarom.",
+      "note": "machine_prices already has maimai. Venue still appears open (Yelp active listing at 2415 Blanding Blvd Ste 9).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12770,
+      "name": "Leaderboard 3 (Lakeshore)",
+      "field": "website",
+      "current": null,
+      "proposed": "https://leaderboardarcade.com/",
+      "confidence": "likely",
+      "evidence_url": "https://leaderboardarcade.com/",
+      "evidence_quote": "Official Leaderboard Arcade site covers Jacksonville-area locations including Shad and Wells; FAQ/community references Blanding/Lakeshore as a third credited-card location.",
+      "note": "No dedicated Lakeshore subpage confirmed in fetch; chain homepage is still a better website than null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12771,
+      "name": "Leaderboard Arcade Bar & Pizzeria (Wells)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "iidx",
+        "jubeat",
+        "other",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "other",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5430",
+      "evidence_quote": "maimai FiNALE (Japan) Perfect, free-play credit pricing 9.0. Last update 2026-06-19 by JBMonte. machine_prices already has maimai.",
+      "note": "ZIv no longer lists DDR at Wells. App correctly does not list ddr. CHUNITHM on ZIv is LUMINOUS PLUS which matches notes.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12771,
+      "name": "Leaderboard Arcade Bar & Pizzeria (Wells)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "drs": 1,
+        "iidx": 1,
+        "jubeat": 2,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "drs": 1,
+        "iidx": 1,
+        "jubeat": 2,
+        "maimai": 1,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5430",
+      "evidence_quote": "jubeat Ave. x2; single cabinets for IIDX 30 RESIDENT, CHUNITHM LUMINOUS PLUS, DRS, SDVX EXCEED GEAR, taiko Green, WACCA REVERSE, maimai FiNALE.",
+      "note": "Also ZIv lists StepMania Converted Cabinet and Synchronica under music (not currently in games).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12789,
+      "name": "Lucky Cat Arcade",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai",
+        "other",
+        "sdvx",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11206",
+      "evidence_quote": "maimai FiNALE (Japan) Perfect. Also CHUNITHM VERSE, SDVX EXCEED GEAR NEMSYS x2, WACCA REVERSE. Last update 2026-06-06 by maji.",
+      "note": "Notes already say maimai FiNALE. Not on SEGA ALL.Net maimai DX International locator (expected for offline FiNALE). Venue listing still active mid-2026.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12789,
+      "name": "Lucky Cat Arcade",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "sdvx": 2,
+        "wacca": 1
+      },
+      "proposed": {
+        "chunithm": 1,
+        "maimai": 1,
+        "sdvx": 2,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11206",
+      "evidence_quote": "Five cabinets: CHUNITHM VERSE x1, maimai FiNALE x1, SOUND VOLTEX EXCEED GEAR NEMSYS x2, WACCA REVERSE x1.",
+      "note": "cab_models sdvx_nemsys already correct.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12698,
+      "name": "Insert Coin Olympia",
+      "field": "hours",
+      "current": "Mon-Thu 11:00-23:00; Fri-Sat 11:00-23:59; Sun 11:00-23:00",
+      "proposed": "Sun-Thu 11:00-22:00; Fri-Sat 11:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.insertcoinwa.com/olympia",
+      "evidence_quote": "Arcade/Restaurant/Bar: Sun-Thu 11:00 AM-10:00 PM; Fri-Sat 11:00 AM-11:00 PM. Closed Thanksgiving and Christmas. 21+ after 11:00 pm per liquor rules.",
+      "note": "Official hours are one hour earlier close than the shard. ZIv still lists IIDX 26 Rootage, DrumManiaV8, Reflec Beat, SDVX EXCEED GEAR Nemsys, Nostalgia Op.3, StepManiaX 65 as of 2026-04-12.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12723,
+      "name": "Jungle Fun Island - Ala Moana Center",
+      "field": "location",
+      "current": {
+        "addr": "528 Kona Street Honolulu, 96814, Honolulu"
+      },
+      "proposed": {
+        "addr": "1450 Ala Moana Boulevard #1218, Honolulu, HI 96814"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://junglefunisland.com/",
+      "evidence_quote": "Address shown as 1450 Ala Moana Boulevard, Honolulu, HI 96814. Phone (808) 949-4905. Open today 09:00 am - 09:00 pm on capture.",
+      "note": "SEGA ALL.Net maimai DX International also lists Jungle Fun Island at 1450 ALA Moana Blvd #1218. Prefer customer-facing Ala Moana Blvd suite over historical Kona St service address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12723,
+      "name": "Jungle Fun Island - Ala Moana Center",
+      "field": "games",
+      "current": [
+        "ddr",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "sdvx"
+      ],
+      "proposed": [
+        "ddr",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "Jungle Fun Island appears on official maimai DX International North America location list at 1450 Ala Moana Blvd #1218.",
+      "note": "Confirmation only: open and maimai_dx still official. ZIv 2026-07-08 lists IIDX 33 Lightning, DDR WORLD, maimai DX CiRCLE, SDVX Valkyrie.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12731,
+      "name": "KIDDLETON",
+      "field": "location",
+      "current": {
+        "addr": "14006 riverside dr sheman oaks Ca 91423"
+      },
+      "proposed": {
+        "addr": "14006 Riverside Dr, Sherman Oaks, CA 91423",
+        "name_note": "Kiddleton Kiosk (Westfield Fashion Square)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "Kiddleton listed on ALL.Net; ZIv id=11258 titles it Kiddleton Kiosk (Westfield Fashion Square), 14006 Riverside Dr, Sherman Oaks CA 91423, maimai DX CiRCLE, updated 2026-06-24.",
+      "note": "Fix sheman -> Sherman and capitalize. Official maimai network confirms still live.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12796,
+      "name": "LUCKY STRIKE ALISO VIEJO",
+      "field": "location",
+      "current": {
+        "addr": "26501 Aliso Creek rd Aliso Viejo ca 92656"
+      },
+      "proposed": {
+        "addr": "26503 Aliso Creek Rd, Aliso Viejo, CA 92656"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10743",
+      "evidence_quote": "Address 26503 Aliso Creek Rd, Aliso Viejo, California 92656; maimai DX PRiSM PLUS Perfect; last update 2026-01-24. ALL.Net lists 26501 Aliso Creek rd.",
+      "note": "ALL.Net 26501 vs ZIv 26503; same parcel. maimai_dx confirmed on official SEGA locator.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12755,
+      "name": "LASER BOUNCE",
+      "field": "other",
+      "current": {
+        "notes_pump": "Pump It Up without Phoenix version"
+      },
+      "proposed": {
+        "pump_version": "Pump It Up Phoenix (2024)",
+        "cabinet": "LX"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4540",
+      "evidence_quote": "Pump It Up Phoenix (2024) - 9.0 credits or 4 hearts, Moderate, LX cabinet, v2.12.0. Last update 2026-02-18.",
+      "note": "maimai DX CiRCLE confirmed on SEGA ALL.Net and ZIv (9.9 credits).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12718,
+      "name": "Joysticks Arcade",
+      "field": "other",
+      "current": {
+        "notes": "includes maimai FiNALE and maimai DX PRiSM PLUS"
+      },
+      "proposed": {
+        "maimai_status": "Both maimai FiNALE (offline) and unofficial maimai DX PRiSM PLUS (offline) per ZIv; not on official ALL.Net maimai DX International list"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5830",
+      "evidence_quote": "maimai FiNALE offline Perfect; maimai DX PRiSM PLUS Unofficial cab, offline Perfect. Last update 2026-06-21 by Jaio. Venue open; $25 Unlimited Play.",
+      "note": "App games maimai_dx is arguably overstated for an offline/unofficial cab not on ALL.Net.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12718,
+      "name": "Joysticks Arcade",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.facebook.com/JoysticksClearwaterBeach/",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5830",
+      "evidence_quote": "Facebook: facebook.com/JoysticksClearwaterBeach/; phone +17272400006.",
+      "note": "No dedicated commercial website found; Facebook is the public presence.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12736,
+      "name": "Kiddleton Kiosk (South Point Hotel Casino & Spa)",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "still_on_official_maimai_locator": true,
+        "allnet_name": "South Point"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "North America list includes South Point under Nevada maimai DX International locations (alongside The Orleans).",
+      "note": "ZIv 11256 last update 2026-06-24 condition Unknown. Official network presence is stronger than ZIv condition field.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12737,
+      "name": "Kiddleton Kiosk (The Orleans Hotel & Casino)",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "still_on_official_maimai_locator": true,
+        "allnet_name": "The Orleans"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "North America list includes The Orleans under Nevada maimai DX International locations.",
+      "note": "ZIv 11257 last update 2026-06-24 condition Unknown. Confirms networked maimai still associated with this address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12735,
+      "name": "Kiddleton Japantown",
+      "field": "other",
+      "current": {
+        "notes": "maimai DX CiRCLE PLUS"
+      },
+      "proposed": {
+        "maimai_version": "maimai DX CiRCLE PLUS (International)",
+        "still_open": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9174",
+      "evidence_quote": "maimai DX CiRCLE PLUS (International) 2 tokens/play Perfect; last update 2026-07-30 by Inuchan915.",
+      "checked_at": "2026-07-31",
+      "note": "Very recent ZIv update. App games maimai_dx correct."
+    },
+    {
+      "id": 12732,
+      "name": "Kiddleton",
+      "field": "other",
+      "current": {
+        "games": [
+          "ddr",
+          "popn"
+        ]
+      },
+      "proposed": {
+        "still_listed": true,
+        "ddr": "WORLD Universal",
+        "popn": "High Cheers"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11227",
+      "evidence_quote": "DanceDanceRevolution WORLD (Universal Model) Perfect; popn High Cheers Perfect; last update 2026-06-19.",
+      "checked_at": "2026-07-31",
+      "note": "Not on maimai ALL.Net list. App data looks consistent."
+    },
+    {
+      "id": 12733,
+      "name": "Kiddleton (Gardena)",
+      "field": "other",
+      "current": {
+        "games": [
+          "ddr",
+          "other",
+          "popn"
+        ]
+      },
+      "proposed": {
+        "still_listed": true,
+        "last_ziv": "2026-07-15"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11456",
+      "evidence_quote": "DDR WORLD Universal Perfect; popn High Cheers Perfect; last update 2026-07-15.",
+      "checked_at": "2026-07-31",
+      "note": "Consistent with app."
+    },
+    {
+      "id": 12734,
+      "name": "Kiddleton Cupertino",
+      "field": "other",
+      "current": {
+        "info_text_has_unreliable_hours": true
+      },
+      "proposed": {
+        "hours_caveat": "Store may be closed during posted 13:00-21:00 hours"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11418",
+      "evidence_quote": "Despite listed regular hours, the store opens and closes whenever it feels like. Last update 2026-07-16.",
+      "checked_at": "2026-07-31",
+      "note": "App info_text already carries this caveat."
+    },
+    {
+      "id": 12754,
+      "name": "Laser Assault - Provo",
+      "field": "other",
+      "current": {
+        "iidx": "beatmania IIDX 30 RESIDENT"
+      },
+      "proposed": {
+        "iidx_condition": "bad",
+        "monitor_pc_sync_issues": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8571",
+      "evidence_quote": "IIDX 30 RESIDENT condition Bad; monitor and PC sync issues. jubeat Ave Perfect; Nostalgia Op.3 Perfect. Last update 2026-05-25.",
+      "checked_at": "2026-07-31",
+      "note": "Venue still listed open. IIDX playability poor."
+    },
+    {
+      "id": 12787,
+      "name": "Lowry Parcade",
+      "field": "other",
+      "current": {
+        "notes": "DDRMAX2; jubeat Ave; WACCA REVERSE"
+      },
+      "proposed": {
+        "ddr_software": "DDRMAX2 (Extreme Pro board failed; running MAX2)",
+        "wacca_software": "WACCA PLUS not newest REVERSE build per ZIv note"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10175",
+      "evidence_quote": "DDRMAX2 condition Great; Extreme Pro board failed; currently runs MAX2. WACCA notes running WACCA PLUS. Last update 2026-03-15.",
+      "checked_at": "2026-07-31",
+      "note": "Still open free-play barcade."
+    },
+    {
+      "id": 12778,
+      "name": "LFG Gaming Bar",
+      "field": "other",
+      "current": {
+        "games": [
+          "ddr",
+          "other",
+          "sdvx"
+        ]
+      },
+      "proposed": {
+        "still_listed": true,
+        "last_ziv": "2025-09-19",
+        "ddr": "EXTREME / Extreme Pro",
+        "sdvx": "EXCEED GEAR online via Eagle"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5513",
+      "evidence_quote": "Last update 2025-09-19 by Kinfante. DDR EXTREME Great; SDVX EXCEED GEAR Perfect online via Eagle.",
+      "checked_at": "2026-07-31",
+      "note": "Stalest multi-rhythm barcade researched (~10 months). No closure evidence found."
+    },
+    {
+      "id": 12695,
+      "name": "Independence Blue Cross RiverRink",
+      "field": "status",
+      "current": {
+        "implied_always_available": true,
+        "games": [
+          "other",
+          "pump_it_up"
+        ]
+      },
+      "proposed": {
+        "seasonal": true,
+        "winterfest": "late Nov to early March",
+        "summerfest": "May to September",
+        "pump": "Pump It Up Zero"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10857",
+      "evidence_quote": "Seasonally open pop-up skating rink. Winterfest end of November to beginning of March; Summerfest May to September. Pump It Up Zero 4 credits. Updated 2026-01-13.",
+      "checked_at": "2026-07-31",
+      "note": "Critical: venue is NOT year-round. Outside windows closed/absent."
+    },
+    {
+      "id": 12702,
+      "name": "ITG2 House",
+      "field": "status",
+      "current": {
+        "shown_as_public_arcade": true,
+        "addr": "4904 Timber Trail Court Richmond Virginia, 23112"
+      },
+      "proposed": {
+        "private_residence": true,
+        "public_access": "unknown / not a commercial arcade"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2977",
+      "evidence_quote": "Name ITG2 House; residential street address; only machine In the Groove 2 Dedicab Excellent; no website/hours.",
+      "checked_at": "2026-07-31",
+      "note": "Residential pin. Risk of sending players to a private home."
+    },
+    {
+      "id": 12717,
+      "name": "Jon's House",
+      "field": "status",
+      "current": {
+        "shown_as_public_arcade": true
+      },
+      "proposed": {
+        "private_residence": true,
+        "access": "by text/appointment per info_text"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3358",
+      "evidence_quote": "info: I have a DDR Extreme Machine... Text me if you ever want to play. Residential address Elgin SC.",
+      "checked_at": "2026-07-31",
+      "note": "Explicit private home collection. Should not appear as a walk-in public arcade."
+    },
+    {
+      "id": 12704,
+      "name": "Jacqueline's Home Arcade",
+      "field": "status",
+      "current": {
+        "info": "Private home arcade, appointment"
+      },
+      "proposed": {
+        "private_residence": true,
+        "access": "appointment via jacqueline@ordrstudio.com"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7491",
+      "evidence_quote": "Private home arcade, but open based on appointment. Please email Jacqueline at jacqueline@ordrstudio.com. Addr N/A Macungie PA.",
+      "checked_at": "2026-07-31",
+      "note": "Already documented as appointment-only private. Keep private flag highly visible."
+    },
+    {
+      "id": 12693,
+      "name": "Incredible Pizza Company",
+      "field": "other",
+      "current": {
+        "games": [
+          "stepmaniax"
+        ],
+        "website": "https://incrediblepizza.com/locations/memphis/"
+      },
+      "proposed": {
+        "ziv_last_update": "2024-07-09",
+        "still_listed_on_ziv": true,
+        "piu_removed_2022": true
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3671",
+      "evidence_quote": "StepManiaX 43 dedicated Moderate US.25/song; last update 2024-07-09. Comment: PIU Prime supposedly removed August 2022.",
+      "checked_at": "2026-07-31",
+      "note": "Could not reconfirm 2026 SMX presence beyond ZIv ~2 years stale. Do not invent removal."
+    },
+    {
+      "id": 12694,
+      "name": "Incredibowl Entertainment",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "stepmaniax": "US.50 for 2 songs"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9514",
+      "evidence_quote": "StepManiaX 43 dedicated Great; US.50 for 2 songs; last update 2024-12-04 by GamingLizard9. Hours match shard.",
+      "checked_at": "2026-07-31",
+      "note": "Hours already match. Price missing from machine_prices in shard."
+    }
+  ]
+}

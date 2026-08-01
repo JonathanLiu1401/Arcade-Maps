@@ -1,0 +1,1395 @@
+{
+  "shard": 40,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/ Inertia shop JSON for all 72 linked shops plus selected missing shops",
+    "https://map.bemanicn.com/games title_id map",
+    "https://map.bemanicn.com/api/miniapp/common/region",
+    "https://map.bemanicn.com/region/city/{code} Shandong 16 cities 238 shops",
+    "https://location.am-all.net/alm/location?gm=98 (intl maimai; no China)",
+    "https://maimai.wahlap.com/location (HTTP 567)",
+    "data_raw/verify/shards/shard_040.json",
+    "scrapers/bemanicn.py TITLE_GAME; js/state.js cab variant model"
+  ],
+  "corrections": [
+    {
+      "id": 949,
+      "name": "51区青岛市北悦荟广场店",
+      "field": "status",
+      "current": "open (wahlap, chunithm)",
+      "proposed": "closed / machines removed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2113",
+      "evidence_quote": "2026年4月，悦荟51区撤店后，舞萌中二太鼓全部转移至此 | 2026.7.29 应51区总店要求将原悦荟店的一台舞萌和两台中二节奏撤机运往其他城市",
+      "note": "Sibling Licang Wanda BCN page updated 2026-07-30. No BCN page remains for Yuehui 51. WAHLAP locator HTTP 567 this run.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 950,
+      "name": "51区青岛李沧万达店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2113",
+      "evidence_quote": "arcades={'maimai_dx': 2, 'taiko': 1, 'other': 2}; no chunithm; updated 2026-07-30; comment 2026.7.29 chu removal",
+      "note": "Remove chunithm after 2026-07-29 transfer out.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 950,
+      "name": "51区青岛李沧万达店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 3,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2113",
+      "evidence_quote": "maimai_dx=2 taiko=1; was app mai=3 chu=2",
+      "note": "Prior bemanicn_qty stale after 2026-07-29.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2074,
+      "name": "吉合家庭娱乐中心烟台开发区万达店",
+      "field": "other",
+      "current": {
+        "bemanicn": "https://map.bemanicn.com/s/4904"
+      },
+      "proposed": {
+        "bemanicn": "https://map.bemanicn.com/s/6755"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6755",
+      "evidence_quote": "name=吉合家庭娱乐中心（烟台开发区万达店）; games={'maimai_dx': 1, 'chunithm': 2, 'other': 1}; updated 2026-07-27",
+      "note": "App links 4904 (乐到底 same mall). Correct is 6755 吉合.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2074,
+      "name": "吉合家庭娱乐中心烟台开发区万达店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6755",
+      "evidence_quote": "6755 arcades={'maimai_dx': 1, 'chunithm': 2, 'other': 1}; no taiko",
+      "note": "taiko is on sibling 乐到底 4904.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2074,
+      "name": "吉合家庭娱乐中心烟台开发区万达店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6755",
+      "evidence_quote": "counts from 6755: {'maimai_dx': 1, 'chunithm': 2, 'other': 1}",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1559,
+      "name": "乐到底烟台福山万达店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4904",
+      "evidence_quote": "name=乐到底家庭娱乐中心（开发区万达店）; games={'maimai_dx': 1, 'taiko': 1, 'other': 1}; updated 2026-07-28",
+      "note": "WAHLAP-only; matches BCN 4904. Link bemanicn /s/4904.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1559,
+      "name": "乐到底烟台福山万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4904",
+      "evidence_quote": "counts {'maimai_dx': 1, 'taiko': 1, 'other': 1}",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1559,
+      "name": "乐到底烟台福山万达店",
+      "field": "location",
+      "current": {
+        "addr": "山东省烟台市福山区万达广场三楼乐到底家庭娱乐中心"
+      },
+      "proposed": {
+        "addr": "烟台开发区万达广场三楼（福莱山街道衡山路17号3F-C）"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4904",
+      "evidence_quote": "BCN address=福莱山街道衡山路17号开发区万达3F-C号店铺",
+      "note": "App says Fushan; BCN/pin are Kaifa district Wanda.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1092,
+      "name": "g2街区淄博富力万达店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1084 (G2街区)",
+      "proposed": "duplicate of id 1084; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4331",
+      "evidence_quote": "same lat/lng 36.838363,118.005068 Fuli Wanda",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1084.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1450,
+      "name": "七彩潮玩聊城阳谷利客来店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1854 (利客来购物中心3楼七彩潮玩)",
+      "proposed": "duplicate of id 1854; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5334",
+      "evidence_quote": "same pin Yanggu Like Lai",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1854.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1757,
+      "name": "偶予潮玩社潍坊泰华城店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1756 (偶予潮玩社潍坊安丘店)",
+      "proposed": "duplicate of id 1756; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1985",
+      "evidence_quote": "6m both Anqiu Taihua F3",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1756.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1829,
+      "name": "全福元游乐园潍坊寿光洛城店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1830 (全福元游乐园（洛城全福元中心店）)",
+      "proposed": "duplicate of id 1830; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4708",
+      "evidence_quote": "same pin Shouguang Luocheng",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1830.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1912,
+      "name": "华录乐园荣成九龙城店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1913 (华录乐园荣成店)",
+      "proposed": "duplicate of id 1913; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5071",
+      "evidence_quote": "same pin Rongcheng Jiulongcheng",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1913.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1279,
+      "name": "super101日照万象汇店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1277 (SUPER101壹零壹潮漫电玩（日照万象汇店）)",
+      "proposed": "duplicate of id 1277; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6642",
+      "evidence_quote": "same pin Rizhao MixC",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1277.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1572,
+      "name": "乐掌门潍坊奎文店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1573 (乐掌门电玩[潍坊万达店])",
+      "proposed": "duplicate of id 1573; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3931",
+      "evidence_quote": "same pin Weifang Kuiwen Wanda",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1573.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2136,
+      "name": "咖来乐济南万虹广场店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2135 (咖来乐·电玩嘉年华)",
+      "proposed": "duplicate of id 2135; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6322",
+      "evidence_quote": "same pin Jinan Wanhong",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2135.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2604,
+      "name": "大玩家济宁太白路万达店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2554 (大玩家JN11太白路万达店)",
+      "proposed": "duplicate of id 2554; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/537",
+      "evidence_quote": "same pin Jining Taibai Wanda",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2554.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2881,
+      "name": "天空之城潍坊吾悦广场店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2877 (天空之城游乐体验世界（潍坊吾悦广场）)",
+      "proposed": "duplicate of id 2877; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3631",
+      "evidence_quote": "same pin Weifang Gaoxin Wuyue",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2877.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2063,
+      "name": "合家欢青岛市北悦荟店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2060 (合家欢家庭娱乐中心(悦荟店))",
+      "proposed": "duplicate of id 2060; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4627",
+      "evidence_quote": "same pin Yuehui",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2060.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2062,
+      "name": "合家欢青岛市北利群店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2059 (合家欢家庭娱乐中心 台东利群店)",
+      "proposed": "duplicate of id 2059; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5544",
+      "evidence_quote": "~40m Taidong Liqun",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2059.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2092,
+      "name": "吾爱玩济南历下店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2093 (吾爱玩潮玩（济南奥体龙湖天街店）)",
+      "proposed": "duplicate of id 2093; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4415",
+      "evidence_quote": "~38m Longfor Sky Street",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2093.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2229,
+      "name": "嗨森汇山东烟台大悦城店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2232 (嗨森汇（原悦动先锋）山东烟台大悦城店)",
+      "proposed": "duplicate of id 2232; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/968",
+      "evidence_quote": "~39m Yantai Joy City",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2232.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2847,
+      "name": "天空之城泰安泰山吾悦广场店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2722 (天空之城(泰汶吾悦店))",
+      "proposed": "duplicate of id 2722; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3779",
+      "evidence_quote": "~46m Taian Wuyue",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2722.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1291,
+      "name": "super101青岛胶州宝龙店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1286 (SUPER101潮漫电玩（胶州宝龙店）)",
+      "proposed": "duplicate of id 1286; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6148",
+      "evidence_quote": "~67m Jiaozhou Powerlong",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1286.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1733,
+      "name": "享区日照东港万达店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1732 (享区家庭娱乐中心(万达店))",
+      "proposed": "duplicate of id 1732; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5315",
+      "evidence_quote": "~87m Rizhao Wanda",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1732.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2058,
+      "name": "合家欢威海威高广场店",
+      "field": "status",
+      "current": "separate open venue; sibling id 2061 (合家欢家庭娱乐中心威海威高店)",
+      "proposed": "duplicate of id 2061; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/647",
+      "evidence_quote": "~104m Weigao",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 2061.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1595,
+      "name": "乐游悦动青岛黄岛吾悦店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1594 (乐游悦动电玩城青岛店)",
+      "proposed": "duplicate of id 1594; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1308",
+      "evidence_quote": "~110m Huangdao Wuyue",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1594.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2476,
+      "name": "壹家庭游乐园临沂店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1540 (临沂壹家庭游乐园泰盛广场店)",
+      "proposed": "duplicate of id 1540; merge/remove this row",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/590",
+      "evidence_quote": "~114m Linyi Taisheng",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1540.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 974,
+      "name": "AREA-51区烟台福山永旺店",
+      "field": "status",
+      "current": "separate open venue; sibling id 973 (AREA-51区烟台开发区永旺店)",
+      "proposed": "duplicate of id 973; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1378",
+      "evidence_quote": "~73m same AEON; BCN renamed 2025.8.10; 974 is rename of 973",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 973.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2605,
+      "name": "大玩家烟台芝罘万达店",
+      "field": "status",
+      "current": "separate open venue; sibling id 1278 (SUPER101壹零壹潮漫电玩（烟台芝罘万达店）)",
+      "proposed": "duplicate of id 1278; merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6419",
+      "evidence_quote": "0m; former Daywanjia reopened 2025-12-06 as SUPER101",
+      "note": "WAHLAP vs BemaniCN double-entry. Prefer BemaniCN-linked id 1278.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 943,
+      "name": "51区超级乐园滨州滨城万达广场店",
+      "field": "other",
+      "current": {
+        "bemanicn": null
+      },
+      "proposed": {
+        "bemanicn": "https://map.bemanicn.com/s/7344"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7344",
+      "evidence_quote": "name=51区超级乐园(山东滨州万达广场店); games={'maimai_dx': 2}; updated 2026-07-31",
+      "note": "WAHLAP 943 matches BCN 7344.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 943,
+      "name": "51区超级乐园滨州滨城万达广场店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7344",
+      "evidence_quote": "maimai_dx qty=2",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 943,
+      "name": "51区超级乐园滨州滨城万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7344",
+      "evidence_quote": "start_time=10 end_time=22",
+      "note": "Community-edited BCN hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1749,
+      "name": "佳慧电玩城",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5611",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=milk plus; app buckets as other; updated 2026-01-24",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1749,
+      "name": "佳慧电玩城",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5611",
+      "evidence_quote": "title_id=2 qty=1 version=milk plus",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1886,
+      "name": "十七回合莱阳万达店",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3413",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=球盘联网; app buckets as other; updated 2026-01-03",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1886,
+      "name": "十七回合莱阳万达店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3413",
+      "evidence_quote": "title_id=2 qty=1 version=球盘联网",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1887,
+      "name": "十七回合（和谐银座店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3289",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=Ver.Qiu.20250902; app buckets as other; updated 2026-07-21",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1887,
+      "name": "十七回合（和谐银座店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3289",
+      "evidence_quote": "title_id=2 qty=1 version=Ver.Qiu.20250902",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1888,
+      "name": "十七回合（银座商城店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4130",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=1.99B; app buckets as other; updated 2026-07-21",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1888,
+      "name": "十七回合（银座商城店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4130",
+      "evidence_quote": "title_id=2 qty=1 version=1.99B",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1889,
+      "name": "十七回合（高密中百店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3913",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=球盘; app buckets as other; updated 2026-06-12",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1889,
+      "name": "十七回合（高密中百店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3913",
+      "evidence_quote": "title_id=2 qty=1 version=球盘",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2171,
+      "name": "哈雷慧6号星球电玩城",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1324",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=FiNALE 20250309; app buckets as other; updated 2026-07-22",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2171,
+      "name": "哈雷慧6号星球电玩城",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1324",
+      "evidence_quote": "title_id=2 qty=1 version=FiNALE 20250309",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2172,
+      "name": "哈雷慧六号星球（全福元城市广场店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5282",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=FINALE; app buckets as other; updated 2026-04-22",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2172,
+      "name": "哈雷慧六号星球（全福元城市广场店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5282",
+      "evidence_quote": "title_id=2 qty=1 version=FINALE",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2234,
+      "name": "嗨潮联盟（中建幸孚Mall）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6448",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=旧版; app buckets as other; updated 2025-12-23",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2234,
+      "name": "嗨潮联盟（中建幸孚Mall）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6448",
+      "evidence_quote": "title_id=2 qty=1 version=旧版",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2235,
+      "name": "嗨潮联盟（胶州利群广场店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6168",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=QiuFINALE; app buckets as other; updated 2026-07-05",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2235,
+      "name": "嗨潮联盟（胶州利群广场店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6168",
+      "evidence_quote": "title_id=2 qty=1 version=QiuFINALE",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2236,
+      "name": "嗨潮联盟（青岛合美mall店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6368",
+      "evidence_quote": "title_id=2 maimai classic qty=1 version=Finale Ver.Qiu.20250; app buckets as other; updated 2026-07-29",
+      "note": "Per js/state.js pre-DX maimai is cab_models maimai_classic under game maimai_dx, not other.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2236,
+      "name": "嗨潮联盟（青岛合美mall店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6368",
+      "evidence_quote": "title_id=2 qty=1 version=Finale Ver.Qiu.20250",
+      "note": "Set maimai_classic FiNALE/pre-DX badge. Do not invent maimai_dx_cab unless DX also present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2170,
+      "name": "哈雷慧6号星球淄博高新店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx_cab": 1,
+        "maimai_classic": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/242",
+      "evidence_quote": "games={'maimai_dx': 1, 'maimai_classic': 1, 'initial_d': 4}; both old frame and DX; updated 2026-07-22",
+      "note": "Both cabinets present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1889,
+      "name": "十七回合（高密中百店）",
+      "field": "status",
+      "current": "open with other/maimai",
+      "proposed": "open but maimai cabinet reported broken (unplayable)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3913",
+      "evidence_quote": "arcade comment says machine broken now; shop status still 1; updated 2026-06-12",
+      "note": "Flag unplayable rather than hard-close.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1573,
+      "name": "乐掌门电玩[潍坊万达店]",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3931",
+      "evidence_quote": "old taiko abandoned; maimai still listed; games={'maimai_dx': 1, 'taiko': 1}; updated 2026-07-21",
+      "note": "Remove taiko from playable or keep with broken note.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1573,
+      "name": "乐掌门电玩[潍坊万达店]",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3931",
+      "evidence_quote": "taiko abandoned per arcade comment",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1286,
+      "name": "SUPER101潮漫电玩（胶州宝龙店）",
+      "field": "other",
+      "current": {
+        "notes": "other games: WACCA"
+      },
+      "proposed": {
+        "wacca_qty": 2,
+        "playable": false
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6148",
+      "evidence_quote": "WACCA qty=2; both broken will not power on; updated 2026-06-30",
+      "note": "Do not add wacca as playable chip. mai+chu OK.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2235,
+      "name": "嗨潮联盟（胶州利群广场店）",
+      "field": "location",
+      "current": "floor unclear",
+      "proposed": "Liqun plaza B1 not 4F",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6168",
+      "evidence_quote": "address=Liqun plaza B1; comment note not 4F",
+      "note": "Wrong floor wastes phone-nav trip.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 973,
+      "name": "AREA-51区烟台开发区永旺店",
+      "field": "other",
+      "current": "AREA-51区烟台开发区永旺店",
+      "proposed": "rename to Kuwan Kongjian Yantai Fushan/Kaifa AEON; merge wahlap 974",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1378",
+      "evidence_quote": "name=酷玩空间（烟台开发区永旺店）; renamed 2025.8.10; games={'maimai_dx': 2, 'chunithm': 1, 'taiko': 1}; updated 2026-07-31",
+      "note": "Rename primary; 974 is duplicate rename.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 942,
+      "name": "51区超级乐园济南印象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1514",
+      "evidence_quote": "BemaniCN start_time=10 end_time=22",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 950,
+      "name": "51区青岛李沧万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2113",
+      "evidence_quote": "BemaniCN start_time=10 end_time=22",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 921,
+      "name": "51区家庭娱乐中心黄岛店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1199",
+      "evidence_quote": "BemaniCN start_time=9 end_time=21",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 973,
+      "name": "AREA-51区烟台开发区永旺店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1378",
+      "evidence_quote": "BemaniCN start_time=10 end_time=22",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2060,
+      "name": "合家欢家庭娱乐中心(悦荟店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4627",
+      "evidence_quote": "BemaniCN start_time=10 end_time=22",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2061,
+      "name": "合家欢家庭娱乐中心威海威高店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/647",
+      "evidence_quote": "BemaniCN start_time=10 end_time=22",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1286,
+      "name": "SUPER101潮漫电玩（胶州宝龙店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6148",
+      "evidence_quote": "BemaniCN start_time=10 end_time=21",
+      "note": "Community-edited BCN hours; app hours_text null for all Shandong rows.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 921,
+      "name": "51区家庭娱乐中心黄岛店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 tokens/credit",
+        "taiko": "10 tokens/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1199",
+      "evidence_quote": "maimai coin=5; taiko coin=10; card system",
+      "note": "Token counts per credit from BCN arcade.coin, not RMB.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 950,
+      "name": "51区青岛李沧万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "5 tokens/credit",
+        "taiko": "10 tokens/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2113",
+      "evidence_quote": "maimai coin=5 session card 100RMB/80PC; taiko coin=10",
+      "note": "Token counts per credit from BCN arcade.coin, not RMB.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1286,
+      "name": "SUPER101潮漫电玩（胶州宝龙店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "3 tokens/credit",
+        "chunithm": "3 tokens/credit"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6148",
+      "evidence_quote": "maimai coin=3; chunithm coin=3; Meituan 9.9RMB=30 tokens",
+      "note": "Token counts per credit from BCN arcade.coin, not RMB.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "潮玩社（济南万象城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "经十路11111号华润万象城3层L365号商铺（肯德基隔壁）",
+        "name": "潮玩社（济南万象城店）",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/2188",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-07-30"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2188",
+      "evidence_quote": "status=1 updated 2026-07-30; games={'maimai_dx': 2, 'chunithm': 2, 'taiko': 1}",
+      "note": "Major Jinan MixC venue not in shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "神采飞扬青岛伟东乐客城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "夏庄路1号伟东·乐客城购物中心3层",
+        "name": "神采飞扬青岛伟东乐客城店",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/240",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-02-03"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/240",
+      "evidence_quote": "status=1 updated 2026-02-03; games={'maimai_dx': 2, 'taiko': 1, 'wangan': 4}",
+      "note": "Not in shard. Theft warnings.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起青岛金狮广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "香港东路195号乙金狮广场",
+        "name": "风云再起青岛金狮广场店",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 2
+        },
+        "bemanicn": "https://map.bemanicn.com/s/241",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-06-26"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/241",
+      "evidence_quote": "status=1 updated 2026-06-26; games={'maimai_dx': 2, 'taiko': 2}",
+      "note": "Not in shard. Chain copper tokens.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩空间（烟台芝罘吾悦店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "芝罘屯路与建设路交汇处吾悦广场3楼",
+        "name": "酷玩空间（烟台芝罘吾悦店）",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 1,
+          "taiko": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/2702",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-07-03"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2702",
+      "evidence_quote": "status=1 updated 2026-07-03; games={'maimai_dx': 1, 'chunithm': 1, 'taiko': 1}",
+      "note": "Not in shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩空间东营吾悦广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "黄河路与香山路交汇处南100米",
+        "name": "酷玩空间东营吾悦广场店",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/2809",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-05-05"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2809",
+      "evidence_quote": "status=1 updated 2026-05-05; games={'maimai_dx': 2, 'chunithm': 2, 'taiko': 1}",
+      "note": "Not in shard. Full set Dongying.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲游乐青岛万象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "山东省青岛市市南区山东路万象城4楼L498商户(溜冰场对面)菲游乐电玩城(青岛万象城店)",
+        "name": "菲游乐青岛万象城店",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "bemanicn": "https://map.bemanicn.com/s/5750",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-07-30"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5750",
+      "evidence_quote": "status=1 updated 2026-07-30; games={'maimai_dx': 2, 'other': 4}",
+      "note": "Not in shard. High-traffic MixC.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "赛博时空（鑫马吾悦店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "张店区华光路288号 鑫马吾悦广场二楼东侧",
+        "name": "赛博时空（鑫马吾悦店）",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/5554",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-07-18"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5554",
+      "evidence_quote": "status=1 updated 2026-07-18; games={'maimai_dx': 1}",
+      "note": "Not in shard. Opened ~June.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "天空之城（青特万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "城阳区正阳中路青特万达广场二楼东南角（原大玩家旧址）",
+        "name": "天空之城（青特万达店）",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/6550",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-06-16"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6550",
+      "evidence_quote": "status=1 updated 2026-06-16; games={'maimai_dx': 1}",
+      "note": "Not in shard. Chengyang Wanda.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "趣玩猩球（寿光万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "万达广场二楼东北角（原大玩家所在门店）",
+        "name": "趣玩猩球（寿光万达店）",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 1,
+          "taiko": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/6644",
+        "hours": "09:00-22:00",
+        "status": 1,
+        "updated": "2026-01-29"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6644",
+      "evidence_quote": "status=1 updated 2026-01-29; games={'maimai_dx': 1, 'chunithm': 1, 'taiko': 1}",
+      "note": "Not in shard. Replaced Daywanjia ~2026-01.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩空间（龙湖天街店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "龙湖天街3F北侧",
+        "name": "酷玩空间（龙湖天街店）",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/7215",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-07-12"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7215",
+      "evidence_quote": "status=1 updated 2026-07-12; games={'maimai_dx': 1, 'other': 1}",
+      "note": "Not in shard. Revived 2026.3.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "茂业天地 哈雷慧6号星球",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "莱芜区茂业天地负一层",
+        "name": "茂业天地 哈雷慧6号星球",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/2897",
+        "hours": "09:00-21:00",
+        "status": 1,
+        "updated": "2026-07-26",
+        "cab_models": {
+          "maimai_classic": 1,
+          "maimai_dx_cab": 1
+        }
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2897",
+      "evidence_quote": "status=1 updated 2026-07-26; games={'maimai_dx': 1, 'maimai_classic': 1}",
+      "note": "Not in shard. Laiwu Maoye. Also classic maimai present.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "日照万达大玩家",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "万达广场二楼大玩家",
+        "name": "日照万达大玩家",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "bemanicn": "https://map.bemanicn.com/s/6080",
+        "hours": "10:00-22:00",
+        "status": 1,
+        "updated": "2026-01-21"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6080",
+      "evidence_quote": "status=1 updated 2026-01-21; games={'maimai_dx': 1}",
+      "note": "Not in shard. Distinct from SUPER101 Rizhao MixC.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1324,
+      "name": "TOPTOP未来战场聊城东昌府万达店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "chunithm"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4571",
+      "evidence_quote": "Weilai Zhanchang Liaocheng Wanda games={'maimai_dx': 1, 'chunithm': 1}; same mall as TOPTOP wahlap 1324",
+      "note": "If same unit, add chu + bemanicn /s/4571; else insert 4571 as missing_venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 976,
+      "name": "AREA-51区超级乐园青岛永旺店",
+      "field": "other",
+      "current": "wahlap-only maimai Huangdao AEON 1F east",
+      "proposed": "verify still distinct from id 921 (BCN 1199 east hall 3F)",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1199",
+      "evidence_quote": "BCN 1199 is 51qu Huangdao east hall 3F; app 976 says 1F east; pins ~114m",
+      "note": "Possibly same chain different floor. BCN only has 3F.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 921,
+      "name": "51区家庭娱乐中心黄岛店",
+      "field": "images",
+      "current": {
+        "n_images": 1
+      },
+      "proposed": {
+        "bemanicn_images_count": 4,
+        "host": "oss.bemanicn.com"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1199",
+      "evidence_quote": "props.images_count=4; image_thumb on oss.bemanicn.com",
+      "note": "User-upload photos; redistribution licence UNVERIFIED.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "(shard-wide) WAHLAP-only without BCN twin",
+      "field": "other",
+      "current": "43 wahlap-only rows; many dups listed; remainder not revalidated vs live WAHLAP",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://maimai.wahlap.com/location",
+      "evidence_quote": "HTTP 567 from maimai.wahlap.com/location; ALL.Net gm=98 has no China country option",
+      "note": "Official CN locator unreachable. Pure-WAHLAP non-dup rows remain UNVERIFIED open.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

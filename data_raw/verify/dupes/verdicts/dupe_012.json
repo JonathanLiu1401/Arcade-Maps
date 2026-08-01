@@ -1,0 +1,369 @@
+{
+  "shard": 12,
+  "verdicts": [
+    {
+      "ids": [
+        4895,
+        4906
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4906,
+      "canonical_name": "润宝梦想潮玩娱乐（晋江万达店）",
+      "canonical_addr": "世纪大道888号万达广场2层（肯德基旁边）",
+      "reason": "Same Jinjiang Wanda floor 2 branch; Baidu lists one 润宝梦想潮玩娱乐 at 世纪大道888号万达广场2层, matching both wahlap and bemanicn.",
+      "evidence_url": "https://map.bemanicn.com/s/6045",
+      "evidence_quote": "润宝梦想潮玩娱乐（晋江万达店） / 世纪大道888号万达广场2层（肯德基旁边）"
+    },
+    {
+      "ids": [
+        2468,
+        2471
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2468,
+      "canonical_name": "壹号玩家(遂宁万达广场店)",
+      "canonical_addr": "四川省遂宁市船山区香林南路300号遂宁万达广场三楼",
+      "reason": "Suining has only one main Wanda at 香林南路300号; Baidu maps 河东新区 and 船山 labels onto that same mall, and lists a single 壹号玩家 there. wahlap branch name 河东新万达 is a mislabel of the same store.",
+      "evidence_url": "https://map.bemanicn.com/s/6591",
+      "evidence_quote": "壹号玩家(遂宁万达广场店) / 四川省遂宁市船山区香林南路300号遂宁万达广场三楼"
+    },
+    {
+      "ids": [
+        1486,
+        1487
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1486,
+      "canonical_name": "三十六计 尹山湖歌林公园店",
+      "canonical_addr": "江苏省苏州市吴中区郭巷街道清禾路888号歌林公园1号楼二层1201B",
+      "reason": "Identical unit 1201B on floor 2 of 歌林公园1号楼 at 清禾路888号; only branch suffix wording differs (尹山湖 vs 吴中).",
+      "evidence_url": "https://map.bemanicn.com/s/4144",
+      "evidence_quote": "郭巷街道清禾路888号 尹山湖歌林公园1号楼2层1201B"
+    },
+    {
+      "ids": [
+        4748,
+        4786
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4748,
+      "canonical_name": "汤姆熊欢乐世界（正大乐城店）",
+      "canonical_addr": "中山南二路699号正大乐城F2-7-203",
+      "reason": "Same unit code F2-7-203 at Zhengda Lecheng; ZIv and BemaniCN describe one Tom World shop, confirmed by Baidu.",
+      "evidence_url": "https://map.bemanicn.com/s/5632",
+      "evidence_quote": "汤姆熊欢乐世界（正大乐城店） / 中山南二路699号正大乐城F2-7-203"
+    },
+    {
+      "ids": [
+        1498,
+        5365
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5365,
+      "canonical_name": "烈火游戏机娱乐",
+      "canonical_addr": "上海市静安区江宁路77号4楼",
+      "reason": "Same building and floor 江宁路77号4楼; wahlap company name and ZIv community listing of the well-known 烈火 arcade are one venue. Baidu returns 街机烈火 at that address.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1611",
+      "evidence_quote": "Jiangning Road No. 77-4F 美琪大剧院对面 静安区"
+    },
+    {
+      "ids": [
+        1501,
+        1504
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1504,
+      "canonical_name": "不玩星球重庆大渡口新天泽店",
+      "canonical_addr": "重庆市大渡口区新天泽国际广场1F017室不玩星球",
+      "reason": "Same mall and floor; Baidu has one 不玩星球(大渡口店) at 新天泽国际广场1F017室 matching wahlap room number.",
+      "evidence_url": "https://map.bemanicn.com/s/6207",
+      "evidence_quote": "不玩星球 / 新天泽国际广场1F"
+    },
+    {
+      "ids": [
+        3854,
+        3855
+      ],
+      "verdict": "merge",
+      "confidence": "likely",
+      "canonical_id": 3854,
+      "canonical_name": "星城嘉年华",
+      "canonical_addr": "重庆市潼南区甘泉西路隆鑫中央大街C区6号楼3层",
+      "reason": "BemaniCN and ZIv both name 星城嘉年华 in Tongnan Longxin; Baidu has a single 星城嘉年华电玩世界 at 隆鑫中央大街. Vague addresses and ~94 m offset look like geocode noise, not two shops.",
+      "evidence_url": "https://map.bemanicn.com/s/980",
+      "evidence_quote": "星城嘉年华 / 重庆市潼南区隆鑫"
+    },
+    {
+      "ids": [
+        2022,
+        2023
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 2022,
+      "canonical_name": "及放运动吉林丰满店",
+      "canonical_addr": "吉林省吉林市丰满区吉林大街1-2号欧亚综合体6楼及放运动潮玩空间",
+      "reason": "Both point to 欧亚综合体6楼; wahlap branch name and bemanicn short name are the same store.",
+      "evidence_url": "https://map.bemanicn.com/s/3109",
+      "evidence_quote": "及放运动潮玩空间 / 欧亚综合体6楼"
+    },
+    {
+      "ids": [
+        6975,
+        6976
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6975,
+      "canonical_name": "金满地动漫城",
+      "canonical_addr": "重庆市开州区汉丰街道地一国际商业街A区20号(电影院旁)",
+      "reason": "Identical unit A区20号 at 地一国际商业街; ZIv English address is a translation of the BemaniCN listing. (A separate 交通大厦 branch exists in Kaizhou but is not this pair.)",
+      "evidence_url": "https://map.bemanicn.com/s/2808",
+      "evidence_quote": "重庆市开州区汉丰街道地一国际商业街A区20号(电影院旁)"
+    },
+    {
+      "ids": [
+        4444,
+        4446
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 4444,
+      "canonical_name": "极速翼电玩娱乐中心",
+      "canonical_addr": "辽宁省盘锦市兴隆台区鹏欣水游城负一楼旺和超市旁边极速翼电玩娱乐中心",
+      "reason": "Same mall B1 next to 旺和超市; wahlap 盘锦兴隆台店 is the branch label for the BemaniCN 极速翼电玩娱乐中心.",
+      "evidence_url": "https://map.bemanicn.com/s/4019",
+      "evidence_quote": "石油大街109号鹏欣·水游城负一楼东（旺和超市旁）"
+    },
+    {
+      "ids": [
+        1528,
+        1529
+      ],
+      "verdict": "keep_separate",
+      "confidence": "certain",
+      "canonical_id": null,
+      "canonical_name": null,
+      "canonical_addr": null,
+      "reason": "Two real Zhongjia branches: 黔西花漾阳光城 vs 毕节七星关创美国贸广场. Baidu lists both separately. Shared lat/lng is a geocode collision, not the same shop.",
+      "evidence_url": "https://map.bemanicn.com/s/6816",
+      "evidence_quote": "中嘉动漫城（创美店） / 市西街道创美国贸广场二楼; Baidu also has 中嘉动漫城家庭娱乐中心(黔西店) at 阳光城B区二层"
+    },
+    {
+      "ids": [
+        1530,
+        1531
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1530,
+      "canonical_name": "中嘉动漫城（曲靖店）",
+      "canonical_addr": "云南省曲靖市麒麟区益宁街道办事处花柯社区70花柯不夜城5栋1-18-19-20号及5栋2-3号中嘉动漫城曲靖店",
+      "reason": "Same 花柯不夜城5栋 Qujing store; wahlap short form and bemanicn long unit list describe one shop. Baidu returns a single 中嘉动漫城(曲靖店).",
+      "evidence_url": "https://map.bemanicn.com/s/6837",
+      "evidence_quote": "花柯不夜城5栋1-18-19-20号及5栋2-3号中嘉动漫城曲靖店"
+    },
+    {
+      "ids": [
+        7068,
+        7069
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 7069,
+      "canonical_name": "阿奇拉潮玩BLOCK (AQILA Hot Springs and Entertainment Center)",
+      "canonical_addr": "桃园路田厦金牛广场B座 阿奇拉汤泉生活",
+      "reason": "Same Tianxia Jinniu Plaza A/B complex in Nanshan; Baidu lists 阿奇拉汤泉 and 阿奇拉潮玩BLOCK as the same venue at 田厦国际中心/金牛广场.",
+      "evidence_url": "https://map.bemanicn.com/s/5312",
+      "evidence_quote": "阿奇拉汤泉 / 桃园路田厦金牛广场B座 阿奇拉汤泉生活"
+    },
+    {
+      "ids": [
+        1545,
+        1546
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1546,
+      "canonical_name": "乐享潮玩安顺家家惠购物广场店",
+      "canonical_addr": "贵州省安顺市镇宁布依族苗族自治县顺立达财富广场家家惠购物广场二楼乐享潮玩电玩城",
+      "reason": "财富广场 and 家家惠购物广场 are the same complex; both place the shop on floor 2 at 0 m.",
+      "evidence_url": "https://map.bemanicn.com/s/5046",
+      "evidence_quote": "乐享潮玩 / 财富广场二楼观光电梯右侧"
+    },
+    {
+      "ids": [
+        1739,
+        1740
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1740,
+      "canonical_name": "伟亿电玩城呼和浩特店",
+      "canonical_addr": "王府井奥莱如意小镇B1层",
+      "reason": "Same Wangfujing Outlets Ruyi Town B1; ZIv English name is the translation of the BemaniCN Hohhot branch. Baidu has one 伟亿电玩城 there.",
+      "evidence_url": "https://map.bemanicn.com/s/3671",
+      "evidence_quote": "伟亿电玩城呼和浩特店 / 王府井奥莱如意小镇B1层"
+    },
+    {
+      "ids": [
+        1550,
+        1556
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1550,
+      "canonical_name": "乐其潮玩(玉林店)",
+      "canonical_addr": "玉州区人民中路六路口东门商业广场A座-1层A-1号摩尔街A23-30号",
+      "reason": "Same 东门商业广场 B1; wahlap 玉州东门店 is the official branch name for the BemaniCN 玉林店.",
+      "evidence_url": "https://map.bemanicn.com/s/5427",
+      "evidence_quote": "乐其潮玩(玉林店) / 东门商业广场A座-1层...A23-30号"
+    },
+    {
+      "ids": [
+        1551,
+        1555
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1551,
+      "canonical_name": "乐其潮玩五星店",
+      "canonical_addr": "广西壮族自治区柳州市城中区城中街道中山中路2号兴隆大厦负一层夹层",
+      "reason": "Identical 中山中路2号兴隆大厦负一层; 五星店 is the local brand label for the same wahlap 兴隆大厦店.",
+      "evidence_url": "https://map.bemanicn.com/s/5635",
+      "evidence_quote": "乐其潮玩五星店 / 中山中路2号兴隆大厦负一层"
+    },
+    {
+      "ids": [
+        3274,
+        3312
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 3274,
+      "canonical_name": "宝贝王山东烟台万达店",
+      "canonical_addr": "山东省烟台市开发区万达广场1楼宝贝王",
+      "reason": "Same Wanda 1F Baby King in Yantai Development Zone; Baidu has one 万达宝贝王(烟台开发区店).",
+      "evidence_url": "https://map.bemanicn.com/s/3132",
+      "evidence_quote": "宝贝王烟台开发区万达店 / 开发区万达广场1F"
+    },
+    {
+      "ids": [
+        1943,
+        1944
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1944,
+      "canonical_name": "卡奇部落沈阳大悦城店",
+      "canonical_addr": "辽宁省沈阳市大东区小东路9号大悦城购物中心D馆3楼D316",
+      "reason": "Same Joy City D馆 3F unit; Baidu has one 卡奇部落(大悦城店) at 小东路9号大悦城D生活馆3楼.",
+      "evidence_url": "https://map.bemanicn.com/s/87",
+      "evidence_quote": "卡奇部落家庭娱乐中心（沈阳大悦城店） / 中街大悦城D馆 3楼"
+    },
+    {
+      "ids": [
+        6905,
+        6912
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 6912,
+      "canonical_name": "酷玩猩球（沈阳中街吾悦店）",
+      "canonical_addr": "辽宁省沈阳市大东区津桥路7号吾悦广场三楼",
+      "reason": "Same Zhongjie Wuyue Plaza floor 3; Baidu lists one 酷玩猩球(沈阳店) there.",
+      "evidence_url": "https://map.bemanicn.com/s/2801",
+      "evidence_quote": "酷玩猩球（沈阳中街吾悦店） / 大东区津桥路7号吾悦广场三楼"
+    },
+    {
+      "ids": [
+        1563,
+        1564
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1563,
+      "canonical_name": "乐动时空(M3碧乐城店)(暂停营业)",
+      "canonical_addr": "朱雀大街南段12号M3碧乐城B1层011B商铺",
+      "reason": "Same M3 碧乐城 B1 unit; bemanicn notes 暂停营业 but it is still the same physical shop as the wahlap 雁塔碧乐城 listing.",
+      "evidence_url": "https://map.bemanicn.com/s/5658",
+      "evidence_quote": "乐动时空(M3碧乐城店)(暂停营业) / 朱雀大街南段12号M3碧乐城B1层011B商铺"
+    },
+    {
+      "ids": [
+        5242,
+        5246
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 5242,
+      "canonical_name": "潮玩萌兽乐山市中万达店",
+      "canonical_addr": "四川省乐山市市中区乐青路万达广场3楼潮玩萌兽",
+      "reason": "Same Leshan Wanda floor 3 atrium; branch names 市中万达 and 乐山万达 refer to one store.",
+      "evidence_url": "https://map.bemanicn.com/s/3952",
+      "evidence_quote": "潮玩萌兽综合馆（乐山万达店） / 万达广场3楼中庭"
+    },
+    {
+      "ids": [
+        1572,
+        1573
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1573,
+      "canonical_name": "乐掌门电玩[潍坊万达店]",
+      "canonical_addr": "山东潍坊市奎文区万达广场2楼乐掌门",
+      "reason": "Same Weifang Kuiwen Wanda floor 2; 奎文店 and 潍坊万达店 are one branch at 东风街/鸢飞路 Wanda.",
+      "evidence_url": "https://map.bemanicn.com/s/3931",
+      "evidence_quote": "乐掌门电玩[潍坊万达店] / 东风街鸢飞路交叉口东万达广场二楼"
+    },
+    {
+      "ids": [
+        1579,
+        1580
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1579,
+      "canonical_name": "乐斯尼万宁文化广场店",
+      "canonical_addr": "海南省万宁市万城镇人民中路文化广场一楼",
+      "reason": "Same Wanning 文化广场 1F; wahlap 万城店 and bemanicn 文化广场店 are one shop (wahlap also says unit 16 海洋乐园 inside that plaza).",
+      "evidence_url": "https://map.bemanicn.com/s/4954",
+      "evidence_quote": "乐斯尼万宁文化广场店 / 海南省万宁市万城镇人民中路文化广场一楼"
+    },
+    {
+      "ids": [
+        1582,
+        1585
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1582,
+      "canonical_name": "乐斯尼乐园屯昌宝真广场店",
+      "canonical_addr": "海南省屯昌县文化路286号宝真广场一楼",
+      "reason": "Same Tunchang 宝真广场/宝真超市 1F; short bemanicn address is the supermarket name inside that plaza.",
+      "evidence_url": "https://map.bemanicn.com/s/3930",
+      "evidence_quote": "乐斯尼屯昌宝真广场店 / 宝真超市一楼"
+    },
+    {
+      "ids": [
+        1583,
+        1586
+      ],
+      "verdict": "merge",
+      "confidence": "certain",
+      "canonical_id": 1583,
+      "canonical_name": "乐斯尼乐园文昌耀龄广场店",
+      "canonical_addr": "海南省文昌市文城镇教育东路88号耀龄广场裙房商业2层F2-02铺位",
+      "reason": "Same Wenchang Yaoling Plaza floor 2 unit; wahlap has the precise F2-02 shop number matching bemanicn 耀龄广场2楼.",
+      "evidence_url": "https://map.bemanicn.com/s/4953",
+      "evidence_quote": "乐斯尼文昌耀龄文化广场店 / 海南省文昌市教育东路耀龄广场2楼"
+    }
+  ]
+}

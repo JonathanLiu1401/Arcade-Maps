@@ -1,0 +1,581 @@
+{
+  "shard": 5,
+  "checked": 38,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3648",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1544",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10083",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10972",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10066",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5679",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+    "https://www.gatcha.us/",
+    "https://gamenestlv.com/",
+    "http://www.gamenestlv.com/arcade-games",
+    "https://gamecenter.gg",
+    "https://www.gameunderground.store/",
+    "https://www.highscoretwo.com/",
+    "https://ameristarstcharles.boydgaming.com/things-to-do",
+    "https://www.simon.com/mall/oxford-valley-mall/stores/game-box-arcade",
+    "https://www.simon.com/mall/fashion-centre-at-pentagon-city/stores/gatcha",
+    "https://www.golfland.com/mesa/",
+    "https://headshotsbar.com/",
+    "https://www.grandstationent.com/",
+    "https://www.gazettenet.com/PINZ-at-Hampshire-Mall-in-Hadley-closed-59667228",
+    "https://northernvirginiamag.com/style/shopping/2025/04/04/gatcha-arcade-opening-soon-in-pentagon-city-mall/",
+    "https://visitkop.com/latest/now-open-gatcha/"
+  ],
+  "corrections": [
+    {
+      "id": 12603,
+      "name": "Gatcha (Fashion Centre at Pentagon City)",
+      "field": "location",
+      "current": {
+        "lat": 38.082689544838,
+        "lng": -76.9921875,
+        "addr": "1100 S Hayes St Arlington VA, 22202, Arlington"
+      },
+      "proposed": {
+        "lat": 38.8626,
+        "lng": -77.059,
+        "note": "Pin should be Fashion Centre at Pentagon City, Arlington VA (Metro level). Current lat/lng is far south of Arlington."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.simon.com/mall/fashion-centre-at-pentagon-city/stores/gatcha",
+      "evidence_quote": "Gatcha is listed as a store at Fashion Centre at Pentagon City, 1100 S Hayes St, Arlington, VA 22202 (Simon mall directory).",
+      "note": "Current coordinates 38.08,-76.99 are nowhere near Pentagon City. Approximate correct pin is the mall (~38.8626,-77.0590). Verify exact interior pin if needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12606,
+      "name": "Gatcha (Koreatown)",
+      "field": "game_counts",
+      "current": {
+        "taiko": 15
+      },
+      "proposed": {
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10066",
+      "evidence_quote": "Taiko no Tatsujin Nijiro USA (2024) (North America); Taiko no Tatsujin 14 (Japan). Two taiko cabinets listed, not fifteen. ZIv updated 2026-07-28.",
+      "note": "App game_counts.taiko=15 is almost certainly a data bug. ZIv machine list shows exactly two taiko cabs: Nijiiro USA and Taiko 14.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12606,
+      "name": "Gatcha (Koreatown)",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null,
+        "taiko_us": 1
+      },
+      "proposed": {
+        "iidx_lm": 1,
+        "taiko_us": 1,
+        "note": "IIDX is Lightning Model (Pinky Crush). One Nijiiro USA plus one Japanese Taiko 14."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10066",
+      "evidence_quote": "beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL) (Japan); Taiko no Tatsujin Nijiro USA (2024); Taiko no Tatsujin 14 (Japan).",
+      "note": "Confirm iidx_lm presence; value was null/placeholder. Taiko US count 1 is correct but there is also a JP Taiko 14.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12606,
+      "name": "Gatcha (Koreatown)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "pump_it_up",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": "KEEP maimai_dx (confirmed on official ALL.Net maimai DX International locator)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "GATCHA KTOWN, 313 5TH AVE, MANHATTAN, NY 10016 appears on official maimai DX International location finder.",
+      "note": "Positive verification only; no games[] change required except taiko count (separate correction). ZIv also lists IIDX Lightning, CHUNITHM x3, nostalgia Op.3, maimai DX CiRCLE PLUS x2.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12579,
+      "name": "Game Underground",
+      "field": "website",
+      "current": "http://www.game-underground.com/",
+      "proposed": "https://www.gameunderground.store/",
+      "confidence": "certain",
+      "evidence_url": "https://www.gameunderground.store/",
+      "evidence_quote": "game-underground.com returns HTTP 301 redirect to https://www.gameunderground.store/",
+      "note": "Old domain permanently redirects to new store domain.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12579,
+      "name": "Game Underground",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "groove_coaster",
+        "jubeat",
+        "ongeki",
+        "other",
+        "popn",
+        "pump_it_up",
+        "sdvx",
+        "stepmaniax",
+        "wacca"
+      ],
+      "proposed": {
+        "add_candidate": "maimai_dx",
+        "caveat": "ZIv lists two Japanese maimai cabs; not on ALL.Net gm=98 list"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1544",
+      "evidence_quote": "maimai (Japan) x2 listed at back of arcade, both adjacent. ZIv updated 2026-07-27 by fluzzarn.",
+      "note": "They do NOT appear on SEGA ALL.Net maimai DX International locator (gm=98, ct=1009) as of 2026-07-31, so they may be offline/import rather than live DX network. If maimai_dx is reserved for networked DX only, do not add or use a different tag.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12581,
+      "name": "gamecenter",
+      "field": "hours",
+      "current": "Mon closed; Tue-Fri 05:00-00:00; Sat 10:00-00:00; Sun 10:00-22:00",
+      "proposed": "Mon closed; Tue-Fri 17:00-00:00; Sat 10:00-00:00; Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamecenter.gg",
+      "evidence_quote": "Tuesday-Friday: 5PM - Midnight; Saturday: 10AM - Midnight; Sunday: 10AM - 10PM; Now Open!",
+      "note": "App stored Tue-Fri as 05:00 (5 AM). Official site says 5 PM. ZIv also shows 05:00 which is likely the same 12h-clock parse error. Correct to 17:00.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12581,
+      "name": "gamecenter",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "groove_coaster",
+        "jubeat",
+        "museca",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": {
+        "add_candidate": "maimai_dx",
+        "caveat": "ZIv lists maimai (Japan); not on ALL.Net gm=98"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10083",
+      "evidence_quote": "maimai (Japan) Free Play Great; also 4x CHUNITHM VERSE, 2x ONGEKI bright MEMORY, Polaris Chord, Taiko 14. ZIv updated 2026-07-16.",
+      "note": "Official site gamecenter.gg confirms venue open at 22009 68th Ave S, Kent WA. Also present on ZIv: beatmania THE FINAL (legacy, not modern IIDX).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12581,
+      "name": "gamecenter",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "groove_coaster": 1,
+        "jubeat": 1,
+        "museca": 1,
+        "ongeki": 2,
+        "polaris_chord": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 4,
+        "groove_coaster": 1,
+        "jubeat": 1,
+        "museca": 1,
+        "ongeki": 2,
+        "polaris_chord": 1,
+        "taiko": 1,
+        "wacca": 2,
+        "note": "counts match ZIv machine list as of 2026-07-16"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10083",
+      "evidence_quote": "CHUNITHM VERSE listed four times; ONGEKI bright MEMORY twice; WACCA twice; one each of GC, jubeat, maimai, MUSECA, Polaris Chord, Taiko 14.",
+      "note": "Positive verification that existing counts match ZIv. maimai still absent from game_counts if added to games.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12571,
+      "name": "Game Nest",
+      "field": "status",
+      "current": "listed open",
+      "proposed": "still open / operating",
+      "confidence": "certain",
+      "evidence_url": "https://gamenestlv.com/",
+      "evidence_quote": "We close early Aug 7 for Private Event. Public hours that day 12PM - 8PM. Normally 12PM - 2AM. All other days run on our regular schedule.",
+      "note": "No permanent closure. Address 4525 Spring Mountain Rd #112 confirmed by Yelp July 2026.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12571,
+      "name": "Game Nest",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "museca",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "reflec",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": {
+        "maimai_candidate": "maimai (Japan) on ZIv; marketing page says maimai DX; NOT on ALL.Net gm=98",
+        "nostalgia_note": "ZIv comment on Nostalgia Op.3: Not currently available, maybe put away for maintenance",
+        "do_not_remove": "IIDX and SDVX still listed on ZIv despite incomplete marketing page"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3648",
+      "evidence_quote": "maimai (Japan) listed; Nostalgia Op.3 Comment: Not currently available, maybe put away for maintaince?; beatmania IIDX 29 CastHour; SOUND VOLTEX EXCEED GEAR; Updated 2026-07-02 by LarpLarp.",
+      "note": "Do not remove IIDX/SDVX based solely on incomplete gamenestlv.com/arcade-games marketing (lists maimai DX, CHUNITHM, Taiko, DDR, PIU only). Nostalgia may warrant a status note rather than removal.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12629,
+      "name": "Golfland Sunsplash",
+      "field": "other",
+      "current": {
+        "id": 12629,
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9421",
+        "addr": "155 W Hampton Ave Mesa Arizona, 85210"
+      },
+      "proposed": "merge_or_remove_duplicate_of_12630",
+      "confidence": "certain",
+      "evidence_url": "https://www.golfland.com/mesa/",
+      "evidence_quote": "Golfland Sunsplash Mesa is a single park at 155 W Hampton Ave, Mesa, AZ. Two shard rows point at the same venue (ZIv ids 9421 and 37).",
+      "note": "Duplicate of id 12630 Golfland Sunsplash (Mesa) / same street address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12629,
+      "name": "Golfland Sunsplash",
+      "field": "hours",
+      "current": "Mon-Fri 00:10-00:22; Sat 00:10-00:00; Sun 00:11-00:22",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://www.golfland.com/mesa/plan-your-visit/hours/",
+      "evidence_quote": "Official Golfland Mesa hours page exists; park hours are daytime/evening, not 00:10-00:22.",
+      "note": "Current hours look like a bad parse of 10am/10pm into zero-padded nonsense. Prefer removing until official hours re-imported, or copy from 12630 after verification.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12657,
+      "name": "Headshots Bar and Grill",
+      "field": "website",
+      "current": "http://(316) 260-4370",
+      "proposed": "https://headshotsbar.com/",
+      "confidence": "certain",
+      "evidence_url": "https://headshotsbar.com/",
+      "evidence_quote": "Headshots Bar and Grill official site; phone (316) 260-4370 also listed on Yelp for 2120 N Woodlawn Blvd, Wichita KS.",
+      "note": "website field currently holds a phone number string, not a URL. Venue still open per Yelp updated July 2026.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12664,
+      "name": "High Score Player Two: Classic Arcade",
+      "field": "location",
+      "current": {
+        "addr": "2818 Mount Vernon Avenue Evansville Indiana, 47712, Evansville"
+      },
+      "proposed": {
+        "addr": "2814 Mt Vernon Ave, Evansville, IN 47712"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.highscoretwo.com/",
+      "evidence_quote": "Address listed on official site: 2814 Mt Vernon Ave, Evansville, IN 47712. Phone (812) 303-9093.",
+      "note": "Official site says 2814; ZIv and app say 2818. Same block; likely off-by-one street number. Prefer official site; confirm on-site if possible.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12664,
+      "name": "High Score Player Two: Classic Arcade",
+      "field": "hours",
+      "current": "Mon-Tue closed; Wed-Fri 03:00-09:00; Sat 12:00-09:00; Sun 11:00-07:00",
+      "proposed": "Mon-Tue closed; Wed-Sat 12:00-21:00; Sun 11:00-19:00",
+      "confidence": "likely",
+      "evidence_url": "https://www.highscoretwo.com/",
+      "evidence_quote": "Wednesday-Saturday: 12pm-9pm; Sunday: 11am-7pm; Closed Monday and Tuesday for general admission.",
+      "note": "Official site hours differ from ZIv (Wed-Fri 3pm-9pm). Prefer official. Also 03:00/09:00/07:00 look like 12h ambiguity (3pm/9pm/7pm).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12664,
+      "name": "High Score Player Two: Classic Arcade",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 2,
+        "iidx": 1,
+        "jubeat": 1,
+        "popn": 1,
+        "sdvx": 1,
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5679",
+      "evidence_quote": "DDR EXTREME (Japan); DDR SuperNOVA2 (North America); IIDX 29 CastHour; jubeat Ave.; pop'n music 18; SOUND VOLTEX EXCEED GEAR; WACCA REVERSE. Official site: Two DDR Machines!",
+      "note": "Counts from ZIv machine list plus official site claim of two DDR machines. ZIv last major update 2025-11-18 so may be somewhat stale.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12648,
+      "name": "Hampshire Mall",
+      "field": "status",
+      "current": "listed as open mall arcade aggregate",
+      "proposed": "Pinz Bowl arcade section permanently closed Feb 2025; other entertainment tenants may remain",
+      "confidence": "certain",
+      "evidence_url": "https://www.gazettenet.com/PINZ-at-Hampshire-Mall-in-Hadley-closed-59667228",
+      "evidence_quote": "PiNZ closes for good at Hampshire Mall, citing declining foot traffic. Hadley location closed permanently; removed from PiNZ website.",
+      "note": "App info_text still lists Pinz Bowl among arcade locations. FunHub Action Park, Interskate 91, Cinemark may still host games; treat this row as a mall-aggregate that needs re-verification. No strong rhythm-game presence confirmed after Pinz closure.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12605,
+      "name": "Gatcha (King of Prussia Mall)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "jubeat",
+        "other",
+        "pump_it_up",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": {
+        "add_candidate": "maimai_dx",
+        "status": "venue open (Aug 2025 grand opening)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://visitkop.com/latest/now-open-gatcha/",
+      "evidence_quote": "Now Open: Gatcha at King of Prussia District. Map notes/cabs already include maimai and Taiko 14.",
+      "note": "maimai appears in notes/cabs but not in games[]. Not confirmed on ALL.Net maimai DX International locator in this research pass; may be offline/Mythos.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12608,
+      "name": "Gatcha at Perimeter Mall",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "other"
+      ],
+      "proposed": {
+        "add_candidate": "maimai_dx",
+        "from_notes": "CHUNITHM NEW; DANCERUSH; maimai"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10776",
+      "evidence_quote": "Map notes list cabs: CHUNITHM NEW; DANCERUSH STARDOM; maimai.",
+      "note": "maimai in notes but missing from games[]. Not confirmed on ALL.Net DX intl list this pass. gatcha.us navigation lists Atlanta GA.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12608,
+      "name": "Gatcha at Perimeter Mall",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.gatcha.us/",
+      "confidence": "likely",
+      "evidence_url": "https://www.gatcha.us/",
+      "evidence_quote": "Gatcha site navigation lists Atlanta GA among locations (Tangram NY, Orlando FL, Saugus MA, KOP PA, Atlanta GA).",
+      "note": "Chain website is gatcha.us; no dedicated Perimeter path confirmed in this pass.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12608,
+      "name": "Gatcha at Perimeter Mall",
+      "field": "location",
+      "current": {
+        "lat": 34.036652825561,
+        "lng": -84.190979003906
+      },
+      "proposed": {
+        "lat": 33.924,
+        "lng": -84.341,
+        "note": "Approximate pin for Perimeter Mall, 4400 Ashford Dunwoody Rd, Atlanta GA 30346"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://en.wikipedia.org/wiki/Perimeter_Mall",
+      "evidence_quote": "Perimeter Mall is at 4400 Ashford Dunwoody Road in Dunwoody/Atlanta area.",
+      "note": "Address text is correct; coordinates appear offset several km northeast of the mall footprint.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12607,
+      "name": "Gatcha (Square One Mall)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": {
+        "add_candidate": "maimai_dx",
+        "confidence": "community notes only"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9970",
+      "evidence_quote": "Cabs list includes maimai and Dance Battle; info says opened 9/15/23 clawcade and children's playground mix.",
+      "note": "Only community notes claim maimai. Not on ALL.Net maimai DX International locator. Do not treat as confirmed DX network cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12645,
+      "name": "H MART ORLANDO",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "H Mart Orlando - 7501 W Colonial Dr, Orlando, FL 32818 listed on official maimai DX International location finder.",
+      "note": "Map info says one (soon to be two) maimai DX cabs; as of 2/4/2026 updated to CiRCLE. ALL.Net confirms currently serviced. game_counts currently null.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12662,
+      "name": "Hi-Vi Arcade (Ameristar Casino, St. Charles)",
+      "field": "status",
+      "current": "listed open",
+      "proposed": "still open / listed on property site",
+      "confidence": "likely",
+      "evidence_url": "https://ameristarstcharles.boydgaming.com/things-to-do",
+      "evidence_quote": "Hi-Vi Arcade appears in Things to Do navigation and as a featured Arcade card linking to /things-to-do/hi-vi-arcade.",
+      "note": "Do not confuse with permanently closed Hi-Vi at Ameristar Kansas City (ZIv id=25 / Yelp CLOSED). St. Charles location still listed by Boyd Gaming.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12567,
+      "name": "Game Box Arcade (Langhorne)",
+      "field": "status",
+      "current": "listed open",
+      "proposed": "still listed open on mall directory",
+      "confidence": "likely",
+      "evidence_url": "https://www.simon.com/mall/oxford-valley-mall/stores/game-box-arcade",
+      "evidence_quote": "Game Box Arcade still listed at Oxford Valley Mall, 2300 E Lincoln Hwy, Langhorne PA on Simon directory.",
+      "note": "No closure evidence found. Yelp updated June 2026. PIU Exceed 2 is very old software; rhythm presence may be weak/stale but venue itself still listed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12656,
+      "name": "Haze's Toys & Arcade",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "ongeki",
+        "other",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": {
+        "add_candidate": "maimai_dx",
+        "from_info_text": "Two cabinets of each: maimai, CHUNITHM, DANCERUSH"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6617",
+      "evidence_quote": "Map notes/cabs include maimai; info_text says Music Games: Two cabinets of each: maimai, CHUNITHM VERSE, DANCERUSH STARDOM.",
+      "note": "maimai in notes and info_text but missing from games[]. Not confirmed on ALL.Net DX intl list this pass.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12636,
+      "name": "Grand Station Entertainment",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.grandstationent.com/",
+      "confidence": "certain",
+      "evidence_url": "https://www.grandstationent.com/",
+      "evidence_quote": "Grand Station Entertainment Bowling and Arcade | College Station, TX official site.",
+      "note": "Venue still operating (chamber/tourism listings 2026). No strong rhythm games; only Guitar Hero Arcade in notes.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12647,
+      "name": "Hamm's Arcade",
+      "field": "status",
+      "current": "listed open",
+      "proposed": "still open (community ZIv updated 2026-07-17)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10972",
+      "evidence_quote": "Updated 2026-07-17; open Fri-Sun 06:00-02:00; $15 all day play; machines include CHUNITHM VERSE, maimai DX PRiSM PLUS, ONGEKI bright, Taiko Green, 2x WACCA REVERSE, DDR SuperNOVA2, DRS, PIU XX.",
+      "note": "Primary sources are Instagram @hamms_arcade and ZIv community. maimai DX PRiSM PLUS on ZIv but not seen on ALL.Net gm=98 North America list this pass; may be import/offline or newly added. wacca count 2 matches ZIv comment There are 2 cabs!",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12647,
+      "name": "Hamm's Arcade",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "ddr": 1,
+        "drs": 1,
+        "maimai_dx": 1,
+        "ongeki": 1,
+        "pump_it_up": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 1,
+        "ddr": 1,
+        "drs": 1,
+        "maimai_dx": 1,
+        "ongeki": 1,
+        "pump_it_up": 1,
+        "taiko": 1,
+        "wacca": 2,
+        "note": "counts consistent with ZIv machine list 2026-07-17"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10972",
+      "evidence_quote": "WACCA REVERSE Comment: There are 2 cabs!; one each of CHUNITHM VERSE, DDR SuperNOVA2, DRS, maimai DX PRiSM PLUS, PIU XX, ONGEKI bright, Taiko Green.",
+      "note": "Community source only; treat as likely not certain. No official chain page.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 12603,
+      "name": "Gatcha (Fashion Centre at Pentagon City)",
+      "field": "status",
+      "current": "listed open (opened June 20 2026 per info_text)",
+      "proposed": "open (listed on Simon mall directory)",
+      "confidence": "likely",
+      "evidence_url": "https://www.simon.com/mall/fashion-centre-at-pentagon-city/stores/gatcha",
+      "evidence_quote": "Gatcha store page exists on Fashion Centre at Pentagon City Simon directory.",
+      "note": "Northern Virginia Mag April 2025 said opening in a couple of months; map info says opened June 20 2026. No closure signals. Primary issue remains wrong coordinates.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}
