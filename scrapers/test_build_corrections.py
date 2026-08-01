@@ -193,6 +193,65 @@ def test_a_nonnumeric_location_proposal_is_refused(tmp_path):
     assert not out and stats["location_not_numeric"] == 1
 
 
+def _status(tmp, proposed, note="", conf="certain",
+            url="https://news.example.com/story"):
+    import merge as merge_mod
+    _shard(tmp, [{
+        "field": "status", "name": ARCADE["name"],
+        "current": {"name": ARCADE["name"], "addr": ARCADE["addr"]},
+        "proposed": proposed, "note": note, "confidence": conf,
+        "evidence_url": url, "evidence_quote": "q",
+    }])
+    return BC.build(tmp, [ARCADE], {"maimai_dx"}, merge_mod=merge_mod)
+
+
+def test_a_plain_permanent_closure_is_accepted(tmp_path):
+    out, _ = _status(str(tmp_path), "permanently closed (last day 2025-09-28)")
+    assert out, "a sourced permanent closure was refused"
+    assert out[BC.venue_key(ARCADE)]["fields"]["status"]["value"]["closed"]
+
+
+def test_a_temporary_closure_is_not_a_closure(tmp_path):
+    # "closed for renovation, reopening October" is a venue that still
+    # exists. Marking it permanently closed is its own kind of wrong.
+    for text in ("closed for renovation, reopening 2026-10-01",
+                 "closed temporarily while the mall is refurbished",
+                 "店铺搬迁至高新三期玫瑰ONE，装修中",
+                 "open but network offline (已断网)"):
+        out, stats = _status(str(tmp_path), text)
+        assert not out, "treated a temporary state as permanent: %r" % text
+
+
+def test_a_merge_proposal_is_not_a_closure(tmp_path):
+    # The fleet writes merge_into proposals into this same field.
+    out, _ = _status(str(tmp_path),
+                     {"action": "merge_into", "target_id": 12062,
+                      "reason": "duplicate; the other row is no longer needed"})
+    assert not out
+
+
+def test_a_closure_needs_certainty(tmp_path):
+    out, stats = _status(str(tmp_path), "permanently closed", conf="likely")
+    assert not out and stats["status_not_certain"] == 1
+
+
+def test_a_closure_sourced_to_the_community_listing_is_refused(tmp_path):
+    # The row already came from these sites. Citing them back is not
+    # corroboration, and removing a venue is not reversible for a user
+    # who trusted the map and stayed home.
+    for url in ("https://map.bemanicn.com/s/4035",
+                "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1"):
+        out, stats = _status(str(tmp_path), "permanently closed", url=url)
+        assert not out, "accepted a closure sourced to %s" % url
+
+
+def test_vague_status_text_is_not_a_closure(tmp_path):
+    for text in ("possibly gone?", "could not verify", "status unclear",
+                 "unverified / possibly delisted"):
+        out, _ = _status(str(tmp_path), text)
+        assert not out, "read %r as a permanent closure" % text
+
+
 def test_unknown_game_slugs_are_dropped(tmp_path):
     out, stats = _one(str(tmp_path), {
         "field": "games", "name": "Test Arcade",

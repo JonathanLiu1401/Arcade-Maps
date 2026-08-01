@@ -1,18 +1,21 @@
 {
  "stats": {
-  "applied": 1458,
+  "applied": 1471,
   "bad_slug": 5,
   "counts_without_quantity": 192,
-  "held_field": 3693,
-  "location_no_geographic_gain": 4,
+  "held_field": 3066,
+  "location_no_geographic_gain": 2,
   "location_not_numeric": 127,
-  "location_unjudgeable": 35,
+  "location_unjudgeable": 29,
   "location_wrong_country": 3,
   "no_change": 0,
   "proposals": 5973,
   "shards": 100,
-  "unresolved": 340,
-  "unverified": 116
+  "status_not_a_closure": 320,
+  "status_not_certain": 4,
+  "status_temporary": 4,
+  "unresolved": 445,
+  "unverified": 305
  },
  "venues": {
   "addr|Australia|TIMEZONE BANKSTOWN|Bankstown Central Shopping Centre, Shop MM022 North Terrace": {
@@ -734,6 +737,21 @@
    },
    "name": "TIMEZONE TIMEZONE GATEWAY"
   },
+  "addr|Taiwan|GIGO KUANG SAN SOGO-Taichung|17F.,No.459,Sec.2,Taiwan Blvd.,West Dist.,Taichung City 403503": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "maps?q=GIGO KUANG SAN SOGO-Taichung@24.1430604,120.6631289",
+     "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+     "value": {
+      "lat": 24.1430604,
+      "lng": 120.6631289
+     }
+    }
+   },
+   "name": "GIGO KUANG SAN SOGO-Taichung"
+  },
   "addr|Taiwan|INFINITY WORLD|No.22-50-1 Zhongshan Rd. Banqiao Dist. New Taipei City 220073": {
    "fields": {
     "games": {
@@ -757,6 +775,21 @@
     }
    },
    "name": "INFINITY WORLD"
+  },
+  "addr|Taiwan|TOM'S WORLD(FENGSHAN@KAOHSIUNG)|B1F.,NO.149,ZHONGSHAN RD.,FENGSHANG DIST., KAOHSIUNG,": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "TOM'S WORLD(FENGSHAN@KAOHSIUNG) | B1F.,NO.149,ZHONGSHAN RD.,FENGSHANG DIST., KAOHSIUNG | @22.6227308104161,120.358045460731",
+     "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+     "value": {
+      "lat": 22.6227308104161,
+      "lng": 120.358045460731
+     }
+    }
+   },
+   "name": "TOM'S WORLD(FENGSHAN@KAOHSIUNG)"
   },
   "addr|United States|CAMELOT GOLFLAND|3200 Carpenter Ave. Anaheim, CA": {
    "fields": {
@@ -6592,6 +6625,21 @@
    },
    "name": "遊占超级电玩(武汉佰港城店)"
   },
+  "bemanicn|https://map.bemanicn.com/s/5230": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "certain",
+     "evidence_quote": "name=环游嘉年华超乐场(阿克苏友好店); address=新疆维吾尔自治区阿克苏地区阿克苏市塔中4楼路2号新疆友好集团阿克苏天百时尚购物中心; status=1; maimai_dx=2 chunithm=2; updated_at=2026-07-20; comment references 塔大/阿克苏音游群",
+     "evidence_url": "https://map.bemanicn.com/s/5230",
+     "value": {
+      "lat": 41.174324,
+      "lng": 80.276013
+     }
+    }
+   },
+   "name": "环游嘉年华超乐场友好时尚店"
+  },
   "bemanicn|https://map.bemanicn.com/s/5243": {
    "fields": {
     "hours": {
@@ -8258,6 +8306,16 @@
      "evidence_quote": "start_time=9 end_time=21 (BemaniCN shop.start_time/end_time; community-maintained)",
      "evidence_url": "https://map.bemanicn.com/s/6090",
      "value": "09:00-21:00"
+    },
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "name 悦动空间（淅川县万悦汇店）; address 淅川县万悦汇富强路与北三环路交叉口东100米; maimai qty=1; comment edits through 2026-06.",
+     "evidence_url": "https://map.bemanicn.com/s/6090",
+     "value": {
+      "lat": 33.147062,
+      "lng": 111.466579
+     }
     }
    },
    "name": "悦动空间南阳淅川万悦汇店"
@@ -13267,6 +13325,21 @@
    },
    "name": "Amazone Jatinangor Town Square"
   },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1462": {
+   "fields": {
+    "status": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "PiNZ closes for good at Hampshire Mall, citing declining foot traffic. Hadley location closed permanently; removed from PiNZ website.",
+     "evidence_url": "https://www.gazettenet.com/PINZ-at-Hampshire-Mall-in-Hadley-closed-59667228",
+     "value": {
+      "closed": true,
+      "reason": "Pinz Bowl arcade section permanently closed Feb 2025; other entertainment tenants may remain"
+     }
+    }
+   },
+   "name": "Hampshire Mall"
+  },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1489": {
    "fields": {
     "hours": {
@@ -14132,6 +14205,21 @@
    },
    "name": "Timezone Plaza Medan Fair"
   },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3167": {
+   "fields": {
+    "status": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Malibu Norcross' last day in business is Sunday, Sept. 28.",
+     "evidence_url": "https://www.atlantanewsfirst.com/2025/09/25/popular-gwinnett-county-family-fun-center-shut-down-late-september/",
+     "value": {
+      "closed": true,
+      "reason": "permanently closed (last day 2025-09-28; later branded Malibu Norcross)"
+     }
+    }
+   },
+   "name": "Malibu Grand Prix"
+  },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3199": {
    "fields": {
     "hours": {
@@ -14325,6 +14413,16 @@
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3702": {
    "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "Address: Lower Ground Floor Bldg. A Bridgeway, SM Megamall, Mandaluyong City; Monday - Sunday: 10:00 AM - 10:00 PM",
+     "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-sm-megamall/",
+     "value": {
+      "lat": 14.5922687,
+      "lng": 121.0535762
+     }
+    },
     "website": {
      "checked_at": "2026-07-31",
      "confidence": "certain",
@@ -14397,6 +14495,21 @@
     }
    },
    "name": "World Of Fun, SM City Batangas"
+  },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3803": {
+   "fields": {
+    "status": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Movies 8 in Boardman shuts down after Dec. 31, 2025, with operations ending Jan. 1. Co-owner Paige DeCiancio: \"It's not easy to walk away from this place... But sometimes good things come to an end.\"",
+     "evidence_url": "https://www.tribtoday.com/news/business/2025/11/boardman-movies-8-announces-upcoming-closure/",
+     "value": {
+      "closed": true,
+      "reason": "permanently closed (venue closed 2025-12-31)"
+     }
+    }
+   },
+   "name": "Boardman Movies 8"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3819": {
    "fields": {
@@ -14553,6 +14666,21 @@
     }
    },
    "name": "QUANTUM SM CITY BF PARANAQUE"
+  },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4048": {
+   "fields": {
+    "status": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "ZDT's Amusement Park is no longer operating - it shut down in August 2025 after 18 years, and the 10-acre site is being converted into a leasable plaza.",
+     "evidence_url": "https://www.zdtamusement.com/",
+     "value": {
+      "closed": true,
+      "reason": "permanently closed (August 2025); site redeveloping as multi-tenant plaza; Jungle Jam Xtreme may occupy former indoor space but is a different operator"
+     }
+    }
+   },
+   "name": "ZDT's"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4061": {
    "fields": {
@@ -14841,6 +14969,21 @@
    },
    "name": "TIMEZONE PLUIT EMPORIUM"
   },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4453": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "ZIv 4453 PALO Sunway Velocity Mall Lot 4-32 & 33, 4th Floor, lat/lng 3.1275402374125,101.72486096621; CHUNITHM X-VERSE-X '2 cabinets...'; maimai DX CiRCLE '2 cabinets 4P...'; lastUpdate 2026-04-20. Live ALL.Net lists PALO Sunway Velocity Mall for both titles. maimai_intl lat=0,lng=0 for this name.",
+     "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+     "value": {
+      "lat": 3.1275402374125,
+      "lng": 101.72486096621
+     }
+    }
+   },
+   "name": "PALO Sunway Velocity Mall"
+  },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4466": {
    "fields": {
     "games": {
@@ -15048,6 +15191,21 @@
     }
    },
    "name": "Jeremy's Downtown Arcade"
+  },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4668": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "ZIv 4668 PALO Imago address '2F, 2-49 & 2-50, Imago Shopping Mall KK Time Square, Phrase 2, Off Coastal Highway Kota Kinabalu Sabah 88100'; lat/lng 5.9706169381874,116.06624188727; CHUNITHM X-VERSE '2 cabinets...'; maimai DX CiRCLE '2 cabinets 4P...'; lastUpdate 2026-02-16. Live ALL.Net still lists PALO Imago for maimai+chunithm. maimai_intl has lat=0,lng=0 for this name (bad allnet geocode).",
+     "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+     "value": {
+      "lat": 5.9706169381874,
+      "lng": 116.06624188727
+     }
+    }
+   },
+   "name": "PALO Imago"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4683": {
    "fields": {
@@ -15853,6 +16011,16 @@
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5781": {
    "fields": {
+    "status": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Our Newbury branch will be closing on 26th April 2026. We will be trading as normal up until this date.",
+     "evidence_url": "https://highscorearcades.co.uk/offers/newbury-offers/",
+     "value": {
+      "closed": true,
+      "reason": "closed (permanently closed after 26 April 2026)"
+     }
+    },
     "website": {
      "checked_at": "2026-07-31",
      "confidence": "certain",
@@ -18727,6 +18895,21 @@
     }
    },
    "name": "OXO - Museo del Videojuego (Madrid)"
+  },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9929": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "6205 Merle Hay Rd., Johnston, IA 50131; Bar 11am-10pm Sun-Thu, 11am-12am Fri-Sat",
+     "evidence_url": "https://backpocketpinandpixel.com/",
+     "value": {
+      "lat": 41.673625055602,
+      "lng": -93.69732567775
+     }
+    }
+   },
+   "name": "Backpocket Pin & Pixel"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9944": {
    "fields": {

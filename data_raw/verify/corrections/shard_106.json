@@ -1,0 +1,2327 @@
+{
+  "shard": 106,
+  "checked": 69,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=11",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=11",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=11",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=11",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DAN&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORADM&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DANCEAROUND&pref=JP-12",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=REFLECC&pref=JP-12",
+    "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+    "https://2dera.net/iidx_map/index.php?s=1791",
+    "https://www.taito.co.jp/store/00002186",
+    "https://www.taito.co.jp/store/00002056",
+    "https://tokibow.com/",
+    "https://www.gigo.co.jp/shops/llp-tokyo-bay",
+    "https://www.gigo.co.jp/shops/soga/games",
+    "https://location.am-all.net/alm/shop?gm=109&sid=26043",
+    "https://www.gigo.co.jp/en/games/maimai?area=12"
+  ],
+  "corrections": [
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "iidx",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "sdvx",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "jubeat",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "popn",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "gitadora",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORADM&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "nostalgia",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "reflec",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=REFLECC&pref=JP-12",
+      "evidence_quote": "千葉県のe-amusement設置店舗検索(2026-08-02取得)に『タイトーステーション旭サンモール店』は掲載なし。IIDXマップ(2dera)も『※ IIDXが撤去されました。』『maimaiは残し、ほかの音ゲーは撤去となるようです』(告知2026/1/15、ページ更新2026-03-13)。",
+      "note": "Official Konami facility search for Chiba returns 0 hits for this store across IIDX/SDVX/jubeat/popn/GITADORA/NOSTALGIA/REFLEC. Community IIDX map confirms removal end of Jan 2026. Keep maimai_dx (still on ALL.Net). Taiko still on Namco official list (1 cab).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "games",
+      "current": "groove_coaster",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://2dera.net/iidx_map/index.php?s=1791",
+      "evidence_quote": "★2026/1/15　１月末に撤去予定（maimaiは残し、ほかの音ゲーは撤去となるようです） / ※ IIDXが撤去されました。",
+      "note": "Not a Konami title so not on e-amusement. Removal is inferred from the same Jan 2026 otoge pull note on 2dera. Confidence only likely.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8766,
+      "name": "タイトーステーション 旭サンモール店",
+      "field": "status",
+      "current": "open with full bemani lineup",
+      "proposed": "open; maimai_dx (and possibly taiko) remain; Konami bemani removed ~2026-01",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=11",
+      "evidence_quote": "maimai でらっくす 千葉県一覧に『タイトーステーション 旭サンモール店 旭市イ−２６７６−１ サンモール３Ｆ』が現存。e-amusement千葉検索には同店なし。",
+      "note": "Venue itself not closed. Rhythm lineup heavily reduced.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8610,
+      "name": "ゲームガリバー",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=11",
+      "evidence_quote": "オンゲキ 千葉県（51店舗）一覧に『ゲームガリバー — 柏市柏１‐１‐１１』が掲載。",
+      "note": "ALL.Net ONGEKI prefecture list includes ゲームガリバー; app omits ongeki.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8610,
+      "name": "ゲームガリバー",
+      "field": "hours",
+      "current": null,
+      "proposed": "8:30～23:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ゲームガリバー柏\" data-operationtime=\"8:30～23:00\" data-address=\"柏市柏1-1-11ファミリかしわB1F\"",
+      "note": "Hours from live Konami e-amusement facility record.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8825,
+      "name": "タイトーＦステーション市川妙典店",
+      "field": "games",
+      "current": "drs",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DAN&pref=JP-12",
+      "evidence_quote": "DANCERUSH (gkey=DAN) 千葉県検索(2026-08-02)の7店舗: ラッキーバッティングドーム, ラッキー中央店(フェリシダ), ラウンドワン市原/市川鬼高/アリオ柏/習志野, 大慶園。市川妙典は含まれない。",
+      "note": "Live official e-amusement DAN list omits this store. ZIv snapshot from 2025-03-23 still listed DANCERUSH STARDOM, so this may be a 2025-2026 removal. Marked likely not certain. Other Konami titles still present.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8825,
+      "name": "タイトーＦステーション市川妙典店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人 設置店舗 千葉: タイトーFステーション市川妙典 — 市川市妙典4-1-1 イオン市川妙典2番街2F（6 cabinets）",
+      "note": "Namco official taiko location list shows 6 cabinets. App games list omits taiko. Also remove drs per previous correction when applying.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8825,
+      "name": "タイトーＦステーション市川妙典店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "iidx": 4,
+        "sdvx": 4,
+        "taiko": 6
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+      "evidence_quote": "ZIv id=1003 Taito F Station AEON Ichikawa Myoden lastUpdate=2025-03-23: IIDX LM x3 + standard x1, SDVX Valkyrie x4; Namco taiko list 6 cabs.",
+      "note": "ZIv is community and 2025-03-23; counts may have changed. Taiko 6 from official Namco list is stronger.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8827,
+      "name": "タイトーＦステーション新松戸店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "タイトーFステーションイオン新松戸 — 松戸市新松戸3-2-2 イオンフードスタイル新松戸店4F（3 cabinets）",
+      "note": "Also corroborated by ZIv 2025-04-01 listing 太鼓の達人 ニジイロVer.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8827,
+      "name": "タイトーＦステーション新松戸店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00002186",
+      "evidence_quote": "営業時間 10:00～21:00（イオン新松戸店の営業に準じる）",
+      "note": "Official Taito store page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8827,
+      "name": "タイトーＦステーション新松戸店",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.taito.co.jp/store/00002186",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00002186",
+      "evidence_quote": "タイトーFステーション イオン新松戸店 公式店舗ページ",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8931,
+      "name": "プラサカプコン成田店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "プラサカプコン成田 — 成田市ウイング土屋24 イオンモール成田2F（3 cabinets）",
+      "note": "Namco official taiko list. ZIv 2024-07-18 also lists 3x 太鼓.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8931,
+      "name": "プラサカプコン成田店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 4,
+        "maimai_dx": 3,
+        "ongeki": 2,
+        "taiko": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+      "evidence_quote": "ZIv id=7933 プラサカプコン成田 lastUpdate=2024-07-18: CHUNITHM LUMINOUS x4, maimai DX BUDDiES x3, オンゲキ bright MEMORY x2, 太鼓 x3",
+      "note": "ZIv snapshot is 2024-07-18 and versions are outdated names; counts are community-reported. Taiko 3 matches Namco official.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9128,
+      "name": "大慶園",
+      "field": "other",
+      "current": "separate records 9128 (Konami-only) and 9229 DAIKEIEN (SEGA-only) at same address 市川市大町359",
+      "proposed": "merge into one venue with combined games: chunithm, maimai_dx, ongeki, ddr, drs, gitadora, iidx, jubeat, nostalgia, popn, taiko",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=11",
+      "evidence_quote": "ALL.Net maimai: ＤＡＩＫＥＩＥＮ 市川市大町３５９; e-amusement IIDX: 大慶園 市川市大町359 一部24時間営業; Namco taiko: DAIKEIEN 市川市大町359 (2 cabs)",
+      "note": "Same physical amusement complex. Two shard rows are a split by source, not two places.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9128,
+      "name": "大慶園",
+      "field": "hours",
+      "current": null,
+      "proposed": "一部24時間営業",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"大慶園\" data-operationtime=\"一部24時間営業\" data-address=\"市川市大町359\"",
+      "note": "Partial 24h as reported by e-amusement; exact section hours unknown.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9128,
+      "name": "大慶園",
+      "field": "games",
+      "current": [
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "popn"
+      ],
+      "proposed": [
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "DAIKEIEN — 市川市大町359（2 cabinets）",
+      "note": "Add taiko. SEGA titles live on sibling row 9229.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9229,
+      "name": "ＤＡＩＫＥＩＥＮ",
+      "field": "other",
+      "current": "SEGA-only row for same place as 9128 大慶園",
+      "proposed": "merge with id 9128; keep SEGA games chunithm/maimai_dx/ongeki on the merged record",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=11",
+      "evidence_quote": "CHUNITHM list: ＤＡＩＫＥＩＥＮ 市川市大町３５９; maimai and ONGEKI lists same address.",
+      "note": "Duplicate venue split.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8515,
+      "name": "アミューズメントエース津田沼",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（5 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 5 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9548,
+      "name": "ｎａｍｃｏ松戸店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（6 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 6 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9109,
+      "name": "ラッキー中央店・フェリシダ",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "reflec",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9018,
+      "name": "ラウンドワンアリオ柏店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（4 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 4 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8709,
+      "name": "スポーツウェーブ鉄腕24",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8710,
+      "name": "スポーツウェーブ鉄腕24稲毛長沼店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8556,
+      "name": "イスカンダル",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9121,
+      "name": "千葉レジャーランド野田店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9093,
+      "name": "ラウンドワン習志野店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8711,
+      "name": "スーパーウェーブ柏",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8648,
+      "name": "ゲームランドちはら台店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8836,
+      "name": "チャリオット五井店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8455,
+      "name": "アピナ市原店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9292,
+      "name": "ＧｉＧＯイオン新浦安ショッピングセンター",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8440,
+      "name": "アピナ印西店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "jubeat",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "jubeat",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9120,
+      "name": "千葉レジャーランド成東店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（3 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 3 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8703,
+      "name": "スタジオプリモ本八幡店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9060,
+      "name": "ラウンドワン市川鬼高店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9059,
+      "name": "ラウンドワン市原店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8773,
+      "name": "タイトーステーション 船橋店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9382,
+      "name": "ＧｉＧＯ幕張",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9452,
+      "name": "ＧｉＧＯ稲毛オーツーパーク",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9288,
+      "name": "ＧｉＧＯイオンモール銚子",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9347,
+      "name": "ＧｉＧＯ八柱",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8891,
+      "name": "パレパレ稲毛長沼店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8845,
+      "name": "テクモピア船橋南口店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8842,
+      "name": "テクモピア千葉中央店",
+      "field": "games",
+      "current": [
+        "chunithm"
+      ],
+      "proposed": [
+        "chunithm",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9562,
+      "name": "ＰＡＬＯ市川",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8431,
+      "name": "アドアーズ船橋",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8592,
+      "name": "キャッツアイ東千葉店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9357,
+      "name": "ＧｉＧＯ千葉",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9156,
+      "name": "柏ヤングボウル",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8414,
+      "name": "アソビクル京葉船橋インター店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8507,
+      "name": "アミュージアム茂原店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8729,
+      "name": "ソユーゲームフィールド木更津店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8685,
+      "name": "シルクハット津田沼",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8840,
+      "name": "テクモピアロックダム公津の杜店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9261,
+      "name": "ＧｉＧＯそよら成田ニュータウン",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9110,
+      "name": "ラッキー佐倉店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9108,
+      "name": "ラッキーバッティングドーム八千代店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8587,
+      "name": "キャッツアイ八千代店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "popn"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9390,
+      "name": "ＧｉＧＯ我孫子",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9401,
+      "name": "ＧｉＧＯ旭",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9413,
+      "name": "ＧｉＧＯ柏",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8610,
+      "name": "ゲームガリバー",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8888,
+      "name": "パラボランド東金店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8926,
+      "name": "プラサカプコン富津店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8991,
+      "name": "モーリーファンタジー館山",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8916,
+      "name": "フリスポ佐原",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8651,
+      "name": "ゲームランド千葉ニュータウン店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9223,
+      "name": "館山ヤングボウル",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9117,
+      "name": "八街ヤングボウル",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8470,
+      "name": "アピナ野田七光台店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "nostalgia",
+        "other",
+        "popn"
+      ],
+      "proposed": [
+        "chunithm",
+        "nostalgia",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（2 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 2 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9249,
+      "name": "ＧａｍｅＦｉｅｌｄ千城台店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "太鼓の達人公式設置店舗(千葉)に当該店舗あり（1 cabinets）。",
+      "note": "Namco official taiko location list for Chiba lists this venue with 1 cabinet(s). App currently omits taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8431,
+      "name": "アドアーズ船橋",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～23:45",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"アドアーズ船橋店\" data-operationtime=\"10:00～23:45\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8587,
+      "name": "キャッツアイ八千代店",
+      "field": "hours",
+      "current": null,
+      "proposed": "日～木・祝日:10:00～翌1:00 / 金・土・祝前日:10:00～翌2:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"キャッツアイ八千代店\" data-operationtime=\"日～木・祝日:10:00～翌1:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8644,
+      "name": "ゲームプラザセントラル浦安店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ゲームプラザセントラル浦安店\" data-operationtime=\"10:00～24:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8711,
+      "name": "スーパーウェーブ柏",
+      "field": "hours",
+      "current": null,
+      "proposed": "9:00～24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"スーパーウェーブ柏店\" data-operationtime=\"9:00～24:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8836,
+      "name": "チャリオット五井店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ゲームチャリオット五井店\" data-operationtime=\"10:00～24:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8837,
+      "name": "チャリオット辰巳店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ゲームチャリオット辰巳店\" data-operationtime=\"10:00～24:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8891,
+      "name": "パレパレ稲毛長沼店",
+      "field": "hours",
+      "current": null,
+      "proposed": "9:00～24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"パレパレ稲毛長沼店\" data-operationtime=\"9:00～24:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9108,
+      "name": "ラッキーバッティングドーム八千代店",
+      "field": "hours",
+      "current": null,
+      "proposed": "9:00～23:50",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ラッキーバッティングドーム\" data-operationtime=\"9:00～23:50\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9110,
+      "name": "ラッキー佐倉店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～23:45",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ラッキー佐倉店\" data-operationtime=\"10:00～23:45\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9223,
+      "name": "館山ヤングボウル",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00～24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"館山ヤングボウル\" data-operationtime=\"10:00～24:00\"",
+      "note": "Hours string from Konami e-amusement facility data-operationtime field (live 2026-08-02). May be arcade-corner hours rather than full building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9109,
+      "name": "ラッキー中央店・フェリシダ",
+      "field": "hours",
+      "current": "Mon-Sun 09:00-24:00",
+      "proposed": "9:00～24:50",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-12",
+      "evidence_quote": "data-name=\"ラッキー中央店(フェリシダ)\" data-operationtime=\"9:00～24:50\"",
+      "note": "App closes at 24:00; e-amusement lists 24:50.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9141,
+      "name": "常盤平ボウリングセンター",
+      "field": "website",
+      "current": null,
+      "proposed": "https://tokibow.com/",
+      "confidence": "certain",
+      "evidence_url": "https://tokibow.com/",
+      "evidence_quote": "ときわ平ボウリングセンター 公式サイト 〒270-2261 千葉県松戸市常盤平2-8-2 TEL 047-388-0010",
+      "note": "Official site confirms bowling center still operating. GITADORA still listed on e-amusement for this address.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9157,
+      "name": "柏駅前ヤングボウル",
+      "field": "location",
+      "current": "千葉県柏市柏１−３−１",
+      "proposed": "千葉県柏市柏1-3-1 ドン・キホーテ5F",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-12",
+      "evidence_quote": "data-name=\"柏駅前ヤングボウル\" data-address=\"柏市柏1-3-1ドン･キホーテ5F\" data-latitude=\"35.8605258\" data-longitude=\"139.9713721\"",
+      "note": "Floor detail missing. Coordinates already near eagate values.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9382,
+      "name": "ＧｉＧＯ幕張",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 4,
+        "maimai_dx": 2,
+        "ongeki": 2,
+        "project_diva": 2,
+        "sdvx": 1,
+        "gitadora": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+      "evidence_quote": "ZIv id=7876 GiGO Makuhari lastUpdate=2025-09-08: CHUNITHM '1 silver cab, 3 gold'; maimai '2 cabs'; オンゲキ '2 Cabs'; DIVA '2 cabs'; SDVX Valkyrie; GITADORA GF+DM",
+      "note": "Community snapshot Sep 2025. Not live official counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9156,
+      "name": "柏ヤングボウル",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+      "evidence_quote": "ZIv id=10705 Kashiwa Young Bowl lastUpdate=2025-11-28: CHUNITHM X-VERSE 'Two machines'; maimai でらっくす CiRCLE 'Two machines'",
+      "note": "Fresh ZIv update Nov 2025.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO ららぽーとTOKYO-BAY",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県船橋市浜町2-1-1 ららぽーとTOKYO-BAY西館3F",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "taiko"
+        ],
+        "notes": "GiGO page lists 音楽ゲーム category; specific SEGA/Konami titles not verified on ALL.Net Chiba lists. Namco taiko list: 5 cabinets."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.gigo.co.jp/shops/llp-tokyo-bay",
+      "evidence_quote": "住所: 千葉県船橋市浜町2丁目1番1号 ららぽーとTOKYO-BAY西館 3F; ゲームカテゴリに『音楽ゲーム』; 営業時間 平日10:00-20:00 土日祝10:00-21:00",
+      "note": "Not present in shard. Taiko 5 from Namco official list. Specific maimai/CHUNITHM/IIDX etc. UNVERIFIED (not on ALL.Net Chiba lists).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "namcoイオンモール幕張新都心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県千葉市美浜区豊砂1-1 イオンモール幕張新都心グランドモール3F",
+        "games": [
+          "taiko"
+        ],
+        "notes": "Namco official taiko list 5 cabinets. Other titles not verified."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "namcoイオンモール幕張新都心 — 千葉市美浜区豊砂1-1 イオンモール幕張新都心グランドモール3F（5 cabinets）",
+      "note": "Missing from shard. Only taiko confirmed here.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO イオンモール津田沼South",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県習志野市津田沼1-10-30 イオンモール津田沼South5F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "GiGO イオンモール津田沼South — 習志野市津田沼1-10-30 イオンモール津田沼South5F（3 cabinets）",
+      "note": "Missing from shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO ららぽーと柏の葉",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県柏市若柴175 ららぽーと柏の葉本館3F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "GiGO ららぽーと柏の葉 — 柏市若柴175 ららぽーと柏の葉本館3F（2 cabinets）",
+      "note": "Missing from shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO キテミテマツド",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県松戸市松戸1307-1 キテミテマツド6F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "GiGO キテミテマツド — 松戸市松戸1307-1 キテミテマツド6F（2 cabinets）",
+      "note": "Missing from shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO モラージュ柏",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県柏市大山台2-3-1 モラージュ柏2F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "GiGO モラージュ柏 — 柏市大山台2-3-1 モラージュ柏2F（2 cabinets）",
+      "note": "Missing from shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO イオン北小金",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県松戸市小金1 イオン北小金店5F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "GiGO イオン北小金 — 松戸市小金1 イオン北小金店5F（2 cabinets）",
+      "note": "Missing from shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "タイトーFステーション ニューコースト新浦安",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県浦安市明海4-1-1 ニューコースト新浦安3F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "タイトーFステーションニューコースト新浦安 — 浦安市明海4-1-1 ニューコースト新浦安3F（2 cabinets）",
+      "note": "Missing from shard. Other titles not checked beyond taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "にこまるぷらすユーカリが丘",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県佐倉市ユーカリが丘4-1-4 ユーカリプラザビル5F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "にこまるぷらすユーカリが丘 — 佐倉市ユーカリが丘4-1-4 ユーカリプラザビル5F（4 cabinets）",
+      "note": "Missing from shard. 4 taiko is notable for a map gap.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO フェスティバルウォーク蘇我",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県千葉市中央区川崎町51-1 ハーバーシティ蘇我 フェスティバルウォーク アミューズメント棟1F",
+        "games": [
+          "taiko"
+        ],
+        "hours": "10:00～23:00",
+        "notes": "Renovated toward crane/prize (GiGOクレーンゲームオアシス). ALL.Net shop page exists but shows タイトル情報がありません. GiGO games page lists only medal/kids games. Namco taiko still lists 1 cab. Do NOT add maimai/CHUNITHM/ONGEKI without reconfirmation."
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=109&sid=26043",
+      "evidence_quote": "ＧｉＧＯフェスティバルウォーク蘇我 〒260-0835 千葉県千葉市中央区川崎町５１−１ハーバーシティ蘇我ＦＷ　１Ｆ 10:00～23:00 タイトル情報がありません。",
+      "note": "Possibly still open as prize arcade with taiko. SEGA rhythm titles appear removed or offline. Confidence on current rhythm lineup is low.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "タイトーステーション アリオ蘇我",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県千葉市中央区川崎町52-7 アリオ蘇我2F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "タイトーステーションアリオ蘇我 — 千葉市中央区川崎町52-7 アリオ蘇我2F（2 cabinets）",
+      "note": "Missing from shard. Other titles not verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "namcoアリオ市原",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県市原市更級4-3-2 アリオ市原2F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "namcoアリオ市原 — 市原市更級4-3-2 アリオ市原2F（4 cabinets）",
+      "note": "Missing from shard. Near APINA Ichihara in same mall area.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "namco流山おおたかの森S・C",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "addr": "千葉県流山市西初石6-185-2 おおたかの森S・C3F",
+        "games": [
+          "taiko"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-12",
+      "evidence_quote": "namco流山おおたかの森S・C — 流山市西初石6-185-2 おおたかの森S・C3F（4 cabinets）",
+      "note": "Chiba prefecture venue missing from shard entirely.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

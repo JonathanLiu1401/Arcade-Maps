@@ -52,10 +52,26 @@ ROOT = os.path.dirname(HERE)
 MECHANICAL = ("hours", "website")
 # Applied, but only after validation against the game slug vocabulary,
 # the country box, or - for coordinates - independent geographic proof.
-VALIDATED = ("games", "game_counts", "location")
+VALIDATED = ("games", "game_counts", "location", "status")
 # Deliberately NOT applied - see module docstring.
-HELD = ("cab_models", "prices", "other", "missing_venue", "status",
-        "images")
+HELD = ("cab_models", "prices", "other", "missing_venue", "images")
+
+# A permanently-closed venue still shown as open is the worst failure
+# this map has, because somebody travels to it. But "status" is also the
+# field the fleet writes merge proposals and vague notes into, so only a
+# plain statement of permanent closure counts, and only from a source
+# that is not the community listing the row already came from.
+_CLOSED_RE = re.compile(
+    r"permanently closed|closed (?:down|for good|permanently)"
+    r"|no longer (?:open|in (?:business|operation))|ceased trading"
+    r"|out of business|已(?:关闭|停业)|停止营业",
+    re.I)
+# Temporary states that must NOT be read as closure: a venue being
+# refurbished, relocated, or merely offline is still a real venue.
+_NOT_CLOSED_RE = re.compile(
+    r"reopen|re-open|renovat|refurbish|装修中|筹备|搬迁|temporar"
+    r"|network offline|已断网|离线|merge_into|duplicate",
+    re.I)
 
 # A coordinate correction must move the pin INTO the place its own
 # address names, and by a margin that is not measurement noise. Several
@@ -75,6 +91,19 @@ _QTY_RE = re.compile(
 
 def quotes_a_quantity(quote):
     return bool(_QTY_RE.search(quote or ""))
+
+
+_COMMUNITY_HOSTS = ("zenius-i-vanisher.com", "bemanicn.com")
+
+
+def _host(url):
+    m = re.match(r"https?://([^/]+)", str(url or ""), re.I)
+    return m.group(1).lower().replace("www.", "") if m else ""
+
+
+def _is_community_host(host):
+    return any(host == h or host.endswith("." + h)
+               for h in _COMMUNITY_HOSTS)
 
 
 def load_places(data_dir):
@@ -126,13 +155,26 @@ def _location_ok(arcade, proposed, places, merge_mod):
             best = (name, plat, plng, depth)
     if best is None:
         # Nothing to check against. Accept only when the arcade has no
-        # pin at all, where any plausible coordinate beats none.
+        # pin at all, where any plausible coordinate beats none - or
+        # when the pin already IS this proposal, which means a previous
+        # build applied it and dropping it now would revert the fix.
         if arcade.get("lat") is None:
             return True, "fills_a_gap"
+        if merge_mod.haversine_m(lat, lng,
+                                 arcade["lat"], arcade["lng"]) < 25.0:
+            return True, "already_applied"
         return False, "unjudgeable"
     d_new = merge_mod.haversine_m(lat, lng, best[1], best[2])
     if arcade.get("lat") is None:
         return True, "fills_a_gap"
+    # The arcade's CURRENT pin may already be this proposal, because
+    # arcades.json is the output of the previous build - the overlay put
+    # it there. Dropping it then would un-apply the fix on the next
+    # rebuild, which is the same self-erasing bug the no_change filter
+    # had. An already-applied coordinate stays applied.
+    if merge_mod.haversine_m(lat, lng,
+                             arcade["lat"], arcade["lng"]) < 25.0:
+        return True, "already_applied"
     d_old = merge_mod.haversine_m(arcade["lat"], arcade["lng"],
                                   best[1], best[2])
     if d_old - d_new < LOCATION_MIN_GAIN_M:
@@ -230,6 +272,28 @@ def build(raw_dir, arcades, game_slugs, places=None, merge_mod=None):
                     stats["bad_slug"] += 1
                     continue
                 value = games
+            elif field == "status":
+                blob = "%s %s" % (proposed, corr.get("note") or "")
+                if not _CLOSED_RE.search(blob):
+                    stats["status_not_a_closure"] += 1
+                    continue
+                if _NOT_CLOSED_RE.search(blob):
+                    # "closed for renovation, reopening October" is not
+                    # a closure, and neither is a merge proposal that
+                    # happens to use the word.
+                    stats["status_temporary"] += 1
+                    continue
+                if corr.get("confidence") != "certain":
+                    stats["status_not_certain"] += 1
+                    continue
+                # The evidence must not be the same community listing the
+                # row already came from - that is not corroboration.
+                host = _host(corr.get("evidence_url"))
+                if _is_community_host(host):
+                    stats["status_community_evidence"] += 1
+                    continue
+                value = {"closed": True,
+                         "reason": str(proposed)[:200]}
             elif field == "location":
                 ok, why = _location_ok(arcade, proposed, places, merge_mod)
                 if not ok:

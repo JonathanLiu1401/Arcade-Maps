@@ -174,13 +174,17 @@ window.AM = window.AM || {};
   /* Anchor is the CENTRE, not a bottom tip: these are symbols, not pins, so no
      point on the artwork claims to be the ground position, and a centre anchor
      keeps the icon visually stable when its size changes. */
-  function iconFor(tierId, color, px) {
-    var key = tierId + "|" + color + "|" + px;
+  /* `closed` only adds a CSS class, so a permanently-closed venue reads as
+     dimmed on the map instead of looking like somewhere you can go tonight.
+     The pin is kept rather than removed: a reader searching for a place they
+     remember deserves to be told it closed. */
+  function iconFor(tierId, color, px, closed) {
+    var key = tierId + "|" + color + "|" + px + (closed ? "|x" : "");
     var hit = iconCache[key];
     if (hit) return hit;
     iconCache[key] = L.icon({
       iconUrl: tintedUrl(tierId, color),
-      className: "am-tier am-tier-" + tierId,
+      className: "am-tier am-tier-" + tierId + (closed ? " am-closed" : ""),
       iconSize: [px, px],
       iconAnchor: [px / 2, px / 2],
       popupAnchor: [0, -px / 2],
@@ -196,15 +200,18 @@ window.AM = window.AM || {};
   /* The icon a marker should be wearing right now, as a comparable key. Stored
      on the marker so a filter pass can skip setIcon for the (very common) case
      where the colour did not actually change. */
-  function iconKey(tierId, color, px) {
-    return tierId + "|" + color + "|" + px;
+  function iconKey(tierId, color, px, closed) {
+    return tierId + "|" + color + "|" + px + (closed ? "|x" : "");
   }
 
-  function setMarkerIcon(m, tierId, color, px) {
-    var key = iconKey(tierId, color, px);
+  /* `closed` must be threaded through here too, not just through the initial
+     build: without it the first rescale hands back an un-dimmed icon and a
+     closed venue quietly starts looking open again on zoom. */
+  function setMarkerIcon(m, tierId, color, px, closed) {
+    var key = iconKey(tierId, color, px, closed);
     if (m._amIconKey === key) return;
     m._amIconKey = key;
-    m.setIcon(iconFor(tierId, color, px));
+    m.setIcon(iconFor(tierId, color, px, closed));
   }
 
   /* ---------- cluster group ---------- */
@@ -300,7 +307,8 @@ window.AM = window.AM || {};
       var m = markerOf[list[i].id];
       if (!m) continue;
       var tierId = m._amTier;
-      setMarkerIcon(m, tierId, m._amColor, pxFor(TIER_BY_ID[tierId] || UNKNOWN_TIER, on));
+      setMarkerIcon(m, tierId, m._amColor,
+        pxFor(TIER_BY_ID[tierId] || UNKNOWN_TIER, on), m._amClosed);
     }
     /* Cluster bubbles do not carry the ramp, but a spiderfied set is laid out
        from icon sizes, so unspiderfy anything currently fanned out. */
@@ -442,7 +450,7 @@ window.AM = window.AM || {};
       var color = colorFor(displayGame(a));
       var px = pxFor(tier, on);
       var m = L.marker([a.lat, a.lng], {
-        icon: iconFor(tier.id, color, px),
+        icon: iconFor(tier.id, color, px, a.closed),
         /* Markers are not tab stops. The old canvas circles never were, and
            making several hundred visible icons focusable would put a long tab
            run between the search box and the rest of the page. The keyboard
@@ -456,7 +464,8 @@ window.AM = window.AM || {};
       });
       m._amTier = tier.id;
       m._amColor = color;
-      m._amIconKey = iconKey(tier.id, color, px);
+      m._amClosed = !!a.closed;
+      m._amIconKey = iconKey(tier.id, color, px, a.closed);
       m.bindPopup(function () { return popupHtml(a); }, { maxWidth: 320 });
       markerOf[a.id] = m;
     });
@@ -479,7 +488,8 @@ window.AM = window.AM || {};
       if (!m) continue;
       var color = colorFor(g);
       m._amColor = color;
-      setMarkerIcon(m, m._amTier, color, pxFor(TIER_BY_ID[m._amTier] || UNKNOWN_TIER, on));
+      setMarkerIcon(m, m._amTier, color,
+        pxFor(TIER_BY_ID[m._amTier] || UNKNOWN_TIER, on), m._amClosed);
       vis.push(m);
     }
     cluster.clearLayers();

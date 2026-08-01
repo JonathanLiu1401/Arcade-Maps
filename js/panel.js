@@ -1659,6 +1659,32 @@ window.AM = window.AM || {};
     return h + "</div>";
   }
 
+  /* A permanently-closed venue drawn as open is the worst failure this map
+     has, because somebody travels to it. The row is deliberately KEPT rather
+     than deleted - a reader who searches for a place they remember deserves
+     to be told it closed, and a silently vanishing pin cannot explain
+     itself - so the panel has to say so loudly, above the games and the
+     directions button, and link the source that says it. */
+  function closedHtml(a) {
+    if (!a || !a.closed) return "";
+    var src = a.closed_source
+      ? ' <a href="' + esc(a.closed_source) + '" target="_blank"' +
+        ' rel="noopener noreferrer">source</a>'
+      : "";
+    /* The reason text is written by the researcher and usually already
+       opens with "permanently closed ...", so printing the heading and
+       the reason verbatim read "Permanently closed. closed (permanently
+       closed after 26 April 2026)". Strip that leading restatement and
+       keep whatever detail follows - the date is the useful part. */
+    var why = String(a.closed_reason || "");
+    why = why.replace(/^[\s(]*(?:permanently\s+)?closed\b[\s:;,-]*/i, "")
+             .replace(/^\((.*)\)$/, "$1")
+             .trim();
+    return '<div class="pl-closed"><strong>Permanently closed.</strong>' +
+      (why ? " " + esc(why.charAt(0).toUpperCase() + why.slice(1)) : "") +
+      src + "</div>";
+  }
+
   var renderedVersion = -1;
 
   function renderPlace(a, keepScroll) {
@@ -1666,6 +1692,7 @@ window.AM = window.AM || {};
     bodyEl.innerHTML = heroHtml(a) +
       '<div class="pl-head"><h2 class="pl-name">' + esc(a.name) + "</h2>" +
       (sub ? '<div class="pl-sub">' + esc(sub) + "</div>" : "") + "</div>" +
+      closedHtml(a) +
       chipsHtml(a) + actionsHtml(a) + rowsHtml(a);
     renderedVersion = dataVersion;
     /* keepScroll marks a re-render of the SAME store (the enrichment fetch

@@ -1,0 +1,920 @@
+{
+  "shard": 118,
+  "checked": 112,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=7",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=7",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=7",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=7",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (gkeys IIDX,IIDX_LN,SDVX,SDVX_VM,DDR,DDR20TH,JUBEAT,PMSP,GITADORADM/GF/A,NOSTALGIA,PLRS,DAN,REFLECC; pref=JP-08)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Puerto%20Rico",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Russia",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2384",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2385",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2370",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2527",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2386",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1694",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=314",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9025",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11163"
+  ],
+  "corrections": [
+    {
+      "id": 9246,
+      "name": "ＧＡＭＥ ＰＡＤＤＯＣＫ＋１",
+      "field": "other",
+      "current": "Separate venue id=9246 (allnet SEGA only) and id=8625 (eagate Konami only)",
+      "proposed": "Merge into one venue with both SEGA and Konami games; 8625 and 9246 are the same store at 古河市小堤1916-1",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ＧＡＭＥ ＰＡＤＤＯＣＫ＋１ — 茨城県古河市小堤１９１６−１ (maimai DX). Same address as e-amusement ゲームパドック プラスワン.",
+      "note": "e-amusement lists ゲームパドック プラスワン at 古河市小堤1916-1 with IIDX/SDVX/jubeat/popn/gitadora/nostalgia (IIDX Lightning, SDVX Valkyrie, GITADORA Arena). ALL.Net lists maimai/CHUNITHM/ONGEKI/DIVA at same address under fullwidth name. App has two records each with half the games.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8625,
+      "name": "ゲームパドック プラスワン",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ＧＡＭＥ ＰＡＤＤＯＣＫ＋１ listed for maimai DX; also on CHUNITHM (gm=109), ONGEKI (gm=88), Project DIVA (gm=34) ALL.Net Ibaraki lists.",
+      "note": "If merge with 9246 is done, apply merged game list once. SEGA titles confirmed on ALL.Net; Konami titles already match e-amusement.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8625,
+      "name": "ゲームパドック プラスワン",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "gitadora_arena": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ゲームパドック プラスワン appears on IIDX_LN (Lightning), SDVX_VM (Valkyrie), and GITADORADMA/GFA (Arena) Ibaraki facility lists.",
+      "note": "e-amusement separate gkeys: IIDX_LN, SDVX_VM, GITADORADMA, GITADORAGFA all include this shop.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9237,
+      "name": "ＦＥＳＴＡ古河店",
+      "field": "other",
+      "current": "Separate venue id=9237 (allnet SEGA) and id=8911 フェスタ古河店 (eagate Konami)",
+      "proposed": "Merge: same store at 古河市松並2-18-10 マーケットシティ古河",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ＦＥＳＴＡ古河店 — 茨城県古河市松並２−１８−１０マーケットシティ古河. e-amusement フェスタ古河店 same address.",
+      "note": "Coords nearly identical (36.2096,139.7086 vs 36.2097,139.7097).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8911,
+      "name": "フェスタ古河店",
+      "field": "games",
+      "current": [
+        "iidx",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ＦＥＳＴＡ古河店 on CHUNITHM, maimai DX, ONGEKI ALL.Net Ibaraki lists.",
+      "note": "Merge with 9237; Konami set already matches e-amusement (IIDX Lightning + SDVX Valkyrie).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8911,
+      "name": "フェスタ古河店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "フェスタ古河店 on IIDX_LN and SDVX_VM Ibaraki lists.",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8911,
+      "name": "フェスタ古河店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "data-operationtime for フェスタ古河店: 10:00～24:00",
+      "note": "From e-amusement facility data-operationtime.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9575,
+      "name": "ＳＯＹＵ　ＴＯＹ’Ｓ　ＮＹ　守谷店",
+      "field": "other",
+      "current": "Separate id=9575 (allnet SEGA) and id=8741 ソユートイズニューヨーク守谷店 (eagate Konami)",
+      "proposed": "Merge: same store at イオンタウン守谷2F 守谷市百合ヶ丘3-249-1",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ＳＯＹＵ　ＴＯＹ'Ｓ　ＮＹ　守谷店 — 茨城県守谷市百合ヶ丘3-249-1イオンタウン守谷2Ｆ",
+      "note": "e-amusement lists ソユートイズニューヨーク守谷店 at same address with jubeat, Polaris Chord, REFLEC BEAT.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8741,
+      "name": "ソユートイズニューヨーク守谷店",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "polaris_chord",
+        "reflec"
+      ],
+      "proposed": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "reflec"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ＳＯＹＵ　ＴＯＹ'Ｓ　ＮＹ　守谷店 on maimai DX, CHUNITHM, ONGEKI ALL.Net lists.",
+      "note": "Merge with 9575. Hours from e-amusement: 10:00～21:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8741,
+      "name": "ソユートイズニューヨーク守谷店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-08",
+      "evidence_quote": "data-operationtime ソユートイズニューヨーク守谷店: 10:00～21:00",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8526,
+      "name": "アミューズメントパレスワンダーヴュー阿見店",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "gitadora",
+        "iidx",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "アミューズメントパレスワンダーヴュー阿見店 appears on IIDX, IIDX_LN, SDVX, SDVX_VM, GITADORADM, GITADORAGF only. Absent from DDR, DDR20TH, popn, nostalgia, jubeat, polaris lists. Absent from ALL.Net maimai (gm=96), CHUNITHM (109), ONGEKI (88), DIVA (34) Ibaraki lists.",
+      "note": "notes field still claims DDR WORLD/20th, maimai PRiSM PLUS, オンゲキ, ノスタルジア, pop'n - those contradict current official locators. Official locators win. IIDX Lightning and SDVX Valkyrie ARE present.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8526,
+      "name": "アミューズメントパレスワンダーヴュー阿見店",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": null
+      },
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "Shop on IIDX_LN and SDVX_VM lists. Not on DDR or DDR20TH lists, so ddr_gold claim is unsupported and should be removed.",
+      "note": "ddr_gold removed from proposed because ddr itself is no longer on official locator.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8526,
+      "name": "アミューズメントパレスワンダーヴュー阿見店",
+      "field": "other",
+      "current": "notes lists DDR WORLD, maimai PRiSM PLUS, オンゲキ Re:Fresh, ノスタルジア Op.3, pop'n Jam&Fizz",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=7",
+      "evidence_quote": "No 阿見 / ワンダーヴュー / アミューズメントパレス entry on maimai DX Ibaraki list (29 venues). Same absence on CHUNITHM and ONGEKI lists.",
+      "note": "Clear stale machine notes that claim SEGA/DDR/popn/nostalgia cabs not on current official locators.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8646,
+      "name": "ゲームメガ日立店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-08",
+      "evidence_quote": "NOSTALGIA Ibaraki list (12 shops) does not include ゲームメガ日立店. Shop is present on IIDX/SDVX/DDR/jubeat/popn/gitadora/polaris lists.",
+      "note": "Also has IIDX Lightning, SDVX Valkyrie, DDR 20th, GITADORA Arena per e-amusement variant gkeys.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8646,
+      "name": "ゲームメガ日立店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true,
+        "gitadora_arena": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ゲームメガ日立店 on IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA, GITADORAGFA Ibaraki lists.",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9420,
+      "name": "ＧｉＧＯ水戸オーパ",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=7",
+      "evidence_quote": "ONGEKI Ibaraki list (26 shops) does not include ＧｉＧＯ水戸オーパ. CHUNITHM list (30 shops) does include it at 水戸市宮町１丁目７番３３号水戸オーパ７階.",
+      "note": "maimai also absent for this store on ALL.Net (app already does not list maimai). Only CHUNITHM confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9486,
+      "name": "ＧｉＧＯ龍ヶ崎",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-08",
+      "evidence_quote": "GiGO龍ヶ崎 appears only on DANCERUSH (DAN) among Konami gkeys checked. Absent from jubeat (16 shops) and nostalgia (12 shops) Ibaraki lists. Still on ALL.Net for maimai/CHUNITHM/ONGEKI/DIVA.",
+      "note": "e-amusement only returns this shop for DRS among the gkeys queried.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8436,
+      "name": "アピナ下館店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "アピナ下館店 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8513,
+      "name": "アミューズビバ",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "アミューズビバ present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8626,
+      "name": "ゲームパニックつくば",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true,
+        "gitadora_arena": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ゲームパニックつくば present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8645,
+      "name": "ゲームメガつくば店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ゲームメガつくば店 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8647,
+      "name": "ゲームメガ水戸けやき台店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ゲームメガ水戸けやき台店 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8900,
+      "name": "ピンクパンサー下妻店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ピンクパンサー 下妻店 on SDVX_VM; not on IIDX_LN present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8901,
+      "name": "ピンクパンサー土浦店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ピンクパンサー土浦店 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8915,
+      "name": "フリスポ下館",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "フリスポ下館 on SDVX_VM; not on IIDX_LN present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9005,
+      "name": "ユーズランド水戸内原店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true,
+        "gitadora_arena": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "ユーズランド水戸内原店 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9263,
+      "name": "ＧｉＧＯひたちなか",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "GiGOひたちなか present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9303,
+      "name": "ＧｉＧＯショッピングセンターチェリオ鹿嶋",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "GiGOショッピングセンターチェリオ鹿嶋 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9308,
+      "name": "ＧｉＧＯデイズタウンつくば",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true,
+        "gitadora_arena": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "GiGOデイズタウンつくば present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9419,
+      "name": "ＧｉＧＯ水戸",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "GiGO水戸 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9421,
+      "name": "ＧｉＧＯ水戸南",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "GiGO水戸南 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9442,
+      "name": "ＧｉＧＯ神栖",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "GiGO神栖 present on the corresponding e-amusement Lightning/Valkyrie/20th/Arena facility search results for JP-08 (Ibaraki).",
+      "note": "Derived from e-amusement gkeys IIDX_LN, SDVX_VM, DDR20TH, GITADORADMA/GFA as of 2026-08-02. For 8900 only Valkyrie (no Lightning). For 8915 only Valkyrie.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8777,
+      "name": "タイトーステーションイオンタウン水戸南店",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null,
+        "taiko_jp": null
+      },
+      "proposed": {
+        "iidx_lm": false,
+        "taiko_jp": null
+      },
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-08",
+      "evidence_quote": "タイトーステーションイオンタウン水戸南店 is on standard IIDX and popn lists but NOT on IIDX_LN (Lightning) Ibaraki list (17 shops).",
+      "note": "App notes say beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL). Official IIDX_LN locator disagrees. Prefer official: mark Lightning false. taiko not verified via e-amusement (Bandai Namco).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8900,
+      "name": "ピンクパンサー下妻店",
+      "field": "hours",
+      "current": null,
+      "proposed": "12:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "data-operationtime for this shop on e-amusement: 12:00～24:00",
+      "note": "Source is Konami facility operation time field. Apply only if app hours_text empty or wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9167,
+      "name": "楽市楽座イオンモール土浦店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "data-operationtime for this shop on e-amusement: 09:00～21:00",
+      "note": "Source is Konami facility operation time field. Apply only if app hours_text empty or wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9303,
+      "name": "ＧｉＧＯショッピングセンターチェリオ鹿嶋",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "data-operationtime for this shop on e-amusement: 10:00～22:00",
+      "note": "Source is Konami facility operation time field. Apply only if app hours_text empty or wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9442,
+      "name": "ＧｉＧＯ神栖",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "data-operationtime for this shop on e-amusement: 10:00～24:00",
+      "note": "Source is Konami facility operation time field. Apply only if app hours_text empty or wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8625,
+      "name": "ゲームパドック プラスワン",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "data-operationtime for this shop on e-amusement: 09:00～24:00",
+      "note": "Source is Konami facility operation time field. Apply only if app hours_text empty or wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9308,
+      "name": "ＧｉＧＯデイズタウンつくば",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "crossbeats",
+        "dance_evo",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "museca",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "pump_it_up",
+        "reflec",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "reflec",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-08",
+      "evidence_quote": "GiGOデイズタウンつくば is on e-amusement for IIDX/SDVX/DDR/jubeat/popn/gitadora/nostalgia/polaris/drs/reflec and ALL.Net for maimai/CHUNITHM/ONGEKI/DIVA. crossbeats, MUSECA, DanceEvolution have no current official locator; pump_it_up is Andamiro and not on Konami/SEGA locators.",
+      "note": "App notes list many offline/legacy cabs. Those may still exist as offline shells but cannot be confirmed as playable. Removed crossbeats/dance_evo/museca/pump_it_up from proposed live games as likely stale; other can absorb offline curios. Confidence likely not certain because physical offline cabs can exist without network listing.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10560,
+      "name": "Carolina Bowling Center",
+      "field": "status",
+      "current": "listed open with ddr",
+      "proposed": "closed_or_no_rhythm (DDR cabinet removed; archival only)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2384",
+      "evidence_quote": "[Cabinet has been removed. Leaving this up for archival purposes.] Condition: Not Working. lastUpdateTime 2026-01-09.",
+      "note": "Worst map failure class: venue no longer has the listed rhythm cab. Remove ddr or mark status closed for rhythm purposes.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10560,
+      "name": "Carolina Bowling Center",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2384",
+      "evidence_quote": "[Cabinet has been removed. Leaving this up for archival purposes.]",
+      "note": "proposed null = remove ddr claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10568,
+      "name": "Game Room, Caribe Hilton",
+      "field": "status",
+      "current": "listed open with ddr",
+      "proposed": "closed (hotel no longer has the machine; arcade is gone)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2385",
+      "evidence_quote": "CURRENT UPDATE: The hotel no longer has the machine. The arcade is also gone. Leaving this here for archival purposes. lastUpdate 2023-01-29.",
+      "note": "Mark closed / remove from active map.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10568,
+      "name": "Game Room, Caribe Hilton",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2385",
+      "evidence_quote": "The hotel no longer has the machine. The arcade is also gone.",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10564,
+      "name": "Cupey Bowling & Entertainment Center (Cupey Professional Mall)",
+      "field": "status",
+      "current": "listed with games other",
+      "proposed": "closed (arcade area vacant post-pandemic)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2370",
+      "evidence_quote": "Previously housed a DDR EXTREME cab ... but the arcade area has been closed and vacant post-pandemic. It is currently unknown when the arcade will reopen. lastUpdate 2022-04-11.",
+      "note": "Stale 2022 update; no newer confirmation. Likely still closed but not re-verified on-site in 2024-2026.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10558,
+      "name": "Caribbean Cinemas (The Outlet 66)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2527",
+      "evidence_quote": "Went there recently, it's still turned off with the majority of the cabs that used to be there removed only a few remain and DDR is the only that is turned off. lastUpdate 2026-04-18.",
+      "note": "DDR SuperNOVA still listed on ZIv but reported powered off with most cabs removed. Treat as not playable; keep other for remaining cabs.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10561,
+      "name": "Chuck E. Cheese (Plaza Centro)",
+      "field": "status",
+      "current": "listed open with games other",
+      "proposed": "no rhythm games (PIU NX2 removed; kids arcade only)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2386",
+      "evidence_quote": "there was a Pump It Up NX2, but got removed, so basically you will only see lots of kids and arcades focused on children. lastUpdate 2026-01-30. machines: none.",
+      "note": "Not necessarily fully closed as a venue, but no rhythm cabs. Low value for this map.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10539,
+      "name": "Aguadilla Bowling Center & Mini Golf",
+      "field": "status",
+      "current": "listed open with ddr SuperNOVA",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2382",
+      "evidence_quote": "DanceDanceRevolution SuperNOVA still listed; lastUpdateTime 2022-04-11. Comment: Terrible pads... Monitor is somewhat discolored.",
+      "note": "No update since 2022. Cannot confirm still present in 2026. Do not remove, but treat as stale/unverified. proposed null means no status change proven.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10579,
+      "name": "Almaz",
+      "field": "status",
+      "current": "listed open with games other",
+      "proposed": "closed (no games anymore)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1694",
+      "evidence_quote": "information: No games anymore. lastUpdateTime 2013-08-01. machines: none.",
+      "note": "Very stale (2013) but explicit closed note. No newer source found. likely not certain.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10611,
+      "name": "Варшавский",
+      "field": "status",
+      "current": "listed open with games other",
+      "proposed": "closed (gaming zone removed)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=314",
+      "evidence_quote": "information: Gaming zone has been removed. lastUpdateTime 2020-04-13. machines: none.",
+      "note": "2020 note; no newer source. likely.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10589,
+      "name": "Funky Town",
+      "field": "other",
+      "current": "country: Russia; addr Almaty",
+      "proposed": "country should be Kazakhstan (Almaty), not Russia",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9025",
+      "evidence_quote": "city: Almaty; address: Tashkenstiy trakt, 17k Almaty 040916. ZIv country field is Russia but coordinates 43.23,76.77 are Almaty, Kazakhstan.",
+      "note": "ZIv mis-filed under Russia. Map currently shows it in Russia country bucket. 2x PIU NX ABSOLUTE last updated 2024-06-21.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10615,
+      "name": "Читай-Город (Chitai Gorod, not Arcade)",
+      "field": "status",
+      "current": "listed as arcade with games other",
+      "proposed": "not a rhythm arcade (bookstore with one locked fighting-game cab after purchase)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11163",
+      "evidence_quote": "Name includes '(Chitai Gorod, not Arcade)'. information: This store has a singular arcade. Machine: Samurai Shodown III — You can play this only after a book purchase.",
+      "note": "Name already warns not arcade. Low value; consider removing from rhythm map.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10609,
+      "name": "Tetris",
+      "field": "status",
+      "current": "listed open with ddr (DDR X2)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3163",
+      "evidence_quote": "DanceDanceRevolution X2; lastUpdateTime 2014-06-19. Comment: Unlock level MAX, on left pad crosswiring bug.",
+      "note": "12-year-old ZIv row. Cannot verify current presence. Do not invent removal.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10585,
+      "name": "Cinema Park",
+      "field": "status",
+      "current": "listed open with ddr SuperNOVA",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5196",
+      "evidence_quote": "DanceDanceRevolution SuperNOVA; lastUpdateTime 2019-10-13.",
+      "note": "Stale 2019. Unverified today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10597,
+      "name": "LaserLand",
+      "field": "status",
+      "current": "listed open with pump_it_up Fiesta 2",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3363",
+      "evidence_quote": "Pump It Up Fiesta 2; lastUpdateTime 2015-02-13.",
+      "note": "Stale 2015. Unverified today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10590,
+      "name": "Happylon",
+      "field": "status",
+      "current": "listed open with pump_it_up PRIME x2",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2334",
+      "evidence_quote": "Pump It Up PRIME x2 FX Cabinet; lastUpdateTime 2020-06-06.",
+      "note": "Stale 2020. Unverified today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10596,
+      "name": "Kosmik (Космик)",
+      "field": "other",
+      "current": "location pin may be wrong per ZIv community",
+      "proposed": "Verify pin against address Yartsevskaya 19 (Ярцевская улица, 19), 7th floor, Moscow; PIU Fiesta 2 listed 2026-07-15",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11157",
+      "evidence_quote": "Address Yartsevskaya Street, 19, 7th floor; Pump It Up Fiesta 2; lastUpdate 2026-07-15. API summary noted a commenter flags the map pin as wrong.",
+      "note": "Did not recompute distance from app lat/lng in this pass. Maintainer should compare app coordinates to Yartsevskaya 19.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

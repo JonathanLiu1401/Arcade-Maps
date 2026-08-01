@@ -1,0 +1,756 @@
+{
+  "shard": 113,
+  "checked": 58,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10051",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9956",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9946",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2388",
+    "https://map.bemanicn.com/shop/4134",
+    "https://map.bemanicn.com/shop/51",
+    "https://map.bemanicn.com/shop/49",
+    "https://map.bemanicn.com/shop/50",
+    "https://map.bemanicn.com/shop/415",
+    "https://map.bemanicn.com/shop/1038",
+    "https://map.bemanicn.com/shop/1112",
+    "https://map.bemanicn.com/shop/2004",
+    "https://map.bemanicn.com/shop/2349",
+    "https://map.bemanicn.com/shop/2674",
+    "https://map.bemanicn.com/shop/3862",
+    "https://map.bemanicn.com/shop/4595",
+    "https://map.bemanicn.com/shop/5058",
+    "https://m.map.360.cn/m/search/detail/pid=37af5779ab680e8b"
+  ],
+  "corrections": [
+    {
+      "id": 3013,
+      "name": "奇乐多",
+      "field": "status",
+      "current": "open (implied; listed with gitadora/taiko)",
+      "proposed": "closed",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10051",
+      "evidence_quote": "奇乐多 CLOSED ... Updated 2026-07-31 01:45 ... History: 1 day ago rainfallESC Location marked as closed.",
+      "note": "ZIv page title and H1 show CLOSED. Venue absent from ZIv China API dump. Do not send players here.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1068,
+      "name": "FUNDOLAND 反斗乐园 (欢乐海岸)",
+      "field": "status",
+      "current": "open hours; address prefix [Temporary Closed]",
+      "proposed": "temporary_closed (possibly permanent; unconfirmed)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9946",
+      "evidence_quote": "[Temporary Closed] L2 Floor, OCT Harbour Shopping, No.8 Baishi Road, Nanshan District (欢乐海岸购物中心2楼) ... Updated 2025-04-07 03:39 (1 year ago)",
+      "note": "ZIv has Temporary Closed since at least 2025-04. No newer reopen confirmation. App still shows normal hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1374,
+      "name": "YH城电玩城-白云嘉禾店(未开业)",
+      "field": "status",
+      "current": "listed as venue; name says never opened",
+      "proposed": "never_opened / remove or hide from active map",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2416",
+      "evidence_quote": "YH城电玩城-白云嘉禾店(未开业) ... Updated 2012-12-01 18:23:37 (13 years ago) ... machines: []",
+      "note": "Name says never opened. ZIv last update 2012 with zero machines.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4065,
+      "name": "星际传奇 Star Lenged (龙华天虹)",
+      "field": "status",
+      "current": "address begins with [Temporary Closed]; app name still Star Legend",
+      "proposed": "open (renovated/reopened; no longer temporary closed)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9956",
+      "evidence_quote": "Formerly STAR LEGEND, the arcade has been renovated and reopened as FUNDOLAND π. ... Updated 2026-08-01 03:12",
+      "note": "App addr still has [Temporary Closed] which is now wrong. Cross-check BemaniCN shop 1112 status=1 name FUNDOLAND pi Longhua Tianhong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4065,
+      "name": "星际传奇 Star Lenged (龙华天虹)",
+      "field": "other",
+      "current": "Star Legend Star Lenged (Longhua Tianhong)",
+      "proposed": "反斗乐园π / FUNDOLAND π (龙华天虹) [was 星际传奇]",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/1112",
+      "evidence_quote": "name=反斗乐园π（龙华天虹店） status=1 address=民治街道人民南路天虹购物中心3层L312号铺 updated=2026-07-14",
+      "note": "Brand rename after renovation. ZIv name is FUNDOLAND pi @ Longhua Tianhong. Typo Lenged should be fixed if old brand string kept. Chinese official name on BCN: fan dou le yuan pi (Longhua Tianhong).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4065,
+      "name": "星际传奇 Star Lenged (龙华天虹)",
+      "field": "location",
+      "current": "addr starts with [Temporary Closed] F3 Rainbow Shopping Center No.2020 Renmin Longhua...",
+      "proposed": "F3 / L312, 龙华天虹购物中心, 民治街道人民南路 (no Temporary Closed prefix)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/1112",
+      "evidence_quote": "民治街道人民南路天虹购物中心3层L312号铺",
+      "note": "Remove obsolete Temporary Closed prefix. Coordinates 22.63033,114.01615 match ZIv.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4065,
+      "name": "星际传奇 Star Lenged (龙华天虹)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Fri 10:00-21:30; Sat-Sun 10:00-22:30 (ZIv table). Info text also says Mon-Thu 10:00-21:30, Fri-Sun 10:00-22:30 (minor Fri conflict).",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9956",
+      "evidence_quote": "Hours Mon-Thu 10:00-21:30 Fri-Sun 10:00-22:30; Opening Times table Mon-Fri 10:00-21:30 Sat-Sun 10:00-22:30",
+      "note": "ZIv free-text and structured table disagree slightly on Friday close. BemaniCN only has start=10 end=22.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4322,
+      "name": "朗玩 Round1 Bowling & Arcade (福田店)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "maimai_dx": 6,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 3,
+        "maimai_dx": 6,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/shop/4134",
+      "evidence_quote": "CHUNITHM quantity=3 version=中二节奏 2026; maimai DX quantity=6; 太鼓之达人 quantity=2; updated 2026-07-14",
+      "note": "BemaniCN lists 3 CHUNITHM cabs. ZIv still has 4 CHUNITHM VERSE rows (about 24 days old). Prefer BCN quantity; maimai 6 and taiko 2 agree.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4066,
+      "name": "星际传奇 Star Lenged (龙岗万科)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/shop/51",
+      "evidence_quote": "maimai DX quantity=1 version=舞萌DX 2025; CHUNITHM quantity=2; 太鼓之达人 quantity=1; updated 2026-04-04. Comment notes Mar 2026 both sides broken then 2026.4.4 maimai已修好 (still one unit).",
+      "note": "Older ZIv had 2 maimai rows (bulk update about 1 year). Newer BCN quantity is 1.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4057,
+      "name": "星际传奇 Star Lenged (光明大仟里)",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/1038",
+      "evidence_quote": "太鼓之达人 x1 ver=国框 2026春 ... 光明第一台太鼓，于2026年2月5日正式入驻",
+      "note": "Taiko added Feb 2026. ZIv also lists Nijiiro (updated 2026-08-01). App games list missing taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4057,
+      "name": "星际传奇 Star Lenged (光明大仟里)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/1038",
+      "evidence_quote": "maimai DX quantity=1; 太鼓之达人 quantity=1; status=1 updated 2026-07-03",
+      "note": "Both BCN and recent ZIv agree on 1 maimai and 1 taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2025,
+      "name": "反斗乐园 FUNDOLAND (金光华)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/49",
+      "evidence_quote": "maimai DX x1 国行 DX2025; 太鼓之达人 x1 国行虹; 太鼓达人(旧代) x1 12亚; updated 2026-04-21",
+      "note": "ZIv 2026-07-30 also 1 maimai + 1 Nijiiro + 1 Asia taiko 12. Count taiko as 2 if both generations shown.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4396,
+      "name": "极客森超乐场 GEEK WORLD (光明蓝鲸汇)",
+      "field": "other",
+      "current": "games include maimai_dx with game_counts maimai_dx=1 (presented as playable)",
+      "proposed": "maimai_dx currently non-operational / powered down at back of store (do not travel for maimai alone); WACCA also degraded",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/shop/2349",
+      "evidence_quote": "maimai DX quantity=1 comment: 目前机子完全停摆，两边屏幕积灰，2p键盘全坏，已断电放至店深处，商家目前未处理，请勿扑空出勤; updated 2026-07-25",
+      "note": "Venue itself is open (status=1). Rhythm cabinets are the problem. Original Chinese on BCN: ji qi wan quan ting bai.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4401,
+      "name": "极客森超乐场 GEEK WORLD (深圳松岗)",
+      "field": "other",
+      "current": "games=['maimai_dx'] presented as normal online DX",
+      "proposed": "maimai present but offline / 开大会 mode, not networked; poor condition per BCN",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/shop/2004",
+      "evidence_quote": "maimai DX quantity=1 Ver.CH1.51-C comment: 目前机器开大会模式，未联网，与店员沟通尝试恢复联网无果。整体手感较差。能不来尽量别来。 updated 2026-04-22",
+      "note": "ZIv 2026-08-01 lists maimai DX 2026 (may be optimistic vs BCN offline note).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4399,
+      "name": "极客森超乐场 GEEK WORLD (沙井佳漾汇)",
+      "field": "other",
+      "current": "maimai_dx listed without network warning",
+      "proposed": "maimai online fee expired / 断网 per BCN (Ver.CN1.51-I 断网)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/shop/2674",
+      "evidence_quote": "maimai DX quantity=1 version=Ver.CN1.51-I（断网） comment: 【未续费断网注意】机况一般，内屏随机吃note/星星; updated 2026-02-12",
+      "note": "ZIv day-old row says maimai DX 2026 without offline flag. BCN more explicit about offline.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4056,
+      "name": "星际传奇 Star Lenged (BREW TOWN)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/5058",
+      "evidence_quote": "maimai DX quantity=1 国行2024; 太鼓之达人 quantity=1 国行; status=1",
+      "note": "ZIv 2026-07-31 also 1 maimai + 1 Nijiiro. BCN version string may lag; count matters.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3545,
+      "name": "彩虹王国动漫中心 Rainbow Kingdom (新沙天虹)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/415",
+      "evidence_quote": "maimai DX quantity=1; status=1 updated 2026-07-05",
+      "note": "Only rhythm title is maimai. Count was null in app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5371,
+      "name": "热带时光家庭娱乐中心 Tropical Time Games (深圳店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/4595",
+      "evidence_quote": "maimai DX quantity=1 coin=8; status=1 updated 2026-06-13",
+      "note": "Matches ZIv single maimai row.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6110,
+      "name": "米其漫游艺城 MiQi Cartoon (红山6979)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/3862",
+      "evidence_quote": "maimai DX quantity=1 2025; status=1 updated 2026-06-26; comment: 可能是全深圳手感最好的一批舞萌",
+      "note": "ZIv also 1 cab.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4401,
+      "name": "极客森超乐场 GEEK WORLD (深圳松岗)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/2004",
+      "evidence_quote": "maimai DX quantity=1",
+      "note": "Count is 1; playability is separate offline correction.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4399,
+      "name": "极客森超乐场 GEEK WORLD (沙井佳漾汇)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/2674",
+      "evidence_quote": "maimai DX quantity=1",
+      "note": "Count only; see offline note.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2025,
+      "name": "反斗乐园 FUNDOLAND (金光华)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/49",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/49",
+      "evidence_quote": "BemaniCN shop id 49 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3545,
+      "name": "彩虹王国动漫中心 Rainbow Kingdom (新沙天虹)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/415",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/415",
+      "evidence_quote": "BemaniCN shop id 415 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4042,
+      "name": "星际传奇 STAR LEGEND (京基KKMall)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/50",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/50",
+      "evidence_quote": "BemaniCN shop id 50 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4056,
+      "name": "星际传奇 Star Lenged (BREW TOWN)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/5058",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/5058",
+      "evidence_quote": "BemaniCN shop id 5058 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4057,
+      "name": "星际传奇 Star Lenged (光明大仟里)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/1038",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/1038",
+      "evidence_quote": "BemaniCN shop id 1038 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4065,
+      "name": "星际传奇 Star Lenged (龙华天虹)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/1112",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/1112",
+      "evidence_quote": "BemaniCN shop id 1112 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4066,
+      "name": "星际传奇 Star Lenged (龙岗万科)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/51",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/51",
+      "evidence_quote": "BemaniCN shop id 51 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4322,
+      "name": "朗玩 Round1 Bowling & Arcade (福田店)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/4134",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/4134",
+      "evidence_quote": "BemaniCN shop id 4134 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4396,
+      "name": "极客森超乐场 GEEK WORLD (光明蓝鲸汇)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/2349",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/2349",
+      "evidence_quote": "BemaniCN shop id 2349 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4399,
+      "name": "极客森超乐场 GEEK WORLD (沙井佳漾汇)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/2674",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/2674",
+      "evidence_quote": "BemaniCN shop id 2674 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4401,
+      "name": "极客森超乐场 GEEK WORLD (深圳松岗)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/2004",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/2004",
+      "evidence_quote": "BemaniCN shop id 2004 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5371,
+      "name": "热带时光家庭娱乐中心 Tropical Time Games (深圳店)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/4595",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/4595",
+      "evidence_quote": "BemaniCN shop id 4595 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6110,
+      "name": "米其漫游艺城 MiQi Cartoon (红山6979)",
+      "field": "other",
+      "current": "links.bemanicn=null",
+      "proposed": "https://map.bemanicn.com/shop/3862",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/3862",
+      "evidence_quote": "BemaniCN shop id 3862 matches this venue (also BEMANICN ID in ZIv info where present)",
+      "note": "App has no BemaniCN link; China community map is freshest count/status source for these stores.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1510,
+      "name": "世宇乐园(大信旗舰店)",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2433",
+      "evidence_quote": "ZIv lastUpdate around 2012-07-16; machine list still jubeat x4 condition 0. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1511,
+      "name": "世宇乐园广州棠下店",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2397",
+      "evidence_quote": "ZIv lastUpdate around 2012-12-01; machine list still jubeat/taiko Asia 11. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1862,
+      "name": "动力99",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2431",
+      "evidence_quote": "ZIv lastUpdate around 2012-09-15; machine list still IIDX/jubeat/reflec/GFDM XG. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2621,
+      "name": "大玩家超乐场",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2432",
+      "evidence_quote": "ZIv lastUpdate around 2012-12-12; machine list still jubeat/taiko 12 Asia. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3466,
+      "name": "幸运乐园‎",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2605",
+      "evidence_quote": "ZIv lastUpdate around 2012-12-01; machine list still zero machines. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5839,
+      "name": "百信广场4楼",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2603",
+      "evidence_quote": "ZIv lastUpdate around about 13 years ago; machine list still jubeat/taiko 10-11. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6767,
+      "name": "都市乐园游艺中心",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2604",
+      "evidence_quote": "ZIv lastUpdate around about 13 years ago; machine list still taiko 11 Asia only. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6974,
+      "name": "金木一郎动漫游戏体验馆",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2535",
+      "evidence_quote": "ZIv lastUpdate around about 13 years ago; machine list still jubeat + DJMAX. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5637,
+      "name": "环游乐园星力店",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2393",
+      "evidence_quote": "ZIv lastUpdate around about 14 years ago; machine list still GFDM XG + jubeat. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2696,
+      "name": "天娱广场2楼",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2606",
+      "evidence_quote": "ZIv lastUpdate around 2016-10-21; machine list still maimai ORANGE PLUS OFFLINE + taiko 12 Asia. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4532,
+      "name": "梦幻谷游艺城",
+      "field": "status",
+      "current": "shown as active venue with rhythm games",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2818",
+      "evidence_quote": "ZIv lastUpdate around about 13 years ago; machine list still IIDX/jubeat/reflec/old maimai. No CLOSED flag found on ZIv, but data is many years stale.",
+      "note": "Could NOT verify whether still open or long closed. No official chain page or recent BemaniCN hit found. Do NOT treat as confirmed closed. Recommend maintainer recheck on-site or via Chinese maps/Dianping. proposed=null means remove the implicit open-and-current claim until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5647,
+      "name": "环游嘉年华(大学城)",
+      "field": "status",
+      "current": "shown as active",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2395",
+      "evidence_quote": "ZIv lastUpdate about 7 years ago for Funloop branch; no CLOSED flag verified in this pass",
+      "note": "Sister stores of Tianhecheng Funloop. Could not confirm 2026 status. proposed=null = do not trust as current without recheck.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5651,
+      "name": "环游嘉年华(广百店)",
+      "field": "status",
+      "current": "shown as active",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2396",
+      "evidence_quote": "ZIv lastUpdate about 7 years ago for Funloop branch; no CLOSED flag verified in this pass",
+      "note": "Sister stores of Tianhecheng Funloop. Could not confirm 2026 status. proposed=null = do not trust as current without recheck.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5652,
+      "name": "环游嘉年华(易发店)",
+      "field": "status",
+      "current": "shown as active",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2394",
+      "evidence_quote": "ZIv lastUpdate about 7 years ago for Funloop branch; no CLOSED flag verified in this pass",
+      "note": "Sister stores of Tianhecheng Funloop. Could not confirm 2026 status. proposed=null = do not trust as current without recheck.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3497,
+      "name": "广州星力动漫游戏产业园",
+      "field": "other",
+      "current": "listed as normal arcade with IIDX/jubeat/GFDM/reflec counts",
+      "proposed": "treat as industry park / distributor showroom, not a normal pay-to-play arcade; free-play notes from 2018",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2398",
+      "evidence_quote": "由于这块区域是国内各大街机代理商厂商的大本营，因此在此地区游玩大多数为免费 ... lastUpdate 2018-10-30; machine comments Just for free !!!!",
+      "note": "Not a consumer arcade destination. Last ZIv update 2018. Public access today unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5650,
+      "name": "环游嘉年华(天河城)",
+      "field": "game_counts",
+      "current": {
+        "gitadora": 2,
+        "jubeat": 1,
+        "maimai_dx": 4,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "gitadora": 2,
+        "jubeat": 1,
+        "maimai_dx": 4,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2388",
+      "evidence_quote": "舞萌DX 2025 / maimai DX PRiSM comment '4 cabinets'; lastUpdate 2025-08-17 (11 months ago)",
+      "note": "Counts consistent with ZIv comments but data is about 11 months old. No BemaniCN id in ZIv info. Pipeline may drop no-ops.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 981,
+      "name": "BitCity",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "groove_coaster": 2,
+        "jubeat": 2,
+        "maimai_dx": 3,
+        "taiko": 4
+      },
+      "proposed": {
+        "chunithm": 2,
+        "groove_coaster": 2,
+        "jubeat": 2,
+        "maimai_dx": 3,
+        "taiko": 4
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9990",
+      "evidence_quote": "Updated 2026-07-21: 中二节奏2026 x2, 舞萌DX 2026 x3, 太鼓之达人 Nijiiro x4, jubeat音乐魔方 x2, 音炫轨道II x2",
+      "note": "App counts match latest ZIv multi-row machines. No change to numbers. Venue still open (BitCity anime town).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6146,
+      "name": "精灵岛聚有引力家庭娱乐中心",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 1,
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11607",
+      "evidence_quote": "Updated 8 days ago: 中二节奏2026 x1; 舞萌DX 2026 x1; 舞立方·秀 120Hz x1",
+      "note": "Only ZIv source, but only 8 days old. No BemaniCN cross-check.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1066,
+      "name": "FUNDOLAND Sports·Games·VR 反斗乐园 (中航城君尚(天虹)购物中心)",
+      "field": "other",
+      "current": "game_counts maimai_dx=1 taiko=2 wacca=2; ZIv last update 1 year ago (2025-04-07)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9947",
+      "evidence_quote": "lastUpdate 2025-04-07 03:26:18; still lists WACCA REVERSE x2, Nijiiro + Asia taiko, maimaiDX BUDDiES x1",
+      "note": "Could not reconfirm 2026 status with BemaniCN id. Chain still operates other Shenzhen stores. Do not mark closed. Versions may be stale.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4498,
+      "name": "桔钓沙莱华度假酒店 (Lavenna Resort Judiaosha Shenzhen)",
+      "field": "other",
+      "current": "listed with drs + sdvx as if public arcade",
+      "proposed": "hotel-guest-only arcade; cards issued only to hotel guests; SDVX marked OFFLINE on ZIv",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10063",
+      "evidence_quote": "The arcade is hotel-exclusive and uses an electronic card system. Cards are only issued to hotel guests. Tokens cannot be purchased. ... SOUND VOLTEX OFFLINE",
+      "note": "Not a walk-in public venue. ZIv last update about 1 year.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4056,
+      "name": "星际传奇 Star Lenged (BREW TOWN)",
+      "field": "other",
+      "current": "name contains typo 'Lenged' (also ids 4057-4066 in this shard)",
+      "proposed": "Star Legend (fix spelling)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/shop/5058",
+      "evidence_quote": "星际传奇啤酒小镇店 (official Chinese brand 星际传奇 / Star Legend)",
+      "note": "Cosmetic but affects search. Apply to all Star Lenged names in this shard.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

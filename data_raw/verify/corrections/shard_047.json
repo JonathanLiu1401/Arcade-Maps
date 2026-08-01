@@ -1,0 +1,498 @@
+{
+  "shard": 47,
+  "checked": 48,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1007",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Indonesia",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11194",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10681",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1593",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3837",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7499",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5374",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=136",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8544",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8555",
+    "https://www.timezonegames.com/id-id/lokasi/timezone-galeria-bali",
+    "https://www.timezonegames.com/id-id/lokasi/jakarta/kramat-jati-indah-plaza/",
+    "https://www.timezonegames.com/id-id/lokasi/jakarta/pantai-kita-pik/",
+    "https://www.nowjakarta.co.id/jakarta-welcomes-timezones-largest-venue-at-riverwalk-island/",
+    "https://jakartakita.com/2025/11/22/resmi-dibuka-timezone-hadirkan-area-bermain-baru-untuk-semua-generasi-di-riverwalk-island-pik/",
+    "https://www.traveloka.com/id-id/activities/indonesia/product/top-up-kartu-timezone-grage-mall-cirebon-2002102571508",
+    "https://en.wikipedia.org/wiki/Plaza_Semanggi",
+    "https://biz.kompas.com/read/2025/03/28/125050928/lippo-mall-nusantara-wajah-baru-plaza-semanggi-yang-siap-jadi-destinasi-gaya"
+  ],
+  "corrections": [
+    {
+      "id": 7879,
+      "name": "SEMARANG 23 ARKANA",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "Jl.Kawasan POJCity (Pearl of Jav"
+      },
+      "proposed": {
+        "lat": -6.9545181114731,
+        "lng": 110.38889005095055,
+        "addr": "Mall 23 / POJ City (Pearl of Java), Tambakharjo, Semarang, Jawa Tengah 50144"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11194",
+      "evidence_quote": "Mall 23 Semarang, Tambakharjo, Semarang City, Central Java, 50144; machines: maimai DX CiRCLE, Pump It Up Phoenix; lastUpdate 2026-06-01",
+      "note": "ALL.Net lists SEMARANG 23 ARKANA for maimai DX with truncated address and no coords. ZIv Mall 23 Semarang (same mall, opened May 2026 at POJ City) has working coords and the same maimai. Treat 7879 and 7861 as the same physical venue; prefer filling coords rather than inventing a second pin.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7879,
+      "name": "SEMARANG 23 ARKANA",
+      "field": "other",
+      "current": "separate venue from Mall 23 Semarang (7861)",
+      "proposed": "merge_candidate_with_id_7861",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "SEMARANG 23 ARKANA | Jl.Kawasan POJCity (Pearl of Jav",
+      "note": "ALL.Net name is ARKANA at Mall 23 / POJ City. Shard also has id 7861 Mall 23 Semarang with maimai_dx+pump from ZIv. High risk of double pin for one mall.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7873,
+      "name": "PIK 1 KITA",
+      "field": "location",
+      "current": {
+        "lat": -6.1519684,
+        "lng": 106.9188253,
+        "addr": "Kawasan Pantai Kita, Jl. Ebony 2, Jkt Utara"
+      },
+      "proposed": {
+        "lat": -6.0878378482295,
+        "lng": 106.73057845793,
+        "addr": "Timezone Pantai Kita / Riverwalk Island PIK, Kawasan Pantai Kita, Jl. Ebony 2, Pantai Indah Kapuk, Jakarta Utara 14460"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10681",
+      "evidence_quote": "Timezone - Riverside Island PIK, Jl. Ebony 2, North Jakarta, Jakarta 14460; lat/lng from ZIv API -6.0878378482295, 106.73057845793; machines include CHUNITHM X-VERSE and maimai DX PRiSM PLUS",
+      "note": "Current pin (~106.918E) is in the Kelapa Gading longitude band, not PIK. Ebony 2 / Pantai Kita is the Riverwalk Island PIK area (~106.73E). ALL.Net name PIK 1 KITA and ZIv Timezone Riverside Island PIK (7910) are the same Timezone flagship opened late 2025. Strong merge candidate with 7910.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7873,
+      "name": "PIK 1 KITA",
+      "field": "other",
+      "current": "separate from Timezone - Riverside Island PIK (7910)",
+      "proposed": "merge_candidate_with_id_7910",
+      "confidence": "likely",
+      "evidence_url": "https://www.nowjakarta.co.id/jakarta-welcomes-timezones-largest-venue-at-riverwalk-island/",
+      "evidence_quote": "Jakarta Welcomes Timezone's Largest Venue at Riverwalk Island PIK",
+      "note": "Timezone official directory lists Pantai Kita PIK / Riverwalk Island PIK. ALL.Net registers the networked cabinets as PIK 1 KITA. Keep one map entry; do not leave two pins.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7910,
+      "name": "Timezone - Riverside Island PIK",
+      "field": "other",
+      "current": "independent ZIv venue",
+      "proposed": "merge_candidate_with_id_7873_ALLNet_name_PIK_1_KITA",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "PIK 1 KITA | Kawasan Pantai Kita, Jl. Ebony 2, Jkt Utara (present). No store named RIVERSIDE on the 52-location Indonesia maimai list.",
+      "note": "ZIv still lists maimai+chunithm (updated 2025-11-25). Official ALL.Net uses PIK 1 KITA for the same address string. Prefer official name if merging.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7902,
+      "name": "Timezone - Mall Bali Galleria",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "Selected area: Indonesia (52 locations). No GALERIA/GALLERIA entry. Bali maimai rows present are TIMEZONE TRANS STUDIO MAL BALI and TIMEZONE LEVEL 21 only.",
+      "note": "ZIv still shows maimai DX CiRCLE as of 2026-04-15, and the Timezone venue itself is open, but ALL.Net (official currently-serviced list) does not list this branch for maimai. Official/newer wins: remove maimai_dx until it reappears on ALL.Net. Venue stays open for other games.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7846,
+      "name": "Hokki Bear",
+      "field": "other",
+      "current": "separate from Hokki Bear Batam City Square (7847)",
+      "proposed": "merge_candidate_with_id_7847",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8544",
+      "evidence_quote": "Hokki Bear, Batam City Square Mall 3rd Floor Blok C11; nearby Hokki Bear Batam City Square id=8555 is same mall BCS, coords ~1.13N 104.01E for both",
+      "note": "Two ZIv rows for the same Batam City Square Hokki Bear. Pins are ~150m apart. Merge to one venue.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7846,
+      "name": "Hokki Bear",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1007",
+      "evidence_quote": "Selected area: Indonesia (19 locations). No HOKKI entry on the CHUNITHM International official list.",
+      "note": "ZIv lists CHUNITHM AMAZON (offline-era title, last ZIv update 2024-11 for 8544). Not an official networked CHUNITHM venue. Do not present as live ALL.Net chunithm. Notes also list maimai FiNALE (offline); correctly not tagged maimai_dx.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7847,
+      "name": "Hokki Bear Batam City Square",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1007",
+      "evidence_quote": "Selected area: Indonesia (19 locations). No HOKKI entry.",
+      "note": "Same as 7846: ZIv has CHUNITHM AMAZON Offline base version (2025-08-06). IIDX 18 Resort Anthem and DrumManiaV8 are also ancient offline cabs; keep tags only if maintainers want private/offline inventory, but chunithm should not imply official network. I left gitadora/iidx/groove_coaster as listed on ZIv with medium confidence they still exist as private cabinets - not independently reconfirmed 2026.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7846,
+      "name": "Hokki Bear",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "chunithm": "AMAZON (offline / non-ALL.Net)",
+        "maimai": "FiNALE (offline, not DX network)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8544",
+      "evidence_quote": "machines: CHUNITHM AMAZON; maimai FiNALE; Pump It Up Phoenix; taiko no tatsujin 14",
+      "note": "If any chunithm/maimai tag is kept, label generation clearly. These are not X-VERSE / DX CiRCLE network cabs.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7825,
+      "name": "Game Master - Plaza Semanggi",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "closed_or_replaced",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=136",
+      "evidence_quote": "This Gamecenter now is ELEMENT. lastUpdateTime 2017-01-03 10:10:53. machines still list DDRMAX2, DJMAX TECHNIKA2, DrumManiaV3, Pump It Up Fiesta EX.",
+      "note": "Plaza Semanggi was renovated and rebranded Lippo Mall Nusantara (2024-2025). The rhythm inventory that now sits at the same coordinates is CPCM Lippo Mall Nusantara (ALL.Net + ZIv id 10829), not Game Master. Map currently shows a 2017 Game Master row as if live. Prefer retire 7825 or hard-redirect to CPCM entry already in the full dataset.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7825,
+      "name": "Game Master - Plaza Semanggi",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=136",
+      "evidence_quote": "DDRMAX2 -Dance Dance Revolution 7thMIX-; DrumManiaV3; Pump It Up Fiesta EX; last update 2017-01-03",
+      "note": "Even if some family entertainment remains, the listed titles are multi-generation obsolete and the ZIv row itself says the gamecenter is now ELEMENT. Removing the claim is safer than leaving travelers chasing DDRMAX2.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7908,
+      "name": "Timezone - Plaza Kramat Jati Indah",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2655",
+      "evidence_quote": "lastUpdateTime 2013-02-12 02:50:53 (13 years ago); machines: DanceDanceRevolution X2; drummania 3rdMIX; Initial D Arcade Stage 3; Wangan MT 3DX+; Aliens Extermination",
+      "note": "Venue brand still appears in older Timezone directories, but the only machine evidence is a 2013 ZIv snapshot. DDR X2 and drummania 3rdMIX cannot be treated as current. Drop specific rhythm tags until a fresh source confirms them. Did not verify permanent closure.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7834,
+      "name": "Grage Mall Cirebon (Timezone)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1589",
+      "evidence_quote": "lastUpdateTime 2011-07-21 19:47:44 (15 years ago); machines: beatmania complete MIX; DDR EXTREME; DDR X2; Dancing Stage SuperNOVA",
+      "note": "Traveloka still sells Timezone Grage Mall Cirebon card top-ups (venue likely open as a generic Timezone), but the DDR/beatmania inventory is a 2011 community snapshot. Remove ddr until reconfirmed. No maimai on ALL.Net for this branch.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7834,
+      "name": "Grage Mall Cirebon (Timezone)",
+      "field": "location",
+      "current": {
+        "addr": "Cirebon West Java (Jawa Barat), Cirebon",
+        "lat": -6.713555371504,
+        "lng": 108.552896238918
+      },
+      "proposed": {
+        "addr": "Grage Mall Lantai 3, Jl. Tentara Pelajar, Kejaksan, Cirebon, Jawa Barat 45123",
+        "lat": -6.713555371504,
+        "lng": 108.552896238918
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.traveloka.com/id-id/activities/indonesia/product/top-up-kartu-timezone-grage-mall-cirebon-2002102571508",
+      "evidence_quote": "Timezone Grage Mall Cirebon; Grage Mall Lantai 3 context in ticket listing",
+      "note": "Address in app is city-only. Filled from current ticket/directory style listing. Coords left as existing ZIv pin (not re-geocoded).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7848,
+      "name": "Jember Roxy Square GameFantasia",
+      "field": "other",
+      "current": "separate from Gamefantasia - Roxy Square (7829)",
+      "proposed": "merge_candidate_with_id_7829",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3326",
+      "evidence_quote": "Jember Roxy Square GameFantasia lastUpdate 2014-11-30; sibling Gamefantasia - Roxy Square id=4943 lastUpdate 2019-06-10; both Jl. Hayam Wuruk Jember 68131, coords within ~80m",
+      "note": "Duplicate GameFantasia rows for Roxy Square Jember. Prefer keep 7829 (newer 2019 ZIv) and retire 7848, or merge notes. Both game lists are still multi-year stale (PIU Fiesta 2 / XX era).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7811,
+      "name": "Funworld Mall Of Indonesia",
+      "field": "other",
+      "current": "only Funworld MOI row in shard",
+      "proposed": "keep_distinct_from_CPCM_MALL_OF_INDONESIA",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1007",
+      "evidence_quote": "CPCM MALL OF INDONESIA | Jl. Boulevard Bar. Raya No.12... (maimai). Funworld MOI is a different Lt.3 tenant.",
+      "note": "Full map already has separate CPCM MALL OF INDONESIA with maimai+chunithm. Funworld MOI (ZIv 5374, updated 2025-10-06) has taiko/PIU/Wangan only - no maimai/chunithm. Do not merge these two.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7875,
+      "name": "Playtopia @ Supermall Karawaci",
+      "field": "other",
+      "current": "only Playtopia listed for Supermall Karawaci in this shard",
+      "proposed": "keep_distinct_from_TIMEZONE_SUPERMALL_KARAWACI",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3837",
+      "evidence_quote": "Timezone Supermall Karawaci: CHUNITHM X-VERSE-X (2 cabs), maimai DX CiRCLE (2 cabs), PIU Phoenix; lastUpdate 2026-07-11. Playtopia ZIv 10895 is a different tenant with IIDX/SDVX/GC/taiko, no maimai/chunithm.",
+      "note": "Shard has Playtopia but not Timezone Supermall Karawaci (that ALL.Net venue exists elsewhere in the full dataset). Do not retag Playtopia with maimai/chunithm.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7872,
+      "name": "Parpica - PGC",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1628",
+      "evidence_quote": "lastUpdateTime 2012-04-21 17:22:42; machines: Pump It Up Fiesta EX only",
+      "note": "No independent 2020s confirmation found that Parpica PGC still has PIU or still exists. Mark claim unsupported. Could not prove permanent closure either.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7893,
+      "name": "Timezone - Baywalk Mall",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3383",
+      "evidence_quote": "lastUpdateTime 2015-03-15 17:19:39; machines: Pump It Up Fiesta 2; Pump It Up PRIME",
+      "note": "11-year-stale ZIv PIU list. Did not find a fresh confirmation of PIU at Baywalk. Venue status itself not reconfirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7889,
+      "name": "Super Games - ITC Cibinong (Mall Cibinong)",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3152",
+      "evidence_quote": "lastUpdateTime 2014-06-10 00:24:10; machines: Pump It Up Fiesta 2; Pump It Up NX2",
+      "note": "12-year-stale. Remove pump claim until reconfirmed. Closure not proven.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7880,
+      "name": "Sky Games - Rangkasbitung Indah Plaza",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3153",
+      "evidence_quote": "lastUpdateTime 2014-06-10 00:30:01; machines: Pump It Up Fiesta 2",
+      "note": "12-year-stale single-game claim. Unsupported today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7860,
+      "name": "malang city point",
+      "field": "status",
+      "current": "open (implied), games=['other']",
+      "proposed": "unverified_possibly_stale",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4149",
+      "evidence_quote": "lastUpdateTime 2017-07-13 18:28:20; machines: [] empty; address only Gang Manyar Jawa Timur",
+      "note": "Empty machine list, 9-year-stale, vague address. Not enough to assert open or closed; flag for maintainer review.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7865,
+      "name": "Mr. Games",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4455",
+      "evidence_quote": "lastUpdateTime 2018-05-22 15:50:17; machines: Pump It Up Fiesta EX",
+      "note": "8-year-stale PIU Fiesta EX claim at Alun-Alun Utara Magelang area. No newer source found.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7832,
+      "name": "Gamezone",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4454",
+      "evidence_quote": "lastUpdateTime 2018-07-05 05:21:42; machines: Danz Base; Pump It Up PRIME 2",
+      "note": "8-year-stale. Drop pump_it_up until reconfirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7857,
+      "name": "Kidsfun - Wild Wild West",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3445",
+      "evidence_quote": "lastUpdateTime 2015-05-17 10:44:02; machines: Pump It Up Infinity; Pump It Up PRIME",
+      "note": "11-year-stale Yogyakarta claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7849,
+      "name": "Kediri Town Square GameFantasia",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3325",
+      "evidence_quote": "lastUpdateTime 2014-11-30 12:53:33; machines include Pump It Up Fiesta 2 and many 2010s cabs",
+      "note": "11-year-stale. PIU version in notes is Fiesta 2. Drop pump until reconfirmed; venue existence not re-proved.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7883,
+      "name": "Solo Grand Mall",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3329",
+      "evidence_quote": "lastUpdateTime 2014-11-30 13:59:59; machines: Pump It Up Fiesta 2; 18 Wheeler; Wangan Midnight R",
+      "note": "11-year-stale. Related Solo Grand Mall Timezone (7884) equally stale.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7884,
+      "name": "Solo Grand Mall Timezone",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3328",
+      "evidence_quote": "lastUpdateTime 2014-11-30 13:47:23; machines: Pump It Up Fiesta 2; Temple Run; HOTD4; Time Crisis 3; Wangan MT4",
+      "note": "11-year-stale Timezone Solo Grand Mall row. Note Happy Time Manhattan / Solo Paragon (7842) is a different modern Solo venue with IIDX/SDVX.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7910,
+      "name": "Timezone - Riverside Island PIK",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10681",
+      "evidence_quote": "maimai DX PRiSM PLUS (International) - 3 cabinets - 16 TIZO red card / 15 TIZO VIP",
+      "note": "Community count from 2025-11-25 ZIv update. Not an official SEGA count. If 7910 is merged into 7873, attach count there.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

@@ -1,0 +1,555 @@
+{
+  "shard": 107,
+  "checked": 66,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Colombia",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4341",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11689",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10936",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5913",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5472",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5905",
+    "https://citypark.co/",
+    "https://citypark.co/parques/centro-mayor/",
+    "https://africa.com.co/parque-medellin/",
+    "https://happycity.com.co/",
+    "https://happycity.com.co/parques/parques-happy-city/",
+    "https://www.playland.com.co/parques/",
+    "https://linktr.ee/labodegamer",
+    "https://www.instagram.com/la.bodegamer/",
+    "https://www.instagram.com/tecnogamebq/",
+    "https://www.instagram.com/acmegames.entertainment/",
+    "https://arkadia.com.co/",
+    "https://corporativo.compensar.com/app/Paginas/divertimento-av68.aspx",
+    "https://www.pumpitup.com.mx/locales"
+  ],
+  "corrections": [
+    {
+      "id": null,
+      "name": "AFRICA - Parque de diversiones Premium Plaza",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "AFRICA - Parque de diversiones Premium Plaza",
+        "addr": "Cra. 43A # 30-25, Centro Comercial Premium Plaza, Medellin, Antioquia, 050021",
+        "country": "Colombia",
+        "lat": 6.2289151568723,
+        "lng": -75.570294857025,
+        "games": [
+          "ddr"
+        ],
+        "notes": "Cabs: DanceDanceRevolution WORLD (Universal Model). First-gen cab, offline/local mode, numpads. Right next to climbing wall. Reopened after long closure; NFC card system.",
+        "website": "https://africa.com.co/parque-medellin/",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11689"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11689",
+      "evidence_quote": "AFRICA-Parque de diversiones premium plaza; Cra. 43A # 30-25, medellin, antioquia; DanceDanceRevolution WORLD (Universal Model); lastUpdate 2026-07-31; Freshly opened again after being closed for many years; 4500 COP for a single play mode (3 songs)",
+      "note": "Present in live ZIv Colombia API (id 11689) and official Africa Medellin page. Not in shard 107. Coords from ZIv API. Single contributor (nekot234) created listing 2026-07-31; no independent photos yet.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7404,
+      "name": "Dance Dance Revolution A",
+      "field": "status",
+      "current": "listed as open rhythm venue games=['other'] with hours Mon-Sun 13:00-20:00",
+      "proposed": "not a confirmed rhythm arcade; ZIv has zero machines; Instagram is a retail geek/videogame shop",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10936",
+      "evidence_quote": "No games at this location. Created 2026-02-12 by Tecnogamebq. Website: instagram.com/tecnogamebq",
+      "note": "ZIv entry has no machines after 5 months. Instagram @tecnogamebq describes a Barranquilla shop for videogames/anime/geek/tech, posts show merchandise not dance cabs. Map uses the game title as the venue name. Recommend rename or remove rhythm claims until a cab is verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7404,
+      "name": "Dance Dance Revolution A",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10936",
+      "evidence_quote": "No games at this location.",
+      "note": "No machine rows on ZIv. Business Instagram shows retail, not arcade dance machines. proposed null means remove the games claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7404,
+      "name": "Dance Dance Revolution A",
+      "field": "other",
+      "current": "name: Dance Dance Revolution A",
+      "proposed": "TecnogameBQ (or Tecno Game Barranquilla)",
+      "confidence": "certain",
+      "evidence_url": "https://www.instagram.com/tecnogamebq/",
+      "evidence_quote": "TecnogameBQ - Videogames, Anime, Geek, Tecnologia, Accesorios. Lun a Dom 1:00p.m a 8:00 pm",
+      "note": "Map uses a game title as the venue name. Official social brand is TecnogameBQ. Address Calle 72#46-14 Local 7 matches ZIv.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7379,
+      "name": "ACME GAMES ENTERTAINMENT",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "COP 16000 / per Hour"
+      },
+      "proposed": {
+        "pump_it_up": "PHOENIX 2 LX: COP 3000/credit or COP 26000/hour; PHOENIX 2 TX: COP 3000/credit or COP 24000/hour; Phoenix 2024 SD modified: COP 16000/hour (ZIv 2026-07-30)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4341",
+      "evidence_quote": "Pump It Up PHOENIX 2 TX COP 3000/credit COP 24000/hour; PHOENIX 2 LX COP 3000/credit COP 26000/hour; Phoenix (2024) SD modified COP 16000/hour; lastUpdate 2026-07-30",
+      "note": "Live ZIv machines table updated 2026-07-30. Single app price of COP 16000/hour is incomplete and understates TX/LX credit and hour rates.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7379,
+      "name": "ACME GAMES ENTERTAINMENT",
+      "field": "other",
+      "current": "info_text lists ITG Simply Love and DDR A20 as present",
+      "proposed": "treat ITG and DDR A20 claims in info_text as unverified/stale relative to the 2026-07-30 machines table (PIU only)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4341",
+      "evidence_quote": "Games table: only Pump It Up Phoenix (2024) and three Pump It Up PHOENIX 2 rows. Free-text Information still mentions In The Groove Simply Love and Dance Dance Revolution A20, but July 2026 edit pass by RsebaS only converted/added PIU rows.",
+      "note": "games[] correctly lists only pump_it_up. Do not add ddr/itg without a fresh visit. free-text info_text is out of sync with structured machines.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7379,
+      "name": "ACME GAMES ENTERTAINMENT",
+      "field": "game_counts",
+      "current": {
+        "pump_it_up": 4,
+        "count_evidence": "ziv_listed"
+      },
+      "proposed": {
+        "pump_it_up": 4,
+        "count_evidence": "ziv_listed_2026-07-30_4_machine_rows"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4341",
+      "evidence_quote": "Four machine rows: 1x Phoenix (2024) SD modified + 3x PHOENIX 2 (TX, LX, TX), all condition 5, lastUpdate 2026-07-30",
+      "note": "Count of 4 is correct against live ZIv. Evidence label is still generic ziv_listed; optional to enrich. notes correctly mention PHOENIX 2 and Phoenix 2024.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7379,
+      "name": "ACME GAMES ENTERTAINMENT",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.facebook.com/AcmeGamesEntertainment/ (also Instagram @acmegames.entertainment)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4341",
+      "evidence_quote": "Facebook: facebook.com/AcmeGamesEntertainment/; phone 3004481395; lastUpdate 2026-07-30",
+      "note": "No dedicated website field currently. Social pages are the live contact channels.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7406,
+      "name": "Divertimento - Compensar Av. 68",
+      "field": "notes",
+      "current": "Cabs: Pump It Up Infinity; Pump It Up Jump!; Pump It Up PRIME; Pump It Up XX",
+      "proposed": "Cabs: Pump It Up Infinity (1x CX offline); Pump It Up Jump! (1 pad only); Pump It Up PRIME (1x CX offline); Pump It Up XX (3x: 2 TX + 1 CX, offline)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5472",
+      "evidence_quote": "6 machines: Infinity CX offline; Jump! Only one pad; PRIME CX offline; XX TX; XX TX low volume; XX CX offline. lastUpdate 2026-02-12",
+      "note": "notes already mention Jump! and variants but do not make clear there are three XX cabinets. game_counts pump_it_up:6 matches ZIv row count.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7406,
+      "name": "Divertimento - Compensar Av. 68",
+      "field": "game_counts",
+      "current": {
+        "pump_it_up": 6,
+        "count_evidence": "ziv_listed"
+      },
+      "proposed": {
+        "pump_it_up": 6,
+        "count_evidence": "ziv_listed_2026-02-12_6_machine_rows"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5472",
+      "evidence_quote": "Six PIU machine rows present as of lastUpdate 2026-02-12 17:10:54",
+      "note": "Count 6 is real (not a placeholder 1). All cabs offline per comments. Hours in shard Mon-Thu closed Fri 13-20 Sat-Sun 10-20 match ZIv has_hours; Compensar page did not return machine-readable hours via fetch.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7428,
+      "name": "La Bodegamer",
+      "field": "cab_models",
+      "current": {
+        "sdvx": "SOUND VOLTEX (Valkyrie model) in notes/games"
+      },
+      "proposed": {
+        "sdvx": "home controller running SDVX (not a full Valkyrie cabinet)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5913",
+      "evidence_quote": "SOUND VOLTEX (Valkyrie model) comment: Home Controller running SDVX | 6000COP / Hour",
+      "note": "Listing name says Valkyrie model but comment explicitly says Home Controller. Do not present as a genuine SDVX Valkyrie cab. info_text also says SDVX Controller 6000 COP/h.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7428,
+      "name": "La Bodegamer",
+      "field": "prices",
+      "current": {
+        "pump_it_up": "10000COP / hour",
+        "sdvx": "6000COP / Hour"
+      },
+      "proposed": {
+        "pump_it_up": "10000 COP/hour (machines table) vs 12000 COP/hour (info_text) - conflict",
+        "sdvx": "6000 COP/hour (home controller)",
+        "stepmania_itg": "7000 COP/hour (machines) vs 6000 COP/hour for 4-arrow cab in info_text"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5913",
+      "evidence_quote": "Machines: PIU Phoenix 10000COP/hour; SDVX home controller 6000COP/Hour; StepMania 7000COP/hour. Information free-text: PIU 12000 COP/h; 4 ARROW CAB SIMPLY LOVE AND DDR WORLD 6000 COP/h; SDVX 6000 COP/h. lastUpdate 2026-03-02",
+      "note": "info_text and machines table disagree on PIU and 4-arrow hourly rates. Prefer machines table values as structured, but mark conflict. Venue is reservation-by-hour, no coin credits. Active Instagram/Linktree streaming confirms venue still operates (2026).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7428,
+      "name": "La Bodegamer",
+      "field": "website",
+      "current": "https://www.instagram.com/la.bodegamer/",
+      "proposed": "https://www.instagram.com/la.bodegamer/ (also https://linktr.ee/labodegamer for WhatsApp reservations and stream calendars)",
+      "confidence": "certain",
+      "evidence_url": "https://linktr.ee/labodegamer",
+      "evidence_quote": "LA BODEGAMER ITG - DDR- PUMP IT UP; RESERVAS EN WHATSAPP; BODE STREAMMING PUMP IT UP; BODE STREAMMING ITG - DDR",
+      "note": "Linktree is a better operator hub than Instagram alone. Confirms ITG/DDR/PIU branding.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7441,
+      "name": "Playland Caribe Plaza",
+      "field": "hours",
+      "current": "Mon-Sun 01:00-09:00",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Colombia",
+      "evidence_quote": "Playland Caribe Plaza openingTimes all days ['01:00','09:00',false]; lastUpdate 2024-02-15",
+      "note": "01:00-09:00 (1 AM to 9 AM) is not a plausible mall arcade schedule. Almost certainly a PM-as-AM data entry error on ZIv. Playland official site still lists Caribe Plaza as a park, so venue may exist, but hours must not be shown as-is. proposed null = remove hours until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7441,
+      "name": "Playland Caribe Plaza",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8574",
+      "evidence_quote": "machines: [] empty; lastUpdate 2024-02-15; no rhythm titles recorded",
+      "note": "Empty machine list. Playland.com.co still lists Caribe Plaza among parks (family attractions), but no evidence of a specific rhythm game. Remove 'other' or leave until a real cab is documented.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7445,
+      "name": "Superlandya Discovery",
+      "field": "status",
+      "current": "listed open with Pump It Up Fiesta EX",
+      "proposed": "existence and open status unverified; last ZIv update 2011-09-21; no current web footprint found under this name",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1919",
+      "evidence_quote": "lastUpdateTime 2011-09-21 10:57:08 (14 years ago); Pump It Up Fiesta EX; SuperCentro Los Ejecutivos Piso 3 Cartagena",
+      "note": "No Superlandya/Superlandia Cartagena results in 2026 web search. Hours in shard Mon-Fri 02:00-09:00 are also nonsensical. Strong candidate for removal after maintainer ground-check, but I could not prove permanent closure.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7445,
+      "name": "Superlandya Discovery",
+      "field": "hours",
+      "current": "Mon-Fri 02:00-09:00",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Colombia",
+      "evidence_quote": "openingTimes Mon-Fri ['02:00','09:00',false] Sat-Sun ['10:00','10:00',false]",
+      "note": "2 AM-9 AM weekday hours are not credible. Remove until verified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7409,
+      "name": "Family Park - Ciudad Tunal",
+      "field": "status",
+      "current": "listed with games=['other'], no notes, no hours",
+      "proposed": "existence of a rhythm-game venue here is unverified; ZIv empty machines since 2016-07-04",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3812",
+      "evidence_quote": "lastUpdateTime 2016-07-04 23:41:47; machines: []; 24B-33 Carrera 24 Bogota",
+      "note": "Ciudad Tunal mall still exists, but this specific Family Park listing has no games for 10 years on ZIv. Do not treat as a playable rhythm destination without a fresh visit.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7409,
+      "name": "Family Park - Ciudad Tunal",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3812",
+      "evidence_quote": "machines: []",
+      "note": "Remove empty 'other' claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7446,
+      "name": "Unicentro Bogota",
+      "field": "status",
+      "current": "listed games=['other'] no notes no hours",
+      "proposed": "no rhythm machines documented; last ZIv update 2023-04-18 with empty machines",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4353",
+      "evidence_quote": "lastUpdateTime 2023-04-18 02:37:18; machines: []; 14a1 Calle 124a Bogota",
+      "note": "Unicentro mall exists. This pin has no games. Remove or demote until a cab is confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7446,
+      "name": "Unicentro Bogota",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4353",
+      "evidence_quote": "machines: []",
+      "note": "Empty machine list.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7393,
+      "name": "CITY PARK Centro Mayor",
+      "field": "games",
+      "current": [
+        "ddr",
+        "gitadora"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1985",
+      "evidence_quote": "lastUpdateTime 2011-11-18 05:25:38; machines DanceDanceRevolution SuperNOVA2 and GuitarFreaksV5 Rock to Infinity",
+      "note": "Official citypark.co still lists C.C. Centro Mayor as an active City Park location (park itself open as of 2026 listing). Machine list is 14 years old. SuperNOVA2 and GuitarFreaks V5 presence today is NOT verified. proposed null = remove game claims until re-verified; do NOT remove the venue pin solely on cab staleness.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7393,
+      "name": "CITY PARK Centro Mayor",
+      "field": "other",
+      "current": "notes/prices from 2011 SuperNOVA2 and GF V5",
+      "proposed": "venue chain page still lists Centro Mayor; rhythm cab claims stale since 2011",
+      "confidence": "likely",
+      "evidence_url": "https://citypark.co/",
+      "evidence_quote": "City Park locations include C.C. Centro Mayor Bogota among Barranquilla, Bogota, Barrancabermeja, Cucuta, Chia, Medellin y Santa Marta",
+      "note": "Park open claim is supported by chain site. Specific Konami cabs are not.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7432,
+      "name": "PaseoGames",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1918",
+      "evidence_quote": "lastUpdateTime 2011-09-21 10:42:54; DanceDanceRevolution SuperNOVA2; Centro Comercial La Castellana Piso 2 Cartagena",
+      "note": "Paseo de la Castellana mall still has a PaseoGames tenant listing in search results, but SuperNOVA2 last verified 2011. Cannot confirm any DDR remains. Remove ddr claim or mark unverified until visit.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7383,
+      "name": "Arkadia Cali",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3944",
+      "evidence_quote": "lastUpdateTime 2017-09-11 00:19:05 (8 years ago); Pump It Up Infinity; CC Jardin Plaza Cali",
+      "note": "Arkadia chain (arkadia.com.co) is reported to still operate at Jardin Plaza Cali, so the park may exist, but Infinity-era PIU software/cab has not been re-confirmed since 2017. Do not assert current PIU without a newer visit.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7405,
+      "name": "Diver Plaza",
+      "field": "games",
+      "current": [
+        "ddr",
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=98",
+      "evidence_quote": "lastUpdateTime 2019-11-28 01:08:02; machines: DDR 4thMIX, DDR EXTREME, SuperNOVA, Pump It Up Fiesta",
+      "note": "CC Diver Plaza Alamos mall still operates (transit listings current into 2026). Playland also opened at Diverplaza. The 2019 cab list (4thMIX/EXTREME/SuperNOVA/Fiesta) is stale and may no longer match floor. Not proof of closure; proof that game claims are old.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7410,
+      "name": "Fiestasuba",
+      "field": "status",
+      "current": "listed games=['other'] StepMania Converted Cabinets",
+      "proposed": "status unverified; last ZIv update 2018-02-05; description notes 'not so safe part of Bogota'",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4351",
+      "evidence_quote": "lastUpdateTime 2018-02-05 01:22:36; two StepMania Converted Cabinets; Really cheap arcade, but it's on a not so safe part of Bogota",
+      "note": "No modern independent confirmation found. Treat as stale community row.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7407,
+      "name": "Divertimento - Compensar Suba",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5473",
+      "evidence_quote": "lastUpdateTime 2020-02-06 02:44:13; Pump It Up Infinity TX Cabinet",
+      "note": "Six years since last ZIv update. Compensar Suba facility may still run Divertimento, but Infinity cab is unconfirmed today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7403,
+      "name": "Crazytown Park - Centro Chia",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5364",
+      "evidence_quote": "lastUpdateTime 2019-11-28 02:03:08 (6 years ago); machines ['Pump It Up XX']; comment=LX Cabinet - Online - AM.Pass Card Reader; price=COP 1.10 for 3 songs; condition=4",
+      "note": "ZIv last update 2019-11-28 for PIU XX. Crazy Town chain still operates other cities (Cartagena rows updated 2026). Chia location not reconfirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7447,
+      "name": "Unicentro de Armenia",
+      "field": "status",
+      "current": "listed DDR EXTREME",
+      "proposed": "cab and possibly venue claim unverified; last ZIv update 2015-03-27",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3397",
+      "evidence_quote": "lastUpdateTime 2015-03-27 13:09:59 (11 years ago); machines ['Dance Dance Revolution EXTREME']; comment=; price=???; condition=4",
+      "note": "11-year-old EXTREME listing. No modern evidence.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7449,
+      "name": "Xtreme Zone - Santafe",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7826",
+      "evidence_quote": "DDRMAX2 condition 0; lastUpdate 2023-10-28; Likely a K-Cab with DDR 2013 pastel decals",
+      "note": "Condition 0 and 2023 last update. Not proof of absence, but claim is weak for a travel decision.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7415,
+      "name": "GaMe OvEr PaRk",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "ddr": 1,
+        "pump_it_up": 2,
+        "count_evidence": "ziv_listed_2025-02-19"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5905",
+      "evidence_quote": "DanceDanceRevolution A20 (1); Pump It Up Phoenix LX Online (1); Pump It Up XX LX offline since Dec 2023 (1); plus non-rhythm machines. lastUpdate 2025-02-19",
+      "note": "Real counts available from ZIv (not placeholder 1). notes already list both PIU versions.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7420,
+      "name": "Happy City - El Tesoro",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7482",
+      "evidence_quote": "DanceDanceRevolution X; lastUpdate 2023-10-28 02:02:51; no detailed comment",
+      "note": "happycity.com.co/parques/el-tesoro-encantado/ still presents El Tesoro as operating. DDR X presence not reconfirmed since Oct 2023. Park open != cab present.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7422,
+      "name": "Happy City - Unicentro",
+      "field": "games",
+      "current": [
+        "ddr"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7805",
+      "evidence_quote": "Dance Dance Revolution EXTREME condition 0; Japanese cabinet. P1's down arrow has nuts in the actual panel... lastUpdate 2023-10-25",
+      "note": "CC Unicentro Pasto still lists Happy City as tenant. Machine condition 0 and damaged pad note from 2023; current state unknown.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7380,
+      "name": "Africa Mallplaza Barranquilla",
+      "field": "other",
+      "current": "StepMania Converted Cabinet presented without condition warning",
+      "proposed": "ZIv 2024-06-16 notes P1 panels not working/unresponsive, condition 2",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8424",
+      "evidence_quote": "StepMania Converted Cabinet comment: P1 panels not working/unresponsive; condition 2; lastUpdate 2024-06-16",
+      "note": "Two-year-old damage report. Cab may have been fixed; do not state as current without recheck, but app has no condition flag.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7394,
+      "name": "City park los molinos",
+      "field": "other",
+      "current": "DDR A3 listed",
+      "proposed": "confirmed recently: first-gen 3rd mix plus cab modded to A3, offline/local, P1 left arrow issues; 3500 COP credit (1750 Tue/Thu)",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11619",
+      "evidence_quote": "lastUpdateTime 2026-07-31 21:03:18 (20 hrs ago); machines ['DanceDanceRevolution A3']; comment=originally a 3rd mix plus cab, modded to run A3, machine is offline / local mode, player one pad left arrow tends to not register the inputs; price=3500 COP one credit (two required for versus)\r<br />\n1750 COP one credit on tuesdays and thursdays\r<br />\n; condition=3",
+      "note": "One of the freshest Colombia DDR updates (2026-07-31). App listing is essentially correct; enrich condition/price if desired.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7430,
+      "name": "Moonglow Esports",
+      "field": "other",
+      "current": "Pump It Up PRIME 2 condition 0 on ZIv",
+      "proposed": "keep venue; condition unknown on ZIv despite lastUpdate 2026-07-02; price COP 4000 for 5 songs",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11337",
+      "evidence_quote": "lastUpdateTime 2026-07-02 00:12:43 (1 month ago); machines ['Pump It Up PRIME 2']; comment=; price=COP 4,000.00 for 5 songs; condition=0",
+      "note": "Recent listing with condition 0 (unknown). Not a removal candidate.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "(ZIv country tag issue) Crazy Park Panama / Funlandia / Game World Megapolis / Johnny & Red's / Space Play World",
+      "field": "other",
+      "current": "not in shard 107 (correct)",
+      "proposed": "ZIv API returns these under country=Colombia but city/subregion are Panama; keep them out of Colombia shard",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Colombia",
+      "evidence_quote": "ids 10516,5573,10517,5574,10514 with city Panama City / Panama Oeste while country field says Colombia",
+      "note": "Not a shard 107 data error (they are absent). Flag for any future auto-import from ZIv country=Colombia.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

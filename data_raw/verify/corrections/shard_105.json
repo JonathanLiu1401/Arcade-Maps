@@ -1,0 +1,733 @@
+{
+  "shard": 105,
+  "checked": 55,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Brazil",
+    "https://gamestation.com.br/onde-estamos/",
+    "https://gamestation.com.br/fechamento-do-game-station-north-fortaleza/",
+    "https://gamestation.com.br/game-station/riomar-fortaleza/",
+    "https://gamestation.com.br/game-station/mais-shopping/",
+    "https://gamestation.com.br/game-station/shopping-boa-vista/",
+    "https://gamestation.com.br/game-station/franca-shopping/",
+    "https://gamestation.com.br/game-station/shopping-tucuruvi/",
+    "https://gamestation.com.br/game-station/maceio-shopping/",
+    "https://gamestation.com.br/game-station/shopping-west-plaza/",
+    "https://gamestation.com.br/game-station/total-shopping/",
+    "https://www.hotzone.com.br/lojas",
+    "https://www.hotzone.com.br/lojas/morumbishopping",
+    "https://www.hotzone.com.br/lojas/barrashopping",
+    "https://www.hotzone.com.br/lojas/bhshopping",
+    "https://www.hotzone.com.br/lojas/barrashoppingsul",
+    "https://www.hotzone.com.br/lojas/parkshoppingsaocaetano",
+    "https://www.hotzone.com.br/lojas/parkshopping",
+    "https://www.hotzone.com.br/lojas/parkshoppingbarigui",
+    "https://www.hotzone.com.br/lojas/parkshoppingcanoas",
+    "https://www.hotzone.com.br/lojas/ribeiraoshopping",
+    "https://www.hotzone.com.br/atracoes/simuladores/pump-it-pro",
+    "https://www.hotzone.com.br/atracoes/simuladores/pump-it-xx-20th-lx",
+    "https://www.hotzone.com.br/atracoes/simuladores/pump-it-lx-phoenix",
+    "https://www.bario.com.br/",
+    "https://www.bario.com.br/maquinas-tatuape",
+    "https://lords.diggital.com.br/",
+    "https://lbpiu.com.br/eventos-2025/"
+  ],
+  "corrections": [
+    {
+      "id": 344,
+      "name": "Game Station - North Shopping Fortaleza",
+      "field": "status",
+      "current": "listed as open with hours Mon-Sat 10:00-22:00; Sun 13:00-21:00 and full machine list",
+      "proposed": "closed (permanently closed 2024-11-17)",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/fechamento-do-game-station-north-fortaleza/",
+      "evidence_quote": "encerrara suas atividades no dia 17 de novembro de 2024 ... a partir desta data, os cartoes serao aceitos exclusivamente na unidade Game Station do Shopping Parangaba, em Fortaleza",
+      "note": "Official Game Station blog post published 2024-11-05. Unit still on ZIv (last update 2023-07) and still in the map. Remove or mark closed. Cards redirected to Parangaba only.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 343,
+      "name": "Game Station - Mais Shopping",
+      "field": "location",
+      "current": {
+        "addr": "430 Avenida Padre Jose Maria Sao Paulo Sao Paulo, 04753-060, Sao Paulo",
+        "lat": -23.653086706901,
+        "lng": -46.710181895886
+      },
+      "proposed": {
+        "addr": "R. Amador Bueno, 229 - Santo Amaro, Sao Paulo - SP, 04752-005",
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/mais-shopping/",
+      "evidence_quote": "R. Amador Bueno, 229 - Santo Amaro, Sao Paulo - SP CEP: 04752-005",
+      "note": "Official GS page and mall use Rua Amador Bueno 229. Av. Padre Jose Maria is nearby metro access (Largo Treze), not the mall street. Re-geocode from official address.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 343,
+      "name": "Game Station - Mais Shopping",
+      "field": "hours",
+      "current": "Mon-Sat 10:00-22:00; Sun 12:00-18:00",
+      "proposed": "Mon-Sat 10:00-22:00; Sun/holidays 12:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/mais-shopping/",
+      "evidence_quote": "Segunda a sexta: 10h00 as 22h00; Sabado: 10h00 as 22h00; Domingo: 12h00 as 20h00; Feriados: 12h00 as 20h00",
+      "note": "Official GS Mais Shopping. Sunday close 20:00 not 18:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 343,
+      "name": "Game Station - Mais Shopping",
+      "field": "website",
+      "current": "https://www.azegames.com.br",
+      "proposed": "https://gamestation.com.br/game-station/mais-shopping/",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/mais-shopping/",
+      "evidence_quote": "Game Station - Mais Shopping unit page",
+      "note": "Prefer unit page over parent Aze Games corporate site.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 353,
+      "name": "Game Station @ Shopping Boa Vista",
+      "field": "location",
+      "current": {
+        "addr": "243 Rua da Soledade Pernambuco, 50060-001"
+      },
+      "proposed": {
+        "addr": "R. do Giriquiti, 48 - Boa Vista, Recife/PE, 50070-010 (Piso L3, Shopping Boa Vista)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-boa-vista/",
+      "evidence_quote": "R. do Giriquiti, 48 - Boa Vista - Recife/PE CEP: 50070-010",
+      "note": "Official GS page. Rua da Soledade is nearby but not the mall address. Re-geocode if pin is off the mall.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 353,
+      "name": "Game Station @ Shopping Boa Vista",
+      "field": "hours",
+      "current": "Mon-Sun 08:00-22:00",
+      "proposed": "Mon-Sat 11:00-21:00; Sun/holidays 11:00-19:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-boa-vista/",
+      "evidence_quote": "Segunda a sexta: 11h00 as 21h00; Sabado: 11h00 as 21h00; Domingo: 11h00 as 19h00; Feriados: 11h00 as 19h00",
+      "note": "Official hours much shorter than app 08:00-22:00 daily claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 359,
+      "name": "Game Station Franca SP",
+      "field": "location",
+      "current": {
+        "addr": "710 Avenida Rio Negro Franca Sao Paulo, 14406-005, Franca"
+      },
+      "proposed": {
+        "addr": "Av. Rio Negro, 1100 - Jardim Roselandia, Franca - SP, 14406-005"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/franca-shopping/",
+      "evidence_quote": "Av. Rio Negro, 1100 - Jardim Roselandia, Franca - SP CEP: 14406-005",
+      "note": "Official GS Franca Shopping. Street number 710 vs 1100. Re-geocode.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 359,
+      "name": "Game Station Franca SP",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 12:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/franca-shopping/",
+      "evidence_quote": "Segunda a sexta: 12h00 as 22h00; Sabado: 12h00 as 22h00; Domingo: 12h00 as 22h00",
+      "note": "Official GS page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 341,
+      "name": "Game station",
+      "field": "location",
+      "current": {
+        "addr": "Av. Dr. Antonio Maria Laet, 566 Parada Inglesa, - SP, CEP: 02307-120 Sao Paulo SP, 02307-120, Sao Paulo",
+        "name": "Game station"
+      },
+      "proposed": {
+        "addr": "R. Paulo de Faria, 133-167 - Tucuruvi, Sao Paulo - SP, 02307-120 (Shopping Metro Tucuruvi)",
+        "name": "Game Station - Shopping Tucuruvi"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-tucuruvi/",
+      "evidence_quote": "R. Paulo de Faria, 133-167 - Tucuruvi /SP CEP 02307-120",
+      "note": "Official GS page names it Shopping Tucuruvi. ZIv notes floor L1 of Shopping Metro Tucuruvi. Standardize name and address.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 341,
+      "name": "Game station",
+      "field": "hours",
+      "current": "Mon-Sat 10:00-22:00; Sun 14:00-20:00",
+      "proposed": "Mon-Fri 12:00-22:00; Sat 10:00-22:00; Sun/holidays 12:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-tucuruvi/",
+      "evidence_quote": "Segunda a sexta: 12h00 as 22h00; Sabado: 10h00 as 22h00; Domingo: 12h00 as 20h00; Feriados: 12h00 as 20h00",
+      "note": "Official GS Tucuruvi page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 358,
+      "name": "Game Station @ Shopping West Plaza",
+      "field": "location",
+      "current": {
+        "addr": "71 Rua Teixeira e Sousa Sao Paulo Sao Paulo, 05003-020, Sao Paulo"
+      },
+      "proposed": {
+        "addr": "Av. Francisco Matarazzo, s/n - Agua Branca, Sao Paulo - SP, 05003-020 (Shopping West Plaza)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-west-plaza/",
+      "evidence_quote": "Av. Francisco Matarazzo, s/n - Agua Branca, Sao Paulo - SP CEP: 05003-020",
+      "note": "Official GS West Plaza page. Prefer mall address over side street.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 358,
+      "name": "Game Station @ Shopping West Plaza",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Fri 12:00-22:00; Sat 10:00-22:00; Sun/holidays 12:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-west-plaza/",
+      "evidence_quote": "Segunda a sexta: 12h00 as 22h00; Sabado: 10h00 as 22h00; Domingo: 12h00 as 20h00; Feriados: 12h00 as 20h00",
+      "note": "Official GS page. Hours were null in the app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 358,
+      "name": "Game Station @ Shopping West Plaza",
+      "field": "website",
+      "current": null,
+      "proposed": "https://gamestation.com.br/game-station/shopping-west-plaza/",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/shopping-west-plaza/",
+      "evidence_quote": "Game Station - Shopping West Plaza unit page; westplaza@gamestation.com.br",
+      "note": "Official unit page exists; app website was null.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 388,
+      "name": "Playland",
+      "field": "other",
+      "current": {
+        "name": "Playland",
+        "website": "http://www.playland.com.br/"
+      },
+      "proposed": {
+        "name": "Game Station - Shopping Total",
+        "website": "https://gamestation.com.br/game-station/total-shopping/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/total-shopping/",
+      "evidence_quote": "Av. Cristovao Colombo, 545 - Independencia - Porto Alegre /RS CEP: 90560-003; total@azegames.com.br",
+      "note": "Same street address as app Playland (Av. Cristovao Colombo 545, Shopping Total). Official Game Station unit page is live; Playland brand not used. ZIv still lists old Playland machines (last 2024-04) including PIU Fiesta 2 and Wadaiko - may be stale post-rebrand.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 388,
+      "name": "Playland",
+      "field": "hours",
+      "current": "Mon-Sun 12:00-22:00",
+      "proposed": "Mon-Sat 12:00-22:00; Sun/holidays 12:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/total-shopping/",
+      "evidence_quote": "Segunda a sexta: 12h00 as 22h00; Sabado: 12h00 as 22h00; Domingo: 12h00 as 21h00; Feriados: 12h00 as 21h00",
+      "note": "Official Game Station Shopping Total hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 330,
+      "name": "Aze Games Game Station - RioMar Fortaleza",
+      "field": "hours",
+      "current": "Mon-Sat 10:00-22:00; Sun 10:30-22:00",
+      "proposed": "Mon-Fri 12:00-22:00; Sat 10:00-22:00; Sun 10:30-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/riomar-fortaleza/",
+      "evidence_quote": "Segunda a sexta: 12h00 as 22h00; Sabado: 10h00 as 22h00; Domingo: 10h30 as 22h00",
+      "note": "Official GS Riomar Fortaleza. Weekday open is 12:00 not 10:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 330,
+      "name": "Aze Games Game Station - RioMar Fortaleza",
+      "field": "website",
+      "current": null,
+      "proposed": "https://gamestation.com.br/game-station/riomar-fortaleza/",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/riomar-fortaleza/",
+      "evidence_quote": "R. Des. Lauro Nogueira, 1500 - Papicu, Fortaleza/CE CEP 60175-055; riomarfortaleza@gamestation.com.br",
+      "note": "Official unit page. Optional rename to Game Station - Riomar Fortaleza (Aze Games is parent operator).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 340,
+      "name": "Game Station",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sat 10:00-22:00; Sun 12:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://gamestation.com.br/game-station/maceio-shopping/",
+      "evidence_quote": "Segunda a sexta: 10h00 as 22h00; Sabado: 10h00 as 22h00; Domingo: 12h00 as 21h00",
+      "note": "Official GS Maceio Shopping. Name could be Game Station - Maceio Shopping. ZIv PIU Fiesta last update 2020-09 (5 years) so pump_it_up tag is stale/unverified for current stock.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 368,
+      "name": "HotZone ParkShopping",
+      "field": "status",
+      "current": "separate open venue at SAI/SO - 6580 - Lj 297, CEP 71219-900, lat -15.8226 lng -47.8839, games=['other'], no machines",
+      "proposed": "duplicate of id 367 (same mall store) - remove or merge into 367",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/parkshopping",
+      "evidence_quote": "ParkShopping, SAI/SO Area 6580, Brasilia - DF, CEP: 71219-900 - one unit in the chain's 10-store list",
+      "note": "Shard has TWO HotZone ParkShopping Brasilia rows (367 and 368) with same store Lj 297. Official HotZone lists one ParkShopping unit. Id 367 carries rhythm machines; 368 is empty with a different lat/lng about 7-8 km east. Keep 367, delete 368.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 367,
+      "name": "HotZone ParkShopping",
+      "field": "location",
+      "current": {
+        "addr": "SAI/SO - 6580 - Lj 297, SAI / SO Area, 6580 - Store 297 - Guara Brasilia Federal District, 70297-400, Brasilia",
+        "lat": -15.832693306440726,
+        "lng": -47.95610547065735
+      },
+      "proposed": {
+        "addr": "ParkShopping, SAI/SO Area 6580, Loja 297, Guara, Brasilia - DF, 71219-900",
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/parkshopping",
+      "evidence_quote": "ParkShopping, SAI/SO Area 6580, Brasilia - DF, CEP: 71219-900",
+      "note": "CEP 70297-400 in app is wrong (official 71219-900). Re-check pin still lands on ParkShopping Guara.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 367,
+      "name": "HotZone ParkShopping",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu 10:00-22:00; Fri-Sat 10:00-23:00; Sun/holidays 11:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/parkshopping",
+      "evidence_quote": "Segunda a quinta: 10h-22h; Sexta e sabado: 10h-23h; Domingos e feriados: 11h-21h",
+      "note": "Official HotZone ParkShopping page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 332,
+      "name": "BH Shopping (Hot Zone)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-23:00",
+      "proposed": "Mon-Sat 11:00-22:00; Sun/holidays 12:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/bhshopping",
+      "evidence_quote": "Segunda a sabado: 11h-22h; Domingos e feriados: 12h-21h",
+      "note": "Official HotZone BHShopping. App hours longer than official.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 332,
+      "name": "BH Shopping (Hot Zone)",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.hotzone.com.br/lojas/bhshopping",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/bhshopping",
+      "evidence_quote": "HotZone BHShopping unit page (BR 356, n 3.049, Belvedere, CEP 30320-900)",
+      "note": "Official unit page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 332,
+      "name": "BH Shopping (Hot Zone)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-pro",
+      "evidence_quote": "Disponivel nas lojas abaixo: BHShopping, ParkShoppingCampoGrande, BarraShoppingSul",
+      "note": "Official confirms PIU PRO (also XX LX on pump-it-xx-20th-lx page). ZIv DDR SuperNOVA last update 2020-01-17 (6 years stale). Drop ddr until a post-2020 confirmation.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 364,
+      "name": "HotZone BarraShopping",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sat 10:00-22:00; Sun/holidays 12:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/barrashopping",
+      "evidence_quote": "Segunda a sabado: 10h-22h; Domingos e feriados: 12h-21h",
+      "note": "Official HotZone BarraShopping. Hours were null.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 364,
+      "name": "HotZone BarraShopping",
+      "field": "cab_models",
+      "current": "Pump It Up XX (2 cabs per ZIv 2023); StepManiaX (ZIv 2023)",
+      "proposed": "Pump It Up XX 20th LX still listed at BarraShopping on official attraction page. StepManiaX not on official site (ZIv last 2023-10) - leave SMX as community-only stale claim.",
+      "confidence": "likely",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-xx-20th-lx",
+      "evidence_quote": "Disponivel nas lojas abaixo: BarraShopping, BHShopping, MorumbiShopping, ParkShopping, RibeiraoShopping",
+      "note": "Official confirms PIU XX LX. SMX only on ZIv 2023.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 366,
+      "name": "HotZone MorumbiShopping",
+      "field": "hours",
+      "current": "Mon-Fri 12:00-22:00; Sat 10:00-22:00; Sun 13:00-21:00",
+      "proposed": "Mon-Sat 11:00-22:00; Sun/holidays 11:00-21:00 (attractions from 12:00)",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/morumbishopping",
+      "evidence_quote": "Segunda a sabado: 11h-22h; Domingos e feriados: 11h-21h. Atracoes a partir de 12h.",
+      "note": "Official HotZone MorumbiShopping page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 366,
+      "name": "HotZone MorumbiShopping",
+      "field": "website",
+      "current": "http://www.hotzone.com.br/locais/2/morumbi-shopping",
+      "proposed": "https://www.hotzone.com.br/lojas/morumbishopping",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/morumbishopping",
+      "evidence_quote": "Current HotZone unit URL path /lojas/morumbishopping",
+      "note": "Old /locais/2/ URL is legacy; official site uses /lojas/.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 366,
+      "name": "HotZone MorumbiShopping",
+      "field": "cab_models",
+      "current": "ZIv 2026-07-15: Pump It Up Phoenix offline; Taiko No Tatsujin Nijiiro offline nearly unplayable; Dance Battle offline",
+      "proposed": "Official HotZone lists Pump It Up XX 20th LX at MorumbiShopping. ZIv (2026-07-15) still says Phoenix. Prefer official for variant label but do not invent count. Real Taiko no Tatsujin (not Wadaiko) on ZIv with detailed 2026-07 condition notes.",
+      "confidence": "likely",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-xx-20th-lx",
+      "evidence_quote": "Disponivel nas lojas abaixo: ... MorumbiShopping ...",
+      "note": "Official XX LX vs ZIv Phoenix conflict. Taiko tag supported by ZIv 2026-07 detailed Nijiiro notes.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 365,
+      "name": "HotZone BarraShoppingSul",
+      "field": "hours",
+      "current": "Mon-Sat 12:00-23:00; Sun 12:00-22:00",
+      "proposed": "Mon-Sat 11:00-22:00; Sun/holidays 11:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/barrashoppingsul",
+      "evidence_quote": "Segunda a sabado: 11h-22h; Domingos e feriados: 11h-21h",
+      "note": "Official HotZone BarraShoppingSul.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 365,
+      "name": "HotZone BarraShoppingSul",
+      "field": "website",
+      "current": "http://www.barrashoppingsul.com.br/megazone",
+      "proposed": "https://www.hotzone.com.br/lojas/barrashoppingsul",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/barrashoppingsul",
+      "evidence_quote": "HotZone BarraShoppingSul unit page; rebranded from MegaZone in 2017 per page text",
+      "note": "App website still points at old MegaZone mall path.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 365,
+      "name": "HotZone BarraShoppingSul",
+      "field": "cab_models",
+      "current": "ZIv: DDR SuperNOVA; Pump It Up Fiesta EX (TX); Wadaiko Master",
+      "proposed": "Official HotZone lists PUMP IT UP PRO at BarraShoppingSul. ZIv 2026-07-15 still lists Fiesta EX. Prefer official PRO for serviced cab; DDR SuperNOVA only on ZIv with unsure condition - keep ddr as community-likely only.",
+      "confidence": "likely",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-pro",
+      "evidence_quote": "Disponivel nas lojas abaixo: BHShopping, ParkShoppingCampoGrande, BarraShoppingSul",
+      "note": "Official PRO vs ZIv Fiesta EX conflict. Taiko tag is Wadaiko Master per ZIv, not Bandai Taiko no Tatsujin.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 363,
+      "name": "HotZone @ Shopping Campo Grande",
+      "field": "cab_models",
+      "current": "ZIv 2024-04: DDR SuperNOVA; Pump It Up PRO (FX)",
+      "proposed": "Official HotZone lists PUMP IT UP PRO at ParkShoppingCampoGrande. DDR SuperNOVA remains community-only (ZIv 2024).",
+      "confidence": "likely",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-pro",
+      "evidence_quote": "Disponivel nas lojas abaixo: BHShopping, ParkShoppingCampoGrande, BarraShoppingSul",
+      "note": "Official confirms PRO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 363,
+      "name": "HotZone @ Shopping Campo Grande",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.hotzone.com.br/lojas/parkshoppingcampogrande",
+      "confidence": "likely",
+      "evidence_url": "https://www.hotzone.com.br/lojas",
+      "evidence_quote": "ParkShoppingCampoGrande listed among the 10 HotZone stores",
+      "note": "Unit slug from chain pattern; app website was null.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 369,
+      "name": "HotZone ParkShoppingSaoCaetano",
+      "field": "website",
+      "current": "http://www.hotzone.com.br/locais/6/park-shopping-sao-caetano",
+      "proposed": "https://www.hotzone.com.br/lojas/parkshoppingsaocaetano",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/parkshoppingsaocaetano",
+      "evidence_quote": "Alameda Terracota N 545, Espaco Ceramica, Sao Caetano do Sul, SP - CEP: 09531-190",
+      "note": "Legacy /locais/ URL; official is /lojas/parkshoppingsaocaetano.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 369,
+      "name": "HotZone ParkShoppingSaoCaetano",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sat 11:00-22:00; Sun/holidays 11:00-21:00 (attractions from 12:00)",
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/parkshoppingsaocaetano",
+      "evidence_quote": "Segunda a sabado: 11h-22h; Domingos e feriados: 11h-21h. Atracoes a partir de 12h.",
+      "note": "Official page. Hours were null in app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 371,
+      "name": "Lord's Tatuape",
+      "field": "games",
+      "current": [
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2647",
+      "evidence_quote": "ZIv machines as of 2026-06-07: Pump It Up Phoenix (2024) LX V3; Pump It Up XX FX - no Taiko/Wadaiko listed",
+      "note": "App games includes taiko but notes and ZIv (2026-06) only list two PIU cabs. Official lords.diggital.com.br does not list Taiko. Remove taiko unless newer photo shows a drum cab.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 371,
+      "name": "Lord's Tatuape",
+      "field": "location",
+      "current": {
+        "addr": "315 Rua Coelho Lisboa Sao Paulo Tatuape, 03319-000, Sao Paulo"
+      },
+      "proposed": {
+        "addr": "Rua Coelho Lisboa, 305 - Tatuape, Sao Paulo - SP"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://lords.diggital.com.br/",
+      "evidence_quote": "Rua Coelho Lisboa, 305, Tatuape - SP",
+      "note": "Official site uses 305; app and some older listings use 315. Prefer official 305.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 331,
+      "name": "Bario Bar",
+      "field": "other",
+      "current": "games=['taiko']; notes='Cabs: Wadaiko Master'",
+      "proposed": "Keep Wadaiko Master in notes. Do not treat as Bandai Taiko no Tatsujin. Official Tatuape machine list confirms Wadaiko Master under Redemption.",
+      "confidence": "certain",
+      "evidence_url": "https://www.bario.com.br/maquinas-tatuape",
+      "evidence_quote": "Redemption list includes WADAIKO MASTER; no Taiko no Tatsujin / Pump It Up / DDR listed",
+      "note": "If app taiko tag means any Japanese drum game including Wadaiko, leave games alone. If reserved for Taiko no Tatsujin, proposed games should drop taiko. Bario also has Pinheiros and Santo Amaro units not in this shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 393,
+      "name": "Vem Pra Mesa - Praia Shopping",
+      "field": "other",
+      "current": "two nearby entries: id 393 (PIU XX, Instagram octogononatal) and id 394 (PIU Phoenix, vempramesagamecenter.com.br) both at Av. Eng. Roberto Freire 3132 Natal",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6677",
+      "evidence_quote": "ZIv 6677 lastUpdate 2023-01-06 Pump It Up XX; ZIv 7902 lastUpdate 2023-10-31 Pump It Up Phoenix - same street number 3132",
+      "note": "Likely same complex or rebrand. Website vempramesagamecenter.com.br currently redirects empty. Do NOT delete without local confirmation.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "HotZone ParkShoppingBarigui",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "HotZone ParkShoppingBarigui",
+        "addr": "R. Prof. Pedro Viriato Parigot de Souza, 600 - Mossungue, Curitiba - PR, 81200-100",
+        "country": "Brazil",
+        "games": [
+          "pump_it_up"
+        ],
+        "website": "https://www.hotzone.com.br/lojas/parkshoppingbarigui",
+        "hours_text": "Mon-Fri 13:00-22:00; Sat 12:00-22:00; Sun/holidays 12:00-21:00",
+        "note": "Only HotZone store official lists for Pump It Up LX Phoenix"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-lx-phoenix",
+      "evidence_quote": "Disponivel nas lojas abaixo: ParkShoppingBarigui",
+      "note": "Official HotZone store and attraction pages. Not in shard/ZIv Brazil. Highest-value missing venue: exclusive official Phoenix LX location for the chain.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "HotZone RibeiraoShopping",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "HotZone RibeiraoShopping",
+        "addr": "Av. Cel. Fernando Ferreira Leite, 1540 - Jd California, Ribeirao Preto - SP, 14026-900",
+        "country": "Brazil",
+        "games": [
+          "pump_it_up"
+        ],
+        "website": "https://www.hotzone.com.br/lojas/ribeiraoshopping",
+        "hours_text": "Mon-Sat 11:00-22:00; Sun/holidays 12:00-21:00",
+        "note": "Official lists Pump It Up XX 20th LX here"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/atracoes/simuladores/pump-it-xx-20th-lx",
+      "evidence_quote": "Disponivel nas lojas abaixo: BarraShopping, BHShopping, MorumbiShopping, ParkShopping, RibeiraoShopping",
+      "note": "Official HotZone unit and PIU XX LX attraction page. Missing from shard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "HotZone ParkShoppingCanoas",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "HotZone ParkShoppingCanoas",
+        "addr": "Avenida Farroupilha, 4545 - Marechal Rondon, Canoas - RS, 92020-475",
+        "country": "Brazil",
+        "games": [],
+        "website": "https://www.hotzone.com.br/lojas/parkshoppingcanoas",
+        "hours_text": "Mon-Sat 11:00-22:00; Sun/holidays 11:00-21:00",
+        "note": "Official HotZone store. No PIU/DDR/Taiko confirmed on official attraction location pages."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.hotzone.com.br/lojas/parkshoppingcanoas",
+      "evidence_quote": "Avenida Farroupilha, 4545 - Marechal Rondon, Canoas/RS CEP 92020-475; Mon-Sat 11h-22h; Sun/holidays 11h-21h",
+      "note": "Missing HotZone unit. Do NOT invent rhythm games. Add only if maintainers want full HotZone coverage even without confirmed rhythm cabs.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 333,
+      "name": "Buddy Games & Mini Golfe Indoor",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4773",
+      "evidence_quote": "lastUpdateTime 2019-03-05 (7 years ago); machines: Pump It Up Fiesta / Fiesta 2 / Fiesta EX",
+      "note": "Only source is 7-year-old ZIv. Cannot confirm venue still has PIU or still exists. Flag stale / consider removing pump_it_up.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 336,
+      "name": "Danny's Park",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4748",
+      "evidence_quote": "lastUpdateTime 2019-02-15 (7 years ago); Pump It Up PRIME",
+      "note": "7-year-old ZIv only. No official confirmation found. Flag as stale.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 375,
+      "name": "Magic Games ShoppingD",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3431",
+      "evidence_quote": "lastUpdateTime 2015-05-03 (11 years ago); Pump It Up Fiesta EX",
+      "note": "11-year-old ZIv. Strong candidate for removing pump_it_up or entire venue if closed. Not independently verified open/closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 391,
+      "name": "Puppy Play",
+      "field": "games",
+      "current": [
+        "ddr",
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4250",
+      "evidence_quote": "lastUpdateTime 2019-02-15 (7 years ago); DDR 3rdMIX Ver.KOREA; Pump It Up NX ABSOLUTE",
+      "note": "7-year-old ZIv with very old cab generations. Cannot verify still open or still has those games.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 392,
+      "name": "Shopping Russi Russi",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4433",
+      "evidence_quote": "lastUpdateTime 2018-08-20 (7 years ago); Pump It Up Fiesta 2",
+      "note": "7-year-old ZIv only. Stale PIU claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 384,
+      "name": "Planeta Kids",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5063",
+      "evidence_quote": "lastUpdateTime 2019-09-01 (6 years ago); Pump It Up NX ABSOLUTE",
+      "note": "6-year-old ZIv. Stale.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 335,
+      "name": "DanceFit House",
+      "field": "other",
+      "current": "hours Mon-Sat 14:00-22:00; games pump_it_up + other",
+      "proposed": "Treat as appointment/training-house style venue rather than walk-in mall arcade; still active as of LBPIU 2025 event calendar",
+      "confidence": "likely",
+      "evidence_url": "https://lbpiu.com.br/eventos-2025/",
+      "evidence_quote": "DanceFit House Summer Festival listed on LBPIU Eventos 2025 calendar (Porto Alegre, organized by DanceFit Gaming)",
+      "note": "Instagram @dancefitgaming.house describes scheduling by appointment. ZIv 2024-11 lists 2x PIU Phoenix custom MK10 + StepMania converted cabs. Website dancefitgaming.com.br is the pad manufacturer store, not the house booking page.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

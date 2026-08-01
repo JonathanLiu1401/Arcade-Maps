@@ -898,6 +898,27 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 }
 .pl-sub { margin-top: 4px; color: var(--fg-dim); font-size: 12.5px; }
 
+/* Permanently-closed notice. Sits above the games and the directions
+   button on purpose: the whole point is that the reader sees it BEFORE
+   deciding to travel there. */
+.pl-closed {
+  margin: 10px 14px 0; padding: 9px 11px; border-radius: 8px;
+  background: #3a1d18; border: 1px solid #6d3a2e; color: #f0b8a8;
+  font-size: 12.5px; line-height: 1.45;
+}
+.pl-closed strong { color: #ff9b80; }
+.pl-closed a { color: inherit; text-decoration: underline; }
+
+/* A closed venue keeps its pin but must not read as somewhere you can go
+   tonight. Dimmed and desaturated rather than hidden, so it is still
+   findable by someone searching for a place they remember.
+
+   The fade is done with filter: opacity(), NOT the opacity property.
+   Leaflet writes `opacity: 1` INLINE on every marker element (it owns
+   that property for its own fade animations), so a stylesheet rule for
+   it is silently ignored no matter how specific - measured. */
+.am-tier.am-closed { filter: grayscale(0.85) opacity(0.5); }
+
 /* ---- chips ---- */
 .pl-chips {
   display: flex; flex-wrap: wrap; gap: 5px; align-items: center;

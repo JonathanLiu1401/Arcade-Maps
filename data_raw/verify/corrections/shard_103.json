@@ -1,0 +1,302 @@
+{
+  "shard": 103,
+  "checked": 74,
+  "sources_used": [
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=New%20Zealand",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1014",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1014",
+    "https://www.timezonegames.com/en-nz/locations/",
+    "https://gameon.co.nz/locations/",
+    "https://www.archiebrothers.co.nz/",
+    "https://galaxyarcade.co.nz/",
+    "https://www.odysseum.co.nz/arcadium",
+    "https://starlight-arcade.com/",
+    "https://www.daytonaadventurepark.co.nz",
+    "https://teeg.com/news/new-venues/timezone-returns-to-queen-street-with-exciting-new-experiences/",
+    "https://www.timezonegames.com/en-nz/locations/north-island/timezone-the-base-hamilton/",
+    "https://www.timezonegames.com/en-nz/locations/north-island/timezone-queen-st/",
+    "https://www.timezonegames.com/en-nz/locations/north-island/timezone-courtenay-place/"
+  ],
+  "corrections": [
+    {
+      "id": 10014,
+      "name": "GAME ON",
+      "field": "status",
+      "current": "listed as separate venue with games [chunithm, maimai_dx], src=allnet only",
+      "proposed": "REMOVE as duplicate of id 10018 GameOn @ Queen Street; merge allnet source into 10018",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1014",
+      "evidence_quote": "GAME ON SKY WORLD — 291 QUEEN ST, AUCKLANDNEW ZEALAND on maimai DX International NZ list (10 locations). Same SkyWorld / 291 Queen St as GameOn @ Queen Street (id 10018). Also on CHUNITHM International locator (gm=104) as GAME ON SKY WORLD.",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net-only stub from SEGA locator naming. 10018 already has full ZIv machine list (maimai DX x2, CHUNITHM x2, IIDX, DDR, DRS, GITADORA, Nostalgia, PIU, Taiko x2), official website and hours. Pins are ~90m apart. Do not keep both."
+    },
+    {
+      "id": 10014,
+      "name": "GAME ON",
+      "field": "location",
+      "current": {
+        "addr": "SKY WORLD 291 QUEEN ST, AUCKLANDNEW ZEALAND",
+        "lat": -36.8522849,
+        "lng": 174.7630544
+      },
+      "proposed": "use 10018 address (Upper Basement, 291-297 Queen Street, Auckland Central 1010) and 10018 coordinates, then delete 10014",
+      "confidence": "certain",
+      "evidence_url": "https://gameon.co.nz/locations/",
+      "evidence_quote": "GameOn Queen Street: Sky World Entertainment Centre, 291-297 Queen Street, Auckland Central, Auckland 1010. Hours Mon 10:00 am-10:00 pm; Tue-Thu 10:00 am-11:00 pm; Fri-Sat 10:00 am-12:00 am; Sun 10:00 am-10:00 pm.",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net address has missing space (AUCKLANDNEW ZEALAND). Canonical curated entry is 10018."
+    },
+    {
+      "id": 10065,
+      "name": "TIMEZONE BASE",
+      "field": "status",
+      "current": "listed as separate venue with games [maimai_dx] only, src=allnet only",
+      "proposed": "REMOVE as duplicate of id 10062 Timezone @ The Base Hamilton; merge allnet source into 10062",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1014",
+      "evidence_quote": "TIMEZONE BASE — Cnr Te Rapa and Wairere Drive, Hamilton, 3200 on maimai DX International NZ list. Same corner address as Timezone @ The Base Hamilton (id 10062 / ZIv 9466).",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net-only stub. 10062 already lists maimai_dx, pump_it_up, taiko, other with ZIv link, hours, website and prices. Official Timezone page address: M04, Level 1, The Base, Te Rapa Road & Wairere Drive, Hamilton 3200."
+    },
+    {
+      "id": 10062,
+      "name": "Timezone @ The Base Hamilton",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "pump_it_up": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "pump_it_up": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9466",
+      "evidence_quote": "Machines: one maimai DX CiRCLE, one Pump It Up Phoenix (2024), one 太鼓の達人 ニジイロVer.(アシア版）. Last update 2026-07-03.",
+      "checked_at": "2026-08-02",
+      "note": "App has pump_it_up:2 with count_evidence ziv_comment, but the ZIv machine array only contains a single PIU entry. Prefer machine-list count. ALL.Net still lists TIMEZONE BASE for maimai."
+    },
+    {
+      "id": 10031,
+      "name": "Oddyseum Queenstown",
+      "field": "other",
+      "current": "Oddyseum Queenstown",
+      "proposed": "Odysseum Queenstown (Arcadium Retro Arcade)",
+      "confidence": "certain",
+      "evidence_url": "https://www.odysseum.co.nz/arcadium",
+      "evidence_quote": "Arcadium / Odysseum Queenstown at 57 Shotover Street, Queenstown. $20 for 1 hour of unlimited freeplay retro games. Domain is odysseum.co.nz.",
+      "checked_at": "2026-08-02",
+      "note": "App spelling Oddyseum (double-d, single-s) does not match official Odysseum brand. Freeplay room is branded Arcadium. Address and hours (Sun-Thu 10-20, Fri-Sat 10-22) match. games=['other'] is correct (retro freeplay, no modern rhythm network)."
+    },
+    {
+      "id": 10046,
+      "name": "Quickplay @ Ormiston",
+      "field": "website",
+      "current": "http://info@quickplay.co.nz",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11253",
+      "evidence_quote": "ZIv website field for Quickplay @ Ormiston is the same email-like string; not a valid HTTP website. Machines include In the Groove 2 on a DDR classic cab (ITG3 Encore). Last update 2026-07-03.",
+      "checked_at": "2026-08-02",
+      "note": "Remove website claim (email misfiled as URL). ITG/In the Groove is in notes as Cabs; games remain other unless maintainers add an ITG game key."
+    },
+    {
+      "id": 10011,
+      "name": "Daytona Adventure Park",
+      "field": "hours",
+      "current": "Mon-Thu 10:00-08:00; Sun 10:00-08:00",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://www.daytonaadventurepark.co.nz",
+      "evidence_quote": "Official site describes Wellington's biggest indoor entertainment centre with an Arcade Games section (Photo Booth, Jurassic Park Raw Thrills, claws, air hockey) but does not publish a clear full-week hours block on the homepage.",
+      "checked_at": "2026-08-02",
+      "note": "Current hours string is invalid (10:00-08:00 looks like 10am-8pm mis-encoded as 08:00) and omits Fri/Sat. Clear hours_text rather than invent a schedule. Pump It Up PRIME 2 still on ZIv as of 2025-11-10; 2026 presence not reconfirmed on official site."
+    },
+    {
+      "id": 10013,
+      "name": "Galaxy Arcade",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Thu 17:00-23:00; Fri 17:00-02:00; Sat 12:00-02:00; Sun 12:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://galaxyarcade.co.nz/",
+      "evidence_quote": "Opening hours: Monday-Thursday 5pm-11pm; Friday 5pm-2am; Saturday 12pm-2am; Sunday 12pm-11pm. Dive bar at 206 Barbadoes St, Christchurch with retro cabinets (Donkey Kong, Street Fighter), karaoke, pool.",
+      "checked_at": "2026-08-02",
+      "note": "Venue open. Freeplay retro bar; games=['other'] is correct (no modern networked rhythm games)."
+    },
+    {
+      "id": 10050,
+      "name": "Starlight Arcade",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr_legacy": "Dance Dance Revolution EXTREME (not WORLD); pads in bad condition per ZIv"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7579",
+      "evidence_quote": "Dance Dance Revolution EXTREME (Japan) — condition Bad — Pads not very good. Left arrow on P1 side sucks. Last update 2025-11-09. Hours Fri-Sun 12:00-22:00.",
+      "checked_at": "2026-08-02",
+      "note": "App correctly uses ddr_legacy rather than modern WORLD. EXTREME is offline old hardware. Venue website still active (token $1, pool night). No closure evidence."
+    },
+    {
+      "id": 10050,
+      "name": "Starlight Arcade",
+      "field": "status",
+      "current": "open with ddr+other",
+      "proposed": "still open (no status change)",
+      "confidence": "likely",
+      "evidence_url": "https://starlight-arcade.com/",
+      "evidence_quote": "Active homepage: tokens now $1, pool night Fri-Sun 5-8pm, holiday-hours-april-2026 graphic, birthday/corporate bookings.",
+      "checked_at": "2026-08-02",
+      "note": "No closure found. DDR EXTREME last confirmed on ZIv 2025-11-09."
+    },
+    {
+      "id": 10018,
+      "name": "GameOn @ Queen Street",
+      "field": "other",
+      "current": "src=['ziv'] only; no allnet flag despite SEGA locators",
+      "proposed": "src should include allnet (GAME ON SKY WORLD on maimai gm=98 and CHUNITHM gm=104). Keep 10018 as canonical venue after deleting 10014.",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1014",
+      "evidence_quote": "CHUNITHM International NZ locations: GAME ON SKY WORLD — 291 QUEEN ST, AUCKLAND (and TIMEZONE AUCKLAND CBD). Also on maimai DX International list.",
+      "checked_at": "2026-08-02",
+      "note": "Official GameOn hours match app. ZIv last update 2026-07-25 supports full games list and game_counts (chunithm 2, maimai_dx 2, taiko 2, others 1). Venue open."
+    },
+    {
+      "id": 10064,
+      "name": "TIMEZONE AUCKLAND CBD",
+      "field": "other",
+      "current": "games [chunithm, ddr, maimai_dx, other, popn, pump_it_up, taiko]; opened Aug 2025",
+      "proposed": "no change to games list; CHUNITHM and maimai confirmed on official SEGA locators",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1014",
+      "evidence_quote": "TIMEZONE AUCKLAND CBD — 280 Queen Street, Auckland CBD 1010 is one of two NZ CHUNITHM International locations. Same venue on maimai gm=98 list.",
+      "checked_at": "2026-08-02",
+      "note": "TEEG press: grand opening 9 August 2025, names DDR Gold, maimai, Taiko, WMMT6, karaoke suite. ZIv 2026-07-27 lists CHUNITHM X-VERSE-X x2, maimai DX CiRCLE PLUS x2, DDR WORLD 20th, pop'n High Cheers, PIU Phoenix 2024, Taiko Nijiiro. game_counts match ZIv. Official page also under timezone-queen-st path."
+    },
+    {
+      "id": 10066,
+      "name": "TIMEZONE COURTENAY PLACE",
+      "field": "website",
+      "current": "https://www.timezonegames.com/en-nz",
+      "proposed": "https://www.timezonegames.com/en-nz/locations/north-island/timezone-courtenay-place/",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-nz/locations/",
+      "evidence_quote": "Timezone Courtenay Place listed under North Island: 60 Courtenay Place, Te Aro, Wellington. Path /en-nz/locations/north-island/timezone-courtenay-place/.",
+      "checked_at": "2026-08-02",
+      "note": "Homepage is too generic; venue-specific page exists. ALL.Net + ZIv confirm maimai at this site."
+    },
+    {
+      "id": 10067,
+      "name": "TIMEZONE NEW MARKET",
+      "field": "other",
+      "current": "game_counts maimai_dx:2 ddr:1 pump:1 taiko:1",
+      "proposed": "no change - maimai still on official ALL.Net NZ list; counts match ZIv",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1014",
+      "evidence_quote": "TIMEZONE NEW MARKET — 135-141 Broadway, Newmarket, Auckland 1023 on maimai DX International NZ list.",
+      "checked_at": "2026-08-02",
+      "note": "ZIv 2026-07-06: maimai DX CiRCLE x2, DDR WORLD 20th anniversary, PIU Phoenix, Taiko Nijiiro Asia. Official Timezone NZ locations page still lists Newmarket."
+    },
+    {
+      "id": 10069,
+      "name": "TIMEZONE RICCARTON",
+      "field": "other",
+      "current": "games include maimai_dx; allnet+ziv",
+      "proposed": "no change - only South Island maimai on ALL.Net, still listed",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1014",
+      "evidence_quote": "TIMEZONE RICCARTON — Westfield Riccarton, Rotherham Street, 8041,NZ on maimai DX International NZ list.",
+      "checked_at": "2026-08-02",
+      "note": "ZIv 2026-07-24: maimai DX CiRCLE PLUS, PIU Phoenix 2024, Taiko Nijiiro Asia. Official Timezone locations still list Riccarton."
+    },
+    {
+      "id": 10010,
+      "name": "Coin Singing Booth",
+      "field": "other",
+      "current": "games=['other']; notes Cabs: maimai FiNALE; machine_prices key maimai",
+      "proposed": "keep games as other (do NOT reclassify as maimai_dx). Offline modded Chinese 舞萌 FiNALE dump only; no Aime/online.",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10377",
+      "evidence_quote": "maimai FiNALE — Modded Chinese/舞萌 cab, running finale dump. Masters + Pandora Boxxx Unlocked, no aime support. Finale server offline. Last update 2026-01-15. Venue is karaoke booth shop at 47 Chancery Street.",
+      "checked_at": "2026-08-02",
+      "note": "Official FiNALE network closed 2020. Venue Instagram still lists Chancery Street karaoke. App treating as other is correct; price key 'maimai' is only about the offline cab."
+    },
+    {
+      "id": 10004,
+      "name": "Archie Brothers Cirque Electriq @ Christchurch Central",
+      "field": "other",
+      "current": "games ddr+taiko; open",
+      "proposed": "no status change - still open with DDR WORLD and Taiko Nijiiro Asia",
+      "confidence": "certain",
+      "evidence_url": "https://www.archiebrothers.co.nz/",
+      "evidence_quote": "Christchurch location: 617-619 Colombo Street, Christchurch Central City, Christchurch 8011. Activities include bowling, mini golf, arcade, karaoke.",
+      "checked_at": "2026-08-02",
+      "note": "ZIv 2026-07-23: DDR WORLD (Ver. 2026016) and Taiko Nijiiro Asia still listed. Community rates Taiko condition 2 (quality/price complaints) but machine is present. Official brand lists 3 NZ sites (Wellington, Newmarket, Christchurch)."
+    },
+    {
+      "id": 10076,
+      "name": "ZONE BOWLING MANUKAU",
+      "field": "other",
+      "current": "games maimai_dx, pump_it_up, taiko, other",
+      "proposed": "keep games; community reports Taiko P1 unplayable and P2 sensors bad as of ZIv 2026-03-04 (condition note only)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8366",
+      "evidence_quote": "maimai DX CiRCLE (1 cab, updated Circle 1/22/26). Taiko: P1 unplayable for months; P2 rim sensors bad. Overall recommend not playing Taiko at this location. ALL.Net still lists ZONE BOWLING MANUKAU for maimai.",
+      "checked_at": "2026-08-02",
+      "note": "Venue open. Do not remove taiko solely on condition complaints. maimai networked per ALL.Net."
+    },
+    {
+      "id": 10029,
+      "name": "Motion Entertainment",
+      "field": "games",
+      "current": ["pump_it_up"],
+      "proposed": ["pump_it_up"],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5926",
+      "evidence_quote": "Pump It Up Phoenix — condition 2 — Offline, Right side is perfect but left side is completely broken. Last update 2025-11-13.",
+      "checked_at": "2026-08-02",
+      "note": "Could not reconfirm 2026 status from an official page. Keep listing; half-broken offline cab as of late 2025. No website in app."
+    },
+    {
+      "id": 10019,
+      "name": "GameOn @ Takanini",
+      "field": "hours",
+      "current": "Mon-Wed 11:00-21:00; Thu 11:00-22:00; Fri 11:00-23:00; (ensure Sat/Sun present)",
+      "proposed": "Mon-Wed 11:00-21:00; Thu 11:00-22:00; Fri 11:00-23:00; Sat 10:00-23:00; Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://gameon.co.nz/locations/",
+      "evidence_quote": "Takanini: Mon-Wed 11:00 am to 9:00 pm; Thu 11:00 am to 10:00 pm; Fri 11:00 am to 11:00 pm; Sat 10:00 am to 11:00 pm; Sun 10:00 am to 9:00 pm. Unit 72/30 Walters Road, Takanini 2112.",
+      "checked_at": "2026-08-02",
+      "note": "If app already has full week matching this, no edit needed. ZIv: PIU Phoenix 2024 + Taiko Nijiiro (transferred from CBD)."
+    },
+    {
+      "id": 10041,
+      "name": "Play2Win @ Palmerston North",
+      "field": "games",
+      "current": ["stepmaniax"],
+      "proposed": ["stepmaniax"],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9171",
+      "evidence_quote": "StepManiaX (65 inch Deluxe Cabinet) listed. Last update 2025-05-04.",
+      "checked_at": "2026-08-02",
+      "note": "Official play2win.co.nz/palmy is live, but SMX not reconfirmed on official site text. ZIv row is older. Leave as-is with stale-data caveat; do not invent a removal."
+    },
+    {
+      "id": null,
+      "name": "(no missing ZIv NZ venues found)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=New%20Zealand",
+      "evidence_quote": "ZIv returns 72 New Zealand arcades. Shard has 74 rows = those 72 ZIv venues plus 2 ALL.Net-only stubs (10014 GAME ON, 10065 TIMEZONE BASE) which are duplicates of 10018 and 10062.",
+      "checked_at": "2026-08-02",
+      "note": "No additional rhythm-game venue found on ZIv or Timezone official locations list that is absent from the shard. Official Timezone NZ lists 15 venues; all appear represented (Timezone and Zone Bowling brands)."
+    }
+  ]
+}

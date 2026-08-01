@@ -1,0 +1,337 @@
+{
+  "shard": 101,
+  "checked": 78,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=10",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=10",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=10",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=10",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (JP-11, multiple gkeys)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+    "https://haradenka.com/?page_id=21",
+    "https://www.adores.jp/tenpo/warabi.html",
+    "https://www.taito.co.jp/store/00001932",
+    "https://game.watch.impress.co.jp/docs/news/2125442.html",
+    "https://www.wako.life/?p=2611",
+    "https://www.kyowa-corp.co.jp/am/shop/11-06/",
+    "https://tempo.gendagigo.jp/am/koshigaya-alc/"
+  ],
+  "corrections": [
+    {
+      "id": 8548,
+      "name": "アミューズランドモナコ川越店",
+      "field": "games",
+      "current": "gitadora",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORAGF&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement Saitama GITADORA GF list (36 stores, 2026-08-02) does not include Monaco Kawagoe. Store operator music page also omits GITADORA.",
+      "checked_at": "2026-08-02",
+      "note": "Official locator omits title. Prefer over older ZIv (lastUpdateTime 2023-10-28)."
+    },
+    {
+      "id": 8548,
+      "name": "アミューズランドモナコ川越店",
+      "field": "games",
+      "current": "jubeat",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement Saitama JUBEAT list (24 stores, 2026-08-02) does not include Monaco Kawagoe. Operator page music lineup omits jubeat.",
+      "checked_at": "2026-08-02",
+      "note": "Official locator omits title."
+    },
+    {
+      "id": 8548,
+      "name": "アミューズランドモナコ川越店",
+      "field": "games",
+      "current": "reflec",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=REFLECC&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement Saitama REFLEC (REFLECC) lists 5 stores only; Monaco Kawagoe not among them (2026-08-02).",
+      "checked_at": "2026-08-02",
+      "note": "Official locator omits title. Operator page also omits REFLEC."
+    },
+    {
+      "id": 8548,
+      "name": "アミューズランドモナコ川越店",
+      "field": "games",
+      "current": "project_diva",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=10",
+      "evidence_quote": "ALL.Net Project DIVA Saitama (gm=34,at=10) has 13 stores; Amusement Land Monaco Kawagoe is not listed (2026-08-02).",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net omits DIVA for this store."
+    },
+    {
+      "id": 8548,
+      "name": "アミューズランドモナコ川越店",
+      "field": "game_counts",
+      "current": {
+        "ddr": 2,
+        "gitadora": 5,
+        "iidx": 3,
+        "jubeat": 7,
+        "popn": 2,
+        "project_diva": 3,
+        "reflec": 6,
+        "sdvx": 6,
+        "taiko": 2
+      },
+      "proposed": {
+        "iidx": 2,
+        "sdvx": 2,
+        "popn": 1,
+        "ddr": 1,
+        "maimai_dx": 2,
+        "chunithm": 4,
+        "ongeki": 2,
+        "polaris_chord": 2,
+        "taiko": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://haradenka.com/?page_id=21",
+      "evidence_quote": "Operator music-game section: Polaris Chord 2, ONGEKI 2, CHUNITHM NEW 4, maimai 2, IIDX 2 (incl LM); also SDVX Valkyrie 2, popn 1, DDR 1, taiko 4.",
+      "note": "Replace stale ZIv-derived counts. Page has no explicit last-updated stamp. Removed titles must not remain in counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8701,
+      "name": "スクウェアワンサイスポ店",
+      "field": "games",
+      "current": "ddr",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement Saitama DDR list (19 stores, 2026-08-02) does not include Square One Saispo. Store is listed for IIDX, GITADORADM, JUBEAT, NOSTALGIA only.",
+      "note": "Also drop ddr from game_counts if counts retained.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8701,
+      "name": "スクウェアワンサイスポ店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "iidx": 1,
+        "jubeat": 4,
+        "nostalgia": 1,
+        "taiko": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "DDR no longer on e-amusement for this store. Official locators do not publish machine counts.",
+      "note": "Propose clearing game_counts rather than inventing numbers. At minimum ddr:1 is wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8761,
+      "name": "タイトーステーション 和光店",
+      "field": "games",
+      "current": "maimai_dx",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=10",
+      "evidence_quote": "ALL.Net maimai DX Saitama list (67 stores, 2026-08-02) does not include Taito Station Wako. Same store IS listed on CHUNITHM and Project DIVA.",
+      "note": "ZIv still listed maimai as of 2025-03-22; official ALL.Net wins.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8761,
+      "name": "タイトーステーション 和光店",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "closing 2026-09-30",
+      "confidence": "certain",
+      "evidence_url": "https://game.watch.impress.co.jp/docs/news/2125442.html",
+      "evidence_quote": "Store announced on X @Taito_Wako that it will close on 2026-09-30 (reported by GAME Watch 2026-07-15). Opened 2009-06-02.",
+      "note": "Still operating as of 2026-08-02 per Taito page and live locators, but permanent closure scheduled 2026-09-30. Also https://www.wako.life/?p=2611",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8761,
+      "name": "タイトーステーション 和光店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-24:00 (year-round until closure)",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00001932",
+      "evidence_quote": "10:00-24:00 / open year-round",
+      "note": "Official Taito store page. Valid only until 2026-09-30 closure.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8813,
+      "name": "タイトーＦステーションクレアモール川越店",
+      "field": "games",
+      "current": "polaris_chord",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement Saitama Polaris Chord (PLRS) lists 25 stores (2026-08-02); Taito F Station Creamall Kawagoe is not among them.",
+      "note": "ZIv listed Polaris Chord as of 2025-04-01; official e-amusement today does not.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9011,
+      "name": "ラウンドワンさいたま・栗橋店",
+      "field": "games",
+      "current": "museca",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=MUSECA&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement MUSECA search for Saitama (JP-11) returned zero stores (2026-08-02).",
+      "note": "ZIv 8004 (2026-06-03) still lists MUSECA; official network has no Saitama MUSECA. Prefer official.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9011,
+      "name": "ラウンドワンさいたま・栗橋店",
+      "field": "game_counts",
+      "current": {
+        "dance_around": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "maimai_dx": 4,
+        "museca": 1,
+        "popn": 2
+      },
+      "proposed": {
+        "dance_around": 1,
+        "ddr": 1,
+        "gitadora": 2,
+        "maimai_dx": 4,
+        "popn": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=MUSECA&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "MUSECA e-amusement Saitama = 0; remove museca:1. Other figures remain community/ZIv and are not re-certified as exact.",
+      "note": "Only museca count removed with certainty.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9015,
+      "name": "ラウンドワンららぽーと新三郷店",
+      "field": "games",
+      "current": "dance_evo",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DANEVOAC&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement DanceEvolution ARCADE (DANEVOAC) Saitama lists exactly 1 store: Round1 Saitama Konosu only (2026-08-02). LaLaport Shin-Misato not listed.",
+      "note": "Some community notes claim offline legacy DanceEvolution inside Spo-cha. Networked/serviced presence is absent.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9015,
+      "name": "ラウンドワンららぽーと新三郷店",
+      "field": "game_counts",
+      "current": {
+        "beatstream": 2,
+        "chunithm": 1,
+        "dance_evo": 1,
+        "ddr": 1,
+        "maimai_dx": 1,
+        "sdvx": 3
+      },
+      "proposed": {
+        "beatstream": 2,
+        "chunithm": 1,
+        "ddr": 1,
+        "maimai_dx": 1,
+        "sdvx": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DANEVOAC&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "DANEVOAC not listed for this store; remove dance_evo:1 from counts.",
+      "note": "Only dance_evo count removed with evidence. Remaining counts still community-sourced.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9067,
+      "name": "ラウンドワン朝霞店",
+      "field": "games",
+      "current": "dance_evo",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DANEVOAC&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "e-amusement DANEVOAC Saitama: only Round1 Saitama Konosu (1 store). Round1 Asaka not listed (2026-08-02).",
+      "note": "ZIv 1088 (2023-10-28) listed DanceEvolution as Offline. Official serviced list excludes Asaka.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8432,
+      "name": "アドアーズ蕨",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:45",
+      "confidence": "certain",
+      "evidence_url": "https://www.adores.jp/tenpo/warabi.html",
+      "evidence_quote": "Hours 10:00-23:45 on official Adores Warabi page; machines marked currently operating.",
+      "note": "Official Adores page; store still open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8432,
+      "name": "アドアーズ蕨",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.adores.jp/tenpo/warabi.html",
+      "confidence": "certain",
+      "evidence_url": "https://www.adores.jp/tenpo/warabi.html",
+      "evidence_quote": "Adores Warabi official store page",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8261,
+      "name": "GiGO ALCO越谷ショッピングスクエア",
+      "field": "website",
+      "current": null,
+      "proposed": "https://tempo.gendagigo.jp/am/koshigaya-alc/",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/koshigaya-alc/",
+      "evidence_quote": "GiGO path am/koshigaya-alc exists (may redirect to gigo.co.jp shops). Address Koshigaya ALCo B1F on prize/store directories.",
+      "note": "ALL.Net lists CHUNITHM; e-amusement lists GITADORA. App games [chunithm, gitadora] match.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "アピナ吉川美南店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "アピナ吉川美南店",
+        "addr": "埼玉県吉川市美南3-25-1 イオンタウン吉川美南 東街区2階",
+        "games": [
+          "taiko"
+        ],
+        "website": "https://www.kyowa-corp.co.jp/am/shop/11-06/",
+        "hours": "10:00-21:00",
+        "lat": null,
+        "lng": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/11-06/",
+      "evidence_quote": "APINA Yoshikawa Minami / AEON Town Yoshikawa Minami East 2F / 10:00-21:00 / music games: Taiko no Tatsujin",
+      "note": "Not in shard. Open. Rhythm presence taiko-only per operator page (no maimai/CHUNITHM/IIDX on official locators). Geocode if adding.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8762,
+      "name": "タイトーステーション 大宮店",
+      "field": "hours",
+      "current": null,
+      "proposed": "9:00-next day 1:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-11&paselif=false&page=1",
+      "evidence_quote": "data-operationtime 9:00 to next-day 1:00, holiday none, for Taito Station Omiya on e-amusement facility list",
+      "note": "Hours from e-amusement facility attributes.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

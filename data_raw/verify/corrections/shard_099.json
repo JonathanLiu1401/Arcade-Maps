@@ -1,0 +1,2264 @@
+{
+  "shard": 99,
+  "checked": 88,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+    "https://maimaidx.tw/",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+    "https://map.bemanicn.com/s/{id}",
+    "https://x50.fun/"
+  ],
+  "corrections": [
+    {
+      "id": 1119,
+      "name": "GiGO - 台中老虎城店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "河南路三段120號B1"
+      },
+      "proposed": {
+        "lat": 24.164083,
+        "lng": 120.63813,
+        "addr": "河南路三段120號B1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/45",
+      "evidence_quote": "GiGO TIGER CITY購物中心 / GiGO TIGER CITY lat=24.164083 lon=120.638130 addr=407台灣西屯區河南路三段120號B1 (老虎城購物中心)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24698. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 1249,
+      "name": "Rhythm Arena II競音殿堂",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "天祥一路102號2樓"
+      },
+      "proposed": {
+        "lat": 22.667908,
+        "lng": 120.320457,
+        "addr": "天祥一路102號2樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/183",
+      "evidence_quote": "謝謝文子 / RHYTHM ARENA 2 lat=22.667908 lon=120.320457 addr=807台灣高雄市三民區天祥一路102號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=18659. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 1250,
+      "name": "Rhythm Arena 競音殿堂",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華三路86-1號"
+      },
+      "proposed": {
+        "lat": 22.628014,
+        "lng": 120.296646,
+        "addr": "中華三路86-1號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/171",
+      "evidence_quote": "競音殿堂 一號店 / RHYTHM ARENA(KAOHSIUNG) lat=22.628014 lon=120.296646 addr=801台灣高雄市前金區中華三路86-1號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19007. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 1363,
+      "name": "X50 Music Game Station 西門零店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "武昌街二段134號"
+      },
+      "proposed": {
+        "lat": 25.04574,
+        "lng": 121.502975,
+        "addr": "武昌街二段134號"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://maimaidx.tw/store/31",
+      "evidence_quote": "X50MGS 西門零店 / X50 MUSIC GAME STATION lat=25.045740 lon=121.502975 addr=108台灣台北市萬華區武昌街二段101號",
+      "checked_at": "2026-08-02",
+      "note": "Coords from maimaidx.tw for X50MGS 西門零店 (community). Address remains conflicted: shard=武昌街二段134號 (same as 一店), maimaidx=武昌街二段101號, ALL.Net X50 MGS TAIPEI=Emei St 49. Do not treat as certain."
+    },
+    {
+      "id": 1857,
+      "name": "力堡 站前店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "忠孝西路一段50-1號(站前地下街15-6號)"
+      },
+      "proposed": {
+        "lat": 25.047298,
+        "lng": 121.513542,
+        "addr": "忠孝西路一段50-1號(站前地下街15-6號)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/11",
+      "evidence_quote": "力堡台北店 / LIBAO COMPANY lat=25.047298 lon=121.513542 addr=100台灣台北市中正區忠孝西路一段50-1號 (近Z5出入口)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=20525. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2055,
+      "name": "台中 Lalaport GiGO",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "台中市東區進德路700號"
+      },
+      "proposed": {
+        "lat": 24.13394,
+        "lng": 120.692444,
+        "addr": "台中市東區進德路700號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/169",
+      "evidence_quote": "GiGO LaLaport台中 / GiGO LaLaport Taichung lat=24.133940 lon=120.692444 addr=40154台灣台中市東區進德路700號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19124. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2056,
+      "name": "台中大鲁阁新时代（现已改名iFG远雄台中店）",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "台湾省台中市东区复兴路四段186号台中新时代威秀影城"
+      },
+      "proposed": {
+        "lat": 24.135773,
+        "lng": 120.687752,
+        "addr": "台湾省台中市东区复兴路四段186号台中新时代威秀影城"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/194",
+      "evidence_quote": "湯姆熊台中新時代店 / TOM'S WORLD(TOM'S WORLD TAROKO MALL) lat=24.135773 lon=120.687752 addr=401台灣臺中市東區復興路四段186號10樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=18425. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2156,
+      "name": "哈啦星球 一中店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "太平路10號"
+      },
+      "proposed": {
+        "lat": 24.147663,
+        "lng": 120.685875,
+        "addr": "太平路10號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/182",
+      "evidence_quote": "哈啦星球台中一中店 / HALA PLANET(TAICHUNG YIZHONG) lat=24.147663 lon=120.685875 addr=404台灣台中市北區太平路10號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=18603. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2157,
+      "name": "哈啦星球 公館二店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "羅斯福路四段142號"
+      },
+      "proposed": {
+        "lat": 25.012844303779,
+        "lng": 121.5359680698,
+        "addr": "羅斯福路四段142號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "Hala Planet@Gongguan Second Store | 142 Roosevelt Road Section 4 | lat=25.012844303779 (ZIv).",
+      "checked_at": "2026-08-02",
+      "note": "Second store at 142. ZIv coords used; ALL.Net does not separate the two units."
+    },
+    {
+      "id": 2158,
+      "name": "哈啦星球 公館店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中正區羅斯福路四段130號"
+      },
+      "proposed": {
+        "lat": 25.013047456258,
+        "lng": 121.5357561272,
+        "addr": "中正區羅斯福路四段130號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "Hala Planet@Gongguan First Store | 130 Roosevelt Road Section 4 | lat=25.013047456258 (ZIv). ALL.Net shares one HALA PLANET sid for both Gongguan units.",
+      "checked_at": "2026-08-02",
+      "note": "Two Gongguan Hala stores exist (130 and 142). ALL.Net/maimaidx collapse them under one sid so official coords are ambiguous. Using ZIv first-store coords for 130號."
+    },
+    {
+      "id": 2159,
+      "name": "哈啦星球 士林店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "文林路43號"
+      },
+      "proposed": {
+        "lat": 25.08688,
+        "lng": 121.525528,
+        "addr": "文林路43號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/181",
+      "evidence_quote": "哈啦星球士林店 / HALA PLANET(SHILIN) lat=25.086880 lon=121.525528 addr=111台灣台北市士林區文林路43號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=18693. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2160,
+      "name": "哈啦星球 逢甲店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "西屯路二段269-48號"
+      },
+      "proposed": {
+        "lat": 24.174507,
+        "lng": 120.644249,
+        "addr": "西屯路二段269-48號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/168",
+      "evidence_quote": "哈啦星球台中逢甲店 / HALA (FENGJIA) lat=24.174507 lon=120.644249 addr=407台灣台中市西屯區西屯路二段269-48號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19035. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2161,
+      "name": "哈啦星球 饒河店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "台北市松山區饒河街202號"
+      },
+      "proposed": {
+        "lat": 25.050694,
+        "lng": 121.577026,
+        "addr": "台北市松山區饒河街202號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/157",
+      "evidence_quote": "哈啦星球饒河店 / HALA PLANET (RAOHE) lat=25.050694 lon=121.577026 addr=105台灣台北市松山區饒河街202號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19206. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2673,
+      "name": "大釣哥選物販賣",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中和路249號"
+      },
+      "proposed": {
+        "lat": 24.95335,
+        "lng": 121.223358,
+        "addr": "中和路249號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/154",
+      "evidence_quote": "大釣哥選物販賣 / PRO FISHER(ZHONGLI) lat=24.953350 lon=121.223358 addr=320台灣桃園市中壢區中和路249號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19359. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 2959,
+      "name": "太鼓歡樂園",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華東路二段62號"
+      },
+      "proposed": {
+        "lat": 22.98604,
+        "lng": 120.233124,
+        "addr": "中華東路二段62號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/100",
+      "evidence_quote": "太鼓歡樂園 / GUOBIN AMUSEMENT PARK lat=22.986040 lon=120.233124 addr=701台灣台南市東區中華東路二段62、64號1樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19606. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3010,
+      "name": "夾到飽士林店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "大南路48號二樓"
+      },
+      "proposed": {
+        "lat": 25.089361,
+        "lng": 121.524986,
+        "addr": "大南路48號二樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/94",
+      "evidence_quote": "夾到寶士林店 / CATCH BUFFET(DA-NAN@SHLIN) lat=25.089361 lon=121.524986 addr=111台灣台北市士林區大南路48號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19884. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3086,
+      "name": "奇樂多南港店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "忠孝東路七段299號C棟6樓"
+      },
+      "proposed": {
+        "lat": 25.052572,
+        "lng": 121.603897,
+        "addr": "忠孝東路七段299號C棟6樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/18",
+      "evidence_quote": "奇樂多南港店 / HURO WORLD(CITY LINK@NANGANG) lat=25.052572 lon=121.603897 addr=115台灣台北市南港區忠孝東路七段369號C棟6樓 (CITY LINK南港店)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=20654. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3630,
+      "name": "恐怖红夜 - 義大購物廣場C區3樓",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "義大八街100號"
+      },
+      "proposed": {
+        "lat": 22.729492,
+        "lng": 120.405884,
+        "addr": "義大八街100號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/74",
+      "evidence_quote": "HAPPY100高雄義大購物廣場店 / HAPPY100 (E DA) lat=22.729492 lon=120.405884 addr=840台灣高雄市大樹區學府路一段12號3樓 (義大OUTLET C區3F)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19954. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3631,
+      "name": "恐怖红夜 西門店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華路一段114巷11號2樓"
+      },
+      "proposed": {
+        "lat": 25.04394,
+        "lng": 121.508026,
+        "addr": "中華路一段114巷11號2樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/20",
+      "evidence_quote": "哈啦星球西門店 / HALA PLANET (XIMEN) lat=25.043940 lon=121.508026 addr=108台灣台北市萬華區中華路一段114巷11號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=20138. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3682,
+      "name": "抓抓族遊樂園（信陽店）",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "台北市中正區信陽街2號"
+      },
+      "proposed": {
+        "lat": 25.044586,
+        "lng": 121.516754,
+        "addr": "台北市中正區信陽街2號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/29",
+      "evidence_quote": "哈啦星球信陽店 / HALA(XINYANG) lat=25.044586 lon=121.516754 addr=100台灣台北市中正區信陽街9號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19759. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3765,
+      "name": "新藝城虎尾店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "新興里新興路80號1樓"
+      },
+      "proposed": {
+        "lat": 23.70944,
+        "lng": 120.434692,
+        "addr": "新興里新興路80號1樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/91",
+      "evidence_quote": "新藝城虎尾店 / SIN YI CITY (HUWEI) lat=23.709440 lon=120.434692 addr=632台灣雲林縣虎尾鎮新興路80號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=20555. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 3767,
+      "name": "新都市育樂廣場",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中央西路一段120號11樓"
+      },
+      "proposed": {
+        "lat": 24.958616,
+        "lng": 121.220329,
+        "addr": "中央西路一段120號11樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/32",
+      "evidence_quote": "新都市育樂廣場 / NEW CITY(ZHONGLI) lat=24.958616 lon=121.220329 addr=320台灣桃園市中壢區中央西路一段120號11樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24066. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 4462,
+      "name": "极限游戏道馆（天台广场）",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "重新路二段78号1楼"
+      },
+      "proposed": {
+        "lat": 25.061701,
+        "lng": 121.497307,
+        "addr": "重新路二段78号1楼"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/9",
+      "evidence_quote": "極限遊戲道館 (天台廣場/鐵馬奇兵娃娃屋) / MAX GAME CENTER lat=25.061701 lon=121.497307 addr=241台灣新北市三重區重新路二段78號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=23879. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 4570,
+      "name": "橙柿口袋",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "尊賢街11號1樓"
+      },
+      "proposed": {
+        "lat": 24.148853,
+        "lng": 120.685181,
+        "addr": "尊賢街11號1樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/50",
+      "evidence_quote": "橙柿口袋一中店 / WAWA EMPIRE(YIJHONG) lat=24.148853 lon=120.685181 addr=404台灣台中市北區尊賢街9號1樓 (水利大樓)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=21127. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 4689,
+      "name": "永淇樂園",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中正區市民大道一段50號"
+      },
+      "proposed": {
+        "lat": 25.049665,
+        "lng": 121.513039,
+        "addr": "中正區市民大道一段50號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/5",
+      "evidence_quote": "永淇樂園 / YOUNG KEY PARADISE(DATONG) lat=25.049665 lon=121.513039 addr=100台灣台北市中正區市民大道一段100號B1 (近Y19出入口)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24024. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5000,
+      "name": "湯姆熊 - 左營新光店(湯姆貝貝)",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "高鐵路123號10樓"
+      },
+      "proposed": {
+        "lat": 22.689138,
+        "lng": 120.310394,
+        "addr": "高鐵路123號10樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/76",
+      "evidence_quote": "湯姆熊左營新光店10F / TOM'S WORLD(MITSUKOSHI@ZUOYING 10F) lat=22.689138 lon=120.310394 addr=813台灣高雄市左營區高鐵路123號10樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19942. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5001,
+      "name": "湯姆熊六合店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "六合二路132號"
+      },
+      "proposed": {
+        "lat": 22.631092,
+        "lng": 120.295914,
+        "addr": "六合二路132號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/68",
+      "evidence_quote": "湯姆熊高雄六合店 / TOM'S WORLD(LIUHE@KAOHSIUNG) lat=22.631092 lon=120.295914 addr=801台灣高雄市前金區六合二路132號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24622. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5002,
+      "name": "湯姆熊南紡夢時代店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華東路一段366號B1"
+      },
+      "proposed": {
+        "lat": 22.990902,
+        "lng": 120.233337,
+        "addr": "中華東路一段366號B1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/60",
+      "evidence_quote": "湯姆熊台南南紡店 / TOM'S WORLD (T.S. MALL@TAINAN) lat=22.990902 lon=120.233337 addr=701台灣台南市東區中華東路一段366號B1 (南紡購物中心)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19941. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5003,
+      "name": "湯姆熊台南FOCUS店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中西區中山路166號"
+      },
+      "proposed": {
+        "lat": 22.995623,
+        "lng": 120.210045,
+        "addr": "中西區中山路166號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/57",
+      "evidence_quote": "湯姆熊台南Focus店 / TOM'S WORLD(FOCUS@TAINAN) lat=22.995623 lon=120.210045 addr=700台灣台南市中西區中山路166號9樓 (Focus時尚流行館)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24150. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5004,
+      "name": "湯姆熊台南新光中山店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中山路162號11F"
+      },
+      "proposed": {
+        "lat": 22.995216,
+        "lng": 120.21003,
+        "addr": "中山路162號11F"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/65",
+      "evidence_quote": "湯姆熊台南新光中山店 / TOM'S WORLD (MITSUKOSHI@TAINAN ) lat=22.995216 lon=120.210030 addr=700台灣台南市中西區中山路162號11樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19929. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5005,
+      "name": "湯姆熊台南新天地",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "西門路一段658號7樓A區"
+      },
+      "proposed": {
+        "lat": 22.987289,
+        "lng": 120.198555,
+        "addr": "西門路一段658號7樓A區"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/92",
+      "evidence_quote": "湯姆熊台南新光新天地店 / TOM'S WORLD (MITSUKOSHI@TAINAN) lat=22.987289 lon=120.198555 addr=700台灣台南市中西區西門路一段658號6樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19684. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5006,
+      "name": "湯姆熊台南海佃店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "海佃路一段329號"
+      },
+      "proposed": {
+        "lat": 23.026218,
+        "lng": 120.19104,
+        "addr": "海佃路一段329號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/63",
+      "evidence_quote": "湯姆熊台南海佃店 / TOM'S WORLD (HAIDIAN-LI@TAINAN)) lat=23.026218 lon=120.191040 addr=709台灣台南市安南區海佃路一段329號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19933. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5007,
+      "name": "湯姆熊台南真光店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華東路二段236號"
+      },
+      "proposed": {
+        "lat": 22.981936,
+        "lng": 120.229919,
+        "addr": "中華東路二段236號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/58",
+      "evidence_quote": "湯姆熊台南真光店 / TOM'S WORLD(JHENGUANG@TAINAN) lat=22.981936 lon=120.229919 addr=701台灣台南市東區中華東路二段236號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24684. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5008,
+      "name": "湯姆熊台南西門店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "西門路四段273號"
+      },
+      "proposed": {
+        "lat": 23.013163,
+        "lng": 120.208839,
+        "addr": "西門路四段273號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/159",
+      "evidence_quote": "湯姆熊台南西門店 / TOM'S WORLD(XIMEN@TAINAN) lat=23.013163 lon=120.208839 addr=704台灣台南市北區西門路四段273號1樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24013. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5010,
+      "name": "湯姆熊台南開元店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "開元路219號"
+      },
+      "proposed": {
+        "lat": 23.007442,
+        "lng": 120.220024,
+        "addr": "開元路219號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/61",
+      "evidence_quote": "湯姆熊台南開元店 / TOM'S WORLD (KAIYUAN@TAINAN) lat=23.007442 lon=120.220024 addr=704台灣台南市北區開元路219號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19938. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5011,
+      "name": "湯姆熊員林惠來店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "惠來街49-1號"
+      },
+      "proposed": {
+        "lat": 23.955322,
+        "lng": 120.571884,
+        "addr": "惠來街49-1號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/54",
+      "evidence_quote": "湯姆熊員林惠來店 / TOM'S WORLD (HUILAI@CHANGHUA) lat=23.955322 lon=120.571884 addr=510台灣彰化縣員林市惠來街49-1號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=20098. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5012,
+      "name": "湯姆熊夢時代店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華五路789號5樓、地下2樓"
+      },
+      "proposed": {
+        "lat": 22.594904,
+        "lng": 120.30661,
+        "addr": "中華五路789號5樓、地下2樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/71",
+      "evidence_quote": "湯姆熊高雄夢時代店B2 (傑克玩樂園) / TOM'S WORLD(DREAM MALL@KAOHSIUNG) lat=22.594904 lon=120.306610 addr=806台灣高雄市前鎮區中華五路789號B2",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=22353. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5014,
+      "name": "湯姆熊屏東真光店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "民生路62號"
+      },
+      "proposed": {
+        "lat": 22.667925,
+        "lng": 120.497475,
+        "addr": "民生路62號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/80",
+      "evidence_quote": "湯姆熊屏東真光店 / TOM'S WORLD(JHENGUANG@PINGTUNG) lat=22.667925 lon=120.497475 addr=900台灣屏東縣屏東市民生路62號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24055. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5015,
+      "name": "湯姆熊巧立店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中正路239號"
+      },
+      "proposed": {
+        "lat": 22.992884,
+        "lng": 120.197273,
+        "addr": "中正路239號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/62",
+      "evidence_quote": "湯姆熊台南巧立店 / TOM'S WORLD (CIAO-LI@TAINAN)) lat=22.992884 lon=120.197273 addr=700台灣台南市中西區中正路239號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19936. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5016,
+      "name": "湯姆熊彰化家樂福店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "金馬路二段321號"
+      },
+      "proposed": {
+        "lat": 24.094431,
+        "lng": 120.542519,
+        "addr": "金馬路二段321號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/163",
+      "evidence_quote": "湯姆熊彰化家樂福店 / TOM'S WORLD(CARREFOUR@CHANGHUA) lat=24.094431 lon=120.542519 addr=500台灣彰化縣彰化市金馬路二段321號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19137. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5017,
+      "name": "湯姆熊彼得堡店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華路一段437號"
+      },
+      "proposed": {
+        "lat": 22.752974,
+        "lng": 121.151962,
+        "addr": "中華路一段437號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/82",
+      "evidence_quote": "湯姆熊台東店 / TOM'S WORLD (TAITUNG) lat=22.752974 lon=121.151962 addr=950台灣台東縣台東市中華路一段438號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19928. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5019,
+      "name": "湯姆熊樂購廣場",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "捷安路1巷2號2樓"
+      },
+      "proposed": {
+        "lat": 22.77977,
+        "lng": 120.300125,
+        "addr": "捷安路1巷2號2樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/158",
+      "evidence_quote": "湯姆熊岡山樂購廣場店 / TOM'S WORLD (SHOWTIME@KONG-SAN) lat=22.779770 lon=120.300125 addr=820台灣高雄市岡山區捷安路1巷2號 (樂購廣場)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19215. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5021,
+      "name": "湯姆熊歡樂世界 台中中友店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "三民路三段161號B棟"
+      },
+      "proposed": {
+        "lat": 24.152218,
+        "lng": 120.684784,
+        "addr": "三民路三段161號B棟"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/51",
+      "evidence_quote": "湯姆熊台中中友店 / TOM'S WORLD (CHUNGYO@TAICHUNG) lat=24.152218 lon=120.684784 addr=404台灣台中市北區三民路三段161號B棟8樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19948. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5022,
+      "name": "湯姆熊歡樂世界 台北金萬年店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "西寧南路70號5樓"
+      },
+      "proposed": {
+        "lat": 25.043606,
+        "lng": 121.505882,
+        "addr": "西寧南路70號5樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/4",
+      "evidence_quote": "湯姆熊台北金萬年店 / TOM'S WORLD(JINWANNIAN@TAIPEI) lat=25.043606 lon=121.505882 addr=108台灣台北市萬華區西寧南路70號5樓 (西門町萬年商業大樓)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24689. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5024,
+      "name": "湯姆熊歡樂世界 新竹巨城店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中央路229號遠東巨城購物中心8樓"
+      },
+      "proposed": {
+        "lat": 24.809486,
+        "lng": 120.974724,
+        "addr": "中央路229號遠東巨城購物中心8樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/41",
+      "evidence_quote": "湯姆熊新竹巨城店 / TOM'S WORLD(GIANT CITY@HSINCHU) lat=24.809486 lon=120.974724 addr=300台灣新竹市東區中央路229號8樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=23030. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5025,
+      "name": "湯姆熊歡樂世界 新莊宏匯店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "新北大道4段3號9F"
+      },
+      "proposed": {
+        "lat": 25.059637,
+        "lng": 121.449493,
+        "addr": "新北大道4段3號9F"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/90",
+      "evidence_quote": "湯姆熊新莊宏匯店 / TOM'S WORLD(HONHUI PLAZA@NEW TAIPEI) lat=25.059637 lon=121.449493 addr=24250台灣新北市新莊區新北大道四段3號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19667. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5027,
+      "name": "湯姆熊歡樂世界 樹林秀泰店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "保安里樹新路40-6號3樓"
+      },
+      "proposed": {
+        "lat": 24.99552,
+        "lng": 121.427963,
+        "addr": "保安里樹新路40-6號3樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/105",
+      "evidence_quote": "湯姆熊樹林秀泰店 / TOM'S WORLD(MORI SHOWTIME@SHULIN) lat=24.995520 lon=121.427963 addr=238台灣新北市樹林區樹新路40-6號3樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19591. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5028,
+      "name": "湯姆熊秀泰生活嘉義店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "文化路299號"
+      },
+      "proposed": {
+        "lat": 23.485415,
+        "lng": 120.44783,
+        "addr": "文化路299號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/118",
+      "evidence_quote": "湯姆熊嘉義秀泰店 / TOM'S WORLD(SHOW TIME@CHIAYI) lat=23.485415 lon=120.447830 addr=600台灣嘉義市西區文化路299號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19528. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5029,
+      "name": "湯姆熊羅東民生店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "民生路6號2樓"
+      },
+      "proposed": {
+        "lat": 24.676695,
+        "lng": 121.770897,
+        "addr": "民生路6號2樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/86",
+      "evidence_quote": "湯姆熊宜蘭羅東民生店 / TOM'S WORLD(MINSHENG@LOTONG) lat=24.676695 lon=121.770897 addr=265台灣宜蘭縣羅東鎮民生路6號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24665. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5031,
+      "name": "湯姆熊蘭城新月店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "民權路二段38巷6號4樓"
+      },
+      "proposed": {
+        "lat": 24.754353,
+        "lng": 121.750961,
+        "addr": "民權路二段38巷6號4樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/85",
+      "evidence_quote": "湯姆熊宜蘭新月廣場 / TOM'S WORLD(LUNA PLAZA@YILAN) lat=24.754353 lon=121.750961 addr=260台灣宜蘭縣宜蘭市宜蘭縣宜蘭市民權路二段38巷6號4樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24145. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5032,
+      "name": "湯姆熊親親店(親親戲院)",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "北屯路14號B1"
+      },
+      "proposed": {
+        "lat": 24.160231,
+        "lng": 120.692032,
+        "addr": "北屯路14號B1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/44",
+      "evidence_quote": "湯姆熊台中親親店 / TOM'S WORLD(CHIN CHIN@TAICHUNG) lat=24.160231 lon=120.692032 addr=404台灣台中市北區北屯路14號B1 (親親戲院)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24686. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5034,
+      "name": "湯姆熊高雄大遠百",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "三多四路21號12樓"
+      },
+      "proposed": {
+        "lat": 22.613075,
+        "lng": 120.304291,
+        "addr": "三多四路21號12樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/69",
+      "evidence_quote": "湯姆熊高雄大遠百店 / TOM'S WORLD(FE21 MEGA@KAOHSIUNG) lat=22.613075 lon=120.304291 addr=802高雄市苓雅區三多四路21號12樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=22390. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5035,
+      "name": "湯姆熊高雄左營新光三越店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "高鐵路115號（彩虹市集2～4F）"
+      },
+      "proposed": {
+        "lat": 22.689138,
+        "lng": 120.310394,
+        "addr": "高鐵路115號（彩虹市集2～4F）"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/75",
+      "evidence_quote": "湯姆熊左營新光店2F / TOM'S WORLD(MITSUKOSHI@ZUOYING 2F) lat=22.689138 lon=120.310394 addr=813台灣高雄市左營區高鐵路123號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19944. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5036,
+      "name": "湯姆熊高雄巨蛋店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "博愛二路777號8樓"
+      },
+      "proposed": {
+        "lat": 22.669594,
+        "lng": 120.302284,
+        "addr": "博愛二路777號8樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/101",
+      "evidence_quote": "湯姆熊高雄漢神巨蛋店 / TOM'S WORLD (HANSHIN@KAOHSIUNG) lat=22.669594 lon=120.302284 addr=813台灣高雄市左營區博愛二路777號6樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19592. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5037,
+      "name": "湯姆熊高雄義享天地",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "大順一路115號5樓"
+      },
+      "proposed": {
+        "lat": 22.656399,
+        "lng": 120.306587,
+        "addr": "大順一路115號5樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/121",
+      "evidence_quote": "湯姆熊高雄義享店 / TOM'S WORLD(E SKY LAND@KAOHSIUNG) lat=22.656399 lon=120.306587 addr=804台灣高雄市鼓山區大順一路115號5樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19493. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5038,
+      "name": "湯姆熊高雄草衙道",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中安路1-1號3樓、B1"
+      },
+      "proposed": {
+        "lat": 22.582777,
+        "lng": 120.33091,
+        "addr": "中安路1-1號3樓、B1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/72",
+      "evidence_quote": "湯姆熊高雄草衙道店3F / TOM'S WORLD(SKM PARK@KAOHSIUNG 3F) lat=22.582777 lon=120.330910 addr=806台灣高雄市前鎮區中安路1-1號 (大魯閣草衙道 大道西3F)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=20968. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5039,
+      "name": "湯姆熊鳳山店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中山路149號B1"
+      },
+      "proposed": {
+        "lat": 22.622702,
+        "lng": 120.35807,
+        "addr": "中山路149號B1"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/67",
+      "evidence_quote": "湯姆熊高雄鳳山店 / TOM'S WORLD(FENGSHAN@KAOHSIUNG) lat=22.622702 lon=120.358070 addr=830台灣高雄市鳳山區中山路149號B1",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24073. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5407,
+      "name": "無限遊戲中心",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中山路一段50巷22號1F"
+      },
+      "proposed": {
+        "lat": 25.008837,
+        "lng": 121.461525,
+        "addr": "中山路一段50巷22號1F"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/119",
+      "evidence_quote": "無限遊戲中心 / INFINITY WORLD lat=25.008837 lon=121.461525 addr=220台灣新北市板橋區中山路一段50巷22號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19524. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5834,
+      "name": "白喵一番屋 中壢店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "延平路575號"
+      },
+      "proposed": {
+        "lat": 24.954786,
+        "lng": 121.222633,
+        "addr": "延平路575號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/192",
+      "evidence_quote": "白喵一番屋中壢店 / SHIRONEKOYA(ZHONGLI) lat=24.954786 lon=121.222633 addr=320台灣桃園市中壢區延平路575號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=18794. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5835,
+      "name": "白喵一番屋 台中店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "育才街6巷7號"
+      },
+      "proposed": {
+        "lat": 24.150225,
+        "lng": 120.685104,
+        "addr": "育才街6巷7號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/191",
+      "evidence_quote": "白喵一番屋台中店 / SHIRONEKOYA(TAICHUNG) lat=24.150225 lon=120.685104 addr=404台灣台中市北區育才街6巷7號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19234. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5836,
+      "name": "白喵一番屋 台北店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "南陽街50號1樓"
+      },
+      "proposed": {
+        "lat": 25.043962,
+        "lng": 121.516006,
+        "addr": "南陽街50號1樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/193",
+      "evidence_quote": "白喵一番屋台北店 / SHIRONEKOYA(TAIPEI) lat=25.043962 lon=121.516006 addr=100台灣台北市中正區南陽街50號1樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=18656. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5837,
+      "name": "白喵一番屋 新竹店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中正路2號4樓"
+      },
+      "proposed": {
+        "lat": 24.802656,
+        "lng": 120.971558,
+        "addr": "中正路2號4樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/139",
+      "evidence_quote": "白喵一番屋新竹店 / SHIRONEKOYA(HSINCHU) lat=24.802656 lon=120.971558 addr=300台灣新竹市東區中正路2號4樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19469. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 5838,
+      "name": "白喵一番屋 桃園店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "成功路12號2樓"
+      },
+      "proposed": {
+        "lat": 24.992998,
+        "lng": 121.312805,
+        "addr": "成功路12號2樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/39",
+      "evidence_quote": "白喵一番屋桃園店 / SHIRONEKOYA lat=24.992998 lon=121.312805 addr=330台灣桃园市桃園區成功路一段12號2樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19675. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 6160,
+      "name": "红夜 - 夢時代店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中華五路789號9樓"
+      },
+      "proposed": {
+        "lat": 22.595222,
+        "lng": 120.306732,
+        "addr": "中華五路789號9樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/70",
+      "evidence_quote": "HAPPY100高雄夢時代店 / HAPPY100(DREAM MALL@KAOHSIUNG ) lat=22.595222 lon=120.306732 addr=806台灣高雄市前鎮區中華五路789號9樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=22921. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 6161,
+      "name": "红夜星光 板橋南雅店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "南雅東街31之5號1樓"
+      },
+      "proposed": {
+        "lat": 25.006037,
+        "lng": 121.454254,
+        "addr": "南雅東街31之5號1樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/116",
+      "evidence_quote": "哈啦星球南雅店 / HALA PLANET (NANYA) lat=25.006037 lon=121.454254 addr=220台灣板橋區南雅東路31號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19533. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 6282,
+      "name": "花蓮三商湯姆熊",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "中正路530號4樓"
+      },
+      "proposed": {
+        "lat": 23.977608,
+        "lng": 121.608047,
+        "addr": "中正路530號4樓"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/83",
+      "evidence_quote": "湯姆熊花蓮三商店 / TOM'S WORLD(E33@HUALIEN) lat=23.977608 lon=121.608047 addr=970台灣花蓮縣花蓮市中正路530號4樓",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=24673. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 6479,
+      "name": "變色龍歡樂世界",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "文化路79號"
+      },
+      "proposed": {
+        "lat": 23.477343,
+        "lng": 120.449722,
+        "addr": "文化路79號"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://maimaidx.tw/store/165",
+      "evidence_quote": "變色龍歡樂世界 / CHAMELEON (CHIAYI) lat=23.477343 lon=120.449722 addr=600台灣嘉義市東區文化路79號",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net sid=19070. All shard Taiwan pins were null; filled from official/community locator. Address text left unchanged unless separately corrected."
+    },
+    {
+      "id": 1363,
+      "name": "X50 Music Game Station 西門零店",
+      "field": "other",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": "Do not auto-merge ALL.Net X50 MGS TAIPEI onto 西門零店 alone",
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net CHUNITHM intl Taiwan lists sid=20079 as X50 MGS TAIPEI @ No.49, Emei St., Wanhua Dist., Taipei City 108, Taiwan (R.O.C.)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net lists a single 'X50 MGS TAIPEI' with both maimai and CHUNITHM, but X50 has three Ximen units (零/一/二) with different game mixes. Cannot map the CHUNITHM listing to 西門零店 specifically. Leave games as maimai_dx only until operator confirms. Address also conflicts across ALL.Net (Emei 49), maimaidx (Wuchang 101), shard (Wuchang 134)."
+    },
+    {
+      "id": 2056,
+      "name": "台中大鲁阁新时代（现已改名iFG远雄台中店）",
+      "field": "status",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": "investigate_split_or_rename_to_toms_taroko",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net maimai DX Taiwan lists sid=18425 as TOM'S WORLD(TOM'S WORLD TAROKO MALL) @ 10 F, No.186, Sec.4, Fuxing Rd,East Dist, Taichung City 401211",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net lists TOM'S WORLD TAROKO MALL with maimai DX at 10F of the same mall address. The BemaniCN row is labeled 大鲁阁/iFG and lists offline maimai FiNALE (title_id=2) not DX. Either split venues (Tom's DX vs batting-cage offline) or reassign this id to Tom's. Do not blindly set maimai_dx on the 大鲁阁-branded row without split."
+    },
+    {
+      "id": 3010,
+      "name": "夾到飽士林店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "Venue sid=19884 appears on ALL.Net maimai Taiwan but is ABSENT from ALL.Net CHUNITHM Taiwan list (61 locations).",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net CHUNITHM list is the official live locator. Absence strongly suggests no live CHUNITHM. BemaniCN may be stale. Confidence likely not certain because temporary downtime can drop a store."
+    },
+    {
+      "id": 3767,
+      "name": "新都市育樂廣場",
+      "field": "games",
+      "current": [
+        "chunithm"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net maimai DX Taiwan lists sid=24066 as NEW CITY(ZHONGLI) @ 11F,NO.120,SEC.1,ZHONGYANG W.RD,ZHONGLI CITY, TAOYUAN",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net intl locator currently lists this venue for maimai DX; map was missing the game."
+    },
+    {
+      "id": 5000,
+      "name": "湯姆熊 - 左營新光店(湯姆貝貝)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "Venue sid=19942 appears on ALL.Net maimai Taiwan but is ABSENT from ALL.Net CHUNITHM Taiwan list (61 locations).",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net CHUNITHM list is the official live locator. Absence strongly suggests no live CHUNITHM. BemaniCN may be stale. Confidence likely not certain because temporary downtime can drop a store."
+    },
+    {
+      "id": 5006,
+      "name": "湯姆熊台南海佃店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net CHUNITHM intl Taiwan lists sid=19933 as TOM'S WORLD (HAIDIAN-LI@TAINAN)) @ 1FNo329,Sec.1,Haidian Rd.,AnnanDist.,TainanCity70962,Taiwan",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net lists CHUNITHM here; map was missing it."
+    },
+    {
+      "id": 5015,
+      "name": "湯姆熊巧立店",
+      "field": "games",
+      "current": [
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net maimai DX Taiwan lists sid=19936 as TOM'S WORLD (CIAO-LI@TAINAN)) @ 2F.No.239,ZhongzhengRd.West Central Dist.,TainanCity70055,Taiwan",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net intl locator currently lists this venue for maimai DX; map was missing the game."
+    },
+    {
+      "id": 5025,
+      "name": "湯姆熊歡樂世界 新莊宏匯店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "Venue sid=19667 appears on ALL.Net maimai Taiwan but is ABSENT from ALL.Net CHUNITHM Taiwan list (61 locations).",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net CHUNITHM list is the official live locator. Absence strongly suggests no live CHUNITHM. BemaniCN may be stale. Confidence likely not certain because temporary downtime can drop a store."
+    },
+    {
+      "id": 5035,
+      "name": "湯姆熊高雄左營新光三越店",
+      "field": "games",
+      "current": [
+        "ddr",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net CHUNITHM intl Taiwan lists sid=19944 as TOM'S WORLD(MITSUKOSHI@ZUOYING 2F) @ 2F.No.123,GaotieRd.,Zuoying Dist.,KaohsiungCity81361",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net lists CHUNITHM here; map was missing it."
+    },
+    {
+      "id": 5036,
+      "name": "湯姆熊高雄巨蛋店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1001",
+      "evidence_quote": "Venue sid=19592 appears on ALL.Net maimai Taiwan but is ABSENT from ALL.Net CHUNITHM Taiwan list (61 locations).",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net CHUNITHM list is the official live locator. Absence strongly suggests no live CHUNITHM. BemaniCN may be stale. Confidence likely not certain because temporary downtime can drop a store."
+    },
+    {
+      "id": 3631,
+      "name": "恐怖红夜 西門店",
+      "field": "other",
+      "current": "恐怖红夜 西門店",
+      "proposed": "哈啦星球 西門店 (HALA PLANET XIMEN)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "HALA PLANET (XIMEN) | No.11, Ln.144, Sec.1,Zhonghua Rd.Wanhua Dist., Taipei City 108",
+      "checked_at": "2026-08-02",
+      "note": "Address 中華路一段114巷11號 matches HALA PLANET (XIMEN) on ALL.Net and maimaidx.tw. '恐怖红夜' appears to be an old/wrong BemaniCN label for this store. Same address as ZIv 'Hala Planet@Ximen'."
+    },
+    {
+      "id": 6161,
+      "name": "红夜星光 板橋南雅店",
+      "field": "other",
+      "current": "红夜星光 板橋南雅店",
+      "proposed": "哈啦星球 南雅店 (HALA PLANET NANYA)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "HALA PLANET (NANYA) | 1F,No31-5,Nanya E Rd.Banqiao Dist.New Taipei City 220053",
+      "checked_at": "2026-08-02",
+      "note": "Address 南雅東街31之5號 matches HALA PLANET (NANYA). ZIv also lists Hala Planet@Nanya at this address. Red-night branding on BemaniCN is wrong/outdated."
+    },
+    {
+      "id": 3682,
+      "name": "抓抓族遊樂園（信陽店）",
+      "field": "other",
+      "current": "抓抓族遊樂園（信陽店）",
+      "proposed": "哈啦星球 信陽店 (HALA XINYANG)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "HALA(XINYANG) | 1F., No.2, Xinyang St., Zhongzheng Dist., Taipei City 10047",
+      "checked_at": "2026-08-02",
+      "note": "Address 信陽街2號 matches official HALA(XINYANG). Community name 抓抓族 is outdated."
+    },
+    {
+      "id": 6160,
+      "name": "红夜 - 夢時代店",
+      "field": "other",
+      "current": "红夜 - 夢時代店",
+      "proposed": "HAPPY100 高雄夢時代店",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "HAPPY100(DREAM MALL@KAOHSIUNG ) | 9F., NO.789, ZHONGHUA 5TH RD.,QIANZHEN DIST., KAOHSIUNG CITY",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net brand is HAPPY100 at Dream Mall 9F. BemaniCN '红夜' is alternate/old label."
+    },
+    {
+      "id": 3630,
+      "name": "恐怖红夜 - 義大購物廣場C區3樓",
+      "field": "other",
+      "current": "恐怖红夜 - 義大購物廣場C區3樓",
+      "proposed": "HAPPY100 義大店 (E-DA)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "HAPPY100 (E DA) | 3F,No.12,Sec.1,XuechengRd DashuDist.KaohsiungCity84048",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net and maimaidx list HAPPY100 at E-DA. Address on shard is 義大八街100號 which is E-DA mall complex; official listing uses 學城路."
+    },
+    {
+      "id": 1118,
+      "name": "GiGO - Global Mall 南港車站店",
+      "field": "status",
+      "current": "open (implied) with maimai_dx x2",
+      "proposed": "unverified / possibly wrong brand or absorbed into Tom's World at same mall",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(GLOBALMALL-NANGANG) | B2., No. 371, Sec. 7, ZhongxiaoE. Rd., Nangang Dist. (sid=18503). No GiGO Global Mall Nangang on ALL.Net maimai Taiwan list.",
+      "checked_at": "2026-08-02",
+      "note": "Same building number 371 as Tom's World Nangang Global Mall which IS on ALL.Net. GiGO is not listed under that name. BemaniCN still shows status=1 with 2x maimai DX + GROOVE COASTER. Could be co-located, rebranded, or stale. Needs on-site/local confirmation. Do NOT hard-delete without more evidence."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 南港環球店 (TOM'S WORLD GLOBALMALL-NANGANG)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 南港環球店",
+        "addr": "B2., No. 371, Sec. 7, Zhongxiao E. Rd., Nangang Dist., Taipei",
+        "lat": 25.0529839,
+        "lng": 121.6071877,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "country": "Taiwan",
+        "pref": "台北市"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(GLOBALMALL-NANGANG) on maimai list with coords 25.0529839,121.6071877; also on CHUNITHM list sid=18503",
+      "checked_at": "2026-08-02",
+      "note": "Official ALL.Net live store. Shard only has 'GiGO - Global Mall 南港車站店' at same building number without coords. Add Tom's explicitly; investigate GiGO row separately."
+    },
+    {
+      "id": 2056,
+      "name": "台中大鲁阁新时代（现已改名iFG远雄台中店）",
+      "field": "other",
+      "current": "台中大鲁阁新时代（现已改名iFG远雄台中店）",
+      "proposed": "湯姆熊 台中新時代店 (TOM'S WORLD TAROKO MALL) - or keep batting-cage row separate",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(TOM'S WORLD TAROKO MALL) | 10 F, No.186, Sec.4, Fuxing Rd,East Dist, Taichung City",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN row mixes 大魯閣 brand with maimai FiNALE (title_id=2 offline) + taiko + Initial D. ALL.Net has Tom's World on 10F of same mall with live maimai DX. The app's 'other games: maimai' is likely the offline Finale at batting/bowling side, not DX. Split or relabel carefully."
+    },
+    {
+      "id": 1363,
+      "name": "X50 Music Game Station 西門零店",
+      "field": "location",
+      "current": {
+        "addr": "武昌街二段134號",
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": 25.04574,
+        "lng": 121.502975,
+        "addr": "武昌街二段134號"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://maimaidx.tw/",
+      "evidence_quote": "maimaidx: X50MGS 西門零店 addr 武昌街二段101號 lat=25.045740 lon=121.502975; ALL.Net: X50 MGS TAIPEI No.49 Emei St.",
+      "checked_at": "2026-08-02",
+      "note": "Coords from maimaidx.tw for X50MGS 西門零店 (community). Address remains conflicted: shard=武昌街二段134號 (same as 一店), maimaidx=武昌街二段101號, ALL.Net X50 MGS TAIPEI=Emei St 49. Do not treat as certain."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 台北美麗華店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 台北美麗華店",
+        "name_en": "TOM'S WORLD(MIRAMAR@TAIPEI)",
+        "addr": "5F., NO.22, JINGYE 3RD RD., ZHONGSHAN DIST., TAIPEI CITY 104",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "21370",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(MIRAMAR@TAIPEI) | 5F.,NO.22,JINGYE3RD RD.,ZHONGSHAN DIST.,TAIPEI CITY104,TAIWAN | sid=21370 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 基隆東岸店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 基隆東岸店",
+        "name_en": "TOM'S WORLD (E-SQUARE@KEELUNG)",
+        "addr": "3F, No.236, Ren 2nd Rd., Ren'ai Dist., Keelung City",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "20400",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD (E-SQUARE@KEELUNG) | 3F,No.236,Ren 2nd Rd.,Ren’aiDist.,Keelung City 20048, Taiwan | sid=20400 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "夾到寶 基隆店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "夾到寶 基隆店",
+        "name_en": "CATCH BUFFET (KEELUNG NIGHT MARKET)",
+        "addr": "No.64, Ai 4th Rd., Ren'ai Dist., Keelung City",
+        "lat": 25.1292241,
+        "lng": 121.7445904,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "19050",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "CATCH BUFFET (KEELUNG NIGHT MARKET) | No.64, Ai 4th Rd., Ren’ai Dist., Keelung City 200010, Taiwan | sid=19050 lat=25.1292241 lng=121.7445904",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "小凡樂園 淡水",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "小凡樂園 淡水",
+        "name_en": "VAN'S PARADISE(TAMSUI)",
+        "addr": "No.94 Yingzhuan Rd., Tamsui Dist., New Taipei City",
+        "lat": 25.1717774,
+        "lng": 121.4458778,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "18986",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "VAN'S PARADISE(TAMSUI) | No.94 Yingzhuan Rd., Tamsui Dist., New Taipei City,Taiwan | sid=18986 lat=25.1717774 lng=121.4458778",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 淡水大都會店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 淡水大都會店",
+        "name_en": "TOM'S WORLD (CITY PLAZA@TAMSUI)",
+        "addr": "4F., No.8, Jhongshan Rd., Tamsui Dist., New Taipei City",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "20135",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD (CITY PLAZA@TAMSUI) | 4F., No.8, Jhongshan Rd., Tamsui Dist., New Taipei City 25151 | sid=20135 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 林口三井店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 林口三井店",
+        "name_en": "TOM'S WORLD MITSUI OUTLET PARK-LINKOU",
+        "addr": "3F, No.123, Sec.1, Wenhua 2nd Rd, Linkou Dist, New Taipei City",
+        "lat": 25.2247173,
+        "lng": 121.6365176,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "18728",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD MITSUI OUTLET PARK-LINKOU | 3F,No.123,Sec.1,Wenhua 2nd Rd,Linkou Dist,New Taipei City 244008 | sid=18728 lat=25.2247173 lng=121.6365176",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "GiGO 林口三井店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGO 林口三井店",
+        "name_en": "GiGO MITSUI OUTLET PARK Lin Kou",
+        "addr": "2F, No.356, Sec.1, Wenhua 3rd Rd, Linkou Dist, New Taipei City",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "20505",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "GiGO MITSUI OUTLET PARK Lin Kou | 2F, No.356, Sec.1,Wenhua3rdRd,LinkouDist,NewTaipeiCity,Taiwan | sid=20505 lat=0.0 lng=0.0",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "GiGO 大江購物中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGO 大江購物中心",
+        "name_en": "GiGO METRO WALK",
+        "addr": "4F, NO.501, SEC.2, JHONGYUAN RD, JHONGLI CITY, TAOYUAN",
+        "lat": 25.0013610040415,
+        "lng": 121.228575054891,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "24700",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "GiGO METRO WALK | 4F,NO.501 ,SEC.2,JHONGYUAN RD,JHONGLICITY,TAOYUAN COUNTY | sid=24700 lat=25.0013610040415 lng=121.228575054891",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "GiGO 廣三SOGO台中店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGO 廣三SOGO台中店",
+        "name_en": "GIGO KUANG SAN SOGO-Taichung",
+        "addr": "17F., No.459, Sec.2, Taiwan Blvd., West Dist., Taichung City",
+        "lat": 24.1430604,
+        "lng": 120.6631289,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "18828",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "GIGO KUANG SAN SOGO-Taichung | 17F.,No.459,Sec.2,Taiwan Blvd.,West Dist.,Taichung City 403503 | sid=18828 lat=24.1430604 lng=120.6631289",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "哈啦星球 桃園復興店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "哈啦星球 桃園復興店",
+        "name_en": "HALA PLANET(TAOYUAN)",
+        "addr": "No. 168, Fuxing Rd., Taoyuan Dist., Taoyuan City",
+        "lat": 24.9904077,
+        "lng": 121.312293,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "18789",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "HALA PLANET(TAOYUAN) | No. 168, Fuxing Rd., Taoyuan Dist., Taoyuan City 330046 | sid=18789 lat=24.9904077 lng=121.312293",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "奇樂多 信義威秀店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "奇樂多 信義威秀店",
+        "name_en": "KILEDO-XIN△YI",
+        "addr": "No.20, Songshou Rd, Sinyi Dist, Taipei City",
+        "lat": 25.045098,
+        "lng": 121.5613131,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "19738",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "KILEDO-XIN△YI | No.20, Songshou Rd, Sinyi Dist,Taipei City 110062 | sid=19738 lat=25.045098 lng=121.5613131",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "老虎歡樂世界 新莊佳瑪店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "老虎歡樂世界 新莊佳瑪店",
+        "name_en": "TIGER'S WORLD (XINZHUANG)",
+        "addr": "No.763, Xingfu E. Rd., Xinzhuang Dist., New Taipei City",
+        "lat": 25.049437,
+        "lng": 121.4639439,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "19424",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TIGER'S WORLD (XINZHUANG) | No.763,Xingfu E. Rd.,Xinzhuang Dist.,New Taipei City 242040,TWN | sid=19424 lat=25.049437 lng=121.4639439",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "老虎歡樂世界 蘆洲佳瑪店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "老虎歡樂世界 蘆洲佳瑪店",
+        "name_en": "TIGER'S WORLD (LUZHOU)",
+        "addr": "No.8, Changrong Rd., Luzhou Dist., New Taipei City",
+        "lat": 25.0868908,
+        "lng": 121.4715241,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "19414",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TIGER'S WORLD (LUZHOU) | No.8, Changrong Rd., Luzhou Dist., New Taipei City 247033 | sid=19414 lat=25.0868908 lng=121.4715241",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 新店裕隆城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 新店裕隆城店",
+        "name_en": "TOM'S WORLD (YULON CITY@XINDIAN)",
+        "addr": "7F No.70 Sec3, Zhongxing Rd, Xindian Dist, New Taipei City",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "19028",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD (YULON CITY@XINDIAN) | 7F No.70 Sec3,Zhongxing Rd,Xindian Dist,New Taipei City | sid=19028 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 桃園遠東店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 桃園遠東店",
+        "name_en": "TOM'S WORLD(FE21@TAOYUAN)",
+        "addr": "12F., NO.20, ZHONGZHENG RD., TAOYUAN CITY",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "24136",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(FE21@TAOYUAN) | 12F., NO.20,ZHONGZHENG RD.,TAOYUAN CITY, TAOYUAN COUNTY | sid=24136 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 台南金華店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 台南金華店",
+        "name_en": "TOM'S WORLD(JINWUA-TAINAN)",
+        "addr": "1F No. 412, Sec. 1, Jinhua Rd., South Dist., Tainan City",
+        "lat": 22.971355,
+        "lng": 120.1910355,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "18509",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(JINWUA-TAINAN) | 1 F No. 412, Sec. 1, Jinhua Rd., South Dist., Tainan City 702011 | sid=18509 lat=22.971355 lng=120.1910355",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 嘉義博愛店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 嘉義博愛店",
+        "name_en": "TOM'S WORLD(BOAI@CHIAYI)",
+        "addr": "NO.181, SEC.2, BO'AI RD., WEST DIST, CHIAYI CITY",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "24149",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(BOAI@CHIAYI) | NO.181, SEC.2, BO'AI RD.,WEST DIST, CHIAYI CITY 60059 | sid=24149 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 文心秀泰店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 文心秀泰店",
+        "name_en": "TOM'S WORLD(SHOWTIME WENXIN@TAICHUNG)",
+        "addr": "4F., No.289, Wenxin S. Rd., Nantun Dist., Taichung City",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "20076",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(SHOWTIME WENXIN@TAICHUNG) | 4F., No.289, Wenxin S. Rd., NantunDist., Taichung City 40854, | sid=20076 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 台中大里店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 台中大里店",
+        "name_en": "TOM'S WORLD(DALI@TAICHUNG)",
+        "addr": "NO.446, SEC. 2, ZHONGXING RD., DALI DIST., TAICHUNG CITY",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "23031",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(DALI@TAICHUNG) | NO.446, SEC. 2, ZHONGXING RD.,DALI DIST., TAICHUNG CITY | sid=23031 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 台中港三井店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 台中港三井店",
+        "name_en": "TOM'S WORLD MITSUI OUTLET PARK-TAICHUNG",
+        "addr": "2F No168 Sec10, Taiwan Blvd Wuqi Dist Taichung City",
+        "lat": 24.2490793,
+        "lng": 120.5386546,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "18712",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD MITSUI OUTLET PARK-TAICHUNG | 2F No168 Sec10, Taiwan Blvd Wuqi Dist TaichungCity 435407 | sid=18712 lat=24.2490793 lng=120.5386546",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "爪娃星球 永和樂華",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "爪娃星球 永和樂華",
+        "name_en": "JAVA PLANET(LE-HUA@YOUNG-HE)",
+        "addr": "No. 22, Yongping Rd., Yonghe Dist., New Taipei City",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "19422",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "JAVA PLANET(LE-HUA@YOUNG-HE) | No. 22, Yongping Rd., Yonghe Dist., New Taipei City, Taiwan | sid=19422 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "新藝城 豐原三民店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "新藝城 豐原三民店",
+        "name_en": "SIN YI CITY (ZHANQIAN)",
+        "addr": "NO.12, SANMIN RD., FENGYUAN DIST., TAICHUNG CITY",
+        "lat": 24.2513923,
+        "lng": 120.7210256,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "allnet_sid": "21498",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "SIN YI CITY (ZHANQIAN) | NO.12,SANMIN RD.,FENGYUAN DIST.TAICHUNG CITY 420,TAIWAN | sid=21498 lat=24.2513923 lng=120.7210256",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": null,
+      "name": "湯姆熊 高雄草衙道店 B1",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "湯姆熊 高雄草衙道店 B1",
+        "name_en": "TOM'S WORLD(SKM PARK @KAOHSIUNGB1)",
+        "addr": "B1, NO.100, ZHONGSHAN 4TH RD., QIANZHEN DIST., KAOHSIUNG CITY",
+        "lat": null,
+        "lng": null,
+        "games": [
+          "maimai_dx"
+        ],
+        "allnet_sid": "19687",
+        "country": "Taiwan"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "TOM'S WORLD(SKM PARK @KAOHSIUNGB1) | B1,NO.100,ZHONGSHAN4TH RD.,QIANZHENDIST.,KAOHSIUNG CITY806,TWN | sid=19687 lat=None lng=None",
+      "checked_at": "2026-08-02",
+      "note": "Present on official ALL.Net maimai DX Taiwan locator (live network) but absent from this shard/map. CHUNITHM noted only if also on ALL.Net CHUNITHM list."
+    },
+    {
+      "id": 1118,
+      "name": "(all Taiwan venues in shard)",
+      "field": "other",
+      "current": {
+        "country": "China",
+        "pref": "台湾"
+      },
+      "proposed": {
+        "country": "Taiwan",
+        "pref": "<city/county>"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "ALL.Net country option value=1001 label=Taiwan; maimaidx.tw titles as 台灣",
+      "checked_at": "2026-08-02",
+      "note": "Entire shard (88 venues) stores country=China with pref=台湾. Operator-facing map for rhythm players in Taiwan should use country Taiwan (or a dedicated region key). This is a data-model decision for maintainers; reporting once rather than 88 times."
+    },
+    {
+      "id": 5026,
+      "name": "湯姆熊歡樂世界 板橋麗寶店",
+      "field": "status",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": "unverified_live_rhythm_presence",
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "No clear TOM'S WORLD Banqiao/Lipao entry on ALL.Net maimai Taiwan list of 98 stores when checked 2026-08-02.",
+      "checked_at": "2026-08-02",
+      "note": "Could not find this Tom's branch on current ALL.Net maimai/CHUNITHM Taiwan lists. May have closed, lost rhythm cabs, or be listed under a different English name. Needs local confirmation before removing."
+    },
+    {
+      "id": 5023,
+      "name": "湯姆熊歡樂世界 土城日月光店",
+      "field": "status",
+      "current": [
+        "chunithm",
+        "other"
+      ],
+      "proposed": "unverified_live_rhythm_presence",
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
+      "evidence_quote": "No TOM'S WORLD Tucheng/Sunshine entry found on ALL.Net maimai Taiwan list.",
+      "checked_at": "2026-08-02",
+      "note": "Notes claim maimai but not found on official ALL.Net. CHUNITHM also not matched to ALL.Net list. Unverified; do not invent removal."
+    },
+    {
+      "id": 1361,
+      "name": "X50 Music Game Station 西門一店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": "Lightning Model",
+        "sdvx": "Valkyrie",
+        "ddr": "20th anniversary (gold) per ZIv First store entry"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+      "evidence_quote": "X50 Music Game Station (First store) machines include beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL), SOUND VOLTEX EXCEED GEAR (Valkyrie model), DDR WORLD 20th anniversary; lastUpdate 2025-04-19",
+      "checked_at": "2026-08-02",
+      "note": "ZIv last update 2025-04-19 so somewhat fresh. BemaniCN confirms IIDX Lighting + SDVX Valkyrie quantities. Map currently has no cab_models."
+    }
+  ]
+}

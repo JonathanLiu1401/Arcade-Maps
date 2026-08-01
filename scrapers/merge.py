@@ -2618,6 +2618,17 @@ def run(raw_dir, out_dir, updated=None):
                             a.pop("cab_models", None)
                     a["games"] = games
                     applied["games"] += 1
+                elif field == "status":
+                    # A permanently-closed venue drawn as open is the
+                    # worst failure this map has: somebody travels to
+                    # it. The row is KEPT rather than deleted - a user
+                    # who searches for it deserves to be told it closed,
+                    # and silently vanishing rows are how a dataset
+                    # loses the ability to explain itself.
+                    a["closed"] = True
+                    a["closed_reason"] = rec["value"]["reason"]
+                    a["closed_source"] = rec.get("evidence_url")
+                    applied["closed"] += 1
                 elif field == "location":
                     # build_corrections already proved this coordinate
                     # lands in the right country AND nearer to the
