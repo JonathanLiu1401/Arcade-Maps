@@ -140,6 +140,59 @@ def test_a_proposal_matching_current_data_is_still_kept(tmp_path):
     assert stats["no_change"] == 0
 
 
+CN = {"id": 9, "name": "Test 电玩城", "addr": "北京市海淀区万柳",
+      "country": "China", "games": ["maimai_dx"], "lat": 39.90, "lng": 116.40,
+      "links": {"ziv": "https://ziv/9"}}
+# (name, lat, lng, depth) - 海淀区 Haidian, Beijing.
+PLACES = [("海淀区", 39.9593, 116.2979, 2), ("北京市", 39.9028, 116.4011, 1)]
+
+
+def _loc(tmp, proposed, arcade=None, places=PLACES):
+    import merge as merge_mod
+    _shard(tmp, [{
+        "field": "location", "name": (arcade or CN)["name"],
+        "current": {"name": (arcade or CN)["name"],
+                    "addr": (arcade or CN)["addr"]},
+        "proposed": proposed, "confidence": "certain",
+        "evidence_url": "https://x", "evidence_quote": "q",
+    }])
+    return BC.build(tmp, [arcade or CN], {"maimai_dx"},
+                    places=places, merge_mod=merge_mod)
+
+
+def test_a_coordinate_in_the_wrong_country_is_refused(tmp_path):
+    # Measured: three "certain" proposals moved a pin across a border.
+    out, stats = _loc(str(tmp_path), {"lat": 35.68, "lng": 139.76})  # Tokyo
+    assert not out and stats["location_wrong_country"] == 1
+
+
+def test_a_coordinate_moving_away_from_its_own_district_is_refused(tmp_path):
+    # The arcade's address says 海淀区; this lands further from it than
+    # the current pin, so the proposal is the wrong one, not the data.
+    out, stats = _loc(str(tmp_path), {"lat": 39.80, "lng": 116.70})
+    assert not out and stats["location_no_geographic_gain"] == 1
+
+
+def test_a_coordinate_moving_into_its_own_district_is_accepted(tmp_path):
+    out, stats = _loc(str(tmp_path), {"lat": 39.9590, "lng": 116.2980})
+    assert out, "a coordinate landing in the named district was refused"
+    key = BC.venue_key(CN)
+    assert out[key]["fields"]["location"]["value"]["lat"] == 39.9590
+
+
+def test_a_coordinate_fills_a_gap_when_the_arcade_has_no_pin(tmp_path):
+    blank = dict(CN, lat=None, lng=None)
+    out, _ = _loc(str(tmp_path), {"lat": 39.9590, "lng": 116.2980}, blank)
+    assert out, "an arcade with no pin at all should take a plausible one"
+
+
+def test_a_nonnumeric_location_proposal_is_refused(tmp_path):
+    # The fleet frequently proposes prose here ("re-geocode; pin
+    # currently identical to ...").
+    out, stats = _loc(str(tmp_path), {"note": "re-geocode this one"})
+    assert not out and stats["location_not_numeric"] == 1
+
+
 def test_unknown_game_slugs_are_dropped(tmp_path):
     out, stats = _one(str(tmp_path), {
         "field": "games", "name": "Test Arcade",

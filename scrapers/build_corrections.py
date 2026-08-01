@@ -38,6 +38,7 @@ means "the overlay put it there". Dropping those would shrink the
 overlay on every rebuild until the corrections silently reverted.
 """
 
+import collections
 import glob
 import json
 import os
@@ -49,11 +50,18 @@ ROOT = os.path.dirname(HERE)
 
 # Fields safe to apply as-is once the venue is unambiguously identified.
 MECHANICAL = ("hours", "website")
-# Applied, but only after validation against the game slug vocabulary.
-VALIDATED = ("games", "game_counts")
+# Applied, but only after validation against the game slug vocabulary,
+# the country box, or - for coordinates - independent geographic proof.
+VALIDATED = ("games", "game_counts", "location")
 # Deliberately NOT applied - see module docstring.
 HELD = ("cab_models", "prices", "other", "missing_venue", "status",
-        "location", "images")
+        "images")
+
+# A coordinate correction must move the pin INTO the place its own
+# address names, and by a margin that is not measurement noise. Several
+# proposals are confidently wrong in the other direction, so the fleet's
+# "certain" is not sufficient on its own.
+LOCATION_MIN_GAIN_M = 2000.0
 
 # A quantity in the evidence: "4 cabinets", "(x2)", "12 machines", "3台".
 _QTY_RE = re.compile(
@@ -67,6 +75,69 @@ _QTY_RE = re.compile(
 
 def quotes_a_quantity(quote):
     return bool(_QTY_RE.search(quote or ""))
+
+
+def load_places(data_dir):
+    """[(name, lat, lng, depth)] of admin areas, for judging coordinates.
+
+    Currently China only (data/china_areas.json, 3,257 districts), which
+    is also where most bad pins are. Absent file -> empty list, and every
+    coordinate correction then falls back to the country-box test alone.
+    """
+    path = os.path.join(data_dir, "china_areas.json")
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, encoding="utf-8") as fh:
+            areas = json.load(fh).get("areas") or {}
+    except (OSError, ValueError):
+        return []
+    out = []
+    for rec in areas.values():
+        if rec.get("lat") is not None and len(rec.get("n") or "") >= 3:
+            out.append((rec["n"], rec["lat"], rec["lng"], rec.get("d", 0)))
+    return out
+
+
+def _location_ok(arcade, proposed, places, merge_mod):
+    """(accept, reason) for one coordinate proposal.
+
+    Two independent checks, because the fleet's confidence is not
+    evidence: several "certain" proposals move a pin into the wrong
+    COUNTRY, and several others move it further from the district the
+    arcade's own address names.
+    """
+    try:
+        lat = float(proposed["lat"])
+        lng = float(proposed["lng"])
+    except (TypeError, ValueError, KeyError):
+        return False, "not_numeric"
+    if not (-90 <= lat <= 90 and -180 <= lng <= 180):
+        return False, "out_of_range"
+    box = merge_mod.bbox_country(lat, lng)
+    if box and arcade.get("country") and box != arcade["country"]:
+        return False, "wrong_country"
+    # Find the deepest admin area this arcade's own address names, and
+    # require the proposal to land nearer to it than the current pin.
+    hay = (arcade.get("addr") or "") + (arcade.get("name") or "")
+    best = None
+    for name, plat, plng, depth in places:
+        if name in hay and (best is None or depth > best[3]):
+            best = (name, plat, plng, depth)
+    if best is None:
+        # Nothing to check against. Accept only when the arcade has no
+        # pin at all, where any plausible coordinate beats none.
+        if arcade.get("lat") is None:
+            return True, "fills_a_gap"
+        return False, "unjudgeable"
+    d_new = merge_mod.haversine_m(lat, lng, best[1], best[2])
+    if arcade.get("lat") is None:
+        return True, "fills_a_gap"
+    d_old = merge_mod.haversine_m(arcade["lat"], arcade["lng"],
+                                  best[1], best[2])
+    if d_old - d_new < LOCATION_MIN_GAIN_M:
+        return False, "no_geographic_gain"
+    return True, "closer_to_named_district"
 
 
 def venue_key(arcade):
@@ -112,15 +183,19 @@ def resolve(corr, arcades, by_key, by_name):
     return None
 
 
-def build(raw_dir, arcades, game_slugs):
+def build(raw_dir, arcades, game_slugs, places=None, merge_mod=None):
+    if merge_mod is None:
+        sys.path.insert(0, HERE)
+        import merge as merge_mod       # noqa: F811
+    places = [] if places is None else places
     shards = sorted(glob.glob(os.path.join(
         raw_dir, "verify", "corrections", "shard_*.json")))
     by_key, by_name = _index(arcades)
     out = {}
-    stats = {"shards": len(shards), "proposals": 0, "applied": 0,
-             "held_field": 0, "unresolved": 0, "no_change": 0,
-             "counts_without_quantity": 0, "unverified": 0,
-             "bad_slug": 0}
+    stats = collections.Counter({
+        "shards": len(shards), "proposals": 0, "applied": 0,
+        "held_field": 0, "unresolved": 0, "no_change": 0,
+        "counts_without_quantity": 0, "unverified": 0, "bad_slug": 0})
     for path in shards:
         try:
             with open(path, encoding="utf-8") as fh:
@@ -155,6 +230,13 @@ def build(raw_dir, arcades, game_slugs):
                     stats["bad_slug"] += 1
                     continue
                 value = games
+            elif field == "location":
+                ok, why = _location_ok(arcade, proposed, places, merge_mod)
+                if not ok:
+                    stats["location_" + why] += 1
+                    continue
+                value = {"lat": float(proposed["lat"]),
+                         "lng": float(proposed["lng"])}
             elif field == "game_counts":
                 if not isinstance(proposed, dict):
                     stats["held_field"] += 1
@@ -196,7 +278,8 @@ def main():
     with open(os.path.join(data_dir, "arcades.json"), encoding="utf-8") as fh:
         arcades = json.load(fh)["arcades"]
     out, stats = build(os.path.join(ROOT, "data_raw"), arcades,
-                       set(merge_mod.GAME_SLUGS))
+                       set(merge_mod.GAME_SLUGS),
+                       places=load_places(data_dir), merge_mod=merge_mod)
     dest = os.path.join(data_dir, "corrections.json")
     with open(dest, "w", encoding="utf-8") as fh:
         json.dump({"venues": out, "stats": stats}, fh,

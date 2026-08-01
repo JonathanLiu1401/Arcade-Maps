@@ -1,16 +1,35 @@
 {
  "stats": {
-  "applied": 1441,
+  "applied": 1458,
   "bad_slug": 5,
   "counts_without_quantity": 192,
-  "held_field": 3908,
+  "held_field": 3693,
+  "location_no_geographic_gain": 4,
+  "location_not_numeric": 127,
+  "location_unjudgeable": 35,
+  "location_wrong_country": 3,
   "no_change": 0,
   "proposals": 5973,
   "shards": 100,
-  "unresolved": 324,
-  "unverified": 103
+  "unresolved": 340,
+  "unverified": 116
  },
  "venues": {
+  "addr|Australia|TIMEZONE BANKSTOWN|Bankstown Central Shopping Centre, Shop MM022 North Terrace": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "Timezone Bankstown Central | MM022 North Terrace Bankstown New South Wales, 2200 | lat -33.916137760812 lng 151.03720932731",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11128",
+     "value": {
+      "lat": -33.916137760812,
+      "lng": 151.03720932731
+     }
+    }
+   },
+   "name": "TIMEZONE BANKSTOWN"
+  },
   "addr|Canada|WATERLOO RHYTHM ARCADE|140 University Ave W, Unit 2-5 Waterloo, On N2L6J3 Canada": {
    "fields": {
     "games": {
@@ -150,6 +169,36 @@
    },
    "name": "奇妙之城柳州柳北保利店"
   },
+  "addr|China|宇宙队长武夷山万兆广场店|福建武夷山市清献大道190号万兆广场1楼": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "certain",
+     "evidence_quote": "宇宙队长武夷山店 twin id 3192 has lat=27.76053 lng=118.024395 for 清献大道190号万兆广场一楼",
+     "evidence_url": "https://map.bemanicn.com/s/6769",
+     "value": {
+      "lat": 27.76053,
+      "lng": 118.024395
+     }
+    }
+   },
+   "name": "宇宙队长武夷山万兆广场店"
+  },
+  "addr|China|宝贝王郑州惠济万达广场店|河南省郑州市惠济区万达广场万达宝贝王": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "宝贝王家庭娱乐中心（惠济万达店） address 惠济万达广场2号门一楼; maimai qty=1. OSM Nominatim 郑州惠济万达广场 -> 34.8695500,113.6303646.",
+     "evidence_url": "https://map.bemanicn.com/s/4618",
+     "value": {
+      "lat": 34.869589,
+      "lng": 113.630528
+     }
+    }
+   },
+   "name": "宝贝王郑州惠济万达广场店"
+  },
   "addr|China|快乐星球巴彦淖尔维多利摩尔城店|内蒙古自治区巴彦淖尔市临河区维多利摩尔城南区五楼快乐星球": {
    "fields": {
     "hours": {
@@ -238,6 +287,21 @@
    },
    "name": "树屋音游无锡梁溪店"
   },
+  "addr|China|欢乐岛东山西埔店|东山县西埔镇立信路1-1号201室": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "certain",
+     "evidence_quote": "欢乐岛成人电玩儿童游乐 twin has lat=23.699339 lng=117.42688 for same 立信路1-1号201室 address",
+     "evidence_url": "https://map.bemanicn.com/s/6165",
+     "value": {
+      "lat": 23.699339,
+      "lng": 117.42688
+     }
+    }
+   },
+   "name": "欢乐岛东山西埔店"
+  },
   "addr|China|比特王湖州德清店|浙江省湖州市德清县舞阳街道中兴南路899号银泰城比特王": {
    "fields": {
     "games": {
@@ -282,6 +346,36 @@
     }
    },
    "name": "迪卡丘烟台芝罘万达店"
+  },
+  "addr|Indonesia|CPCM PIK2 (PANTAI INDAH KAPUK)|Entertainment District PIK 2, Blok A6, Jl. Rasuna Said, PIK 2,": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "likely",
+     "evidence_quote": "Cow Play Cow Moo PIK2 address Entertainment District PIK 2, Blok A6, Jl. Rasuna Said; latitude -6.046285070366627 longitude 106.7053287707168",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10048",
+     "value": {
+      "lat": -6.046285070366627,
+      "lng": 106.7053287707168
+     }
+    }
+   },
+   "name": "CPCM PIK2 (PANTAI INDAH KAPUK)"
+  },
+  "addr|Indonesia|FESTIVAL CITYLINK BANDUNG|Jl.Peta, No.241, Suka Asih, Kec.Bojongloa Kaler, Kota Bandung": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "certain",
+     "evidence_quote": "Festival Citylink (Game Master) JL. Peta No 241 Bandung lat -6.9296992126261 lng 107.58595705032",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1957",
+     "value": {
+      "lat": -6.9296992126261,
+      "lng": 107.58595705032
+     }
+    }
+   },
+   "name": "FESTIVAL CITYLINK BANDUNG"
   },
   "addr|Indonesia|TIMEZONE DUTA PALANGKARAYA|Langkai,Kec.Pahandut,KotaPalangkaRaya,KalimantanTengah": {
    "fields": {
@@ -461,6 +555,21 @@
    },
    "name": "アミューズメントゲーム　マグレブ"
   },
+  "addr|Malaysia|FUN SCAPE PUBLIKA|Lot 72, UG, Publika Shopping Gallery, Solaris Dutamas, 50480": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "ZIv#11424 FUNSCAPE Cobay @ Publika Shopping Gallery coords 3.1708055474582757,101.66554151310311 lastUpdateTime=2026-07-13; maimai DX CiRCLE 1 Cabinet 2P. ALL.Net sid=18319 FUN SCAPE PUBLIKA address Lot 72 UG Publika, 'No GPS'.",
+     "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Malaysia",
+     "value": {
+      "lat": 3.1708055474582757,
+      "lng": 101.66554151310311
+     }
+    }
+   },
+   "name": "FUN SCAPE PUBLIKA"
+  },
   "addr|Malaysia|FUN SCAPE@LOW YAT|7, Jalan Bintang, Off Jalan Bukit Bintang,55100 Kuala Lumpur": {
    "fields": {
     "games": {
@@ -497,9 +606,94 @@
       "chunithm",
       "maimai_dx"
      ]
+    },
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "likely",
+     "evidence_quote": "GAMEON Arcade Arena, Pavillion Bukit Jalil; address L4.30.01 & L4.30.02 Pavilion Bukit Jalil Shopping Centre, 2, Persiaran Jalil Utama, Bukit Jalil, Kuala Lumpur 57000; API lat/lng 3.0498477505387, 101.67296778022; info 'Opening in 18 July 2026'. ALL.Net shop page for sid=18313 has no usable map pin (maps query is the broken address string '4.82.00,LEVEL').",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11506",
+     "value": {
+      "lat": 3.0498477505387,
+      "lng": 101.67296778022
+     }
     }
    },
    "name": "PAVILION BUKIT JALIL (GAME ON)"
+  },
+  "addr|Philippines|Q POWER STATION-PARKTRIANGLE MALL-BGC|4F Park Triangle Mall, Fort Bonifacio Global City, Taguig, 1634": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "likely",
+     "evidence_quote": "Q Power Station Park Triangle Mall | 4F Park Triangle Mall, 32nd St. cor. 11th Ave., Bonifacio Global City, Taguig | lat 14.55298732837 lng 121.05441763563",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3015",
+     "value": {
+      "lat": 14.55298732837,
+      "lng": 121.05441763563
+     }
+    }
+   },
+   "name": "Q POWER STATION-PARKTRIANGLE MALL-BGC"
+  },
+  "addr|Philippines|QUANTUM GREENHILLS|L547 & L549 5F Greenhills Shopping Center, San Juan City,1502": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "likely",
+     "evidence_quote": "Quantum Greenhills Mall | 5F GH Mall, Ortigas Avenue, Greenhills, San Juan | lat 14.602643287343 lng 121.04876234891 | lastUpdate 2026-07-23",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4530",
+     "value": {
+      "lat": 14.602643287343,
+      "lng": 121.04876234891
+     }
+    }
+   },
+   "name": "QUANTUM GREENHILLS"
+  },
+  "addr|Philippines|QUANTUM SM FAIRVIEW|UGF/GF/FF, ANNEX 2, SM City Fairview": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Quantum SM City Fairview coordinates 14.733921741263, 121.0564501251 (ZIv id 3785 / shard 10239).",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3785",
+     "value": {
+      "lat": 14.733921741263,
+      "lng": 121.0564501251
+     }
+    }
+   },
+   "name": "QUANTUM SM FAIRVIEW"
+  },
+  "addr|Philippines|QUANTUM SM PAMPANGA|3rd Floor, San Jose, San Fernando": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Quantum SM City Pampanga lat 15.052117916544 lng 120.69884777069; address 3F SM CITY Pampanga San Fernando. ALL.Net had rejected out-of-country geocode (observed raw pin 37.33874,-121.8852525).",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=364",
+     "value": {
+      "lat": 15.052117916544,
+      "lng": 120.69884777069
+     }
+    }
+   },
+   "name": "QUANTUM SM PAMPANGA"
+  },
+  "addr|Philippines|TIMEZONE MANILA BAY|3rd Floor Ayala Malls Manila Bay, Macapagal Blvd., Brgy. Tambo,": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Timezone Ayala Malls Manila Bay lat 14.523196849076 lng 120.98943736987. Official Timezone site lists Ayala Malls Manila Bay 3rd Floor.",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4961",
+     "value": {
+      "lat": 14.523196849076,
+      "lng": 120.98943736987
+     }
+    }
+   },
+   "name": "TIMEZONE MANILA BAY"
   },
   "addr|Philippines|TIMEZONE TIMEZONE GATEWAY|L3 GatewayMall 2 General Araneta Av, Araneta City, Brgy. Socorro": {
    "fields": {
@@ -519,6 +713,16 @@
      "evidence_quote": "Sunday-Thursday: 10:00 AM - 09:00 PM; Friday-Saturday: 10:00 AM - 10:00 PM",
      "evidence_url": "https://www.timezonegames.com/en-ph/locations/metro-manila/timezone-gateway-2/",
      "value": "Sun-Thu 10:00-21:00; Fri-Sat 10:00-22:00"
+    },
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "Timezone Gateway 2 @ 14.6200192,121.0530499 (resolved from official maps link maps.app.goo.gl/fHam24Sic5qyQ4Et7 on timezonegames.com venue page). ZIv id 8509 also has 14.619580334176,121.05335223377.",
+     "evidence_url": "https://www.google.com/maps/place/Timezone+Gateway+2/@14.6200244,121.050475,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b72c5438b381:0x2ba97ea69712c2e1!8m2!3d14.6200192!4d121.0530499",
+     "value": {
+      "lat": 14.6200192,
+      "lng": 121.0530499
+     }
     },
     "website": {
      "checked_at": "2026-07-31",
@@ -565,6 +769,21 @@
     }
    },
    "name": "CAMELOT GOLFLAND"
+  },
+  "addr|United States|ONE MORE EXTRA STAGE|1313 w El Camino Real , suite A, Mountain View , Ca 94040": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "OSM way 382460068 building/retail at 1313 West El Camino Real, Mountain View CA: lat 37.3882035, lon -122.0897071 (also nearby house points ~37.38865,-122.08938).",
+     "evidence_url": "https://nominatim.openstreetmap.org/search?q=1313+W+El+Camino+Real+Mountain+View+CA+94040&format=json&limit=3",
+     "value": {
+      "lat": 37.3882035,
+      "lng": -122.0897071
+     }
+    }
+   },
+   "name": "ONE MORE EXTRA STAGE"
   },
   "bemanicn|https://map.bemanicn.com/s/1": {
    "fields": {
@@ -6728,6 +6947,21 @@
    },
    "name": "开心季万达宝贝王"
   },
+  "bemanicn|https://map.bemanicn.com/s/5402": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-01",
+     "confidence": "likely",
+     "evidence_quote": "live WAHLAP maimai: arcadeName=秘密艾游乐园武夷山店 address=福建省武夷山市百花路867-1号宝龙广场3楼秘密艾游乐园",
+     "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+     "value": {
+      "lat": 27.748297,
+      "lng": 118.020076
+     }
+    }
+   },
+   "name": "秘密艾武夷山宝龙广场店"
+  },
   "bemanicn|https://map.bemanicn.com/s/5407": {
    "fields": {
     "hours": {
@@ -12521,6 +12755,16 @@
      "evidence_quote": "start_time=10 end_time=26; comment: 店铺在2层北侧。9:20左右开门，大约24:00结束营业 ... 闭店设置已改为2:00，店铺亦营业到凌晨",
      "evidence_url": "https://map.bemanicn.com/s/1293",
      "value": "~09:20/09:30 open, ~24:00-02:00 close (comment); BemaniCN start=10 end=26"
+    },
+    "location": {
+     "checked_at": "2026-07-31",
+     "confidence": "certain",
+     "evidence_quote": "ZIv 11304 噜彼熊电玩嘉年华(华联万柳) lat=39.9717062 lng=116.2889774 address 2F North Side, BHG Mall Wanliu, No.2 Bagou Road; info BEMANICN ID: 1293",
+     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11304",
+     "value": {
+      "lat": 39.9717062,
+      "lng": 116.2889774
+     }
     }
    },
    "name": "噜彼熊电玩嘉年华万柳店"

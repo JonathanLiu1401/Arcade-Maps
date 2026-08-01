@@ -2618,6 +2618,22 @@ def run(raw_dir, out_dir, updated=None):
                             a.pop("cab_models", None)
                     a["games"] = games
                     applied["games"] += 1
+                elif field == "location":
+                    # build_corrections already proved this coordinate
+                    # lands in the right country AND nearer to the
+                    # district the arcade's own address names.
+                    #
+                    # The approx flag is deliberately LEFT ALONE. A
+                    # better pin is not the same as a proven-exact one:
+                    # the researcher may have read a published
+                    # coordinate or may have geocoded the address
+                    # themselves, and nothing in the report distinguishes
+                    # those. Clearing the caveat on the strength of "it
+                    # moved closer" is the same overclaim this file
+                    # already refuses to make for the Baidu cache.
+                    a["lat"] = rec["value"]["lat"]
+                    a["lng"] = rec["value"]["lng"]
+                    applied["location"] += 1
                 elif field == "game_counts":
                     counts = {k: v for k, v in rec["value"].items()
                               if k in a["games"]}
