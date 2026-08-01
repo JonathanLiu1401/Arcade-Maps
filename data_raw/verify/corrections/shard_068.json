@@ -1,0 +1,2846 @@
+{
+  "shard": 68,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+    "https://map.bemanicn.com/games",
+    "https://map.bemanicn.com/api/miniapp/common/region",
+    "https://map.bemanicn.com/region/city/{code} (Liaoning 14 cities, 130 shops)",
+    "https://map.bemanicn.com/s/{id} (81 shard-linked + 54 priority detail fetches)"
+  ],
+  "corrections": [
+    {
+      "id": 867,
+      "name": "(装修中）玩家来也（全运路万达店）",
+      "field": "status",
+      "current": "shown as under renovation (装修中) with games=[\"other\"] only",
+      "proposed": "open / opened 2026-08-01 as 玩家来也（浑南店）; live maimai DX on BemaniCN and WAHLAP",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7328",
+      "evidence_quote": "name: (8.1开业）玩家来也（浑南店）; title_id 1 maimai qty=1 ver=1.56B; updated_at 2026-07-31T12:35:09.000000Z",
+      "note": "WAHLAP lists 玩家来也沈阳浑南万达店 placeId=5322 at 浑南区万达广场3层. App name still says 装修中.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 867,
+      "name": "(装修中）玩家来也（全运路万达店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7328",
+      "evidence_quote": "title_id 1 maimai DX quantity=1 version=1.56B; also 舞立方EVO x1 and 头文字D x4",
+      "note": "Also on official WAHLAP maimai location API for Liaoning.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 867,
+      "name": "(装修中）玩家来也（全运路万达店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7328",
+      "evidence_quote": "title_id 1 quantity=1",
+      "note": "count_evidence bemanicn_qty",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 867,
+      "name": "(装修中）玩家来也（全运路万达店）",
+      "field": "other",
+      "current": "(装修中）玩家来也（全运路万达店）",
+      "proposed": "(8.1开业）玩家来也（浑南店） or 玩家来也沈阳浑南万达店",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7328",
+      "evidence_quote": "name field: (8.1开业）玩家来也（浑南店）",
+      "note": "Rename; WAHLAP official name is 玩家来也沈阳浑南万达店.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4185,
+      "name": "星际传奇（沈阳皇姑万象汇店）",
+      "field": "other",
+      "current": "app games lack maimai_dx (already correct)",
+      "proposed": "maimai DX relocated to 三台子万象汇 (星际传奇沈阳三台子万象汇店 id 4129); this store keeps taiko/other only",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1734",
+      "evidence_quote": "最新更新：舞萌已搬至三台子万象汇，别跑空了; arcades have no title_id 1",
+      "note": "Informational note for panel. App games already correct.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4444,
+      "name": "极速翼电玩娱乐中心",
+      "field": "status",
+      "current": "shown as open with maimai_dx + taiko",
+      "proposed": "scheduled permanent closure around 2026-08-10 (community: 已公示8月10日停业)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4019",
+      "evidence_quote": "有用户反馈：已公示8月10日停业; status still 1; updated_at 2026-07-29T06:22:02.000000Z",
+      "note": "Community report, not official chain notice. Twin WAHLAP row id 4446 is the same venue. Re-check after 2026-08-10.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1385,
+      "name": "【舞萌故障】汤姆熊欢乐世界（亿合城三楼店）",
+      "field": "status",
+      "current": "open with maimai_dx (name prefix 【舞萌故障】)",
+      "proposed": "open but maimai reported faulty/unreliable; keep warning in name or notes",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5352",
+      "evidence_quote": "name still 【舞萌故障】汤姆熊欢乐世界（亿合城三楼店）; title_id 1 maimai qty=1; updated_at 2026-07-25T09:10:09.000000Z",
+      "note": "Cabinet still listed. Twin WAHLAP id 4722 lacks fault prefix.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4619,
+      "name": "欢乐猩球嘉年华（龙湖天街店）",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7324",
+      "evidence_quote": "title_id 1 maimai DX quantity=1 version=国服; comment: 舞萌生死不明",
+      "note": "WAHLAP twin id 4622 already has maimai_dx. Reliability of cabinet unverified.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4619,
+      "name": "欢乐猩球嘉年华（龙湖天街店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7324",
+      "evidence_quote": "title_id 1 quantity=1",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3388,
+      "name": "小丑乐园",
+      "field": "status",
+      "current": "open with jubeat, other, taiko",
+      "proposed": "likely near-closed / very low activity; hours unknown (start=end=0)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1661",
+      "evidence_quote": "快要倒闭的样子了，想要考古可以来; hours start_time=0 end_time=0; updated_at 2025-11-29",
+      "note": "BemaniCN data stale (2025-11-29). jubeat is old 国行1. Reconfirm before recommending.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1344,
+      "name": "V动地带兴城兴隆大家庭店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1362",
+      "evidence_quote": "目前除舞萌其余机器陆续撤机，机厅改为下午5点钟关门，舞萌开到晚上8点",
+      "note": "App lists maimai_dx, other, taiko. Non-maimai cabs being removed per comment.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1344,
+      "name": "V动地带兴城兴隆大家庭店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-20:00 (maimai until 20:00; general close earlier ~17:00 per comment)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1362",
+      "evidence_quote": "营业时间：早九点半到晚八点; 机厅改为下午5点钟关门，舞萌开到晚上8点",
+      "note": "Conflicting times in same comment.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1142,
+      "name": "HiSome嗨森汇潮玩俱乐部",
+      "field": "other",
+      "current": "games=[\"other\"] only",
+      "proposed": "machine condition very poor after internal move; comment strongly discourages visits",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1597",
+      "evidence_quote": "目前机器已搬迁至骑马机旁边，准确度有明显下降，机况不好，屏幕暗，不建议出勤，非常不建议出勤",
+      "note": "No official closure. App correctly has no maimai.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1737,
+      "name": "伍零动漫沈阳沈河店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 912 (50动漫游艺空间); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5254",
+      "evidence_quote": "BC s/5254 name=50动漫游艺空间 addr=盛京大家庭广场区四层; WAHLAP 伍零动漫沈阳沈河店 same mall 4F; identical coords",
+      "note": "50动漫 / 伍零动漫 盛京大家庭 4F; keep_id=912 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1354,
+      "name": "WONDERLAND家庭娱乐中心沈阳和平鹿特丹万芊荟店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 1353 (wonderland奇境家庭娱乐中心（长白鹿特丹店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6400",
+      "evidence_quote": "BC s/6400 wonderland...L3层305; WAHLAP WONDERLAND...鹿特丹万芊荟三楼305; identical coords",
+      "note": "WONDERLAND 鹿特丹 unit 305; keep_id=1353 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1525,
+      "name": "东方英雄鞍山站前店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 1524 (东方英雄嘉年华（站前店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3800",
+      "evidence_quote": "BC s/3800 东方英雄嘉年华（站前店） addr=铁东五道街60号; WAHLAP 东方英雄鞍山站前店 same",
+      "note": "东方英雄 鞍山站前 五道街60号; keep_id=1524 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1713,
+      "name": "乖贝特大连瓦房店店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 1712 (乖贝特); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7128",
+      "evidence_quote": "BC s/7128 乖贝特 has maimai+chunithm+taiko; WAHLAP 乖贝特大连瓦房店店 maimai-only at same address",
+      "note": "乖贝特 瓦房店 景翠路77号 3F; keep_id=1712 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1714,
+      "name": "乖贝特大连瓦房店长兴店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['chunithm'])",
+      "proposed": "duplicate of id 1712 (乖贝特); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7128",
+      "evidence_quote": "WAHLAP chunithm 乖贝特大连瓦房店长兴店 at same 景翠路77号斐卡影城三楼; BC single shop covers all games",
+      "note": "乖贝特 长兴店 chunithm twin of same 景翠路77号; keep_id=1712 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1944,
+      "name": "卡奇部落沈阳大悦城店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 1943 (卡奇部落家庭娱乐中心（沈阳大悦城店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/87",
+      "evidence_quote": "BC s/87 卡奇部落...大悦城D馆3楼; WAHLAP 卡奇部落沈阳大悦城店 D316 same mall",
+      "note": "卡奇部落 大悦城 D馆3楼; keep_id=1943 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2325,
+      "name": "噜彼熊营口站前万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 2326 (噜彼熊超级乐园（营口万达店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4801",
+      "evidence_quote": "BC s/4801 噜彼熊超级乐园（营口万达店）; WAHLAP 噜彼熊营口站前万达店 F4-B-B; identical coords",
+      "note": "噜彼熊 营口站前万达 F4; keep_id=2326 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3180,
+      "name": "宇宙英雄大连金州店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 2334 (地一城宇宙英雄游乐体验中心); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4028",
+      "evidence_quote": "BC s/4028 地一城宇宙英雄; WAHLAP 宇宙英雄大连金州店 same 向应广场地下",
+      "note": "宇宙英雄 大连金州 地一城; keep_id=2334 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2543,
+      "name": "大潮玩沈阳铁西龙之梦店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 2542 (大潮玩家庭娱乐中心); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2114",
+      "evidence_quote": "BC s/2114 大潮玩家庭娱乐中心 建设西路2号龙之梦2楼东侧; WAHLAP twin same address",
+      "note": "大潮玩 铁西龙之梦 2F; keep_id=2542 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3385,
+      "name": "富虹动漫城明山富虹广场店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['chunithm', 'maimai_dx'])",
+      "proposed": "duplicate of id 3384 (富虹动漫城); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3905",
+      "evidence_quote": "BC s/3905 富虹动漫城; WAHLAP 富虹动漫城明山富虹广场店 same",
+      "note": "富虹动漫城 本溪明山 富虹广场3F; keep_id=3384 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3399,
+      "name": "小猪泰德大连中央大道店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['chunithm', 'maimai_dx'])",
+      "proposed": "duplicate of id 3398 (小猪泰德儿童乐园); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6553",
+      "evidence_quote": "BC s/6553 小猪泰德儿童乐园; WAHLAP 小猪泰德大连中央大道店 same address",
+      "note": "小猪泰德 大连中央大道 3F; keep_id=3398 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3688,
+      "name": "拾光派对沈阳大东区大悦城店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['chunithm', 'maimai_dx'])",
+      "proposed": "duplicate of id 3693 (拾光派对（中街大悦城店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2891",
+      "evidence_quote": "BC s/2891 拾光派对（中街大悦城店） 大悦城4楼 A426; WAHLAP 拾光派对沈阳大东区大悦城店 A馆426",
+      "note": "拾光派对 中街大悦城 A426; keep_id=3693 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3689,
+      "name": "拾光派对沈阳大东吾悦店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 3692 (拾光派对超级乐园); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6928",
+      "evidence_quote": "BC s/6928 拾光派对超级乐园 吾悦广场负一楼; WAHLAP 拾光派对沈阳大东吾悦店 same",
+      "note": "拾光派对 中街吾悦 负一楼; keep_id=3692 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3690,
+      "name": "拾光派对沈阳沈河店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 3694 (拾光派对（佳兆业店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4363",
+      "evidence_quote": "BC s/4363 拾光派对（佳兆业店） 佳兆业广场3F; WAHLAP 拾光派对沈阳沈河店 same",
+      "note": "拾光派对 佳兆业 3F; keep_id=3694 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3090,
+      "name": "奇趣联盟辽阳文圣万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 3089 (奇趣联盟儿童乐园); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4843",
+      "evidence_quote": "BC s/4843 奇趣联盟儿童乐园 辽阳万达二楼; WAHLAP 奇趣联盟辽阳文圣万达店 same",
+      "note": "奇趣联盟 辽阳万达 2F; keep_id=3089 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4205,
+      "name": "星际嘉年华沈阳沈辽万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['chunithm', 'maimai_dx'])",
+      "proposed": "duplicate of id 4204 (星际嘉年华娱乐中心); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4396",
+      "evidence_quote": "BC s/4396 星际嘉年华娱乐中心 铁西万达F2; WAHLAP 星际嘉年华沈阳沈辽万达店 same mall",
+      "note": "星际嘉年华 铁西/沈辽万达 2F; keep_id=4204 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4441,
+      "name": "极速翼丹东振兴万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4447 (极速翼（丹东万达店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/517",
+      "evidence_quote": "BC s/517 极速翼（丹东万达店） 锦山大街298号万达二楼; WAHLAP 极速翼丹东振兴万达店 same; id 1478 宝贝王 is different shop same mall",
+      "note": "极速翼 丹东万达 2F; keep_id=4447 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4446,
+      "name": "极速翼电玩盘锦兴隆台店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4444 (极速翼电玩娱乐中心); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4019",
+      "evidence_quote": "BC s/4019 极速翼电玩娱乐中心 鹏欣水游城负一楼; WAHLAP 极速翼电玩盘锦兴隆台店 same",
+      "note": "极速翼 盘锦水游城 B1; keep_id=4444 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4542,
+      "name": "梦想街区大连甘井子万达广场店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4541 (梦想街区大连周水子万达店); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6463",
+      "evidence_quote": "BC s/6463 梦想街区大连周水子万达店; WAHLAP 梦想街区大连甘井子万达广场店 same mall 2F",
+      "note": "梦想街区 甘井子/周水子万达 2F; keep_id=4541 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4543,
+      "name": "梦想街区大连金州佰都荟购物广场店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4544 (梦想街区（大连金州栢都荟店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6383",
+      "evidence_quote": "BC s/6383 梦想街区（大连金州栢都荟店）; WAHLAP 梦想街区大连金州佰都荟购物广场店 same",
+      "note": "梦想街区 金州栢都荟 2F; keep_id=4544 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4581,
+      "name": "欢乐代码葫芦岛龙港财富街店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4580 (欢乐代码家庭娱乐中心（富尔沃财富街店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5619",
+      "evidence_quote": "BC s/5619 欢乐代码...富尔沃财富街三楼; WAHLAP twin same",
+      "note": "欢乐代码 葫芦岛财富街 3F; keep_id=4580 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4620,
+      "name": "欢乐猩球沈阳沈河万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4616 (欢乐猩球嘉年华(万达广场店)); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3262",
+      "evidence_quote": "BC s/3262 欢乐猩球嘉年华(万达广场店) 文化路81号万达F3; WAHLAP 欢乐猩球沈阳沈河万达店 same",
+      "note": "欢乐猩球 沈河万达 F3; keep_id=4616 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4621,
+      "name": "欢乐猩球沈阳浑南奥体店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4617 (欢乐猩球嘉年华(奥体万达店)); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6071",
+      "evidence_quote": "BC s/6071 欢乐猩球嘉年华(奥体万达店); WAHLAP 欢乐猩球沈阳浑南奥体店 same",
+      "note": "欢乐猩球 奥体万达 2F; keep_id=4617 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4623,
+      "name": "欢乐猩球沈阳铁西万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4618 (欢乐猩球嘉年华（铁西店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6092",
+      "evidence_quote": "BC s/6092 欢乐猩球嘉年华（铁西店） 沈辽路万达; WAHLAP 欢乐猩球沈阳铁西万达店 same area",
+      "note": "欢乐猩球 铁西万达; keep_id=4618 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4622,
+      "name": "欢乐猩球沈阳浑南龙湖天街",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4619 (欢乐猩球嘉年华（龙湖天街店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7324",
+      "evidence_quote": "BC s/7324 欢乐猩球嘉年华（龙湖天街店）; WAHLAP 欢乐猩球沈阳浑南龙湖天街 same",
+      "note": "欢乐猩球 龙湖天街 2F; keep_id=4619 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4722,
+      "name": "汤姆熊大连甘井子亿合城店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 1385 (【舞萌故障】汤姆熊欢乐世界（亿合城三楼店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5352",
+      "evidence_quote": "BC s/5352 【舞萌故障】汤姆熊...亿合城F3; WAHLAP 汤姆熊大连甘井子亿合城店 same mall 3F",
+      "note": "汤姆熊 甘井子亿合城 3F; keep_id=1385 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4724,
+      "name": "汤姆熊大连金州安盛店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4773 (汤姆熊欢乐世界金州安盛店); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6240",
+      "evidence_quote": "BC s/6240 汤姆熊欢乐世界金州安盛店 F5; WAHLAP 汤姆熊大连金州安盛店 same",
+      "note": "汤姆熊 金州安盛 5F; keep_id=4773 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3324,
+      "name": "宝贝王营口万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 3758 (新宝贝王家庭娱乐中心（营口万达店）); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7005",
+      "evidence_quote": "BC s/7005 新宝贝王家庭娱乐中心（营口万达店） 2F-A; WAHLAP 宝贝王营口万达店 2F same mall",
+      "note": "宝贝王 营口万达 2F; keep_id=3758 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4036,
+      "name": "星际乐迪营口鲅鱼圈万达店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 4034 (星际乐迪); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7257",
+      "evidence_quote": "BC s/7257 星际乐迪 万达广场3楼东侧; WAHLAP 星际乐迪营口鲅鱼圈万达店 same",
+      "note": "星际乐迪 营口鲅鱼圈万达 3F; keep_id=4034 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2317,
+      "name": "嘿棒潮玩星球沈阳财富中心店",
+      "field": "other",
+      "current": "separate open venue (src=['wahlap'], games=['maimai_dx'])",
+      "proposed": "duplicate of id 2316 (嘿棒潮玩星球(荣信·财富广场店)); merge/remove this row",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5165",
+      "evidence_quote": "BC s/5165 嘿棒潮玩星球(荣信·财富广场店); WAHLAP 嘿棒潮玩星球沈阳财富中心店 same mall",
+      "note": "嘿棒潮玩星球 沈阳财富中心 3F; keep_id=2316 usually has richer BemaniCN machine list.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1097,
+      "name": "G2街区盘锦兴隆万达店",
+      "field": "other",
+      "current": "separate WAHLAP maimai venue at 盘锦兴隆万达 F1",
+      "proposed": "same mall as id 945 (51区超级乐园盘锦万达店) but different WAHLAP placeIds; human merge judgment needed",
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP lists G2街区盘锦兴隆万达店 placeId=3966 and 51区超级乐园盘锦万达店 placeId=4178 as distinct placeIds",
+      "note": "Different placeIds so they may be real separate maimai locations in the same mall. Do not auto-merge.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 867,
+      "name": "(装修中）玩家来也（全运路万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7328",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 912,
+      "name": "50动漫游艺空间",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5254",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 945,
+      "name": "51区超级乐园盘锦万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4737",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1142,
+      "name": "HiSome嗨森汇潮玩俱乐部",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1597",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1326,
+      "name": "Tree窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4013",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1353,
+      "name": "wonderland奇境家庭娱乐中心（长白鹿特丹店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6400",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1385,
+      "name": "【舞萌故障】汤姆熊欢乐世界（亿合城三楼店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5352",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1459,
+      "name": "万有引力沈阳欧亚长青城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1484",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1460,
+      "name": "万有引力沈阳盛京大东城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1968",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1478,
+      "name": "万达宝贝王（丹东店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6427",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1493,
+      "name": "三声筋斗云gt鞍山万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6466",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1521,
+      "name": "东方英雄 （本溪新玛特）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5358",
+      "evidence_quote": "start_time=9 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1522,
+      "name": "东方英雄嘉年华（大悦城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6186",
+      "evidence_quote": "start_time=10 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1523,
+      "name": "东方英雄嘉年华（碧乐城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2839",
+      "evidence_quote": "start_time=9 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1524,
+      "name": "东方英雄嘉年华（站前店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3800",
+      "evidence_quote": "start_time=9 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1526,
+      "name": "东方英雄（盘锦水游城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1010",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1541,
+      "name": "丹东嗨翻（湾岸殿堂圣地）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7110",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1562,
+      "name": "乐动城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7125",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1605,
+      "name": "乐满堂家庭游乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1896",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1670,
+      "name": "乐缘地带电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "08:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3387",
+      "evidence_quote": "start_time=8 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1712,
+      "name": "乖贝特",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7128",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1848,
+      "name": "凯蒂星动电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6536",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1849,
+      "name": "创世纪宇宙英雄（罗斯福店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7199",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 1943,
+      "name": "卡奇部落家庭娱乐中心（沈阳大悦城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/87",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2024,
+      "name": "双燕天河城炫舞星河",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6416",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2109,
+      "name": "和音屋x出勤公司沈阳中街店",
+      "field": "hours",
+      "current": null,
+      "proposed": "01:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7051",
+      "evidence_quote": "start_time=1 end_time=24 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2220,
+      "name": "嗨宝潮玩家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3981",
+      "evidence_quote": "start_time=9 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2316,
+      "name": "嘿棒潮玩星球(荣信·财富广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5165",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2326,
+      "name": "噜彼熊超级乐园（营口万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4801",
+      "evidence_quote": "start_time=9 end_time=26 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2327,
+      "name": "四隆主题公园",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/707",
+      "evidence_quote": "start_time=10 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2334,
+      "name": "地一城宇宙英雄游乐体验中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4028",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2542,
+      "name": "大潮玩家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2114",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2697,
+      "name": "天朗电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-08:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/106",
+      "evidence_quote": "start_time=9 end_time=8 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 2978,
+      "name": "头号玩家（新抚万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5650",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3089,
+      "name": "奇趣联盟儿童乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4843",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3202,
+      "name": "宇鑫动漫城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7024",
+      "evidence_quote": "start_time=10 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3251,
+      "name": "宝贝王大连高新万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4279",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3384,
+      "name": "富虹动漫城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3905",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3398,
+      "name": "小猪泰德儿童乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6553",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3519,
+      "name": "开心季万达宝贝王",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5396",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3527,
+      "name": "开星客大连开发万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3970",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3691,
+      "name": "拾光派对盘锦双台城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4738",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3692,
+      "name": "拾光派对超级乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6928",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3693,
+      "name": "拾光派对（中街大悦城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2891",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3694,
+      "name": "拾光派对（佳兆业店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4363",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3757,
+      "name": "新奇电玩",
+      "field": "hours",
+      "current": null,
+      "proposed": "07:00-09:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3827",
+      "evidence_quote": "start_time=7 end_time=9 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3758,
+      "name": "新宝贝王家庭娱乐中心（营口万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7005",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 3768,
+      "name": "新都电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "07:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6863",
+      "evidence_quote": "start_time=7 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4034,
+      "name": "星际乐迪",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7257",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4129,
+      "name": "星际传奇沈阳三台子万象汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4701",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4131,
+      "name": "星际传奇沈阳吾悦广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1872",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4132,
+      "name": "星际传奇沈阳铁西万象汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4446",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4173,
+      "name": "星际传奇（K11店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5407",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4177,
+      "name": "星际传奇（和平环宇城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2237",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4185,
+      "name": "星际传奇（沈阳皇姑万象汇店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1734",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4204,
+      "name": "星际嘉年华娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4396",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4206,
+      "name": "星际家庭电玩中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6862",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4301,
+      "name": "智慧宝宝亲子乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7283",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4316,
+      "name": "暴走猫电玩（亿合城四楼店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6968",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4442,
+      "name": "极速翼大连甘井子万达广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7081",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4443,
+      "name": "极速翼庄河万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7163",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4444,
+      "name": "极速翼电玩娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4019",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4445,
+      "name": "极速翼电玩娱乐中心（锦绣前程店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5575",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4447,
+      "name": "极速翼（丹东万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/517",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4524,
+      "name": "梦幻城游乐场（逸彩城店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6539",
+      "evidence_quote": "start_time=9 end_time=20 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4541,
+      "name": "梦想街区大连周水子万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6463",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4544,
+      "name": "梦想街区（大连金州栢都荟店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6383",
+      "evidence_quote": "start_time=10 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4580,
+      "name": "欢乐代码家庭娱乐中心（富尔沃财富街店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5619",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4589,
+      "name": "欢乐城市嘉年华沈阳沈河店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6260",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4616,
+      "name": "欢乐猩球嘉年华(万达广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3262",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4617,
+      "name": "欢乐猩球嘉年华(奥体万达店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6071",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4618,
+      "name": "欢乐猩球嘉年华（铁西店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6092",
+      "evidence_quote": "start_time=9 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4619,
+      "name": "欢乐猩球嘉年华（龙湖天街店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7324",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4672,
+      "name": "欧乐家庭成长中心本溪万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6508",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4684,
+      "name": "永利汇娱乐城",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3678",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4721,
+      "name": "汤姆熊大连开发区亿合城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3558",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4773,
+      "name": "汤姆熊欢乐世界金州安盛店",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6240",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 4787,
+      "name": "汤姆熊欢乐世界（沈阳龙之梦店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4581",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN integer hour fields)",
+      "note": "BemaniCN community hours; not always accurate. end>24 means next day.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "玩家来也(太原街万达店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家来也(太原街万达店)",
+        "addr": "辽宁省沈阳市和平区太原街万达广场三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7167",
+        "wahlap_placeId": "5238"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7167",
+      "evidence_quote": "BC s/7167 name=玩家来也(太原街万达店) addr=辽宁省沈阳市和平区南一马路沈阳太原街万达广场 status=1 arcades=[maimai_dxx2(2026), chunithmx2(2026最新), taikox1(2026秋)] updated_at=2026-07-31T07:28:05.000000Z | WAHLAP maimai placeId=5238 arcadeName=玩家来也沈阳太原街万达店 address=辽宁省沈阳市和平区太原街万达广场三楼玩家来也 | WAHLAP chunithm placeId=5238 arcadeName=玩家来也沈阳太原街万达店",
+      "note": "WAHLAP placeId 5238; BC s/7167",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "玩家来也家庭娱乐中心（北一路万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家来也家庭娱乐中心（北一路万达店）",
+        "addr": "辽宁省沈阳市铁西区北一路万达广场三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5256",
+        "wahlap_placeId": "3829"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5256",
+      "evidence_quote": "BC s/5256 name=玩家来也家庭娱乐中心（北一路万达店） addr=北一路万达广场三楼 status=1 arcades=[maimai_dxx1(2026), chunithmx2(2026), taikox1(2026春)] updated_at=2026-07-25T09:26:47.000000Z | WAHLAP maimai placeId=3829 arcadeName=玩家来也沈阳铁西万达店 address=辽宁省沈阳市铁西区北一路万达广场3楼玩家来也 | WAHLAP chunithm placeId=3829 arcadeName=玩家来也沈阳铁西万达店",
+      "note": "WAHLAP placeId 3829; BC s/5256",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "玩家来也（锦州万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家来也（锦州万达店）",
+        "addr": "锦州市太和区万达广场3楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6871",
+        "wahlap_placeId": "4884"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6871",
+      "evidence_quote": "BC s/6871 name=玩家来也（锦州万达店） addr=科技路21号（近渤海大学） status=1 arcades=[maimai_dxx2(2026), chunithmx2(2026), taikox1(国行)] updated_at=2026-07-29T15:00:08.000000Z | WAHLAP maimai placeId=4884 arcadeName=玩家来也锦州太和万达店 address=锦州市太和区万达广场3楼玩家来也电玩城 | WAHLAP chunithm placeId=4884 arcadeName=玩家来也锦州太和万达店",
+      "note": "WAHLAP placeId 4884; BC s/6871",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "银河系（印象城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "银河系（印象城店）",
+        "addr": "辽宁省大连市西岗区中山路281号印象城A座L201",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 3,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/92",
+        "wahlap_placeId": "1232"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/92",
+      "evidence_quote": "BC s/92 name=银河系（印象城店） addr=辽宁省大连市西岗区中山路281号印象城A座L201银河系TheArcade status=1 arcades=[maimai_dxx3(Ver.CN1.56-A), chunithmx2(Ver.CN1.32), taikox1(2025秋)] updated_at=2026-07-21T09:47:02.000000Z | WAHLAP maimai placeId=1232 arcadeName=银河系大连恒隆广场店 address=辽宁省大连市西岗区中山路281号印象城A栋二楼 | WAHLAP chunithm placeId=1232 arcadeName=银河系大连恒隆广场店",
+      "note": "WAHLAP placeId 1232; BC s/92",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "金色年华电玩沙龙（市府恒隆店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "金色年华电玩沙龙（市府恒隆店）",
+        "addr": "沈阳市沈河区青年大街1号市府恒隆广场负一层B127",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6252",
+        "wahlap_placeId": "4512"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6252",
+      "evidence_quote": "BC s/6252 name=金色年华电玩沙龙（市府恒隆店） addr=市府恒隆广场负一层B127 status=1 arcades=[maimai_dxx2(2026), chunithmx2(2026), taikox1(2026秋)] updated_at=2026-07-31T07:30:00.000000Z | WAHLAP maimai placeId=4512 arcadeName=金色年华市府恒隆店 address=沈阳市沈河区青年大街1号 市府恒隆广场负一层 B127 | WAHLAP chunithm placeId=4512 arcadeName=金色年华市府恒隆店",
+      "note": "WAHLAP placeId 4512; BC s/6252",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "金色年华潮玩中心（皇城恒隆店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "金色年华潮玩中心（皇城恒隆店）",
+        "addr": "辽宁省沈阳市沈河区中街路128号皇城恒隆广场3楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 3,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/2741",
+        "wahlap_placeId": "2445"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2741",
+      "evidence_quote": "BC s/2741 name=金色年华潮玩中心（皇城恒隆店） addr=辽宁省沈阳市沈河区皇城街道中街路128号皇城恒隆广场3楼300-302&346号铺位金色年华(中街恒隆店) status=1 arcades=[maimai_dxx3(2026), chunithmx2(2026), taikox1(2026秋)] updated_at=2026-07-31T11:42:30.000000Z | WAHLAP maimai placeId=2445 arcadeName=金色年华皇城恒隆广场店 address=辽宁省沈阳市沈河区中街路128号恒隆广场3楼 | WAHLAP chunithm placeId=2445 arcadeName=金色年华皇城恒隆广场店",
+      "note": "WAHLAP placeId 2445; BC s/2741 WEC2026",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "金色年华电玩沙龙（中街大悦城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "金色年华电玩沙龙（中街大悦城店）",
+        "addr": "辽宁省沈阳市大东区东中街大悦城B馆四楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 3,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6070",
+        "wahlap_placeId": "4414"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6070",
+      "evidence_quote": "BC s/6070 name=金色年华电玩沙龙（中街大悦城店） addr=东中街大悦城B馆四楼 status=1 arcades=[maimai_dxx3(2026), chunithmx2(2026), taikox1(2026春)] updated_at=2026-07-19T07:58:25.000000Z | WAHLAP maimai placeId=4414 arcadeName=金色年华沈阳大东大悦城店 address=辽宁省沈阳市大东区小东路5号大悦城B座4楼金色年华",
+      "note": "WAHLAP placeId 4414; BC s/6070",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "金色年华电玩沙龙（于洪新玛特店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "金色年华电玩沙龙（于洪新玛特店）",
+        "addr": "辽宁省沈阳市于洪区黄海路45号于洪新玛特7F",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/998",
+        "wahlap_placeId": "1473"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/998",
+      "evidence_quote": "BC s/998 name=金色年华电玩沙龙（于洪新玛特店） addr=黄海路45号于洪新玛特7F status=1 arcades=[maimai_dxx2(2026), chunithmx2(2026), taikox1(2026春)] updated_at=2026-07-18T12:33:42.000000Z | WAHLAP maimai placeId=1473 arcadeName=金色年华于洪新玛特店 address=辽宁省沈阳市于洪区黄海路45号新玛特7楼金色年华电玩",
+      "note": "WAHLAP placeId 1473; BC s/998",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷玩猩球（沈阳中街吾悦店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩猩球（沈阳中街吾悦店）",
+        "addr": "辽宁省沈阳市大东区津桥路7号吾悦广场三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/2801",
+        "wahlap_placeId": "2471"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2801",
+      "evidence_quote": "BC s/2801 name=酷玩猩球（沈阳中街吾悦店） addr=大东区津桥路7号吾悦广场三楼 status=1 arcades=[maimai_dxx2(2026), chunithmx2(国行2026), taikox1(国行)] updated_at=2026-07-08T10:18:44.000000Z | WAHLAP maimai placeId=2471 arcadeName=酷玩猩球沈阳吾悅广场店 address=辽宁省沈阳市大东区吾悅广场三楼酷玩猩球游乐场 | WAHLAP chunithm placeId=2471 arcadeName=酷玩猩球沈阳吾悅广场店",
+      "note": "WAHLAP placeId 2471; BC s/2801",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷乐光年家庭娱乐中心（玖伍文化城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐光年家庭娱乐中心（玖伍文化城店）",
+        "addr": "辽宁省沈阳市和平区太原北街95号玖伍文化城一楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5439",
+        "wahlap_placeId": "5076"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5439",
+      "evidence_quote": "BC s/5439 name=酷乐光年家庭娱乐中心（玖伍文化城店） addr=太原北街95号玖伍文化城一楼 status=1 arcades=[maimai_dxx1(2026), 宝可梦明耀之星x1(国行)] updated_at=2026-07-17T08:15:37.000000Z | WAHLAP maimai placeId=5076 arcadeName=酷乐光年沈阳和平店 address=辽宁省沈阳市和平区玖伍文化城一楼酷乐光年家庭游乐中心",
+      "note": "WAHLAP placeId 5076; BC s/5439",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "超级玩咖沈阳沈北万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级玩咖沈阳沈北万达店",
+        "addr": "辽宁省沈阳市沈北新区蒲昌路沈北万达广场二楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/1400",
+        "wahlap_placeId": "1658"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1400",
+      "evidence_quote": "BC s/1400 name=超级玩咖沈阳沈北万达店 addr=蒲昌路沈北万达广场二楼超级玩咖 status=1 arcades=[maimai_dxx1(2026)] updated_at=2026-06-30T03:09:48.000000Z | WAHLAP maimai placeId=1658 arcadeName=超级玩咖沈阳沈北万达店 address=辽宁省沈阳市沈北新区蒲昌路万达广场二楼超级玩咖",
+      "note": "WAHLAP placeId 1658; BC s/1400",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "蓝猫精灵潮玩中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "蓝猫精灵潮玩中心",
+        "addr": "辽宁省沈阳市沈河区文化路81号万达广场5楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3096",
+        "wahlap_placeId": "2663"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3096",
+      "evidence_quote": "BC s/3096 name=蓝猫精灵潮玩中心 addr=文化路81号万达广场5楼 status=1 arcades=[maimai_dxx1(2026), 宝可梦明耀之星x1(星光第四弹)] updated_at=2026-07-12T08:59:18.000000Z | WAHLAP maimai placeId=2663 arcadeName=蓝猫精灵沈阳沈河万达店 address=辽宁省沈阳市沈河区文化路81号万达广场5楼蓝猫精灵潮玩中心",
+      "note": "WAHLAP placeId 2663; BC s/3096",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "玩计划家庭娱乐中心（k11店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩计划家庭娱乐中心（k11店）",
+        "addr": "辽宁省沈阳市和平区博览路2甲1号K11购物艺术中心2层",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3966",
+        "wahlap_placeId": "3950"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3966",
+      "evidence_quote": "BC s/3966 name=玩计划家庭娱乐中心（k11店） addr=博览路2甲1号k11购物艺术中心2层2029-2030店铺 status=1 arcades=[maimai_dxx1(2026), 宝可梦明耀之星x1(国行)] updated_at=2026-07-16T10:17:46.000000Z | WAHLAP maimai placeId=3950 arcadeName=玩计划沈阳和平K11店 address=辽宁省沈阳市和平区博览路2甲1号K11购物艺术中心2楼玩计划",
+      "note": "WAHLAP placeId 3950; BC s/3966; id 4173 is different K11 shop",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "风云再起游乐汇（沈北华强广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起游乐汇（沈北华强广场店）",
+        "addr": "辽宁省沈阳市沈北新区道义南大街8号沈北华强广场3F314",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/608",
+        "wahlap_placeId": "1304"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/608",
+      "evidence_quote": "BC s/608 name=风云再起游乐汇（沈北华强广场店） addr=道义南大街8号沈北华强广场3F314 status=1 arcades=[maimai_dxx2(2026), taikox1(2026春), taikox1(12亚)] updated_at=2026-07-08T09:56:38.000000Z | WAHLAP maimai placeId=1304 arcadeName=风云再起沈阳沈北华强广场店 address=辽宁省沈阳市沈北新区道义街道华强广场三楼风云再起",
+      "note": "WAHLAP placeId 1304; BC s/608",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "福熊电玩城/熊爪爪夹机社（冰山慧谷熊洞街店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "福熊电玩城/熊爪爪夹机社（冰山慧谷熊洞街店）",
+        "addr": "辽宁省大连市沙河口区西南路888号冰山慧谷D4栋熊洞街",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 4,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6086",
+        "wahlap_placeId": "4408"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6086",
+      "evidence_quote": "BC s/6086 name=福熊电玩城/熊爪爪夹机社（冰山慧谷熊洞街店） addr=辽宁省大连市沙河口区西南路888号冰山慧谷D4栋熊洞街 status=1 arcades=[maimai_dxx2(Ver.CN), chunithmx4(Ver.CN), taikox1(2025秋)] updated_at=2026-07-24T11:05:25.000000Z | WAHLAP maimai placeId=4408 arcadeName=福熊电玩城大连沙河口店 address=辽宁省大连市沙河口区冰山慧谷熊洞街 | WAHLAP chunithm placeId=4408 arcadeName=福熊电玩城大连沙河口店",
+      "note": "WAHLAP placeId 4408; BC s/6086",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "终极梦想电玩（中央大道店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "终极梦想电玩（中央大道店）",
+        "addr": "辽宁省大连市沙河口区中央大道吾悦广场三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3129",
+        "wahlap_placeId": "2682"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3129",
+      "evidence_quote": "BC s/3129 name=终极梦想电玩（中央大道店） addr=辽宁省大连市沙河口区西安路街道中央大道吾悦广场三楼终极梦想电玩(中央大道店) status=1 arcades=[maimai_dxx2(Ver.CN1.55), chunithmx1(Ver.CN1.30), taikox1(2026春)] updated_at=2026-06-11T05:59:24.000000Z | WAHLAP maimai placeId=2682 arcadeName=终极梦想大连沙河口吾悦广场店 address=辽宁省大连市沙河口区中央大道吾悦广场3楼 | WAHLAP chunithm placeId=2682 arcadeName=终极梦想大连沙河口吾悦广场店",
+      "note": "WAHLAP placeId 2682; BC s/3129",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "终极梦想电玩（恒隆店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "终极梦想电玩（恒隆店）",
+        "addr": "辽宁省大连市西岗区五四路66号大连恒隆广场L4东区",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4541",
+        "wahlap_placeId": "3461"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4541",
+      "evidence_quote": "BC s/4541 name=终极梦想电玩（恒隆店） addr=辽宁省大连市西岗区白云街道五四路66号大连恒隆广场L4东区445-448号终极梦想(恒隆广场店) status=1 arcades=[maimai_dxx1(Ver.CN), taikox1(2026), 炸弹少女x2(华立国服)] updated_at=2026-07-28T05:16:29.000000Z | WAHLAP maimai placeId=3461 arcadeName=终极梦想大连西岗店 address=辽宁省大连市西岗区恒隆广场四楼终极梦想",
+      "note": "WAHLAP placeId 3461; BC s/4541",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "缤纷幻想电玩城（银泰城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "缤纷幻想电玩城（银泰城店）",
+        "addr": "辽宁省大连市中山区银泰城2层L229",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7266",
+        "wahlap_placeId": "5293"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7266",
+      "evidence_quote": "BC s/7266 name=缤纷幻想电玩城（银泰城店） addr=辽宁省大连市中山区银泰城2层L229铺位缤纷幻想电玩城(银泰店) status=1 arcades=[maimai_dxx1(Ver-CN 1.56A), taikox1(2026春), 宝可梦明耀之星x2(银河)] updated_at=2026-07-28T02:57:55.000000Z | WAHLAP maimai placeId=5293 arcadeName=缤纷幻想城大连中山银泰城店 address=辽宁省大连市中山区青泥洼桥街道银泰城2楼缤纷幻想电玩城",
+      "note": "WAHLAP placeId 5293; BC s/7266",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "缤纷幻想电玩城（高新锦辉店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "缤纷幻想电玩城（高新锦辉店）",
+        "addr": "辽宁省大连市甘井子区高新园锦辉奥莱 G201",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5638",
+        "wahlap_placeId": "4196"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5638",
+      "evidence_quote": "BC s/5638 name=缤纷幻想电玩城（高新锦辉店） addr=辽宁省大连市甘井子区G201缤纷幻想电玩城(锦辉奥莱店) status=1 arcades=[maimai_dxx1(2026), 宝可梦明耀之星x1(银河第2弹)] updated_at=2026-07-22T08:19:00.000000Z | WAHLAP maimai placeId=4196 arcadeName=缤纷幻想大连甘井子奥莱店 address=辽宁省大连市甘井子区高新园锦辉奥莱店二楼缤纷幻想电玩城",
+      "note": "WAHLAP placeId 4196; BC s/5638",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "筋斗云（大连开发区万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "筋斗云（大连开发区万达店）",
+        "addr": "辽宁省大连市金普区经开/开发区万达广场3楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7196",
+        "wahlap_placeId": "5192"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7196",
+      "evidence_quote": "BC s/7196 name=筋斗云（大连开发区万达店） addr=开发区万达3F status=1 arcades=[maimai_dxx1(2026), taikox1(12亚), 头文字Dx4(激斗)] updated_at=2026-07-22T12:18:41.000000Z | WAHLAP maimai placeId=5192 arcadeName=筋斗云大连金普万达店 address=辽宁省大连市金普区经开万达广场3楼筋斗云",
+      "note": "WAHLAP placeId 5192; BC s/7196; taiko old gen title_id 15",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "炫动星球电玩城",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "炫动星球电玩城",
+        "addr": "辽宁省盘锦市兴隆台区双兴南路71号万达广场三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7118",
+        "wahlap_placeId": "4947"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7118",
+      "evidence_quote": "BC s/7118 name=炫动星球电玩城 addr=双兴南路71号万达广场三楼 status=1 arcades=[maimai_dxx2(国服), chunithmx2(国服)] updated_at=2026-07-16T10:52:08.000000Z | WAHLAP maimai placeId=4947 arcadeName=炫动星球盘锦兴隆台万达店 address=辽宁省盘锦市兴隆台区兴盛街道万达社区万达商业广场室内步行街3F层3F-A号商铺 | WAHLAP chunithm placeId=4947 arcadeName=炫动星球盘锦兴隆台万达店",
+      "note": "WAHLAP placeId 4947; BC s/7118",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "电顽橙子潮玩体验中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电顽橙子潮玩体验中心",
+        "addr": "辽宁省盘锦市双台子区渤海路久柏埠商场负一F154",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/4249",
+        "wahlap_placeId": "3337"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4249",
+      "evidence_quote": "BC s/4249 name=电顽橙子潮玩体验中心 addr=渤海路久柏埠商场负一F154室 status=1 arcades=[maimai_dxx1(国服), chunithmx1(国服)] updated_at=2026-06-25T18:06:39.000000Z | WAHLAP maimai placeId=3337 arcadeName=电顽橙子盘锦双台子店 address=辽宁省盘锦市双台子区久柏埠地下商业街F145电顽橙子",
+      "note": "WAHLAP placeId 3337; BC s/4249",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "浴兰汤锦州太和店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "浴兰汤锦州太和店",
+        "addr": "辽宁省锦州市太和区209省道瑞盛晶座",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6096",
+        "wahlap_placeId": "4368"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6096",
+      "evidence_quote": "BC s/6096 name=浴兰汤锦州太和店 addr=209省道瑞盛晶座 status=1 arcades=[maimai_dxx1(2025), chunithmx2(2026), taikox1(2026春)] updated_at=2026-06-07T06:58:48.000000Z | WAHLAP maimai placeId=4368 arcadeName=浴兰汤锦州太和店 address=辽宁省锦州市太和区209省道瑞盛晶座 | WAHLAP chunithm placeId=4368 arcadeName=浴兰汤锦州太和店",
+      "note": "WAHLAP placeId 4368; BC s/6096",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "泡泡星球家庭娱乐中心（古塔区店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "泡泡星球家庭娱乐中心（古塔区店）",
+        "addr": "辽宁省锦州市古塔区辽西郡3楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6093",
+        "wahlap_placeId": "4373"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6093",
+      "evidence_quote": "BC s/6093 name=泡泡星球家庭娱乐中心（古塔区店） addr=保安街道中央大街二段138号辽西郡3楼 status=1 arcades=[maimai_dxx2(2026)] updated_at=2026-06-30T15:49:40.000000Z | WAHLAP maimai placeId=4373 arcadeName=泡泡星球锦州古塔店 address=辽宁省锦州市古塔区辽西郡三楼泡泡星球",
+      "note": "WAHLAP placeId 4373; BC s/6093",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "超级星座家庭娱乐中心(顺城万达店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级星座家庭娱乐中心(顺城万达店)",
+        "addr": "辽宁省抚顺市顺城万达广场3楼BA号商铺",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3602",
+        "wahlap_placeId": "3268"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3602",
+      "evidence_quote": "BC s/3602 name=超级星座家庭娱乐中心(顺城万达店) addr=顺城万达广场3楼BA号商铺 status=1 arcades=[maimai_dxx1(2025), 宝可梦明耀之星x2(国行)] updated_at=2026-05-26T07:16:04.000000Z | WAHLAP maimai placeId=3268 arcadeName=超级星座抚顺顺城万达店 address=辽宁省抚顺市顺城万达广场3F-BA商铺超级星座",
+      "note": "WAHLAP placeId 3268; BC s/3602",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "超级星座（新抚万达店）（原大玩家）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级星座（新抚万达店）（原大玩家）",
+        "addr": "辽宁省抚顺市新抚区浑河南路中段56号新抚万达广场3楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/105",
+        "wahlap_placeId": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/105",
+      "evidence_quote": "BC s/105 name=超级星座（新抚万达店）（原大玩家） addr=浑河南路中段56号新抚万达广场3楼 status=1 arcades=[maimai_dxx1(2026), taikox1(最新最热), 湾岸MIDNIGHTx4(5DX PLUS)] updated_at=2026-07-14T11:55:42.000000Z",
+      "note": "BC s/105 new superstar ~2026-06-19; not id 2978 头号玩家 2F",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "米奇贝贝嘉年华（锦华广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "米奇贝贝嘉年华（锦华广场店）",
+        "addr": "鞍山市岫岩满族自治县锦华广场3F",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6524",
+        "wahlap_placeId": "4704"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6524",
+      "evidence_quote": "BC s/6524 name=米奇贝贝嘉年华（锦华广场店） addr=锦华广场3F status=1 arcades=[maimai_dxx2(2025)] updated_at=2026-03-29T04:13:48.000000Z | WAHLAP maimai placeId=4704 arcadeName=米奇贝贝嘉年华鞍山岫岩锦华广场店 address=鞍山市岫岩满族自治州锦华广场3F米奇贝贝嘉年华",
+      "note": "WAHLAP placeId 4704; BC s/6524",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "米奇贝贝嘉年华（真实惠购物广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "米奇贝贝嘉年华（真实惠购物广场店）",
+        "addr": "辽宁省营口市大石桥市南头检查站真实惠购物广场",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 2
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3041",
+        "wahlap_placeId": "3837"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3041",
+      "evidence_quote": "BC s/3041 name=米奇贝贝嘉年华（原环游嘉年华）（真实惠购物广场店） addr=南头检查站真实惠购物广场 status=1 arcades=[maimai_dxx1(2026), chunithmx2(2026), 宝可梦明耀之星x1(星光3弹)] updated_at=2026-06-12T17:06:53.000000Z | WAHLAP maimai placeId=3837 arcadeName=米奇贝贝嘉年华营口大石桥店 address=辽宁省营口市大石桥市检查站真实惠购物广场3楼米奇贝贝嘉年华",
+      "note": "WAHLAP placeId 3837; BC s/3041",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷乐光年（鞍山店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐光年（鞍山店）",
+        "addr": "鞍山市铁东区碧乐城4F",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7224",
+        "wahlap_placeId": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7224",
+      "evidence_quote": "BC s/7224 name=酷乐光年（鞍山店） addr=碧乐城4F status=1 arcades=[maimai_dxx1(2026), taikox1(国服), 炸弹少女x2(新版)] updated_at=2026-07-30T01:23:01.000000Z",
+      "note": "BC s/7224; machines from Shenyang 酷乐光年",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷游猩球",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷游猩球",
+        "addr": "辽宁省阜新市细河区解放大街甲17号万达广场三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7000",
+        "wahlap_placeId": "4903"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7000",
+      "evidence_quote": "BC s/7000 name=酷游猩球 addr=万达广场3F\n\n细河区解放大街甲17号室内3FA - B status=1 arcades=[maimai_dxx1(2026 CN1.56-B), 头文字Dx2(激斗 1.25.00 CHN +D)] updated_at=2026-07-23T05:58:30.000000Z | WAHLAP maimai placeId=4903 arcadeName=酷游猩球阜新细河万达广场店 address=辽宁省阜新市细河区解放大街甲17号万达广场三楼酷游猩球",
+      "note": "WAHLAP placeId 4903; BC s/7000",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "满载客电玩台球俱乐部",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "满载客电玩台球俱乐部",
+        "addr": "辽宁省丹东市宽甸县新世纪三楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6673",
+        "wahlap_placeId": "5102"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6673",
+      "evidence_quote": "BC s/6673 name=满载客电玩台球俱乐部 addr=宽甸新世纪三楼 status=1 arcades=[maimai_dxx1(CN1.50-D)] updated_at=2026-01-23T16:06:09.000000Z | WAHLAP maimai placeId=5102 arcadeName=满载客丹东宽甸新世纪店 address=辽宁省丹东市宽甸县新世纪三楼满载客电玩台球俱乐部",
+      "note": "WAHLAP placeId 5102; BC s/6673",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "玩家岛电玩城",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家岛电玩城",
+        "addr": "辽宁省大连市瓦房店市弘源购物广场五楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3020",
+        "wahlap_placeId": "2625"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3020",
+      "evidence_quote": "BC s/3020 name=玩家岛电玩城 addr=弘源购物广场五楼 status=1 arcades=[maimai_dxx1(2026)] updated_at=2026-06-14T16:35:35.000000Z | WAHLAP maimai placeId=2625 arcadeName=玩家岛大连弘源购物广场店 address=辽宁省大连市瓦房店市弘源购物广场5层",
+      "note": "WAHLAP placeId 2625; BC s/3020",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷乐光年家庭游乐中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐光年家庭游乐中心",
+        "addr": "辽宁省辽阳市白塔区新运大街73号友谊商城一部5楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3284",
+        "wahlap_placeId": "2797"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3284",
+      "evidence_quote": "BC s/3284 name=酷乐光年家庭游乐中心 addr=新运大街73号5楼 status=1 arcades=[maimai_dxx1(国服)] updated_at=2026-01-05T18:16:25.000000Z | WAHLAP maimai placeId=2797 arcadeName=酷乐光年辽阳友谊商场店 address=辽宁省辽阳市白塔区新运大街73号友谊商城一部",
+      "note": "WAHLAP placeId 2797; BC s/3284",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "艺珑传奇亲子游乐中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "艺珑传奇亲子游乐中心",
+        "addr": "辽宁省辽阳市白塔区民主路75号友谊商城二部C座2楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/2310",
+        "wahlap_placeId": "2297"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2310",
+      "evidence_quote": "BC s/2310 name=艺珑传奇亲子游乐中心 addr=民主路75号友谊商城二部（万嘉店）C座F2 status=1 arcades=[maimai_dxx1(1.41), 头文字Dx4(8)] updated_at=2026-03-25T07:07:33.000000Z | WAHLAP maimai placeId=2297 arcadeName=艺珑传奇亲子游乐中心 address=辽宁省辽阳市白塔区民主路75-4A-207友谊商场二店C座2楼",
+      "note": "WAHLAP placeId 2297; BC s/2310",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "环游嘉年华阜新店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游嘉年华阜新店",
+        "addr": "辽宁省阜新市阜新蒙古族自治县文化路42号国贸大厦",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5248",
+        "wahlap_placeId": "3893"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5248",
+      "evidence_quote": "BC s/5248 name=环游嘉年华阜新店 addr=文化路42号国贸大厦 status=1 arcades=[maimai_dxx1(2026 CN1.56-B), taikox1(2026春)] updated_at=2026-07-29T02:27:30.000000Z | WAHLAP maimai placeId=3893 arcadeName=米奇贝贝嘉年华阜新蒙古族自治县店 address=辽宁省阜新市阜新蒙古族自治县人民大街42号国贸大厦2楼米奇贝贝嘉年华",
+      "note": "WAHLAP placeId 3893 may be same rebrand; BC s/5248",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "领尚环游乐园",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "领尚环游乐园",
+        "addr": "辽宁省营口市鲅鱼圈区商业大厦3F",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/5994",
+        "wahlap_placeId": "4361"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5994",
+      "evidence_quote": "BC s/5994 name=领尚环游乐园 addr=鲅鱼圈区商业大厦3F status=1 arcades=[maimai_dxx1(2025)] updated_at=2025-11-29T17:21:25.000000Z | WAHLAP maimai placeId=4361 arcadeName=领尚环游乐园营口鲅鱼圈店 address=辽宁省营口市鲅鱼圈区商业大厦三楼",
+      "note": "WAHLAP placeId 4361; BC s/5994",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "环游嘉年华（鲅鱼圈店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游嘉年华（鲅鱼圈店）",
+        "addr": "辽宁省营口市鲅鱼圈区真实惠二楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/3525",
+        "wahlap_placeId": "3991"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3525",
+      "evidence_quote": "BC s/3525 name=环游嘉年华（鲅鱼圈店） addr=鲅鱼圈区真实惠二楼环游嘉年华 status=1 arcades=[maimai_dxx1(舞萌DX2025), taikox1(番禺绿版), 宝可梦明耀之星x1(1.0.2.39184.cn)] updated_at=2026-06-03T16:11:37.000000Z | WAHLAP maimai placeId=3991 arcadeName=米奇贝贝嘉年华营口鲅鱼圈店 address=辽宁省营口市鲅鱼圈区义乌商贸城二期二楼米奇贝贝嘉年华 | WAHLAP chunithm placeId=3991 arcadeName=米奇贝贝嘉年华营口鲅鱼圈店",
+      "note": "WAHLAP placeId 3991 has chunithm; BC s/3525 may differ",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "炫鼓音游工作社",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "炫鼓音游工作社",
+        "addr": "大连市静蕙街3号5号车库",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "iidx",
+          "jubeat",
+          "taiko"
+        ],
+        "game_counts": {
+          "iidx": 1,
+          "jubeat": 1,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6018",
+        "wahlap_placeId": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6018",
+      "evidence_quote": "BC s/6018 name=炫鼓音游工作社 addr=静蕙街3号5号车库 status=1 arcades=[taikox1(2025), iidxx1(32), jubeatx1(AVE)] updated_at=2026-06-11T16:14:30.000000Z",
+      "note": "BC s/6018 IIDX/jubeat/taiko private room",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "赛博星际家庭娱乐中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "赛博星际家庭娱乐中心",
+        "addr": "辽宁省本溪市万达广场四楼(原大玩家)",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7188",
+        "wahlap_placeId": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7188",
+      "evidence_quote": "BC s/7188 name=赛博星际家庭娱乐中心 addr=万达广场四楼(原大玩家) status=1 arcades=[maimai_dxx1(Ver.CN.1.56-A), 宝可梦明耀之星x1(华立国服)] updated_at=2026-07-19T06:19:41.000000Z",
+      "note": "BC s/7188",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷乐光年游乐中心",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐光年游乐中心",
+        "addr": "本溪市站前街道华联街一号",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/6366",
+        "wahlap_placeId": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6366",
+      "evidence_quote": "BC s/6366 name=酷乐光年游乐中心 addr=站前街道华联街一号 status=1 arcades=[maimai_dxx1(Ver.CN), 宝可梦明耀之星x1(不知道)] updated_at=2026-07-23T06:43:08.000000Z",
+      "note": "BC s/6366; maimai offline unpaid network fee 2026-07-23",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "玩家来也（塔湾信悦汇店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家来也（塔湾信悦汇店）",
+        "addr": "沈阳市塔湾信悦汇2楼209号",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "other"
+        ],
+        "game_counts": null,
+        "src": [
+          "bemanicn"
+        ],
+        "bemanicn": "https://map.bemanicn.com/s/7341",
+        "wahlap_placeId": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7341",
+      "evidence_quote": "BC s/7341 name=玩家来也（塔湾信悦汇店） addr=信悦汇2楼209号 status=1 arcades=[宝可梦明耀之星x1(国服)] updated_at=2026-07-30T16:22:59.000000Z",
+      "note": "BC s/7341 new; only pokemon for now",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "风云再起大连胜利广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起大连胜利广场店",
+        "addr": "辽宁省大连市中山区青泥洼桥街道胜利广场28号夹层D102",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "1378"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP still lists placeId=1378; BC s/7266 comment claims 胜利风云再起撤店",
+      "note": "Official WAHLAP still lists it, BemaniCN nearby-shop comment claims closed. Re-check before treating as live.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "神采飞扬大连开发昌林大厦店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "神采飞扬大连开发昌林大厦店",
+        "addr": "辽宁省大连市开发区昌林大厦二楼",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "2987"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai province=辽宁 arcadeName=神采飞扬大连开发昌林大厦店 placeId=2987",
+      "note": "No BemaniCN page found in Liaoning city crawl. Official WAHLAP only.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": null,
+      "name": "酷乐光年沈阳浑南店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷乐光年沈阳浑南店",
+        "addr": "辽宁省沈阳市浑南区营盘街7号花园城购物中心3楼321.322档酷乐光年家庭娱乐中心",
+        "country": "China",
+        "pref": "辽宁",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": null,
+        "src": [
+          "wahlap"
+        ],
+        "bemanicn": null,
+        "wahlap_placeId": "2349"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "WAHLAP maimai 酷乐光年沈阳浑南店 placeId=2349",
+      "note": "Not present in BemaniCN Shenyang shop index under this name at crawl time.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

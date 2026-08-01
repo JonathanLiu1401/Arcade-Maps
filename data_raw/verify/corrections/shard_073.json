@@ -1,0 +1,692 @@
+{
+  "shard": 73,
+  "checked": 64,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} (Inertia JSON, 42 shops live-fetched 2026-08-01)",
+    "https://map.bemanicn.com/games (title_id map)",
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location (live 2026-08-01, 96 Fujian)",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location (live 2026-08-01, 15 Fujian)",
+    "data_raw/china_wahlap_maimai_dx.json",
+    "data_raw/china_wahlap_chunithm.json",
+    "data/arcades.json (dedupe cross-check)",
+    "scrapers/bemanicn.py TITLE_GAME map"
+  ],
+  "corrections": [
+    {
+      "id": 5414,
+      "name": "熊开心福州台江店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:5412; remove or merge into 5412 (熊开心家庭娱乐电玩城(万象九宜城店))",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6853",
+      "evidence_quote": "name=熊开心家庭娱乐电玩城(万象九宜城店); address=福建省福州市台江区西环中路691号万象城F2-216A; maimai DX qty=1; FiNALE qty=1",
+      "note": "Same mall 万象九宜城 / 万象城 F2. WAHLAP 熊开心福州台江店 is same venue as BemaniCN 6853. Keep 5412 (richer). Remove or merge 5414.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5431,
+      "name": "爱婴城堡福州长乐店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:5430; remove or merge into 5430 (爱婴城堡)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5147",
+      "evidence_quote": "name=爱婴城堡; address=金峰镇胪东二路1号好莱钨商场2楼; maimai DX qty=1; taiko nijiiro=1 + legacy=1",
+      "note": "Same 好莱钨商场 address. Keep 5430 (has taiko). Merge/remove 5431.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5632,
+      "name": "玩里挑一漳浦绥安店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:5631; remove or merge into 5631 (玩里挑一漳浦店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3310",
+      "evidence_quote": "name=玩里挑一漳浦店; address=绥安镇麦市街西183-114号; maimai DX=1 CHUNITHM=2",
+      "note": "Identical address 麦市街西183-114号. 5632 is WAHLAP-only twin of 5631. Keep 5631. Remove 5632.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6173,
+      "name": "纷享星球泉州石狮店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:5951; remove or merge into 5951 (石狮纷享星球电玩动漫体验)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/562",
+      "evidence_quote": "name=石狮纷享星球电玩动漫体验; address=石狮泰禾广场; maimai DX quantity=2 Ver.CN1.56-B; updated 2026-07-30",
+      "note": "Same 泰禾广场, identical coords. Keep 5951, remove 6173. Also update maimai count 1->2 on keep.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5979,
+      "name": "福思特三明尤溪万达店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:5983; remove or merge into 5983 (福思特家庭游乐中心（三明尤溪万达店）)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6390",
+      "evidence_quote": "name=福思特家庭游乐中心（三明尤溪万达店）; address=西城镇文公大道3号万达广场2F-1; maimai DX=1",
+      "note": "Same 尤溪万达. Keep 5983, remove 5979.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6175,
+      "name": "纷享星球福州仓山万达店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6169; remove or merge into 6169 (纷享星球家庭娱乐中心（仓山万达店）)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7229",
+      "evidence_quote": "name=纷享星球家庭娱乐中心（仓山万达店）; address=仓山区金山街道浦上大道276号仓山万达1号门3F; maimai DX=1 Ver.1.56-A",
+      "note": "Same 仓山万达 3F. Keep 6169, remove 6175.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6170,
+      "name": "纷享星球泉州丰泽领秀店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6177; remove or merge into 6177 (纷享星球（领SHOW天地店）)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5470",
+      "evidence_quote": "name=纷享星球（领SHOW天地店）; address=福建省泉州市丰泽区刺桐路112号领SHOW天地综艺A馆107室",
+      "note": "Identical address. Keep 6177, remove 6170.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6172,
+      "name": "纷享星球泉州池店百捷上悦城店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6176; remove or merge into 6176 (纷享星球（晋江百捷上悦城店）)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7268",
+      "evidence_quote": "name=纷享星球（晋江百捷上悦城店）; address=池店镇百捷上悦城1楼二号门Nike旁边; maimai DX=1",
+      "note": "Same 百捷上悦城. Keep 6176, remove 6172.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6386,
+      "name": "萌多拉南平建发悦城店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6387; remove or merge into 6387 (萌多拉建瓯店)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4391",
+      "evidence_quote": "name=萌多拉建瓯店; address=福建省南平市建瓯市建发悦城负一楼萌多拉都市幻想; maimai DX=1 Ver.CN1.56-B",
+      "note": "Same 建发悦城 B1. Keep 6387, remove 6386.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6436,
+      "name": "蓝皮猫游乐园漳州芗城店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6435; remove or merge into 6435 (蓝皮猫乐园)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3836",
+      "evidence_quote": "name=蓝皮猫乐园; address=福建省漳州市芗城区南昌路49号印象汇F3层; maimai DX=1",
+      "note": "Same 印象汇 F3, identical coords. Keep 6435, remove 6436.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6963,
+      "name": "量子风爆泉州南安店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6962; remove or merge into 6962 (量子风爆)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6039",
+      "evidence_quote": "name=量子风爆; address=水头镇时代新城惠客多超市二楼; maimai DX=2 Ver.CN1.56-D",
+      "note": "Same 水头 时代新城 惠客多. Keep 6962, remove 6963.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7321,
+      "name": "魔法奇缘福州万星广场店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:7320; remove or merge into 7320 (魔法奇缘)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3019",
+      "evidence_quote": "name=魔法奇缘; address=吴航路988号万星广场二楼; maimai DX=1",
+      "note": "Same 万星广场. Keep 7320, remove 7321.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7369,
+      "name": "鼎顺电玩城福鼎水北店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:7368; remove or merge into 7368 (鼎顺游乐园)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6701",
+      "evidence_quote": "name=鼎顺游乐园; address=福建省宁德市福鼎市水北村双架山1-5号; maimai DX=1 CH1.56-B",
+      "note": "Identical 水北村双架山 address. Keep 7368, remove 7369.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6535,
+      "name": "超乐玩家福清店",
+      "field": "status",
+      "current": "listed separate from 超吉乐 at same address",
+      "proposed": "duplicate_of:6543; remove or merge into 6543 (rename 超乐->超吉乐)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3870",
+      "evidence_quote": "超吉乐玩家福清利桥古街店 comment: 原来叫超乐玩家，福清发洪水曾被淹过，现在复活了，舞萌DX也换了新机; address=江滨路东百利桥古街B1区负一层超吉乐; maimai DX=2 jubeat=2",
+      "note": "WAHLAP still has 超乐玩家福清店 and two 超吉乐 names for same 利桥古街 B1 venue. Official rename to 超吉乐. Keep 6543. Remove 6535, 6544, 6545.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6544,
+      "name": "超吉乐福清东百利店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6543; remove or merge into 6543",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3870",
+      "evidence_quote": "address=江滨路东百利桥古街B1区负一层超吉乐; same as WAHLAP 超吉乐福清东百利店 / 超吉乐福清店",
+      "note": "WAHLAP listed the same store under two names (东百利店 and 福清店) plus old 超乐 name.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6545,
+      "name": "超吉乐福清店",
+      "field": "status",
+      "current": "listed as open separate venue",
+      "proposed": "duplicate_of:6543; remove or merge into 6543",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3870",
+      "evidence_quote": "address=江滨路东百利桥古街B1区负一层超吉乐",
+      "note": "Identical address to 6543/6544/6535.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6002,
+      "name": "秘密艾武夷山宝龙广场店",
+      "field": "status",
+      "current": "listed separate from 6003 秘密艾游乐园武夷山店",
+      "proposed": "likely_duplicate_of:6003; merge; prefer WAHLAP address 百花路867-1号宝龙广场3楼",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5402",
+      "evidence_quote": "BemaniCN name=秘密艾武夷山宝龙广场店 but address=上洲路与彭祖路交叉口; WAHLAP live: 秘密艾游乐园武夷山店 百花路867-1号宝龙广场3楼; both maimai DX",
+      "note": "Name claims 宝龙广场 but BemaniCN address/geocode points ~15km away (27.633,117.918 vs WAHLAP 27.748,118.020). Comment celebrates 武夷山舞萌破0. Treat as one venue at 宝龙广场. Not certain they never had two sites.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6002,
+      "name": "秘密艾武夷山宝龙广场店",
+      "field": "location",
+      "current": {
+        "addr": "福建省南平市武夷山市上洲路与彭祖路交叉口正北方向93米左右秘密艾",
+        "lat": 27.633027,
+        "lng": 117.91834
+      },
+      "proposed": {
+        "addr": "福建省武夷山市百花路867-1号宝龙广场3楼秘密艾游乐园",
+        "lat": 27.748297,
+        "lng": 118.020076,
+        "note": "use WAHLAP address; BemaniCN 上洲路 pin is likely wrong"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "live WAHLAP maimai: arcadeName=秘密艾游乐园武夷山店 address=福建省武夷山市百花路867-1号宝龙广场3楼秘密艾游乐园",
+      "note": "Prefer official WAHLAP store address over BemaniCN free-text that conflicts with shop name 宝龙广场店.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5950,
+      "name": "石狮世佳乐园",
+      "field": "other",
+      "current": "bemanicn-only entry in shard; full map also has id 1433 世佳乐园石狮德辉广场店 (wahlap)",
+      "proposed": "merge with map id 1433 if still separate in production; keep taiko from bemanicn",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/371",
+      "evidence_quote": "石狮世佳乐园 德辉广场7楼7-001号; maimai=2 chunithm=2 taiko=1; WAHLAP: 世佳乐园石狮德辉广场店 same 德辉广场7楼",
+      "note": "Shard has 5950; full arcades.json also has 1433 at same mall. Deduplicate across sources.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5951,
+      "name": "石狮纷享星球电玩动漫体验",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/562",
+      "evidence_quote": "arcades: title_id=1 (maimai DX) quantity=2 version=CN1.56-B; updated_at=2026-07-30T05:55:46.000000Z",
+      "note": "BemaniCN quantity raised to 2; app still has 1.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5412,
+      "name": "熊开心家庭娱乐电玩城(万象九宜城店)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "CN DX (国服, updated 2026)",
+        "maimai_legacy": "FiNALE x1 still listed on BemaniCN"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6853",
+      "evidence_quote": "title_id=1 quantity=1 version=国服 comment=已更新2026版本; title_id=2 quantity=1 version=FiNALE comment=信息不足",
+      "note": "Has both DX and a FiNALE cabinet per BemaniCN. App other covers FiNALE. FiNALE is offline legacy.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5299,
+      "name": "潮酷电玩城群升广场店",
+      "field": "status",
+      "current": "listed open with taiko:1",
+      "proposed": "shop still listed open but taiko effectively unplayable; flag machine_dead or remove taiko claim",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5995",
+      "evidence_quote": "title_id=15 太鼓达人(旧代) quantity=1 version=亚洲版12 comment=更新：现在机况很差，基本打不了，不建议任何donder来尝试; updated 2025-11-29",
+      "note": "Community report that legacy taiko is basically unplayable. Shop status still 1. Do not invent venue closure.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5299,
+      "name": "潮酷电玩城群升广场店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "legacy 亚洲版12 (not Nijiiro); condition poor per 2025-11 note"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5995",
+      "evidence_quote": "title_id=15 version=亚洲版12 (旧代太鼓)",
+      "note": "App maps title 15 to taiko; players may expect Nijiiro.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6612,
+      "name": "超级玩家闽侯万家广场店",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2063",
+      "evidence_quote": "title_id=15 comment=2026.7.3 店员说机台已经损坏无法开机，不过一直都没撤机摆着当装饰。; also 湾岸 x4 均无法插卡",
+      "note": "Taiko cabinet confirmed dead by staff 2026-07-03, left as decoration. Remove playable taiko claim; keep other (Wangan). Shop still open.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6612,
+      "name": "超级玩家闽侯万家广场店",
+      "field": "game_counts",
+      "current": {
+        "taiko": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2063",
+      "evidence_quote": "店员说机台已经损坏无法开机，不过一直都没撤机摆着当装饰。",
+      "note": "Remove taiko count; cabinet non-functional.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6681,
+      "name": "趴趴星球",
+      "field": "games",
+      "current": [
+        "taiko"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/439",
+      "evidence_quote": "title_id=15 version=12亚洲版 comment=鼓已严重损毁，完全无法正常游玩，不建议投币游玩。",
+      "note": "Only listed rhythm game is destroyed legacy taiko. Clear games or mark unplayable. Shop may still operate non-rhythm machines (铁拳 etc. in shop comment).",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6681,
+      "name": "趴趴星球",
+      "field": "game_counts",
+      "current": {
+        "taiko": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/439",
+      "evidence_quote": "鼓已严重损毁，完全无法正常游玩，不建议投币游玩。",
+      "note": "Do not show taiko as playable.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6793,
+      "name": "酷乐多龙岩上杭万达店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "2025 CN",
+        "taiko": "legacy 亚洲版12 (not Nijiiro)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3752",
+      "evidence_quote": "title_id=1 version=2025; title_id=15 version=亚洲版12",
+      "note": "Taiko is old Asian version 12, not national Nijiiro.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5430,
+      "name": "爱婴城堡",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "1x 新国行虹版 (Nijiiro) + 1x 11亚 legacy"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5147",
+      "evidence_quote": "title_id=31 quantity=1 version=新国行虹版; title_id=15 quantity=1 version=11亚 comment=11代亚洲版，鼓况很一般",
+      "note": "game_counts taiko:2 is correct as sum, but one is legacy.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6748,
+      "name": "邦尼斯玩斗城",
+      "field": "location",
+      "current": {
+        "addr": "金城镇北门里民生路9-17号 金城车站旁",
+        "lat": 24.731646,
+        "lng": 118.638353
+      },
+      "proposed": {
+        "addr": "金门县金城镇北门里民生路9-17号 金城车站旁",
+        "lat": null,
+        "lng": null,
+        "note": "Kinmen Jincheng; current pin ~24.73,118.64 is near Shishi Quanzhou and is WRONG. Do not invent exact lat/lng; re-geocode to Kinmen 金城."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4823",
+      "evidence_quote": "address=金城镇北门里民生路9-17号 金城车站旁; comment prices in 新台币; version finale 1.99A",
+      "note": "Address is Kinmen (金门) 金城镇, prices in TWD. App pin is in Shishi/Quanzhou mainland, not Kinmen. Exact replacement coordinates UNVERIFIED; leave null and re-geocode.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6001,
+      "name": "秋的茶研社",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ongeki": "simgeki (hand controller / sim) rin server, NOT full arcade ONGEKI cabinet"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7004",
+      "evidence_quote": "title_id=27 version=ReFresh comment=simgeki台，rin服，要玩找店长开电脑即可，店内手台+主机+桌游畅玩是10r/h，一天内25r封顶",
+      "note": "Listing as ongeki may mislead players expecting a full cabinet. Tea/board-game shop with controller sim.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6001,
+      "name": "秋的茶研社",
+      "field": "hours",
+      "current": null,
+      "proposed": "approx 14:00-22:00 (owner-dependent; may run to 24:00)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7004",
+      "evidence_quote": "开店时间大概是14:00至晚22:00，但是实际开店时间完全看店长心情; start_time=14 end_time=22",
+      "note": "Community hours from BemaniCN.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6001,
+      "name": "秋的茶研社",
+      "field": "prices",
+      "current": null,
+      "proposed": "CNY 10/hour shop flat (controllers+console+board games), CNY 25/day cap; not per-credit arcade pricing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7004",
+      "evidence_quote": "店内手台+主机+桌游畅玩是10r/h，一天内25r封顶; shop price field=10",
+      "note": "Time-based pricing, not coin.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5278,
+      "name": "潮能空间厦门湖里万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6747",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-07-21T10:48:34.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5388,
+      "name": "热带雨林泉州鲤城万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6405",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-07-18T09:21:13.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5827,
+      "name": "疯狂街区三明万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6131",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-03-04T11:41:12.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5950,
+      "name": "石狮世佳乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/371",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN community hours; updated_at=2026-06-22T01:12:00.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6168,
+      "name": "纷享星球厦门集美IOI店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5904",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-07-16T04:05:26.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6366,
+      "name": "萌可力·润宝梦想潮玩娱乐（浦西万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6237",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-07-28T11:48:33.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6542,
+      "name": "超吉乐宁德店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6097",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-07-15T12:21:55.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6543,
+      "name": "超吉乐玩家福清利桥古街店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3870",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-04-07T23:45:24.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7366,
+      "name": "黑桃国王福州闽侯正荣财富中心店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6551",
+      "evidence_quote": "start_time=10 end_time=22 (BemaniCN community hours; updated_at=2026-02-27T05:10:28.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7367,
+      "name": "黑桃国王福州闽侯永嘉天地店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6415",
+      "evidence_quote": "start_time=10 end_time=23 (BemaniCN community hours; updated_at=2026-07-14T14:09:25.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7368,
+      "name": "鼎顺游乐园",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6701",
+      "evidence_quote": "start_time=9 end_time=21 (BemaniCN community hours; updated_at=2026-07-29T05:11:05.000000Z)",
+      "note": "Community-edited hours on BemaniCN, not an official chain page. Treat as likely not certain.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7366,
+      "name": "黑桃国王福州闽侯正荣财富中心店",
+      "field": "location",
+      "current": "福州市闽侯县上街镇正荣财富中心",
+      "proposed": "闽侯县南屿镇新保路18号正荣财富中心1号楼2层 (not 上街镇)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6551",
+      "evidence_quote": "address=闽侯县南屿镇新保路18号正荣财富中心1号楼2层; comment=机厅位于正荣财富中心1号楼2层",
+      "note": "App and WAHLAP say 上街镇; BemaniCN more specific 南屿镇新保路18号. Different towns in Minhou. Prefer BemaniCN street address. Pin may need re-geocode.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 7367,
+      "name": "黑桃国王福州闽侯永嘉天地店",
+      "field": "location",
+      "current": "福州市闽侯县上街镇永嘉天地永辉超市入口",
+      "proposed": "闽侯县上街镇国宾大道268号东百城永嘉天地负一层",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6415",
+      "evidence_quote": "address=闽侯县上街镇国宾大道268号东百城永嘉天地负一层; comment=机厅位于地下一层的永辉半区",
+      "note": "More precise floor/street than app 永辉超市入口.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5630,
+      "name": "玩里挑一漳州云霄云陵店",
+      "field": "location",
+      "current": "福建省漳州市云霄县云陵镇将军大道629-164号",
+      "proposed": "云陵镇建发半山御园恒晟超市建发店一楼内部 (WAHLAP still lists 将军大道629-164号)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3920",
+      "evidence_quote": "address=云陵镇建发半山御园恒晟超市建发店一楼内部; comment directs to 恒晟超市（建发店）",
+      "note": "BemaniCN address differs from WAHLAP 将军大道. May be same complex under different naming. Prefer local confirm before overwrite.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5388,
+      "name": "热带雨林泉州鲤城万达店",
+      "field": "location",
+      "current": "泉州市鲤城区鲤城万达",
+      "proposed": "黄龙南大道1699号 鲤城万达 (BemaniCN street)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6405",
+      "evidence_quote": "address=黄龙南大道1699号; name=热带雨林（泉州鲤城万达店）",
+      "note": "App only has 鲤城万达 without street number.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5278,
+      "name": "潮能空间厦门湖里万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": "package note 186 CNY / 1000 coins per shop comment; maimai coin=5 on BemaniCN",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6747",
+      "evidence_quote": "price=1; maimai coin=5; comment=一百八十六元/一千币; 2026年2月15日开业",
+      "note": "BemaniCN price/coin is community data. Package text more useful than unit field.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6799,
+      "name": "酷乐橙游乐场",
+      "field": "other",
+      "current": "games=['other'] only",
+      "proposed": "confirm remains WACCA-only (1 cab after one removed); not maimai/chunithm",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2340",
+      "evidence_quote": "title_id=17 WACCA Ver3 Reverse quantity=1; comment 8.17更新:撤机一台，剩一台",
+      "note": "Only WACCA remains. App maps as other if WACCA is not a first-class slug. No false rhythm titles.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 5388,
+      "name": "热带雨林泉州鲤城万达店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "国行 x2",
+        "taiko": "国行 Nijiiro x1",
+        "jubeat": "国行 音乐魔方 x2"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6405",
+      "evidence_quote": "title_id=1 qty=2 国行; title_id=31 qty=1 国行; title_id=34 qty=2 国行 音乐魔方",
+      "note": "Counts already match app.",
+      "checked_at": "2026-08-01"
+    },
+    {
+      "id": 6543,
+      "name": "超吉乐玩家福清利桥古街店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "2025 x2",
+        "jubeat": "音乐魔方新框体 x2"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3870",
+      "evidence_quote": "title_id=34 quantity=2 version=音乐魔方 comment=新框体，在舞萌对面",
+      "note": "jubeat is CN 音乐魔方 frame.",
+      "checked_at": "2026-08-01"
+    }
+  ]
+}

@@ -453,6 +453,42 @@ def _bigrams(s):
     return {s[i:i + 2] for i in range(len(s) - 1)}
 
 
+# Street-type words each source abbreviates differently. "258 Granby St"
+# and "258 Granby Street" are the same address and were shipping as two
+# arcades 753 km apart, because one of the two rows is badly geocoded.
+_ADDR_ABBR = [
+    (r"\bstreet\b", "st"), (r"\bavenue\b", "ave"), (r"\broad\b", "rd"),
+    (r"\bdrive\b", "dr"), (r"\bboulevard\b", "blvd"),
+    (r"\bhighway\b", "hwy"), (r"\blane\b", "ln"), (r"\bcourt\b", "ct"),
+    (r"\bparkway\b", "pkwy"), (r"\bfloor\b", "fl"),
+    (r"\bnorth\b", "n"), (r"\bsouth\b", "s"), (r"\beast\b", "e"),
+    (r"\bwest\b", "w"),
+    # Sub-premise noise: one source records the suite, the other does not.
+    (r"\bsuite\s*\d*\b", ""), (r"\bste\s*\d*\b", ""),
+    (r"\bunit\s*\d*\b", ""), (r"\bapt\s*\d*\b", ""),
+]
+
+
+def street_signature(addr):
+    """(house number, first two street tokens) or None.
+
+    The two tokens after the number are the discriminating part of a
+    street address. Using only ONE token, or a prefix of the whole
+    address, merged four different Wanda Plazas in four different cities
+    - every one of them printed "3rd Floor, Wanda Plaza".
+    """
+    s = (addr or "").lower()
+    s = re.sub(r"[^a-z0-9 ]", " ", s)
+    for pat, rep in _ADDR_ABBR:
+        s = re.sub(pat, rep, s)
+    toks = s.split()
+    for i, tok in enumerate(toks):
+        if tok.isdigit():
+            rest = tuple(toks[i + 1:i + 3])
+            return (tok, rest) if len(rest) == 2 else None
+    return None
+
+
 # -------------------------------------------- China (wahlap x bemanicn) ---
 
 _CN_SUFFIXES = ["壮族自治区", "回族自治区", "维吾尔自治区", "特别行政区",
@@ -1657,6 +1693,38 @@ def cluster_units(units, log):
                 if uf.union(i, j):
                     log.append({"rule": rule, "a": unit_ref(i),
                                 "b": unit_ref(j)})
+
+    # ---- street-address identity tier --------------------------------
+    #
+    # Reported by the verification fleet: "Circuit Social" appears twice,
+    # once at "258 Granby St" and once at "258 Granby Street". Same
+    # source, same venue, two rows - so every tier above misses it. The
+    # distance tiers cannot help either, because one row of each pair is
+    # badly geocoded: those two pins are 753 km apart.
+    #
+    # The evidence here is the printed address, not the pin. When two
+    # rows carry the SAME name, the SAME house number and the SAME
+    # street, they are one venue whatever the coordinates claim.
+    # Deliberately narrow: the street tokens must match after
+    # abbreviation folding, not merely start the same. Requiring only a
+    # prefix merged four different Wanda Plazas in four different cities,
+    # every one of them "3rd Floor, Wanda Plaza".
+    addr_index = {}
+    for i, u in enumerate(units):
+        sig = street_signature(u["addr"])
+        if not sig:
+            continue
+        key = (u["country"], compact_name(u["name"]), sig)
+        addr_index.setdefault(key, []).append(i)
+    for key, idxs in sorted(addr_index.items()):
+        if len(idxs) < 2 or len(key[1]) < 4:
+            continue
+        for j in idxs[1:]:
+            if uf.union(idxs[0], j):
+                log.append({"rule": "same-name-same-street",
+                            "street": " ".join(key[2][1]),
+                            "number": key[2][0],
+                            "a": unit_ref(idxs[0]), "b": unit_ref(j)})
 
     # ---- Hong Kong / Macau cross-script tier -------------------------
     # The only territory where one venue is routinely published under two

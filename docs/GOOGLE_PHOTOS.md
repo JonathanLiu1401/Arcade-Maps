@@ -1,9 +1,12 @@
 # Google Places photos (optional)
 
-Most arcades on this map still have no photo. Coverage is about 43% overall, 7% in
-Japan and effectively 0% in China, and the photos we do have come from
-community uploads that are often years old. This is the optional path that
-fills the gap using Google's own photo of the venue.
+Most arcades on this map still have no photo. Coverage is 38.4% overall and
+3.3% in Japan, and the photos we do have come from community uploads that are
+often years old. China is the exception rather than the gap this doc was
+originally written around: the mirrored BemaniCN thumbnails put it at 51.1%,
+the best-covered major market on the map. Japan, Taiwan (3.4%) and the
+uncovered tail are where a venue photo is actually missing. This is the
+optional path that fills that gap using Google's own photo of the venue.
 
 It is **off by default and costs nothing until you turn it on.** With no API
 key configured the site behaves exactly as it does today: no Google request is

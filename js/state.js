@@ -35,8 +35,8 @@ window.AM = window.AM || {};
     /* Six titles that scrapers/ziv.py slugs out of the `other` bucket and that
        merge.py's GAME_SLUGS now keeps (it used to revert every one, which is
        why 1,541 real rhythm-game venues rendered as an unnamed grey chip).
-       Live counts in the current data: pump_it_up 1558, stepmaniax 596,
-       wacca 252, groove_coaster 224, crossbeats 50, beatstream 8.
+       Live counts in the current data: pump_it_up 1557, stepmaniax 596,
+       wacca 253, groove_coaster 224, crossbeats 50, beatstream 8.
        They are declared here so the chip, the filter, the colour, the
        legend and the per-game price lookup all light up the moment it does,
        rather than the frontend becoming the second half of a two-part fix.
@@ -478,10 +478,12 @@ window.AM = window.AM || {};
   function computeVariants(a) {
     var map = {};
 
-    /* 1. cab_models {slug: count} - the field a concurrent scraper change is
-       adding. Absent from every row today, so this branch is written blind
-       and is deliberately the highest-precedence source: when it lands it
-       carries real per-variant quantities and supersedes both guesses. */
+    /* 1. cab_models {slug: count} - per-variant quantities tallied by the
+       scraper from the same ZIv machine rows. It HAS landed: 1,306 rows carry
+       the field and 219 of those hold at least one real number (the rest are
+       null, meaning "this cabinet is here, quantity unknown"). Deliberately
+       the highest-precedence source, because it names the cabinet model the
+       comment was about instead of inferring it from a title. */
     var cm = a && a.cab_models;
     if (cm && typeof cm === "object") {
       for (var slug in cm) {

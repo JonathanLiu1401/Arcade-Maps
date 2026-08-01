@@ -1,0 +1,886 @@
+{
+  "shard": 75,
+  "checked": 60,
+  "sources_used": [
+    "https://map.bemanicn.com/s/{id} Inertia JSON for all 38 bemanicn-linked shops (2026-07-31)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+    "In-shard coordinate/address clustering for wahlap vs bemanicn duplicates"
+  ],
+  "corrections": [
+    {
+      "id": 6779,
+      "name": "都市玩家颛桥万达店",
+      "field": "status",
+      "current": "open",
+      "proposed": "closed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2371",
+      "evidence_quote": "店铺因不明原因现已关门，具体恢复营业时间未知且有可能不再开门",
+      "checked_at": "2026-07-31",
+      "note": "BC status still 1 but comment 2026-07-07 says closed indefinitely. Dup of 6771."
+    },
+    {
+      "id": 6771,
+      "name": "都市玩家上海闵行万达店",
+      "field": "status",
+      "current": "open",
+      "proposed": "closed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2371",
+      "evidence_quote": "店铺因不明原因现已关门，具体恢复营业时间未知且有可能不再开门",
+      "checked_at": "2026-07-31",
+      "note": "Wahlap duplicate of 6779 at same Zhuanqiao Wanda 3F."
+    },
+    {
+      "id": 6779,
+      "name": "都市玩家颛桥万达店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2371",
+      "evidence_quote": "WACCA x2 (title_id 17); maimai DX x1",
+      "checked_at": "2026-07-31",
+      "note": "App stuffed WACCA under other."
+    },
+    {
+      "id": 6779,
+      "name": "都市玩家颛桥万达店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2371",
+      "evidence_quote": "maimai DX quantity=1; WACCA quantity=2",
+      "checked_at": "2026-07-31",
+      "note": "WACCA count missing."
+    },
+    {
+      "id": 5654,
+      "name": "环游嘉年华上海环球港店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 4,
+        "maimai_dx": 6,
+        "taiko": 4
+      },
+      "proposed": {
+        "maimai_dx": 6,
+        "chunithm": 4,
+        "taiko": 6
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/23",
+      "evidence_quote": "taiko x6 maimai_dx x6 chunithm x4 updated 2026-07-31",
+      "checked_at": "2026-07-31",
+      "note": "BC 2026-07-31: taiko 6 not 4."
+    },
+    {
+      "id": 6460,
+      "name": "街机烈火",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 6,
+        "maimai_dx": 9,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 9,
+        "chunithm": 5,
+        "taiko": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "chunithm x5 maimai_dx x9 taiko x2 updated 2026-07-30",
+      "checked_at": "2026-07-31",
+      "note": "BC 2026-07-30: chunithm 5 not 6."
+    },
+    {
+      "id": 6919,
+      "name": "酷玩空间上海世纪汇店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 6,
+        "taiko": 8
+      },
+      "proposed": {
+        "maimai_dx": 10,
+        "chunithm": 4,
+        "taiko": 8
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2744",
+      "evidence_quote": "maimai_dx x10 chunithm x4 taiko x8 updated 2026-07-30",
+      "checked_at": "2026-07-31",
+      "note": "BC 2026-07-30: maimai 10 not 6, chunithm 4 not 2."
+    },
+    {
+      "id": 5800,
+      "name": "疯狂娃娃城（梅陇里店）",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 12:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7064",
+      "evidence_quote": "start_time=12 end_time=22; comment open from 12",
+      "checked_at": "2026-07-31",
+      "note": "Shop opens at noon, not 10:00."
+    },
+    {
+      "id": 5621,
+      "name": "玩者归来上海嘉定信业店",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:30",
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6298",
+      "evidence_quote": "start_time=10 end_time=21",
+      "checked_at": "2026-07-31",
+      "note": "BC 10-21 vs app 21:30 from ZIv."
+    },
+    {
+      "id": 7005,
+      "name": "鑫鑫游乐",
+      "field": "hours",
+      "current": "Mon-Sun 01:00-02:00",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6371",
+      "evidence_quote": "start_time=1 end_time=26",
+      "checked_at": "2026-07-31",
+      "note": "App 01:00-02:00 is almost certainly bad overnight encoding. REMOVE (proposed null)."
+    },
+    {
+      "id": 4790,
+      "name": "汤姆熊欢乐世界（百联滨江店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2112",
+      "evidence_quote": "start_time=10 end_time=21",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 4796,
+      "name": "汤姆熊欢乐世界（金山店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1173",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 5400,
+      "name": "焕游星际上海临港万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7217",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 5509,
+      "name": "猫鼓旗舰店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 13:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6791",
+      "evidence_quote": "start_time=13 end_time=23",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 5654,
+      "name": "环游嘉年华上海环球港店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/23",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 5723,
+      "name": "环游地平线家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3739",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6257,
+      "name": "舞玩伏特（凯德闵行商业中心店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5581",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6313,
+      "name": "菲游乐(上海浦东禹悦汇店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 09:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5200",
+      "evidence_quote": "start_time=9 end_time=21",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6315,
+      "name": "菲游乐上海奉贤宝龙店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4043",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6322,
+      "name": "菲游乐奉贤龙湖天街店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7028",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6325,
+      "name": "菲游乐宝杨宝龙广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/654",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6349,
+      "name": "菲菲羊乐园上海江桥万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4886",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6355,
+      "name": "菲菲羊乐园（周浦万达店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6914",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6385,
+      "name": "萌多拉上海奉贤港嘉店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4707",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6460,
+      "name": "街机烈火",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 02:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "start_time=10 end_time=26",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6494,
+      "name": "贝塔潮玩上海嘉定大融城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7172",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6662,
+      "name": "趣玩汇上海百联曲阳店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1608",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6695,
+      "name": "蹦蹦乐园南桥百联店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2668",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6779,
+      "name": "都市玩家颛桥万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2371",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6864,
+      "name": "酷熊酷玩",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7193",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6919,
+      "name": "酷玩空间上海世纪汇店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 00:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2744",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6920,
+      "name": "酷玩空间上海普陀环球港店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 00:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4712",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6921,
+      "name": "酷玩空间上海爱琴海缤纷里店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7238",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7141,
+      "name": "风云再起(百联中环购物广场)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/583",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7146,
+      "name": "风云再起上海人民广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 00:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7147,
+      "name": "风云再起上海宝山日月光店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 00:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1510",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7148,
+      "name": "风云再起上海文峰广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/455",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7150,
+      "name": "风云再起上海长泰广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 00:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/11",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7151,
+      "name": "风云再起上海龙阳广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1039",
+      "evidence_quote": "start_time=10 end_time=22",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 7214,
+      "name": "风云再起莘庄维璟印象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-next day 00:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/491",
+      "evidence_quote": "start_time=10 end_time=24",
+      "checked_at": "2026-07-31",
+      "note": "Hours present on BemaniCN, missing in app."
+    },
+    {
+      "id": 6460,
+      "name": "街机烈火",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": 1,
+        "maimai_dx_coins": 5,
+        "chunithm_coins": 5,
+        "taiko_coins": 4
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "price=1; arcade coin maimai=5 chunithm=5 taiko=4",
+      "checked_at": "2026-07-31",
+      "note": "1 CNY per token."
+    },
+    {
+      "id": 5654,
+      "name": "环游嘉年华上海环球港店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": 1,
+        "maimai_dx_coins": 8,
+        "chunithm_coins": 8,
+        "taiko_coins": 10
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/23",
+      "evidence_quote": "price=1; maimai coin=8 chunithm coin=8 taiko coin=10",
+      "checked_at": "2026-07-31",
+      "note": "Premium pricing."
+    },
+    {
+      "id": 6919,
+      "name": "酷玩空间上海世纪汇店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": 1,
+        "maimai_dx_coins": 6,
+        "chunithm_coins": 6,
+        "taiko_coins": 8,
+        "payment": "e-coins only"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2744",
+      "evidence_quote": "price=1; maimai=6 chunithm=6 taiko=8; physical coin slots sealed",
+      "checked_at": "2026-07-31",
+      "note": "Card/app only."
+    },
+    {
+      "id": 5509,
+      "name": "猫鼓旗舰店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_cny": 2.8
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6791",
+      "evidence_quote": "price=2.8",
+      "checked_at": "2026-07-31",
+      "note": "Unusually high; unclear if yuan/coin or per-credit."
+    },
+    {
+      "id": 4796,
+      "name": "汤姆熊欢乐世界（金山店）",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "taiko",
+        "maimai"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1173",
+      "evidence_quote": "title_id=2 maimai x1 version=finale",
+      "checked_at": "2026-07-31",
+      "note": "Offline FiNALE not DX. Reconfirm existence per BC comment."
+    },
+    {
+      "id": 4796,
+      "name": "汤姆熊欢乐世界（金山店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai": "FiNALE offline legacy"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1173",
+      "evidence_quote": "maimai version=finale",
+      "checked_at": "2026-07-31",
+      "note": "Do not upgrade to maimai_dx without evidence."
+    },
+    {
+      "id": 5800,
+      "name": "疯狂娃娃城（梅陇里店）",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "old-gen Asia 12"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7064",
+      "evidence_quote": "title_id=15 old-gen taiko Asia 12 x1",
+      "checked_at": "2026-07-31",
+      "note": "Not modern Nijiiro."
+    },
+    {
+      "id": 7141,
+      "name": "风云再起(百联中环购物广场)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "1 modern + 1 old-gen broken"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/583",
+      "evidence_quote": "title_id=31 x1; title_id=15 x1 comment broken",
+      "checked_at": "2026-07-31",
+      "note": "taiko count 2 includes dead unit."
+    },
+    {
+      "id": 7151,
+      "name": "风云再起上海龙阳广场店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "taiko": "1 modern + 1 old-gen unplayable"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1039",
+      "evidence_quote": "title_id=31 x1; title_id=15 x1 screen dead",
+      "checked_at": "2026-07-31",
+      "note": "taiko count 2 includes unplayable unit."
+    },
+    {
+      "id": 6460,
+      "name": "街机烈火",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "maimai_dx": "1 JP factory + 8 domestic CN",
+        "chunithm": "CN Huali"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "1 JP factory frame + 8 domestic; chunithm CN Huali",
+      "checked_at": "2026-07-31",
+      "note": "Cab variants."
+    },
+    {
+      "id": 6921,
+      "name": "酷玩空间上海爱琴海缤纷里店",
+      "field": "other",
+      "current": "name implies Aegean Minhang",
+      "proposed": "rename toward Coolplay Space LEGOLAND Shanghai",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7238",
+      "evidence_quote": "name has Aegean; address is Jinshan LEGOLAND Lefen Rd",
+      "checked_at": "2026-07-31",
+      "note": "Name/address disagree. Coords match Jinshan LEGOLAND not Aegean."
+    },
+    {
+      "id": 6385,
+      "name": "萌多拉上海奉贤港嘉店",
+      "field": "location",
+      "current": "上海市奉贤区四团镇港嘉路277号奉发宝龙1号门2楼萌多拉",
+      "proposed": "四团镇港嘉路518号2楼",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4707",
+      "evidence_quote": "address=四团镇港嘉路518号2楼",
+      "checked_at": "2026-07-31",
+      "note": "App Gangjia 277 vs BC 518; same mall."
+    },
+    {
+      "id": 6460,
+      "name": "街机烈火",
+      "field": "website",
+      "current": null,
+      "proposed": "https://weibo.com/liehuoyouxiji",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "official Weibo listed on shop page",
+      "checked_at": "2026-07-31",
+      "note": "Also WeChat OA / Xiaohongshu / Bilibili."
+    },
+    {
+      "id": 5622,
+      "name": "玩者归来上海浦东康桥店",
+      "field": "other",
+      "current": "separate venue near id 5620",
+      "proposed": "likely DUPLICATE of id 5620 (玩者归来/企萌电玩上海新田360店); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1197",
+      "evidence_quote": "same Xintian 360 Kangqiao 3F303",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 5620. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 5623,
+      "name": "玩者归来上海闵行爱琴海店",
+      "field": "other",
+      "current": "separate venue near id 5624",
+      "proposed": "likely DUPLICATE of id 5624 (玩者归来游乐mall上海爱琴海店); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4421",
+      "evidence_quote": "same Aegean 4F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 5624. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 5722,
+      "name": "环游地平线上海新松江店",
+      "field": "other",
+      "current": "separate venue near id 5723",
+      "proposed": "likely DUPLICATE of id 5723 (环游地平线家庭娱乐中心); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3739",
+      "evidence_quote": "same Kaiyuan Mediterranean 2F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 5723. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 5731,
+      "name": "环游家族金山龙皓店",
+      "field": "other",
+      "current": "separate venue near id 5732",
+      "proposed": "likely DUPLICATE of id 5732 (环游家族（上海金山万达店）/酷玩巅峰); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4357",
+      "evidence_quote": "same Jinshan Wanda Longhao 1088",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 5732. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6256,
+      "name": "舞玩伏特闵行凯德龙之梦店",
+      "field": "other",
+      "current": "separate venue near id 6257",
+      "proposed": "likely DUPLICATE of id 6257 (舞玩伏特（凯德闵行商业中心店）); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5581",
+      "evidence_quote": "same CapitaLand Longemont Minhang 3F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6257. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6316,
+      "name": "菲游乐上海奉贤新城龙湖店",
+      "field": "other",
+      "current": "separate venue near id 6322",
+      "proposed": "likely DUPLICATE of id 6322 (菲游乐奉贤龙湖天街店); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7028",
+      "evidence_quote": "same Fengxian Longfor 3F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6322. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6317,
+      "name": "菲游乐上海宝山店",
+      "field": "other",
+      "current": "separate venue near id 6325",
+      "proposed": "likely DUPLICATE of id 6325 (菲游乐宝杨宝龙广场店); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/654",
+      "evidence_quote": "same Baoshan Baolong 3F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6325. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6348,
+      "name": "菲菲羊乐园上海嘉定万达店",
+      "field": "other",
+      "current": "separate venue near id 6349",
+      "proposed": "likely DUPLICATE of id 6349 (菲菲羊乐园上海江桥万达店); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4886",
+      "evidence_quote": "same Jiangqiao Wanda 3F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6349. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6356,
+      "name": "菲菲羊儿童乐园上海浦东店",
+      "field": "other",
+      "current": "separate venue near id 6355",
+      "proposed": "likely DUPLICATE of id 6355 (菲菲羊乐园（周浦万达店）); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6914",
+      "evidence_quote": "same Zhoupu Wanda 2F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6355. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6694,
+      "name": "蹦蹦乐园上海奉贤百联店",
+      "field": "other",
+      "current": "separate venue near id 6695",
+      "proposed": "likely DUPLICATE of id 6695 (蹦蹦乐园南桥百联店); merge or suppress",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2668",
+      "evidence_quote": "same Bailian Nanqiao area (Baiqi 288 vs 588)",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6695. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 7145,
+      "name": "风云再起上海中环百联店",
+      "field": "other",
+      "current": "separate venue near id 7141",
+      "proposed": "likely DUPLICATE of id 7141 (风云再起(百联中环购物广场)); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/583",
+      "evidence_quote": "same Bailian Zhonghuan 3F",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 7141. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 7149,
+      "name": "风云再起上海维璟广场店",
+      "field": "other",
+      "current": "separate venue near id 7214",
+      "proposed": "likely DUPLICATE of id 7214 (风云再起莘庄维璟印象城店); merge or suppress",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/491",
+      "evidence_quote": "same Weijing INCITY L4",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 7214. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 6318,
+      "name": "菲游乐上海禹州广场店",
+      "field": "other",
+      "current": "separate venue near id 6313",
+      "proposed": "likely DUPLICATE of id 6313 (菲游乐(上海浦东禹悦汇店)); merge or suppress",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5200",
+      "evidence_quote": "near-identical Huinan coords; Yuyuehui vs Yuzhou",
+      "checked_at": "2026-07-31",
+      "note": "Prefer bemanicn-linked id 6313. Confirm not two tenants before hard delete."
+    },
+    {
+      "id": 4801,
+      "name": "汤姆熊浦东高行森兰店",
+      "field": "status",
+      "current": "open (wahlap-only)",
+      "proposed": "open (unverified beyond wahlap/ZIv)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11462",
+      "evidence_quote": "ZIv Tom World Senlan Garden City 3F; not marked closed",
+      "checked_at": "2026-07-31",
+      "note": "No BC link. Do not close without stronger evidence."
+    }
+  ]
+}

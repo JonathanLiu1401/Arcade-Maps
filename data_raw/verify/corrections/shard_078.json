@@ -1,0 +1,1110 @@
+{
+  "shard": 78,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/ (Inertia JSON for all 75 linked shop ids in shard; 74 OK, 1x404)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China (Beijing filter)",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=* for specific Beijing venues",
+    "Cross-check WAHLAP-only rows by coordinate proximity to BemaniCN-backed siblings"
+  ],
+  "corrections": [
+    {
+      "id": 1382,
+      "name": "【即将停业】吾技动漫（四元桥店）",
+      "field": "status",
+      "current": "listed as open-ish with name tag 即将停业; games other+taiko",
+      "proposed": "closed_or_closing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5205",
+      "evidence_quote": "BemaniCN name still 【即将停业】吾技动漫（四元桥店）; comment: 预计2026年7月31日闭店停业。舞萌和中二已于2026.7.14下午提前撤机，运往龙德广场店. updated_at=2026-07-16",
+      "note": "Closure date in comment is 2026-07-31. maimai/CHUNITHM already removed to 龙德 (id 2091). Do not send players here after that date. Remaining cabs only taiko+Initial D+Mezastar on BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1386,
+      "name": "【营业状态存疑】迪乐尼电玩城望京中福百货店",
+      "field": "status",
+      "current": "listed with status-doubt tag; taiko x1",
+      "proposed": "likely_closed",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2912",
+      "evidence_quote": "BemaniCN name 【营业状态存疑】迪乐尼电玩城望京中福百货店; comment: 据点评/美团上的用户评价反应，该店自2025年11月便已停业，当前店铺的实际运营状态待实地探查. updated_at=2026-06-05",
+      "note": "Community reports closed since 2025-11. No newer confirmation of reopening found. Treat as closed until proven open.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1383,
+      "name": "【即将开业】E享空间北京新华百货CCmall店",
+      "field": "status",
+      "current": "tagged 即将开业; listed with maimai_dx x1 and hours Mon-Sun 10:00-22:30",
+      "proposed": "opening_soon_or_verify_opened",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6988",
+      "evidence_quote": "BemaniCN name still 【即将开业】E享空间北京新华百货CCmall店; maimai comment 应该是全新机器，还没插电; updated_at=2026-06-05; start_time=10 end_time=22",
+      "note": "Still opening-soon on BemaniCN as of last update 2026-06-05. App hours/prices may be premature. WAHLAP-only sibling id 1048 is ~20m away and is almost certainly the same planned venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1381,
+      "name": "【8.8开业】M.Lab 米莱音游研究所",
+      "field": "status",
+      "current": "tagged 8.8开业; games chunithm+maimai_dx counts 2/5",
+      "proposed": "opening_2026-08-08_verify",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4422",
+      "evidence_quote": "BemaniCN name still 【8.8开业】M.Lab 米莱音游研究所; comment: 开业时间：8月8日; 会员定价：19元/小时 139元/12小时; updated_at=2026-07-29",
+      "note": "BemaniCN still shows opening Aug 8 (year context 2026 given updated_at). game_counts maimai_dx=5 includes 3 MajdataPlay/unofficial hand cabs plus 2 real DX. Confirm open after 2026-08-08.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2082,
+      "name": "吉睿潮玩(顺义祥云小镇店)",
+      "field": "status",
+      "current": "listed open with bemanicn link s/5628; maimai+taiko",
+      "proposed": "bemanicn_entry_removed_verify_elsewhere",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5628",
+      "evidence_quote": "HTTP 404 Not Found for BemaniCN shop id 5628 (Inertia JSON fetch 2026-07-31)",
+      "note": "BemaniCN page gone. ZIv still has 吉睿潮玩 Shine Hills as id 11307 (upd 2026-07-07) with maimai DX + taiko at 2F Block 11 Shine Hills. Prefer ZIv/WAHLAP sibling id 2083 rather than dead BemaniCN link. Confirm still open on site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1190,
+      "name": "KT竞技现场(朝阳合生汇店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/682",
+      "evidence_quote": "BemaniCN arcades: only WACCA qty=2 国行. Comment: 店铺现已由商场B1层21街区西侧搬至21街区东侧，音游只有华卡和舞立方。updated_at=2026-07-12",
+      "note": "Live BemaniCN says only WACCA (+ dance cube as other). Remove chunithm and maimai_dx from games. App notes still claim CHUNITHM VERSE and maimai DX from older ZIv (11250 upd 2026-06-23). Official-community newer source wins.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1190,
+      "name": "KT竞技现场(朝阳合生汇店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/682",
+      "evidence_quote": "WACCA quantity=2 version=国行 coin=5 comment=从三楼搬来的",
+      "note": "Also clear any stale chunithm/maimai_dx counts if present. count_evidence=bemanicn_qty.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1190,
+      "name": "KT竞技现场(朝阳合生汇店)",
+      "field": "prices",
+      "current": {
+        "chunithm": "CN¥5.00",
+        "maimai_dx": "CN¥5.00"
+      },
+      "proposed": {
+        "wacca": "5 coins per credit (BemaniCN coin=5); venue price field 0.5 RMB/coin style summary"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/682",
+      "evidence_quote": "WACCA coin=5; shop price=0.5; no chunithm/maimai rows remain",
+      "note": "Remove chunithm/maimai price rows. 0.5 is BemaniCN free-text coin RMB estimate, not a per-credit price by itself.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4096,
+      "name": "星际传奇北京东坝万达店",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2866",
+      "evidence_quote": "BemaniCN lists WACCA qty=2 Ver.3 coin=4; no other rhythm titles on this shop page. updated_at=2025-11-29",
+      "note": "App only has other; add wacca. ZIv 11343 (2026-07-01) also lists 华卡音舞 Ver.3 x2 at Dongba Wanda.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4096,
+      "name": "星际传奇北京东坝万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2866",
+      "evidence_quote": "WACCA quantity=2 version=Ver.3",
+      "note": "count_evidence=bemanicn_qty",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3018,
+      "name": "奇哒荟北京丰台店",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "wacca"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5938",
+      "evidence_quote": "BemaniCN arcades only maimai DX qty=1 Ver.CN1.51-E; comment mentions 店内有1台舞萌DX2025全新机 only. updated_at=2026-02-09. No WACCA row.",
+      "note": "App/ZIv still carry wacca but live BemaniCN and shop comment only describe maimai. Propose remove wacca; confidence likely not certain because WACCA could be unlisted. Also remove game_counts.wacca and prices.wacca if removing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3018,
+      "name": "奇哒荟北京丰台店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1,
+        "wacca": 1
+      },
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5938",
+      "evidence_quote": "only maimai DX quantity=1 on BemaniCN",
+      "note": "Drop wacca count if game removed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3361,
+      "name": "宝贝计划常营华联店",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4002",
+      "evidence_quote": "BemaniCN arcades: maimai DX x2; 舞立方EVO x1; 头文字D x4 comment 已撤机. No jubeat, no taiko. updated_at=2026-07-18",
+      "note": "jubeat and taiko not on live BemaniCN. Initial D marked 已撤机 so other may also be stale. ZIv 11251 may still be older. Prefer BemaniCN for current floor.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3361,
+      "name": "宝贝计划常营华联店",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 1,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "proposed": {
+        "maimai_dx": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4002",
+      "evidence_quote": "maimai DX quantity=2; no jubeat/taiko rows",
+      "note": "Remove jubeat/taiko counts if games removed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2324,
+      "name": "噜彼熊电玩嘉年华万柳店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1293",
+      "evidence_quote": "BemaniCN 噜彼熊电玩嘉年华北京华联万柳店 arcades: maimai DX x2, CHUNITHM x2, 太鼓之达人 x1. No IIDX/SDVX. updated_at=2026-07-20",
+      "note": "App wrongly merged ZIv 11350 (东城东方银座 噜彼熊) machines onto the Wanliu venue. Wanliu has no IIDX/SDVX on BemaniCN. ZIv 11304 is the correct Wanliu row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2324,
+      "name": "噜彼熊电玩嘉年华万柳店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "iidx": 1,
+        "maimai_dx": 2,
+        "sdvx": 2,
+        "taiko": 3
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "taiko": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1293",
+      "evidence_quote": "CHUNITHM qty=2; maimai DX qty=2; 太鼓之达人 qty=1 (not 3)",
+      "note": "taiko was 3 from wrong ZIv merge (Dongcheng). Remove iidx/sdvx counts.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2324,
+      "name": "噜彼熊电玩嘉年华万柳店",
+      "field": "location",
+      "current": {
+        "lat": 39.942,
+        "lng": 116.436,
+        "addr": "北京市海淀区巴沟路2号万柳华联购物中心二层"
+      },
+      "proposed": {
+        "lat": 39.9717062,
+        "lng": 116.2889774,
+        "addr": "海淀街道巴沟路2号华联万柳购物中心二楼北侧"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11304",
+      "evidence_quote": "ZIv 11304 噜彼熊电玩嘉年华(华联万柳) lat=39.9717062 lng=116.2889774 address 2F North Side, BHG Mall Wanliu, No.2 Bagou Road; info BEMANICN ID: 1293",
+      "note": "CRITICAL: app pin 39.942,116.436 is ~17km wrong (sits near Dongcheng/Chaoyang, not Haidian Wanliu). Wrong ZIv link id=11350 is the Dongcheng Oriental Ginza 噜彼熊 (sibling of app id 2321). Retarget ziv link to 11304. BemaniCN address confirms Wanliu BHG.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2324,
+      "name": "噜彼熊电玩嘉年华万柳店",
+      "field": "other",
+      "current": "ziv link https://zenius-i-vanisher.com/v5.2/arcade.php?id=11350",
+      "proposed": "ziv link should be https://zenius-i-vanisher.com/v5.2/arcade.php?id=11304 (Wanliu); 11350 is Dongcheng Oriental Ginza 噜彼熊",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11304",
+      "evidence_quote": "11304 name 噜彼熊电玩嘉年华(华联万柳) BEMANICN ID: 1293; 11350 address Oriental Ginza Dongzhimen = Dongcheng store",
+      "note": "Root cause of wrong lat/lng and ghost IIDX/SDVX on Wanliu row.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2324,
+      "name": "噜彼熊电玩嘉年华万柳店",
+      "field": "hours",
+      "current": null,
+      "proposed": "~09:20/09:30 open, ~24:00-02:00 close (comment); BemaniCN start=10 end=26",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1293",
+      "evidence_quote": "start_time=10 end_time=26; comment: 店铺在2层北侧。9:20左右开门，大约24:00结束营业 ... 闭店设置已改为2:00，店铺亦营业到凌晨",
+      "note": "Slightly inconsistent comment vs fields; late night possible.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1229,
+      "name": "PLAYCE乐顽星电玩（京西大悦城店）",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 3,
+        "taiko": 2
+      },
+      "proposed": {
+        "maimai_dx": 3,
+        "taiko": 0
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2706",
+      "evidence_quote": "太鼓之达人 qty=1 comment 26.5.3已关机 无法游玩; 太鼓达人(旧代) qty=1 comment 7.14 屏幕发黑 显示无信号. maimai DX qty=3 still listed. updated_at=2026-07-14",
+      "note": "Both taiko units reported unplayable on BemaniCN as of 2026-07-14. Propose taiko count 0 or remove taiko from games until repaired. Shop comment also 26.7.14 避雷 机厅机况奇差无比.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1229,
+      "name": "PLAYCE乐顽星电玩（京西大悦城店）",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2706",
+      "evidence_quote": "taiko Nijiiro 已关机 无法游玩; old taiko 屏幕发黑 显示无信号",
+      "note": "Remove taiko while both cabs are dead per BemaniCN comments. Keep maimai (3, though condition poor).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1229,
+      "name": "PLAYCE乐顽星电玩（京西大悦城店）",
+      "field": "other",
+      "current": "notes/cabs mention maimai FiNALE among ZIv cab list",
+      "proposed": "maimai is DX network (BemaniCN title_id=1 maimai DX, version 随网更新 / 已更新舞萌2026); FiNALE label is stale ZIv residue",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2706",
+      "evidence_quote": "title maimai DX quantity=3 version=随网更新 comment includes 已更新舞萌2026",
+      "note": "China live maimai is WAHLAP DX. Strip FiNALE from notes/cabs display.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3719,
+      "name": "插电师北京王府井银泰店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11260",
+      "evidence_quote": "ZIv 11260 PLAYCE插电师 (王府井银泰店) upd 2026-07-08 machines include beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL) x2; SOUND VOLTEX EXCEED GEAR (Valkyrie model) x2; plus CHUNITHM x2, maimai DX x3, taiko x1",
+      "note": "BemaniCN s/4940 only lists SEGA-side titles (maimai/CHUNITHM/taiko) and omits Konami converts. ZIv July 2026 still has Lightning IIDX and Valkyrie SDVX. Add iidx+sdvx. cab_models: iidx Lightning, sdvx Valkyrie.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3719,
+      "name": "插电师北京王府井银泰店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 3,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 3,
+        "taiko": 1,
+        "iidx": 2,
+        "sdvx": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11260",
+      "evidence_quote": "IIDX Lightning x2; SDVX Valkyrie x2; CHUNITHM x2; maimai DX x3; taiko x1 (ZIv machine list 2026-07-08)",
+      "note": "BemaniCN confirms SEGA counts. Konami counts from ZIv. count_evidence mix bemanicn_qty / ziv_listed with real multi-cab counts not placeholder 1.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3719,
+      "name": "插电师北京王府井银泰店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": "Lightning Model",
+        "sdvx": "Valkyrie Model"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11260",
+      "evidence_quote": "beatmania IIDX 32 Pinky Crush (LIGHTNING MODEL); SOUND VOLTEX EXCEED GEAR (Valkyrie model)",
+      "note": "Important for players choosing cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4828,
+      "name": "泛时空北京西红门荟聚店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "sdvx",
+        "taiko",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9754",
+      "evidence_quote": "ZIv 9754 FUNSPACE BEIJING Livat upd 2026-07-15: IIDX 33 x2, DDR WORLD x1, GITADORA GW DM+GF, jubeat Ave.+音乐魔方, SDVX Valkyrie x1, CHUNITHM x2, taiko x2, maimai DX x4, plus more",
+      "note": "Major incomplete listing. BemaniCN s/2287 only shows maimai/CHUNITHM/taiko (WAHLAP-side) but ZIv documents full Konami suite updated 2026-07-15. info BEMANICN ID: 2287. Also consider linking ziv 9754.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4828,
+      "name": "泛时空北京西红门荟聚店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 4,
+        "taiko": 2
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 4,
+        "taiko": 2,
+        "iidx": 2,
+        "ddr": 1,
+        "gitadora": 2,
+        "jubeat": 3,
+        "sdvx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9754",
+      "evidence_quote": "counts from ZIv 2026-07-15 machine list: IIDX x2, DDR x1, GF+DM x1 each, jubeat Ave x1 + 音乐魔方 x2, SDVX Valkyrie x1, CHUNITHM x2, taiko (old+Nijiiro) x2, maimai x4",
+      "note": "jubeat=3 if counting Ave+2x音乐魔方; taiko=2 matches app. sdvx cab is Valkyrie (nabla).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4828,
+      "name": "泛时空北京西红门荟聚店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "Valkyrie Model",
+        "ddr": "WORLD 20th anniversary"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9754",
+      "evidence_quote": "SOUND VOLTEX nabla (Valkyrie model); DanceDanceRevolution WORLD (20th anniversary model)",
+      "note": "IIDX model generation not labeled Lightning in ZIv name (IIDX 33 Sparkle Shower) - leave iidx model unverified.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2996,
+      "name": "夸特游艺（望京凯德mall店）",
+      "field": "location",
+      "current": {
+        "lat": 39.671051,
+        "lng": 116.31289
+      },
+      "proposed": {
+        "lat": 39.991686615808,
+        "lng": 116.46226857324,
+        "addr": "广顺北大街33号院213号楼凯德MALL（望京店）3层30103-3435号"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3536",
+      "evidence_quote": "BemaniCN address 广顺北大街33号院213号楼凯德MALL（望京店）3层30103-3435号; ZIv 11352 Quart World 望京店 lat=39.991686615808 lng=116.46226857324 at Captial Land 凯德广场 Guangshun North No.33 (upd 2026-08-01)",
+      "note": "CRITICAL wrong-district pin: app lat/lng 39.671051,116.31289 is CapitaMall Daxing / 天宫院 area (same coords as 卡通尼凯德大兴 id 1987), NOT Wangjing. ~35km south of real Wangjing Kaide. Players would go to the wrong mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2996,
+      "name": "夸特游艺（望京凯德mall店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (BemaniCN end_time=26); after 22:00 mall entry restricted",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3536",
+      "evidence_quote": "start_time=10 end_time=26; comment 营业时间10店至次日2点，但22点后商场只出不进",
+      "note": "end_time 26 means 02:00 next day on BemaniCN convention used elsewhere.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1191,
+      "name": "KT竞技现场（五棵松华熙LIVE店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-03:00 (BemaniCN end_time=26; comment 店铺实际营业到凌晨3点)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6999",
+      "evidence_quote": "start_time=10 end_time=26; comment: 店铺实际营业到凌晨3点. updated_at=2026-07-31",
+      "note": "Also coin prices high: maimai/CHUNITHM coin=6, WACCA coin=5; shop price field=2.0.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2107,
+      "name": "和音屋 x -Azisai- 北京店 立直麻将/音游",
+      "field": "hours",
+      "current": "Mon-Sun 13:00-24:00",
+      "proposed": "13:00-02:00 (BemaniCN start=13 end=26); minors not admitted; must join QQ for address",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6870",
+      "evidence_quote": "start_time=13 end_time=26; comment 本店谢绝未成年顾客; 入店前请务必入群 ... 获取路线指引; 3/14 13:00正式营业",
+      "note": "App end 24:00 may be short vs BemaniCN end 26. Address intentionally vague. Free-play membership shop. BemaniCN only lists maimai x2, CHUNITHM x1, SDVX Valkyrie x1 - ZIv still has broader Konami set; private shop inventory may differ. Do NOT strip Konami games without on-site confirmation.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2107,
+      "name": "和音屋 x -Azisai- 北京店 立直麻将/音游",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "Valkyrie Model"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6870",
+      "evidence_quote": "SOUND VOLTEX qty=1 version=7 nabla comment: Valkyrie Model框体（女武神框体）",
+      "note": "Private free-play shop; SDVX is Valkyrie per BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 967,
+      "name": "AKIBAGO北京朝阳微博in店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Weekdays to 21:00, weekends/holidays to 22:00 (shop comment); BemaniCN start=10 end=21",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6832",
+      "evidence_quote": "start_time=10 end_time=21; comment: 工作日营业至晚9点，周末及节假日营业至晚10点. 如遇极端天气造成公园闭园，商场亦随之停业.",
+      "note": "Inside Chaoyang Park Weibo IN; weather/park closure can close mall. QR pay only, no physical coins.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2091,
+      "name": "吾技动漫北京龙德广场店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mall closes Sun-Thu ~21:30, Fri-Sat ~22:00; machines may shut early near close",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2174",
+      "evidence_quote": "comment: 商场周日至周四21：30闭店，周五和周六22：00闭店 ... 在临近21:30时店员会提前关闭机台和网络. updated_at=2026-07-28",
+      "note": "Received maimai x2 + CHUNITHM x2 transferred from closing 四元桥店 (comment 新增两台原四元桥店的机器). Counts chunithm=4 maimai=3 taiko=1 match live BemaniCN.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1382,
+      "name": "【即将停业】吾技动漫（四元桥店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Weekdays 11:00-21:00, weekends 11:00-23:00 (historical; venue closing 2026-07-31)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5205",
+      "evidence_quote": "工作日（周一～四）营业时间：11:00～21:00；周末（周五～日）营业时间：11:00～23:00。预计2026年7月31日闭店停业",
+      "note": "Only useful if map keeps historical row; prefer status closed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1381,
+      "name": "【8.8开业】M.Lab 米莱音游研究所",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 5
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "maimai_dx_unofficial_hand": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4422",
+      "evidence_quote": "two arcade rows for maimai: qty=2 ver=2025 随网更新 (工厂直供); qty=3 ver=手台 with MajdataPlay (Maimoller*2 + ADX*1, Majdata NET 非官方模拟器程序)",
+      "note": "App maimai_dx=5 overstates official networked DX cabinets. Only 2 are real DX; 3 are hand/controller setups for custom charts. CHUNITHM 2 matches.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1048,
+      "name": "E享空间北京西城百货大楼店",
+      "field": "other",
+      "current": "separate venue id=1048 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=1383 (【即将开业】E享空间北京新华百货CCmall店) dist_m≈20",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only 'E享空间北京西城百货大楼店' within ~20m of BemaniCN-backed '【即将开业】E享空间北京新华百货CCmall店' (id 1383) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1600,
+      "name": "乐游记丰台京盛时代店",
+      "field": "other",
+      "current": "separate venue id=1600 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=1601 (乐游记游戏体验中心) dist_m≈2",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '乐游记丰台京盛时代店' within ~2m of BemaniCN-backed '乐游记游戏体验中心' (id 1601) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1667,
+      "name": "乐立方潮玩大兴龙玥城店",
+      "field": "other",
+      "current": "separate venue id=1667 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=1668 (乐立方潮玩运动馆大兴龙玥城店) dist_m≈0",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '乐立方潮玩大兴龙玥城店' within ~0m of BemaniCN-backed '乐立方潮玩运动馆大兴龙玥城店' (id 1668) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1882,
+      "name": "北京上地华联嘉贝乐",
+      "field": "other",
+      "current": "separate venue id=1882 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2265 (嘉贝乐电玩城(上地华联店)) dist_m≈47",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '北京上地华联嘉贝乐' within ~47m of BemaniCN-backed '嘉贝乐电玩城(上地华联店)' (id 2265) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2047,
+      "name": "可多梦北京丰台店",
+      "field": "other",
+      "current": "separate venue id=2047 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2048 (可多梦北京丰台花乡奥莱店) dist_m≈26",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '可多梦北京丰台店' within ~26m of BemaniCN-backed '可多梦北京丰台花乡奥莱店' (id 2048) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2078,
+      "name": "吉睿游艺北京海淀学清路店",
+      "field": "other",
+      "current": "separate venue id=2078 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2085 (吉睿潮玩（海淀学清路店）) dist_m≈55",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '吉睿游艺北京海淀学清路店' within ~55m of BemaniCN-backed '吉睿潮玩（海淀学清路店）' (id 2085) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2083,
+      "name": "吉睿潮玩北京顺义店",
+      "field": "other",
+      "current": "separate venue id=2083 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2082 (吉睿潮玩(顺义祥云小镇店)) dist_m≈23",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '吉睿潮玩北京顺义店' within ~23m of BemaniCN-backed '吉睿潮玩(顺义祥云小镇店)' (id 2082) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2084,
+      "name": "吉睿潮玩朝阳凯德茂店",
+      "field": "other",
+      "current": "separate venue id=2084 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2079 (吉睿游艺（太阳宫凯德mall店）) dist_m≈0",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '吉睿潮玩朝阳凯德茂店' within ~0m of BemaniCN-backed '吉睿游艺（太阳宫凯德mall店）' (id 2079) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2263,
+      "name": "嘉贝乐北京朝阳店",
+      "field": "other",
+      "current": "separate venue id=2263 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2264 (嘉贝乐惠多港店) dist_m≈37",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '嘉贝乐北京朝阳店' within ~37m of BemaniCN-backed '嘉贝乐惠多港店' (id 2264) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2568,
+      "name": "大玩家北京丰台西铁营万达店",
+      "field": "other",
+      "current": "separate venue id=2568 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=2665 (大玩家（西铁营万达店）) dist_m≈0",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '大玩家北京丰台西铁营万达店' within ~0m of BemaniCN-backed '大玩家（西铁营万达店）' (id 2665) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3005,
+      "name": "夹米星球丰台石榴庄店",
+      "field": "other",
+      "current": "separate venue id=3005 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=3007 (夹米星球（丰台汇琴店）) dist_m≈0",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '夹米星球丰台石榴庄店' within ~0m of BemaniCN-backed '夹米星球（丰台汇琴店）' (id 3007) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3077,
+      "name": "奇幻王国电玩城北京大兴环宇坊店",
+      "field": "other",
+      "current": "separate venue id=3077 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=3078 (奇幻王国（大兴环宇坊店）) dist_m≈135",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '奇幻王国电玩城北京大兴环宇坊店' within ~135m of BemaniCN-backed '奇幻王国（大兴环宇坊店）' (id 3078) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3110,
+      "name": "奥尔曼嘉年华昌平龙旗购物中心店",
+      "field": "other",
+      "current": "separate venue id=3110 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=3109 (奥尔曼嘉年华北京龙旗广场店) dist_m≈82",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '奥尔曼嘉年华昌平龙旗购物中心店' within ~82m of BemaniCN-backed '奥尔曼嘉年华北京龙旗广场店' (id 3109) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3354,
+      "name": "宝贝计划北京大兴银泰店",
+      "field": "other",
+      "current": "separate venue id=3354 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=3366 (宝贝计划（大兴上德银泰城店）) dist_m≈59",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '宝贝计划北京大兴银泰店' within ~59m of BemaniCN-backed '宝贝计划（大兴上德银泰城店）' (id 3366) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3356,
+      "name": "宝贝计划北京朝阳华联店",
+      "field": "other",
+      "current": "separate venue id=3356 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=3361 (宝贝计划常营华联店) dist_m≈51",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '宝贝计划北京朝阳华联店' within ~51m of BemaniCN-backed '宝贝计划常营华联店' (id 3361) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3625,
+      "name": "怀柔万达宝贝计划",
+      "field": "other",
+      "current": "separate venue id=3625 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=3353 (宝贝计划(怀柔店)) dist_m≈58",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '怀柔万达宝贝计划' within ~58m of BemaniCN-backed '宝贝计划(怀柔店)' (id 3353) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3718,
+      "name": "插电师playce北京石景山店",
+      "field": "other",
+      "current": "separate venue id=3718 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=1229 (PLAYCE乐顽星电玩（京西大悦城店）) dist_m≈50",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '插电师playce北京石景山店' within ~50m of BemaniCN-backed 'PLAYCE乐顽星电玩（京西大悦城店）' (id 1229) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4098,
+      "name": "星际传奇北京五棵松店",
+      "field": "other",
+      "current": "separate venue id=4098 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=4073 (星际传奇STAR LEGEND电玩(北京五棵松店)) dist_m≈106",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '星际传奇北京五棵松店' within ~106m of BemaniCN-backed '星际传奇STAR LEGEND电玩(北京五棵松店)' (id 4073) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4242,
+      "name": "星际玩家北京西城凯德MALL店",
+      "field": "other",
+      "current": "separate venue id=4242 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=4253 (星际玩家西直门凯德MALL店) dist_m≈42",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '星际玩家北京西城凯德MALL店' within ~42m of BemaniCN-backed '星际玩家西直门凯德MALL店' (id 4253) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4306,
+      "name": "智玩空间北京怀柔店",
+      "field": "other",
+      "current": "separate venue id=4306 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=1734 (京北智玩空间) dist_m≈33",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only '智玩空间北京怀柔店' within ~33m of BemaniCN-backed '京北智玩空间' (id 1734) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1223,
+      "name": "PKboy北京湾里奥莱店",
+      "field": "other",
+      "current": "separate venue id=1223 src=wahlap-only",
+      "proposed": "likely_duplicate_of id=1224 (PKBoy潮玩嘉年华北京湾里奥莱店) dist_m≈150",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/",
+      "evidence_quote": "Coordinate proximity: WAHLAP-only 'PKboy北京湾里奥莱店' within ~150m of BemaniCN-backed 'PKBoy潮玩嘉年华北京湾里奥莱店' (id 1224) in shard_078 Beijing set",
+      "note": "WAHLAP-only shell near richer BemaniCN/ZIv row. Prefer keep BemaniCN-backed id and merge/remove WAHLAP shell after human review.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4827,
+      "name": "泛时空北京大兴店",
+      "field": "other",
+      "current": "separate venue id=4827 src=wahlap-only",
+      "proposed": "possible_duplicate_or_sibling_of id=4828 (泛时空北京西红门荟聚店) dist_m≈600",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2287",
+      "evidence_quote": "WAHLAP-only 泛时空北京大兴店 ~0.6km from 荟聚 Livat 泛时空 (id 4828 / bemanicn 2287)",
+      "note": "May be same brand/mall cluster or a second outlet; do not merge without address proof.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起游乐汇 (北京西单店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起游乐汇 Fengyun Arcade (北京西单店)",
+        "addr": "6F, New Generation Mall / 西单新一代商场6F",
+        "lat": 39.912829349931,
+        "lng": 116.366562626,
+        "games": [
+          "chunithm",
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "maimai_dx": 3
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4191",
+        "bemanicn_id": 1867,
+        "hours": "10:00-24:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4191",
+      "evidence_quote": "ZIv 4191 Fengyun Arcade 北京西单店 upd 2026-07-28; CHUNITHM VERSE x2, maimai DX x3, Initial D x4; hours 10:00-24:00; info BEMANICN ID: 1867",
+      "note": "Not present under 风云 in shard_078. Major Xidan rhythm floor, updated days before check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "爱玩荟家庭游乐中心（大望路店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "爱玩荟家庭游乐中心（大望路店）",
+        "addr": "2F New World shopping mall, Wanda Plaza CBD Block A / 大望路新世界",
+        "lat": 39.907913349549,
+        "lng": 116.4663541317,
+        "games": [
+          "chunithm",
+          "jubeat",
+          "maimai_dx",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "jubeat": 2,
+          "maimai_dx": 1
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10862",
+        "bemanicn_id": 5322,
+        "hours": "10:00-24:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10862",
+      "evidence_quote": "ZIv 10862 Love the game together 大望路店 upd 2026-07-24; CHUNITHM x2, jubeat音乐魔方 x2, maimai DX x1; BEMANICN ID: 5322",
+      "note": "Missing from shard. ZIv also lists legacy maimai MURASAKi PLUS x2 alongside DX.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "电雀屋 Cozyroom",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "电雀屋 Cozyroom",
+        "addr": "Room B619, Xueyuan No.8 Office Building, Haidian",
+        "lat": 39.999930937025,
+        "lng": 116.34097090551,
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "maimai_dx": 5
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11407",
+        "bemanicn_id": 5623,
+        "hours": "10:00-02:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11407",
+      "evidence_quote": "ZIv 11407 电雀屋Cozyroom upd 2026-07-07; CHUNITHM x2, maimai DX x5; hours 10:00-02:00; BEMANICN ID: 5623; minors need guardian consent",
+      "note": "Private-ish rhythm room near Xueyuan Lu. Not in shard_078.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "环游嘉年华（北京朝阳大悦城店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游嘉年华（北京朝阳大悦城店）",
+        "addr": "8F, Chaoyang Joy City, No.101 Chaoyang North Road",
+        "lat": 39.9233673,
+        "lng": 116.5127771,
+        "games": [
+          "chunithm",
+          "jubeat",
+          "maimai_dx",
+          "taiko",
+          "wacca",
+          "other"
+        ],
+        "game_counts": {
+          "chunithm": 4,
+          "jubeat": 4,
+          "maimai_dx": 5,
+          "taiko": 2,
+          "wacca": 1
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11291",
+        "bemanicn_id": 4,
+        "hours": "10:00-22:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11291",
+      "evidence_quote": "ZIv 11291 环游嘉年华 朝阳大悦城店 upd 2026-06-26; jubeat音乐魔方 x4, CHUNITHM x4, WACCA REVERSE x1, taiko x2, maimai DX x5; BEMANICN ID: 4",
+      "note": "Large Joy City floor completely absent from shard. High value add.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玩宙电玩世界 W/Z GAME WORLD",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩宙电玩世界 W/Z GAME WORLD",
+        "addr": "Tuanjie Xinli Cultural Park, No.3-5 Tuanjiehu Dongli, Chaoyang",
+        "lat": 39.928699,
+        "lng": 116.463996,
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11439",
+        "bemanicn_id": 6183
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11439",
+      "evidence_quote": "ZIv 11439 W/Z GAME WORLD upd 2026-07-14; maimai DX PRiSM PLUS x2 (touch issues noted); BEMANICN ID: 6183",
+      "note": "Residential-area maimai spot near Tuanjiehu, missing from map.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "電波雀莊 Denpa Mahjong House",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "電波雀莊 Denpa Mahjong House",
+        "addr": "Room 627, 6F, Jiacheng Center, Chengbei Subdistrict, Changping",
+        "lat": 40.215233,
+        "lng": 116.228264,
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "chunithm": 1,
+          "maimai_dx": 1
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11444",
+        "bemanicn_id": 6333
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11444",
+      "evidence_quote": "ZIv 11444 電波雀莊 upd 2026-07-14; CHUNITHM VERSE x1, maimai DX x1; primarily riichi mahjong parlor; BEMANICN ID: 6333",
+      "note": "Changping specialty shop with rhythm cabs. Missing from shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起游乐汇 (通爱/通州)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起游乐汇 (通爱)",
+        "addr": "M Floor, Beitou Aegean Shopping Park, Building 1, No.289 Xinhua, Tongzhou",
+        "lat": 39.9078323,
+        "lng": 116.6526429,
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11294",
+        "bemanicn_id": 1079,
+        "hours": "10:00-24:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11294",
+      "evidence_quote": "ZIv 11294 Fengyun 通爱 upd 2026-07-27; taiko x1, maimai DX x2, Initial D x4; hours 10:00-24:00; BEMANICN ID: 1079",
+      "note": "Tongzhou Fengyun branch missing from shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起游乐汇 (北京门头沟店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起游乐汇 (北京门头沟店)",
+        "addr": "Xichang'an Zhongjun World City 4F, Mentougou",
+        "lat": 39.9102604,
+        "lng": 116.1192379,
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "other"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11322",
+        "bemanicn_id": 2299,
+        "hours": "10:00-24:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11322",
+      "evidence_quote": "ZIv 11322 Fengyun 门头沟店 upd 2026-07-28; taiko x1, maimai DX x2, Initial D x2; BEMANICN ID: 2299",
+      "note": "Mentougou Fengyun branch missing. Distinct from 夸特游艺门头沟店 already in shard.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

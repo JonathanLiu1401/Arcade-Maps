@@ -1,0 +1,2004 @@
+{
+  "shard": 72,
+  "checked": 115,
+  "sources_used": [
+    "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+    "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+    "https://map.bemanicn.com/api/miniapp/common/region",
+    "https://map.bemanicn.com/region/city/310100000000",
+    "https://map.bemanicn.com/s/{id} (Inertia Shop/Show for all 73 shard shops + 39 only_live shops)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China"
+  ],
+  "corrections": [
+    {
+      "id": 4130,
+      "name": "星际传奇沈阳中海环宇城店",
+      "field": "other",
+      "current": {
+        "name": "星际传奇沈阳中海环宇城店",
+        "addr": "上海市杨浦区五角场街道翔殷路1099号合生汇3楼17号星际传奇",
+        "lat": 31.3019,
+        "lng": 121.513638,
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_or_remove_as_duplicate",
+        "duplicate_of": 4077,
+        "duplicate_name": "星际传奇上海合生汇店",
+        "note_name": "WAHLAP registered this placeId under the wrong store name (Shenyang Zhonghai Huanyu) while the address is Shanghai Heshenghui. Live WAHLAP also lists the correctly named store at the same mall."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=星际传奇沈阳中海环宇城店 address=上海市杨浦区五角场街道翔殷路1099号合生汇3楼17号星际传奇; also arcadeName=星际传奇上海合生汇店 address=上海市杨浦区翔殷路1099号合生汇三楼星际传奇",
+      "note": "Pins about 142m apart (geocode variance). App row 4077 already covers Heshenghui with bemanicn+wahlap and taiko. 4130 should not remain as a separate Shanghai venue named Shenyang.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1498,
+      "name": "上海烈火游戏机娱乐有限公司",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "shop id=1 name=街机烈火 address=江宁路77恒顺大楼4层; game_counts maimai_dx=9 chunithm=5 taiko=2; updated_at=2026-07-30T08:29:42.000000Z; status=1",
+      "note": "Same address as WAHLAP Shanghai Liehuo (Jiangning Rd 77 4F). App is wahlap-only and omits taiko. Link bemanicn /s/1 and prefer brand name 街机烈火.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1498,
+      "name": "上海烈火游戏机娱乐有限公司",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 9,
+        "chunithm": 5,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "arcades quantities: maimai_dx quantity=9 version=舞萌DX2025; chunithm quantity=5 version=中二节奏2026; taiko quantity=2 version=太鼓之达人 2026春",
+      "note": "BemaniCN community quantities. ZIv id=1611 also says too many maimai cabs to list, probably +10 (lastUpdateTime 2026-07-10).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1498,
+      "name": "上海烈火游戏机娱乐有限公司",
+      "field": "other",
+      "current": {
+        "name": "上海烈火游戏机娱乐有限公司",
+        "bemanicn": null,
+        "hours_text": null
+      },
+      "proposed": {
+        "name": "街机烈火",
+        "bemanicn": "https://map.bemanicn.com/s/1",
+        "hours_text": "Mon-Sun 10:00-02:00 (+1d)",
+        "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1611"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1",
+      "evidence_quote": "name=街机烈火; start_time=10 end_time=26 (end>24 means next day, so 10:00-02:00); address=江宁路77恒顺大楼4层",
+      "note": "WAHLAP legal entity name vs public brand name. Hours from bemanicn integer fields.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 966,
+      "name": "AKIBAGO上海杨浦百联ZX造趣场店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4720",
+      "evidence_quote": "updated_at=2026-07-31T03:49:16.000000Z; arcades only: maimai_dx qty 5+2=7 version 2026 CN1.56-A; chunithm qty 2 version 2025. No jubeat title_id present.",
+      "note": "ZIv arcade 11511 (lastUpdateTime 2026-07-17) still lists 2x jubeat. BemaniCN is newer (2026-07-31) and omits jubeat. Prefer removing until reconfirmed on-site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 966,
+      "name": "AKIBAGO上海杨浦百联ZX造趣场店",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "jubeat": 2,
+        "maimai_dx": 7
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 7
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4720",
+      "evidence_quote": "maimai_dx quantities 5 and 2 (total 7); chunithm quantity 2; no jubeat row",
+      "note": "If jubeat removed from games, drop jubeat count too.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4704,
+      "name": "汤姆熊上海大悦城店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4764,
+        "distance_m": 20.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4764,
+        "keep_name": "汤姆熊欢乐世界(上海大悦城店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 20.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/9",
+      "evidence_quote": "WAHLAP-only id 4704 '汤姆熊上海大悦城店' and bemanicn-linked id 4764 '汤姆熊欢乐世界(上海大悦城店)' share mall/unit key '西藏北路166号大悦城'. Haversine distance between app pins approx 20.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4707,
+      "name": "汤姆熊上海正大广场店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4767,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4767,
+        "keep_name": "汤姆熊欢乐世界(正大广场店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/10",
+      "evidence_quote": "WAHLAP-only id 4707 '汤姆熊上海正大广场店' and bemanicn-linked id 4767 '汤姆熊欢乐世界(正大广场店)' share mall/unit key '陆家嘴西路168号正大广场2楼'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4705,
+      "name": "汤姆熊上海打浦桥日月光店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4772,
+        "distance_m": 69.1,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4772,
+        "keep_name": "汤姆熊欢乐世界打浦桥日月光店",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 69.1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3863",
+      "evidence_quote": "WAHLAP-only id 4705 '汤姆熊上海打浦桥日月光店' and bemanicn-linked id 4772 '汤姆熊欢乐世界打浦桥日月光店' share mall/unit key '徐家汇路618号2楼'. Haversine distance between app pins approx 69.1 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4720,
+      "name": "汤姆熊嘉定南翔店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4762,
+        "distance_m": 110.9,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4762,
+        "keep_name": "汤姆熊欢乐世界(上海南翔印象城店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 110.9
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2928",
+      "evidence_quote": "WAHLAP-only id 4720 '汤姆熊嘉定南翔店' and bemanicn-linked id 4762 '汤姆熊欢乐世界(上海南翔印象城店)' share mall/unit key '陈翔公路2299号03-14'. Haversine distance between app pins approx 110.9 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4701,
+      "name": "汤姆浦东熊啦啦宝都店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4780,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4780,
+        "keep_name": "汤姆熊欢乐世界（啦啦宝都店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5098",
+      "evidence_quote": "WAHLAP-only id 4701 '汤姆浦东熊啦啦宝都店' and bemanicn-linked id 4780 '汤姆熊欢乐世界（啦啦宝都店）' share mall/unit key '新金桥路738号320'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4703,
+      "name": "汤姆熊上海中山公园店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4775,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4775,
+        "keep_name": "汤姆熊欢乐世界（上海中山公园龙之梦购物公园店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/16",
+      "evidence_quote": "WAHLAP-only id 4703 '汤姆熊上海中山公园店' and bemanicn-linked id 4775 '汤姆熊欢乐世界（上海中山公园龙之梦购物公园店）' share mall/unit key '长宁路1018号龙之梦6楼'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4708,
+      "name": "汤姆熊上海百联又一城店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4789,
+        "distance_m": 60.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4789,
+        "keep_name": "汤姆熊欢乐世界（百联又一城购物中心店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 60.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/21",
+      "evidence_quote": "WAHLAP-only id 4708 '汤姆熊上海百联又一城店' and bemanicn-linked id 4789 '汤姆熊欢乐世界（百联又一城购物中心店）' share mall/unit key '淞沪路8号百联又一城'. Haversine distance between app pins approx 60.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4709,
+      "name": "汤姆熊上海虹口店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4769,
+        "distance_m": 20.3,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4769,
+        "keep_name": "汤姆熊欢乐世界(虹口店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 20.3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/19",
+      "evidence_quote": "WAHLAP-only id 4709 '汤姆熊上海虹口店' and bemanicn-linked id 4769 '汤姆熊欢乐世界(虹口店)' share mall/unit key '西江湾路388号B座5楼'. Haversine distance between app pins approx 20.3 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4710,
+      "name": "汤姆熊上海长宁南丰城店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4777,
+        "distance_m": 58.9,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4777,
+        "keep_name": "汤姆熊欢乐世界（上海虹桥南丰城店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 58.9
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/17",
+      "evidence_quote": "WAHLAP-only id 4710 '汤姆熊上海长宁南丰城店' and bemanicn-linked id 4777 '汤姆熊欢乐世界（上海虹桥南丰城店）' share mall/unit key '虹桥南丰城'. Haversine distance between app pins approx 58.9 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4711,
+      "name": "汤姆熊上海长宁宜家荟聚店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4776,
+        "distance_m": 27.9,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4776,
+        "keep_name": "汤姆熊欢乐世界（上海荟聚店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 27.9
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4208",
+      "evidence_quote": "WAHLAP-only id 4711 '汤姆熊上海长宁宜家荟聚店' and bemanicn-linked id 4776 '汤姆熊欢乐世界（上海荟聚店）' share mall/unit key '金钟路788号L3'. Haversine distance between app pins approx 27.9 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4713,
+      "name": "汤姆熊上海闵行南方店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4788,
+        "distance_m": 75.5,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4788,
+        "keep_name": "汤姆熊欢乐世界（百联南方购物中心店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 75.5
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/24",
+      "evidence_quote": "WAHLAP-only id 4713 '汤姆熊上海闵行南方店' and bemanicn-linked id 4788 '汤姆熊欢乐世界（百联南方购物中心店）' share mall/unit key '沪闵路7388号南方商城'. Haversine distance between app pins approx 75.5 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4714,
+      "name": "汤姆熊上海闵行宝龙店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4774,
+        "distance_m": 0.7,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4774,
+        "keep_name": "汤姆熊欢乐世界（七宝宝龙城市广场店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.7
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/722",
+      "evidence_quote": "WAHLAP-only id 4714 '汤姆熊上海闵行宝龙店' and bemanicn-linked id 4774 '汤姆熊欢乐世界（七宝宝龙城市广场店）' share mall/unit key '七宝宝龙广场3楼'. Haversine distance between app pins approx 0.7 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4715,
+      "name": "汤姆熊上海闵行虹桥天地店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4770,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4770,
+        "keep_name": "汤姆熊欢乐世界(虹桥天地店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2060",
+      "evidence_quote": "WAHLAP-only id 4715 '汤姆熊上海闵行虹桥天地店' and bemanicn-linked id 4770 '汤姆熊欢乐世界(虹桥天地店)' share mall/unit key '申长路688号虹桥天地3楼'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4716,
+      "name": "汤姆熊上海静安久光中心店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4779,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4779,
+        "keep_name": "汤姆熊欢乐世界（久光店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3359",
+      "evidence_quote": "WAHLAP-only id 4716 '汤姆熊上海静安久光中心店' and bemanicn-linked id 4779 '汤姆熊欢乐世界（久光店）' share mall/unit key '共和新路2188号久光中心'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4717,
+      "name": "汤姆熊上海黄浦新世界城店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4785,
+        "distance_m": 39.4,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4785,
+        "keep_name": "汤姆熊欢乐世界（新世界店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 39.4
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3724",
+      "evidence_quote": "WAHLAP-only id 4717 '汤姆熊上海黄浦新世界城店' and bemanicn-linked id 4785 '汤姆熊欢乐世界（新世界店）' share mall/unit key '南京西路新世界城8楼'. Haversine distance between app pins approx 39.4 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1497,
+      "name": "上海汤姆熊正大乐城店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4786,
+        "distance_m": 247.1,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4786,
+        "keep_name": "汤姆熊欢乐世界（正大乐城店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 247.1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5632",
+      "evidence_quote": "WAHLAP-only id 1497 '上海汤姆熊正大乐城店' and bemanicn-linked id 4786 '汤姆熊欢乐世界（正大乐城店）' share mall/unit key '正大乐城'. Haversine distance between app pins approx 247.1 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4706,
+      "name": "汤姆熊上海旭辉广场店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4768,
+        "distance_m": 34.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4768,
+        "keep_name": "汤姆熊欢乐世界(置汇旭辉广场店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 34.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/12",
+      "evidence_quote": "WAHLAP-only id 4706 '汤姆熊上海旭辉广场店' and bemanicn-linked id 4768 '汤姆熊欢乐世界(置汇旭辉广场店)' share mall/unit key '张杨路2389弄旭辉4F-1B'. Haversine distance between app pins approx 34.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2695,
+      "name": "天天玩上海徐汇汇银广场店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 2694,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 2694,
+        "keep_name": "天天玩Game（上海徐汇汇银广场店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/262",
+      "evidence_quote": "WAHLAP-only id 2695 '天天玩上海徐汇汇银广场店' and bemanicn-linked id 2694 '天天玩Game（上海徐汇汇银广场店）' share mall/unit key '华山路2088号汇银广场南楼7M'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2469,
+      "name": "壹号玩家上海浦东店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 2470,
+        "distance_m": 80.2,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 2470,
+        "keep_name": "壹号玩家动漫城（航头浦乐汇店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 80.2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5031",
+      "evidence_quote": "WAHLAP-only id 2469 '壹号玩家上海浦东店' and bemanicn-linked id 2470 '壹号玩家动漫城（航头浦乐汇店）' share mall/unit key '鹤雷路319号3层301-310'. Haversine distance between app pins approx 80.2 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4081,
+      "name": "星际传奇上海闵行七宝店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4174,
+        "distance_m": 38.6,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4174,
+        "keep_name": "星际传奇（七宝领展广场店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 38.6
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1888",
+      "evidence_quote": "WAHLAP-only id 4081 '星际传奇上海闵行七宝店' and bemanicn-linked id 4174 '星际传奇（七宝领展广场店）' share mall/unit key '漕宝路3366号L301'. Haversine distance between app pins approx 38.6 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4082,
+      "name": "星际传奇上海闵行万象城店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 4193,
+        "distance_m": 40.1,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 4193,
+        "keep_name": "星际传奇（虹桥万象城店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 40.1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5653",
+      "evidence_quote": "WAHLAP-only id 4082 '星际传奇上海闵行万象城店' and bemanicn-linked id 4193 '星际传奇（虹桥万象城店）' share mall/unit key '吴中路1599号万象城'. Haversine distance between app pins approx 40.1 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2734,
+      "name": "天空之城上海宝山店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 2922,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 2922,
+        "keep_name": "天空之城（宝山龙湖天街店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3046",
+      "evidence_quote": "WAHLAP-only id 2734 '天空之城上海宝山店' and bemanicn-linked id 2922 '天空之城（宝山龙湖天街店）' share mall/unit key '丹霞山路50弄1号龙湖宝山天街'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3948,
+      "name": "星河部落上海宝山海上世界店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3947,
+        "distance_m": 13.3,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3947,
+        "keep_name": "星河部落(海上世界店)",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 13.3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6647",
+      "evidence_quote": "WAHLAP-only id 3948 '星河部落上海宝山海上世界店' and bemanicn-linked id 3947 '星河部落(海上世界店)' share mall/unit key '吴淞口路58号海上世界2楼'. Haversine distance between app pins approx 13.3 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3957,
+      "name": "星河部落闵行浦江店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3950,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3950,
+        "keep_name": "星河部落上海浦江店",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3217",
+      "evidence_quote": "WAHLAP-only id 3957 '星河部落闵行浦江店' and bemanicn-linked id 3950 '星河部落上海浦江店' share mall/unit key '陈行公路2688号欢乐颂3L'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1935,
+      "name": "卡乐比乐园上海浦东新区店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 1936,
+        "distance_m": 56.7,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 1936,
+        "keep_name": "卡乐比乐园（上海世博源店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 56.7
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4214",
+      "evidence_quote": "WAHLAP-only id 1935 '卡乐比乐园上海浦东新区店' and bemanicn-linked id 1936 '卡乐比乐园（上海世博源店）' share mall/unit key '世博大道1368号世博源三区G层'. Haversine distance between app pins approx 56.7 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2195,
+      "name": "喜漫游上海浦东龙光蓝鲸店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 2194,
+        "distance_m": 4.5,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 2194,
+        "keep_name": "喜漫游·潮玩中心（上海临港蓝鲸世界店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 4.5
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5510",
+      "evidence_quote": "WAHLAP-only id 2195 '喜漫游上海浦东龙光蓝鲸店' and bemanicn-linked id 2194 '喜漫游·潮玩中心（上海临港蓝鲸世界店）' share mall/unit key '龙光蓝鲸世界L3-49'. Haversine distance between app pins approx 4.5 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3024,
+      "name": "奇奇乐园上海闵行龙盛广场店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3036,
+        "distance_m": 44.2,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3036,
+        "keep_name": "奇奇乐园（龙盛国际商业广场店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 44.2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2461",
+      "evidence_quote": "WAHLAP-only id 3024 '奇奇乐园上海闵行龙盛广场店' and bemanicn-linked id 3036 '奇奇乐园（龙盛国际商业广场店）' share mall/unit key '龙盛商业/国际广场'. Haversine distance between app pins approx 44.2 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3835,
+      "name": "星乐荟上海松江店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3837,
+        "distance_m": 39.1,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3837,
+        "keep_name": "星乐荟佘山宝乐汇店",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 39.1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1776",
+      "evidence_quote": "WAHLAP-only id 3835 '星乐荟上海松江店' and bemanicn-linked id 3837 '星乐荟佘山宝乐汇店' share mall/unit key '佘月路27号宝乐汇'. Haversine distance between app pins approx 39.1 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3836,
+      "name": "星乐荟上海浦东金汇广场店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3838,
+        "distance_m": 3.9,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3838,
+        "keep_name": "星乐荟浦乐汇广场店",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 3.9
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/272",
+      "evidence_quote": "WAHLAP-only id 3836 '星乐荟上海浦东金汇广场店' and bemanicn-linked id 3838 '星乐荟浦乐汇广场店' share mall/unit key '华夏东路2255号金汇/浦乐汇'. Haversine distance between app pins approx 3.9 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3635,
+      "name": "悠乐乐园上海宝山经纬汇店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3634,
+        "distance_m": 164.7,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3634,
+        "keep_name": "悠乐YOLO乐园（经纬汇店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 164.7
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4684",
+      "evidence_quote": "WAHLAP-only id 3635 '悠乐乐园上海宝山经纬汇店' and bemanicn-linked id 3634 '悠乐YOLO乐园（经纬汇店）' share mall/unit key '经地路99号经纬汇6座'. Haversine distance between app pins approx 164.7 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1471,
+      "name": "万达宝贝王家庭娱乐中心上海金桥太茂广场店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 1476,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 1476,
+        "keep_name": "万达宝贝王金桥太茂广场店",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6518",
+      "evidence_quote": "WAHLAP-only id 1471 '万达宝贝王家庭娱乐中心上海金桥太茂广场店' and bemanicn-linked id 1476 '万达宝贝王金桥太茂广场店' share mall/unit key '金桥太茂商业广场二楼宝贝王'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2189,
+      "name": "啵比特上海闵行浦江万达店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 2193,
+        "distance_m": 0.0,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 2193,
+        "keep_name": "啵比特（上海浦江万达店）",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 0.0
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6021",
+      "evidence_quote": "WAHLAP-only id 2189 '啵比特上海闵行浦江万达店' and bemanicn-linked id 2193 '啵比特（上海浦江万达店）' share mall/unit key '永跃路360号浦江万达2层'. Haversine distance between app pins approx 0.0 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3558,
+      "name": "忆凯乐上海松江叶榭店",
+      "field": "other",
+      "current": {
+        "duplicate_candidate_of": 3559,
+        "distance_m": 14.2,
+        "src": [
+          "wahlap"
+        ]
+      },
+      "proposed": {
+        "action": "merge_into",
+        "keep_id": 3559,
+        "keep_name": "忆凯乐电玩动漫城",
+        "merge_sources": [
+          "wahlap",
+          "bemanicn"
+        ],
+        "distance_m": 14.2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5923",
+      "evidence_quote": "WAHLAP-only id 3558 '忆凯乐上海松江叶榭店' and bemanicn-linked id 3559 '忆凯乐电玩动漫城' share mall/unit key '叶榭'. Haversine distance between app pins approx 14.2 m.",
+      "note": "Keep bemanicn-linked row (usually richer games/taiko). Drop wahlap-only id after merge. 1497/4786 is farther (~247m) so confidence likely only.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2557,
+      "name": "大玩家上海闵行浦江万达店",
+      "field": "location",
+      "current": {
+        "note": "same pin as bobite 2189/2193 and baobei wang 3229 (0.0m)"
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "arcadeName=大玩家上海闵行浦江万达店 address=上海市闵行区浦江镇永跃路浦江万达广场二楼 (still on live WAHLAP maimai list)",
+      "note": "Still official on WAHLAP. Pin coincides with other Pujiang Wanda tenants due to mall-level geocode. Do not delete as duplicate of bobite without floor check.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起上海人民广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起上海人民广场店",
+        "addr": "上海市黄浦区人民大道221号迪美广场负一楼227-229号",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 3,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "lat": 31.230614636313,
+        "lng": 121.46893144028,
+        "hours_text": "10:00-24:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1610"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6",
+      "evidence_quote": "WAHLAP maimai+chunithm: 风云再起上海人民广场店 人民大道221号迪美广场负一楼227-229#; BemaniCN shop 6 status=1 maimai_dx=3 chunithm=2 taiko=1; ZIv 1610 3x maimai DX 2026 + 2x CHUNITHM VERSE",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起上海长泰广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起上海长泰广场店",
+        "addr": "上海市浦东新区祖冲之路1239弄长泰商业广场地下一层59-1室",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "sdvx"
+        ],
+        "game_counts": {
+          "maimai_dx": 4,
+          "taiko": 1,
+          "sdvx": 2
+        },
+        "lat": 31.2081811887,
+        "lng": 121.5976303422,
+        "hours_text": "10:00-24:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/11",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6175"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/11",
+      "evidence_quote": "WAHLAP maimai: 风云再起上海长泰广场店 祖冲之路1239弄长泰广场地下一层59-1室; BemaniCN shop 11 maimai_dx=4 taiko=1 sdvx=2; ZIv 6175 4x maimai + 2x SDVX",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起上海龙阳广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起上海龙阳广场店",
+        "addr": "上海市浦东新区龙阳路2000号龙阳广场2楼201室",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 2
+        },
+        "lat": 31.205312,
+        "lng": 121.5533448,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/1039",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11463"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1039",
+      "evidence_quote": "WAHLAP maimai: 风云再起上海龙阳广场店 龙阳路2000号2楼201室; BemaniCN shop 1039 maimai_dx=2 taiko=2; ZIv 11463 2x maimai DX 2026",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起上海宝山日月光店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起上海宝山日月光店",
+        "addr": "上海市宝山区沪太路1933号宝山大场日月光中心三楼C栋301",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 4,
+          "chunithm": 2,
+          "taiko": 1
+        },
+        "lat": 31.2966693,
+        "lng": 121.4132211,
+        "hours_text": "10:00-24:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/1510",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11468"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1510",
+      "evidence_quote": "WAHLAP maimai+chunithm: 风云再起上海宝山日月光店 沪太路1933号日月光中心三层; BemaniCN shop 1510 maimai_dx=4 chunithm=2 taiko=1; ZIv 11468",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起上海文峰广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起上海文峰广场店",
+        "addr": "上海市浦东新区张杨北路801号文峰广场4楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "lat": 31.273692,
+        "lng": 121.583012,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/455",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11453"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/455",
+      "evidence_quote": "WAHLAP maimai: 风云再起上海文峰广场店 张杨北路801号文峰广场4楼; BemaniCN shop 455 maimai_dx=1 taiko=1; ZIv 11453",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起上海中环百联店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起上海中环百联店",
+        "addr": "上海市普陀区真光路1288号百联中环购物广场F3",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 2
+        },
+        "lat": 31.2472359,
+        "lng": 121.3790792,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/583",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11460"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/583",
+      "evidence_quote": "WAHLAP maimai: 风云再起上海中环百联店 真光路1288号中环百联3楼; BemaniCN shop 583 maimai_dx=2 taiko=2; ZIv 11460",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "风云再起莘庄维璟印象城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "风云再起莘庄维璟印象城店",
+        "addr": "上海市闵行区七莘路1507号莘庄维璟印象城L4",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 3
+        },
+        "lat": 31.132451,
+        "lng": 121.358491,
+        "hours_text": "10:00-24:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/491",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11454"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/491",
+      "evidence_quote": "WAHLAP maimai: 风云再起上海维璟广场店 维璟广场四楼; BemaniCN shop 491 maimai_dx=2 taiko=3; ZIv 11454",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩空间上海世纪汇店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩空间上海世纪汇店",
+        "addr": "上海市浦东新区世纪大道1192号世纪汇广场负一楼（LG1）",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 10,
+          "chunithm": 4,
+          "taiko": 8
+        },
+        "lat": 31.2295323,
+        "lng": 121.5228398,
+        "hours_text": "10:00-24:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/2744",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11480"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2744",
+      "evidence_quote": "WAHLAP maimai+chunithm: 酷玩空间上海世纪汇店 世纪大道1192号世纪汇负一楼; BemaniCN shop 2744 maimai_dx=10 chunithm=4 taiko=8; ZIv 11480 lists 6 maimai + 2 CHUNITHM + 8 taiko",
+      "note": "Game presence certain via WAHLAP. Exact counts: bemanicn vs ZIv disagree on maimai (10 vs 6); re-count preferred.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩空间上海普陀环球港店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩空间上海普陀环球港店",
+        "addr": "上海市普陀区中山北路3300号月星环球港负一楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 10,
+          "chunithm": 8,
+          "taiko": 10
+        },
+        "lat": 31.236398724221,
+        "lng": 121.40853859398,
+        "hours_text": "10:00-24:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4712",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11510"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4712",
+      "evidence_quote": "WAHLAP maimai+chunithm: 酷玩空间上海普陀环球港店 环球港负一楼; BemaniCN shop 4712 maimai_dx=10 chunithm=8 taiko=10; ZIv 11510 10 maimai + 8 CHUNITHM + 10 taiko",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "环游嘉年华（上海环球港店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游嘉年华（上海环球港店）",
+        "addr": "上海市普陀区中山北路3300号月星环球港3楼L3163",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 6,
+          "chunithm": 4,
+          "taiko": 6
+        },
+        "lat": 31.233866795929,
+        "lng": 121.40744470893,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/23",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2411"
+        },
+        "src": [
+          "wahlap",
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/23",
+      "evidence_quote": "WAHLAP maimai+chunithm: 环游嘉年华上海环球港店 中山北路3300号月星环球港3楼L3163; BemaniCN shop 23 maimai_dx=6 chunithm=4 taiko=6; ZIv 2411 6x maimai + 4x CHUNITHM",
+      "note": "Different floor from Coolplay Space Global Harbor (3F vs B1). Both missing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玩者归来上海浦东康桥店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩者归来上海浦东康桥店",
+        "addr": "上海市浦东新区秀浦路668号新田360广场3楼303",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/1197",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1197",
+      "evidence_quote": "WAHLAP maimai: 玩者归来上海浦东康桥店 秀浦路668号新田360广场3楼303; BemaniCN shop 1197 maimai_dx=1 status=1",
+      "note": "No ZIv coords; geocode from address.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玩者归来上海嘉定信业店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩者归来上海嘉定信业店",
+        "addr": "上海市嘉定区信业购物中心",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6298",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6298",
+      "evidence_quote": "WAHLAP maimai: 玩者归来上海嘉定信业店 嘉定区信业购物中心; BemaniCN shop 6298 maimai_dx=1",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玩者归来游乐mall上海爱琴海店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩者归来游乐mall上海爱琴海店",
+        "addr": "上海市闵行区吴中路1588号爱琴海购物公园4F",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": null,
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4421",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4421",
+      "evidence_quote": "WAHLAP maimai: 玩者归来上海闵行爱琴海店 吴中路1588号爱琴海四楼F428-F435; BemaniCN shop 4421 maimai_dx=1",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "贝塔潮玩上海嘉定大融城店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "贝塔潮玩上海嘉定大融城店",
+        "addr": "上海市嘉定区马陆镇宝安公路3386号310室",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7172",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7172",
+      "evidence_quote": "WAHLAP maimai: 贝塔潮玩上海嘉定大融城店 宝安公路3386号310室; BemaniCN shop 7172 maimai_dx=1",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲游乐宝杨宝龙广场店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "菲游乐宝杨宝龙广场店",
+        "addr": "上海市宝山区同济路669弄宝龙广场3楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/654",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/654",
+      "evidence_quote": "WAHLAP maimai: 菲游乐上海宝山店 同济路669号宝龙广场3楼; BemaniCN shop 654 maimai_dx=2",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲游乐奉贤龙湖天街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "菲游乐奉贤龙湖天街店",
+        "addr": "上海市奉贤区南桥镇金海公路3800号龙湖天街3楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 3,
+          "chunithm": 2
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7028",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7028",
+      "evidence_quote": "WAHLAP maimai+chunithm: 菲游乐上海奉贤新城龙湖店 奉贤新城龙湖天街3楼; BemaniCN shop 7028 maimai_dx=3 chunithm=2",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲游乐上海奉贤宝龙店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "菲游乐上海奉贤宝龙店",
+        "addr": "上海市奉贤区南桥宝龙广场三楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": null,
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4043",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4043",
+      "evidence_quote": "WAHLAP maimai: 菲游乐上海奉贤宝龙店 南桥宝龙广场三楼; BemaniCN shop 4043 maimai_dx=1",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲游乐(上海浦东禹悦汇店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "菲游乐(上海浦东禹悦汇店)",
+        "addr": "上海市浦东新区惠南镇沪南公路9968号禹悦汇/禹州商业广场",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": null,
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/5200",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5200",
+      "evidence_quote": "WAHLAP maimai: 菲游乐上海禹州广场店 惠南镇禹州商业广场一楼; BemaniCN shop 5200 maimai_dx=1",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "趣玩汇上海百联曲阳店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "趣玩汇上海百联曲阳店",
+        "addr": "上海市虹口区曲阳路800号百联曲阳购物中心三楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko",
+          "jubeat"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1,
+          "jubeat": 2
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/1608",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1608",
+      "evidence_quote": "WAHLAP maimai: 趣玩汇上海百联曲阳店 曲阳购物中心3楼; BemaniCN shop 1608 maimai_dx=2 taiko=1 jubeat=2",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "舞玩伏特（凯德闵行商业中心店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "舞玩伏特（凯德闵行商业中心店）",
+        "addr": "上海市闵行区莘庄镇凯德闵行商业中心（凯德龙之梦）3楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": null,
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/5581",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5581",
+      "evidence_quote": "WAHLAP maimai: 舞玩伏特闵行凯德龙之梦店 凯德龙之梦三楼; BemaniCN shop 5581 maimai_dx=1 taiko=1",
+      "note": "Absent from shard_072 despite live BemaniCN Shanghai city index and (where noted) live WAHLAP. Coords from ZIv when available; else geocode needed.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "环游家族（上海金山万达店）/酷玩巅峰",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "环游家族（上海金山万达店）/酷玩巅峰",
+        "addr": "上海市金山区金山万达广场2F/3F东侧",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "lat": 30.75692170253431,
+        "lng": 121.33154549891857,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4357",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11503"
+        },
+        "src": [
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4357",
+      "evidence_quote": "BemaniCN shop 4357 maimai_dx=2 taiko=1 status=1; ZIv 11503 2x maimai DX 2026 + 1 taiko. Not found under this name on filtered WAHLAP Shanghai list.",
+      "note": "No WAHLAP name match in Shanghai filter. BemaniCN+ZIv agree.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩空间上海爱琴海缤纷里店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩空间上海爱琴海缤纷里店",
+        "addr": "上海市金山区乐纷路（乐高乐园）爱琴海缤纷里",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "chunithm": 1
+        },
+        "lat": 30.886868159687,
+        "lng": 121.0909216227,
+        "hours_text": "10:00-22:00",
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7238",
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11569"
+        },
+        "src": [
+          "bemanicn",
+          "ziv"
+        ]
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7238",
+      "evidence_quote": "BemaniCN shop 7238 maimai_dx=1 chunithm=1; ZIv 11569 Coolplay Space SHANGHAI LEGOLAND 1 maimai + 1 CHUNITHM",
+      "note": "Not matched on WAHLAP Shanghai name filter.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲菲羊乐园上海江桥万达店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "菲菲羊乐园上海江桥万达店",
+        "addr": "上海市嘉定区金沙江西路1051号江桥万达广场3楼",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": null,
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4886",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4886",
+      "evidence_quote": "WAHLAP maimai: 菲菲羊乐园上海嘉定万达店 嘉定江桥万达广场三楼; BemaniCN shop 4886 maimai_dx=2",
+      "note": "Distinct from 极速时代江桥万达 (id 4429).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "菲菲羊乐园（周浦万达店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "菲菲羊乐园（周浦万达店）",
+        "addr": "上海市浦东新区周浦镇年家浜路518号万达广场2层",
+        "country": "China",
+        "pref": "上海",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "lat": null,
+        "lng": null,
+        "hours_text": null,
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6914",
+          "ziv": null
+        },
+        "src": [
+          "wahlap",
+          "bemanicn"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6914",
+      "evidence_quote": "WAHLAP maimai: 菲菲羊儿童乐园上海浦东店 周浦镇万达广场二楼; BemaniCN shop 6914 maimai_dx=1",
+      "note": "Distinct from 大玩家上海周浦万达店 (id 2555).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1007,
+      "name": "cowplaycowmoo上海徐汇新六百店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7001",
+      "evidence_quote": "BemaniCN shop start_time=10 end_time=24 (fetched 2026-07-31 live Inertia)",
+      "note": "Community hours on BemaniCN; not chain-official. end_time>24 means next calendar day per scraper convention.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1008,
+      "name": "CPCM龙之梦长宁城市生活中心店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-24:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6272",
+      "evidence_quote": "BemaniCN shop start_time=10 end_time=24 (fetched 2026-07-31 live Inertia)",
+      "note": "Community hours on BemaniCN; not chain-official. end_time>24 means next calendar day per scraper convention.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2694,
+      "name": "天天玩Game（上海徐汇汇银广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 00:00-24:00 (24h per bemanicn)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/262",
+      "evidence_quote": "BemaniCN shop start_time=0 end_time=24 (fetched 2026-07-31 live Inertia)",
+      "note": "Community hours on BemaniCN; not chain-official. end_time>24 means next calendar day per scraper convention.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4775,
+      "name": "汤姆熊欢乐世界（上海中山公园龙之梦购物公园店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/16",
+      "evidence_quote": "BemaniCN shop start_time=10 end_time=22 (fetched 2026-07-31 live Inertia)",
+      "note": "Community hours on BemaniCN; not chain-official. end_time>24 means next calendar day per scraper convention.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4764,
+      "name": "汤姆熊欢乐世界(上海大悦城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/9",
+      "evidence_quote": "BemaniCN shop start_time=10 end_time=22 (fetched 2026-07-31 live Inertia)",
+      "note": "Community hours on BemaniCN; not chain-official. end_time>24 means next calendar day per scraper convention.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1120,
+      "name": "GiGO 上海概念店",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other",
+          "taiko"
+        ],
+        "info_note": "no chunithm in app"
+      },
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6932",
+      "evidence_quote": "comment: 2026.07更新，中二节奏已经被撤走; live arcades only maimai_dx=3 taiko=1; updated_at=2026-07-19T08:25:24.000000Z",
+      "note": "App already omits chunithm. No games correction needed. Confirming current listing is correct.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4708,
+      "name": "汤姆熊上海百联又一城店",
+      "field": "location",
+      "current": "上海市杨浦区淞沪路8号百联又一城购物中心8楼汤姆熊欢乐世界",
+      "proposed": "上海市杨浦区淞沪路8号百联又一城购物中心5层北区 (see keep id 4789)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/21",
+      "evidence_quote": "bemanicn-linked keep row 4789 addr=淞沪路8号百联又一城购物中心5层北区01-62; wahlap-only 4708 says 8楼",
+      "note": "Floor mismatch WAHLAP 8F vs BemaniCN 5F. Prefer bemanicn when merging into 4789.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}

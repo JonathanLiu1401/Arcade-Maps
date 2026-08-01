@@ -517,7 +517,8 @@ window.AM = window.AM || {};
 
   /* ================= enrichment (lazy, one fetch each) =================
 
-     data/enrichment.json is 3.4 MB and only the place panel ever needs it, so
+     data/enrichment.json is 8.2 MB raw (about 1.1 MB gzipped, which is what
+     GitHub Pages actually sends) and only the place panel ever needs it, so
      nothing is fetched until the first panel opens. The panel renders straight
      away from whatever is already cached and re-renders once when a fetch
      lands - never blocking the open on a megabyte of JSON.

@@ -309,7 +309,7 @@ The committed answer cache that places almost every mainland-China arcade. Writt
 | Native coord system | Baidu **BD-09, as Mercator metres times 100** (`x: 1267877300`). AMap and Google-in-China are **GCJ-02** |
 | Stored coord system | **WGS-84**, converted through `bd2wgs` / `gcj2wgs` before anything reaches the cache |
 | Refresh | `python scrapers/run_all.py --skip-scrape --only geocode`, then re-merge. Hours of polite serial requests, so it is asked for by name and never part of a default run |
-| Effect | 5,757 rows placed at address level; China distinct coordinates 2,090 -> 5,305; worst pile-up on one point 69 venues -> 6 |
+| Effect | 5,758 rows placed at address level; China distinct coordinates 2,090 -> 5,305; worst pile-up on one point 69 venues -> 6 |
 
 **Why a miss is stored.** An address no geocoder can resolve (a bare mall-floor label, a closed venue) is written as `{"miss": true}` rather than left absent, so the next refresh does not re-pay for the same dead end. `lookup` never hands a miss back as a coordinate.
 

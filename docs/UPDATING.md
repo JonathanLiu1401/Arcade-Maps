@@ -230,7 +230,7 @@ falls sharply. ZIv empty-200 traps abort the run loudly with
    payloads; login-walled coordinate routes remaining 302 is expected.
    If enrichment fields disappear from raw rows, `enrichment.json`
    simply omits them (`bemanicn_rows_contributed` drops) while arcade
-   placement still works. That counter reads **2,256** of 3,812 in the
+   placement still works. That counter reads **3,193** of 3,812 in the
    current build, and every one of those contributions is a PHOTO: the
    committed BemaniCN rows still carry no text enrichment, so every
    text field in `enrichment.json` today comes from ZIv. A drop in that
@@ -259,11 +259,11 @@ Two different mechanisms place China rows now, and they have different
 healthy values. `merge_log.json` carries a log for each:
 
 - **`china_geocoded`** is the main path: rows placed from the committed
-  address cache. Last good run **5,757**, all at level `address`. A sharp
+  address cache. Last good run **5,758**, all at level `address`. A sharp
   drop here means `data/china_geocode.json` is missing or truncated, not
   that addresses changed.
 - **`china_approx`** is now only the residue that no cached answer covers.
-  Last good run **10** (7 district, 3 city). This number being small is
+  Last good run **9** (7 district, 2 city). This number being small is
   healthy; it was ~5,625 before the geocode cache existed, so an old note
   quoting thousands is describing the previous design.
 - **`china_geocode_rejected`** lists cached answers the district gate

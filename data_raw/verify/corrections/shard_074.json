@@ -1,0 +1,1623 @@
+{
+  "shard": 74,
+  "checked": 115,
+  "sources_used": [
+    "https://map.bemanicn.com/ (Inertia shop JSON for all 68 shard BC links)",
+    "https://map.bemanicn.com/api/miniapp/common/region + /region/city/{code} for all 11 Jiangxi cities (107 shops)",
+    "https://map.bemanicn.com/s/{id} detail for 39 BC shops not in shard",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China and action=get for Jiangxi-related ZIv rows",
+    "scrapers/bemanicn.py TITLE_GAME map (title_id 15 and 31 both map to taiko by design)"
+  ],
+  "corrections": [
+    {
+      "id": 3359,
+      "name": "宝贝计划南昌红谷滩万达店",
+      "field": "status",
+      "current": "open (listed with maimai_dx x2)",
+      "proposed": "not_yet_open / not operating as of 2026-07-18",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7220",
+      "evidence_quote": "name \"[暂未开业]宝贝计划(红谷滩万达店)\"; comment \"说7/3开业，目前还没开，可以看抖音确定状态\"; updated_at 2026-07-18T05:57:40.000000Z; status=1 still",
+      "note": "BemaniCN still status=1 but display name is prefixed [暂未开业] and comment says not open yet as of mid-July 2026. Do not send players here as open. Re-check Douyin / BC before treating as open. Machines listed as maimai_dx qty 2 (国行) may be staged.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 962,
+      "name": "ABAM电玩娱乐中心",
+      "field": "other",
+      "current": "listed maimai_dx playable",
+      "proposed": "maimai currently under repair / unplayable (shop still open)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2580",
+      "evidence_quote": "comment \"舞萌在维修，玩不了\"; machine still title_id=1 qty=1 version CN; updated_at 2026-07-01T03:46:28.000000Z",
+      "note": "Venue exists; maimai is offline for repair per community note dated 2026-07-01. Temporary, not permanent closure. Worth a note flag if the app supports it.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2389,
+      "name": "城市英雄PartyHouse(南昌吾悦广场店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:45",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/414",
+      "evidence_quote": "comment \"营业时间：10:00-21:45\"; shop.start_time=10 end_time=22 (coarser field)",
+      "note": "Community comment is more precise than the integer start/end fields.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2390,
+      "name": "城市英雄PartyHouse(南昌大悦城店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:45",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5443",
+      "evidence_quote": "comment \"营业时间：10:00-21:45\"; updated_at 2026-05-26T10:24:04.000000Z",
+      "note": "HTML bold around 21:45 in source. Matches sister 吾悦店 hours.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1859,
+      "name": "加菲队长家庭娱乐中心(南昌九颂荟店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:30-21:30",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3483",
+      "evidence_quote": "comment \"营业时间9:30-21:30\"; start_time=10 end_time=21; updated_at 2026-07-22T04:27:10.000000Z",
+      "note": "Comment overrides coarser start_time=10.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1408,
+      "name": "一同潮玩泛娱乐体验中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:30",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4706",
+      "evidence_quote": "comment \"营业时间：10:00-22：30\"; updated_at 2026-07-21T13:45:30.000000Z",
+      "note": "Also note 2026-07-20 one maimai removed (see game_counts).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1409,
+      "name": "一同潮玩泛娱乐体验中心(华润万象汇店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "weekdays 10:00-21:30; weekends/holidays 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1028",
+      "evidence_quote": "comment \"次日工作日:10:00-21:30 次日休息:10:00-22:00（商场关门前进去可以玩晚点）\"",
+      "note": "start_time/end_time on shop are 0/0 (unknown placeholder); use comment. Also aka 幸运星南昌万象汇 (WAHLAP id 3469 is same pin).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 962,
+      "name": "ABAM电玩娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "weekdays 10:00-22:00; weekends 10:00-22:30 (may cut power ~21:50 if empty)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2580",
+      "evidence_quote": "comment \"工作日营业时间：10：00-22：00\\n周末营业时间：10：00-22：30\\n实际时间根据观察会根据客流量调整，不过最少也是21：50断电\"",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1408,
+      "name": "一同潮玩泛娱乐体验中心",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4706",
+      "evidence_quote": "arcades title_id=1 quantity=1 version 2026; machine comment \"2026.7.20旧机撤走\"; shop comment \"2026,7,20右机撤走，听说是卖给深圳一同潮玩了\"",
+      "note": "App already shows 1. Confirm keep at 1 (was two; one cab removed 2026-07-20). If any other source still says 2, BC wins.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1151,
+      "name": "io电动工坊(湾悦天地店)",
+      "field": "other",
+      "current": "chunithm playable, maimai_dx playable",
+      "proposed": "chunithm offline/unnetworked (1 broken, 1 free offline play); maimai older build still networked for pay play",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7191",
+      "evidence_quote": "comment \"目前中二都未联网并且版本落后（2026.6.26），中二节奏不能登录，1号机损坏，2号机免费游玩，舞萌旧版本能登录，需投币游玩\"; machines maimai qty1 + chunithm qty2; updated_at 2026-07-06",
+      "note": "Do not remove chunithm from games list (cabs present) but a status/quality note would help. Duplicate WAHLAP row id 1152 is same venue (identical lat/lng).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2504,
+      "name": "多奇妙儿童乐园(高新吾悦店)",
+      "field": "other",
+      "current": "standalone maimai venue",
+      "proposed": "keep as separate from 天空之城高新吾悦 (id 2865); former single 天空之城 split into two shops with non-interoperable tokens",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4704",
+      "evidence_quote": "comment \"由多奇妙天空之城机厅分裂成两家店\\n多奇妙：...只保留一台dx在原店面...\\n天空之城：...门店一台dx，两台中二...\\n分裂后两家店币不通用\"; updated 2026-07-25",
+      "note": "App already has both 2504 (maimai only) and 2865 (maimai+chunithm). WAHLAP rows 2768 and 2769 at same pin are stale pre-split duplicates of this mall site and should be merged away.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2865,
+      "name": "天空之城游乐体验世界(南昌高新吾悦店)",
+      "field": "other",
+      "current": "chunithm 2, maimai_dx 1",
+      "proposed": "same counts; note maimai may have been under repair as of 2026-06-11",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5535",
+      "evidence_quote": "machines maimai qty1 comment \"2026.6.11 正在维修，可能还要几天\"; chunithm qty2; split comment same as shop 4704; updated 2026-06-11",
+      "note": "Repair note may be stale relative to multi奇妙 2026-07-25 update. Counts match app.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2390,
+      "name": "城市英雄PartyHouse(南昌大悦城店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_unit_cny": 0.26,
+        "maimai_coins_per_play": 15,
+        "chunithm_coins_per_play": 20,
+        "taiko_coins_per_play": 20,
+        "note": "per BemaniCN shop.price and arcades[].coin"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5443",
+      "evidence_quote": "shop.price=0.26; arcades coins maimai=15 chunithm=20 taiko=20",
+      "note": "price is community-reported CNY per token unit, not an official chain tariff. Coin costs are per credit on that cab.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2389,
+      "name": "城市英雄PartyHouse(南昌吾悦广场店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_unit_cny": 0.26,
+        "maimai_coins_per_play": 5,
+        "chunithm_coins_per_play": 6,
+        "taiko_coins_per_play": 7
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/414",
+      "evidence_quote": "shop.price=0.26; arcades coins maimai=5 chunithm=6 taiko=7",
+      "note": "Much cheaper coin costs than the 大悦城 sister store despite same token unit price field.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4360,
+      "name": "未来玩家南昌梦时代店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "token_unit_cny": 0.37,
+        "maimai_coins_per_play": 6,
+        "chunithm_coins_per_play": 6,
+        "taiko_coins_per_play": 9
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2329",
+      "evidence_quote": "shop.price=0.37; arcades coins maimai=6 chunithm=6 taiko=9; comment mentions 微信小程序 jx未来玩家 and self-service coin machine",
+      "note": "Counts still match app (mai 2 / chu 4 / taiko 3) as of 2026-06-19.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1716,
+      "name": "九江大玩家超乐场",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "maimai_coins_per_play": 3,
+        "ref_token_cny_max": 0.3,
+        "ref_token_cny_min_package": 0.25
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1555",
+      "evidence_quote": "comment \"位于万达三楼，3币1pc，支持扫码投币。...参考币价：1枚游戏币≤0.30元（小程序套餐199=666）\\n最低币价：1枚游戏币＝ 0.25元（小程序套餐500＝2000）\"; machine maimai coin=3; updated 2026-07-30; machine comment \"机况 良好 2026年7月31日编\"",
+      "note": "Very fresh 2026-07-30/31 edit. Duplicate WAHLAP id 2561 same pin.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1152,
+      "name": "iO电动工坊南昌红谷滩湾悦店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1151 io电动工坊(湾悦天地店)",
+      "proposed": "merge into id 1151 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7191",
+      "evidence_quote": "identical lat/lng 28.616406,115.79788; WAHLAP-only vs BemaniCN full games",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1413,
+      "name": "一同潮玩赣州南水君尚店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1408 一同潮玩泛娱乐体验中心",
+      "proposed": "merge into id 1408 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4706",
+      "evidence_quote": "identical lat/lng; same 君尚购物中心三楼",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1705,
+      "name": "乐酷电玩景德珠山金鼎店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1700 乐酷主题电玩乐园",
+      "proposed": "merge into id 1700 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/127",
+      "evidence_quote": "identical lat/lng 金鼎; BC has maimai+taiko+other",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1858,
+      "name": "加菲队长南昌九颂荟店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1859 加菲队长家庭娱乐中心(南昌九颂荟店)",
+      "proposed": "merge into id 1859 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3483",
+      "evidence_quote": "~44m apart same 九颂荟; WAHLAP vs BC",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1894,
+      "name": "十二星球上饶信州万达店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2652 大玩家（上饶十二星球店）",
+      "proposed": "merge into id 2652 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1371",
+      "evidence_quote": "identical pin; BC comment \"现由十二星球管理，万达指示牌及门头皆为大玩家\"",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2206,
+      "name": "嗨之星修水欢乐海岸店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2207 嗨之星动漫",
+      "proposed": "merge into id 2207 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4085",
+      "evidence_quote": "~26m same 欢乐海岸; BC has maimai+taiko(new)+old asian taiko",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2395,
+      "name": "城市英雄南昌大悦城店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2390 城市英雄PartyHouse(南昌大悦城店)",
+      "proposed": "merge into id 2390 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5443",
+      "evidence_quote": "~86m same 大悦城 L4; WAHLAP incomplete games",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2417,
+      "name": "城市英雄江西南昌店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2389 城市英雄PartyHouse(南昌吾悦广场店)",
+      "proposed": "merge into id 2389 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/414",
+      "evidence_quote": "identical lat/lng 新城吾悦; WAHLAP missing taiko",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2485,
+      "name": "壹零壹潮漫九江濂溪店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1276 SUPER101壹零壹潮漫电玩（九江十里万达店）",
+      "proposed": "merge into id 1276 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2134",
+      "evidence_quote": "identical pin 十里万达 4F",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2561,
+      "name": "大玩家九江濂溪万达店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1716 九江大玩家超乐场",
+      "proposed": "merge into id 1716 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1555",
+      "evidence_quote": "identical pin 万达三楼大玩家",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2743,
+      "name": "天空之城九江浔阳联盛店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2754 天空之城动漫电玩世界（快乐城店）",
+      "proposed": "merge into id 2754 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4582",
+      "evidence_quote": "identical pin 联盛快乐城; BC fuller games incl taiko",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2768,
+      "name": "天空之城南昌高新吾悦广场店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2504 多奇妙儿童乐园(高新吾悦店) / also 2865 天空之城高新吾悦",
+      "proposed": "merge into id 2504 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4704",
+      "evidence_quote": "identical pin to post-split multi奇妙/天空之城 pair; stale pre-split WAHLAP name",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2769,
+      "name": "天空之城南昌高新技术产业开发新城吾悦广场店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2865 天空之城游乐体验世界(南昌高新吾悦店)",
+      "proposed": "merge into id 2865 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5535",
+      "evidence_quote": "identical pin; WAHLAP pre-split duplicate of 5535",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3179,
+      "name": "宇宙潮玩九江湖口千艺江湖汇店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3185 宇宙队长千艺店",
+      "proposed": "merge into id 3185 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6613",
+      "evidence_quote": "identical pin 千艺江湖汇",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3181,
+      "name": "宇宙队长上饶广信万慧店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3198 宇宙队长（上饶万慧店）",
+      "proposed": "merge into id 3198 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6817",
+      "evidence_quote": "identical pin 万慧广场",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3182,
+      "name": "宇宙队长上饶弋阳东华店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3528 弋阳县宇宙队长",
+      "proposed": "merge into id 3528 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4775",
+      "evidence_quote": "~47m same 东华时代广场",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3469,
+      "name": "幸运星南昌万象汇店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1409 一同潮玩泛娱乐体验中心(华润万象汇店)",
+      "proposed": "merge into id 1409 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1028",
+      "evidence_quote": "identical pin; BC pinyin/name_pinyin still xing-yun-xing; operator 南昌幸运星游乐有限公司",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3673,
+      "name": "慢车道南昌铜锣湾T16店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3674 慢车道电玩(铜锣湾店)",
+      "proposed": "merge into id 3674 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3630",
+      "evidence_quote": "identical pin 铜锣湾",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3699,
+      "name": "拾趣潮玩上饶婺源绘广场店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3697 拾趣潮玩",
+      "proposed": "merge into id 3697 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6572",
+      "evidence_quote": "~31m same 婺源荟/绘广场",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3778,
+      "name": "时光潮玩九江修水联盛广场店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3514 开心季 时光潮玩",
+      "proposed": "merge into id 3514 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5668",
+      "evidence_quote": "~55m same 联盛西区; also near 4232 星际潮玩 same mall",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4025,
+      "name": "星辰潮玩城宜春丰城市民中心店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 4026 星辰潮玩城（剑邑天街店）",
+      "proposed": "merge into id 4026 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6789",
+      "evidence_quote": "identical pin 剑邑天街/市民中心",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4168,
+      "name": "星际传奇赣州章贡万象城店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 4194 星际传奇（赣州万象城店）",
+      "proposed": "merge into id 4194 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1360",
+      "evidence_quote": "~110m same 万象城; BC has maimai+chunithm+taiko",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4439,
+      "name": "极速空间南昌中悦广场店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 4440 极速空间潮玩游乐中心",
+      "proposed": "merge into id 4440 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6760",
+      "evidence_quote": "~54m same 中悦广场",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4470,
+      "name": "柒彩大玩家上饶余干店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1743 余干县柒彩大玩家",
+      "proposed": "merge into id 1743 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3927",
+      "evidence_quote": "identical pin 鹏颂百货",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1410,
+      "name": "一同潮玩泛娱乐体验中心(南昌旭辉店)",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 1405 一同潮玩南昌旭辉店",
+      "proposed": "merge into id 1405 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1730",
+      "evidence_quote": "~115m same 旭辉; WAHLAP 1405 vs BC 1410",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2244,
+      "name": "嗨玩社赣州章贡万达店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2243 嗨玩社巨亿万达店",
+      "proposed": "merge into id 2243 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5685",
+      "evidence_quote": "~125m same 巨亿万达",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3195,
+      "name": "宇宙队长赣州全南江畔湾店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3199 宇宙队长（全南店）",
+      "proposed": "merge into id 3199 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7278",
+      "evidence_quote": "~86m same 全南 江畔湾/嘉莱影城旁",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 4472,
+      "name": "柒彩大玩家吉安店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 4471 柒彩大玩家吉安吉州店",
+      "proposed": "merge into id 4471 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4442",
+      "evidence_quote": "~97m same 莱斯百货; WAHLAP incomplete (chunithm only) vs BC maimai+chu+taiko",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3133,
+      "name": "好酷好玩赣州章贡店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 2430 城市英雄赣州店",
+      "proposed": "merge into id 2430 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/274",
+      "evidence_quote": "identical lat/lng with 城市英雄赣州 步步高新天地/南门Q park area; WAHLAP name 好酷好玩 may be wrong label or co-tenant - treat as merge candidate carefully",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3788,
+      "name": "时空龙骑士九江濂溪万达店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3790 时空龙骑士（九江万达店）",
+      "proposed": "merge into id 3790 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3761",
+      "evidence_quote": "~97m same 濂溪万达; BC maimai qty 2",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3262,
+      "name": "宝贝王宜春袁州万达店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3342 宝贝王（宜春万达店）",
+      "proposed": "merge into id 3342 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2122",
+      "evidence_quote": "~114m same 宜春万达; also pin-collides with 3205 橙柿潮玩 on BC",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 3511,
+      "name": "开心大玩家宜春市丰喜盈门店",
+      "field": "other",
+      "current": "separate venue row (WAHLAP); pair BC/canonical id 3510 开心大玩家动漫（丰跃名城）",
+      "proposed": "merge into id 3510 (keep BC-enriched games/counts); drop or redirect this WAHLAP duplicate",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4784",
+      "evidence_quote": "~97m; names differ 喜盈门范城 vs 丰跃名城 - may be same commercial complex rebrand; verify before hard-merge",
+      "note": "Duplicate detection is by shared/near-identical geocode + same chain/mall name. Not field-surveyed. Prefer BemaniCN row for games/counts when both exist.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "真快活CoohooMax(王府井店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "真快活CoohooMax(王府井店)",
+        "addr": "江西省南昌市青云谱区洪城路158号王府井购物中心5F-P039B号商铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/289"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/289",
+      "evidence_quote": "status=1; machines title_id1 qty2 version2026, title_id31 qty1 version2025春; comment \"2026.7.29重新开业，新店位于原6楼店铺正楼下5楼同一个位置\"; updated 2026-07-20",
+      "note": "Reopened 2026-07-29 on 5F (moved from 6F). Same mall as 喵呜雀庄/宝贝王. No lat/lng on BC public API (GCJ-02 expected).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "阿尔法Game Station(中山路店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "阿尔法Game Station(中山路店)",
+        "addr": "南昌市西湖区中山路282号西湖商厦负一楼（西湖区贝贝游艺店）",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/741"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/741",
+      "evidence_quote": "status=1; maimai_dx qty1 v2025; title_id15 (old asian taiko, mapped taiko by scraper) qty1 12亚; hours comment 周一至周五11:00-23:00 周末节假日11:00-24:00; \"就是以前的快乐玩家中山路店\"; updated 2026-04-13",
+      "note": "Also on ZIv id 3965 (stale 2024-01). BC is newer. Taiko is 12 Asian old cab, not Nijiiro (title_id 15 not 31).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "潮玩无界(南昌万象城店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "潮玩无界(南昌万象城店)",
+        "addr": "江西省南昌市红谷滩区学府大道388号南昌万象城商业中心L327、L328号商铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/3482"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3482",
+      "evidence_quote": "status=1; maimai qty1 国行; comment updated 2026-05-31 about cab moved inside and key maintenance; updated_at 2026-05-30",
+      "note": "Active Nanchang MixC maimai not in shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "洛克帝国潮玩城",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "洛克帝国潮玩城",
+        "addr": "江西省南昌市红谷滩区丰和中大道818号华茂国际广场地铁大厦天虹购物中心商场L4层4001、4002铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/2953"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2953",
+      "evidence_quote": "status=1; maimai qty1 国行; comment field survey note 2025.1.19; updated 2026-02-01",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "跳动西游南昌青山龙湖天街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "跳动西游南昌青山龙湖天街店",
+        "addr": "江西省南昌市青山湖区解放东路1999号南昌青山龙湖天街A-4F-02号商铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/5617"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5617",
+      "evidence_quote": "status=1; maimai qty2 国行; updated 2026-02-10; card/miniprogram pay preferred",
+      "note": "Sister stores 6195 and 6721 share tokens.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "跳动西游(南昌红谷滩万达店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "跳动西游(南昌红谷滩万达店)",
+        "addr": "江西省南昌市红谷滩区万达广场A区1号商业楼苏宁区3楼01-5003室",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6195"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6195",
+      "evidence_quote": "status=1; maimai qty2 v2025; taiko title_id31 qty1 2026春; updated 2026-06-07; coins shared with s/5617 and s/6721",
+      "note": "Possibly related to old 大玩家红谷滩万达 (WAHLAP 2574 / ZIv 2481 last 2024). This is the live BC-listed operator at 红谷滩万达 with current cabs.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "跳动西游(九州天虹店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "跳动西游(九州天虹店)",
+        "addr": "朝阳新城九州大街666号朝阳洲天虹购物中心商场三层楼3019A铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6721"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6721",
+      "evidence_quote": "status=1; maimai qty2 国行; updated 2026-02-10; shared tokens with other 跳动西游 stores",
+      "note": "Same mall as 快乐玩家九州天虹 (id 3593) which only has old asian taiko + old maimai Orange plus (not DX). Different shop.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "飞翔动漫·儿童乐园(锦尚汇购物中心店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "飞翔动漫·儿童乐园(锦尚汇购物中心店)",
+        "addr": "江西省南昌市南昌县利安路南昌县锦尚汇购物中心(利安路西)三楼",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6762"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6762",
+      "evidence_quote": "status=1; maimai qty1 2025 Ver.CN1.53-N; updated 2026-07-22",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "萍乡大蓝鲸家庭娱乐中心(萍乡天虹店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "萍乡大蓝鲸家庭娱乐中心(萍乡天虹店)",
+        "addr": "江西省萍乡市安源区萍安北大道和康庄路交汇处萍乡天虹购物中心L2",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6511"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6511",
+      "evidence_quote": "status=1; maimai qty1 2025; comment notes new cab; updated 2026-07-22",
+      "note": "WAHLAP row 2671 大蓝鲸...萍乡天虹 is the same site (unique WAHLAP without BC link in shard). Prefer BC shop 6511.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "（天虹店）贵溪天空之星",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "（天虹店）贵溪天空之星",
+        "addr": "贵溪天虹购物中心3f",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 2
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4768"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4768",
+      "evidence_quote": "status=1; maimai qty2 v2025; chunithm qty2 v2025; comment \"已经开业\"; updated 2026-04-07",
+      "note": "WAHLAP 2943 天空之星贵溪雄石天虹店 is this venue (no BC link in shard). Important multi-cab site.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "泛时空赣州九方店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "泛时空赣州九方店",
+        "addr": "九方（招商花园城）二楼泛时空游乐空间站",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/2108"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2108",
+      "evidence_quote": "status=1; maimai qty1; taiko title_id31 qty1 version 2026; updated 2026-07-22",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "超级英雄江西章贡店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级英雄江西章贡店",
+        "addr": "超级英雄动漫游戏体验中心(永信广场店)",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/1956"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1956",
+      "evidence_quote": "status=1; maimai qty1 守护最好的舞萌DX2025; updated 2026-07-01",
+      "note": "Address string is thin; geocode from 永信广场 赣州.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "趣彗星SuperStar（新余地王广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "趣彗星SuperStar（新余地王广场店）",
+        "addr": "胜利北路地王广场2F趣慧星",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6522"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6522",
+      "evidence_quote": "status=1; maimai qty1 2025; comment \"店铺只有一台maimai\"; updated 2026-02-24",
+      "note": "Xinyu city has no other shard venues; province gap.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "静窝喵喵喵",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "静窝喵喵喵",
+        "addr": "江西省宜春市袁州区文体路343号袁州区顺欣新旧货市场(文体路南)",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "chunithm",
+          "ongeki"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "chunithm": 1,
+          "ongeki": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7200"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7200",
+      "evidence_quote": "status=1; maimai qty2 Circle Plus; chunithm qty1 X-VERSE-X; title_id27 ongeki qty1 Re:Fresh; comment \"12/h 30r/3h\"; updated 2026-07-28",
+      "note": "Rare private-style room with ONGEKI in Jiangxi. Versions look like imported JP builds (Circle Plus / X-VERSE-X / Re:Fresh), not standard CN Wahlap network names. Treat as specialty venue. Very fresh BC update 2026-07-28.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "柒彩大玩家（高安鹏泰百货店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "柒彩大玩家（高安鹏泰百货店）",
+        "addr": "江西省宜春市高安市锦惠中路高安市鹏泰百货(高安店)",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7316"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7316",
+      "evidence_quote": "status=1; maimai qty1 舞萌DX2026; updated 2026-07-24",
+      "note": "WAHLAP 4473 柒彩大玩家宜春高安店 is almost certainly this BC shop.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玩家搭档动漫城(抚州万达店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家搭档动漫城(抚州万达店)",
+        "addr": "临川区迎宾大道688号万达广场3楼3058A",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/5703"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5703",
+      "evidence_quote": "status=1; maimai qty1 2025; updated 2026-06-28",
+      "note": "WAHLAP 3720 搭档动漫城抚州临川万达店 is this. Also WAHLAP 3287 宝贝王抚州临川万达店 is a different floor/brand at same mall.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "铅山宇宙队长天街店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "铅山宇宙队长天街店",
+        "addr": "江西省上饶市铅山县铅山天街商场3F",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4759"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4759",
+      "evidence_quote": "status=1; maimai qty1 1.53-N; updated 2026-06-01",
+      "note": "WAHLAP 3184 is this venue.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "铜鼓宇宙队长游乐园",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "铜鼓宇宙队长游乐园",
+        "addr": "世贸广场二楼宇宙队长",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6763"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6763",
+      "evidence_quote": "status=1; maimai qty1 2025; updated 2026-03-17",
+      "note": "WAHLAP 3189 宇宙队长宜春铜鼓世茂广场店 is this (世贸/世茂 spelling).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "酷玩嘉年华(上饶市信州区万力时代店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "酷玩嘉年华(上饶市信州区万力时代店)",
+        "addr": "信州区东市街道滨江东路66号",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/3928"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3928",
+      "evidence_quote": "status=1; maimai qty1 1.56-B; comment \"8月1日新开店铺 营业时间每天10:00-22:00\"; updated 2026-07-24",
+      "note": "New store note says Aug 1 opening; BC updated 2026-07-24. Year not explicit in comment; treat open status as likely based on status=1 + machine listing.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "滨汾热店",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "滨汾热店",
+        "addr": "宜春润达国际购物中心3F",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 2,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7019"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7019",
+      "evidence_quote": "status=1; maimai qty2 dx2025; taiko qty1 夏; comment \"2台新机，机况良好\"; updated 2026-05-31",
+      "note": "Same mall as 星际玩家宜春润达 (id 4244). Distinct shop.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "润宝梦想潮玩娱乐（樟树时代广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "润宝梦想潮玩娱乐（樟树时代广场店）",
+        "addr": "四特大道时代广场3F",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 2
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6713"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6713",
+      "evidence_quote": "status=1; maimai qty2 2026 Ver.CN1.55; updated 2026-06-11",
+      "note": "Zhangshu (樟树) city venue missing from shard.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "积木熊潮玩娱乐（抚州南丰凯升广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "积木熊潮玩娱乐（抚州南丰凯升广场店）",
+        "addr": "江西省抚州市南丰县琴城镇桔苑北路凯升购物广场2楼积木熊",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/7244"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7244",
+      "evidence_quote": "status=1; maimai qty1 舞萌DX 2026; comment \"南丰县首台舞萌DX，2026年7月5日正式开业\"; updated 2026-07-07",
+      "note": "Brand new Nanfeng county first maimai.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "瑞昌市童幻王国",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "瑞昌市童幻王国",
+        "addr": "江西省九江市瑞昌市赤乌中路16号联盛购物广场F3层童幻王国(联盛广场店)",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx",
+          "taiko"
+        ],
+        "game_counts": {
+          "maimai_dx": 1,
+          "taiko": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6540"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6540",
+      "evidence_quote": "status=1; maimai qty1; taiko qty1; comment \"一台太鼓一台舞萌 店家说是华立来的新机\"; updated 2026-02-28",
+      "note": null,
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "江西赣州宁都鹏泰柒彩大玩家",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "江西赣州宁都鹏泰柒彩大玩家",
+        "addr": "鹏泰超市二楼 上楼梯掉头往里走",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4606"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4606",
+      "evidence_quote": "status=1; maimai qty1 2025国服最新; updated 2026-07-15",
+      "note": "Ningdu county. Address needs geocode from 宁都 鹏泰.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "玩家搭档（龙南万达广场店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "玩家搭档（龙南万达广场店）",
+        "addr": "龙南万达广场",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/5637"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5637",
+      "evidence_quote": "status=1; maimai qty1 守护最好的舞萌DX2025; comment \"已开业 舞萌是全新机\"; updated 2025-12-30",
+      "note": "Thin address; Longnan Wanda.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "柒彩大玩家(瑞金红都广场地下)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "柒彩大玩家(瑞金红都广场地下)",
+        "addr": "象湖街道红都广场地下商业场负一楼g106商铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6074"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6074",
+      "evidence_quote": "status=1; maimai qty1 2025; updated 2025-11-29",
+      "note": "Likely related to WAHLAP 4477 柒彩大玩家瑞金鹏泰店 (same city/chain; may be same or adjacent - verify before treating as identical).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "超级玩家(小城故事店)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "超级玩家(小城故事店)",
+        "addr": "江西省赣州市兴国县潋江镇平固街文化街区2号地16号建筑2层201号铺",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/6835"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6835",
+      "evidence_quote": "status=1; maimai qty1 舞萌DX 2026; updated 2026-06-03",
+      "note": "Xingguo county first-class fill.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "萍乡快时空潮玩（芦溪店）",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "萍乡快时空潮玩（芦溪店）",
+        "addr": "漫时区一楼快潮玩电玩",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "bemanicn"
+        ],
+        "links": {
+          "bemanicn": "https://map.bemanicn.com/s/4215"
+        },
+        "lat": null,
+        "lng": null,
+        "approx": true,
+        "note": "coords not exposed on public BemaniCN API; geocode from address (GCJ-02 then convert)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4215",
+      "evidence_quote": "status=1; maimai qty1 CN.Ver 2024; updated 2025-11-29",
+      "note": "WAHLAP 3624 is this. BC comment mentions 10.1 opening (year not restated).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": null,
+      "name": "纯玩世界 JOYONE (南昌大悦城)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "纯玩世界 JOYONE (南昌大悦城)",
+        "addr": "南昌市西湖区抚生南路666号南昌大悦城 L5-11",
+        "country": "China",
+        "pref": "江西",
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        },
+        "src": [
+          "ziv"
+        ],
+        "links": {
+          "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10205"
+        },
+        "lat": 28.638462640275044,
+        "lng": 115.85687043900357,
+        "approx": false
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=get&id=10205",
+      "evidence_quote": "name 纯玩世界 JOYONE (南昌大悦城); machines include 舞萌DX 2025 / maimai DX PRiSM; lastUpdateTime 2025-06-06 16:59:53 (API reports lastUpdateDifference \"1 year ago\"); openingTimes 10:00-22:00 daily; lat 28.63846 lng 115.85687",
+      "note": "NOT present in BemaniCN Jiangxi city indexes (all 11 cities) as of this research. ZIv last update ~1 year old. Do NOT add as certain-open without a newer source. Same mall as 城市英雄大悦城 (L4) but different floor L5.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2574,
+      "name": "大玩家南昌红谷滩万达店",
+      "field": "status",
+      "current": "open with maimai_dx (WAHLAP-only row)",
+      "proposed": "unverified; may be closed or rebranded - 跳动西游 now listed at 红谷滩万达 with maimai+taiko",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/6195",
+      "evidence_quote": "跳动西游(南昌红谷滩万达店) status=1 maimai qty2 taiko qty1 updated 2026-06-07 at 红谷滩万达广场A区...3楼. ZIv 2481 大玩家超乐场(红谷滩万达广场店) lastUpdateTime 2024-01-11. BC shop list for Nanchang has no 大玩家红谷滩 entry.",
+      "note": "Cannot prove 大玩家 closed from official WAHLAP (HTML shell only). Strong community pattern: BC lists 跳动西游 at this mall instead. Flag for human re-check; do not delete solely on this.",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 2430,
+      "name": "城市英雄赣州店",
+      "field": "location",
+      "current": "江西省赣州市章贡区红旗大道33号步步高新天地四楼",
+      "proposed": "章贡区红旗大道33号 步步高新天地4楼4001号 (营角上路处电梯入口按4楼可直达)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/274",
+      "evidence_quote": "address \"章贡区红旗大道33号 步步高新天地4楼4001号\\n营角上路处电梯入口按4楼可直达\"; updated 2026-07-22",
+      "note": "App address is already close; unit 4001 and elevator tip are useful. Counts still match (mai2/chu2/taiko1).",
+      "checked_at": "2026-07-31"
+    },
+    {
+      "id": 1409,
+      "name": "一同潮玩泛娱乐体验中心(华润万象汇店)",
+      "field": "other",
+      "current": "name 一同潮玩...; also WAHLAP 幸运星南昌万象汇",
+      "proposed": "keep primary BC name; acknowledge operator 南昌幸运星游乐有限公司 / aka 幸运星",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1028",
+      "evidence_quote": "name 一同潮玩泛娱乐体验中心(华润万象汇店); address includes （南昌幸运星游乐有限公司）; name_pinyin still xing-yun-xing-nan-chang-wan-xiang-hui-dian; comment \"请谨慎选择该机厅\"",
+      "note": "Community warns poor maimai feel. Merge WAHLAP 3469 into this id.",
+      "checked_at": "2026-07-31"
+    }
+  ]
+}
