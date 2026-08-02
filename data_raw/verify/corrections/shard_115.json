@@ -1,0 +1,436 @@
+{
+  "shard": 115,
+  "checked": 96,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+    "https://location.am-all.net/alm/location?gm=104&ct=1003&at=12&lang=en",
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=39",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=39",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=39",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=39",
+    "https://location.am-all.net/alm/shop?sid=18934",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-40",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-40",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-40",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10322",
+    "https://www.cpcm.com.sg/locations_singapore",
+    "https://www.timezonegames.com/en-sg/locations/",
+    "https://www.timezonegames.com/en-sg/locations/central/timezone-orchard-xchange/"
+  ],
+  "corrections": [
+    {
+      "id": 10629,
+      "name": "COW PLAY COW MOO SUN PLAZA",
+      "field": "status",
+      "current": "listed open with maimai_dx (src allnet)",
+      "proposed": "likely closed or no longer a CPCM-branded store; confirm before travel",
+      "confidence": "likely",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "Official CPCM Singapore store list includes Suntec L3, Suntec B1, 313 Somerset, Bishan, Century Square, Downtown East, Jurong Point, Hillion Mall, West Mall, Thomson Plaza, Wisteria Mall, Woodlands STELLAR@TE2, Hougang 1 Mall, Woodleigh Mall, Northshore Plaza 2, Seletar Mall. Sun Plaza / Sembawang is not listed.",
+      "checked_at": "2026-08-02",
+      "note": "Conflict: ALL.Net still lists COW PLAY COW MOO SUN PLAZA (30 Sembawang Drive 03-14, sid=18934) for maimai DX International as of this check, so a cabinet may still report online. Official brand store locator does not list Sun Plaza and instead lists Thomson Plaza as a North outlet. Community writeups also describe Sun Plaza as closed/relocated. Do not treat as a certain closure; ALL.Net network presence remains."
+    },
+    {
+      "id": 10622,
+      "name": "Cow Play Cow Moo (Woodlands Square)",
+      "field": "other",
+      "current": "separate venue id 10622 (ziv) and id 10633 COW PLAY COW MOO WOODLANDS (allnet)",
+      "proposed": "merge with id 10633; same address 11 Woodlands Square #B1-12/13/14/15/16 STELLAR@TE2",
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "COW PLAY COW MOO WOODLANDS STELLAR@TE2 / STELLAR TE2, Woodlands MRT Station Exit 7 / #B1-12/13/14/15/16, S(737736)",
+      "checked_at": "2026-08-02",
+      "note": "Duplicate of 10633. ALL.Net name is COW PLAY COW MOO WOODLANDS at the same unit. Official CPCM lists one Woodlands STELLAR@TE2 outlet. Keep the allnet-sourced row as canonical and fold ZIv metadata into it."
+    },
+    {
+      "id": 10633,
+      "name": "COW PLAY COW MOO WOODLANDS",
+      "field": "other",
+      "current": "duplicate of 10622",
+      "proposed": "canonical Woodlands CPCM row; postal S(737736); hours Mon-Fri 11:00-23:00, Sat-Sun/PH 10:00-23:00 from official CPCM",
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "WOODLANDS STELLAR@TE2 / #B1-12/13/14/15/16, S(737736) / Opening Hours: Mon to Fri - 11am to 11pm; Weekends and Public Holidays - 10am to 11pm",
+      "checked_at": "2026-08-02",
+      "note": "Also on ALL.Net maimai list. Merge partner is 10622."
+    },
+    {
+      "id": 10644,
+      "name": "Timezone (Orchard Xchange)",
+      "field": "other",
+      "current": "separate from id 10653 TIMEZONE ORX",
+      "proposed": "merge with 10653; same venue at 437 Orchard Road B1 Orchard Xchange",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-sg/locations/central/timezone-orchard-xchange/",
+      "evidence_quote": "437 Orchard Rd, #B1-01 to 04, #B1-07 to 18, #B1-25 to 44, Singapore 238878 (Above Orchard MRT station), Level B1 of Orchard Xchange",
+      "checked_at": "2026-08-02",
+      "note": "10644 is ZIv-sourced with broader game list and hours; 10653 is ALL.Net-sourced as TIMEZONE ORX with chunithm+maimai. One physical store."
+    },
+    {
+      "id": 10653,
+      "name": "TIMEZONE ORX",
+      "field": "other",
+      "current": "duplicate of 10644",
+      "proposed": "merge into single Orchard Xchange Timezone row",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "TIMEZONE ORX | 437 Orchard Road. #B1-01/05, #B1-07/18, Common Area, Orchard (among 32 Singapore maimai DX International locations); also on CHUNITHM International list",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net confirms both maimai and CHUNITHM here."
+    },
+    {
+      "id": 10644,
+      "name": "Timezone (Orchard Xchange)",
+      "field": "games",
+      "current": ["ddr", "maimai_dx", "other", "popn", "pump_it_up", "taiko"],
+      "proposed": ["chunithm", "ddr", "maimai_dx", "other", "popn", "pump_it_up", "taiko"],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&ct=1003&at=12&lang=en",
+      "evidence_quote": "TIMEZONE ORX listed among Singapore CHUNITHM International locations (13 total), address 437 Orchard Road #B1-01/05, #B1-07/18",
+      "checked_at": "2026-08-02",
+      "note": "ZIv row lacks chunithm; official ALL.Net CHUNITHM locator includes this store. After merge with 10653 this is the combined games set (plus ZIv extras)."
+    },
+    {
+      "id": 10644,
+      "name": "Timezone (Orchard Xchange)",
+      "field": "hours",
+      "current": "Mon-Thu 11:00-22:00; Fri 11:00-23:00; Sat 10:00-23:00; Sun 10:00-22:00",
+      "proposed": "Mon-Thu 11:00-22:00; Fri and eve of PH 11:00-23:00; Sat 10:00-23:00; Sun and PH 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-sg/locations/central/timezone-orchard-xchange/",
+      "evidence_quote": "Mon-Thurs 11 am - 10 pm; Fri & Eve of PH 11 am - 11 pm; Sat 10 am - 11 pm; Sun & Holidays 10 am - 10 pm",
+      "checked_at": "2026-08-02",
+      "note": "Official Timezone page matches the existing hours closely; note PH eve explicitly."
+    },
+    {
+      "id": 10646,
+      "name": "Timezone @ Tampines Hub",
+      "field": "other",
+      "current": "separate from id 10654 TIMEZONE OUR TAMPINES HUB",
+      "proposed": "merge with 10654; same Our Tampines Hub #B1-13 Timezone",
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-sg/locations/",
+      "evidence_quote": "Timezone Our Tampines Hub - #B1-13 (single OTH listing on official Timezone SG locations page)",
+      "checked_at": "2026-08-02",
+      "note": "10646 uses 495A Tampines Avenue 5 Festive Mall #B1-13 S529650; 10654 uses 51 Tampines Avenue 4 #B1-13 S529684 (ALL.Net wording). Both are Our Tampines Hub. Prefer official unit #B1-13 and ALL.Net coords 1.3459383,103.9382917 from 10654, keep ZIv game notes from 10646."
+    },
+    {
+      "id": 10654,
+      "name": "TIMEZONE OUR TAMPINES HUB",
+      "field": "other",
+      "current": "duplicate of 10646",
+      "proposed": "canonical Our Tampines Hub Timezone row",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "TIMEZONE OUR TAMPINES HUB | 51TAMPINES AVENUE4#B1-13OUR TAMPINES HUB SINGAPORE 529684",
+      "checked_at": "2026-08-02",
+      "note": "Merge partner 10646."
+    },
+    {
+      "id": 10621,
+      "name": "Cow Play Cow Moo (Hillion)",
+      "field": "other",
+      "current": "separate from id 10634 FAT CAT HILLION",
+      "proposed": "merge with 10634; same Hillion Mall #01-28 unit, now branded CPCM on official site (ALL.Net still says FAT CAT HILLION)",
+      "confidence": "likely",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "COW PLAY COW MOO HILLION MALL / 17 Petir Road #01-28/34, S(678278)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net maimai lists FAT CAT HILLION at Hillion Mall #01-28.17 Petir Rd (same unit). Official CPCM lists Hillion Mall as CPCM. ZIv CPCM Hillion (id 7168) also at this mall with maimai+SDVX. Almost certainly one store with a residual ALL.Net name FAT CAT."
+    },
+    {
+      "id": 10634,
+      "name": "FAT CAT HILLION",
+      "field": "other",
+      "current": "name FAT CAT HILLION",
+      "proposed": "rename/display as Cow Play Cow Moo Hillion Mall (keep note that ALL.Net still says FAT CAT HILLION)",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "FAT CAT HILLION | Hillion Mall #01-28.17 Petir Rd, Singapore 678278 (on maimai DX International Singapore list)",
+      "checked_at": "2026-08-02",
+      "note": "Merge with 10621. Official brand page is CPCM Hillion; ALL.Net network name is still FAT CAT."
+    },
+    {
+      "id": 10619,
+      "name": "Cow Play Cow Moo (Bishan)",
+      "field": "games",
+      "current": ["maimai_dx", "other", "sdvx"],
+      "proposed": ["other", "sdvx"],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "Selected area: Singapore (32 locations). Store list does not include any Bishan / Bishan Street 13 CPCM outlet among the 32 maimai DX International locations.",
+      "checked_at": "2026-08-02",
+      "note": "Venue itself is live on official CPCM locator. ZIv (updated 2026-03-29) still listed maimai DX PRiSM PLUS with comment '2 pairs of cabs' and SDVX. Official ALL.Net maimai list does not include Bishan as of this check, so network-live maimai is not confirmed. SDVX cannot be checked via e-amusement outside Japan. Safer to drop or soft-flag maimai until ALL.Net lists it again rather than show a confident maimai pin."
+    },
+    {
+      "id": 10625,
+      "name": "COW PLAY COW MOO DOWNTOWN EAST",
+      "field": "hours",
+      "current": "Mon-Fri 11:00-23:00; Sat-Sun 10:00-23:00",
+      "proposed": "Mon-Thu 11:00-23:00; Fri 11:00-01:00; Sat 10:00-01:00; Sun 10:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "DOWNTOWN EAST / Opening Hours: Mon to Fri - 11am to 11pm (Closes at 1am on Fridays); Weekends and Public Holidays - 10am to 1am (Closes at 11pm on Sundays)",
+      "checked_at": "2026-08-02",
+      "note": "Official CPCM hours differ on Fri late close and weekend late close."
+    },
+    {
+      "id": 10620,
+      "name": "Cow Play Cow Moo (Flagship Store Hall A @ Suntec City L3)",
+      "field": "hours",
+      "current": "Mon-Fri 11:00-22:00; Sat-Sun 10:00-22:00",
+      "proposed": "Mon-Fri 11:00-01:00; Sat-Sun and PH 10:00-01:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "SUNTEC CITY LEVEL 3 / Opening Hours: Mon to Fri - 11am to 1am; Weekends and Public Holidays - 10am to 1am",
+      "checked_at": "2026-08-02",
+      "note": "Prize/claw focused hall; rhythm hall is B1 (id 10630)."
+    },
+    {
+      "id": 10630,
+      "name": "COW PLAY COW MOO SUNTEC CITY",
+      "field": "location",
+      "current": "Sun Tec City 3Temasek Boulevard, 02-408/409,Singapore 038983",
+      "proposed": "3 Temasek Boulevard #B1-152, Suntec City, Singapore 038983 (rhythm/claw B1 flagship; ALL.Net still prints 02-408/409)",
+      "confidence": "likely",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "COW PLAY COW MOO (FLAGSHIP) SUNTEC CITY BASEMENT 1 / 3 Temasek Boulevard #B1-152, S(038983)",
+      "checked_at": "2026-08-02",
+      "note": "ALL.Net address text is 02-408/409 for COW PLAY COW MOO SUNTEC CITY; official CPCM and ZIv place the rhythm-game flagship on B1 (#B1-152). L3 #03-372 is the separate prize-focused Hall A (id 10620). Prefer official B1 unit for the rhythm venue; keep ALL.Net string in notes."
+    },
+    {
+      "id": 10628,
+      "name": "COW PLAY COW MOO SELETAR MALL",
+      "field": "location",
+      "current": {"lat": null, "lng": null, "addr": "33 Sengkang W Ave, #04-28 Singapore 797653"},
+      "proposed": "coords missing (ALL.Net map also emits 0,0); address confirmed on official CPCM and ALL.Net",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "COW PLAY COW MOO SELETAR MALL | 33 Sengkang W Ave, #04-28 Singapore 797653 (Google Maps link uses @0.0,0.0)",
+      "checked_at": "2026-08-02",
+      "note": "Also listed on official CPCM locations with hours Mon-Fri 11am-11pm, WE/PH 10am-11pm. Needs a real geocode of Seletar Mall; do not invent coordinates."
+    },
+    {
+      "id": 10631,
+      "name": "COW PLAY COW MOO WEST MALL",
+      "field": "location",
+      "current": {"lat": null, "lng": null, "addr": "1 Bukit Batok Central #05-01B, Singapore 658713"},
+      "proposed": "coords missing (ALL.Net map also emits 0,0); address confirmed on official CPCM and ALL.Net",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "COW PLAY COW MOO WEST MALL | 1 Bukit Batok Central #05-01B, Singapore 658713 (Google Maps link uses @0.0,0.0)",
+      "checked_at": "2026-08-02",
+      "note": "Official CPCM hours Mon-Fri 11am-11pm, WE/PH 10am-11pm. Needs real geocode of West Mall; do not invent coordinates."
+    },
+    {
+      "id": 10617,
+      "name": "BUNNYSIDE BASEMENT",
+      "field": "location",
+      "current": {"lat": 1.2997043, "lng": 103.8500107, "addr": "637 Balestier Road Singapore 329921"},
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&ct=1003&at=12&lang=en",
+      "evidence_quote": "BUNNYSIDE BASEMENT | 637 Balestier Road Singapore 329921; Google Maps button uses q=BUNNYSIDE BASEMENT@1.2997043,103.8500107",
+      "checked_at": "2026-08-02",
+      "note": "Pin matches ALL.Net, but 1.2997N is roughly Orchard/Dhoby Ghaut latitude, not Balestier Road (Balestier is farther north). High risk the geocode is wrong even though ALL.Net and the app agree. Do not invent a replacement coordinate without a proper geocode of 637 Balestier Road. Venue still on ALL.Net for maimai and CHUNITHM."
+    },
+    {
+      "id": 10638,
+      "name": "LOT1 SHOPPER'S MALL",
+      "field": "other",
+      "current": "name LOT1 SHOPPER'S MALL",
+      "proposed": "display name Zone X @ Lot One (or Zone X Lot 1); ALL.Net network name remains LOT1 SHOPPER'S MALL",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+      "evidence_quote": "Zone X (Lot One) | 21 Choa Chu Kang Ave 4, #05-01/02/03 Singapore 689812 | games include maimai DX CiRCLE, 太鼓の達人 ニジイロVer.(アシア版）, Wangan Midnight Maximum Tune 6RR | lastUpdate 2026-04-21",
+      "checked_at": "2026-08-02",
+      "note": "Shard website already http://zonex.com.sg. ALL.Net still labels the maimai location LOT1 SHOPPER'S MALL at the same unit."
+    },
+    {
+      "id": 9244,
+      "name": "Ｇ−ＳＴＡＧＥ小倉",
+      "field": "games",
+      "current": ["chunithm", "gitadora", "iidx", "jubeat", "maimai_dx", "museca", "nostalgia", "ongeki", "other", "polaris_chord", "popn", "sdvx"],
+      "proposed": ["chunithm", "gitadora", "iidx", "jubeat", "maimai_dx", "nostalgia", "ongeki", "other", "polaris_chord", "popn", "sdvx"],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=39",
+      "evidence_quote": "Ｇ−ＳＴＡＧＥ小倉 present on Fukuoka maimai/CHUNITHM/ONGEKI lists; MUSECA is a long-discontinued Konami network title and is not returned by current e-amusement facility search",
+      "checked_at": "2026-08-02",
+      "note": "Remove museca. MUSECA online service ended years ago; a live venue should not list it as a current game. Venue itself is live on ALL.Net and e-amusement (IIDX/SDVX)."
+    },
+    {
+      "id": 9244,
+      "name": "Ｇ−ＳＴＡＧＥ小倉",
+      "field": "hours",
+      "current": "Mon-Sun 11:00-20:00",
+      "proposed": "Mon-Sun 10:00-20:00",
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-40",
+      "evidence_quote": "data-name=\"G-STAGE小倉店\" data-operationtime=\"10:00～20:00\" data-address=\"北九州市小倉北区浅野2-14-5\"",
+      "checked_at": "2026-08-02",
+      "note": "e-amusement facility record says open from 10:00, not 11:00."
+    },
+    {
+      "id": 9194,
+      "name": "楽市街道箱崎店",
+      "field": "games",
+      "current": ["chunithm", "dance_evo", "ddr", "gitadora", "iidx", "jubeat", "maimai_dx", "nostalgia", "ongeki", "other", "popn", "project_diva", "sdvx"],
+      "proposed": ["chunithm", "ddr", "gitadora", "iidx", "jubeat", "maimai_dx", "nostalgia", "ongeki", "other", "popn", "project_diva", "sdvx"],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=39",
+      "evidence_quote": "楽市街道箱崎店 listed on Fukuoka Project DIVA, maimai, CHUNITHM, ONGEKI; DanceEvolution arcade network has been offline for years and is not on current Konami e-amusement facility search",
+      "checked_at": "2026-08-02",
+      "note": "Remove dance_evo as a current game. Venue is live: ALL.Net SEGA titles present; e-amusement lists 楽市街道箱崎店2F for IIDX/SDVX/DDR with hours 10:00～27:00."
+    },
+    {
+      "id": null,
+      "name": "Cow Play Cow Moo Thomson Plaza",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Cow Play Cow Moo Thomson Plaza",
+        "addr": "301 Upper Thomson Road #03-52/53, Singapore 574408",
+        "country": "Singapore",
+        "games": [],
+        "hours_text": "Mon-Fri 11:00-23:00; Sat-Sun and PH 10:00-23:00",
+        "website": "https://www.cpcm.com.sg/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "COW PLAY COW MOO THOMSON PLAZA / 301 Upper Thomson Road #03-52/53, S(574408) / Opening Hours: Mon to Fri - 11am to 11pm; Weekends and Public Holidays - 10am to 11pm",
+      "checked_at": "2026-08-02",
+      "note": "On official CPCM store locator under NORTH. Not present in shard. Not on ALL.Net maimai/CHUNITHM Singapore lists, so rhythm cabinets are unverified (may be claw/redemption only). Still worth adding as a CPCM outlet; do not invent games."
+    },
+    {
+      "id": null,
+      "name": "Cow Play Cow Moo Hougang 1 Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Cow Play Cow Moo Hougang 1 Mall",
+        "addr": "1 Hougang Street 91 #01-07, Singapore 538692",
+        "country": "Singapore",
+        "games": [],
+        "hours_text": "Mon-Fri 11:00-23:00; Sat-Sun and PH 10:00-23:00",
+        "website": "https://www.cpcm.com.sg/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "COW PLAY COW MOO HOUGANG 1 MALL / 1 HOUGANG ST 91 #01-07, S(538692) / Opening Hours: Mon to Fri - 11am to 11pm; Weekends and Public Holidays - 10am to 11pm",
+      "checked_at": "2026-08-02",
+      "note": "Official CPCM NORTH-EAST outlet. Not in shard. Not on ALL.Net maimai/CHUNITHM SG lists; rhythm games unverified."
+    },
+    {
+      "id": null,
+      "name": "Cow Play Cow Moo Woodleigh Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Cow Play Cow Moo Woodleigh Mall",
+        "addr": "11 Bidadari Park Drive #B1-22, Singapore 367803",
+        "country": "Singapore",
+        "games": [],
+        "hours_text": "Daily 11:30-23:30",
+        "website": "https://www.cpcm.com.sg/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.cpcm.com.sg/locations_singapore",
+      "evidence_quote": "COW PLAY COW MOO WOODLEIGH MALL / 11 Bidadari Park Dr #B1-22, S(367803) / Opening Hours: Mon to Fri - 11:30am to 11:30pm; Weekends and Public Holidays - 11:30am to 11:30pm",
+      "checked_at": "2026-08-02",
+      "note": "Official CPCM NORTH-EAST outlet. Not in shard. Not on ALL.Net maimai/CHUNITHM SG lists; rhythm games unverified."
+    },
+    {
+      "id": null,
+      "name": "Timezone Hougang Mall",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "Timezone Hougang Mall",
+        "addr": "Hougang Mall #04-15, Singapore",
+        "country": "Singapore",
+        "games": [],
+        "website": "https://www.timezonegames.com/en-sg/locations/northeast/timezone-hougang-mall/"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.timezonegames.com/en-sg/locations/",
+      "evidence_quote": "Timezone Hougang Mall - #04-15 - Claw Machines, Arcade Games, VR Games (no Music Games listed on the locations index)",
+      "checked_at": "2026-08-02",
+      "note": "Official Timezone SG locations page lists this outlet. Feature chips omit Music Games, so rhythm cabinets are unverified / likely absent. Still missing from the map as a Timezone branch. Street address beyond unit #04-15 not shown on the index page."
+    },
+    {
+      "id": 10630,
+      "name": "COW PLAY COW MOO SUNTEC CITY",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": "Lightning Model",
+        "sdvx": "Valkyrie",
+        "ddr": "20th anniversary model"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+      "evidence_quote": "Cow Play Cow Moo (Flagship Store Hall B @ Suntec City B1) machines include: beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL); SOUND VOLTEX ∇ (Valkyrie model); DanceDanceRevolution WORLD (20th anniversary model); lastUpdate 2026-02-23",
+      "checked_at": "2026-08-02",
+      "note": "ZIv community data from Feb 2026 for the B1 rhythm hall (maps to this ALL.Net Suntec row). Not an official Konami model feed; mark likely not certain."
+    },
+    {
+      "id": 10662,
+      "name": "VIRTUALAND BUGIS+",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": "Lightning Model",
+        "sdvx": "Valkyrie"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+      "evidence_quote": "VIRTUALAND Bugis+ machines include beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL); SOUND VOLTEX EXCEED GEAR (Valkyrie model); lastUpdate 2026-04-17",
+      "checked_at": "2026-08-02",
+      "note": "ZIv community last update April 2026. Venue confirmed on ALL.Net for maimai and CHUNITHM."
+    },
+    {
+      "id": 10663,
+      "name": "VIRTUALAND(NEX)",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx": "Lightning Model",
+        "sdvx": "Valkyrie"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+      "evidence_quote": "VIRTUALAND @ Nex machines include beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL); SOUND VOLTEX EXCEED GEAR (Valkyrie model); lastUpdate 2026-06-18",
+      "checked_at": "2026-08-02",
+      "note": "ZIv community last update June 2026. Venue confirmed on ALL.Net for maimai and CHUNITHM. Also lists WACCA REVERSE on ZIv (app already has wacca)."
+    },
+    {
+      "id": 10625,
+      "name": "COW PLAY COW MOO DOWNTOWN EAST",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "Valkyrie (plus standard NEMSYS listed)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+      "evidence_quote": "Cow Play Cow Moo (Downtown East) machines include SOUND VOLTEX EXCEED GEAR and SOUND VOLTEX ∇ (Valkyrie model); lastUpdate 2026-02-23",
+      "checked_at": "2026-08-02",
+      "note": "ZIv Feb 2026. Venue confirmed on ALL.Net maimai+CHUNITHM."
+    },
+    {
+      "id": 10627,
+      "name": "COW PLAY COW MOO NORTHSHORE PLAZA 2",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx": "Valkyrie (plus standard listed)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Singapore",
+      "evidence_quote": "Cow Play Cow Moo - Northshore Plaza II machines include SOUND VOLTEX EXCEED GEAR and SOUND VOLTEX ∇ (Valkyrie model); lastUpdate 2026-06-03",
+      "checked_at": "2026-08-02",
+      "note": "ZIv June 2026. Venue on ALL.Net for maimai and CHUNITHM."
+    }
+  ]
+}

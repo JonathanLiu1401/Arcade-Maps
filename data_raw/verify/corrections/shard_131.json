@@ -1,0 +1,731 @@
+{
+  "shard": 131,
+  "checked": 48,
+  "sources_used": [
+    "https://location.am-all.net/alm/location (gm=96/109/88/34 JP; gm=98 ct=1008 Macau; gm=98 ct=1009 NA; gm=104 ct=1008)",
+    "https://www.gigo.co.jp/shops/saitama-fukiage",
+    "https://www.taito.co.jp/store/00002240",
+    "https://www.taito.co.jp/store/00001697",
+    "https://www.taito.co.jp/store/00002107",
+    "https://www.taito.co.jp/store/00002222",
+    "https://act-amuse.com/shop_list/katata_shop/",
+    "https://amipara.co.jp/store/amipara-kumiyama/",
+    "http://www.yous-am.com/wakayama.html",
+    "https://www.round1.co.jp/shop/tenpo/wakayama-wakayama.html",
+    "https://www.round1usa.com/locations/",
+    "http://www.quarterworldarcade.com",
+    "https://www.akihabaraarcade.com/",
+    "https://www.akihabaraarcade.com/gamelist",
+    "https://map.bemanicn.com/s/1185",
+    "https://map.bemanicn.com/s/6618",
+    "https://map.bemanicn.com/s/6583",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php (multiple ids)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan"
+  ],
+  "corrections": [
+    {
+      "id": 8264,
+      "name": "GiGO Fuji Mall Fukiage / GiGOフジモール吹上",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/saitama-fukiage",
+      "evidence_quote": "Music game shelf lists: オンゲキ Re:Fresh Act.2; CHUNITHM Mate; maimai でらっくす CiRCLE PLUS; SOUND VOLTEX ∇; beatmania IIDX 33 Sparkle Shower. Hours Mon-Sun 10:00-20:00.",
+      "note": "Official GiGO shop page lists maimai DX, ONGEKI and IIDX in addition to CHUNITHM and SDVX. ALL.Net gm=96/109/88 Saitama lists all include ＧｉＧＯフジモール吹上 (sid=19739). Taiko remains only on ZIv; left in proposed set because absence is not proven on official pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8264,
+      "name": "GiGO Fuji Mall Fukiage / GiGOフジモール吹上",
+      "field": "location",
+      "current": {
+        "lat": 36.085314932002,
+        "lng": 139.49014663696
+      },
+      "proposed": {
+        "lat": 36.0994301,
+        "lng": 139.473297,
+        "addr": "埼玉県鴻巣市袋９０ー１　２階 (Fuji Mall Fukiage 2F)"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=10",
+      "evidence_quote": "store_name ＧｉＧＯフジモール吹上; store_address 埼玉県鴻巣市袋９０ー１　２階; GoogleMap q=ＧｉＧＯフジモール吹上@36.0994301,139.473297",
+      "note": "App pin is about 2.2 km from the official ALL.Net pin for the same store.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8264,
+      "name": "GiGO Fuji Mall Fukiage / GiGOフジモール吹上",
+      "field": "images",
+      "current": 0,
+      "proposed": {
+        "urls": [
+          "https://assets.gigo.co.jp/img/shops/saitama-fukiage-01.jpg",
+          "https://assets.gigo.co.jp/img/shops/saitama-fukiage-02.jpg",
+          "https://assets.gigo.co.jp/img/shops/saitama-fukiage-03.jpg"
+        ],
+        "licence": "Official GiGO shop photography on gigo.co.jp; confirm GENDA GiGO reuse rights before ingesting."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/saitama-fukiage",
+      "evidence_quote": "alt GiGOフジモール吹上の店舗画像1/2/3 with assets at assets.gigo.co.jp/img/shops/saitama-fukiage-0{1,2,3}.jpg",
+      "note": "Venue has n_images=0. First-party shop photos.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8191,
+      "name": "Ace lane Katata",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Fri/Sun 10:00-23:00; Sat 10:00-24:00 (GW/Obon/year-end special hours)",
+      "confidence": "certain",
+      "evidence_url": "https://act-amuse.com/shop_list/katata_shop/",
+      "evidence_quote": "施設名 アクト堅田 住所 滋賀県大津市今堅田2丁目40－10 TEL 077-571-1106 営業時間 10:00～23:00 ※土曜日のみ 10:00～24：00 ※GW・お盆・年末年始は特別営業となります",
+      "note": "App hours_text is null. ALL.Net also lists エースレーン堅田 for maimai DX / CHUNITHM / ONGEKI (sid=24863 @35.1246449,135.9194342).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8191,
+      "name": "Ace lane Katata",
+      "field": "website",
+      "current": "http://act-amuse.com",
+      "proposed": "https://act-amuse.com/shop_list/katata_shop/",
+      "confidence": "certain",
+      "evidence_url": "https://act-amuse.com/shop_list/katata_shop/",
+      "evidence_quote": "title アクト堅田; 施設名 アクト堅田",
+      "note": "Shop page is more useful than the root URL. Display name also matches エースレーン堅田 on ALL.Net.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8358,
+      "name": "Taito F Station Takasaki OPA (タイトーFステーション高崎オーパ店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:00",
+      "proposed": "Mon-Sun 10:00-20:00 (年中無休)",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00002240",
+      "evidence_quote": "LocalBusiness name タイトーFステーション 高崎オーパ店; openingHours opens 10:00:00 closes 20:00:00; page text 営業時間 10:00～20:00 年中無休",
+      "note": "Official Taito page closes at 20:00, not 21:00. ALL.Net still lists this store for maimai DX, CHUNITHM and ONGEKI.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8385,
+      "name": "Video Game Museum Robot Fukaya /ビデオゲームミュージアム ロボット 深谷店",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "other"
+      ],
+      "proposed": [
+        "jubeat",
+        "other",
+        "project_diva"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=10",
+      "evidence_quote": "store_name ビデオゲームミュージアムロボット深谷店; address 埼玉県深谷市上柴町西４−１２−１; listed under Project DIVA gm=34 sid=25290",
+      "note": "Official ALL.Net Project DIVA locator includes this shop. App omits project_diva.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8385,
+      "name": "Video Game Museum Robot Fukaya /ビデオゲームミュージアム ロボット 深谷店",
+      "field": "location",
+      "current": {
+        "lat": 36.353990823206,
+        "lng": 139.33951640361,
+        "addr": "4 Chome-12-1 Kamishibachonishi Fukaya Saitama, 〒366-0052, Fukaya"
+      },
+      "proposed": {
+        "lat": 36.179639220016,
+        "lng": 139.298801259525,
+        "addr": "埼玉県深谷市上柴町西４−１２−１"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=10",
+      "evidence_quote": "GoogleMap q=ビデオゲームミュージアムロボット深谷店@36.179639220016,139.298801259525; address 埼玉県深谷市上柴町西４−１２−１",
+      "note": "App pin is about 19.7 km from the ALL.Net pin for the same shop name and street address.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8199,
+      "name": "AmiPara Kumiyama (アミパラ久御山店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=25",
+      "evidence_quote": "Kyoto (at=25) maimai DX list has 11 shops and does not include アミパラ or 久御山; CHUNITHM gm=109 and ONGEKI gm=88 Kyoto lists likewise omit it.",
+      "note": "Venue still exists (https://amipara.co.jp/store/amipara-kumiyama/ shows 営業時間：10:00~24:00). Official SEGA locators do not list maimai/CHUNITHM. e-amusement facility search requires login so IIDX cannot be re-checked. ZIv list is stale (CHUNITHM SUN / IIDX 30 RESIDENT / maimai FESTiVAL). proposed null means REMOVE the three network-game claims until official or fresh on-site evidence re-adds them. Hours/address can stay.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13002,
+      "name": "QuarterWorld",
+      "field": "hours",
+      "current": "Mon closed; Tue-Fri 15:00-01:00; Sat-Sun 12:00-01:00",
+      "proposed": "Mon-Tue closed; Wed-Fri 16:00-01:00; Sat-Sun 13:00-01:00 (minors Sat-Sun 13:00-19:00 only); check site for private events",
+      "confidence": "certain",
+      "evidence_url": "http://www.quarterworldarcade.com",
+      "evidence_quote": "Hours of Operation: Wednesday: 4pm to 1am; Thursday: 4pm to 1am; Friday: 4pm to 1am; Saturday: 1pm to 1am; Sunday: 1pm to 1am. FAQ: currently open Wednesday-Friday from 4pm to 1am, and Saturday-Sunday from 1pm to 1am. StepManiaX on game list.",
+      "note": "App still shows Tuesday open from 15:00 and weekend open from 12:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11994,
+      "name": "Akihabara Arcade and Bar",
+      "field": "hours",
+      "current": "Mon-Thu 14:00-01:00; Fri 14:00-02:00; Sat 12:00-02:00; Sun 12:00-01:00",
+      "proposed": "Mon-Tue closed; Wed 14:00-21:00; Thu 14:00-23:00; Fri 14:00-24:00; Sat 12:00-24:00; Sun 12:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.akihabaraarcade.com/",
+      "evidence_quote": "businessHours monday Closed; tuesday Closed; wednesday 2PM to 9PM; thursday 2PM to 11PM; friday 2pm to 12PM; saturday 12PM to 12AM; sunday 12PM to 9PM",
+      "note": "Squarespace location businessHours on official homepage. Friday '12PM' treated as midnight (24:00) given Saturday 12AM pattern. App incorrectly shows Monday open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11994,
+      "name": "Akihabara Arcade and Bar",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "reflec",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "groove_coaster",
+        "iidx",
+        "other",
+        "popn",
+        "project_diva",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://www.akihabaraarcade.com/gamelist",
+      "evidence_quote": "Updated List As Of 04/08/2026 RHYTHM and Dance: Pop'n Music HD (new); Taiko no tatsujin HD (new); Beatmania IIDX (new); Dance Rush Stardom (new); Chunithm x 4 (new); Wacca x 2 (new); Project Diva; MAiMai Finale; Final fantasy theatrythm; Rhythm Tengoku; Dance Dance Revolution A3 (new); Groove Coaster. No SDVX, REFLEC BEAT or Nostalgia on the published list.",
+      "note": "Official gamelist is primary over ZIv. maimai is listed as FiNALE (not live DX) and venue is NOT on ALL.Net North America maimai DX (ct=1009, 110 shops). SDVX/reflec/nostalgia/jubeat not on the 2026-04-08 official list. project_diva added from official Project Diva entry.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11994,
+      "name": "Akihabara Arcade and Bar",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 1,
+        "ddr": 1,
+        "drs": 1,
+        "groove_coaster": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "nostalgia": 1,
+        "popn": 2,
+        "reflec": 2,
+        "sdvx": 1,
+        "taiko": 1,
+        "wacca": 2
+      },
+      "proposed": {
+        "chunithm": 4,
+        "wacca": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://www.akihabaraarcade.com/gamelist",
+      "evidence_quote": "Chunithm x 4 (new); Wacca x 2 (new)",
+      "note": "Only counts the official page states as x N. Remove stale counts for games no longer listed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10577,
+      "name": "Fun forrest, Rock'n roll bowling",
+      "field": "other",
+      "current": {
+        "country": "Romania",
+        "addr": "strada arborilor 21 In moldova since this site does not have moldova as an option Chisinau centru, MD-2025, Chisinau"
+      },
+      "proposed": {
+        "country": "Moldova",
+        "city": "Chisinau",
+        "addr": "Strada Arborilor 21, Chisinau, Moldova"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10947",
+      "evidence_quote": "Address: strada arborilor 21 In moldova since this site does not have moldova as an option Chisinau; coords ~47.005,28.841 are Chisinau.",
+      "note": "App country is Romania only because ZIv has no Moldova option. Coordinates and address text are Chisinau, Moldova.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10796,
+      "name": "VAMS MUSIC/SPORT",
+      "field": "location",
+      "current": {
+        "country": "Japan",
+        "addr": "Jung-gu 28 BIFF gwangjang-ro Busan Busan 48983, Busan",
+        "lat": 33.18163598295305,
+        "lng": 131.08056095131045
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9778",
+      "evidence_quote": "ZIv address: Jung-gu 28 BIFF gwangjang-ro Busan Busan 48983. App notes country corrected from coordinates (South Korea -> Japan). Coordinates 33.18,131.08 land near Oita Prefecture, Japan, which contradicts the Busan address.",
+      "note": "Internally inconsistent row: Busan street address, Japan country, Oita-area pin. proposed null = do not trust current location/country. Re-geocode from Busan address or drop if dead. games=['other'] only.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "YURAKUCHO (Macau)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "YURAKUCHO",
+        "addr": "N 5-7A, Rua de Sacadura Cabral N14-18B, R/C E, EDF. POU SENG, Macau",
+        "country": "Macau",
+        "lat": 22.1991168,
+        "lng": 113.5469361,
+        "games": [
+          "maimai_dx",
+          "chunithm"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1008",
+      "evidence_quote": "Macau maimai DX list includes YURAKUCHO | N 5-7A,Rua de Sacadura Cabral N14-18B,R/C E,EDF.POU SENG @22.1991168,113.5469361. CHUNITHM international gm=104 ct=1008 also lists YURAKUCHO as the sole Macau CHUNITHM shop.",
+      "note": "Not present in shard_131. Official SEGA international locator.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "BEEBEE LAND (Macau)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "BEEBEE LAND",
+        "addr": "R92A, 2F, H853 Fun Factory, Lisboeta, Macau",
+        "country": "Macau",
+        "lat": 22.1415633,
+        "lng": 113.5729178,
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1008",
+      "evidence_quote": "Macau maimai DX list: BEEBEE LAND | R92A, 2F, H853 Fun Factory, Lisboeta, Macau @22.1415633,113.5729178",
+      "note": "Not present in shard_131. Official SEGA international locator.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9592,
+      "name": "新遊戲",
+      "field": "other",
+      "current": {
+        "name": "新遊戲",
+        "addr": "永華街57號僑光工業大廈地下H舖 Macau 999078, Macau"
+      },
+      "proposed": {
+        "note": "Likely same physical unit as id 9588 GAME WORLD(CHIAO KUONG)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1008",
+      "evidence_quote": "ALL.Net: GAME WORLD(CHIAO KUONG) | R.GRACIOSA 57 R/C+SL, FLAT H, ED. IND. CHIAO KUONG, MACAU @22.210261445944,113.552542111048. App 新遊戲 addr 永華街57號僑光工業大廈地下H舖.",
+      "note": "Rua Graciosa is the Portuguese name for 永華街; unit H matches. Consider merging 9592 into 9588.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9591,
+      "name": "兒童王國",
+      "field": "games",
+      "current": [
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "project_diva",
+        "taiko"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1008",
+      "evidence_quote": "Macau maimai DX official list has exactly 3 shops: GAME WORLD(CHIAO KUONG), YURAKUCHO, BEEBEE LAND. No 兒童王國.",
+      "note": "Cannot prove closed; ZIv still lists many cabs. Official maimai locator does not name 兒童王國 and it sits on the same Chiao Kuong building as GAME WORLD. proposed null is a flag that network-game claims are not official-confirmed, not a hard delete of the venue.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12604,
+      "name": "Gatcha (Fashion Centre)",
+      "field": "hours",
+      "current": "Mon-Sat 11:00-09:00; Sun 11:00-06:00",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11386",
+      "evidence_quote": "App hours close earlier than they open (11:00-09:00), which is not a usable schedule. Official Gatcha site did not respond from this environment.",
+      "note": "Remove or blank hours until a real schedule is found. Likely bad AM/PM conversion.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12604,
+      "name": "Gatcha (Fashion Centre)",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ]
+      },
+      "proposed": {
+        "network_status": "Not on ALL.Net NA maimai list (ct=1009 has GATCHA KTOWN and GATCHA TANGRAM only). Cabinets on ZIv are likely private/offline."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "North America maimai DX list (110 shops) includes GATCHA KTOWN (Manhattan) and GATCHA TANGRAM (Flushing) but no Arlington / Fashion Centre / Hayes St entry.",
+      "note": "Not removing games; ZIv still lists CHUNITHM LUMINOUS x2 and maimai FESTiVAL + PRiSM.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13088,
+      "name": "ROUND1 CUMBERLAND MALL",
+      "field": "games",
+      "current": [
+        "crossbeats",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "museca",
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11096",
+      "evidence_quote": "ZIv id 11096 machine list is mostly free-play / legacy (IIDX 26 Rootage, DDR X, crossbeats REV., MUSECA). Sibling id 13062 / ZIv 4979 has the modern Round1 set. ALL.Net NA still lists ROUND1 CUMBERLAND MALL for maimai DX.",
+      "note": "Second row for the same Cumberland Mall Round1 with an outdated free-play subset. Prefer id 13062 as canonical. proposed null = do not trust this row as a separate complete inventory.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13140,
+      "name": "ROUND1 VALLEY RIVER CENTER",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ],
+        "addr": "600 Valley River Center, Suite 100, Eugene, OR 97401"
+      },
+      "proposed": {
+        "merge_into": 13076,
+        "note": "ALL.Net-only maimai stub for the same Round1 as id 13076"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 VALLEY RIVER CENTER | 600 Valley River Center, Suite 100, Eugene, OR 97401 on ALL.Net NA maimai. Sibling 13076 is full Round1 list.",
+      "note": "Duplicate pair. Merge maimai confirmation onto 13076 and drop or hide 13140.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2659,
+      "name": "大玩家（拉萨城关万达广场店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1185",
+      "evidence_quote": "props.shop: name 大玩家（拉萨城关万达广场店）; start_time 10; end_time 22; status 1; price \"3\"; arcades[0] title_id 1 quantity 1 version Ver.CN1.51-D; updated_at 2026-07-05",
+      "note": "BemaniCN status=1 open, one maimai cabinet.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2659,
+      "name": "大玩家（拉萨城关万达广场店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1185",
+      "evidence_quote": "arcades: [{title_id: 1, quantity: 1, version: \"Ver.CN1.51-D\", comment: \"机况良好 拉萨的第一台滴蜡熊...\"}]",
+      "note": "Real quantity from BemaniCN, not a ziv_listed placeholder.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2659,
+      "name": "大玩家（拉萨城关万达广场店）",
+      "field": "prices",
+      "current": null,
+      "proposed": "maimai about CNY 3 per credit (BemaniCN price field \"3\"; shop comment notes 币价较贵)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1185",
+      "evidence_quote": "price: \"3\"; comment: 币价较贵; arcade coin: 5",
+      "note": "price field is commonly yuan-per-play; coin:5 may mean 5 coins per play. Likely not certain.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2659,
+      "name": "大玩家（拉萨城关万达广场店）",
+      "field": "images",
+      "current": 0,
+      "proposed": {
+        "urls": [
+          "https://oss.bemanicn.com/arcademap/img/gJlkzuqNrVTM9uqqjK1Zm8V6eXF2v7XEHE3xJ0p3.jpg"
+        ],
+        "licence": "BemaniCN shop/user upload via oss.bemanicn.com; check BemaniCN terms before reuse."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1185",
+      "evidence_quote": "image_thumb.url https://oss.bemanicn.com/arcademap/img/gJlkzuqNrVTM9uqqjK1Zm8V6eXF2v7XEHE3xJ0p3.jpg-thumbnail?...",
+      "note": "n_images=0 in app. Strip -thumbnail and query for full image if needed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4752,
+      "name": "汤姆熊欢乐世界 Tom's World (罗斯福店)",
+      "field": "other",
+      "current": {
+        "notes_contains": "maimai FiNALE and 舞萌DX 2026"
+      },
+      "proposed": {
+        "cab_models_note": "ZIv still lists offline maimai FiNALE beside two live maimai DX PRiSM PLUS cabs; DX is the live product."
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2422",
+      "evidence_quote": "maimai FiNALE | OFFLINE，球盘，已断网; 舞萌DX 2026 (maimai DX PRiSM PLUS) x2 | 机况良好。FiNALE 和 DX 并排在一起",
+      "note": "App games correctly has maimai_dx only. Optional cab_models note only.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3368,
+      "name": "宝龙乐园",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "other",
+        "pump_it_up",
+        "reflec",
+        "taiko"
+      ],
+      "proposed": [
+        "jubeat",
+        "other",
+        "pump_it_up",
+        "reflec"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2516",
+      "evidence_quote": "Parsed ZIv rhythm machines present: Pump It Up PRIME 2; 乐动魔方2代 (jubeat) (2 linked); 动感弹珠 (REFLEC BEAT) (2). No taiko row in the current machine table.",
+      "note": "App lists taiko with count 2 and notes mention 太鼓の達人11/12 亞洲版, but the live ZIv machine table no longer shows taiko. Community only.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8999,
+      "name": "ユーズランド和歌山店",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:00",
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "http://www.yous-am.com/wakayama.html",
+      "evidence_quote": "営業時間 10:00～21:00 店舗電話 073-452-1668 店舗住所 〒640-8451 和歌山県和歌山市ふじと台23番地 イオンモール和歌山２Ｆ",
+      "note": "Confirms app hours against official YOU'S LAND page. ALL.Net shop detail sid=22436 showed 10:00～22:00; chain page wins. Also on ALL.Net maimai/CHUNITHM/ONGEKI for Wakayama.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9042,
+      "name": "ラウンドワン和歌山店",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-00:00; Sat-Sun 06:00-00:00",
+      "proposed": "Building: Mon-Thu 10:00-next 06:00; Fri 10:00-all day; Sat 24h; Sun until next 06:00. Amusement corner: weekdays until 23:50; weekend from 06:00 (see official calendar)",
+      "confidence": "likely",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/wakayama-wakayama.html",
+      "evidence_quote": "月曜日〜木曜日 午前10:00〜翌朝6:00; 金曜日・祝前日 午前10:00〜終日; 土曜日 24時間営業; 日曜日・祝日 〜翌朝6:00; アミューズメントコーナーの営業時間は[平日]OPEN〜午後11:50、[土日祝]午前6:00〜",
+      "note": "App collapses overnight Fri-Sat. Rhythm floor follows amusement-corner hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5118,
+      "name": "潮棱镜·潮玩街区",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-24:00 (ticket venue; late session 19:00-24:00 noted)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6618",
+      "evidence_quote": "status: 1; start_time 11; end_time 24; updated_at 2026-07-24; arcade title_id 33 version evo quantity 1; comment 单人全天门票98元 / 晚场票19点-24点68元",
+      "note": "舞立方EVO only (app 'other'). Ticket arcade, not coin-drop primary.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6552,
+      "name": "超核游戏站电玩店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6583",
+      "evidence_quote": "status: 1; start_time 10; end_time 22; updated_at 2026-01-03; arcade title_id 33 version evo quantity 1",
+      "note": "BemaniCN still open with 舞立方EVO. Last update Jan 2026.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13434,
+      "name": "XSCAPE",
+      "field": "other",
+      "current": {
+        "games_includes": "jubeat"
+      },
+      "proposed": {
+        "jubeat": "location-test only per ZIv; may not be permanent"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10803",
+      "evidence_quote": "jubeat音乐魔方 | LOCATION TEST. How long this will remain in the store is unknown.",
+      "note": "App lists jubeat as a normal game. maimai DX confirmed on ALL.Net NA as XSCAPE. Do not hard-remove jubeat; flag ephemerality.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8365,
+      "name": "Taito Station Kinuyama (タイトーステーション衣山店)",
+      "field": "other",
+      "current": {
+        "games": [
+          "taiko"
+        ],
+        "name": "Taito Station Kinuyama"
+      },
+      "proposed": {
+        "nearby": "バンバン衣山店 is the ALL.Net-listed SEGA music shop at 愛媛県松山市衣山１−２４８−１ (maimai/CHUNITHM/DIVA), distinct from Taito Station inside パルティ・フジ衣山"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=37",
+      "evidence_quote": "Ehime maimai list includes バンバン衣山店 | 愛媛県松山市衣山１−２４８−１, not タイトーステーション衣山. Taito official store 00001697 still open 10:00-24:00 at パルティ・フジ衣山.",
+      "note": "No error on the Taito row itself (still open, taiko-only plausible). Do not merge with BanBan 衣山; consider adding BanBan if missing globally.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8357,
+      "name": "Taito F Station Morioka Minami (タイトーFステーション盛岡南店)",
+      "field": "other",
+      "current": {
+        "games": [
+          "taiko"
+        ],
+        "addr": "2-1-77, Tsushidacho Morioka Iwate, 020-0837"
+      },
+      "proposed": {
+        "nearby_sega": "ソユーゲームフィールド盛岡南 at 岩手県盛岡市本宮７−１−１イオンモール盛岡南２Ｆ is the ALL.Net maimai/CHUNITHM/ONGEKI location (sid=22812), different address from Taito F Station 津志田町２－１－７７"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=2",
+      "evidence_quote": "Iwate maimai list includes ソユーゲームフィールド盛岡南 | 岩手県盛岡市本宮７−１−１イオンモール盛岡南２Ｆ, and タイトーステーション 盛岡マッハランド店, but not タイトーFステーション盛岡南. Taito official 00002107 still open 10:00-24:00.",
+      "note": "Taito F Station Morioka Minami remains open per Taito.co.jp with taiko. It is NOT the ALL.Net SEGA store at AEON Mall Morioka Minami (SOYU). Do not rename one into the other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13126,
+      "name": "ROUND1 QUAIL SPRINGS MALL",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into": 13081,
+        "note": "ALL.Net-only maimai stub for the same Round1 as id 13081"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net NA maimai list includes ROUND1 QUAIL SPRINGS MALL; fuller sibling is Round1 Bowling & Arcade - Oklahoma City (Quail Springs Mall) (id 13081).",
+      "note": "Same Round1 allnet-stub pattern as Valley River. Prefer 13081.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13130,
+      "name": "ROUND1 SOUTH TOWN CENTER",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into": 13082,
+        "note": "ALL.Net-only maimai stub for the same Round1 as id 13082"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net NA maimai list includes ROUND1 SOUTH TOWN CENTER; fuller sibling is Round1 Bowling & Arcade - Sandy (The Shops at South Town) (id 13082).",
+      "note": "Same Round1 allnet-stub pattern as Valley River. Prefer 13082.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13086,
+      "name": "ROUND1 CORONADO CENTER MALL",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "proposed": {
+        "merge_into": 13061,
+        "note": "ALL.Net-only maimai stub for the same Round1 as id 13061"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net NA maimai list includes ROUND1 CORONADO CENTER MALL; fuller sibling is Round1 Bowling & Arcade (Coronado Center) (id 13061).",
+      "note": "Same Round1 allnet-stub pattern as Valley River. Prefer 13061.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

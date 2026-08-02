@@ -1,0 +1,498 @@
+{
+  "shard": 125,
+  "checked": 55,
+  "sources_used": [
+    "https://location.am-all.net/alm/location (gm=96/109/88/34 JP prefs at=2,5,25,34,42; gm=98 ct=1009 North America)",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (gkeys IIDX,IIDX_LN,SDVX,SDVX_VM,DDR,DDR20TH,PMSP,JUBEAT,GITADORADM,GITADORAGF,PLRS,DANCEAROUND; prefs JP-03,06,26,35,43)",
+    "https://www.cidercade.com/houston/",
+    "https://freeplayinc.com/richardson/",
+    "https://tokyostationdfw.com/",
+    "https://timeriftarcade.com/",
+    "https://www.sidequestarcade.com/",
+    "https://www.round1usa.com/ and /locations/063wlb",
+    "https://cw-office.co.jp/passca/game_passcaland.html",
+    "https://cw-office.co.jp/passca/game_pw_uto.html",
+    "https://bandainamco-am.co.jp/game_center/loc/kumamoto-minami/",
+    "https://3rd-planet.jp/shop/bivi-kyoto2jo/",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php (ids 5891,4855,9125,4853,9430,11174,8549,3125,8161,8155,8162,1071,8084,848)"
+  ],
+  "corrections": [
+    {
+      "id": 8889,
+      "name": "パルケ・デ・アミーゴ！山形店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "jubeat",
+        "ongeki",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=5",
+      "evidence_quote": "山形県 maimai でらっくす 14店舗 list includes ＧｉＧＯ北山形, トレジャーサバイバル, あそビレッジ山形店, スタジオプリモ山形店, アピナ鶴岡店, ＧｉＧＯ天童, ソユーゲームフィールド天童店, ＧｉＧＯ米沢, モーリーファンタジー米沢, ＳＯＹＵＧａｍｅＦｉｅｌｄ酒田店, ＧｉＧＯ新庄, ソユーゲームフィールド三川店, ＧｉＧＯ庄内, モーリーファンタジー東根 — パルケ・デ・アミーゴ！山形店 is absent. Venue remains on CHUNITHM (gm=109) and ONGEKI (gm=88) lists.",
+      "note": "Remove maimai_dx only. Venue still listed for CHUNITHM and ONGEKI on ALL.Net. jubeat is a separate correction.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8889,
+      "name": "パルケ・デ・アミーゴ！山形店",
+      "field": "games",
+      "current": "jubeat present",
+      "proposed": "remove jubeat",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-06",
+      "evidence_quote": "jubeat 山形県 facilities: GiGO天童, ゲームゾーントレジャー北町店, GiGO新庄, アピナ鶴岡店 — パルケデアミーゴ not listed. IIDX list does include パルケデアミーゴ.",
+      "note": "e-amusement official locator no longer lists jubeat at this venue. Keep iidx.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8585,
+      "name": "キッズランド",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=2",
+      "evidence_quote": "岩手県 maimai でらっくす 14店舗: タイトーステーション 盛岡マッハランド店, サンシャイン, ソユーゲームフィールド盛岡南, ラウンドワン盛岡店, ゲームランド盛岡店, ＧｉＧＯ一関, ソユーファミリーゲームフィールド花巻店, アミューズメントゾーン北上店, ソユーゲームフィールド江釣子店, アミューズメントパークアルコ, ＰＡＬＯ久慈, ＧｉＧＯ水沢, テクノワールド, ソユーゲームフィールド釜石店 — キッズランド absent. CHUNITHM list still includes キッズランド.",
+      "note": "Remove maimai_dx. CHUNITHM remains on ALL.Net for this venue.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8664,
+      "name": "サープラ京都あそびタウン",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=25",
+      "evidence_quote": "京都府 ONGEKI 9店舗: ラウンドワン京都河原町店, ＧｉＧＯ河原町オーパ, アミューズメントＣＵＥ京都円町店, ＧｉＧＯ ＭＯＭＯテラス京都伏見, ラウンドワン京都伏見店, プラサカプコン京都店, バンダイナムコＣｒｏｓｓＳｔｏｒｅ京都, パルケ上賀茂店, あそＶＩＶＡゲームセンター — サープラ京都あそびタウン absent. maimai+CHUNITHM lists still include サープラ京都あそびタウン. e-amusement IIDX/SDVX Kyoto lists do not include this venue.",
+      "note": "Remove ongeki (ALL.Net), iidx and sdvx (e-amusement). ZIv arcade.php?id=848 (updated 2026-05-10) still lists オンゲキ / IIDX / SDVX as community data; official network locators do not. Prefer official.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8876,
+      "name": "パスカランドはません",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=42",
+      "evidence_quote": "熊本県 maimai 11店舗 / CHUNITHM 13 / ONGEKI 12 — none include パスカランドはません. Official names present include パスカワールドグリーンランド店, パスカランド長嶺, サープラ下通りあそびタウン, ラウンドワン熊本店, ＧｉＧＯアミュプラザくまもと, スポラ菊陽, ふぇすたらんど菊陽店, ピノキオランド玉名, ＦＥＳＴＡ山鹿店, ＦＥＳＴＡ人吉店, ピノキオランド本渡.",
+      "note": "Remove all SEGA rhythm claims. Chain page still describes a family amusement corner at ゆめタウンはません 3F but does not list these titles. Do not mark permanently closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9131,
+      "name": "宇土パスカワールド",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=42",
+      "evidence_quote": "熊本県 ALL.Net maimai/CHUNITHM/ONGEKI lists do not include 宇土パスカワールド. e-amusement IIDX/SDVX/PMSP/JUBEAT/GITADORA for JP-43 list フェスタ人吉店, ピノキオランド本渡店, スポラ九品寺, サープラ下通りあそびタウン, ラウンドワン熊本店, パスカワールドグリーンランド, スポラ菊陽店, フェスタ山鹿店, namcoワンダーシティ南熊本店 — not Uto. Operator page lists 太鼓の達人 x4 and generic 音楽ゲーム only.",
+      "note": "Remove SEGA and Konami rhythm claims not on official locators. ZIv id=8155 is a 2023 stub with no games. Venue still has address/hours on operator site.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9185,
+      "name": "楽市楽座小川店",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=42",
+      "evidence_quote": "熊本県 maimai でらっくす 11店舗 — 楽市楽座小川店 is not among them. Kumamoto maimai set is パスカワールドグリーンランド店, パスカランド長嶺, サープラ下通りあそびタウン, ラウンドワン熊本店, ＧｉＧＯアミュプラザくまもと, スポラ菊陽, ふぇすたらんど菊陽店, ピノキオランド玉名, ＦＥＳＴＡ山鹿店, ＦＥＳＴＡ人吉店, ピノキオランド本渡.",
+      "note": "Only game claim was maimai_dx from stale allnet src. After removal venue has no rhythm games. Existence of a non-rhythm store not verified in this pass.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9543,
+      "name": "ｎａｍｃｏワンダーシティ南熊本店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=42",
+      "evidence_quote": "熊本県 maimai list (11) does not include ｎａｍｃｏワンダーシティ南熊本店. CHUNITHM and ONGEKI lists do include it. e-amusement IIDX JP-43 list does not include namcoワンダーシティ南熊本店; SDVX/PLRS/PMSP do.",
+      "note": "Remove maimai_dx and iidx. Official Bandai Namco store page (2026-07-30 reopening notice) shows hours 1F/2F game corners 10:00-24:00; app 10:00-02:00 is close but not identical.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8771,
+      "name": "タイトーステーション 盛岡マッハランド店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-03",
+      "evidence_quote": "ポラリスコード 岩手県: GiGO一関, PALO久慈, GiGO水沢, テクノワールド, ソユーゲームフィールド盛岡南店, ラウンドワン盛岡店 — タイトーステーション盛岡マッハランド店 absent. Same venue still on IIDX, SDVX, PMSP, GITADORA e-amusement lists and ALL.Net maimai/CHUNITHM.",
+      "note": "Remove polaris_chord only. nostalgia not re-checked with e-amusement in this pass; left unchanged.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8869,
+      "name": "バンダイナムコＣｒｏｓｓＳｔｏｒｅ京都",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-26",
+      "evidence_quote": "SOUND VOLTEX 京都府: ラウンドワン京都河原町店, アミューズメントCUE京都円町店, ラウンドワン京都伏見店, あそVIVA本店 — バンダイナムコCrossStore京都 not listed. pop'n (PMSP) list does include バンダイナムコCrossStore京都1号. ALL.Net still lists venue for maimai/CHUNITHM/ONGEKI.",
+      "note": "Remove sdvx. Nostalgia not revalidated with e-amusement key in this pass.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13079,
+      "name": "Round1 Bowling & Arcade (Willowbrook Mall)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "museca",
+        "other",
+        "pump_it_up",
+        "sdvx",
+        "stepmaniax",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "museca",
+        "other",
+        "pump_it_up",
+        "sdvx",
+        "stepmaniax",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "maimai DX International North America TX entries: ROUND1 ARLINGTON PARKS; ROUND1 GRAPEVINE MILLS; ROUND1 NORTH STAR MALL; ROUND1 DEERBROOK MALL; CIDERCADE HOUSTON; GAMESCAPE BY CINEMARK; DAVE & BUSTER'S MCKINNEY; CLAW ZONE — no Willowbrook / Houston Round1. ZIv id=8549 comments repeatedly state still no maimai.",
+      "note": "Remove maimai_dx. game_counts already lacks maimai_dx. Hours confirmed via round1usa.com/locations/063wlb OPEN NOW Sun-Sat 10AM-2AM.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13372,
+      "name": "Tokyo Station",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "crossbeats",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "crossbeats",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "North America maimai DX list (110 stores) has no Tokyo Station / Arlington TX entry. ZIv id=4853 lists maimai FiNALE (Japan) not DX network: Online as of Late March 2026 on FiNALE, not ALL.Net International DX.",
+      "note": "Remove maimai_dx tag used for networked DX. Offline FiNALE is a different cab model and should not be listed as maimai_dx network.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13372,
+      "name": "Tokyo Station",
+      "field": "hours",
+      "current": "Mon-Thu 15:00-23:00; Fri 15:00-02:00; Sat 11:00-02:00; Sun 11:00-23:00",
+      "proposed": "Mon-Thu 11:00-23:00; Fri-Sat 11:00-02:00; Sun 11:00-23:00 (SUMMER HOURS as of fetch)",
+      "confidence": "certain",
+      "evidence_url": "https://tokyostationdfw.com/",
+      "evidence_quote": "SUMMER HOURS: Sunday 11a - 11p; Monday 11a - 11p; Tuesday 11a - 11p; Wednesday 11a - 11p; Thursday 11a - 11p; Friday 11a - 2a; Saturday 11a - 2a. Address 400 E. South Street Arlington, TX 76010.",
+      "note": "Official site summer hours open earlier Mon-Fri than app (11a vs 3pm). Seasonal; re-check after summer.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12509,
+      "name": "Free Play Arcade - Richardson",
+      "field": "hours",
+      "current": "Mon-Thu 15:00-23:00; Fri 15:00-00:00; Sat 11:00-01:00; Sun 11:00-23:00",
+      "proposed": "Sun-Wed 11:00-23:00; Thu-Sat 11:00-02:00 (summer hours as of fetch)",
+      "confidence": "certain",
+      "evidence_url": "https://freeplayinc.com/richardson/",
+      "evidence_quote": "Summer hours: Sunday-Wednesday 11a - 11p; Thursday-Saturday 11a - 2a. Address 1730 East Belt Line Road / Richardson, TX 75081. $12.89 entry.",
+      "note": "Official chain page (freeplayinc.com redirect from freeplayrichardson.com). Seasonal summer hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12509,
+      "name": "Free Play Arcade - Richardson",
+      "field": "website",
+      "current": "http://freeplayrichardson.com/",
+      "proposed": "https://freeplayinc.com/richardson/",
+      "confidence": "certain",
+      "evidence_url": "https://freeplayinc.com/richardson/",
+      "evidence_quote": "http://freeplayrichardson.com/ returns 301 to https://freeplayinc.com/richardson/; live location page with hours and address.",
+      "note": "Update canonical website URL.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12207,
+      "name": "CIDERCADE HOUSTON",
+      "field": "website",
+      "current": "https://www.cidercadehouston.com/",
+      "proposed": "https://www.cidercade.com/houston/",
+      "confidence": "certain",
+      "evidence_url": "https://www.cidercade.com/houston/",
+      "evidence_quote": "https://www.cidercadehouston.com/ 301 redirects to https://www.cidercade.com/houston/. Page: 10am-Midnight Every Day; 2320 Canal St. Suite 100 Houston, TX 77003; $12 play all day. Still open.",
+      "note": "Update website. ALL.Net NA still lists CIDERCADE HOUSTON for maimai. ZIv id=5891 updated 2026-07-22 confirms rhythm lineup matching app counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13363,
+      "name": "Time Rift Arcade",
+      "field": "hours",
+      "current": "Mon-Tue closed; Wed-Thu 15:00-23:00; Fri 15:00-00:00; Sat 12:00-00:00; Sun 12:00-22:00",
+      "proposed": "Mon-Tue closed; Wed-Thu 12:00-23:00; Fri-Sat 12:00-00:00; Sun 12:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://timeriftarcade.com/",
+      "evidence_quote": "MON: CLOSED; TUE: CLOSED; WED: 12PM to 11PM; THU: 12PM to 11PM; FRI: 12PM to 12AM; SAT: 12PM to 12AM; SUN: 12PM to 10PM. Summer Extended Hours banner. 21+ after 8PM.",
+      "note": "Wed-Fri open at noon per official site, not 3pm. ZIv last update 2026-03-27 still lists StepManiaX and jubeat.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13117,
+      "name": "ROUND1 NORTH STAR MALL",
+      "field": "other",
+      "current": "Separate arcade id=13117 (allnet-only maimai_dx) vs id=13072 Round1 Bowling & Arcade (North Star Mall) full listing",
+      "proposed": "Merge/dedupe into id=13072; keep single North Star Mall Round1",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net: ROUND1 NORTH STAR MALL | 7400 San Pedro Ave, Suite 2600,San Antonio, TX 78216. App also has id=13072 Round1 Bowling & Arcade (North Star Mall) at 7400 San Pedro Avenue San Antonio with full game list including maimai_dx. Coordinates nearly identical (~29.518).",
+      "note": "Same physical store duplicated: 13117 is ALL.Net import stub, 13072 is community/round1usa full record. Maintainers should merge rather than show two pins.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13182,
+      "name": "Side Quest Arcade",
+      "field": "games",
+      "current": [
+        "crossbeats",
+        "dance_evo",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "other",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9125",
+      "evidence_quote": "ZIv updated 2026-02-11 lists music games: crossbeats REV. Sunrise; HELLO! POP'N MUSIC; maimai FiNALE (offline, not networked); SOUND VOLTEX EXCEED GEAR (not on e-amusement). No DDR, IIDX, GITADORA, Groove Coaster, or Dance Evolution entries on that page.",
+      "note": "Not proposing hard removals because ZIv omission is weak negative evidence. Flag for maintainer review: app still claims ddr/gitadora/groove_coaster/iidx/dance_evo that ZIv no longer lists. Offline maimai FiNALE present on ZIv but should NOT be tagged maimai_dx network. Venue open per sidequestarcade.com.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "CLAW ZONE",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "CLAW ZONE",
+        "addr": "847 Northeast Mall Blvd, Hurst, TX 76053",
+        "country": "United States",
+        "pref": "TX",
+        "games": [
+          "maimai_dx"
+        ],
+        "src": [
+          "allnet"
+        ]
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "CLAW ZONE | 847 NORTHEAST MALL BLVD, HURST,TX 76053 appears on maimai DX International North America location list (fetched 2026-08-02).",
+      "note": "Not present in shard_125 TX entries. Add as new venue with at least maimai_dx. Coordinates not fetched here.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12404,
+      "name": "DAVE & BUSTER'S SUGARLAND",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "stepmaniax"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net North America maimai list includes DAVE & BUSTER'S MCKINNEY but not Sugar Land. ZIv id=11174 (updated 2026-07-03) lists maimai DX CiRCLE Perfect 'Brand new, online and perfectly working' and notes Opened on June 15, 2026.",
+      "note": "Conflicting evidence: recent ZIv says online maimai; ALL.Net NA locator does not list Sugar Land. Do not remove yet. Possible ALL.Net lag for new install. Leave games as-is; flag for recheck.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12401,
+      "name": "DAVE & BUSTER'S MCKINNEY",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "4064 WEST UNIVERSITY DRIVE , Mckinney TX 75071"
+      },
+      "proposed": "Needs geocode; ALL.Net confirms live maimai at this address",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "DAVE & BUSTER'S MCKINNEY | 4064 WEST UNIVERSITY DRIVE , Mckinney TX 75071 is on the live North America maimai list. App lat/lng are null.",
+      "note": "Pin missing coordinates. Address valid per ALL.Net. Geocode not performed in this research pass.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12593,
+      "name": "GAMESCAPE BY CINEMARK",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "3800 Ablowich drive, Greenville, TX 75402"
+      },
+      "proposed": "Needs geocode; ALL.Net confirms live maimai at this address",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "GAMESCAPE BY CINEMARK | 3800 Ablowich drive, Greenville, TX 75402 is on the live North America maimai list. App lat/lng are null.",
+      "note": "Pin missing coordinates.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

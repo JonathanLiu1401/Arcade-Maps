@@ -1,0 +1,806 @@
+{
+  "shard": 127,
+  "checked": 90,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=15",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=15",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=15",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=15",
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=26",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=26",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=26",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1013",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1013",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMPM&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORADM&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORAGF&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORADMA&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-16",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-16",
+    "https://www.kyowa-corp.co.jp/am/shop/16-01",
+    "https://www.kyowa-corp.co.jp/am/shop/16-02",
+    "https://www.kyowa-corp.co.jp/am/shop/16-03",
+    "https://www.gigo.co.jp/shops/toyama",
+    "https://www.gigo.co.jp/shops?area=16",
+    "https://www.gigo.co.jp/shops?area=27",
+    "https://www.gigo.co.jp/shops/abeno-qs",
+    "https://www.gigo.co.jp/shops/namba-ebisubashi",
+    "https://www.taito.co.jp/store/00204580",
+    "https://bandainamco-am.co.jp/game_center/loc/nipponbashi/",
+    "https://alibabaamusement.com",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Uruguay",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Ukraine",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=India",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Myanmar",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Denmark",
+    "https://map.bemanicn.com/s/1631",
+    "https://map.bemanicn.com/s/6458",
+    "https://map.bemanicn.com/s/5374",
+    "https://map.bemanicn.com/s/4380",
+    "https://map.bemanicn.com/s/6392",
+    "https://map.bemanicn.com/s/5620",
+    "https://map.bemanicn.com/s/710",
+    "https://map.bemanicn.com/s/4987",
+    "https://map.bemanicn.com/s/6477",
+    "https://map.bemanicn.com/s/3901",
+    "https://map.bemanicn.com/s/7119",
+    "https://babooncity.dk/",
+    "https://high-score.dk/",
+    "https://www.playright.dk/museum/",
+    "https://daveandbustersindia.com/delhi",
+    "https://torq03.com/",
+    "https://www.timezonegames.com/en-in/locations/south/express-avenue-mall-chennai/"
+  ],
+  "corrections": [
+    {
+      "id": 8449,
+      "name": "アピナ富山南店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "chunithm_gold": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/16-03",
+      "evidence_quote": "beatmania IIDX LIGHTNING MODEL; CHUNITHM ゴールドモデル; SOUND VOLTEX -Valkyrie model-",
+      "checked_at": "2026-08-02",
+      "note": "Official APINA shop page music-game list. No per-title cabinet counts stated. e-amusement IIDX_LN and SDVX_VM also list this store."
+    },
+    {
+      "id": 8451,
+      "name": "アピナ富山豊田店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "chunithm_gold": true,
+        "gitadora_arena": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/16-02",
+      "evidence_quote": "beatmania IIDX LIGHTNING MODEL; CHUNITHM ゴールドモデル; SOUND VOLTEX -Valkyrie model-; GITADORA DrumMania/GuitarFreaks -ARENA MODEL-; DanceDanceRevolution X",
+      "checked_at": "2026-08-02",
+      "note": "Official APINA Toyoda music list. e-amusement also lists this store under DDR20TH and GITADORA Arena gkeys. DRS appears on the APINA page as DANCE RUSH; e-amusement DANCERUSH JP-16 returned 0 shops today so DRS presence is chain-page-only."
+    },
+    {
+      "id": 8450,
+      "name": "アピナ富山新庄店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "chunithm_gold": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/16-01",
+      "evidence_quote": "CHUNITHM ゴールドモデル; maimaiでらっくす; オンゲキ; jubeat; ノスタルジア; DrumMania XG; GuitarFreaks XG",
+      "checked_at": "2026-08-02",
+      "note": "No Lightning/Valkyrie listed; GITADORA listed as XG (not Arena). App game list matches ALL.Net + e-amusement for this store."
+    },
+    {
+      "id": 9007,
+      "name": "ユーズランド高岡店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-16",
+      "evidence_quote": "data-name=\"ユーズランド高岡店\" data-operationtime=\"10:00～21:00\"",
+      "checked_at": "2026-08-02",
+      "note": "From Konami e-amusement facility record for Toyama IIDX list."
+    },
+    {
+      "id": 8661,
+      "name": "サービスエリアイン高岡",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 05:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-16",
+      "evidence_quote": "data-name=\"サービスエリアイン高岡店\" data-operationtime=\"5:00～24:00\"",
+      "checked_at": "2026-08-02",
+      "note": "e-amusement name suffix 店 vs app サービスエリアイン高岡. Same address area 高岡市石瀬."
+    },
+    {
+      "id": 8944,
+      "name": "プレイランドイン黒部",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 05:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-16",
+      "evidence_quote": "data-name=\"プレイランド黒部\" data-operationtime=\"5:00～24:00\"",
+      "checked_at": "2026-08-02",
+      "note": "e-amusement short name プレイランド黒部 vs app プレイランドイン黒部."
+    },
+    {
+      "id": 8854,
+      "name": "トヤマレジャーランド呉羽店",
+      "field": "hours",
+      "current": "Mon-Sun 07:30-24:00",
+      "proposed": "一部24時間営業 (partial 24h; exact music-floor window not stated)",
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-16",
+      "evidence_quote": "data-name=\"トヤマレジャーランド呉羽店\" data-operationtime=\"一部24時間営業\"",
+      "checked_at": "2026-08-02",
+      "note": "e-amusement now says partial 24h operation. App 07:30-24:00 may still describe the main day window but official facility field is vaguer."
+    },
+    {
+      "id": 8617,
+      "name": "ゲームスポットアップル",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "IIDX_LN list includes this store; SDVX_VM list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 8661,
+      "name": "サービスエリアイン高岡",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "IIDX_LN list includes this store; SDVX_VM list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 8854,
+      "name": "トヤマレジャーランド呉羽店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "IIDX_LN list includes this store; SDVX_VM list includes this store; DDR20TH list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 9007,
+      "name": "ユーズランド高岡店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "IIDX_LN list includes this store; SDVX_VM list includes this store; DDR20TH list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 9135,
+      "name": "富山レジャーランド掛尾店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "IIDX_LN list includes this store; SDVX_VM list includes this store; DDR20TH list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 8605,
+      "name": "クァトロブーム小杉",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "SDVX_VM list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 8944,
+      "name": "プレイランドイン黒部",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-16",
+      "evidence_quote": "SDVX_VM list includes this store (Toyama JP-16 facility search, 2026-08-02)",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet variant flags from e-amusement model-specific facility keys. Exact cabinet COUNT still unknown."
+    },
+    {
+      "id": 8368,
+      "name": "Taito Station Settsu Tonda (タイトーステーション摂津富田店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=26",
+      "evidence_quote": "Osaka maimai DX ALL.Net list (52 stores) has no 摂津富田 / イオンフードスタイル摂津富田 / 高槻大畑町 Taito entry. Same absence for CHUNITHM gm=109 and ONGEKI gm=88.",
+      "checked_at": "2026-08-02",
+      "note": "Taito official store page still presents the shop as open (タイトーFステーション イオンフードスタイル摂津富田店, 10:00～21:00, follows host supermarket days) but machine list is JS-empty in fetch. ZIv claimed CHUNITHM/maimai/taiko; official SEGA locators do not currently service maimai or CHUNITHM there. Prefer remove network SEGA titles until reconfirmed. taiko is not on ALL.Net so cannot be disproved by this lookup alone."
+    },
+    {
+      "id": 9931,
+      "name": "ALIBABA 5",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1013",
+      "evidence_quote": "Myanmar maimai DX International 8 locations: THE MOVE(ALIBABA), ALIBABA 3, ALIBABA 4, ALIBABA 7, ALIBABA 8 (KANTHARYAR), ARCADE HERO 2, ALIBABA AMUSEMENT, GAZE AMUSEMENT. No ALIBABA 5 / Gamone Pwint.",
+      "checked_at": "2026-08-02",
+      "note": "App still lists maimai_dx from older ALL.Net scrape. Ga Mone Pwint still named on alibabaamusement.com branch list without proof of maimai. proposed null removes maimai_dx claim."
+    },
+    {
+      "id": 9928,
+      "name": "Alibaba (Theingi Market YGN)",
+      "field": "games",
+      "current": [
+        "drs",
+        "maimai_dx"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1013",
+      "evidence_quote": "Theingi Market not in Myanmar ALL.Net maimai (8) or CHUNITHM (3) lists. ZIv machines both condition=0 for DANCERUSH STARDOM and maimai DX BUDDiES (lastUpdate 2025-11-04).",
+      "checked_at": "2026-08-02",
+      "note": "Combined official-absence + ZIv offline flags. proposed null removes both game claims. Venue may still operate as an Alibaba branch."
+    },
+    {
+      "id": 9926,
+      "name": "Alibaba (Capital Mall MDY)",
+      "field": "games",
+      "current": [
+        "drs",
+        "gitadora",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "drs",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8677",
+      "evidence_quote": "GITADORA GALAXY WAVE DrumMania condition=0 comment: As of early December, Alibaba quietly removed GITADORA DrumMania",
+      "checked_at": "2026-08-02",
+      "note": "ZIv lastUpdate 2026-01-25. DRS still cond=4. Not an ALL.Net title set."
+    },
+    {
+      "id": 9927,
+      "name": "Alibaba (The Move MDY)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8682",
+      "evidence_quote": "DANCERUSH STARDOM condition=0 comment: As of early December, Alibaba quietly removed the DANCERUSH STADOM cabinets. RIP.",
+      "checked_at": "2026-08-02",
+      "note": "ZIv 2026-01-25. CHUNITHM and maimai still on ALL.Net as THE MOVE(ALIBABA)."
+    },
+    {
+      "id": 9927,
+      "name": "Alibaba (The Move MDY)",
+      "field": "other",
+      "current": "separate from id 9938 THE MOVE(ALIBABA)",
+      "proposed": "merge with 9938 THE MOVE(ALIBABA) - same venue",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1013",
+      "evidence_quote": "THE MOVE(ALIBABA) | 73 Street, Between 105 x 107, Chan Mya Thar Si Township",
+      "checked_at": "2026-08-02",
+      "note": "Coords nearly identical (21.94097,96.09340 vs 21.94275,96.09356). App has ZIv-named and ALL.Net-named duplicates for one Mandalay site."
+    },
+    {
+      "id": 9938,
+      "name": "THE MOVE(ALIBABA)",
+      "field": "other",
+      "current": "separate from id 9927",
+      "proposed": "merge with 9927 Alibaba (The Move MDY)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1013",
+      "evidence_quote": "THE MOVE(ALIBABA) address matches ZIv Alibaba (The Move MDY) Mandalay location",
+      "checked_at": "2026-08-02",
+      "note": "Keep one row; prefer ALL.Net name plus non-ALL.Net games (pump etc.) from ZIv."
+    },
+    {
+      "id": 9935,
+      "name": "Alibaba Amusement Centre",
+      "field": "status",
+      "current": "open with dance_evo",
+      "proposed": "unverified - ZIv last update 2017-02-20 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4002",
+      "evidence_quote": "lastUpdateTime=2017-02-20 10:27:10; DanceEvolution ARCADE; lastUpdateDifference about 9 years ago",
+      "checked_at": "2026-08-02",
+      "note": "Myanmar Plaza Alibaba branch still listed on alibabaamusement.com, but DanceEvolution claim is a decade stale."
+    },
+    {
+      "id": 9934,
+      "name": "ALIBABA AMUSEMENT",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "No.401-403, 4F, Food Planet, Time City, Kamaryut Township"
+      },
+      "proposed": {
+        "lat": null,
+        "lng": null,
+        "addr": "No.401-403, 4F, Food Planet, Time City, Kamaryut Township, Yangon"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1013",
+      "evidence_quote": "ALIBABA AMUSEMENT | No.401-403, 4F, Food Planet, Time City, Kamaryut Township",
+      "checked_at": "2026-08-02",
+      "note": "Still on ALL.Net maimai Myanmar list (serviced). Missing coordinates in app; do not invent lat/lng."
+    },
+    {
+      "id": 5599,
+      "name": "玩派嘉年华西宁城西力盟店",
+      "field": "other",
+      "current": "separate venue from 5598",
+      "proposed": "duplicate of 5598 玩派嘉年华西宁力盟店 - same lat/lng and same mall",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6477",
+      "evidence_quote": "玩派嘉年华（力盟商业巷店） address 城西区古城台街道五四大街41号力盟商业巷6号楼1层; both app rows use lat=36.629209,lng=101.756359",
+      "checked_at": "2026-08-02",
+      "note": "5598 has wahlap+bemanicn and chunithm+maimai; 5599 is wahlap-only maimai-only at identical pin. Merge into 5598."
+    },
+    {
+      "id": 5957,
+      "name": "神秘国度西宁西门王府井店",
+      "field": "other",
+      "current": "separate venue from 5956",
+      "proposed": "duplicate of 5956 神秘国度 - same address and lat/lng",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7119",
+      "evidence_quote": "神秘国度 address 青海省西宁市城中区王府井百货B馆负一楼; both app rows lat=36.621507,lng=101.775339",
+      "checked_at": "2026-08-02",
+      "note": "5956 bemanicn, 5957 wahlap-only. Merge."
+    },
+    {
+      "id": 2898,
+      "name": "天空之城西宁城北吾悦广场店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "chunithm": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4380",
+      "evidence_quote": "arcades: title_id 1 (maimai DX) quantity=2; title_id 3 (CHUNITHM) quantity=2; updated_at 2025-11-29; status=1",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN community quantities. Hours on BCN 10-22."
+    },
+    {
+      "id": 5598,
+      "name": "玩派嘉年华西宁力盟店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6477",
+      "evidence_quote": "title_id 1 quantity=1 version 2025Ver.CN1.51-I; title_id 3 quantity=2 version 2026 comment 全新机子，机况良好; updated 2026-05-16",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN quantities."
+    },
+    {
+      "id": 2075,
+      "name": "吉合家庭娱乐中心西宁万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1631",
+      "evidence_quote": "title_id 1 qty=1; title_id 31 qty=1 (太鼓之达人); title_id 15 qty=1 (太鼓达人旧代); comment 原大玩家（西宁海湖万达店）; hours 10-22",
+      "checked_at": "2026-08-02",
+      "note": "Two taiko entries (new + old gen). App games maimai_dx+taiko match."
+    },
+    {
+      "id": 2296,
+      "name": "嘻哈电玩城西宁湟中店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6458",
+      "evidence_quote": "start_time=10 end_time=21; comment historically 即将开业 / 湟中区第一台舞萌; updated_at 2026-07-23; maimai qty=1; status=1",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN hours. Community source; 2026-07 update suggests live."
+    },
+    {
+      "id": 5600,
+      "name": "玩派嘉年华西宁海湖万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3901",
+      "evidence_quote": "start_time=10 end_time=23; maimai qty=1; status=1",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN."
+    },
+    {
+      "id": 5956,
+      "name": "神秘国度",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 11:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7119",
+      "evidence_quote": "start_time=11 end_time=22; maimai qty=1 comment 机况非常良好; updated 2026-07-02",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN."
+    },
+    {
+      "id": 4200,
+      "name": "星际动漫电玩城",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5620",
+      "evidence_quote": "shop comment 很小，只有一台旧框太鼓达人; arcades array has title_id 31 and title_id 15 rows",
+      "checked_at": "2026-08-02",
+      "note": "Prefer shop comment (1 old taiko) over summing two title rows. proposed 1."
+    },
+    {
+      "id": 2897,
+      "name": "天空之城西宁城东吾悦广场店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5374",
+      "evidence_quote": "title_id 1 quantity=1 version 2025; comment 1p耳机没声音，内屏吃键吃星星，慎用，2p正常机况较好; status=1 updated 2026-02-18",
+      "checked_at": "2026-08-02",
+      "note": "BemaniCN."
+    },
+    {
+      "id": 4414,
+      "name": "极客森超乐场（西宁吾悦广场店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/710",
+      "evidence_quote": "title_id 15 quantity=1 version 国行; comment 机台机况极差，屏幕闪屏，绿屏鼓面不灵，鼓棒丢失，不建议游戏。; status=1",
+      "checked_at": "2026-08-02",
+      "note": "Cabinet present but in very poor condition per BCN."
+    },
+    {
+      "id": 11211,
+      "name": "Dinopark Entertainment centre",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified in occupied Crimea; ZIv explicitly stale",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5324",
+      "evidence_quote": "lastUpdateTime=2019-11-15; information: No updated info due to annexation of Crimea.; Pump It Up Zero",
+      "checked_at": "2026-08-02",
+      "note": "Cannot confirm existence or playability. Do not present as a reliable destination."
+    },
+    {
+      "id": 11214,
+      "name": "Funtura (Donetsk City Mall)",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - Donetsk, ZIv 2019 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5326",
+      "evidence_quote": "lastUpdateTime=2019-11-15 23:58:21; lastUpdateDifference=6 years ago; Pump It Up PRO 2",
+      "checked_at": "2026-08-02",
+      "note": "War / occupation context. No post-2019 verification."
+    },
+    {
+      "id": 11215,
+      "name": "Funty Land (Donets'k City Mall)",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - Donetsk, ZIv 2019 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5325",
+      "evidence_quote": "lastUpdateTime=2019-11-15 23:46:13; Pump It Up Zero condition=2",
+      "checked_at": "2026-08-02",
+      "note": "Same as above."
+    },
+    {
+      "id": 11208,
+      "name": "\"Fabryka\" mall",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - Kherson, ZIv 2019 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5322",
+      "evidence_quote": "lastUpdateTime=2019-11-15; city=Kherson; Pump It Up Fiesta 2 condition=2",
+      "checked_at": "2026-08-02",
+      "note": "Kherson heavily affected by war. No 2025-2026 machine confirmation."
+    },
+    {
+      "id": 11213,
+      "name": "FONTAN SKY center",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - ZIv 2019 only (Odesa)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5321",
+      "evidence_quote": "lastUpdateTime=2019-11-15; Pump It Up NX2",
+      "checked_at": "2026-08-02",
+      "note": "Odesa is government-controlled but entry is 6 years stale. No independent 2025-2026 confirmation in this pass."
+    },
+    {
+      "id": 11218,
+      "name": "Lavina Mall - GALAXY Family Fun Park",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified pump cabinet - ZIv 2019 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5315",
+      "evidence_quote": "lastUpdateTime=2019-11-15 01:16:53; Pump It Up PRIME",
+      "checked_at": "2026-08-02",
+      "note": "Lavina Mall still exists as a major Kyiv mall but the Pump cabinet was last ZIv-confirmed in 2019."
+    },
+    {
+      "id": 11210,
+      "name": "DEPOt Mall",
+      "field": "status",
+      "current": "open with ddr",
+      "proposed": "unverified - ZIv 2019 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5323",
+      "evidence_quote": "lastUpdateTime=2019-11-15; DanceDanceRevolution SuperNOVA2 condition=2",
+      "checked_at": "2026-08-02",
+      "note": "Chernivtsi. Six years stale; no newer evidence."
+    },
+    {
+      "id": 11219,
+      "name": "Maliata Khata (Grand Plaza Mall)",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - ZIv 2019 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5327",
+      "evidence_quote": "lastUpdateTime=2019-11-16; Pump It Up Fiesta EX",
+      "checked_at": "2026-08-02",
+      "note": "Dnipro. Stale community entry only."
+    },
+    {
+      "id": 13449,
+      "name": "Indoor Karting Montevideo",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10888",
+      "evidence_quote": "Dance Dance Revolution EXTREME condition=1 comment: Out of order. Possible sys573 failure... Disconnect screen. lastUpdate 2026-01-24",
+      "checked_at": "2026-08-02",
+      "note": "Recent ZIv report says DDR is broken. Keep other (Daytona). Do not claim playable DDR until repaired."
+    },
+    {
+      "id": 13452,
+      "name": "Las Piedras Shopping",
+      "field": "status",
+      "current": "open with ddr",
+      "proposed": "unverified - ZIv last update 2020-02-25 (6 years)",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5503",
+      "evidence_quote": "lastUpdateTime=2020-02-25 17:20:59; lastUpdateDifference=6 years ago; Dance Dance Revolution 4thMIX",
+      "checked_at": "2026-08-02",
+      "note": "No newer confirmation."
+    },
+    {
+      "id": 13461,
+      "name": "Taxco Pool - Libertad",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - ZIv last update 2020-07-30",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5656",
+      "evidence_quote": "lastUpdateTime=2020-07-30; Pump It Up PRIME 2 TX Cabinet; lastUpdateDifference=6 years ago",
+      "checked_at": "2026-08-02",
+      "note": "Stale community entry."
+    },
+    {
+      "id": 13462,
+      "name": "Taxco Pool - Los Pinos",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": "unverified - ZIv last update 2020-07-30",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5657",
+      "evidence_quote": "lastUpdateTime=2020-07-30; Pump It Up PRIME FX Cabinet",
+      "checked_at": "2026-08-02",
+      "note": "Same 6-year stale warning."
+    },
+    {
+      "id": 7685,
+      "name": "Timezone Phoenix Marketcity",
+      "field": "status",
+      "current": "open with other games",
+      "proposed": "unverified - ZIv last update 2022-07-13; all machines condition=0",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6431",
+      "evidence_quote": "lastUpdateTime=2022-07-13; lastUpdateDifference=4 years ago; all 8 machines condition=0",
+      "checked_at": "2026-08-02",
+      "note": "Cannot confirm current machine set for this mall floor."
+    },
+    {
+      "id": 7472,
+      "name": "Storcenter Nord",
+      "field": "status",
+      "current": "open with other",
+      "proposed": "seasonal / temporary free arcade event (not a permanent always-open arcade)",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10358",
+      "evidence_quote": "From June 27 to August 31, kids and adults alike can enjoy unlimited playtime – completely free! NORD is once again bringing fun and games to the center",
+      "checked_at": "2026-08-02",
+      "note": "ZIv 2025-08-02 describes a summer free-play event window. Presenting as a permanent arcade is misleading outside that window."
+    },
+    {
+      "id": 7464,
+      "name": "Bang og Jensen",
+      "field": "status",
+      "current": "open with other",
+      "proposed": "unverified - ZIv 2013-09-10 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2895",
+      "evidence_quote": "lastUpdateTime=2013-09-10; Shrek pinball note only",
+      "checked_at": "2026-08-02",
+      "note": "12-year stale pinball-in-bar entry. Not a rhythm destination."
+    },
+    {
+      "id": 7466,
+      "name": "Copenhagen Skatepark",
+      "field": "status",
+      "current": "open with other",
+      "proposed": "unverified - ZIv 2013-09-11 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2893",
+      "evidence_quote": "lastUpdateTime=2013-09-11",
+      "checked_at": "2026-08-02",
+      "note": "Extremely stale."
+    },
+    {
+      "id": 7469,
+      "name": "Navnløs Bar",
+      "field": "status",
+      "current": "open with other",
+      "proposed": "unverified - ZIv 2013-09-10 only",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2894",
+      "evidence_quote": "lastUpdateTime=2013-09-10; Ms. Pac-Man freeplay note",
+      "checked_at": "2026-08-02",
+      "note": "Extremely stale bar cab entry."
+    },
+    {
+      "id": 7463,
+      "name": "Baboon City",
+      "field": "status",
+      "current": "open with many rhythm games",
+      "proposed": "venue open; individual rhythm cab lineup not reconfirmed on official site",
+      "confidence": "likely",
+      "evidence_url": "https://babooncity.dk/",
+      "evidence_quote": "Baboon City holder åbent som normalt; Åkirkebyvej 10, 7400 Herning; Summer 2026 open all days 10-18 from 20.6.26 to 9.8.26",
+      "checked_at": "2026-08-02",
+      "note": "Official site confirms FE open but does not name DDR/taiko/gitadora/groove coaster/crossbeats. ZIv lists many rhythm cabs all condition=0."
+    },
+    {
+      "id": 7471,
+      "name": "Spilmuseet",
+      "field": "status",
+      "current": "open with other",
+      "proposed": "open as membership museum on scheduled Saturdays only",
+      "confidence": "certain",
+      "evidence_url": "https://www.playright.dk/museum/",
+      "evidence_quote": "Spilmuseet er en privat samling; membership required; open days 12.00-16.00; 15+ rytme- og dansespil in collection",
+      "checked_at": "2026-08-02",
+      "note": "Not a walk-in commercial arcade. Access is membership/appointment."
+    },
+    {
+      "id": 7686,
+      "name": "Torq03",
+      "field": "other",
+      "current": "stepmaniax listed from ZIv 2023",
+      "proposed": "stepmaniax presence unverified on official site (venue itself open)",
+      "confidence": "unverified",
+      "evidence_url": "https://torq03.com/",
+      "evidence_quote": "We are open all days including govt holidays; Activities 10:30AM to 10:30PM; no StepManiaX title on page",
+      "checked_at": "2026-08-02",
+      "note": "ZIv lastUpdate 2023-03-09 is the only SMX evidence."
+    }
+  ]
+}

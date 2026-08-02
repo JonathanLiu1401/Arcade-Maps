@@ -1,0 +1,785 @@
+{
+  "shard": 120,
+  "checked": 113,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=33",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=33",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=33",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=33",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMPM&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORAGF&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORADM&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DAN&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=REFLECC&pref=JP-34",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DANCEAROUND&pref=JP-34",
+    "https://www.round1.co.jp/shop/tenpo/hiroshima-hiroshima.html",
+    "https://www.round1.co.jp/shop/tenpo/hiroshima-fukuyama.html",
+    "https://www.taito.co.jp/store/00001938",
+    "https://www.taito.co.jp/store/00001749",
+    "https://amipara.co.jp/store/amipara-hiroshima/",
+    "https://amipara.co.jp/store/amipara-kokojya/",
+    "https://tempo.gendagigo.jp/am/hiro/",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Ireland",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Hong%20Kong",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=China",
+    "https://map.bemanicn.com/s/3854",
+    "https://map.bemanicn.com/s/1077",
+    "https://map.bemanicn.com/s/217",
+    "https://map.bemanicn.com/s/216",
+    "https://map.bemanicn.com/s/219",
+    "https://map.bemanicn.com/s/230",
+    "https://map.bemanicn.com/s/232",
+    "https://map.bemanicn.com/s/229"
+  ],
+  "corrections": [
+    {
+      "id": 9061,
+      "name": "ラウンドワン広島店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=33",
+      "evidence_quote": "Project DIVA Hiroshima ALL.Net store list (gm=34): ＧｉＧＯ中筋, ＧｉＧＯアルパーク北棟, ＧｉＧＯ福山, ＧｉＧＯ海田 only. ラウンドワン広島店 is not listed.",
+      "note": "Official ALL.Net Project DIVA locator for Hiroshima prefecture does not include Round1 Hiroshima. App currently lists project_diva (likely from stale ZIv 2024 list that still named Version B). Remove project_diva. SEGA titles still on ALL.Net: maimai/CHUNITHM/ONGEKI yes; DIVA no. Also remove reflec (see companion correction from eagate REFLECC).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9061,
+      "name": "ラウンドワン広島店",
+      "field": "games",
+      "current": "includes reflec",
+      "proposed": "remove reflec",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=REFLECC&pref=JP-34",
+      "evidence_quote": "REFLEC BEAT Hiroshima e-amusement list (gkey=REFLECC, pref=JP-34): only タイトーステーション広島紙屋町店. ラウンドワン広島店 not listed.",
+      "note": "Official e-amusement facility search for REFLEC BEAT in Hiroshima has a single store (Taito Kamiyacho). Remove reflec from Round1 Hiroshima.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9061,
+      "name": "ラウンドワン広島店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true,
+        "popn_pikapika": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "e-amusement lists ラウンドワン広島店 under IIDX_LN (LIGHTNING MODEL), SDVX_VM (Valkyrie model), DDR20TH (20th anniversary model), and PMPM (pop'n ピカピカポップ君モデル) for pref=JP-34.",
+      "note": "Official Konami facility search variant keys confirm Lightning IIDX, Valkyrie SDVX, DDR 20th anniversary, and pop'n Pikapika at this store. Exact cabinet counts not stated by eagate (presence only).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9061,
+      "name": "ラウンドワン広島店",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-24:00",
+      "proposed": "Amusement: weekdays OPEN-23:50; Sat/Sun/holidays 06:00-23:50 (official store page text). Full facility hours vary by day.",
+      "confidence": "likely",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/hiroshima-hiroshima.html",
+      "evidence_quote": "アミューズメントコーナーの営業時間は[平日]OPEN〜午後11:50、[土日祝]午前6:00～午後11:50までとなります。",
+      "note": "Official Round1 page distinguishes amusement-corner hours from general facility hours. App flat 10:00-24:00 is incomplete; weekend open is 06:00 not 10:00. Exact weekday OPEN time is not a fixed clock time on the page (says OPEN).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9061,
+      "name": "ラウンドワン広島店",
+      "field": "other",
+      "current": "notes Cabs still name maimai GreeN / IIDX tricoro / DIVA Version B / SDVX II from old ZIv snapshot",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=33",
+      "evidence_quote": "ALL.Net currently lists ラウンドワン広島店 for maimai DX (gm=96), CHUNITHM (gm=109), ONGEKI (gm=88). ZIv lastUpdateTime for arcade 2833 is 2024-06-15 and still names maimai GreeN / IIDX tricoro / DIVA Version B.",
+      "note": "Machine notes text is from a stale ZIv snapshot and misrepresents current software generations. Prefer ALL.Net + eagate for live presence; clear or rewrite notes. game_counts with ziv_listed evidence should not be treated as exact quantities.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9089,
+      "name": "ラウンドワン福山店",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null
+      },
+      "proposed": {
+        "ddr_gold": null,
+        "ddr_20th": true,
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "popn_pikapika": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-34",
+      "evidence_quote": "e-amusement DDR20TH list for JP-34 includes ラウンドワン福山店; also listed under IIDX_LN, SDVX_VM, PMPM.",
+      "note": "App already notes DDR WORLD 20th anniversary. Official eagate confirms 20th model plus Lightning IIDX, Valkyrie SDVX, Pikapika pop'n.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9089,
+      "name": "ラウンドワン福山店",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-00:00; Sat-Sun 06:00-00:00",
+      "proposed": "Amusement: weekdays OPEN-23:50; Sat/Sun/holidays 06:00-23:50",
+      "confidence": "likely",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/hiroshima-fukuyama.html",
+      "evidence_quote": "アミューズメントコーナーの営業時間は[平日]OPEN〜午後11:50、[土日祝]午前6:00～午後11:50までとなります。",
+      "note": "Close-time on official page is 23:50, not midnight. Weekend open 06:00 matches app; weekday open is OPEN (not a fixed 10:00 in the amusement note).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8786,
+      "name": "タイトーステーション広島本通店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-34",
+      "evidence_quote": "SDVX JP-34 list: GiGO広, GiGO海田, ラウンドワン広島店, GiGOアルパーク北棟, アミパラ広島店, アミパラここじゃ店, ラウンドワン福山店, アミューズメントパークMGジアス店. タイトーステーション広島本通店 not present. REFLECC JP-34 list has only タイトーステーション広島紙屋町店.",
+      "note": "Official e-amusement no longer lists SDVX or REFLEC BEAT at Taito Hondori. ZIv (lastUpdate 2025-03-23) still shows SOUND VOLTEX II and REFLEC BEAT colette, which is stale relative to eagate. Prefer eagate. SEGA titles still confirmed on ALL.Net (maimai+CHUNITHM). No Lightning IIDX (standard IIDX only). No DDR20TH (standard DDR only).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8787,
+      "name": "タイトーステーション広島紙屋町店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "reflec",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-34",
+      "evidence_quote": "SDVX JP-34 e-amusement list does not include タイトーステーション広島紙屋町店. REFLECC list does include it. PLRS/IIDX_LN/PMPM also list this store.",
+      "note": "Remove sdvx (eagate). Keep reflec (eagate REFLECC). SEGA titles confirmed on ALL.Net including ONGEKI.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8787,
+      "name": "タイトーステーション広島紙屋町店",
+      "field": "cab_models",
+      "current": {
+        "taiko_jp": null
+      },
+      "proposed": {
+        "taiko_jp": null,
+        "iidx_lightning": true,
+        "popn_pikapika": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "タイトーステーション広島紙屋町店 appears on IIDX_LN and PMPM facility lists for JP-34.",
+      "note": "Lightning IIDX and pop'n Pikapika model confirmed via official variant keys. No SDVX at this store.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8401,
+      "name": "ふぇすたらんど可部",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-22:00",
+      "proposed": "Mon-Sun 10:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-34",
+      "evidence_quote": "data-name=\"ふぇすたらんど可部店\" data-operationtime=\"10:00～20:00\"",
+      "note": "e-amusement operation time for this facility is 10:00-20:00. App says until 22:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8401,
+      "name": "ふぇすたらんど可部",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "popn_pikapika": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMPM&pref=JP-34",
+      "evidence_quote": "PMPM list includes ふぇすたらんど可部店",
+      "note": "pop'n Pikapika model present. Polaris Chord also confirmed on PLRS list.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8919,
+      "name": "ブラックジャックアクア店",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-23:00",
+      "proposed": "Mon-Sun 10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-34",
+      "evidence_quote": "data-name=\"ブラックジャックアクア\" data-operationtime=\"10:00～24:00\"",
+      "note": "e-amusement lists closing at 24:00, not 23:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8919,
+      "name": "ブラックジャックアクア店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "IIDX_LN list includes ブラックジャックアクア",
+      "note": "Lightning Model IIDX present.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8920,
+      "name": "ブラックジャック東広島店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "IIDX_LN list includes ブラックジャック東広島店",
+      "note": "Lightning Model IIDX present. e-amusement operationtime is 10:00～24:00 (simpler than app day-split hours); not filing hours change because the app may reflect more detailed real hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8479,
+      "name": "アミパラここじゃ店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true,
+        "ddr_20th": true,
+        "popn_pikapika": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "アミパラここじゃ店 listed under IIDX_LN, SDVX_VM, DDR20TH, and PMPM for JP-34.",
+      "note": "Full Konami presence matches app games list. Official amipara page confirms 営業時間：10:00～24:00 which matches app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8492,
+      "name": "アミパラ広島店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-34",
+      "evidence_quote": "アミパラ広島店 listed under SDVX and SDVX_VM; not on IIDX/DDR/etc. Official store page: 営業時間：10:00～24:00.",
+      "note": "Only Konami rhythm game at this store per eagate is SDVX (Valkyrie). Store still open per amipara.co.jp.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8531,
+      "name": "アミューズメントパークＭＧジアス",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-34",
+      "evidence_quote": "アミューズメントパークMGジアス店 on SDVX_VM, GITADORAGF/ADM, PLRS, PMSP lists.",
+      "note": "App games list matches eagate base set. Valkyrie SDVX present. No IIDX here per eagate.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9273,
+      "name": "ＧｉＧＯアルパーク北棟",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "GiGOアルパーク北棟 on IIDX_LN, SDVX_VM, DAN, PLRS, JUBEAT, NOSTALGIA, GITADORADM lists.",
+      "note": "App Konami games match eagate. Store still on ALL.Net for SEGA titles.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9383,
+      "name": "ＧｉＧＯ広",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-23:00",
+      "proposed": "Mon-Sun 10:00-24:00",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-34",
+      "evidence_quote": "data-name=\"GiGO広\" data-operationtime=\"10:00～24:00\" data-address=\"呉市広中町1-9フタバ図書TSUTAYA広店2F\"",
+      "note": "e-amusement operation time is until 24:00, not 23:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9383,
+      "name": "ＧｉＧＯ広",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "GiGO広 on IIDX_LN and SDVX_VM lists for JP-34.",
+      "note": "App Konami games match eagate.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9427,
+      "name": "ＧｉＧＯ海田",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lightning": true,
+        "sdvx_valkyrie": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-34",
+      "evidence_quote": "GiGO海田 on IIDX_LN, SDVX_VM, PLRS lists.",
+      "note": "App games match eagate+ALL.Net (including project_diva on ALL.Net gm=34).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9334,
+      "name": "ＧｉＧＯ中筋",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/mega/",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/mega/",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9375,
+      "name": "ＧｉＧＯ尾道",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/onomichi/",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/onomichi/",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9383,
+      "name": "ＧｉＧＯ広",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/hiro/",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/hiro/",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9384,
+      "name": "ＧｉＧＯ広島本通",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/Hondori/",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/Hondori/",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9427,
+      "name": "ＧｉＧＯ海田",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/kaita/",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/kaita/",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9445,
+      "name": "ＧｉＧＯ福山",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/fukuyama/",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://tempo.gendagigo.jp/am/fukuyama/",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9273,
+      "name": "ＧｉＧＯアルパーク北棟",
+      "field": "website",
+      "current": "https://www.gigo.co.jp/shops/alpark?utm_campaign=mov&utm_medium=GBP&utm_source=website-button",
+      "proposed": "https://tempo.gendagigo.jp/ (old per-shop tempo paths now redirect to GiGO group shop-info renewal hub; individual store pages need re-discovery on the new site)",
+      "confidence": "likely",
+      "evidence_url": "https://www.gigo.co.jp/shops/alpark?utm_campaign=mov&utm_medium=GBP&utm_source=website-button",
+      "evidence_quote": "Fetched tempo.gendagigo.jp/am/* pages return the renewal message: GiGOグループのお店情報サイトはリニューアルしました / 旧サイト（tempo.gendagigo.jp）は閲覧できなくなりました.",
+      "note": "Do not treat the venue as closed. ALL.Net still lists these Hiroshima GiGO stores for maimai/CHUNITHM/ONGEKI (and DIVA where applicable). Only the old per-store website path is dead/redirected.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8013,
+      "name": "Level Up Arcade Bar",
+      "field": "games",
+      "current": [
+        "ddr",
+        "groove_coaster",
+        "other",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "ddr",
+        "groove_coaster",
+        "maimai",
+        "other",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5529",
+      "evidence_quote": "ZIv machines include maimai FiNALE (comment: offline mode, ENG language...) and lastUpdateTime=2026-07-30 22:29:37. Also 太鼓の達人12, WACCA REVERSE, Groove Coaster 4MAX, DDR A20 PLUS.",
+      "note": "This is offline maimai FiNALE, not networked maimai DX. Use game key carefully: not maimai_dx if that implies ALL.Net. ZIv is community but very recent (2 days before check). App already has taiko/wacca/ddr/gc; maimai was omitted.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8002,
+      "name": "Funworld",
+      "field": "status",
+      "current": "open with games=[\"ddr\"] (Dancing Stage EuroMIX / Fusion)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4349",
+      "evidence_quote": "lastUpdateTime=2018-02-04 12:08:20 (lastUpdateDifference reported as 8 years ago). Machines: Dancing Stage EuroMIX; Dancing Stage Fusion only.",
+      "note": "No official confirmation either way. Sole evidence is ZIv with no update since 2018. Cannot assert closed; cannot assert DDR still present. Maintainer should re-verify on site or via recent visitor report.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8022,
+      "name": "TOKEN",
+      "field": "game_counts",
+      "current": {
+        "ddr": 4
+      },
+      "proposed": {
+        "ddr": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10744",
+      "evidence_quote": "ZIv lists exactly two DanceDanceRevolution A20 PLUS entries (Left Cab / Right Cab). lastUpdateTime=2026-07-28. info: Reopened in December 2025.",
+      "note": "count_evidence was ziv_comment claiming 4; actual ZIv machine rows are 2. Community source, recent. Venue open per ZIv reopen note.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7635,
+      "name": "Game33",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "新界 葵涌 和塘咀街87-89號 美涌大廈上層地舖"
+      },
+      "proposed": "geocode address; lat/lng currently null so pin cannot place",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5060",
+      "evidence_quote": "Shard row has lat=null lng=null while address text is present.",
+      "note": "Not a claim that the store moved; the map simply has no coordinates. Needs geocoding from the Chinese address.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7649,
+      "name": "powerplay arena",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6979",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7657,
+      "name": "佐敦Game Zone",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1791",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7659,
+      "name": "奇趣天地Sky Fantasia",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/244",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7662,
+      "name": "文娛Game Centre",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5061",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7663,
+      "name": "海龍遊戲廣場",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/220",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7664,
+      "name": "觀塘金沙遊戲機",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3556",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7665,
+      "name": "铭铿电子游戏机中心（西环gamezone）",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": "geocode from address / BemaniCN; pin currently missing",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3328",
+      "evidence_quote": "Shard snapshot has lat=null and lng=null for this Hong Kong venue.",
+      "note": "Presence/games not re-verified for every null-coord store; this correction is only about the missing pin. BemaniCN is the listed source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7630,
+      "name": "168 GAME CENTRE",
+      "field": "hours",
+      "current": null,
+      "proposed": "approx 10:00-24:00 (BemaniCN start_time=10 end_time=24)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3854",
+      "evidence_quote": "props.shop: name=168遊戲機中心, start=10, end=24, status=1, updated_at=2026-05-22; arcades maimai qty=1, CHUNITHM qty=2, taiko qty=1",
+      "note": "BemaniCN start/end appear to be hour integers. Game counts in app (chunithm 2, maimai_dx 1, taiko 1) match BemaniCN quantities. status=1 open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7636,
+      "name": "GAMEZONE(KWUN TONG PLAZA)",
+      "field": "hours",
+      "current": "Mon-Sun 08:00-00:00",
+      "proposed": "approx 08:00-24:00; machines power down from ~23:30 per BemaniCN comment",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1077",
+      "evidence_quote": "start=8 end=24; comment includes 【闭店时间】每天23:30机台将陆续断电; maimai qty=6, CHUNITHM qty=2, taiko qty=2; status=1 updated 2026-06-21",
+      "note": "App hours roughly match. Counts match BemaniCN. status=1 means listed open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7637,
+      "name": "GAMEZONE(MONG KOK)",
+      "field": "hours",
+      "current": null,
+      "proposed": "approx 10:00-02:00 (BemaniCN start=10 end=26)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/217",
+      "evidence_quote": "start=10 end=26; maimai quantity=22 version CIRCLE PLUS; CHUNITHM quantity=4; taiko quantity=4; status=1 updated 2026-07-30",
+      "note": "App game_counts maimai_dx=22, chunithm=4, taiko=4 match BemaniCN. end=26 is BemaniCN encoding for 02:00 next day.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7639,
+      "name": "GOLD STAR(TSUEN WAN)",
+      "field": "hours",
+      "current": "Mon-Sun 07:00-23:00",
+      "proposed": "BemaniCN start=8 end=2 with comment 每天凌晨1:30闭店 suggests late-night hours (possibly 08:00-01:30/02:00), not 23:00 close.",
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/216",
+      "evidence_quote": "start=8 end=2; maimai qty=14; CHUNITHM qty=2; taiko qty=2; comment mentions 每天凌晨1:30闭店; status=1 updated 2026-07-07",
+      "note": "BemaniCN end=2 with comment 1:30 close suggests late-night hours, not 23:00. Counts maimai 14 / chunithm 2 / taiko 2 match app. Hours need human interpretation of BemaniCN encoding.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2720,
+      "name": "天空之城(小寨·原力场)",
+      "field": "other",
+      "current": "games chunithm+maimai_dx with ziv_listed counts 2+2; last community update ~2025-02-24",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9757",
+      "evidence_quote": "lastUpdateTime=2025-02-24 01:10:57; machines include 中二节奏2024 / CHUNITHM SUN x2 and 舞萌DX 2024 / maimaiDX BUDDiES x2",
+      "note": "Best China evidence in-shard is ZIv from Feb 2025. Counts match ZIv machine rows but are not official. Cannot confirm still open on 2026-08-02.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1206,
+      "name": "Mega Game Cube 游戏大魔方 (汉中吾悦)",
+      "field": "other",
+      "current": "games maimai_dx+wacca with counts maimai_dx=1 wacca=2 (ziv_listed)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9905",
+      "evidence_quote": "lastUpdateTime=2025-03-30; machines include 华卡音舞 Ver. 3 (WACCA REVERSE) x2 and 舞萌DX 2024 x1",
+      "note": "WACCA REVERSE offline/community list only. No newer official China locator confirmed. Stale relative to today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4347,
+      "name": "未来世界梦想王国",
+      "field": "other",
+      "current": "games=[\"drs\"] only (DANCERUSH STARDOM)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9915",
+      "evidence_quote": "lastUpdateTime=2025-03-30; machines: DANCERUSH STARDOM only",
+      "note": "Unusual single-game DRS venue in Yan'an per ZIv. No independent confirmation.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

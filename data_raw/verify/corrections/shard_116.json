@@ -1,0 +1,550 @@
+{
+  "shard": 116,
+  "checked": 85,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=27",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=27",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=27",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=27",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (gkeys IIDX,IIDX_LN,SDVX,SDVX_VM,DDR,DDR20TH,GITADORA*,JUBEAT,PMSP,PMPM,NOSTALGIA,DAN,PLRS,DANEVOAC,DANCEAROUND,REFLECC pref=JP-28)",
+    "https://www.gigo.co.jp/shops?area=28",
+    "https://www.gigo.co.jp/shops/akashi",
+    "https://www.gigo.co.jp/shops/sannomiya-kitaguchi",
+    "https://www.gigo.co.jp/shops/sannomiya-minamiguchi",
+    "https://www.gigo.co.jp/shops/himeji-ekimae",
+    "https://www.gigo.co.jp/shops/amagasaki",
+    "https://www.gigo.co.jp/shops/kakogawa-befu",
+    "https://www.kyowa-corp.co.jp/am/shop/26-01",
+    "https://www.taito.co.jp/store/00002104",
+    "https://www.taito.co.jp/store/00002172",
+    "https://www.taito.co.jp/store/00016554",
+    "https://amipara.co.jp/store/amipara-kakogawa/",
+    "https://www.round1.co.jp/shop/tenpo/hyogo-sannomiya.html",
+    "https://www.round1.co.jp/shop/tenpo/hyogo-kakogawa.html",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+    "https://gdanskarcademuseum.com/",
+    "https://gdanskarcademuseum.com/gry.php",
+    "https://www.warsawarcademuseum.com",
+    "https://www.warsawarcademuseum.com/gry.php",
+    "http://krakowarcademuseum.com/",
+    "http://krakowarcademuseum.com/gry.php",
+    "https://arcadebee.com/warszawa-blue-city/",
+    "https://arcadebee.com/warszawa-zlote-tarasy/",
+    "https://potyczki.com/"
+  ],
+  "corrections": [
+    {
+      "id": 8818,
+      "name": "タイトーＦステーション三宮西館店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=27",
+      "evidence_quote": "ALL.Net ONGEKI Hyogo (at=27) store list does not include タイトーＦステーション三宮西館店; maimai (gm=96) and CHUNITHM (gm=109) lists do include it.",
+      "note": "Remove ongeki. Official SEGA locator is authoritative for currently networked ONGEKI. SDVX remains via e-amusement; taiko not re-verified on an official taiko locator in this pass.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9022,
+      "name": "ラウンドワン三宮駅前店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DANCEAROUND&pref=JP-28&paselif=false&page=1",
+      "evidence_quote": "e-amusement Hyogo JP-28: DANCEAROUND returns only ラウンドワン加古川店 (1 store). DAN (DRS) Hyogo lists アピナ姫路店, GiGO明石, namco豊岡店 only. JUBEAT Hyogo lists ラウンドワン加古川店, アピナ姫路店, アミューズメント ミール, 遊･スペース マジカル, タロフォフォ only. ラウンドワン三宮駅前店 is present for DDR/IIDX/SDVX/GITADORA/popn/polaris but not dance_around/drs/jubeat.",
+      "note": "Remove dance_around, drs, jubeat. App notes and ZIv still claim them; official e-amusement facility search takes precedence for currently serviced Konami titles. SEGA titles retained from ALL.Net match.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9402,
+      "name": "ＧｉＧＯ明石",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/akashi",
+      "evidence_quote": "GiGO official shop page lists オンゲキ Re:Fresh Act.2, CHUNITHM Mate, maimai でらっくす CiRCLE PLUS, SOUND VOLTEX. e-amusement JP-28 for GiGO明石 lists only DANCERUSH and GITADORA (no NOSTALGIA).",
+      "note": "Remove nostalgia (absent from e-amusement NOSTALGIA Hyogo list for this store). Add sdvx from current GiGO official machine list. SEGA titles still on ALL.Net.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9402,
+      "name": "ＧｉＧＯ明石",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "scheduled_closure_2026-09-27",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/akashi",
+      "evidence_quote": "【閉店のお知らせ】 ... 2026年9月27日(日) をもちまして閉店",
+      "note": "Official GiGO page announces permanent closure on 2026-09-27. Still open as of 2026-08-02; flag for future removal or status field after that date.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9402,
+      "name": "ＧｉＧＯ明石",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/akashi/",
+      "proposed": "https://www.gigo.co.jp/shops/akashi",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/akashi",
+      "evidence_quote": "Canonical store page on gigo.co.jp/shops/akashi; old tempo.gendagigo.jp URL 301-redirects to a renewal/shops landing page.",
+      "note": "Update all tempo.gendagigo.jp Hyogo links similarly where known.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9262,
+      "name": "ＧｉＧＯつかしん",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/tsukashin/",
+      "proposed": "https://www.gigo.co.jp/shops/tsukashin",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/tsukashin",
+      "evidence_quote": "Live GiGO shop page at https://www.gigo.co.jp/shops/tsukashin; listed under Hyogo area filter https://www.gigo.co.jp/shops?area=28",
+      "note": "Old tempo.gendagigo.jp domain redirects away from store content.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9301,
+      "name": "ＧｉＧＯコロワ甲子園",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/corowa/",
+      "proposed": "https://www.gigo.co.jp/shops/corowa-koshien",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/corowa-koshien",
+      "evidence_quote": "Live GiGO shop page at https://www.gigo.co.jp/shops/corowa-koshien; listed under Hyogo area filter https://www.gigo.co.jp/shops?area=28",
+      "note": "Old tempo.gendagigo.jp domain redirects away from store content.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9316,
+      "name": "ＧｉＧＯフェニックスプラザ摩耶",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/maya/",
+      "proposed": "https://www.gigo.co.jp/shops/maya",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/maya",
+      "evidence_quote": "Live GiGO shop page at https://www.gigo.co.jp/shops/maya; listed under Hyogo area filter https://www.gigo.co.jp/shops?area=28",
+      "note": "Old tempo.gendagigo.jp domain redirects away from store content.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9331,
+      "name": "ＧｉＧＯ三宮北口",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/sannomiya-kitaguchi/",
+      "proposed": "https://www.gigo.co.jp/shops/sannomiya-kitaguchi",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/sannomiya-kitaguchi",
+      "evidence_quote": "Live GiGO shop page at https://www.gigo.co.jp/shops/sannomiya-kitaguchi; listed under Hyogo area filter https://www.gigo.co.jp/shops?area=28",
+      "note": "Old tempo.gendagigo.jp domain redirects away from store content.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9441,
+      "name": "ＧｉＧＯ神戸ｕｍｉｅモザイク",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/kobe-mosaic/",
+      "proposed": "https://www.gigo.co.jp/shops/kobe-umie-mosaic",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/kobe-umie-mosaic",
+      "evidence_quote": "Live GiGO shop page at https://www.gigo.co.jp/shops/kobe-umie-mosaic; listed under Hyogo area filter https://www.gigo.co.jp/shops?area=28",
+      "note": "Old tempo.gendagigo.jp domain redirects away from store content.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9331,
+      "name": "ＧｉＧＯ三宮北口",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-23:30",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/sannomiya-kitaguchi",
+      "evidence_quote": "営業時間 10:00〜23:30 every day including holidays",
+      "note": "Official GiGO page. Also lists beatmania IIDX, SOUND VOLTEX, maimai, CHUNITHM, ONGEKI matching app SEGA+eagate set.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8447,
+      "name": "アピナ姫路店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_evo",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "reflec"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_evo",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "reflec",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/26-01",
+      "evidence_quote": "Music section lists: beatmania IIDX LIGHTNING MODEL, CHUNITHM ゴールドモデル, maimaiでらっくす, 太鼓の達人, jubeat, pop'n music, オンゲキ, ノスタルジア",
+      "note": "Add taiko. Official APINA store page explicitly lists 太鼓の達人. Hours 10:00-24:00 already match app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGO三宮南口",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGO三宮南口",
+        "addr": "兵庫県神戸市中央区三宮町1-7-17 三慶ビル",
+        "country": "Japan",
+        "pref": "兵庫県",
+        "website": "https://www.gigo.co.jp/shops/sannomiya-minamiguchi",
+        "hours_text": "Mon-Sun 10:00-23:00",
+        "games_note": "Official page lists 音楽ゲーム category but no specific SEGA/Konami titles; not present on ALL.Net Hyogo maimai/chunithm/ongeki/diva lists as of 2026-08-02"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/sannomiya-minamiguchi",
+      "evidence_quote": "GiGO三宮南口, 兵庫県神戸市中央区三宮町1-7-17 三慶ビル, hours 10:00-23:00 daily; categories include 音楽ゲーム",
+      "note": "Missing from map. Has music-game category on official GiGO page but no specific networked titles confirmed (not on ALL.Net Hyogo). Add venue even if games empty or unknown.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGOあまがさきキューズモール",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGOあまがさきキューズモール",
+        "addr": "兵庫県尼崎市潮江1-3-1 あまがさきキューズモール 4F",
+        "country": "Japan",
+        "pref": "兵庫県",
+        "website": "https://www.gigo.co.jp/shops/amagasaki",
+        "hours_text": "Mon-Sun 10:00-22:00",
+        "games_note": "Official page lists 音楽ゲーム category; not on ALL.Net Hyogo SEGA lists as of 2026-08-02"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/amagasaki",
+      "evidence_quote": "GiGOあまがさきキューズモール, 尼崎市潮江1-3-1 あまがさきキューズモール 4F, 10:00-22:00 daily; includes 音楽ゲーム",
+      "note": "Missing from map. Near Round1 JR Amagasaki. Specific rhythm titles not confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGOアリオ加古川",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGOアリオ加古川",
+        "addr": "兵庫県加古川市別府町緑町2 アリオ加古川店3F",
+        "country": "Japan",
+        "pref": "兵庫県",
+        "website": "https://www.gigo.co.jp/shops/kakogawa-befu",
+        "hours_text": "Mon-Sun 10:00-21:00",
+        "games_note": "Official page lists 音楽ゲーム category; not on ALL.Net Hyogo SEGA lists as of 2026-08-02"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/kakogawa-befu",
+      "evidence_quote": "GiGOアリオ加古川, 加古川市別府町緑町2 アリオ加古川店3F, 10:00-21:00; includes 音楽ゲーム",
+      "note": "Missing from map. Specific rhythm titles not confirmed on ALL.Net.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10499,
+      "name": "Gdańsk Arcade Museum",
+      "field": "hours",
+      "current": "Mon-Thu 14:00-21:00; Fri 14:00-22:00; Sat 11:00-22:00; Sun 11:00-20:00",
+      "proposed": "Mon-Thu 10:00-21:00; Fri 10:00-22:00; Sat 11:00-22:00; Sun 11:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://gdanskarcademuseum.com/",
+      "evidence_quote": "Monday-Thursday: 10:00-21:00; Friday: 10:00-22:00; Saturday: 11:00-22:00; Sunday: 11:00-20:00 (also summer happy hour 10:00-14:00 weekdays)",
+      "note": "Official site shows weekday open from 10:00, not 14:00. Venue open (Muzeum jest OTWARTE).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10523,
+      "name": "Warsaw Arcade Museum",
+      "field": "hours",
+      "current": "Mon-Fri 12:00-21:00; Sat 11:00-22:00; Sun 11:00-20:00",
+      "proposed": "Mon-Thu 10:00-21:00; Fri 10:00-22:00; Sat 11:00-22:00; Sun 11:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.warsawarcademuseum.com",
+      "evidence_quote": "Mon-Thu 10:00-21:00; Fri 10:00-22:00; Sat 11:00-22:00; Sun 11:00-20:00. MUZEUM jest OTWARTE",
+      "note": "Official hours start 10:00 weekdays (app had 12:00). Summer happy hour 10:00-14:00 noted on site.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10506,
+      "name": "Krakow Arcade Museum",
+      "field": "hours",
+      "current": "Mon 14:00-21:00; Tue 14:00-20:00; Wed-Thu 14:00-21:00; Fri 14:00-22:00; Sat 11:00-22:00; Sun 11:00-20:00",
+      "proposed": "Mon-Thu 10:00-21:00; Fri 10:00-22:00; Sat 11:00-22:00; Sun 11:00-20:00",
+      "confidence": "certain",
+      "evidence_url": "http://krakowarcademuseum.com/",
+      "evidence_quote": "MUZEUM jest OTWARTE; Mon-Thu 10:00-21:00; Friday 10:00-22:00; Saturday 11:00-22:00; Sunday 11:00-20:00",
+      "note": "Official hours no longer use afternoon-only weekday openings.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10523,
+      "name": "Warsaw Arcade Museum",
+      "field": "games",
+      "current": [
+        "groove_coaster",
+        "nostalgia",
+        "other",
+        "popn",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "drs",
+        "groove_coaster",
+        "nostalgia",
+        "other",
+        "popn",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.warsawarcademuseum.com/gry.php",
+      "evidence_quote": "Gry Rytmiczne section lists: Dancerush stardom; Groove Coaster; Guitar Hero; Pop'n Music (Pop'n Music 26 Kaimei Riddles); Taiko no tatsujin; Wacca",
+      "note": "Add drs from official games page. Official page does NOT list nostalgia; ZIv (lastUpdate 2026-05-08) still lists ノスタルジア Op.3 Online. Keeping nostalgia as likely from recent ZIv inventory, but official site omits it - not certain enough to remove.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10499,
+      "name": "Gdańsk Arcade Museum",
+      "field": "games",
+      "current": [
+        "drs",
+        "groove_coaster",
+        "other",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "drs",
+        "other",
+        "sdvx",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://gdanskarcademuseum.com/gry.php",
+      "evidence_quote": "Official Gry Rytmiczne: Dancerush stardom; Dancing Stage EuroMIX2 (Stepmania); Guitar Hero; Percussion Master; Sound Voltex; Taiko no tatsujin; Wacca. No Groove Coaster. ZIv 2026-07-26 lists Groove Coaster 4MAX with comment Currently offline.",
+      "note": "Remove groove_coaster as likely not playable: absent from official gry.php and ZIv marks it offline. If maintainers prefer to keep offline cabs, restore with a note instead.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10506,
+      "name": "Krakow Arcade Museum",
+      "field": "games",
+      "current": [
+        "ddr",
+        "groove_coaster",
+        "jubeat",
+        "other",
+        "popn",
+        "pump_it_up",
+        "wacca"
+      ],
+      "proposed": [
+        "ddr",
+        "groove_coaster",
+        "jubeat",
+        "maimai_dx",
+        "other",
+        "popn",
+        "pump_it_up",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv arcade id 5067 Krakow Arcade Museum lastUpdateTime 2026-07-21 lists machine maimai FiNALE (comment: Online, P2 screen dimmer than P1). Official gry.php rhythm section lists Jubeat Festo, Pop'n 26, Pump Nx2/STEPF2, Groove Coaster, Dance Maniax, EuroMIX2/Stepmania but does not list maimai or WACCA.",
+      "note": "Add maimai (private FiNALE, not DX network) from recent ZIv inventory. Official site incomplete vs ZIv for this private museum. Do not treat as networked maimai DX Japan. WACCA kept from ZIv (online Mythos) despite official page omission.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10488,
+      "name": "Cinema City Centrum Handlowe Korona",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv id 2934 Cinema City Centrum Handlowe Korona: Dancing Stage EuroMIX2 comment \"I cannot find it in recent photos.\" condition 0; lastUpdateTime 2023-08-01",
+      "note": "Remove ddr. Only evidence is stale ZIv row with condition 0 and explicit missing-from-photos note. No newer official confirmation found.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10511,
+      "name": "Miejski Ośrodek Sportu i Rekreacji",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv id 2898 lastUpdateTime 2013-09-11 15:54:46; machine Pump It Up NX2. No newer source found in this pass.",
+      "note": "ZIv row is ~13 years stale. Cannot confirm the PIU still exists. Propose removing the pump_it_up claim (or the venue) until re-verified; do not invent closed status without a closure source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10486,
+      "name": "Centrum Handlowe TGG",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv id 2935 lastUpdateTime 2013-09-15; machine In the Groove 2 condition 0. Website http://tgg.wroc.pl/ TLS failed in this pass; no newer machine confirmation.",
+      "note": "Extremely stale ZIv (2013). Notes still say ITG2. Cannot verify venue still has rhythm games. Address wrongly says Lesser Poland for Wroclaw.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10512,
+      "name": "Miraz Bowling Center",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv id 2936 lastUpdateTime 2013-09-17; machines Daytona USA, Indy 500, OutRun 2 all condition 0. Same address family as TGG.",
+      "note": "Stale 2013 ZIv only. No confirmation machines remain. Same complex/address area as TGG.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10515,
+      "name": "Potyczki XOXO Activity Bar",
+      "field": "hours",
+      "current": "Mon-Thu 11:00-01:00; Fri-Sat 11:00-02:00; Sun 11:00-01:00",
+      "proposed": "Mon-Thu 10:00-00:00; Fri-Sat 10:00-01:00; Sun 10:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://potyczki.com/",
+      "evidence_quote": "Monday-Thursday 10:00-00:00; Friday 10:00-01:00; Saturday 10:00-01:00; Sunday 10:00-00:00; address Monte Cassino 39, Sopot",
+      "note": "Official site hours differ from app (opens 10:00 not 11:00; closes earlier than app Fri/Sat). PIU Phoenix not mentioned on homepage (only on ZIv 2024-08-23); not re-verified on site.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10486,
+      "name": "Centrum Handlowe TGG",
+      "field": "location",
+      "current": "ul. Słubicka 18 Wrocław Lesser Poland, 53-615, Wrocław",
+      "proposed": "ul. Słubicka 18, 53-615 Wrocław, Dolnośląskie, Poland",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv address for id 2935 is Wroclaw (city), not Lesser Poland/Malopolska. Wroclaw is in Dolnoslaskie (Lower Silesia).",
+      "note": "Province string Lesser Poland is wrong for Wroclaw. Coordinates still in Wroclaw so pin city is OK; label text is wrong.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10488,
+      "name": "Cinema City Centrum Handlowe Korona",
+      "field": "location",
+      "current": "Bolesława Krzywoustego 126 Wrocław Lesser Poland, Wrocław",
+      "proposed": "Bolesława Krzywoustego 126, Wrocław, Dolnośląskie, Poland",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv city Wroclaw for id 2934; Centrum Korona is a known Wroclaw mall. Lesser Poland is incorrect.",
+      "note": "Same province mislabel as other Wroclaw rows.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10512,
+      "name": "Miraz Bowling Center",
+      "field": "location",
+      "current": "Słubicka 18 Wrocław Lesser Poland, 53-110, Wrocław",
+      "proposed": "Słubicka 18, Wrocław, Dolnośląskie, Poland",
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Poland",
+      "evidence_quote": "ZIv city Wroclaw for id 2936; not Lesser Poland.",
+      "note": "Province mislabel only.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

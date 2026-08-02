@@ -1,0 +1,695 @@
+{
+  "shard": 128,
+  "checked": 85,
+  "sources_used": [
+    "https://location.am-all.net/alm/location (maimai gm=96, CHUNITHM gm=109, ONGEKI gm=88; prefs Ishikawa/Fukui/Nara/Nagasaki/Miyazaki/Kagoshima/Aichi/Hiroshima/Kanagawa)",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (IIDX/SDVX/DDR/NOSTALGIA/JUBEAT; prefs JP-17,18,29,42,45,46)",
+    "https://www.kyowa-corp.co.jp/am/shop/17-01",
+    "https://www.kyowa-corp.co.jp/am/shop/17-02",
+    "https://www.kyowa-corp.co.jp/am/shop/23-02",
+    "https://www.gigo.co.jp/shops/lect-hiroshima",
+    "https://www.gigo.co.jp/shops/fukui",
+    "https://www.gigo.co.jp/shops/takefu",
+    "https://www.gigo.co.jp/shops/nobeoka",
+    "https://www.gigo.co.jp/shops/isahaya",
+    "https://www.gigo.co.jp/shops/miyazaki",
+    "https://www.gigo.co.jp/shops/nobeoka-okatomi",
+    "https://heysthlm.se/",
+    "https://www.smalandsspelhall.se/",
+    "https://www.pixelarcade.se/",
+    "https://www.korona.co.jp/Game/knz/index.asp",
+    "https://www.yamazakiya.co.jp/shop/hokuriku/",
+    "https://www.round1.co.jp/shop/tenpo/ishikawa-kanazawa.html",
+    "https://www.round1.co.jp/shop/tenpo/miyazaki-miyazaki.html",
+    "https://bandainamco-am.co.jp/game_center/loc/nagoyaekimae/",
+    "https://www.taito.co.jp/store/00002224",
+    "https://am.silkhat-entertainment.co.jp/shop/kawasaki-mores/",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Sweden",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Mongolia",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=800",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3575",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5587",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6088",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7727"
+  ],
+  "corrections": [
+    {
+      "id": 8468,
+      "name": "アピナ野々市バッティングスタジアム",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "jubeat",
+        "other",
+        "project_diva",
+        "reflec"
+      ],
+      "proposed": [
+        "chunithm",
+        "jubeat",
+        "other",
+        "popn",
+        "project_diva",
+        "reflec",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/17-01",
+      "evidence_quote": "音楽ゲーム: CHUNITHM ゴールドモデル / jubeat / pop'n music / 初音ミク Project DIVA Arcade Future Tone / REFLEC BEAT / カードメイカー / 太鼓の達人",
+      "note": "Official APINA store page lists pop'n music and 太鼓の達人 in addition to the titles already in the app. Still on ALL.Net CHUNITHM for Ishikawa. Venue open; hours 10:00-23:00 match official.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8469,
+      "name": "アピナ野々市店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/17-02",
+      "evidence_quote": "音楽ゲーム: beatmania IIDX LIGHTNING MODEL、CHUNITHM ゴールドモデル、DrumMania XG、GuitarFreaks XG、maimaiでらっくす、オンゲキ、カードメイカー、太鼓の達人",
+      "note": "Official APINA page lists 太鼓の達人; missing from app games. IIDX Lightning confirmed by official page (cabs already has iidx_lm). ALL.Net confirms maimai/CHUNITHM/ONGEKI. Hours 10:00-22:00 match.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8469,
+      "name": "アピナ野々市店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/17-02",
+      "evidence_quote": "beatmania IIDX LIGHTNING MODEL",
+      "note": "Official operator page explicitly names LIGHTNING MODEL. cabs already includes iidx_lm; cab_models is null and should record the variant.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8982,
+      "name": "モーリーファンタジー延岡",
+      "field": "games",
+      "current": [
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=44",
+      "evidence_quote": "Miyazaki ONGEKI 4 stores: ラウンドワン宮崎店, ＧｉＧＯアミュプラザみやざき, ＧｉＧＯ延岡, ピノキオランド日南. モーリーファンタジー延岡 is NOT listed.",
+      "note": "Still on ALL.Net maimai for Miyazaki (イオン延岡店２Ｆ) so maimai_dx is solid. ONGEKI official locator for Miyazaki has only 4 venues and does not include this Molly Fantasy. Remove ongeki.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8695,
+      "name": "ジョイランド敦賀店",
+      "field": "other",
+      "current": {
+        "duplicate_of": 9489,
+        "games": [
+          "gitadora",
+          "iidx",
+          "sdvx"
+        ],
+        "addr": "敦賀市木崎40-土三田12USAアリーナ内"
+      },
+      "proposed": "merge_into_9489",
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-18",
+      "evidence_quote": "e-amusement IIDX/SDVX Fukui lists ジョイランド敦賀店 at lat=35.64473762 lng=136.0430148; ALL.Net lists ＪＯＹＬＡＮＤ敦賀店 at 福井県敦賀市木崎４０ー１２ for maimai/CHUNITHM/ONGEKI. Shard has both as separate rows with coords within ~15m.",
+      "note": "Almost certainly the same USA Arena Tsuruga venue split across e-amusement and ALL.Net name spellings. Maintainers should merge 8695 into 9489 (or reverse) and union the game lists: chunithm, maimai_dx, ongeki, gitadora, iidx, sdvx. IIDX Lightning and SDVX Valkyrie flags currently on 8695 should carry over if kept.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9489,
+      "name": "ＪＯＹＬＡＮＤ敦賀店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-18",
+      "evidence_quote": "SDVX Fukui: ジョイランド敦賀店, 福井レジャーランド板垣店, GiGO福井, フクイレジャーランドワイプラザ店. IIDX Fukui also includes ジョイランド敦賀店. ALL.Net maimai/CHUNITHM/ONGEKI list ＪＯＹＬＡＮＤ敦賀店 at same address.",
+      "note": "If not merging 8695, at least add the e-amusement Konami titles that live at this same address. IIDX and SDVX confirmed on e-amusement today. gitadora was only on 8695 from older eagate source and was not re-confirmed via live gkey; keep as likely only when merging.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8775,
+      "name": "タイトーステーション 金沢店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-17",
+      "evidence_quote": "SDVX Ishikawa 5 stores: ベティ, バイパスレジャーランド加賀店, バイパスレジャーランド御経塚店, ラウンドワン金沢店, バイパスレジャーランド藤江新館. タイトーステーション金沢店 is absent.",
+      "note": "e-amusement still lists this store for IIDX, DDR, NOSTALGIA, JUBEAT. ALL.Net still lists it for maimai and CHUNITHM. SDVX is the clear omission from the live Konami locator. groove_coaster/gitadora/popn/taiko were not re-verified on official locators in this pass; do not remove those without further evidence. Only sdvx has a clear official negative.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9220,
+      "name": "金沢メトロポリス",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "other",
+        "popn"
+      ],
+      "proposed": [
+        "chunithm",
+        "iidx",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://www.korona.co.jp/Game/knz/index.asp",
+      "evidence_quote": "入荷情報 video games includes 太鼓の達人 (updated 2025-09-05).",
+      "note": "Operator Korona page lists 太鼓の達人 in recent arrivals. ALL.Net CHUNITHM yes; maimai not listed for this venue (correct that app lacks maimai_dx). e-amusement IIDX lists 金沢メトロポリス. Active as of 2026 summer campaigns on the same page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8213,
+      "name": "APINA Gamagori (アピナ蒲郡店)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/23-02",
+      "evidence_quote": "音楽ゲーム: 太鼓の達人 (sole music title). Store open 10:00～21:00 at クラスポ蒲郡 2F.",
+      "note": "Official APINA page shows only Taiko as a music game. Not on ALL.Net maimai/CHUNITHM/ONGEKI for Aichi (expected). Hours match app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8309,
+      "name": "namco Nagoya Ekimae (namco名古屋駅前店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=22",
+      "evidence_quote": "Aichi maimai lists ｎａｍｃｏイオンモールナゴヤドーム前店, ｎａｍｃｏエアポートウォーク名古屋店, ｎａｍｃｏイオンモール長久手１号店 but NOT namco名古屋駅前. CHUNITHM and ONGEKI Aichi also omit Nagoya Ekimae.",
+      "note": "Official Bandai Namco store page still exists and is open (B1F/6F Bic Camera Nagoya Sta West, 10:00-21:00). SEGA ALL.Net no longer lists this venue for maimai, CHUNITHM, or ONGEKI in Aichi, so the three SEGA rhythm titles are almost certainly gone. ZIv notes still mention them; ZIv is weaker than live ALL.Net. Keep taiko and other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8366,
+      "name": "Taito Station Osu (タイトーステーション大須店)",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=22",
+      "evidence_quote": "タイトーステーションフェドラ大須店 愛知県名古屋市中区大須３−３０−３１ appears on Aichi maimai and CHUNITHM ALL.Net lists.",
+      "note": "Live ALL.Net shows this venue (as フェドラ大須) for both maimai DX and CHUNITHM. App only has other+taiko. Consider renaming to include フェドラ if that is the official store name.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8366,
+      "name": "Taito Station Osu (タイトーステーション大須店)",
+      "field": "location",
+      "current": {
+        "addr": "3-20-7, Osu, Naka-ku Nagoya Aichi, 460-0011, Nagoya"
+      },
+      "proposed": {
+        "addr": "愛知県名古屋市中区大須３−３０−３１ (タイトーステーションフェドラ大須店)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=22",
+      "evidence_quote": "タイトーステーションフェドラ大須店 愛知県名古屋市中区大須３−３０−３１",
+      "note": "ALL.Net address 3-30-31 vs app 3-20-7. May be renumbering, building rename (Fedora), or a wrong pin. Needs maintainer geocode check.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8270,
+      "name": "GiGO LECT Hiroshima (GiGOLECT広島)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/lect-hiroshima",
+      "evidence_quote": "Featured titles: オンゲキ Re:Fresh Act.2, maimai でらっくす CiRCLE PLUS. Categories include 音楽ゲーム. Hours daily 10:00-21:00. Address 広島県広島市西区扇2丁目1-45 LECT広島 2F.",
+      "note": "Official GiGO shop page lists ONGEKI and maimai. NOT on ALL.Net CHUNITHM Hiroshima (no LECT entry; only ＧｉＧＯアルパーク北棟 nearby). Do not add chunithm. Hours already match.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8270,
+      "name": "GiGO LECT Hiroshima (GiGOLECT広島)",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/LECT_hiroshima/",
+      "proposed": "https://www.gigo.co.jp/shops/lect-hiroshima",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/lect-hiroshima",
+      "evidence_quote": "GiGO LECT広島 store page live at www.gigo.co.jp/shops/lect-hiroshima with hours, address, game categories.",
+      "note": "Old GendaGiGO tempo subdomain is obsolete; official pages are on gigo.co.jp now.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8234,
+      "name": "Comtech Square (コムテックスクエア)",
+      "field": "cabs",
+      "current": [],
+      "proposed": [
+        "iidx_lm",
+        "sdvx_vm",
+        "ddr_gold",
+        "taiko_jp"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=800",
+      "evidence_quote": "beatmania IIDX 33 Sparkle Shower (LIGHTNING MODEL) 4x; SOUND VOLTEX EXCEED GEAR (Valkyrie model) 3x; DanceDanceRevolution WORLD (20th anniversary model) 2x; 太鼓の達人 ニジイロVer. 2x. Last update 2025-12-13.",
+      "note": "cab_models already records ddr_gold/iidx_lm/sdvx_vm/taiko_jp flags. cabs array is empty and should mirror those. ALL.Net confirms コムテックスクウェア for maimai/CHUNITHM/ONGEKI Aichi.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8234,
+      "name": "Comtech Square (コムテックスクエア)",
+      "field": "location",
+      "current": {
+        "lat": 35.14,
+        "lng": 136.9
+      },
+      "proposed": {
+        "note": "re-geocode 名古屋市中区金山1-16-8; app lat/lng are rounded to 2 decimals"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=800",
+      "evidence_quote": "Address: 1-16-8, Kanayama, Naka-ku, Nagoya, Aichi, 460-0022",
+      "note": "35.14,136.9 is a city-block-scale pin. Not wrong city, but coarse. Propose re-geocoding from the Kanayama address. No precise geocoder run here.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10917,
+      "name": "HEY STHLM",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "museca",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx",
+        "stepmaniax",
+        "taiko",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "museca",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx",
+        "stepmaniax",
+        "taiko",
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://heysthlm.se/",
+      "evidence_quote": "MUSIKSPEL: Beatmania IIDX, Jubeat, Pop'n Music, Groove Coaster, Taiko No Tatsujin, Sound Voltex, Gitadora Drummania, Chunithm, Nostalgia, Guitar Hero, StepmaniaX Deluxe, MaiMai, Dance Dance Revolution, Museca, Wacca",
+      "note": "Official site lists MaiMai. ZIv (updated 2026-04-24) lists maimai FiNALE Japan, offline, dim screen. This is private-import FiNALE, NOT maimai DX network. Use game key maimai (legacy) not maimai_dx if the taxonomy distinguishes them.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10917,
+      "name": "HEY STHLM",
+      "field": "hours",
+      "current": "Mon-Thu 17:00-00:55; Fri-Sat 16:00-03:00; Sun 17:00-00:55",
+      "proposed": "Summer (Jun-Aug): daily 18:00-01:00 closed Midsummer; otherwise Mon-Thu/Sun ~17:00-01:00, Fri-Sat 16:00-03:00 - verify season on heysthlm.se",
+      "confidence": "likely",
+      "evidence_url": "https://heysthlm.se/",
+      "evidence_quote": "Våra sommaröppettider är: Måndag – Söndag 18-01. Stängt midsommarafton och midsommardagen.",
+      "note": "Official site currently advertises summer hours 18-01 daily. ZIv still has the non-summer table. App hours match ZIv non-summer and will be wrong in summer.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10923,
+      "name": "Smålands Spelhall",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "other",
+        "reflec",
+        "sdvx",
+        "wacca"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai",
+        "nostalgia",
+        "other",
+        "reflec",
+        "sdvx",
+        "wacca"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5587",
+      "evidence_quote": "maimai FiNALE x2 (Networked free play); one Perfect, one Not Working. Last update 2026-06-12 by Bocchi.",
+      "note": "ZIv only (community). Official smalandsspelhall.se does not enumerate titles. Same FiNALE-not-DX caveat as HEY STHLM. One of two cabs marked not working. Use maimai not maimai_dx.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10925,
+      "name": "Strike Club",
+      "field": "status",
+      "current": "open with ddr,other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Sweden",
+      "evidence_quote": "Strike Club lastUpdateTime 2018-05-17 06:51:02. Machines: Dancing Stage EuroMIX2, Guitar Hero Arcade. Bowling venue.",
+      "note": "ZIv row is 8+ years stale. Could not independently confirm DDR still present or venue still operating as an arcade via official sources in this pass. Flag for maintainer follow-up; do not confidently mark closed without primary evidence.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10926,
+      "name": "Ylab School of Health and Exercise",
+      "field": "status",
+      "current": "open with pump_it_up",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Sweden",
+      "evidence_quote": "Ylab lastUpdateTime 2023-11-12 12:07:16. Pump It Up Phoenix free play. Entry 50 SEK.",
+      "note": "ZIv last touch late 2023. Website ylab-education.eu was not re-confirmed live with a game list in this pass. Treat presence as unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGOイオン多々良",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGOイオン多々良",
+        "addr": "宮崎県延岡市岡富町154番 イオン多々良店内",
+        "country": "Japan",
+        "pref": "宮崎県",
+        "games_known": [
+          "other"
+        ],
+        "notes": "Music games category listed but no specific SEGA/Konami titles named. Rebranded from スマイルステーション多々良 on 2026-07-18. GiGO app not supported at this store.",
+        "website": "https://www.gigo.co.jp/shops/nobeoka-okatomi",
+        "hours_text": "Mon-Sun 09:00-21:00"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/nobeoka-okatomi",
+      "evidence_quote": "Address 宮崎県延岡市岡富町154番 イオン多々良店内. Hours daily 09:00〜21:00. Categories: crane, medal, driving, gun, music, kids, sports. Rebranded from スマイルステーション多々良 as of 2026-07-18.",
+      "note": "Not in shard 128. Not on ALL.Net maimai/CHUNITHM/ONGEKI Miyazaki lists, so do not invent SEGA titles. Add as a GiGO general arcade with music-game category until title-level evidence appears.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "コムテックタワー",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "コムテックタワー",
+        "addr": "愛知県名古屋市中村区名駅４−１０−２０",
+        "country": "Japan",
+        "pref": "Aichi",
+        "games_known": [
+          "chunithm",
+          "maimai_dx",
+          "ongeki"
+        ],
+        "notes": "Distinct from コムテックスクエア (Kanayama). Appears on ALL.Net for maimai, CHUNITHM, and ONGEKI Aichi."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=22",
+      "evidence_quote": "コムテックタワー 愛知県名古屋市中村区名駅４−１０−２０ listed on Aichi maimai; also present on CHUNITHM and ONGEKI Aichi lists as コムテックタワー.",
+      "note": "Shard has Comtech Square (Kanayama) but not Comtech Tower (Meieki). Both are live on ALL.Net. High value add for Nagoya players.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9098,
+      "name": "ラウンドワン金沢店",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-00:00; Sat-Sun 06:00-00:00",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/ishikawa-kanazawa.html",
+      "evidence_quote": "Store page live at 石川県金沢市横川6丁目120-1. Hours section present but concrete open/close times not rendered in fetched text. Notice: game corner normally closes midnight, extended to 1 a.m. Aug 13-16.",
+      "note": "Could not re-verify the 06:00 weekend open from the official page text. ALL.Net and e-amusement still list the store for the claimed SEGA/Konami titles. Leave hours as-is unless a cleaner official times source is found.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8291,
+      "name": "Let's Waku2 ベル店",
+      "field": "status",
+      "current": "open with popn only (eagate)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://www.gigo.co.jp/shops?q=%E7%A6%8F%E4%BA%95",
+      "evidence_quote": "GiGO Fukui search returns キッズパラダイスアルプラザベル at 福井県福井市花堂南2丁目16番1号 - same address as Let's Waku2 ベル店 (福井市花堂南2-16-1).",
+      "note": "Same street address as a current GiGO Kids Paradise Alplaza Bell listing. May be rebranded, co-located, or a different floor/tenant. App only has popn from eagate. Could not confirm whether pop'n still exists (popn gkey probe returned empty for Fukui). Flag only; do not mark closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10921,
+      "name": "Pixel Arcade",
+      "field": "hours",
+      "current": "Mon-Thu closed; Fri 17:00-23:00; Sat-Sun closed",
+      "proposed": "Drop-in Fri 17:00-23:00; other days private bookings only (Mon-Thu 16:45-20:00 / weekend 10:00-17:00 bookable)",
+      "confidence": "certain",
+      "evidence_url": "https://www.pixelarcade.se/",
+      "evidence_quote": "Drop-in on Fridays only, 17.00–23.00. Other days reserved for private bookings (Mån–tors 16.45–20.00 · Helg 10.00–17.00). Entry 175 kr / 125 kr youth.",
+      "note": "App hours are basically right for public drop-in. Optional refinement: note private-booking windows. ZIv last update 2026-06-09 confirms the rhythm lineup including offline crossbeats and server-troubled Groove Coaster.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8621,
+      "name": "ゲームセンターベティ",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "ddr": 2,
+        "drs": 1,
+        "gitadora": 2,
+        "iidx": 4,
+        "jubeat": 1,
+        "maimai_dx": 1,
+        "nostalgia": 1,
+        "popn": 2,
+        "project_diva": 1,
+        "reflec": 1,
+        "sdvx": 1
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7727",
+      "evidence_quote": "ZIv last updated 2024-10-20. IIDX Lightning MODEL listed 2x; SDVX Valkyrie 1x. App game_counts has iidx:4 with ziv_listed evidence (placeholder quality).",
+      "note": "Venue still live on ALL.Net maimai/CHUNITHM/ONGEKI and e-amusement IIDX/SDVX/DDR/NOSTALGIA/JUBEAT for Ishikawa. Counts themselves are stale ZIv and should not be treated as certain. Do not invent new numbers. Preservation arcade with irregular hours; check Twitter before travel.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8333,
+      "name": "SILK HAT Kawasaki MORE'S (シルクハット川崎モアーズ)",
+      "field": "website",
+      "current": "http://matahari-entertainment.co.jp/shop/8/",
+      "proposed": "https://am.silkhat-entertainment.co.jp/shop/kawasaki-mores/",
+      "confidence": "certain",
+      "evidence_url": "https://am.silkhat-entertainment.co.jp/shop/kawasaki-mores/",
+      "evidence_quote": "SILK HAT 川崎モアーズ open 8:30-24:45 year-round at 川崎市川崎区駅前本町7 岡田屋モアーズ内 1～2F. Crane-heavy; no SEGA rhythm titles claimed.",
+      "note": "Old matahari-entertainment URL redirects through silkhat-entertainment to the new am.silkhat domain. Hours in app (08:30-24:45) match official. Games=other is correct (not on ALL.Net maimai/CHUNITHM for this MORE'S branch; Daice has CHUNITHM separately).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9444,
+      "name": "ＧｉＧＯ福井",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/fukui/",
+      "proposed": "https://www.gigo.co.jp/shops/fukui",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/fukui",
+      "evidence_quote": "GiGO福井 live at gigo.co.jp/shops/fukui. Hours Mon-Fri 10:00-00:00, Sat/Sun/hol 09:00-00:00. Featured: ONGEKI, CHUNITHM Mate, maimai CiRCLE PLUS, SOUND VOLTEX.",
+      "note": "tempo.gendagigo.jp URLs are obsolete post-rebrand; use www.gigo.co.jp/shops/* pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9417,
+      "name": "ＧｉＧＯ武生",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/takefu/",
+      "proposed": "https://www.gigo.co.jp/shops/takefu",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/takefu",
+      "evidence_quote": "GiGO武生 live at gigo.co.jp/shops/takefu. Hours daily 10:00-00:00. Featured: ONGEKI, CHUNITHM Mate, maimai CiRCLE PLUS.",
+      "note": "tempo.gendagigo.jp URLs are obsolete post-rebrand; use www.gigo.co.jp/shops/* pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9387,
+      "name": "ＧｉＧＯ延岡",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/nobeoka/",
+      "proposed": "https://www.gigo.co.jp/shops/nobeoka",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/nobeoka",
+      "evidence_quote": "GiGO延岡 live at gigo.co.jp/shops/nobeoka. Hours daily 10:00-23:00. Featured: ONGEKI, CHUNITHM Mate, maimai CiRCLE PLUS.",
+      "note": "tempo.gendagigo.jp URLs are obsolete post-rebrand; use www.gigo.co.jp/shops/* pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9468,
+      "name": "ＧｉＧＯ諫早",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/mominokimura/",
+      "proposed": "https://www.gigo.co.jp/shops/isahaya",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/isahaya",
+      "evidence_quote": "GiGO諫早 live at gigo.co.jp/shops/isahaya. Hours Mon-Thu/Sun 10:00-23:00, Fri-Sat 10:00-00:00. Featured: ONGEKI, CHUNITHM Mate, maimai CiRCLE PLUS.",
+      "note": "tempo.gendagigo.jp URLs are obsolete post-rebrand; use www.gigo.co.jp/shops/* pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9271,
+      "name": "ＧｉＧＯアミュプラザみやざき",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/miyazaki/",
+      "proposed": "https://www.gigo.co.jp/shops/miyazaki",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/miyazaki",
+      "evidence_quote": "GiGOアミュプラザみやざき live at gigo.co.jp/shops/miyazaki. Hours daily 10:00-22:00. Address うみ館 4F. Featured: ONGEKI, CHUNITHM Mate, maimai CiRCLE PLUS.",
+      "note": "tempo.gendagigo.jp URLs are obsolete post-rebrand; use www.gigo.co.jp/shops/* pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9468,
+      "name": "ＧｉＧＯ諫早",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-24:00",
+      "proposed": "Mon-Thu 10:00-23:00; Fri-Sat 10:00-00:00; Sun 10:00-23:00; day-before-holiday 10:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/isahaya",
+      "evidence_quote": "Mon-Thu 10:00-23:00; Fri & Sat 10:00-00:00; Sun 10:00-23:00; day before holidays 10:00-00:00",
+      "note": "App had flat Mon-Sun 10:00-24:00; official schedule is day-dependent and closes 23:00 on ordinary weeknights/Sundays.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9274,
+      "name": "ＧｉＧＯアルプラザ金沢",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/kanazawa/",
+      "proposed": "https://www.gigo.co.jp/shops",
+      "confidence": "likely",
+      "evidence_url": "https://www.gigo.co.jp/shops?q=%E9%87%91%E6%B2%A2",
+      "evidence_quote": "GiGOアルプラザ金沢 石川県金沢市諸江町30-1 appears in GiGO shop search.",
+      "note": "tempo URL obsolete. Exact /shops/ slug not captured in this pass (search listed the store). Prefer gigo.co.jp over tempo.gendagigo.jp. ALL.Net confirms maimai/CHUNITHM/ONGEKI.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9264,
+      "name": "ＧｉＧＯみらい長崎ココウォーク",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/nagasaki/",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://www.gigo.co.jp/",
+      "evidence_quote": "GiGO store pages have moved from tempo.gendagigo.jp to www.gigo.co.jp/shops/*; exact Nagasaki Cocowalk slug not fetched in this pass.",
+      "note": "Do not invent a slug. Remove or replace the dead tempo URL once the official shop page is located. Venue still on ALL.Net maimai/CHUNITHM/ONGEKI for Nagasaki.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

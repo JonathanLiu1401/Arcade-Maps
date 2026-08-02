@@ -1,0 +1,1291 @@
+{
+  "shard": 114,
+  "checked": 115,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=13",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=13",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=13",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=13",
+    "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+    "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1011",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORAGF&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DAN&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-14",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-14",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Vietnam",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=906",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4176",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9395",
+    "https://www.taito.co.jp/store/00001640",
+    "https://www.taito.co.jp/store/00002130",
+    "https://www.taito.co.jp/en/store/00001965",
+    "https://www.taito.co.jp/store/00001622",
+    "https://3rd-planet.jp/shop/yokohama/",
+    "https://www.timezonegames.com/vi-vn/dia-diem/hai-phong/aeon-mall-hai-phong/",
+    "https://gigovietnam.com/"
+  ],
+  "corrections": [
+    {
+      "id": 13506,
+      "name": "LGG LIEU GIAI",
+      "field": "location",
+      "current": {
+        "lat": 10.7285352,
+        "lng": 106.7187468,
+        "addr": "Vincom Center,29 Lieu Giai street,Ngoc Khanh Ward,Ba Dinh,Hanoi"
+      },
+      "proposed": {
+        "lat": 21.031384633088916,
+        "lng": 105.81471723810476
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "LGG LIEU GIAI | Vincom Center,29 Lieu Giai street,Ngoc Khanh Ward,Ba Dinh,Hanoi | maps @10.7285352,106.7187468 (identical pair used for TIMEZONE CRESCENT MALL, District 7 HCMC)",
+      "note": "Address is Ba Dinh Hanoi but pin is Crescent Mall HCMC (~1150 km). Travel-breaking wrong-city pin. Proposed coords are from ZIv Timezone Vincom Metropolis (shard 13535) at the same 29 Lieu Giai complex; ALL.Net map button is wrong so do not copy it.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13538,
+      "name": "TIMEZONE(AEON HA DONG)",
+      "field": "location",
+      "current": {
+        "lat": 21.0277644,
+        "lng": 105.8341598
+      },
+      "proposed": {
+        "lat": 20.989864365939,
+        "lng": 105.75230635509
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "TIMEZONE(AEON HA DONG) address: AEONMALL,HoangVanThuStreet DuongNoiWard,HaDong District, Ha Noi; map button @21.0277644,105.8341598",
+      "note": "ALL.Net address text correctly names AEON Ha Dong / Duong Noi, but the published pin sits in central Hanoi (~9.5 km away). Proposed coords from ZIv twin Timezone Aeon Mall Ha Dong (id 6427 / shard 13528).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13496,
+      "name": "GIGO AEON MALL HA DONG",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": 20.99014076847,
+        "lng": 105.75173377991
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "GIGO AEON MALL HA DONG | Lot T325, 3F, AEON MALL HA DONG, Duong Noi Ward, Ha Noi City | maps @0.0,0.0",
+      "note": "Still listed live on ALL.Net for maimai and CHUNITHM, but official coords are 0,0. Fill from ZIv twin GiGO Aeon Mall Ha Dong (shard 13497). Likely duplicate of 13497.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13529,
+      "name": "TIMEZONE AEON MALL THANH KHE",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "TIMEZONE AEON MALL THANH KHE | Dien Bien Phu, Thanh Khe District, Da Nang city ,Viet Nam | maps @0.0,0.0",
+      "note": "On live ALL.Net maimai list so the store exists, but no usable official or verified coords found. Do not invent a geocode. Maintainer should geocode AEON Mall Thanh Khe, Da Nang.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13504,
+      "name": "KIDS BOX&TINY MF AEON TAN AN",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": {
+        "lat": 10.554646892353,
+        "lng": 106.54884338379
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "KIDS BOX&TINY MF AEON TAN AN | Lot T212. 2nd Fl No88 Aeon TanAn SC, National Highway 1 Ward 6 | maps @33.836081,-81.1637245",
+      "note": "ALL.Net still lists maimai here but map button is in South Carolina, USA. Shard correctly nulled it. Proposed coords from ZIv twin Kidszoona Molly Fantasy AEON Tan An (shard 13505). Likely duplicate of 13505.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13526,
+      "name": "TIMEZONE AEON LONG BIEN",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "groove_coaster",
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "proposed": [
+        "groove_coaster",
+        "maimai_dx",
+        "other",
+        "pump_it_up",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=104&lang=en&ct=1011",
+      "evidence_quote": "CHUNITHM International Vietnam list (18 stores) does not include TIMEZONE AEON LONG BIEN. maimai list (gm=98) does include TIMEZONE AEON LONG BIEN.",
+      "note": "Official CHUNITHM locator is authoritative for currently serviced cabinets. ZIv still notes CHUNITHM VERSE (7 months stale). Remove chunithm only; keep maimai_dx.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13517,
+      "name": "Molly Fantasy Sense City Can Tho",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "ALL.Net maimai DX International Vietnam (35 stores) has no Can Tho / Sense City Molly Fantasy entry.",
+      "note": "ZIv lists maimai DX BUDDiES PLUS with lastUpdateDifference '1 year ago'. Not on SEGA network today. Downgrade maimai_dx; venue itself may still be open for other machines.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13536,
+      "name": "Timezone Vincom Đồng Khởi",
+      "field": "games",
+      "current": [
+        "maimai_dx"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "ALL.Net maimai DX International Vietnam (35 stores) has no Timezone Vincom Dong Khoi / Le Thanh Ton entry.",
+      "note": "ZIv lists maimai DX PRiSM PLUS (~10 months). Not on ALL.Net today. Propose drop maimai_dx claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13499,
+      "name": "Helio Center",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "unverified_possibly_stale",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4176",
+      "evidence_quote": "Last updated: 2017-08-21 (8 years ago). Machines: Pump It Up Infinity; Pump It Up PRIME. No closed flag on page.",
+      "note": "Only source is 2017 ZIv. Cannot confirm open or closed in 2026. Do not remove without local check; mark as stale community data.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13486,
+      "name": "Dream Games Aeon Mall Tân Phú Celadon",
+      "field": "other",
+      "current": {
+        "pair_of": 13487,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13487,
+        "allnet_name": "DREAM GAMES HO CHI MINH"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "DREAM GAMES HO CHI MINH | Bo Bao Tan Thang Street, Son KyWard, Tan Phu District,HoChiMinh @10.8018964709086,106.617999986976",
+      "note": "ZIv name is the same Celadon/Tan Phu Dream Games as ALL.Net DREAM GAMES HO CHI MINH (shard 13487), ~150 m apart. Merge candidate.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13494,
+      "name": "DreamGames Mipec Xuan Thuy",
+      "field": "other",
+      "current": {
+        "pair_of": 13488,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13488,
+        "allnet_name": "DREAM GAMES MIPEC"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "DREAM GAMES MIPEC | 122 - 124 Xuan Thuy Street, Dich Vong Hau ward @21.0378193,105.7872989",
+      "note": "Same Mipec Xuan Thuy Dream Games as ALL.Net 13488. Coords ~150 m. Merge candidate. ZIv adds taiko.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13497,
+      "name": "GiGO Aeon Mall Hà Đông",
+      "field": "other",
+      "current": {
+        "pair_of": 13496,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13496,
+        "allnet_name": "GIGO AEON MALL HA DONG"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "GIGO AEON MALL HA DONG | Lot T325, 3F, AEON MALL HA DONG, Duong Noi Ward, Ha Noi City",
+      "note": "Same AEON Ha Dong GiGO as 13496. ZIv row has better coords and extra pump_it_up/other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13501,
+      "name": "Heroworld Games & Bowling Center.",
+      "field": "other",
+      "current": {
+        "pair_of": 13500,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13500,
+        "allnet_name": "HEROWORLD BOWLING AND GAMES CENTER"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "HEROWORLD BOWLING AND GAMES CENTER | B2R304,Royalcity Megamall,72 Nguyen Trai,Thanh Xuan,Ha Noi @21.0010656,105.8161199",
+      "note": "Same Royal City Heroworld as 13500. ZIv adds pump_it_up and other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13505,
+      "name": "Kidszoona Molly Fantasy AEON Tân An",
+      "field": "other",
+      "current": {
+        "pair_of": 13504,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13504,
+        "allnet_name": "KIDS BOX&TINY MF AEON TAN AN"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "KIDS BOX&TINY MF AEON TAN AN | Lot T212. 2nd Fl No88 Aeon TanAn SC, National Highway 1 Ward 6",
+      "note": "Same AEON Tan An Molly/Kids Box as 13504.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13511,
+      "name": "Molly Fantasy AEON MALL CELADON CITY - Tan Phu",
+      "field": "other",
+      "current": {
+        "pair_of": 13510,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13510,
+        "allnet_name": "MOLLY FANTASY AEON CELADON"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "MOLLY FANTASY AEON CELADON | Lot S19 2F, No30 Bo Bao Tan Thang st, Tan Phu Dst, HCM @10.7994592,106.6132931",
+      "note": "Same Celadon Molly as 13510. ZIv adds taiko/other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13512,
+      "name": "Molly Fantasy Aeon Mall Hải Phòng",
+      "field": "other",
+      "current": {
+        "pair_of": 13514,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13514,
+        "allnet_name": "MOLLY FANTASY HAI PHONG 2F"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "MOLLY FANTASY HAI PHONG 2F | 10 Vo Nguyen Giap,Du Hang Kenh,Le Chan Hai Phong,Vietnam @20.833226,106.6824513",
+      "note": "Same Hai Phong AEON Molly as 13514.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13522,
+      "name": "Panda Game Center Nowzone Fashion Mall",
+      "field": "other",
+      "current": {
+        "pair_of": 13521,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13521,
+        "allnet_name": "NOWZONE FASHION MALL"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "NOWZONE FASHION MALL | 235 Nguyen Van Cu Street, Nguyen Cu Ward, District 1 @10.7610332,106.6837686",
+      "note": "Same Nowzone as ALL.Net 13521. ZIv adds pump_it_up/other under operator name Panda Game Center.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13527,
+      "name": "Timezone AEON Mall Huế",
+      "field": "other",
+      "current": {
+        "pair_of": 13525,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13525,
+        "allnet_name": "TIMEZONE AEON HUE"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "TIMEZONE AEON HUE | No. 08, Vo Nguyen Giap Street, An Dong Ward, Hue City @16.45462,107.6139515",
+      "note": "Same Hue AEON Timezone as 13525.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13528,
+      "name": "Timezone Aeon Mall Hà Đông",
+      "field": "other",
+      "current": {
+        "pair_of": 13538,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13538,
+        "allnet_name": "TIMEZONE(AEON HA DONG)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "TIMEZONE(AEON HA DONG) | AEONMALL,HoangVanThuStreet DuongNoiWard,HaDong District, Ha Noi",
+      "note": "Same Ha Dong AEON Timezone as 13538. ZIv coords are better than ALL.Net central-Hanoi pin.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13534,
+      "name": "Timezone The Loop IPH",
+      "field": "other",
+      "current": {
+        "pair_of": 13502,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13502,
+        "allnet_name": "IPH INDOCHINA"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "IPH INDOCHINA | IPH, 241 Xuan Thuy Street,Dich Vong Hau Ward, Cau Giay, Hanoi @21.0360605,105.7833056",
+      "note": "Same IPH / The Loop Cau Giay Timezone as ALL.Net IPH INDOCHINA (13502). Coords ~100 m.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13535,
+      "name": "Timezone Vincom Metropolis",
+      "field": "other",
+      "current": {
+        "pair_of": 13506,
+        "src": [
+          "ziv"
+        ]
+      },
+      "proposed": {
+        "likely_duplicate_of": 13506,
+        "allnet_name": "LGG LIEU GIAI",
+        "note": "Same Vincom Lieu Giai complex; LGG LIEU GIAI allnet row currently has wrong HCMC pin"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Vietnam",
+      "evidence_quote": "Timezone Vincom Metropolis address: 3rd Floor, Vincom Metropolis Lieu Giai, No.29 Lieu Giai Street, Ha Noi @21.031384633088916,105.81471723810476",
+      "note": "Vincom Metropolis = 29 Lieu Giai. ALL.Net labels the maimai store LGG LIEU GIAI at that address. Strong merge candidate with 13506 after fixing 13506 coords.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13495,
+      "name": "Game World GO! Thái Bình",
+      "field": "other",
+      "current": {
+        "notes_games": "maimai FiNALE (ZIv)"
+      },
+      "proposed": {
+        "music_game_status": "likely_offline",
+        "reason": "maimai FiNALE network closed; not on ALL.Net; ZIv 2 years stale"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Vietnam",
+      "evidence_quote": "Game World GO! Thái Bình machines: maimai FiNALE; lastUpdateDifference: 2 years ago",
+      "note": "All official maimai networks shut down FiNALE years ago. Treat as non-playable networked maimai. Venue open status unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13523,
+      "name": "Thế giới vui nhộn (GO! Can Tho)",
+      "field": "other",
+      "current": {
+        "notes_games": "maimai FiNALE (ZIv)"
+      },
+      "proposed": {
+        "music_game_status": "likely_offline",
+        "reason": "maimai FiNALE network closed; not on ALL.Net; ZIv 2 years stale"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Vietnam",
+      "evidence_quote": "Thế giới vui nhộn (GO! Can Tho) machines: maimai FiNALE; lastUpdateDifference: 2 years ago",
+      "note": "Same FiNALE/offline pattern as 13495.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13503,
+      "name": "Jazzy Paradise GigaMall Thủ Đức",
+      "field": "other",
+      "current": {
+        "notes_include": "maimai FiNALE"
+      },
+      "proposed": {
+        "maimai_networked": false,
+        "reason": "ZIv lists maimai FiNALE; not on ALL.Net maimai intl Vietnam"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1011",
+      "evidence_quote": "ALL.Net maimai Vietnam list has no Jazzy Paradise / GigaMall Thu Duc entry.",
+      "note": "Shard already omits maimai_dx (good). Notes still mention FiNALE which is a dead network.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8764,
+      "name": "タイトーステーション 小田原店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa (JP-14) facility lists for SDVX, JUBEAT, DAN (DANCERUSH) do not include タイトーステーション小田原店. Present Konami titles at this store: IIDX, GITADORAGF, NOSTALGIA, PLRS, PMSP. ALL.Net still lists maimai/CHUNITHM/ONGEKI/Project DIVA.",
+      "note": "Remove sdvx, jubeat, drs. ZIv notes claiming SDVX Valkyrie / jubeat / DRS are superseded by live e-amusement. Store page https://www.taito.co.jp/store/00001640 still open 10:00-24:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8764,
+      "name": "タイトーステーション 小田原店",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "taiko_jp": null
+      },
+      "proposed": {
+        "taiko_jp": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "IIDX_LN and SDVX_VM Kanagawa lists do not include タイトーステーション小田原店.",
+      "note": "Drop iidx_lm and sdvx_vm; neither Lightning nor Valkyrie is on the official variant locators today.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8774,
+      "name": "タイトーステーション 藤沢店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=GITADORAGF&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "GITADORAGF Kanagawa list does not include タイトーステーション藤沢店. Present Konami: DDR, IIDX, PMSP (popn). ALL.Net still has maimai/CHUNITHM/ONGEKI.",
+      "note": "Remove gitadora. ZIv notes still list GITADORA GALAXY WAVE; e-amusement is newer/official. Store open per https://www.taito.co.jp/store/00002130 hours 10:00-23:50.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8774,
+      "name": "タイトーステーション 藤沢店",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": null,
+        "taiko_jp": null
+      },
+      "proposed": {
+        "iidx_lm": null,
+        "taiko_jp": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "DDR20TH Kanagawa list does not include タイトーステーション藤沢店. IIDX_LN does include it.",
+      "note": "Remove ddr_gold claim. Keep iidx_lm (Lightning confirmed). No SDVX at this store so no sdvx_vm.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8793,
+      "name": "タイトーステーション横浜西口五番街店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "DDR Kanagawa list (16 stores) does not include タイトーステーション横浜西口五番街店. Present Konami: IIDX, SDVX, GITADORAGF, NOSTALGIA, PLRS, PMSP.",
+      "note": "Remove ddr. ZIv/count notes claim DDR WORLD; e-amusement does not list it today. Store open 10:00-23:50.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9077,
+      "name": "ラウンドワン横浜駅西口店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "dance_around",
+        "ddr",
+        "drs",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "NOSTALGIA Kanagawa list (11 stores) does not include ラウンドワン横浜駅西口店. Other Konami titles (IIDX, SDVX, DDR, JUBEAT, PMSP, GITADORAGF, DAN, PLRS) remain listed.",
+      "note": "Remove nostalgia only. Official store page still live.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8803,
+      "name": "タイトー小田原シティーモール店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement name タイトーステーション小田原シティモール店 appears on IIDX, JUBEAT, PMSP, GITADORAGF. It does NOT appear on SDVX, SDVX_VM, NOSTALGIA, or DAN Kanagawa lists.",
+      "note": "Remove sdvx and nostalgia. Store open per https://www.taito.co.jp/store/00001622 hours 10:00-24:00. Name on eagate is タイトーステーション小田原シティモール店 (slightly different orthography from shard).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8803,
+      "name": "タイトー小田原シティーモール店",
+      "field": "cab_models",
+      "current": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "taiko_jp": null
+      },
+      "proposed": {
+        "taiko_jp": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "IIDX_LN and SDVX_VM Kanagawa lists do not include タイトーステーション小田原シティモール店 (standard IIDX only).",
+      "note": "Drop iidx_lm and sdvx_vm keys; neither Lightning nor Valkyrie is on the official variant locators.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8669,
+      "name": "サープラ横浜あそびタウン",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "JUBEAT Kanagawa facility list (16 stores) does not include サープラ横浜あそびタウン / THE 3RD PLANET Yokohama. ALL.Net still lists the store for maimai DX and CHUNITHM.",
+      "note": "Remove jubeat. ZIv still shows only 'jubeat prop' last updated 2023-10-29. Shop site https://3rd-planet.jp/shop/yokohama/ is open (hours 10:00-22:00) but emphasizes crane/capsule.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8197,
+      "name": "AMFマーズ",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes AMFマーズ for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8425,
+      "name": "アドアーズ大和店Ａ館",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes アドアーズ大和店A館 for sdvx_vm (keys: sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8428,
+      "name": "アドアーズ横須賀",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes アドアーズ横須賀 for sdvx_vm (keys: sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8429,
+      "name": "アドアーズ橋本",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX_VM&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes アドアーズ橋本 for sdvx_vm (keys: sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8461,
+      "name": "アピナ橋本店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes アピナ橋本店 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8558,
+      "name": "イミグランデ大和店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes イミグランデ大和店 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8559,
+      "name": "イミグランデ日吉店３",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes イミグランデ日吉店 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8560,
+      "name": "イミグランデ本厚木店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes イミグランデ本厚木店 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8561,
+      "name": "イミグランデ溝口店２",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes イミグランデ溝口店 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8679,
+      "name": "シルクハット伊勢佐木町",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes シルクハット伊勢佐木町 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8681,
+      "name": "シルクハット大船",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes シルクハット大船 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8683,
+      "name": "シルクハット川崎ダイス",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes シルクハット川崎ダイス for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8684,
+      "name": "シルクハット本厚木",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes シルクハット本厚木 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8686,
+      "name": "シルクハット海老名マルイ",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes シルクハット海老名マルイ for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8795,
+      "name": "タイトーステーション海老名ビナウォーク店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes タイトーステーション海老名ビナウォーク店 for ddr_gold (keys: ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8844,
+      "name": "テクモピア座間店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes テクモピア座間店 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9009,
+      "name": "ラウンドワンさいか屋横須賀店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes ラウンドワンさいか屋横須賀店 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9016,
+      "name": "ラウンドワンららぽーと湘南平塚店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes ラウンドワンららぽーと湘南平塚店 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9058,
+      "name": "ラウンドワン川崎大師店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes ラウンドワン川崎大師店 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9076,
+      "name": "ラウンドワン横浜綱島店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes ラウンドワン横浜綱島店 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9077,
+      "name": "ラウンドワン横浜駅西口店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR20TH&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes ラウンドワン横浜駅西口店 for ddr_gold (keys: ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9202,
+      "name": "神奈川レジャーランド厚木店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes 神奈川レジャーランド厚木店 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9306,
+      "name": "ＧｉＧＯセンター南",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGOセンター南 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9397,
+      "name": "ＧｉＧＯ新杉田",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO新杉田 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9404,
+      "name": "ＧｉＧＯ本厚木",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO本厚木 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9405,
+      "name": "ＧｉＧＯ本藤沢",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO本藤沢 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9428,
+      "name": "ＧｉＧＯ海老名",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO海老名 for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9430,
+      "name": "ＧｉＧＯ港北インター",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO港北インター for iidx_lm,sdvx_vm (keys: iidx_lm,sdvx_vm). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9435,
+      "name": "ＧｉＧＯ相模原",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO相模原 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9437,
+      "name": "ＧｉＧＯ相模大野",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO相模大野 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9459,
+      "name": "ＧｉＧＯ綱島",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": null,
+        "sdvx_vm": null,
+        "ddr_gold": null
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "e-amusement Kanagawa variant locator includes GiGO綱島 for iidx_lm,sdvx_vm,ddr_gold (keys: iidx_lm,sdvx_vm,ddr_gold). Value null means presence confirmed, quantity unknown.",
+      "note": "Official e-amusement variant search (IIDX_LN / SDVX_VM / DDR20TH) lists this store. Merge into existing cab_models if any; do not invent cabinet counts. NFKC name match: shard fullwidth GiGO vs eagate GiGO.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8730,
+      "name": "ソユーゲームフィールド橋本店",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null
+      },
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=13",
+      "evidence_quote": "ソユーゲームフィールド橋本店 | 神奈川県相模原市緑区西橋本５丁目４番３号　コトエ橋本２Ｆ | maps @0.0,0.0",
+      "note": "Still on ALL.Net for maimai/CHUNITHM/ONGEKI so open, but official coords are 0,0 and shard has null. Nearby Apina Hashimoto is 35.59732,139.33731 (different building). Do not invent; geocode コトエ橋本.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8683,
+      "name": "シルクハット川崎ダイス",
+      "field": "website",
+      "current": "http://matahari-entertainment.co.jp/shop/7/",
+      "proposed": "https://silkhat-entertainment.co.jp/shop/7/",
+      "confidence": "certain",
+      "evidence_url": "https://silkhat-entertainment.co.jp/shop/7/",
+      "evidence_quote": "HTTP 301 from matahari-entertainment.co.jp/shop/7/ to silkhat-entertainment.co.jp/shop/7/",
+      "note": "Brand domain migrated from Matahari to Silk Hat Entertainment. Same path /shop/7/.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8679,
+      "name": "シルクハット伊勢佐木町",
+      "field": "website",
+      "current": "http://matahari-entertainment.co.jp/shop/10/",
+      "proposed": "https://silkhat-entertainment.co.jp/shop/10/",
+      "confidence": "likely",
+      "evidence_url": "https://silkhat-entertainment.co.jp/shop/7/",
+      "evidence_quote": "matahari-entertainment.co.jp redirects to silkhat-entertainment.co.jp (verified via /shop/7/ 301).",
+      "note": "Same operator domain migration; path /shop/10/ presumed parallel. Confirm path if 404.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8681,
+      "name": "シルクハット大船",
+      "field": "website",
+      "current": "http://matahari-entertainment.co.jp/shop/9/",
+      "proposed": "https://silkhat-entertainment.co.jp/shop/9/",
+      "confidence": "likely",
+      "evidence_url": "https://silkhat-entertainment.co.jp/shop/7/",
+      "evidence_quote": "matahari-entertainment.co.jp redirects to silkhat-entertainment.co.jp (verified via /shop/7/ 301).",
+      "note": "Same operator domain migration; path /shop/9/ presumed parallel.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8684,
+      "name": "シルクハット本厚木",
+      "field": "website",
+      "current": "http://matahari-entertainment.co.jp/shop/12/",
+      "proposed": "https://silkhat-entertainment.co.jp/shop/12/",
+      "confidence": "likely",
+      "evidence_url": "https://silkhat-entertainment.co.jp/shop/7/",
+      "evidence_quote": "matahari-entertainment.co.jp redirects to silkhat-entertainment.co.jp (verified via /shop/7/ 301).",
+      "note": "Same operator domain migration; path /shop/12/ presumed parallel.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8683,
+      "name": "シルクハット川崎ダイス",
+      "field": "other",
+      "current": {
+        "notes": "Cabs: pop'n music Sunny Park; 太鼓の達人 ソライロVer.; 太鼓の達人14"
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-14&paselif=false&page=1",
+      "evidence_quote": "Store is live on e-amusement for popn, IIDX, SDVX, DDR, jubeat, gitadora, nostalgia, polaris_chord and on ALL.Net for SEGA titles; ZIv notes still say pop'n Sunny Park and taiko Sorairo/14.",
+      "note": "Notes list multi-generation-old cab versions (Sunny Park, Sorairo, Taiko 14). Those strings are stale community notes, not evidence of current software. Propose clear or rewrite notes.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

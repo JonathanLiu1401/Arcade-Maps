@@ -1,0 +1,1187 @@
+{
+  "shard": 119,
+  "checked": 95,
+  "sources_used": [
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=21",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=21",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=21",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=21",
+    "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=3",
+    "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=3",
+    "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=3",
+    "https://location.am-all.net/alm/location?gm=34&lang=ja&ct=1000&at=3",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (JP-04, JP-22 multi-gkey)",
+    "https://map.bemanicn.com/s/{id} (20 Gansu shops)",
+    "data_raw/china_wahlap_maimai_dx.json",
+    "data_raw/china_wahlap_chunithm.json",
+    "scrapers/bemanicn.py TITLE_GAME map"
+  ],
+  "corrections": [
+    {
+      "id": 8463,
+      "name": "アピナ焼津店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=JUBEAT&pref=JP-22&paselif=false",
+      "evidence_quote": "e-amusement JUBEAT pref=JP-22 (Shizuoka) live list includes アピナ大須賀店 and タイトーステーション新浜松ザザシティ店 but does NOT list アピナ焼津店. Same-day e-amusement lists for IIDX/SDVX/pop'n/NOSTALGIA/GITADORA/REFLEC at this store still return アピナ焼津店.",
+      "note": "Remove jubeat only. Other Konami titles still on e-amusement. SEGA titles still on ALL.Net. taiko/other not checked via an official locator.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8791,
+      "name": "タイトーステーション新浜松ザザシティ店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=SDVX&pref=JP-22&paselif=false",
+      "evidence_quote": "e-amusement SDVX and SDVX_VM pref=JP-22 lists do not include タイトーステーション新浜松ザザシティ店. Live e-amusement for this store still lists IIDX (standard, not Lightning), jubeat, pop'n, NOSTALGIA only.",
+      "note": "Remove sdvx. IIDX present but not Lightning Model (no iidx_lm cab). pop'n present but not Pikapika. SEGA maimai/chunithm/ongeki still on ALL.Net.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8791,
+      "name": "タイトーステーション新浜松ザザシティ店",
+      "field": "location",
+      "current": {
+        "addr": "静岡県浜松市中央区鍛冶町１５サザンシティ西館２Ｆ"
+      },
+      "proposed": {
+        "addr": "静岡県浜松市中央区鍛冶町１５ザザシティ浜松西館２Ｆ"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-22&paselif=false",
+      "evidence_quote": "e-amusement IIDX row data-name=タイトーステーション新浜松ザザシティ店 data-address=浜松市中央区鍛冶町15ザザシティ浜松西館2F",
+      "note": "App address uses サザンシティ (Southern City), a homophone misspelling of ザザシティ (Zaza City Hamamatsu). Coordinates already match the Zaza City area.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8759,
+      "name": "タイトーステーション 仙台ベガロポリス店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "popn",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "groove_coaster",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-04&paselif=false",
+      "evidence_quote": "Full e-amusement Miyagi (JP-04) scrape for IIDX/SDVX/DDR/jubeat/pop'n/NOSTALGIA/GITADORA/polaris/DRS/REFLEC returns 17 Konami-hosting stores and does NOT include any ベガロポリス / 西多賀 Taito entry. Keyword search gkey=IIDX keyword=ベガロポリス returns 店舗が見つかりませんでした. ALL.Net still lists this store for maimai DX (gm=96) and CHUNITHM (gm=109) only, sid=25927, address 宮城県仙台市太白区西多賀５−２４−１ベガロポリス内.",
+      "note": "Venue still open for SEGA (maimai_dx + chunithm on ALL.Net). Remove all e-amusement Konami titles (iidx, jubeat, popn, nostalgia, gitadora). groove_coaster and taiko have no official public locator checked today; left in proposed list as unverified remainders rather than inventing a removal.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9198,
+      "name": "沼津バッティングスタジアム",
+      "field": "other",
+      "current": {
+        "related_id": 9199,
+        "note": "two pins at nearly the same address"
+      },
+      "proposed": {
+        "keep_both": true,
+        "reason": "e-amusement lists two separate facility names at the same Numazu site"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-22&paselif=false",
+      "evidence_quote": "e-amusement has both 沼津バッティングスタジアム (IIDX, NOSTALGIA; address 沼津市岡一色三竹道19-2) and 沼津バッティングセンター (pop'n; address 沼津市岡一色字三竹道19-2). ALL.Net lists 沼津バッティングスタジアム for chunithm and ongeki.",
+      "note": "Do not merge 9198 and 9199. They are separate e-amusement facility records (different game sets) at the same batting-center complex. Shard already splits games correctly.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1419,
+      "name": "一起玩天水秦州大城店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 1425,
+        "name_b": "一起玩潮趣嘉年华（步行街店）"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 1425,
+        "partner_id": 1425
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6013",
+      "evidence_quote": "Both refer to 一起玩 at 天水秦州 阳光饭店 / 中华西路步行街. 1419 is WAHLAP-named 一起玩天水秦州大城店; 1425 is BemaniCN 一起玩潮趣嘉年华（步行街店） at 中华西路步行街阳光饭店对面西北20米. Same operator and site.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1420,
+      "name": "一起玩天水麦积桥南店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 1424,
+        "name_b": "一起玩潮趣嘉年华"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 1424,
+        "partner_id": 1424
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4799",
+      "evidence_quote": "Both are 一起玩 at 天水麦积 桥南五道街. 1420 WAHLAP name 一起玩天水麦积桥南店; 1424 BemaniCN 一起玩潮趣嘉年华 at 桥南五道街商业街区2楼. Same coordinates 34.55369,105.884875.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2750,
+      "name": "天空之城兰州店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 2864,
+        "name_b": "天空之城游乐体验世界(兰州吾悦店)"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 2864,
+        "partner_id": 2864
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2185",
+      "evidence_quote": "Both are 天空之城 at 兰州安宁 吾悦广场3楼. 2750 WAHLAP; 2864 BemaniCN with fuller name. Coords within ~150m.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3531,
+      "name": "引力矩阵兰州七里河店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 3977,
+        "name_b": "星球派对引力矩阵（兰州店）"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 3977,
+        "partner_id": 3977
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4800",
+      "evidence_quote": "Both at 兰州七里河 万达茂 引力矩阵. 3531 WAHLAP; 3977 BemaniCN 星球派对引力矩阵. Identical coords 36.090119,103.681243.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3748,
+      "name": "斯跑曼兰州七里河店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 3749,
+        "name_b": "斯跑曼潮玩电竞馆"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 3749,
+        "partner_id": 3749
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2462",
+      "evidence_quote": "Both at 兰州七里河 万达茂 斯跑曼. 3748 WAHLAP 斯跑曼主题体育乐园; 3749 BemaniCN 斯跑曼潮玩电竞馆. Identical coords 36.089393,103.680169.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3919,
+      "name": "星期六家庭娱乐中心武威凉州店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 3920,
+        "name_b": "星期六家庭娱乐中心潮玩e空间"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 3920,
+        "partner_id": 3920
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3362",
+      "evidence_quote": "Both are 星期六 at 武威凉州 步行街南广场负一层. 3919 WAHLAP; 3920 BemaniCN. Coords within ~70m.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6897,
+      "name": "酷玩时代兰州城关店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 6900,
+        "name_b": "酷玩时代电玩城"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 6900,
+        "partner_id": 6900
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2398",
+      "evidence_quote": "Both at 兰州城关 雁滩路3113号 欣大购物广场三楼. 6897 WAHLAP; 6900 BemaniCN.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7353,
+      "name": "麦兜熊嘉峪关名嘉汇店",
+      "field": "other",
+      "current": {
+        "duplicate_of_candidate": 7356,
+        "name_b": "麦兜熊潮玩空间（名嘉汇店）"
+      },
+      "proposed": {
+        "action": "merge_or_dedupe",
+        "keep_preferred": 7356,
+        "partner_id": 7356
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4281",
+      "evidence_quote": "Both are 麦兜熊 at 嘉峪关 名嘉汇时尚中心二楼. Identical coords 39.779019,98.266311.",
+      "note": "WAHLAP+BemaniCN dual ingest created two map pins for one physical shop. Prefer the BemaniCN-linked row when it has richer hours/prices/arcades; keep WAHLAP as source evidence that maimai is still officially listed. Do not delete without maintainer merge logic.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3499,
+      "name": "庆阳潮玩庆阳西峰店",
+      "field": "other",
+      "current": {
+        "lat": 35.71743,
+        "lng": 107.638311,
+        "duplicate_coords_with": 1337
+      },
+      "proposed": {
+        "action": "investigate_same_mall",
+        "partner_id": 1337,
+        "partner_name": "V-play潮玩家庭娱乐中心"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1588",
+      "evidence_quote": "Shard pins 3499 庆阳潮玩庆阳西峰店 and 1337 V-play潮玩家庭娱乐中心 share exact coordinates 35.71743,107.638311 (东方丽晶茂). WAHLAP lists 庆阳潮玩; BemaniCN lists V-play with maimai DX + taiko + other. Possibly rename, same floor, or two shops in one mall.",
+      "note": "Not certain they are the same shop. Flag for human merge review. Both claim maimai_dx.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1236,
+      "name": "PPG潮玩汇兰州店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1075",
+      "evidence_quote": "arcades: title_id=1 quantity=1 version=2025; title_id=26 quantity=2 (other). status=1 updated_at=2026-02-15",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1337,
+      "name": "V-play潮玩家庭娱乐中心",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1588",
+      "evidence_quote": "arcades: title_id=1 qty=1 (maimai); title_id=15 qty=1 (taiko); title_id=26 qty=4 (other). status=1 updated_at=2026-01-24",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1424,
+      "name": "一起玩潮趣嘉年华",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4799",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=3 qty=2 (comment: 甘肃（目前）唯一完全体（两台）中二节奏). status=1 updated_at=2026-07-19",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1425,
+      "name": "一起玩潮趣嘉年华（步行街店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6013",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=17 qty=2 (other). No chunithm on BemaniCN. status=1 updated_at=2026-03-25",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1433,
+      "name": "七凰音游窝",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 2,
+        "chunithm": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5349",
+      "evidence_quote": "arcades: two title_id=1 entries qty=1 each (versions 最新最热 and ADX); title_id=3 qty=1. status=1 type=3",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1535,
+      "name": "丰乐嘉家庭娱乐中心（兰州华联店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7152",
+      "evidence_quote": "arcades: title_id=1 qty=1 version=国服2026. status=1 updated_at=2026-06-20",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1846,
+      "name": "凯普乐运动星球",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "drs": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2149",
+      "evidence_quote": "arcades: title_id=10 qty=1 (drs); title_id=17 qty=2 (other). No maimai. status=1; entry fee model price=118",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2534,
+      "name": "大森林时空屋兰州京都之星店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2894",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=3 qty=1; title_id=26 qty=2 (other). status=1 updated_at=2026-05-18",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2535,
+      "name": "大森林时空屋兰州大学城店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4121",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=3 qty=1; title_id=31 qty=1 (taiko). status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2864,
+      "name": "天空之城游乐体验世界(兰州吾悦店)",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "chunithm": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2185",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=3 qty=1 (comment 甘肃首台chunithm 但是只有一边); title_id=32 qty=2 (other). status=1 ea_status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3457,
+      "name": "布鲁格快乐街区兰州城关万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5682",
+      "evidence_quote": "arcades: title_id=1 qty=1. BemaniCN name now 星球派对布鲁格快乐街区（兰州城关万达店）. status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3749,
+      "name": "斯跑曼潮玩电竞馆",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2462",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=33 qty=1 (other); title_id=26 qty=4 (other). status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3796,
+      "name": "昊鑫时代广场三楼元气满满家庭娱乐中心",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3007",
+      "evidence_quote": "arcades: title_id=15 qty=1 version=12. status=1. Only taiko listed.",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3920,
+      "name": "星期六家庭娱乐中心潮玩e空间",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3362",
+      "evidence_quote": "arcades: title_id=1 qty=1 version=DX2025. status=1 updated_at=2026-07-26 comment 武威唯一一家有舞萌的机厅",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3977,
+      "name": "星球派对引力矩阵（兰州店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4800",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=22 qty=1 (other). status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4095,
+      "name": "星际传奇兰州万象城店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1,
+        "taiko": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2357",
+      "evidence_quote": "arcades: title_id=1 qty=1; title_id=31 qty=2 (taiko); title_id=17 qty=2 (other). status=1 updated_at=2026-07-25",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6005,
+      "name": "积木熊天水秦州万达店",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5028",
+      "evidence_quote": "arcades: title_id=1 qty=1 version=2025. status=1 updated_at=2026-07-13",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6900,
+      "name": "酷玩时代电玩城",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2398",
+      "evidence_quote": "arcades: title_id=1 qty=1 version=2025. status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6971,
+      "name": "金思乐娱乐中心",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5857",
+      "evidence_quote": "arcades: title_id=1 qty=1 version=舞萌DX2025. status=1 ea_status=1",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7356,
+      "name": "麦兜熊潮玩空间（名嘉汇店）",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4281",
+      "evidence_quote": "arcades: title_id=1 qty=1 version=2025 coin=6. status=1 ea_status=1 comment 只有一台机子",
+      "note": "BemaniCN community quantities (title_id mapped via scrapers/bemanicn.py TITLE_GAME). count_evidence should be bemanicn_listed. Only mapped slugs included.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1236,
+      "name": "PPG潮玩汇兰州店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1075",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1337,
+      "name": "V-play潮玩家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1588",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1424,
+      "name": "一起玩潮趣嘉年华",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4799",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=11 end=23",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1425,
+      "name": "一起玩潮趣嘉年华（步行街店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "11:00-23:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6013",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=11 end=23",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1433,
+      "name": "七凰音游窝",
+      "field": "hours",
+      "current": null,
+      "proposed": "02:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5349",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=2 end=26",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1535,
+      "name": "丰乐嘉家庭娱乐中心（兰州华联店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7152",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1846,
+      "name": "凯普乐运动星球",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2149",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2534,
+      "name": "大森林时空屋兰州京都之星店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2894",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2535,
+      "name": "大森林时空屋兰州大学城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4121",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2864,
+      "name": "天空之城游乐体验世界(兰州吾悦店)",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2185",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3457,
+      "name": "布鲁格快乐街区兰州城关万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5682",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=26",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3749,
+      "name": "斯跑曼潮玩电竞馆",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2462",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3796,
+      "name": "昊鑫时代广场三楼元气满满家庭娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3007",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=21",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3920,
+      "name": "星期六家庭娱乐中心潮玩e空间",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3362",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=9 end=21",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3977,
+      "name": "星球派对引力矩阵（兰州店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-02:00 (+1d)",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4800",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=26",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4095,
+      "name": "星际传奇兰州万象城店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2357",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6005,
+      "name": "积木熊天水秦州万达店",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5028",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6900,
+      "name": "酷玩时代电玩城",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-22:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2398",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=22",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6971,
+      "name": "金思乐娱乐中心",
+      "field": "hours",
+      "current": null,
+      "proposed": "09:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5857",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=9 end=21",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7356,
+      "name": "麦兜熊潮玩空间（名嘉汇店）",
+      "field": "hours",
+      "current": null,
+      "proposed": "10:00-21:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4281",
+      "evidence_quote": "BemaniCN shop.start_time/end_time: start=10 end=21",
+      "note": "Community-maintained hours on BemaniCN, not an official chain page. end_time>24 means next calendar day per bemanicn scraper convention.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1236,
+      "name": "PPG潮玩汇兰州店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1.3,
+        "maimai_dx_coins": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1075",
+      "evidence_quote": "BemaniCN: price=1.3; maimai arcade coin=3",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1337,
+      "name": "V-play潮玩家庭娱乐中心",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1.5,
+        "maimai_dx_coins": 4,
+        "taiko_coins": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1588",
+      "evidence_quote": "BemaniCN: price=1.5; maimai coin=4; taiko coin=2",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1424,
+      "name": "一起玩潮趣嘉年华",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 0.65,
+        "maimai_dx_coins": 5,
+        "chunithm_coins": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4799",
+      "evidence_quote": "BemaniCN: price=0.65; maimai coin=5 (7月18日涨价为5币); chunithm coin=4",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1425,
+      "name": "一起玩潮趣嘉年华（步行街店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 5
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6013",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=5",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1535,
+      "name": "丰乐嘉家庭娱乐中心（兰州华联店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1.0,
+        "maimai_dx_coins": 5
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7152",
+      "evidence_quote": "BemaniCN: price=1.0; maimai coin=5",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2534,
+      "name": "大森林时空屋兰州京都之星店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 3,
+        "chunithm_coins": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2894",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=3; chunithm coin=3",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2535,
+      "name": "大森林时空屋兰州大学城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1.5,
+        "maimai_dx_coins": 3,
+        "chunithm_coins": 3,
+        "taiko_coins": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4121",
+      "evidence_quote": "BemaniCN: price=1.5; maimai/chunithm/taiko coin=3",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2864,
+      "name": "天空之城游乐体验世界(兰州吾悦店)",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 4,
+        "chunithm_coins": 5
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2185",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=4; chunithm coin=5",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3457,
+      "name": "布鲁格快乐街区兰州城关万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5682",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=4",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3749,
+      "name": "斯跑曼潮玩电竞馆",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2462",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=4; 1元1币",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3920,
+      "name": "星期六家庭娱乐中心潮玩e空间",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 5
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3362",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=5",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3977,
+      "name": "星球派对引力矩阵（兰州店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4800",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=4",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4095,
+      "name": "星际传奇兰州万象城店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1.5,
+        "maimai_dx_coins": 4,
+        "taiko_coins": 9
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2357",
+      "evidence_quote": "BemaniCN: price=1.5; maimai coin=4; taiko coin=9 (单人9币双人18币)",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6005,
+      "name": "积木熊天水秦州万达店",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 0.5,
+        "maimai_dx_coins": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5028",
+      "evidence_quote": "BemaniCN: price=0.5; maimai coin=3; 舞萌专属套餐 50=100币",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6900,
+      "name": "酷玩时代电玩城",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2398",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=3; 现已改为一元一币",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6971,
+      "name": "金思乐娱乐中心",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 5
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5857",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=5",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7356,
+      "name": "麦兜熊潮玩空间（名嘉汇店）",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "unit_coin_cny": 1,
+        "maimai_dx_coins": 6
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4281",
+      "evidence_quote": "BemaniCN: price=1; maimai coin=6; 30元/15pc套票",
+      "note": "Community price field is unit CNY per coin; per-game coin costs from arcades[].coin. Not official chain pricing. Packs/membership often cheaper than unit price.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3457,
+      "name": "布鲁格快乐街区兰州城关万达店",
+      "field": "other",
+      "current": "布鲁格快乐街区兰州城关万达店",
+      "proposed": "星球派对布鲁格快乐街区（兰州城关万达店）",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5682",
+      "evidence_quote": "BemaniCN shop.name=星球派对布鲁格快乐街区（兰州城关万达店） address=甘肃省兰州市城关区天水北路城关万达广场2层 updated_at=2026-04-24",
+      "note": "WAHLAP still uses shorter 布鲁格快乐街区 name. Display-name update optional; same venue.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1433,
+      "name": "七凰音游窝",
+      "field": "other",
+      "current": {
+        "type_assumed": "public arcade"
+      },
+      "proposed": {
+        "type": "private_or_members_rhythm_bar",
+        "bemanicn_type": 3
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5349",
+      "evidence_quote": "BemaniCN type=3; price=12; hours start=2 end=26; comment 群号：116561964，窝内价格及规则在群公告; coin fields 0 on all machines",
+      "note": "Looks like a private/members 音游窝 rather than a public mall arcade. Pricing is session/group based (price=12), not per-coin.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1846,
+      "name": "凯普乐运动星球",
+      "field": "prices",
+      "current": null,
+      "proposed": {
+        "entry_fee_model": true,
+        "weekday_cny": 128,
+        "weekend_cny": 158,
+        "meituan_weekday_cny": 98,
+        "meituan_weekend_cny": 118
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2149",
+      "evidence_quote": "BemaniCN comment: 工作日单人128（美团98）周末单人158（美团118） 入场后可自由免费游玩至闭店; price field=118",
+      "note": "Not per-credit. All-you-can-play entry fee venue with DRS + other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "(shard_119 Japan coverage)",
+      "field": "other",
+      "current": "64 Japan venues in Shizuoka+Miyagi",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=21",
+      "evidence_quote": "ALL.Net live 2026-08-02: Shizuoka maimai=27 chunithm=29 ongeki=27 project_diva=5; Miyagi maimai=29 chunithm=29 ongeki=23 project_diva=6. Every SEGA-claiming shard venue matched an ALL.Net store name. No ALL.Net-only missing venue found for these two prefectures that is absent from the shard.",
+      "note": "Shared lookup found no missing SEGA venues for 静岡県/宮城県 relative to the shard. Konami e-amusement store sets also fully matched after name aliases (Round1 Stadium, SOYU/ソユー, Taito F イオン富士宮).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1419,
+      "name": "一起玩天水秦州大城店",
+      "field": "status",
+      "current": "open (assumed)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "evidence_quote": "data_raw/china_wahlap_maimai_dx.json still contains 一起玩天水秦州大城店 address 甘肃省天水市秦州区大城街道阳光饭店对面一起玩潮趣嘉年华 province=甘肃 placeId=4226",
+      "note": "Official WAHLAP maimai China locator still lists this shop. Duplicate of BemaniCN 1425 (see other correction).",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

@@ -1,0 +1,1210 @@
+{
+  "shard": 130,
+  "checked": 115,
+  "sources_used": [
+    "ALL.Net JP location.am-all.net gm=96/109/88/34 prefs Fukushima/Okinawa/Yamanashi/Tokushima/Shimane/Miyagi/Shizuoka/Toyama",
+    "ALL.Net intl maimai gm=98 ct=1009 NA and ct=1008 Macau",
+    "ALL.Net intl CHUNITHM gm=104 ct=1008/1009",
+    "Zenius-I-Vanisher API country dumps (Japan, China, Macau, Austria, Bolivia, Cyprus, Morocco, Saudi Arabia; Panama empty; USA HTTP 500)",
+    "BemaniCN map.bemanicn.com shops 2750,1691,417,224,2936,6283",
+    "Round1 USA location pages 018glc, 064mlp, 044dfm",
+    "Lisboeta Beebeeland page",
+    "Taito store search (no usable detail)",
+    "Sport Bowling Taira page",
+    "Arcade Monsters homepage"
+  ],
+  "corrections": [
+    {
+      "id": 8207,
+      "name": "Amusement PLABI Kashima Everia (アミューズメントPLABI鹿島エブリア店)",
+      "field": "other",
+      "current": "name=Amusement PLABI Kashima Everia; games=['other']; website=https://www.plabi.com/",
+      "proposed": "name=ＧｉＧＯいわきエブリア (GiGO Iwaki Everia); keep same Everia mall address; website should not be bare plabi.com",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=6",
+      "evidence_quote": "store_name ＧｉＧＯいわきエブリア | store_address 福島県いわき市鹿島町米田字日渡５いわきエブリア２階 | maps ＧｉＧＯいわきエブリア@36.9937290467013,140.905107495701",
+      "note": "Official ALL.Net ONGEKI list (2026-08-02) shows the Everia floor as GiGO, not PLABI. Same mall/coords. www.plabi.com now serves the GiGO shop-info portal.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8207,
+      "name": "Amusement PLABI Kashima Everia (アミューズメントPLABI鹿島エブリア店)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "ongeki",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=88&astep=6&sid=27897",
+      "evidence_quote": "ALL.Net shop sid=27897 ＧｉＧＯいわきエブリア title list includes オンゲキ (and 頭文字D THE ARCADE, etc.). maimai/CHUNITHM lists for Fukushima do not include this store.",
+      "note": "Only ONGEKI confirmed among SEGA rhythm titles. Do not invent maimai/chunithm.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8207,
+      "name": "Amusement PLABI Kashima Everia (アミューズメントPLABI鹿島エブリア店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-20:00",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/shop?gm=88&astep=6&sid=27897",
+      "evidence_quote": "Shop detail exists for ＧｉＧＯいわきエブリア; current public hours were not cleanly confirmed from GiGO portal (search redirects to renewal page).",
+      "note": "App hours look early for a GiGO. No certain replacement hours found; proposed null means do not trust the old PLABI hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8781,
+      "name": "タイトーステーションフジグラン北島店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=35",
+      "evidence_quote": "Tokushima CHUNITHM (5): アポロゲームセンター沖洲店; ＧｉＧＯスエヒロボウル徳島; アミューズメントパフェパレパレ田宮店; ラウンドワン徳島・万代店; フジグラン阿南. タイトーステーションフジグラン北島店 absent.",
+      "note": "maimai IS listed for this store on ALL.Net gm=96 same day. Official network listing outranks older ZIv which still named CHUNITHM VERSE with condition 0.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8781,
+      "name": "タイトーステーションフジグラン北島店",
+      "field": "games",
+      "current": "maimai_dx present (confirm keep)",
+      "proposed": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=35",
+      "evidence_quote": "Tokushima maimai includes タイトーステーションフジグラン北島店 | 徳島県板野郡北島町鯛浜字西ノ須１７４",
+      "note": "Paired with CHUNITHM absence. Taiko not an ALL.Net title; left in set only from prior ZIv (weak).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8364,
+      "name": "Taito Station Favore Fuchu (タイトーステーションファボーレ婦中店)",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "iidx",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "iidx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=15",
+      "evidence_quote": "Toyama maimai DX list has no ファボーレ/婦中/タイトーステーション entry. CHUNITHM and ONGEKI lists for at=15 likewise omit it.",
+      "note": "Strong evidence maimai and CHUNITHM network cabs are no longer online here. IIDX/taiko cannot be checked via ALL.Net. ZIv still lists them ~1 year ago with condition 0. Not asserting full store closure.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8370,
+      "name": "TaitoFStation AEONMALL Hamamatsu Ichino",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "groove_coaster",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=21",
+      "evidence_quote": "タイトーFSイオンモール浜松市野店 listed for maimai DX and CHUNITHM | 静岡県浜松市中央区天王町字諏訪１９８１−３ @34.73986,137.76311",
+      "note": "No removal. Official confirms maimai+CHUNITHM. gitadora/GC/taiko not re-verified beyond ZIv (~1 year).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8352,
+      "name": "Sweets Factory Pacc'n Aizuwakamatsu",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=6",
+      "evidence_quote": "スウィーツファクトリーパックン会津若松 on maimai and CHUNITHM | 福島県会津若松市幕内南町９−１０　ＭＥＧＡドンキ２階",
+      "note": "App correct for SEGA titles. No reliable cabinet counts found.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8631,
+      "name": "ゲームパニック甲府",
+      "field": "cab_models",
+      "current": {
+        "ddr_gold": null,
+        "iidx_lm": null,
+        "sdvx_vm": null
+      },
+      "proposed": {
+        "ddr_20th": 2,
+        "iidx_lm": 3,
+        "sdvx_vm": 4
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=984",
+      "evidence_quote": "IIDX Lightning Model x3; DDR WORLD (20th anniversary model) x2; SDVX Valkyrie model x4; CHUNITHM x3; maimai CiRCLE PLUS x2; ONGEKI x3; Polaris Chord x2. lastUpdate ~3 months. ALL.Net also lists maimai/chunithm/ongeki.",
+      "note": "ddr is 20th anniversary model, not gold. App game_counts already match ZIv; no count change needed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13113,
+      "name": "ROUND1 MENLO PARK MALL",
+      "field": "status",
+      "current": "separate venue id=13113 games=['maimai_dx'] only; parallel full record id=13070",
+      "proposed": "merge/remove as duplicate of id=13070",
+      "confidence": "certain",
+      "evidence_url": "https://www.round1usa.com/locations/064mlp",
+      "evidence_quote": "Official Round1 Menlo Park page + ALL.Net single ROUND1 MENLO PARK MALL entry; app has id 13113 (maimai-only, null coords) and id 13070 (full list).",
+      "note": "Duplicate import: allnet-only stub vs richer sibling. One physical store at 55 PARSONAGE ROAD, SPACE 1850A,EDISON, NJ 08837.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13101,
+      "name": "ROUND1 GREAT LAKES CROSSING",
+      "field": "status",
+      "current": "separate venue id=13101 games=['maimai_dx'] only; parallel full record id=13059",
+      "proposed": "merge/remove as duplicate of id=13059",
+      "confidence": "certain",
+      "evidence_url": "https://www.round1usa.com/locations/018glc",
+      "evidence_quote": "Official Round1 018glc page; ALL.Net single ROUND1 GREAT LAKES CROSSING; app has id 13101 stub and id 13059 fuller row.",
+      "note": "Duplicate import: allnet-only stub vs richer sibling. One physical store at 4220 Baldwin Rd. Suite A502, Auburn Hills, MI. 48326.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13102,
+      "name": "ROUND1 GREAT LAKES MALL",
+      "field": "status",
+      "current": "separate venue id=13102 games=['maimai_dx'] only; parallel full record id=13066",
+      "proposed": "merge/remove as duplicate of id=13066",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net NA lists one ROUND1 GREAT LAKES MALL; app has id 13102 maimai-only stub and id 13066 full row.",
+      "note": "Duplicate import: allnet-only stub vs richer sibling. One physical store at 7850 Mentor Ave. Suite 200A, Mentor, OH 44060.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12395,
+      "name": "DAVE & BUSTER'S ALA MOANA",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "1450 Ala Moana Blvd, Honolulu, HI 96814"
+      },
+      "proposed": "needs geocode; ALL.Net has 0.0,0.0; address is Ala Moana Center",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "DAVE & BUSTER'S ALA MOANA | 1450 Ala Moana Blvd, Honolulu, HI 96814 | @0.0,0.0",
+      "note": "Venue exists on official maimai NA list. App lat/lng null. Do not invent precise coords; maintainers should geocode Ala Moana Center unit.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12722,
+      "name": "JUNGLE FUN ISLAND",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": "1450 ALA Moana Blvd, #1218 Honolulu HI 96814"
+      },
+      "proposed": "needs geocode of suite 1218; ALL.Net 0.0,0.0",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "JUNGLE FUN ISLAND | 1450 ALA Moana Blvd, #1218 Honolulu HI 96814 | @0.0,0.0",
+      "note": "Confirmed on ALL.Net maimai NA. Coords missing. Same mall as D&B Ala Moana.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9587,
+      "name": "BEEBEE LAND",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-21:00",
+      "proposed": "Mon-Thu 10:00-21:00; Fri-Sun 10:00-22:00",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2750",
+      "evidence_quote": "营业时间：星期一至星期四 上午 10:00 – 晚上 9:00；星期五至星期日 上午 10:00 – 晚上 10:00。 status=1 updated 2026-07-30; maimai DX qty=2; PIU Phoenix qty=1.",
+      "note": "Counts already match. Hours wrong on Fri-Sun.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9587,
+      "name": "BEEBEE LAND",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 2,
+        "pump_it_up": 1
+      },
+      "proposed": {
+        "maimai_dx": 2,
+        "pump_it_up": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2750",
+      "evidence_quote": "title_id=1 maimai DX quantity=2 version CiRCLE PLUS coin=9; title_id=19 PUMP IT UP quantity=1 version Phoenix 2024 coin=9",
+      "note": "Also on ALL.Net Macau maimai list as BEEBEE LAND.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9589,
+      "name": "YURAKUCHO",
+      "field": "hours",
+      "current": "Mon-Fri 09:00-23:59; Sat-Sun 08:00-23:59",
+      "proposed": "Open ~09:00 weekdays / ~08:00 weekend-holiday; after 23:00 entry restricted; overnight self-serve with game-dependent auto power-off ~02:50-04:00",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1691",
+      "evidence_quote": "start_time=9 end_time=24; 周末/节假日8点开始营业。23点后有门禁... maimai凌晨两点五十左右会断网三点自动关机。 status=1 updated 2026-07-27; maimai qty=8 chunithm qty=6 taiko qty=2.",
+      "note": "App understates overnight operation. Counts for maimai/chunithm/taiko match BemaniCN.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9593,
+      "name": "新遊戲/兒童王國",
+      "field": "location",
+      "current": {
+        "lat": null,
+        "lng": null,
+        "addr": null
+      },
+      "proposed": {
+        "lat": 22.210412429476,
+        "lng": 113.55218634009,
+        "addr": "永華街57號僑光大廈地下H舖 (Edificio Chiao Kuong)"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/224",
+      "evidence_quote": "address 永華街57號僑光大廈地下H鋪; status=1 updated 2026-07-27; maimai DX qty=6; taiko qty=5; jubeat qty=2. ZIv 7061 coords 22.210412429476,113.55218634009.",
+      "note": "App has null coords/address/hours. May be adjacent to ALL.Net GAME WORLD(CHIAO KUONG).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9593,
+      "name": "新遊戲/兒童王國",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 2,
+        "maimai_dx": 6,
+        "taiko": 5
+      },
+      "proposed": {
+        "jubeat": 2,
+        "maimai_dx": 6,
+        "taiko": 5
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/224",
+      "evidence_quote": "title_id=1 qty=6 CiRCLE PLUS; title_id=31 qty=5; title_id=6 qty=2 beyond the Ave.",
+      "note": "Counts confirmed. ZIv lists additional titles (DRS/WACCA/DIVA) not in BemaniCN; not added.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9594,
+      "name": "栢蕙遊戲廣場",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "jubeat",
+        "other",
+        "reflec"
+      ],
+      "proposed": [
+        "jubeat",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2936",
+      "evidence_quote": "場內的DJMAX TECHNIKA3、DrumMania（V7、V8）、GuitarFreaks（V7、V8）、REFLEC BEAT limelight閒置多年，均沒有開機。 Active: jubeat qty=2 (poor buttons). updated 2026-05-17 status=1.",
+      "note": "Remove dead GITADORA and REFLEC as playable games.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9590,
+      "name": "佳景樂園",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "jubeat",
+        "other",
+        "reflec"
+      ],
+      "proposed": [
+        "gitadora",
+        "jubeat",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/417",
+      "evidence_quote": "arcades: jubeat qty=2; GD DrumMania qty=1 V7; GD GuitarFreaks qty=1 V7. No REFLEC. status=1 updated 2025-11-29.",
+      "note": "REFLEC not on current BemaniCN list or ZIv for this shop.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9595,
+      "name": "海濱遊樂 Kaihin Yuraku",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "other",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "other",
+        "popn",
+        "project_diva",
+        "taiko"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6283",
+      "evidence_quote": "SOUND VOLTEX VIVID WAVE comment 「暫停服務」，沒有開機 離線. chunithm qty=1; taiko qty=1 offline 3 songs. ZIv 2026-04-19 also: SDVX VIVID WAVE Out of service.",
+      "note": "SDVX should not show as playable. Not on ALL.Net Macau maimai list, so do not add maimai from ZIv FiNALE.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1746,
+      "name": "佳世客",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2426",
+      "evidence_quote": "ZIv lastUpdateTime 2014-01-29 (12 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1855,
+      "name": "利群商厦",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2427",
+      "evidence_quote": "ZIv lastUpdateTime 2012-07-16 (14 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5842,
+      "name": "百盛电玩",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2424",
+      "evidence_quote": "ZIv lastUpdateTime 2014-01-29 (12 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6698,
+      "name": "轻舞飞扬游乐场",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2423",
+      "evidence_quote": "ZIv lastUpdateTime 2012-07-17 (14 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7103,
+      "name": "青岛探索空间电玩城",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2403",
+      "evidence_quote": "ZIv lastUpdateTime 2012-07-14 (14 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4644,
+      "name": "欢天乐地",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2450",
+      "evidence_quote": "ZIv lastUpdateTime 2012-07-21 (14 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7153,
+      "name": "风云再起动漫体验中心",
+      "field": "status",
+      "current": "shown open with ZIv-derived games/counts",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2602",
+      "evidence_quote": "ZIv lastUpdateTime 2012-12-01 (13 years ago); no newer BemaniCN link or official source found in this pass.",
+      "note": "Decade-stale community row. Not asserting closure. Game claims and counts must not be treated as current.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 5842,
+      "name": "百盛电玩",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 4,
+        "reflec": 2,
+        "taiko": 3
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2424",
+      "evidence_quote": "lastUpdateTime 2014-01-29 21:25:03 (12 years ago)",
+      "note": "Remove displayed counts derived from 2014 data. proposed null = remove claim.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6698,
+      "name": "轻舞飞扬游乐场",
+      "field": "game_counts",
+      "current": {
+        "jubeat": 4,
+        "taiko": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2423",
+      "evidence_quote": "lastUpdateTime 2012-07-17 09:12:23 (14 years ago)",
+      "note": "Remove 2012 counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7103,
+      "name": "青岛探索空间电玩城",
+      "field": "game_counts",
+      "current": {
+        "iidx": 1,
+        "jubeat": 2,
+        "popn": 1,
+        "taiko": 1
+      },
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2403",
+      "evidence_quote": "lastUpdateTime 2012-07-14 21:56:27 (14 years ago)",
+      "note": "Remove 2012 counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3592,
+      "name": "快乐玩家 Happy Player (九州天虹)",
+      "field": "games",
+      "current": [
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "other",
+        "taiko",
+        "possible legacy maimai (not confirmed DX)"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10208",
+      "evidence_quote": "2025-06-06 machines include 舞萌 (maimai) cond=4; 太鼓の達人12 亞洲版 cond=2",
+      "note": "ZIv says maimai but not clearly DX. Do not set maimai_dx with certainty.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1783,
+      "name": "元气总动员 Happy Story (时代天街)",
+      "field": "game_counts",
+      "current": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10224",
+      "evidence_quote": "2025-06-09: CHUNITHM LUMINOUS x2; maimai DX PRiSM x2; SDVX VIVID WAVE x1; Taiko Nijiiro x1",
+      "note": "Matches app; ~1 year old ZIv, no BemaniCN link.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4744,
+      "name": "汤姆熊欢乐世界 Tom's World (成都王府井科华店)",
+      "field": "game_counts",
+      "current": {
+        "ddr": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "proposed": {
+        "ddr": 1,
+        "iidx": 1,
+        "jubeat": 1,
+        "maimai_dx": 2,
+        "sdvx": 1,
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10225",
+      "evidence_quote": "2025-06-09: IIDX CastHour; DDR A3 20th; SDVX EXCEED GEAR; jubeat; Taiko Nijiiro; maimai DX PRiSM x2",
+      "note": "Matches app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 296,
+      "name": "FlippArena Vöcklabruck",
+      "field": "hours",
+      "current": null,
+      "proposed": "Typically every 2nd Saturday 14:00-22:00; 29 EUR free-play entry; always check website",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5021",
+      "evidence_quote": "Only open every 2nd Saturday, entrance fee is 29€, all machines are on free play. Open days on website. lastUpdate 2024-07-15.",
+      "note": "Critical traveler note. Also ZIv lists maimai FiNALE (private, not DX network) often present; app omits maimai entirely.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 296,
+      "name": "FlippArena Vöcklabruck",
+      "field": "games",
+      "current": [
+        "museca",
+        "other",
+        "sdvx",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "museca",
+        "other",
+        "sdvx",
+        "stepmaniax",
+        "maimai FiNALE (private/offline, not DX)"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5021",
+      "evidence_quote": "machines include maimai FiNALE; info: StepmaniaX and MaiMai are usually always there.",
+      "note": "Do not map private FiNALE to maimai_dx network flag without a separate offline marker.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9922,
+      "name": "Adventure Land, Morocco Mall",
+      "field": "games",
+      "current": [
+        "pump_it_up"
+      ],
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2917",
+      "evidence_quote": "lastUpdate 2026-07-23: Pump It Up PRIME | Currently not available. Morocco mall being renovated; many arcade parts closed as of 2026-07-07.",
+      "note": "Remove active PIU claim or mark unavailable. Venue may still exist.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 299,
+      "name": "Ocean Park Wien",
+      "field": "status",
+      "current": "games=['other','pump_it_up']",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4637",
+      "evidence_quote": "lastUpdateTime 2019-08-01 (7 years ago); Pump It Up NX",
+      "note": "Stale. Current operation unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7453,
+      "name": "Play3R5 Arcade",
+      "field": "status",
+      "current": "games=['other']",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5028",
+      "evidence_quote": "lastUpdate 2019-08-04 (6 years ago); last visited September 2018",
+      "note": "Stale.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 327,
+      "name": "NextLevel Games",
+      "field": "status",
+      "current": "games=['pump_it_up']",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5564",
+      "evidence_quote": "lastUpdate 2020-05-19 (6 years ago)",
+      "note": "No 2024+ confirmation.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11222,
+      "name": "Adventure Island",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Saudi%20Arabia",
+      "evidence_quote": "Country query returned only Atallah Happy Land Park (1 arcade). Adventure Island not present.",
+      "note": "Could not verify. Same for other non-Atallah Saudi rows.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11227,
+      "name": "Iceland",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Saudi%20Arabia",
+      "evidence_quote": "Saudi dump has a single arcade (Atallah Happy Land Park); this name not present.",
+      "note": "Unverified orphan relative to current ZIv country dump.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11232,
+      "name": "PlayOcity",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Saudi%20Arabia",
+      "evidence_quote": "Saudi dump has a single arcade (Atallah Happy Land Park); this name not present.",
+      "note": "Unverified orphan relative to current ZIv country dump.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11236,
+      "name": "Sparky's",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Saudi%20Arabia",
+      "evidence_quote": "Saudi dump has a single arcade (Atallah Happy Land Park); this name not present.",
+      "note": "Unverified orphan relative to current ZIv country dump.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7399,
+      "name": "Crazy Park Panama",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Panama",
+      "evidence_quote": "{\"arcades\":[],\"success\":true} for Panama (also empty for Panamá / Republic of Panama)",
+      "note": "All Panama shard rows unverified this pass. Not asserting closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7412,
+      "name": "Funlandia @ Town Center",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Panama",
+      "evidence_quote": "{\"arcades\":[],\"success\":true} for Panama (also empty for Panamá / Republic of Panama)",
+      "note": "All Panama shard rows unverified this pass. Not asserting closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7417,
+      "name": "Game World @ Megapolis Outlets",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Panama",
+      "evidence_quote": "{\"arcades\":[],\"success\":true} for Panama (also empty for Panamá / Republic of Panama)",
+      "note": "All Panama shard rows unverified this pass. Not asserting closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7426,
+      "name": "Johnny & Red's @ Westland Premium Outlet",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Panama",
+      "evidence_quote": "{\"arcades\":[],\"success\":true} for Panama (also empty for Panamá / Republic of Panama)",
+      "note": "All Panama shard rows unverified this pass. Not asserting closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7442,
+      "name": "Space Play World",
+      "field": "status",
+      "current": "listed from ziv",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Panama",
+      "evidence_quote": "{\"arcades\":[],\"success\":true} for Panama (also empty for Panamá / Republic of Panama)",
+      "note": "All Panama shard rows unverified this pass. Not asserting closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12028,
+      "name": "ARCADE MONSTERS",
+      "field": "games",
+      "current": "chunithm listed among many; maimai confirmed",
+      "proposed": "maimai_dx confirmed on SEGA NA locator; chunithm is NOT on SEGA CHUNITHM international USA list (USA No Installed Locations)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ARCADE MONSTERS | 6362 INTERNATIONAL DR ORLANDO FL 32819 | 28.4596379,-81.4683551 present on maimai NA. CHUNITHM gm=104 ct=1009: USA(No Installed Locations).",
+      "note": "Applies policy-wide to US chunithm flags in this shard (Round1s etc.). May still be private/offline cabs. Full multi-game counts not re-verified (ZIv USA API HTTP 500).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13059,
+      "name": "Round1 Auburn Hills (Great Lakes Crossing)",
+      "field": "hours",
+      "current": null,
+      "proposed": "Sun-Sat 10AM-2AM",
+      "confidence": "certain",
+      "evidence_url": "https://www.round1usa.com/locations/018glc",
+      "evidence_quote": "Hours of Operation: Sun - Sat 10AM to 2AM; 4220 Baldwin Rd, Auburn Hills, MI 48326",
+      "note": "Also merge with stub 13101.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13070,
+      "name": "Round1 Bowling & Arcade (Menlo Park Mall)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-26:00",
+      "proposed": "Sun-Sat 10AM-2AM",
+      "confidence": "certain",
+      "evidence_url": "https://www.round1usa.com/locations/064mlp",
+      "evidence_quote": "Hours of Operation: Sun - Sat 10AM to 2AM",
+      "note": "Equivalent to 10-26; normalize to official wording.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13091,
+      "name": "ROUND1 DEPTFORD MALL",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-26:00",
+      "proposed": "Sun-Sat 10AM-2AM",
+      "confidence": "certain",
+      "evidence_url": "https://www.round1usa.com/locations/044dfm",
+      "evidence_quote": "Hours of Operation: Sun - Sat 10AM to 2AM",
+      "note": "Official Round1 page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GAME WORLD (CHIAO KUONG)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GAME WORLD (CHIAO KUONG)",
+        "addr": "R.GRACIOSA 57 R/C+SL, FLAT H, ED. IND. CHIAO KUONG, MACAU",
+        "lat": 22.210261445944,
+        "lng": 113.552542111048,
+        "games": [
+          "maimai_dx"
+        ],
+        "country": "Macau"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1008",
+      "evidence_quote": "Macau maimai: GAME WORLD(CHIAO KUONG); YURAKUCHO; BEEBEE LAND.",
+      "note": "May be same complex as 新遊戲/兒童王國. Merge if same operator/room; else add.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 297,
+      "name": "LosKrochn",
+      "field": "games",
+      "current": [
+        "groove_coaster",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "groove_coaster",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9134",
+      "evidence_quote": "2024-12-04: StepManiaX present; Groove Coaster 3 in repair; Jubeat Quebell removed indefinitely.",
+      "note": "App list OK. GC may still be in repair.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8503,
+      "name": "アミュージアム南アルプス店",
+      "field": "games",
+      "current": [
+        "jubeat",
+        "nostalgia",
+        "reflec"
+      ],
+      "proposed": [
+        "jubeat",
+        "nostalgia",
+        "reflec"
+      ],
+      "confidence": "unverified",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=jubeat&pref=JP-19",
+      "evidence_quote": "e-amusement facility search returned login-gated shell without store list when fetched without session (2026-08-02).",
+      "note": "Could not re-verify Konami lineup. No closure evidence. Leave as-is, unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8631,
+      "name": "ゲームパニック甲府",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=18",
+      "evidence_quote": "ゲームパニック甲府 on maimai, CHUNITHM, ONGEKI | 山梨県甲府市国母5-20-24",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8934,
+      "name": "プラサカプコン甲府店",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=18",
+      "evidence_quote": "プラサカプコン甲府店 on maimai, CHUNITHM, ONGEKI, Project DIVA | 山梨県中巨摩郡昭和町西条３７１７",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9177,
+      "name": "楽市楽座イオンモール甲府店",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=18",
+      "evidence_quote": "楽市楽座イオンモール甲府店 on maimai and CHUNITHM",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9250,
+      "name": "ＧＡＭＥＱ",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=109&lang=ja&ct=1000&at=18",
+      "evidence_quote": "ＧＡＭＥＱ on CHUNITHM only (matches app) | 山梨県富士吉田市上吉田２ノ５ノ１ＱＳＴＡ４Ｆ",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9252,
+      "name": "ＧｉＧＯ　ＭＥＧＡドンキＵＮＹ石和",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=18",
+      "evidence_quote": "ＧｉＧＯ　ＭＥＧＡドンキＵＮＹ石和 on maimai, CHUNITHM, ONGEKI",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9063,
+      "name": "ラウンドワン徳島・万代店",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=35",
+      "evidence_quote": "ラウンドワン徳島・万代店 on maimai, CHUNITHM, ONGEKI",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9304,
+      "name": "ＧｉＧＯスエヒロボウル徳島",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=35",
+      "evidence_quote": "ＧｉＧＯスエヒロボウル徳島 on maimai, CHUNITHM, ONGEKI, DIVA",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8495,
+      "name": "アミパラ松江店",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=31",
+      "evidence_quote": "アミパラ松江店 on maimai, CHUNITHM, ONGEKI",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9411,
+      "name": "ＧｉＧＯ松江",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=31",
+      "evidence_quote": "ＧｉＧＯ松江 on maimai, CHUNITHM, ONGEKI, DIVA",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9563,
+      "name": "ＰＡＬＯ松江",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=31",
+      "evidence_quote": "ＰＡＬＯ松江 on maimai, CHUNITHM, ONGEKI, DIVA",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9586,
+      "name": "ｙｏｕｍｅ　ＣＩＲＣＵＳ出雲店",
+      "field": "games",
+      "current": "SEGA titles as in app",
+      "proposed": "SEGA titles confirmed still on ALL.Net (no change)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=31",
+      "evidence_quote": "ｙｏｕｍｅ　ＣＩＲＣＵＳ出雲店 on maimai, CHUNITHM, ONGEKI",
+      "note": "Positive confirmation. Konami titles at these venues not re-checked (e-amusement login-gated).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12040,
+      "name": "ARCADE TIME ENTERTAINMENT ORLANDO",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ARCADE TIME ENTERTAINMENT ORLANDO present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12622,
+      "name": "GOLDEN ARCADE INC. (ARCADIA)",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "GOLDEN ARCADE INC. (ARCADIA) present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13121,
+      "name": "ROUND1 PEMBROKE LAKES MALL",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 PEMBROKE LAKES MALL present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12530,
+      "name": "FUN FACTORY - MAUI MALL",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "FUN FACTORY - MAUI MALL present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12531,
+      "name": "FUN FACTORY - MILILANI",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "FUN FACTORY - MILILANI present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 12532,
+      "name": "FUN FACTORY - PEARL CITY GATEWAY",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "FUN FACTORY - PEARL CITY GATEWAY present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13308,
+      "name": "THE GAME ROOM POWERED BY HASBRO",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "THE GAME ROOM POWERED BY HASBRO present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13108,
+      "name": "ROUND1 LAS VEGAS SOUTH PREMIUM OUTLETS",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 LAS VEGAS SOUTH PREMIUM OUTLETS present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13111,
+      "name": "ROUND1 MEADOWOOD MALL",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 MEADOWOOD MALL present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13112,
+      "name": "ROUND1 MEADOWS MALL",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 MEADOWS MALL present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13200,
+      "name": "SOUTH POINT",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "SOUTH POINT present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13322,
+      "name": "THE ORLEANS",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "THE ORLEANS present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13095,
+      "name": "ROUND1 FAIRFIELD COMMONS",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 FAIRFIELD COMMONS present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13091,
+      "name": "ROUND1 DEPTFORD MALL",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 DEPTFORD MALL present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13106,
+      "name": "ROUND1 JERSEY GARDEN",
+      "field": "games",
+      "current": "maimai_dx claimed",
+      "proposed": "maimai_dx confirmed on ALL.Net NA (no change for maimai)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ROUND1 JERSEY GARDEN present in North America maimai store list (fetched 2026-08-02).",
+      "note": "Other non-maimai games/counts not re-verified this pass (ZIv USA API failed).",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

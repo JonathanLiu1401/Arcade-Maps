@@ -1,0 +1,398 @@
+{
+  "shard": 122,
+  "checked": 108,
+  "sources_used": [
+    "https://location.am-all.net/alm/location (JP gm=96/109/88/34 at=14 Niigata and at=9 Gunma; intl gm=98 ct=1009 NA)",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (JP-15 and JP-10 major bemani gkeys)",
+    "https://www.kyowa-corp.co.jp/am/shop/15-01",
+    "https://www.kyowa-corp.co.jp/am/shop/15-02",
+    "https://www.taito.co.jp/store/00002090",
+    "https://www.taito.co.jp/store/00002103",
+    "https://www.round1.co.jp/shop/tenpo/niigata-niigata.html",
+    "https://2ndlooparcade.com/",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Greece",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Switzerland",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Japan"
+  ],
+  "corrections": [
+    {
+      "id": 8472,
+      "name": "アピナ長岡店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-15&paselif=false&page=1",
+      "evidence_quote": "6 stores found for DDR in Niigata; data-name list omits APINA Nagaoka; listed Joetsu Leisure, Taito Joetsu, Round1 Niigata, Feedy, Playhouse Erina, GiGO Shibata",
+      "note": "e-amusement Niigata DDR (2026-08-02) omits APINA Nagaoka. Operator page still lists DDR X. Prefer network official: remove networked ddr unless on-site. ALL.Net still has SEGA titles.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8472,
+      "name": "アピナ長岡店",
+      "field": "other",
+      "current": "info_text starts with DDRX1 final confirm 2009-01-09",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://www.kyowa-corp.co.jp/am/shop/15-02",
+      "evidence_quote": "Operator music list includes IIDX LIGHTNING MODEL, CHUNITHM gold model, maimai DX, ONGEKI, SDVX Valkyrie, GITADORA Arena; no 2009-era text.",
+      "note": "proposed null = strip stale info_text. Hours 10:00-24:00 match app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8828,
+      "name": "タイトーＦステーション燕三条店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "groove_coaster",
+        "maimai_dx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-15&paselif=false&page=1",
+      "evidence_quote": "Niigata IIDX list (15 stores) has Taito F Station Aeon Niigata West and Taito F Station Joetsu but NOT Tsubame-Sanjo. jubeat JP-15 (5 stores) also omits Tsubame-Sanjo.",
+      "note": "Remove iidx and jubeat. ALL.Net still lists chunithm+maimai_dx for this store. Taito page machine list did not render (NOW LOADING).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9230,
+      "name": "ＦｅｅｄｙＡｒｃａｄｅ新潟亀田インター",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "maimai_dx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=14",
+      "evidence_quote": "Selected area Niigata (15 stores). ONGEKI store_name list has no Feedy. Feedy appears on maimai gm=96 and CHUNITHM gm=109 only.",
+      "note": "Remove ongeki. e-amusement still lists Feedy Diner and Arcade for ddr+gitadora (lat=37.87624975, lng=139.0816577).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9230,
+      "name": "ＦｅｅｄｙＡｒｃａｄｅ新潟亀田インター",
+      "field": "other",
+      "current": "name=FeedyArcade fullwidth form",
+      "proposed": "name variants: ALL.Net fullwidth FeedyArcade; e-amusement=Feedy Diner&Arcade Niigata Kameda Inter",
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=DDR&pref=JP-15&paselif=false&page=1",
+      "evidence_quote": "data-name=Feedy Diner&Arcade Niigata Kameda Inter; data-address includes Aeon Mall Niigata Kameda Inter 2F",
+      "note": "Optional display-name update to Konami form. Same Aeon Mall 2F location.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9487,
+      "name": "ＨａｐｉｐｉＬａｎｄ十日町",
+      "field": "games",
+      "current": [
+        "ongeki"
+      ],
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=14",
+      "evidence_quote": "ONGEKI Niigata 15 stores has no Hapipi. Absent also from maimai (15), CHUNITHM (20), DIVA (2).",
+      "note": "Remove ongeki claim. Physical permanent closure not independently proven; only SEGA network absence.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9487,
+      "name": "ＨａｐｉｐｉＬａｎｄ十日町",
+      "field": "status",
+      "current": "open (implied; listed with ongeki)",
+      "proposed": "no longer on ALL.Net; SEGA service unverified / likely removed",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=88&lang=ja&ct=1000&at=14",
+      "evidence_quote": "Venue absent from all four ALL.Net Niigata result pages as of 2026-08-02.",
+      "note": "Recommend field/operator check before hard-deleting pin.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8958,
+      "name": "マトリクス前橋",
+      "field": "location",
+      "current": {
+        "addr": "群馬県前橋市小相木町５５８−１",
+        "lat": 36.3727438561573,
+        "lng": 139.05966141052
+      },
+      "proposed": {
+        "addr": "群馬県前橋市小相木町563-3",
+        "lat": 36.37294244,
+        "lng": 139.059637
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-10&paselif=false&page=1",
+      "evidence_quote": "data-name=マトリクス前橋店 data-address=前橋市小相木町563-3 data-latitude=36.37294244 data-longitude=139.059637",
+      "note": "App address ends 558-1; official e-amusement is 563-3. Pin only about 20m off; fix address string.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8958,
+      "name": "マトリクス前橋",
+      "field": "other",
+      "current": "name without ten suffix",
+      "proposed": "マトリクス前橋店 (e-amusement form)",
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-10&paselif=false&page=1",
+      "evidence_quote": "data-name=マトリクス前橋店",
+      "note": "Optional rename. ALL.Net uses form without ten.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "LUCKY STRIKE ALISO VIEJO",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "26501 Aliso Creek rd Aliso Viejo ca 92656",
+        "country": "United States",
+        "pref": "CA",
+        "lat": 33.578837,
+        "lng": -117.7248752
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "store_name=LUCKY STRIKE ALISO VIEJO; store_address=26501 Aliso Creek rd Aliso Viejo ca 92656; GoogleMap @33.578837,-117.7248752",
+      "note": "On official ALL.Net maimai DX International NA list (gm=98/ct=1009) as of 2026-08-02; not in shard_122 CA set. Only maimai_dx confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "KIDDLETON",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "14006 riverside dr sheman oaks Ca 91423",
+        "country": "United States",
+        "pref": "CA",
+        "lat": 34.1568918,
+        "lng": -118.43639
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "store_name=KIDDLETON; store_address=14006 riverside dr sheman oaks Ca 91423; GoogleMap @34.1568918,-118.43639",
+      "note": "On official ALL.Net maimai DX International NA list (gm=98/ct=1009) as of 2026-08-02; not in shard_122 CA set. Only maimai_dx confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "CAMELOT GOLFLAND",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "3200 Carpenter Ave. Anaheim, CA",
+        "country": "United States",
+        "pref": "CA",
+        "lat": 33.8503993,
+        "lng": -117.8513949
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "store_name=CAMELOT GOLFLAND; store_address=3200 Carpenter Ave. Anaheim, CA; GoogleMap @33.8503993,-117.8513949",
+      "note": "On official ALL.Net maimai DX International NA list (gm=98/ct=1009) as of 2026-08-02; not in shard_122 CA set. Only maimai_dx confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "SIZIGI 20TH STREET",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "933 20th st san fransisco ca 94107",
+        "country": "United States",
+        "pref": "CA",
+        "lat": null,
+        "lng": null,
+        "note_coords": "ALL.Net returns 0,0; geocode from address before adding pin"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "store_name=SIZIGI 20TH STREET; store_address=933 20th st san fransisco ca 94107; GoogleMap @0.0,0.0 (do not pin at 0,0)",
+      "note": "On official ALL.Net maimai DX International NA list (gm=98/ct=1009) as of 2026-08-02; not in shard_122 CA set. Only maimai_dx confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "ONE MORE EXTRA STAGE",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "games": [
+          "maimai_dx"
+        ],
+        "addr": "1313 w El Camino Real , suite A, Mountain View , Ca 94040",
+        "country": "United States",
+        "pref": "CA",
+        "lat": null,
+        "lng": null,
+        "note_coords": "ALL.Net returns 0,0; geocode from address before adding pin"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "store_name=ONE MORE EXTRA STAGE; store_address=1313 w El Camino Real , suite A, Mountain View , Ca 94040; GoogleMap @0.0,0.0 (do not pin at 0,0)",
+      "note": "On official ALL.Net maimai DX International NA list (gm=98/ct=1009) as of 2026-08-02; not in shard_122 CA set. Only maimai_dx confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13109,
+      "name": "ROUND1 MAIN PLACE MALL",
+      "field": "other",
+      "current": "separate id with only maimai_dx; near id 13068 full Round1 Main Place Mall",
+      "proposed": "merge into 13068 (or mark as duplicate of 13068)",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net single entry ROUND1 MAIN PLACE MALL | 2800 N. Main St. Suite 1100, Santa Ana, CA 92705. Shard has id=13068 (same suite, full bemani via ziv/round1usa) and id=13109 (maimai_dx only via allnet).",
+      "note": "Same physical Round1; double pin. Keep richer 13068 and attach allnet maimai.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13135,
+      "name": "ROUND1 STONESTOWN GALLERIA",
+      "field": "other",
+      "current": "separate id with only maimai_dx; near id 13074 Round1 Stonestown",
+      "proposed": "merge into 13074 (or mark as duplicate of 13074)",
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "ALL.Net: ROUND1 STONESTOWN GALLERIA | 3251 20th Ave, San Francisco, CA 94132. id=13135 uses that address; id=13074 uses 285 Winston Dr Space No. B1 for same Stonestown Round1.",
+      "note": "Same mall store, two pins. Merge recommended.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13077,
+      "name": "Round1 Bowling & Arcade (Westfield Plaza Bonita)",
+      "field": "location",
+      "current": {
+        "addr": "3030 Plaza Bonita Road National City California, 91902, National City"
+      },
+      "proposed": {
+        "addr": "3030 Plaza Bonita Road, Suite 1025, National City, CA, 91950"
+      },
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1009",
+      "evidence_quote": "store_name=ROUND1 PLAZA BONITA; store_address=3030 Plaza Bonita Road, Suite 1025, National City, CA, 91950",
+      "note": "ALL.Net has Suite 1025 and ZIP 91950; app has ZIP 91902 and no suite.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 11969,
+      "name": "2ND LOOP ARCADE",
+      "field": "location",
+      "current": {
+        "addr": "18529 s western gardena ca 90248",
+        "lat": 33.8626797,
+        "lng": -118.3098189
+      },
+      "proposed": {
+        "addr": "18529 S Western Ave, Torrance/Gardena area, CA 90504/90248 (confirm city)",
+        "lat": 33.8626797,
+        "lng": -118.3098189
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://2ndlooparcade.com/",
+      "evidence_quote": "Site lists 18529 S Western Ave / Torrance, CA 90504. ALL.Net lists 18529 s western gardena ca 90248 with coords @33.8626797,-118.3098189.",
+      "note": "City/ZIP disagree (Torrance 90504 vs Gardena 90248). Coords match ALL.Net. maimai still listed on both ALL.Net and operator site.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7609,
+      "name": "\"Lobby Best Cocktails\"",
+      "field": "other",
+      "current": "listed open with ddr",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Greece",
+      "evidence_quote": "id 6359 lastUpdateTime=2024-07-06 (2 years ago); information: Shady arcade with no name, has ddr 2. Address also does not exist.",
+      "note": "Only ZIv; 2 years stale; address reliability poor. Not an official open/closed claim. Travelers should not rely on this pin.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7627,
+      "name": "VIllage CInemas Pagkrati",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "ZIv describes as dead arcade; community-stale",
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Greece",
+      "evidence_quote": "id 6853 lastUpdateTime=2023-02-01; information: Dead arcade (it used to have guitar hero); machines=[]",
+      "note": "Community note only; not official closure. Mark low trust.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 10936,
+      "name": "Gameorama",
+      "field": "games",
+      "current": [
+        "drs",
+        "other"
+      ],
+      "proposed": [
+        "drs",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8520",
+      "evidence_quote": "ZIv API lastUpdateTime=2025-09-17; machines include DANCERUSH STARDOM and maimai FiNALE. App already has drs+other.",
+      "note": "Verification note only. Do NOT add maimai_dx: FiNALE is offline, not DX network. ZIv about 10 months old.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

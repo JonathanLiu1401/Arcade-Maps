@@ -1,0 +1,984 @@
+{
+  "shard": 121,
+  "checked": 96,
+  "sources_used": [
+    "https://location.am-all.net/alm/location (gm=96/109/88/34; at=6 Fukushima, at=8 Tochigi)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+    "https://map.bemanicn.com/s/{id} Ningxia shops (Inertia JSON)",
+    "https://www.taito.co.jp/store/00002105,00001836,00002059,00001968,00002152",
+    "https://www.round1.co.jp/shop/tenpo/tochigi-utunomiya.html,fukushima-fukushima.html,fukushima-kooriyama.html",
+    "https://www.kyowa-corp.co.jp/am/shop/09-01",
+    "https://seaside-ap.jp/ and machine list",
+    "https://shop.soyu-am.jp/sukagawa/, /iwakionahama/",
+    "https://www.amipa-koriyama.com/",
+    "https://bandainamco-am.co.jp/game_center/loc/koriyama/",
+    "https://www.gigo.co.jp/shops?area=07,09 and /shops/{slug}",
+    "Belgium official sites: big-c.be, game-inn.be, gamelandarcade.com, gamestate.com, gateninety-world.com, space-liege.be, thehouseoffun.be, reflex.be, bowlfactory.eu"
+  ],
+  "corrections": [
+    {
+      "id": 8562,
+      "name": "インターパークプラスワン 宇都宮店",
+      "field": "other",
+      "current": {
+        "id": 8562,
+        "games": [
+          "ddr",
+          "drs",
+          "gitadora",
+          "iidx",
+          "jubeat",
+          "nostalgia",
+          "polaris_chord",
+          "popn",
+          "sdvx"
+        ],
+        "src": [
+          "eagate"
+        ]
+      },
+      "proposed": "merge into id 8286 INTER PARK+1宇都宮 (same address インターパーク6-5-1; pins ~25m apart). Keep Konami games from this e-amusement record on the merged venue.",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=8",
+      "evidence_quote": "store_name INTER PARK+1宇都宮 / store_address 栃木県宇都宮市インターパーク６−５−１ @36.4881173,139.905569",
+      "note": "Shard split SEGA (8286 allnet/ziv) and Konami (8562 eagate) for one physical arcade.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8286,
+      "name": "INTER PARK+1宇都宮",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva",
+        "ddr",
+        "drs",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "nostalgia",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=8",
+      "evidence_quote": "INTER PARK+1宇都宮 on ALL.Net maimai/chunithm/ongeki/project_diva; paired e-amusement record 8562 at same address lists Konami titles",
+      "note": "Only valid after merge with 8562. e-amusement HTML search required login so Konami list not re-fetched live.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8716,
+      "name": "ソユーゲームフィールドいわき小名浜店",
+      "field": "other",
+      "current": {
+        "id": 8716,
+        "games": [
+          "other",
+          "polaris_chord"
+        ],
+        "src": [
+          "eagate",
+          "ziv"
+        ]
+      },
+      "proposed": "merge into id 8724 ソユーゲームフィールド小名浜店 (same AEON Mall Onahama 3F; pins ~164m). Official page uses ソユーゲームフィールドいわき小名浜店.",
+      "confidence": "certain",
+      "evidence_url": "https://shop.soyu-am.jp/iwakionahama/",
+      "evidence_quote": "ソユーゲームフィールドいわき小名浜店 / 福島県いわき市小名浜字辰巳町79番地 イオンモールいわき小名浜3階 / 営業時間 10：00～21：00",
+      "note": "8724 holds ALL.Net SEGA games; 8716 holds e-amusement polaris_chord.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8724,
+      "name": "ソユーゲームフィールド小名浜店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=6",
+      "evidence_quote": "ソユーゲームフィールド小名浜店 on ALL.Net maimai/chunithm/ongeki; twin eagate record 8716 adds polaris_chord",
+      "note": "Prefer official name ソユーゲームフィールドいわき小名浜店.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8724,
+      "name": "ソユーゲームフィールド小名浜店",
+      "field": "website",
+      "current": null,
+      "proposed": "https://shop.soyu-am.jp/iwakionahama/",
+      "confidence": "certain",
+      "evidence_url": "https://shop.soyu-am.jp/iwakionahama/",
+      "evidence_quote": "page title ソユーゲームフィールドいわき小名浜店; address イオンモールいわき小名浜3階",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8724,
+      "name": "ソユーゲームフィールド小名浜店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-21:00",
+      "confidence": "certain",
+      "evidence_url": "https://shop.soyu-am.jp/iwakionahama/",
+      "evidence_quote": "営業時間 10：00～21：00",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8748,
+      "name": "タイトーFステーションおやまゆうえん店",
+      "field": "other",
+      "current": {
+        "id": 8748,
+        "addr": "小山市喜沢1475-52ハーヴェストウォーク内",
+        "games": [
+          "gitadora",
+          "iidx",
+          "popn"
+        ],
+        "src": [
+          "eagate"
+        ]
+      },
+      "proposed": "likely same venue as id 8823 タイトーＦステーション小山店 (Harvest Walk). Official Taito name タイトーFステーション 小山店 (store 00002059). Consider merge or old-name alias.",
+      "confidence": "likely",
+      "evidence_url": "https://www.taito.co.jp/store/00002059",
+      "evidence_quote": "title タイトーFステーション 小山店（栃木県・小山市）; ハーヴェストウォーク area; pins ~167m apart in shard",
+      "note": "e-amusement re-check blocked by login. Confirm Konami cabs before deleting 8748.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8823,
+      "name": "タイトーＦステーション小山店",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-23:00",
+      "proposed": "Mon-Fri 10:00-22:00; Sat-Sun/Holidays 09:00-22:00 (year-round)",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00002059",
+      "evidence_quote": "営業時間 月～金 10:00～22:00、土日祝 9:00～22:00 年中無休",
+      "note": "App overstates closing time and misses earlier weekend open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8831,
+      "name": "タイトーＦ郡山オリエントパーク店",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-23:00; Sat-Sun 09:00-23:00",
+      "proposed": "Mon-Sun 10:00-23:00 (year-round)",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00002152",
+      "evidence_quote": "営業時間 10:00～23:00 年中無休",
+      "note": "Official page does not list a distinct weekend 09:00 open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9051,
+      "name": "ラウンドワン宇都宮店",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-24:00; Sat-Sun 06:00-24:00",
+      "proposed": "Building: Mon-Thu 10:00-next 06:00; Fri/pre-holiday 10:00-all night; Sat 24h; Sun/holiday through next 06:00. Amusement: weekdays open-23:50; Sat/Sun/holiday 06:00-23:50 (confirm on site).",
+      "confidence": "likely",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/tochigi-utunomiya.html",
+      "evidence_quote": "月曜日〜木曜日 午前10:00〜翌朝6:00 金曜日・祝前日 午前10:00〜終日 土曜日 24時間営業 日曜日・祝日 〜翌朝6:00 アミューズメントコーナーの営業時間は[平日]OPEN〜午後11:50、[土日祝]午前6:00～午後11:50",
+      "note": "Amusement ends ~23:50. Page also has older HTML-comment notices.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9097,
+      "name": "ラウンドワン郡山店",
+      "field": "hours",
+      "current": "Mon-Fri 10:00-00:00; Sat-Sun 09:00-00:00",
+      "proposed": "Building: Mon-Thu 10:00-next 06:00; Fri/pre-holiday 10:00-all night; Sat 24h; Sun/holiday through next 06:00. Amusement Sat/Sun/holiday 09:00-23:50.",
+      "confidence": "likely",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/fukushima-kooriyama.html",
+      "evidence_quote": "月曜日〜木曜日 午前10:00〜翌朝6:00 金曜日・祝前日 午前10:00〜終日 土曜日 24時間営業 日曜日・祝日 〜翌朝6:00 ※土・日・祝日のアミューズメントコーナーは午前9:00～午後11:50までの営業となります。",
+      "note": "App understates overnight building hours.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8512,
+      "name": "アミューズパーク郡山",
+      "field": "hours",
+      "current": "Mon-Fri 12:00-00:00; Sat 10:00-01:00; Sun 10:00-23:00",
+      "proposed": "Mon-Fri 12:00-24:00; Sat 10:00-25:00 (to 01:00); Sun 10:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.amipa-koriyama.com/",
+      "evidence_quote": "【アミューズパーク営業時間】 月～金 12:00～24:00 土 10:00～25:00(深夜1:00) 日 10:00～23:00",
+      "note": "Official labels Saturday end as 25:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9370,
+      "name": "ＧｉＧＯ宇都宮",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/utsunomiya/",
+      "proposed": "https://www.gigo.co.jp/shops/utsunomiya",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/utsunomiya",
+      "evidence_quote": "Official path /shops/utsunomiya (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9373,
+      "name": "ＧｉＧＯ小山",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/oyama/",
+      "proposed": "https://www.gigo.co.jp/shops/oyama",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/oyama",
+      "evidence_quote": "Official path /shops/oyama (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9398,
+      "name": "ＧｉＧＯ日光",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/imaichi/",
+      "proposed": "https://www.gigo.co.jp/shops/nikko",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/nikko",
+      "evidence_quote": "Official path /shops/nikko (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9466,
+      "name": "ＧｉＧＯ西那須野",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/nishinasuno/",
+      "proposed": "https://www.gigo.co.jp/shops/nishi-nasuno",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/nishi-nasuno",
+      "evidence_quote": "Official path /shops/nishi-nasuno (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9474,
+      "name": "ＧｉＧＯ足利朝倉",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.gigo.co.jp/shops/ashikaga-asakura",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/ashikaga-asakura",
+      "evidence_quote": "Official path /shops/ashikaga-asakura (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9342,
+      "name": "ＧｉＧＯ会津若松",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/aizu/",
+      "proposed": "https://www.gigo.co.jp/shops/aizuwakamatsu",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/aizuwakamatsu",
+      "evidence_quote": "Official path /shops/aizuwakamatsu (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9352,
+      "name": "ＧｉＧＯ勿来",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/nakoso/",
+      "proposed": "https://www.gigo.co.jp/shops/nakoso",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/nakoso",
+      "evidence_quote": "Official path /shops/nakoso (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9399,
+      "name": "ＧｉＧＯ日和田",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/hiwada/",
+      "proposed": "https://www.gigo.co.jp/shops/hiwada",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/hiwada",
+      "evidence_quote": "Official path /shops/hiwada (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9434,
+      "name": "ＧｉＧＯ白河",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/shirakawa/",
+      "proposed": "https://www.gigo.co.jp/shops/shirakawa",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/shirakawa",
+      "evidence_quote": "Official path /shops/shirakawa (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9447,
+      "name": "ＧｉＧＯ福島",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/fukushima/",
+      "proposed": "https://www.gigo.co.jp/shops/fukushima",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/fukushima",
+      "evidence_quote": "Official path /shops/fukushima (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9448,
+      "name": "ＧｉＧＯ福島南",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/fukushima-minami/",
+      "proposed": "https://www.gigo.co.jp/shops/fukushima-minami",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/fukushima-minami",
+      "evidence_quote": "Official path /shops/fukushima-minami (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9258,
+      "name": "ＧｉＧＯいわきエブリア",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.gigo.co.jp/shops/iwaki-kashima",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/iwaki-kashima",
+      "evidence_quote": "Official path /shops/iwaki-kashima (checked 2026-08-02). Old tempo.gendagigo.jp URLs redirect to gigo.co.jp/renewal?to=shops.",
+      "note": "Old tempo.gendagigo.jp venue URLs no longer serve store pages.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8689,
+      "name": "シーサイドリゾートアミューズメントパーク",
+      "field": "game_counts",
+      "current": null,
+      "proposed": {
+        "chunithm": 2,
+        "maimai_dx": 1,
+        "ongeki": 1,
+        "taiko": 2,
+        "gitadora": 2,
+        "popn": 1,
+        "iidx": 2,
+        "polaris_chord": 2,
+        "jubeat": 1,
+        "project_diva": 1,
+        "sdvx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://seaside-ap.jp/%e6%a9%9f%e6%a2%b0%e3%83%aa%e3%82%b9%e3%83%88/695",
+      "evidence_quote": "設置機械一覧（2026年5月22日現在）: チュウニズム×２; Maimaiでらっくす×１; オンゲキ×１; 太鼓の達人×２; GITADORA ドラムマニア×１; GITADORA ギターフリークス×１; ポップンミュージックHigh☆Cheers!!×１; beatmania ⅡDX LIGHTNING MODEL×1; beatmania ⅡDX 旧筐体×１; ポラリスコード×２; jubeat×１; 初音ミクProject DIVA Arcade Future Tone×１; SOUND VOLTEX -Valkyrie model- ×１",
+      "note": "gitadora 2 = DM+GF. iidx 2 = Lightning + standard.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8689,
+      "name": "シーサイドリゾートアミューズメントパーク",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://seaside-ap.jp/%e6%a9%9f%e6%a2%b0%e3%83%aa%e3%82%b9%e3%83%88/695",
+      "evidence_quote": "太鼓の達人×２",
+      "note": "taiko missing from app games list.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8689,
+      "name": "シーサイドリゾートアミューズメントパーク",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_vm": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://seaside-ap.jp/%e6%a9%9f%e6%a2%b0%e3%83%aa%e3%82%b9%e3%83%88/695",
+      "evidence_quote": "beatmania ⅡDX LIGHTNING MODEL×1; beatmania ⅡDX 旧筐体×１; SOUND VOLTEX -Valkyrie model- ×１",
+      "note": "Also has standard IIDX cab. Use project cab_models keys.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGOヨークベニマル御幸ヶ原",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGOヨークベニマル御幸ヶ原",
+        "addr": "栃木県宇都宮市御幸ケ原町50-1 ヨークベニマル御幸ヶ原店 1F",
+        "country": "Japan",
+        "pref": "栃木県",
+        "hours_text": "Mon-Sun 10:00-20:00",
+        "website": "https://www.gigo.co.jp/shops/miyukigahara",
+        "games": [
+          "other"
+        ],
+        "notes": "Official page lists 音楽ゲーム but not specific titles. Not on ALL.Net Tochigi SEGA lists as of 2026-08-02."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/miyukigahara",
+      "evidence_quote": "GiGOヨークベニマル御幸ヶ原; 栃木県宇都宮市御幸ケ原町50-1 ヨークベニマル御幸ヶ原店 1F; 営業時間 daily 10:00〜20:00; ゲームの種類 includes 音楽ゲーム",
+      "note": "Existence certain. Specific rhythm titles and coordinates unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGOヨークベニマルいわき泉",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "name": "GiGOヨークベニマルいわき泉",
+        "addr": "福島県いわき市泉滝尻3丁目12-26 ヨークベニマル泉店 1F",
+        "country": "Japan",
+        "pref": "福島県",
+        "hours_text": "Mon-Sun 10:00-20:00",
+        "website": "https://www.gigo.co.jp/shops/iwaki-izumi",
+        "games": [
+          "other"
+        ],
+        "notes": "Official page lists 音楽ゲーム. Not found on ALL.Net Fukushima SEGA lists as of 2026-08-02."
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/iwaki-izumi",
+      "evidence_quote": "GiGOヨークベニマルいわき泉; 福島県いわき市泉滝尻3丁目12-26 ヨークベニマル泉店 1F; 営業時間 daily 10:00〜20:00; ゲームの種類 includes 音楽ゲーム",
+      "note": "Existence certain. Specific rhythm titles and coordinates unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8754,
+      "name": "タイトーFステーション郡山アティ店",
+      "field": "other",
+      "current": {
+        "games": [
+          "groove_coaster",
+          "iidx",
+          "jubeat",
+          "museca",
+          "reflec",
+          "taiko"
+        ]
+      },
+      "proposed": "still on official Taito store list (hours 10:00-20:00 year-round). museca network is dead globally; physical presence of museca cab not re-verified beyond ZIv.",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00001968",
+      "evidence_quote": "title タイトーFステーション 郡山アティ店（福島県・郡山市）; 営業時間 10:00～20:00 年中無休",
+      "note": "No SEGA ALL.Net titles (correct for this store).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8539,
+      "name": "アミューズメントヒカリ",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=8",
+      "evidence_quote": "Not present on ALL.Net Tochigi maimai/chunithm/ongeki/diva lists (eagate-only source in shard)",
+      "note": "No official Konami e-amusement re-check (login wall). Cannot confirm open or closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8839,
+      "name": "テクモピアパルテロン宇都宮店",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=8",
+      "evidence_quote": "Not present on ALL.Net Tochigi SEGA lists; shard src=eagate only (iidx)",
+      "note": "e-amusement re-check blocked by login. Existence today unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2050,
+      "name": "可心可丽家庭娱乐中心银川兴庆砂之船奥莱店",
+      "field": "other",
+      "current": {
+        "id": 2050,
+        "duplicate_of": 2049
+      },
+      "proposed": "merge into id 2049 (可心可丽家庭娱乐中心); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6470",
+      "evidence_quote": "可心可丽家庭娱乐中心 status=1 addr=丽景南街砂之船奥莱B馆2楼; shard also has wahlap-only row id=2050 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 2672,
+      "name": "大蓝鲸银川西夏店",
+      "field": "other",
+      "current": {
+        "id": 2672,
+        "duplicate_of": 2670
+      },
+      "proposed": "merge into id 2670 (大蓝鲸家庭娱乐中心); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4495",
+      "evidence_quote": "大蓝鲸家庭娱乐中心 status=1 addr=西夏区文萃街与怀远路交叉口新百宁阳广场三楼; shard also has wahlap-only row id=2672 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3248,
+      "name": "宝贝王吴忠利通万达广场店",
+      "field": "other",
+      "current": {
+        "id": 3248,
+        "duplicate_of": 1470
+      },
+      "proposed": "merge into id 1470 (万达宝贝王宁夏吴忠店); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6431",
+      "evidence_quote": "万达宝贝王宁夏吴忠店 status=1 addr=万达广场一号门3楼; shard also has wahlap-only row id=3248 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3711,
+      "name": "探奇爱玩荟银川建发店",
+      "field": "other",
+      "current": {
+        "id": 3711,
+        "duplicate_of": 3709
+      },
+      "proposed": "merge into id 3709 (探奇&爱玩荟银川店); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6061",
+      "evidence_quote": "探奇&爱玩荟银川店 status=1 addr=建发现代城3楼306; shard also has wahlap-only row id=3711 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4386,
+      "name": "极客森宁夏银川店",
+      "field": "other",
+      "current": {
+        "id": 4386,
+        "duplicate_of": 4417
+      },
+      "proposed": "merge into id 4417 (极客森银川悠阅城店); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2656",
+      "evidence_quote": "极客森银川悠阅城店 status=1 addr=建发悠阅城3楼 maimai qty=2; shard also has wahlap-only row id=4386 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4979,
+      "name": "游戏大魔方银川兴庆吾悦广场",
+      "field": "other",
+      "current": {
+        "id": 4979,
+        "duplicate_of": 4952
+      },
+      "proposed": "merge into id 4952 (游戏大魔方吾悦广场店); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3567",
+      "evidence_quote": "游戏大魔方吾悦广场店 status=1 addr=吾悦广场二楼; shard also has wahlap-only row id=4979 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6444,
+      "name": "蓝鲸纵队银川兴庆新百中心店",
+      "field": "other",
+      "current": {
+        "id": 6444,
+        "duplicate_of": 6442
+      },
+      "proposed": "merge into id 6442 (蓝鲸纵队超乐场新百中心店); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5204",
+      "evidence_quote": "蓝鲸纵队超乐场新百中心店 status=1 addr=兴庆区新百中心五楼; shard also has wahlap-only row id=6444 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6637,
+      "name": "趣动空间银川金凤店",
+      "field": "other",
+      "current": {
+        "id": 6637,
+        "duplicate_of": 6636
+      },
+      "proposed": "merge into id 6636 (趣动空间家庭娱乐中心); same physical shop, wahlap+bemanicn duplicate rows (~0-60m pin distance)",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6818",
+      "evidence_quote": "趣动空间家庭娱乐中心 status=1 addr=金凤区北京中路192号亲水商业广场DE102室ccpark店第E馆一层EC-06; shard also has wahlap-only row id=6637 at same mall/address",
+      "note": "Prefer bemanicn row as canonical when it has game_counts.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6680,
+      "name": "趣玩趣乐银川金凤新华联店",
+      "field": "location",
+      "current": {
+        "addr": "宁夏回族自治区银川市金凤区新华百货E馆1楼",
+        "lat": 38.482304,
+        "lng": 106.210597
+      },
+      "proposed": "If this is 趣玩趣乐, address should be 金凤区新华联购物中心3F (bemanicn shop 5455 / id 6679). Current E馆1楼+coords match 趣动空间 CCpark (ids 6636/6637), not 新华联.",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5455",
+      "evidence_quote": "趣玩趣乐 status=1 addr=金凤区新华联购物中心3F; comment 注意:最西边的不是趣玩趣乐！请仔细核对(新华联内有两家电玩城)",
+      "note": "wahlap name says 新华联 but address/coords point at CCpark E馆.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 4952,
+      "name": "游戏大魔方吾悦广场店",
+      "field": "game_counts",
+      "current": {
+        "maimai_dx": 1
+      },
+      "proposed": {
+        "maimai_dx": 1,
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3567",
+      "evidence_quote": "arcades: title_id=1 maimai DX qty=1; title_id=17 WACCA qty=2 version=随网更新",
+      "note": "App notes mention WACCA under other; counts lack wacca.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1215,
+      "name": "NATAKIDS银川兴庆吾悦店",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "maimai_dx": 1
+        }
+      },
+      "proposed": "keep open; note maimai is offline (机台已断网) per BemaniCN comment. status=1.",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1428",
+      "evidence_quote": "status=1; title_id=1 qty=1 version=DX2025 comment 机台已断网; updated_at=2026-01-10T11:00:06.000000Z",
+      "note": "Not closed. Network play unavailable according to community map comment.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1470,
+      "name": "万达宝贝王宁夏吴忠店",
+      "field": "other",
+      "current": {
+        "games": [
+          "chunithm",
+          "maimai_dx"
+        ],
+        "game_counts": {
+          "chunithm": 2,
+          "maimai_dx": 1
+        }
+      },
+      "proposed": "still open (status=1); BemaniCN notes opened 2025-12-13; counts match maimai x1 chunithm x2",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6431",
+      "evidence_quote": "status=1; comment 新店于2025年12月13日开业; arcades maimai qty=1, CHUNITHM qty=2; updated_at=2026-04-05",
+      "note": "No game_counts change needed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 7009,
+      "name": "银川金凤万达大玩家",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other"
+        ],
+        "notes": "头文字D, 湾岸MIDNIGHT"
+      },
+      "proposed": "Initial D (title 26 qty=4) and Wangan (title 28 qty=4) reported black-screen/unplayable in May 2026 BemaniCN comments; maimai still qty=1 and 已恢复联网",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/435",
+      "evidence_quote": "title_id=1 maimai comment 机台目前已恢复联网; title_id=26 头文字D qty=4 comment 四台机子已全部黑屏损坏，不能游玩; title_id=28 湾岸MIDNIGHT 5DX+ qty=4 comment 四台机子已全部黑屏损坏",
+      "note": "Do not remove other entirely; mark unplayable if schema allows.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 1325,
+      "name": "TOP玩家宁夏银川店",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Fri close 21:30; Sat-Sun close 22:00 (BemaniCN comment); nominal 10-22 on record",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2212",
+      "evidence_quote": "start_time=10 end_time=22; comment 周一至周五21：30闭店，周六周日22：00闭店。店里很热",
+      "note": "Community hours, not mall official page.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 3709,
+      "name": "探奇&爱玩荟银川店",
+      "field": "hours",
+      "current": null,
+      "proposed": "About 10:00-21:30 daily (comment 闭店时间为晚上9点半); record start_time=10 end_time=22",
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6061",
+      "evidence_quote": "start_time=10 end_time=22; comment 请注意每日闭店时间为晚上9点半",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 6679,
+      "name": "趣玩趣乐",
+      "field": "other",
+      "current": {
+        "games": [
+          "maimai_dx",
+          "other"
+        ]
+      },
+      "proposed": "still open; maimai x1 + 舞立方EVO (title 33) 白框120hz EVO/秀 dual system",
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5455",
+      "evidence_quote": "status=1; title_id=1 maimai qty=1; title_id=33 舞立方EVO qty=1 comment 已更新为EVO 秀二合一; updated_at=2026-06-23",
+      "note": "other already covers 舞立方EVO in notes.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 307,
+      "name": "Free Play Lanaken",
+      "field": "cab_models",
+      "current": {
+        "ddr_legacy": null
+      },
+      "proposed": {
+        "ddr_legacy": true,
+        "maimai_finale": true
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6234",
+      "evidence_quote": "ZIv machines include maimai FiNALE (Version: 1.99a unlocked), Dancing Stage EuroMIX, pop'n music 13, 太鼓の達人13, Groove Coaster x2; lastUpdateTime=2026-01-19",
+      "note": "FiNALE is offline/private, not maimai DX network. ziv_listed count=1 placeholders are not real quantities.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 307,
+      "name": "Free Play Lanaken",
+      "field": "games",
+      "current": [
+        "ddr",
+        "groove_coaster",
+        "other",
+        "popn",
+        "taiko"
+      ],
+      "proposed": [
+        "ddr",
+        "groove_coaster",
+        "other",
+        "popn",
+        "taiko",
+        "maimai"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+      "evidence_quote": "Free Play Lanaken machines include maimai FiNALE",
+      "note": "Do not label as maimai_dx.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 314,
+      "name": "Gate Ninety World",
+      "field": "games",
+      "current": [
+        "groove_coaster",
+        "other",
+        "taiko"
+      ],
+      "proposed": [
+        "groove_coaster",
+        "other",
+        "taiko",
+        "maimai"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+      "evidence_quote": "Gate Ninety World machines: Groove Coaster 4MAX; maimai FiNALE (Online, Private server); Taiko No Tatsujin (2020); lastUpdateTime=2025-11-30",
+      "note": "FiNALE/private server, not DX network.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 311,
+      "name": "Gamestate Bruxelles",
+      "field": "website",
+      "current": "https://gamestate.com/bruxelles-en/",
+      "proposed": "https://www.gamestate.com/en/bruxelles",
+      "confidence": "certain",
+      "evidence_url": "https://www.gamestate.com/en/bruxelles",
+      "evidence_quote": "HTTP 200 Game Hall Bruxelles page; old path /bruxelles-en/ returned 404 on 2026-08-02",
+      "note": null,
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 316,
+      "name": "Lillys Casino",
+      "field": "website",
+      "current": "http://Bellewaerde Meenseweg 497",
+      "proposed": null,
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2961",
+      "evidence_quote": "ZIv website field is invalid string 'http://Bellewaerde Meenseweg 497'; lastUpdateTime=2013-10-01 (12 years ago)",
+      "note": "Remove broken website. Existence today unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 316,
+      "name": "Lillys Casino",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+      "evidence_quote": "Lillys Casino lastUpdateTime=2013-10-01 17:49:58 lastUpdateDifference=12 years ago",
+      "note": "Cannot confirm still exists. Do not assert closed without primary source.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 320,
+      "name": "Player (Chênée)",
+      "field": "website",
+      "current": "http://www.player-shop.be/",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "https://www.player-shop.be/",
+      "evidence_quote": "Fetched page is a generic short HTML placeholder/error body (2026-08-02); ZIv last update 2014-08-30 (11 years ago)",
+      "note": "Website appears dead. Arcade existence unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 319,
+      "name": "Marco Polo",
+      "field": "website",
+      "current": "http://www.lemarco-polo.be/",
+      "proposed": null,
+      "confidence": "likely",
+      "evidence_url": "http://www.lemarco-polo.be/",
+      "evidence_quote": "fetch failed / empty error response on 2026-08-02; ZIv lastUpdateTime=2013-10-05 (12 years ago)",
+      "note": "Stale ZIv row. Existence unverified.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 302,
+      "name": "Big Ben Beach",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+      "evidence_quote": "Big Ben Beach lastUpdateTime=2013-09-19 lastUpdateDifference=12 years ago",
+      "note": "No official confirmation found. Flag stale.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 315,
+      "name": "L'Ondin",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+      "evidence_quote": "L'Ondin lastUpdateTime=2013-10-01 lastUpdateDifference=12 years ago",
+      "note": "Stale ZIv only.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 322,
+      "name": "Shoryu Game",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Belgium",
+      "evidence_quote": "Shoryu Game lastUpdateTime=2013-10-01 lastUpdateDifference=12 years ago",
+      "note": "No 2024-2026 confirmation found.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 323,
+      "name": "The Bowl Factory (Braine-l'Alleud)",
+      "field": "website",
+      "current": "http://www.bowlfactory.be/",
+      "proposed": "http://www.bowlfactory.eu/",
+      "confidence": "likely",
+      "evidence_url": "http://www.bowlfactory.eu/",
+      "evidence_quote": "http://www.bowlfactory.be/ redirects to http://www.bowlfactory.eu/; ZIv arcade update 2013-09-17",
+      "note": "Bowling business appears active; arcade cab list is 12 years stale and may be gone.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 308,
+      "name": "Game-INN",
+      "field": "other",
+      "current": {
+        "games": [
+          "drs",
+          "nostalgia",
+          "other"
+        ]
+      },
+      "proposed": "ZIv 2025-11-30: DANCERUSH STARDOM not server-connected; NOSTALGIA condition=0; official site game-inn.be live",
+      "confidence": "likely",
+      "evidence_url": "https://game-inn.be/",
+      "evidence_quote": "Official site live; ZIv DANCERUSH STARDOM comment 'Cab is not connected to the server'; ノスタルジア condition=0",
+      "note": "Rhythm cabs may be offline/unplayable intermittently.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

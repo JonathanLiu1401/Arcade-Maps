@@ -66,10 +66,10 @@ def test_a_count_with_a_quoted_quantity_is_accepted(tmp_path):
 
 
 def test_free_text_fields_are_held(tmp_path):
-    # cab_models is {slug: int|None} with a hard assert downstream, and
-    # the fleet writes prose into it ("DX PRiSM PLUS (x3)").
-    for field, proposed in (("cab_models", {"maimai_dx": "DX PRiSM (x3)"}),
-                            ("prices", "Admission $12 all-day"),
+    # prices is a measured per-country table built by prices.py, and
+    # status collects merge proposals as well as closures. Neither can be
+    # applied verbatim.
+    for field, proposed in (("prices", "Admission $12 all-day"),
                             ("status", {"action": "merge_into"})):
         out, stats = _one(str(tmp_path), {
             "field": field, "name": "Test Arcade",
@@ -78,6 +78,74 @@ def test_free_text_fields_are_held(tmp_path):
             "evidence_url": "https://x", "evidence_quote": "q",
         })
         assert not out, "%s was applied without a translation step" % field
+
+
+def test_cab_models_prose_is_translated_to_schema_slugs(tmp_path):
+    # The fleet writes prose under a GAME key ("iidx": "Lightning
+    # Model...") where cab_models wants {"iidx_lm": count|None}. Only 29
+    # of 256 proposals used the slugs, so without translation the whole
+    # field - the cabinet distinctions the owner asked for - is lost.
+    arcade = dict(ARCADE, games=["iidx"])
+    out, _ = _one(str(tmp_path), {
+        "field": "cab_models", "name": "Test Arcade",
+        "current": {"name": "Test Arcade", "addr": "1 Main St"},
+        "proposed": {"iidx": "Lightning Model x2"},
+        "confidence": "certain",
+        "evidence_url": "https://x", "evidence_quote": "q",
+    }, arcade)
+    assert out, "cab_models prose was not translated"
+    val = out[BC.venue_key(arcade)]["fields"]["cab_models"]["value"]
+    assert val == {"iidx_lm": 2}
+
+
+def test_a_cab_model_that_cannot_be_resolved_is_dropped(tmp_path):
+    # A wrong cabinet badge is worse than a missing one: a veteran
+    # travels for a specific cabinet.
+    arcade = dict(ARCADE, games=["ddr"])
+    out, stats = _one(str(tmp_path), {
+        "field": "cab_models", "name": "Test Arcade",
+        "current": {"name": "Test Arcade", "addr": "1 Main St"},
+        "proposed": {"ddr": "A3 X-cab online + A20 offline"},
+        "confidence": "certain",
+        "evidence_url": "https://x", "evidence_quote": "q",
+    }, arcade)
+    assert not out and stats["cab_untranslatable"] == 1
+
+
+def test_a_game_version_number_is_not_a_cabinet_count(tmp_path):
+    # "Lightning Model (IIDX 33 Sparkle Shower)" was read as 33 cabinets.
+    arcade = dict(ARCADE, games=["iidx"])
+    out, _ = _one(str(tmp_path), {
+        "field": "cab_models", "name": "Test Arcade",
+        "current": {"name": "Test Arcade", "addr": "1 Main St"},
+        "proposed": {"iidx": "Lightning Model (IIDX 33 Sparkle Shower)"},
+        "confidence": "certain",
+        "evidence_url": "https://x", "evidence_quote": "q",
+    }, arcade)
+    val = out[BC.venue_key(arcade)]["fields"]["cab_models"]["value"]
+    assert val == {"iidx_lm": None}, \
+        "a game version number was published as a cabinet count"
+
+
+def test_a_cab_model_for_a_game_the_venue_lacks_is_dropped(tmp_path):
+    arcade = dict(ARCADE, games=["maimai_dx"])
+    out, stats = _one(str(tmp_path), {
+        "field": "cab_models", "name": "Test Arcade",
+        "current": {"name": "Test Arcade", "addr": "1 Main St"},
+        "proposed": {"iidx": "Lightning Model"}, "confidence": "certain",
+        "evidence_url": "https://x", "evidence_quote": "q",
+    }, arcade)
+    assert not out and stats["cab_untranslatable"] == 1
+
+
+def test_lookup_matches_any_of_a_venues_source_urls(tmp_path):
+    # A merged venue answers to a url per source; venue_key returns only
+    # the first. A file keyed on the OTHER one silently no-ops.
+    a = dict(ARCADE, links={"ziv": "https://ziv/1",
+                            "bemanicn": "https://map.bemanicn.com/s/2744"})
+    table = {"bemanicn|https://map.bemanicn.com/s/2744": {"hit": True}}
+    assert BC.lookup(table, a) == {"hit": True}
+    assert BC.lookup({"nope": 1}, a) is None
 
 
 def test_unverified_confidence_never_applies(tmp_path):

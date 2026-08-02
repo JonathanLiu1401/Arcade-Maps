@@ -635,7 +635,7 @@ def build_enrichment(arcades, raw_dir, updated=None, photos_index=None,
         # reports) override the scraped value, and say so: each one
         # carries the url and quote it was read from, so a wrong entry
         # can be traced to its source rather than argued about.
-        fixes = (corrections.get(corrections_mod.venue_key(a))
+        fixes = (corrections_mod.lookup(corrections, a)
                  or {}).get("fields") if corrections else None
         if fixes:
             if entry is None:

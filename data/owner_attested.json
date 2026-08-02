@@ -1,0 +1,32 @@
+{
+  "_comment": [
+    "Facts the owner has attested to directly, usually from having been in",
+    "the venue. These override every scraped source, because a person who",
+    "was there beats a database that was not.",
+    "",
+    "This file exists because some things are true and unsourceable. Chinese",
+    "arcades in particular run imported and grey-market cabinets that no",
+    "official register lists: SEGA's WAHLAP register in mainland China",
+    "carries only maimai DX and CHUNITHM, so an ONGEKI cab there appears in",
+    "no official locator, and BemaniCN only has it if a user filed it.",
+    "Refusing to record what the owner saw, purely because the databases are",
+    "silent, would make the map less accurate rather than more honest.",
+    "",
+    "Every entry says WHO vouched for it and WHEN, and the app renders that",
+    "provenance rather than passing it off as a source's claim. Keyed on the",
+    "venue's source page url, never on the arcade id - ids are reassigned on",
+    "every build.",
+    "",
+    "To add one: append an entry with a key from links.ziv or links.bemanicn,",
+    "then run python -m scrapers.run_all --skip-scrape."
+  ],
+  "venues": {
+    "bemanicn|https://map.bemanicn.com/s/2744": {
+      "name": "酷玩空间上海世纪汇店",
+      "add_games": ["ongeki"],
+      "attested_by": "owner",
+      "attested_at": "2026-08-02",
+      "note": "Owner reports ONGEKI at this venue. Checked and NOT found in: BemaniCN live shop payload (title_ids 1/3/31 only), the committed BemaniCN snapshot, ZIv's 37-machine list, or WAHLAP - whose mainland China register carries only maimai DX and CHUNITHM, so an ONGEKI cabinet here would appear in no official locator at all."
+    }
+  }
+}

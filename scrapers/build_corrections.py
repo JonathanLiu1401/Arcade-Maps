@@ -52,9 +52,9 @@ ROOT = os.path.dirname(HERE)
 MECHANICAL = ("hours", "website")
 # Applied, but only after validation against the game slug vocabulary,
 # the country box, or - for coordinates - independent geographic proof.
-VALIDATED = ("games", "game_counts", "location", "status")
+VALIDATED = ("games", "game_counts", "location", "status", "cab_models")
 # Deliberately NOT applied - see module docstring.
-HELD = ("cab_models", "prices", "other", "missing_venue", "images")
+HELD = ("prices", "other", "missing_venue", "images")
 
 # A permanently-closed venue still shown as open is the worst failure
 # this map has, because somebody travels to it. But "status" is also the
@@ -93,7 +93,88 @@ def quotes_a_quantity(quote):
     return bool(_QTY_RE.search(quote or ""))
 
 
+# Cabinet-model translation.
+#
+# The fleet reports cab models as PROSE under a game key rather than as
+# the schema's slugs: {"iidx": "Lightning Model (IIDX 33 Sparkle Shower)"}
+# where cab_models wants {"iidx_lm": <count|None>}. Only 29 of 256
+# proposals use the slugs throughout, so the rest are unreachable without
+# a translation step - and these are exactly the distinctions the owner
+# asked for (IIDX Lightning vs standard, SDVX Valkyrie vs NEMSYS, DDR
+# gold vs white vs legacy, maimai DX vs FiNALE).
+#
+# Each pattern must be UNAMBIGUOUS: it names one cabinet and nothing
+# else. Anything a pattern does not match is dropped rather than guessed,
+# because a wrong cabinet badge is worse than a missing one - a veteran
+# travels for a specific cab.
+_CAB_PATTERNS = (
+    # (regex, slug). Order matters: more specific first.
+    (r"lightning\s*model|\bLM\b|ライトニング", "iidx_lm"),
+    (r"valkyrie\s*model|valkyrie\b|ヴァルキリー", "sdvx_vm"),
+    (r"nemsys|nemesis\s*cab", "sdvx_nemsys"),
+    (r"\bgold\s*cab|gold\s*cabinet|ddr\s*gold", "ddr_gold"),
+    (r"universal\s*model|white\s*cab(?:inet)?", "ddr_universal"),
+    (r"legacy\s*cab|\bCRT\b|extreme\s*(?:pro|red)|old\s*cab", "ddr_legacy"),
+    (r"guitarfreaks\s*arena|\bGF\s*arena", "gitadora_gf_arena"),
+    (r"drummania\s*arena|\bDM\s*arena", "gitadora_dm_arena"),
+    (r"pikapika|ピカピカ", "popn_pikapika"),
+    (r"nijiiro.*(?:usa|america)|usa\s*nijiiro", "taiko_us"),
+    (r"(?:asia|亚洲|亞洲).*(?:version|版|ver)|旧代|舊代|old-?gen", "taiko_asia"),
+    (r"nijiiro|ニジイロ", "taiko_jp"),
+    (r"finale|ファイナル|pre-?dx", "maimai_classic"),
+    (r"\bDX\b|circle|buddies|prism|festival|splash|universe|deluxe",
+     "maimai_dx_cab"),
+)
+
 _COMMUNITY_HOSTS = ("zenius-i-vanisher.com", "bemanicn.com")
+
+
+def translate_cab_models(proposed, cab_slugs, cab_game, arcade_games):
+    """{slug: count|None} from the fleet's free-form cab_models dict.
+
+    Accepts the schema slugs verbatim, and translates the prose forms by
+    matching an unambiguous cabinet phrase in the VALUE. Everything it
+    cannot resolve is dropped: a wrong cabinet badge is worse than a
+    missing one, because a veteran travels for a specific cabinet.
+
+    A count is only carried through when the proposal states one as an
+    integer or as an "xN" in the text. Otherwise the value is None, which
+    the app renders as "this cabinet is here, nobody said how many".
+    """
+    out = {}
+    if not isinstance(proposed, dict):
+        return out
+    for key, val in proposed.items():
+        slug = key if key in cab_slugs else None
+        blob = key + " " + ("" if val is None else str(val))
+        if slug is None:
+            for pat, cand in _CAB_PATTERNS:
+                if re.search(pat, blob, re.I):
+                    slug = cand
+                    break
+        if slug is None or cab_game.get(slug) not in arcade_games:
+            continue
+        n = None
+        if isinstance(val, bool):
+            n = None
+        elif isinstance(val, int) and 0 < val < 100:
+            n = val
+        else:
+            # Only an explicit "xN" / "Nx" counts. A bare number in this
+            # prose is nearly always the GAME VERSION, not a quantity:
+            # "Lightning Model (IIDX 33 Sparkle Shower)" was read as 33
+            # cabinets. Requiring the x makes the quantity explicit, and
+            # a missing count renders as "here, quantity unstated".
+            m = re.search(r"(?:^|[^0-9a-z])(?:[x×]\s*([0-9]{1,2})\b"
+                          r"|\b([0-9]{1,2})\s*[x×](?![0-9]))",
+                          str(val), re.I)
+            if m:
+                n = int(m.group(1) or m.group(2))
+        # Last writer wins only when it brings a number the earlier one
+        # lacked; otherwise the first match stands.
+        if slug not in out or (out[slug] is None and n is not None):
+            out[slug] = n
+    return out
 
 
 def _host(url):
@@ -182,15 +263,42 @@ def _location_ok(arcade, proposed, places, merge_mod):
     return True, "closer_to_named_district"
 
 
-def venue_key(arcade):
-    """Stable identity for one arcade. Source page first, address last."""
+def venue_keys(arcade):
+    """EVERY stable identity this arcade answers to, best first.
+
+    A merged venue carries a page url per source, and venue_key() returns
+    only the first. A hand-written file keyed on the bemanicn url then
+    silently failed to match a venue whose ziv url won that race - which
+    is a wrong-looking no-op rather than an error, so it has to be
+    impossible by construction.
+    """
     links = arcade.get("links") or {}
+    keys = []
     for src in ("ziv", "bemanicn"):
         if links.get(src):
-            return src + "|" + links[src]
-    return "addr|%s|%s|%s" % (arcade.get("country") or "",
-                              (arcade.get("name") or "").strip(),
-                              (arcade.get("addr") or "").strip())
+            keys.append(src + "|" + links[src])
+    for url in (links.get("also") or []):
+        for src, frag in (("ziv", "zenius-i-vanisher"),
+                          ("bemanicn", "bemanicn.com")):
+            if frag in str(url):
+                keys.append(src + "|" + url)
+    keys.append("addr|%s|%s|%s" % (arcade.get("country") or "",
+                                   (arcade.get("name") or "").strip(),
+                                   (arcade.get("addr") or "").strip()))
+    return keys
+
+
+def venue_key(arcade):
+    """The preferred identity for one arcade. Source page first."""
+    return venue_keys(arcade)[0]
+
+
+def lookup(table, arcade):
+    """The entry in `table` for this arcade under ANY of its keys."""
+    for key in venue_keys(arcade):
+        if key in table:
+            return table[key]
+    return None
 
 
 def _index(arcades):
@@ -272,6 +380,14 @@ def build(raw_dir, arcades, game_slugs, places=None, merge_mod=None):
                     stats["bad_slug"] += 1
                     continue
                 value = games
+            elif field == "cab_models":
+                cab = translate_cab_models(
+                    proposed, set(merge_mod.CAB_MODEL_SLUGS),
+                    merge_mod.CAB_MODEL_GAME, set(arcade.get("games") or []))
+                if not cab:
+                    stats["cab_untranslatable"] += 1
+                    continue
+                value = cab
             elif field == "status":
                 blob = "%s %s" % (proposed, corr.get("note") or "")
                 if not _CLOSED_RE.search(blob):

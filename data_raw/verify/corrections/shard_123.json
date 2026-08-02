@@ -1,0 +1,643 @@
+{
+  "shard": 123,
+  "checked": 97,
+  "sources_used": [
+    "https://location.am-all.net/alm/location (gm=96/109/88/34; at=12 Tokyo, 20 Gifu, 23 Mie, 32 Okayama)",
+    "https://p.eagate.573.jp/game/facility/search/p/list.html (IIDX,IIDX_LN,SDVX,SDVX_VM,DDR,DDR20TH,PLRS,JUBEAT,PMSP,NOSTALGIA,GITADORAGF,DAN; pref JP-13/21/24/33)",
+    "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Venezuela",
+    "https://www.gigo.co.jp/shops (area 13/21/24/33 and individual store pages)",
+    "http://www.adores.jp/tenpo/asakusa.html",
+    "http://www.adores.jp/tenpo/",
+    "https://www.karzoc.co.jp/store/storeinfo/takao/",
+    "https://www.jpg.co.jp/capsule",
+    "https://amuseum.jp/store/am_toyosu/",
+    "https://www.taito.co.jp/store/00001595",
+    "https://www.taito.co.jp/store/00002168",
+    "https://www.round1.co.jp/shop/tenpo/tokyo-chofu.html"
+  ],
+  "corrections": [
+    {
+      "id": 8322,
+      "name": "PALOイオンモール津南",
+      "field": "games",
+      "current": [
+        "polaris_chord"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=23",
+      "evidence_quote": "ＰＡＬＯ津南 | 三重県津市高茶屋小森町１４５番地　イオンモール津南３Ｆ (also on CHUNITHM gm=109 and ONGEKI gm=88). e-amusement: PALOイオンモール津南 for Polaris Chord",
+      "note": "Same physical shop as id 9565 ＰＡＬＯ津南 (ALL.Net name). App split SEGA vs Konami into two rows. Merge into one venue with all four games.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9565,
+      "name": "ＰＡＬＯ津南",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-24",
+      "evidence_quote": "PALOイオンモール津南 | 津市高茶屋小森町145イオンモール津南3F (Polaris Chord Mie list)",
+      "note": "Duplicate of id 8322. If merging, keep one row and drop the other.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8322,
+      "name": "PALOイオンモール津南",
+      "field": "other",
+      "current": "separate from id 9565 ＰＡＬＯ津南",
+      "proposed": "merge with id 9565 (same address イオンモール津南3F)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=23",
+      "evidence_quote": "ALL.Net name ＰＡＬＯ津南 address 三重県津市高茶屋小森町１４５番地　イオンモール津南３Ｆ; e-amusement name PALOイオンモール津南 same address",
+      "note": "Two shard rows for one store because ALL.Net and e-amusement use different display names.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8520,
+      "name": "アミューズメントスペースコミ丸四日市店",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "ddr",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "popn",
+        "sdvx"
+      ],
+      "proposed": [
+        "chunithm",
+        "ddr",
+        "iidx",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PLRS&pref=JP-24",
+      "evidence_quote": "アミューズメントスペースコミ丸四日市店 present on polaris_chord/iidx/sdvx/ddr/popn/nostalgia Mie lists; ABSENT from gitadora_gf Mie list",
+      "note": "Add polaris_chord. Remove gitadora (not on e-amusement GITADORAGF for Mie as of 2026-08-02).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8520,
+      "name": "アミューズメントスペースコミ丸四日市店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_vm": true,
+        "ddr_gold": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-24",
+      "evidence_quote": "IIDX_LN / SDVX_VM / DDR20TH Mie lists all include アミューズメントスペースコミ丸四日市店",
+      "note": "Cabinet variants confirmed via e-amusement model-specific gkeys.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9310,
+      "name": "ＧｉＧＯトナリエ四日市",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "crossbeats",
+        "drs",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "popn",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "chunithm",
+        "crossbeats",
+        "drs",
+        "groove_coaster",
+        "iidx",
+        "jubeat",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "polaris_chord",
+        "project_diva",
+        "sdvx",
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=PMSP&pref=JP-24",
+      "evidence_quote": "pop'n Mie: ラウンドワンみえ川越IC店, アピナ四日市店, アミューズメントスペースコミ丸四日市店, ラウンドワン津･高茶屋店 (no GiGOトナリエ四日市). jubeat/iidx/sdvx/polaris and DAN do list it.",
+      "note": "Remove popn. Keep jubeat/drs/polaris (confirmed). SEGA games confirmed on ALL.Net.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9376,
+      "name": "ＧｉＧＯ岡山藤崎",
+      "field": "games",
+      "current": [
+        "chunithm",
+        "maimai_dx",
+        "nostalgia",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other",
+        "project_diva"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=NOSTALGIA&pref=JP-33",
+      "evidence_quote": "NOSTALGIA Okayama only: ファンタジスタ; ドライブイン古城. GiGO岡山藤崎 not listed.",
+      "note": "Remove nostalgia. SEGA titles still on ALL.Net.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9376,
+      "name": "ＧｉＧＯ岡山藤崎",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-24:00",
+      "proposed": "Mon-Sun 10:00-23:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/okayama-fujisaki",
+      "evidence_quote": "営業時間 月曜日 10:00〜23:00 (same through Sunday)",
+      "note": "Official GiGO hours end at 23:00 not 24:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9376,
+      "name": "ＧｉＧＯ岡山藤崎",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/AP-gimmick/",
+      "proposed": "https://www.gigo.co.jp/shops/okayama-fujisaki",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/okayama-fujisaki",
+      "evidence_quote": "Title: GiGO岡山藤崎 | 店舗 | GiGOお店情報サイト",
+      "note": "tempo.gendagigo.jp store paths redirect to gigo.co.jp/renewal hub.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8272,
+      "name": "GiGO Minamimachida GrandberryPark WonderTheater (GiGO南町田GBPシアター)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "ongeki",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ＧｉＧＯ南町田グランベリーパークシアター | 東京都町田市鶴間３‐４‐１　ワンダーシアター１Ｆ listed for maimai, CHUNITHM, ONGEKI",
+      "note": "ZIv-only row omitted live SEGA network titles.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8230,
+      "name": "Capsule Nagayama (カプセル永山)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": [
+        "chunithm",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "アミューズメントスペースカプセル | 東京都多摩市永山１−３−４ヒューマックスパビリオン永山B1-2F listed for maimai and CHUNITHM",
+      "note": "Same venue as ALL.Net アミューズメントスペースカプセル. Store page also mentions maimai.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8230,
+      "name": "Capsule Nagayama (カプセル永山)",
+      "field": "games",
+      "current": [
+        "other"
+      ],
+      "proposed": "consider adding taiko (store news says 3 units; not verified on an official taiko locator today)",
+      "confidence": "unverified",
+      "evidence_url": "https://www.jpg.co.jp/capsule",
+      "evidence_quote": "太鼓の達人 増台！ 太鼓の達人が１台増えて３台稼働中！",
+      "note": "Do not treat as certain. Store news may be stale (content references 2022).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8193,
+      "name": "Adores Asakusa (アドアーズ浅草店)",
+      "field": "status",
+      "current": "open (implied)",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "http://www.adores.jp/tenpo/asakusa.html",
+      "evidence_quote": "アドアーズ浅草店 still listed; 住所 〒111-0032 東京都台東区浅草1-42-4; 営業時間 10:00～23:30; also on store index (unlike closed サンシャイン/町田 which say 閉店致しました)",
+      "note": "Venue exists and is open. Hours match app.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8193,
+      "name": "Adores Asakusa (アドアーズ浅草店)",
+      "field": "games",
+      "current": [
+        "gitadora",
+        "iidx",
+        "jubeat",
+        "other",
+        "popn",
+        "reflec",
+        "sdvx",
+        "taiko"
+      ],
+      "proposed": [
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX&pref=JP-13",
+      "evidence_quote": "No アドアーズ浅草店 on Tokyo e-amusement IIDX/SDVX/jubeat/popn/GITADORA lists. Tokyo Adores entries: 中野/上野アメ横/亀戸/新小岩/仙川 only. Official Asakusa page features アイドルマスター TOURS and ガンダムEXVS.",
+      "note": "Strong evidence Konami rhythm cabs are gone. taiko also unverified. Prefer proposed=['other'] or keep only games with fresh primary evidence.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8317,
+      "name": "NICOPA iias Takao (NICOPA イーアス 高尾)",
+      "field": "location",
+      "current": {
+        "lat": 35.658409884969,
+        "lng": 139.32413935661,
+        "addr": "iias Takao 2F 550-1 Higashiasakawamachi Hachioji Tokyo, 193-0834, Hachioji"
+      },
+      "proposed": {
+        "lat": 35.645164,
+        "lng": 139.2912724,
+        "addr": "東京都八王子市東浅川町550-1イーアス高尾2F"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ＮＩＣＯＰＡ高尾店 | 東京都八王子市東浅川町550-1イーアス高尾2F | coords 35.645164,139.2912724",
+      "note": "App pin is about 3km too far east/north. Games maimai/chunithm/ongeki confirmed on ALL.Net. Store open 10:00-21:00.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8268,
+      "name": "GiGO Ito-Yokado Hachioji (GiGOイトーヨーカドー八王子)",
+      "field": "location",
+      "current": {
+        "lat": 35.713052710167,
+        "lng": 139.32450413704,
+        "addr": "Ito-Yokado Hachioji 3F 1426-1 Hazamamachi Hachioji Tokyo, 193-0941, Hachioji"
+      },
+      "proposed": {
+        "lat": 35.6380448,
+        "lng": 139.293491,
+        "addr": "東京都八王子市狭間町1462-1 イトーヨーカドー八王子 3F"
+      },
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/hachioji-hazama",
+      "evidence_quote": "住所 東京都八王子市狭間町1462-1 イトーヨーカドー八王子 3F; ALL.Net coords 35.6380448,139.293491",
+      "note": "App lat 35.713 is about 8km north of Hazama. Address number off (1426-1 vs 1462-1). SEGA games confirmed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8268,
+      "name": "GiGO Ito-Yokado Hachioji (GiGOイトーヨーカドー八王子)",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/hachioji-hazama/",
+      "proposed": "https://www.gigo.co.jp/shops/hachioji-hazama",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/hachioji-hazama",
+      "evidence_quote": "Title GiGOイトーヨーカドー八王子 | 店舗 | GiGOお店情報サイト; 営業時間 10:00〜21:00 daily",
+      "note": "Old tempo URL redirects to renewal hub.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8259,
+      "name": "GiGO Akihabara Building 2 (GiGO秋葉原2号店)",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/akiba-2/",
+      "proposed": "https://www.gigo.co.jp/shops/akihabara2",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/akihabara2",
+      "evidence_quote": "Live GiGO store page (HTTP 200, store title present). Old tempo.gendagigo.jp paths redirect to https://www.gigo.co.jp/renewal?to=shops",
+      "note": "GENDA moved store pages off tempo.gendagigo.jp.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8265,
+      "name": "GiGO Ikebukuro Building 1 (GiGO 池袋1号館)",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/ikebukuro01/",
+      "proposed": "https://www.gigo.co.jp/shops/ikebukuro1",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/ikebukuro1",
+      "evidence_quote": "Live GiGO store page (HTTP 200, store title present). Old tempo.gendagigo.jp paths redirect to https://www.gigo.co.jp/renewal?to=shops",
+      "note": "GENDA moved store pages off tempo.gendagigo.jp.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8275,
+      "name": "GiGO Shibuya (GiGO渋谷)",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/shibuya/",
+      "proposed": "https://www.gigo.co.jp/shops/shibuya",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/shibuya",
+      "evidence_quote": "Live GiGO store page (HTTP 200, store title present). Old tempo.gendagigo.jp paths redirect to https://www.gigo.co.jp/renewal?to=shops",
+      "note": "GENDA moved store pages off tempo.gendagigo.jp.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8276,
+      "name": "GiGO Shinjuku Kabukicho (GiGO 新宿歌舞伎町)",
+      "field": "website",
+      "current": "https://tempo.gendagigo.jp/am/kabukicho",
+      "proposed": "https://www.gigo.co.jp/shops/shinjuku-kabukicho",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/shinjuku-kabukicho",
+      "evidence_quote": "Live GiGO store page (HTTP 200, store title present). Old tempo.gendagigo.jp paths redirect to https://www.gigo.co.jp/renewal?to=shops",
+      "note": "GENDA moved store pages off tempo.gendagigo.jp.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9344,
+      "name": "ＧｉＧＯ倉敷",
+      "field": "website",
+      "current": null,
+      "proposed": "https://www.gigo.co.jp/shops/kurashiki",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/kurashiki",
+      "evidence_quote": "Live GiGO store page (HTTP 200, store title present). Old tempo.gendagigo.jp paths redirect to https://www.gigo.co.jp/renewal?to=shops",
+      "note": "GENDA moved store pages off tempo.gendagigo.jp.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8276,
+      "name": "GiGO Shinjuku Kabukicho (GiGO 新宿歌舞伎町)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-25:00",
+      "proposed": "Mon-Sun 10:00-01:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/shinjuku-kabukicho",
+      "evidence_quote": "営業時間 月曜日 10:00〜01:00 (same all week); 住所 東京都新宿区歌舞伎町1丁目21番1号 第二東亜会館 1-2F",
+      "note": "25:00 and 01:00 are the same clock time; prefer official 01:00 notation. Store open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9414,
+      "name": "ＧｉＧＯ柳津",
+      "field": "other",
+      "current": "name GiGO柳津; src includes eagate",
+      "proposed": "SEGA still under GiGO柳津 on ALL.Net; Konami e-amusement lists same address as ゲームファンタジアン柳津店",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=20",
+      "evidence_quote": "ALL.Net: ＧｉＧＯ柳津 | 岐阜県岐阜市柳津町上佐波西３‐６８. e-amusement: ゲームファンタジアン柳津店 | 岐阜市柳津町上佐波西3-68. GiGO Gifu area index did not list 柳津 among current GiGO Gifu stores.",
+      "note": "Venue still live. Dual naming may confuse merges. IIDX_LN and SDVX_VM include ゲームファンタジアン柳津店.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9013,
+      "name": "ラウンドワンみえ川越インターチェンジ店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_vm": true,
+        "ddr_gold": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-24",
+      "evidence_quote": "IIDX_LN / SDVX_VM / DDR20TH Mie all include ラウンドワンみえ川越IC店",
+      "note": "e-amusement name is abbreviated ラウンドワンみえ川越IC店.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8443,
+      "name": "アピナ四日市店",
+      "field": "cab_models",
+      "current": null,
+      "proposed": {
+        "iidx_lm": true,
+        "sdvx_vm": true
+      },
+      "confidence": "certain",
+      "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/list.html?finder=area&gkey=IIDX_LN&pref=JP-24",
+      "evidence_quote": "IIDX_LN Mie and SDVX_VM Mie both include アピナ四日市店",
+      "note": "Game list already matches official sources well.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13463,
+      "name": "Arkadia Lecherías",
+      "field": "status",
+      "current": "hours Mon-Sun closed (game list still shown as if active)",
+      "proposed": "closed until further notice",
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11179",
+      "evidence_quote": "information: Cerrado hasta nuevo aviso; openingTimes all days closed; lastUpdateTime 2026-05-26",
+      "note": "Hours already closed. Only ZIv evidence, no operator page found.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13465,
+      "name": "C.C. Costa Azul (Full Diversión)",
+      "field": "status",
+      "current": "open (implied); games other (Daytona/Manx)",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3902",
+      "evidence_quote": "lastUpdateTime 2016-12-30 20:57:33 (diff 9 years ago); machines Daytona USA, Manx TT only",
+      "note": "ZIv row is 9 years stale. Cannot confirm still exists. Do not invent closed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13473,
+      "name": "Replay",
+      "field": "status",
+      "current": "open (implied); games ddr, other",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4833",
+      "evidence_quote": "lastUpdateTime 2019-03-25 02:48:06 (diff 7 years ago); machines Dance Dance Revolution Solo BASS MIX; Daytona USA 2",
+      "note": "Extremely stale community data. Cannot verify current existence from any newer source in this pass.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13470,
+      "name": "Le Mans 24",
+      "field": "status",
+      "current": "open (implied); games other; no machine list",
+      "proposed": null,
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7897",
+      "evidence_quote": "lastUpdateTime 2023-10-30; machines=[]; information mentions Hyper Jumbo / Hyper Maquinas",
+      "note": "No machines, sparse address. Possibly a bad/placeholder ZIv row.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13479,
+      "name": "Super Video Mania (Sambil Chacao)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "stepmaniax"
+      ],
+      "proposed": [
+        "ddr",
+        "stepmaniax"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11155",
+      "evidence_quote": "lastUpdateTime 2026-07-13; machines DanceDanceRevolution A3; StepManiaX (65\" Deluxe Cabinet)",
+      "note": "No correction needed; recent ZIv supports current games. Documented for coverage honesty.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 13475,
+      "name": "Super Video Mania (Centro Comercial El Recreo)",
+      "field": "games",
+      "current": [
+        "ddr",
+        "other",
+        "pump_it_up"
+      ],
+      "proposed": [
+        "ddr",
+        "other",
+        "pump_it_up"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11154",
+      "evidence_quote": "lastUpdateTime 2026-07-13; machines DanceDanceRevolution A20 PLUS; Pump It Up Phoenix (2024); Mario Kart Arcade GP DX",
+      "note": "Verified against recent ZIv; no change needed.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 9344,
+      "name": "ＧｉＧＯ倉敷",
+      "field": "hours",
+      "current": null,
+      "proposed": "Mon-Sun 10:00-00:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.gigo.co.jp/shops/kurashiki",
+      "evidence_quote": "営業時間 月曜日 10:00〜00:00 (daily through Sunday)",
+      "note": "App hours_text was null. SEGA games still on ALL.Net. Nearby Konami is アミパラ倉敷店.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8361,
+      "name": "Taito Station Asakusa (タイトーステーション浅草店)",
+      "field": "hours",
+      "current": "Mon-Sun 10:00-01:00",
+      "proposed": "Mon-Sun 10:00-25:00",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00001595",
+      "evidence_quote": "営業時間 10:00～25:00 年中無休; 住所 東京都台東区浅草１－２７－５",
+      "note": "Official Taito page says 25:00 not 01:00. Store open.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8211,
+      "name": "Amuseum Toyosu (アミュージアム豊洲店)",
+      "field": "status",
+      "current": "open",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://amuseum.jp/store/am_toyosu/",
+      "evidence_quote": "営業時間 10:00～23:00; 住所 東京都江東区豊洲2-4-9　アーバンドックららぽーと豊洲3F",
+      "note": "No correction to games. Store page does not mention taiko; app taiko is ZIv-only.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8275,
+      "name": "GiGO Shibuya (GiGO渋谷)",
+      "field": "other",
+      "current": "games other,taiko at Udagawa Zenmall",
+      "proposed": "Do not merge with GiGO渋谷宮益坂 (different store with maimai/chunithm/ongeki/diva on ALL.Net)",
+      "confidence": "certain",
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&lang=ja&ct=1000&at=12",
+      "evidence_quote": "ＧｉＧＯ渋谷宮益坂 | 東京都渋谷区渋谷１−１４−１４ＥＳＴ１階・７階 has maimai/chunithm/ongeki/project_diva. Official gigo.co.jp/shops/shibuya is Udagawa GiGO渋谷, a separate listing.",
+      "note": "App Udagawa pin is classic Shibuya GiGO. SEGA rhythm is at 宮益坂. If 宮益坂 is missing from the full map, add as its own venue (may already exist in another shard).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": null,
+      "name": "GiGOアピタ各務原 (and other Gifu GiGO crane stores)",
+      "field": "missing_venue",
+      "current": null,
+      "proposed": {
+        "country": "Japan",
+        "pref": "岐阜県",
+        "names_on_gigo_area_list": [
+          "GiGOアピタ各務原",
+          "GiGOドン･キホーテUNY可児",
+          "GiGOラスパ御嵩",
+          "GiGOルビットタウン高山"
+        ],
+        "source": "https://www.gigo.co.jp/shops?area=21"
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://www.gigo.co.jp/shops?area=21",
+      "evidence_quote": "GiGO Gifu area list includes GiGOアピタ各務原, GiGOドン･キホーテUNY可児, GiGOラスパ御嵩, GiGOルビットタウン高山",
+      "note": "NOT on ALL.Net maimai/chunithm/ongeki for Gifu, so probably no SEGA rhythm. Report only as possible non-rhythm map pins; do NOT add as rhythm venues without game evidence.",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8369,
+      "name": "Taito Station Ueno Okachimachi (タイトーステーション上野御徒町店)",
+      "field": "status",
+      "current": "open",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://www.taito.co.jp/store/00002168",
+      "evidence_quote": "年中無休; 営業時間 10:00～23:30; 住所 東京都台東区上野４－６－９",
+      "note": "Confirmed open. Hours match app. No official taiko confirmation extracted (dynamic page).",
+      "checked_at": "2026-08-02"
+    },
+    {
+      "id": 8326,
+      "name": "ROUND1 Crane Game Park Chofu Ekimae (ラウンドワン クレーンゲームパーク調布駅前店)",
+      "field": "status",
+      "current": "open",
+      "proposed": "open",
+      "confidence": "certain",
+      "evidence_url": "https://www.round1.co.jp/shop/tenpo/tokyo-chofu.html",
+      "evidence_quote": "Page title 【ラウンドワン】クレーンゲームパーク調布駅前店｜店舗紹介; HTTP 200 live store page",
+      "note": "Crane-only Round1 park; games=['other'] is correct.",
+      "checked_at": "2026-08-02"
+    }
+  ]
+}

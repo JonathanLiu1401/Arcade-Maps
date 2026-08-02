@@ -221,10 +221,25 @@ _CA_PROVINCES = re.compile(
     r"|Saskatchewan|Nova Scotia|New Brunswick|Newfoundland"
     r"|Prince Edward Island)\b", re.I)
 
+_TAIWAN_RE = re.compile(r"\btaiwan\b|台湾|臺灣", re.I)
+_HONG_KONG_RE = re.compile(r"\bhong\s?kong\b|香港", re.I)
+_MACAU_RE = re.compile(r"\bmacau\b|\bmacao\b|澳門|澳门", re.I)
+
+# The only hints allowed to be read from a source's own region NOTE
+# rather than the address. Kept to the three territories a China-scoped
+# source files separately, because the note is that source's own
+# statement of where the venue is - unlike a venue NAME, which lies
+# ("JAPAN VILLAGE" in Brooklyn).
+_REGION_NOTE_HINTS = (
+    (_TAIWAN_RE, "Taiwan"),
+    (_HONG_KONG_RE, "Hong Kong"),
+    (_MACAU_RE, "Macau"),
+)
+
 _COUNTRY_HINTS = [
-    (re.compile(r"\btaiwan\b|台湾|臺灣", re.I), "Taiwan"),
-    (re.compile(r"\bhong\s?kong\b|香港", re.I), "Hong Kong"),
-    (re.compile(r"\bmacau\b|\bmacao\b|澳門|澳门", re.I), "Macau"),
+    (_TAIWAN_RE, "Taiwan"),
+    (_HONG_KONG_RE, "Hong Kong"),
+    (_MACAU_RE, "Macau"),
     (re.compile(r"\bsingapore\b", re.I), "Singapore"),
     (re.compile(r"\bjapan\b", re.I), "Japan"),
     (re.compile(r"\bkorea\b", re.I), "South Korea"),
@@ -354,7 +369,7 @@ def bbox_country(lat, lng):
     return None
 
 
-def resolve_country(lat, lng, addr, name):
+def resolve_country(lat, lng, addr, name, note=None):
     """Order matters (audit D1): script checks, then the strong signals
     (coordinate bounding box, US state+ZIP), then keyword hints matched
     against the ADDRESS ONLY - venue names like "JAPAN VILLAGE" in
@@ -367,6 +382,16 @@ def resolve_country(lat, lng, addr, name):
     still runs and labels bare "Toronto, Ontario" addresses as Canada."""
     text = "%s %s" % (addr or "", name or "")
     addr = addr or ""
+    # A source's own region note, where it has one, is a stronger
+    # statement of location than the address text - see the BemaniCN
+    # loader, which resolves 香港 / 澳门 / 台湾 from its region field for
+    # exactly this reason. Only those three territories are read from a
+    # note: a venue NAME lies ("JAPAN VILLAGE" in Brooklyn) and a note
+    # from an unknown source might too.
+    if note:
+        for rx, territory in _REGION_NOTE_HINTS:
+            if rx.search(note):
+                return territory
     if _HANGUL.search(text):
         return "South Korea"
     if _CA_POSTAL.search(text):
@@ -1096,7 +1121,8 @@ def load_units(raw_dir, stats):
                            "Korea": "South Korea"}.get(country, country)
             else:
                 country = resolve_country(
-                    lat, lng, row.get("address"), row.get("name"))
+                    lat, lng, row.get("address"), row.get("name"),
+                    note=row.get("notes"))
             pref = extract_pref(country, row.get("address"))
             games = [g if g in GAME_SLUGS else "other"
                      for g in (row.get("games") or ["other"])]
@@ -1134,11 +1160,21 @@ def load_units(raw_dir, stats):
             # BUILDING name (香港财富广场 in Fuyang, 香港东路 in Qingdao) while
             # their region says 安徽省 / 山东省, and matching on the address
             # would drag them to Hong Kong.
+            #
+            # Taiwan is the same bug with a worse symptom. These 88 rows
+            # carry NO address and NO coordinate - the region note is the
+            # only statement of where they are - so left as "China" they
+            # could not pair with the ZIv/ALL.Net rows for the same
+            # venues, AND every correct Taiwanese coordinate offered for
+            # them was rejected for falling outside China's bounding box.
+            # All 88 shipped with no pin at all: invisible on the map.
             country = "China"
             if prov.startswith("香港"):
                 country = "Hong Kong"
             elif prov.startswith("澳门") or prov.startswith("澳門"):
                 country = "Macau"
+            elif prov.startswith("台湾") or prov.startswith("臺灣"):
+                country = "Taiwan"
             pref = prov or extract_pref("China", row.get("address"))
             add("bemanicn", row.get("name"), row.get("address"), lat, lng,
                 games, [], country, pref, note=row.get("notes"),
@@ -2576,7 +2612,7 @@ def run(raw_dir, out_dir, updated=None):
             venues = {}
         applied = collections.Counter()
         for a in ordered:
-            fields = (venues.get(build_corrections.venue_key(a))
+            fields = (build_corrections.lookup(venues, a)
                       or {}).get("fields") or {}
             for field, rec in sorted(fields.items()):
                 if field == "games":
@@ -2618,6 +2654,23 @@ def run(raw_dir, out_dir, updated=None):
                             a.pop("cab_models", None)
                     a["games"] = games
                     applied["games"] += 1
+                elif field == "cab_models":
+                    # A cabinet number may only be published where the
+                    # parent game already carries real count evidence -
+                    # the same invariant the validation block asserts.
+                    ev = a.get("count_evidence") or {}
+                    cm = dict(a.get("cab_models") or {})
+                    for slug, n in rec["value"].items():
+                        if n is not None and ev.get(
+                                CAB_MODEL_GAME[slug]) not in \
+                                REAL_COUNT_EVIDENCE:
+                            n = None
+                        if slug not in cm or (cm[slug] is None
+                                              and n is not None):
+                            cm[slug] = n
+                    if cm:
+                        a["cab_models"] = cm
+                        applied["cab_models"] += 1
                 elif field == "status":
                     # A permanently-closed venue drawn as open is the
                     # worst failure this map has: somebody travels to
@@ -2666,6 +2719,49 @@ def run(raw_dir, out_dir, updated=None):
             print("merge: applied verified corrections (%s)"
                   % ", ".join("%s=%d" % kv for kv in sorted(applied.items())),
                   file=sys.stderr)
+
+    # (p) owner-attested facts. These outrank every scraped source,
+    # because a person who was in the building beats a database that was
+    # not. They exist because some things are true and unsourceable: the
+    # WAHLAP register in mainland China carries only maimai DX and
+    # CHUNITHM, so an imported ONGEKI cabinet appears in NO official
+    # locator, and BemaniCN has it only if a user happened to file it.
+    att_path = os.path.join(out_dir, "owner_attested.json")
+    if os.path.exists(att_path):
+        try:
+            with open(att_path, encoding="utf-8") as fh:
+                attested = json.load(fh).get("venues") or {}
+        except (OSError, ValueError):
+            attested = {}
+        n_att = 0
+        for a in ordered:
+            rec = build_corrections.lookup(attested, a)
+            if not rec:
+                continue
+            add = [g for g in (rec.get("add_games") or [])
+                   if g in GAME_SLUGS and g not in a["games"]]
+            drop = [g for g in (rec.get("remove_games") or [])
+                    if g in a["games"]]
+            if not add and not drop:
+                continue
+            games = sorted((set(a["games"]) | set(add)) - set(drop))
+            a["games"] = games
+            for key in ("game_counts", "count_evidence"):
+                if a.get(key):
+                    kept = {k: v for k, v in a[key].items() if k in games}
+                    if kept:
+                        a[key] = kept
+                    else:
+                        a.pop(key, None)
+                        a.pop("counts_src", None)
+            a["attested"] = {"by": rec.get("attested_by") or "owner",
+                             "at": rec.get("attested_at"),
+                             "games": sorted(add),
+                             "note": rec.get("note")}
+            n_att += 1
+        if n_att:
+            print("merge: applied owner-attested facts to %d venue(s)"
+                  % n_att, file=sys.stderr)
 
     # ------- validation (hard fails) -------
     for a in ordered:
