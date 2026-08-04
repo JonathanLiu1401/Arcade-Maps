@@ -274,14 +274,26 @@ def venue_keys(arcade):
     """
     links = arcade.get("links") or {}
     keys = []
-    for src in ("ziv", "bemanicn"):
-        if links.get(src):
-            keys.append(src + "|" + links[src])
+    # Prefer stable source pages first (every provenance with a real URL).
+    for src in ("ziv", "bemanicn", "allnet", "nearcade", "insert_coin",
+                "musecat", "hkrgm2", "maimaidx_tw", "otogesetchi",
+                "timezone", "round1usa", "wahlap_gc", "eagate", "wahlap",
+                "community"):
+        u = links.get(src)
+        if u:
+            keys.append(src + "|" + u)
     for url in (links.get("also") or []):
-        for src, frag in (("ziv", "zenius-i-vanisher"),
-                          ("bemanicn", "bemanicn.com")):
-            if frag in str(url):
-                keys.append(src + "|" + url)
+        u = str(url)
+        if "zenius-i-vanisher" in u:
+            keys.append("ziv|" + u)
+        elif "bemanicn.com" in u:
+            keys.append("bemanicn|" + u)
+        elif "am-all.net" in u:
+            keys.append("allnet|" + u)
+        elif "insert-coin.app" in u:
+            keys.append("insert_coin|" + u)
+        elif "nearcade" in u:
+            keys.append("nearcade|" + u)
     keys.append("addr|%s|%s|%s" % (arcade.get("country") or "",
                                    (arcade.get("name") or "").strip(),
                                    (arcade.get("addr") or "").strip()))

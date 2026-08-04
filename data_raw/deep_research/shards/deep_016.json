@@ -1,0 +1,2700 @@
+{
+ "shard": 16,
+ "n": 100,
+ "risk_hist": {
+  "4": 76,
+  "3": 15,
+  "2": 9
+ },
+ "venues": [
+  {
+   "id": 4969,
+   "sid": "z11440",
+   "name": "索尼Playstation（北京世纪金源店）",
+   "addr": "世纪金源购物中心东区B1层名创优品及北京地铁长春桥站地下通道旁",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.957442,
+   "lng": 116.283938,
+   "games": [
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9574420,116.2839380",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11440",
+    "bemanicn": "https://map.bemanicn.com/s/6253",
+    "nearcade": "https://nearcade.phizone.cn/shops/16253"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 北京市 | Cabs: 太鼓之达人 / Taiko no Tatsujin Nijiiro; 宝可梦明耀之星 (Pokémon MEZASTAR) | sid=16253; country=CN; region: 北京市 海淀区; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/16253 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5013,
+   "sid": "b3014",
+   "name": "美吉熊绿蜻蜓国泰百货店",
+   "addr": "北京市北京市密云区鼓楼南大街16号国泰百货(密云店)F3美吉熊儿童乐园(密云国泰百货店)",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.37210878296362,
+   "lng": 116.84016246350454,
+   "games": [
+    "maimai_dx",
+    "wacca"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.3721088,116.8401625",
+    "bemanicn": "https://map.bemanicn.com/s/3014",
+    "nearcade": "https://nearcade.phizone.cn/shops/13014"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: WACCA; region: 北京市 | sid=13014; country=CN; region: 北京市 密云区 | source_url: https://nearcade.phizone.cn/shops/13014 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5014,
+   "sid": "z11306",
+   "name": "美吉熊绿蜻蜓昌平天通苑店",
+   "addr": "太平庄东路天通苑东苑3区2号商业楼国泰百货3层",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.0717668,
+   "lng": 116.4292358,
+   "games": [
+    "maimai_dx",
+    "other",
+    "wacca"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.0717668,116.4292358",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11306",
+    "bemanicn": "https://map.bemanicn.com/s/1565",
+    "nearcade": "https://nearcade.phizone.cn/shops/11565"
+   },
+   "also": [
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11299"
+   ],
+   "closed": false,
+   "notes": "other games: WACCA; region: 北京市 | Cabs: 华卡音舞 Ver. 3 (WACCA REVERSE); 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=11565; country=CN; region: 北京市 昌平区 | source_url: https://nearcade.phizone.cn/shops/11565 | inherited:true (coords from ziv) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5218,
+   "sid": "b7269",
+   "name": "诺娜星途电玩城（久隆生活广场店）",
+   "addr": "北京市朝阳区酒仙桥街道酒仙桥路39号1幢-1至6层101内三层J03A-09诺娜星途电玩城(久隆生活广场店)",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.96044235005584,
+   "lng": 116.48878655158343,
+   "games": [
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9604424,116.4887866",
+    "bemanicn": "https://map.bemanicn.com/s/7269",
+    "nearcade": "https://nearcade.phizone.cn/shops/17269"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 北京市 | sid=17269; country=CN; region: 北京市 朝阳区 | source_url: https://nearcade.phizone.cn/shops/17269 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5223,
+   "sid": "z11399",
+   "name": "贝乐童话(北京怀柔万达广场店)",
+   "addr": "府前西街1号院怀柔万达广场3层",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.315566988975,
+   "lng": 116.62384270874,
+   "games": [
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.3155670,116.6238427",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11399",
+    "bemanicn": "https://map.bemanicn.com/s/5074",
+    "nearcade": "https://nearcade.phizone.cn/shops/15074"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 北京市 | Cabs: 太鼓之达人 / Taiko no Tatsujin Nijiiro; 宝可梦明耀之星 (Pokémon MEZASTAR) | sid=15074; country=CN; region: 北京市 怀柔区; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/15074 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5529,
+   "sid": "b6144",
+   "name": "酷玩劲乐游艺中心",
+   "addr": "双营西路78号路劲世界广场2层东北角",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.20581376237401,
+   "lng": 116.28652448958852,
+   "games": [
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.2058138,116.2865245",
+    "bemanicn": "https://map.bemanicn.com/s/6144",
+    "nearcade": "https://nearcade.phizone.cn/shops/16144"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 北京市 | sid=16144; country=CN; region: 北京市 昌平区 | source_url: https://nearcade.phizone.cn/shops/16144 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5578,
+   "sid": "z11317",
+   "name": "量子攻略北京大兴旧宫店",
+   "addr": "北京市大兴旧宫住总万科广场五楼量子攻略",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.8043754,
+   "lng": 116.4533268,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.8043754,116.4533268",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11317",
+    "bemanicn": "https://map.bemanicn.com/s/2028"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 北京市 | Cabs: 宝可梦明耀之星 (Pokémon MEZASTAR); 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=12028; country=CN; region: 北京市 大兴区; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/12028 | bemanicn addr: 旧宫忠凉路1号住总万科广场5楼 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5579,
+   "sid": "b1800",
+   "name": "量子攻略北京朝阳金隅嘉品店",
+   "addr": "北京市朝阳区东坝中路金隅嘉品mall3层量子攻略游戏体验中心",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.95078775825058,
+   "lng": 116.54116611424993,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9507878,116.5411661",
+    "bemanicn": "https://map.bemanicn.com/s/1800"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦加傲乐; region: 北京市 | sid=11800; country=CN; region: 北京市 朝阳区; other games: 宝可梦加傲乐 | source_url: https://nearcade.phizone.cn/shops/11800 | bemanicn addr: 东坝中路38号3楼 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5580,
+   "sid": "z11247",
+   "name": "量子攻略游戏体验中心(新奥购物中心店)",
+   "addr": "湖景东路9号新奥购物中心B1层H1-01",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.998854,
+   "lng": 116.390233,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9988540,116.3902330",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11247",
+    "bemanicn": "https://map.bemanicn.com/s/572",
+    "nearcade": "https://nearcade.phizone.cn/shops/10572"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 北京市 | Cabs: 中二节奏2026 / CHUNITHM VERSE; 宝可梦明耀之星 (Pokémon MEZASTAR); 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=10572; country=CN; region: 北京市 朝阳区; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/10572 | inherited:true (coords from ziv) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5581,
+   "sid": "z11348",
+   "name": "量子攻略（龙湖大兴天街店）",
+   "addr": "永兴路七号院龙湖大兴天街2层",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.6850302,
+   "lng": 116.3142797,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.6850302,116.3142797",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11348",
+    "bemanicn": "https://map.bemanicn.com/s/2951",
+    "nearcade": "https://nearcade.phizone.cn/shops/12951"
+   },
+   "also": [
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11355"
+   ],
+   "closed": false,
+   "notes": "other games: 炸弹少女, 宝可梦明耀之星; region: 北京市 | Cabs: Bombergirl; 宝可梦明耀之星 (Pokémon MEZASTAR); 舞萌DX 2026 (maimai DX PRiSM PLUS) | Cabs: 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=12951; country=CN; region: 北京市 大兴区; other games: 宝可梦明耀之星, 炸弹少女 | source_url: https://nearcade.phizone.cn/shops/12951 | inherited:true (coords from ziv) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5583,
+   "sid": "b1798",
+   "name": "量子空间·电竞家庭娱乐中心北京顺义店",
+   "addr": "锦荟港3楼",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.12537425816775,
+   "lng": 116.6415063550713,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.1253743,116.6415064",
+    "bemanicn": "https://map.bemanicn.com/s/1798",
+    "nearcade": "https://nearcade.phizone.cn/shops/11798"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 北京市 | sid=11798; country=CN; region: 北京市 顺义区; other games: 头文字D | source_url: https://nearcade.phizone.cn/shops/11798 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5661,
+   "sid": "z11372",
+   "name": "阿凡达&爱玩荟朝阳华腾新天地店",
+   "addr": "北京市朝阳区东四环中路195号阿凡达&爱玩荟北京华腾新天地店",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.884252594192,
+   "lng": 116.48219915665,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.8842526,116.4821992",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11372",
+    "bemanicn": "https://map.bemanicn.com/s/4237"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 北京市 | Cabs: E舞成名 网络版 (E5 ONLINE); Initial D The Arcade; Pokémon Ga-Olé; jubeat音乐魔方; 中二节奏2026 / CHUNITHM VERSE; 太鼓之达人 / Taiko no Tatsujin Nijiiro; 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=14237; country=CN; region: 北京市 朝阳区; other games: 头文字D, 宝可梦加傲乐 | source_url: https://nearcade.phizone.cn/shops/14237 | bemanicn addr: 东四环中路195号 华腾新天地一层 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5699,
+   "sid": "z11444",
+   "name": "電波雀莊（北京昌平城北店）",
+   "addr": "城北街道嘉诚中心6层627室",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.215233,
+   "lng": 116.228264,
+   "games": [
+    "chunithm",
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.2152330,116.2282640",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11444",
+    "bemanicn": "https://map.bemanicn.com/s/6333",
+    "nearcade": "https://nearcade.phizone.cn/shops/16333"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 北京市 | Cabs: 中二节奏2026 / CHUNITHM VERSE; 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=16333; country=CN; region: 北京市 昌平区 | source_url: https://nearcade.phizone.cn/shops/16333 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5756,
+   "sid": "z11294",
+   "name": "风云再起北京北投爱琴海店",
+   "addr": "北京市通州区新华东街289号院1号楼北京北投爱琴海购物公园M层",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.9078323,
+   "lng": 116.6526429,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9078323,116.6526429",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11294"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "Cabs: Initial D The Arcade; 太鼓之达人 / Taiko no Tatsujin Nijiiro; 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=11079; country=CN; region: 北京市 通州区; other games: 湾岸MIDNIGHT, 头文字D, 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/11079 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5758,
+   "sid": "z4191",
+   "name": "风云再起北京西西友谊店",
+   "addr": "北京市西城区二环西单北大街109号西西友谊商城2层",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.912829349931,
+   "lng": 116.366562626,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9128293,116.3665626",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4191",
+    "bemanicn": "https://map.bemanicn.com/s/1867"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 北京市 | Cabs: E舞成名 网络版 (E5 ONLINE); Initial D The Arcade; Pokémon Ga-Olé; 中二节奏2026 / CHUNITHM VERSE; 宝可梦明耀之星 (Pokémon MEZASTAR); 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=11867; country=CN; region: 北京市 西城区; other games: 宝可梦加傲乐, 宝可梦明耀之星, 头文字D | source_url: https://nearcade.phizone.cn/shops/11867 | bemanicn addr: 西西友谊商城2楼 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5797,
+   "sid": "z11322",
+   "name": "风云再起（北京门头沟中骏世界城店）",
+   "addr": "西长安中骏世界城4楼",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.9102604,
+   "lng": 116.1192379,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.9102604,116.1192379",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11322",
+    "bemanicn": "https://map.bemanicn.com/s/2299",
+    "nearcade": "https://nearcade.phizone.cn/shops/12299"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 北京市 | Cabs: Initial D The Arcade; 太鼓之达人 / Taiko no Tatsujin Nijiiro; 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=12299; country=CN; region: 北京市 门头沟区; other games: 头文字D | source_url: https://nearcade.phizone.cn/shops/12299 | inherited:true (coords from ziv) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5863,
+   "sid": "z11412",
+   "name": "魔力季（旧宫万科3F）",
+   "addr": "旧宫忠凉路1号院1号楼住总万科广场3F L3025",
+   "country": "China",
+   "pref": "北京",
+   "lat": 39.804328874193,
+   "lng": 116.45450241927,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=39.8043289,116.4545024",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11412",
+    "bemanicn": "https://map.bemanicn.com/s/5644",
+    "nearcade": "https://nearcade.phizone.cn/shops/15644"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 北京市 | Cabs: 宝可梦明耀之星 (Pokémon MEZASTAR); 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=15644; country=CN; region: 北京市 大兴区; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/15644 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 5871,
+   "sid": "z11315",
+   "name": "魔方MIX北京顺义华联店",
+   "addr": "北京市顺义区新顺南大街8号华联购物中心3楼魔方MIX家庭娱乐中心",
+   "country": "China",
+   "pref": "北京",
+   "lat": 40.1268397,
+   "lng": 116.6466154,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=40.1268397,116.6466154",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11315",
+    "bemanicn": "https://map.bemanicn.com/s/2024"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 北京市 | Cabs: 中二节奏2026 / CHUNITHM VERSE; 太鼓之达人 / Taiko no Tatsujin Nijiiro; 舞萌DX 2026 (maimai DX PRiSM PLUS) | sid=12024; country=CN; region: 北京市 顺义区 | source_url: https://nearcade.phizone.cn/shops/12024 | bemanicn addr: 北京顺义华联金街购物中心3楼 | inherited:true (coords from ziv)",
+   "risk": 4
+  },
+  {
+   "id": 1856,
+   "sid": "h045572f1d4",
+   "name": "台中大鲁阁新时代（现已改名iFG远雄台中店）",
+   "addr": "台湾省台中市东区复兴路四段186号台中新时代威秀影城",
+   "country": "China",
+   "pref": "台湾省",
+   "lat": 24.139039833976287,
+   "lng": 120.6835394870913,
+   "games": [
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=24.1390398,120.6835395",
+    "bemanicn": "https://map.bemanicn.com/s/6935",
+    "nearcade": "https://nearcade.phizone.cn/shops/16935"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "sid=16935; country=CN; region: 台湾省 台中市; other games: maimai, 头文字D | source_url: https://nearcade.phizone.cn/shops/16935",
+   "risk": 3
+  },
+  {
+   "id": 1679,
+   "sid": "b5493",
+   "name": "农安佳加乐超市动漫城",
+   "addr": "德彪街25号3F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.428068,
+   "lng": 125.174099,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%86%9C%E5%AE%89%E4%BD%B3%E5%8A%A0%E4%B9%90%E8%B6%85%E5%B8%82%E5%8A%A8%E6%BC%AB%E5%9F%8E%20%E5%BE%B7%E5%BD%AA%E8%A1%9725%E5%8F%B73F",
+    "bemanicn": "https://map.bemanicn.com/s/5493"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王; region: 吉林省 长春市 | position from address: geocoded to address precision by baidu",
+   "risk": 2
+  },
+  {
+   "id": 1757,
+   "sid": "b4972",
+   "name": "博禹动漫世界",
+   "addr": "德惠路888号住邦休闲购物商都A座5F层",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.536107583910024,
+   "lng": 125.69980462464494,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=44.5361076,125.6998046",
+    "bemanicn": "https://map.bemanicn.com/s/4972",
+    "nearcade": "https://nearcade.phizone.cn/shops/14972"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王, 头文字D; region: 吉林省 长春市 | sid=14972; country=CN; region: 吉林省 长春市; other games: 鼓王, 头文字D | source_url: https://nearcade.phizone.cn/shops/14972 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 1758,
+   "sid": "b3539",
+   "name": "博禹嘉年华（桦甸店）＆萌娃抓抓",
+   "addr": "吉林国贸购物中心四楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.97324862396746,
+   "lng": 126.73959329916397,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.9732486,126.7395933",
+    "bemanicn": "https://map.bemanicn.com/s/3539",
+    "nearcade": "https://nearcade.phizone.cn/shops/13539"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 吉林省 吉林市 | sid=13539; country=CN; region: 吉林省 吉林市; other games: 头文字D | source_url: https://nearcade.phizone.cn/shops/13539 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 4130,
+   "sid": "b4836",
+   "name": "满载客动漫城（原动感地带）",
+   "addr": "太王镇东城商厦欧亚商超三楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 41.12265517180879,
+   "lng": 126.18167555912412,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=41.1226552,126.1816756",
+    "bemanicn": "https://map.bemanicn.com/s/4836",
+    "nearcade": "https://nearcade.phizone.cn/shops/14836"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王, 头文字D; region: 吉林省 通化市 | sid=14836; country=CN; region: 吉林省 通化市; other games: 鼓王, 头文字D | source_url: https://nearcade.phizone.cn/shops/14836 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 4194,
+   "sid": "b2758",
+   "name": "潮派世界(栖乐荟店)",
+   "addr": "朝阳区博文路与学府街交叉口东南100米",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.815814,
+   "lng": 125.251682,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E6%BD%AE%E6%B4%BE%E4%B8%96%E7%95%8C%28%E6%A0%96%E4%B9%90%E8%8D%9F%E5%BA%97%29%20%E6%9C%9D%E9%98%B3%E5%8C%BA%E5%8D%9A%E6%96%87%E8%B7%AF%E4%B8%8E%E5%AD%A6%E5%BA%9C%E8%A1%97%E4%BA%A4%E5%8F%89%E5%8F%A3%E4%B8%9C%E5%8D%97100%E7%B1%B3",
+    "bemanicn": "https://map.bemanicn.com/s/2758"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王; region: 吉林省 长春市 | position from address: geocoded to address precision by baidu",
+   "risk": 2
+  },
+  {
+   "id": 4671,
+   "sid": "b2343",
+   "name": "电玩帝国（东环不夜城店）",
+   "addr": "东环不夜城1楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.856928764839374,
+   "lng": 125.38796986509129,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8569288,125.3879699",
+    "bemanicn": "https://map.bemanicn.com/s/2343",
+    "nearcade": "https://nearcade.phizone.cn/shops/12343"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 星光, 鼓王, 头文字D; region: 吉林省 长春市 | sid=12343; country=CN; region: 吉林省 长春市; other games: 星光, 鼓王, 头文字D | source_url: https://nearcade.phizone.cn/shops/12343 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 4672,
+   "sid": "b5143",
+   "name": "电玩帝国（中东新天地店）",
+   "addr": "江南大街298号中东新天地2楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 41.705789899001815,
+   "lng": 125.92858831257989,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=41.7057899,125.9285883",
+    "bemanicn": "https://map.bemanicn.com/s/5143",
+    "nearcade": "https://nearcade.phizone.cn/shops/15143"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王; region: 吉林省 通化市 | sid=15143; country=CN; region: 吉林省 通化市; other games: 鼓王 | source_url: https://nearcade.phizone.cn/shops/15143 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 5158,
+   "sid": "b4405",
+   "name": "萌趣童堡中润店（原开心乐园电玩城）",
+   "addr": "步行街旁中润购物中心二楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 45.61754856858088,
+   "lng": 122.84627722755879,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=45.6175486,122.8462772",
+    "bemanicn": "https://map.bemanicn.com/s/4405",
+    "nearcade": "https://nearcade.phizone.cn/shops/14405"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王, 头文字D; region: 吉林省 白城市 | sid=14405; country=CN; region: 吉林省 白城市; other games: 鼓王, 头文字D | source_url: https://nearcade.phizone.cn/shops/14405 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 5506,
+   "sid": "b6325",
+   "name": "酷炫游艺娱乐城",
+   "addr": "大润发4楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 45.60879996790085,
+   "lng": 122.83408680540498,
+   "games": [
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=45.6088000,122.8340868",
+    "bemanicn": "https://map.bemanicn.com/s/6325",
+    "nearcade": "https://nearcade.phizone.cn/shops/16325"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王, 头文字D; region: 吉林省 白城市 | sid=16325; country=CN; region: 吉林省 白城市; other games: 鼓王, 头文字D | source_url: https://nearcade.phizone.cn/shops/16325 | inherited:true (coords from nearcade)",
+   "risk": 2
+  },
+  {
+   "id": 1645,
+   "sid": "h3a2e69df27",
+   "name": "兄弟动漫城德惠新东方购物中心店",
+   "addr": "吉林省德惠市新东方购物中心三楼兄弟动漫城吉林省德惠市新东方购物中心三楼兄弟动漫城",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.881775,
+   "lng": 126.514897,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%85%84%E5%BC%9F%E5%8A%A8%E6%BC%AB%E5%9F%8E%E5%BE%B7%E6%83%A0%E6%96%B0%E4%B8%9C%E6%96%B9%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E5%BE%B7%E6%83%A0%E5%B8%82%E6%96%B0%E4%B8%9C%E6%96%B9%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E4%B8%89%E6%A5%BC%E5%85%84%E5%BC%9F%E5%8A%A8%E6%BC%AB%E5%9F%8E%E5%90%89%E6%9E%97%E7%9C%81%E5%BE%B7%E6%83%A0%E5%B8%82%E6%96%B0%E4%B8%9C%E6%96%B9%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E4%B8%89%E6%A5%BC%E5%85%84%E5%BC%9F%E5%8A%A8%E6%BC%AB%E5%9F%8E"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 1767,
+   "sid": "hce9f431809",
+   "name": "卡吉姆吉林昌邑店",
+   "addr": "吉林省吉林市昌邑区财富广场5层卡吉姆动漫",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.844791,
+   "lng": 126.561638,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%8D%A1%E5%90%89%E5%A7%86%E5%90%89%E6%9E%97%E6%98%8C%E9%82%91%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E5%90%89%E6%9E%97%E5%B8%82%E6%98%8C%E9%82%91%E5%8C%BA%E8%B4%A2%E5%AF%8C%E5%B9%BF%E5%9C%BA5%E5%B1%82%E5%8D%A1%E5%90%89%E5%A7%86%E5%8A%A8%E6%BC%AB"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 1845,
+   "sid": "hfb779e1223",
+   "name": "叮当次元长春宽城万达店",
+   "addr": "吉林省长春市宽城区上海路宽城广场3楼3023A",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.898637,
+   "lng": 125.325637,
+   "games": [
+    "chunithm"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%8F%AE%E5%BD%93%E6%AC%A1%E5%85%83%E9%95%BF%E6%98%A5%E5%AE%BD%E5%9F%8E%E4%B8%87%E8%BE%BE%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E9%95%BF%E6%98%A5%E5%B8%82%E5%AE%BD%E5%9F%8E%E5%8C%BA%E4%B8%8A%E6%B5%B7%E8%B7%AF%E5%AE%BD%E5%9F%8E%E5%B9%BF%E5%9C%BA3%E6%A5%BC3023A"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 1873,
+   "sid": "hbf3dd3948d",
+   "name": "吉林市丰满区世宇乐园",
+   "addr": "吉林省吉林市吉林大街1~2号欧亚综合体三楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.787899,
+   "lng": 126.548284,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%90%89%E6%9E%97%E5%B8%82%E4%B8%B0%E6%BB%A1%E5%8C%BA%E4%B8%96%E5%AE%87%E4%B9%90%E5%9B%AD%20%E5%90%89%E6%9E%97%E7%9C%81%E5%90%89%E6%9E%97%E5%B8%82%E5%90%89%E6%9E%97%E5%A4%A7%E8%A1%971~2%E5%8F%B7%E6%AC%A7%E4%BA%9A%E7%BB%BC%E5%90%88%E4%BD%93%E4%B8%89%E6%A5%BC"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 1944,
+   "sid": "h25c2218cc4",
+   "name": "哎呦玩家长春净月店",
+   "addr": "吉林省长春市南关区复地嘉年华广场A3A座十楼1002",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.814797,
+   "lng": 125.40196,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%93%8E%E5%91%A6%E7%8E%A9%E5%AE%B6%E9%95%BF%E6%98%A5%E5%87%80%E6%9C%88%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E9%95%BF%E6%98%A5%E5%B8%82%E5%8D%97%E5%85%B3%E5%8C%BA%E5%A4%8D%E5%9C%B0%E5%98%89%E5%B9%B4%E5%8D%8E%E5%B9%BF%E5%9C%BAA3A%E5%BA%A7%E5%8D%81%E6%A5%BC1002"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 2148,
+   "sid": "h3bc4f68e7e",
+   "name": "城市英雄长春南关活力城店",
+   "addr": "长春市南关区重庆路与大经路交汇活力城四楼徐氏城市英雄",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.888712,
+   "lng": 125.327444,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%9F%8E%E5%B8%82%E8%8B%B1%E9%9B%84%E9%95%BF%E6%98%A5%E5%8D%97%E5%85%B3%E6%B4%BB%E5%8A%9B%E5%9F%8E%E5%BA%97%20%E9%95%BF%E6%98%A5%E5%B8%82%E5%8D%97%E5%85%B3%E5%8C%BA%E9%87%8D%E5%BA%86%E8%B7%AF%E4%B8%8E%E5%A4%A7%E7%BB%8F%E8%B7%AF%E4%BA%A4%E6%B1%87%E6%B4%BB%E5%8A%9B%E5%9F%8E%E5%9B%9B%E6%A5%BC%E5%BE%90%E6%B0%8F%E5%9F%8E%E5%B8%82%E8%8B%B1%E9%9B%84"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 2273,
+   "sid": "he2ff627aa2",
+   "name": "大玩家延吉万达店",
+   "addr": "吉林省延吉市公园街道万达广场二楼大玩家",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.883696,
+   "lng": 126.559279,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E7%8E%A9%E5%AE%B6%E5%BB%B6%E5%90%89%E4%B8%87%E8%BE%BE%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E5%BB%B6%E5%90%89%E5%B8%82%E5%85%AC%E5%9B%AD%E8%A1%97%E9%81%93%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E4%BA%8C%E6%A5%BC%E5%A4%A7%E7%8E%A9%E5%AE%B6"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 2690,
+   "sid": "h569398d354",
+   "name": "威尼斯辽源东旺店",
+   "addr": "吉林省辽源市步行街东旺集贸三楼威伲斯电玩馆",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.898813,
+   "lng": 125.140406,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E5%A8%81%E5%B0%BC%E6%96%AF%E8%BE%BD%E6%BA%90%E4%B8%9C%E6%97%BA%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E8%BE%BD%E6%BA%90%E5%B8%82%E6%AD%A5%E8%A1%8C%E8%A1%97%E4%B8%9C%E6%97%BA%E9%9B%86%E8%B4%B8%E4%B8%89%E6%A5%BC%E5%A8%81%E4%BC%B2%E6%96%AF%E7%94%B5%E7%8E%A9%E9%A6%86"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 3709,
+   "sid": "h2357f72ec6",
+   "name": "极限动漫延吉百利城店",
+   "addr": "吉林省延吉市百利城九楼极限动漫",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.857166,
+   "lng": 126.50128,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E6%9E%81%E9%99%90%E5%8A%A8%E6%BC%AB%E5%BB%B6%E5%90%89%E7%99%BE%E5%88%A9%E5%9F%8E%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E5%BB%B6%E5%90%89%E5%B8%82%E7%99%BE%E5%88%A9%E5%9F%8E%E4%B9%9D%E6%A5%BC%E6%9E%81%E9%99%90%E5%8A%A8%E6%BC%AB"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 3904,
+   "sid": "h5d49aa143c",
+   "name": "汤姆熊延吉百货店",
+   "addr": "吉林省延吉市光明街608号百货大楼八楼汤姆熊欢乐世界",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.814144,
+   "lng": 126.552392,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E6%B1%A4%E5%A7%86%E7%86%8A%E5%BB%B6%E5%90%89%E7%99%BE%E8%B4%A7%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E5%BB%B6%E5%90%89%E5%B8%82%E5%85%89%E6%98%8E%E8%A1%97608%E5%8F%B7%E7%99%BE%E8%B4%A7%E5%A4%A7%E6%A5%BC%E5%85%AB%E6%A5%BC%E6%B1%A4%E5%A7%86%E7%86%8A%E6%AC%A2%E4%B9%90%E4%B8%96%E7%95%8C"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 4005,
+   "sid": "hd262b7fa4a",
+   "name": "海奥华星长春远大购物广场店",
+   "addr": "吉林省长春市南关区远大购物广场C座3F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.79794,
+   "lng": 125.305622,
+   "games": [
+    "chunithm",
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E5%A5%A5%E5%8D%8E%E6%98%9F%E9%95%BF%E6%98%A5%E8%BF%9C%E5%A4%A7%E8%B4%AD%E7%89%A9%E5%B9%BF%E5%9C%BA%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E9%95%BF%E6%98%A5%E5%B8%82%E5%8D%97%E5%85%B3%E5%8C%BA%E8%BF%9C%E5%A4%A7%E8%B4%AD%E7%89%A9%E5%B9%BF%E5%9C%BAC%E5%BA%A73F"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 5051,
+   "sid": "h1b526e135d",
+   "name": "艺珑传奇榆树长白山店",
+   "addr": "吉林省榆树市榆树大街长白山一楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.825105,
+   "lng": 126.553696,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E8%89%BA%E7%8F%91%E4%BC%A0%E5%A5%87%E6%A6%86%E6%A0%91%E9%95%BF%E7%99%BD%E5%B1%B1%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E6%A6%86%E6%A0%91%E5%B8%82%E6%A6%86%E6%A0%91%E5%A4%A7%E8%A1%97%E9%95%BF%E7%99%BD%E5%B1%B1%E4%B8%80%E6%A5%BC"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 5606,
+   "sid": "b7304",
+   "name": "金莎电玩中心",
+   "addr": "吉林省通化市梅河口市梅河大街1073号梅河口公路客运总站(梅河大街西)",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.536931,
+   "lng": 125.704915,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%8E%8E%E7%94%B5%E7%8E%A9%E4%B8%AD%E5%BF%83%20%E5%90%89%E6%9E%97%E7%9C%81%E9%80%9A%E5%8C%96%E5%B8%82%E6%A2%85%E6%B2%B3%E5%8F%A3%E5%B8%82%E6%A2%85%E6%B2%B3%E5%A4%A7%E8%A1%971073%E5%8F%B7%E6%A2%85%E6%B2%B3%E5%8F%A3%E5%85%AC%E8%B7%AF%E5%AE%A2%E8%BF%90%E6%80%BB%E7%AB%99%28%E6%A2%85%E6%B2%B3%E5%A4%A7%E8%A1%97%E8%A5%BF%29",
+    "bemanicn": "https://map.bemanicn.com/s/7304"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: maimai; region: 吉林省 通化市 | position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 5614,
+   "sid": "hb51571a965",
+   "name": "鑫乐迪梅河口维港城店",
+   "addr": "吉林省梅河口市维港城三楼鑫乐迪家庭娱乐中心",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.882685,
+   "lng": 126.55947,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E9%91%AB%E4%B9%90%E8%BF%AA%E6%A2%85%E6%B2%B3%E5%8F%A3%E7%BB%B4%E6%B8%AF%E5%9F%8E%E5%BA%97%20%E5%90%89%E6%9E%97%E7%9C%81%E6%A2%85%E6%B2%B3%E5%8F%A3%E5%B8%82%E7%BB%B4%E6%B8%AF%E5%9F%8E%E4%B8%89%E6%A5%BC%E9%91%AB%E4%B9%90%E8%BF%AA%E5%AE%B6%E5%BA%AD%E5%A8%B1%E4%B9%90%E4%B8%AD%E5%BF%83"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu",
+   "risk": 3
+  },
+  {
+   "id": 1174,
+   "sid": "b5757",
+   "name": "OK动漫城吉林龙潭店",
+   "addr": "吉林省吉林市龙潭区遵义路江北百货大楼3楼OK动漫城",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.908324296048505,
+   "lng": 126.55771920941429,
+   "games": [
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.9083243,126.5577192",
+    "bemanicn": "https://map.bemanicn.com/s/5757"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 吉林市 | sid=15757; country=CN; region: 吉林省 吉林市 | source_url: https://nearcade.phizone.cn/shops/15757 | bemanicn addr: 吉林省吉林市龙潭区龙华街道江北百货大楼3层OK动漫城 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1259,
+   "sid": "b5434",
+   "name": "ULAND公主岭荣超金未来店",
+   "addr": "吉林省公主岭市荣超金未来8号楼ULAND家庭娱乐中心",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.48633602709405,
+   "lng": 124.79103192807739,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.4863360,124.7910319",
+    "bemanicn": "https://map.bemanicn.com/s/5434"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=15434; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/15434 | bemanicn addr: 荣超金未来购物商场 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1390,
+   "sid": "b663",
+   "name": "万隆电玩城",
+   "addr": "青年路2199号",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.050982214943055,
+   "lng": 125.18300517481825,
+   "games": [
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=44.0509822,125.1830052",
+    "bemanicn": "https://map.bemanicn.com/s/663",
+    "nearcade": "https://nearcade.phizone.cn/shops/10663"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=10663; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/10663 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1413,
+   "sid": "z2408",
+   "name": "世宇乐园（吉林欧亚综合体）",
+   "addr": "吉林大街1-2号 欧亚商都综合体3层",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.787887806358,
+   "lng": 126.5481019394,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "ziv",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.7878878,126.5481019",
+    "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2408",
+    "bemanicn": "https://map.bemanicn.com/s/73",
+    "nearcade": "https://nearcade.phizone.cn/shops/10073"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王; region: 吉林省 吉林市 | Cabs: Asphalt Moto Blitz DX; E舞成名 网络版 (E5 ONLINE); Speed Driver 5 New Generation; Wangan Midnight MAXIMUM TUNE 6R; 太鼓の達人12 亞洲版; 狂野飙车9: 竞速传奇 DX (Asphalt 9 Legends Arcade DX); 舞萌DX 2026 (maimai DX PRiSM PLUS); 鼓王3：骑士与公主 (Percussion Master 3) | sid=10073; country=CN; region: 吉林省 吉林市; other games: 鼓王, 湾岸MIDNIGHT | source_url: https://nearcade.phizone.cn/shops/10073 |",
+   "risk": 4
+  },
+  {
+   "id": 1579,
+   "sid": "h74a18c61e5",
+   "name": "事诚电竞长春绿园车城万达店",
+   "addr": "长春市汽车开发区西湖大路与腾飞大路交汇车城万达广场购物中心A1-1#楼3F-A-",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.825005,
+   "lng": 125.184215,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=%E4%BA%8B%E8%AF%9A%E7%94%B5%E7%AB%9E%E9%95%BF%E6%98%A5%E7%BB%BF%E5%9B%AD%E8%BD%A6%E5%9F%8E%E4%B8%87%E8%BE%BE%E5%BA%97%20%E9%95%BF%E6%98%A5%E5%B8%82%E6%B1%BD%E8%BD%A6%E5%BC%80%E5%8F%91%E5%8C%BA%E8%A5%BF%E6%B9%96%E5%A4%A7%E8%B7%AF%E4%B8%8E%E8%85%BE%E9%A3%9E%E5%A4%A7%E8%B7%AF%E4%BA%A4%E6%B1%87%E8%BD%A6%E5%9F%8E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83A1-1%23%E6%A5%BC3F-A-",
+    "bemanicn": "https://map.bemanicn.com/s/6497"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "position from address: geocoded to address precision by baidu | region: 吉林省 长春市 | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 1580,
+   "sid": "b6258",
+   "name": "事诚电竞（宽城万达店）",
+   "addr": "宽城区北人民大街155号万达广场一楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.91246287706647,
+   "lng": 125.31489987092854,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.9124629,125.3148999",
+    "bemanicn": "https://map.bemanicn.com/s/6258",
+    "nearcade": "https://nearcade.phizone.cn/shops/16258"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=16258; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/16258 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 1581,
+   "sid": "b6686",
+   "name": "事诚电竞（重庆路万达店）",
+   "addr": "重庆路万达广场3楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.88752423118638,
+   "lng": 125.31387964362119,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8875242,125.3138796",
+    "bemanicn": "https://map.bemanicn.com/s/6686",
+    "nearcade": "https://nearcade.phizone.cn/shops/16686"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=16686; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/16686 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 1644,
+   "sid": "b5010",
+   "name": "兄弟动漫",
+   "addr": "新东方购物中心3楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.53168461175887,
+   "lng": 125.70338808473574,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=44.5316846,125.7033881",
+    "bemanicn": "https://map.bemanicn.com/s/5010",
+    "nearcade": "https://nearcade.phizone.cn/shops/15010"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 吉林省 长春市 | sid=15010; country=CN; region: 吉林省 长春市; other games: 头文字D | source_url: https://nearcade.phizone.cn/shops/15010 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1722,
+   "sid": "b5325",
+   "name": "十三嘉年华(万达广场店)",
+   "addr": "四平万达广场3F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.15355059045213,
+   "lng": 124.38451376101128,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.1535506,124.3845138",
+    "bemanicn": "https://map.bemanicn.com/s/5325",
+    "nearcade": "https://nearcade.phizone.cn/shops/15325"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 吉林省 四平市 | sid=15325; country=CN; region: 吉林省 四平市; other games: 头文字D | source_url: https://nearcade.phizone.cn/shops/15325 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 1759,
+   "sid": "b6349",
+   "name": "博禹电玩城（阳光城市广场店）",
+   "addr": "范家屯镇阳光城市广场4F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.71662617936838,
+   "lng": 125.09581687493952,
+   "games": [
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.7166262,125.0958169",
+    "bemanicn": "https://map.bemanicn.com/s/6349",
+    "nearcade": "https://nearcade.phizone.cn/shops/16349"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=16349; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/16349 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1834,
+   "sid": "b3109",
+   "name": "及放运动潮玩空间",
+   "addr": "欧亚综合体6楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.78748108184065,
+   "lng": 126.54862122028845,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.7874811,126.5486212",
+    "bemanicn": "https://map.bemanicn.com/s/3109",
+    "nearcade": "https://nearcade.phizone.cn/shops/13109"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: DJMAX Technika, 鼓王; region: 吉林省 吉林市 | sid=13109; country=CN; region: 吉林省 吉林市; other games: 头文字D, 鼓王, 湾岸MIDNIGHT, DJMAX Technika | source_url: https://nearcade.phizone.cn/shops/13109 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 1872,
+   "sid": "b4228",
+   "name": "吉林卡吉姆动漫娱乐城",
+   "addr": "吉林大街173号财富广场F5-北区",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.845837066009516,
+   "lng": 126.56164418213805,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8458371,126.5616442",
+    "bemanicn": "https://map.bemanicn.com/s/4228",
+    "nearcade": "https://nearcade.phizone.cn/shops/14228"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 吉林市 | sid=14228; country=CN; region: 吉林省 吉林市 | source_url: https://nearcade.phizone.cn/shops/14228 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1933,
+   "sid": "b5610",
+   "name": "哈基窝",
+   "addr": "库洛雀庄（欢乐宫西侧同城配送门市）",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.88569973678521,
+   "lng": 129.4876320163533,
+   "games": [
+    "chunithm",
+    "iidx",
+    "maimai_dx",
+    "ongeki",
+    "sdvx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.8856997,129.4876320",
+    "bemanicn": "https://map.bemanicn.com/s/5610",
+    "nearcade": "https://nearcade.phizone.cn/shops/15610"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 延边朝鲜族自治州 | sid=15610; country=CN; region: 吉林省 延边朝鲜族自治州 | source_url: https://nearcade.phizone.cn/shops/15610 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 1945,
+   "sid": "b5691",
+   "name": "哎呦窝",
+   "addr": "复地嘉年华A3A座",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.81439396120721,
+   "lng": 125.40248957251194,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "ongeki"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8143940,125.4024896",
+    "bemanicn": "https://map.bemanicn.com/s/5691",
+    "nearcade": "https://nearcade.phizone.cn/shops/15691"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=15691; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/15691 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 2501,
+   "sid": "b4467",
+   "name": "天空之城长春宽城店",
+   "addr": "吉林省长春市宽城区北远达大街与应化新路交汇处长春北湖吾悦广场三层Z07号商铺天空之城多奇妙乐园",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.96929190494309,
+   "lng": 125.38010407743748,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.9692919,125.3801041",
+    "bemanicn": "https://map.bemanicn.com/s/4467"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 吉林省 长春市 | sid=14467; country=CN; region: 吉林省 长春市; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/14467 | bemanicn addr: 北远达大街与应化新路交汇处长春北湖吾悦广场三层Z07号商铺天空之城多奇妙乐园 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 2688,
+   "sid": "b1563",
+   "name": "威伲斯电玩城",
+   "addr": "威伲斯电玩城集贸店",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.8988775333097,
+   "lng": 125.14084657017278,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.8988775,125.1408466",
+    "bemanicn": "https://map.bemanicn.com/s/1563",
+    "nearcade": "https://nearcade.phizone.cn/shops/11563"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: DANZBASE; region: 吉林省 辽源市 | sid=11563; country=CN; region: 吉林省 辽源市; other games: DANZBASE | source_url: https://nearcade.phizone.cn/shops/11563 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 2932,
+   "sid": "b712",
+   "name": "巷战英雄(欧亚万豪购物中心店)",
+   "addr": "洋浦大街6088号欧亚万豪购物中心5楼巷战英雄电玩城",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.8766598762704,
+   "lng": 125.4174713475568,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8766599,125.4174713",
+    "bemanicn": "https://map.bemanicn.com/s/712",
+    "nearcade": "https://nearcade.phizone.cn/shops/10712"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: DANZBASE, 湾岸MIDNIGHT; region: 吉林省 长春市 | sid=10712; country=CN; region: 吉林省 长春市; other games: DANZBASE, 湾岸MIDNIGHT | source_url: https://nearcade.phizone.cn/shops/10712 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 2933,
+   "sid": "b80",
+   "name": "巷战英雄(欧亚新生活购物广场店)",
+   "addr": "工农大路与延安大街交汇（新民广场）欧亚新生活购物广场C区5楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.8612729054456,
+   "lng": 125.29930040909811,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "other",
+    "pump_it_up",
+    "taiko",
+    "wacca"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8612729,125.2993004",
+    "bemanicn": "https://map.bemanicn.com/s/80",
+    "nearcade": "https://nearcade.phizone.cn/shops/10080"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=10080; country=CN; region: 吉林省 长春市; other games: DANZBASE | source_url: https://nearcade.phizone.cn/shops/10080 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 2934,
+   "sid": "b782",
+   "name": "巷战英雄长春亚泰新动力店",
+   "addr": "吉林省长春市二道区东盛大街与吉林大路交汇亚泰新动力",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.88041829158324,
+   "lng": 125.37145138535107,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8804183,125.3714514",
+    "bemanicn": "https://map.bemanicn.com/s/782"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=10782; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/10782 | bemanicn addr: 东盛大街与吉林大路交汇东北角亚泰新动力购物广场3楼 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3023,
+   "sid": "b5329",
+   "name": "徐氏城市英雄长春重庆路活力城店",
+   "addr": "南关区重庆路活力城4F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.888677523905564,
+   "lng": 125.32762071078868,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8886775,125.3276207",
+    "bemanicn": "https://map.bemanicn.com/s/5329",
+    "nearcade": "https://nearcade.phizone.cn/shops/15329"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 舞立方EVO; region: 吉林省 长春市 | sid=15329; country=CN; region: 吉林省 长春市; other games: 舞立方EVO | source_url: https://nearcade.phizone.cn/shops/15329 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3265,
+   "sid": "hef1770a8f1",
+   "name": "星地标动漫长春朝阳店（已停业）",
+   "addr": "西康路威宝大厦二楼星地标",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.86383027197956,
+   "lng": 125.31249918554497,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8638303,125.3124992",
+    "nearcade": "https://nearcade.phizone.cn/shops/14010"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "sid=14010; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/14010 | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 3393,
+   "sid": "b7130",
+   "name": "星辰电玩城（吉林万达店）",
+   "addr": "昌邑万达广场3F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.88421451256555,
+   "lng": 126.55926593683473,
+   "games": [
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8842145,126.5592659",
+    "bemanicn": "https://map.bemanicn.com/s/7130",
+    "nearcade": "https://nearcade.phizone.cn/shops/17130"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 湾岸MIDNIGHT; region: 吉林省 吉林市 | sid=17130; country=CN; region: 吉林省 吉林市; other games: 湾岸MIDNIGHT | source_url: https://nearcade.phizone.cn/shops/17130 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3400,
+   "sid": "b6678",
+   "name": "星际乐迪吉林白山店",
+   "addr": "吉林省白山市浑江区 万达广场三楼星际乐迪",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 41.937977414110335,
+   "lng": 126.42134062435224,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=41.9379774,126.4213406",
+    "bemanicn": "https://map.bemanicn.com/s/6678"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 白山市 | sid=16678; country=CN; region: 吉林省 白山市 | source_url: https://nearcade.phizone.cn/shops/16678 | bemanicn addr: 白山市浑江区浑江大街132号万达广场3楼星际乐迪 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3484,
+   "sid": "b2667",
+   "name": "星际传奇长春万象城店",
+   "addr": "吉林省长春市南关区解放大路万象城五楼星际传奇",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.8761991945596,
+   "lng": 125.32040551188074,
+   "games": [
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8761992,125.3204055",
+    "bemanicn": "https://map.bemanicn.com/s/2667"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦加傲乐; region: 吉林省 长春市 | sid=12667; country=CN; region: 吉林省 长春市; other games: 宝可梦加傲乐 | source_url: https://nearcade.phizone.cn/shops/12667 | bemanicn addr: 解放大路万象城五楼星际传奇 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3508,
+   "sid": "b639",
+   "name": "星际传奇（长春摩天活力城MALL）",
+   "addr": "卫星路与仙台大街交汇处 摩天活力城MALL3楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.833090055332455,
+   "lng": 125.37209414827231,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8330901,125.3720941",
+    "bemanicn": "https://map.bemanicn.com/s/639",
+    "nearcade": "https://nearcade.phizone.cn/shops/10639"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 吉林省 长春市 | sid=10639; country=CN; region: 吉林省 长春市; other games: 头文字D, 炸弹少女 | source_url: https://nearcade.phizone.cn/shops/10639 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3683,
+   "sid": "b921",
+   "name": "极速动漫公主岭华生店",
+   "addr": "吉林省公主岭市华生购物中心4楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.481636581685294,
+   "lng": 124.79936275737744,
+   "games": [
+    "jubeat",
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.4816366,124.7993628",
+    "bemanicn": "https://map.bemanicn.com/s/921"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=10921; country=CN; region: 吉林省 长春市; other games: DANZBASE | source_url: https://nearcade.phizone.cn/shops/10921 | bemanicn addr: 华生购物中心 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3693,
+   "sid": "b6731",
+   "name": "极速玩家长春绿园吾悦二期店",
+   "addr": "长春市绿园区吾悦广场项目二期",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.88643564247391,
+   "lng": 125.26633070282269,
+   "games": [
+    "jubeat",
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8864356,125.2663307",
+    "bemanicn": "https://map.bemanicn.com/s/6731"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=16731; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/16731 | bemanicn addr: 正阳街与皓月大路交汇绿园吾悦广场 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3710,
+   "sid": "b4310",
+   "name": "极限动漫（百利城店）",
+   "addr": "延吉市光明街688号9楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.90487370818291,
+   "lng": 129.50607608448638,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.9048737,129.5060761",
+    "bemanicn": "https://map.bemanicn.com/s/4310",
+    "nearcade": "https://nearcade.phizone.cn/shops/14310"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 延边朝鲜族自治州 | sid=14310; country=CN; region: 吉林省 延边朝鲜族自治州 | source_url: https://nearcade.phizone.cn/shops/14310 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3789,
+   "sid": "b5869",
+   "name": "榆树市艺珑传奇动漫城",
+   "addr": "长春市榆树市城郊街道榆树大街173号(华昌区0102-1/7-8)长白山商城",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.82516023444233,
+   "lng": 126.55407408459803,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=44.8251602,126.5540741",
+    "bemanicn": "https://map.bemanicn.com/s/5869",
+    "nearcade": "https://nearcade.phizone.cn/shops/15869"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=15869; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/15869 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3803,
+   "sid": "b5545",
+   "name": "欢乐嘉年华动漫城",
+   "addr": "金源购物广场2楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 44.98341056635629,
+   "lng": 126.02218163767176,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=44.9834106,126.0221816",
+    "bemanicn": "https://map.bemanicn.com/s/5545",
+    "nearcade": "https://nearcade.phizone.cn/shops/15545"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 松原市 | sid=15545; country=CN; region: 吉林省 松原市 | source_url: https://nearcade.phizone.cn/shops/15545 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3836,
+   "sid": "b4846",
+   "name": "欢乐谷",
+   "addr": "维港城3楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.53028898216907,
+   "lng": 125.6785465056861,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.5302890,125.6785465",
+    "bemanicn": "https://map.bemanicn.com/s/4846",
+    "nearcade": "https://nearcade.phizone.cn/shops/14846"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: maimai; region: 吉林省 通化市 | sid=14846; country=CN; region: 吉林省 通化市; other games: maimai | source_url: https://nearcade.phizone.cn/shops/14846 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 3932,
+   "sid": "b547",
+   "name": "汤姆熊欢乐世界（延边）",
+   "addr": "光明街608号",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.903509431468066,
+   "lng": 129.50581739487563,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.9035094,129.5058174",
+    "bemanicn": "https://map.bemanicn.com/s/547",
+    "nearcade": "https://nearcade.phizone.cn/shops/10547"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 吉林省 延边朝鲜族自治州 | sid=10547; country=CN; region: 吉林省 延边朝鲜族自治州; other games: 湾岸MIDNIGHT, 头文字D | source_url: https://nearcade.phizone.cn/shops/10547 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4003,
+   "sid": "b3438",
+   "name": "海奥华星动漫城力旺广场店",
+   "addr": "力旺广场2楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.83829965417852,
+   "lng": 125.28442565648083,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8382997,125.2844257",
+    "bemanicn": "https://map.bemanicn.com/s/3438",
+    "nearcade": "https://nearcade.phizone.cn/shops/13438"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=13438; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/13438 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4004,
+   "sid": "b3894",
+   "name": "海奥华星动漫城远大购物广场店",
+   "addr": "远大购物广场C座3F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.79849654658075,
+   "lng": 125.3055801330168,
+   "games": [
+    "chunithm",
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.7984965,125.3055801",
+    "bemanicn": "https://map.bemanicn.com/s/3894",
+    "nearcade": "https://nearcade.phizone.cn/shops/13894"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=13894; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/13894 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4132,
+   "sid": "b6528",
+   "name": "满载客动漫娱乐中心（华联新生活）",
+   "addr": "吉林省吉林市船营区华联新生活购物广场5层满载客动漫娱乐中心",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.824408191069566,
+   "lng": 126.51712916737569,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8244082,126.5171292",
+    "bemanicn": "https://map.bemanicn.com/s/6528",
+    "nearcade": "https://nearcade.phizone.cn/shops/16528"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 吉林市 | sid=16528; country=CN; region: 吉林省 吉林市 | source_url: https://nearcade.phizone.cn/shops/16528 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4234,
+   "sid": "b6794",
+   "name": "潮玩时光运动街区",
+   "addr": "时代购物广场（船营区南京街12号）三楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.84409125191361,
+   "lng": 126.5531282596143,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8440913,126.5531283",
+    "bemanicn": "https://map.bemanicn.com/s/6794",
+    "nearcade": "https://nearcade.phizone.cn/shops/16794"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 吉林市 | sid=16794; country=CN; region: 吉林省 吉林市 | source_url: https://nearcade.phizone.cn/shops/16794 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 4335,
+   "sid": "b4576",
+   "name": "火火联盟上海路万达店",
+   "addr": "吉林省长春市宽城区新发街道东三条街长春上海路万达广场3F火火联盟-炫动时空",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.898548976583726,
+   "lng": 125.32568641637769,
+   "games": [
+    "chunithm",
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8985490,125.3256864",
+    "bemanicn": "https://map.bemanicn.com/s/4576",
+    "nearcade": "https://nearcade.phizone.cn/shops/14576"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=14576; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/14576 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 4348,
+   "sid": "b2039",
+   "name": "炫动四方居然店",
+   "addr": "硅谷大街与锦湖大路交汇 中商世界里三层",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.78804582781359,
+   "lng": 125.2196639802959,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.7880458,125.2196640",
+    "bemanicn": "https://map.bemanicn.com/s/2039",
+    "nearcade": "https://nearcade.phizone.cn/shops/12039"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=12039; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/12039 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 4349,
+   "sid": "b4375",
+   "name": "炫动四方摩天店",
+   "addr": "吉林省长春市南关区会展街道摩天活力城MALL购物中心三层301、302、3号01号商铺炫动四方(摩天活力城店)",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.83340777424681,
+   "lng": 125.371534854297,
+   "games": [
+    "chunithm",
+    "jubeat",
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8334078,125.3715349",
+    "bemanicn": "https://map.bemanicn.com/s/4375",
+    "nearcade": "https://nearcade.phizone.cn/shops/14375"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=14375; country=CN; region: 吉林省 长春市; other games: 头文字D, 炸弹少女 | source_url: https://nearcade.phizone.cn/shops/14375 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 4646,
+   "sid": "b7070",
+   "name": "环游斯跑曼动漫城(吉林中东店)",
+   "addr": "吉林省吉林市船营区越山路378号中东新生活购物乐园F3",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.85970518008153,
+   "lng": 126.52097892331885,
+   "games": [
+    "dance_evo",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8597052,126.5209789",
+    "bemanicn": "https://map.bemanicn.com/s/7070",
+    "nearcade": "https://nearcade.phizone.cn/shops/17070"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 鼓王; region: 吉林省 吉林市 | sid=17070; country=CN; region: 吉林省 吉林市; other games: 鼓王 | source_url: https://nearcade.phizone.cn/shops/17070 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4656,
+   "sid": "b632",
+   "name": "现代嘉年华珲春现代百货店",
+   "addr": "吉林省珲春市沿河西街1463号现代百货",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.86271072495191,
+   "lng": 130.35284588124296,
+   "games": [
+    "chunithm",
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.8627107,130.3528459",
+    "bemanicn": "https://map.bemanicn.com/s/632"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 延边朝鲜族自治州 | sid=10632; country=CN; region: 吉林省 延边朝鲜族自治州 | source_url: https://nearcade.phizone.cn/shops/10632 | bemanicn addr: 沿河西街1463号现代百货 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4673,
+   "sid": "b7090",
+   "name": "电玩帝国（长春新天地店）",
+   "addr": "吉林省长春市南关区亚泰大街辅路中东新天地购物公园",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.89647691077965,
+   "lng": 125.33784422538369,
+   "games": [
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8964769,125.3378442",
+    "bemanicn": "https://map.bemanicn.com/s/7090",
+    "nearcade": "https://nearcade.phizone.cn/shops/17090"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D, 湾岸MIDNIGHT; region: 吉林省 长春市 | sid=17090; country=CN; region: 吉林省 长春市; other games: 头文字D, 湾岸MIDNIGHT | source_url: https://nearcade.phizone.cn/shops/17090 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 4975,
+   "sid": "b76",
+   "name": "红旗街万达大玩家",
+   "addr": "红旗街616号万达广场3层",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.864580526517194,
+   "lng": 125.28906440763248,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8645805,125.2890644",
+    "bemanicn": "https://map.bemanicn.com/s/76",
+    "nearcade": "https://nearcade.phizone.cn/shops/10076"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 星光; region: 吉林省 长春市 | sid=10076; country=CN; region: 吉林省 长春市; other games: 星光, 湾岸MIDNIGHT, 宝可梦加傲乐 | source_url: https://nearcade.phizone.cn/shops/10076 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 4976,
+   "sid": "b214",
+   "name": "红色星球嘉年华",
+   "addr": "红旗街959号這有山thehill2层",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.864526891876,
+   "lng": 125.28680043456737,
+   "games": [
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8645269,125.2868004",
+    "bemanicn": "https://map.bemanicn.com/s/214",
+    "nearcade": "https://nearcade.phizone.cn/shops/10214"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 头文字D; region: 吉林省 长春市 | sid=10214; country=CN; region: 吉林省 长春市; other games: 头文字D | source_url: https://nearcade.phizone.cn/shops/10214 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5000,
+   "sid": "b7091",
+   "name": "维京传奇延吉店",
+   "addr": "吉林省延吉市沿河西路万达广场店",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.89865855254212,
+   "lng": 129.45086825257323,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.8986586,129.4508683",
+    "bemanicn": "https://map.bemanicn.com/s/7091"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 延边朝鲜族自治州 | sid=17091; country=CN; region: 吉林省 延边朝鲜族自治州 | source_url: https://nearcade.phizone.cn/shops/17091 | bemanicn addr: 公园街沿河路与新民街交汇处 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5001,
+   "sid": "b6020",
+   "name": "维京传奇（长春绿园店）",
+   "addr": "皓月大路与正阳街交汇吾悦广场2楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.885094623003006,
+   "lng": 125.26661252791405,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8850946,125.2666125",
+    "bemanicn": "https://map.bemanicn.com/s/6020",
+    "nearcade": "https://nearcade.phizone.cn/shops/16020"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=16020; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/16020 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5047,
+   "sid": "b3699",
+   "name": "艺珑传奇俱乐部(延边万达广场延河路店)",
+   "addr": "新民北路和延河路交接处特1号万达广场2楼艺珑传奇俱乐部",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.897964102437314,
+   "lng": 129.45143785123986,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.8979641,129.4514379",
+    "bemanicn": "https://map.bemanicn.com/s/3699",
+    "nearcade": "https://nearcade.phizone.cn/shops/13699"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 延边朝鲜族自治州 | sid=13699; country=CN; region: 吉林省 延边朝鲜族自治州 | source_url: https://nearcade.phizone.cn/shops/13699 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5048,
+   "sid": "b6297",
+   "name": "艺珑传奇俱乐部吉林万达店",
+   "addr": "吉林大街518号 昌邑区万达广场3F",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.883776321550094,
+   "lng": 126.55930908817471,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8837763,126.5593091",
+    "bemanicn": "https://map.bemanicn.com/s/6297",
+    "nearcade": "https://nearcade.phizone.cn/shops/16297"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 吉林市 | sid=16297; country=CN; region: 吉林省 吉林市 | source_url: https://nearcade.phizone.cn/shops/16297 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5050,
+   "sid": "b2150",
+   "name": "艺珑传奇动漫娱乐中心（吉林财富购物广场店）",
+   "addr": "吉林大街173号财富广场F6-南区",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.84443237827563,
+   "lng": 126.56171251528569,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8444324,126.5617125",
+    "bemanicn": "https://map.bemanicn.com/s/2150",
+    "nearcade": "https://nearcade.phizone.cn/shops/12150"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 吉林市 | sid=12150; country=CN; region: 吉林省 吉林市 | source_url: https://nearcade.phizone.cn/shops/12150 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5052,
+   "sid": "b6150",
+   "name": "艺珑传奇长春北湖吾悦广场店",
+   "addr": "吉林省长春市北湖吾悦广场4楼4092艺珑传奇",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.96943691629905,
+   "lng": 125.38021994858866,
+   "games": [
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.9694369,125.3802199",
+    "bemanicn": "https://map.bemanicn.com/s/6150"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 长春市 | sid=16150; country=CN; region: 吉林省 长春市 | source_url: https://nearcade.phizone.cn/shops/16150 | bemanicn addr: 宽城区北湖经济开发区远达大街9888号长春北湖新城吾悦广场四楼 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5054,
+   "sid": "b5795",
+   "name": "艺珑潮玩（活力汇店）",
+   "addr": "吉林省长春市朝阳区飞跃街道华光街588号活力汇3楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.819903492402155,
+   "lng": 125.24556400996926,
+   "games": [
+    "dance_evo",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8199035,125.2455640",
+    "bemanicn": "https://map.bemanicn.com/s/5795",
+    "nearcade": "https://nearcade.phizone.cn/shops/15795"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 舞立方EVO; region: 吉林省 长春市 | sid=15795; country=CN; region: 吉林省 长春市; other games: 舞立方EVO | source_url: https://nearcade.phizone.cn/shops/15795 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5159,
+   "sid": "b6122",
+   "name": "萌趣童堡白城欧亚店",
+   "addr": "吉林省白城市欧亚购物中心3层萌趣童堡游乐场",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 45.595172313415034,
+   "lng": 122.8229710872733,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=45.5951723,122.8229711",
+    "bemanicn": "https://map.bemanicn.com/s/6122"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 白城市 | sid=16122; country=CN; region: 吉林省 白城市 | source_url: https://nearcade.phizone.cn/shops/16122 | bemanicn addr: 欧亚购物中心三楼115号 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5235,
+   "sid": "h820f0c9015",
+   "name": "贪吃夹松原宁江店",
+   "addr": "吉林省松原市宁江区江南秀一楼贪吃夹",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 45.1309118315507,
+   "lng": 124.82114640505606,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "wahlap",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=45.1309118,124.8211464"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "sid=14192; country=CN; region: 吉林省 松原市 | source_url: https://nearcade.phizone.cn/shops/14192 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5289,
+   "sid": "b6125",
+   "name": "超级星座四平万达广场店",
+   "addr": "吉林省四平市铁东区万达广场D区三楼超级星座",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.15306655508872,
+   "lng": 124.38523782195402,
+   "games": [
+    "maimai_dx",
+    "other",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.1530666,124.3852378",
+    "bemanicn": "https://map.bemanicn.com/s/6125"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 宝可梦明耀之星; region: 吉林省 四平市 | sid=16125; country=CN; region: 吉林省 四平市; other games: 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/16125 | bemanicn addr: 吉林省四平市铁东区东街万达广场3楼超级星座(四平万达店) | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5381,
+   "sid": "b6404",
+   "name": "迅驰嘉年华",
+   "addr": "博学路1555号迅驰广场三楼迅驰嘉年华电玩城",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 43.818579532980586,
+   "lng": 125.41137735854507,
+   "games": [
+    "chunithm",
+    "maimai_dx",
+    "other"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=43.8185795,125.4113774",
+    "bemanicn": "https://map.bemanicn.com/s/6404",
+    "nearcade": "https://nearcade.phizone.cn/shops/16404"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "other games: 炸弹少女; region: 吉林省 长春市 | sid=16404; country=CN; region: 吉林省 长春市; other games: 炸弹少女, 宝可梦明耀之星 | source_url: https://nearcade.phizone.cn/shops/16404 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  },
+  {
+   "id": 5608,
+   "sid": "b7170",
+   "name": "金钻潮玩运动馆松原宁江店",
+   "addr": "吉林省松原市宁江区铂金路金钻百货大楼六楼",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 45.12968488438412,
+   "lng": 124.82463399056888,
+   "games": [
+    "maimai_dx",
+    "taiko"
+   ],
+   "src": [
+    "wahlap",
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=45.1296849,124.8246340",
+    "bemanicn": "https://map.bemanicn.com/s/7170"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 松原市 | sid=17170; country=CN; region: 吉林省 松原市 | source_url: https://nearcade.phizone.cn/shops/17170 | bemanicn addr: 宁江区沿江街道铂金路768号金钻六楼 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5611,
+   "sid": "b6106",
+   "name": "鑫乐迪家庭娱乐中心（梅河维港城店）",
+   "addr": "维港城C区三楼(欢乐谷旁)",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 42.530493158744726,
+   "lng": 125.67843569945892,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=42.5304932,125.6784357",
+    "bemanicn": "https://map.bemanicn.com/s/6106",
+    "nearcade": "https://nearcade.phizone.cn/shops/16106"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 通化市 | sid=16106; country=CN; region: 吉林省 通化市 | source_url: https://nearcade.phizone.cn/shops/16106 | inherited:true (coords from nearcade)",
+   "risk": 4
+  },
+  {
+   "id": 5612,
+   "sid": "b6594",
+   "name": "鑫乐迪家庭娱乐中心（通化万达店）",
+   "addr": "万达广场2F-A区",
+   "country": "China",
+   "pref": "吉林",
+   "lat": 41.70177450965143,
+   "lng": 125.92854291746873,
+   "games": [
+    "maimai_dx"
+   ],
+   "src": [
+    "bemanicn",
+    "nearcade",
+    "wahlap"
+   ],
+   "links": {
+    "gmaps": "https://www.google.com/maps/search/?api=1&query=41.7017745,125.9285429",
+    "bemanicn": "https://map.bemanicn.com/s/6594",
+    "nearcade": "https://nearcade.phizone.cn/shops/16594"
+   },
+   "also": [],
+   "closed": false,
+   "notes": "region: 吉林省 通化市 | sid=16594; country=CN; region: 吉林省 通化市 | source_url: https://nearcade.phizone.cn/shops/16594 | inherited:true (coords from nearcade) | position from address: geocoded to address precision by baidu",
+   "risk": 4
+  }
+ ]
+}
