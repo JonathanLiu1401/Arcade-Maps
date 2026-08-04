@@ -1,0 +1,27 @@
+{
+  "slug": "share_map",
+  "files_changed": [
+    "scrapers/build_share_pages.py",
+    "scrapers/test_share_pages.py",
+    "s/z195.html",
+    "s/b1.html",
+    "s/b4712.html",
+    "s/*.html (full rebuild 11856 pages)"
+  ],
+  "summary": "Share pages now use a two-column media strip (left venue/cab photo, right OSM static map pin at zoom 11 city/prefecture level). Primary og:image stays the venue/cab photo; a second og:image points at the static map URL when coords exist. Map column caption is country / pref. Map img has onerror to hide the map column if staticmap.openstreetmap.de is down. Browser redirect delayed 2s (immediate with ?go=1); bots never redirect. Added --only SID... for partial regen. Full rebuild wrote 11856 pages in ~6s (5072 venue photos, 11792 with map).",
+  "how_to_verify": [
+    "Open s/z195.html (Quantum SM City Bacolod, no venue photo): dual card, cabinet left, map pin Philippines right; 2s redirect; ?go=1 immediate.",
+    "Open s/b1.html (街机烈火, venue photo): dual card, assets/venues/cn/1.jpg left, China / 上海 map right; two og:image meta tags.",
+    "Open s/b4712.html: venue photo + map.",
+    "View source: first og:image = photo, second = staticmap.openstreetmap.de with red-pushpin; twitter:image stays photo only.",
+    "python -m pytest scrapers/test_share_pages.py -q  (7 passed).",
+    "python scrapers/build_share_pages.py --only z195 b1  for quick regen."
+  ],
+  "risks": [
+    "Discord/Twitter unfurl only reliably shows ONE og:image (the first/photo). Second map og:image is best-effort for clients that support multi-image; humans who open the link always see both columns.",
+    "staticmap.openstreetmap.de is a free third-party service with no SLA. DNS/probe from this agent host failed (getaddrinfo); onerror hides the map column if the image fails to load. No API key, but rate limits or downtime are possible.",
+    "Map tiles attribution is not shown on the small card (space-constrained). Acceptable for a share preview; full map on the main site has proper attribution.",
+    "Only ~64 arcades lack coords and skip the map column (11856-11792).",
+    "Live GitHub Pages still serves old pages until deploy/push (this agent does not commit or push)."
+  ]
+}

@@ -34,22 +34,24 @@
 <link rel="stylesheet" href="vendor/leaflet.css?v=a7837102">
 <link rel="stylesheet" href="vendor/MarkerCluster.css?v=614dea0a">
 <link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=61258232">
-<link rel="stylesheet" href="style.css?v=f5dfdaa0">
+<link rel="stylesheet" href="style.css?v=a0567a8a">
 </head>
 <body>
 <header id="topbar">
-  <button id="drawer-toggle" aria-label="Toggle filters" aria-expanded="true" title="Toggle filter panel">
+  <button id="drawer-toggle" data-i18n-aria="drawer.toggle" data-i18n-title="drawer.toggle_title" aria-label="Toggle filters" aria-expanded="true" title="Toggle filter panel">
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 5h16v2l-6 6v5l-4 2v-7L4 7z"/></svg>
   </button>
-  <h1>Arcade Maps</h1>
-  <span id="meta-updated" class="meta" title="Data last updated"></span>
-  <span id="meta-count" class="meta tabnum" title="Markers shown / plottable stores"></span>
+  <h1 data-i18n="app.title">Arcade Maps</h1>
+  <span id="meta-updated" class="meta" data-i18n-title="meta.updated_title" title="Data last updated"></span>
+  <span id="meta-count" class="meta tabnum" data-i18n-title="meta.count_title" title="Markers shown / plottable stores"></span>
   <div id="searchwrap">
-    <input id="search" type="search" placeholder="Search name or address..." autocomplete="off"
+    <input id="search" type="search" data-i18n-placeholder="search.placeholder" data-i18n-aria="search.aria"
+           placeholder="Search name or address..." autocomplete="off"
            aria-label="Search arcades by name or address" role="combobox" aria-expanded="false" aria-controls="search-results">
     <ul id="search-results" role="listbox" hidden></ul>
   </div>
-  <a id="repo-link" href="https://github.com/JonathanLiu1401/Arcade-Maps" target="_blank" rel="noopener" title="GitHub repository" aria-label="GitHub repository">
+  <a id="repo-link" href="https://github.com/JonathanLiu1401/Arcade-Maps" target="_blank" rel="noopener"
+     data-i18n-title="repo.title" data-i18n-aria="repo.aria" title="GitHub repository" aria-label="GitHub repository">
     <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
   </a>
 </header>
@@ -57,32 +59,41 @@
 <div id="layout">
   <aside id="panel">
     <div id="panel-tabs" role="tablist">
-      <button id="tab-filters" role="tab" aria-selected="true" aria-controls="pane-filters" class="active">Filters</button>
-      <button id="tab-china" role="tab" aria-selected="false" aria-controls="pane-china">No-coords list</button>
+      <button id="tab-filters" role="tab" aria-selected="true" aria-controls="pane-filters" class="active" data-i18n="tab.filters">Filters</button>
+      <button id="tab-china" role="tab" aria-selected="false" aria-controls="pane-china" data-i18n="tab.china">No-coords list</button>
     </div>
     <div id="pane-filters" role="tabpanel" aria-labelledby="tab-filters">
       <div class="pane-head">
-        <span class="pane-title">Games</span>
+        <span class="pane-title" data-i18n="pane.games">Games</span>
         <span class="shortcuts">
-          <button id="games-all" class="mini">all</button>
-          <button id="games-none" class="mini">none</button>
+          <button id="games-all" class="mini" data-i18n="btn.all">all</button>
+          <button id="games-none" class="mini" data-i18n="btn.none">none</button>
         </span>
       </div>
       <div id="game-chips"></div>
-      <div class="pane-head"><span class="pane-title">Cab variants</span></div>
+      <div class="pane-head"><span class="pane-title" data-i18n="pane.cab_variants">Cab variants</span></div>
       <div id="cab-filters"></div>
-      <p class="hint">Checking a variant restricts that game's markers to stores with the cab.</p>
+      <p class="hint" data-i18n="hint.cab_variant">Checking a variant restricts that game's markers to stores with the cab.</p>
+      <div class="pane-head">
+        <span class="pane-title" data-i18n="pane.arcade_size">Arcade size</span>
+        <span class="shortcuts">
+          <button id="size-all" class="mini" type="button" data-i18n="btn.all">all</button>
+          <button id="size-none" class="mini" type="button" data-i18n="btn.none">none</button>
+        </span>
+      </div>
+      <div id="size-chips"></div>
+      <p class="hint" data-i18n="hint.arcade_size">Cabinet count bands match the map marker shapes. Unknown means no trusted count was published.</p>
     </div>
     <div id="pane-china" role="tabpanel" aria-labelledby="tab-china" hidden>
-      <p class="hint">Stores without map coordinates (mostly China).</p>
-      <p class="hint">These come from the official WAHLAP list and the BemaniCN community map, which publish addresses only; search the address in your preferred map app. Chinese web maps use shifted coordinates (GCJ-02); plotted China points were converted to WGS-84 - positions are approximate.</p>
+      <p class="hint" data-i18n="hint.china1">Stores without map coordinates (mostly China).</p>
+      <p class="hint" data-i18n="hint.china2">These come from the official WAHLAP list and the BemaniCN community map, which publish addresses only; search the address in your preferred map app. Chinese web maps use shifted coordinates (GCJ-02); plotted China points were converted to WGS-84 - positions are approximate.</p>
       <div id="china-list"></div>
     </div>
     <!-- nearby: overlays the drawer panes while the nearby list is open -->
-    <div id="pane-nearby" aria-label="Nearby arcades">
+    <div id="pane-nearby" data-i18n-aria="nearby.pane_aria" aria-label="Nearby arcades">
       <div class="nb-head">
-        <span class="pane-title">Nearby arcades</span>
-        <button id="nb-close" class="mini" type="button" aria-label="Close nearby list">close</button>
+        <span class="pane-title" data-i18n="nearby.title">Nearby arcades</span>
+        <button id="nb-close" class="mini" type="button" data-i18n="nearby.close" data-i18n-aria="nearby.close_aria" aria-label="Close nearby list">close</button>
       </div>
       <div id="nb-origin" class="nb-origin"></div>
       <div id="nb-list" role="list"></div>
@@ -90,9 +101,9 @@
     </div>
     <!-- /nearby -->
   </aside>
-  <div id="map" role="application" aria-label="Arcade map">
+  <div id="map" role="application" data-i18n-aria="map.aria" aria-label="Arcade map">
     <!-- nearby: map-anchored bits (inside #map so they sit over the tiles) -->
-    <button id="nb-research" type="button" class="nb-pill">Search this area</button>
+    <button id="nb-research" type="button" class="nb-pill" data-i18n="nearby.search_area">Search this area</button>
     <div id="nb-toast" class="nb-toast" role="status" aria-live="polite"></div>
     <!-- /nearby -->
   </div>
@@ -100,7 +111,7 @@
 
 <footer id="foot">
   <span id="src-counts" class="tabnum"></span>
-  <a href="https://github.com/JonathanLiu1401/Arcade-Maps/tree/main/docs" target="_blank" rel="noopener">data sources</a>
+  <a href="https://github.com/JonathanLiu1401/Arcade-Maps/tree/main/docs" target="_blank" rel="noopener" data-i18n="foot.data_sources">data sources</a>
 </footer>
 
 <!-- OPTIONAL: Google Places photos. Leave the key EMPTY and nothing changes -
@@ -127,21 +138,22 @@ window.AM_CONFIG = {
 <script src="vendor/SmoothWheelZoom.js?v=065a1c76"></script>
 <!-- Plain scripts, loaded in dependency order: state first, then the map,
      then the modules that draw into it, then the boot script. -->
-<script src="js/state.js?v=f8a95482"></script>
+<script src="js/state.js?v=6454e45a"></script>
 <!-- tier-marker cab totals + price/fx display helpers -->
 <script src="js/format.js?v=5e574034"></script>
 <script src="js/mapcore.js?v=f0a49994"></script>
 <!-- tier marker artwork, generated from assets/markers/*.svg by
      tools/build_tier_icons.py; markers.js reads it at parse time -->
 <script src="js/tier-icons.js?v=b970f432"></script>
-<script src="js/markers.js?v=17820135"></script>
+<script src="js/markers.js?v=d023cc34"></script>
 <!-- runtime Google Places photos; no-op unless AM_CONFIG.googleMapsApiKey is
      set. Must load before panel.js, which consults it in its photo chain. -->
 <script src="js/gphotos.js?v=3d7a627f"></script>
 <script src="js/search.js?v=289c30b0"></script>
-<script src="js/panel.js?v=e4931b73"></script>
-<script src="js/settings.js?v=f15894cb"></script>
+<script src="js/panel.js?v=2621de91"></script>
+<script src="js/i18n.js?v=e933db59"></script>
+<script src="js/settings.js?v=56e7a74d"></script>
 <script src="js/nearby.js?v=e54475e8"></script>
-<script src="js/app-init.js?v=c3c3fa62"></script>
+<script src="js/app-init.js?v=48adfe7d"></script>
 </body>
 </html>

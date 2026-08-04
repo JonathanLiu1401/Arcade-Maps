@@ -380,12 +380,17 @@ window.AM = window.AM || {};
     return false;
   }
 
-  function isVisible(a, selGames, selCabs, enabledSources) {
+  function isVisible(a, selGames, selCabs, enabledSources, selSizes) {
     selGames = selGames || AM.state.get("selectedGames");
     selCabs = selCabs || AM.state.get("selectedCabs");
     enabledSources = enabledSources || AM.state.get("enabledSources");
+    selSizes = selSizes || AM.state.get("selectedSizeTiers");
     if (!selGames) return false;
     if (!sourceEnabled(a, enabledSources)) return false;
+    /* Size band is a property of the arcade (showable cabinet count), not of
+       the selected game. When the set is still null (pre-init) treat every
+       tier as allowed so early callers never blank the map. */
+    if (selSizes && !selSizes.has(tierFor(a).id)) return false;
     return displayGame(a, selGames, selCabs) !== null;
   }
 
@@ -476,6 +481,7 @@ window.AM = window.AM || {};
     if (!selGames) return;
     var selCabs = AM.state.get("selectedCabs");
     var enabled = AM.state.get("enabledSources");
+    var selSizes = AM.state.get("selectedSizeTiers");
     var on = scalingOn();
     var plottable = AM.data.plottable;
     var vis = [];
@@ -486,6 +492,7 @@ window.AM = window.AM || {};
       if (!g) continue;
       var m = markerOf[a.id];
       if (!m) continue;
+      if (selSizes && !selSizes.has(m._amTier)) continue;
       var color = colorFor(g);
       m._amColor = color;
       setMarkerIcon(m, m._amTier, color,
@@ -604,6 +611,7 @@ window.AM = window.AM || {};
     AM.state.on("selectedGames", scheduleApply);
     AM.state.on("selectedCabs", scheduleApply);
     AM.state.on("enabledSources", scheduleApply);
+    AM.state.on("selectedSizeTiers", scheduleApply);
     AM.state.on("markerScaling", function () { applyScale(); });
     AM.state.on("selectedArcade", function (id, meta) {
       if (!meta || !meta.focus) return;

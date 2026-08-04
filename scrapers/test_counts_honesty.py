@@ -124,12 +124,14 @@ check("GuitarFreaks and PercussionFreaks are two titles, one slug",
 # quantities at all must never acquire a count.
 print("\n--- count evidence: real quantity vs lower bound ---")
 
-check("evidence vocabulary is exactly the three classes",
-      merge.COUNT_EVIDENCE == {"ziv_listed", "ziv_comment", "bemanicn_qty"},
+check("evidence vocabulary covers ziv + bemanicn + community_qty",
+      merge.COUNT_EVIDENCE == {
+          "ziv_listed", "ziv_comment", "community_qty", "bemanicn_qty"},
       repr(sorted(merge.COUNT_EVIDENCE)))
 
 check("only stated quantities count as REAL",
-      merge.REAL_COUNT_EVIDENCE == {"ziv_comment", "bemanicn_qty"},
+      merge.REAL_COUNT_EVIDENCE == {
+          "ziv_comment", "community_qty", "bemanicn_qty"},
       "ziv_listed is a floor, not a tally")
 
 

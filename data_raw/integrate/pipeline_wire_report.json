@@ -1,0 +1,45 @@
+{
+  "slug": "pipeline_wire",
+  "files_changed": [
+    "scrapers/merge.py",
+    "scrapers/run_all.py",
+    "scrapers/geo_validate.py",
+    "scrapers/test_counts_honesty.py",
+    "docs/DATA_SOURCES.md",
+    "js/state.js",
+    "data_raw/integrate/pipeline_wire_report.json"
+  ],
+  "summary": "Defensive pipeline hooks for eight optional community sources (nearcade, hkrgm2, hkarcade, mgm_tw, musecat, otogesetchi, timezone, insert_coin). merge.py loads data_raw/<slug>.json when present (list or wrapped dict), assigns SRC_PRIORITY 7+, treats them as community for geo_validate, and teaches counts honesty via community_qty (with aliases like musecat_quantity and auto-tag for inventory sources). run_all registers optional scrapers only under --only (never default full scrape); missing modules skip; scrape() may return (rows, meta). Docs section 12 documents the contract. No production optional raw JSON on disk yet; hkrgm2.py and musecat.py modules exist from parallel agents; smoke_hkrgm2.json is not production path.",
+  "how_to_verify": [
+    "python -c \"import sys; sys.path.insert(0,'scrapers'); import merge; print(merge.OPTIONAL_COMMUNITY_SOURCES); print({k: merge.SRC_PRIORITY[k] for k in merge.OPTIONAL_COMMUNITY_SOURCES})\"",
+    "python scrapers/test_counts_honesty.py",
+    "python scrapers/run_all.py --only nearcade  (expect: optional nearcade module not present (skipped) when scraper absent)",
+    "python scrapers/run_all.py --only hkrgm2  (runs scraper if network ok; writes data_raw/hkrgm2.json)",
+    "Copy or scrape into data_raw/hkrgm2.json then: python scrapers/run_all.py --skip-scrape  (merge log should say loading optional source hkrgm2)",
+    "Synthetic unit path verified in agent session: load_units + merged_entry with smoke_hkrgm2 schema and musecat_quantity alias"
+  ],
+  "risks": [
+    "js/markers.js TRUSTED_COUNTS still only bemanicn|ziv: optional counts_src labels publish in arcades.json but map markers may not treat them as trusted until UI is updated.",
+    "timezone is intentionally excluded from OPTIONAL_COUNT_AUTO_EVIDENCE so assumed chain lineups do not invent community_qty.",
+    "hkrgm2.scrape returns (rows, origin); run_all unwraps tuples. Other scrapers should return a bare list or a one-element tuple of rows.",
+    "Accidental full merge during verification rewrote data/arcades.json + share pages with no optional rows present (same core sources); not a data expansion.",
+    "nearcade/hkarcade/mgm_tw/otogesetchi/timezone/insert_coin scrapers not landed yet; hooks only fire after their JSON or --only scrape exists.",
+    "Cross-source merge uses existing 120 m / name-sim rules only; nearcade vs bemanicn dense CN clusters may need future china_colocated extension if false non-merges appear."
+  ],
+  "metrics": {
+    "optional_slugs": 8,
+    "optional_raw_json_present": 0,
+    "optional_scraper_modules_present": ["hkrgm2", "musecat"],
+    "optional_scraper_modules_missing": ["nearcade", "hkarcade", "mgm_tw", "otogesetchi", "timezone", "insert_coin"],
+    "smoke_json_present": ["smoke_hkrgm2.json"],
+    "src_priority_range": {"first": "nearcade=7", "last": "insert_coin=14"},
+    "count_evidence_new": "community_qty",
+    "count_evidence_aliases": ["musecat_quantity", "musecat_qty", "hkrgm2_qty", "nearcade_qty", "community_quantity", "qty", "quantity"],
+    "auto_evidence_sources": ["nearcade", "hkrgm2", "hkarcade", "mgm_tw", "musecat", "otogesetchi", "insert_coin"],
+    "default_scrape_runs_optional": false,
+    "only_flag_runs_optional": true,
+    "unit_test_counts_honesty": "48/48 pass",
+    "synthetic_hkrgm2_rows_loaded": 5,
+    "synthetic_musecat_alias_ok": true
+  }
+}

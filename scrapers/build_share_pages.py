@@ -32,12 +32,20 @@ import json
 import os
 import re
 import sys
+from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
 # Canonical public origin. og:image MUST be absolute HTTPS for Discord.
 SITE_BASE = "https://jonathanliu1401.github.io/Arcade-Maps"
+
+# Free OSM static map (no API key). City/prefecture zoom, not street-level.
+# If the service is down, the HTML map <img> hides itself via onerror.
+# See: https://staticmap.openstreetmap.de/
+STATIC_MAP_BASE = "https://staticmap.openstreetmap.de/staticmap.php"
+STATIC_MAP_ZOOM = 11  # ~city/prefecture (10-12); deep-link zoom stays 16
+STATIC_MAP_SIZE = "600x400"
 
 # Keep in sync with js/state.js GAMES labels (display only).
 GAME_LABELS = {
@@ -134,6 +142,49 @@ def _map_hash(arcade):
     return "16/%.5f/%.5f/arcade=%s" % (float(lat), float(lng), sid)
 
 
+def _coords(arcade):
+    """Return (lat, lng) floats or None if missing/invalid."""
+    lat, lng = arcade.get("lat"), arcade.get("lng")
+    if lat is None or lng is None:
+        return None
+    try:
+        lat_f, lng_f = float(lat), float(lng)
+    except (TypeError, ValueError):
+        return None
+    if not (-90.0 <= lat_f <= 90.0 and -180.0 <= lng_f <= 180.0):
+        return None
+    return lat_f, lng_f
+
+
+def _static_map_url(lat, lng, zoom=STATIC_MAP_ZOOM, size=STATIC_MAP_SIZE):
+    """OSM staticmap URL with a red pin. No API key.
+
+    Format per staticmap.openstreetmap.de:
+      center=LAT,LNG&zoom=N&size=WxH&maptype=mapnik&markers=LAT,LNG,red-pushpin
+    """
+    lat_s = "%.5f" % float(lat)
+    lng_s = "%.5f" % float(lng)
+    # Commas and marker style are part of the API; quote the query values.
+    center = quote("%s,%s" % (lat_s, lng_s), safe=",")
+    markers = quote("%s,%s,red-pushpin" % (lat_s, lng_s), safe=",")
+    return (
+        "%s?center=%s&zoom=%d&size=%s&maptype=mapnik&markers=%s"
+        % (STATIC_MAP_BASE, center, int(zoom), quote(str(size), safe="x"), markers)
+    )
+
+
+def _map_caption(arcade):
+    """Country / pref caption for the map column."""
+    country = (arcade.get("country") or "").strip()
+    pref = (arcade.get("pref") or "").strip()
+    parts = []
+    if country:
+        parts.append(country)
+    if pref and pref not in country:
+        parts.append(pref)
+    return " / ".join(parts) if parts else "Location"
+
+
 def _description(arcade, labels):
     parts = []
     country = (arcade.get("country") or "").strip()
@@ -183,9 +234,59 @@ def render_page(arcade, enrich, cab_manifest):
         "brand": "Arcade Maps",
     }.get(image_kind, "")
 
+    coords = _coords(arcade)
+    static_map = _static_map_url(*coords) if coords else None
+    map_cap = _map_caption(arcade) if coords else ""
+
+    # Primary og:image stays the venue/cab photo (Discord shows one image).
+    # Second og:image points at the static map when coords exist; some clients
+    # pick it up, and the HTML dual card always shows both for humans.
+    og_image_extra = ""
+    if static_map:
+        og_image_extra = (
+            '\n<meta property="og:image" content="%s">'
+            '\n<meta property="og:image:alt" content="%s">'
+        ) % (_esc(static_map), _esc("Map pin - " + map_cap))
+
+    if static_map:
+        # Two-column media strip: left photo, right map pin at city zoom.
+        # Built separately then inserted as a dict value (values may contain %
+        # from URLs; only the outer template string is scanned for %).
+        media_html = """
+  <div class="media">
+    <div class="media-col">
+      <img class="hero" src="%(image)s" alt="%(img_alt)s" width="600" height="400"
+           loading="eager">
+      <p class="media-cap">%(photo_cap)s</p>
+    </div>
+    <div class="media-col media-map">
+      <img class="hero map" src="%(static_map)s" alt="%(map_alt)s" width="600" height="400"
+           loading="eager"
+           onerror="this.closest('.media-map').style.display='none';var m=this.closest('.media');if(m)m.classList.add('no-map');">
+      <p class="media-cap">%(map_cap)s</p>
+    </div>
+  </div>""" % {
+            "image": _esc(image),
+            "img_alt": _esc(name if image_kind == "venue" else name + " - " + img_note),
+            "photo_cap": _esc(img_note or "Photo"),
+            "static_map": _esc(static_map),
+            "map_alt": _esc("Map pin - " + map_cap),
+            "map_cap": _esc(map_cap),
+        }
+        card_class = "card card-wide"
+    else:
+        media_html = (
+            '  <img class="hero" src="%s" alt="%s" width="1200" height="630">'
+            % (_esc(image),
+               _esc(name if image_kind == "venue" else name + " - " + img_note))
+        )
+        card_class = "card"
+
     # No meta-refresh: crawlers that follow redirects would unfurl the
     # destination (the generic index) instead of this page. JS redirect
-    # only runs in real browsers; Discordbot never executes it.
+    # only runs in real browsers after a short delay so humans can see the
+    # dual card; Discordbot/Twitterbot/etc. never execute it. ?go=1 opens
+    # immediately for people who want to skip the preview.
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -200,7 +301,7 @@ def render_page(arcade, enrich, cab_manifest):
 <meta property="og:description" content="%(desc)s">
 <meta property="og:url" content="%(page_url)s">
 <meta property="og:image" content="%(image)s">
-<meta property="og:image:alt" content="%(img_alt)s">
+<meta property="og:image:alt" content="%(img_alt)s">%(og_image_extra)s
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="%(title)s">
 <meta name="twitter:description" content="%(desc)s">
@@ -215,8 +316,18 @@ def render_page(arcade, enrich, cab_manifest):
   .card { max-width: 420px; width: 100%%; background: #1a1d24; border-radius: 14px;
           overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.45);
           border: 1px solid #2a2f3a; }
-  .hero { width: 100%%; aspect-ratio: 1.91 / 1; object-fit: cover; display: block;
+  .card-wide { max-width: 720px; }
+  .media { display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+           background: #111; }
+  .media.no-map { grid-template-columns: 1fr; }
+  .media-col { min-width: 0; position: relative; }
+  .media-map { border-left: 1px solid #2a2f3a; }
+  .hero { width: 100%%; aspect-ratio: 1.5 / 1; object-fit: cover; display: block;
           background: #111; }
+  .card:not(.card-wide) .hero { aspect-ratio: 1.91 / 1; }
+  .media-cap { margin: 0; padding: 6px 10px; font-size: .72rem; color: #9aa0a6;
+               background: #14171e; border-top: 1px solid #2a2f3a;
+               white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .body { padding: 16px 18px 20px; }
   h1 { font-size: 1.25rem; margin: 0 0 6px; line-height: 1.25; }
   .sub { color: #9aa0a6; font-size: .9rem; margin: 0 0 12px; }
@@ -227,11 +338,16 @@ def render_page(arcade, enrich, cab_manifest):
   .btn:hover { filter: brightness(1.08); }
   .foot { margin-top: 14px; font-size: .75rem; color: #6b7280; }
   .foot a { color: #9aa0a6; }
+  @media (max-width: 560px) {
+    .media { grid-template-columns: 1fr; }
+    .media-map { border-left: 0; border-top: 1px solid #2a2f3a; }
+    .card-wide { max-width: 420px; }
+  }
 </style>
 </head>
 <body>
-<article class="card">
-  <img class="hero" src="%(image)s" alt="%(img_alt)s" width="1200" height="630">
+<article class="%(card_class)s">
+%(media_html)s
   <div class="body">
     %(closed_html)s
     <h1>%(title)s</h1>
@@ -242,12 +358,23 @@ def render_page(arcade, enrich, cab_manifest):
   </div>
 </article>
 <script>
-/* Real browsers land on the map. Crawlers never run this. */
+/* Real browsers land on the map after a short delay so the dual card is
+   visible. Crawlers never run this. ?go=1 skips the delay. */
 (function () {
   try {
     var ua = navigator.userAgent || "";
-    if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp/i.test(ua)) return;
-    location.replace(%(map_rel_js)s);
+    if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp|Applebot|bingbot|Googlebot/i.test(ua)) return;
+    var dest = %(map_rel_js)s;
+    var q = (location.search || "").replace(/^\\?/, "");
+    var params = {};
+    q.split("&").forEach(function (p) {
+      var i = p.indexOf("=");
+      if (i >= 0) params[decodeURIComponent(p.slice(0, i))] = decodeURIComponent(p.slice(i + 1));
+      else if (p) params[decodeURIComponent(p)] = "";
+    });
+    var delay = (params.go === "1" || params.go === "true") ? 0 : 2000;
+    if (delay === 0) { location.replace(dest); return; }
+    setTimeout(function () { location.replace(dest); }, delay);
   } catch (e) {}
 })();
 </script>
@@ -259,6 +386,9 @@ def render_page(arcade, enrich, cab_manifest):
         "page_url": _esc(page_url),
         "image": _esc(image),
         "img_alt": _esc(name if image_kind == "venue" else name + " - " + img_note),
+        "og_image_extra": og_image_extra,
+        "card_class": card_class,
+        "media_html": media_html,
         "closed_html": ('<p class="closed">Permanently closed</p>' if closed else ""),
         "where": _esc(" - ".join(x for x in [country, addr] if x) or "Rhythm game arcade"),
         "games_li": games_li,
@@ -269,9 +399,17 @@ def render_page(arcade, enrich, cab_manifest):
     }
 
 
-def build(data_dir=None, out_dir=None, clean=True):
+def build(data_dir=None, out_dir=None, clean=True, only_sids=None):
+    """Write share pages.
+
+    only_sids: optional set/list of sids to regenerate (e.g. for quick proofs).
+    When set, clean is forced off and the directory index is left untouched.
+    """
     data_dir = data_dir or os.path.join(ROOT, "data")
     out_dir = out_dir or os.path.join(ROOT, "s")
+    only = set(only_sids) if only_sids else None
+    if only:
+        clean = False
 
     with open(os.path.join(data_dir, "arcades.json"), encoding="utf-8") as fh:
         doc = json.load(fh)
@@ -308,9 +446,12 @@ def build(data_dir=None, out_dir=None, clean=True):
 
     n = 0
     n_venue_img = 0
+    n_map = 0
     for a in arcades:
         sid = a.get("sid")
         if not sid or not _SID_OK.match(sid):
+            continue
+        if only is not None and sid not in only:
             continue
         en = enrich_by_id.get(str(a.get("id"))) or enrich_by_id.get(a.get("id"))
         page = render_page(a, en, cab_manifest)
@@ -320,25 +461,28 @@ def build(data_dir=None, out_dir=None, clean=True):
         n += 1
         if en and (en.get("image") or en.get("images")):
             n_venue_img += 1
+        if _coords(a):
+            n_map += 1
 
-    # Directory index so /s/ is not a naked listing failure on some hosts.
-    index = """<!DOCTYPE html>
+    if only is None:
+        # Directory index so /s/ is not a naked listing failure on some hosts.
+        index = """<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><title>Arcade Maps - share links</title>
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0;url=../">
 </head><body>
-<p><a href="../">Arcade Maps</a> – per-venue share pages live at
+<p><a href="../">Arcade Maps</a> - per-venue share pages live at
 <code>s/&lt;sid&gt;.html</code> (for example
 <a href="z195.html">s/z195.html</a>).</p>
 </body></html>
 """
-    with open(os.path.join(out_dir, "index.html"), "w",
-              encoding="utf-8", newline="\n") as fh:
-        fh.write(index)
+        with open(os.path.join(out_dir, "index.html"), "w",
+                  encoding="utf-8", newline="\n") as fh:
+            fh.write(index)
 
-    print("build_share_pages: wrote %d pages under %s (%d with venue photos)"
-          % (n, out_dir, n_venue_img), file=sys.stderr)
+    print("build_share_pages: wrote %d pages under %s (%d with venue photos, %d with map)"
+          % (n, out_dir, n_venue_img, n_map), file=sys.stderr)
     return n
 
 
@@ -349,8 +493,10 @@ def main():
     ap.add_argument("--out", default=os.path.join(ROOT, "s"))
     ap.add_argument("--no-clean", action="store_true",
                     help="do not delete share pages for sids that no longer exist")
+    ap.add_argument("--only", nargs="+", metavar="SID",
+                    help="regenerate only these sids (implies --no-clean)")
     args = ap.parse_args()
-    build(args.data, args.out, clean=not args.no_clean)
+    build(args.data, args.out, clean=not args.no_clean, only_sids=args.only)
 
 
 if __name__ == "__main__":

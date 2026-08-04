@@ -1,0 +1,58 @@
+{
+  "slug": "apply_unknown",
+  "files_changed": [
+    "scrapers/apply_unknown_reports.py",
+    "data/owner_attested.json",
+    "data/arcades.json",
+    "data_raw/unknown/apply_plan_v2.json",
+    "data_raw/integrate/apply_unknown_report.json"
+  ],
+  "summary": "Created idempotent scrapers/apply_unknown_reports.py and ran v2 apply of unknown-games fleet reports into owner_attested.json. Re-confirmed first-pass work (185 add_games, 21 closed, 101 exclude). Newly applied 22 confirmed_none certain excludes with non-circular evidence on other-only venues. Rebuild dropped other-only 2024->2002 and arcades 11856->11848. Pure-other has_games and low-confidence verdicts remain skipped (safety over coverage).",
+  "how_to_verify": [
+    "python scrapers/apply_unknown_reports.py --dry-run  (expect 0 would-change)",
+    "python scrapers/apply_unknown_reports.py --no-rebuild  (idempotent no-op)",
+    "python -m scrapers.run_all --skip-scrape",
+    "Inspect data_raw/unknown/apply_plan_v2.json for n_exclude / skipped reasons",
+    "Count research-fleet excludes in data/owner_attested.json (expect 123 + 2 owner excludes = 125 exclude flags)"
+  ],
+  "risks": [
+    "confirmed_none excludes drop pins; circular ZIv-empty is filtered but agent notes can still be wrong.",
+    "has_games pure-other-only is always skipped (map chip is already other; writing add_games=['other'] is noise).",
+    "sid join depends on current arcades.json; missing sids after a prior exclude are matched via synthetic ziv/bemanicn keys.",
+    "Owner-attested entries are protected from research-fleet overwrite except certain real-game lifts.",
+    "likely confirmed_none (430) and likely closed (12) are intentionally not applied."
+  ],
+  "metrics": {
+    "findings_total": 2312,
+    "reports": 60,
+    "verdict_has_games": 836,
+    "verdict_confirmed_none": 651,
+    "verdict_closed": 34,
+    "verdict_unknown": 791,
+    "applied_this_run": 22,
+    "applied_apply_exclude_new": 22,
+    "unchanged_apply_add_games": 185,
+    "unchanged_apply_closed": 21,
+    "unchanged_apply_exclude_after": 123,
+    "skip_has_games_other_only_or_empty": 450,
+    "skip_has_games_low_confidence": 201,
+    "skip_confirmed_none_low_confidence": 527,
+    "skip_closed_low_confidence": 12,
+    "skip_verdict_unknown": 791,
+    "skip_owner_protected": 2,
+    "before_owner_attested": 310,
+    "after_owner_attested": 332,
+    "before_arcades": 11856,
+    "after_arcades": 11848,
+    "before_other_only": 2024,
+    "after_other_only": 2002,
+    "n_add_games_total": 185,
+    "n_closed_total": 21,
+    "n_exclude_research_fleet": 123,
+    "n_exclude_owner": 2,
+    "n_exclude_new_this_run": 22,
+    "rebuild_ran": true,
+    "rebuild_ok": true,
+    "idempotent_rerun_changes": 0
+  }
+}

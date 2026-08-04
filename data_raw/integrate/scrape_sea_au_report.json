@@ -1,0 +1,86 @@
+{
+  "slug": "scrape_sea_au",
+  "files_changed": [
+    "scrapers/insert_coin.py",
+    "scrapers/timezone.py",
+    "data_raw/insert_coin.json",
+    "data_raw/timezone.json",
+    "data_raw/integrate/scrape_sea_au_report.json"
+  ],
+  "summary": "Wired two optional community scrapers already expected by merge.OPTIONAL_COMMUNITY_SOURCES. Insert Coin reverse-indexes Music-genre catalog titles via the public backend API (locationGames.game.uuid filter) into 2425 merge-ready venues with 100% coords and game_counts. Timezone scrapes official AU/NZ/SG/PH/ID list pages into 226 address-only chain rows (no cab lists; lat/lng left null because CMS map pins are sparse and often wrong).",
+  "how_to_verify": [
+    "python scrapers/insert_coin.py --smoke  (expect venues from top Music titles; nothing written)",
+    "python scrapers/insert_coin.py --out data_raw  (writes data_raw/insert_coin.json; ~255 Music titles, several minutes)",
+    "python scrapers/timezone.py --smoke  (AU list, 5 rows printed)",
+    "python scrapers/timezone.py --out data_raw  (writes data_raw/timezone.json; 5 list pages)",
+    "python scrapers/run_all.py --only insert_coin  (optional path via OPTIONAL_SCRAPERS)",
+    "python scrapers/run_all.py --only timezone",
+    "python -c \"import json; ic=json.load(open('data_raw/insert_coin.json',encoding='utf-8')); tz=json.load(open('data_raw/timezone.json',encoding='utf-8')); print(len(ic), len(tz), len({r['sid'] for r in ic})==len(ic))\"",
+    "python scrapers/merge.py  (with both raw files present; optional loaders should print loaded counts)"
+  ],
+  "risks": [
+    "Insert Coin is crowdsourced (often seeded from ZIv). Treat as secondary to allnet/eagate/ziv for name/coords priority (SRC_PRIORITY 7+).",
+    "game_counts count distinct IC title versions mapped to a slug at a venue (e.g. two maimai DX versions => maimai_dx:2), not physical cabinet units.",
+    "Timezone locator has zero per-venue music cab lists. Rows are games=['other'] for venue existence / address hygiene only.",
+    "Timezone Google Maps pins on detail pages are often missing or point at sibling stores. Default scrape is list-only (lat/lng null). --detail is opt-in and still sparse.",
+    "Full insert_coin crawl paginates ~64 game pages then ~255 Music titles (polite 0.4s sleep). Runtime is several minutes; do not smoke-test with full.",
+    "API Accept header must be application/json (application/ld+json returns 406). GeoJSON list is id+coords only."
+  ],
+  "metrics": {
+    "insert_coin_venues": 2425,
+    "insert_coin_with_coords": 2425,
+    "insert_coin_with_game_counts": 2425,
+    "insert_coin_music_titles_indexed": 255,
+    "insert_coin_catalog_games_total": 6368,
+    "insert_coin_by_country_sea_au": {
+      "Australia": 101,
+      "New Zealand": 38,
+      "Singapore": 23,
+      "Philippines": 86,
+      "Indonesia": 109,
+      "Malaysia": 74,
+      "Thailand": 41,
+      "Vietnam": 19,
+      "India": 1
+    },
+    "insert_coin_game_chip_venues": {
+      "pump_it_up": 931,
+      "ddr": 778,
+      "maimai_dx": 697,
+      "taiko": 589,
+      "chunithm": 447,
+      "stepmaniax": 444,
+      "sdvx": 417,
+      "iidx": 281,
+      "gitadora": 271,
+      "popn": 257,
+      "jubeat": 220,
+      "wacca": 206,
+      "drs": 170,
+      "groove_coaster": 168,
+      "ongeki": 110,
+      "project_diva": 104,
+      "nostalgia": 104,
+      "dance_around": 71,
+      "reflec": 59,
+      "polaris_chord": 55,
+      "crossbeats": 44,
+      "dance_evo": 22
+    },
+    "timezone_venues": 226,
+    "timezone_with_coords": 0,
+    "timezone_by_country": {
+      "Australia": 65,
+      "New Zealand": 15,
+      "Singapore": 15,
+      "Philippines": 59,
+      "Indonesia": 72
+    },
+    "api_notes": {
+      "insert_coin_locations_geojson": "GET /api/locations?pagination=false Accept: application/geo+json -> 7650 features (id+coords only)",
+      "insert_coin_locations_json": "GET /api/locations?pagination=false Accept: application/json -> 7650 full name/address rows (country filters ignored)",
+      "insert_coin_game_filter": "GET /api/locations?locationGames.game.uuid={uuid}&itemsPerPage=1000 works; used for reverse index",
+      "timezone_list_html": "venue-details cards: venue-suburb name, venue-address, activity tooltips; path /en-{cc}/venues|locations/{region}/{slug}/"
+    }
+  }
+}

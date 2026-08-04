@@ -21,9 +21,15 @@ from __future__ import annotations
 
 import urllib.parse
 
-# Keep in sync with scrapers/merge.py SRC_PRIORITY / OFFICIAL.
+# Keep in sync with scrapers/merge.py SRC_PRIORITY / OFFICIAL /
+# OPTIONAL_COMMUNITY_SOURCES / COMMUNITY_SOURCES.
 OFFICIAL_SOURCES = frozenset({"allnet", "eagate", "wahlap"})
-COMMUNITY_SOURCES = frozenset({"ziv", "round1usa", "community"})
+COMMUNITY_SOURCES = frozenset({
+    "ziv", "round1usa", "community",
+    # Optional community scrapers (defensive loaders in merge.py).
+    "nearcade", "hkrgm2", "hkarcade", "mgm_tw",
+    "musecat", "otogesetchi", "timezone", "insert_coin",
+})
 
 # Imported lazily / by caller so this module can also run standalone
 # against a frozen arcades.json without loading the full merge pipeline.

@@ -174,6 +174,28 @@ body.drawer-closed .panel-grip { display: none; }
 .chip.on .dot { opacity: 1; }
 .chip:hover { border-color: var(--fg-dim); }
 
+/* Arcade size chips: short labels (1-2, 3-9, ..., ?), denser grid than games. */
+#size-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+}
+#size-chips .size-chip {
+  --c: var(--fg-dim);
+  justify-content: center;
+}
+#size-chips .size-chip .dot {
+  background: var(--fg-dim);
+}
+#size-chips .size-chip.on {
+  --c: var(--accent);
+  border-color: var(--accent);
+}
+#size-chips .size-chip.on .dot {
+  background: var(--accent);
+  opacity: 1;
+}
+
 /* cab checkboxes */
 #cab-filters label {
   display: flex; align-items: center; gap: 8px;
@@ -634,7 +656,7 @@ body.nearby-open #pane-china { display: none; }
    failed tile load. Drawn as a pseudo-element on #map so no module has to own
    an extra node, and pointer-events:none so it never swallows a pan or pinch. */
 body.am-empty #map::after {
-  content: "No arcades match your filters";
+  content: var(--am-empty-msg, "No arcades match your filters");
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
   z-index: 800; pointer-events: none;
@@ -1178,6 +1200,41 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 }
 .sd-gear:hover { color: var(--fg); border-color: var(--fg-dim); }
 
+/* language control: same footprint as .sd-gear, sits left of the gear */
+.am-lang-wrap {
+  position: relative; flex: none; margin-left: 4px;
+  display: inline-flex; align-items: center;
+}
+.am-lang-btn {
+  background: none; border: 1px solid var(--line); border-radius: 6px;
+  width: 32px; height: 32px; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--fg-dim); padding: 0;
+}
+.am-lang-btn:hover { color: var(--fg); border-color: var(--fg-dim); }
+.am-lang-btn[aria-expanded="true"] {
+  color: var(--fg); border-color: var(--fg-dim); background: var(--bg3);
+}
+.am-lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  min-width: 168px; max-height: min(70vh, 420px); overflow-y: auto;
+  margin: 0; padding: 4px;
+  background: var(--bg2); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  z-index: 1400;
+  display: flex; flex-direction: column; gap: 1px;
+}
+.am-lang-menu[hidden] { display: none; }
+.am-lang-item {
+  text-align: left; background: none; border: none; border-radius: 6px;
+  padding: 7px 10px; font-size: 13px; font-weight: 500; color: var(--fg);
+  white-space: nowrap;
+}
+.am-lang-item:hover { background: var(--bg3); }
+.am-lang-item.on {
+  color: var(--accent); background: var(--accent-soft); font-weight: 600;
+}
+
 /* ---- dialog shell ---- */
 /* No padding on the dialog itself: the visible card is .sd-inner, so a click
    landing on the dialog element can only be a backdrop click. */
@@ -1426,6 +1483,8 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
      shortfall and collapsed to ~52 px on a 390 px phone - narrower than its
      own placeholder. Nothing here may re-introduce that override. */
   .sd-gear { width: 30px; height: 30px; margin-left: 0; }
+  .am-lang-wrap { margin-left: 0; }
+  .am-lang-btn { width: 30px; height: 30px; }
 
   #settings-dialog { width: calc(100vw - 20px); max-height: 92vh; }
   .sd-inner { max-height: 92vh; }

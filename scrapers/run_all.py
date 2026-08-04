@@ -22,6 +22,7 @@ one-request fetch (writes data/fx_rates.json on success).
 """
 
 import argparse
+import importlib
 import os
 import sys
 
@@ -38,6 +39,13 @@ import build_share_pages
 import fx
 import geocode_cn
 import common
+
+# Optional community scrapers landed by other agents. Not imported at
+# module load (modules may not exist yet). Only run when --only names
+# them, so default full / weekly scrapes stay on the core six sources
+# and never hang on multi-hour optional crawls. Merge still loads any
+# data_raw/<slug>.json that already exists under --skip-scrape.
+OPTIONAL_SCRAPERS = merge.OPTIONAL_COMMUNITY_SOURCES
 
 # Spellings must match ZIV's own country list EXACTLY: an unknown name
 # returns an empty 200, not an error (see the guard in scrape_all).
@@ -132,6 +140,39 @@ def scrape_all(raw_dir, only=None):
             common.die("round1usa returned 0 stores")
         common.save_json(os.path.join(raw_dir, "round1usa.json"), rows)
 
+    # Optional community sources: only when --only explicitly names them
+    # (never on a bare full scrape). Module missing = skip with a note,
+    # not a hard fail, so parallel agent work can land scrapers later.
+    if only is not None:
+        for name in OPTIONAL_SCRAPERS:
+            if name not in only:
+                continue
+            try:
+                mod = importlib.import_module(name)
+            except ImportError:
+                print("scrape: optional %s module not present (skipped)"
+                      % name, file=sys.stderr)
+                continue
+            scrape_fn = getattr(mod, "scrape", None)
+            if scrape_fn is None:
+                common.die("optional scraper %s has no scrape()" % name)
+            result = scrape_fn()
+            # Some scrapers return (rows, meta); accept either shape.
+            if isinstance(result, tuple):
+                rows = result[0] if result else None
+            else:
+                rows = result
+            if not rows:
+                common.die("optional %s returned 0 rows" % name)
+            outfile = getattr(mod, "OUTFILE", name + ".json")
+            if not outfile.endswith(".json"):
+                outfile = outfile + ".json"
+            # OUTFILE is a bare filename under data_raw/, same as bemanicn.
+            common.save_json(os.path.join(raw_dir, os.path.basename(outfile)),
+                             rows)
+            print("scrape: optional %s wrote %d rows -> %s"
+                  % (name, len(rows), outfile), file=sys.stderr)
+
 
 def _smoke_ziv():
     got = ziv.fetch_country(ZIV_SMOKE_COUNTRY)
@@ -208,11 +249,15 @@ def main():
     ap.add_argument("--skip-scrape", action="store_true",
                     help="reuse existing data_raw/ (no network)")
     ap.add_argument("--only", action="append",
-                    choices=["allnet", "eagate", "wahlap", "bemanicn",
-                             "ziv", "round1usa", "fx", "geocode"],
+                    choices=(["allnet", "eagate", "wahlap", "bemanicn",
+                              "ziv", "round1usa", "fx", "geocode"]
+                             + list(OPTIONAL_SCRAPERS)),
                     help="scrape only these sources; `geocode` is the opt-in "
                          "China address geocode refresh, which needs an API "
-                         "key in the environment and is a no-op without one")
+                         "key in the environment and is a no-op without one. "
+                         "Optional community sources (nearcade, hkrgm2, ...) "
+                         "run ONLY when named here and their scraper module "
+                         "exists; merge still loads existing data_raw JSON.")
     ap.add_argument("--smoke", action="store_true",
                     help="one-region connectivity probe per source; "
                          "writes data_raw/smoke_*.json, skips merge and "

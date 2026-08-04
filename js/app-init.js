@@ -6,6 +6,13 @@ window.AM = window.AM || {};
 
   var C = AM.consts, U = AM.util;
   var $ = U.$;
+  function tr(key, vars) {
+    return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
+  }
+
+  /* Translate static chrome as soon as the DOM is ready (scripts are at end of
+     body). Language control is injected later by settings.build(). */
+  if (AM.i18n && AM.i18n.init) AM.i18n.init();
 
   function ingest(data) {
     var D = AM.data;
@@ -78,20 +85,27 @@ window.AM = window.AM || {};
     btn.type = "button";
     btn.className = "foot-toggle";
     btn.setAttribute("aria-expanded", "false");
-    btn.setAttribute("aria-label", "Show data source counts");
-    btn.innerHTML = '<span class="ft-lb">sources</span>' +
+    btn.setAttribute("aria-label", tr("foot.show"));
+    btn.innerHTML = '<span class="ft-lb" data-i18n="foot.sources">' + tr("foot.sources") + '</span>' +
       '<svg class="ft-cv" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">' +
       '<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" ' +
       'stroke-linejoin="round" d="M6 15l6-6 6 6"/></svg>';
     btn.addEventListener("click", function () {
       var open = document.body.classList.toggle("foot-open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.setAttribute("aria-label",
-        open ? "Hide data source counts" : "Show data source counts");
+      btn.setAttribute("aria-label", open ? tr("foot.hide") : tr("foot.show"));
       /* The map column just changed height. */
       if (AM.map && AM.map.map) AM.map.map.invalidateSize();
     });
     foot.insertBefore(btn, foot.firstChild);
+    if (AM.i18n && AM.i18n.on) {
+      AM.i18n.on(function () {
+        var open = document.body.classList.contains("foot-open");
+        var lb = btn.querySelector(".ft-lb");
+        if (lb) lb.textContent = tr("foot.sources");
+        btn.setAttribute("aria-label", open ? tr("foot.hide") : tr("foot.show"));
+      });
+    }
   }
 
   /* ---------- empty state ---------- */
@@ -127,7 +141,14 @@ window.AM = window.AM || {};
 
   function init(data) {
     ingest(data);
-    $("meta-updated").textContent = "updated " + (data.updated || "?");
+    $("meta-updated").textContent = tr("app.updated", { date: data.updated || "?" });
+    if (AM.i18n && AM.i18n.on) {
+      AM.i18n.on(function () {
+        $("meta-updated").textContent = tr("app.updated", {
+          date: (AM.data.raw && AM.data.raw.updated) || data.updated || "?"
+        });
+      });
+    }
 
     /* Seed defaults (all games, all sources), then let the URL override the
        shareable parts. Sources are per-device and never come from the hash. */
@@ -168,7 +189,7 @@ window.AM = window.AM || {};
   }
 
   function fail(e) {
-    $("meta-count").textContent = "data load failed";
+    $("meta-count").textContent = tr("app.data_failed");
     $("meta-count").title = String(e);
     AM.map.map.setView([30, 135], 3);
   }

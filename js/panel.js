@@ -168,6 +168,63 @@ window.AM = window.AM || {};
     });
   }
 
+  /* ---------- arcade size chips ---------- */
+
+  /* Same bands as markers.js TIER_LEGEND: T1 1-2 ... T5 50+, TU unknown.
+     Chip counts are plottable arcades in that tier (tierFor uses showable
+     cabinet counts, not the raw sum). */
+  function sizeTierCounts() {
+    var counts = {};
+    var list = AM.data.plottable;
+    for (var i = 0; i < list.length; i++) {
+      var id = AM.markers.tierFor(list[i]).id;
+      counts[id] = (counts[id] || 0) + 1;
+    }
+    return counts;
+  }
+
+  function buildSizeChips() {
+    var box = $("size-chips");
+    if (!box || !AM.markers || !AM.markers.TIER_LEGEND) return;
+    var counts = sizeTierCounts();
+    AM.markers.TIER_LEGEND.forEach(function (t) {
+      var b = document.createElement("button");
+      b.className = "chip size-chip";
+      b.dataset.tier = t.id;
+      b.type = "button";
+      b.title = t.label;
+      b.innerHTML = '<span class="dot"></span>' + esc(t.short) +
+        ' <span class="n tabnum">' + U.num(counts[t.id] || 0) + "</span>";
+      b.addEventListener("click", function () { AM.state.toggleSizeTier(t.id); });
+      box.appendChild(b);
+    });
+    var allBtn = $("size-all");
+    var noneBtn = $("size-none");
+    if (allBtn) {
+      allBtn.addEventListener("click", function () {
+        var ids = AM.markers.TIER_LEGEND.map(function (t) { return t.id; });
+        AM.state.set("selectedSizeTiers", new Set(ids));
+      });
+    }
+    if (noneBtn) {
+      noneBtn.addEventListener("click", function () {
+        AM.state.set("selectedSizeTiers", new Set());
+      });
+    }
+  }
+
+  function syncSizeChips() {
+    var sel = AM.state.get("selectedSizeTiers");
+    var box = $("size-chips");
+    if (!sel || !box) return;
+    var chips = box.children;
+    for (var i = 0; i < chips.length; i++) {
+      var on = sel.has(chips[i].dataset.tier);
+      chips[i].classList.toggle("on", on);
+      chips[i].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+  }
+
   /* ---------- no-coords list (grouped country + province) ---------- */
 
   function buildCoordlessList() {
@@ -2242,6 +2299,7 @@ window.AM = window.AM || {};
     buildResizer();
     buildChips();
     buildCabFilters();
+    buildSizeChips();
     buildCoordlessList();
     buildFooter();
     buildPlace();
@@ -2251,6 +2309,7 @@ window.AM = window.AM || {};
   function start() {
     AM.state.on("selectedGames", syncChips);
     AM.state.on("selectedCabs", syncCabFilters);
+    AM.state.on("selectedSizeTiers", syncSizeChips);
     /* Source and cab changes move what a chip's number would be, so the
        numbers are re-read whenever they do. search.js subscribes to the same
        two keys to clear its count cache, and it registers during
@@ -2317,6 +2376,7 @@ window.AM = window.AM || {};
 
     syncChips();
     syncCabFilters();
+    syncSizeChips();
     syncCount();
     applyHashArcade();
   }

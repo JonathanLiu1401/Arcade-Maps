@@ -1,0 +1,28 @@
+{
+  "slug": "size_filter",
+  "files_changed": [
+    "js/state.js",
+    "js/markers.js",
+    "js/panel.js",
+    "index.html",
+    "style.css"
+  ],
+  "summary": "Added Arcade size filter chips (T1 1-2, T2 3-9, T3 10-19, T4 20-49, T5 50+, TU unknown) matching marker tiers. Default all tiers on (map unchanged). isVisible and applyFilters AND selectedSizeTiers; markers rebuild on selectedSizeTiers. Session-only state (not localStorage). No hash segment.",
+  "how_to_verify": [
+    "Open index.html locally or serve the site",
+    "Filters drawer: Arcade size section after Cab variants with 6 chips and all/none",
+    "Default: all chips on, marker count unchanged from before",
+    "Click none: map empties (shownCount 0)",
+    "Click all: map restores full plottable set under other filters",
+    "Toggle off U: unknown-count stores disappear; T1-T5 remain",
+    "Toggle only 50+: only mega arcades remain",
+    "Nearby list respects size filter via isVisible",
+    "Reload: size selection resets to all (not persisted)"
+  ],
+  "risks": [
+    "applyFilters still duplicates isVisible logic (pre-existing); size check added in both places so they can drift if one is updated later",
+    "Chip counts are static plottable-by-tier totals and do not shrink under game/source/cab filters (unlike game chips)",
+    "No URL hash for size= so share links cannot encode size filter",
+    "Most plottable stores are TU; filtering only counted tiers leaves a small subset"
+  ]
+}

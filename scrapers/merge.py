@@ -143,9 +143,66 @@ GAME_SLUGS = [
 CAB_SLUGS = ["sdvx_vm", "iidx_lm", "ddr_gold", "gitadora_gf_arena",
              "gitadora_dm_arena", "popn_pikapika"]
 
+# Optional community sources other agents scrape into data_raw/<slug>.json.
+# Merge loads each file only when present (defensive). Priority is below the
+# core six so official / ZIv / BemaniCN still win name/addr/coords. Order
+# among the optionals is arbitrary but stable (CN/HK first, then regional).
+OPTIONAL_COMMUNITY_SOURCES = (
+    "nearcade", "hkrgm2", "hkarcade", "mgm_tw", "maimaidx_tw",
+    "musecat", "otogesetchi", "timezone", "insert_coin", "wahlap_gc",
+)
+
 SRC_PRIORITY = {"allnet": 0, "eagate": 1, "wahlap": 2, "bemanicn": 3,
                 "ziv": 4, "round1usa": 5, "community": 6}
+for _i, _slug in enumerate(OPTIONAL_COMMUNITY_SOURCES):
+    SRC_PRIORITY[_slug] = 7 + _i
 OFFICIAL = {"allnet", "eagate", "wahlap"}
+# Coord-trusting community sources for geo_validate (keep in sync there).
+COMMUNITY_SOURCES = frozenset(
+    {"ziv", "round1usa", "community"} | set(OPTIONAL_COMMUNITY_SOURCES))
+# Sources allowed to contribute game_counts (see counts honesty below).
+COUNT_SOURCES = frozenset(
+    {"bemanicn", "ziv"} | set(OPTIONAL_COMMUNITY_SOURCES))
+# Optional sources whose scrapers publish real per-title inventories
+# (not an assumed chain lineup). Bare game_counts without evidence are
+# auto-tagged community_qty for these only. timezone is excluded: it is
+# closer to round1usa (standard lineup assumption).
+OPTIONAL_COUNT_AUTO_EVIDENCE = frozenset({
+    "nearcade", "hkrgm2", "hkarcade", "mgm_tw", "maimaidx_tw",
+    "musecat", "otogesetchi", "insert_coin", "wahlap_gc",
+})
+# Scraper-specific evidence tags folded onto community_qty at load time.
+_COMMUNITY_EVIDENCE_ALIASES = frozenset({
+    "community_qty", "community_quantity", "qty", "quantity",
+    "musecat_quantity", "musecat_qty",
+    "hkrgm2_qty", "hkrgm2_quantity",
+    "nearcade_qty", "nearcade_quantity",
+    "hkarcade_qty", "mgm_qty", "otogesetchi_qty", "otogesetchi_tai",
+    "insert_coin_qty", "maimaidx_tw_qty", "wahlap_gc_qty",
+})
+
+
+def _normalize_optional_count_evidence(source, game_counts, raw_evidence):
+    """Map optional-source count_evidence onto the merge vocabulary.
+
+    Scrapers may emit source-local tags (musecat_quantity) or omit
+    evidence entirely when every quantity is a curated inventory cell.
+    Returns a {slug: evidence} dict using COUNT_EVIDENCE values only.
+    """
+    gc = game_counts or {}
+    raw = raw_evidence or {}
+    out = {}
+    for slug in gc:
+        e = raw.get(slug)
+        if e in COUNT_EVIDENCE:
+            out[slug] = e
+        elif e in _COMMUNITY_EVIDENCE_ALIASES:
+            out[slug] = "community_qty"
+        elif source in OPTIONAL_COUNT_AUTO_EVIDENCE:
+            # Curated inventory with no per-slug tag: treat as real qty.
+            out[slug] = "community_qty"
+        # else: leave unlabelled; honesty gate drops the number
+    return out
 
 # data_raw file -> (games, cabs) per source
 ALLNET_FILES = {
@@ -859,6 +916,12 @@ _ZIV_CABS_PREFIX = "Cabs: "
 #                 machines", "4x"). A real quantity, and the fix for
 #                 GiGO Akihabara Building 3 rendering CHUNITHM as x1
 #                 when its listing says twelve.
+#   community_qty A per-title quantity from an optional community source
+#                 (nearcade / hkrgm2 / musecat / ...). Same honesty class
+#                 as ziv_comment: a human or curated inventory stated a
+#                 number. Scrapers MUST emit this evidence key with any
+#                 game_counts they publish; bare tallies without evidence
+#                 are dropped (no invented x1).
 #   ziv_listed    ZIv lists one entry per machine and nobody stated a
 #                 quantity, so the tally is a LOWER BOUND: it counts
 #                 what somebody bothered to list, which is why the UI
@@ -869,13 +932,16 @@ _ZIV_CABS_PREFIX = "Cabs: "
 # known only to them carries no count and the panel says counts are
 # unavailable. Inventing an x1 there is the bug this table exists to
 # stop, not a default worth having.
-COUNT_EVIDENCE_RANK = {"ziv_listed": 1, "ziv_comment": 2, "bemanicn_qty": 3}
+COUNT_EVIDENCE_RANK = {
+    "ziv_listed": 1, "ziv_comment": 2, "community_qty": 2, "bemanicn_qty": 3,
+}
 COUNT_EVIDENCE = frozenset(COUNT_EVIDENCE_RANK)
 
 # Evidence classes that publish a NUMBER (game_counts + counts_src set).
 # ziv_listed does not: it is a floor, and it rides in game_counts only
 # when _ziv_counts_tallied vouches for the row (see (m)).
-REAL_COUNT_EVIDENCE = frozenset(("ziv_comment", "bemanicn_qty"))
+REAL_COUNT_EVIDENCE = frozenset(
+    ("ziv_comment", "community_qty", "bemanicn_qty"))
 
 # Hardware-variant slug -> the game slug it is a cabinet OF. Mirrors the
 # `game:` key of the VARIANTS table in js/state.js, which is what decides
@@ -1213,6 +1279,84 @@ def load_units(raw_dir, stats):
                 game_counts=row.get("game_counts"),
                 count_evidence=row.get("count_evidence"),
                 cab_models=row.get("cab_models"))
+
+    # --- optional community sources (defensive loaders) ---
+    # Other agents write data_raw/<slug>.json in the community schema
+    # (name, address, lat, lng, games, country, notes, source_url,
+    # optional game_counts + count_evidence). When the file is absent
+    # the source is skipped, so a checkout without the scrape still
+    # merges cleanly. Cross-source merge reuses the existing 120 m /
+    # name-sim rules; we do not invent looser proximity merges.
+    for src_slug in OPTIONAL_COMMUNITY_SOURCES:
+        if not os.path.exists(path(src_slug)):
+            continue
+        print("merge: loading optional source %s from %s"
+              % (src_slug, path(src_slug)), file=sys.stderr)
+        payload = common.load_json(path(src_slug))
+        # Accept either a bare list or {"arcades": [...]} / {"rows": [...]}.
+        if isinstance(payload, dict):
+            rows = (payload.get("arcades")
+                    or payload.get("rows")
+                    or payload.get("venues")
+                    or payload.get("places")
+                    or [])
+        else:
+            rows = payload
+        if not isinstance(rows, list):
+            print("merge: optional %s has unexpected shape (skipped)"
+                  % src_slug, file=sys.stderr)
+            continue
+        n_loaded = 0
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            stats.raw_rows += 1
+            # File slug is the authority. Refuse to let an optional file
+            # masquerade as allnet/eagate/ziv/bemanicn (would break
+            # priority and supersede rules).
+            source = src_slug
+            lat, lng = _null_zero(row, stats, src_slug)
+            country = row.get("country")
+            if country:
+                country = {"USA": "United States", "UK": "United Kingdom",
+                           "Korea": "South Korea", "KR": "South Korea",
+                           "CN": "China", "JP": "Japan", "TW": "Taiwan",
+                           "HK": "Hong Kong", "MO": "Macau",
+                           }.get(country, country)
+            else:
+                country = resolve_country(
+                    lat, lng, row.get("address"), row.get("name"),
+                    note=row.get("notes"))
+            pref = (row.get("pref") or row.get("prefecture")
+                    or extract_pref(country, row.get("address")))
+            games = [g if g in GAME_SLUGS else "other"
+                     for g in (row.get("games") or ["other"])]
+            note = row.get("notes")
+            url = row.get("source_url") or row.get("url")
+            if url:
+                tag = "source_url: " + str(url)
+                if not note:
+                    note = tag
+                elif str(url) not in note:
+                    note = "%s | %s" % (note, tag)
+            # game_counts publish when evidence normalizes to a real
+            # class (community_qty / ziv_comment / bemanicn_qty). Bare
+            # inventory rows from OPTIONAL_COUNT_AUTO_EVIDENCE sources
+            # are auto-tagged; others (e.g. timezone) need an explicit
+            # tag or the honesty gate drops the numbers.
+            gc = row.get("game_counts")
+            ev = _normalize_optional_count_evidence(
+                source, gc, row.get("count_evidence"))
+            add(source, row.get("name"), row.get("address"), lat, lng,
+                games, [], country, pref,
+                note=note,
+                coord_system=row.get("coord_system") or "wgs84",
+                game_counts=gc,
+                count_evidence=ev,
+                cab_models=row.get("cab_models"))
+            n_loaded += 1
+        print("merge: optional %s loaded %d row(s)"
+              % (src_slug, n_loaded), file=sys.stderr)
 
     out = list(units.values())
 
@@ -2412,16 +2556,59 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     # quantity claim, never the fact that the machine exists.
     counts_src = None
     if counts_contributors:
-        unexpected = counts_contributors - {"bemanicn", "ziv"}
+        unexpected = counts_contributors - COUNT_SOURCES
         assert not unexpected, (
             "game_counts from unexpected source(s) %s for %s - counts_src "
-            "only documents bemanicn|ziv; teach this rule about the new "
-            "source before shipping it" % (sorted(unexpected), best["name"]))
+            "documents bemanicn|ziv|optional community; teach this rule "
+            "about the new source before shipping it"
+            % (sorted(unexpected), best["name"]))
+        tallied = any(u["counts_tallied"] for u in members)
+        has_ziv_comment = any(e == "ziv_comment"
+                              for e in count_evidence.values())
+        has_community = any(e == "community_qty"
+                            for e in count_evidence.values())
+        has_bem = any(e == "bemanicn_qty"
+                      for e in count_evidence.values())
+        # When a community inventory supplies real quantities, bare
+        # ziv_listed 1s from the machine list are still placeholders
+        # (one row per title). Keep them only if ZIv tallied the list
+        # (repeated titles) or a human wrote a quantity. Otherwise they
+        # ride in as fake x1s and force counts_src="ziv", which then
+        # fails the publish assertion (KINGPIN CANBERRA: ziv 1s +
+        # insert_coin maimai_dx:1).
+        if (has_community or has_bem) and not tallied and not has_ziv_comment:
+            for slug in list(count_evidence):
+                if (count_evidence.get(slug) == "ziv_listed"
+                        and game_counts.get(slug, 0) == 1):
+                    game_counts.pop(slug, None)
+                    count_evidence.pop(slug, None)
         has_real = any(e in REAL_COUNT_EVIDENCE
                        for e in count_evidence.values())
-        if has_real or any(u["counts_tallied"] for u in members):
-            counts_src = ("bemanicn" if "bemanicn" in counts_contributors
-                          else "ziv")
+        if has_real or tallied:
+            # Prefer the strongest published source label for the UI
+            # trust set (bemanicn, then ziv). Optional community sources
+            # only label the entry when neither of those contributed
+            # surviving justified numbers.
+            if "bemanicn" in counts_contributors and has_bem:
+                counts_src = "bemanicn"
+            elif "ziv" in counts_contributors and (
+                    has_ziv_comment
+                    or (tallied and any(n >= 2 for n in game_counts.values()))):
+                # tallied alone is not enough: a unit may have been tallied
+                # on a different title that later folded away, leaving only
+                # 1s. counts_src="ziv" then fails the publish assertion.
+                counts_src = "ziv"
+            else:
+                opts = counts_contributors - {"bemanicn", "ziv"}
+                if opts:
+                    counts_src = min(opts, key=lambda s: SRC_PRIORITY[s])
+                elif "bemanicn" in counts_contributors:
+                    counts_src = "bemanicn"
+                elif "ziv" in counts_contributors:
+                    counts_src = "ziv"
+                else:
+                    counts_src = min(counts_contributors,
+                                     key=lambda s: SRC_PRIORITY[s])
         else:
             # placeholder-only: drop the quantities, keep the games.
             # `games |= set(game_counts)` ran above, so this must hold;
@@ -2432,6 +2619,25 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
             game_counts = {}
             count_evidence = {}
             counts_src = None
+        # Final honesty scrub: the label and the evidence must agree.
+        # Optional community rows cannot publish bare ziv_listed 1s, and
+        # a ziv-labelled row cannot publish community-only numbers.
+        if counts_src in OPTIONAL_COMMUNITY_SOURCES:
+            for slug in list(game_counts):
+                if count_evidence.get(slug) not in REAL_COUNT_EVIDENCE:
+                    game_counts.pop(slug, None)
+                    count_evidence.pop(slug, None)
+            if not game_counts:
+                counts_src = None
+                count_evidence = {}
+        elif counts_src == "ziv":
+            if not (any(e == "ziv_comment" for e in count_evidence.values())
+                    or any(n >= 2 for n in game_counts.values())):
+                # Mislabelled or leftover placeholder 1s - drop rather
+                # than fail the hard assert after a multi-source merge.
+                game_counts = {}
+                count_evidence = {}
+                counts_src = None
         entry["counts_src"] = counts_src
     if game_counts:
         entry["game_counts"] = {s: game_counts[s]
@@ -2439,6 +2645,11 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         if count_evidence:
             entry["count_evidence"] = {s: count_evidence[s]
                                        for s in sorted(count_evidence)}
+    elif "counts_src" in entry and entry["counts_src"] is None:
+        pass
+    elif not game_counts and "counts_src" in entry:
+        # no numbers left -> no label
+        entry["counts_src"] = None
     # cab_models is per-CABINET-variant, not per game. WHICH variants exist
     # is a fact about the hardware in the room and is published regardless
     # of the counts gate above; HOW MANY of each is a quantity claim and
@@ -2864,7 +3075,7 @@ def run(raw_dir, out_dir, updated=None):
                 (a["name"], slug, n, ce.get(CAB_MODEL_GAME[slug]))
         if "counts_src" in a:
             cs = a["counts_src"]
-            assert cs in ("bemanicn", "ziv", None), (a["name"], cs)
+            assert cs is None or cs in COUNT_SOURCES, (a["name"], cs)
             # game_counts present exactly when the counts were kept
             assert ("game_counts" in a) == (cs is not None), (a["name"], cs)
             # a dropped ziv-placeholder entry must still list the games
@@ -2887,6 +3098,13 @@ def run(raw_dir, out_dir, updated=None):
                 # mistaken for a placeholder 1.
                 assert (any(e == "ziv_comment" for e in ce.values())
                         or any(n >= 2 for n in gc.values())), (a["name"], gc)
+            elif cs in OPTIONAL_COMMUNITY_SOURCES:
+                # Optional community sources publish only on real
+                # evidence (community_qty or another REAL class). No
+                # tallied-list fallback: those scrapers either state a
+                # quantity or they do not.
+                assert any(e in REAL_COUNT_EVIDENCE for e in ce.values()), \
+                    (a["name"], cs, ce)
         else:
             assert "game_counts" not in a, a["name"]
             assert "count_evidence" not in a, a["name"]
@@ -2898,18 +3116,26 @@ def run(raw_dir, out_dir, updated=None):
     # OUT of stats.json/counts: the frontend reads that shape.
     counts_src_dist = {"bemanicn": 0, "ziv": 0,
                        "null_placeholder_dropped": 0, "absent_never_counted": 0}
+    for slug in OPTIONAL_COMMUNITY_SOURCES:
+        counts_src_dist[slug] = 0
     for a in ordered:
         if "counts_src" not in a:
             counts_src_dist["absent_never_counted"] += 1
         elif a["counts_src"] is None:
             counts_src_dist["null_placeholder_dropped"] += 1
         else:
-            counts_src_dist[a["counts_src"]] += 1
+            counts_src_dist[a["counts_src"]] = (
+                counts_src_dist.get(a["counts_src"], 0) + 1)
+    opt_bits = " ".join(
+        "%s=%d" % (s, counts_src_dist[s])
+        for s in OPTIONAL_COMMUNITY_SOURCES if counts_src_dist.get(s))
     print("merge: counts_src bemanicn=%d ziv=%d null(dropped placeholder)=%d "
-          "absent(never counted)=%d"
+          "absent(never counted)=%d%s"
           % (counts_src_dist["bemanicn"], counts_src_dist["ziv"],
              counts_src_dist["null_placeholder_dropped"],
-             counts_src_dist["absent_never_counted"]), file=sys.stderr)
+             counts_src_dist["absent_never_counted"],
+             (" optional{" + opt_bits + "}" if opt_bits else "")),
+          file=sys.stderr)
 
     # (m) evidence mix, at ENTRY level: an entry counts once per evidence
     # class it carries, so the three buckets overlap by construction (a
@@ -2917,11 +3143,11 @@ def run(raw_dir, out_dir, updated=None):
     # "real" is the honest headline - how many venues have at least one
     # quantity somebody actually asserted.
     ev_dist = {"any_real": 0, "bemanicn_qty": 0, "ziv_comment": 0,
-               "ziv_listed_only": 0, "cab_models": 0}
+               "community_qty": 0, "ziv_listed_only": 0, "cab_models": 0}
     for a in ordered:
         ce = a.get("count_evidence") or {}
         vals = set(ce.values())
-        for k in ("bemanicn_qty", "ziv_comment"):
+        for k in ("bemanicn_qty", "ziv_comment", "community_qty"):
             if k in vals:
                 ev_dist[k] += 1
         if vals & REAL_COUNT_EVIDENCE:
@@ -2930,10 +3156,11 @@ def run(raw_dir, out_dir, updated=None):
             ev_dist["ziv_listed_only"] += 1
         if a.get("cab_models"):
             ev_dist["cab_models"] += 1
-    print("merge: count_evidence real=%d (bemanicn_qty=%d, ziv_comment=%d), "
-          "ziv_listed-only=%d; %d entries with cab_models"
+    print("merge: count_evidence real=%d (bemanicn_qty=%d, ziv_comment=%d, "
+          "community_qty=%d), ziv_listed-only=%d; %d entries with cab_models"
           % (ev_dist["any_real"], ev_dist["bemanicn_qty"],
-             ev_dist["ziv_comment"], ev_dist["ziv_listed_only"],
+             ev_dist["ziv_comment"], ev_dist["community_qty"],
+             ev_dist["ziv_listed_only"],
              ev_dist["cab_models"]), file=sys.stderr)
 
     by_game = {g: 0 for g in GAME_SLUGS}

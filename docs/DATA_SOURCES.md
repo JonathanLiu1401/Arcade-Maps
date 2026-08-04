@@ -426,6 +426,37 @@ Dashcams photograph roads, not shops, and radius hit rate overstates usable stor
 
 ---
 
+## 12. Optional community sources (pipeline-wired loaders)
+
+These sources are **wired defensively** in `scrapers/merge.py` and `scrapers/run_all.py` so a scrape that lands `data_raw/<slug>.json` is ingested on the next merge without further glue code. As of the pipeline-wire pass, **no raw files or scraper modules are required**: missing files are skipped, missing modules are skipped.
+
+**Contract for scraper authors (other agents):**
+
+| Item | Rule |
+|---|---|
+| Output path | `data_raw/<slug>.json` (bare list, or `{arcades\|rows\|venues\|places: [...]}`) |
+| Schema | Community schema: `name`, `address`, `lat`, `lng`, `coord_system` (default `wgs84`), `games` (canonical slugs), `country`, `notes`, `source_url` |
+| Counts | Optional `game_counts` + `count_evidence`. Quantities publish only when evidence is `community_qty` (or another real class). Bare tallies without evidence are dropped (no invented x1). |
+| Module | `scrapers/<slug>.py` with `scrape() -> list` and optional `OUTFILE` |
+| Run path | `python scrapers/run_all.py --only <slug>` only. Default full scrape does **not** call optional scrapers (keeps weekly CI fast). `--skip-scrape` merge loads any existing JSON. |
+| Dedupe | Existing 120 m + name-sim / official-vs-community rules. No loose multi-km merges. Source priority is below the core six (`SRC_PRIORITY` 7+). |
+| Identity | Key venues by `source_url` or stable sid, never by row-number id. |
+
+| Slug | Upstream | Region | Notes |
+|---|---|---|---|
+| `nearcade` | https://nearcade.phizone.cn/ | CN + worldwide | Public `/api/shops` JSON; rich cab lineups/coords. Prefer as enrichment over naive full reimport (historical BemaniCN seed). |
+| `hkrgm2` | https://whitenightawa.github.io/hkrgm2/ | Hong Kong | WIP map; backend `/places/all` may 504. Cab counts + prices when API is up. |
+| `hkarcade` | https://hkarcade.fandom.com/ | Hong Kong | Fandom wiki; MediaWiki API for GameList templates. Historical cab depth. |
+| `mgm_tw` | https://mgm.wind-chime.info/ | Taiwan | Music Game Map; multi-title cab tables. Bot-blocked plain HTTP; needs browser/session path. |
+| `musecat` | https://musecat.app/ | Korea (+ JP) | PocketBase venue list public; game inventory often HTML-scrape per venue. |
+| `otogesetchi` | https://w.atwiki.jp/otogesetchi/ | Japan | 全国音ゲー設置店舗 wiki; cab counts, Tokyo-strong. Copyright forbids bulk republication: scrape for merge only with care. |
+| `timezone` | https://www.timezonegames.com/ | AU/NZ/SG/PH/ID/IN… | Official TimeZone chain locators (addresses; lineup often assumed). |
+| `insert_coin` | https://www.insert-coin.app/ | CA/MX + global | GeoJSON + per-uuid `location_games` API; strong classic/rhythm cab lists. |
+
+When a scraper module is absent, `run_all.py --only <slug>` prints a skip note and continues. When a raw JSON file is absent, merge prints nothing for that slug and proceeds. When either is present, merge reports `loading optional source <slug>` and a row count.
+
+---
+
 ## Refresh pipeline
 
 All sources are re-scraped by a single GitHub Action: weekly cron, Monday 18:00 UTC, plus `workflow_dispatch` for manual runs. The job runs with `permissions: contents: write`, commits changed files under `data/`, `data_raw/`, and `mymaps/` with a bot identity, and skips the commit when nothing changed. Arcade scrapers fail-fast (one broken source blocks the commit). FX is the exception: total feed failure keeps the previous rates file and does not fail the job. Both scrape targets (location.am-all.net, p.eagate.573.jp) are empirically reachable from GitHub-hosted US runners as of July 2026.

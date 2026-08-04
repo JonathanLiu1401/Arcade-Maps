@@ -1,0 +1,75 @@
+{
+  "slug": "scrape_cn",
+  "files_changed": [
+    "scrapers/nearcade.py",
+    "scrapers/wahlap_gc.py",
+    "data_raw/nearcade.json",
+    "data_raw/china_wahlap_gc.json",
+    "data_raw/integrate/scrape_cn_report.json"
+  ],
+  "summary": "Implemented nearcade.phizone.cn scraper (primary) and optional WAHLAP Groove Coaster China scraper. Discovered live public API: GET /api/shops?page=N&regionId=CN (48/page, totalCount 3941 CN), GET /api/shops/{id}, GET /api/regions. List payload already includes full per-cab lineups (titleId, quantity, cost, version), GeoJSON Point coords, openingHours, isOpen. Mapped titleIds to GAME_SLUGS (maimai_dx, chunithm, sdvx, taiko, wacca, groove_coaster, pump_it_up, etc.; unmapped -> other with names in notes). Full CN crawl wrote data_raw/nearcade.json with 3941 unique source_url-keyed rows. wahlap_gc writes china_wahlap_gc.json (31 shops, groove_coaster only). Did not touch bemanicn.py/wahlap.py; did not wire merge.",
+  "how_to_verify": [
+    "cd \"C:/Users/jonny/Desktop/Arcade Maps\"",
+    "$env:PYTHONIOENCODING='utf-8'; python scrapers/nearcade.py --smoke",
+    "Expect stderr: totalCount=3941 regionId=CN page size ~48; smoke: 48 rows (nothing written)",
+    "python scrapers/nearcade.py --out data_raw",
+    "Expect: wrote data_raw/nearcade.json (3941 rows)",
+    "python -c \"import json; r=json.load(open('data_raw/nearcade.json',encoding='utf-8')); print(len(r), r[0]['source_url']); h=[x for x in r if x['name']=='街机烈火'][0]; print(h['games'][:8], h['game_counts'])\"",
+    "python scrapers/wahlap_gc.py --smoke",
+    "Expect 31 rows with games=['groove_coaster']",
+    "Confirm scrapers/bemanicn.py and scrapers/wahlap.py are unchanged (git status / diff)"
+  ],
+  "risks": [
+    "Merge is NOT wired: nearcade rows sit in data_raw/nearcade.json only. Deduping against bemanicn is required later (shop ids often look like 10000+bemanicn_id; names/addresses overlap heavily).",
+    "Coords labeled gcj02 (Tencent maps). Do not plot as WGS-84 without eviltransform.",
+    "Community-edited lineups can diverge from official WAHLAP/BemaniCN; treat as enrichment/override layer, not sole authority.",
+    "isOpen=false marks 94 closed shops; some names still say 闭店 while isOpen=true (upgrade-in-progress prose).",
+    "titleId 2 (maimai classic) intentionally maps to other per GAME_SLUGS policy; racing/Initial D/Wangan/Pokemon stay other.",
+    "API page size and regionId filter are observed, not documented; if page size changes, scraper still follows hasNextPage.",
+    "wahlap_gc source_url is the REST list URL for all rows (no per-shop page); merge by name/address only.",
+    "Full crawl is ~83 polite requests (~1-2 min); IncompleteRead retries via common.fetch."
+  ],
+  "metrics": {
+    "nearcade_total_count_api": 3941,
+    "nearcade_rows_written": 3941,
+    "nearcade_unique_source_urls": 3941,
+    "nearcade_with_coords": 3941,
+    "nearcade_is_open_false": 94,
+    "nearcade_pages_crawled": 83,
+    "nearcade_page_size": 48,
+    "nearcade_venues_ge3_mapped_games": 603,
+    "nearcade_game_venue_counts": {
+      "maimai_dx": 3304,
+      "other": 1428,
+      "taiko": 1375,
+      "chunithm": 777,
+      "jubeat": 214,
+      "wacca": 151,
+      "sdvx": 121,
+      "ongeki": 80,
+      "iidx": 70,
+      "gitadora": 55,
+      "groove_coaster": 50,
+      "pump_it_up": 49,
+      "drs": 39,
+      "ddr": 31,
+      "project_diva": 24,
+      "popn": 24,
+      "nostalgia": 19,
+      "dance_evo": 13,
+      "reflec": 9,
+      "dance_around": 3
+    },
+    "liehuo_sid": 10001,
+    "liehuo_mapped_games": 13,
+    "wahlap_gc_rows": 31,
+    "smoke_page_rows": 48,
+    "api_endpoints": {
+      "shops_list": "https://nearcade.phizone.cn/api/shops?page=N&regionId=CN",
+      "shop_detail": "https://nearcade.phizone.cn/api/shops/{id}",
+      "regions": "https://nearcade.phizone.cn/api/regions",
+      "wahlap_gc": "https://wc.wahlap.net/gc/rest/location"
+    },
+    "title_id_map_count": 22
+  }
+}

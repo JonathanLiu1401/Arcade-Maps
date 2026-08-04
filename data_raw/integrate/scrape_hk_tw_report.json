@@ -1,0 +1,68 @@
+{
+  "slug": "scrape_hk_tw",
+  "files_changed": [
+    "scrapers/hkrgm2.py",
+    "scrapers/maimaidx_tw.py",
+    "data_raw/hkrgm2.json",
+    "data_raw/maimaidx_tw.json",
+    "data_raw/smoke_hkrgm2.json",
+    "data_raw/smoke_maimaidx_tw.json",
+    "data_raw/integrate/scrape_hk_tw_report.json"
+  ],
+  "summary": "Implemented two fetchable HK/TW scrapers and wrote real data_raw rows. (1) scrapers/hkrgm2.py for 香港音遊地圖2: prefers live GET https://hkrgm2-backend.vercel.app/places/all, falls back to GitHub WhiteNightAWA/hkrgm2-backend master test.sqlite (table places). Live API returned 504 Gateway Timeout on every attempt during this run, so output is from the sqlite snapshot (29 places, all with WGS84 coords, game_counts, game_prices HKD, game_versions). HKRGM2 game keys mapped to Arcade Maps slugs (maimaidx->maimai_dx, gtdr_*->gitadora, gc->groove_coaster, etc.). Rows keyed by stable place id in source_url (#place=sid) and sid field. (2) scrapers/maimaidx_tw.py for maimaidx.tw + chunithm.tw: parses embedded store_data JSON from each homepage, merges by ALL.Net sid into 102 Taiwan venues (99 maimai + 65 chunithm; 60 both, 38 maimai-only, 4 chunithm-only), all with lat/lng, Chinese names, google_place_id, allnet sid. Music Game Map (mgm.wind-chime.info) intentionally not implemented: 403 to plain HTTP. hkarcade.fandom MediaWiki API works but deferred (heavier HTML/wikitext; HKRGM2 covers the same HK cab depth better). Not wired into merge.py (wire agent owns that); output schema matches community/round1usa style plus country, sid, optional game_counts/game_prices/game_versions/google_place_id.",
+  "how_to_verify": [
+    "cd \"C:/Users/jonny/Desktop/Arcade Maps\"",
+    "$env:PYTHONIOENCODING='utf-8'; python scrapers/hkrgm2.py --sqlite-only",
+    "$env:PYTHONIOENCODING='utf-8'; python scrapers/hkrgm2.py --smoke --sqlite-only",
+    "$env:PYTHONIOENCODING='utf-8'; python scrapers/maimaidx_tw.py --smoke",
+    "$env:PYTHONIOENCODING='utf-8'; python scrapers/maimaidx_tw.py",
+    "python -c \"import json; print(len(json.load(open('data_raw/hkrgm2.json',encoding='utf-8'))), len(json.load(open('data_raw/maimaidx_tw.json',encoding='utf-8'))))\"",
+    "Expect ~29 HKRGM2 rows and ~102 maimaidx_tw rows; spot-check game_counts on 觀塘廣場GAMEZONE / gtGz and a Taiwan sid-merged dual-game shop."
+  ],
+  "risks": [
+    "HKRGM2 live API (/places/all) is 504; current data is a GitHub test.sqlite snapshot last_edit around 2025-02-19, may lag real cab counts.",
+    "HKRGM2 addresses are district + floor notes (placeD/desc), not full street addresses; geo is solid but address string is thin for name-only matching.",
+    "HKRGM2 key 'db' is unmapped (3 venues) and lands in games as other; may be a local/obscure title.",
+    "Classic maimai and maimaidx both map to maimai_dx with summed game_counts; per-key detail is preserved in notes cabs: lines.",
+    "maimaidx_tw heavily overlaps ALL.Net Taiwan already on the map; merge must dedupe by sid/coords or it will inflate Taiwan SEGA rows.",
+    "maimaidx.tw HTML comment asks not to steal the data; treat as polite community mirror, low request rate only.",
+    "Music Game Map Taiwan still highest multi-title TW value but bot-blocked; needs browser/session path later.",
+    "hkarcade.fandom not scraped yet; MediaWiki API is available if HKRGM2 stays stale."
+  ],
+  "metrics": {
+    "hkrgm2_rows": 29,
+    "hkrgm2_with_coords": 29,
+    "hkrgm2_with_game_counts": 29,
+    "hkrgm2_data_origin": "github_sqlite",
+    "hkrgm2_live_api_status": "504 Gateway Timeout",
+    "maimaidx_tw_rows": 102,
+    "maimaidx_tw_from_maimai_page": 99,
+    "maimaidx_tw_from_chunithm_page": 65,
+    "maimaidx_tw_both_games": 60,
+    "maimaidx_tw_maimai_only": 38,
+    "maimaidx_tw_chunithm_only": 4,
+    "maimaidx_tw_with_coords": 102,
+    "maimaidx_tw_with_sid": 102,
+    "sources_skipped": [
+      "mgm.wind-chime.info (403 bot block)",
+      "hkarcade.fandom (deferred; API works)",
+      "taikoinfotw.fandom (out of scope for this slug priority)"
+    ],
+    "merge_hints": {
+      "hkrgm2": {
+        "source": "hkrgm2",
+        "file": "data_raw/hkrgm2.json",
+        "country": "Hong Kong",
+        "key": "sid or source_url #place=",
+        "enrichment": ["game_counts", "game_prices", "game_versions"]
+      },
+      "maimaidx_tw": {
+        "source": "maimaidx_tw",
+        "file": "data_raw/maimaidx_tw.json",
+        "country": "Taiwan",
+        "key": "sid (ALL.Net) or source_url",
+        "enrichment": ["google_place_id", "name_en", "Chinese name_ch as name"]
+      }
+    }
+  }
+}

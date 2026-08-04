@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://jonathanliu1401.github.io/Arcade-Maps/s/z206.html">
 <meta property="og:image" content="https://zenius-i-vanisher.com/pictures/1717321999.5519.jpg">
 <meta property="og:image:alt" content="TIMEZONE ALABANG TOWN CENTER MALL">
+<meta property="og:image" content="https://staticmap.openstreetmap.de/staticmap.php?center=14.42327,121.03120&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=14.42327,121.03120,red-pushpin">
+<meta property="og:image:alt" content="Map pin - Philippines">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TIMEZONE ALABANG TOWN CENTER MALL">
 <meta name="twitter:description" content="Philippines - 3rd Floor Alabang Town Center, Alabang, Muntinlupa City. Games: maimai DX, Pump It Up, Taiko no Tatsujin.">
@@ -27,8 +29,18 @@
   .card { max-width: 420px; width: 100%; background: #1a1d24; border-radius: 14px;
           overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.45);
           border: 1px solid #2a2f3a; }
-  .hero { width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover; display: block;
+  .card-wide { max-width: 720px; }
+  .media { display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+           background: #111; }
+  .media.no-map { grid-template-columns: 1fr; }
+  .media-col { min-width: 0; position: relative; }
+  .media-map { border-left: 1px solid #2a2f3a; }
+  .hero { width: 100%; aspect-ratio: 1.5 / 1; object-fit: cover; display: block;
           background: #111; }
+  .card:not(.card-wide) .hero { aspect-ratio: 1.91 / 1; }
+  .media-cap { margin: 0; padding: 6px 10px; font-size: .72rem; color: #9aa0a6;
+               background: #14171e; border-top: 1px solid #2a2f3a;
+               white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .body { padding: 16px 18px 20px; }
   h1 { font-size: 1.25rem; margin: 0 0 6px; line-height: 1.25; }
   .sub { color: #9aa0a6; font-size: .9rem; margin: 0 0 12px; }
@@ -39,11 +51,29 @@
   .btn:hover { filter: brightness(1.08); }
   .foot { margin-top: 14px; font-size: .75rem; color: #6b7280; }
   .foot a { color: #9aa0a6; }
+  @media (max-width: 560px) {
+    .media { grid-template-columns: 1fr; }
+    .media-map { border-left: 0; border-top: 1px solid #2a2f3a; }
+    .card-wide { max-width: 420px; }
+  }
 </style>
 </head>
 <body>
-<article class="card">
-  <img class="hero" src="https://zenius-i-vanisher.com/pictures/1717321999.5519.jpg" alt="TIMEZONE ALABANG TOWN CENTER MALL" width="1200" height="630">
+<article class="card card-wide">
+
+  <div class="media">
+    <div class="media-col">
+      <img class="hero" src="https://zenius-i-vanisher.com/pictures/1717321999.5519.jpg" alt="TIMEZONE ALABANG TOWN CENTER MALL" width="600" height="400"
+           loading="eager">
+      <p class="media-cap">Photo of this venue</p>
+    </div>
+    <div class="media-col media-map">
+      <img class="hero map" src="https://staticmap.openstreetmap.de/staticmap.php?center=14.42327,121.03120&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=14.42327,121.03120,red-pushpin" alt="Map pin - Philippines" width="600" height="400"
+           loading="eager"
+           onerror="this.closest('.media-map').style.display='none';var m=this.closest('.media');if(m)m.classList.add('no-map');">
+      <p class="media-cap">Philippines</p>
+    </div>
+  </div>
   <div class="body">
     
     <h1>TIMEZONE ALABANG TOWN CENTER MALL</h1>
@@ -54,12 +84,23 @@
   </div>
 </article>
 <script>
-/* Real browsers land on the map. Crawlers never run this. */
+/* Real browsers land on the map after a short delay so the dual card is
+   visible. Crawlers never run this. ?go=1 skips the delay. */
 (function () {
   try {
     var ua = navigator.userAgent || "";
-    if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp/i.test(ua)) return;
-    location.replace("../#16/14.42327/121.03120/arcade=z206");
+    if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp|Applebot|bingbot|Googlebot/i.test(ua)) return;
+    var dest = "../#16/14.42327/121.03120/arcade=z206";
+    var q = (location.search || "").replace(/^\?/, "");
+    var params = {};
+    q.split("&").forEach(function (p) {
+      var i = p.indexOf("=");
+      if (i >= 0) params[decodeURIComponent(p.slice(0, i))] = decodeURIComponent(p.slice(i + 1));
+      else if (p) params[decodeURIComponent(p)] = "";
+    });
+    var delay = (params.go === "1" || params.go === "true") ? 0 : 2000;
+    if (delay === 0) { location.replace(dest); return; }
+    setTimeout(function () { location.replace(dest); }, delay);
   } catch (e) {}
 })();
 </script>

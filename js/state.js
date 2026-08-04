@@ -208,10 +208,18 @@ window.AM = window.AM || {};
   CAB_BADGE.gitadora_dm_arena = "DM Arena";
   var SRC_LABEL = {
     allnet: "ALL.Net", eagate: "e-amusement", wahlap: "WAHLAP", ziv: "ZIv",
-    round1usa: "Round1 USA", bemanicn: "BemaniCN", community: "community"
+    round1usa: "Round1 USA", bemanicn: "BemaniCN", community: "community",
+    nearcade: "nearcade", hkrgm2: "HKRGM2", hkarcade: "hkarcade",
+    mgm_tw: "Music Game Map TW", maimaidx_tw: "maimaiDX.TW",
+    musecat: "Musecat", otogesetchi: "otogesetchi", timezone: "TimeZone",
+    insert_coin: "Insert Coin", wahlap_gc: "WAHLAP GC"
   };
   /* Display order for source lists; unknown sources are appended at runtime. */
-  var SRC_ORDER = ["allnet", "eagate", "wahlap", "ziv", "round1usa", "bemanicn", "community"];
+  var SRC_ORDER = [
+    "allnet", "eagate", "wahlap", "ziv", "round1usa", "bemanicn", "community",
+    "nearcade", "hkrgm2", "hkarcade", "mgm_tw", "maimaidx_tw", "musecat",
+    "otogesetchi", "timezone", "insert_coin", "wahlap_gc"
+  ];
 
   var REDUCED = !!(window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -739,6 +747,10 @@ window.AM = window.AM || {};
     selectedGames: null,
     /* Set of checked CAB_FILTERS ids. */
     selectedCabs: new Set(),
+    /* Set of selected size-tier ids ("1".."5", "U"). Null until initFromData;
+       default is every tier so the map is unchanged on first paint. Session-
+       only (not written to localStorage). */
+    selectedSizeTiers: null,
     /* Set of enabled source slugs. Defaults to every source in the data,
        minus anything the user explicitly turned off in a past session. */
     enabledSources: new Set(),
@@ -856,11 +868,27 @@ window.AM = window.AM || {};
       state.set("enabledSources", next);
     },
 
+    toggleSizeTier: function (id) {
+      var next = new Set(values.selectedSizeTiers);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      state.set("selectedSizeTiers", next);
+    },
+
     /* Seed defaults once the data is known. Stored per-device source choices
        are applied here; anything not explicitly disabled starts enabled. */
     initFromData: function (data) {
       if (values.selectedGames === null) {
         values.selectedGames = new Set(data.gamesInData);
+      }
+      /* All size bands on by default (matches the pre-filter map). IDs align
+         with markers.js TIER_CLASSES + UNKNOWN_TIER; prefer the live legend
+         when markers has already loaded so a future band cannot drift. */
+      if (values.selectedSizeTiers === null) {
+        var sizeIds = ["1", "2", "3", "4", "5", "U"];
+        if (AM.markers && AM.markers.TIER_LEGEND) {
+          sizeIds = AM.markers.TIER_LEGEND.map(function (t) { return t.id; });
+        }
+        values.selectedSizeTiers = new Set(sizeIds);
       }
       var disabled = PERSIST.disabledSources.read(store);
       var enabled = new Set();

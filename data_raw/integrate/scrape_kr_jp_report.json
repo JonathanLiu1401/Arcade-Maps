@@ -1,0 +1,189 @@
+{
+  "slug": "scrape_kr_jp",
+  "files_changed": [
+    "scrapers/musecat.py",
+    "scrapers/otogesetchi.py",
+    "scrapers/merge.py",
+    "data_raw/musecat.json",
+    "data_raw/otogesetchi.json",
+    "data_raw/integrate/scrape_kr_jp_report.json"
+  ],
+  "summary": "Wired KR Musecat and JP otogesetchi rhythm scrapers with merge-friendly community rows (sid/source_url keyed, game_counts + count_evidence). Musecat: PocketBase list API + per-venue SSR flight parse for series/quantity; full KR crawl 308 open public venues (291 with mapped rhythm inventories). otogesetchi: atwiki area-page HTML tables for Tokyo metro (24 venues with cab lines; incomplete prefecture stub pages correctly yield 0). merge.py already listed both under OPTIONAL_COMMUNITY_SOURCES; added otogesetchi_tai evidence alias. run_all optional path: --only musecat / --only otogesetchi.",
+  "how_to_verify": [
+    "python scrapers/musecat.py --smoke",
+    "python scrapers/otogesetchi.py --smoke",
+    "python scrapers/musecat.py --out data_raw --country KR",
+    "python scrapers/otogesetchi.py --out data_raw",
+    "python scrapers/run_all.py --only musecat",
+    "python scrapers/run_all.py --only otogesetchi",
+    "python scrapers/run_all.py --skip-scrape  # merge loads data_raw/musecat.json + otogesetchi.json when present",
+    "Check data_raw/musecat.json: 308 KR rows, sid=musecat id, game_counts present",
+    "Check data_raw/otogesetchi.json: Tokyo venues, null lat/lng, game_counts from 台"
+  ],
+  "risks": [
+    "Musecat game inventory API is 403; depends on Next.js flight SSR shape (self.__next_f). Markup change breaks counts.",
+    "Full Musecat KR crawl is ~308 sequential polite fetches (~3+ min). Do not run on default weekly scrape without --only.",
+    "otogesetchi copyright forbids bulk republication; ingest for merge only. National coverage thin (Tokyo-strong stubs elsewhere).",
+    "otogesetchi has no coordinates; merge relies on name+address match to allnet/eagate/ziv JP rows.",
+    "EZ2AC/BeatOn/etc map to other (not in GAME_SLUGS). Classic maimai FiNALE folds into maimai_dx slug.",
+    "Bare counts without 台 (e.g. ポップン16) may undercount on some wiki lines.",
+    "merge priority for optionals is below ziv; official sources still win name/addr/coords."
+  ],
+  "metrics": {
+    "musecat": {
+      "rows": 308,
+      "with_non_other_games": 291,
+      "with_game_counts": 291,
+      "with_coords": 308,
+      "countries": [
+        "South Korea"
+      ],
+      "top_games": [
+        [
+          "pump_it_up",
+          272
+        ],
+        [
+          "taiko",
+          150
+        ],
+        [
+          "sdvx",
+          63
+        ],
+        [
+          "jubeat",
+          56
+        ],
+        [
+          "popn",
+          54
+        ],
+        [
+          "iidx",
+          50
+        ],
+        [
+          "gitadora",
+          49
+        ],
+        [
+          "nostalgia",
+          40
+        ],
+        [
+          "maimai_dx",
+          38
+        ],
+        [
+          "chunithm",
+          27
+        ],
+        [
+          "drs",
+          22
+        ],
+        [
+          "ddr",
+          20
+        ],
+        [
+          "other",
+          17
+        ],
+        [
+          "reflec",
+          15
+        ],
+        [
+          "wacca",
+          11
+        ]
+      ]
+    },
+    "otogesetchi": {
+      "rows": 24,
+      "with_non_other_games": 21,
+      "with_game_counts": 21,
+      "with_coords": 0,
+      "countries": [
+        "Japan"
+      ],
+      "top_games": [
+        [
+          "taiko",
+          21
+        ],
+        [
+          "chunithm",
+          20
+        ],
+        [
+          "iidx",
+          20
+        ],
+        [
+          "maimai_dx",
+          19
+        ],
+        [
+          "sdvx",
+          19
+        ],
+        [
+          "popn",
+          18
+        ],
+        [
+          "ongeki",
+          16
+        ],
+        [
+          "gitadora",
+          13
+        ],
+        [
+          "polaris_chord",
+          12
+        ],
+        [
+          "ddr",
+          10
+        ],
+        [
+          "jubeat",
+          4
+        ],
+        [
+          "other",
+          3
+        ],
+        [
+          "groove_coaster",
+          1
+        ],
+        [
+          "project_diva",
+          1
+        ],
+        [
+          "nostalgia",
+          1
+        ]
+      ]
+    },
+    "musecat_list_open_kr_total_items": 334,
+    "musecat_usable_public_with_basic": 308,
+    "otogesetchi_area_pages": [
+      "pages/19.html 都心・副都心",
+      "pages/24.html 横浜・川崎",
+      "pages/26.html 多摩地域 (stubs only)",
+      "pages/27.html 23区西部",
+      "pages/29.html 23区東部 (empty)"
+    ],
+    "smoke": {
+      "musecat": "PASS 3 KR rows with game_counts",
+      "otogesetchi": "PASS 15 Tokyo core venues (13 with counts on retest)"
+    }
+  }
+}

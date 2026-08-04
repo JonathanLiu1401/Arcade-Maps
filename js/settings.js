@@ -17,40 +17,21 @@ window.AM = window.AM || {};
 
   var C = AM.consts, U = AM.util;
   var $ = U.$, esc = U.esc;
+  /* tr() so it does not shadow tier/forEach locals named t. */
+  function tr(key, vars) {
+    return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
+  }
 
   /* Long-form source names and the one-line explanation each row shows.
      C.SRC_LABEL is the short badge text used on markers and in the footer;
-     this is the prose version, and it stays local to the settings UI. */
-  var SRC_INFO = {
-    allnet: {
-      name: "ALL.Net",
-      desc: "Official SEGA store locator: maimai DX, CHUNITHM, O.N.G.E.K.I."
-    },
-    eagate: {
-      name: "e-amusement",
-      desc: "Official KONAMI store locator: IIDX, SOUND VOLTEX, DDR and other Bemani."
-    },
-    wahlap: {
-      name: "WAHLAP",
-      desc: "Official SEGA distributor for mainland China. Addresses only, no coordinates."
-    },
-    bemanicn: {
-      name: "BemaniCN",
-      desc: "Community-run map of Bemani cabinets in mainland China."
-    },
-    ziv: {
-      name: "Zenius-I-Vanisher",
-      desc: "Community arcade database with worldwide coverage."
-    },
-    round1usa: {
-      name: "Round1 USA",
-      desc: "Official Round1 venue list for the United States."
-    },
-    community: {
-      name: "Community",
-      desc: "Entries curated by hand in this repository."
+     this is the prose version, resolved through i18n so language changes apply. */
+  var SRC_KEYS = ["allnet", "eagate", "wahlap", "bemanicn", "ziv", "round1usa", "community"];
+  function srcInfo(s) {
+    if (SRC_KEYS.indexOf(s) !== -1) {
+      return { name: tr("src." + s + "_name"), desc: tr("src." + s + "_desc") };
     }
-  };
+    return { name: C.SRC_LABEL[s] || s, desc: tr("settings.src_extra") };
+  }
 
   /* Our own persisted keys and their defaults. Location features default on:
      nothing asks the browser for a position until the user acts, so the
@@ -101,10 +82,10 @@ window.AM = window.AM || {};
   }
 
   var SECTIONS = [
-    { id: "sources", label: "Sources" },
-    { id: "display", label: "Display" },
-    { id: "location", label: "Location" },
-    { id: "about", label: "About" }
+    { id: "sources", labelKey: "settings.sec_sources" },
+    { id: "display", labelKey: "settings.sec_display" },
+    { id: "location", labelKey: "settings.sec_location" },
+    { id: "about", labelKey: "settings.sec_about" }
   ];
 
   var gearBtn = null, dlg = null, currentSection = "sources";
@@ -129,7 +110,7 @@ window.AM = window.AM || {};
     head.appendChild(document.createTextNode(opts.label));
     if (opts.count != null) {
       var n = el("span", "sd-count tabnum", U.num(opts.count));
-      n.title = "stores from this source, including entries without coordinates";
+      n.title = tr("settings.src_count_title");
       head.appendChild(n);
     }
     text.appendChild(head);
@@ -165,7 +146,7 @@ window.AM = window.AM || {};
       var item = el("div", "sd-size");
       item.appendChild(tierSwatch(t));
       item.appendChild(el("span", null,
-        t.id === "U" ? "Count unknown (drawn mid-size)" : t.label));
+        t.id === "U" ? tr("settings.tier_unknown") : t.label));
       box.appendChild(item);
     });
     /* The one marker-ish thing on the map that is not a tier: a cluster bubble
@@ -174,8 +155,7 @@ window.AM = window.AM || {};
        swallowed by a bubble. */
     var ring = el("div", "sd-size");
     ring.appendChild(el("span", "cl-ico cl-big sd-clu", "12"));
-    ring.appendChild(el("span", null,
-      "Cluster of 12 stores. A gold rim means at least one 20+ cabinet store is inside."));
+    ring.appendChild(el("span", null, tr("settings.cluster_note")));
     box.appendChild(ring);
   }
 
@@ -205,13 +185,12 @@ window.AM = window.AM || {};
   var srcInputs = {};
 
   function buildSourcesPane(pane) {
-    pane.appendChild(sectionHead("Data sources",
-      "Turn a source off to hide its stores. A store listed by more than one source stays on the map while any of them is on."));
+    pane.appendChild(sectionHead(tr("settings.sources_head"), tr("settings.sources_note")));
 
     var enabled = AM.state.get("enabledSources") || new Set();
     var counts = AM.data.srcCounts || {};
     AM.data.srcInData.forEach(function (s) {
-      var info = SRC_INFO[s] || { name: C.SRC_LABEL[s] || s, desc: "Additional data source." };
+      var info = srcInfo(s);
       var r = switchRow({
         label: info.name,
         desc: info.desc,
@@ -230,19 +209,18 @@ window.AM = window.AM || {};
   }
 
   function buildDisplayPane(pane) {
-    pane.appendChild(sectionHead("Display"));
-    pane.appendChild(prefRow("markerScaling", "Marker size by cabinet count",
-      "Draw busier stores as larger icons. Turn it off to draw every marker the same size - the icon shape still shows the tier.").row);
+    pane.appendChild(sectionHead(tr("settings.display_head")));
+    pane.appendChild(prefRow("markerScaling", tr("settings.marker_scaling"),
+      tr("settings.marker_scaling_desc")).row);
   }
 
   function buildLocationPane(pane) {
-    pane.appendChild(sectionHead("Location"));
-    pane.appendChild(prefRow("locationEnabled", "Enable location features",
-      "Show the locate button and the list of arcades nearest to you.").row);
+    pane.appendChild(sectionHead(tr("settings.location_head")));
+    pane.appendChild(prefRow("locationEnabled", tr("settings.location_enabled"),
+      tr("settings.location_enabled_desc")).row);
     var note = el("p", "sd-note");
-    note.appendChild(el("strong", null, "Your location never leaves the browser."));
-    note.appendChild(document.createTextNode(
-      " It is read only after you ask for it, used on this page to sort stores by distance, and is never uploaded, stored or shared. This site has no server and no analytics."));
+    note.appendChild(el("strong", null, tr("settings.location_privacy")));
+    note.appendChild(document.createTextNode(tr("settings.location_privacy_body")));
     pane.appendChild(note);
   }
 
@@ -258,21 +236,19 @@ window.AM = window.AM || {};
   }
 
   function buildAboutPane(pane) {
-    pane.appendChild(sectionHead("Legend"));
+    pane.appendChild(sectionHead(tr("settings.legend")));
 
     /* marker tiers */
-    pane.appendChild(el("p", "sd-sub", "Icon: total cabinets at the store"));
+    pane.appendChild(el("p", "sd-sub", tr("settings.icon_cabinets")));
     var sizes = el("div", "sd-sizes");
     sizes.id = "sd-tier-legend";
     renderTierRows(sizes);
     pane.appendChild(sizes);
-    pane.appendChild(el("p", "sd-note",
-      "Each tier is a different shape, so the tier reads without comparing sizes. Most official listings publish which games a store has but not how many cabinets, so an unknown count gets its own icon at mid weight rather than the smallest one - it means \"not published\", never \"one cabinet\". Counts come from BemaniCN and, where they are more than a bare presence marker, from ZIv. Sizes follow the Display setting; the shapes do not."));
+    pane.appendChild(el("p", "sd-note", tr("settings.legend_note")));
 
     /* game colours */
-    pane.appendChild(el("p", "sd-sub", "Icon colour: game at the store"));
-    pane.appendChild(el("p", "sd-note",
-      "A store with several games takes the colour of the first selected game it has, in the order below. The tier icons above are all drawn in one sample colour; on the map each takes its store's game colour."));
+    pane.appendChild(el("p", "sd-sub", tr("settings.icon_color")));
+    pane.appendChild(el("p", "sd-note", tr("settings.color_note")));
     var grid = el("div", "sd-colors");
     grid.id = "sd-color-counts";
     AM.data.gamesInData.forEach(function (g) {
@@ -288,10 +264,10 @@ window.AM = window.AM || {};
     pane.appendChild(grid);
 
     /* source badges */
-    pane.appendChild(el("p", "sd-sub", "Badges in a store popup"));
+    pane.appendChild(el("p", "sd-sub", tr("settings.badges")));
     var badges = el("div", "sd-badges");
     AM.data.srcInData.forEach(function (s) {
-      var info = SRC_INFO[s] || { name: C.SRC_LABEL[s] || s, desc: "" };
+      var info = srcInfo(s);
       var item = el("div", "sd-badge-row");
       item.appendChild(el("span", "badge", C.SRC_LABEL[s] || s));
       item.appendChild(el("span", "sd-badge-txt", info.name + ". " + info.desc));
@@ -299,48 +275,34 @@ window.AM = window.AM || {};
     });
     var cabBadge = el("div", "sd-badge-row");
     cabBadge.appendChild(el("span", "badge cab", "Lightning"));
-    cabBadge.appendChild(el("span", "sd-badge-txt",
-      "Yellow badges name the CABINET, not the game: Lightning model IIDX, "
-      + "Valkyrie or NEMSYS SOUND VOLTEX, DDR gold and Universal cabs, "
-      + "GITADORA Arena, pop'n Pikapika, and Taiko regional builds. The "
-      + "cabinet decides which charts and modes you can actually play."));
+    cabBadge.appendChild(el("span", "sd-badge-txt", tr("settings.cab_badge")));
     badges.appendChild(cabBadge);
     var deadBadge = el("div", "sd-badge-row");
     deadBadge.appendChild(el("span", "badge cab dead", "FiNALE"));
-    deadBadge.appendChild(el("span", "sd-badge-txt",
-      "A struck-through badge is an OFFLINE cabinet: maimai FiNALE and pre-LCD "
-      + "DDR cabs still run, but their networks shut down, so nothing is saved "
-      + "- no scores, no unlocks, no online play."));
+    deadBadge.appendChild(el("span", "sd-badge-txt", tr("settings.dead_badge")));
     badges.appendChild(deadBadge);
     pane.appendChild(badges);
-    pane.appendChild(el("p", "sd-note",
-      "Where cabinet data comes from, and what it cannot tell you. Official "
-      + "operator listings publish cabinet models for Japan only, so outside "
-      + "Japan the model is read from the machine list community members "
-      + "wrote. That means a missing badge always reads as \"nobody recorded "
-      + "the model\" and never as \"standard cabinet\". Two known gaps: the "
-      + "operator feed for SOUND VOLTEX returns the same stores whether or not "
-      + "you ask for Valkyrie cabs, so Valkyrie is taken from community "
-      + "listings alone; and CHUNITHM gold and silver cabinets are real (gold "
-      + "runs at 120Hz, and the two do not match against each other in versus) "
-      + "but no source publishes which a store has, so this map does not guess."));
+    pane.appendChild(el("p", "sd-note", tr("settings.badge_note")));
 
     /* data + links */
-    pane.appendChild(sectionHead("About this map"));
+    pane.appendChild(sectionHead(tr("settings.about_map")));
     var upd = (AM.data.raw && AM.data.raw.updated) ? AM.data.raw.updated : "unknown";
     var stats = el("p", "sd-note tabnum");
-    stats.textContent = U.num(AM.data.arcades.length) + " stores, " +
-      U.num(AM.data.plottable.length) + " with coordinates. Data updated " + upd + ".";
+    stats.id = "sd-stats";
+    stats.textContent = tr("settings.stats", {
+      stores: U.num(AM.data.arcades.length),
+      plottable: U.num(AM.data.plottable.length),
+      updated: upd
+    });
     pane.appendChild(stats);
 
     var links = el("p", "sd-links");
     links.innerHTML =
-      '<a href="' + esc(C.REPO_URL) + '" target="_blank" rel="noopener">Source code on GitHub</a>' +
-      '<a href="' + esc(C.REPO_URL) + '/tree/main/docs" target="_blank" rel="noopener">Data sources</a>' +
-      '<a href="' + esc(C.REPO_URL) + '/blob/main/LICENSE" target="_blank" rel="noopener">MIT licence</a>';
+      '<a href="' + esc(C.REPO_URL) + '" target="_blank" rel="noopener">' + esc(tr("settings.link_source")) + '</a>' +
+      '<a href="' + esc(C.REPO_URL) + '/tree/main/docs" target="_blank" rel="noopener">' + esc(tr("settings.link_data")) + '</a>' +
+      '<a href="' + esc(C.REPO_URL) + '/blob/main/LICENSE" target="_blank" rel="noopener">' + esc(tr("settings.link_license")) + '</a>';
     pane.appendChild(links);
-    pane.appendChild(el("p", "sd-note",
-      "Map data (c) OpenStreetMap contributors, ODbL. Store listings belong to their respective sources and are aggregated here for convenience. Chinese coordinates are converted from GCJ-02 and are approximate."));
+    pane.appendChild(el("p", "sd-note", tr("settings.osm_note")));
   }
 
   /* ---------- preferences ---------- */
@@ -369,12 +331,13 @@ window.AM = window.AM || {};
     var inner = el("div", "sd-inner");
 
     var head = el("div", "sd-head");
-    var h2 = el("h2", null, "Settings");
+    var h2 = el("h2", null, tr("settings.title"));
     h2.id = "sd-title";
     head.appendChild(h2);
     var close = el("button", "sd-close");
     close.type = "button";
-    close.setAttribute("aria-label", "Close settings");
+    close.id = "sd-close";
+    close.setAttribute("aria-label", tr("settings.close"));
     close.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.3 19.71 2.88 18.3 9.17 12 2.88 5.71 4.3 4.29l6.29 6.3 6.3-6.3z"/></svg>';
     close.addEventListener("click", function () { closeDialog(); });
     head.appendChild(close);
@@ -382,12 +345,13 @@ window.AM = window.AM || {};
 
     var body = el("div", "sd-body");
     var nav = el("div", "sd-nav");
+    nav.id = "sd-nav";
     nav.setAttribute("role", "tablist");
-    nav.setAttribute("aria-label", "Settings sections");
+    nav.setAttribute("aria-label", tr("settings.sections"));
     var panes = el("div", "sd-panes");
 
     SECTIONS.forEach(function (sec, i) {
-      var tab = el("button", "sd-tab", sec.label);
+      var tab = el("button", "sd-tab", tr(sec.labelKey));
       tab.type = "button";
       tab.id = "sd-tab-" + sec.id;
       tab.dataset.sec = sec.id;
@@ -481,14 +445,16 @@ window.AM = window.AM || {};
     gearBtn = el("button", "sd-gear");
     gearBtn.id = "settings-btn";
     gearBtn.type = "button";
-    gearBtn.title = "Settings";
-    gearBtn.setAttribute("aria-label", "Settings");
+    gearBtn.title = tr("settings.gear");
+    gearBtn.setAttribute("aria-label", tr("settings.gear"));
     gearBtn.setAttribute("aria-haspopup", "dialog");
     gearBtn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19.14 12.94a7.6 7.6 0 0 0 0-1.88l2.03-1.58a.5.5 0 0 0 .12-.62l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.3 7.3 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.58.24-1.12.55-1.62.94l-2.39-.96a.5.5 0 0 0-.6.22L2.67 8.86a.5.5 0 0 0 .12.62l2.03 1.58a7.6 7.6 0 0 0 0 1.88l-2.03 1.58a.5.5 0 0 0-.12.62l1.92 3.32c.12.22.38.3.6.22l2.39-.96c.5.39 1.04.7 1.62.94l.36 2.54c.04.24.25.42.5.42h3.84c.25 0 .46-.18.5-.42l.36-2.54c.58-.24 1.12-.55 1.62-.94l2.39.96c.22.08.48 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.62zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/></svg>';
     gearBtn.addEventListener("click", openDialog);
     var anchor = $("repo-link");
     if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(gearBtn, anchor);
     else document.getElementById("topbar").appendChild(gearBtn);
+    /* Language control sits LEFT of the gear: ... search | lang | gear | github. */
+    if (AM.i18n && AM.i18n.buildControl) AM.i18n.buildControl(gearBtn);
   }
 
   /* ---------- on-map legend chip ---------- */
@@ -512,14 +478,14 @@ window.AM = window.AM || {};
       key.setAttribute("aria-hidden", "true");
       legendBtn.appendChild(key);
     }
-    legendBtn.appendChild(document.createTextNode("Legend"));
+    legendBtn.appendChild(document.createTextNode(tr("legend.toggle")));
     legendBtn.addEventListener("click", function () { toggleLegend(); });
 
     legendBody = el("div", "legend-body");
     legendBody.id = "legend-body";
     legendBody.hidden = true;
 
-    legendBody.appendChild(el("p", "legend-sub", "Icon: cabinets at the store"));
+    legendBody.appendChild(el("p", "legend-sub", tr("legend.icon_cabinets")));
     var sizes = el("div", "legend-sizes");
     /* Three ticks (smallest, middle, largest) sampled from the real tier table
        plus unknown, so neither the labels nor the artwork can drift from what
@@ -537,16 +503,16 @@ window.AM = window.AM || {};
       picks.push(counted[i]);
     });
     if (AM.markers && AM.markers.UNKNOWN_TIER) picks.push(AM.markers.UNKNOWN_TIER);
-    picks.forEach(function (t) {
+    picks.forEach(function (tier) {
       var item = el("div", "legend-size");
-      item.appendChild(tierSwatch(t, CHIP_PX));
-      item.appendChild(el("span", null, t.short));
-      item.title = t.id === "U" ? "count unknown, drawn mid-size" : t.label;
+      item.appendChild(tierSwatch(tier, CHIP_PX));
+      item.appendChild(el("span", null, tier.short));
+      item.title = tier.id === "U" ? tr("legend.unknown_title") : tier.label;
       sizes.appendChild(item);
     });
     legendBody.appendChild(sizes);
 
-    legendBody.appendChild(el("p", "legend-sub", "Colour: game"));
+    legendBody.appendChild(el("p", "legend-sub", tr("legend.color_game")));
     var grid = el("div", "legend-colors");
     AM.data.gamesInData.forEach(function (g) {
       var item = el("div", "legend-color");
@@ -558,8 +524,9 @@ window.AM = window.AM || {};
     });
     legendBody.appendChild(grid);
 
-    var more = el("button", "legend-more", "Full legend in Settings");
+    var more = el("button", "legend-more", tr("legend.full"));
     more.type = "button";
+    more.id = "legend-more";
     more.addEventListener("click", function () {
       collapseLegend();
       currentSection = "about";
@@ -634,8 +601,68 @@ window.AM = window.AM || {};
   function syncShown() {
     var live = $("sd-shown");
     if (!live) return;
-    live.textContent = U.num(AM.state.get("shownCount")) + " of " +
-      U.num(AM.data.plottable.length) + " mappable stores shown with the current filters.";
+    live.textContent = tr("settings.shown", {
+      n: U.num(AM.state.get("shownCount")),
+      total: U.num(AM.data.plottable.length)
+    });
+  }
+
+  /* Rebuild dialog panes + legend chrome when the UI language changes so every
+     string (including long About prose) flips without a full page reload. */
+  function retranslate() {
+    if (gearBtn) {
+      gearBtn.title = tr("settings.gear");
+      gearBtn.setAttribute("aria-label", tr("settings.gear"));
+    }
+    if (dlg) {
+      var h2 = $("sd-title");
+      if (h2) h2.textContent = tr("settings.title");
+      var close = $("sd-close");
+      if (close) close.setAttribute("aria-label", tr("settings.close"));
+      var nav = $("sd-nav");
+      if (nav) nav.setAttribute("aria-label", tr("settings.sections"));
+      SECTIONS.forEach(function (sec) {
+        var tab = $("sd-tab-" + sec.id);
+        if (tab) tab.textContent = tr(sec.labelKey);
+      });
+      srcInputs = {};
+      ["sources", "display", "location", "about"].forEach(function (id) {
+        var pane = $("sd-pane-" + id);
+        if (!pane) return;
+        while (pane.firstChild) pane.removeChild(pane.firstChild);
+      });
+      buildSourcesPane($("sd-pane-sources"));
+      buildDisplayPane($("sd-pane-display"));
+      buildLocationPane($("sd-pane-location"));
+      buildAboutPane($("sd-pane-about"));
+      syncSources();
+      syncPrefs();
+      syncShown();
+      syncColorCounts();
+    }
+    if (legendBtn) {
+      /* Keep the key glyph (if any); replace only the trailing text node. */
+      var nodes = legendBtn.childNodes;
+      for (var i = nodes.length - 1; i >= 0; i--) {
+        if (nodes[i].nodeType === 3) {
+          nodes[i].textContent = tr("legend.toggle");
+          break;
+        }
+      }
+    }
+    if (legendBody) {
+      var subs = legendBody.querySelectorAll(".legend-sub");
+      if (subs[0]) subs[0].textContent = tr("legend.icon_cabinets");
+      if (subs[1]) subs[1].textContent = tr("legend.color_game");
+      var more = $("legend-more");
+      if (more) more.textContent = tr("legend.full");
+      var sizes = legendBody.querySelectorAll(".legend-size");
+      for (var j = 0; j < sizes.length; j++) {
+        if (sizes[j].title && /unknown|mid-size|mid size/i.test(sizes[j].title)) {
+          sizes[j].title = tr("legend.unknown_title");
+        }
+      }
+    }
   }
 
   /* ---------- wiring ---------- */
@@ -659,6 +686,7 @@ window.AM = window.AM || {};
       var box = document.getElementById("sd-tier-legend");
       if (box) renderTierRows(box);
     });
+    if (AM.i18n && AM.i18n.on) AM.i18n.on(retranslate);
     syncSources();
     syncPrefs();
     syncShown();

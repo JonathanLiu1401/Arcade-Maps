@@ -1,0 +1,26 @@
+{
+  "slug": "i18n",
+  "files_changed": [
+    "js/i18n.js",
+    "js/settings.js",
+    "js/app-init.js",
+    "index.html",
+    "style.css"
+  ],
+  "summary": "Added self-contained AM.i18n module with 16 locales (en, zh-Hans, zh-Hant, ja, ko, id, ms, th, vi, fil, es, fr, de, pt, it, ru). Top-right language button (translate SVG) sits left of the settings gear; menu uses native language names, applies immediately, persists am_lang, and detects navigator.languages on first visit. Static chrome uses data-i18n / data-i18n-placeholder / data-i18n-title / data-i18n-aria. Settings modal, legend chip, empty-state CSS var, footer toggle, and boot strings go through AM.i18n.t(); settings panes rebuild on language change. Game brand names left untranslated. Script order: i18n.js before settings.js. Assets stamped.",
+  "how_to_verify": [
+    "Open index.html (or local static server). Confirm header order: search, language button, gear, GitHub.",
+    "Click language button: compact popover with 16 native names. Pick 日本語: title becomes アーケードマップ, Filters/tabs/settings/legend translate, empty-state message uses Japanese.",
+    "Reload: language persists via localStorage key am_lang.",
+    "Clear am_lang and set browser preferred language to zh-CN: first visit should land on 简体中文.",
+    "Open Settings: section tabs, source descs, Display/Location copy, About legend, live shown count all match the selected language.",
+    "Missing key falls back to English then the key string (console: AM.i18n.t('nope')).",
+    "Confirm game labels (maimai DX, CHUNITHM, etc.) stay official English/romaji names."
+  ],
+  "risks": [
+    "panel.js and nearby.js still hardcode some dynamic strings (share toasts, locate errors, place actions). Keys exist under place.* and nb.* for a follow-up wire-up without expanding this agent's file ownership.",
+    "Size-filter chip labels built in panel.js stay English until that module calls t() for tier short labels.",
+    "Retranslate rebuilds settings panes from scratch on language change (source checkbox state re-synced from AM.state; should match).",
+    "CSS empty state uses --am-empty-msg; very old browsers without CSS variables keep the English fallback in content:."
+  ]
+}
