@@ -1,0 +1,71 @@
+{
+  "region": "Mainland China",
+  "sources": [
+    {
+      "name": "nearcade (Naptie)",
+      "url": "https://nearcade.phizone.cn/",
+      "kind": "community_map",
+      "languages": ["zh", "en"],
+      "countries_covered": ["China", "global"],
+      "venues_estimated": 3941,
+      "per_venue_detail": ["games", "cab_counts", "prices", "hours", "address"],
+      "machine_readable": "api",
+      "example_venue_url": "https://nearcade.phizone.cn/shops/10001",
+      "example_data_quote": "街机烈火 @ 江宁路77恒顺大楼4层: CHUNITHM x6 (5币, 中二节奏2026); maimai DX x9 (5币, 舞萌DX2025); beatmania IIDX x3; SOUND VOLTEX x3; jubeat x1; DDR x2; 太鼓之达人 x2; plus GF/DM, Nostalgia, WACCA, Pop'n, Project DIVA, Initial D, Wangan, etc. Opening hours and long community comment with Weibo/WeChat links. API: GET https://nearcade.phizone.cn/api/shops?page=N (totalCount 7336 worldwide, ~3941 CN); GET https://nearcade.phizone.cn/api/shops/{id}.",
+      "adds_over_current": "Compared 街机烈火 (map id 5023, games=[chunithm,maimai_dx,taiko] from bemanicn only): live BemaniCN s/1 also only has those 3 titles (mai x9, chunithm x5, taiko x2), but nearcade lists 20+ music/racing titles with per-cab quantity, coin cost, version, and status notes. Compared other-only map venues: 1号街区 (bemanicn, other) shows maimai (old 精文) x1 + closed Groove Coaster note; AP FUNLL(吾角天街店) (other) shows WACCA x3 free-play with 2026-06-28 status; 903Psi玩家之家 (other) shows DanceEvolution x1. Also compared XAMG幻乐坊: map games=[chunithm,maimai_dx] while nearcade lists many free-play cabs (IIDX, SDVX, ONGEKI, taiko, PIU, etc.). Seeded from BemaniCN historically but now community-editable (Create Shop) with divergent richer lineups. Coordinates present (GeoJSON Point).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best Mainland China find that is NOT already in the six pipeline sources. Public JSON API, no login for shop list/detail. GitHub Naptie/nearcade discloses early CN data came from BemaniCN and overseas from ZIv; today community comments, cab counts, prices, and multi-title lineups often exceed the map's BemaniCN scrape for the same shop (shop ids often look like 10000+bemanicn_id, e.g. 10001 vs s/1). QQ group for corrections. Use as enrichment/override layer, not a naive full reimport without dedupe."
+    },
+    {
+      "name": "WAHLAP 舞萌DX public location JSON (machineCount)",
+      "url": "https://wc.wahlap.net/maidx/location/index.html",
+      "kind": "official_locator",
+      "languages": ["zh"],
+      "countries_covered": ["China"],
+      "venues_estimated": 3130,
+      "per_venue_detail": ["games", "cab_counts", "address"],
+      "machine_readable": "api",
+      "example_venue_url": "https://wc.wahlap.net/maidx/rest/location",
+      "example_data_quote": "环游嘉年华广州天河城店: placeId 1001, machineCount 4, province 广东, mall 天河城, address 广东省广州市天河区天河路208号天河城6楼. Endpoint returns 3130 rows; every row has machineCount (max observed 12).",
+      "adds_over_current": "Pipeline already scrapes sega-register.wahlap.net maidx (name+address+placeId only, no machineCount). Public wc.wahlap.net/maidx/rest/location is the same operator list with machineCount and mall fields. For 环游嘉年华广州天河城店 map has maimai_dx but empty cabs[]; public JSON claims machineCount=4. Does not fix other-only venues that lack maimai entirely. Sister endpoint https://wc.wahlap.net/chunithm/rest/location returns 580 CHUNITHM rows with machineCount too.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Not a brand-new operator: WAHLAP is already used. Report as a field-level upgrade of the existing official locator (public WC REST vs register API). HTML SPA at location/index.html; data is the REST JSON. Name-only: confirms maimai (or chunithm) presence, not full multi-game lineups."
+    },
+    {
+      "name": "WAHLAP Rhythmvaders (Groove Coaster China) 店铺分布",
+      "url": "https://wc.wahlap.net/gc/location/index.html",
+      "kind": "official_locator",
+      "languages": ["zh"],
+      "countries_covered": ["China"],
+      "venues_estimated": 31,
+      "per_venue_detail": ["games", "address"],
+      "machine_readable": "api",
+      "example_venue_url": "https://wc.wahlap.net/gc/rest/location",
+      "example_data_quote": "JSON array of 31: {id, province, arcadeName, address}. Example: 大玩家商洛商州万达店 / 陕西省商洛市商州区通江西路与州城路东北角万达广场; 环游嘉年华广州天河城店 / 广东省广州市天河区天河路208号天河城F6.",
+      "adds_over_current": "Single-title official register not in the current scrapers (only maidx+chunithm WAHLAP). Can mark Rhythmvaders/Groove Coaster China presence. Name matches are fuzzy (e.g. 大玩家商洛商州万达店 vs map's 天空之城商洛商州万达店 with games maimai_dx+other). Address+name only; no cab counts, hours, or other games.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Small (31 shops). Useful as a presence flag, not a full venue database. Page falls back to hardcoded demo data if API fails; live REST returned 31 real rows today."
+    },
+    {
+      "name": "朗玩 ROUND1 China official store list",
+      "url": "https://round1china.cn/location/",
+      "kind": "official_locator",
+      "languages": ["zh"],
+      "countries_covered": ["China"],
+      "venues_estimated": 3,
+      "per_venue_detail": ["address", "hours", "prices"],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://round1china.cn/location/shenzhen/",
+      "example_data_quote": "深圳龙华壹方天地店: 深圳市龙华区龙华街道景龙社区壹成中心花园三区E座壹方天地C区; 0755-2103-8371; 营业时间 周一～周日 10点～凌晨2点; sections for 肆跑＋ / 电子娱乐中心 / 保龄球 / 卡拉OK. Location index also lists 广州新塘永旺梦乐城店 and 深圳福田IN城市广场.",
+      "adds_over_current": "Round1 USA is already a pipeline source; this is the Mainland China ROUND1 (朗玩) brand site. Map already has the same 3 stores from bemanicn/wahlap/ziv with music games. Official site adds verified hours/phone and chain identity but does NOT publish per-cab music game lists (only '电子游艺区' as a category).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Tiny chain (3 open store pages verified). Useful for hours/closure checks and chain branding, not for filling other-only machine lists."
+    }
+  ],
+  "summary": "Mainland China already has the densest coverage of any region via BemaniCN (~3786) and WAHLAP maimai/chunithm registers. Searched in Chinese for 机厅 / 音游地图 / 舞萌 店铺分布 / 中二节奏 店铺 / 太鼓 店铺 / 舞立方 查找 / 华卡音舞 / 大玩家 门店 / 朗玩. Primary NEW multi-venue database with full per-cab detail is nearcade.phizone.cn (~3941 CN shops, public paginated JSON API, community-maintained lineups that exceed BemaniCN on major rooms like 街机烈火 and reclassify several map other-only stubs). Secondary: WAHLAP public maidx/chunithm REST adds machineCount missing from the register scrape already in-tree; Rhythmvaders GC REST adds a 31-shop single-title official list; 朗玩 China is a 3-store official chain locator without cab lists. No hkarcade.fandom-style independent wiki with full cab lists was found beyond BemaniCN (already used). Other-only CN venues are mostly bemanicn titles unmapped by TITLE_GAME (WACCA, DanceEvolution, old maimai, racing) or thin ZIv stubs; nearcade is the practical path to reduce them.",
+  "dead_ends": "map.b30w.com: DNS resolution failed (No such host). wiki.bemani.cc archived 全国音游地图: Cloudflare blocked (unverified content). FindMaimai / godserver.cn: site loads SPA shell only; no verified public multi-venue shop API from probing. maimai.diving-fish.com: score prober, not venues. dancecube.com: domain-for-sale page, not a live Dance Cube locator. dancecube.cn: DNS fail. NGA 音游 threads: discussion pointing at 全国音游地图 (BemaniCN), no maintained pinned multi-venue DB. 太鼓之达人 China: shop info pushed via WeChat 太鼓鼓众广场 only, no open web multi-venue list verified. 舞立方: zhihu/app mentions of in-app 查找舞立方 map; no open web multi-venue database confirmed. 大玩家 chain: no public official multi-store locator with game lists found (operator brand only). map.bemanicn.com and sega-register.wahlap.net: already pipeline sources, not counted as new finds."
+}
