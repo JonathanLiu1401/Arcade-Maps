@@ -3106,7 +3106,23 @@
       "attested_by": "research-fleet",
       "attested_at": "2026-08-04",
       "evidence_url": "https://www.google.com/maps/search/?api=1&query=One+More+Extra+Stage+1313+W+El+Camino+Real+Mountain+View",
-      "note": "Remove from map. Google Maps: Temporarily closed at 1313 W El Camino Real A, Mountain View. ALL.Net-only maimai intl registration (sid=18325) with no public hours, no ZIv/community corroboration. Not a useful music-map listing; prefer silence over a closed/open ghost pin."
+      "note": "Exclude. Google temporarily closed; ALL.Net-only ghost. Removed from map."
+    },
+    "allnet|https://location.am-all.net/alm/shop?sid=18326": {
+      "name": "SIZIGI 20TH STREET",
+      "exclude": true,
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://location.am-all.net/alm/shop?sid=18326",
+      "note": "Exclude. 933 20th St San Francisco is commercial/biotech office space, not a walk-in arcade. ALL.Net-only ghost/private install pattern. Prefer silence."
+    },
+    "allnet|https://location.am-all.net/alm/shop?sid=18365": {
+      "name": "THE REC ROOM BRENTWOOD",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://www.therecroom.com/brentwood",
+      "note": "Country was United States; real venue is Rec Room Brentwood Town Centre, Burnaby BC, Canada. Official chain site therecroom.com/brentwood.",
+      "set_country": "Canada"
     }
   }
 }
