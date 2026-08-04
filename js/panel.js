@@ -889,7 +889,13 @@ window.AM = window.AM || {};
     var segs = raw ? raw.split("/").filter(function (s) {
       return s && s.indexOf("arcade=") !== 0;
     }) : [];
-    segs.push("arcade=" + encodeURIComponent(a.id));
+    /* Share the STABLE id, not the row number. `a.id` is reassigned 1..N on
+       every rebuild, so a link carrying one retargets to whatever venue now
+       occupies that row: #arcade=6072 was a Hong Kong arcade one week and an
+       Indonesian one the next, which is how a Hong Kong link came to quote
+       rupiah. a.sid is derived from the venue's own source page url and
+       survives renumbering. */
+    segs.push("arcade=" + encodeURIComponent(a.sid || a.id));
     return base + "#" + segs.join("/");
   }
 
@@ -2204,9 +2210,17 @@ window.AM = window.AM || {};
       if (s.indexOf("arcade=") === 0) found = s.slice(7);
     });
     if (!found) return null;
-    var id = decodeId(found);
-    if (id !== null && AM.data.byId[id]) return AM.data.byId[id];
-    return AM.data.byId[found] || null;
+    var key = decodeId(found);
+    if (key === null) key = found;
+    /* sid first, ALWAYS. A link minted before stable ids carries a bare row
+       number, and resolving that against today's byId opens whichever venue
+       now sits in that row - silently, and on the other side of the world.
+       Numeric-looking keys are therefore only honoured when they also match
+       a sid; an unrecognised one opens nothing, which is the honest outcome
+       for a link whose target can no longer be identified. */
+    if (AM.data.bySid && AM.data.bySid[key]) return AM.data.bySid[key];
+    if (!/^[0-9]+$/.test(key) && AM.data.byId[key]) return AM.data.byId[key];
+    return null;
   }
 
   function applyHashArcade() {

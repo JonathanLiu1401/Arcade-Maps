@@ -70,6 +70,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import json
 import os
 import re
@@ -231,7 +232,8 @@ def fetch_shop(shop_id):
                 time.sleep(SLEEP)
                 return None
             last_err = e
-        except (urllib.error.URLError, OSError, ValueError) as e:
+        except (urllib.error.URLError, OSError, ValueError,
+                http.client.HTTPException) as e:
             last_err = e
         wait = 2 ** attempt
         print("  shop %s attempt %d/%d failed: %s (retry in %ds)"
@@ -426,7 +428,8 @@ def mirror_one(shop_id, asset_dir):
                   % (shop_id, attempt + 1, IMG_RETRIES, e), file=sys.stderr)
             time.sleep(1 + attempt)
             continue
-        except (urllib.error.URLError, OSError) as e:
+        except (urllib.error.URLError, OSError,
+                http.client.HTTPException) as e:
             last_err = e
             print("  shop %s image attempt %d/%d failed: %s"
                   % (shop_id, attempt + 1, IMG_RETRIES, e), file=sys.stderr)

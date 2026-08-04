@@ -99,6 +99,7 @@ Pipeline rules (see README / task spec):
 
 import argparse
 import collections
+import hashlib
 import json
 import math
 import os
@@ -637,6 +638,34 @@ def _common_prefix_len(a, b):
     while n < len(a) and n < len(b) and a[n] == b[n]:
         n += 1
     return n
+
+
+_ZIV_ID_RE = re.compile(r"[?&]id=(\d+)")
+_BEMANICN_ID_RE = re.compile(r"/s/(\d+)")
+
+
+def stable_sid(entry):
+    """A share-safe identifier that survives a rebuild.
+
+    `id` is a row number reassigned 1..N on every build, so a URL carrying
+    one silently retargets when the dataset shifts. This is derived from
+    the venue's own SOURCE PAGE url where it has one - a genuinely stable
+    identity - and falls back to a hash of (country, name, address).
+
+    The prefix records where it came from, so a stale sid can be traced
+    rather than guessed at.
+    """
+    links = entry.get("links") or {}
+    m = _ZIV_ID_RE.search(links.get("ziv") or "")
+    if m:
+        return "z" + m.group(1)
+    m = _BEMANICN_ID_RE.search(links.get("bemanicn") or "")
+    if m:
+        return "b" + m.group(1)
+    key = "%s|%s|%s" % (entry.get("country") or "",
+                        (entry.get("name") or "").strip().casefold(),
+                        (entry.get("addr") or "").strip().casefold())
+    return "h" + hashlib.sha1(key.encode("utf-8")).hexdigest()[:10]
 
 
 # A place name is the 2-3 chars immediately before an admin suffix.
@@ -2464,10 +2493,22 @@ def run(raw_dir, out_dir, updated=None):
                                 a["addr"]))
     for i, a in enumerate(arcades, 1):
         a["id"] = i
+        a["sid"] = stable_sid(a)
+    # A share link must not rot. `id` is a row NUMBER: it is reassigned 1..N
+    # by (country, name, addr) on EVERY build, so one venue appearing or
+    # merging shifts every id after it. A link saved last week therefore
+    # opens a different arcade this week - measured: #arcade=6072 was Game
+    # Zone in Hong Kong before the Taiwan relabel and is an Indonesian venue
+    # in Bandung after it, which is how a Hong Kong link came to show rupiah.
+    # `sid` is derived from the venue's own source page url instead, so it
+    # survives renumbering. This is the same lesson as the photo join and the
+    # manual China coordinates - the id is not a key.
+    dup = len(arcades) - len({a["sid"] for a in arcades})
+    assert dup == 0, "%d duplicate sids" % dup
     # reorder keys for output (game_counts / count_evidence / counts_src /
     # cab_models are all optional)
     ordered = [{k: a[k] for k in
-                ("id", "name", "addr", "lat", "lng", "country", "pref",
+                ("id", "sid", "name", "addr", "lat", "lng", "country", "pref",
                  "games", "game_counts", "count_evidence", "counts_src",
                  "cab_models", "cabs", "src", "links", "notes")
                 if k in a} for a in arcades]

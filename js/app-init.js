@@ -36,6 +36,9 @@ window.AM = window.AM || {};
         srcCounts[s] = (srcCounts[s] || 0) + 1;
       });
       D.byId[a.id] = a;
+      /* sid is the share-safe identity: derived from the venue's own source
+         page url, so it survives the id renumbering every rebuild performs. */
+      if (a.sid) D.bySid[a.sid] = a;
       if (U.hasCoords(a)) D.plottable.push(a); else D.coordless.push(a);
     });
 

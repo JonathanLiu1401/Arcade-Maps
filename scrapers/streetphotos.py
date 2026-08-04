@@ -73,6 +73,7 @@ actually shippable.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import math
 import os
@@ -254,7 +255,8 @@ def _kv_get(lat, lng, radius_m, timeout=30):
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             raw = resp.read()
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+    except (urllib.error.URLError, urllib.error.HTTPError, OSError,
+            http.client.HTTPException) as e:
         raise common.FetchError("kartaview %s: %s" % (url, e))
     time.sleep(0.15)  # politeness; full-scale harvest is gated off anyway
     try:
@@ -530,7 +532,8 @@ def verify_commons_live(lat, lng, radius_m=100):
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             body = json.loads(resp.read().decode("utf-8", errors="replace"))
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError, ValueError) as e:
+    except (urllib.error.URLError, urllib.error.HTTPError, OSError, ValueError,
+            http.client.HTTPException) as e:
         return {"ok": False, "error": str(e), "n": 0}
     hits = ((body.get("query") or {}).get("geosearch")) or []
     titles = [h.get("title") for h in hits[:5]]

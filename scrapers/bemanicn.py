@@ -57,6 +57,7 @@ enrichment.json is fetched by browsers on demand.
 """
 
 import argparse
+import http.client
 import json
 import os
 import sys
@@ -120,7 +121,16 @@ def _fetch_json(url, partial=None, allow_404=False):
                 time.sleep(SLEEP)
                 return None
             last_err = e
-        except (urllib.error.URLError, OSError, ValueError) as e:
+        except (urllib.error.URLError, OSError, ValueError,
+                http.client.HTTPException) as e:
+            # http.client.IncompleteRead is an HTTPException, NOT an OSError
+            # or a URLError, so without it here a single truncated chunked
+            # response escapes the retry loop and kills the entire weekly
+            # build. That is exactly what happened on 2026-08-03: one city
+            # request returned 2942 bytes and stopped, and the run died
+            # mid-crawl with the map left on the previous week's data.
+            # Truncation is a transient network condition and is precisely
+            # what a retry is for.
             last_err = e
         wait = 2 ** attempt
         print("fetch attempt %d/%d failed for %s: %s (retry in %ds)"

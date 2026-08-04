@@ -690,7 +690,8 @@ window.AM = window.AM || {};
     arcades: [],      /* all entries */
     plottable: [],    /* entries with usable coords */
     coordless: [],    /* no-coords-list entries */
-    byId: {},         /* id -> arcade */
+    byId: {},         /* id -> arcade (row number; NOT stable across builds) */
+    bySid: {},        /* sid -> arcade (stable; what share links carry) */
     gamesInData: [],  /* game slugs present, canonical order first */
     srcInData: [],    /* source slugs present, canonical order first */
     gameCounts: {},   /* game slug -> number of arcades */

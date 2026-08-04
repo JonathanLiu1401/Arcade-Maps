@@ -80,6 +80,7 @@ Stdlib only, same rule as the rest of scrapers/.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
 import sys
@@ -409,7 +410,8 @@ def _request(url, key, mask, body=None):
             last = e
             if e.code == 404:
                 return None
-        except (urllib.error.URLError, OSError, ValueError) as e:
+        except (urllib.error.URLError, OSError, ValueError,
+                http.client.HTTPException) as e:
             last = e
         wait = 2 ** attempt
         print("place_ids: attempt %d/%d failed (%s); retry in %ds"

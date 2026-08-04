@@ -81,6 +81,7 @@ Stdlib only, same rule as the rest of scrapers/.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
 import re
@@ -457,7 +458,8 @@ def probe(url, sleep=0.15, retries=2):
             if e.code < 500:
                 return rec
             last_err = e
-        except (urllib.error.URLError, OSError, ValueError) as e:
+        except (urllib.error.URLError, OSError, ValueError,
+                http.client.HTTPException) as e:
             last_err = e
             rec["error"] = "%s: %s" % (type(e).__name__, e)
         time.sleep(min(4.0, 2 ** attempt))

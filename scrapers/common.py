@@ -6,6 +6,7 @@ so callers exit nonzero instead of silently writing empty output.
 """
 
 import html
+import http.client
 import json
 import os
 import sys
@@ -41,7 +42,15 @@ def fetch(url, extra_headers=None, retries=3, sleep=DEFAULT_SLEEP, timeout=30):
                 raw = resp.read()
             time.sleep(sleep)
             return raw.decode("utf-8", errors="replace")
-        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+        except (urllib.error.URLError, urllib.error.HTTPError, OSError,
+                http.client.HTTPException) as e:
+            # http.client.IncompleteRead (a server that announces a chunked
+            # body and then stops sending) is an HTTPException, NOT an
+            # OSError or URLError. Every scraper in this repo fetches
+            # through here, so omitting it meant ONE truncated response
+            # anywhere could abort the whole weekly build - which is what
+            # killed the 2026-08-03 run at a BemaniCN city request. A
+            # truncated read is transient and is exactly what retrying is for.
             last_err = e
             wait = 2 ** attempt
             print("fetch attempt %d/%d failed for %s: %s (retry in %ds)"
