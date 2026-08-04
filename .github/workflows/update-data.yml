@@ -29,11 +29,26 @@ jobs:
       # If a third-party dependency is ever added, uncomment:
       # - run: python -m pip install -r requirements.txt
 
+      - name: Unit tests (fetch retry + merge guards)
+        # Cheap, no network. Catches the class of bug that killed the
+        # 2026-08-03 weekly run (IncompleteRead not retried) before we
+        # spend an hour crawling. Fail here -> nothing is scraped or
+        # committed; previous data stays live.
+        run: |
+          python -m pip install --quiet pytest
+          python -m pytest scrapers/test_fetch_retry.py \
+            scrapers/test_stable_sid.py \
+            scrapers/test_counts_honesty.py \
+            scrapers/test_build_corrections.py \
+            -q --tb=short
+
       - name: Scrape all sources
-        # run_all.py is fail-fast for arcade sources: fetches retry 3x with
-        # backoff, and any source that still fails (or parses to zero rows)
-        # makes the run exit nonzero, failing this job so NOTHING is
-        # committed and the previously committed data stays in place.
+        # run_all.py is fail-fast for arcade sources: fetches retry with
+        # backoff (including http.client.IncompleteRead / truncated
+        # chunked bodies - the 2026-08-03 weekly killer), and any source
+        # that still fails (or parses to zero rows) makes the run exit
+        # nonzero, failing this job so NOTHING is committed and the
+        # previously committed data stays in place.
         # continue-on-error stays false so a broken run can never half-commit
         # a partial refresh.
         #
@@ -43,6 +58,9 @@ jobs:
         #     step warns instead of aborting, so arcade data can still land.
         #   * Individual ZIV countries that return rows are required; an
         #     empty country is hard-fail (spelling drift guard).
+        #   * BemaniCN per-city / per-shop FetchError after retries: the
+        #     city is skipped and retried once at the end; the crawl
+        #     continues so one flaky city cannot zero the whole China set.
         continue-on-error: false
         run: python scrapers/run_all.py
 

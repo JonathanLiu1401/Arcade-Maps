@@ -72,7 +72,10 @@ import enrich
 
 BASE = "https://map.bemanicn.com"
 SLEEP = 0.5          # politeness pause after every successful request
-RETRIES = 3
+# 5 attempts: BemaniCN is a 392-city crawl that regularly sees truncated
+# chunked responses on GitHub-hosted runners (2026-08-03 IncompleteRead
+# kill). Three was not enough cushion for a multi-hour scrape.
+RETRIES = 5
 OUTFILE = "china_bemanicn.json"
 SMOKE_CITY = "拉萨市"  # small city (3 shops) used by --smoke
 
