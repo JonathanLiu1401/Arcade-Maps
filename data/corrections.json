@@ -1,6 +1,6 @@
 {
  "stats": {
-  "applied": 2235,
+  "applied": 2296,
   "bad_slug": 7,
   "cab_untranslatable": 90,
   "counts_without_quantity": 239,
@@ -8,15 +8,15 @@
   "location_no_geographic_gain": 2,
   "location_not_numeric": 177,
   "location_unjudgeable": 36,
-  "location_wrong_country": 69,
+  "location_wrong_country": 3,
   "no_change": 0,
   "proposals": 7500,
   "shards": 133,
   "status_not_a_closure": 392,
   "status_not_certain": 4,
   "status_temporary": 4,
-  "unresolved": 504,
-  "unverified": 480
+  "unresolved": 510,
+  "unverified": 479
  },
  "venues": {
   "addr|Australia|TIMEZONE BANKSTOWN|Bankstown Central Shopping Centre, Shop MM022 North Terrace": {
@@ -2995,6 +2995,16 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊新莊宏匯店 / TOM'S WORLD(HONHUI PLAZA@NEW TAIPEI) lat=25.059637 lon=121.449493 addr=24250台灣新北市新莊區新北大道四段3號",
+     "evidence_url": "https://maimaidx.tw/store/90",
+     "value": {
+      "lat": 25.059637,
+      "lng": 121.449493
+     }
     }
    },
    "name": "湯姆熊歡樂世界 新莊宏匯店"
@@ -3686,6 +3696,36 @@
    },
    "name": "D7星空之城恩施星光里店"
   },
+  "bemanicn|https://map.bemanicn.com/s/1935": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "大釣哥選物販賣 / PRO FISHER(ZHONGLI) lat=24.953350 lon=121.223358 addr=320台灣桃園市中壢區中和路249號",
+     "evidence_url": "https://maimaidx.tw/store/154",
+     "value": {
+      "lat": 24.95335,
+      "lng": 121.223358
+     }
+    }
+   },
+   "name": "大釣哥選物販賣"
+  },
+  "bemanicn|https://map.bemanicn.com/s/1941": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "橙柿口袋一中店 / WAWA EMPIRE(YIJHONG) lat=24.148853 lon=120.685181 addr=404台灣台中市北區尊賢街9號1樓 (水利大樓)",
+     "evidence_url": "https://maimaidx.tw/store/50",
+     "value": {
+      "lat": 24.148853,
+      "lng": 120.685181
+     }
+    }
+   },
+   "name": "橙柿口袋"
+  },
   "bemanicn|https://map.bemanicn.com/s/1956": {
    "fields": {
     "hours": {
@@ -4109,6 +4149,21 @@
    },
    "name": "爱儿乐亲子潮玩基地"
   },
+  "bemanicn|https://map.bemanicn.com/s/2209": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "Hala Planet@Gongguan Second Store | 142 Roosevelt Road Section 4 | lat=25.012844303779 (ZIv).",
+     "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+     "value": {
+      "lat": 25.012844303779,
+      "lng": 121.5359680698
+     }
+    }
+   },
+   "name": "哈啦星球 公館二店"
+  },
   "bemanicn|https://map.bemanicn.com/s/2212": {
    "fields": {
     "hours": {
@@ -4216,6 +4271,21 @@
     }
    },
    "name": "快乐街区生源时代广场店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/2288": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "永淇樂園 / YOUNG KEY PARADISE(DATONG) lat=25.049665 lon=121.513039 addr=100台灣台北市中正區市民大道一段100號B1 (近Y19出入口)",
+     "evidence_url": "https://maimaidx.tw/store/5",
+     "value": {
+      "lat": 25.049665,
+      "lng": 121.513039
+     }
+    }
+   },
+   "name": "永淇樂園"
   },
   "bemanicn|https://map.bemanicn.com/s/2319": {
    "fields": {
@@ -4457,6 +4527,21 @@
     }
    },
    "name": "游戏大魔方运城吾悦店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/250": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "極限遊戲道館 (天台廣場/鐵馬奇兵娃娃屋) / MAX GAME CENTER lat=25.061701 lon=121.497307 addr=241台灣新北市三重區重新路二段78號",
+     "evidence_url": "https://maimaidx.tw/store/9",
+     "value": {
+      "lat": 25.061701,
+      "lng": 121.497307
+     }
+    }
+   },
+   "name": "极限游戏道馆（天台广场）"
   },
   "bemanicn|https://map.bemanicn.com/s/2508": {
    "fields": {
@@ -4711,6 +4796,21 @@
     }
    },
    "name": "潮玩社（济南和谐广场店）"
+  },
+  "bemanicn|https://map.bemanicn.com/s/2608": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "白喵一番屋新竹店 / SHIRONEKOYA(HSINCHU) lat=24.802656 lon=120.971558 addr=300台灣新竹市東區中正路2號4樓",
+     "evidence_url": "https://maimaidx.tw/store/139",
+     "value": {
+      "lat": 24.802656,
+      "lng": 120.971558
+     }
+    }
+   },
+   "name": "白喵一番屋 新竹店"
   },
   "bemanicn|https://map.bemanicn.com/s/2625": {
    "fields": {
@@ -6978,6 +7078,21 @@
    },
    "name": "G2街区（乐山沃尔玛店）"
   },
+  "bemanicn|https://map.bemanicn.com/s/3944": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊新竹巨城店 / TOM'S WORLD(GIANT CITY@HSINCHU) lat=24.809486 lon=120.974724 addr=300台灣新竹市東區中央路229號8樓",
+     "evidence_url": "https://maimaidx.tw/store/41",
+     "value": {
+      "lat": 24.809486,
+      "lng": 120.974724
+     }
+    }
+   },
+   "name": "湯姆熊歡樂世界 新竹巨城店"
+  },
   "bemanicn|https://map.bemanicn.com/s/3956": {
    "fields": {
     "hours": {
@@ -8197,6 +8312,96 @@
    },
    "name": "精灵岛/奇妙之城家庭娱乐中心(保利商业广场店)"
   },
+  "bemanicn|https://map.bemanicn.com/s/4661": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "HAPPY100高雄夢時代店 / HAPPY100(DREAM MALL@KAOHSIUNG ) lat=22.595222 lon=120.306732 addr=806台灣高雄市前鎮區中華五路789號9樓",
+     "evidence_url": "https://maimaidx.tw/store/70",
+     "value": {
+      "lat": 22.595222,
+      "lng": 120.306732
+     }
+    }
+   },
+   "name": "红夜 - 夢時代店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4662": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄大遠百店 / TOM'S WORLD(FE21 MEGA@KAOHSIUNG) lat=22.613075 lon=120.304291 addr=802高雄市苓雅區三多四路21號12樓",
+     "evidence_url": "https://maimaidx.tw/store/69",
+     "value": {
+      "lat": 22.613075,
+      "lng": 120.304291
+     }
+    }
+   },
+   "name": "湯姆熊高雄大遠百"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4663": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄六合店 / TOM'S WORLD(LIUHE@KAOHSIUNG) lat=22.631092 lon=120.295914 addr=801台灣高雄市前金區六合二路132號",
+     "evidence_url": "https://maimaidx.tw/store/68",
+     "value": {
+      "lat": 22.631092,
+      "lng": 120.295914
+     }
+    }
+   },
+   "name": "湯姆熊六合店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4667": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄鳳山店 / TOM'S WORLD(FENGSHAN@KAOHSIUNG) lat=22.622702 lon=120.358070 addr=830台灣高雄市鳳山區中山路149號B1",
+     "evidence_url": "https://maimaidx.tw/store/67",
+     "value": {
+      "lat": 22.622702,
+      "lng": 120.35807
+     }
+    }
+   },
+   "name": "湯姆熊鳳山店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4668": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "HAPPY100高雄義大購物廣場店 / HAPPY100 (E DA) lat=22.729492 lon=120.405884 addr=840台灣高雄市大樹區學府路一段12號3樓 (義大OUTLET C區3F)",
+     "evidence_url": "https://maimaidx.tw/store/74",
+     "value": {
+      "lat": 22.729492,
+      "lng": 120.405884
+     }
+    }
+   },
+   "name": "恐怖红夜 - 義大購物廣場C區3樓"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4670": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄夢時代店B2 (傑克玩樂園) / TOM'S WORLD(DREAM MALL@KAOHSIUNG) lat=22.594904 lon=120.306610 addr=806台灣高雄市前鎮區中華五路789號B2",
+     "evidence_url": "https://maimaidx.tw/store/71",
+     "value": {
+      "lat": 22.594904,
+      "lng": 120.30661
+     }
+    }
+   },
+   "name": "湯姆熊夢時代店"
+  },
   "bemanicn|https://map.bemanicn.com/s/4672": {
    "fields": {
     "games": {
@@ -8210,6 +8415,16 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊左營新光店2F / TOM'S WORLD(MITSUKOSHI@ZUOYING 2F) lat=22.689138 lon=120.310394 addr=813台灣高雄市左營區高鐵路123號2樓",
+     "evidence_url": "https://maimaidx.tw/store/75",
+     "value": {
+      "lat": 22.689138,
+      "lng": 120.310394
+     }
     }
    },
    "name": "湯姆熊高雄左營新光三越店"
@@ -8225,6 +8440,16 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄漢神巨蛋店 / TOM'S WORLD (HANSHIN@KAOHSIUNG) lat=22.669594 lon=120.302284 addr=813台灣高雄市左營區博愛二路777號6樓",
+     "evidence_url": "https://maimaidx.tw/store/101",
+     "value": {
+      "lat": 22.669594,
+      "lng": 120.302284
+     }
     }
    },
    "name": "湯姆熊高雄巨蛋店"
@@ -8240,9 +8465,34 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊左營新光店10F / TOM'S WORLD(MITSUKOSHI@ZUOYING 10F) lat=22.689138 lon=120.310394 addr=813台灣高雄市左營區高鐵路123號10樓",
+     "evidence_url": "https://maimaidx.tw/store/76",
+     "value": {
+      "lat": 22.689138,
+      "lng": 120.310394
+     }
     }
    },
    "name": "湯姆熊 - 左營新光店(湯姆貝貝)"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4677": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄草衙道店3F / TOM'S WORLD(SKM PARK@KAOHSIUNG 3F) lat=22.582777 lon=120.330910 addr=806台灣高雄市前鎮區中安路1-1號 (大魯閣草衙道 大道西3F)",
+     "evidence_url": "https://maimaidx.tw/store/72",
+     "value": {
+      "lat": 22.582777,
+      "lng": 120.33091
+     }
+    }
+   },
+   "name": "湯姆熊高雄草衙道"
   },
   "bemanicn|https://map.bemanicn.com/s/4678": {
    "fields": {
@@ -8257,6 +8507,51 @@
     }
    },
    "name": "欢悦天堂仙桃新天地国际广场店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4680": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊高雄義享店 / TOM'S WORLD(E SKY LAND@KAOHSIUNG) lat=22.656399 lon=120.306587 addr=804台灣高雄市鼓山區大順一路115號5樓",
+     "evidence_url": "https://maimaidx.tw/store/121",
+     "value": {
+      "lat": 22.656399,
+      "lng": 120.306587
+     }
+    }
+   },
+   "name": "湯姆熊高雄義享天地"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4681": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊岡山樂購廣場店 / TOM'S WORLD (SHOWTIME@KONG-SAN) lat=22.779770 lon=120.300125 addr=820台灣高雄市岡山區捷安路1巷2號 (樂購廣場)",
+     "evidence_url": "https://maimaidx.tw/store/158",
+     "value": {
+      "lat": 22.77977,
+      "lng": 120.300125
+     }
+    }
+   },
+   "name": "湯姆熊樂購廣場"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4683": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "競音殿堂 一號店 / RHYTHM ARENA(KAOHSIUNG) lat=22.628014 lon=120.296646 addr=801台灣高雄市前金區中華三路86-1號",
+     "evidence_url": "https://maimaidx.tw/store/171",
+     "value": {
+      "lat": 22.628014,
+      "lng": 120.296646
+     }
+    }
+   },
+   "name": "Rhythm Arena 競音殿堂"
   },
   "bemanicn|https://map.bemanicn.com/s/4700": {
    "fields": {
@@ -8681,6 +8976,36 @@
    },
    "name": "吉合家庭娱乐中心烟台开发区万达店"
   },
+  "bemanicn|https://map.bemanicn.com/s/4906": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "變色龍歡樂世界 / CHAMELEON (CHIAYI) lat=23.477343 lon=120.449722 addr=600台灣嘉義市東區文化路79號",
+     "evidence_url": "https://maimaidx.tw/store/165",
+     "value": {
+      "lat": 23.477343,
+      "lng": 120.449722
+     }
+    }
+   },
+   "name": "變色龍歡樂世界"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4907": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊嘉義秀泰店 / TOM'S WORLD(SHOW TIME@CHIAYI) lat=23.485415 lon=120.447830 addr=600台灣嘉義市西區文化路299號",
+     "evidence_url": "https://maimaidx.tw/store/118",
+     "value": {
+      "lat": 23.485415,
+      "lng": 120.44783
+     }
+    }
+   },
+   "name": "湯姆熊秀泰生活嘉義店"
+  },
   "bemanicn|https://map.bemanicn.com/s/4926": {
    "fields": {
     "hours": {
@@ -8869,6 +9194,111 @@
    },
    "name": "星球派对彩虹世界"
   },
+  "bemanicn|https://map.bemanicn.com/s/4995": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊屏東真光店 / TOM'S WORLD(JHENGUANG@PINGTUNG) lat=22.667925 lon=120.497475 addr=900台灣屏東縣屏東市民生路62號",
+     "evidence_url": "https://maimaidx.tw/store/80",
+     "value": {
+      "lat": 22.667925,
+      "lng": 120.497475
+     }
+    }
+   },
+   "name": "湯姆熊屏東真光店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4998": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台東店 / TOM'S WORLD (TAITUNG) lat=22.752974 lon=121.151962 addr=950台灣台東縣台東市中華路一段438號",
+     "evidence_url": "https://maimaidx.tw/store/82",
+     "value": {
+      "lat": 22.752974,
+      "lng": 121.151962
+     }
+    }
+   },
+   "name": "湯姆熊彼得堡店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/4999": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊花蓮三商店 / TOM'S WORLD(E33@HUALIEN) lat=23.977608 lon=121.608047 addr=970台灣花蓮縣花蓮市中正路530號4樓",
+     "evidence_url": "https://maimaidx.tw/store/83",
+     "value": {
+      "lat": 23.977608,
+      "lng": 121.608047
+     }
+    }
+   },
+   "name": "花蓮三商湯姆熊"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5001": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊宜蘭羅東民生店 / TOM'S WORLD(MINSHENG@LOTONG) lat=24.676695 lon=121.770897 addr=265台灣宜蘭縣羅東鎮民生路6號2樓",
+     "evidence_url": "https://maimaidx.tw/store/86",
+     "value": {
+      "lat": 24.676695,
+      "lng": 121.770897
+     }
+    }
+   },
+   "name": "湯姆熊羅東民生店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5002": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊宜蘭新月廣場 / TOM'S WORLD(LUNA PLAZA@YILAN) lat=24.754353 lon=121.750961 addr=260台灣宜蘭縣宜蘭市宜蘭縣宜蘭市民權路二段38巷6號4樓",
+     "evidence_url": "https://maimaidx.tw/store/85",
+     "value": {
+      "lat": 24.754353,
+      "lng": 121.750961
+     }
+    }
+   },
+   "name": "湯姆熊蘭城新月店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5004": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊員林惠來店 / TOM'S WORLD (HUILAI@CHANGHUA) lat=23.955322 lon=120.571884 addr=510台灣彰化縣員林市惠來街49-1號",
+     "evidence_url": "https://maimaidx.tw/store/54",
+     "value": {
+      "lat": 23.955322,
+      "lng": 120.571884
+     }
+    }
+   },
+   "name": "湯姆熊員林惠來店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5005": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊彰化家樂福店 / TOM'S WORLD(CARREFOUR@CHANGHUA) lat=24.094431 lon=120.542519 addr=500台灣彰化縣彰化市金馬路二段321號2樓",
+     "evidence_url": "https://maimaidx.tw/store/163",
+     "value": {
+      "lat": 24.094431,
+      "lng": 120.542519
+     }
+    }
+   },
+   "name": "湯姆熊彰化家樂福店"
+  },
   "bemanicn|https://map.bemanicn.com/s/501": {
    "fields": {
     "hours": {
@@ -8905,6 +9335,51 @@
    },
    "name": "积木熊天水秦州万达店"
   },
+  "bemanicn|https://map.bemanicn.com/s/5033": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南真光店 / TOM'S WORLD(JHENGUANG@TAINAN) lat=22.981936 lon=120.229919 addr=701台灣台南市東區中華東路二段236號",
+     "evidence_url": "https://maimaidx.tw/store/58",
+     "value": {
+      "lat": 22.981936,
+      "lng": 120.229919
+     }
+    }
+   },
+   "name": "湯姆熊台南真光店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5034": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南西門店 / TOM'S WORLD(XIMEN@TAINAN) lat=23.013163 lon=120.208839 addr=704台灣台南市北區西門路四段273號1樓",
+     "evidence_url": "https://maimaidx.tw/store/159",
+     "value": {
+      "lat": 23.013163,
+      "lng": 120.208839
+     }
+    }
+   },
+   "name": "湯姆熊台南西門店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5035": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南開元店 / TOM'S WORLD (KAIYUAN@TAINAN) lat=23.007442 lon=120.220024 addr=704台灣台南市北區開元路219號",
+     "evidence_url": "https://maimaidx.tw/store/61",
+     "value": {
+      "lat": 23.007442,
+      "lng": 120.220024
+     }
+    }
+   },
+   "name": "湯姆熊台南開元店"
+  },
   "bemanicn|https://map.bemanicn.com/s/5037": {
    "fields": {
     "games": {
@@ -8916,9 +9391,34 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南巧立店 / TOM'S WORLD (CIAO-LI@TAINAN)) lat=22.992884 lon=120.197273 addr=700台灣台南市中西區中正路239號2樓",
+     "evidence_url": "https://maimaidx.tw/store/62",
+     "value": {
+      "lat": 22.992884,
+      "lng": 120.197273
+     }
     }
    },
    "name": "湯姆熊巧立店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5038": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南Focus店 / TOM'S WORLD(FOCUS@TAINAN) lat=22.995623 lon=120.210045 addr=700台灣台南市中西區中山路166號9樓 (Focus時尚流行館)",
+     "evidence_url": "https://maimaidx.tw/store/57",
+     "value": {
+      "lat": 22.995623,
+      "lng": 120.210045
+     }
+    }
+   },
+   "name": "湯姆熊台南FOCUS店"
   },
   "bemanicn|https://map.bemanicn.com/s/5040": {
    "fields": {
@@ -8932,9 +9432,79 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南海佃店 / TOM'S WORLD (HAIDIAN-LI@TAINAN)) lat=23.026218 lon=120.191040 addr=709台灣台南市安南區海佃路一段329號",
+     "evidence_url": "https://maimaidx.tw/store/63",
+     "value": {
+      "lat": 23.026218,
+      "lng": 120.19104
+     }
     }
    },
    "name": "湯姆熊台南海佃店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5041": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南南紡店 / TOM'S WORLD (T.S. MALL@TAINAN) lat=22.990902 lon=120.233337 addr=701台灣台南市東區中華東路一段366號B1 (南紡購物中心)",
+     "evidence_url": "https://maimaidx.tw/store/60",
+     "value": {
+      "lat": 22.990902,
+      "lng": 120.233337
+     }
+    }
+   },
+   "name": "湯姆熊南紡夢時代店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5043": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南新光中山店 / TOM'S WORLD (MITSUKOSHI@TAINAN ) lat=22.995216 lon=120.210030 addr=700台灣台南市中西區中山路162號11樓",
+     "evidence_url": "https://maimaidx.tw/store/65",
+     "value": {
+      "lat": 22.995216,
+      "lng": 120.21003
+     }
+    }
+   },
+   "name": "湯姆熊台南新光中山店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5044": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台南新光新天地店 / TOM'S WORLD (MITSUKOSHI@TAINAN) lat=22.987289 lon=120.198555 addr=700台灣台南市中西區西門路一段658號6樓",
+     "evidence_url": "https://maimaidx.tw/store/92",
+     "value": {
+      "lat": 22.987289,
+      "lng": 120.198555
+     }
+    }
+   },
+   "name": "湯姆熊台南新天地"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5045": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "太鼓歡樂園 / GUOBIN AMUSEMENT PARK lat=22.986040 lon=120.233124 addr=701台灣台南市東區中華東路二段62、64號1樓",
+     "evidence_url": "https://maimaidx.tw/store/100",
+     "value": {
+      "lat": 22.98604,
+      "lng": 120.233124
+     }
+    }
+   },
+   "name": "太鼓歡樂園"
   },
   "bemanicn|https://map.bemanicn.com/s/5054": {
    "fields": {
@@ -9094,6 +9664,21 @@
    },
    "name": "像素玩家南宁西南商都店"
   },
+  "bemanicn|https://map.bemanicn.com/s/5173": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球信陽店 / HALA(XINYANG) lat=25.044586 lon=121.516754 addr=100台灣台北市中正區信陽街9號",
+     "evidence_url": "https://maimaidx.tw/store/29",
+     "value": {
+      "lat": 25.044586,
+      "lng": 121.516754
+     }
+    }
+   },
+   "name": "抓抓族遊樂園（信陽店）"
+  },
   "bemanicn|https://map.bemanicn.com/s/5174": {
    "fields": {
     "games": {
@@ -9105,9 +9690,64 @@
       "maimai_dx",
       "taiko"
      ]
+    },
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "夾到寶士林店 / CATCH BUFFET(DA-NAN@SHLIN) lat=25.089361 lon=121.524986 addr=111台灣台北市士林區大南路48號",
+     "evidence_url": "https://maimaidx.tw/store/94",
+     "value": {
+      "lat": 25.089361,
+      "lng": 121.524986
+     }
     }
    },
    "name": "夾到飽士林店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5175": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球饒河店 / HALA PLANET (RAOHE) lat=25.050694 lon=121.577026 addr=105台灣台北市松山區饒河街202號",
+     "evidence_url": "https://maimaidx.tw/store/157",
+     "value": {
+      "lat": 25.050694,
+      "lng": 121.577026
+     }
+    }
+   },
+   "name": "哈啦星球 饒河店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5176": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球士林店 / HALA PLANET(SHILIN) lat=25.086880 lon=121.525528 addr=111台灣台北市士林區文林路43號",
+     "evidence_url": "https://maimaidx.tw/store/181",
+     "value": {
+      "lat": 25.08688,
+      "lng": 121.525528
+     }
+    }
+   },
+   "name": "哈啦星球 士林店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5177": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "Hala Planet@Gongguan First Store | 130 Roosevelt Road Section 4 | lat=25.013047456258 (ZIv). ALL.Net shares one HALA PLANET sid for both Gongguan units.",
+     "evidence_url": "https://zenius-i-vanisher.com/api/arcades.php?action=query&country=Taiwan",
+     "value": {
+      "lat": 25.013047456258,
+      "lng": 121.5357561272
+     }
+    }
+   },
+   "name": "哈啦星球 公館店"
   },
   "bemanicn|https://map.bemanicn.com/s/5178": {
    "fields": {
@@ -9172,6 +9812,21 @@
     }
    },
    "name": "风云潮玩社揭阳揭东晟旺家购物广场店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5195": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "GiGO LaLaport台中 / GiGO LaLaport Taichung lat=24.133940 lon=120.692444 addr=40154台灣台中市東區進德路700號",
+     "evidence_url": "https://maimaidx.tw/store/169",
+     "value": {
+      "lat": 24.13394,
+      "lng": 120.692444
+     }
+    }
+   },
+   "name": "台中 Lalaport GiGO"
   },
   "bemanicn|https://map.bemanicn.com/s/5200": {
    "fields": {
@@ -9318,6 +9973,21 @@
     }
    },
    "name": "未来妙觅青岛凯德MALL店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5275": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "奇樂多南港店 / HURO WORLD(CITY LINK@NANGANG) lat=25.052572 lon=121.603897 addr=115台灣台北市南港區忠孝東路七段369號C棟6樓 (CITY LINK南港店)",
+     "evidence_url": "https://maimaidx.tw/store/18",
+     "value": {
+      "lat": 25.052572,
+      "lng": 121.603897
+     }
+    }
+   },
+   "name": "奇樂多南港店"
   },
   "bemanicn|https://map.bemanicn.com/s/5277": {
    "fields": {
@@ -9575,6 +10245,21 @@
    },
    "name": "KiKis其趣白云湖金铂中心店"
   },
+  "bemanicn|https://map.bemanicn.com/s/5378": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "謝謝文子 / RHYTHM ARENA 2 lat=22.667908 lon=120.320457 addr=807台灣高雄市三民區天祥一路102號2樓",
+     "evidence_url": "https://maimaidx.tw/store/183",
+     "value": {
+      "lat": 22.667908,
+      "lng": 120.320457
+     }
+    }
+   },
+   "name": "Rhythm Arena II競音殿堂"
+  },
   "bemanicn|https://map.bemanicn.com/s/5379": {
    "fields": {
     "hours": {
@@ -9587,6 +10272,21 @@
    },
    "name": "堡窝"
   },
+  "bemanicn|https://map.bemanicn.com/s/5387": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "白喵一番屋台北店 / SHIRONEKOYA(TAIPEI) lat=25.043962 lon=121.516006 addr=100台灣台北市中正區南陽街50號1樓",
+     "evidence_url": "https://maimaidx.tw/store/193",
+     "value": {
+      "lat": 25.043962,
+      "lng": 121.516006
+     }
+    }
+   },
+   "name": "白喵一番屋 台北店"
+  },
   "bemanicn|https://map.bemanicn.com/s/5388": {
    "fields": {
     "hours": {
@@ -9598,6 +10298,21 @@
     }
    },
    "name": "维京传奇家庭娱乐中心（鄂州店）"
+  },
+  "bemanicn|https://map.bemanicn.com/s/5390": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "白喵一番屋中壢店 / SHIRONEKOYA(ZHONGLI) lat=24.954786 lon=121.222633 addr=320台灣桃園市中壢區延平路575號",
+     "evidence_url": "https://maimaidx.tw/store/192",
+     "value": {
+      "lat": 24.954786,
+      "lng": 121.222633
+     }
+    }
+   },
+   "name": "白喵一番屋 中壢店"
   },
   "bemanicn|https://map.bemanicn.com/s/5391": {
    "fields": {
@@ -10897,6 +11612,36 @@
    },
    "name": "常德酷玩·超乐场"
   },
+  "bemanicn|https://map.bemanicn.com/s/6007": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球台中一中店 / HALA PLANET(TAICHUNG YIZHONG) lat=24.147663 lon=120.685875 addr=404台灣台中市北區太平路10號",
+     "evidence_url": "https://maimaidx.tw/store/182",
+     "value": {
+      "lat": 24.147663,
+      "lng": 120.685875
+     }
+    }
+   },
+   "name": "哈啦星球 一中店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/6008": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球台中逢甲店 / HALA (FENGJIA) lat=24.174507 lon=120.644249 addr=407台灣台中市西屯區西屯路二段269-48號",
+     "evidence_url": "https://maimaidx.tw/store/168",
+     "value": {
+      "lat": 24.174507,
+      "lng": 120.644249
+     }
+    }
+   },
+   "name": "哈啦星球 逢甲店"
+  },
   "bemanicn|https://map.bemanicn.com/s/6013": {
    "fields": {
     "hours": {
@@ -11650,6 +12395,21 @@
     }
    },
    "name": "真快活合肥银泰城店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/6331": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "GiGO TIGER CITY購物中心 / GiGO TIGER CITY lat=24.164083 lon=120.638130 addr=407台灣西屯區河南路三段120號B1 (老虎城購物中心)",
+     "evidence_url": "https://maimaidx.tw/store/45",
+     "value": {
+      "lat": 24.164083,
+      "lng": 120.63813
+     }
+    }
+   },
+   "name": "GiGO - 台中老虎城店"
   },
   "bemanicn|https://map.bemanicn.com/s/6335": {
    "fields": {
@@ -12419,6 +13179,21 @@
    },
    "name": "环游家族苏州太仓店"
   },
+  "bemanicn|https://map.bemanicn.com/s/656": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球西門店 / HALA PLANET (XIMEN) lat=25.043940 lon=121.508026 addr=108台灣台北市萬華區中華路一段114巷11號2樓",
+     "evidence_url": "https://maimaidx.tw/store/20",
+     "value": {
+      "lat": 25.04394,
+      "lng": 121.508026
+     }
+    }
+   },
+   "name": "恐怖红夜 西門店"
+  },
   "bemanicn|https://map.bemanicn.com/s/6565": {
    "fields": {
     "hours": {
@@ -13141,6 +13916,21 @@
     }
    },
    "name": "鸟窝｜黄边"
+  },
+  "bemanicn|https://map.bemanicn.com/s/6935": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台中新時代店 / TOM'S WORLD(TOM'S WORLD TAROKO MALL) lat=24.135773 lon=120.687752 addr=401台灣臺中市東區復興路四段186號10樓",
+     "evidence_url": "https://maimaidx.tw/store/194",
+     "value": {
+      "lat": 24.135773,
+      "lng": 120.687752
+     }
+    }
+   },
+   "name": "台中大鲁阁新时代（现已改名iFG远雄台中店）"
   },
   "bemanicn|https://map.bemanicn.com/s/6938": {
    "fields": {
@@ -14008,6 +14798,21 @@
    },
    "name": "爱巴爱麻家庭娱乐中心(南县店)"
   },
+  "bemanicn|https://map.bemanicn.com/s/723": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊樹林秀泰店 / TOM'S WORLD(MORI SHOWTIME@SHULIN) lat=24.995520 lon=121.427963 addr=238台灣新北市樹林區樹新路40-6號3樓",
+     "evidence_url": "https://maimaidx.tw/store/105",
+     "value": {
+      "lat": 24.99552,
+      "lng": 121.427963
+     }
+    }
+   },
+   "name": "湯姆熊歡樂世界 樹林秀泰店"
+  },
   "bemanicn|https://map.bemanicn.com/s/7234": {
    "fields": {
     "hours": {
@@ -14463,21 +15268,6 @@
    },
    "name": "娱乐至上成都都江堰店"
   },
-  "bemanicn|https://map.bemanicn.com/s/753": {
-   "fields": {
-    "games": {
-     "checked_at": "2026-08-02",
-     "confidence": "certain",
-     "evidence_quote": "ALL.Net maimai DX Taiwan lists sid=24066 as NEW CITY(ZHONGLI) @ 11F,NO.120,SEC.1,ZHONGYANG W.RD,ZHONGLI CITY, TAOYUAN",
-     "evidence_url": "https://location.am-all.net/alm/location?gm=98&lang=en&ct=1001",
-     "value": [
-      "chunithm",
-      "maimai_dx"
-     ]
-    }
-   },
-   "name": "新都市育樂廣場"
-  },
   "bemanicn|https://map.bemanicn.com/s/758": {
    "fields": {
     "games": {
@@ -14530,6 +15320,36 @@
     }
    },
    "name": "超级英雄衡阳蒸湘店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/792": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台中中友店 / TOM'S WORLD (CHUNGYO@TAICHUNG) lat=24.152218 lon=120.684784 addr=404台灣台中市北區三民路三段161號B棟8樓",
+     "evidence_url": "https://maimaidx.tw/store/51",
+     "value": {
+      "lat": 24.152218,
+      "lng": 120.684784
+     }
+    }
+   },
+   "name": "湯姆熊歡樂世界 台中中友店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/793": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台中親親店 / TOM'S WORLD(CHIN CHIN@TAICHUNG) lat=24.160231 lon=120.692032 addr=404台灣台中市北區北屯路14號B1 (親親戲院)",
+     "evidence_url": "https://maimaidx.tw/store/44",
+     "value": {
+      "lat": 24.160231,
+      "lng": 120.692032
+     }
+    }
+   },
+   "name": "湯姆熊親親店(親親戲院)"
   },
   "bemanicn|https://map.bemanicn.com/s/799": {
    "fields": {
@@ -14665,6 +15485,36 @@
    },
    "name": "奇奇乐园襄阳樊城天元店"
   },
+  "bemanicn|https://map.bemanicn.com/s/860": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "湯姆熊台北金萬年店 / TOM'S WORLD(JINWANNIAN@TAIPEI) lat=25.043606 lon=121.505882 addr=108台灣台北市萬華區西寧南路70號5樓 (西門町萬年商業大樓)",
+     "evidence_url": "https://maimaidx.tw/store/4",
+     "value": {
+      "lat": 25.043606,
+      "lng": 121.505882
+     }
+    }
+   },
+   "name": "湯姆熊歡樂世界 台北金萬年店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/863": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "力堡台北店 / LIBAO COMPANY lat=25.047298 lon=121.513542 addr=100台灣台北市中正區忠孝西路一段50-1號 (近Z5出入口)",
+     "evidence_url": "https://maimaidx.tw/store/11",
+     "value": {
+      "lat": 25.047298,
+      "lng": 121.513542
+     }
+    }
+   },
+   "name": "力堡 站前店"
+  },
   "bemanicn|https://map.bemanicn.com/s/864": {
    "fields": {
     "games": {
@@ -14714,6 +15564,21 @@
     }
    },
    "name": "第一回合成都银泰城店"
+  },
+  "bemanicn|https://map.bemanicn.com/s/898": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "哈啦星球南雅店 / HALA PLANET (NANYA) lat=25.006037 lon=121.454254 addr=220台灣板橋區南雅東路31號",
+     "evidence_url": "https://maimaidx.tw/store/116",
+     "value": {
+      "lat": 25.006037,
+      "lng": 121.454254
+     }
+    }
+   },
+   "name": "红夜星光 板橋南雅店"
   },
   "bemanicn|https://map.bemanicn.com/s/911": {
    "fields": {
@@ -17550,20 +18415,6 @@
     }
    },
    "name": "ＧｉＧＯ勿来"
-  },
-  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1320": {
-   "fields": {
-    "games": {
-     "checked_at": "2026-08-02",
-     "confidence": "likely",
-     "evidence_quote": "lastUpdateTime 2026-01-02 07:40:38; 0 machines",
-     "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1320",
-     "value": [
-      "other"
-     ]
-    }
-   },
-   "name": "太子 (Prince Game Centre)"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1336": {
    "fields": {
@@ -22400,6 +23251,21 @@
     }
    },
    "name": "ＧｉＧＯ豊橋飯村"
+  },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6067": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "白喵一番屋桃園店 / SHIRONEKOYA lat=24.992998 lon=121.312805 addr=330台灣桃园市桃園區成功路一段12號2樓",
+     "evidence_url": "https://maimaidx.tw/store/39",
+     "value": {
+      "lat": 24.992998,
+      "lng": 121.312805
+     }
+    }
+   },
+   "name": "白喵一番屋 桃園店"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6088": {
    "fields": {
@@ -27899,6 +28765,21 @@
     }
    },
    "name": "ラッキー中央店・フェリシダ"
+  },
+  "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8831": {
+   "fields": {
+    "location": {
+     "checked_at": "2026-08-02",
+     "confidence": "likely",
+     "evidence_quote": "無限遊戲中心 / INFINITY WORLD lat=25.008837 lon=121.461525 addr=220台灣新北市板橋區中山路一段50巷22號",
+     "evidence_url": "https://maimaidx.tw/store/119",
+     "value": {
+      "lat": 25.008837,
+      "lng": 121.461525
+     }
+    }
+   },
+   "name": "無限遊戲中心"
   },
   "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8843": {
    "fields": {

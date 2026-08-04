@@ -2767,6 +2767,11 @@ def run(raw_dir, out_dir, updated=None):
     # WAHLAP register in mainland China carries only maimai DX and
     # CHUNITHM, so an imported ONGEKI cabinet appears in NO official
     # locator, and BemaniCN has it only if a user happened to file it.
+    #
+    # `exclude: true` drops the row entirely. Use that for ghost stubs
+    # (empty ZIv pages with no address and no machines) and for venues
+    # whose own source states they have no music games - a music-game
+    # map should not pin them. Closed venues stay on the map (see (o)).
     att_path = os.path.join(out_dir, "owner_attested.json")
     if os.path.exists(att_path):
         try:
@@ -2775,34 +2780,62 @@ def run(raw_dir, out_dir, updated=None):
         except (OSError, ValueError):
             attested = {}
         n_att = 0
+        n_excl = 0
+        kept = []
         for a in ordered:
             rec = build_corrections.lookup(attested, a)
             if not rec:
+                kept.append(a)
                 continue
+            if rec.get("exclude"):
+                n_excl += 1
+                print("merge: excluded %s (%s)"
+                      % (a.get("name"), rec.get("note") or "owner exclude"),
+                      file=sys.stderr)
+                continue
+            touched = False
+            if rec.get("closed") and not a.get("closed"):
+                a["closed"] = True
+                a["closed_reason"] = (rec.get("closed_reason")
+                                      or rec.get("note")
+                                      or "owner-attested closed")
+                a["closed_source"] = rec.get("evidence_url")
+                touched = True
             add = [g for g in (rec.get("add_games") or [])
                    if g in GAME_SLUGS and g not in a["games"]]
             drop = [g for g in (rec.get("remove_games") or [])
                     if g in a["games"]]
-            if not add and not drop:
-                continue
-            games = sorted((set(a["games"]) | set(add)) - set(drop))
-            a["games"] = games
-            for key in ("game_counts", "count_evidence"):
-                if a.get(key):
-                    kept = {k: v for k, v in a[key].items() if k in games}
-                    if kept:
-                        a[key] = kept
-                    else:
-                        a.pop(key, None)
-                        a.pop("counts_src", None)
-            a["attested"] = {"by": rec.get("attested_by") or "owner",
-                             "at": rec.get("attested_at"),
-                             "games": sorted(add),
-                             "note": rec.get("note")}
-            n_att += 1
+            if add or drop:
+                games = sorted((set(a["games"]) | set(add)) - set(drop))
+                a["games"] = games
+                for key in ("game_counts", "count_evidence"):
+                    if a.get(key):
+                        kept_gc = {k: v for k, v in a[key].items()
+                                   if k in games}
+                        if kept_gc:
+                            a[key] = kept_gc
+                        else:
+                            a.pop(key, None)
+                            a.pop("counts_src", None)
+                a["attested"] = {"by": rec.get("attested_by") or "owner",
+                                 "at": rec.get("attested_at"),
+                                 "games": sorted(add),
+                                 "note": rec.get("note")}
+                touched = True
+            if touched:
+                n_att += 1
+            kept.append(a)
+        ordered = kept
+        # Re-number after exclusions so ids stay dense 1..N. sid is the
+        # stable public key; id is only a row number.
+        for i, a in enumerate(ordered, 1):
+            a["id"] = i
         if n_att:
             print("merge: applied owner-attested facts to %d venue(s)"
                   % n_att, file=sys.stderr)
+        if n_excl:
+            print("merge: excluded %d owner-attested venue(s)"
+                  % n_excl, file=sys.stderr)
 
     # ------- validation (hard fails) -------
     for a in ordered:

@@ -790,12 +790,12 @@
       "name": "Game Zone",
       "field": "status",
       "current": "listed games=[other], empty address",
-      "proposed": null,
-      "confidence": "unverified",
+      "proposed": "ghost empty stub - exclude from map (owner_attested 2026-08-04)",
+      "confidence": "certain",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4627",
-      "evidence_quote": "Game Zone id 4627 lastUpdateTime 2018-10-12; empty address; 0 machines",
-      "checked_at": "2026-08-02",
-      "note": "Near-empty ZIv stub. Distinct from richer Game Zone Mong Kok ZIv id 2251 (not in this shard) which has a full 2026-01 cab list."
+      "evidence_quote": "Game Zone id 4627 lastUpdateTime 2018-10-12; empty address; 0 machines; No games at this location.",
+      "checked_at": "2026-08-04",
+      "note": "Ghost ZIv stub, not a real listing. Real HK Game Zone venues are z2251 Mong Kok, z1329 Hollywood, z5991 Kwun Tong, b1791 Jordan. Excluded via owner_attested (exclude:true) rather than status-closed, because it never was a real pin."
     },
     {
       "id": 7660,
@@ -824,14 +824,14 @@
     {
       "id": 7658,
       "name": "太子 (Prince Game Centre)",
-      "field": "games",
-      "current": ["other"],
-      "proposed": ["other"],
-      "confidence": "likely",
+      "field": "status",
+      "current": "listed games=[other]",
+      "proposed": "no music games - exclude from map (owner_attested 2026-08-04)",
+      "confidence": "certain",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1320",
-      "evidence_quote": "lastUpdateTime 2026-01-02 07:40:38; 0 machines",
-      "checked_at": "2026-08-02",
-      "note": "Recently touched ZIv row with zero music games. Keeping as non-rhythm / other is correct."
+      "evidence_quote": "Information: No music game available. Games: No games at this location. lastUpdateTime 2026-01-02 07:40:38; 0 machines",
+      "checked_at": "2026-08-04",
+      "note": "ZIv itself states no music games. Keeping as Other was the wrong fix - a music map should not list non-music venues. Excluded via owner_attested (exclude:true)."
     },
     {
       "id": 7670,
