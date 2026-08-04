@@ -1340,18 +1340,39 @@ def load_units(raw_dir, stats):
                 country = resolve_country(
                     lat, lng, row.get("address"), row.get("name"),
                     note=row.get("notes"))
-            # Belt-and-suspenders quality gate at merge time even if the
-            # raw file was produced by an older scraper without filters.
+            # Belt-and-suspenders for optional crowd sources. Older raw
+            # dumps (or a scraper that regressed) must not re-ship ghosts.
+            # nearcade: isOpen=false shops used to land as open pins with
+            # only a notes tag; drop them at merge too, not only at scrape.
+            if row.get("is_open") is False or row.get("isOpen") is False:
+                n_skipped += 1
+                skip_reasons["closed_flag"] = (
+                    skip_reasons.get("closed_flag", 0) + 1)
+                continue
+            note_l = (row.get("notes") or "").lower()
+            if "isopen=false" in note_l or "closed (isopen=false)" in note_l:
+                n_skipped += 1
+                skip_reasons["closed_note"] = (
+                    skip_reasons.get("closed_note", 0) + 1)
+                continue
             if src_slug == "insert_coin":
                 street = (row.get("street") or "").strip()
                 addr = (row.get("address") or "").strip()
                 if not street:
-                    # City + postcode only (e.g. "Toshima City, 170-0013, JP")
-                    # is not a real venue address. Drop.
-                    # Heuristic: street empty AND address has no digit-led
-                    # house number / block token after the first comma split.
+                    # Align with insert_coin.quality_reject_reason: no
+                    # street line means city/postcode centroid. Do not
+                    # accept "digits in first comma segment" as a street
+                    # (that let "170-0013, Toshima City" through).
+                    # Pre-gate dumps had no street field; recover a
+                    # candidate only when the first segment looks like a
+                    # house/block line AND a later segment exists.
                     first = addr.split(",")[0].strip() if addr else ""
-                    if not re.search(r"\d", first):
+                    rest = ",".join(addr.split(",")[1:]).strip() if addr else ""
+                    looks_street = bool(
+                        first and rest and re.search(r"\d", first)
+                        and not re.fullmatch(r"\d{3,6}(-\d+)?", first)
+                    )
+                    if not looks_street:
                         n_skipped += 1
                         skip_reasons["no_street"] = (
                             skip_reasons.get("no_street", 0) + 1)
@@ -1361,23 +1382,44 @@ def load_units(raw_dir, stats):
                     skip_reasons["dense_official"] = (
                         skip_reasons.get("dense_official", 0) + 1)
                     continue
+                # Also map common alt labels that COUNTRY_MAP misses if a
+                # hand-edited raw row used the long form.
+                if country in ("Republic of Korea", "Korea, Republic of",
+                               "SouthKorea"):
+                    n_skipped += 1
+                    skip_reasons["dense_official"] = (
+                        skip_reasons.get("dense_official", 0) + 1)
+                    continue
                 notes = row.get("notes") or ""
                 # Vintage-only IC inventories (maimai PLUS + SDVX II + …)
-                # without any modern software token.
+                # without any modern software token. Prefer the "IC cabs:"
+                # title list; fall back to scanning whole notes so a
+                # reformatted dump cannot bypass the gate.
+                title_list = []
                 if "IC cabs:" in notes:
                     titles = notes.split("IC cabs:", 1)[1]
                     titles = titles.split("|", 1)[0]
                     title_list = [t.strip() for t in titles.split(";")
                                   if t.strip()]
-                    try:
-                        import insert_coin as _ic
-                        if _ic.inventory_is_vintage_only(title_list):
-                            n_skipped += 1
-                            skip_reasons["vintage_only"] = (
-                                skip_reasons.get("vintage_only", 0) + 1)
-                            continue
-                    except Exception:
-                        pass
+                try:
+                    import insert_coin as _ic
+                    vintage = False
+                    if title_list and _ic.inventory_is_vintage_only(
+                            title_list):
+                        vintage = True
+                    elif (not title_list and notes
+                          and _ic.inventory_is_vintage_only(
+                              [notes])):
+                        # Whole-notes scan is weaker; only reject when the
+                        # notes blob itself matches vintage and not modern.
+                        vintage = True
+                    if vintage:
+                        n_skipped += 1
+                        skip_reasons["vintage_only"] = (
+                            skip_reasons.get("vintage_only", 0) + 1)
+                        continue
+                except Exception:
+                    pass
             pref = (row.get("pref") or row.get("prefecture")
                     or extract_pref(country, row.get("address")))
             games = [g if g in GAME_SLUGS else "other"

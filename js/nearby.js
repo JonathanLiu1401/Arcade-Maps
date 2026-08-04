@@ -35,6 +35,10 @@ window.AM = window.AM || {};
   var C = AM.consts, U = AM.util;
   var $ = U.$, esc = U.esc;
 
+  function tr(key, vars) {
+    return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
+  }
+
   var LIMIT = 20;                 /* rows in the list */
   var R_KM = 6371.0088;           /* IUGG mean earth radius, km */
   var LOCATE_ZOOM = 14;
@@ -192,9 +196,15 @@ window.AM = window.AM || {};
        store read as a live DX venue in the one place a phone user scans
        fastest. */
     var h = shown.map(function (g) {
+      var label = (g === "other")
+        ? (function () {
+            var s = tr("cabs.other_game");
+            return (s && s !== "cabs.other_game") ? s : (U.gameLabelFor(a, g) || "Other");
+          })()
+        : U.gameLabelFor(a, g);
       return '<span class="gc" style="--c:' +
         (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
-        esc(U.gameLabelFor(a, g)) + "</span>";
+        esc(label) + "</span>";
     }).join("");
     if (hits.length > shown.length) {
       h += '<span class="nb-more tabnum">+' + (hits.length - shown.length) + "</span>";
@@ -224,27 +234,27 @@ window.AM = window.AM || {};
     results = compute(origin.lat, origin.lng, LIMIT,
       { excludeId: origin.id, dedupe: true });
     if (!results.length) {
-      box.innerHTML = '<p class="hint nb-empty">No stores match the current ' +
-        "filters. Turn a game or a source back on to see nearby results.</p>";
+      box.innerHTML = '<p class="hint nb-empty">' + esc(tr("nearby.empty")) + "</p>";
     } else {
       box.innerHTML = results.map(rowHtml).join("");
     }
     var head = $("nb-origin");
     if (head) {
       head.innerHTML = origin.user
-        ? "Nearest to your location" +
+        ? esc(tr("nearby.nearest_you")) +
           (origin.acc ? ' <span class="nb-acc tabnum">&plusmn;' +
             Math.round(origin.acc) + " m</span>" : "")
-        : "Nearest to " + esc(origin.label || "this point") +
+        : esc(tr("nearby.nearest_to", {
+            label: origin.label || tr("nearby.this_point")
+          })) +
           ' <span class="nb-acc tabnum">' + origin.lat.toFixed(3) + ", " +
           origin.lng.toFixed(3) + "</span>";
     }
     var cap = $("nb-caption");
     if (cap) {
       cap.textContent = results.length
-        ? "Showing the " + results.length + " nearest stores that match your " +
-          "filters. Stores without coordinates are not shown."
-        : "Stores without coordinates are not shown.";
+        ? tr("nearby.showing", { n: String(results.length) })
+        : tr("nearby.no_coords_note");
     }
   }
 
@@ -421,7 +431,7 @@ window.AM = window.AM || {};
     setBusy(false);
     var c = pos && pos.coords;
     if (!c || typeof c.latitude !== "number" || typeof c.longitude !== "number") {
-      toast("Your location came back empty. Try again in a moment.");
+      toast(tr("nb.err_empty"));
       return;
     }
     showUser(c.latitude, c.longitude, c.accuracy);
@@ -430,31 +440,30 @@ window.AM = window.AM || {};
     });
   }
 
-  var ERRORS = {
-    1: "Location permission was denied. Allow it for this site in your " +
-       "browser settings, then try again.",
-    2: "Your location is not available right now. Try again, or search for " +
-       "a city instead.",
-    3: "Getting your location took too long. Try again."
-  };
+  function errorMsg(code) {
+    if (code === 1) return tr("nb.err_denied");
+    if (code === 2) return tr("nb.err_unavailable");
+    if (code === 3) return tr("nb.err_timeout");
+    return tr("nb.err_generic");
+  }
 
   function onError(err) {
     setBusy(false);
     var code = err && err.code;
-    toast(ERRORS[code] || "Could not get your location.");
+    toast(errorMsg(code));
   }
 
   function locate() {
     if (!locationAllowed()) {
-      toast("Location is switched off in settings.");
+      toast(tr("nb.err_off"));
       return;
     }
     if (window.isSecureContext === false) {
-      toast("Location needs a secure (https) connection.");
+      toast(tr("nb.err_https"));
       return;
     }
     if (!navigator.geolocation) {
-      toast("This browser cannot report your location.");
+      toast(tr("nb.err_unsupported"));
       return;
     }
     setBusy(true);
@@ -464,7 +473,7 @@ window.AM = window.AM || {};
       });
     } catch (e) {
       setBusy(false);
-      toast("Could not get your location.");
+      toast(tr("nb.err_generic"));
     }
   }
 
@@ -474,7 +483,7 @@ window.AM = window.AM || {};
     if (typeof lat !== "number" || typeof lng !== "number" ||
         !isFinite(lat) || !isFinite(lng)) return false;
     opts = opts || {};
-    setOrigin(lat, lng, opts.label || (opts.user ? "your location" : "this point"),
+    setOrigin(lat, lng, opts.label || (opts.user ? tr("nearby.your_location") : tr("nearby.this_point")),
       opts.user, opts.accuracy, opts.id);
     openPane();
     renderList();
@@ -506,8 +515,8 @@ window.AM = window.AM || {};
         "leaflet-bar leaflet-control leaflet-control-locate");
       var b = L.DomUtil.create("button", "", wrap);
       b.type = "button";
-      b.title = "Show arcades near me";
-      b.setAttribute("aria-label", "Show arcades near me");
+      b.title = tr("nearby.locate");
+      b.setAttribute("aria-label", tr("nearby.locate"));
       b.innerHTML = CROSSHAIR;
       /* Without this a click on the control also reaches the map: pan start,
          and a quick double click would zoom. */
@@ -594,12 +603,23 @@ window.AM = window.AM || {};
     AM.state.on("nearbyFrom", function (v) {
       if (!v || typeof v.lat !== "number" || typeof v.lng !== "number") return;
       showFrom(v.lat, v.lng, {
-        label: v.label || "this place", user: false, fly: !!v.fly, zoom: v.zoom,
+        label: v.label || tr("nearby.this_point"), user: false, fly: !!v.fly, zoom: v.zoom,
         id: v.id
       });
     });
 
     map.on("moveend", updatePill);
+
+    /* Rebuild list chrome (origin/caption/empty) when UI language changes. */
+    if (AM.i18n && AM.i18n.on) {
+      AM.i18n.on(function () {
+        if (btn) {
+          btn.title = tr("nearby.locate");
+          btn.setAttribute("aria-label", tr("nearby.locate"));
+        }
+        if (isOpen()) scheduleRender();
+      });
+    }
   }
 
   AM.nearby = {

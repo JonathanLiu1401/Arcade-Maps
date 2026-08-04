@@ -94,3 +94,65 @@ def test_render_china_caption():
     assert "China / 上海" in html
     assert "assets/venues/cn/1.jpg" in html
     assert "staticmap.openstreetmap.de" in html
+
+
+def test_og_url_is_path_not_hash():
+    """Discord strips #fragments; share identity must be s/<sid>.html."""
+    html = render_page(_base_arcade(), None, {})
+    m = re.search(r'<meta property="og:url" content="([^"]+)"', html)
+    assert m, "og:url missing"
+    url = m.group(1)
+    assert url.startswith("https://")
+    assert "/s/z195.html" in url
+    assert "#" not in url
+    can = re.search(r'<link rel="canonical" href="([^"]+)"', html)
+    assert can and can.group(1) == url
+    # Page must not meta-refresh to index (crawler would unfurl generic card).
+    assert not re.search(r'http-equiv\s*=\s*["\']?refresh', html, re.I)
+
+
+def test_og_images_are_absolute_https():
+    html = render_page(
+        _base_arcade(),
+        {"images": [{"file": "assets/venues/cn/1.jpg"}]},
+        {},
+    )
+    imgs = re.findall(r'<meta property="og:image" content="([^"]+)"', html)
+    assert len(imgs) >= 1
+    for u in imgs:
+        assert u.startswith("https://"), u
+    # Venue photo first; static map second when coords exist.
+    assert "assets/venues/cn/1.jpg" in imgs[0]
+    assert len(imgs) == 2
+    assert "staticmap.openstreetmap.de" in imgs[1]
+    assert "red-pushpin" in imgs[1]
+
+
+def test_venue_name_xss_escaped():
+    """Hostile venue/address/country must not break out of HTML contexts."""
+    html = render_page(
+        _base_arcade(
+            sid="x1",
+            name='</title><script>alert(1)</script><img src=x onerror=alert(2)>',
+            country='"><script>x</script>',
+            addr='<img src=x onerror=alert(3)>',
+        ),
+        None,
+        {},
+    )
+    # Escaped form present in meta/title/body.
+    assert "&lt;script&gt;" in html
+    assert "&lt;img" in html
+    # Raw breakout must not appear as real tags outside our fixed template.
+    title = re.search(r'<meta property="og:title" content="([^"]*)"', html)
+    assert title
+    assert "<script>" not in title.group(1)
+    assert "&lt;script&gt;" in title.group(1)
+    # Attribute breakout via country quote must be neutralized.
+    assert 'content=""><script>' not in html
+    # Only intentional <img class="hero"...> tags (photo + map).
+    for m in re.finditer(r"<img\b[^>]*>", html):
+        assert 'class="hero' in m.group(0), m.group(0)
+    # Redirect script dest is a JSON string, not raw HTML.
+    dest = re.search(r"var dest = (.*?);", html)
+    assert dest and dest.group(1).startswith('"')

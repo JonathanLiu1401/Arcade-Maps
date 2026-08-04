@@ -207,6 +207,7 @@ window.AM = window.AM || {};
         approx_city: "Position approximate - city level",
         approx_city_cap: "The source publishes no coordinates and the address names no district, so this pin is the centre of the city.",
         back_to: "Back to {label}",
+        search_gmaps: "Search in Google Maps",
       },
       nb: {
         err_denied: "Location permission was denied. Allow it for this site in your browser settings, then try again.",
@@ -251,6 +252,7 @@ window.AM = window.AM || {};
         source: "source",
         photo_by: "photo: {credit}",
         unknown_author: "unknown",
+        listed: "listed",
         size_1: "1 to 2 cabinets",
         size_2: "3 to 9 cabinets",
         size_3: "10 to 19 cabinets",
@@ -361,6 +363,7 @@ window.AM = window.AM || {};
         approx_city: "位置近似（城市级）",
         approx_city_cap: "来源未公布坐标且地址无名区县，图钉为城市中心。",
         back_to: "返回{label}",
+        search_gmaps: "在 Google 地图中搜索",
       },
       nb: {
         err_denied: "定位权限被拒绝。请在浏览器设置中允许本站定位后重试。",
@@ -405,6 +408,7 @@ window.AM = window.AM || {};
         source: "来源",
         photo_by: "照片: {credit}",
         unknown_author: "未知",
+        listed: "已登记",
         size_1: "1–2 台机台",
         size_2: "3–9 台",
         size_3: "10–19 台",
@@ -515,6 +519,7 @@ window.AM = window.AM || {};
         approx_city: "位置近似（城市級）",
         approx_city_cap: "來源未公佈座標且地址無名區縣，圖釘為城市中心。",
         back_to: "返回{label}",
+        search_gmaps: "在 Google 地圖中搜尋",
       },
       nb: {
         err_denied: "定位權限被拒絕。請在瀏覽器設定中允許本站定位後重試。",
@@ -559,6 +564,7 @@ window.AM = window.AM || {};
         source: "來源",
         photo_by: "照片: {credit}",
         unknown_author: "未知",
+        listed: "已登記",
         size_1: "1–2 台機台",
         size_2: "3–9 台",
         size_3: "10–19 台",
@@ -580,7 +586,7 @@ window.AM = window.AM || {};
       btn: { all: "すべて", none: "なし" },
       hint: {
         cab_variant: "バリエーションを選ぶと、その筐体がある店舗のマーカーだけに絞られます。",
-        arcade_size: "箐体数の帯は地図マーカーの形と一致します。不明は信頼できる公開数が無いことを意味します。",
+        arcade_size: "筐体数の帯は地図マーカーの形と一致します。不明は信頼できる公開数が無いことを意味します。",
         china1: "地図座標のない店舗（主に中国）。",
         china2: "公式 WAHLAP リストと BemaniCN コミュニティ地図の住所のみのデータです。地図アプリで住所を検索してください。中国のウェブ地図は GCJ-02 を使用；地図上の中国地点は WGS-84 に変換済みで、位置は概算です。"
       },
@@ -669,6 +675,7 @@ window.AM = window.AM || {};
         approx_city: "位置はおよそそ（市レベル）",
         approx_city_cap: "出典に座標がなく区名もないため、市の中心です。",
         back_to: "{label}に戻る",
+        search_gmaps: "Google マップで検索",
       },
       nb: {
         err_denied: "位置情報の許可が拒否されました。ブラウザ設定で許可してから再試行してください。",
@@ -683,13 +690,13 @@ window.AM = window.AM || {};
       cabs: {
         sdvx_vm: "Valkyrieモデル",
         iidx_lm: "Lightningモデル",
-        ddr_gold: "ゴールド筋体（20周年）",
+        ddr_gold: "ゴールド筐体（20周年）",
         gitadora_arena: "Arenaモデル",
         popn_pikapika: "ピカピカモデル",
-        maimai_classic: "maimai FiNALE / 旧筋体",
+        maimai_classic: "maimai FiNALE / 旧筐体",
         sdvx_nemsys: "NEMSYS（標準）",
         ddr_universal: "Universal Model（欧米）",
-        ddr_legacy: "旧型CRT筋体",
+        ddr_legacy: "旧型CRT筐体",
         other_game: "その他",
       },
       ui: {
@@ -700,11 +707,11 @@ window.AM = window.AM || {};
         show_less: "折りたたむ",
         search_wide: "ゲーム・店舗・場所を検索...",
         search_narrow: "検索...",
-        cab_model_unpublished: "筋体モデル未公開",
-        cab_model_unpublished_cap: "どの筋体かを明記した情報がありません。公式の筋体データは日本のみ。コミュニティ掲載は記録された場合だけです。「標準」ではなく「不明」です。",
-        offline_cab: "オフライン筋体",
-        offline_cabs: "オフライン筋体",
-        offline_cap: "この筋体のネットワークは終了しています。遊べますがスコア保存・オンライン・アンロックはできません。",
+        cab_model_unpublished: "筐体モデル未公開",
+        cab_model_unpublished_cap: "どの筐体かを明記した情報がありません。公式の筐体データは日本のみ。コミュニティ掲載は記録された場合だけです。「標準」ではなく「不明」です。",
+        offline_cab: "オフライン筐体",
+        offline_cabs: "オフライン筐体",
+        offline_cap: "この筐体のネットワークは終了しています。遊べますがスコア保存・オンライン・アンロックはできません。",
         price_median: "{game}、{country}で引用{n}件の中央値。この店の実際料金ではありません。",
         price_sparse: "{country}で{n}件の情報のみ{for_game}。目安として取ってください。",
         for_game: "（{game}）",
@@ -713,6 +720,7 @@ window.AM = window.AM || {};
         source: "出典",
         photo_by: "写真: {credit}",
         unknown_author: "不明",
+        listed: "掲載",
         size_1: "1〜2 台",
         size_2: "3〜9 台",
         size_3: "10〜19 台",
@@ -823,6 +831,7 @@ window.AM = window.AM || {};
         approx_city: "대략적 위치(시 수준)",
         approx_city_cap: "좌표와 구 이름이 없어 시 중심입니다.",
         back_to: "{label}(으)로 돌아가기",
+        search_gmaps: "Google 지도에서 검색",
       },
       nb: {
         err_denied: "위치 권한이 거부되었습니다. 브라우저 설정에서 허용한 뒤 다시 시도하세요.",
@@ -867,6 +876,7 @@ window.AM = window.AM || {};
         source: "출처",
         photo_by: "사진: {credit}",
         unknown_author: "미상",
+        listed: "등록",
         size_1: "1–2대",
         size_2: "3–9대",
         size_3: "10–19대",
@@ -977,6 +987,7 @@ window.AM = window.AM || {};
         approx_city: "Posisi perkiraan (level kota)",
         approx_city_cap: "Tanpa koordinat dan tanpa nama distrik; pin di pusat kota.",
         back_to: "Kembali ke {label}",
+        search_gmaps: "Cari di Google Maps",
       },
       nb: {
         err_denied: "Izin lokasi ditolak. Izinkan di pengaturan browser, lalu coba lagi.",
@@ -1131,6 +1142,7 @@ window.AM = window.AM || {};
         approx_city: "Kedudukan anggaran (level bandar)",
         approx_city_cap: "Tiada koordinat dan tiada nama daerah; pin di pusat bandar.",
         back_to: "Kembali ke {label}",
+        search_gmaps: "Cari di Google Maps",
       },
       nb: {
         err_denied: "Kebenaran lokasi ditolak. Benarkan dalam tetapan pelayar, kemudian cuba lagi.",
@@ -1285,6 +1297,7 @@ window.AM = window.AM || {};
         approx_city: "ตำแหน่งโดยประมาณ (ระดับเมือง)",
         approx_city_cap: "ไม่มีพิกัดและไม่มีชื่อเขต หมุดอยู่กลางเมือง",
         back_to: "กลับไป{label}",
+        search_gmaps: "ค้นหาใน Google Maps",
       },
       nb: {
         err_denied: "ถูกปฏิเสธสิทธิ์ตำแหน่ง อนุญาตในตั้งค่าเบราว์เซอร์แล้วลองใหม่",
@@ -1439,6 +1452,7 @@ window.AM = window.AM || {};
         approx_city: "Vị trí xấp xỉ (cấp thành phố)",
         approx_city_cap: "Không tọa độ và không tên quận; ghim ở trung tâm thành phố.",
         back_to: "Quay lại {label}",
+        search_gmaps: "Tìm trên Google Maps",
       },
       nb: {
         err_denied: "Quyền vị trí bị từ chối. Cho phép trong cài đặt trình duyệt rồi thử lại.",
@@ -1593,6 +1607,7 @@ window.AM = window.AM || {};
         approx_city: "Tinatayang posisyon (level ng lungsod)",
         approx_city_cap: "Walang coordinates at walang pangalan ng distrito; gitna ng lungsod ang pin.",
         back_to: "Bumalik sa {label}",
+        search_gmaps: "Hanapin sa Google Maps",
       },
       nb: {
         err_denied: "Tinanggihan ang pahintulot sa lokasyon. Payagan sa browser settings, tapos subukan ulit.",
@@ -1747,6 +1762,7 @@ window.AM = window.AM || {};
         approx_city: "Posición aproximada (nivel ciudad)",
         approx_city_cap: "Sin coordenadas ni nombre de distrito; el pin es el centro de la ciudad.",
         back_to: "Volver a {label}",
+        search_gmaps: "Buscar en Google Maps",
       },
       nb: {
         err_denied: "Permiso de ubicación denegado. Permítelo en el navegador e inténtalo de nuevo.",
@@ -1791,6 +1807,7 @@ window.AM = window.AM || {};
         source: "fuente",
         photo_by: "photo: {credit}",
         unknown_author: "unknown",
+        listed: "listado",
         size_1: "1 to 2 cabinets",
         size_2: "3 to 9 cabinets",
         size_3: "10 to 19 cabinets",
@@ -1901,6 +1918,7 @@ window.AM = window.AM || {};
         approx_city: "Position approximative (niveau ville)",
         approx_city_cap: "Sans coordonnées ni nom de district ; le pin est le centre de la ville.",
         back_to: "Retour à {label}",
+        search_gmaps: "Rechercher dans Google Maps",
       },
       nb: {
         err_denied: "Permission de localisation refusée. Autorisez-la dans le navigateur, puis réessayez.",
@@ -1945,6 +1963,7 @@ window.AM = window.AM || {};
         source: "source",
         photo_by: "photo: {credit}",
         unknown_author: "unknown",
+        listed: "listé",
         size_1: "1 to 2 cabinets",
         size_2: "3 to 9 cabinets",
         size_3: "10 to 19 cabinets",
@@ -2055,6 +2074,7 @@ window.AM = window.AM || {};
         approx_city: "Ungefähre Position (Stadtebene)",
         approx_city_cap: "Ohne Koordinaten und ohne Bezirksnamen; Pin ist der Stadtmitte.",
         back_to: "Zurück zu {label}",
+        search_gmaps: "In Google Maps suchen",
       },
       nb: {
         err_denied: "Standortberechtigung verweigert. In den Browser-Einstellungen erlauben und erneut versuchen.",
@@ -2099,6 +2119,7 @@ window.AM = window.AM || {};
         source: "Quelle",
         photo_by: "photo: {credit}",
         unknown_author: "unknown",
+        listed: "gelistet",
         size_1: "1 to 2 cabinets",
         size_2: "3 to 9 cabinets",
         size_3: "10 to 19 cabinets",
@@ -2209,6 +2230,7 @@ window.AM = window.AM || {};
         approx_city: "Posição aproximada (nível cidade)",
         approx_city_cap: "Sem coordenadas e sem nome de distrito; o pino é o centro da cidade.",
         back_to: "Voltar para {label}",
+        search_gmaps: "Pesquisar no Google Maps",
       },
       nb: {
         err_denied: "Permissão de localização negada. Permita no navegador e tente de novo.",
@@ -2363,6 +2385,7 @@ window.AM = window.AM || {};
         approx_city: "Posizione approssimativa (livello città)",
         approx_city_cap: "Senza coordinate né nome di distretto; il pin è il centro della città.",
         back_to: "Torna a {label}",
+        search_gmaps: "Cerca su Google Maps",
       },
       nb: {
         err_denied: "Permesso di posizione negato. Consentilo nelle impostazioni del browser e riprova.",
@@ -2517,6 +2540,7 @@ window.AM = window.AM || {};
         approx_city: "Приблизительная позиция (город)",
         approx_city_cap: "Без координат и без названия района; пин — центр города.",
         back_to: "Назад к {label}",
+        search_gmaps: "Искать в Google Картах",
       },
       nb: {
         err_denied: "Доступ к геолокации запрещён. Разрешите в настройках браузера и повторите.",
@@ -2561,6 +2585,7 @@ window.AM = window.AM || {};
         source: "источник",
         photo_by: "photo: {credit}",
         unknown_author: "unknown",
+        listed: "в списке",
         size_1: "1 to 2 cabinets",
         size_2: "3 to 9 cabinets",
         size_3: "10 to 19 cabinets",

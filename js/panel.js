@@ -312,7 +312,7 @@ window.AM = window.AM || {};
               esc(gameLabelFor(a, g)) + "</span>";
           }).join("") + "</div>" +
           '<a target="_blank" rel="noopener" href="' + esc(U.gmapsSearchUrl(a)) +
-          '">Search in Google Maps</a></div>';
+          '">' + esc(tr("place.search_gmaps")) + '</a></div>';
       });
     });
     box.innerHTML = h;
@@ -1481,13 +1481,15 @@ window.AM = window.AM || {};
       var cnt = "";
       if (n !== null && U.countIsShowable(a, g)) {
         cnt = ' <b class="cnt tabnum">x' + n + "</b>" +
-          (U.countIsQualified(a, g, src) ? ' <i class="cnt-q">listed</i>' : "");
+          (U.countIsQualified(a, g, src)
+            ? ' <i class="cnt-q">' + esc(tr("ui.listed")) + "</i>"
+            : "");
       }
       /* The grey "Other" chip covers 7,491 stores and names nothing. Pump It
          Up alone sits in 1,481 of them. The merge has no slug for these yet,
          but the titles are right there in the listing, so the chip says what
          it is instead of being a black box. */
-      var label = gameLabelFor(a, g);
+      var label = (g === "other") ? gameChipLabel("other") : gameLabelFor(a, g);
       if (g === "other") {
         var og = U.otherGamesOf(a);
         if (og.length) {
@@ -2046,7 +2048,7 @@ window.AM = window.AM || {};
 
   function copyText(text, okMsg) {
     var fail = function () {
-      if (legacyCopy(text)) toast(okMsg); else toast("Copy failed");
+      if (legacyCopy(text)) toast(okMsg); else toast(tr("place.copy_failed"));
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () { toast(okMsg); }, fail);
