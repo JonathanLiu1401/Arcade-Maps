@@ -1,0 +1,666 @@
+{
+  "shard": 12,
+  "checked": 39,
+  "sources_used": [
+    "https://map.bemanicn.com/ (per-shop pages / Inertia shop.arcades)",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11598",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11609",
+    "https://wc.wahlap.net/maidx/location/index.html (cross-check only; JS map)"
+  ],
+  "findings": [
+    {
+      "sid": "b5493",
+      "name": "农安佳加乐超市动漫城",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5493",
+      "evidence_quote": "BEMANICN lists 1x 鼓王 (title_id 22, ver 3). No maimai/CHUNITHM/WACCA/舞立方 or other international rhythm titles.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "鼓王 is a Chinese drum music game mapped to slug other. No standard SEGA/Konami rhythm cabinets listed."
+    },
+    {
+      "sid": "b4972",
+      "name": "博禹动漫世界",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4972",
+      "evidence_quote": "Comment: 无音游区 / 2025.2.1 多了两台e舞，没有吴丽芳. Arcades: 1x 鼓王, 2x 头文字D.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Editor says no music-game area; only 鼓王 + racing + later e舞 clones. 鼓王 -> other. Not confirmed_none because Chinese rhythm/drum cabs present."
+    },
+    {
+      "sid": "b3539",
+      "name": "博禹嘉年华（桦甸店）＆萌娃抓抓",
+      "verdict": "unknown",
+      "games": [],
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/3539",
+      "evidence_quote": "Arcades: 5x 头文字D ARCADE STAGE 8 only. Shop comment covers hours and coins only; no positive statement that rhythm games are absent.",
+      "evidence_date": "2026-05-06",
+      "checked_at": "2026-08-04",
+      "note": "BEMANICN tracks only Initial D racing here. Silence on rhythm titles is not confirmed_none."
+    },
+    {
+      "sid": "b4846",
+      "name": "欢乐谷",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4846",
+      "evidence_quote": "1x maimai (old frame, title_id 2, ver.3.99). Cab comment: 机器还在...右半边屏幕黑屏...无网络，已进离线模式. Shop: 无法登陆,4币1pc. Updated 2026-07-31.",
+      "evidence_date": "2026-07-31",
+      "checked_at": "2026-08-04",
+      "note": "Old CN maimai (not DX). Very poor condition, offline, 2P dead. Nearby 鑫乐迪 at same 维港城 has official 舞萌DX per WAHLAP (different venue). Do not merge."
+    },
+    {
+      "sid": "b4836",
+      "name": "满载客动漫城（原动感地带）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4836",
+      "evidence_quote": "Comment: 有台没联网的e5，包浆的鼓王且基本没怎么开过机...现代机台基本约等于没有. Arcades: 1x 鼓王, 1x 头文字D.",
+      "evidence_date": "2026-01-06",
+      "checked_at": "2026-08-04",
+      "note": "Ji'an small town hall mostly claw/gambling. 鼓王 -> other. Offline e5 dance clone mentioned in comment only."
+    },
+    {
+      "sid": "b2758",
+      "name": "潮派世界(栖乐荟店)",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2758",
+      "evidence_quote": "1x 鼓王 3(骑士与公主). Comment: 25年已经改为潮派世界. Cab: 机台偏暗，鼓棒木头棒.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Renamed to 潮派世界 in 2025. Only 鼓王 listed."
+    },
+    {
+      "sid": "b7070",
+      "name": "环游斯跑曼动漫城(吉林中东店)",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo",
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7070",
+      "evidence_quote": "Shop comment: 一台鼓王一台舞立方，抖音有团购. DB arcade row: 1x 鼓王 (未开机). 舞立方 not entered as arcade row.",
+      "evidence_date": "2026-05-12",
+      "checked_at": "2026-08-04",
+      "note": "舞立方 from shop comment (likely pre-EVO or EVO; mapped dance_evo). Count for dance_evo omitted (no DB quantity row). 鼓王 qty 1."
+    },
+    {
+      "sid": "b2343",
+      "name": "电玩帝国（东环不夜城店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 2
+      },
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/2343",
+      "evidence_quote": "1x 星光 (疑似已撤机), 1x 鼓王 (还好), 2x 头文字D. No standard JP rhythm titles.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "星光 + 鼓王 both -> other. 星光 may already be removed per cab comment."
+    },
+    {
+      "sid": "b5143",
+      "name": "电玩帝国（中东新天地店）",
+      "verdict": "unknown",
+      "games": [],
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/5143",
+      "evidence_quote": "HTTP 404 on map.bemanicn.com/s/5143 at research time. Region index still named the shop at 中东新天地2楼 but page is gone.",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Shard import noted 鼓王 only. Entry may be deleted/closed; cannot verify. Not confirmed_none."
+    },
+    {
+      "sid": "b76",
+      "name": "红旗街万达大玩家",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx",
+        "taiko",
+        "other"
+      ],
+      "game_counts": {
+        "maimai_dx": 1,
+        "taiko": 1,
+        "other": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/76",
+      "evidence_quote": "1x maimai DX (Ver.CN1.51-D): 已被华立舞萌官网除名 / 不可能再次登录游玩. 1x 太鼓达人旧 (12亚): 已关机 疑似不再开机. 2x 星光: 已关机 不再开机. Shop: 舞萌已降价为3币1pc，目前处于关机状态.",
+      "evidence_date": "2026-07-18",
+      "checked_at": "2026-08-04",
+      "note": "Cabinets still listed but maimai delisted from WAHLAP and offline; taiko/星光 reported powered off. Chain 大玩家 financial risk note in shop comment."
+    },
+    {
+      "sid": "b214",
+      "name": "红色星球嘉年华",
+      "verdict": "has_games",
+      "games": [
+        "taiko"
+      ],
+      "game_counts": {
+        "taiko": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/214",
+      "evidence_quote": "1x 太鼓之达人 (虹): 目前机器已经不允许使用，无法游玩...频繁黑屏. Also 4x 头文字D Zero (racing).",
+      "evidence_date": "2026-04-30",
+      "checked_at": "2026-08-04",
+      "note": "Taiko present in DB but editor says play currently forbidden / unusable. Racing not counted as rhythm."
+    },
+    {
+      "sid": "b5795",
+      "name": "艺珑潮玩（活力汇店）",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5795",
+      "evidence_quote": "1x 舞立方EVO (黑框60Hz). Cab: 机况信息待补充. Updated 2026-06-24.",
+      "evidence_date": "2026-06-24",
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO = dance_evo."
+    },
+    {
+      "sid": "b6325",
+      "name": "酷炫游艺娱乐城",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6325",
+      "evidence_quote": "Comment: 之前店主说会进一台舞萌DX，但是现在欧亚都已经进了他们还是没有 / 目前一台wlf2代机...两台头文字D8. Arcades: 1x 鼓王, 2x 头文字D.",
+      "evidence_date": "2026-03-15",
+      "checked_at": "2026-08-04",
+      "note": "Explicitly no maimai yet. wlf (吴丽芳/星光-class dance) in prose; DB has 鼓王 only as music-adjacent."
+    },
+    {
+      "sid": "b7304",
+      "name": "金莎电玩中心",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7304",
+      "evidence_quote": "1x maimai FINALE 1.99 (old frame). Shop: 远古maimai（原武汉神采飞扬百捷店机台）. Cab: 旧框，可联网可用aime. Updated 2026-08-04.",
+      "evidence_date": "2026-08-04",
+      "checked_at": "2026-08-04",
+      "note": "Old-frame maimai FiNALE mapped to maimai_dx family slug. Not DX hardware."
+    },
+    {
+      "sid": "b5790",
+      "name": "魔凡电玩中心",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5790",
+      "evidence_quote": "1x 舞立方EVO 黑秀60Hz: 已升级为双系统版本，畅玩EVO和show. Also 4x 头文字D 8.",
+      "evidence_date": "2026-05-18",
+      "checked_at": "2026-08-04",
+      "note": "Meihekou. Dance EVO dual system confirmed."
+    },
+    {
+      "sid": "b5779",
+      "name": "丁丁家庭娱乐中心",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5779",
+      "evidence_quote": "Comment: 目前店内设有一台高刷新机舞立方EVO和一台2025版本e舞. Arcade: 1x 舞立方EVO 高刷120hz 新机.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Neijiang 内江. e舞 clone also present (not a valid slug beyond other)."
+    },
+    {
+      "sid": "b6744",
+      "name": "东方神启家庭娱乐中心(盐亭店)",
+      "verdict": "has_games",
+      "games": [
+        "wacca"
+      ],
+      "game_counts": {
+        "wacca": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6744",
+      "evidence_quote": "1x WACCA 国行. Comment: 盐亭县唯一一个有像样音游机的地方 / 同时还有绵阳唯一一台华卡.",
+      "evidence_date": "2026-02-10",
+      "checked_at": "2026-08-04",
+      "note": "WACCA China version. Call front desk if powered off."
+    },
+    {
+      "sid": "b7008",
+      "name": "大玩家(双流万达店)",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7008",
+      "evidence_quote": "1x 鼓王3 (有时候关机), 4x 湾岸MIDNIGHT 5dx+ (近日无网). No maimai/WACCA/舞立方 row.",
+      "evidence_date": "2026-05-30",
+      "checked_at": "2026-08-04",
+      "note": "Chengdu Shuangliu Wanda 大玩家. 鼓王 -> other; racing omitted."
+    },
+    {
+      "sid": "b1902",
+      "name": "开心世界家庭亲子游乐场威远店",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1902",
+      "evidence_quote": "1x maimai Finale 球盘，可刷卡. Shop mentions 威远同城舞萌交流群. Also 4x 头文字D 8.",
+      "evidence_date": "2026-06-20",
+      "checked_at": "2026-08-04",
+      "note": "Old-frame maimai Finale at Weiyuan Wanda."
+    },
+    {
+      "sid": "b5932",
+      "name": "快乐比潮玩店",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5932",
+      "evidence_quote": "1x maimai 精文世嘉 (2014-era offline). Comment: 2025/8/29 店门紧闭...2025/9/13 门店已正常营业. Cab: 因长期无人游玩故改成了免费游玩.",
+      "evidence_date": "2026-06-13",
+      "checked_at": "2026-08-04",
+      "note": "Chengdu Dafeng. Very old Jingwen maimai; touch broken; free play reported. Temporary closure Aug 2025 then reopened."
+    },
+    {
+      "sid": "b3176",
+      "name": "极速玩家",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3176",
+      "evidence_quote": "1x 鼓王, 4x 头文字D 8. Comment: 舞萌国框预定中……（别等了，看起来像是进不了的样子）.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Bazhong. maimai promised but editor says unlikely. Only 鼓王 as music-adjacent."
+    },
+    {
+      "sid": "b7212",
+      "name": "极速玩家（金楠天街店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7212",
+      "evidence_quote": "1x 鼓王3骑士与公主 with detailed pad-condition notes. No other music titles.",
+      "evidence_date": "2026-06-29",
+      "checked_at": "2026-08-04",
+      "note": "Chengdu Jinnan Sky Street."
+    },
+    {
+      "sid": "b2852",
+      "name": "游戏大魔方（东方时代广场店）",
+      "verdict": "has_games",
+      "games": [
+        "wacca"
+      ],
+      "game_counts": {
+        "wacca": 2
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2852",
+      "evidence_quote": "2x WACCA Ver.2. Cab: 第二台屏幕该黑完了. Updated 2026-07-30.",
+      "evidence_date": "2026-07-30",
+      "checked_at": "2026-08-04",
+      "note": "Yibin. Both cabs have contact issues; second screen failing."
+    },
+    {
+      "sid": "b986",
+      "name": "百汇游乐园",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo",
+        "wacca",
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "dance_evo": 1,
+        "wacca": 2,
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/986",
+      "evidence_quote": "1x 舞立方EVO, 2x WACCA 华卡音舞ver.3, 1x maimai Finale. Shop: maimai1P手感极差，2P可正常游玩.",
+      "evidence_date": "2026-02-20",
+      "checked_at": "2026-08-04",
+      "note": "Deyang. Strong multi-title lineup; poor AC/environment."
+    },
+    {
+      "sid": "b5798",
+      "name": "迪趣玩动漫城（天府艺术公园店）",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5798",
+      "evidence_quote": "Comment: 内有一台黑evo，新按键新机. Arcade: 1x 舞立方EVO 黑evo.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Chengdu Jinniu."
+    },
+    {
+      "sid": "b2263",
+      "name": "飞影传奇",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2263",
+      "evidence_quote": "1x 鼓王3 only. No other music titles on BEMANICN.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Guang'an Moore Spring. 鼓王 -> other."
+    },
+    {
+      "sid": "b6980",
+      "name": "DE DE APU潮玩运动聚乐部",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6980",
+      "evidence_quote": "1x 舞立方EVO. Comment: 店铺以运动馆为主，有少许电玩机器，单人入场价为69元/位，项目通玩.",
+      "evidence_date": "2026-06-26",
+      "checked_at": "2026-08-04",
+      "note": "Tianjin sports-club model; entry fee covers machines."
+    },
+    {
+      "sid": "z11598",
+      "name": "快乐橙娱乐厅",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11598",
+      "evidence_quote": "ZIv Games: maimai FiNALE (Japan) Cab 1; also E舞成名 网络版 and Asphalt 9. Updated 2026-07-23. BEMANICN s/4168: 1x maimai 球盘.",
+      "evidence_date": "2026-07-23",
+      "checked_at": "2026-08-04",
+      "note": "Tianjin Xiaozhan. Old maimai FiNALE; 1P worn. E5 ONLINE Chinese dance not mapped beyond other."
+    },
+    {
+      "sid": "z11617",
+      "name": "酷乐电玩城 Kule Arcade",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+      "evidence_quote": "ZIv: maimai FiNALE Cab 1, CN¥3/pc. BEMANICN s/6881: mai（旧框）...机况特别烂. Updated ZIv 2026-07-24.",
+      "evidence_date": "2026-07-24",
+      "checked_at": "2026-08-04",
+      "note": "Tianjin Xiqing Yangliuqing area. Poor condition per BEMANICN."
+    },
+    {
+      "sid": "z11609",
+      "name": "雷庭电玩城",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "game_counts": {
+        "maimai_dx": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11609",
+      "evidence_quote": "ZIv: maimai FiNALE free play. BEMANICN: 舞萌是精文框...2026.5.21 机子开不开纯随缘. Updated ZIv 2026-07-24.",
+      "evidence_date": "2026-07-24",
+      "checked_at": "2026-08-04",
+      "note": "Tianjin Shehuishan Plaza. Power state intermittent; free play when on."
+    },
+    {
+      "sid": "b1377",
+      "name": "宣城酷卡贝家庭娱乐中心",
+      "verdict": "unknown",
+      "games": [],
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/1377",
+      "evidence_quote": "HTTP 404 on map.bemanicn.com/s/1377. Shard had no other-games note.",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Xuancheng Xinglong Plaza. BEMANICN entry missing; no independent lineup found. Not confirmed_none."
+    },
+    {
+      "sid": "b5283",
+      "name": "炫奇儿童乐园",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 2
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5283",
+      "evidence_quote": "2x 星光 ver 2: 远古旧机未联网. Comment: 旁边有一台换了二代键的wlf，没别的了.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Chizhou kids park. 星光 only -> other."
+    },
+    {
+      "sid": "b6716",
+      "name": "神兽大玩家（界首店）",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo",
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/6716",
+      "evidence_quote": "Comment dated 截止到2026.1.31: 有一台2代舞立方和一台鼓王. DB arcade row only 1x 鼓王3.",
+      "evidence_date": "2026-06-26",
+      "checked_at": "2026-08-04",
+      "note": "Jieshou. 舞立方 (gen2) from comment -> dance_evo without count; 鼓王 qty 1."
+    },
+    {
+      "sid": "b3440",
+      "name": "酷玩e族（国购广场店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/3440",
+      "evidence_quote": "1x 鼓王3, 2x 头文字D THE ARCADE (不能联网刷卡). No maimai/WACCA/EVO.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Suzhou Anhui 宿州."
+    },
+    {
+      "sid": "b2978",
+      "name": "银河动力",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2978",
+      "evidence_quote": "1x DANZBASE 国行: 就在大门口摆着 平时没什么人玩.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Xuancheng 国购广场. DANZBASE Chinese dance pad -> other."
+    },
+    {
+      "sid": "b5771",
+      "name": "乐到底家庭娱乐中心",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5771",
+      "evidence_quote": "1x 舞立方EVO 高刷. Coin note: 基础价格49.9/100枚.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Binzhou Wanda."
+    },
+    {
+      "sid": "b840",
+      "name": "乖乖鼠儿童乐园",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/840",
+      "evidence_quote": "1x 鼓王 骑士与公主. Comment mentions 吴丽芳 and e舞 as popular clones but only 鼓王 in arcade table.",
+      "evidence_date": "2025-11-29",
+      "checked_at": "2026-08-04",
+      "note": "Yantai Baolong. Kids venue; noisy."
+    },
+    {
+      "sid": "b7052",
+      "name": "天际の城动漫城（利群购物中心店）",
+      "verdict": "has_games",
+      "games": [
+        "dance_evo"
+      ],
+      "game_counts": {
+        "dance_evo": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7052",
+      "evidence_quote": "1x 舞立方EVO 最新. Comment: 已更新EVO / 20260618：1p3号键有概率吃音符.",
+      "evidence_date": "2026-06-18",
+      "checked_at": "2026-08-04",
+      "note": "Qingdao Liqun."
+    },
+    {
+      "sid": "b7046",
+      "name": "奇幻王国亲子乐园",
+      "verdict": "unknown",
+      "games": [],
+      "confidence": "unverified",
+      "evidence_url": "https://map.bemanicn.com/s/7046",
+      "evidence_quote": "Only 1x 宝可梦明耀之星 (Mezastar). Comment: 不建议特意过来. No rhythm titles listed; no positive no-music-game statement.",
+      "evidence_date": "2026-05-04",
+      "checked_at": "2026-08-04",
+      "note": "Weihai Rongcheng kids park. Pokemon card cab only on BEMANICN."
+    }
+  ]
+}

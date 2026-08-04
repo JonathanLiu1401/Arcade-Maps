@@ -30,7 +30,9 @@
   "venues": {
     "bemanicn|https://map.bemanicn.com/s/2744": {
       "name": "酷玩空间上海世纪汇店",
-      "add_games": ["ongeki"],
+      "add_games": [
+        "ongeki"
+      ],
       "attested_by": "owner",
       "attested_at": "2026-08-02",
       "note": "Owner reports ONGEKI at this venue. Checked and NOT found in: BemaniCN live shop payload (title_ids 1/3/31 only), the committed BemaniCN snapshot, ZIv's 37-machine list, or WAHLAP - whose mainland China register carries only maimai DX and CHUNITHM, so an ONGEKI cabinet here would appear in no official locator at all."
@@ -50,6 +52,2877 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1320",
       "note": "ZIv page itself states 'No music game available.' (updated 2026-01-02, 0 machines). Allied Plaza G15-17 may be a real shop, but it is not a music-game arcade. A music map should not list it as Other with 'no music games' - that is noise, not a listing. Fleet shard_129 already noted zero machines; the wrong fix was to keep games=['other']. Exclude instead."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7399": {
+      "name": "Cyberplay Uno 420",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7399",
+      "note": "unknown-games fleet: StepMania Converted Cabinet (International) Comment: PIU SD cab running StepP1 with custom homemade pads. Condition Bad. Updated 2024-03-14. | DIY PIU-style StepMania pad (mapped to stepmaniax per project convention). Venue still referenced as open 2025 on social; pad status post-2024 not reconfirmed."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5555": {
+      "name": "Fichin Bar & Arcade",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5555",
+      "note": "unknown-games fleet: Music Game: StepMania Converted Cabinet (International) Comment: PIU SD cab running PIU Galaxy SM5 Theme. Updated 2025-12-11. 18+ bar Mar del Plata. | Active retro bar with PIU-cabinet StepMania. Not commercial StepManiaX hardware; slug stepmaniax per map convention for StepMania conversions."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9658": {
+      "name": "Playland Park @ Unicenter",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9658",
+      "note": "unknown-games fleet: ZIv games: Guitar Hero Arcade (Great). Picture: PIU Fiesta 2 @ Playland Park - Unicenter. Updated 2026-07-09. Facebook group 2025-03-14: pump it up fiesta 2 en unicenter... esta hermosa. Instagram @pi | Guitar Hero Arcade maps to other. PIU Fiesta 2 supported by community posts 2025; ZIv game row still missing PIU entry."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5220": {
+      "name": "Playland Park Ushuaia",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5220",
+      "note": "unknown-games fleet: StepMania Converted Cabinet ARS 700.00 Moderate. Plus Ms Pac-Man, Azumanga Puzzle Bobble, Daytona 4P, Super Bikes, Ultra Moto VR, Halo Fireteam Raven, Terminator Salvation, Walking Dead. Updated 2025- | StepMania conversion present on 2025 ZIv visit."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5215": {
+      "name": "Sargento Peppers",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5215",
+      "note": "unknown-games fleet: StepMania Converted Cabinet Comment: PIU DX Cabinet running PIU Galaxy SM5 theme. Price ??? for 3 songs. Condition Bad. Picture Stepmania Machine. Comment: EZ2DJ 1st TraX removed years ago. Updated 20 | Mar del Tuyú. EZ2DJ gone; StepMania PIU conversion still listed as of 2024."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11239": {
+      "name": "SHIRONEKOYA 白喵一番屋 台北店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "chunithm",
+        "maimai_dx",
+        "sdvx",
+        "taiko"
+      ],
+      "evidence_url": "https://mgm.wind-chime.info/game_center/289-%E7%99%BD%E5%96%B5%E4%B8%80%E7%95%AA%E5%B1%8B-%E5%8F%B0%E5%8C%97%E5%BA%97",
+      "note": "unknown-games fleet: Music Game Map: 5 maimai (DX CiRCLE). Also listed on maimaidx.tw/store/193 and chunithm.tw/store/193 as SHIRONEKOYA (TAIPEI). Instagram/Facebook openers: B1 has 太鼓達人 and SDVX; dance machines also ment | Real venue is Taipei Zhongzheng 南陽街50號, Taiwan music game centre. Shard country/coords wrongly forced to Australia. maimai count 5 from MGM; chunithm/taiko/sdvx presence certain from official TW store pages + store opening posts. Further titles (IIDX etc.) possible at chain b"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8451": {
+      "name": "Game Station Franca SP",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up",
+        "taiko"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8451",
+      "note": "unknown-games fleet: Includes the following notable machines: ... Pump It Up!; ... Wadaiko Master (Brazilian localization of Taiko no Tatsujin); Guitar Hero the Arcade; House of the Dead 4; ... | ZIv information block (2024) explicitly names Pump It Up, Wadaiko Master (= taiko), and Guitar Hero Arcade (= other). Games table empty so counts not stated; presence only. Unverified against 2025-2026 visit."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9771": {
+      "name": "YiXiQingShan Experience Store (一袭青衫-二次元体验中心)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9771",
+      "note": "unknown-games fleet: maimai FiNALE (Asia) Free Play Perfect; maimai FiNALE (Asia) Free Play Perfect. CNY 98 ticket unlimited 11:00-20:00. Updated 2025-02-27. | Two maimai FiNALE cabs (Asia, free play). Only maimai slug available is maimai_dx; not China 舞萌DX network."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5031": {
+      "name": "金银岛电玩游戏中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "taiko",
+        "wacca"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11291",
+      "note": "unknown-games fleet: Originally Jinyindao Arcade, taken over by City Hero and reopened as Huanyou Carnival (环游嘉年华 北京朝阳大悦城). 舞萌DX 2026 x5; 中二节奏2026 / CHUNITHM VERSE x4; 华卡音舞 Ver.3 (WACCA REVERSE) x1; 太鼓之达人 Nijiiro x2; jube | Same physical Chaoyang Joy City 8F location rebranded from 金银岛 to 环游嘉年华. z5031 ZIv empty after PIU delete; successor ZIv 11291 has full lineup. Do not invent separate venue."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4190": {
+      "name": "风云再起动漫电玩",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "unknown-games fleet: 舞萌DX location list includes: 风云再起 四川成都 天府广场 店 四川省成都市青羊区 天府广场 负一楼今站购物中心B50商铺. BEMANICN s/277 notes 舞萌 at this store. | Official Wahlap maimai DX store locator lists this Tianfu Square branch. ZIv id 4190 itself empty (2019). Other games (chunithm etc.) not confirmed here without BEMANICN full scrape."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1798": {
+      "name": "量子空间·电竞家庭娱乐中心北京顺义店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11308",
+      "note": "unknown-games fleet: BEMANICN ID: 1798. 舞萌DX 2026 (maimai DX PRiSM PLUS) Left cab CN¥4 Perfect; Initial D The Arcade x4. 3F Jinhui Port Shunyi. Updated 2026-06-29. | Same store as ZIv Quantum Space 11308. Shard only listed 头文字D; maimai DX also present."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4846": {
+      "name": "欢乐谷",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4846",
+      "note": "unknown-games fleet: 1x maimai (old frame, title_id 2, ver.3.99). Cab comment: 机器还在...右半边屏幕黑屏...无网络，已进离线模式. Shop: 无法登陆,4币1pc. Updated 2026-07-31. | Old CN maimai (not DX). Very poor condition, offline, 2P dead. Nearby 鑫乐迪 at same 维港城 has official 舞萌DX per WAHLAP (different venue). Do not merge."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7070": {
+      "name": "环游斯跑曼动漫城(吉林中东店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7070",
+      "note": "unknown-games fleet: Shop comment: 一台鼓王一台舞立方，抖音有团购. DB arcade row: 1x 鼓王 (未开机). 舞立方 not entered as arcade row. | 舞立方 from shop comment (likely pre-EVO or EVO; mapped dance_evo). Count for dance_evo omitted (no DB quantity row). 鼓王 qty 1."
+    },
+    "bemanicn|https://map.bemanicn.com/s/76": {
+      "name": "红旗街万达大玩家",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/76",
+      "note": "unknown-games fleet: 1x maimai DX (Ver.CN1.51-D): 已被华立舞萌官网除名 / 不可能再次登录游玩. 1x 太鼓达人旧 (12亚): 已关机 疑似不再开机. 2x 星光: 已关机 不再开机. Shop: 舞萌已降价为3币1pc，目前处于关机状态. | Cabinets still listed but maimai delisted from WAHLAP and offline; taiko/星光 reported powered off. Chain 大玩家 financial risk note in shop comment."
+    },
+    "bemanicn|https://map.bemanicn.com/s/214": {
+      "name": "红色星球嘉年华",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/214",
+      "note": "unknown-games fleet: 1x 太鼓之达人 (虹): 目前机器已经不允许使用，无法游玩...频繁黑屏. Also 4x 头文字D Zero (racing). | Taiko present in DB but editor says play currently forbidden / unusable. Racing not counted as rhythm."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5795": {
+      "name": "艺珑潮玩（活力汇店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5795",
+      "note": "unknown-games fleet: 1x 舞立方EVO (黑框60Hz). Cab: 机况信息待补充. Updated 2026-06-24. | 舞立方EVO = dance_evo."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7304": {
+      "name": "金莎电玩中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7304",
+      "note": "unknown-games fleet: 1x maimai FINALE 1.99 (old frame). Shop: 远古maimai（原武汉神采飞扬百捷店机台）. Cab: 旧框，可联网可用aime. Updated 2026-08-04. | Old-frame maimai FiNALE mapped to maimai_dx family slug. Not DX hardware."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5790": {
+      "name": "魔凡电玩中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5790",
+      "note": "unknown-games fleet: 1x 舞立方EVO 黑秀60Hz: 已升级为双系统版本，畅玩EVO和show. Also 4x 头文字D 8. | Meihekou. Dance EVO dual system confirmed."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5779": {
+      "name": "丁丁家庭娱乐中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5779",
+      "note": "unknown-games fleet: Comment: 目前店内设有一台高刷新机舞立方EVO和一台2025版本e舞. Arcade: 1x 舞立方EVO 高刷120hz 新机. | Neijiang 内江. e舞 clone also present (not a valid slug beyond other)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6744": {
+      "name": "东方神启家庭娱乐中心(盐亭店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6744",
+      "note": "unknown-games fleet: 1x WACCA 国行. Comment: 盐亭县唯一一个有像样音游机的地方 / 同时还有绵阳唯一一台华卡. | WACCA China version. Call front desk if powered off."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1902": {
+      "name": "开心世界家庭亲子游乐场威远店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1902",
+      "note": "unknown-games fleet: 1x maimai Finale 球盘，可刷卡. Shop mentions 威远同城舞萌交流群. Also 4x 头文字D 8. | Old-frame maimai Finale at Weiyuan Wanda."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5932": {
+      "name": "快乐比潮玩店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5932",
+      "note": "unknown-games fleet: 1x maimai 精文世嘉 (2014-era offline). Comment: 2025/8/29 店门紧闭...2025/9/13 门店已正常营业. Cab: 因长期无人游玩故改成了免费游玩. | Chengdu Dafeng. Very old Jingwen maimai; touch broken; free play reported. Temporary closure Aug 2025 then reopened."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2852": {
+      "name": "游戏大魔方（东方时代广场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2852",
+      "note": "unknown-games fleet: 2x WACCA Ver.2. Cab: 第二台屏幕该黑完了. Updated 2026-07-30. | Yibin. Both cabs have contact issues; second screen failing."
+    },
+    "bemanicn|https://map.bemanicn.com/s/986": {
+      "name": "百汇游乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo",
+        "maimai_dx",
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/986",
+      "note": "unknown-games fleet: 1x 舞立方EVO, 2x WACCA 华卡音舞ver.3, 1x maimai Finale. Shop: maimai1P手感极差，2P可正常游玩. | Deyang. Strong multi-title lineup; poor AC/environment."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5798": {
+      "name": "迪趣玩动漫城（天府艺术公园店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5798",
+      "note": "unknown-games fleet: Comment: 内有一台黑evo，新按键新机. Arcade: 1x 舞立方EVO 黑evo. | Chengdu Jinniu."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6980": {
+      "name": "DE DE APU潮玩运动聚乐部",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6980",
+      "note": "unknown-games fleet: 1x 舞立方EVO. Comment: 店铺以运动馆为主，有少许电玩机器，单人入场价为69元/位，项目通玩. | Tianjin sports-club model; entry fee covers machines."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11598": {
+      "name": "快乐橙娱乐厅",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11598",
+      "note": "unknown-games fleet: ZIv Games: maimai FiNALE (Japan) Cab 1; also E舞成名 网络版 and Asphalt 9. Updated 2026-07-23. BEMANICN s/4168: 1x maimai 球盘. | Tianjin Xiaozhan. Old maimai FiNALE; 1P worn. E5 ONLINE Chinese dance not mapped beyond other."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617": {
+      "name": "酷乐电玩城 Kule Arcade",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
+      "note": "unknown-games fleet: ZIv: maimai FiNALE Cab 1, CN¥3/pc. BEMANICN s/6881: mai（旧框）...机况特别烂. Updated ZIv 2026-07-24. | Tianjin Xiqing Yangliuqing area. Poor condition per BEMANICN."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11609": {
+      "name": "雷庭电玩城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11609",
+      "note": "unknown-games fleet: ZIv: maimai FiNALE free play. BEMANICN: 舞萌是精文框...2026.5.21 机子开不开纯随缘. Updated ZIv 2026-07-24. | Tianjin Shehuishan Plaza. Power state intermittent; free play when on."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6716": {
+      "name": "神兽大玩家（界首店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6716",
+      "note": "unknown-games fleet: Comment dated 截止到2026.1.31: 有一台2代舞立方和一台鼓王. DB arcade row only 1x 鼓王3. | Jieshou. 舞立方 (gen2) from comment -> dance_evo without count; 鼓王 qty 1."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5771": {
+      "name": "乐到底家庭娱乐中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5771",
+      "note": "unknown-games fleet: 1x 舞立方EVO 高刷. Coin note: 基础价格49.9/100枚. | Binzhou Wanda."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7052": {
+      "name": "天际の城动漫城（利群购物中心店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7052",
+      "note": "unknown-games fleet: 1x 舞立方EVO 最新. Comment: 已更新EVO / 20260618：1p3号键有概率吃音符. | Qingdao Liqun."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3102": {
+      "name": "潮玩汇（泰盛店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3102",
+      "note": "unknown-games fleet: status=1 updated 2025-11-29; title_id=15 太鼓达人(旧代) qty=1 version=12亚洲版; title_id=26 头文字D qty=2; comment: 一家室内乐园...通票游玩 | Old-gen Asian taiko (title_id=15) present. Initial D is racing, not counted as rhythm. Prior correction that set games=[other] undercounts taiko. last bulk-style update 2025-11-29."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4369": {
+      "name": "潮玩社（汶上联民二期店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4369",
+      "note": "unknown-games fleet: status=1 updated 2026-05-11; title_id=2 maimai qty=1 version=FiNALE球盘; comment: 有一台e舞升级版和一台mai旧框。maimai1p内屏断触，2p正常...断网状态 | Classic maimai FiNALE cab (title_id=2). Project merge maps maimai_classic->maimai_dx. Offline/card issues. Comment also mentions e舞 but not in structured arcades list; not counted."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7035": {
+      "name": "电潮社电玩城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7035",
+      "note": "unknown-games fleet: status=1 updated 2026-05-02; title_id=2 maimai qty=1 version=Qiu; comment: 把中百第五季节那台球盘旧框maimai收来了 | Classic ball-panel maimai (title_id=2 Qiu/球盘). Maps to maimai_dx family."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7254": {
+      "name": "酷熊趣乐园（旧框舞萌）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7254",
+      "note": "unknown-games fleet: status=1 updated 2026-07-07; title_id=2 maimai qty=1 version=2025; comment: 旧框舞萌; shop name includes 旧框舞萌 | Classic 旧框 maimai (title_id=2). Maps to maimai_dx."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4303": {
+      "name": "哈尼鹿儿童乐园（大同星茂汇店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4303",
+      "note": "unknown-games fleet: status=1 updated 2025-11-29; title_id=17 WACCA qty=1 version=ver3; comment: 儿童乐园，音游只有华卡。 | WACCA only (scraper TITLE_GAME omits 17 so it fell into Other). Kids park pricing noted expensive."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1639": {
+      "name": "嘉润游乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1639",
+      "note": "unknown-games fleet: status=1 updated 2026-02-11; title_id=17 WACCA qty=2 version=2; comment: 5币一PC...店员态度恶劣...机台损坏严重，不建议到此游玩 | Two WACCA. Condition/staff warnings in comment; still listed active."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1073": {
+      "name": "奇幻空间",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1073",
+      "note": "unknown-games fleet: status=1 updated 2025-11-29; title_id=19 PUMP IT UP qty=1 version=未联网; comment: 唯一不好的是最低价格30元; 临汾音游交流群 | Pump It Up offline. TITLE_GAME omits 19 so was Other-only."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2763": {
+      "name": "忆当年家庭娱乐中心(广场店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2763",
+      "note": "unknown-games fleet: status=1 updated 2025-11-29; title_id=19 PUMP IT UP qty=1 version=离线; hours 9-20 | Pump It Up offline only listed cab."
+    },
+    "bemanicn|https://map.bemanicn.com/s/957": {
+      "name": "时代大玩家",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/957",
+      "note": "unknown-games fleet: status=1 updated 2026-07-25; title_id=2 maimai qty=1 version=FiNALE; comment: 店铺内音游还有舞立方和钢琴块; 2025.8.10太鼓已经没了 | Structured list only FiNALE maimai. Comment claims 舞立方 + 钢琴块 not in arcades array - not counted. Taiko removed 2025-08."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6650": {
+      "name": "未来不二动漫城（商贸店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6650",
+      "note": "unknown-games fleet: status=1 updated 2026-01-19; title_id=2 maimai qty=1 version=milk; comment: 目前只有一台旧框，还不是finale; 除此之外还有一台wlf，但是人少一般不开机 | Classic maimai milk (pre-FiNALE). wlf (舞立方) claimed but usually off and not in arcades array - not counted."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4887": {
+      "name": "潮玩街区（一票通玩）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4887",
+      "note": "unknown-games fleet: status=1 updated 2026-03-25; title_id=2 maimai qty=1 version=精文世嘉; comment: 两台音游机台：旧框maimai，舞力特区(均无法联网) | Structured: classic 精文世嘉 maimai only. Comment also claims offline DANZBASE not in arcades array - not counted. Ticket-only entry."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1037": {
+      "name": "中山市文化馆",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1037",
+      "note": "unknown-games fleet: status=1 updated 2025-11-29; title_id=13 DanceEvolution qty=1 version=KMD：C:A:A:2012121200; comment: 公益站点，无需买币即可畅玩。 | Public cultural center free Dance Evolution. TITLE_GAME omits 13 so was Other-only."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4949": {
+      "name": "卡乐潮漫夹机站（星悦荟店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "groove_coaster"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4949",
+      "note": "unknown-games fleet: status=1 updated 2025-12-01; title_id=16 GROOVE COASTER qty=1 version=国行; comment: 如果不是为了GC的话，不建议特意前往（因为店内除了一台GC、一台模拟器组合街机和若干推币机外其余都是夹娃娃机） | Claw-machine shop with one Groove Coaster. TITLE_GAME omits 16."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6311": {
+      "name": "太空喵Spacecat（中山悦来天虹店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6311",
+      "note": "unknown-games fleet: status=1 updated 2026-07-24; two rows title_id=19 PUMP IT UP qty=1 version=XX and qty=1 version=Infinity | Two Pump It Up cabs (XX + Infinity). TITLE_GAME omits 19."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4901": {
+      "name": "探险阳光乐园（板芙壹加壹店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4901",
+      "note": "unknown-games fleet: status=1 updated 2026-08-03; title_id=2 maimai qty=1 version=Finale; comment: 无法双人模式，2p感应差...没人玩可能会被下 | Classic FiNALE maimai. Fresh 2026-08-03 update. Low traffic risk of removal."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6121": {
+      "name": "星际幻想乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6121",
+      "note": "unknown-games fleet: arcades: title_id 19 (PUMP IT UP) quantity=1 version=2015 prime; shop updated_at 2025-12-01 | BemaniCN only lists PIU Prime 2015. No SEGA/Konami rhythm titles."
+    },
+    "bemanicn|https://map.bemanicn.com/s/667": {
+      "name": "极限主场天奕店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/667",
+      "note": "unknown-games fleet: arcades: title_id 17 WACCA quantity=2 version=Ver3.50; shop comment on page: 只有两台wacca，且都有不同程度损坏 | Two WACCA cabs, condition notes say both damaged to varying degrees. No other tracked titles on BemaniCN."
+    },
+    "bemanicn|https://map.bemanicn.com/s/844": {
+      "name": "热带雨林家庭娱乐体验中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/844",
+      "note": "unknown-games fleet: arcades: title_id 19 PUMP IT UP quantity=1 version=Prime 2; updated 2026-01-06 | Single PIU Prime 2 cab."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3372": {
+      "name": "精灵王国游乐园(福家欣时代广场店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3372",
+      "note": "unknown-games fleet: arcades: title_id 19 PUMP IT UP q=1 v=2015 comment 不总是开机，容易扑空; 1P中踏板失灵; updated 2025-11-29 | PIU present but unreliable power-on and pad faults per shop comment."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4157": {
+      "name": "超时空动漫城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4157",
+      "note": "unknown-games fleet: arcades: title_id 19 PUMP IT UP q=1 v=Prime2 comment 目前2p左上會失靈; updated 2025-12-10 | Single PIU Prime 2, 2P pad issue noted."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4156": {
+      "name": "party on运动潮玩承德店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4156",
+      "note": "unknown-games fleet: arcades: title_id 17 WACCA quantity=2 version=国行 comment 会员制机厅; updated 2025-11-29 | Two CN WACCA cabs, membership hall."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1420": {
+      "name": "多乐潮流空间",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1420",
+      "note": "unknown-games fleet: comment: 店内只有WACCA; arcades title_id=17 WACCA qty=2 version=Ver.3.5 | Explicit only-WACCA shop. Bemanicn scraper does not map title 17 to wacca, hence empty on map."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3349": {
+      "name": "栋能魔王健身公园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3349",
+      "note": "unknown-games fleet: arcades title_id=17 WACCA qty=2 version=ver3.5; comment: 刚刚开业 | WACCA-only listing; unmapped by bemanicn scraper TITLE_GAME."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3435": {
+      "name": "栋能魔王嗨FUN空间",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3435",
+      "note": "unknown-games fleet: arcades title_id=17 WACCA qty=2 version=Ver.3; comment: 门票制...除了华卡其他东西也能随便玩 | Ticketed fun space with WACCA (华卡)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7286": {
+      "name": "赛克星球电玩城（乐城广场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7286",
+      "note": "unknown-games fleet: arcades title_id=2 maimai FiNALE qty=1; comment: 有舞立方和旧框舞萌，但都是断网 | Classic/FiNALE 旧框舞萌 (offline). Mapped as maimai_dx per project maimai_classic policy. 舞立方 mentioned in comment only, not in arcade array."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1982": {
+      "name": "AP FUNLL(吾角天街店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1982",
+      "note": "unknown-games fleet: arcades title_id=17 WACCA qty=3 version=ver3; comment 编辑于2026/6/28: 目前三台只有一台能打...机台目前离线状态不可登录账号...应该是停服了 | Three WACCA cabs still present; online service reportedly dead as of 2026-06-28. Cabinets exist, not closed venue."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4747": {
+      "name": "佐佐佑佑(箬横锦悦城店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4747",
+      "note": "unknown-games fleet: arcades title_id=2 maimai finale qty=1; comment: maimai旧框旁有e舞，比较吵 | Classic maimai FiNALE present. e舞 mentioned only in comment."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7544": {
+      "name": "游戏大魔方",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7544",
+      "note": "unknown-games fleet: Games: 舞萌DX 2025 / maimai DX PRiSM (China) at front; also E舞成名 网络版, 舞立方2. Address: Zhuhai Powerlong Mall L3-032. Updated 2026-06-09. | ZIv id=7544 is Zhuhai 宝龙城 with maimai DX (WAHLAP/ZIv). Corrupted merge: shard addr is Hangzhou 沈半路宝龙 (bemanicn s/3616, WACCA-only) while lat/lng and ZIv are Zhuhai; also bemanicn s/1807 游戏大魔方珠海宝龙城店 lists maimai DX CN1.50-C. Treat sid as Zhuhai maimai site; Hangzhou WACCA is a separate venue."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2643": {
+      "name": "游戏大魔方（织里吾悦广场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2643",
+      "note": "unknown-games fleet: arcades: title_id=1 maimai DX qty=1 version=2024; title_id=17 WACCA qty=2 version=ver3.5; comment: maimai日服，断网...机况一坨，2p键直接坏了 | Both maimai DX (JP offline/hacked per comment) and WACCA listed. Condition poor; presence still attested."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5364": {
+      "name": "903Psi玩家之家",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5364",
+      "note": "unknown-games fleet: arcades title_id=13 DanceEvolution qty=1 version=魔改; comment: 电玩主机店，店家收藏了魔改的deac | Hosted/modded Dance Evolution Arcade cab. title_id 13 not in bemanicn TITLE_GAME map (scraper miss)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1372": {
+      "name": "乖比兔家庭娱乐中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1372",
+      "note": "unknown-games fleet: arcades title_id=22 鼓王 qty=1; comment: 从门口进去右转可以看到一台太鼓和一台鼓王...门口e舞和wlf各一台 | 太鼓 claimed in shop comment but not in arcades array (only 鼓王 listed). taiko=likely from comment; 鼓王=certain other."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2421": {
+      "name": "大玩家（黄冈万达广场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2421",
+      "note": "unknown-games fleet: arcades: title_id=2 maimai MiLK Ver.1.90 qty=1; title_id=22 鼓王 qty=1; comment: 群公告里详细的介绍了该旧框机器的机况 | Classic 旧框 maimai MiLK + 鼓王. Shard notes said maimai; confirmed still listed."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3252": {
+      "name": "1号街区",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3252",
+      "note": "unknown-games fleet: arcades title_id=2 maimai qty=1 version=1.0.3精文世嘉版; comment: [此机台已搬走]音炫轨道(Groove Coaster); 初代maimai(并非DX代，是精文世嘉时代的精文舞萌 | Very rare Jingwen SEGA classic 舞萌 still listed; GC removed. Fragile collector cab; not DX hardware but maps to maimai_dx family."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5431": {
+      "name": "Hi one潮玩运动馆",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5431",
+      "note": "unknown-games fleet: arcades title_id=15 太鼓达人(旧代) qty=1 version=12亚洲版; comment: 需要购买门票进入 | Old-gen Taiko no Tatsujin Asia 12. Ticketed venue. title 15 maps to taiko in scraper."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5862": {
+      "name": "一号街区新化店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "groove_coaster",
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5862",
+      "note": "unknown-games fleet: 太鼓达人(旧代) x1, GROOVE COASTER x2 | Live BemaniCN detail 2026-08-04. Old-gen Taiko (title_id 15) + Groove Coaster."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4506": {
+      "name": "乐满地(融冠乐城店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4506",
+      "note": "unknown-games fleet: 太鼓达人(旧代) x1 | Live BemaniCN: old-gen Taiko only (title_id 15)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/630": {
+      "name": "乐酷星球(南郊生活广场店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "dance_evo",
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/630",
+      "note": "unknown-games fleet: 太鼓达人(旧代) x1, maimai x1, DanceEvolution x1 | BemaniCN lists maimai as title_id=2 (legacy maimai, not maimai DX). Not matched on WAHLAP official DX locator. Mapped to maimai_dx per series convention; confidence reduced."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2752": {
+      "name": "乐酷星球(龙湾店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2752",
+      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator. Mapped to maimai_dx with reduced confidence."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2475": {
+      "name": "呀呀潮玩（株洲王府星mall店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2475",
+      "note": "unknown-games fleet: 太鼓达人(旧代) x1, maimai x1, 鼓王 x1 | Old Taiko + legacy maimai (id2) + 鼓王. maimai not on WAHLAP DX."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3790": {
+      "name": "弗兰队长超乐场",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3790",
+      "note": "unknown-games fleet: WACCA x2, 头文字D x4 | WACCA x2 + Initial D x4 racing (other)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/806": {
+      "name": "快乐街区弘阳广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "groove_coaster"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/806",
+      "note": "unknown-games fleet: GROOVE COASTER x1 | Live BemaniCN: Groove Coaster only."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5075": {
+      "name": "悠悠大巴亲子乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5075",
+      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2216": {
+      "name": "第e星球",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2216",
+      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2403": {
+      "name": "永辉欢聚乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2403",
+      "note": "unknown-games fleet: WACCA x2 | Live BemaniCN: WACCA x2."
+    },
+    "bemanicn|https://map.bemanicn.com/s/751": {
+      "name": "漳州悦汇蓝鲸乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/751",
+      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2063": {
+      "name": "超级玩家闽侯万家广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2063",
+      "note": "unknown-games fleet: 太鼓达人(旧代) x1, 湾岸MIDNIGHT x4 | Old-gen Taiko x1 + 湾岸 x4 racing (other)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/4823": {
+      "name": "邦尼斯玩斗城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/4823",
+      "note": "unknown-games fleet: maimai x2 | BemaniCN title_id=2 maimai x2 (legacy). Not on WAHLAP DX locator."
+    },
+    "bemanicn|https://map.bemanicn.com/s/2340": {
+      "name": "酷乐橙游乐场",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/2340",
+      "note": "unknown-games fleet: WACCA x1 | Live BemaniCN: WACCA x1."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1880": {
+      "name": "合力宝贝王疯狂计划电玩城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1880",
+      "note": "unknown-games fleet: WACCA x2 | Live BemaniCN: WACCA x2."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1597": {
+      "name": "HiSome嗨森汇潮玩俱乐部",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1597",
+      "note": "unknown-games fleet: maimai x1, DANZBASE x1, 头文字D x4 | Legacy maimai (id2) + DANZBASE + Initial D. other qty=5 for unmapped cabs. maimai not on WAHLAP DX."
+    },
+    "bemanicn|https://map.bemanicn.com/s/6186": {
+      "name": "东方英雄嘉年华（大悦城店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/6186",
+      "note": "unknown-games fleet: WACCA x2, 湾岸MIDNIGHT x1 | WACCA x2 + 湾岸 x1 (other)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/1010": {
+      "name": "东方英雄（盘锦水游城店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/1010",
+      "note": "unknown-games fleet: WACCA x2, 湾岸MIDNIGHT x4 | WACCA x2 + 湾岸 x4 (other)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7024": {
+      "name": "宇鑫动漫城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7024",
+      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3990": {
+      "name": "一袭青衫＿二次元体验馆",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3990",
+      "note": "unknown-games fleet: title_id=2 maimai quantity=2 version=茶盘/精文世嘉; machine comment 机子一般不开，币价偏高，4.99r一把; shop comment 乌蒙旧框; updated_at=2025-11-29 status=1. | Xi'an Dahua 1935. Classic maimai frames (茶盘/精文), title_id=2 not DX cab. Mapped to maimai_dx as nearest valid slug; often powered off."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5430": {
+      "name": "森林队长潮玩体验中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/5430",
+      "note": "unknown-games fleet: title_id=2 maimai quantity=1 version=circle初日; shop comment 机器在店外...精文框，已修好...谢绝拍照; machine comment 断网全解; updated_at=2026-07-05 status=1. | Xi'an Yanta. maimai present (title_id=2, version string mentions circle). Owner asks no social media photos."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9920": {
+      "name": "Golden Apple Game 金苹果乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9920",
+      "note": "unknown-games fleet: ZIv API machines: 舞萌 (maimai); OutRun 2 SP SDX x2. Music game is maimai (classic title string 舞萌). | Hanzhong Xixiang. Classic maimai listing; not confirmed DX. ZIv last update ~2025-03."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3383": {
+      "name": "乐π潮玩/乐派潮玩（让胡路万达店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "wacca"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3383",
+      "note": "unknown-games fleet: title_id=17 WACCA quantity=1 version=Ver.3; shop comment 仅有1台wacca; also 宝可梦明耀之星 x2 non-rhythm; updated_at=2026-07-27 status=1. | Daqing Ranghulu Wanda. WACCA only music game (BemaniCN notes only 1 WACCA)."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7308": {
+      "name": "潮π大玩家（原让胡路万达大玩家）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "groove_coaster"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/7308",
+      "note": "unknown-games fleet: title_id=16 GROOVE COASTER quantity=2 version=华立国行一代 (comment 未开机); also 头文字D Zero x4 and 湾岸MIDNIGHT 5DX+ x4 both 未开机; shop comment 湾岸5dx+、头d0、节奏过山车没开机，店员说要等修好; 鼓王2008似乎已撤机; updated_at=2026-07-23 stat | Daqing. GROOVE COASTER present but powered off pending repair per 2026-07-23 comment. Racing cabs not rhythm."
+    },
+    "bemanicn|https://map.bemanicn.com/s/3322": {
+      "name": "红象乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://map.bemanicn.com/s/3322",
+      "note": "unknown-games fleet: title_id=2 maimai quantity=1 version=精文世嘉; machine comment 因为店家没续网费导致无法游玩，没人维护，缺乏维护处于半废机状态; shop comment 不建议出勤; updated_at=2026-07-14 status=1. | Qitaihe. Classic maimai present but effectively unplayable (no network fee / unmaintained). Still listed as existing cab."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6239": {
+      "name": "WorldGames Plaza Mundo",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6239",
+      "note": "unknown-games fleet: Dance Dance Revolution EXTREME (Japan) 1.00$ = 2 songs Moderate; StepMania Converted Cabinet 1.00$ / 3 Songs Great. History: DDR Extreme added 2026-08-04 by retep1998. | El Salvador Plaza Mundo. Fresh ZIv update same day as research: official DDR Extreme plus StepMania/ITG cab."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10300": {
+      "name": "Füge Udvar",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10300",
+      "note": "unknown-games fleet: Information: PIU Extra in Prex 3 cab with the same quality pads as in Let's Go arcade, GH and tilted Kiss pinball… nothing to see here. Updated 2025-07-10. Games table empty (not logged as machines). | PIU Extra (Pump It Up) noted in ZIv info text but not added to Games table. Also mentions GH (Guitar Hero). Budapest Klauzál ut. 19."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10476": {
+      "name": "Timezone",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr",
+        "pump_it_up"
+      ],
+      "evidence_url": "https://www.timezonegames.com/en-in/locations/south/express-avenue-mall-chennai/",
+      "note": "unknown-games fleet: Official Timezone Express Avenue Mall Chennai location. Player Instagram posts geolocated Express Avenue / Timezone show DDR and Pump It Up Festa play (e.g. arcade-date reels mentioning DDR and PUMP I | Branch-specific social evidence for DDR and PIU; no maimai/taiko proof for this Timezone (Chennai Korean game center posts are a different venue)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9159": {
+      "name": "Amazone Ayani Mega Mall",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8017",
+      "note": "unknown-games fleet: Sibling ZIv entry Amazone Mega Mall Ayani (same mall/street): maimai FiNALE (Asia), inside next to the register; Right cab / Left cab condition notes. Updated 2024-08-10. Not on ALL.Net maimai DX Indo | Likely same outlet as z8017 (duplicate coords/name). FiNALE maps to maimai_dx slug with classic/offline variant. game_counts not set on this sid (counts on z8017)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8017": {
+      "name": "Amazone Mega Mall Ayani",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8017",
+      "note": "unknown-games fleet: maimai FiNALE (Asia). Location: Inside next to the register. Comment: Right cab one of the buttons are missing but still usable, Left cab multiple buttons are stuck basically unplayable. Rp. 10000 / 3 | Two FiNALE cabs implied by Right/Left. Offline pre-DX (not on ALL.Net DX list). Pontianak."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6734": {
+      "name": "Amazone SKA",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6734",
+      "note": "unknown-games fleet: maimai FiNALE (Asia), Rp 10,000 / 3 Songs. Condition Great. Picture MaiMai FiNALE uploaded. Updated 2022-11-15. Address: Jl. Soekarno-Hatta, Pekanbaru (SKA Mall). | FiNALE only; not on ALL.Net Indonesia maimai DX list (offline). Evidence 2022, mark unverified-to-likely; no removal report found."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3183": {
+      "name": "Club Hotel Eilat",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3183",
+      "note": "unknown-games fleet: Only location for a rhythm game other than PIU in Israel. (Maimai). Music Game: maimai FiNALE (Japan) Comment: Offline without Aime support. Left side lights are off and both screens are too dim. Pric | maimai FiNALE (offline Japan cab, not online DX). Only maimai slug available is maimai_dx. Also has non-rhythm: Fast Beat Battle Rider, Mario Kart GP2, Deadstorm Pirates, etc. FiNALE is worn but present as of early 2026."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7870": {
+      "name": "GiGO FESTIVAL WALK Soga (GiGOフェスティバルウォーク蘇我)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://www.gigo.co.jp/shops/soga",
+      "note": "unknown-games fleet: 2026-07-10 rebrand to GiGOクレーンゲームオアシス フェスティバルウォーク蘇我; ゲームの種類 still includes 音楽ゲーム. TikTok/Chiba navi: 太鼓の達人などのアーケードゲームがある. gamerch maimai: maimai撤去 (2026/7/12). | Music category retained after crane oasis rebrand; taiko still reported. maimai removed at rebrand. Specific other music titles not confirmed post-2026-07."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=897": {
+      "name": "Batting Center You-Big (バッティングセンター遊Big)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://kyushu-taiko.jimdofree.com/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97%E6%83%85%E5%A0%B1/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97-%E7%A6%8F%E5%B2%A1/",
+      "note": "unknown-games fleet: バッティングセンター遊Big / MOMOIRO*1 / 福岡市東区二又瀬新町6-6 | Kyushu taiko placement list; version tag MOMOIRO (older gen) so currency may lag. Count *1."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8200": {
+      "name": "GAME WISDOM (ゲームウィズダム)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://kyushu-taiko.jimdofree.com/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97%E6%83%85%E5%A0%B1/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97-%E7%A6%8F%E5%B2%A1/",
+      "note": "unknown-games fleet: ゲームセンターウィズダム / KIMIDORI*1 / 飯塚市柏の森162-3 | Address matches shard (162-3 Kashiwanomori Iizuka). Other music titles not listed on that page."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8189": {
+      "name": "Molly Fantasy Omuta (モーリーファンタジー大牟田店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://kyushu-taiko.jimdofree.com/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97%E6%83%85%E5%A0%B1/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97-%E7%A6%8F%E5%B2%A1/",
+      "note": "unknown-games fleet: モーリーファンタジー大牟田店 GREEN*1 大牟田市岬町3-4 イオンモール大牟田2F | Molly Fantasy mall arcades commonly only taiko among major rhythm titles; no maimai/chuni claim for this branch."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7918": {
+      "name": "Taito Station Canal City Hakata (タイトーステーションキャナルシティ博多店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "jubeat",
+        "taiko"
+      ],
+      "evidence_url": "https://kyushu-taiko.jimdofree.com/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97%E6%83%85%E5%A0%B1/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97-%E7%A6%8F%E5%B2%A1/",
+      "note": "unknown-games fleet: タイトーステーションキャナルシティ博多店 GREEN*4 福岡市博多区住吉1-2-22. jubeat@Wiki also lists this store (Fukuoka). otomap: 太鼓の達人. ZIv notes only Mario Kart/Minecraft (incomplete). | jubeat listed on w.atwiki.jp/jubeat Fukuoka page for Canal City Taito. No current maimai claim in this research pass."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8121": {
+      "name": "Hapipi Land Fukushima (ハピピランド福島店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://iko-yo.net/facilities/160655/photos/facility_photos/204025",
+      "note": "unknown-games fleet: 人気の太鼓の達人やプリクラ、アーケードゲームがたくさんあります! (Hapipi Land Don Quijote Fukushima photo caption). | Kids/family arcade in Donki Fukushima 4F; taiko presence claimed. No count. Other major SEGA/KONAMI music titles not evidenced."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1195": {
+      "name": "Amusement Space Fantasia (ファンタジア店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/43.html",
+      "note": "unknown-games fleet: アミューズメントスペース ファンタジア 広島市安佐南区緑井 ... 台数1台 ニジイロ 最終確認日2025/9/10. HP fdp-bowling/game-fantasia. | Strong taiko wiki confirmation. Other rhythm titles not listed."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10425": {
+      "name": "Apina Hiroshima Alpark (アピナ広島アルパーク)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/43.html",
+      "note": "unknown-games fleet: アピナ広島アルパーク店 アルパーク東棟3F 台数2台（両方新新筐体） 最終確認日2025/7/27. 2025/7/1オープン。 | New Apina branch. maimai at Alpark is at GiGO Alpark North, not this Apina East building."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1000": {
+      "name": "Fukuyama Metropolis (福山メトロポリス)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/43.html",
+      "note": "unknown-games fleet: 福山メトロポリス listed under Fukuyama with 2 cabs; final confirm 2026/3/13; HP korona.co.jp/Game/fuy. | Korona Metropolis large multi-attraction; taiko confirmed. Full music corner not fully inventoried here."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10426": {
+      "name": "namco Fuji Grand Natalie (namcoフジグランナタリー)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/43.html",
+      "note": "unknown-games fleet: namcoフジグランナタリー店 廿日市市阿品3-1-1 台数2台 ニジイロ 最終更新2024/11/27. iko-yo: 大人気の太鼓の達人もあります！ | namco mall store; taiko standard. No maimai/chuni evidence for this Natalie branch in this pass."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7592": {
+      "name": "BIG BANG Hakodate (BIG BANG 函館店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://maimai.sega.jp/news/circletenpo/",
+      "note": "unknown-games fleet: maimai でらっくす CiRCLE キャンペーン参加店舗に BIGBANG函館 北海道函館市梁川町9−3テキサスビル3F. otomap: ビックバン 函館店 太鼓の達人. | Campaign list is strong for current maimai. Taiko via otomap (date unknown). Hokkaido taiko wiki list omits BIG BANG Hakodate as named entry in TOC (may be under MEGAGET etc.). Counts not stated."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8055": {
+      "name": "BIGBANG Kitami (BIGBANG北見店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: BIG BANG 北見店（リニューアル予定） 台数1台 ニジイロ 200円/3曲 最終確認2025/5/29. 補足: 音ゲーは多めらしい. 4thTRAX 2026/7/26: IIDX 32 Pinky Crush が撤去. | IIDX removed mid-2026 per 4thTRAX. Taiko still listed. Other remaining music titles not named after IIDX pull. Renovation window noted May-Jun 2026 on wiki."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1278": {
+      "name": "Fantasy Kids Resort Shin-Sapporo (ファンタジーキッズリゾート新さっぽろ店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://tokukita.jp/asobiba/fantasyresort-shinsapporo.html/",
+      "note": "unknown-games fleet: 太鼓の達人。人気があるので交代を心がけましょう。 Official arcade page: 人気のアーケードゲームをフリープレイ（無料）. | Indoor kids park free-play arcade includes taiko. Not a standard pay-per-credit music corner. Generation/count unclear. Separate from Molly Fantasy Shin-Sapporo."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3286": {
+      "name": "Fantasy Plaza Asahikawa (ファンタジープラザ旭川店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: ファンタジープラザ旭川店 MEGAドン・キホーテ旭川店2F 台数1台 ニジイロ 最終確認2026/4/15 | Confirmed taiko only among major rhythm titles for this Donki floor."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7596": {
+      "name": "GiGO SEIYU Teine (GiGO西友手稲)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "chunithm",
+        "gitadora",
+        "iidx",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "popn",
+        "sdvx",
+        "taiko"
+      ],
+      "evidence_url": "https://www.ddr-navi.jp/shop/?id=20083023395467",
+      "note": "unknown-games fleet: IIDX[LM]2 SDVX[VM]3 GITADORA GF/DM各1 pop'n2 ポラリスコード2 maimaiでらっくす2 CHUNITHM金1銀3 オンゲキ2 太鼓2. 備考: 2023/12 ディノスパーク→GiGO西友手稲; 2024/9 西友→イオン運営移管で現屋号. Official gigo.co.jp/shops/a-sapporo-teine lists maimai /  | Same physical store as GiGO AEON Sapporo Teine SC (rebrand). Counts from 2024-04 DDR-Navi; taiko wiki lists 2 cabs but with older final confirm on one path. gitadora count 2 = GF+DM. Re-verify after AEON rename."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7588": {
+      "name": "GiGO Super ARCS Muroran Chuo (GiGOスーパーアークス室蘭中央)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: TOC: GiGO 室蘭店（閉店予定）. X @GiGO_Muroran: 2026年8月31日をもちまして閉店. | Listed on Hokkaido taiko wiki as GiGO Muroran (closing planned). Super ARCS Chuo may be same or related Muroran GiGO; if store is Super ARCS 3F vs East-cho GiGO, treat as likely same chain presence. Closing 2026-08-31 announced. After close, flip to closed."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7590": {
+      "name": "GiGO Super Center TRIAL Kamiiso (GiGOスーパーセンタートライアル上磯)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: 北斗市: GiGOクレーンゲームオアシス スーパーセンタートライアル上磯 listed under taiko placement TOC for Hokkaido. | Crane-oasis branding but still on taiko wiki live list. Count/version not extracted in this pass."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8056": {
+      "name": "Kids Park AEON Chitose (キッズ・パーク イオン千歳店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: キッズ・パーク イオン千歳店 listed under Chitose with taiko placement (TOC + store section pattern). | 8-grp Kids Park family floor; typically taiko as sole major rhythm cab."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8061": {
+      "name": "Kids Park AEON Monbetsu (キッズ・パーク イオン紋別店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: 紋別市: キッズパーク イオン紋別店 on Hokkaido taiko wiki live placement list. | Remote Hokkaido kids park; taiko presence via wiki TOC. No multi-title music corner expected."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8046": {
+      "name": "Molly Fantasy Sapporo Asabu (モーリーファンタジー札幌麻生店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/20.html",
+      "note": "unknown-games fleet: モーリーファンタジー 札幌麻生店 イオン札幌麻生店4F 台数2台 ニジイロ 最終確認2025/5/25. Also e-amusement facility search lists モーリーファンタジー麻生. | Standard Molly Fantasy: taiko confirmed, not a full SEGA multi-music floor."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7627": {
+      "name": "SOYU GAME FIELD Sapporo Hassamu (ソユーゲームフィールド札幌発寒店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "chunithm",
+        "drs",
+        "groove_coaster",
+        "maimai_dx",
+        "ongeki",
+        "polaris_chord",
+        "taiko",
+        "wacca"
+      ],
+      "evidence_url": "https://gamerch.com/maimai/533393",
+      "note": "unknown-games fleet: ソユーゲームフィールド発寒: 台数：2. 周辺環境：CHUNITHM、オンゲキ、ポラリスコードが2台ずつ、グルーブコースター、ダンスラッシュ、waccaが1台ずつ。太鼓はソユーに2台。最終更新：2026/04/02. Also on live ALL.Net Hokkaido maimai list as ソユーゲームフィールド発寒 イオン札幌発寒SC3F. | ALL.Net + gamerch wiki agree. Official SOYU page also lists 音楽ゲーム category."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7800": {
+      "name": "GiGO Amagasaki Q's MALL (GiGOあまがさきキューズモール)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://wikiwiki.jp/hyogomgame/GiGO%E3%81%82%E3%81%BE%E3%81%8C%E3%81%95%E3%81%8D%E3%82%AD%E3%83%A5%E3%83%BC%E3%82%BA%E3%83%A2%E3%83%BC%E3%83%AB",
+      "note": "unknown-games fleet: 設置タイトル: 太鼓の達人 ニジイロver /2台. 2025/01/09 maimai,ノスタルジア,CHUNITHM,オンゲキ,カードメイカー,初音ミク撤去確認. 最終確認日 2025/03/13. Official GiGO page still lists 音楽ゲーム category. | Not on Hyogo ALL.Net maimai list (removed Jan 2025). Taiko remains only major rhythm title per Hyogo wiki."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8086": {
+      "name": "Game Land Prego Kanegasaki (ゲームランドプレーゴ金ヶ崎店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/23.html",
+      "note": "unknown-games fleet: ゲームランドプレーゴ金ヶ崎: 台数1 ニジイロ 100円/3曲. 近年は他の音楽ゲームも増えた. 最終確認日 2024/6/16. Not on Iwate maimai ALL.Net list. | Taiko confirmed mid-2024. Other music games mentioned without slugs. maimai absent on live ALL.Net."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7742": {
+      "name": "GiGO Marugame (GiGO丸亀)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/48.html",
+      "note": "unknown-games fleet: GiGOクレーンゲームオアシス丸亀: 台数1. 旧・セガ丸亀→GiGO丸亀→(2026/4/24～)クレーンゲームオアシス業態に転換。改装に伴い太鼓以外の音ゲーは全て撤去されている。最終確認 2026/6/3. Official GiGO page lists 太鼓の達人 under 音楽ゲーム. | Rebranded crane oasis but taiko kept. Not confirmed_none."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8228": {
+      "name": "Molly Fantasy f Ayagawa (モーリーファンタジーf綾川店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/48.html",
+      "note": "unknown-games fleet: Feedy Diner&Arcade 綾川店: 旧・モーリーファンタジーf 綾川店. 2025/7/30リニューアル. 台数2 ニジイロ. 最終更新 2026/5/5. Same AEON Mall Ayagawa 3F. Separate モーリーファンタジー 綾川店 also has taiko x2. | Shard is Molly Fantasy f brand which rebranded to Feedy at same mall. Taiko retained. maimai at mall is Feedy on ALL.Net, not Molly f."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8232": {
+      "name": "youme Town Takamatsu youme land (ゆめタウン高松ゆめランド)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/48.html",
+      "note": "unknown-games fleet: ゆめタウン高松店ゆめランド: 台数3 ニジイロ 100円/3曲. 最終更新 2024/11/29. Official izumi page: クレーンゲーム機/メダルゲーム機/プリクラ/音楽リズムゲーム機/のりもの/カードゲーム機. WCS2024 listed namcoゆめタウン高松店 as prelim venue. | No maimai on Kagawa ALL.Net. Rhythm category confirmed; taiko count from wiki."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7672": {
+      "name": "SILK HAT Kawasaki MORE'S (シルクハット川崎モアーズ)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/135.html",
+      "note": "unknown-games fleet: シルクハット川崎モアーズ店: 台数4（うち1台新新筐体）ニジイロ 100円/3曲. 最終更新 2025/4/29. CHUNITHM wiki: モアーズ 2023/03/13リニューアルのため稼働終了、筐体はダイスへ. 2025 blog: 音ゲー太鼓のみ. | Post-2023 remodel: non-taiko rhythm removed to Dice. Taiko remains."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8165": {
+      "name": "namco youme Town Hikarinomori (namcoゆめタウン光の森店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://taiko.namco-ch.net/taiko/wcs2024/location/",
+      "note": "unknown-games fleet: WCS2024 general prelims: namcoゆめタウン光の森店 熊本県菊池郡菊陽町光の森7丁目39-1 2月17日. kyushu-taiko listed GREEN*4 historically. Not on current Kumamoto maimai ALL.Net. | Taiko present at least through 2024 WCS. Count 4 from regional taiko site (may be outdated); no maimai on live ALL.Net."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8089": {
+      "name": "Amusement Park SAM-1 (アミューズメントパークサムワン)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://note.com/sam1_sam1361/n/n6339afcc1b5b",
+      "note": "unknown-games fleet: Official SAM-1 note 2024-01-26: 2024年2月4日をもちまして音楽ゲーム・ビデオゲームは稼働終了。『太鼓の達人』と『麻雀格闘倶楽部』の2機種につきましては今後も稼働. Taiko wiki still lists store; BNEI radar showed [復活] entries in 2026. | Positive: only taiko kept among music games as of Feb 2024. 2026 radar revival notes imply taiko still tracked."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8093": {
+      "name": "SOYU GAME FIELD Yamoto",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://location.am-all.net/alm/location?gm=96&at=3&ct=1000",
+      "note": "unknown-games fleet: Miyagi ALL.Net maimai: ＳＯＹＵＧａｍｅＦｉｅｌｄ矢本店 東松島市小松字上浮足４３ イオンタウン矢本. Taiko wiki: ソユーゲームフィールド矢本店 台数1 ニジイロ 最終更新 2026/4/27. Official SOYU page lists 音楽ゲーム. | Live ALL.Net maimai + recent taiko wiki."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8091": {
+      "name": "namco AEON MALL Natori (namcoイオンモール名取店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/21.html",
+      "note": "unknown-games fleet: namcoイオンモール名取店: 台数4 ニジイロ 最終確認 2026/2/19. Cross Store併設. ALL.Net Miyagi lists バンダイナムコＣｒｏｓｓＳｔｏｒｅ仙台 at same AEON MALL Natori 3F address for maimai. | Same complex as Molly 新名取 (different tenant)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7752": {
+      "name": "GiGO Sunspa Omura (GiGOサンスパおおむら)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://www.gigo.co.jp/shops/omura",
+      "note": "unknown-games fleet: 2026年6月13日より GiGOクレーンゲームオアシス サンスパおおむら としてグランドオープン. ゲームの種類: クレーン/ドライブ/音楽ゲーム/キッズ. Featured game 太鼓の達人. Nagasaki taiko wiki still lists GiGO サンスパおおむら 台数1 (last wiki update 2024/11/25 before rebrand). | Crane oasis rebrand like Marugame; official page still lists taiko as music game."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8174": {
+      "name": "THE 3RD PLANET Sasebo Asobi Town (サープラ佐世保あそびタウン)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/53.html",
+      "note": "unknown-games fleet: サープラ佐世保あそびタウン: 台数2 ニジイロ. 旧サンゲームス佐世保 2024/4/20リニューアル. 最終更新 2024/11/25. Chiebukuro 2025-05: 市内でmaimaiと太鼓両方はアミパラ・サープラ佐世保・三冠王の3店. | maimai not on current Nagasaki ALL.Net list (may have left since May 2025 answer). Taiko more solid. confidence likely."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=888": {
+      "name": "GEO Game Corner Nishihara (ゲオ・ゲームコーナー西原店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/57.html",
+      "note": "unknown-games fleet: GEO西原店ゲームコーナー ... 台数 1台 ... バージョン 新筐体（ニジイロ） ... 最終更新日 2025/9/18 | Okinawa taiko wiki: Nijiiro 1 cab at GEO Nishihara game corner inside the GEO store."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8131": {
+      "name": "Game Land Joy Jungle Ayapani Bowl (ジョイジャングルあやぱにボウル店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "jubeat",
+        "popn"
+      ],
+      "evidence_url": "https://w.atwiki.jp/jubeat/pages/23.html",
+      "note": "unknown-games fleet: ゲームランドジョイジャングルinあやぱに ... 台数:1台 ... 料金:100円3曲設定 | jubeat wiki lists 1 cab; e-amusement facility search lists this store for pop'n. Old-cabinet taiko wiki still lists old taiko here but main Nijiiro wiki lists Joy Jungle Ishigaki (separate shop) not Ayapani. Current Nijiiro status unverified."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8132": {
+      "name": "Game Land Joy Jungle TOMITON (ジョイジャングルとみとん店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/57.html",
+      "note": "unknown-games fleet: ゲームランドジョイジャングルinとみとん店 ... 台数 1台 ... バージョン 新筐体（ニジイロ） ... 最終更新日 2025/9/8 | Okinawa taiko wiki: 1 Nijiiro at TOMITON 2F."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10446": {
+      "name": "GiGO Abeno Q's Mall (GiGOあべのキューズモール)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/36.html",
+      "note": "unknown-games fleet: GiGO あべのキューズモール店 ... 台数 7台 ... バージョン 新筐体(ニジイロ) ... 最終確認日 2026/6/1 | Osaka city taiko wiki: 7 Nijiiro cabs on 3F of Abeno Q's Mall."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1027": {
+      "name": "SOYU GAME FIELD Sennan (ソユーゲームフィールド泉南店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ],
+      "evidence_url": "https://gamerch.com/maimai/534480",
+      "note": "unknown-games fleet: ソユーゲームフィールド泉南店 ... 設置台数 1台; CHUNITHM wiki: 台数：2(シルバー：2) | maimai wiki 1 cab; chunithm wiki 2 silver cabs (note also marks temporary closure on some pages); taiko listed on Osaka outside taiko wiki. am-net notes autumn 2026 remodel: verify on re-open."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10441": {
+      "name": "The 3rd Planet Osaka Dotonbori Asobi Town (サープラ大阪道頓堀あそびタウン)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/36.html",
+      "note": "unknown-games fleet: サープラ大阪道頓堀あそびタウン ... 台数 3台 ... 2025/3/26オープン ... 最終更新日 2025/5/4 | 3 Nijiiro at Nakaza Cuidaore Bldg; real-dan venue note on wiki."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10442": {
+      "name": "namco Osaka Nipponbashi (namco大阪日本橋)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/36.html",
+      "note": "unknown-games fleet: namco大阪日本橋店 ... 台数 3台 ... バージョン 新筐体(ニジイロ) ... 最終確認日 2026/2/28 | 3 Nijiiro on 1F Cosmo Building; JP+EN cabinets noted."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7697": {
+      "name": "APINA Yoshikawa Minami (アピナ吉河美南店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr",
+        "iidx",
+        "taiko"
+      ],
+      "evidence_url": "https://www.am-net.jp/location/profile.cgi?page=1605",
+      "note": "unknown-games fleet: アピナ吉川美南店 ... 太鼓の達人 ニジイロ ver. DanceDanceRevolution WORLD beatmania IIDX 33 Sparkle | am-net listing includes taiko Nijiiro, DDR WORLD, IIDX 33. Also listed on Saitama taiko wiki as アピナ吉川美南店. Counts not stated on am-net snippet."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1110": {
+      "name": "Adores Asakusa (アドアーズ浅草店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/59.html",
+      "note": "unknown-games fleet: アドアーズ 浅草店 ... 台数 2台 ... バージョン 新筐体（ニジイロ） ... 最終確認日 2026/05/25 | Official store page shows music-game icon category. ZIv cab notes also list older IIDX/SDVX/GITADORA/jubeat/pop'n/REFLEC/taiko versions - those notes are undated so only taiko used as certain current."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=750": {
+      "name": "Games IMON",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/59.html",
+      "note": "unknown-games fleet: ゲームズIMON ... 台数 1台＋旧筐体2台 ... バージョン 新筐体（ニジイロ） ... 最終確認日 2025/10/2 | 1 Nijiiro + 2 old cabinets at IMON Bowl Ota. game_counts counts Nijiiro only."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7536": {
+      "name": "GiGO Ikebukuro Building 3 (GiGO 池袋3号館)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/59.html",
+      "note": "unknown-games fleet: GiGO 池袋3号館 ... 台数 3台 ... バージョン 新筐体（ニジイロ） ... 最終確認日 2025/3/24 | 3 Nijiiro at Ikebukuro Hokushin Bldg; this is the Ikebukuro branch with music-game footprint in wiki."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7669": {
+      "name": "SILK HAT Omori (シルクハット大森)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/59.html",
+      "note": "unknown-games fleet: シルクハット大森店 ... 台数 1台 ... バージョン 新筐体（ニジイロ） ... 最終確認日 2025/8/16 | 1 Nijiiro Omori station building 2F; wiki includes placement photo."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1092": {
+      "name": "AmiPara Hiezu (アミパラ 日吉津店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "taiko"
+      ],
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/46.html",
+      "note": "unknown-games fleet: アミパラ日吉津店 ... 台数 2台 ... バージョン 新筐体（ニジイロ） ... 2026/8/23閉店予定 | 2 Nijiiro at AEON Mall Hiezu West. Wiki notes planned close 2026-08-23; still listed as operating when checked."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8323": {
+      "name": "Hapipiland Pythagoras Wakayama (ハピピランドピタゴラス和歌山店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "iidx",
+        "popn",
+        "sdvx"
+      ],
+      "evidence_url": "https://otomap.net/shops/773",
+      "note": "unknown-games fleet: Hapipi Land（ハピピランド）ピタゴラス和歌山店 ゲームセンター 設置筐体 ... SOUND VOLTEX -Valkyrie model- ... pop'n music ... beatmania IIDX | Otomap user-map listing shows SDVX Valkyrie, pop'n, IIDX among cabinets. Counts partially shown in search (SDVX 2, pop'n 1, IIDX 2 style) but not fully verified on page body; omit game_counts. Full store is game center not kids-only."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6794": {
+      "name": "1st Avenue (K.B. Fun)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6794",
+      "note": "unknown-games fleet: Music Game: maimai FiNALE (Asia). There are 2 cabinets, innermost cabinet... outermost cabinet... Updated 2026-07-04 by maicomet. Photos of maimai FiNALE cabs. | Asia FiNALE (pre-DX), not on official maimai DX Malaysia ALL.Net list. Mapped to maimai_dx franchise slug. Also has Wangan 6RR (non-rhythm). Cab condition issues noted on ZIv."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8483": {
+      "name": "LSL Family, Berjaya Times Square",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8483",
+      "note": "unknown-games fleet: Music Game: 舞萌 (maimai) (China). Comment: 1 cabinet 2P | 1P button 5 is unresponsive and bad speakers... Utage mode, Dan mode, self-made charts available. Picture: maimai FiNALE ver1.99. Updated 2025- | Offline Chinese 舞萌 / FiNALE-style cab, NOT official SEGA maimai DX on ALL.Net (LSL not in Malaysia ALL.Net list). LSL Facebook also announced MaiMai at Berjaya Times Square. Mapped to maimai_dx as only maimai slug; treat as unofficial/offline."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6864": {
+      "name": "LSL Family, MyTown",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6864",
+      "note": "unknown-games fleet: Music Game: 舞萌 (maimai) (China). Comment: 1 cabinet 2P, Running on Chinese Ver. 3.99 Finale with deleted songs, DX Chart Converts and Custom Content. Updated 2025-06-23. Picture: maimai FiNALE chinese | Do not confuse with ALL.Net entry MOLLY FANTASY MY TOWN CHERAS (different operator). LSL cab is offline Chinese FiNALE, not official DX."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9592": {
+      "name": "Virtualand Megamal Pinang",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9592",
+      "note": "unknown-games fleet: Music Game: maimai FiNALE (Japan). Comment: 1 cabinet 2P. Condition Moderate. Updated 2025-04-06. Note: arcade moved to G-62 G floor after renovation. | Offline FiNALE (not ALL.Net DX). Penang island comments note limited online maimai; this is Seberang Perai. Mapped to maimai_dx slug with FiNALE version note."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10685": {
+      "name": "Level One",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10685",
+      "note": "unknown-games fleet: Music Game: Pump It Up XX (International). History: 22 hrs ago giannistek1: Pump It Up XX (International) added. Roosendaal, Lakes Leisure Level One. | Very fresh ZIv add (day before check). Site describes FEC mix (redemption/racing/VR) without naming PIU; rely on ZIv listing."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10377": {
+      "name": "Coin Singing Booth",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10377",
+      "note": "unknown-games fleet: maimai FiNALE (Japan) - Modded Chinese/舞萌 cab, running finale dump. Gloves provided, $2.5 for 3 songs single or 4 songs double. Instagram: Come visit us and play Maimai finale. | Karaoke booth shop with offline maimai FiNALE (not ALL.Net DX). Mapped to maimai_dx as only maimai slug. Not on official maimai DX International NZ locator."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3942": {
+      "name": "Newmarket Tenpin Bowling",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "iidx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3942",
+      "note": "unknown-games fleet: As of the 12th of August 2017 there is now a Beatmania IIDX machine here... Update: 24/3/2025 IIDX has been updated to IIDX 31: EPOLIS. Games table still lists Guitar Hero Arcade. Pictures include Bea | IIDX not currently in ZIv Games table but owner update through 2025-03-24 still present in page info as of 2026-01-28 edit; confidence likely not certain. Guitar Hero Arcade = other (not gitadora). Historical openITG/jubeat photos may be outdated; not asserted as current."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6948": {
+      "name": "Timezone Festival Alabang",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://www.timezonegames.com/en-ph/promos/pump-it-up-tournament/pump-it-up-tournament-tc/",
+      "note": "unknown-games fleet: Participating Venue means See Timezone venues below: 1 TIMEZONE - Festival Mall - Muntinlupa City (Pump It Up Tournament registration Jan 5 - Feb 28 2026). ZIv Marvel Avengers comment: Behind right si | Official Timezone PIU tournament venue. Note: CX PIU cab was later moved to Alabang Town Center per ZIv ATC notes, but Festival Mall remained a 2026 tournament stage-1 venue so a PIU cab was present then. Not on ALL.Net maimai PH (maimai is at nearby ATC Timezone, not Festiva"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2699": {
+      "name": "Timezone Harbor Point",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://www.timezonegames.com/en-ph/promos/pump-it-up-tournament/pump-it-up-tournament-tc/",
+      "note": "unknown-games fleet: Participating Venue: 13 TIMEZONE - Ayala Malls Harbor Point- Olongapo City. PIU Philippines FB group (2026-07-28): Harbor Point PIU machine is on rental. | ZIv page (updated 2026-07-03) omits PIU from games table (Cruis'n, Injustice, Wangan 6RR, Dark Escape, Sailor Quest VR only) but official tournament T&Cs and PIU community confirm a PIU cab. Not on ALL.Net maimai; FB comments ask when maimai will arrive."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6582": {
+      "name": "Wonderpark Waltermart Subic",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6582",
+      "note": "unknown-games fleet: Music Game: maimai FiNALE (Japan). Comment: Machine from SM Olongapo branch. ZIv updated 2023-04-24. Wonderpark Instagram: 'Are you fast enough for MaiMai? Visit Wonderpark Waltermart Subic and find o | Offline maimai FiNALE (not ALL.Net DX network). Only maimai_* slug is maimai_dx. Venue-named IG promo (~1y) plus ZIv. Confidence likely not certain (no 2025-26 machine sighting)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3743": {
+      "name": "World of Fun SM City North EDSA",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://www.facebook.com/worldoffunph/videos/ready-to-groove-and-challenge-yourself-with-every-beat-tara-na-sa-pump-it-up-pri/1608097279906582/",
+      "note": "unknown-games fleet: Official World of Fun post: Ready to groove... Tara na sa Pump It Up Prime dito sa SM City North EDSA! #WOF #WorldOfFun. ZIv also has photo title World of Fun SM North EDSA - Dance Cube Show (Septembe | Official WOF FB promotes PIU Prime at this branch. Dance Cube photo on ZIv Sep 2025 but not in ZIv machine table (games list incomplete). PIU may predate current list; mark likely not certain. ZIv main page: https://zenius-i-vanisher.com/v5.2/arcade.php?id=3743"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9717": {
+      "name": "Aguadilla Shark Roller Rink",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9717",
+      "note": "unknown-games fleet: Music Game: StepMania Converted Cabinet. Custom built cabinet housing with genuine arcade pads and DDR branding. Originally running DDR A3, it now uses a Simply Love theme. | Fresh 2026 ZIv update: pad cab on StepMania/Simply Love (was DDR A3). Slug stepmaniax for StepMania pad software."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6402": {
+      "name": "Caribbean Cinemas (Plaza Prados del Sur)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6402",
+      "note": "unknown-games fleet: Music Game: Guitar Hero Arcade (Very loud!). ITGmania (North America) Excellent sound and pads, US$1.00 for 4 songs. Perfect. | Guitar Hero Arcade -> other; ITGmania (StepMania fork on pads) -> stepmaniax. Santa Isabel cinema arcade."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2785": {
+      "name": "Caribbean Cinemas (Ponce Towne Center)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2785",
+      "note": "unknown-games fleet: Music Game: ITGmania (North America) Perfect. Also Wangan Midnight MAXIMUM TUNE (2P). Updated 2026-04-18. | ITGmania listed as music game; Wangan is racing only."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2527": {
+      "name": "Caribbean Cinemas (The Outlet 66)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2527",
+      "note": "unknown-games fleet: DanceDanceRevolution SuperNOVA (North America). Comment: Went there recently, it's still turned off with the majority of the cabs that used to be there removed only a few remain and DDR is the only th | Cab still listed as present but powered off / not working. Count as has_games ddr with operational caveat."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6382": {
+      "name": "In The Groove 2 homemade arcade",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6382",
+      "note": "unknown-games fleet: Homemade ITG2 venue near B/O Amur, base У Самвела with ITG2 banner. Website vk.com/dancingitg2. Hours 09:00-23:00; confirm days in VK. Games section empty on ZIv but name/description are the machine. | Artyom private/homemade ITG2 pad hall. No formal ZIv game row but venue is purpose-built for ITG2 (StepMania-family). Map stepmaniax."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5829": {
+      "name": "Fantasia @ Matlosana Mall",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5829",
+      "note": "unknown-games fleet: In this arcade, there's a cabinet that has a Dancing Stage banner in which it is running a Stepmania 3.9 software. Music Game: Dancing Stage (Europe) Comment: It's running a Stepmania 3.9 software. Up | Dancing Stage-branded pad running StepMania 3.9 (not official Konami e-amusement). Mapped to ddr as European DDR brand lineage. Gameplay short cited on ZIv (YouTube/TikTok)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4128": {
+      "name": "RackHyu(樂休) Game Center",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up",
+        "taiko"
+      ],
+      "evidence_url": "https://musecat.app/en/arcade/llmg67wpuajwkdg",
+      "note": "unknown-games fleet: 락휴테마파크 광주 광산구 월계로 173-5. PUMP PHOENIX 2 units. Taiko NIJIIRO 1 unit. Also EZ2AC FINAL EX, EZ2AC TIME TRAVELER, BeatOn XX. | Gwangsan RackHyu Theme Park / Game Land. Musecat lists PIU Phoenix x2 and Taiko Nijiiro x1 (photos 2024-08). EZ2AC/BeatOn not in valid slug list (omit or other). Address matches shard. Also on namu pump/taiko distribution pages."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11235": {
+      "name": "Akiba Games",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11235",
+      "note": "unknown-games fleet: maimai FiNALE (Japan) Comment: Offline, all unlocked including RE:MAS, UTAGE, dans and PANDORA BOXXX songs. 1€ / 3 SONGS. Feel free to ask the owner to raise the volume on the Maimai cabinet. Updated  | Castellon retro game store with playable JP maimai FiNALE (offline). Mapped to maimai_dx as only maimai series slug; hardware is FiNALE not DX. Photo of cabinet on ZIv."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10911": {
+      "name": "GamePlaza",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://gameplaza.ch/games-exhibition/?lang=en",
+      "note": "unknown-games fleet: Arcade Cabinets list includes Dance Dance Revolution X and Guitar hero. ZIv also lists In the Groove running on DDR X cabinet and Guitar Hero Arcade (free play museum). | Interactive video game museum Zurich Altstetten. Official site lists DDR X; ZIv lists ITG on DDR X hardware + Guitar Hero Arcade. Guitar Hero/ITG mapped to other."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10880": {
+      "name": "CN Wonderland Big C Place Ratchadaphisek",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10880",
+      "note": "unknown-games fleet: maimai FiNALE (Japan) Near stairs. Refurbished Chinese cab, Offline running on version 1.99B... Condition: Not Working. Picture: maimai FiNALE cab. | Cab listed but Not Working as of 2026-06. Offline FiNALE not DX International (TH official list is 6 other venues). Slug maimai_dx for series."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10461": {
+      "name": "Playerbox Banthat Thong Road (Chula soi 28)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10461",
+      "note": "unknown-games fleet: maimai FiNALE (Asia) Comment: Offline, on event mode, no time limit, all song unlocked (up until FiNALE). Guitar Hero Arcade also Free Play. Klook listing Zone 4: Arcade Zone, Maimai Finale, ... Guita | maimai FiNALE offline/event; slug mapped to maimai_dx as only maimai slug. Guitar Hero Arcade as other. Free-play with hourly admission. Not on ALL.Net DX Thailand list (expected for offline FiNALE)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10014": {
+      "name": "echo Karaoke and Games Mark Four Plaza",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10014",
+      "note": "unknown-games fleet: maimai FiNALE Location: Next to Operation G.H.O.S.T. Running v1.99B event mode. Danz Base SEA Edition Offline. PERCUSSION MASTER 3. Commenter: YES MAIMAI IS STILL THERE. Updated 2026-03-22. | Phrae province offline FiNALE (mapped to maimai_dx) plus Danz Base and Percussion Master as other. Not on ALL.Net DX list. Last photo/comment confirmation within ~1 year; confidence likely not certain."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1689": {
+      "name": "Airport Bowl",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://www.facebook.com/AIRPORTBOWL/posts/level-up-your-fun-at-airport-bowls-arcade-%EF%B8%8Fexplore-a-world-of-excitement-with-ou/1308550881091833/",
+      "note": "unknown-games fleet: We have table top slip n toss, rocking horse , dance dance revolution, Bump bump slides... Instagram reels of the arcade also show DANCE DANCE REVOLUTION A20 PLUS KONAMI on-screen. | ZIv games list (2024-06) omits DDR and is incomplete. Social posts show DDR A20 PLUS present. Confidence likely; exact post date not pinned. No count stated."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10164": {
+      "name": "Continue?",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://www.visitsomerset.co.uk/taunton/things-to-do/activities-(1)/continue-arcades",
+      "note": "unknown-games fleet: From retro classics like Pac-Man and Space Invaders to modern favorites such as Dance Dance Revolution and racing simulators, every corner of our arcade is designed to evoke nostalgia and excitement. | Continue Arcades free-play lounge Taunton (36-38 East St). Visit Somerset and dayoutwiththekids list DDR; site image alt text also references Dance Dance Revolution. ZIv has empty games list. No cabinet count. Do not trust unrelated Facebook snippets listing full Bemani fleets"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9900": {
+      "name": "Go Bowling",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://www.insert-coin.app/location/0197475b-da85-70ba-b346-30b20a34d764",
+      "note": "unknown-games fleet: Find all the arcade and pinball games available at GObowling in Dunstable on Insert Coin. Pump It Up PRIME Andamiro | Dunstable GObowling. Insert Coin locator lists Pump It Up PRIME (Andamiro). Pipeline ZIv notes also said Pump It Up PRIME, but live ZIv page currently shows no games (updated 2025-03, empty). Treat as present with likely confidence pending on-site confirmation of version (PRIME vs later)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10660": {
+      "name": "High Score Bracknell",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10660",
+      "note": "unknown-games fleet: Music Game: OpenITG (International) Comment: Home made cabinet. Free Play. Perfect. Updated 2026-01-24. | OpenITG is ITG/DDR-style pad software on a homebrew cab (not Konami DDR). YouTube walkthrough (Dan's Out and About, ~2025) also says the venue has 'DDR etc'. Mapped to ddr as closest valid slug; not StepManiaX commercial hardware."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2120": {
+      "name": "Hollywood Bowl Tunbridge Wells",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://x.com/stevesmart236/status/1813618998413853133",
+      "note": "unknown-games fleet: We now have 15 StepManiaX installed @HollywoodBowlUK, latest ones being Dunfermline and today in Tunbridge wells | Install confirmed by Hollywood Bowl Amusement Support Manager with photo. ZIv lists StepManiaX (65\" Deluxe) as unconfirmed from same tweet (updated 2024-07-18). Player @dancemaniax still cites Tunbridge Wells SMX as nearest option 2026-06-14. No count stated."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=180": {
+      "name": "Talk of the Town",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=180",
+      "note": "unknown-games fleet: Euromix 2 lives here. Fairly good condition with raised pads. Can often get pad misses however. Used to be on 5 songs for £1 but this has been reduced to 3. Photos of EM1 pads uploaded. Updated 2026-0 | Seaton Carew / Hartlepool seaside arcade. Dancing Stage Euromix 2 is the European DDR family cabinet (slug ddr). Also has ticket/redemption (Connect 4 Hoops, Space Invaders Frenzy, Sonic Kids Basketball). Official seaside site frames Talk of the Town as ticket prize arcade; Z"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6212": {
+      "name": "The Arcade Warehouse North Shields",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6212",
+      "note": "unknown-games fleet: Music Game section (updated 2025-07-08): 'Guitar Hero Arcade (International) - Work surprisingly well for how much use it gets.'; 'StepMania Converted Cabinet (International) - Bad setlist and terribl | StepMania is a converted pad cab running StepMania software (not official StepManiaX hardware); mapped to stepmaniax as nearest dance-pad slug. Guitar Hero Arcade mapped to other (not a Bemani slug). Free-play timed sessions; machines often scuffed per ZIv comments."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3453": {
+      "name": "The Four Quarters",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://fourquarters.bar/our-games/",
+      "note": "unknown-games fleet: Official multi-site games list includes: 'Dancing Stage Euromix' at Peckham; 'Dancing Stage Euromix' at Elephant and Castle; 'Guitar Hero' at Peckham. Shard address 189 Rye Lane is the Peckham branch. | Peckham (189 Rye Lane). Dancing Stage Euromix is European DDR; Guitar Hero mapped to other. ZIv page (2019) is outdated and omits current dance cabs. Do not merge other FQ branches into this sid."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=211": {
+      "name": "The Pier Arcade",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=211",
+      "note": "unknown-games fleet: Information (updated 2025-08-13 by leo77): 'Not a particularly great location. The single machine with screen burn in on the left hand side of the screen. Pads give misses and crap every so often. Usu | Saltburn pier. Pad language implies DDR/Dancing Stage style cab; software version not stated. Mapped to ddr as UK seaside standard for pad cabs."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9360": {
+      "name": "TopGolf Watford",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "stepmaniax"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9360",
+      "note": "unknown-games fleet: Picture titled 'SMX'. Comments: PurpleMila: 'how many songs does 5 credits get you on smx?' PennPal573: '2 songs, which is the default setting IIRC'. Games table as of 2026-06-10 lists Cruis'n Blast,  | Namco-run TopGolf arcade. SMX not entered in formal games list but photo+player comments discuss SMX song pricing. Treat as likely SMX presence; re-verify if catalog gap vs removal."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9970": {
+      "name": "Gatcha (Square One Mall)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9970",
+      "note": "unknown-games fleet: ZIv updated 2026-07-18 by mainlandhero: Music Game lists two maimai (Japan) cabs (left and right near front entrance; 9.7 credits / 3 songs) plus 舞战纪 (Dance Battle) (China) in the back. Also Hyper Cro | Titles are bare maimai (Japan), not maimai DX. Research allowlist only has maimai_dx; mapped both cabs there with likely (not certain classic-vs-DX). other = 舞战纪 Dance Battle. Gatcha still open (clawcade + playpark, Square One Mall Saugus)."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9891": {
+      "name": "Royal Magic Castle",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9891",
+      "note": "unknown-games fleet: Music Game table: maimai (Japan), 6 coins, Perfect. Comment: 'Do not change comment or game.' Condition labeled Japan. Updated 2025-04-09. Flushing NY indoor playground/arcade; site royalmagiccastle.c | ZIv titles classic Japan maimai (not DX). Repo maps maimai classic titles into maimai_dx chip (merge.py). Not on ALL.Net intl locator found. No count beyond presence."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10888": {
+      "name": "Indoor Karting Montevideo",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "ddr"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10888",
+      "note": "unknown-games fleet: ZIv API lastUpdateTime 2026-01-24: Dance Dance Revolution EXTREME cond 1. Comment: Out of order. Possible sys573 failure, as lights for the marquee work, and the image is displaying a Disconnect scree | DDR EXTREME present but out of order as of 2026-01-24. Still has_games ddr with OOO caveat; not closed."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8786": {
+      "name": "Megajuegos @ Lago Mall",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "pump_it_up"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8786",
+      "note": "unknown-games fleet: Pump It Up Infinity Omni Mix; Guitar Hero Arcade | ZIv Information lists Pump It Up Infinity Omni Mix (not formalized in Games table which says No games). Insert Coin also lists Pump It Up / Pump It Up Infinity for Megajuegos at C.C. Lago Mall. Guitar Hero Arcade not a catalog slug. Brand active on Instagram @megajuegos.ve / mega_juegos_mcbo with Lago Mall posts. PIU version may have drifted since 2024."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8110": {
+      "name": "Game World GO! Thái Bình",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8110",
+      "note": "unknown-games fleet: maimai FiNALE (Asia) | ₫5,000 for 3 songs | Moderate | Offline maimai FiNALE (Asia), not DX/ALL.Net. Corroborated by maimai VN Facebook: 'Game World Thái Bình : GO ! Thái Bình ... (1 cab maimai Finale , 2.500VND/xu, 2 xu/credit/4 bài)' and directions 'Trên go thái bình tầng 2 game world'. Slug maimai_dx used for maimai series. FiNALE age/condition: likely still present but not re-verified on-site in 2026."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9153": {
+      "name": "Thế giới vui nhộn (GO! Can Tho)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9153",
+      "note": "unknown-games fleet: maimai FiNALE (Asia) ... Quiet audio but working. Right side has cracked button sometimes doesnt register. Left side screen very dim but working well. Finale 1.99a | đ5000 ($0.20) / 3 songs | Offline maimai FiNALE 1.99a at GO! Can Tho 2nd floor (far left / middle). ZIv has score-screen photos. Condition moderate (cracked button, dim screen). Not on ALL.Net DX locator. Re-verify if still powered in 2026."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10521": {
+      "name": "Timezone Vincom Đồng Khởi",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "add_games": [
+        "maimai_dx"
+      ],
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10521",
+      "note": "unknown-games fleet: maimai DX PRiSM PLUS (International) | ₫ 21.000 / (Red Welcome Card) ₫ 20.000 / (Blue Elite / Gold Cards) ₫ 19.000 / (Platinum Card) 3 Songs | Perfect | Opened 2025-07-15 as Timezone center #14 Vietnam (B2 Vincom Dong Khoi). Official venue page live. ZIv prices for maimai DX PRiSM PLUS. maimai VN community posts discuss this site (incl. CiRCLE PLUS status). Not yet appearing on ALL.Net gm=98 Vietnam list of 35 locations (locator lag or offline at crawl time); local ZIv+commu"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7055": {
+      "name": "Amusements Jolin",
+      "closed": true,
+      "closed_reason": "Old Amusements Jolin address is retired. Successor La Zone Amusements is a different sid/address; do not attach ITG to this sid without re-confirming at new site. Historical ITG at old site is gone wi",
+      "evidence_url": "https://lazoneamusements.ca/",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9382": {
+      "name": "Antisocial Pinball",
+      "closed": true,
+      "closed_reason": "Closed permanently. Even when open, ZIv list had no bemani/PIU/DDR; pinball-focused.",
+      "evidence_url": "https://www.antisocialpinball.com/",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5380": {
+      "name": "Greta Edmonton",
+      "closed": true,
+      "closed_reason": "Formerly had Guitar Hero Arcade while open. Permanently closed; not on current Greta chain location list.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5380",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6714": {
+      "name": "The Ottawa Pinball Arcade / The Neighbourhood Pub",
+      "closed": true,
+      "closed_reason": "Baseline Rd / Neighbourhood Pub listing is the old address. Operator relocated to Experience Social (250 Greenbank Rd). New venue markets pinball plus classic arcade and unspecified dance/rhythm games",
+      "evidence_url": "https://experiencesocial.ca/",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5061": {
+      "name": "University of Waterloo DDR Club",
+      "closed": true,
+      "closed_reason": "Club/meetup stub with zero campus machines. Not a public arcade; players redirected to Pin Up Arcade Bar (separate venue).",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5061",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8083": {
+      "name": "Chat Town Kitakami (チャットタウン北上店)",
+      "closed": true,
+      "closed_reason": "Closed 2026-01-25. Successor at same PAL complex is SOYU Ezuriko (different operator/sid).",
+      "evidence_url": "https://w.atwiki.jp/taiko13/pages/23.html",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8161": {
+      "name": "パスカランドはません",
+      "closed": true,
+      "closed_reason": "Temporarily closed after July 2026 earthquake (host mall closed). Pre-closure lineup well documented: chunithm 2, maimai 1, ongeki 1, taiko 3 (taiko wiki). ALL.Net radar also showed maimai disappear. ",
+      "evidence_url": "https://wikiwiki.jp/chunithmwiki/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97/%E7%86%8A%E6%9C%AC%E7%9C%8C",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8155": {
+      "name": "宇土パスカワールド",
+      "closed": true,
+      "closed_reason": "Closed with host Uto City Mall after July 2026 earthquake (CW office 7/28 notice: パスカワールド宇土店 臨時休業). Pre-closure: rich otoge floor. Official site previously advertised 太鼓の達人は4台. Counts for wacca/iidx/s",
+      "evidence_url": "https://wikiwiki.jp/chunithmwiki/%E8%A8%AD%E7%BD%AE%E5%BA%97%E8%88%97/%E7%86%8A%E6%9C%AC%E7%9C%8C",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6171": {
+      "name": "Crusifix Games and Lounge",
+      "closed": true,
+      "closed_reason": "Surulere Lagos. ZIv marked closed 2026-08-02. Soft pad was never a classified music game on ZIv games table.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6171",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1447": {
+      "name": "Timezone Eastwood CityWalk",
+      "closed": true,
+      "closed_reason": "Temporarily closed pending Sept 2026 reopen. No current machine list. Future lineup unknown.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1447",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3486": {
+      "name": "Doremi Joyworld",
+      "closed": true,
+      "closed_reason": "Jeonju Gaeksa Doremi Joyworld on namu closed list. Older blogs mention jubeat there before closure. Address matches shard (Jeonjugaeksa area).",
+      "evidence_url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%A0%84%EB%B6%81/%ED%8F%90%EC%97%85",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3091": {
+      "name": "Game GwangJang(게임광장)",
+      "closed": true,
+      "closed_reason": "Iksan Game Gwangjang closed 2020-05-19 per contemporaneous tweet. Also on namu 오락실/전북/폐업.",
+      "evidence_url": "https://x.com/shy_SciLla/status/1262310508176175107",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3095": {
+      "name": "Star Game Center (Star 청소년 오락실)",
+      "closed": true,
+      "closed_reason": "Cheonan Dujeong-dong Star Youth Arcade on namu Chungnam closed list. ZIv address matches Dujeong-dong 700.",
+      "evidence_url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%B6%A9%EB%82%A8/%ED%8F%90%EC%97%85",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2749": {
+      "name": "우리들의 놀이터 (Our Playground)",
+      "closed": true,
+      "closed_reason": "Dobong Banghak-dong location closed/relocated May 2014 to Uijeongbu as 아케이드원 (Arcade One). Seoul open-data lists 우리들의 놀이터 도봉로 675 as 폐업. Do not attach current Arcade One games to this sid.",
+      "evidence_url": "https://namu.wiki/w/%EC%95%84%EC%BC%80%EC%9D%B4%EB%93%9C%EC%9B%90",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5288": {
+      "name": "Vertigo VR",
+      "closed": true,
+      "closed_reason": "VR/arcade venue at MK centre permanently closed; unit re-let. Even while open, ZIv list had no tracked rhythm games.",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5288",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2826": {
+      "name": "Brunswick Desert Sky Lanes",
+      "closed": true,
+      "closed_reason": "Former Brunswick/Bowlero Desert Sky Lanes. Had ITG2 (ZIv 2021). Property sold for redevelopment 2022; permanently closed.",
+      "evidence_url": "https://www.mapquest.com/us/arizona/bowlero-10377146",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6611": {
+      "name": "Flashback Retro Arcade and Bar",
+      "closed": true,
+      "closed_reason": "Permanent closure of Flashback Retro Arcade Bar & Grille (Hyannis/Barnstable). ZIv had GH among retro cabs; moot if closed.",
+      "evidence_url": "https://flashback.bar/",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3248": {
+      "name": "Gino's Pub Family Fun Center",
+      "closed": true,
+      "closed_reason": "Gino's as named entity closed/sold; ZIv GH listing moot. New tenants not researched as same arcade.",
+      "evidence_url": "https://www.herald-dispatch.com/business/huntington-icon-ginos-pub-to-reopen-under-new-ownership/article_65fb500c-fab5-11ef-9df5-c78ad7362b7a.html",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3238": {
+      "name": "Harlow's Food And Fun/ Edwards Theaters",
+      "closed": true,
+      "closed_reason": "Long-closed Greenway Plaza Harlow's; ZIv cab list historical only.",
+      "evidence_url": "http://swamplot.com/decade-long-run-of-of-harlows-in-greenway-plaza-edwards-cinema-now-over/2017-01-04/",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1954": {
+      "name": "Movies 12 @ Gateway Mall",
+      "closed": true,
+      "closed_reason": "Springfield OR Cinemark Movies 12 closed 2014; ZIv still listed OpenITG StepMania convert last updated 2014-02. Yelp also marks closed. Not the later Cinemark 17 at Gateway.",
+      "evidence_url": "https://cinematreasures.org/theaters/46496",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9573": {
+      "name": "Molly Fantasy Sense City Can Tho",
+      "closed": true,
+      "closed_reason": "Official Aeon Fantasy VN closure of Molly Fantasy Sense City Can Tho from 2025-09-17. Prior lineup: ZIv listed maimai DX BUDDiES PLUS (3rd floor); Aeon Fantasy FB listed Sense City Cần Thơ among maima",
+      "evidence_url": "https://www.facebook.com/AeonFantasyVietNam/posts/molly-fantasy-xin-tr%C3%A2n-tr%E1%BB%8Dng-th%C3%B4ng-tin-%C4%91%E1%BA%BFn-qu%C3%BD-kh%C3%A1ch-t%E1%BB%AB-ng%C3%A0y-17092025-molly-fant/1220096980135556/",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10518": {
+      "name": "Espacio TEC (Museo de Informática Interactivo)",
+      "exclude": true,
+      "evidence_url": "https://www.espaciotec.com.ar/",
+      "note": "confirmed_none: Museo de Informática: colección de equipos informáticos, consolas y calculadoras; muestras permanentes y torneos de pelea (ZIv comment: Museo de Informática con juegos retro. Se re | Computer museum / interactive retrocomputing, not a music arcade. ZIv: No games at this location.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10811": {
+      "name": "Genesis Games",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10811",
+      "note": "confirmed_none: Info by ArbisucksatDDR (2025-12-31): only arcade in the city... mostly redemption games, alongside a cruisin' world and a candy cab with pandora's box 4 on it. kind of a waste of t | Visitor explicitly describes redemption + Cruis'n + Pandora only; positive no-rhythm inventory.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5191": {
+      "name": "Million Life",
+      "exclude": true,
+      "evidence_url": "https://secretsydney.com/million-life-burwood/",
+      "note": "confirmed_none: Sydney's first claw machine arcade... Crank the fun level up with claw machines, cutting machines and addictive capsule machines. Official site services: Claw machine, Lucky box ma | Retail claw/prize chain (Burwood Railway Parade). Business model is crane/capsule, not music game centre. ZIv notes Claw Machine only. Positive non-rhythm evidence.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8410": {
+      "name": "Comic Sans",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8410",
+      "note": "confirmed_none: Belgium's Geek-Bar!... The seperate Gameroom has 4 big screen tv's with 4 Xbox One's and 2 Nintendo Switches. Other than that we have 6 Pinballmachines and several board/cardgames  | Pinball/console geek bar in Gent (cafecomicsans.be). Venue self-description and ZIv inventory are pinball + home consoles + pool; no arcade rhythm cabinets.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6029": {
+      "name": "Baller's Rec Room",
+      "exclude": true,
+      "evidence_url": "http://ballersrecroom.com/games",
+      "note": "confirmed_none: Official games page lists: Pool, Foosball, Golden Tee 2019, Mario Kart arcade, Star Wars pinball, AC/DC pinball, Skee Ball, Cruisin' Hoops, Halo. No DDR/Pump/ITG/maimai or other mu | Published venue game list is positive evidence of no music rhythm cabs.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9480": {
+      "name": "Boogie's Burgers & Arcade Marda Loop",
+      "exclude": true,
+      "evidence_url": "https://boogiesburgers.com/arcade",
+      "note": "confirmed_none: GAMES @ MARDA LOOP: Galaga, Street Fighter II, Ms. PAC-MAN, Mortal Kombat, Multicade (over 50 different classics), Lethal Weapon III Pinball & Golden Axe. | Official branch game list has no music rhythm cabs. Retro diner arcade only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9481": {
+      "name": "Burn Block Social Club",
+      "exclude": true,
+      "evidence_url": "https://burnblocksocial.com/",
+      "note": "confirmed_none: Nano Brewery, Cocktail lounge & Pinball Arcade. Pinball Map: pinball-only roster (Deadpool, Godzilla, Jurassic Park Stern, Foo Fighters, etc.). ZIv notes are all Stern/modern pinba | Pinball brewery concept. Positive pinball-only evidence.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5015": {
+      "name": "Capital City Arcade",
+      "exclude": true,
+      "evidence_url": "https://www.capcityarcade.com/games.html",
+      "note": "confirmed_none: Official current game list (~80+ classics 70s-00s free-play): 1942, Dig Dug, Frogger, Donkey Kong family, Galaga, Ms. Pac-Man, Marvel vs Capcom 2, SF2/3rd Strike, Tron, etc. Explic | Published rotating classic list is authoritative positive evidence of no music rhythm games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7165": {
+      "name": "Cineplex Cinemas Charlottetown",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7165",
+      "note": "confirmed_none: This place has no dance machine or similar types of games. ... very basic Cinescape arcade with Super Bikes, Extreme Hoops, air hockey and crane games. | ZIv editor LABcrab explicitly states no dance/rhythm machines after 2023 reopening. Redemption/racing only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9493": {
+      "name": "Cineplex VIP Cinemas Don Mills",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9493",
+      "note": "confirmed_none: There is no arcade per se, but billiards/pool is available to guests. | Age-restricted VIP cinema. Only pool table listed. Not an arcade.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3795": {
+      "name": "Cinescape (Cineplex Odeon Barrhaven Cinemas)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3795",
+      "note": "confirmed_none: There was a Dance Dance Revolution SuperNOVA machine from 2007 to 2017. As of August 2024, there is a standard Frightfearland machine, two Dead Heat machines with limited features  | DDR SuperNOVA gone since 2017. Aug 2024 visitor inventory is shooters/redemption/air hockey only. No music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9287": {
+      "name": "Flippins Bar/Arcade",
+      "exclude": true,
+      "evidence_url": "https://www.flippins.ca/games",
+      "note": "confirmed_none: Official list: many Stern/Williams pinballs; floor games (ICE-BALL, air hockey, foosball); fighters (MK2, SSF2T, Tekken 3, Primal Rage, TMNT); shooters (Police Trainer, Big Buck Hu | Fredericton pinball bar opened 2024. Full published game list is positive evidence of no rhythm games. ZIv partial list aligns.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6063": {
+      "name": "Game Changerz VR",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6063",
+      "note": "confirmed_none: VRcade, no traditional machines | Prince George VR-only venue. No traditional cabinets including no rhythm. Verify still operating under same concept if needed.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2003": {
+      "name": "Skylon Tower",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2003",
+      "note": "confirmed_none: The base of the tower has a rather large arcade, mostly retro games... Every BEMANI games has been rid. Comments (historical): I looked around the whole place and didn't see DDR an | Niagara Falls. Positive statement that all Bemani music games are gone. Arcade still open 2026 (arcade-museum forum / skylon.com). Remaining list is retro racers/shooters/fighters.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8377": {
+      "name": "Splitsville (Nanaimo)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8377",
+      "note": "confirmed_none: Splitsville Nanaimo has an arcade that mainly consists of redemption games, with a few traditional games. There was a Guitar Hero Arcade machine at one point, but it no longer seem | Positive evidence GH removed and no dance games. Current list is FEC/racing only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7043": {
+      "name": "TimeOut Arcade at Centre Eaton de Montréal",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7043",
+      "note": "confirmed_none: Just some basic arcade at the mall, No DDR or PIU. Game list: Pac-Man Battle Royale, Stern pinballs, Bust a Move Frenzy, Mario Kart Arcade GP DX, NFS Heat Takedown, Jurassic Park A | Explicit ZIv note No DDR or PIU plus non-music inventory. Still part of Time Out Market Montreal food hall arcade.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=301": {
+      "name": "Toybox Cranes @ Pacific Mall",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=301",
+      "note": "confirmed_none: This place is now Toy Box Cranes and mostly has claw machines. Historical note: used to have DDR, ITG, DrumMania... Thumbsy comment: I went ahead and removed the DDR, confirmed it  | Former Playscape/FUNtime music destination; now claw/redemption only. Music games positively removed from tracking.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4533": {
+      "name": "Xscape (Cinéma Cineplex Kirkland)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4533",
+      "note": "confirmed_none: Unfortunately, with the Xscape transformation, Cineplex has decided to remove the dance machine and other good games. Comment altezza_07 (~1 month before check): A shame the ddr ca | Former DDR Extreme removed during Xscape conversion. Current list is action/redemption only. Recent comment confirms still gone.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4051": {
+      "name": "Xscape (Cinéma Cineplex Laval)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4051",
+      "note": "confirmed_none: Unfortunately, by September 2021, Cineplex has decided to remove the dance machine and other good games. Comment Legendaery: As of September 12th, Extreme has been removed. I could | Former DDR Extreme removed ~2021. Remaining cabs racing/shooter/redemption. No current music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3644": {
+      "name": "Xscape (Cinéma Cineplex Odeon Beauport)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3644",
+      "note": "confirmed_none: Malheureusement, avec la transformation Xscape, Cineplex a décidé d'enlever la machine de danse et d'autres bons jeux. (Unfortunately, with the Xscape transformation, Cineplex remo | Explicit ZIv French/English style note that dance machine was removed. Current inventory non-rhythm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4534": {
+      "name": "Xscape (Cinéma Cineplex Odeon Brossard et VIP)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4534",
+      "note": "confirmed_none: Malheureusement, avec la transformation Xscape, Cineplex a décidé d'enlever la machine de danse et d'autres bons jeux. | Dance machine removed during Xscape conversion per ZIv.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3642": {
+      "name": "Xscape (Cinéma Cineplex Odeon Sainte-Foy)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3642",
+      "note": "confirmed_none: Malheureusement, avec la transformation Xscape, Cineplex a décidé d'enlever la machine de danse et d'autres bons jeux. | Dance machine removed during Xscape conversion per ZIv. Remaining: MotoGP, Jurassic Park, Transformers, basketball, etc.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4050": {
+      "name": "Xscape (Cinéma Starcité Montréal)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4050",
+      "note": "confirmed_none: StarCité Montréal used to have a dance machine: DDR Extreme at first, which was later replaced by a dedicated DDR SuperNOVA machine. ... Sadly, since late 2021, dance machines no l | Positive removal of DDR SuperNOVA by late 2021. Long redemption list, no music games remaining.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11634": {
+      "name": "不玩星球 Buwan Planet (潼南)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11634",
+      "note": "confirmed_none: Current cabs: Cruis'n Blast x4, Deadstorm Pirates SE, Gold Fort Coin Pusher, Magic Forest, Super Train. History 6 days ago: E舞成名 and 太鼓の達人12 deleted. Updated 2026-07-28. | Recent purge removed E5 and Taiko. Remaining floor is racing/coin only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11605": {
+      "name": "猩际争霸 ApeCraft (滨海万达店)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11605",
+      "note": "confirmed_none: Apex Rebels; Asphalt Moto Blitz DX; NITRO SPEED; 狂野飙车9 DX x4. Racing section only. Updated 2026-07-23. | Positive racing-only floor list; no music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1505": {
+      "name": "行运士多 Lucky Store",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1505",
+      "note": "confirmed_none: 这店之前是秋叶原AKIBAGO，现在改成零食乐园了，但里面还能打游戏、夹娃娃。宝可梦明耀之星 x5. Updated 2026-07-05. | Snack/claw shop with Pokémon MEZASTAR only. No rhythm cabinets.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "bemanicn|https://map.bemanicn.com/s/7309": {
+      "name": "超级星座(东北亚购物公园店)",
+      "exclude": true,
+      "evidence_url": "https://map.bemanicn.com/s/7309",
+      "note": "confirmed_none: arcades only title_id=28 湾岸MIDNIGHT quantity=4 version=3DX+; no music/rhythm title_ids; updated_at=2026-07-23 status=1. | Bei'an. Racing-only on BemaniCN (Wangan). Positive evidence no rhythm titles listed.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=315": {
+      "name": "Megarex",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=315",
+      "note": "confirmed_none: piu and guitar hero where removed for a \"dance battle\" (i wont bother adding this shit) dont go there if you expect rhythm games but do check it out if you like pinballs they have  | May 2026 ZIv: Pump It Up Phoenix and Guitar Hero removed. Venue is major pinball destination (Pinball Map / Pinside list dozens of Stern tables). Dance battle cab not a catalog rhythm slug. Historical DDR/PIU gone.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8463": {
+      "name": "Jump House",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8463",
+      "note": "confirmed_none: Indoor tumbling center with a field of trampolines... They have a few arcade games at the entrance: 2x Ultra Race; Crazy Hoop; Football Kickbox machine; Duo Driver Racing game; Air | Trampoline park entrance arcades only (racing/sports/air hockey). Explicit full list, no rhythm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10295": {
+      "name": "Stifler32",
+      "exclude": true,
+      "evidence_url": "https://stifler32.hu/en/",
+      "note": "confirmed_none: Arcade games: Enjoy pinball machines, car and motorcycle simulators that bring the thrill of racing, and shooting games to test your skills. Lists 3 pinball, 2 motorcycle simulator | Official site and 2025 ZIv list (pinball/racing/shooters only) agree: no rhythm machines.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10016": {
+      "name": "Lane7 Dublin City Centre",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10016",
+      "note": "confirmed_none: Bowling, Beer Pong, Arcade, Freeplay Consoles and Bar. No Rhythm Games, Lane7 Dundrum has A Pump Pheonix 2023 if you're interested. Listed: Axe Master; Hyper Pitch. Updated 2025-06 | Explicit ZIv note: no rhythm games at Chatham St / Dublin City Centre. PIU Phoenix is at Lane7 Dundrum (separate venue, not this sid).",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10439": {
+      "name": "GiGO Namba Ebisubashi (GiGOなんば戎橋)",
+      "exclude": true,
+      "evidence_url": "https://prtimes.jp/main/html/rd/p/000000880.000034930.html",
+      "note": "confirmed_none: 設置台数：合計 73台 クレーンゲーム/73台 ... クレーンゲームに特化した「GiGOなんば戎橋」 | Official GENDA PR: crane-only specialty store, 73 crane machines, no other genres listed.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4356": {
+      "name": "The Silver Ball Planet (ザ・シルバーボールプラネット)",
+      "exclude": true,
+      "evidence_url": "https://www.silverballplanet.jp/",
+      "note": "confirmed_none: ピンボール専門ゲームセンター ... あらゆるジャンルのピンボールが120台以上 ラインナップ！ | Official site: pinball specialty arcade only (120+ pinballs). No rhythm cabinets.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7534": {
+      "name": "GiGO Ikebukuro Building 1 (GiGO 池袋1号館)",
+      "exclude": true,
+      "evidence_url": "https://www.gigo.co.jp/shops/ikebukuro1",
+      "note": "confirmed_none: ゲームの種類: クレーンゲーム キッズゲーム ガチャガチャ | Official categories: crane/kids/gacha only. Not on taiko wiki (Ikebukuro music is 総本店 / 3号館).",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7535": {
+      "name": "GiGO Ikebukuro Building 2 (GiGO 池袋2号館)",
+      "exclude": true,
+      "evidence_url": "https://www.gigo.co.jp/shops/ikebukuro2",
+      "note": "confirmed_none: ゲームの種類: プリントシール カードゲーム ガチャガチャ | Official: purikura/card/gacha; hosts collab cafe floors. No music games category.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7421": {
+      "name": "ROUND1 Crane Game Park Chofu Ekimae (ラウンドワン クレーンゲームパーク調布駅前店)",
+      "exclude": true,
+      "evidence_url": "https://www.round1.co.jp/service/amuse/cranegame_park/index.html",
+      "note": "confirmed_none: ラウンドワン初！クレーンゲーム専門店が登場！ ... 調布駅前店がクレーンゲーム総台数300台オーバーにて稼働中 | Official ROUND1 Crane Game Park specialty: crane (+ purikura per store page). Not a standard ROUND1 stadium with rhythm floor.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3607": {
+      "name": "Pokémon Center Osaka",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3607",
+      "note": "confirmed_none: ZIv games list only Pokemon FRIENDA (Japan). History 2026-07-23 removed Ga-Olé and Pokkén Tournament; only FRIENDA remains. Official FRIENDA is a card/treasure-hunt battle arcade,  | Pokemon retail store with FRIENDA kiosk only. No SEGA/Konami/Bandai rhythm lineup. Positive non-rhythm inventory.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9525": {
+      "name": "Get!Stage AEON Tebrau",
+      "exclude": true,
+      "evidence_url": "https://www.aeonfantasy.com.my/brand/getstage/",
+      "note": "confirmed_none: GetStage! offers a variety of Gashapon capsule toys, as well as a wide range of officially licensed anime, manga, and pop culture merchandise for fans. AEON Fantasy FB open post: T | Merch/gashapon concept store, not a music arcade. Animal Kaiser is a card battler. Positive non-rhythm inventory.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5197": {
+      "name": "Magic Bowl",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5197",
+      "note": "confirmed_none: English: The only Bowling alley at Monclova with 2 air hockey tables and 2 Xbox 360 Multigames. Games: Hockey Table x2 only. | Owner/submitter description is positive inventory: bowling + 2 air hockey + 2 Xbox multigames. No arcade rhythm cabs.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3685": {
+      "name": "Bowlingcentrum Ol'Round",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3685",
+      "note": "confirmed_none: Info once mentioned Including a DDR X Cabinet. Comment by nela (~2025): DDR is long gone, OutRun 2 SP is the only reason to come here. Active games: OutRun 2, Mad Wave, Boxer. | Positive recent visitor statement that DDR was removed. Remaining cabs non-rhythm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5966": {
+      "name": "Gamecity Zoetermeer",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5966",
+      "note": "confirmed_none: Comment by nebbii: Checked the place out, no more DDR sadly. Current games: Shrek pinball, Daytona Championship USA, shooters, basketballs, boxers, Lane Master, Big Wave. Updated 2 | Positive visitor note that DDR is gone; current listed lineup has no music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10130": {
+      "name": "KiddieLand",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10130",
+      "note": "confirmed_none: Only has 1 arcade cab. The rest consist of mini rides for small children. Games: Mario Kart Arcade GP DX single cab only. | Explicit single-cab kids area. No rhythm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10464": {
+      "name": "Texel Aviation and War Museum",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10464",
+      "note": "confirmed_none: Museum with singular arcade cabinet. Games: Airline Pilots only (back of museum next to toilets). | Explicit single non-rhythm simulator cab.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10912": {
+      "name": "Oddyseum Queenstown",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10912",
+      "note": "confirmed_none: The only Freeplay arcade in New Zealand... Games: TMNT Turtles In Time, Mortal Kombat II, Street Fighter II, Ms. Pac-Man, Pac-Man, Big Buck World, Terminator 2, Galaga, Golden Tee  | Odysseum Arcadium freeplay retro room. Full ZIv list is fighters/classics only; no rhythm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10842": {
+      "name": "PLAY @ Event Cinemas Tauranga",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10842",
+      "note": "confirmed_none: Smallest PLAY arcade in nz, no rhythm games. | Positive ZIv visitor statement of no rhythm games at this cinema lobby PLAY.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11200": {
+      "name": "Ye Olde Pinball Shoppe",
+      "exclude": true,
+      "evidence_url": "https://www.pinballshoppe.co.nz/",
+      "note": "confirmed_none: New Zealand's Only Dedicated Pinball Arcade... play over twenty unique pinball machines under one roof. ZIv lists Godzilla (Stern), Pokemon (Pro), Pulp Fiction, The Mandalorian pin | Dedicated pinball bar; positive pinball-only positioning.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10549": {
+      "name": "ZONE Bowling @ Garden City",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10549",
+      "note": "confirmed_none: Has no RGs or Wangan so hesitant to add but very fun for redemption games. | Visitor explicitly: no rhythm games. ALL.Net NZ maimai lists Zone Manukau and Zone Botany only, not Garden City Christchurch.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10730": {
+      "name": "QUANTUM SM GENERAL SANTOS",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10730",
+      "note": "confirmed_none: ZIv page title is Token Fun Station SM City General Santos (not Quantum). Reopened after July 27 quake. Games: Overtake Elite Challenge, Storm Racer G only. ALL.Net shop sid=18667: | Shard name QUANTUM SM GENERAL SANTOS maps to ZIv id 10730 Token Fun Station (racing/crane/gacha only). Separate Quantum SM GenSan ZIv 2978 (maimai DX, taiko, sdvx, gitadora) is CLOSED for repair and is not this sid. Do not attach Quantum GenSan rhythm list here.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10797": {
+      "name": "Joker Lounge",
+      "exclude": true,
+      "evidence_url": "https://joker-lounge.com/en/play/machines",
+      "note": "confirmed_none: Try our arcade machines (table football, pinball, air hockey, darts) taking you back to the past while enjoying our food and drinks. Also bowling and snooker on site. | Official site + ZIv list only Stern pinballs (Iron Maiden, James Bond, John Wick, Star Wars). No rhythm machines.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11367": {
+      "name": "Лига Пинбола",
+      "exclude": true,
+      "evidence_url": "https://www.spbpinball.ru/",
+      "note": "confirmed_none: 19 локаций, 29 пинболов. Сейчас они работают в барах Санкт-Петербурга. ATC (Некрасова 3). | SPb Pinball League places pinball machines in bars (including ATC Nekrasova 3-5). Pinball-only operation; not a rhythm arcade.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11163": {
+      "name": "Читай-Город (Chitai Gorod, not Arcade)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11163",
+      "note": "confirmed_none: This store has a singular arcade. Samurai Shodown III: Blades of Blood. You can play this only after a book purchase. | Bookstore (chitai-gorod.ru) with one fighter cab only. Name in shard already flags 'not Arcade'. No rhythm games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10822": {
+      "name": "Fun Claw (Plaza Singapura)",
+      "exclude": true,
+      "evidence_url": "https://www.capitaland.com/sg/en/shop/malls/stores/fun-claw.html",
+      "note": "confirmed_none: A fun space exclusively for claw machines. Fun Claw is a new concept of automated toy catcher. Plaza Singapura #04-68A | CapitaLand listing: exclusively claw machines. funclawsingapore.com describes claw retail entertainment only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10823": {
+      "name": "TOG - Toy Or Game (Plaza Singapura)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10823",
+      "note": "confirmed_none: A store that primarily sells video games, consoles, anime figures, plushies, and manga. There are some arcades games in the front. Animal Kaiser PLUS Comment: 2 cabs. | Retail shop with Animal Kaiser card-battle cabs only. No rhythm games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10333": {
+      "name": "iClaw Taiwan (The Centrepoint)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10333",
+      "note": "confirmed_none: There are a few videogames amongst the claw machines. THE BishiBashi; Pac-Man Battle Royale; Daytona USA (2P); Gunbullet X. | Primarily claw shop with a few non-rhythm video cabs. No music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10390": {
+      "name": "ACAPA Alcàsser",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10390",
+      "note": "confirmed_none: Asociación Cultural de Arcade y Pinball de Alcàsser. An association with pinball machines and classic arcade games. Street Fighter II; Ms. Pac-Man/Galaga; MAME; Megatouch; Pandora' | Cultural association: pinball + retro arcade. Full ZIv/pinballmap inventory has no Bemani/SEGA rhythm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8685": {
+      "name": "Aroma Souvenirs",
+      "exclude": true,
+      "evidence_url": "https://kiddierides.fandom.com/wiki/Aroma_Souvenirs",
+      "note": "confirmed_none: Aroma is a souvenir shop in Duquesa, Spain. Falgas Tutti Frutti Carousel; Falgas Pirate Boat; Falgas Max Truck; Cogan Batmobile; Falgas Magnum Car. | Souvenir/press shop with outdoor kiddie rides only. Not a rhythm arcade.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10693": {
+      "name": "La Millonaria Asociación Pinball",
+      "exclude": true,
+      "evidence_url": "https://www.instagram.com/madridpinballlamillonaria/",
+      "note": "confirmed_none: Asociación de pinballs. Somos una asociación de pinball en Madrid con máquinas clásicas y modernas. Private pinball club (not public arcade); ZIv notes shares building with El Temp | Positive evidence: pinball association only. Not a rhythm-game venue. Members/events access, not walk-in music game hall.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8519": {
+      "name": "Shoot Again Fribourg",
+      "exclude": true,
+      "evidence_url": "https://www.shootagain-fribourg.ch/",
+      "note": "confirmed_none: Club de flippers romand. Decouvrez le premier Club de flippers. Machines are pinball; no arcade rhythm games described. | Pinball club only (Wix site). ZIv empty games list aligns.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10030": {
+      "name": "Joyliday Megabangna",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10030",
+      "note": "confirmed_none: This arcade doesn't have a music rhythm game, but it has claw machines and some arcade games. Inventory: Mario Kart GP DX, Speed Rider 3, Ace Angler, Dragon Punch 2, Scooping Fun,  | Explicit positive statement of no music rhythm games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10658": {
+      "name": "KIDDY LAND @ Yingcharoen Market",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10658",
+      "note": "confirmed_none: Games: Basketball Machine; Hockey Table only. Tiny third-floor kids corner. | Complete ZIv inventory is sports tables only; no rhythm/music cabs.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10720": {
+      "name": "Kiddy Land JC MALL Nawamin",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10720",
+      "note": "confirmed_none: Only had contain games for kids. Games: WWF Royal Rumble; Sweet Land 4; Basketball Machine. | Explicit kids-only note plus non-rhythm cab list.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10376": {
+      "name": "Skippy Land Big C Future Park Rangsit",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10376",
+      "note": "confirmed_none: This arcade doesn't contains of music game. But it have only few racing game and some arcade game. Games: Funky Gators; Cruis'n Blast; Overtake - The Elite Challenge. | Explicit ZIv statement of no music games. Nearby ZPELL Echo/EX10 is a different operator with maimai/chunithm.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10887": {
+      "name": "Smile Park (NIKOLSKY)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10887",
+      "note": "confirmed_none: This place has no Rhythm Arcade cabs... unless if you are fan of Beat Saber VR game. Games: H2Overdrive; Sno Cross; Super Bikes 2; Terminator Salvation. | Explicit positive statement of no rhythm arcade cabs. Beat Saber VR not in slug list.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5246": {
+      "name": "Amusements",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5246",
+      "note": "confirmed_none: Small-ish arcade with redemption games, a couple racers and an 18+ area. No longer has any light gun (except one kids' redemption one) or rhythm games. Updated 2026-05-08. | Explicit positive statement that rhythm games are gone. Address is Seahouses, UK (NE68).",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10779": {
+      "name": "Basingstoke Superbowl",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10779",
+      "note": "confirmed_none: Mainly bowling and a kids soft play area, arcade is really small and the only thing that isnt a boxer or ticket machine is scarlet dawn. Games: The House of the Dead: Scarlet Dawn. | Explicit tiny arcade: boxer, ticket machines, one rail shooter only. No rhythm cabs.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1851": {
+      "name": "Chesterfield Bowl",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1851",
+      "note": "confirmed_none: Has a very small arcade section as you walk in including some games I have not listed. No dance or rhythm games. Games: Dead Heat (2P), The Walking Dead. Updated 2024-12-30 by Stat | Explicit positive statement of no dance/rhythm games by UK ZIv regular, Dec 2024.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9339": {
+      "name": "Coin casino",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9339",
+      "note": "confirmed_none: By the water has many 2p machines and a few modern ticket games and some 18+ slot machines. It was called coin casino but now just says Amusements on the front. | UK coin/pusher/slots amusement arcade (Bowness). Positive description of 2p/ticket/slot mix only; no video music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=306": {
+      "name": "Fairworld Amusements",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=306",
+      "note": "confirmed_none: Just a bunch of redemption games and slot machines at this point. No real reason to visit unless you have... some serious nostalgia for the ol' Tuppenny Nudger. Comment StaticFish  | Cleethorpes. Explicit ZIv description of redemption/slots only; historical DDR Extreme removed years ago; recent visitor confirms kids/redemption focus.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9351": {
+      "name": "Folly Farm (adventure playground)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9351",
+      "note": "confirmed_none: Previously a DDR euromix with wide-screen mod was here however removed around 2020. Now seems to be mainly small crane games and such. | Positive removal note for the only known music cab, plus current crane-only description.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9355": {
+      "name": "FunWorks",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9355",
+      "note": "confirmed_none: Located inside Kiln Park... Typical caravan park arcade with 2p machines and general redemption and such. Games: Typhoon only. | Tenby Kiln Park guest-only amusements: 2p pushers/redemption/Typhoon. Positive description of caravan-park mix without music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6103": {
+      "name": "Funstation Sheffield",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6103",
+      "note": "confirmed_none: Redemption Arcade and Hologate VR. Same spot as the old Namco Wonderpark (RIP). Don't expect frequent location tests of games from Japan here this time though | Meadowhall. Large ZIv inventory updated 2026-03 (Mario Kart, Super Bikes 3, Halo Raven, Jurassic Park, many ticket games) with zero music games. Funstation Meadowhall FB replied SMX is at Nottingham site only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7484": {
+      "name": "Funstation Xscape Castleford",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7484",
+      "note": "confirmed_none: Redemption arcade inside the Xscape building. This arcade uses a card system. | Long ZIv game list (Mario Kart, Super Bikes 3, Halo Raven, Jurassic Park, Transformers, many redemption) with no DDR/PIU/SMX or other rhythm titles.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8472": {
+      "name": "GamerX Wigan",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8472",
+      "note": "confirmed_none: No rhythm games. Claw Machines and some Arcade 1UP cabs | Positive ZIv statement. Venue site is soft-play/go-karts/claw/VR/retro style family centre, not a bemani location.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8375": {
+      "name": "Gashapon Bandai Official Shop Brighton",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8375",
+      "note": "confirmed_none: Store consisting of only gashapon machines. Arcade section removed. | Capsule-toy / merchandise shop (plus One Piece TCG area). Not an arcade with playable rhythm cabs. Old comment asking about SMX pricing appears historical/misdirected.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4677": {
+      "name": "Hollywood Bowl Derby",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4677",
+      "note": "confirmed_none: Games updated 2026-07-03 (Tigapo card readers, full cab list: Mario Kart GP DX, NFS Heat Takedown, Super Bikes 3, Jurassic Park Arcade, Mega Shot, claws, Crossy Road, Piano Keys, Q | Very recent full inventory plus explicit No DDR. Derbion floor 3.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6186": {
+      "name": "Lane7 (Newcastle Upon Tyne)",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6186",
+      "note": "confirmed_none: No more Dancing Stage Euromix unfortunately, as well as HOTD 4. Unsure of where the machines of went, but they've decided to just have newer games sadly. This would be fine if they | Positive removal of Dancing Stage Euromix (DDR). Prior player comments reference Euromix; site information text states it is gone. Current known floor is redemption/racing/MAME only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11110": {
+      "name": "New Unity",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11110",
+      "note": "confirmed_none: Pub with a couple arcade games (same supplier as The World's End). Games: Harley Davidson; Big Buck Hunter Pro; Football Champ. All contactless. | Brighton pub. Recent full inventory of three non-rhythm machines only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4615": {
+      "name": "Playnation",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4615",
+      "note": "confirmed_none: Dance Cube has been removed from the location around mid June. Mostly redemption and coin pushers. Games (2026-06-21): Tomb Raider Arcade; Minecraft Dungeons Arcade; Cruis'n Blast; | Bristol Broadmead. Former Dance Cube (maimai clone) removed mid-June 2026. Current inventory redemption/racers only. Genda ownership noted.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7194": {
+      "name": "Puttstars Leeds",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7194",
+      "note": "confirmed_none: Arcade machines inside minigolf centre. Games: Scooby Doo pinball; Mario Kart Arcade GP DX; Super Bikes 3; Halo Fireteam Raven; DC Superheroes Pusher; Down The Clown; Grand Piano K | Full minigolf-arcade inventory with no rhythm machines.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=272": {
+      "name": "Queen's Ice and Bowl",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=272",
+      "note": "confirmed_none: Has been recently renovated ... DDR MAX 2/Euromix 2 is no longer around. Games: Tron; Mortal Kombat; Street Fighter II; Pac-Man's Arcade Party; Donkey Kong; Mario Bros; TETRIS; Tim | Bayswater ice rink/bowl. Explicit note DDR/Euromix gone; remaining are retro fighters/classics only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10538": {
+      "name": "Rate My Takeaway Kitchen",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10538",
+      "note": "confirmed_none: Free to play, no entry fee. Games: Dig Dug; Mortal Kombat 3; Defender; Scramble; Off Road Challenge (1P); Zero Point 2; Galaga. | Huddersfield free-play retro only. No music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6527": {
+      "name": "Retroblast coffee",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6527",
+      "note": "confirmed_none: Cool retro arcade and cafe. No DDR or such, but a better place for a play than the amusements in Newquay. Games: Dig Dug; Gauntlet; Rampage; Tempest; Defender; Ms. Pac-Man; Pac-Man | Newquay RetroBlast Coffee (coinlesscavernarcade.co.uk). Explicit No DDR or such. Classic retro only. Still operating 2026 per social posts.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2366": {
+      "name": "Rollerbowl",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2366",
+      "note": "confirmed_none: As of 15/02/2025: neat little indie bowling alley... selection is so sparse... few rail shooters and driving cabinets. Games: Sega Rally 3, Sonic & Sega All-Stars Racing, Super Bik | Inverness Rollerbowl. Staff confirmed Dancing Stage Fusion long gone; 2025 visit listed only racing/shooters.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5138": {
+      "name": "Roxy Arcade",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5138",
+      "note": "confirmed_none: All the arcade machines are gone now, all they have left are 2 basketball machines. Games: Basketball Machine x2. | Roxy Ball Room Merrion Street Leeds. Venue still open as ball-games bar (roxyleisure.co.uk); video-game arcade section cleared. No rhythm games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=4480": {
+      "name": "Southwold Pier",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4480",
+      "note": "confirmed_none: Over the past few years this pier's arcade section has had a few renovations with a completely new look, thus getting rid of a few old arcade machines, including Dancing Stage Euro | Explicit removal of Dancing Stage Euromix after renovations. Known for Tim Hunkin Under the Pier Show automata rather than music games.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=8586": {
+      "name": "Sunderland Bowl",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8586",
+      "note": "confirmed_none: At one point this place had a Euromix 2, but it was removed after a remodel. Plenty of variety including rail shooters. Current games: Mario Kart GP DX, Mission Impossible Arcade,  | Explicit post-remodel removal of Euromix 2; 2025 non-music list matches.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6090": {
+      "name": "Superbowl UK Barnsley",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6090",
+      "note": "confirmed_none: First opened in 2021. Home of Sega Prize Zone, featuring mostly redemption games and some driving games. Exhaustive 2026-01-13 games list: Daytona, Storm Racer G, Mission Impossibl | Positive site description plus near-complete floor survey leaves no room for unlisted maimai/DDR/PIU-class machines.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=6101": {
+      "name": "TOCA Social",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6101",
+      "note": "confirmed_none: Bar with a focus on football simulations. The bar contains 6 arcade cabinets running the PlayStation 3 version of FIFA 08... There are no other games installed on the PS3 except FI | Peninsula Square London. Concept and inventory are football interactive only, not music rhythm games. Official site still football-centric in 2026.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1461": {
+      "name": "Tenpin Croydon",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1461",
+      "note": "confirmed_none: Updated 2024-08-30 with large FEC list (Cruis'n Blast, Fast & Furious 2022, Mario Kart, Super Bikes 3, Halo, Jurassic Park, Walking Dead, many redemption). Comment: Pump It Up Infi | PIU historically present then removed; current survey is all non-rhythm. Strong confirmed_none for music games now.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=154": {
+      "name": "Tenpin Nottingham",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=154",
+      "note": "confirmed_none: Information (updated 2024-07-16): 'Fusion finally put out of its misery as of 2022. Place received a £500k revamp and they have perhaps wisely downsized + moved the arcade area'. C | Positive removal of Fusion (UK dance cab). Historical DDR/Fusion comments are years old.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=140": {
+      "name": "Tenpin Parrs Wood Manchester",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=140",
+      "note": "confirmed_none: Information: 'Just the general bowling alley games, no more DDR'. Games list: Super Bikes 3; Claw Machine; Monopoly Pusher; NERF Arcade; Red Zone Rush; Spinner Frenzy; Wheel of For | Explicit ZIv note that DDR is gone; old Euromix2 photo is historical only.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2102": {
+      "name": "Tenpin Plymouth Barbican",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2102",
+      "note": "confirmed_none: Information: 'Update from someone else: I went in and I think they removed the pump infinity cab (I was told it moved to Manchester)'. Comment 1 month ago: 'Does anyone know if the | Pump Infinity historically present then removed; recent ZIv comment confirms still gone.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1710": {
+      "name": "Tenpin Stoke",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1710",
+      "note": "confirmed_none: Information: 'Used to have PIU Prime.' Comment by yipster (~7y): 'They removed the PIU cab due to the music unfamiliarity which meant less people were playing on the cab.' Current  | Positive PIU removal; current list has no rhythm titles.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2106": {
+      "name": "Tenpin Swansea",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2106",
+      "note": "confirmed_none: Information: 'Has a standard arcade, but still no DDR'. Games: Cruis'n Blast; Super Bikes 3; Halo Fireteam Raven; Walking Dead; Crossy Road; Grand Piano Keys; Spinner Frenzy. | Explicit 'still no DDR' on ZIv. Update is older; no counter-evidence found of later music installs.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=578": {
+      "name": "Tenpin Warrington",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=578",
+      "note": "confirmed_none: Information: 'Totally refurbished, arcade is only in the front now, many new standard arcade games (tho no returned DDR still). Back section where DDR, bar, pool and go karts were  | Explicit 'no returned DDR still' after rebrand from LA Bowl.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2108": {
+      "name": "Tenpin Wrexham",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2108",
+      "note": "confirmed_none: Information (updated 2023-09-08): 'Arcade is smaller now, with the usual racing, shoot'ems, and redemption games. No more DDR, now a very large area of pool tables'. Games: Tomb Ra | Explicit 'No more DDR'.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=3137": {
+      "name": "The Bright Spot Arcade",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3137",
+      "note": "confirmed_none: Comment by sansyy (~1 year ago): 'Visited a week ago, DDR cab is gone (and when asking the operators they didn't even know what DDR was!) so I am presuming it's been gone for a whi | Wallasey New Brighton; positive visitor confirmation DDR removed.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=303": {
+      "name": "The Kingpin Arcade",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=303",
+      "note": "confirmed_none: Information (updated 2025-04-05): 'Arcade with bowling and American-style cafe. Lots of redemption, a few videos, no rhythm games though. Owned by the Taylor Made Fun operators...' | Cleethorpes; explicit positive 'no rhythm games though' from recent ZIv editor.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=5290": {
+      "name": "The Needles Landmark Attraction",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5290",
+      "note": "confirmed_none: Information (updated 2024-08-17): 'Small arcade, usual non-ticket redemption, previously had EM2 but now gone'. Games: Dead Heat; Ford Racing Full Blown; Sega Rally 3; Luigi's Mans | Isle of Wight Alum Bay; positive EM2 removal note.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2959": {
+      "name": "Worthing Lido",
+      "exclude": true,
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2959",
+      "note": "confirmed_none: Information: No rhythm games to speak of, but has a nice collection of arcade games, all of which are 50p a play! Games: Crazy Taxi, Sega Rally Championship, The Fast and the Furio | Explicit positive statement of no rhythm games plus full non-rhythm cab list.",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9395": {
+      "name": "Cow Play Cow Moo Crescent Mall",
+      "exclude": true,
+      "evidence_url": "https://www.youtube.com/watch?v=3aWq_H9ZNOI",
+      "note": "confirmed_none: They don't even have one video game... Okay here's the games. Okay Monster Village, Ice Walker, and Wicked Tuna. That is it. Three video games. There's nothing. They have crane gam | s34nVideos full-floor walkthrough of CPCM Crescent Mall (L5): redemption/ticket/fishing/casino-style only; three non-rhythm video games; cranes attributed to adjacent Timezone. No maimai/PIU/DDR/etc. ZIv empty games. Contrast: Timezone Crescent Mall is on ALL.Net maimai DX list (separate operator).",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04"
     }
   }
 }

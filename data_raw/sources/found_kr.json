@@ -1,0 +1,68 @@
+{
+  "region": "South Korea",
+  "sources": [
+    {
+      "name": "뮤즈캣 (Musecat)",
+      "url": "https://musecat.app/kr",
+      "kind": "community_map",
+      "languages": ["ko", "en"],
+      "countries_covered": [
+        "South Korea",
+        "Japan",
+        "Malaysia",
+        "Indonesia",
+        "Philippines",
+        "Taiwan",
+        "Hong Kong",
+        "Singapore",
+        "Vietnam",
+        "Australia",
+        "USA",
+        "others"
+      ],
+      "venues_estimated": 334,
+      "per_venue_detail": ["games", "cab_counts", "prices", "hours", "address"],
+      "machine_readable": "api",
+      "example_venue_url": "https://musecat.app/kr/arcade/lljc7s254gk41uh",
+      "example_data_quote": "화정게임랜드: maimai DX CiRCLE PLUS 3대 / maimai FiNALE 1대 / 사볼 발키리 ∇ 6대 / 투덱 라이트닝 33 Sparkle Shower 1대 / 투덱 33 1대 / 츄니즘 X-VERSE-X 1대 / 유비트 beyond the Ave. 1대 / 팝픈 2종 / 펌프 PHOENIX 2 2대 / 도라 GALAXY WAVE 1대 / DDR WORLD 1대 / EZ2AC FINAL EX 1대 / 태고 NIJIIRO 1대 / 비트온 PRIME 2 2대. 주소 경기 고양시 덕양구 화신로272번길 38 지하 1층. 영업 화-목 10:00-01:00 등.",
+      "adds_over_current": "PRIMARY KR source. Map has 117 KR venues (8 other-only ZIv stubs). Musecat lists ~334 open KR arcades with full rhythm cab lineups, counts, prices, hours. Examples: HWAJUNG GAMELAND on map is only chunithm+maimai_dx; Musecat adds 6x SDVX Valkyrie, 2x IIDX, jubeat, pop'n x2, pump, gitadora, DDR, EZ2AC, taiko, biton. SHINSEGYE GAMELAND / 신세계오락실 (창원 마산) on map is only chunithm (allnet); Musecat page lists maimai DX x3, SDVX Valkyrie x2, SDVX EXCEED x2, IIDX, CHUNITHM, jubeat x2, pop'n x2, pump, GITADORA, nostalgia, DDR, EZ2AC x2, reflec. 즐겨찾기오락실 (양평) is absent from map; Musecat has pump PHOENIX x2, EZ2AC TIME TRAVELER, 태고 14. API: PocketBase at https://db-delta.musecat.app/api/collections/arcade/records (public venue list, country, closed, expand=basic for name/address/lat-lon). Game inventory relation returns 403 without auth; per-venue games are fully present in SSR HTML at /kr/arcade/{id} so hybrid api+html_scrape. Also covers non-KR (JP 1291 etc.) but KR is the dense, actively edited set (homepage shows 2130 total arcades, 11541 edits, 969 fault reports).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best regional equivalent of hkarcade.fandom for Korea. Community-maintained rhythm-arcade finder (filter by maimai/SDVX/IIDX/pump/EZ2AC/taiko etc.). Not ALL.Net/e-amusement/ZIv. Prefer this over namu for machine ingest. Venue-list API is public; game list HTML scrape needed unless auth is obtained later."
+    },
+    {
+      "name": "나무위키 오락실 지역 문서 (Namuwiki arcade region pages)",
+      "url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%84%9C%EC%9A%B8",
+      "kind": "wiki",
+      "languages": ["ko"],
+      "countries_covered": ["South Korea"],
+      "venues_estimated": 250,
+      "per_venue_detail": ["games", "cab_counts", "prices", "hours", "address"],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%84%9C%EC%9A%B8/%EA%B0%95%EB%B6%81",
+      "example_data_quote": "펀시티 건대점 (최종 확인일 2025.09.18): beatmania IIDX 33 1대 기본 2000원/프리미엄 프리 3000원 라이트닝; CHUNITHM X-VERSE-X 1대; maimai DX CiRCLE 1대; 노스텔지어 Op.3 1대; SDVX 나블라 1대 발키리; SDVX 익시드 기어 2대; 팝픈 Jam&Fizz 1대; 태고 NIJIIRO 2대; 펌프 PHOENIX 2 2대; 비트온 XX 1대. 주소 서울 광진구 동일로22길 81. 영업 12:00~익일 06:00.",
+      "adds_over_current": "Structured 보유 기기 tables with qty+price+notes, final-check dates, closed venues moved to 폐업 pages. KONKUK FUN CITY / 펀시티 건대 on map is only chunithm+maimai_dx (allnet); namu lists full bemani+taiko+pump+biton. Covers non-networked EZ2AC, biton, classic cabs ALL.Net never reports. Regional hub pages: 서울/강남, 서울/강북, 경기/남부, 경기/북부, 인천, 대전, 세종, 충남, 충북, 강원, 부산, 울산, 경남, 대구, 경북, 전남광주, 전북, 제주, plus per-title distribution pages (펌프 오락실 분포, 신 태고의 달인 오락실 분포). Overlaps Musecat on big rhythm shops; often richer narrative/maintenance notes. Venue count is rough: Seoul alone dozens of sections; nationwide well over 200 with uneven freshness.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Template 템플릿:오락실 standardizes sections. Network icons (k=e-amusement, n=Namco, s=SEGA Aime, a=AM.PASS). HTML only; Cloudflare/login banners can block anonymous edit but read works. Second-priority after Musecat for ingest; good for cross-check and closed-venue triage of the 8 other-only KR stubs."
+    },
+    {
+      "name": "짱오락실 전국매장안내 (cocozzang.com official locator)",
+      "url": "https://cocozzang.com/html/dh_board/lists/store1",
+      "kind": "official_locator",
+      "languages": ["ko"],
+      "countries_covered": ["South Korea"],
+      "venues_estimated": 50,
+      "per_venue_detail": ["address", "hours"],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://cocozzang.com/html/dh_board/lists/store1",
+      "example_data_quote": "매장목록 examples: 홍대 관련 주소 on store pages; 부산 광안리2호점 부산 수영구 광안동 196-8; 제주 연동점; 송도 트리플스트리트점; 강남 고속버스터미널점 서울 서초구 신반포로 176; 용산 아이파크몰점; 강동 이케아점. Paginated store1/?PageNumber=1..5. No machine/game inventory on chain site.",
+      "adds_over_current": "Official ZZANG chain store list with addresses. Map already has some ZZANG branches (Hongdae, Yongsan I-Park, Daegu, Daejeon, Bupyeong) but often incomplete game lists and missing branches (e.g. many provincial stores). Does NOT list cabinets; pair with Musecat/namu for games. Useful for store-open/close truth and chain completeness only.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Franchise locator, not a rhythm-game database. Detail pages thin on games. ~5 pages of stores (roughly 50+ entries including prep/reopen). 대빵오락실 has no comparable public store locator found (Instagram + namu only)."
+    }
+  ],
+  "summary": "South Korea has an excellent dedicated community source: Musecat (뮤즈캣, musecat.app/kr), a live rhythm-arcade map with ~334 open KR venues, per-venue game lists, cab counts, prices, hours, fault reports, and a public PocketBase venue API. This is the clear HK-fandom equivalent and the highest-value ingest target. Second is the namu.wiki 오락실/* regional wiki tree with structured 보유 기기 tables across all provinces (address, hours, qty, price, last-checked date). Third is the official 짱오락실 chain locator (cocozzang.com) for addresses/hours only. Compared against data/arcades.json (117 KR, 8 other-only ZIv stubs): Musecat and namu both add many games beyond ALL.Net-only stubs (HWAJUNG, SHINSEGYE/신세계오락실 창원, 펀시티 건대) and surface venues absent from the map (e.g. 즐겨찾기오락실). Searched Korean terms: 오락실, 게임장, 리듬게임, 보유 기기, 근처 오락실, 오락실 지도/맵/검색기. Dead ends listed below.",
+  "dead_ends": "amusemap.com (AmuseMap): live SPA claiming national arcade info; no usable HTML without JS, contact page loads but per-venue game/cab detail could not be verified today, so not claimed as a structured source. taiko.wiki/gamecenter: connection failed on 2026-08-04 (unverified). arca.live 리듬 게임 채널 post 수도권 리게이들이 갈만한 오락실 목록 (2022-09): static forum list, not a maintained multi-venue database. Andamiro/piugame: no public KR Pump machine locator found (mall.piugame.com is merch only). 대빵오락실: no official multi-store locator website; only Instagram + namu branch lists. Google Maps/Naver Map/Yelp deliberately not treated as sources. ZIv/ALL.Net/e-amusement already in pipeline."
+}

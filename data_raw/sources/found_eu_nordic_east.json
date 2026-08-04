@@ -1,0 +1,71 @@
+{
+  "region": "Nordics and Eastern Europe",
+  "sources": [
+    {
+      "name": "BEMAFIA / vospi - Baza ritmoigrovykh avtomatov (rhythm machine database)",
+      "url": "https://docs.google.com/spreadsheets/d/1i0UHXh_BhbI0T7a70tAIYfBLkslKYOTV7TKIR8p7L3I/edit",
+      "kind": "spreadsheet",
+      "languages": ["ru"],
+      "countries_covered": ["Russia", "Belarus", "Kazakhstan", "Uzbekistan", "Ukraine (Crimea/limited)", "Moldova (Transnistria)", "CIS broadly"],
+      "venues_estimated": 215,
+      "per_venue_detail": ["games", "cab_counts", "prices", "address"],
+      "machine_readable": "api",
+      "example_venue_url": "https://docs.google.com/spreadsheets/d/1i0UHXh_BhbI0T7a70tAIYfBLkslKYOTV7TKIR8p7L3I/edit",
+      "example_data_quote": "Москва / Playday м.Южная (ТРК \"Глобал Сити\") / PIU XX (TX) / Днепропетровская ул., 2 / Работает, Хорошее / 16.07.2026; ТРЦ \"Авиапарк\" / PIU PHOENIX (LX) / Ходынский б-р, 4 / Работает, Отличное / 28.07.2025; Игралайф (ТЦ \"Капитолий\") / PIU Pro 2 (TX) / Правобережная ул., 1Б / 90р credit notes in similar rows",
+      "adds_over_current": "Map has 37 Russia venues, many other-only or pump_it_up-only stubs from ZIv. Sheet has ~263 machine rows across ~96 cities and ~215 unique venues (CSV export 2026-08-04): PIU version (Phoenix LX, XX TX, Pro 2, Fiesta 2, etc.), pad condition, credit price, operational status (Работает/Убран/Закрыт), photos, update dates through 2026. Example: map id 8951 Play Day is other+pump_it_up; sheet specifies PIU XX (TX) + address/status. Map 8939 Igralife is pump_it_up only; sheet PIU Pro 2 (TX). Map 8944 Kosmik is pump_it_up; sheet PIU Fiesta 2 (CX) with floor notes. Also lists non-PIU rhythm (IIDX, SDVX, maimai, CHUNITHM, DDR mixes, ITG, GF+DM, Taiko, DJMAX) sparsely. Hub page: https://vospi.com/bemafia/arcade-database/ ; community VK: https://vk.com/bemafia",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Title claims Europe+Asia but the live gid=0 export is CIS-heavy (Moscow 47 rows, SPb 21, Minsk, Tashkent, etc.). vospi city blurb names Warsaw/Prague/Helsinki/Budapest/Riga but those city headers were NOT present in the CSV pulled today. Treat as Russia/CIS goldmine, not a Nordic/EU-wide map. Export via gviz CSV works without login. Some rows stale (2020-2022); filter on Актуальность and Состояние. Not a substitute for ZIv IDs but fills machine lists and status for Other-only Russian malls."
+    },
+    {
+      "name": "Poland Arcade Museums (Kraków / Warszawa / Gdańsk)",
+      "url": "https://www.krakowarcademuseum.com/",
+      "kind": "official_locator",
+      "languages": ["pl", "en"],
+      "countries_covered": ["Poland"],
+      "venues_estimated": 3,
+      "per_venue_detail": ["games", "prices", "hours", "address"],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.krakowarcademuseum.com/gry.php",
+      "example_data_quote": "Gry Rytmiczne Kraków: Dance Maniax; Dancing Stage EuroMIX2 (Stepmania + Simply Love); Groove Coaster; Guitar Hero; Jubeat Festo; Percussion Master; Pop'n Music 26 Kaimei Riddles; Pump it Up Nx2 (STEPF2 XX). Warsaw gry.php: Dancerush stardom; Groove Coaster; Guitar Hero; Pop'n Music 26; Taiko no tatsujin; Wacca. Gdańsk gry.php: Dancerush; Dancing Stage EuroMIX2; Guitar Hero; Percussion Master; Sound Voltex; Taiko; Wacca. Shared pricing ~70/90/100 PLN for 1h/2h/open.",
+      "adds_over_current": "Chain already on map (ids 8854 Krakow, 8871 Warsaw, 8847 Gdansk) from ZIv. Operator gry.php pages are fresher per-site rhythm sections: Krakow site lists Dance Maniax + Guitar Hero + Percussion Master not in map games[] (map has maimai_dx+wacca that current Krakow gry.php does not show; reconcile both ways). Gdańsk site confirms SDVX/Wacca/Taiko/DRS and adds EuroMIX2/Guitar Hero/Percussion Master vs map games[]=['drs','other','sdvx','taiko','wacca'] (ZIv notes already mention Guitar Hero). Warsaw site matches DRS/GC/popn/taiko/wacca; map has nostalgia not on current site; site has Guitar Hero not in map games[]. Primary value: maintainable official cab lists + hours/prices for all three branches, plus sibling sites warsawarcademuseum.com and gdanskarcademuseum.com.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Three linked museums under same brand. URL pattern: {city}arcademuseum.com/gry.php with sections Arcade / Flipery / Gry Rytmiczne. Not a nationwide Poland map (most of map's 42 PL venues are mall/other stubs still uncovered). pdgc.pl is Discord-only for broader Polish dance community (manual)."
+    },
+    {
+      "name": "Muzeum Her (Cibien's Corner) - Czech multi-branch catalog",
+      "url": "https://muzeumher.cz/",
+      "kind": "official_locator",
+      "languages": ["cs"],
+      "countries_covered": ["Czechia"],
+      "venues_estimated": 3,
+      "per_venue_detail": ["games", "address"],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://muzeumher.cz/pobocky/",
+      "example_data_quote": "Pobočky: Game World (OC Šestka, Praha 6), Cyber Arcade (Bartůňkova 1761, Praha 11 Opatov / Fun Arena), Game Station (Štefánikovo nám. 2621/4, Plzeň). Catalog tags 'Kde si lze zahrát' per title; systems include ALLS, BEMANI PC, Konami Bemani; examples Beatmania 2023, Final Fantasy Theatrhythm, Darius Burst across branches.",
+      "adds_over_current": "Map already has rich ZIv lineups for Cibien's Corner Game Station (5806), Cyber Arcade (5805), Game World (5807). Operator site is the structured multi-branch source to refresh cabs without ZIv lag: per-game pages list which of the 3 branches have the cab. Useful for Czechia Other-only refresh and verifying CHUNITHM/IIDX/SDVX/PIU placements. Does not cover non-Cibien Czech venues (ArcadeHry Unhošť, Levels, etc.).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "katalog-her/ is large HTML catalog (filterable). Branch automaty pages under /pobocky/{slug}/automaty-*. No public JSON API found. Sibling Fun Arena is the Cyber Arcade host building, not a separate machine database."
+    },
+    {
+      "name": "Tarry / Finnish rhythm-scene venue notes",
+      "url": "http://tarry.fi/rytmipelit/",
+      "kind": "blog",
+      "languages": ["en", "fi"],
+      "countries_covered": ["Finland"],
+      "venues_estimated": 3,
+      "per_venue_detail": ["games", "hours", "address"],
+      "machine_readable": "manual_only",
+      "example_venue_url": "https://www.sugoi.fi/?page_id=11",
+      "example_data_quote": "Tarry recommends: Sugoi (Malmi Helsinki commercial free-play, day ticket); McKylä (Espoo private garage, 3x ITGmania + PIU, open-door calendar); Tarry arcade (Nekala Tampere, opening Jan 2026). Sugoi Pelit page lists rhythm: IIDX 32 Pinky Crush, CHUNITHM Verse, DDR A3, Groove Coaster 4MAX, Guitar Hero Arcade, Project DIVA Future Tone, jubeat beyond the Ave., maimai FiNALE, Nostalgia Op.3, Ongeki Bright, pop'n UniLab, PIU Phoenix, SDVX Exceed Gear, StepManiaX, Taiko Green, Wacca.",
+      "adds_over_current": "Map country count for Finland is 0. Sugoi alone would be a full multi-rhythm venue not present in arcades.json. McKylä (Turuntie 20 Espoo) is private membership/open-door, not a normal public ZIv target but real. No national Finnish arcade wiki found; this blog + operator pages are the only verified structured pointers.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Not a multi-venue database. Linked operator pages are the real data: sugoi.fi (single venue, full cab list + hours/price 12 EUR), mckyla.tanssipelit.fi (private). Include because Finland is a total map blank and these are the only live, openable, detailed sources found."
+    }
+  ],
+  "summary": "Searched EN/local terms (arkad, spelhall, pelihalli, spillehal, automaty arkadowe, herna/arkády, игровые автоматы/бемафия, rhythm/bemani/PIU/DDR) for Sweden, Norway, Finland, Denmark, Iceland, Poland, Czechia, Hungary, Romania, Bulgaria, Ukraine, Russia, Baltics, Balkans, Greece. Region map baseline ~171 venues / 81 other-only; country skew Poland 42, Russia 37, Greece 21, Norway 15, Ukraine 14, Denmark 12, Sweden 11, Czechia 8, Hungary 8, Romania 2, Bulgaria 1, Finland 0.\n\nBest find: BEMAFIA Google Sheet (via vospi.com) for CIS rhythm cabs (especially Russian mall PIU) with status/price/version; exportable CSV (~215 venues). Second: Poland Arcade Museum chain (3 sites, official gry.php rhythm sections) and Czech Muzeum Her / Cibien 3-branch catalog. Finland has no map coverage but Sugoi.fi publishes a full modern Bemani/Sega music lineup. No hkarcade-class regional wiki found for Nordics, Baltics, Balkans, Greece, Hungary, or Romania.\n\nCommunity pointers that are not structured multi-venue scrapes: Polish Dance Game Community (pdgc.pl -> Discord), Pump It Up Players Europe (Facebook), VK bemafia (points at the sheet), Tanssipelaajat Discord (Finland). HEY STHLM (heysthlm.se) is live with full music list but single-venue and already strong on map (id 9264).",
+  "dead_ends": "ZIv already used. Arcade Press / SuperCombo Google Map of arcades (fighting/general, Google Maps, not machine-level). Arcade Museum (IAM/KLOV) map is global general cabinets, not rhythm-focused for this region. Rhythm Game Map mobile apps (App Store/Play) not verifiable as open multi-venue Europe DBs without install. Highscore Arcade Fields (high-score.dk) responds but no multi-location cab list/API found. ArcadeHry.cz (Czech museum, 173 cabs listed) is single-venue. Retro Gaming Club Łódź (retrogamingclub.pl/spis/) single-venue. bemafia.ru original site dead (revived as sheet on vospi). Europe city names advertised on vospi blurb (Warsaw, Prague, Helsinki, Budapest, Riga) not present in live sheet export. No dedicated national lists found for Greece, Hungary, Romania, Bulgaria, Baltics, Balkans, Iceland, Norway chains with per-cab detail. Google Maps/Yelp/TripAdvisor excluded as sources by brief."
+}

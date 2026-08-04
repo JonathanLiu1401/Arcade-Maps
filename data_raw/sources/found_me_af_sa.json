@@ -1,0 +1,71 @@
+{
+  "region": "Middle East, Africa, South Asia",
+  "sources": [
+    {
+      "name": "Timezone India Locations",
+      "url": "https://www.timezonegames.com/en-in/locations/",
+      "kind": "official_locator",
+      "languages": ["en"],
+      "countries_covered": ["India"],
+      "venues_estimated": 76,
+      "per_venue_detail": ["hours", "address"],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.timezonegames.com/en-in/locations/west/inorbit-mall-malad-mumbai/",
+      "example_data_quote": "Timezone Inorbit Mall Malad: Arcade, Bowling & VR Games. Opening Hours Monday: 11:00 am - 10:00 pm ... location: Inorbit Mall, 1st & 2nd Floor, New Link Road, Malad (W), Mumbai, Maharashtra - 400064. Tags: Arcade, Birthday, Bowling, Spin Cars, VR.",
+      "adds_over_current": "Map has only ~4 India Timezone rows (mostly games=['other'], ZIv cab notes like Halo Fireteam Raven, no music games). Official locator lists 76 live venues with stable URL pattern /en-in/locations/{region}/{slug}/ plus address and hours. Does NOT list music/rhythm cabinets (no PIU/DDR/maimai/etc.). High value for venue discovery and filling Other-only gaps; zero game-lineup enrichment without ZIv/field reports.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "TEEG Timezone India chain. Per-venue pages are HTML with amenity icons (Arcade/Bowling/VR) only. Compared Inorbit Malad: map already has this venue as other-only; source confirms hours/address but adds no games. Not already wired as a pipeline source."
+    },
+    {
+      "name": "Fun City India Store Locator",
+      "url": "https://funcity.in/location",
+      "kind": "official_locator",
+      "languages": ["en"],
+      "countries_covered": ["India"],
+      "venues_estimated": 35,
+      "per_venue_detail": ["hours", "address"],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://funcity.in/location/ahmedabad/nexus-one-mall",
+      "example_data_quote": "Fun City - Ahmedabad One Mall. Plot No-216, T.P Scheme-1, Near Vastrapur Lake, Vastrapur. SUN to Sat: 10 AM - 10 PM. info@funcity.in 6366990262. Categories: Big Rides, Kiddie Rides, Play Zone, Redemption & Novelty, Skilled Games, Video Games.",
+      "adds_over_current": "Map has 0 Fun City India venues. 35 mall FECs across Ahmedabad, Bangalore, Chennai, Delhi NCR, Hyderabad, Mumbai, Pune, etc. Categories include Video Games / Skilled Games but no named rhythm cabs. Venue discovery only; SSL cert on funcity.in failed default verify (site still reachable with relaxed TLS).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Landmark Group kids/family FEC chain (claims 35+ locations / 20 cities). URL pattern /location/{city}/{slug}. Not a music-game database."
+    },
+    {
+      "name": "Smaaash Entertainment Centres",
+      "url": "https://smaaash.in/centres",
+      "kind": "official_locator",
+      "languages": ["en"],
+      "countries_covered": ["India"],
+      "venues_estimated": 11,
+      "per_venue_detail": ["hours", "address"],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://smaaash.in/centres/mumbai-lower-parel",
+      "example_data_quote": "UTOPIA CITY Mumbai Lower Parel. Address: Gate No 4, Trade View Building, Utopia City, Pandurang Budhkar Marg, Lower Parel, Mumbai, Maharashtra, 400013. Timings MON-FRI 12:00PM-12:00AM; SAT & SUN 11:00AM-12:00AM. Activities: Bowling, Go Karting, VR Games, F&B, Cricket, Arcade Game (marketing: bike racing simulators).",
+      "adds_over_current": "Map has 0 Smaaash venues. 11 centres (Mumbai, Noida, Hyderabad x2, Ludhiana, Gurugram, Mangalore, Vijayawada, Madurai, Gwalior, New Delhi). Arcade amenity tag only; no PIU/DDR/bemani-style machine lists. Venue discovery, not lineup data.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL pattern /centres/{slug}. Booking engine at bookings.gosmaaash.com. Sportainment focus; rhythm cabs unconfirmed on site."
+    },
+    {
+      "name": "Dave & Buster's India",
+      "url": "https://daveandbustersindia.com/",
+      "kind": "official_locator",
+      "languages": ["en"],
+      "countries_covered": ["India"],
+      "venues_estimated": 3,
+      "per_venue_detail": ["address"],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://daveandbustersindia.com/bangalore",
+      "example_data_quote": "Arcade, Bowling & Gaming Zone in Koramangala, Bangalore. City pages at /bangalore, /mumbai, /delhi. Marketing: 75+ arcade and VR games; no published per-title machine inventory on pages opened.",
+      "adds_over_current": "Map already has all 3 (Delhi Pacific Mall, Mumbai Infiniti Andheri, Bangalore Mantri Avenue) with StepManiaX (and some other cabs) from ZIv notes. Official site confirms multi-city presence but does not add new music games beyond what ZIv already recorded.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Small chain; low incremental value vs map. Keep as chain locator for address refresh only."
+    }
+  ],
+  "summary": "Scouted ME/AF/SA (UAE, Saudi, Israel, Turkey, Egypt, South Africa, Ghana, Morocco, India + neighbors) for structured per-venue music/rhythm databases comparable to hkarcade.fandom.com. Result: no such wiki, community map, or maintained spreadsheet was found that lists multiple venues with per-venue music-game cabinets for this region. Map currently leans almost entirely on ZIv here (Israel ~60, South Africa ~39, UAE ~19, India ~13, Nigeria ~9, Saudi ~5; heavy other-only). What does exist and was opened live are India family-entertainment chain locators: Timezone India (76 venues, best find for coverage gap), Fun City India (35), Smaaash (11), Dave & Buster's India (3, already on map). All give address/hours (and amenity tags like Arcade/VR) via stable URL patterns; none publish maimai/CHUNITHM/SDVX/IIDX/PIU/DDR cab counts. SEGA ALL.Net intl dumps already in-repo have no real ME/AF/SA maimai/CHUNITHM footprint. Israel has active dance-game players (Reddit mentions ~6 PIU sites; Babylon Park / Funland chains dominate the map as ZIv stubs) but no open multi-venue machine wiki. South Africa has a dance-gaming Facebook community and venue posts (PowerPlay, Fun Company, Barcadia) without a scrapeable maintained list. Turkey, Egypt, Saudi, Morocco, Ghana, Pakistan: no dedicated multi-venue music-game source confirmed open today. Priority if wiring anything: Timezone India venue fan-out for Other-only reduction; game lineups still need ZIv, operator socials, or field reports.",
+  "dead_ends": "magicplanetmena.com (MAF Magic Planet, claimed 32 locations / 9 MENA countries): brand marketing and game catalog pages indexed; public multi-venue locator with addresses timed out / not successfully opened today; MAF brand page https://www.majidalfuttaim.com/en/what-we-do/our-industries/brand/magic-planet confirms scale but no per-venue list. ae.sparkysme.com Sparky's UAE: site live but OTP/mobile-gate blocks content; third-party mall.ae lists ~11 Sparky's malls without cab data. stepmaniax.com/locations/: page responds but rendered empty (JS/app-only; SMX Link app is the real locator, not scrapeable from HTML). Andamiro Pump It Up: no global public location finder found. Israeli Hebrew searches (ארקייד / פאמפ איט אפ / מכונות): no multi-venue machine wiki. Arabic Dubai arcade searches: social/IG only. Turkish (atari salonu / dans makinesi / pump it up): single-venue mentions (Funlab Forum Istanbul already on map), no list. South Africa dance community FB/IG posts and Kingpin/PowerPlay mentions: not a structured multi-venue database. Ghana Game It Up Accra: single venue, not a network list. Reddit r/IndianGaming and r/rhythmgames threads: anecdotal, not maintained lists. Google Maps/Yelp/TripAdvisor intentionally not treated as data sources. ZIv/ALL.Net/e-amusement/WAHLAP/BemaniCN/Round1 USA already excluded as known baseline."
+}

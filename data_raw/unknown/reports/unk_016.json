@@ -1,0 +1,692 @@
+{
+  "shard": 16,
+  "checked": 39,
+  "sources_used": [
+    "https://map.bemanicn.com/ (Inertia Shop/Show live detail + /games title map)",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11547",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11546",
+    "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2952",
+    "https://wc.wahlap.net/maidx/location/ (cross-check; china_wahlap_maimai_dx.json dump)",
+    "data_raw/china_bemanicn.json (baseline notes)"
+  ],
+  "findings": [
+    {
+      "sid": "b5862",
+      "name": "一号街区新化店",
+      "verdict": "has_games",
+      "games": [
+        "taiko",
+        "groove_coaster"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5862",
+      "evidence_quote": "太鼓达人(旧代) x1, GROOVE COASTER x2",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Live BemaniCN detail 2026-08-04. Old-gen Taiko (title_id 15) + Groove Coaster.",
+      "game_counts": {
+        "taiko": 1,
+        "groove_coaster": 2
+      }
+    },
+    {
+      "sid": "b4506",
+      "name": "乐满地(融冠乐城店)",
+      "verdict": "has_games",
+      "games": [
+        "taiko"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/4506",
+      "evidence_quote": "太鼓达人(旧代) x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Live BemaniCN: old-gen Taiko only (title_id 15).",
+      "game_counts": {
+        "taiko": 1
+      }
+    },
+    {
+      "sid": "b630",
+      "name": "乐酷星球(南郊生活广场店)",
+      "verdict": "has_games",
+      "games": [
+        "taiko",
+        "maimai_dx",
+        "dance_evo"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/630",
+      "evidence_quote": "太鼓达人(旧代) x1, maimai x1, DanceEvolution x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN lists maimai as title_id=2 (legacy maimai, not maimai DX). Not matched on WAHLAP official DX locator. Mapped to maimai_dx per series convention; confidence reduced.",
+      "game_counts": {
+        "taiko": 1,
+        "maimai_dx": 1,
+        "dance_evo": 1
+      }
+    },
+    {
+      "sid": "b2752",
+      "name": "乐酷星球(龙湾店)",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2752",
+      "evidence_quote": "maimai x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator. Mapped to maimai_dx with reduced confidence.",
+      "game_counts": {
+        "maimai_dx": 1
+      }
+    },
+    {
+      "sid": "b1678",
+      "name": "加菲队长（华容城市广场店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1678",
+      "evidence_quote": "鼓王 x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Chinese drum rhythm cab 鼓王 (title_id 22), not official Taiko. Catalogued as other.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b2475",
+      "name": "呀呀潮玩（株洲王府星mall店）",
+      "verdict": "has_games",
+      "games": [
+        "taiko",
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2475",
+      "evidence_quote": "太鼓达人(旧代) x1, maimai x1, 鼓王 x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Old Taiko + legacy maimai (id2) + 鼓王. maimai not on WAHLAP DX.",
+      "game_counts": {
+        "taiko": 1,
+        "maimai_dx": 1,
+        "other": 1
+      }
+    },
+    {
+      "sid": "b3790",
+      "name": "弗兰队长超乐场",
+      "verdict": "has_games",
+      "games": [
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3790",
+      "evidence_quote": "WACCA x2, 头文字D x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "WACCA x2 + Initial D x4 racing (other).",
+      "game_counts": {
+        "wacca": 2,
+        "other": 4
+      }
+    },
+    {
+      "sid": "b806",
+      "name": "快乐街区弘阳广场店",
+      "verdict": "has_games",
+      "games": [
+        "groove_coaster"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/806",
+      "evidence_quote": "GROOVE COASTER x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Live BemaniCN: Groove Coaster only.",
+      "game_counts": {
+        "groove_coaster": 1
+      }
+    },
+    {
+      "sid": "b2284",
+      "name": "快乐街区生源时代广场店",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2284",
+      "evidence_quote": "鼓王 x1, 头文字D x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "鼓王 x1 Chinese drum + Initial D x4; both unmapped -> other qty sum 5.",
+      "game_counts": {
+        "other": 5
+      }
+    },
+    {
+      "sid": "b5075",
+      "name": "悠悠大巴亲子乐园",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/5075",
+      "evidence_quote": "maimai x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator.",
+      "game_counts": {
+        "maimai_dx": 1
+      }
+    },
+    {
+      "sid": "b2216",
+      "name": "第e星球",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/2216",
+      "evidence_quote": "maimai x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator.",
+      "game_counts": {
+        "maimai_dx": 1
+      }
+    },
+    {
+      "sid": "b7158",
+      "name": "超级汇玩城市欢乐中心",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7158",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Chinese rhythm game 舞立方EVO / Dance Cube Evolution (title_id 33). Not a SEGA/Konami slug; other.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b2403",
+      "name": "永辉欢聚乐园",
+      "verdict": "has_games",
+      "games": [
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2403",
+      "evidence_quote": "WACCA x2",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Live BemaniCN: WACCA x2.",
+      "game_counts": {
+        "wacca": 2
+      }
+    },
+    {
+      "sid": "b751",
+      "name": "漳州悦汇蓝鲸乐园",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/751",
+      "evidence_quote": "maimai x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator.",
+      "game_counts": {
+        "maimai_dx": 1
+      }
+    },
+    {
+      "sid": "b6787",
+      "name": "潮漫星球云霄店",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6787",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only (Chinese dance rhythm).",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b7326",
+      "name": "热带雨林潮玩空间（漳州万达店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7326",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only (Chinese dance rhythm).",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b5784",
+      "name": "蓝鲸乐园（百汇永春广场店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5784",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only (Chinese dance rhythm).",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b2063",
+      "name": "超级玩家闽侯万家广场店",
+      "verdict": "has_games",
+      "games": [
+        "taiko",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2063",
+      "evidence_quote": "太鼓达人(旧代) x1, 湾岸MIDNIGHT x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Old-gen Taiko x1 + 湾岸 x4 racing (other).",
+      "game_counts": {
+        "taiko": 1,
+        "other": 4
+      }
+    },
+    {
+      "sid": "b6516",
+      "name": "趴趴星球（新天城市广场购物中心店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6516",
+      "evidence_quote": "鼓王 x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "鼓王 only (Chinese drum rhythm clone).",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b4823",
+      "name": "邦尼斯玩斗城",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/4823",
+      "evidence_quote": "maimai x2",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN title_id=2 maimai x2 (legacy). Not on WAHLAP DX locator.",
+      "game_counts": {
+        "maimai_dx": 2
+      }
+    },
+    {
+      "sid": "b2340",
+      "name": "酷乐橙游乐场",
+      "verdict": "has_games",
+      "games": [
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/2340",
+      "evidence_quote": "WACCA x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Live BemaniCN: WACCA x1.",
+      "game_counts": {
+        "wacca": 1
+      }
+    },
+    {
+      "sid": "b896",
+      "name": "Sowhat搜哇特（方圆荟店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/896",
+      "evidence_quote": "DJMAX Technika x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "DJMAX Technika (title_id 21) is a rhythm game but not in canonical slug set; other.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b6157",
+      "name": "U享魔方（黔西店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6157",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b6841",
+      "name": "乐漫天(瓮安店)",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6841",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b6626",
+      "name": "乐漫天动漫城（独山店）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6626",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b1880",
+      "name": "合力宝贝王疯狂计划电玩城",
+      "verdict": "has_games",
+      "games": [
+        "wacca"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1880",
+      "evidence_quote": "WACCA x2",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Live BemaniCN: WACCA x2.",
+      "game_counts": {
+        "wacca": 2
+      }
+    },
+    {
+      "sid": "b5873",
+      "name": "快乐潮玩动漫娱乐",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/5873",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b6209",
+      "name": "潮玩世纪",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6209",
+      "evidence_quote": "舞立方EVO x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "舞立方EVO only.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "b1597",
+      "name": "HiSome嗨森汇潮玩俱乐部",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx",
+        "other"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/1597",
+      "evidence_quote": "maimai x1, DANZBASE x1, 头文字D x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "Legacy maimai (id2) + DANZBASE + Initial D. other qty=5 for unmapped cabs. maimai not on WAHLAP DX.",
+      "game_counts": {
+        "maimai_dx": 1,
+        "other": 5
+      }
+    },
+    {
+      "sid": "b6186",
+      "name": "东方英雄嘉年华（大悦城店）",
+      "verdict": "has_games",
+      "games": [
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/6186",
+      "evidence_quote": "WACCA x2, 湾岸MIDNIGHT x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "WACCA x2 + 湾岸 x1 (other).",
+      "game_counts": {
+        "wacca": 2,
+        "other": 1
+      }
+    },
+    {
+      "sid": "b1010",
+      "name": "东方英雄（盘锦水游城店）",
+      "verdict": "has_games",
+      "games": [
+        "wacca",
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/1010",
+      "evidence_quote": "WACCA x2, 湾岸MIDNIGHT x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "WACCA x2 + 湾岸 x4 (other).",
+      "game_counts": {
+        "wacca": 2,
+        "other": 4
+      }
+    },
+    {
+      "sid": "b7110",
+      "name": "丹东嗨翻（湾岸殿堂圣地）",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7110",
+      "evidence_quote": "湾岸MIDNIGHT x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN lists only 湾岸MIDNIGHT x4. Venue branded 湾岸殿堂圣地 (Wangan shrine). No tracked SEGA/Konami rhythm; racing cab as other per fleet convention.",
+      "game_counts": {
+        "other": 4
+      }
+    },
+    {
+      "sid": "b7125",
+      "name": "乐动城",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/7125",
+      "evidence_quote": "头文字D x4",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN lists only 头文字D x4 racing. No tracked rhythm slug; racing as other per fleet convention.",
+      "game_counts": {
+        "other": 4
+      }
+    },
+    {
+      "sid": "b106",
+      "name": "天朗电玩城",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/106",
+      "evidence_quote": "鼓王 x1, 湾岸MIDNIGHT x2",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "鼓王 x1 + 湾岸 x2; unmapped -> other qty sum 3.",
+      "game_counts": {
+        "other": 3
+      }
+    },
+    {
+      "sid": "b7024",
+      "name": "宇鑫动漫城",
+      "verdict": "has_games",
+      "games": [
+        "maimai_dx"
+      ],
+      "confidence": "likely",
+      "evidence_url": "https://map.bemanicn.com/s/7024",
+      "evidence_quote": "maimai x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator.",
+      "game_counts": {
+        "maimai_dx": 1
+      }
+    },
+    {
+      "sid": "b3827",
+      "name": "新奇电玩",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "confidence": "certain",
+      "evidence_url": "https://map.bemanicn.com/s/3827",
+      "evidence_quote": "鼓王 x1",
+      "evidence_date": null,
+      "checked_at": "2026-08-04",
+      "note": "鼓王 only.",
+      "game_counts": {
+        "other": 1
+      }
+    },
+    {
+      "sid": "z11547",
+      "name": "潮棱镜·潮玩街区 Prism Trend Play Zone (Tibet)",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 3
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11547",
+      "evidence_quote": "Games: 舞战纪 (Dance Battle); 舞立方·EVO /DANCE³·EVO; 鼓萌 DRUM MIUMIU. Updated 2026-07-20.",
+      "evidence_date": "2026-07-20",
+      "checked_at": "2026-08-04",
+      "note": "ZIv 2026-07-20 lists three China-only rhythm cabs (Dance Battle, Dance Cube EVO, Drum Miumiu). BemaniCN s/6618 only lists 舞立方EVO x1. No SEGA/Konami titles. All map to other."
+    },
+    {
+      "sid": "z11546",
+      "name": "超核游戏站 Power Core Play Zone (Tibet)",
+      "verdict": "has_games",
+      "games": [
+        "other"
+      ],
+      "game_counts": {
+        "other": 1
+      },
+      "confidence": "certain",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11546",
+      "evidence_quote": "Games: 舞立方·EVO /DANCE³·EVO (CN¥5.00 for 3 songs). Updated 2026-07-20.",
+      "evidence_date": "2026-07-20",
+      "checked_at": "2026-08-04",
+      "note": "ZIv 2026-07-20 and BemaniCN s/6583 both list 舞立方EVO only. China dance rhythm; slug other."
+    },
+    {
+      "sid": "z2952",
+      "name": "立新欢乐天地",
+      "verdict": "unknown",
+      "games": [],
+      "confidence": "unverified",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2952",
+      "evidence_quote": "Games: No games at this location. Updated 2013-09-19. Address only 厦门市 福建省.",
+      "evidence_date": "2013-09-19",
+      "checked_at": "2026-08-04",
+      "note": "ZIv stub from 2013 with empty game list and city-level address only. No BemaniCN link. Nothing findable on current status; not evidence of closed or confirmed_none."
+    }
+  ]
+}

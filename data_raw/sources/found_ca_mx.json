@@ -1,0 +1,134 @@
+{
+  "region": "Canada and Mexico",
+  "sources": [
+    {
+      "name": "Insert Coin (Arcade Locator)",
+      "url": "https://www.insert-coin.app/",
+      "kind": "community_map",
+      "languages": [
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "nl",
+        "pl"
+      ],
+      "countries_covered": [
+        "Canada",
+        "Mexico",
+        "United States",
+        "global"
+      ],
+      "venues_estimated": 7650,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://www.insert-coin.app/location/01931d86-0ab3-77c5-b048-11aadb38b968",
+      "example_data_quote": "eSpot (Richmond, CA) location_games includes: beatmania IIDX 31 EPOLIS, Dance Dance Revolution A3, Groove Coaster 4MAX, maimai FiNALE, pop'n music UniLab, SOUND VOLTEX EXCEED GEAR, WACCA REVERSE, Jubeat Ave., CHUNITHM VERSE (41 total listed machines). Arcade Monterrey (MX) lists Dance Dance Revolution EXTREME among 54 machines. API: GET https://backend.insert-coin.app/api/locations/{uuid}/location_games ; GeoJSON map: GET /api/locations?pagination=false Accept: application/geo+json (7650 features).",
+      "adds_over_current": "Per-cabinet title lists with versions (e.g. DDR A3, IIDX 31, PIU XX/Phoenix) for many CA/MX venues that ZIv marks other-only or genre-only. Verified adds: Arcade Monterrey map has ddr+other only; IC lists DDR EXTREME + Guitar Hero Arcade + 50 classic cabs. Circus Park Monclova map has pump_it_up; IC specifies Pump It Up XX. Capital City Arcade and ZED*80 are other-only on map; IC has full classic/pinball lineups (55+ cabs at Capital City). Incomplete on some rhythm venues (FreePlay Toronto IC only has pinball; CHQ IC only 5 titles vs richer ZIv). Full location list needs geojson+per-uuid detail (public unfiltered JSON list returns only ~30 FR-centric rows without filters).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best CA/MX find. Crowdsourced bar/arcade/pinball map with open backend API. Strong for classic cabinets and some modern rhythm; coverage uneven by city. Filter by locationGames.game.uuid (e.g. PIU XX, DDR Extreme) works for discovery near lat/lon."
+    },
+    {
+      "name": "Museum of the Game Arcade Map (International Arcade Museum / KLOV)",
+      "url": "https://www.arcade-museum.com/map",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Canada",
+        "Mexico",
+        "United States",
+        "global"
+      ],
+      "venues_estimated": 1000,
+      "per_venue_detail": [
+        "address",
+        "hours"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://www.arcade-museum.com/location/CA/Capital-City-Arcade-New-Westminster-2965",
+      "example_data_quote": "Capital City Arcade | 457 E. Columbia St, New Westminster, British Columbia, V3L 3X6, Canada | Bar + Arcade, Classic Machines, Children: Allowed, Food: No, Alcohol: Yes. Phoenix Arcades | Plaza Cuauhtemoc, Av. Cuauhtemoc 19, Roma Nte., Mexico City, 06700. Map API: https://www.arcade-museum.com/api/map and /api/map/details?type=public&id=...",
+      "adds_over_current": "Useful for discovering retro bars/arcades and addresses (e.g. National Calgary, 8-Bit Beans Whitby, Pinball Alley Edmonton, The Den Vancouver, Phoenix Arcades CDMX). Game tagging appears sparse: /api/gamesList returned empty for sampled IDs; location pages emphasize type (classic/modern) not full music-game cabinets. Does not replace ZIv for bemani lineups. Some CA venues already on map as other-only (Capital City).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Live community map focused on classic coin-op and arcade bars. API map endpoint returns large public set; details give address/type. Not a rhythm-game database."
+    },
+    {
+      "name": "Playdium Locations (Cineplex)",
+      "url": "https://www.playdium.com/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "Canada"
+      ],
+      "venues_estimated": 5,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.playdium.com/locations",
+      "example_data_quote": "Dartmouth 21 Cabela Rd, Dartmouth, NS, B3B 0P4; Brampton 20 Biscayne Crescent, Brampton, ON, L6W 4S1; Fairview 1800 Sheppard Ave E Unit Y007, North York, ON, M2J 5A7; Whitby 75 Consumers Drive, Whitby, ON, L1N 2C4; Vaughan 1 Bass Pro Mills Dr, Unit G4, Vaughan, ON, L4K 5W4.",
+      "adds_over_current": "Confirms official chain of 5 Playdium sites already largely present on map (ids 593-597). No per-machine music-game list on locator; Insert Coin Playdium entry lists Pump It Up Phoenix among 41 arcade titles which is more specific than map pump_it_up-only at most Playdiums.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Official locator only. Pricing pages exist per site but not full cab inventories."
+    },
+    {
+      "name": "The Rec Room Locations (Cineplex)",
+      "url": "https://www.therecroom.com/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "Canada"
+      ],
+      "venues_estimated": 12,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.therecroom.com/locations",
+      "example_data_quote": "Locations include South Edmonton 1725-99th Street NW; Calgary Deerfoot 1180-901 64 Avenue NE; West Edmonton Mall; Burnaby Brentwood 1920 Willingdon Ave Unit 21-06; Granville 855 Granville St Vancouver; Winnipeg Seasons of Tuxedo; St. John's Avalon; Toronto Roundhouse 255 Bremner Blvd; Mississauga Square One; London Masonville; Barrie Park Place; Quebec Royalmount.",
+      "adds_over_current": "Official multi-province locator for chain already on map under The Rec Room (*). No music-game cabinets listed. Venue discovery / address validation only; IC has partial machine counts (e.g. Rec Room Roundhouse Arcade:22).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Family entertainment chain. Sibling to Playdium under Cineplex. Not a rhythm source."
+    },
+    {
+      "name": "Circus Park Sucursales",
+      "url": "https://circuspark.com.mx/sucursales/",
+      "kind": "official_locator",
+      "languages": [
+        "es"
+      ],
+      "countries_covered": [
+        "Mexico"
+      ],
+      "venues_estimated": 20,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://circuspark.com.mx/sucursales/",
+      "example_data_quote": "Page live 2026-08-04: Conoce nuestras sucursales; states listed San Luis Potosi (Plaza Sendero, Park Plaza Sendero, Circus Plaza San Luis, Plaza The Park, Plaza Citadina, Plaza El Dorado, Circus Bowl), Nuevo Leon (Santa Catarina, Anahuac, Fashion Drive, Esfera, Sendero La Fe, SunMall, Sendero Sikara, Citadel, Galerias Monterrey), Ciudad de Mexico (Vista Norte, Plaza Galerias Insurgentes, Town square Metepec), Baja California (Plaza Sendero Ensenada, Landmark).",
+      "adds_over_current": "Official branch inventory may surface new/renamed sites vs map's ~9 Circus Park rows (many other-only or pump_it_up only). No per-venue music game lists on site. Insert Coin Circus Park Monclova lists Pump It Up XX + 23 other arcade/redemption titles.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Mexican arcade/FEC chain locator. Good for coverage completeness, weak for cabinets."
+    }
+  ],
+  "summary": "Searched EN/ES/FR for Canada and Mexico rhythm/arcade databases (bemani, DDR, PIU, fliperama, salones de juegos, mapas). Current map: 372 Canada + 91 Mexico, almost all src=ziv; ~228 CA and ~16 MX other-only. No hkarcade.fandom-class regional wiki found for either country. Strongest live multi-venue machine source is Insert Coin (open API, 7650 geo features, verified CA/MX location_games including modern bemani at eSpot/Yume and PIU/DDR at MX sites). Secondary: Museum of the Game Arcade Map (addresses/types, sparse game tags). Official locators: Playdium (5), Rec Room (~12), Circus Park (multi-state MX) give addresses only. FreePlay Toronto publishes a full single-venue game list (DDR EXTREME, JuBeat) matching map genres but is one site. PNWBemani BC forum is live but last meaningful cab updates ~2018 and defers to ZIv/Discord. Recorcholis homepage live but no public /sucursales list (branch names appear in terms text); already partially on map. Pinball Map is pinball-only. No dedicated Mexican rhythm wiki or maintained CA spreadsheet found. Empty result for a full regional machine wiki is itself useful: rely on Insert Coin API + official chain locators + ZIv.",
+  "dead_ends": "pnwbemani.net Canada (BC) forum: live but stale (CHQ/E-Spot threads last cab inventory posts 2017-2018; site map link points to ZIv). recorcholis.com.mx: live marketing site; /sucursales /ubicaciones 404; no machine lists. pinballmap.com: live API but pinball-only, not music games. freeplaytoronto.com/arcade: excellent single-venue list (DDR EXTREME, JuBeat, 70+ cabs) but not multi-venue. ntnl.ca National Calgary: venue page, not multi-venue DB. Reddit r/bemani Canada threads: point back to ZIv. No Mexican equivalent of hkarcade.fandom or a maintained PIU/DDR spreadsheet confirmed openable with multi-venue machine detail."
+}

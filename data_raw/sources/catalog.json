@@ -1,0 +1,1794 @@
+{
+  "updated": "2026-08-04",
+  "n": 69,
+  "regions_reported": 12,
+  "missing_regions": [
+    "cn"
+  ],
+  "sources": [
+    {
+      "name": "Insert Coin (Arcade Locator)",
+      "url": "https://www.insert-coin.app/",
+      "kind": "community_map",
+      "languages": [
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "nl",
+        "pl"
+      ],
+      "countries_covered": [
+        "Canada",
+        "Mexico",
+        "United States",
+        "global"
+      ],
+      "venues_estimated": 7650,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://www.insert-coin.app/location/01931d86-0ab3-77c5-b048-11aadb38b968",
+      "example_data_quote": "eSpot (Richmond, CA) location_games includes: beatmania IIDX 31 EPOLIS, Dance Dance Revolution A3, Groove Coaster 4MAX, maimai FiNALE, pop'n music UniLab, SOUND VOLTEX EXCEED GEAR, WACCA REVERSE, Jubeat Ave., CHUNITHM VERSE (41 total listed machines). Arcade Monterrey (MX) lists Dance Dance Revolution EXTREME among 54 machines. API: GET https://backend.insert-coin.app/api/locations/{uuid}/location_games ; GeoJSON map: GET /api/locations?pagination=false Accept: application/geo+json (7650 features).",
+      "adds_over_current": "Per-cabinet title lists with versions (e.g. DDR A3, IIDX 31, PIU XX/Phoenix) for many CA/MX venues that ZIv marks other-only or genre-only. Verified adds: Arcade Monterrey map has ddr+other only; IC lists DDR EXTREME + Guitar Hero Arcade + 50 classic cabs. Circus Park Monclova map has pump_it_up; IC specifies Pump It Up XX. Capital City Arcade and ZED*80 are other-only on map; IC has full classic/pinball lineups (55+ cabs at Capital City). Incomplete on some rhythm venues (FreePlay Toronto IC only has pinball; CHQ IC only 5 titles vs richer ZIv). Full location list needs geojson+per-uuid detail (public unfiltered JSON list returns only ~30 FR-centric rows without filters).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best CA/MX find. Crowdsourced bar/arcade/pinball map with open backend API. Strong for classic cabinets and some modern rhythm; coverage uneven by city. Filter by locationGames.game.uuid (e.g. PIU XX, DDR Extreme) works for discovery near lat/lon.",
+      "region": "Canada and Mexico"
+    },
+    {
+      "name": "Museum of the Game Arcade Map (International Arcade Museum / KLOV)",
+      "url": "https://www.arcade-museum.com/map",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Canada",
+        "Mexico",
+        "United States",
+        "global"
+      ],
+      "venues_estimated": 1000,
+      "per_venue_detail": [
+        "address",
+        "hours"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://www.arcade-museum.com/location/CA/Capital-City-Arcade-New-Westminster-2965",
+      "example_data_quote": "Capital City Arcade | 457 E. Columbia St, New Westminster, British Columbia, V3L 3X6, Canada | Bar + Arcade, Classic Machines, Children: Allowed, Food: No, Alcohol: Yes. Phoenix Arcades | Plaza Cuauhtemoc, Av. Cuauhtemoc 19, Roma Nte., Mexico City, 06700. Map API: https://www.arcade-museum.com/api/map and /api/map/details?type=public&id=...",
+      "adds_over_current": "Useful for discovering retro bars/arcades and addresses (e.g. National Calgary, 8-Bit Beans Whitby, Pinball Alley Edmonton, The Den Vancouver, Phoenix Arcades CDMX). Game tagging appears sparse: /api/gamesList returned empty for sampled IDs; location pages emphasize type (classic/modern) not full music-game cabinets. Does not replace ZIv for bemani lineups. Some CA venues already on map as other-only (Capital City).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Live community map focused on classic coin-op and arcade bars. API map endpoint returns large public set; details give address/type. Not a rhythm-game database.",
+      "region": "Canada and Mexico"
+    },
+    {
+      "name": "Playdium Locations (Cineplex)",
+      "url": "https://www.playdium.com/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "Canada"
+      ],
+      "venues_estimated": 5,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.playdium.com/locations",
+      "example_data_quote": "Dartmouth 21 Cabela Rd, Dartmouth, NS, B3B 0P4; Brampton 20 Biscayne Crescent, Brampton, ON, L6W 4S1; Fairview 1800 Sheppard Ave E Unit Y007, North York, ON, M2J 5A7; Whitby 75 Consumers Drive, Whitby, ON, L1N 2C4; Vaughan 1 Bass Pro Mills Dr, Unit G4, Vaughan, ON, L4K 5W4.",
+      "adds_over_current": "Confirms official chain of 5 Playdium sites already largely present on map (ids 593-597). No per-machine music-game list on locator; Insert Coin Playdium entry lists Pump It Up Phoenix among 41 arcade titles which is more specific than map pump_it_up-only at most Playdiums.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Official locator only. Pricing pages exist per site but not full cab inventories.",
+      "region": "Canada and Mexico"
+    },
+    {
+      "name": "The Rec Room Locations (Cineplex)",
+      "url": "https://www.therecroom.com/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "Canada"
+      ],
+      "venues_estimated": 12,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.therecroom.com/locations",
+      "example_data_quote": "Locations include South Edmonton 1725-99th Street NW; Calgary Deerfoot 1180-901 64 Avenue NE; West Edmonton Mall; Burnaby Brentwood 1920 Willingdon Ave Unit 21-06; Granville 855 Granville St Vancouver; Winnipeg Seasons of Tuxedo; St. John's Avalon; Toronto Roundhouse 255 Bremner Blvd; Mississauga Square One; London Masonville; Barrie Park Place; Quebec Royalmount.",
+      "adds_over_current": "Official multi-province locator for chain already on map under The Rec Room (*). No music-game cabinets listed. Venue discovery / address validation only; IC has partial machine counts (e.g. Rec Room Roundhouse Arcade:22).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Family entertainment chain. Sibling to Playdium under Cineplex. Not a rhythm source.",
+      "region": "Canada and Mexico"
+    },
+    {
+      "name": "Circus Park Sucursales",
+      "url": "https://circuspark.com.mx/sucursales/",
+      "kind": "official_locator",
+      "languages": [
+        "es"
+      ],
+      "countries_covered": [
+        "Mexico"
+      ],
+      "venues_estimated": 20,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://circuspark.com.mx/sucursales/",
+      "example_data_quote": "Page live 2026-08-04: Conoce nuestras sucursales; states listed San Luis Potosi (Plaza Sendero, Park Plaza Sendero, Circus Plaza San Luis, Plaza The Park, Plaza Citadina, Plaza El Dorado, Circus Bowl), Nuevo Leon (Santa Catarina, Anahuac, Fashion Drive, Esfera, Sendero La Fe, SunMall, Sendero Sikara, Citadel, Galerias Monterrey), Ciudad de Mexico (Vista Norte, Plaza Galerias Insurgentes, Town square Metepec), Baja California (Plaza Sendero Ensenada, Landmark).",
+      "adds_over_current": "Official branch inventory may surface new/renamed sites vs map's ~9 Circus Park rows (many other-only or pump_it_up only). No per-venue music game lists on site. Insert Coin Circus Park Monclova lists Pump It Up XX + 23 other arcade/redemption titles.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Mexican arcade/FEC chain locator. Good for coverage completeness, weak for cabinets.",
+      "region": "Canada and Mexico"
+    },
+    {
+      "name": "BEMAFIA / vospi - Baza ritmoigrovykh avtomatov (rhythm machine database)",
+      "url": "https://docs.google.com/spreadsheets/d/1i0UHXh_BhbI0T7a70tAIYfBLkslKYOTV7TKIR8p7L3I/edit",
+      "kind": "spreadsheet",
+      "languages": [
+        "ru"
+      ],
+      "countries_covered": [
+        "Russia",
+        "Belarus",
+        "Kazakhstan",
+        "Uzbekistan",
+        "Ukraine (Crimea/limited)",
+        "Moldova (Transnistria)",
+        "CIS broadly"
+      ],
+      "venues_estimated": 215,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://docs.google.com/spreadsheets/d/1i0UHXh_BhbI0T7a70tAIYfBLkslKYOTV7TKIR8p7L3I/edit",
+      "example_data_quote": "Москва / Playday м.Южная (ТРК \"Глобал Сити\") / PIU XX (TX) / Днепропетровская ул., 2 / Работает, Хорошее / 16.07.2026; ТРЦ \"Авиапарк\" / PIU PHOENIX (LX) / Ходынский б-р, 4 / Работает, Отличное / 28.07.2025; Игралайф (ТЦ \"Капитолий\") / PIU Pro 2 (TX) / Правобережная ул., 1Б / 90р credit notes in similar rows",
+      "adds_over_current": "Map has 37 Russia venues, many other-only or pump_it_up-only stubs from ZIv. Sheet has ~263 machine rows across ~96 cities and ~215 unique venues (CSV export 2026-08-04): PIU version (Phoenix LX, XX TX, Pro 2, Fiesta 2, etc.), pad condition, credit price, operational status (Работает/Убран/Закрыт), photos, update dates through 2026. Example: map id 8951 Play Day is other+pump_it_up; sheet specifies PIU XX (TX) + address/status. Map 8939 Igralife is pump_it_up only; sheet PIU Pro 2 (TX). Map 8944 Kosmik is pump_it_up; sheet PIU Fiesta 2 (CX) with floor notes. Also lists non-PIU rhythm (IIDX, SDVX, maimai, CHUNITHM, DDR mixes, ITG, GF+DM, Taiko, DJMAX) sparsely. Hub page: https://vospi.com/bemafia/arcade-database/ ; community VK: https://vk.com/bemafia",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Title claims Europe+Asia but the live gid=0 export is CIS-heavy (Moscow 47 rows, SPb 21, Minsk, Tashkent, etc.). vospi city blurb names Warsaw/Prague/Helsinki/Budapest/Riga but those city headers were NOT present in the CSV pulled today. Treat as Russia/CIS goldmine, not a Nordic/EU-wide map. Export via gviz CSV works without login. Some rows stale (2020-2022); filter on Актуальность and Состояние. Not a substitute for ZIv IDs but fills machine lists and status for Other-only Russian malls.",
+      "region": "Nordics and Eastern Europe"
+    },
+    {
+      "name": "Poland Arcade Museums (Kraków / Warszawa / Gdańsk)",
+      "url": "https://www.krakowarcademuseum.com/",
+      "kind": "official_locator",
+      "languages": [
+        "pl",
+        "en"
+      ],
+      "countries_covered": [
+        "Poland"
+      ],
+      "venues_estimated": 3,
+      "per_venue_detail": [
+        "games",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.krakowarcademuseum.com/gry.php",
+      "example_data_quote": "Gry Rytmiczne Kraków: Dance Maniax; Dancing Stage EuroMIX2 (Stepmania + Simply Love); Groove Coaster; Guitar Hero; Jubeat Festo; Percussion Master; Pop'n Music 26 Kaimei Riddles; Pump it Up Nx2 (STEPF2 XX). Warsaw gry.php: Dancerush stardom; Groove Coaster; Guitar Hero; Pop'n Music 26; Taiko no tatsujin; Wacca. Gdańsk gry.php: Dancerush; Dancing Stage EuroMIX2; Guitar Hero; Percussion Master; Sound Voltex; Taiko; Wacca. Shared pricing ~70/90/100 PLN for 1h/2h/open.",
+      "adds_over_current": "Chain already on map (ids 8854 Krakow, 8871 Warsaw, 8847 Gdansk) from ZIv. Operator gry.php pages are fresher per-site rhythm sections: Krakow site lists Dance Maniax + Guitar Hero + Percussion Master not in map games[] (map has maimai_dx+wacca that current Krakow gry.php does not show; reconcile both ways). Gdańsk site confirms SDVX/Wacca/Taiko/DRS and adds EuroMIX2/Guitar Hero/Percussion Master vs map games[]=['drs','other','sdvx','taiko','wacca'] (ZIv notes already mention Guitar Hero). Warsaw site matches DRS/GC/popn/taiko/wacca; map has nostalgia not on current site; site has Guitar Hero not in map games[]. Primary value: maintainable official cab lists + hours/prices for all three branches, plus sibling sites warsawarcademuseum.com and gdanskarcademuseum.com.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Three linked museums under same brand. URL pattern: {city}arcademuseum.com/gry.php with sections Arcade / Flipery / Gry Rytmiczne. Not a nationwide Poland map (most of map's 42 PL venues are mall/other stubs still uncovered). pdgc.pl is Discord-only for broader Polish dance community (manual).",
+      "region": "Nordics and Eastern Europe"
+    },
+    {
+      "name": "Muzeum Her (Cibien's Corner) - Czech multi-branch catalog",
+      "url": "https://muzeumher.cz/",
+      "kind": "official_locator",
+      "languages": [
+        "cs"
+      ],
+      "countries_covered": [
+        "Czechia"
+      ],
+      "venues_estimated": 3,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://muzeumher.cz/pobocky/",
+      "example_data_quote": "Pobočky: Game World (OC Šestka, Praha 6), Cyber Arcade (Bartůňkova 1761, Praha 11 Opatov / Fun Arena), Game Station (Štefánikovo nám. 2621/4, Plzeň). Catalog tags 'Kde si lze zahrát' per title; systems include ALLS, BEMANI PC, Konami Bemani; examples Beatmania 2023, Final Fantasy Theatrhythm, Darius Burst across branches.",
+      "adds_over_current": "Map already has rich ZIv lineups for Cibien's Corner Game Station (5806), Cyber Arcade (5805), Game World (5807). Operator site is the structured multi-branch source to refresh cabs without ZIv lag: per-game pages list which of the 3 branches have the cab. Useful for Czechia Other-only refresh and verifying CHUNITHM/IIDX/SDVX/PIU placements. Does not cover non-Cibien Czech venues (ArcadeHry Unhošť, Levels, etc.).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "katalog-her/ is large HTML catalog (filterable). Branch automaty pages under /pobocky/{slug}/automaty-*. No public JSON API found. Sibling Fun Arena is the Cyber Arcade host building, not a separate machine database.",
+      "region": "Nordics and Eastern Europe"
+    },
+    {
+      "name": "Tarry / Finnish rhythm-scene venue notes",
+      "url": "http://tarry.fi/rytmipelit/",
+      "kind": "blog",
+      "languages": [
+        "en",
+        "fi"
+      ],
+      "countries_covered": [
+        "Finland"
+      ],
+      "venues_estimated": 3,
+      "per_venue_detail": [
+        "games",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "manual_only",
+      "example_venue_url": "https://www.sugoi.fi/?page_id=11",
+      "example_data_quote": "Tarry recommends: Sugoi (Malmi Helsinki commercial free-play, day ticket); McKylä (Espoo private garage, 3x ITGmania + PIU, open-door calendar); Tarry arcade (Nekala Tampere, opening Jan 2026). Sugoi Pelit page lists rhythm: IIDX 32 Pinky Crush, CHUNITHM Verse, DDR A3, Groove Coaster 4MAX, Guitar Hero Arcade, Project DIVA Future Tone, jubeat beyond the Ave., maimai FiNALE, Nostalgia Op.3, Ongeki Bright, pop'n UniLab, PIU Phoenix, SDVX Exceed Gear, StepManiaX, Taiko Green, Wacca.",
+      "adds_over_current": "Map country count for Finland is 0. Sugoi alone would be a full multi-rhythm venue not present in arcades.json. McKylä (Turuntie 20 Espoo) is private membership/open-door, not a normal public ZIv target but real. No national Finnish arcade wiki found; this blog + operator pages are the only verified structured pointers.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Not a multi-venue database. Linked operator pages are the real data: sugoi.fi (single venue, full cab list + hours/price 12 EUR), mckyla.tanssipelit.fi (private). Include because Finland is a total map blank and these are the only live, openable, detailed sources found.",
+      "region": "Nordics and Eastern Europe"
+    },
+    {
+      "name": "Annuaire Arcade",
+      "url": "https://www.annuaire-arcade.fr/",
+      "kind": "wiki",
+      "languages": [
+        "fr"
+      ],
+      "countries_covered": [
+        "France"
+      ],
+      "venues_estimated": 893,
+      "per_venue_detail": [
+        "games",
+        "address",
+        "hours"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.annuaire-arcade.fr/salle-arcade/atom-city/",
+      "example_data_quote": "Atom City (Lille): Beatmania IIDX (IIDX 30 Resident, 120Hz), Chunithm X-Verse, DanceRush Stardom, GITADORA Fuzz-Up (guitare+batterie), Groove Coaster 4MAX, Hatsune Miku Project DIVA, In the Groove 2, Jubeat, Maimai Finale, Pop'n music Unilab, Pump it Up XX (CN), Rerave Plus, Sound Voltex Exceed Gear, Synchronica, Taiko no Tatsujin HD, Wacca DX. Address 113 Rue Barthelemy Delespaul 59000 Lille. 7 EUR freeplay day.",
+      "adds_over_current": "France-wide per-venue cab lists far denser than ZIv stubs. Map has 92 FR venues (many other-only); Annuaire lists ~893 salles with game pages. Atom City (id 5831) already rich on ZIv notes but games[] omits maimai despite FiNALE in notes; Annuaire confirms maimai Finale + version tags. Hall U Need (id 5870) map games=['ddr'] only; Annuaire adds StepManiaX and full modern FEC lineup. DDR game page lists 20+ FR sites by version (A/A20/A20+/X/X2). Community updates through 2026-07. Best EU analog to hkarcade.fandom for France.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL pattern: /salle-arcade/{slug}/ and /jeu/{game-slug}/ with reverse venue lists. Department/region directory at /la-carte-de-france-des-salles-arcade/. HTML scrapeable (WordPress). Not rhythm-only: full arcade genres, but Rythme category includes IIDX, SDVX, maimai, CHUNITHM, WACCA, Taiko, PIU, DDR, etc. Site claims ~6 years, active 2026 posts.",
+      "region": "Western Europe"
+    },
+    {
+      "name": "Arcade Belgium (location list)",
+      "url": "https://www.arcadebelgium.be/ab.php?l=en&r=loc&p=list",
+      "kind": "community_map",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "Belgium"
+      ],
+      "venues_estimated": 150,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.arcadebelgium.be/ab.php?l=en&r=loc&p=gate90wo",
+      "example_data_quote": "Gate Ninety World (Nivelles): Groove Coaster 4MAX Diamond Galaxy; Jubeat Beyond the Ave.; Maimai Finale; Taiko no Tatsujin Nijiro Ver.; plus pinball/racing. Address Rue de l'Industrie 7, 1400 Nivelles. Last update 14/02/2026. Free Play Lanaken: Maimai Finale, Groove Coaster, Taiko 13, Dancing Stage EuroMIX, Guitar Hero Arcade.",
+      "adds_over_current": "Belgium map has 24 ZIv venues. Arcade Belgium 150 locations with named game lists. Gate Ninety (id 314) map games=['groove_coaster','other','taiko'] but AB lists maimai Finale + jubeat Beyond the Ave (missing classified slugs). Free Play Lanaken (id 307) map lacks maimai; AB lists Maimai Finale. Luna Park Reflex (id 317) is other-only pinball-heavy on ZIv; AB page exists for cross-check. Search by game title supported.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL pattern ab.php?l={en|fr}&r=loc&p={slug}. Forum arcadebelgium.net for updates. Fixed venues + mobile lunaparks. Not Bemani-first but music games appear when present. English+French. Copyright 2003-2026.",
+      "region": "Western Europe"
+    },
+    {
+      "name": "Gamestate (official multi-country locator)",
+      "url": "https://www.gamestate.com/en",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "nl",
+        "de",
+        "fr"
+      ],
+      "countries_covered": [
+        "Netherlands",
+        "Belgium",
+        "Germany",
+        "Poland",
+        "Slovakia"
+      ],
+      "venues_estimated": 22,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.gamestate.com/en/antwerpen",
+      "example_data_quote": "Location picker lists NL (Amsterdam ArenA, Breda, Eindhoven, Utrecht, Kerkrade, Mall of the Netherlands, De Kuip, Den Haag, Circus Zandvoort, Haarlem, Arnhem, Enschede, Groningen), BE (Gent, Antwerpen, Bruxelles), DE (CentrO Oberhausen, Potsdamer Platz Berlin, Zoo Berlin), PL (Wroclaw), SK (Bratislava).",
+      "adds_over_current": "Official chain store list for Western Europe FEC brand. Map already has several Gamestate BE/DE rows (e.g. Antwerpen/Bruxelles/Gent/Berlin) often with only ddr/pump/other from ZIv. Locator fills complete current chain footprint and addresses; does not publish full per-cab music-game inventories on the public site (games page is marketing, not per-store lineup).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Useful as authoritative open/closed and address source for this chain, not as a cab database. PL/SK outside Western Europe region scope but same site.",
+      "region": "Western Europe"
+    },
+    {
+      "name": "La Tete dans les Nuages (official centre locator)",
+      "url": "https://latetedanslesnuages.com/centres/",
+      "kind": "official_locator",
+      "languages": [
+        "fr",
+        "en",
+        "es",
+        "it"
+      ],
+      "countries_covered": [
+        "France"
+      ],
+      "venues_estimated": 12,
+      "per_venue_detail": [
+        "address",
+        "hours"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://latetedanslesnuages.com/centres/paris-les-4-temps-la-defense/",
+      "example_data_quote": "Centres include Paris Opera, Les 4 Temps La Defense, Aeroville CDG, Plaisir, Carre Senart, Le Spot Evry, Noisy-le-Grand Les Arcades, Lyon Part-Dieu, Lyon Confluence, Nice CAP3000, Toulon Avenue 83, upcoming Parc Valvert. Each page has address, phone, hours, booking links. Annuaire Arcade separately documents DDR A20 Plus at La Defense and other LTDN sites.",
+      "adds_over_current": "Map has ~8 LTDN-named FR rows, mostly games=['ddr'] or ['other'] (ids 5880-5884 etc.). Official locator gives complete current chain + hours/addresses. Full machine lists are better on Annuaire Arcade venue pages than on the brand site (brand site markets experiences, not cab inventories).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL pattern /centres/{slug}/. Pair with Annuaire for cabs. Large FR FEC chain with confirmed DDR presence on Annuaire.",
+      "region": "Western Europe"
+    },
+    {
+      "name": "Museum of the Game Arcade Map (IA/KLOV)",
+      "url": "https://www.arcade-museum.com/map",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "France",
+        "Germany",
+        "Netherlands",
+        "Belgium",
+        "Spain",
+        "Portugal",
+        "Italy",
+        "Switzerland",
+        "Austria"
+      ],
+      "venues_estimated": null,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.arcade-museum.com/map",
+      "example_data_quote": "Public filter UI: country dropdown includes France, Germany, Netherlands, Belgium, Spain, Italy, Switzerland, Austria, etc. Search by game name, venue type (Arcade, Bar+Arcade, Museum), status Verified/Closed/Private. Map markers for public arcades, museums, events.",
+      "adds_over_current": "Worldwide classic/modern venue map with game filter. Stronger for classic/pinball/FEC than Japanese rhythm. May fill other-only Western EU stubs where ZIv has no machines, and discover venues missing from ZIv entirely. Exact EU venue count not extracted (JS map). Secondary to Annuaire/Arcade Belgium for rhythm cab detail.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "International Arcade Museum / KLOV. Heavy US bias in practice. Game search is the useful path for rhythm titles if catalogued. Needs deeper per-country scrape to size value.",
+      "region": "Western Europe"
+    },
+    {
+      "name": "AURCADE",
+      "url": "https://aurcade.com/locations/",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Spain",
+        "Netherlands",
+        "France",
+        "Germany",
+        "Italy",
+        "Belgium"
+      ],
+      "venues_estimated": null,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.aurcade.com/locations/view.aspx?id=6183",
+      "example_data_quote": "Arcade Levels - Zaragoza (Cuarte de Huerva, Spain): free play, Games: 144 listed, Unique Games: 8. Location pages and game pages (e.g. Wacca, Maimai Finale) link locations. Hommerson Funland (Netherlands) also present.",
+      "adds_over_current": "Score/high-score oriented arcade DB with location+game matrices. Sparse EU vs US but some large freeplay venues (e.g. Arcade Levels Zaragoza) with long game lists. URL pattern /locations/view.aspx?id={n}. Browse requires filters (no dump without criteria). Lower priority than Annuaire/Arcade Belgium for this region.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Live 2026 scores/posts. Not rhythm-focused. Country coverage partial; not a systematic EU census.",
+      "region": "Western Europe"
+    },
+    {
+      "name": "香港機舖資訊维基 (hkarcade.fandom)",
+      "url": "https://hkarcade.fandom.com/zh/wiki/Home",
+      "kind": "wiki",
+      "languages": [
+        "zh-HK",
+        "zh-Hant"
+      ],
+      "countries_covered": [
+        "Hong Kong"
+      ],
+      "venues_estimated": 40,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://hkarcade.fandom.com/zh/wiki/%E8%A7%80%E5%A1%98%E5%BB%A3%E5%A0%B4(GAMEZONE)",
+      "example_data_quote": "觀塘廣場(GAMEZONE) … 營業時間為08:00am至23:00pm。 … {{GameList/Music| maimai=Prism（$6 , 6台）| taiko=虹（$6 , 2台) | CHU=Luminous+ ($6, 2台) }}",
+      "adds_over_current": "For GAMEZONE Kwun Tong (map id 5985 already has chunithm/maimai_dx/taiko/other from allnet+bemanicn+ziv), wiki adds per-title cab counts and HKD prices (6 maimai / 2 taiko / 2 CHUNITHM at $6). Same pattern on other HK venue pages (Gold Star, Hollywood Game Zone, etc.). MediaWiki API allpages returns 52 titles (incl. closed/disambig).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Fandom HTML often 403 to plain bots; MediaWiki API (zh/api.php action=parse|query) works. Structured GameList/* templates are the scrape target. Coverage is older/smaller than full HK fleet but is the classic per-cab wiki nobody had wired up (same class as the prompt's hkarcade example).",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "香港音遊地圖2 (HKRGM2)",
+      "url": "https://whitenightawa.github.io/hkrgm2/",
+      "kind": "community_map",
+      "languages": [
+        "zh-HK",
+        "en"
+      ],
+      "countries_covered": [
+        "Hong Kong"
+      ],
+      "venues_estimated": 29,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://whitenightawa.github.io/hkrgm2/",
+      "example_data_quote": "places row gtGz 觀塘廣場GAMEZONE games: {\"maimaidx\":[6,\"Prism\",6],\"chunithm\":[2,\"Luminous Plus\",6],\"taiko\":[2,\"虹\",6]}; format appears [cab_count, version, price_HKD]. Sample SQLite in GitHub WhiteNightAWA/hkrgm2-backend has 29 places.",
+      "adds_over_current": "Cab counts + per-play prices + game versions for most open HK rhythm halls. Specific deltas vs arcades.json: 佐敦Game Zone (map 6006: only taiko+other) listed with maimaidx+taiko+wacca; 铭铿/西环 (map 6013 other-only) listed with old maimai Final; 金雞/旺角 has iidx+jubeat counts; 奇趣天地 adds jubeat. Does not invent new shops so much as fills lineup gaps and cabs[]. Frontend SPA live; backend GET https://hkrgm2-backend.vercel.app/places/all returned 504 Gateway Timeout on 2026-08-04 so live payload not re-fetched (schema verified from open-source backend + committed test.sqlite).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "WIP community map (HKRGM2 UI banner: 此網站仍然WIP). API routes also include /places/:id, ratings, comments. GitHub: WhiteNightAWA/hkrgm2 + hkrgm2-backend. Prefer this over fandom for current cab counts if API recovers; keep fandom as secondary/historical.",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "Music Game Map (台灣音遊地圖)",
+      "url": "https://mgm.wind-chime.info/",
+      "kind": "community_map",
+      "languages": [
+        "zh-TW"
+      ],
+      "countries_covered": [
+        "Taiwan"
+      ],
+      "venues_estimated": 250,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://mgm.wind-chime.info/game_center/4-%E6%B0%B8%E6%B7%87%E6%A8%82%E5%9C%92",
+      "example_data_quote": "永淇樂園 (archive 2024-06-23): 營業時間 11:00～22:00; 地址 台北市中正區市民大道一段50號; machine table e.g. \"2 jubeat (Ave.) 現金 直接排隊 2024-05-14\"; \"2 maimai (DX BUDDiES)\"; \"2 CHUNITHM (LUMINOUS)\"; \"2 SOUND VOLTEX (Valkyrie)\"; also GITADORA DM, Project DIVA, GROOVE COASTER, Nostalgia, old FiNALE maimai.",
+      "adds_over_current": "Taiwan multi-title community inventory (Konami + SEGA + Namco), not just ALL.Net SEGA titles. For 永淇樂園 map already has a rich ZIv game list (id 9469) but empty cabs[]; MGM adds per-title counts, payment type, queue style, last-report timestamps. Covers non-ALL.Net titles (jubeat, SDVX, IIDX, etc.) that ZIv only partially has. URL pattern /game_center/{id}-{slug}; venue ids observed into the 200s-270s.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Direct HTTP from this scout environment returns 403 Forbidden for all tested UAs. Evidence of liveness: Google snippets with venue notes, Facebook @MusicGameMap, Wayback captures through 2025-03, and id_ archive of full venue HTML with machine tables. Treat as live but anti-bot. GitHub org Music-Game-Map/backend exists but is empty (size 0). Highest-value Taiwan multi-game source if a browser/session scrape path is available.",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "太鼓之達人 - 台灣機台鼓況與店家資訊 (taikoinfotw.fandom)",
+      "url": "https://taikoinfotw.fandom.com/zh-tw/wiki/%E9%A6%96%E9%A0%81",
+      "kind": "wiki",
+      "languages": [
+        "zh-TW"
+      ],
+      "countries_covered": [
+        "Taiwan"
+      ],
+      "venues_estimated": 700,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://taikoinfotw.fandom.com/zh-tw/wiki/%E5%93%88%E5%95%A6%E6%98%9F%E7%90%83%E5%8D%97%E9%9B%85%E5%BA%97",
+      "example_data_quote": "哈啦星球南雅店: 地址 新北市板橋區南雅東路31-5號; 營業時間 24H; 代幣 1枚10元; 太鼓之達人 新框體 價格 3枚代幣(30元) 曲數3首; 鼓況 1P良好 / 2P… (2023/10/14). 永淇樂園: 市民大道一段100號… 11:00～22:00; two 新框體 entries with per-side drum condition reports through 2025.",
+      "adds_over_current": "Taiwan-wide taiko presence + coin price + cab condition. Map often has taiko as a boolean from bemanicn/ziv without cab counts. 751 allpages via MediaWiki API (includes chains Tom's World, HALA, GiGO, Funbox, E7PLAY, 7-ELEVEN, etc.). Taiko-only depth; not a full multi-game lineup source.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Fandom HTML 403 to bots; zh-tw/api.php action=query|parse works. Scope is deliberately taiko drum-condition wiki, not general rhythm map. Use to fill taiko cab counts/prices and to discover small/non-ALL.Net locations.",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "maimaiDX.TW / CHUNITHM.TW 台灣機台稼動店舖一覽",
+      "url": "https://maimaidx.tw/",
+      "kind": "community_map",
+      "languages": [
+        "zh-TW",
+        "en"
+      ],
+      "countries_covered": [
+        "Taiwan"
+      ],
+      "venues_estimated": 99,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://maimaidx.tw/store/116",
+      "example_data_quote": "Embedded JS: let store_data = JSON.parse('[{\"id\":\"166\",\"sid\":\"19050\",\"name_ch\":\"夾到寶基隆店\",\"name_en\":\"Java Catcher (Keelung)\",\"name_net\":\"CATCH BUFFET (KEELUNG NIGHT MARKET)\",\"addr_ch\":\"200台灣基隆市仁愛區愛四路62號\",\"lat\":\"25.129297\",\"lon\":\"121.744331\",\"city_ch\":\"基隆\",...}]'); maimai n=99, chunithm.tw n=65. Store pages expose schema.org AmusementPark geo.",
+      "adds_over_current": "Mostly overlaps ALL.Net Taiwan (already in map as allnet). Adds Chinese display names (name_ch), Google place ids (addr_pid), and a single easy scrape of 99 maimai / 65 CHUNITHM shops with lat/lon. Does NOT list non-SEGA games or cab counts. Companion https://chunithm.tw/ same author (IFYU). Official SEGA ALL.Net locator for TW maimai uses gm=98 (98 locations) and CHUNITHM gm=104 (61 locations) as of check.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Fan mirror of ALL.Net, not official SEGA. Comment in HTML: 請不要盜取辛苦整理的資料. Still the cleanest structured TW SEGA shop list short of ALL.Net itself. URL pattern /store/{id}.",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "X50 Music Game Station",
+      "url": "https://x50.fun/",
+      "kind": "official_locator",
+      "languages": [
+        "zh-TW",
+        "en"
+      ],
+      "countries_covered": [
+        "Taiwan"
+      ],
+      "venues_estimated": 3,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://x50.fun/",
+      "example_data_quote": "西門一店 武昌街二段134號1樓 24H: SEGA maimaiDX 3組, KONAMI SDVX Valkyire 4組, DDR Gold 1, IIDX LM 1, pop'n 1, Jubeat 1. 西門二店 康定路10號: 太鼓 2, maimaiDX 2, CHUNITHM 6, Project Diva 1, Nostalgia 1.",
+      "adds_over_current": "Map has multiple X50 rows (allnet maimai/chunithm only for some; ziv first-store with Konami titles) but cabs[] empty. Operator site is authoritative cab counts per branch. Small N (2 Ximen stores on page; map also has Kaohsiung allnet row).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Single-operator official page, not a region map. Still high-signal for cab counts and rare titles (IIDX LM, Nostalgia, DDR Gold).",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "湯姆熊歡樂世界 全台門市 (Tom's World)",
+      "url": "https://www.tomsworld.com.tw/store.aspx?mnuid=1109&modid=4",
+      "kind": "official_locator",
+      "languages": [
+        "zh-TW"
+      ],
+      "countries_covered": [
+        "Taiwan"
+      ],
+      "venues_estimated": 78,
+      "per_venue_detail": [
+        "hours",
+        "address",
+        "prices"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.tomsworld.com.tw/store_detail.aspx?siteid=&ver=&usid=&mnuid=1109&modid=4&mode=&storeid=17&noframe=",
+      "example_data_quote": "總筆數：78. 台北金萬年店 萬華區西寧南路70號5樓; 週日至週四 11:30-22:00 週五至週六 11:00-22:00; 代幣一枚5元. Chain list covers Keelung through Taitung.",
+      "adds_over_current": "Address/hours/token price for ~78 family amusement branches. Does NOT list rhythm cabinets. Useful only as address authority for Tom's World rows already on ALL.Net maimai list, or to discover branches missing from allnet if any.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Official chain locator. Rhythm games are a subset of stores; pair with maimaidx.tw/ALL.Net/MGM for which branches actually have maimai/taiko/etc.",
+      "region": "Hong Kong / Taiwan / Macau"
+    },
+    {
+      "name": "全国音ゲー設置店舗情報wiki (otogesetchi)",
+      "url": "https://w.atwiki.jp/otogesetchi/",
+      "kind": "wiki",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 200,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address",
+        "hours"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://w.atwiki.jp/otogesetchi/pages/19.html",
+      "example_data_quote": "タイトーステーション渋谷店: 弐寺LM2台、ポップンPPM2台、SDVX3台、DDR金筐体1台、ギタドラAM各1台 / maimai1台、チュウニ金筐体3台 / 太鼓4台 (最終確認26/6中旬). GiGO渋谷宮益坂: オンゲキ4台、maimai2台、チュウニ金筐体5台、太鼓4台. シルクハット秋葉原: 弐寺LM合計15台(7F+8F)、SDVXVM11台、チュウニ金10台、maimai5台、オンゲキ4台、太鼓5台.",
+      "adds_over_current": "Per-cab counts and cab model (LM/金/PPM/AM) that official presence sources do not always surface cleanly; rare/offline titles (DIVA at 高田馬場ミカド, パカパカ, グルコス, テトコネ); access notes. Tokyo 都心 page updated 2026-08-04. Compared GiGO渋谷宮益坂: map has ongeki count 1 vs wiki 4; silkhat iidx count 1 vs wiki ~15 LM. Outside Tokyo many prefecture pages still thin (wiki self-describes as 設立したばかり).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best Japan analogue to hkarcade.fandom for multi-game cab lists. Prefecture-split pages; Tokyo strongest. Copyright notice forbids bulk republication - scrape for merge only with care. Completeness uneven nationally.",
+      "region": "Japan"
+    },
+    {
+      "name": "太鼓の達人 設置店舗情報 (Bandai Namco official)",
+      "url": "https://essential-truth-92204.appspot.com/S12/",
+      "kind": "official_locator",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 2500,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://essential-truth-92204.appspot.com/S12/list?area=JP-13&sw=1",
+      "example_data_quote": "東京都(23区) 124件. アドアーズ浅草: 2台設置 / 東京都 台東区 浅草 1-42-4 パシフィックコート浅草B1・1F. namco秋葉原: 8台. シルクハット秋葉原: 5台. GiGO渋谷宮益坂: 4台. URL pattern: /S12/list?area=JP-01..JP-47 and /S12/detail?loc_id=...",
+      "adds_over_current": "Official Taiko presence + cab counts nationwide. Map has only 286/1397 JP venues with taiko; 122 other-only are almost all ZIv-only stubs. Example: Adores Asakusa (id 6541) is games=['other'] with no taiko; Taiko official lists 2 cabs at same address. Can reclassify many other-only and crane-corner ZIv stubs that actually run Taiko.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Not ALL.Net/eagate/ZIv. Highest-value single-game official source for Japan. Cab count note: terminals may be included in totals. Detail page HTML is thin; list pages carry 台数.",
+      "region": "Japan"
+    },
+    {
+      "name": "オトマップ (OTOMAP)",
+      "url": "https://otomap.net/",
+      "kind": "community_map",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 3000,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://otomap.net/shops/1",
+      "example_data_quote": "ラウンドワンスタジアム 函館店 /shops/1: 住所 北海道函館市西桔梗町 848番地11; 営業 10:00〜翌04:00; user post 2022/09/08: チュウニズム：金筐体２台、銀筐体２台 / オンゲキ：120/240/360GP. GiGO 新宿歌舞伎町 /shops/3186: 住所 東京都新宿区歌舞伎町１丁目２１−１; 10:00〜23:00. Filter lists IIDX LM, SDVX VM, CHUNITHM, maimai, オンゲキ, 太鼓, GROOVE COASTER, CHRONO CIRCLE, etc.",
+      "adds_over_current": "Map UI over music-game venues with sequential /shops/{id} (IDs observed to 3186+). Hours + occasional user-reported cab models/GP prices. Does not reliably show structured cab lists without user posts (設置筐体 often empty). Overlaps heavily with allnet+eagate for presence; best as hours/count enrichment and discovery of offline/rare titles.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "RUNTEQ portfolio product (2022). Login/edit community model. JS-heavy map; venue pages are HTML-scrapable. Do not confuse with unrelated Taiwan food company otomapcorp.",
+      "region": "Japan"
+    },
+    {
+      "name": "ラウンドワン アミューズメント ゲーム機検索 (Japan)",
+      "url": "https://www.round1.co.jp/cgi-bin/service/amuse/type/index.cgi",
+      "kind": "official_locator",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 100,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.round1.co.jp/cgi-bin/service/amuse/type/detail.cgi?type=48",
+      "example_data_quote": "DANCE aROUND (type=48): 設置店舗一覧 includes 函館店, 旭川店, 大宮店, 池袋店, ダイバーシティ東京プラザ店, 福岡天神店, 沖縄 stores, etc. Other type IDs: 太鼓新筺体 type=31 全店設置済み, CHUNITHM Mate=34, maimai CiRCLE PLUS=35, SDVX VM=38, IIDX LM=39, オンゲキ Re:Fresh=42, ポラリスコード=44, MUSIC DIVER=47, ノスタルジア=56. Shop nav lists ~100 JP stores (函館..沖縄南風原).",
+      "adds_over_current": "Japan Round1 only (Round1 USA is already a map source; this JP locator is not). Per-title store lists for chain-exclusive or chain-heavy games (DANCE aROUND, MUSIC DIVER, CHRONO CIRCLE). Can invert type lists into per-store game sets. Does not give cab counts. Map already has eagate/allnet for many R1 stores (e.g. ラウンドワン函館 id 7380) so primary gain is exclusives + confirmation.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL patterns: type/index.cgi, type/detail.cgi?type=N, shop/detail.cgi?shop=N (shop detail page HTML was flaky in fetch; type detail works). Distinct from Round1 USA scraper.",
+      "region": "Japan"
+    },
+    {
+      "name": "GiGO お店情報サイト 店舗検索",
+      "url": "https://www.gigo.co.jp/shops",
+      "kind": "official_locator",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 400,
+      "per_venue_detail": [
+        "games",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.gigo.co.jp/shops/shibuya-miyamasuzaka",
+      "example_data_quote": "GiGO渋谷宮益坂: 営業 10:00〜23:30 daily; ゲームの種類 includes 音楽ゲーム; listed titles include オンゲキ Re:Fresh Act.2, CHUNITHM Mate, maimai でらっくす CiRCLE PLUS, SOUND VOLTEX ∇, beatmania IIDX 33. Filter /shops?game=music_game and /shops?area=13.",
+      "adds_over_current": "Official hours + named music titles on store pages. SEGA titles already largely from ALL.Net; Konami titles on GiGO pages can corroborate eagate. No cab counts. Photo/hours useful; brand forbids embedding many store photos per project README.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Next.js site; slug URLs /shops/{slug}. music_game filter is the useful scrape entry. Not a cab inventory wiki.",
+      "region": "Japan"
+    },
+    {
+      "name": "北海道『音ゲー』ろけ情報 4thTRAX",
+      "url": "https://hokk-otoge.sakura.ne.jp/hok4/",
+      "kind": "community_map",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 150,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://hokk-otoge.sakura.ne.jp/hok4/sh/list.cgi?ar=05",
+      "example_data_quote": "Area pages ar=00..09 (札幌中央/北/南/東/西, 道央, 道東, 道北, 道南, オホーツク). Per-store tables with version + count (e.g. CHUNITHM VERSE x6, maimai PRiSM PLUS x2, 太鼓 ニジイロ x2), GP prices, last updated by named contributors. Site updates through 2026-08-04 (CHUNITHM Mate notes 2026.6/21).",
+      "adds_over_current": "Deepest Hokkaido-only cab/price/version detail; richer than map game_counts for many 道内 venues. Encoding is Shift_JIS (set PYTHONIOENCODING / decode correctly). Regional only, not national.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Classic CGI location DB. Still community-maintained in 2026. Pattern list.cgi?ar=NN.",
+      "region": "Japan"
+    },
+    {
+      "name": "ゲームセンターデータベース かみはて (kamihate)",
+      "url": "https://kamihate.net/arcade_db/",
+      "kind": "blog",
+      "languages": [
+        "ja"
+      ],
+      "countries_covered": [
+        "Japan"
+      ],
+      "venues_estimated": 100,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address",
+        "hours"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://kamihate.net/arcade_db/venue_tokyotama/leisureland_kichijoji/",
+      "example_data_quote": "Prefecture index (北海道..沖縄) with venue slugs. Updates into 2026 (東京レジャーランド吉祥寺 2026.06.16, BIGBANG北見 2026.03.09). Title lists cover IIDX, SDVX, pop'n, maimai, チュウニ, オンゲキ, 太鼓, PIU, GROOVE COASTER, etc. Owner states only personally visited shops get full detail pages.",
+      "adds_over_current": "High-quality visited-shop notes + equipment tags (録画機 list). Not a complete national inventory; sparse outside owner travel paths. Secondary to otogesetchi/Taiko for fill rate.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Personal database, not crowd wiki. Use as corroboration not primary national crawl.",
+      "region": "Japan"
+    },
+    {
+      "name": "뮤즈캣 (Musecat)",
+      "url": "https://musecat.app/kr",
+      "kind": "community_map",
+      "languages": [
+        "ko",
+        "en"
+      ],
+      "countries_covered": [
+        "South Korea",
+        "Japan",
+        "Malaysia",
+        "Indonesia",
+        "Philippines",
+        "Taiwan",
+        "Hong Kong",
+        "Singapore",
+        "Vietnam",
+        "Australia",
+        "USA",
+        "others"
+      ],
+      "venues_estimated": 334,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://musecat.app/kr/arcade/lljc7s254gk41uh",
+      "example_data_quote": "화정게임랜드: maimai DX CiRCLE PLUS 3대 / maimai FiNALE 1대 / 사볼 발키리 ∇ 6대 / 투덱 라이트닝 33 Sparkle Shower 1대 / 투덱 33 1대 / 츄니즘 X-VERSE-X 1대 / 유비트 beyond the Ave. 1대 / 팝픈 2종 / 펌프 PHOENIX 2 2대 / 도라 GALAXY WAVE 1대 / DDR WORLD 1대 / EZ2AC FINAL EX 1대 / 태고 NIJIIRO 1대 / 비트온 PRIME 2 2대. 주소 경기 고양시 덕양구 화신로272번길 38 지하 1층. 영업 화-목 10:00-01:00 등.",
+      "adds_over_current": "PRIMARY KR source. Map has 117 KR venues (8 other-only ZIv stubs). Musecat lists ~334 open KR arcades with full rhythm cab lineups, counts, prices, hours. Examples: HWAJUNG GAMELAND on map is only chunithm+maimai_dx; Musecat adds 6x SDVX Valkyrie, 2x IIDX, jubeat, pop'n x2, pump, gitadora, DDR, EZ2AC, taiko, biton. SHINSEGYE GAMELAND / 신세계오락실 (창원 마산) on map is only chunithm (allnet); Musecat page lists maimai DX x3, SDVX Valkyrie x2, SDVX EXCEED x2, IIDX, CHUNITHM, jubeat x2, pop'n x2, pump, GITADORA, nostalgia, DDR, EZ2AC x2, reflec. 즐겨찾기오락실 (양평) is absent from map; Musecat has pump PHOENIX x2, EZ2AC TIME TRAVELER, 태고 14. API: PocketBase at https://db-delta.musecat.app/api/collections/arcade/records (public venue list, country, closed, expand=basic for name/address/lat-lon). Game inventory relation returns 403 without auth; per-venue games are fully present in SSR HTML at /kr/arcade/{id} so hybrid api+html_scrape. Also covers non-KR (JP 1291 etc.) but KR is the dense, actively edited set (homepage shows 2130 total arcades, 11541 edits, 969 fault reports).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best regional equivalent of hkarcade.fandom for Korea. Community-maintained rhythm-arcade finder (filter by maimai/SDVX/IIDX/pump/EZ2AC/taiko etc.). Not ALL.Net/e-amusement/ZIv. Prefer this over namu for machine ingest. Venue-list API is public; game list HTML scrape needed unless auth is obtained later.",
+      "region": "South Korea"
+    },
+    {
+      "name": "나무위키 오락실 지역 문서 (Namuwiki arcade region pages)",
+      "url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%84%9C%EC%9A%B8",
+      "kind": "wiki",
+      "languages": [
+        "ko"
+      ],
+      "countries_covered": [
+        "South Korea"
+      ],
+      "venues_estimated": 250,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%84%9C%EC%9A%B8/%EA%B0%95%EB%B6%81",
+      "example_data_quote": "펀시티 건대점 (최종 확인일 2025.09.18): beatmania IIDX 33 1대 기본 2000원/프리미엄 프리 3000원 라이트닝; CHUNITHM X-VERSE-X 1대; maimai DX CiRCLE 1대; 노스텔지어 Op.3 1대; SDVX 나블라 1대 발키리; SDVX 익시드 기어 2대; 팝픈 Jam&Fizz 1대; 태고 NIJIIRO 2대; 펌프 PHOENIX 2 2대; 비트온 XX 1대. 주소 서울 광진구 동일로22길 81. 영업 12:00~익일 06:00.",
+      "adds_over_current": "Structured 보유 기기 tables with qty+price+notes, final-check dates, closed venues moved to 폐업 pages. KONKUK FUN CITY / 펀시티 건대 on map is only chunithm+maimai_dx (allnet); namu lists full bemani+taiko+pump+biton. Covers non-networked EZ2AC, biton, classic cabs ALL.Net never reports. Regional hub pages: 서울/강남, 서울/강북, 경기/남부, 경기/북부, 인천, 대전, 세종, 충남, 충북, 강원, 부산, 울산, 경남, 대구, 경북, 전남광주, 전북, 제주, plus per-title distribution pages (펌프 오락실 분포, 신 태고의 달인 오락실 분포). Overlaps Musecat on big rhythm shops; often richer narrative/maintenance notes. Venue count is rough: Seoul alone dozens of sections; nationwide well over 200 with uneven freshness.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Template 템플릿:오락실 standardizes sections. Network icons (k=e-amusement, n=Namco, s=SEGA Aime, a=AM.PASS). HTML only; Cloudflare/login banners can block anonymous edit but read works. Second-priority after Musecat for ingest; good for cross-check and closed-venue triage of the 8 other-only KR stubs.",
+      "region": "South Korea"
+    },
+    {
+      "name": "짱오락실 전국매장안내 (cocozzang.com official locator)",
+      "url": "https://cocozzang.com/html/dh_board/lists/store1",
+      "kind": "official_locator",
+      "languages": [
+        "ko"
+      ],
+      "countries_covered": [
+        "South Korea"
+      ],
+      "venues_estimated": 50,
+      "per_venue_detail": [
+        "address",
+        "hours"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://cocozzang.com/html/dh_board/lists/store1",
+      "example_data_quote": "매장목록 examples: 홍대 관련 주소 on store pages; 부산 광안리2호점 부산 수영구 광안동 196-8; 제주 연동점; 송도 트리플스트리트점; 강남 고속버스터미널점 서울 서초구 신반포로 176; 용산 아이파크몰점; 강동 이케아점. Paginated store1/?PageNumber=1..5. No machine/game inventory on chain site.",
+      "adds_over_current": "Official ZZANG chain store list with addresses. Map already has some ZZANG branches (Hongdae, Yongsan I-Park, Daegu, Daejeon, Bupyeong) but often incomplete game lists and missing branches (e.g. many provincial stores). Does NOT list cabinets; pair with Musecat/namu for games. Useful for store-open/close truth and chain completeness only.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Franchise locator, not a rhythm-game database. Detail pages thin on games. ~5 pages of stores (roughly 50+ entries including prep/reopen). 대빵오락실 has no comparable public store locator found (Instagram + namu only).",
+      "region": "South Korea"
+    },
+    {
+      "name": "Maquinas de Pump It Up en Argentina (Google My Maps)",
+      "url": "https://www.google.com/maps/d/viewer?hl=es&mid=1eda9AYb9wItgLaMZdawcjawkOOY1Jw35",
+      "kind": "community_map",
+      "languages": [
+        "es"
+      ],
+      "countries_covered": [
+        "Argentina"
+      ],
+      "venues_estimated": 80,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://www.google.com/maps/d/viewer?hl=es&mid=1eda9AYb9wItgLaMZdawcjawkOOY1Jw35",
+      "example_data_quote": "Ultima Rhythm Games (Zeta Haus): Pump It Up PHOENIX 2 2026 Gabinete DX con pantalla LCD Plataforma adaptada a TX Online INFO SOBRE RESERVAS: $6000 la hora (por 1 persona). Neverland Park @ Abasto: PIU PHOENIX 2024 Gabinetes LX ... $2200ARS / 3 Canciones. Sacoa @ Dot Baires (RONDA): PUMP IT UP PRIME 2 2018 Gabinete LX Offline. Daigo House: Pump It Up XSANITY / Resident / RISE / Extra $4000 por hora.",
+      "adds_over_current": "Current map has 94 Argentina venues from ZIv; 41 are other-only. This community map has ~80 PIU pins with version/cabinet/price/online status that ZIv often lacks or has stale (e.g. Centerplay still lists EXTRA/Zero; Neverland Abasto has PIU Phoenix 2024 detail here). Adds private studios not in arcades.json: Ultima Rhythm Games, PIU Haus (Dabo's), Daigo House, Ciudad Deportiva FORNIX, Rothar Bar. KML export works: https://www.google.com/maps/d/kml?mid=1eda9AYb9wItgLaMZdawcjawkOOY1Jw35&forcekml=1. Shared from Facebook group Pump it up - Argentina (2026-06).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best structured LATAM find. PIU-only (not multi-game cab wiki). Descriptions are rich Spanish text + photos. Machine_readable: KML/KMZ download (treat as api-style export). Hours present on some private studios via reservation links; mall pins often price/version only. Not a full multi-game arcade wiki like hkarcade.",
+      "region": "Latin America"
+    },
+    {
+      "name": "Pumps do Brasil (Google My Maps via PIUeSport)",
+      "url": "https://www.google.com/maps/d/viewer?mid=zUyuXgpU_iIA.kNV4v-UQQeL4",
+      "kind": "community_map",
+      "languages": [
+        "pt"
+      ],
+      "countries_covered": [
+        "Brazil"
+      ],
+      "venues_estimated": 171,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://www.google.com/maps/d/viewer?mid=zUyuXgpU_iIA.kNV4v-UQQeL4",
+      "example_data_quote": "Shopping Morumbi: Versoes: Fiesta EX e 2 Pump it Up PRO Gabinetes: TX, SX modificada e FX. Lords Diversoes Inteligentes: Versao: Prime Gabinetes: FX. Parque Shopping Barueri: Versao: NX Gabinete: SD. Shopping Campo Limpo: Versao: Fiesta.",
+      "adds_over_current": "Map has 69 Brazil venues (17 other-only). This My Map has 171 PIU pins nationwide with version/cab type, far denser than current ZIv coverage. Some pins may match existing HotZone/Game Station entries with more cab-version detail; many shopping-mall pins are likely net-new or other-only upgrades. Compare: HotZone MorumbiShopping already has pump_it_up+taiko+notes listing Pump It Up Phoenix; the My Map text for Morumbi is older (Fiesta EX/2 PRO) so treat as seed not truth for current version.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Documented on https://piuesport.wordpress.com/2019/07/05/projeto-pumps-do-brasil-via-google-mapas/ (blog still up). KML export works today (~182KB, 171 placemarks). Version histogram is heavily Fiesta/Prime/NX-era with only a handful of XX and almost no Phoenix: data is LIVE but largely STALE. Use as discovery seed for missing venues, not as authoritative machine list. 2025 YouTube 'Ache os Lugares onde tem Pump It Up no Brasil' is a one-off video, not a database.",
+      "region": "Latin America"
+    },
+    {
+      "name": "Pump It Up MX - Locales verificados",
+      "url": "https://www.pumpitup.com.mx/locales/",
+      "kind": "community_map",
+      "languages": [
+        "es",
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "Mexico"
+      ],
+      "venues_estimated": 12,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://laflechita.pumpitup.com.mx",
+      "example_data_quote": "La Flechita - Pump It Up CDMX: Ezequiel Ordonez 1, Copilco el Alto, Coyoacan 04360; 2 gabinetes FX+DX MK10 / PIU Phoenix 2; $80/hr individual $120 pareja; 9AM-10PM daily; WhatsApp +52 56 6942 8394. Pineda's Games: Calle Tierra Blanca 333 A, Azcapotzalco; 4 machines (Phoenix/XX/Prime 2/Fiesta 2); $60/juego; 12:00-22:00.",
+      "adds_over_current": "Map has 91 Mexico venues. La Flechita is NOT in arcades.json at all (dedicated PIU studio with full cab/price/hours). Pineda's Games also missing. The Lost Cave and Phoenix Arcades already exist as pump_it_up-only ZIv stubs without version/price/hours that this site adds. Directory claims LATAM coverage but only Mexico has venues (AR/CL/CO/PE/BR show 0).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Quality is mixed. La Flechita (own subdomain, real photos, booking bot) and Pineda's Games (Setmore booking, Instagram @pinedasgames, version list) look real. Several other directory cards use Unsplash stock photos and placeholder phones (e.g. +52 55 0000-0000); treat non-primary entries as unverified until cross-checked. Site also hosts PIU song wiki and Liga Potosina; venue value is the /locales directory + per-venue pages. html_scrape of /locales/ and /locales/venue-*.",
+      "region": "Latin America"
+    },
+    {
+      "name": "Playland Park Argentina - Locales",
+      "url": "https://park.playland.com.ar/locales/",
+      "kind": "official_locator",
+      "languages": [
+        "es"
+      ],
+      "countries_covered": [
+        "Argentina"
+      ],
+      "venues_estimated": 30,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://park.playland.com.ar/locales/",
+      "example_data_quote": "DEVOTO SHOPPING: Jose Pedro Varela 4866, Piso 3, CP: 1417, CABA. BELGRANO: Monroe 1655, Piso 1, CP: 1428. CANNING: Formosa y Ruta 52 Nro. 653, Local 2018. UNICENTER SHOPPING: Parana 3745, Piso 3, Martinez. Also branches in Mar del Plata, Neuquen, Ushuaia, Mendoza, etc.",
+      "adds_over_current": "Official multi-branch address list for a large AR family-entertainment chain that often hosts PIU (community AR map lists several Playland Park @ shopping locations with PIU versions). Locator itself has NO games/cabinets. Useful only to seed/merge addresses against ZIv Playland entries or the Argentina PIU My Map.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Chain locator only. No per-venue machine list. Do not treat as rhythm-game authority. Related brands (Sacoa, Neverland, Centerplay) appear on the Argentina My Map with better PIU detail.",
+      "region": "Latin America"
+    },
+    {
+      "name": "Coney Park Chile - Nuestros Parques",
+      "url": "https://coneypark.cl/parques/",
+      "kind": "official_locator",
+      "languages": [
+        "es"
+      ],
+      "countries_covered": [
+        "Chile"
+      ],
+      "venues_estimated": 18,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://coneypark.cl/parques/",
+      "example_data_quote": "Filter by city: Antofagasta 1, Calama 1, Coquimbo 1, Los Andes 1, Quilpue 1, San Antonio 1, Santiago 10, Valparaiso 2. Attraction tags include Juegos Arcade but no machine names.",
+      "adds_over_current": "Chile has 94 venues, 53 other-only. Coney Park branches already partially present in arcades.json (e.g. Coney Park La Fabrica Patio Outlet with pump_it_up; several other Coney Park rows are other-only). Locator can complete branch list but does NOT list PIU/DDR/cabs.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Official family-park locator. No per-venue music-game inventory. Low priority vs community PIU maps. Peru also has Coney Park venues in arcades.json; Chile site is Chile-focused.",
+      "region": "Latin America"
+    },
+    {
+      "name": "Timezone India Locations",
+      "url": "https://www.timezonegames.com/en-in/locations/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "India"
+      ],
+      "venues_estimated": 76,
+      "per_venue_detail": [
+        "hours",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.timezonegames.com/en-in/locations/west/inorbit-mall-malad-mumbai/",
+      "example_data_quote": "Timezone Inorbit Mall Malad: Arcade, Bowling & VR Games. Opening Hours Monday: 11:00 am - 10:00 pm ... location: Inorbit Mall, 1st & 2nd Floor, New Link Road, Malad (W), Mumbai, Maharashtra - 400064. Tags: Arcade, Birthday, Bowling, Spin Cars, VR.",
+      "adds_over_current": "Map has only ~4 India Timezone rows (mostly games=['other'], ZIv cab notes like Halo Fireteam Raven, no music games). Official locator lists 76 live venues with stable URL pattern /en-in/locations/{region}/{slug}/ plus address and hours. Does NOT list music/rhythm cabinets (no PIU/DDR/maimai/etc.). High value for venue discovery and filling Other-only gaps; zero game-lineup enrichment without ZIv/field reports.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "TEEG Timezone India chain. Per-venue pages are HTML with amenity icons (Arcade/Bowling/VR) only. Compared Inorbit Malad: map already has this venue as other-only; source confirms hours/address but adds no games. Not already wired as a pipeline source.",
+      "region": "Middle East, Africa, South Asia"
+    },
+    {
+      "name": "Fun City India Store Locator",
+      "url": "https://funcity.in/location",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "India"
+      ],
+      "venues_estimated": 35,
+      "per_venue_detail": [
+        "hours",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://funcity.in/location/ahmedabad/nexus-one-mall",
+      "example_data_quote": "Fun City - Ahmedabad One Mall. Plot No-216, T.P Scheme-1, Near Vastrapur Lake, Vastrapur. SUN to Sat: 10 AM - 10 PM. info@funcity.in 6366990262. Categories: Big Rides, Kiddie Rides, Play Zone, Redemption & Novelty, Skilled Games, Video Games.",
+      "adds_over_current": "Map has 0 Fun City India venues. 35 mall FECs across Ahmedabad, Bangalore, Chennai, Delhi NCR, Hyderabad, Mumbai, Pune, etc. Categories include Video Games / Skilled Games but no named rhythm cabs. Venue discovery only; SSL cert on funcity.in failed default verify (site still reachable with relaxed TLS).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Landmark Group kids/family FEC chain (claims 35+ locations / 20 cities). URL pattern /location/{city}/{slug}. Not a music-game database.",
+      "region": "Middle East, Africa, South Asia"
+    },
+    {
+      "name": "Smaaash Entertainment Centres",
+      "url": "https://smaaash.in/centres",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "India"
+      ],
+      "venues_estimated": 11,
+      "per_venue_detail": [
+        "hours",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://smaaash.in/centres/mumbai-lower-parel",
+      "example_data_quote": "UTOPIA CITY Mumbai Lower Parel. Address: Gate No 4, Trade View Building, Utopia City, Pandurang Budhkar Marg, Lower Parel, Mumbai, Maharashtra, 400013. Timings MON-FRI 12:00PM-12:00AM; SAT & SUN 11:00AM-12:00AM. Activities: Bowling, Go Karting, VR Games, F&B, Cricket, Arcade Game (marketing: bike racing simulators).",
+      "adds_over_current": "Map has 0 Smaaash venues. 11 centres (Mumbai, Noida, Hyderabad x2, Ludhiana, Gurugram, Mangalore, Vijayawada, Madurai, Gwalior, New Delhi). Arcade amenity tag only; no PIU/DDR/bemani-style machine lists. Venue discovery, not lineup data.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL pattern /centres/{slug}. Booking engine at bookings.gosmaaash.com. Sportainment focus; rhythm cabs unconfirmed on site.",
+      "region": "Middle East, Africa, South Asia"
+    },
+    {
+      "name": "Dave & Buster's India",
+      "url": "https://daveandbustersindia.com/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "India"
+      ],
+      "venues_estimated": 3,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://daveandbustersindia.com/bangalore",
+      "example_data_quote": "Arcade, Bowling & Gaming Zone in Koramangala, Bangalore. City pages at /bangalore, /mumbai, /delhi. Marketing: 75+ arcade and VR games; no published per-title machine inventory on pages opened.",
+      "adds_over_current": "Map already has all 3 (Delhi Pacific Mall, Mumbai Infiniti Andheri, Bangalore Mantri Avenue) with StepManiaX (and some other cabs) from ZIv notes. Official site confirms multi-city presence but does not add new music games beyond what ZIv already recorded.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Small chain; low incremental value vs map. Keep as chain locator for address refresh only.",
+      "region": "Middle East, Africa, South Asia"
+    },
+    {
+      "name": "Timezone Australia venue locator",
+      "url": "https://www.timezonegames.com/en-au/venues/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Australia"
+      ],
+      "venues_estimated": 70,
+      "per_venue_detail": [
+        "address",
+        "hours",
+        "phone"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.timezonegames.com/en-au/venues/nsw/timezone-haymarket/",
+      "example_data_quote": "Haymarket: Level 3 Market City, 9-13 Hay Street, Haymarket, Sydney, NSW, 2000. Tags: Games, Parties, Pixel, Prizes, Billiards. Page claims 150+ arcade games; does NOT name maimai/chunithm/taiko per venue. Brand games page lists Mai Mai, Taiko No Tatsujin, DDR A, Pop'n Music as product types with note 'Games at selected venues. Games vary by venue.'",
+      "adds_over_current": "Stable official address/hours for ~70 AU FECs with clean /en-au/venues/{state}/timezone-{slug}/ pattern. Does NOT add per-venue music-game lineups. Map already has many Timezone rows from ALL.Net+ZIv (e.g. TIMEZONE(HAYMARKET) already has chunithm/ddr/drs/gitadora/maimai_dx/popn/pump_it_up/sdvx/taiko). Useful for reconciling missing/other-only TZ stubs (Fountain Gate, Charlestown, Mandurah, Baldivis, etc.) with current open status and address only.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "TEEG brand. Same family as Zone Bowling/Kingpin. Not a cab-list wiki. Disney Photobooth section is one of few places listing specific venue names for a named product.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "Timezone New Zealand venue locator",
+      "url": "https://www.timezonegames.com/en-nz/locations/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "New Zealand"
+      ],
+      "venues_estimated": 15,
+      "per_venue_detail": [
+        "address",
+        "hours",
+        "phone"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.timezonegames.com/en-nz/locations/north-island/timezone-newmarket/",
+      "example_data_quote": "Timezone Newmarket: 135-151 Broadway, Newmarket, Auckland, 1023. Activities: Laser Tag, Parties, Prizes, Games. No named rhythm cabinets on venue page. Live list includes Queen St, Bayfair, Botany, Courtenay Place, Napier, Newmarket, Palmerston Square, The Base Hamilton, Victoria Street Hamilton, Whangarei, Rotorua Central, Christchurch Central, Dunedin, Nelson, Riccarton.",
+      "adds_over_current": "Authoritative NZ chain roster (~15 venues) with addresses. Map already has most via ALL.Net+ZIv (e.g. TIMEZONE NEW MARKET has ddr/maimai_dx/pump_it_up/taiko). Official site still does not publish per-venue music-game lists; maimai presence for select NZ stores is better proven by ALL.Net and social/press than by this locator.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "NZ brand games marketing mentions Mai Mai and Taiko No Tatsujin generically; venue pages only say 'arcade games'.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "Archie Brothers Cirque Electriq locations",
+      "url": "https://archiebrothers.com.au/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Australia"
+      ],
+      "venues_estimated": 19,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://archiebrothers.com.au/locations/glen-waverley",
+      "example_data_quote": "Glen Waverley: Century City, 285 Springvale Rd, Glen Waverley VIC 3150. Perth, Castle Towers, Point Cook, Alexandria, Karrinyup, Rundle Place, Wollongong, Entertainment Quarter, Fremantle, Melbourne Docklands, Chatswood, QV Melbourne, Surfers Paradise, Sunshine Coast, Penrith, Moorabbin, Chadstone, Bowen Hills listed with full addresses and activity icons (arcade/bowling/etc), not music game names.",
+      "adds_over_current": "Complete Funlab/Archie Brothers AU roster and addresses under /locations/{slug}. Does not list maimai/taiko/DDR. Map already has ~19 Archie rows; several are partial (e.g. Entertainment Quarter is other-only on map; Glen Waverley/CCW has ddr+maimai_dx+taiko from ALL.Net). Locator helps fill missing venues or address corrections, not cab lineups.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Funlab family brand. NZ Archie venues appear in map (Christchurch, Wellington, Newmarket) but were not verified on this AU domain locator today.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "iPlay Australia locations",
+      "url": "https://www.iplayaustralia.com.au/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Australia"
+      ],
+      "venues_estimated": 29,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.iplayaustralia.com.au/locations/iplay-tenpin-city-lidcombe/",
+      "example_data_quote": "Listing page: Showing 29 results across QLD/NSW/VIC/ACT/WA/NT. Per venue shows suburb/centre and experience icons (arcade, bowling, laser, pixel, etc). Lidcombe Tenpin City, Carousel, Belconnen, Wetherill Park, Redbank, Whitfords, etc. No cabinet-level music game inventory on location pages.",
+      "adds_over_current": "Official multi-state FEC chain (~29 including coming-soon). Several map iPlay rows are other-only (Redbank, Eastern Creek, Whitfords, Coffs Harbour). Locator confirms they exist and are branded arcade venues, but does not supply rhythm/music game names. Music coverage on map still depends on ALL.Net/ZIv (e.g. IPLAY CAROUSEL has ddr/maimai_dx/taiko; iPlay Tenpin City Lidcombe has maimai_dx/taiko).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Family-owned chain separate from TEEG Timezone. Good for completeness of AU FEC coverage, weak for rhythm cab detail.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "Kingpin Play venues (AU/NZ)",
+      "url": "https://www.kingpinplay.com/en-au/venues/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Australia",
+        "New Zealand"
+      ],
+      "venues_estimated": 10,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.kingpinplay.com/en-au/venues/vic/melbourne/",
+      "example_data_quote": "10 venues: Macarthur, North Strathfield, Crown, Melbourne Collins St, Canberra, Chermside, Townsville, Norwood, Darwin, Queenstown NZ. Per venue: activity tags (Bowling, Arcade Games, Darts, Karaoke, Laser Tag...) not specific music titles.",
+      "adds_over_current": "Official TEEG Kingpin roster including NZ Queenstown. Map already has most with partial music tags from ALL.Net/ZIv (KINGPIN MELBOURNE has chunithm/ddr/drs/maimai_dx/taiko; Kingpin Darwin is other-only). Site does not add missing music games; confirms venue set and addresses.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Sibling brand to Timezone under TEEG. Same limitation: no per-venue cab lists.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "Koko Amusement (Sydney multi-site operator)",
+      "url": "https://www.kokoamusement.com.au/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Australia"
+      ],
+      "venues_estimated": 4,
+      "per_venue_detail": [
+        "address",
+        "hours",
+        "phone",
+        "games"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.kokoamusement.com.au/",
+      "example_data_quote": "Home contact block: George St (Town Hall) Koko, 614 George Street Sydney NSW 2000, Mon-Fri 10am-2am; George St (Cityheroes) 505 George Street; Belmore St (Burwood) Level 3 Emerald Square 27-31 Belmore St; Hornsby Westfield called out as open. Games page https://www.kokoamusement.com.au/games lists redemption/skill titles plus Dance Dance Revolution ACE and Midnight Maximum Tune 6; does NOT list maimai/chunithm/iidx despite community reports of heavy rhythm floors at Town Hall.",
+      "adds_over_current": "Operator site for Sydney's densest rhythm destination brand. Map already has strong ALL.Net+ZIv coverage for major sites (KOKO AMUSEMENT 614: chunithm/ddr/drs/gitadora/iidx/maimai_dx/popn/pump_it_up/sdvx/taiko; City Heroes and Burwood also tagged). Site games page is incomplete vs reality and does not beat ALL.Net for music games. Still useful for hours/addresses and confirming Hornsby/Burwood/Town Hall/City Heroes as live multi-site operator. Some Koko map stubs remain other-only (Bankstown, Chatswood, Koko Amusement 591).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Wix site; not a structured multi-venue cab database. Community YouTube/Discord describe more rhythm cabs than the official games page admits.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "1UP Arcade Brisbane full game list",
+      "url": "https://www.1uparcade.com.au/games/",
+      "kind": "blog",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Australia"
+      ],
+      "venues_estimated": 1,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.1uparcade.com.au/games/",
+      "example_data_quote": "Single venue: Ground-Floor of LASER FORCE in Woolloongabba. Claims ~140 original arcade games with constantly updated A-Z list (1942, Alien vs Predator, Bubble Bobble, Daytona USA Championship, Dariusburst AC, Golden Axe, Guilty Gear, etc). Retro/fighting/shmup focus, not modern SEGA/Konami network music games.",
+      "adds_over_current": "Best structured per-cab inventory found in region, but only one venue and almost no modern rhythm network titles. Not observed as a separate named entry under 1UP in arcades.json sample search (may be absent or nested under another name). Would help a retro/other-only venue if added; does not solve AU/NZ music-game Other-only problem at scale.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Excellent single-site retro database; wrong shape for region-wide music-arcade enrichment.",
+      "region": "Australia and New Zealand"
+    },
+    {
+      "name": "NamuWiki Arcade/Singapore (오락실/싱가포르)",
+      "url": "https://en.namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%8B%B1%EA%B0%80%ED%8F%AC%EB%A5%B4",
+      "kind": "wiki",
+      "languages": [
+        "ko",
+        "en (machine translation mirror)"
+      ],
+      "countries_covered": [
+        "Singapore"
+      ],
+      "venues_estimated": 18,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "prices",
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://en.namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%8B%B1%EA%B0%80%ED%8F%AC%EB%A5%B4#s-4.1",
+      "example_data_quote": "Cow Play Cow Moo Downtown East: address 1 Pasir Ris Cl #04-102; hours Mon-Thu 11:00-23:00 Fri 11:00-01:00; IIDX 33 Sparkle Shower 1 regular (Premium Free 2 medals), CHUNITHM X-VERSE 1 unit (3 medals), maimai DX PRiSM 1 unit (4 medals), SDVX Navla 1 Valkyrie + 1 regular, Taiko NIJIIRO 1, DDR WORLD, GITADORA, DRS, Pop'n, Nostalgia, Reflec Beat with per-mode prices and cab condition notes.",
+      "adds_over_current": "Compared CPCM Downtown East, CPCM Suntec, Timezone Causeway Point in arcades.json: game titles largely already present via allnet/ziv (e.g. Downtown East already has chunithm/ddr/drs/gitadora/iidx/maimai_dx/nostalgia/popn/reflec/sdvx/taiko). Major gap filled is empty cabs[] / sparse cab_models: wiki gives per-title unit counts, medal/token prices, version names (e.g. IIDX 33 Sparkle Shower, maimai DX PRiSM PLUS), and condition notes (broken screens, off machines). Hillion: map has maimai_dx+sdvx; wiki confirms 2x maimai DX PRiSM PLUS and pricing. Closest SEA analogue to hkarcade.fandom for cab-level detail, but Singapore-only (~18 live venues documented; closed section also tracked).",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Last modified 2026-07-10 on page. Korean original at namu.wiki same path. Structured by chain (CPCM, Paco Funworld, Timezone, Virtualand, Zone X) with network service badges (e-amuse/Aime/etc). HTML tables scrapeable. No equivalent NamuWiki pages found for Malaysia/Thailand/Indonesia/Philippines.",
+      "region": "Southeast Asia"
+    },
+    {
+      "name": "Cow Play Cow Moo Singapore store locator",
+      "url": "https://www.cpcm.com.sg/locations_singapore",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Singapore"
+      ],
+      "venues_estimated": 15,
+      "per_venue_detail": [
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.cpcm.com.sg/locations_singapore",
+      "example_data_quote": "COW PLAY COW MOO DOWNTOWN EAST: E!Hub@Downtown East 1 Pasir Ris Cl #04-102 S(519599); Opening Hours Mon to Fri 11am-11pm (Closes at 1am on Fridays), Weekends and PH 10am-1am (Closes at 11pm on Sundays). Also lists Suntec L3/B1, 313 Somerset, Bishan, Century Square, Jurong Point, Hillion, West Mall, Wisteria, Woodlands STELLAR@TE2, Hougang 1, Woodleigh, Northshore Plaza 2, Seletar Mall.",
+      "adds_over_current": "Does not list games/cabs. Useful for address/hours reconciliation and discovering CPCM branches that may be missing or mis-addressed (map already has most CPCM names from ALL.Net/ZIv). No game titles beyond what ALL.Net already supplies for this chain.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Official chain site. Address+hours only. Overseas tab exists on site but Singapore page is the verified multi-venue list.",
+      "region": "Southeast Asia"
+    },
+    {
+      "name": "Timezone Singapore locations",
+      "url": "https://www.timezonegames.com/en-sg/locations/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Singapore"
+      ],
+      "venues_estimated": 15,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.timezonegames.com/en-sg/locations/",
+      "example_data_quote": "Timezone Causeway Point #07-02: tags Claw Machines, Arcade Games, VR Games, Music Games. Also Jurong Point #02-45, Plaza Singapura #07-02/03, Orchard Xchange B1, Westgate #B1-45/46, VivoCity #02-43, etc. Site claims 15 venues across North/Northeast/East/West/Central.",
+      "adds_over_current": "Amenity tags include 'Music Games' but not specific titles or cab counts. Map already has most Timezone SG entries with some allnet-derived titles (e.g. Causeway Point: maimai_dx/taiko/other). Helps completeness of mall unit numbers and which branches claim music games. Does not fill other-only claw shops.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "TEEG official. Per-venue pages exist under /en-sg/locations/{region}/{slug}/. No machine lineup lists.",
+      "region": "Southeast Asia"
+    },
+    {
+      "name": "Timezone Philippines locations",
+      "url": "https://www.timezonegames.com/en-ph/locations/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Philippines"
+      ],
+      "venues_estimated": 100,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.timezonegames.com/en-ph/locations/",
+      "example_data_quote": "Timezone Trinoma: 4/F TriNoma, EDSA, Quezon City; amenity tags Arcade, Billiards, Bowling, Bumper Cars, Party Room, Prize Shop, Videoke, VR. Many Metro Manila/Calabarzon/Visayas/Mindanao outlets listed (SM Southmall, Glorietta 4, Ayala Center Cebu, Abreeza, etc). Site claims 100+ PH venues.",
+      "adds_over_current": "PH has 206 other-only venues in arcades.json (often Timezone/Quantum FEC stubs from ZIv). This locator adds/updates addresses and confirms open branches, but does NOT list music game titles. Game fill for PH still depends on ALL.Net (e.g. maimai DX IV shows 47 PH locations including QUANTUM SM STA.MESA / SM NORTH EDSA) which is already in pipeline. Priority: venue existence + address hygiene, not cab lists.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Largest official multi-venue SEA chain locator verified. Amenity tags are coarse (Arcade/VR), not title-level.",
+      "region": "Southeast Asia"
+    },
+    {
+      "name": "Timezone Indonesia locations",
+      "url": "https://www.timezonegames.com/en-id/locations/",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "id"
+      ],
+      "countries_covered": [
+        "Indonesia"
+      ],
+      "venues_estimated": 70,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.timezonegames.com/en-id/locations/jakarta/emporium-pluit-mall/",
+      "example_data_quote": "Emporium Pluit Mall: 4th Floor, Jl. Pluit Selatan Raya, North Jakarta. Also Lippo Mall Puri 1/2, Pacific Place, Paris Van Java Bandung, Galaxy Mall Surabaya, Mal Bali Galeria, etc. Regions: Jakarta, West/Central/East Java, Sumatera, Kalimantan, Sulawesi, Bali & Nusa Tenggara, Bangka Belitung. IG @timezoneid claims >75 lokasi.",
+      "adds_over_current": "Indonesia has 307 venues / 30 other-only. Locator is useful for branch inventory and addresses. No per-venue music game lists. Does not replace ALL.Net/ZIv for titles.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "HTML lists mall name + floor/street. Indonesian mirror under /id-id/lokasi/.",
+      "region": "Southeast Asia"
+    },
+    {
+      "name": "AEON Fantasy Malaysia store locators (Molly Fantasy / PALO / FANTAZIA)",
+      "url": "https://www.aeonfantasy.com.my/store/",
+      "kind": "official_locator",
+      "languages": [
+        "en",
+        "ms"
+      ],
+      "countries_covered": [
+        "Malaysia"
+      ],
+      "venues_estimated": 80,
+      "per_venue_detail": [
+        "hours",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.aeonfantasy.com.my/store/",
+      "example_data_quote": "Molly Fantasy Mid Valley Megamall: Tingkat 1, 59200 Lingkaran Syed Putra, Kuala Lumpur; hours 10am-10pm; contact +603-2201 1237. PALO Central i-City: Lot L4-18, Central I City Shah Alam; hours 10am-10pm. Tabs also cover FANTAZIA, Toys Spot, Tiny Molly, kidzooona, FANPEKKA, Kid's Box across Klang Valley / Southern / Northern / East Coast / East Malaysia.",
+      "adds_over_current": "Malaysia has 223 venues / 69 other-only. Locator gives comprehensive Molly/PALO/FANTAZIA addresses and hours. Does NOT list which outlets have maimai/chunithm/taiko (social posts claim maimai at selected Molly/PALO; map already has some Molly with chunithm/maimai_dx from ALL.Net e.g. MOLLY FANTASY AEON BUKIT INDAH). Best use: fill missing Molly/PALO shells and hours; still need ALL.Net or field reports for music titles per outlet.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Family entertainment focus (redemption, kids zones). Music cabs are a subset of outlets only. Corporate stats also claim large store counts in PH/TH via AEON Fantasy subsidiaries, but country-specific public store maps for those were not verified as music-game useful today.",
+      "region": "Southeast Asia"
+    },
+    {
+      "name": "Arcade Club Game Library",
+      "url": "https://www.arcadeclub.co.uk/games/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom"
+      ],
+      "venues_estimated": 3,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.arcadeclub.co.uk/games/jubeat/",
+      "example_data_quote": "Jubeat ... Available At BURY, LEEDS, BLACKPOOL. Pop'n Music Éclale Available At BURY only. MÚSECA Available At BURY, BLACKPOOL. Game pages use /games/{slug}/; A-Z index at /a-z/{letter}/. CC BY-SA 3.0 licensed library.",
+      "adds_over_current": "Official operator confirmation of which music cabs sit at which of the 3 sites (Bury/Leeds/Blackpool). Map already has very full ZIv lists for all three (Arcade Club Bury already classified chunithm, iidx, sdvx, popn, jubeat, etc.). Useful as ground-truth / refresh source for those 3 venues only; does not cover the ~428 other-only UK/IE stubs.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Best structured UK cab/game database found. 500+ titles claimed. Per-game pages list venue availability. Only 3 venues total. Free-play chain, not a national multi-operator wiki like hkarcade.fandom.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "Pinball Map United Kingdom",
+      "url": "https://pinballmap.com/uk",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom",
+        "Ireland"
+      ],
+      "venues_estimated": 228,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://pinballmap.com/uk?by_location_id=26175",
+      "example_data_quote": "Site reports ~228 locations & ~788 machines in UK map results. Live RSS (location_machine_xrefs.rss) e.g. 'Elvis (Stern, 2004) was added to Continue Arcades in Taunton'; 'Jurassic Park (Pro) was added to NQ64 Birmingham'. API at /api/v1/region/:region/locations.json requires api_token.",
+      "adds_over_current": "Pinball machine lists only, not rhythm/music games. Can discover bar/arcade venues and pinball lineups the map does not track as music games. Example: Continue Arcades Taunton is other-only with empty notes in arcades.json; Pinball Map has recent pinball additions there but still no DDR/bemani. Overlap with many ZIv venues (Arcade Club, NQ64, Four Quarters, Playback) without adding classified music games.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Actively maintained community map with API + RSS. Pinball-scope only. Ireland venues appear mixed into UK region listing (e.g. Base Arcade Belfast, Sportsland Portrush). Not a substitute for ZIv music-game coverage.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "NAMCO Funscape locations",
+      "url": "https://www.namcofunscape.com/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom"
+      ],
+      "venues_estimated": 6,
+      "per_venue_detail": [
+        "address",
+        "hours"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.namcofunscape.com/locations/braintree",
+      "example_data_quote": "Locations: Braintree, Metrocentre (Gateshead), Norwich, Romford, Tamworth, Trafford Centre. Braintree: Braintree Leisure Park, Charter Way, Braintree, CM77 8YH; hours Mon-Sun 10:00-23:00. Arcade activity page mentions 'dancing machines' generically with no per-site cab list.",
+      "adds_over_current": "Confirms 6 live Funscape sites and addresses/hours. Map already has Funscape entries from ZIv (e.g. Braintree ddr+other; Gateshead other-only with redemption/Mario Kart cabs only). Official site does NOT list per-venue music games, so it does not fix other-only Funscape rows.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Bandai Namco Amusement Europe chain locator. Marketing site, not a machine database.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "Continue Arcades",
+      "url": "https://www.continuearcades.com/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom"
+      ],
+      "venues_estimated": 7,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.continuearcades.com/plymouth",
+      "example_data_quote": "Locations: Plymouth, Taunton, Swansea, Chichester, Tenby, Derby, Hemel. Site copy: free-play arcade, pay once play unlimited; pinball/racers/shooters mentioned. No structured per-venue machine inventory on the pages checked.",
+      "adds_over_current": "Chain has expanded (Hemel etc.). Map has several Continue? Arcades from ZIv with mixed coverage (Swansea ddr+other; Plymouth other+stepmaniax; Taunton other-only empty notes). Official site adds location discovery but not music-game classification.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Growing free-play franchise. Per-city pages exist; machine lists not published systematically.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "High Score Arcades",
+      "url": "https://highscorearcades.co.uk/locations/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom"
+      ],
+      "venues_estimated": 9,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://highscorearcades.co.uk/locations/",
+      "example_data_quote": "Locations listed: Andover, Bracknell, Farnborough, Newport (Wales), Southampton, Swindon, Worcester (plus other pages reference Newbury). Free-play amusement centres; booking via Roller. No public per-site cab catalogue found on the site.",
+      "adds_over_current": "Operator locator for a multi-site free-play chain already partly in the map from ZIv (e.g. High Score Southampton has ddr+other with long cab notes including Dancing Stage SuperNOVA and DANCERUSH STARDOM). Does not add new classified music games beyond ZIv.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Useful chain inventory for venue presence; marketing pages only for machines.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "NQ64 Arcade Bars",
+      "url": "https://nq64.co.uk/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom"
+      ],
+      "venues_estimated": 12,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://nq64.co.uk/soho/games/",
+      "example_data_quote": "Chain of retro arcade bars (Soho, Shoreditch, Manchester NQ, Birmingham, Bristol, Cardiff, Edinburgh, Glasgow, Leeds, Nottingham, etc.). Per-location games pages claim counts like '31 arcade machines, 2 pinball, 8 retro consoles' at Soho. Full page content often behind bot protection when fetched headlessly.",
+      "adds_over_current": "Map already has multiple NQ64 rows from ZIv, typically ddr+other with retro cab notes (Dancing Stage EuroMIX, Guitar Hero Arcade, etc.), not modern e-amusement lineups. Official games pages may refresh retro lists but are not a bemani database and are hard to scrape reliably.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Live chain site. Game lists appear per location when accessible; bot/Cloudflare friction for automated scrape.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "AURCADE location database",
+      "url": "https://www.aurcade.com/locations/",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United Kingdom"
+      ],
+      "venues_estimated": null,
+      "per_venue_detail": [
+        "games",
+        "address",
+        "hours"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.aurcade.com/locations/view.aspx?id=1967",
+      "example_data_quote": "Arcade Club (Bury): Ela Mill, Cork Street BL9 7BW; 'Games: 216 Unique Games: 12'; description notes list incomplete and may cover inventory across three locations. Search UI requires filters; UK coverage sparse vs US.",
+      "adds_over_current": "Classic/video game tracking oriented. UK sample (Arcade Club) is incomplete relative to both ZIv notes and Arcade Club's own library. Not a maintained UK rhythm-game atlas.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Global community DB. Thin UK density. Keep as secondary cross-check only.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "Leisureplex Ireland",
+      "url": "https://leisureplex.ie/",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "Ireland"
+      ],
+      "venues_estimated": 4,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://leisureplex.ie/pool-arcade/",
+      "example_data_quote": "Sites referenced: Blanchardstown, Charlestown, Coolock, Tallaght. Pool/arcade marketing page; no named rhythm cabinets or machine inventory. Instagram: bowling/arcade chain Ireland.",
+      "adds_over_current": "Map already has Leisureplex/Leisure Plex rows from ZIv with stepmaniax and/or pump_it_up on some sites and other-only on Coolock. Official site does not list cabs so cannot fill missing music-game classifications.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Main Ireland multi-site leisure operator with arcades. Locator only.",
+      "region": "United Kingdom and Ireland"
+    },
+    {
+      "name": "AURCADE",
+      "url": "https://www.aurcade.com/",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United States",
+        "Canada",
+        "global (sparse)"
+      ],
+      "venues_estimated": 2000,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address",
+        "hours"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.aurcade.com/locations/view.aspx?id=1397",
+      "example_data_quote": "Underground Retrocade, West Dundee IL: Games: 213. Machine list via /services/ws_games.aspx?a=lg&id=1397 includes Jubeat (Konami, 2012) plus full classic video/pinball floor (Donkey Kong, Galaga, Asteroids, etc.). Dance Dance Revolution Extreme page lists 162 public locations worldwide, majority US (e.g. Acton Bowladrome MA, Aftershock Classic Arcade WI, Ground Kontrol OR). Galloping Ghost Arcade id=638: Games 1101, Unique 306, updated 2026-07-29.",
+      "adds_over_current": "Strongest US classic/video arcade machine database not already wired. Map is ZIv-heavy for US (1432/1473 src=ziv) and misses flagship classic venues (Galloping Ghost, Funspot absent). Aurcade can (1) add missing classic mega-venues with full cab lists, (2) upgrade other-only ZIv stubs that have DDR/PIU/jubeat on Aurcade but only redemption/other on map (example: Acton Bowladrome is other-only on map; Aurcade lists DDR Extreme there), (3) expand classic cab detail beyond music games. Weak on modern Bemani/ALL.Net (CHUNITHM, SDVX, maimai) relative to ZIv/Round1; strength is classic + older DDR/PIU/jubeat floors.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "HTML location pages + scrapable endpoint /services/ws_games.aspx?a=lg&id={location_id}. Genre filters include Dance/Rhythm, Music, Rhythm. Recent scores dated 2026-08-03. Venue total not published as a single number; hundreds of US locations confirmed via game-location reverse indexes (DDR Extreme alone: 162). Not a rhythm-first wiki; better treated as classic-arcade + occasional music cabs.",
+      "region": "United States"
+    },
+    {
+      "name": "Museum of the Game / International Arcade Museum (Arcade Map)",
+      "url": "https://www.arcade-museum.com/map",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United States",
+        "Canada",
+        "global"
+      ],
+      "venues_estimated": 3054,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address",
+        "hours",
+        "prices"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://www.arcade-museum.com/location/Illinois/Galloping-Ghost-Arcade-Brookfield-14",
+      "example_data_quote": "Site reports 'All available locations: 3054' (live 2026-08-04). Galloping Ghost Arcade page: address 9415 Ogden Ave Brookfield IL, hours Sun-Thur 11am-12am Fri-Sat 11am-2am, '1075 Video Games', payment Hourly, verified; long 'Games Reportedly Operated Include' table (005, 1941 Counter Attack, 1942, ... On Floor status). Chain list includes Dave & Busters 156, Barcade 11, Round 1 9, Emporium 5, Cidercade 5, etc.",
+      "adds_over_current": "Largest open US-heavy public arcade locator with per-venue classic game lists, hours, payment, and chain grouping. Adds venues the map lacks entirely (Galloping Ghost, Funspot top most-visited; both missing from arcades.json). Game focus is classic video/pinball/redemption, not modern rhythm. Overlap with ZIv on barcades/family centers is partial; value is classic mega-arcades and closed/verified status flags. Common-games page shows Guitar Hero Arcade in top 50 (5 locations) but not modern Bemani.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "URL pattern /location/{State}/{Name-City-id}. Related: /location/chain/list, /location/most-visited-list, /location/common-games. Same org as KLOV. Filter UI supports Has Game name search. Data timestamped on pages (e.g. most-visited 'August 04 2026').",
+      "region": "United States"
+    },
+    {
+      "name": "Arcade Map (arcademap.app / BlueBurst)",
+      "url": "https://arcademap.app/arcades/",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United States",
+        "New Zealand",
+        "Japan",
+        "Israel",
+        "Australia",
+        "Malaysia",
+        "Colombia",
+        "South Korea"
+      ],
+      "venues_estimated": 213,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address"
+      ],
+      "machine_readable": "url_pattern",
+      "example_venue_url": "https://arcademap.app/arcades/galloping-ghost-arcade/",
+      "example_data_quote": "List page: '213 of 213 venues' with country filter including United States. Galloping Ghost page: 'Arcade 1021 machines', address 9415 Ogden Ave Brookfield IL, full alphabetical games table (1000 Miglia through ...). Round1 Burbank page live but 'Games 0 / No games listed for this venue yet' - coverage uneven. Photos via sql.marshweb.co.nz API paths.",
+      "adds_over_current": "Smaller than Aurcade/IAM but structured slug URLs and some deep classic game lists. Majority of listed venues appear US (Round1 stores, barcades, Emporium, Coin-Op Game Room, Main Event, etc.). Can surface venues or classic cab detail missing from ZIv stubs; does not systematically beat Round1/ZIv on modern rhythm for stores that already have those sources. Many chain entries have empty game lists.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Formerly linked as blueburst.gg/arcades/ (redirects here). Android app on Google Play. Community-edit model. Pinball intentionally out of scope (defers to Pinball Map).",
+      "region": "United States"
+    },
+    {
+      "name": "Pinball Map",
+      "url": "https://pinballmap.com/",
+      "kind": "community_map",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United States",
+        "global"
+      ],
+      "venues_estimated": 12624,
+      "per_venue_detail": [
+        "games",
+        "cab_counts",
+        "address"
+      ],
+      "machine_readable": "api",
+      "example_venue_url": "https://pinballmap.com/map/?by_location_id=16971",
+      "example_data_quote": "Homepage (live 2026-08-03 crawl context / site claims): 12,624 locations and 54,502 machines. Open-source crowdsourced pinball locator with documented REST API at /api/v1/docs (API token required as of 2026; /api/v1/locations/:id/machine_details.json returns 401 without token). Regional maps (e.g. /la).",
+      "adds_over_current": "World-class machine-level data and API quality, but pinball-only. Does not fill music-game Other-only stubs. Useful only if map ever tracks pinball or wants co-located venues that also host music cabs; not a rhythm source.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Include for completeness as the best US public coin-op map infrastructure; not recommended as primary for rhythm/arcade music games. Token gate since mid-2026.",
+      "region": "United States"
+    },
+    {
+      "name": "Barcade official locations + games",
+      "url": "https://barcade.com/games",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United States"
+      ],
+      "venues_estimated": 11,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://barcade.com/location/brooklyn",
+      "example_data_quote": "Site claims: 'Explore the full list of classic arcade games and pinball machines available at each Barcade location.' Locations nav: Brooklyn, Detroit, Jersey City, Los Angeles, New Haven, New York Chelsea, New York FiDi, New York St. Marks Place, plus others. Marketing copy confirms per-location game lists; SPA rendered pages returned little static HTML on fetch (JS-heavy).",
+      "adds_over_current": "Chain already partly on map via ZIv (e.g. Barcade FiDi and Center City Philadelphia with chunithm/groove_coaster/other). Official per-location classic lists could correct or enrich cab notes if scrapable; not a large new venue set. Rhythm coverage at Barcade is sparse vs classic video.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Small chain (~11). Use as operator-attested classic lists if JS content can be rendered; not a national rhythm database.",
+      "region": "United States"
+    },
+    {
+      "name": "Insert Coin (insert-coin.app)",
+      "url": "https://www.insert-coin.app/",
+      "kind": "community_map",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "countries_covered": [
+        "global (including United States)"
+      ],
+      "venues_estimated": 3000,
+      "per_venue_detail": [
+        "games",
+        "address"
+      ],
+      "machine_readable": "manual_only",
+      "example_venue_url": "https://www.insert-coin.app/map",
+      "example_data_quote": "App Store / Reddit (r/cade): free iOS/Android/web map for pinball, foosball, pool, darts, arcade; maintainers claimed ~3,000 locations and 17,000 games. Web map is a JS SPA: WebFetch returned no indexable game/venue body. Arcade Heroes directory lists it as NEW Dec 2024.",
+      "adds_over_current": "Potentially large venue+game graph, but machine-readable access not confirmed today (SPA, no public API found). Scope is bar/cafe games as much as music arcades. Unverified for US rhythm cab depth until app/API inspected further. Do not treat as proven hkarcade-class source yet.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Still live (app + domain respond). Mark machine_readable manual_only until a scrape/API path is demonstrated. Priority below Aurcade and Museum of the Game.",
+      "region": "United States"
+    },
+    {
+      "name": "Dave & Buster's official location finder",
+      "url": "https://www.daveandbusters.com/us/en/about/locations",
+      "kind": "official_locator",
+      "languages": [
+        "en"
+      ],
+      "countries_covered": [
+        "United States",
+        "Canada",
+        "international franchise"
+      ],
+      "venues_estimated": 150,
+      "per_venue_detail": [
+        "address"
+      ],
+      "machine_readable": "html_scrape",
+      "example_venue_url": "https://www.daveandbusters.com/us/en/about/locations/birmingham",
+      "example_data_quote": "Full US state list of store pages (AL Birmingham through WI Wauwatosa, 100+ US stores) live 2026-08-04. Per-store pages are address/hours/reservations oriented; no public per-location music or full game inventory on the locator.",
+      "adds_over_current": "Operator-attested store list for a major chain. Does not supply music-game cabinets. Low value for Other-only rhythm enrichment unless combined with community reports. Museum of the Game already tracks ~156 D&B entries with some classic game data.",
+      "still_live": true,
+      "checked_at": "2026-08-04",
+      "note": "Locator only. Main Event / similar FEC chains are the same class (store finder, no cab lists).",
+      "region": "United States"
+    }
+  ]
+}
