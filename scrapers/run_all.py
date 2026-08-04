@@ -34,6 +34,7 @@ import ziv
 import round1usa
 import merge
 import build_mymaps
+import build_share_pages
 import fx
 import geocode_cn
 import common
@@ -251,6 +252,9 @@ def main():
     if only is None or (only - post_merge):
         merge.run(args.raw, args.data)
         build_mymaps.run(args.data, args.mymaps)
+        # Discord/Slack unfurl crawlers ignore #hash deep links; they need
+        # a real HTML path with per-venue Open Graph tags. See build_share_pages.
+        build_share_pages.build(args.data)
     # China address geocoding: opt-in, and deliberately NOT part of a default
     # run. It costs provider quota and it needs a key, so it only happens when
     # asked for by name. Its output is a committed cache that the NEXT merge

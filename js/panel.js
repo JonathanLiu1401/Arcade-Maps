@@ -884,19 +884,23 @@ window.AM = window.AM || {};
      escaped on the way out. encodeURIComponent leaves the ASCII ids this data
      uses untouched and makes the round trip total for anything else. */
   function shareUrl(a) {
-    var base = location.href.split("#")[0];
-    var raw = location.hash.replace(/^#/, "");
-    var segs = raw ? raw.split("/").filter(function (s) {
-      return s && s.indexOf("arcade=") !== 0;
-    }) : [];
-    /* Share the STABLE id, not the row number. `a.id` is reassigned 1..N on
-       every rebuild, so a link carrying one retargets to whatever venue now
-       occupies that row: #arcade=6072 was a Hong Kong arcade one week and an
-       Indonesian one the next, which is how a Hong Kong link came to quote
-       rupiah. a.sid is derived from the venue's own source page url and
-       survives renumbering. */
-    segs.push("arcade=" + encodeURIComponent(a.sid || a.id));
-    return base + "#" + segs.join("/");
+    /* Discord, Slack, iMessage etc. strip the #fragment before they fetch,
+       so a hash deep link always unfurls the GENERIC site card. Share pages
+       under s/<sid>.html carry per-venue Open Graph tags (title, games,
+       address, image) that crawlers can actually read. Humans who open the
+       link are JS-redirected onto the map. See scrapers/build_share_pages.py.
+
+       Prefer sid over the row-number id: ids reshuffle every merge, which is
+       how #arcade=6072 went from a Hong Kong venue to an Indonesian one. */
+    var sid = a && (a.sid || a.id);
+    if (!sid) {
+      return location.href.split("#")[0];
+    }
+    var path = location.pathname || "/";
+    /* index.html and trailing slash both resolve to the site root folder. */
+    path = path.replace(/index\.html$/i, "");
+    if (path.slice(-1) !== "/") path += "/";
+    return location.origin + path + "s/" + encodeURIComponent(String(sid)) + ".html";
   }
 
   /* Drop the arcade= segment from the URL without touching the rest of it.
