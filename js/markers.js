@@ -422,7 +422,8 @@ window.AM = window.AM || {};
         if (renamed && v.offline) return;
         if (!Object.prototype.hasOwnProperty.call(have, v.id)) return;
         h += '<span class="badge cab' + (v.offline ? " dead" : "") + '">' +
-          esc(v.badge) + "</span>";
+          esc(U.cabBadgeLabel ? U.cabBadgeLabel(v.id, v.badge) : v.badge) +
+          "</span>";
       });
     });
     h += "</div>";

@@ -21,12 +21,71 @@ window.AM = window.AM || {};
     return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
   }
 
-  /* Cab-variant filter / badge label. Official model codenames stay in the
-     English source string; locales may gloss "model" / "standard" around them. */
+  /* Cab-variant filter label. Locales may gloss "model" / "standard". */
   function cabLabel(cf) {
-    var key = "cabs." + cf.id;
+    var key = "cabs." + (cf.id || cf);
     var s = tr(key);
-    return (s && s !== key) ? s : (cf.label || cf.id);
+    return (s && s !== key) ? s : (cf.label || cf.id || cf);
+  }
+
+  function cabBadgeLabel(id, fallback) {
+    if (U.cabBadgeLabel) return U.cabBadgeLabel(id, fallback);
+    var key = "cabs.badge_" + id;
+    var s = tr(key);
+    if (s && s !== key) return s;
+    return fallback || id;
+  }
+
+  /* Localize scraped price prose ("JP¥100 for 3 songs", "free play", …).
+     Numbers and currency symbols are preserved; English templates are not. */
+  function localizePriceText(text) {
+    if (!text) return text;
+    var t = String(text);
+    t = t.replace(/\bfor\s+(\d+)\s+songs?\b/gi, function (_, n) {
+      return tr("place.price_for_songs", { n: n });
+    });
+    t = t.replace(/\bto continue\b/gi, tr("place.price_to_continue"));
+    t = t.replace(/\bfree play\b/gi, tr("place.price_free_play"));
+    t = t.replace(/\bper credit\b/gi, tr("place.price_per_credit"));
+    t = t.replace(/\b(\d+(?:\.\d+)?)\s*credits?\/play\b/gi, function (_, n) {
+      return tr("place.price_n_credits_play", { n: n });
+    });
+    t = t.replace(/\b(\d+(?:\.\d+)?)\s*credits?\b/gi, function (_, n) {
+      return tr("place.price_n_credits", { n: n });
+    });
+    t = t.replace(/\bStandard Play\b/gi, tr("place.price_standard_play"));
+    t = t.replace(/\bPremium Credit\b/gi, tr("place.price_premium_credit"));
+    t = t.replace(/\bNormal Credit\b/gi, tr("place.price_normal_credit"));
+    t = t.replace(/\bTokens\b/g, tr("place.price_tokens"));
+    t = t.replace(/\bToken\b/g, tr("place.price_token"));
+    t = t.replace(/\bstage break off\b/gi, tr("place.price_stage_break_off"));
+    t = t.replace(/\bstage break on\b/gi, tr("place.price_stage_break_on"));
+    t = t.replace(/\bOffline\b/g, tr("place.price_offline"));
+    /* Remaining bare "3 songs" after "for N songs" already handled. */
+    t = t.replace(/\b(\d+)\s+songs?\b/gi, function (_, n) {
+      return tr("place.price_n_songs", { n: n });
+    });
+    return t;
+  }
+
+  /* Localize day abbreviations in hours strings (Mon-Sun, Mon, …). */
+  function localizeHoursText(text) {
+    if (!text) return text;
+    var map = {
+      Mon: tr("place.hours_mon"), Tue: tr("place.hours_tue"),
+      Wed: tr("place.hours_wed"), Thu: tr("place.hours_thu"),
+      Fri: tr("place.hours_fri"), Sat: tr("place.hours_sat"),
+      Sun: tr("place.hours_sun")
+    };
+    /* Longest first so Monday does not become 月day. */
+    return String(text).replace(
+      /\b(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/g,
+      function (w) {
+        var three = w.slice(0, 3);
+        three = three.charAt(0).toUpperCase() + three.slice(1).toLowerCase();
+        return map[three] || w;
+      }
+    );
   }
 
   function gameChipLabel(g) {
@@ -1123,7 +1182,7 @@ window.AM = window.AM || {};
       license: null,
       page: U.safeUrl(cab.source || "") || null,
       kind: "cab",
-      label: gameLabelFor(a, cab.game) + " cabinet"
+      label: gameLabelFor(a, cab.game) + " " + tr("place.cabinet_suffix")
     }];
   }
 
@@ -1458,15 +1517,19 @@ window.AM = window.AM || {};
        just repeat it - "maimai (FiNALE / pre-DX)" followed by a "FiNALE /
        pre-DX" badge. The badge exists to add a cabinet to a game name, so it
        is dropped when it is the game name. */
-    var renamed = gameLabelFor(a, g) !== (C.GAME_LABEL[g] || g);
+    /* Compare against the localized base name, not English GAME_LABEL - otherwise
+       every game looks "renamed" under non-en and FiNALE / offline logic breaks. */
+    var base = (U.gameLabel ? U.gameLabel(g) : null) || C.GAME_LABEL[g] || g;
+    var renamed = gameLabelFor(a, g) !== base;
     vs.forEach(function (v) {
       if (v.def.chipOnly || !v.def.badge) return;
       if (renamed && v.def.offline) return;
       var n = (v.ev && typeof v.ev.n === "number" && v.ev.n > 0) ? v.ev.n : null;
       var cnt = n !== null ? ' <b class="tabnum">x' + n + "</b>" : "";
+      var badge = cabBadgeLabel(v.def.id || v.id, v.def.badge);
       h += '<span class="badge cab' + (v.def.offline ? " dead" : "") + '"' +
         (v.def.note ? ' title="' + esc(v.def.note) + '"' : "") + ">" +
-        esc(v.def.badge) + cnt + "</span>";
+        esc(badge) + cnt + "</span>";
     });
     return h;
   }
@@ -1596,7 +1659,8 @@ window.AM = window.AM || {};
         : communityCaption(a, e, "price_text");
       h += row("price", esc(line), cap);
     } else if (vp && vp.text) {
-      h += row("price", esc(vp.text), communityCaption(a, e, "price_text"));
+      h += row("price", esc(localizePriceText(vp.text)),
+        communityCaption(a, e, "price_text"));
     }
 
     var per = perGamePrices(a, e);
@@ -1606,7 +1670,7 @@ window.AM = window.AM || {};
         return '<li><span class="pp-g gc" style="--c:' +
           (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
           esc(gameLabelFor(a, g)) + "</span>" +
-          '<span class="pp-v">' + esc(r.text) + "</span></li>";
+          '<span class="pp-v">' + esc(localizePriceText(r.text)) + "</span></li>";
       }).join("");
       h += row("layers", '<ul class="pl-prices">' + items + "</ul>",
         esc(tr("place.per_machine")) + " " + communityCaption(a, e, "machine_prices"));
@@ -1708,7 +1772,8 @@ window.AM = window.AM || {};
 
     var hours = field(a, e, ["hours_text", "hours", "opening_hours"]);
     if (hours) {
-      h += row("clock", esc(hours), communityCaption(a, e, "hours_text"));
+      h += row("clock", esc(localizeHoursText(hours)),
+        communityCaption(a, e, "hours_text"));
     }
 
     h += priceRowsHtml(a, e);

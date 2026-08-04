@@ -661,6 +661,19 @@ window.AM = window.AM || {};
     return GAME_LABEL[slug] || slug;
   }
 
+  /* Compact cab-variant pill (Lightning, Valkyrie, JP build, …). */
+  function cabBadgeLabel(id, fallback) {
+    if (AM.i18n && typeof AM.i18n.t === "function") {
+      var key = "cabs.badge_" + id;
+      var s = AM.i18n.t(key);
+      if (s && s !== key) return s;
+      key = "cabs." + id;
+      s = AM.i18n.t(key);
+      if (s && s !== key) return s;
+    }
+    return fallback || CAB_BADGE[id] || id;
+  }
+
   function gameLabelFor(a, g) {
     if (g === "maimai_dx") {
       var have = variantsOf(a);
@@ -702,6 +715,7 @@ window.AM = window.AM || {};
     otherGamesOf: otherGamesOf,
     gameLabel: gameLabel,
     gameLabelFor: gameLabelFor,
+    cabBadgeLabel: cabBadgeLabel,
     resetVariantCache: resetVariantCache
   };
 
