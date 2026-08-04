@@ -667,6 +667,28 @@ window.AM = window.AM || {};
 
   /* ---------- wiring ---------- */
 
+  function tr(key, vars) {
+    return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
+  }
+
+  function syncPlaceholder() {
+    if (!input) return;
+    /* The long wording does not fit the box a phone can spare (measured:
+       187 px of text in a 172 px field at 390 px viewport), and a clipped
+       placeholder reads as breakage, so narrow screens get a short one.
+       The aria-label always carries the full wording. */
+    var narrow = window.matchMedia &&
+      window.matchMedia("(max-width: 760px)").matches;
+    var wide = tr("ui.search_wide");
+    var short = tr("ui.search_narrow");
+    if (!wide || wide === "ui.search_wide") {
+      wide = "Search games, arcades, places...";
+    }
+    if (!short || short === "ui.search_narrow") short = "Search...";
+    input.placeholder = narrow ? short : wide;
+    input.setAttribute("aria-label", wide);
+  }
+
   function build() {
     buildArcadeIndex();
     buildGameIndex();
@@ -674,15 +696,10 @@ window.AM = window.AM || {};
     input = $("search");
     list = $("search-results");
 
-    /* Set from JS so index.html stays untouched by this feature. The long
-       wording does not fit the box a phone can spare (measured: 187 px of text
-       in a 172 px field at 390 px viewport), and a clipped placeholder reads as
-       breakage, so narrow screens get a short one. The aria-label always
-       carries the full wording, so nothing is lost to a screen reader. */
-    var narrow = window.matchMedia && window.matchMedia("(max-width: 760px)").matches;
-    input.placeholder = narrow ? "Search..." : "Search games, arcades, places...";
-    input.setAttribute("aria-label",
-      "Search games, arcades and places");
+    syncPlaceholder();
+    if (AM.i18n && AM.i18n.on) {
+      AM.i18n.on(function () { syncPlaceholder(); });
+    }
 
     input.addEventListener("input", function () {
       clearTimeout(tmr);
@@ -747,6 +764,7 @@ window.AM = window.AM || {};
     queryGames: queryGames,
     queryPlaces: queryPlaces,
     placeIndex: function () { return placeIndex.slice(); },
+    syncPlaceholder: syncPlaceholder,
     run: run
   };
 })(window.AM);

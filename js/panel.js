@@ -22,6 +22,22 @@ window.AM = window.AM || {};
     return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
   }
 
+  /* Cab-variant filter / badge label. Official model codenames stay in the
+     English source string; locales may gloss "model" / "standard" around them. */
+  function cabLabel(cf) {
+    var key = "cabs." + cf.id;
+    var s = tr(key);
+    return (s && s !== key) ? s : (cf.label || cf.id);
+  }
+
+  function gameChipLabel(g) {
+    if (g === "other") {
+      var s = tr("cabs.other_game");
+      return (s && s !== "cabs.other_game") ? s : (C.GAME_LABEL.other || "Other");
+    }
+    return C.GAME_LABEL[g] || g;
+  }
+
   var SHEET_PEEK = 0.45;   /* mobile resting height, fraction of the map column */
   var SHEET_FULL = 0.88;   /* mobile expanded height */
   var DISMISS_PX = 90;     /* drag past this and the sheet is dismissed */
@@ -70,7 +86,7 @@ window.AM = window.AM || {};
       b.dataset.g = g;
       b.type = "button";
       b.style.setProperty("--c", C.GAME_COLOR[g] || C.GAME_COLOR.other);
-      b.innerHTML = '<span class="dot"></span>' + esc(C.GAME_LABEL[g] || g) +
+      b.innerHTML = '<span class="dot"></span>' + esc(gameChipLabel(g)) +
         ' <span class="n tabnum">' + U.num(chipCount(g)) + "</span>";
       b.addEventListener("click", function () { AM.state.toggleGame(g); });
       box.appendChild(b);
@@ -81,6 +97,30 @@ window.AM = window.AM || {};
     $("games-none").addEventListener("click", function () {
       AM.state.set("selectedGames", new Set());
     });
+  }
+
+  function rebuildCabFilters() {
+    var box = $("cab-filters");
+    if (!box) return;
+    box.innerHTML = "";
+    buildCabFilters();
+    syncCabFilters();
+  }
+
+  function rebuildGameChips() {
+    var box = $("game-chips");
+    if (!box) return;
+    box.innerHTML = "";
+    buildChips();
+    syncChips();
+  }
+
+  function rebuildSizeChips() {
+    var box = $("size-chips");
+    if (!box) return;
+    box.innerHTML = "";
+    buildSizeChips();
+    syncSizeChips();
   }
 
   function syncChips() {
@@ -143,7 +183,7 @@ window.AM = window.AM || {};
       var head = document.createElement("div");
       head.className = "cabgrp";
       head.style.setProperty("--c", C.GAME_COLOR[g] || C.GAME_COLOR.other);
-      head.textContent = C.GAME_LABEL[g] || g;
+      head.textContent = gameChipLabel(g);
       box.appendChild(head);
       byGame[g].forEach(function (cf) {
         var lab = document.createElement("label");
@@ -152,7 +192,7 @@ window.AM = window.AM || {};
         cb.checked = sel.has(cf.id);
         cb.addEventListener("change", function () { AM.state.toggleCab(cf.id); });
         lab.appendChild(cb);
-        lab.appendChild(document.createTextNode(" " + cf.label + " "));
+        lab.appendChild(document.createTextNode(" " + cabLabel(cf) + " "));
         var tag = document.createElement("span");
         tag.className = "cabgame tabnum";
         tag.textContent = U.num(variantStoreCount(cf));
@@ -197,7 +237,10 @@ window.AM = window.AM || {};
       b.className = "chip size-chip";
       b.dataset.tier = t.id;
       b.type = "button";
-      b.title = t.label;
+      var sizeKey = "ui.size_" + t.id;
+      var sizeTitle = tr(sizeKey);
+      if (!sizeTitle || sizeTitle === sizeKey) sizeTitle = t.label;
+      b.title = sizeTitle;
       b.innerHTML = '<span class="dot"></span>' + esc(t.short) +
         ' <span class="n tabnum">' + U.num(counts[t.id] || 0) + "</span>";
       b.addEventListener("click", function () { AM.state.toggleSizeTier(t.id); });
@@ -205,13 +248,15 @@ window.AM = window.AM || {};
     });
     var allBtn = $("size-all");
     var noneBtn = $("size-none");
-    if (allBtn) {
+    if (allBtn && !allBtn._amSizeBound) {
+      allBtn._amSizeBound = true;
       allBtn.addEventListener("click", function () {
         var ids = AM.markers.TIER_LEGEND.map(function (t) { return t.id; });
         AM.state.set("selectedSizeTiers", new Set(ids));
       });
     }
-    if (noneBtn) {
+    if (noneBtn && !noneBtn._amSizeBound) {
+      noneBtn._amSizeBound = true;
       noneBtn.addEventListener("click", function () {
         AM.state.set("selectedSizeTiers", new Set());
       });
@@ -307,7 +352,9 @@ window.AM = window.AM || {};
   /* ---------- header count + footer ---------- */
 
   function syncCount() {
-    $("meta-count").textContent = U.num(AM.state.get("shownCount")) + " shown";
+    $("meta-count").textContent = tr("ui.shown", {
+      n: U.num(AM.state.get("shownCount"))
+    });
   }
 
   function buildFooter() {
@@ -315,7 +362,9 @@ window.AM = window.AM || {};
     $("src-counts").innerHTML = AM.data.srcInData.map(function (s) {
       return "<span>" + esc(C.SRC_LABEL[s] || s) + " " + U.num(counts[s]) + "</span>";
     }).join("") +
-      "<span>" + U.num(AM.data.arcades.length) + " stores total</span>";
+      "<span>" + esc(tr("ui.stores_total", {
+        n: U.num(AM.data.arcades.length)
+      })) + "</span>";
   }
 
   /* ---------- tabs + drawer ---------- */
@@ -906,16 +955,21 @@ window.AM = window.AM || {};
 
     var cur = cell.currency || entry.currency || "";
     var display = (cur ? cur + " " : "") + fmtMeasured(cell.value, cur) +
-      " per credit";
+      " " + tr("ui.per_credit");
     var label = slug ? (C.GAME_LABEL[slug] || slug) : null;
     var notes;
     if (cell.tier === "measured") {
-      notes = (label ? label + ", " : "") + "median of " + cell.n +
-        " quoted prices in " + a.country + ". Not this store's own price.";
+      notes = tr("ui.price_median", {
+        game: label || "",
+        n: String(cell.n),
+        country: a.country || ""
+      });
     } else {
-      notes = "Based on only " + cell.n + " listing" +
-        (cell.n === 1 ? "" : "s") + " in " + a.country +
-        (label ? " for " + label : "") + ", so treat it as a rough guide.";
+      notes = tr("ui.price_sparse", {
+        n: String(cell.n),
+        country: a.country || "",
+        for_game: label ? tr("ui.for_game", { game: label }) : ""
+      });
     }
     return {
       display: display, notes: notes, as_of: cell.as_of || table.as_of || null,
@@ -1559,7 +1613,7 @@ window.AM = window.AM || {};
       if (tp) {
         var cap = tp.notes && tp.measured
           ? esc(tp.notes)
-          : "Typical for " + esc(a.country) + " - not this store's own price";
+          : esc(tr("ui.typical_country", { country: a.country || "" }));
         h += row("price", esc(tp.display),
           cap + (tp.as_of ? " (" + esc(tp.as_of) + ")" : ""), "muted");
       }
@@ -1589,10 +1643,10 @@ window.AM = window.AM || {};
       if (def && def.offline) dead.push(def.label);
     }
     if (dead.length) {
-      h += row("alert", esc(dead.join(", ")) + " - offline cabinet" +
-        (dead.length > 1 ? "s" : ""),
-        "This cabinet's network has shut down. It can still be played, but "
-        + "nothing is saved: no score history, no online play, no unlocks.",
+      h += row("alert",
+        esc(dead.join(", ") + " - " +
+          (dead.length > 1 ? tr("ui.offline_cabs") : tr("ui.offline_cab"))),
+        esc(tr("ui.offline_cap")),
         "warn");
     }
     /* Only worth saying where a cabinet variant actually exists to be missed,
@@ -1602,10 +1656,8 @@ window.AM = window.AM || {};
         return (C.VARIANTS_BY_GAME[g] || []).length > 0;
       });
       if (couldVary) {
-        h += row("info", "Cabinet model not published",
-          "No listing says which cabinet this store runs. Official cab data "
-          + "covers Japan only, and community listings record the model just "
-          + "when someone noted it - so this is \"unknown\", not \"standard\".",
+        h += row("info", esc(tr("ui.cab_model_unpublished")),
+          esc(tr("ui.cab_model_unpublished_cap")),
           "muted");
       }
     }
@@ -1732,10 +1784,6 @@ window.AM = window.AM || {};
      directions button, and link the source that says it. */
   function closedHtml(a) {
     if (!a || !a.closed) return "";
-    var src = a.closed_source
-      ? ' <a href="' + esc(a.closed_source) + '" target="_blank"' +
-        ' rel="noopener noreferrer">source</a>'
-      : "";
     /* The reason text is written by the researcher and usually already
        opens with "permanently closed ...", so printing the heading and
        the reason verbatim read "Permanently closed. closed (permanently
@@ -1745,9 +1793,14 @@ window.AM = window.AM || {};
     why = why.replace(/^[\s(]*(?:permanently\s+)?closed\b[\s:;,-]*/i, "")
              .replace(/^\((.*)\)$/, "$1")
              .trim();
-    return '<div class="pl-closed"><strong>Permanently closed.</strong>' +
+    var srcLabel = a.closed_source
+      ? ' <a href="' + esc(a.closed_source) + '" target="_blank"' +
+        ' rel="noopener noreferrer">' + esc(tr("ui.source")) + "</a>"
+      : "";
+    return '<div class="pl-closed"><strong>' + esc(tr("ui.permanently_closed")) +
+      "</strong>" +
       (why ? " " + esc(why.charAt(0).toUpperCase() + why.slice(1)) : "") +
-      src + "</div>";
+      srcLabel + "</div>";
   }
 
   var renderedVersion = -1;
@@ -2317,6 +2370,21 @@ window.AM = window.AM || {};
           placeEl.setAttribute("aria-label", tr("place.details"));
           var closeBtn = $("pl-close");
           if (closeBtn) closeBtn.setAttribute("aria-label", tr("place.close"));
+        }
+        /* Filter drawer is built once; rebuild labels that use tr(). */
+        try { rebuildGameChips(); } catch (e) {}
+        try { rebuildCabFilters(); } catch (e) {}
+        try { rebuildSizeChips(); } catch (e) {}
+        syncCount();
+        /* CSS content for notes expand/collapse. */
+        try {
+          document.documentElement.style.setProperty(
+            "--am-show-more", '"' + tr("ui.show_more").replace(/"/g, '\\"') + '"');
+          document.documentElement.style.setProperty(
+            "--am-show-less", '"' + tr("ui.show_less").replace(/"/g, '\\"') + '"');
+        } catch (e2) {}
+        if (AM.search && AM.search.syncPlaceholder) {
+          try { AM.search.syncPlaceholder(); } catch (e3) {}
         }
         syncBackLabel();
         if (current && isPlaceOpen()) {

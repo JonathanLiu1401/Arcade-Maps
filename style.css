@@ -1048,13 +1048,13 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
   overflow: hidden;
 }
 .pl-more-lb::after {
-  content: "Show more"; display: inline-block; margin-top: 4px;
+  content: var(--am-show-more, "Show more"); display: inline-block; margin-top: 4px;
   font-size: 11.5px; font-weight: 700; color: var(--accent);
 }
 /* Open just lifts the clamp off the same text node and flips the label, so
    the summary always keeps a hit area and the disclosure can close again. */
 .pl-more[open] .clamp { -webkit-line-clamp: unset; overflow: visible; }
-.pl-more[open] .pl-more-lb::after { content: "Show less"; }
+.pl-more[open] .pl-more-lb::after { content: var(--am-show-less, "Show less"); }
 .pl-more summary:hover .pl-more-lb::after { filter: brightness(1.25); }
 
 /* ---- toast ---- */

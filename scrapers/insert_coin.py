@@ -204,6 +204,95 @@ def format_address(addr):
     return common.unescape(", ".join(parts))
 
 
+def street_line(addr):
+    """House/street line only (not city/postcode). Empty => city-level pin."""
+    if not isinstance(addr, dict):
+        return ""
+    return common.unescape(str(addr.get("address") or "")).strip()
+
+
+# Countries with dense official / high-quality sources. Insert Coin is
+# crowd-seeded and frequently mirrors historical ZIv dumps. A standalone
+# IC-only pin there is more often a closed hall or city centroid than a
+# real missing venue. Those countries still get IC data when a future
+# enrich-only pass matches an existing unit; this scraper simply refuses
+# to invent a NEW pin there.
+NO_STANDALONE_COUNTRIES = frozenset({
+    "Japan", "China", "Taiwan", "South Korea", "Hong Kong", "Macau",
+})
+
+# Modern-software tokens. If ANY listed title matches, the inventory is
+# treated as potentially current.
+_MODERN_TITLE = re.compile(
+    r"exceed\s*gear|vivid\s*wave|heavenly\s*haven|"
+    r"\bepolis\b|\bbistrover\b|\bresident\b|"
+    r"maimai\s*d[xχ]|d[xχ]\s*(festival|splash|buddies|prism|circle)|"
+    r"chunithm\s*(new|luminous|sun|verse|crystal)|"
+    r"pop'?n\s*(unilab|kaimei|peace|useneko\s*2)|"
+    r"jubeat\s*(festo|ave\.?|clan)|"
+    r"taiko.*(nijiiro|donderful)|nijiiro|"
+    r"polaris\s*chord|"
+    r"pump\s*it\s*up\s*(phoenix|xx|prime\s*2)|"
+    r"stepmania\s*x|"
+    r"wacca\s*(lily|reverse)|"
+    r"ongeki\s*(bright|bright\s*memory|r\.e\.d)|"
+    r"gitadora\s*(high-voltage|fuzz-up|galaxxion)",
+    re.I,
+)
+
+# Vintage-only markers. When EVERY title matches one of these and NONE
+# match _MODERN_TITLE, the listing is almost certainly a historical dump
+# of a closed or long-stale floor (e.g. maimai PLUS + SDVX II + IIDX 20).
+_VINTAGE_TITLE = re.compile(
+    r"\bmaimai\s*(plus|gree+n|orange|pink|murasaki|milk|finale)\b|"
+    r"\bmaimai\b(?!\s*d[xχ])|"
+    r"sound\s*voltex\s*(ii|iii|iv|booth|floor)\b|"
+    r"beatmania\s*iidx\s*(1\d|20|tricoro|spada|pendual|copula|sinobuz|"
+    r"cannon\s*ballers|rootage|heroic\s*verse)|"
+    r"jubeat\s*(saucer|copious|knit|ripples|qubell)|"
+    r"pop'?n\s*music\s*(sunny\s*park|lapistoria|eclale|usaneko|fantasia|"
+    r"tunestreet|sengoku)|"
+    r"(hatsune\s*miku:\s*)?project\s*diva\s*(arcade|version\s*[ab]|f\b)|"
+    r"taiko\s*no\s*tatsujin\s*(sorairo|momoiro|kimidori|murasaki|white|"
+    r"red|yellow|blue|green|yume|mirai)|"
+    r"reflec\s*beat\s*(colette|groovin|volzza|limelight|schulz)",
+    re.I,
+)
+
+
+def inventory_is_vintage_only(title_notes):
+    """True when the IC title list looks like a pre-modern software dump."""
+    if not title_notes:
+        return False
+    any_modern = any(_MODERN_TITLE.search(t) for t in title_notes)
+    if any_modern:
+        return False
+    vintage_hits = sum(1 for t in title_notes if _VINTAGE_TITLE.search(t))
+    # Require most titles to look vintage so a single odd name does not
+    # wipe a legitimately sparse modern location.
+    return vintage_hits >= max(1, int(0.6 * len(title_notes)))
+
+
+def quality_reject_reason(loc, title_notes, country):
+    """Return a short reject code, or None if the row is usable.
+
+    Prefer rejecting over inventing a pin. Crowdsourced IC data without a
+    street line or with only decade-old software is worse than silence.
+    """
+    addr = loc.get("address") or {}
+    street = street_line(addr)
+    if not street:
+        return "no_street_address"
+    if country in NO_STANDALONE_COUNTRIES:
+        # Even with a street, do not invent standalone pins under dense
+        # official coverage. Matching existing units is merge's job when
+        # we add enrich-only later; for now skip entirely.
+        return "dense_official_country"
+    if inventory_is_vintage_only(title_notes):
+        return "vintage_software_only"
+    return None
+
+
 def build_row(loc_uuid, loc, slug_counts, title_notes):
     addr = loc.get("address") or {}
     name = common.unescape(str(loc.get("name") or ""))
@@ -218,6 +307,9 @@ def build_row(loc_uuid, loc, slug_counts, title_notes):
         lat = lng = None
     cc = str(addr.get("country") or "").upper()
     country = COUNTRY_MAP.get(cc, cc or None)
+    reject = quality_reject_reason(loc, title_notes, country)
+    if reject:
+        return None
     games = sorted(s for s in slug_counts if s != "other")
     if not games:
         if "other" in slug_counts:
@@ -234,6 +326,9 @@ def build_row(loc_uuid, loc, slug_counts, title_notes):
     ltype = (loc.get("locationType") or {}).get("name")
     if ltype:
         notes_parts.append("type: " + str(ltype))
+    updated = loc.get("updatedAt") or loc.get("updated_at")
+    if updated:
+        notes_parts.append("ic_updated: " + str(updated)[:10])
     page_url = "%s/location/%s" % (SITE, loc_uuid)
     row = {
         "name": name,
@@ -248,6 +343,8 @@ def build_row(loc_uuid, loc, slug_counts, title_notes):
         "sid": loc_uuid,
         "country": country,
         "notes": " | ".join(notes_parts),
+        "ic_updated_at": (str(updated)[:10] if updated else None),
+        "street": street_line(addr),
     }
     gc = {k: v for k, v in slug_counts.items() if k != "other" and v > 0}
     if gc:
@@ -309,16 +406,32 @@ def scrape(smoke=False, max_games=None, countries=None):
                 bucket["titles"].append(gname)
 
     rows = []
+    rejected = {}
     for luuid, bucket in agg.items():
-        row = build_row(luuid, bucket["loc"], bucket["slug_counts"],
-                        bucket["titles"])
+        loc = bucket["loc"]
+        titles = bucket["titles"]
+        addr = loc.get("address") or {}
+        cc = str(addr.get("country") or "").upper()
+        country = COUNTRY_MAP.get(cc, cc or None)
+        reason = quality_reject_reason(loc, titles, country)
+        if reason:
+            rejected[reason] = rejected.get(reason, 0) + 1
+            continue
+        row = build_row(luuid, loc, bucket["slug_counts"], titles)
         if row:
             rows.append(row)
+        else:
+            rejected["build_failed"] = rejected.get("build_failed", 0) + 1
     rows.sort(key=lambda r: (
         r.get("country") or "",
         r.get("name") or "",
         r.get("sid") or "",
     ))
+    if rejected:
+        detail = ", ".join("%s=%d" % (k, rejected[k])
+                           for k in sorted(rejected))
+        print("insert_coin: rejected %d (%s)"
+              % (sum(rejected.values()), detail), file=sys.stderr)
     print("insert_coin: done %d venues" % len(rows), file=sys.stderr)
     return rows
 

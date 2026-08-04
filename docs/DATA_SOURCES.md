@@ -451,9 +451,12 @@ These sources are **wired defensively** in `scrapers/merge.py` and `scrapers/run
 | `musecat` | https://musecat.app/ | Korea (+ JP) | PocketBase venue list public; game inventory often HTML-scrape per venue. |
 | `otogesetchi` | https://w.atwiki.jp/otogesetchi/ | Japan | 全国音ゲー設置店舗 wiki; cab counts, Tokyo-strong. Copyright forbids bulk republication: scrape for merge only with care. |
 | `timezone` | https://www.timezonegames.com/ | AU/NZ/SG/PH/ID/IN… | Official TimeZone chain locators (addresses; lineup often assumed). |
-| `insert_coin` | https://www.insert-coin.app/ | CA/MX + global | GeoJSON + per-uuid `location_games` API; strong classic/rhythm cab lists. |
+| `insert_coin` | https://www.insert-coin.app/ | worldwide (gated) | Crowd API. **Quality gates (required):** (1) street address must be present - city/postcode-only pins are rejected; (2) no standalone venues in Japan/China/Taiwan/Korea/HK/Macau (dense official coverage - silence beats ghost pins); (3) inventories that are only vintage software (maimai PLUS, SDVX II, IIDX 20, jubeat saucer, …) with no modern title are rejected as expired dumps. Prefer adding nothing to adding a closed hall. Example of the failure mode: IC location `0197113f-…` "Adores" with empty street, Ikebukuro postcode centroid, and 2013-era cabs only. |
+| `nearcade` closed | | CN | Rows with `isOpen=false` are dropped at scrape time, never plotted open. |
 
 When a scraper module is absent, `run_all.py --only <slug>` prints a skip note and continues. When a raw JSON file is absent, merge prints nothing for that slug and proceeds. When either is present, merge reports `loading optional source <slug>` and a row count.
+
+**Rule of thumb for every new optional source:** check `updatedAt` / software vintage / street-level address / official site before inventing a pin. Crowdsourced "last edited 2025" is not the same as "confirmed open this year".
 
 ---
 

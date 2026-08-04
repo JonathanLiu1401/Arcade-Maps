@@ -247,7 +247,9 @@ def shop_row(shop):
         note_parts.append("other games: " + ", ".join(other_names))
     is_open = shop.get("isOpen")
     if is_open is False:
-        note_parts.append("closed (isOpen=false)")
+        # Closed shops stay out of the map entirely. Keeping them as open
+        # pins is worse than omitting them; users travel to ghosts.
+        return None
 
     lat, lng = _coords(shop)
     # CN: GCJ-02 (Tencent). Without regionId filter non-CN would be WGS-84;

@@ -1287,6 +1287,16 @@ def load_units(raw_dir, stats):
     # the source is skipped, so a checkout without the scrape still
     # merges cleanly. Cross-source merge reuses the existing 120 m /
     # name-sim rules; we do not invent looser proximity merges.
+    # Optional crowd sources that must not invent pins under dense
+    # official coverage. Insert Coin in particular is often a historical
+    # dump (city-only address + vintage software). Prefer silence.
+    OPTIONAL_NO_STANDALONE_COUNTRIES = {
+        "insert_coin": frozenset({
+            "Japan", "China", "Taiwan", "South Korea",
+            "Hong Kong", "Macau",
+        }),
+    }
+
     for src_slug in OPTIONAL_COMMUNITY_SOURCES:
         if not os.path.exists(path(src_slug)):
             continue
@@ -1307,6 +1317,9 @@ def load_units(raw_dir, stats):
                   % src_slug, file=sys.stderr)
             continue
         n_loaded = 0
+        n_skipped = 0
+        skip_reasons = {}
+        blocked = OPTIONAL_NO_STANDALONE_COUNTRIES.get(src_slug) or frozenset()
         for row in rows:
             if not isinstance(row, dict):
                 continue
@@ -1327,6 +1340,44 @@ def load_units(raw_dir, stats):
                 country = resolve_country(
                     lat, lng, row.get("address"), row.get("name"),
                     note=row.get("notes"))
+            # Belt-and-suspenders quality gate at merge time even if the
+            # raw file was produced by an older scraper without filters.
+            if src_slug == "insert_coin":
+                street = (row.get("street") or "").strip()
+                addr = (row.get("address") or "").strip()
+                if not street:
+                    # City + postcode only (e.g. "Toshima City, 170-0013, JP")
+                    # is not a real venue address. Drop.
+                    # Heuristic: street empty AND address has no digit-led
+                    # house number / block token after the first comma split.
+                    first = addr.split(",")[0].strip() if addr else ""
+                    if not re.search(r"\d", first):
+                        n_skipped += 1
+                        skip_reasons["no_street"] = (
+                            skip_reasons.get("no_street", 0) + 1)
+                        continue
+                if country in blocked:
+                    n_skipped += 1
+                    skip_reasons["dense_official"] = (
+                        skip_reasons.get("dense_official", 0) + 1)
+                    continue
+                notes = row.get("notes") or ""
+                # Vintage-only IC inventories (maimai PLUS + SDVX II + …)
+                # without any modern software token.
+                if "IC cabs:" in notes:
+                    titles = notes.split("IC cabs:", 1)[1]
+                    titles = titles.split("|", 1)[0]
+                    title_list = [t.strip() for t in titles.split(";")
+                                  if t.strip()]
+                    try:
+                        import insert_coin as _ic
+                        if _ic.inventory_is_vintage_only(title_list):
+                            n_skipped += 1
+                            skip_reasons["vintage_only"] = (
+                                skip_reasons.get("vintage_only", 0) + 1)
+                            continue
+                    except Exception:
+                        pass
             pref = (row.get("pref") or row.get("prefecture")
                     or extract_pref(country, row.get("address")))
             games = [g if g in GAME_SLUGS else "other"
@@ -1355,8 +1406,12 @@ def load_units(raw_dir, stats):
                 count_evidence=ev,
                 cab_models=row.get("cab_models"))
             n_loaded += 1
-        print("merge: optional %s loaded %d row(s)"
-              % (src_slug, n_loaded), file=sys.stderr)
+        msg = "merge: optional %s loaded %d row(s)" % (src_slug, n_loaded)
+        if n_skipped:
+            detail = ", ".join("%s=%d" % (k, skip_reasons[k])
+                               for k in sorted(skip_reasons))
+            msg += " (skipped %d: %s)" % (n_skipped, detail)
+        print(msg, file=sys.stderr)
 
     out = list(units.values())
 
