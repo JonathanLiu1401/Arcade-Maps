@@ -400,7 +400,10 @@
         "dance_evo"
       ],
       "evidence_url": "https://map.bemanicn.com/s/7052",
-      "note": "unknown-games fleet: 1x 舞立方EVO 最新. Comment: 已更新EVO / 20260618：1p3号键有概率吃音符. | Qingdao Liqun."
+      "note": "deep-research fleet: Remove dance_evo (Konami Dance Evolution not present). Keep other for 舞立方EVO. Public mall venue 利群6F still open.",
+      "remove_games": [
+        "other"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/3102": {
       "name": "潮玩汇（泰盛店）",
@@ -419,8 +422,11 @@
       "add_games": [
         "maimai_dx"
       ],
-      "evidence_url": "https://map.bemanicn.com/s/4369",
-      "note": "unknown-games fleet: status=1 updated 2026-05-11; title_id=2 maimai qty=1 version=FiNALE球盘; comment: 有一台e舞升级版和一台mai旧框。maimai1p内屏断触，2p正常...断网状态 | Classic maimai FiNALE cab (title_id=2). Project merge maps maimai_classic->maimai_dx. Offline/card issues. Comment also mentions e舞 but not in structured arcades list; not counted."
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/14369",
+      "note": "deep-research fleet: Shard wrongly lists maimai_dx. Live nearcade + BemaniCN only have classic FiNALE ball-plate maimai (titleId 2), not DX. Not on WAHLAP maimai DX locator. REMOVE maimai_dx; keep other for classic maimai + e-dance.",
+      "remove_games": [
+        "other"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/7035": {
       "name": "电潮社电玩城",
@@ -429,8 +435,11 @@
       "add_games": [
         "maimai_dx"
       ],
-      "evidence_url": "https://map.bemanicn.com/s/7035",
-      "note": "unknown-games fleet: status=1 updated 2026-05-02; title_id=2 maimai qty=1 version=Qiu; comment: 把中百第五季节那台球盘旧框maimai收来了 | Classic ball-panel maimai (title_id=2 Qiu/球盘). Maps to maimai_dx family."
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/17035",
+      "note": "deep-research fleet: Gaomi FEC only has classic ball-plate maimai (titleId 2), free play, not maimai DX. Not on WAHLAP. REMOVE maimai_dx; keep other.",
+      "remove_games": [
+        "other"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/7254": {
       "name": "酷熊趣乐园（旧框舞萌）",
@@ -531,7 +540,10 @@
         "maimai_dx"
       ],
       "evidence_url": "https://map.bemanicn.com/s/4887",
-      "note": "unknown-games fleet: status=1 updated 2026-03-25; title_id=2 maimai qty=1 version=精文世嘉; comment: 两台音游机台：旧框maimai，舞力特区(均无法联网) | Structured: classic 精文世嘉 maimai only. Comment also claims offline DANZBASE not in arcades array - not counted. Ticket-only entry."
+      "note": "deep-research fleet: Classic FiNALE (title_id 2) plus offline 舞力特区 only. maimai_dx is wrong; keep other for domestic/classic stack. Do not map FiNALE to maimai_dx.",
+      "remove_games": [
+        "maimai_dx"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/1037": {
       "name": "中山市文化馆",
@@ -570,8 +582,11 @@
       "add_games": [
         "maimai_dx"
       ],
-      "evidence_url": "https://map.bemanicn.com/s/4901",
-      "note": "unknown-games fleet: status=1 updated 2026-08-03; title_id=2 maimai qty=1 version=Finale; comment: 无法双人模式，2p感应差...没人玩可能会被下 | Classic FiNALE maimai. Fresh 2026-08-03 update. Low traffic risk of removal."
+      "evidence_url": "https://nearcade.phizone.cn/shops/14901",
+      "note": "deep-research fleet: Shard lists maimai_dx but both nearcade and BemaniCN only have classic maimai Finale (titleId 2 maps to other per project policy). Remove maimai_dx chip; keep other (and notes already say other games: maimai).",
+      "remove_games": [
+        "other"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/6121": {
       "name": "星际幻想乐园",
@@ -671,7 +686,10 @@
         "maimai_dx"
       ],
       "evidence_url": "https://map.bemanicn.com/s/7286",
-      "note": "unknown-games fleet: arcades title_id=2 maimai FiNALE qty=1; comment: 有舞立方和旧框舞萌，但都是断网 | Classic/FiNALE 旧框舞萌 (offline). Mapped as maimai_dx per project maimai_classic policy. 舞立方 mentioned in comment only, not in arcade array."
+      "note": "deep-research fleet: Shard lists maimai_dx but live BemaniCN+nearcade only have offline classic maimai FiNALE (title_id 2). Map classic as other, remove maimai_dx. Keep other (FiNALE + 舞立方 per comment).",
+      "remove_games": [
+        "other"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/1982": {
       "name": "AP FUNLL(吾角天街店)",
@@ -690,8 +708,11 @@
       "add_games": [
         "maimai_dx"
       ],
-      "evidence_url": "https://map.bemanicn.com/s/4747",
-      "note": "unknown-games fleet: arcades title_id=2 maimai finale qty=1; comment: maimai旧框旁有e舞，比较吵 | Classic maimai FiNALE present. e舞 mentioned only in comment."
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/14747",
+      "note": "deep-research fleet: Listed machine is classic maimai FiNALE (旧框), not maimai DX. Remove maimai_dx slug. Keep other (e舞/redemption). Do not map Finale to maimai_dx.",
+      "remove_games": [
+        "other"
+      ]
     },
     "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=7544": {
       "name": "游戏大魔方",
@@ -852,7 +873,10 @@
         "maimai_dx"
       ],
       "evidence_url": "https://map.bemanicn.com/s/5075",
-      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator."
+      "note": "deep-research fleet: Open venue (龙山 湘龙百货三楼). Only classic FiNALE/old-frame maimai (title_id 2), not DX. Nearcade live games are maimai finale only; cache maps to other. Not on WAHLAP maidx. Remove maimai_dx; keep other (classic cab).",
+      "remove_games": [
+        "maimai_dx"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/2216": {
       "name": "第e星球",
@@ -862,7 +886,10 @@
         "maimai_dx"
       ],
       "evidence_url": "https://map.bemanicn.com/s/2216",
-      "note": "unknown-games fleet: maimai x1 | BemaniCN title_id=2 maimai (legacy). Not on WAHLAP DX locator."
+      "note": "deep-research fleet: Open at 双牌 鸿宇世纪广场一楼. BemaniCN+nearcade only classic offline FiNALE (title_id 2). Not on WAHLAP DX locator. Remove maimai_dx; keep other. Data thin (期待详细内容补齐) but DX claim is false.",
+      "remove_games": [
+        "maimai_dx"
+      ]
     },
     "bemanicn|https://map.bemanicn.com/s/2403": {
       "name": "永辉欢聚乐园",
@@ -5254,7 +5281,7 @@
       "attested_by": "research-fleet",
       "attested_at": "2026-08-04",
       "evidence_url": "https://nearcade.phizone.cn/shops/16922",
-      "note": "deep-research fleet: BemaniCN s/6922. Exclude private dens per project policy.",
+      "note": "deep-research fleet: Private rhythm-game nest (窝), not a public arcade. Residential complex address, QQ-group entry, hourly rates, unofficial 手台 cabinets. Exclude from public map.",
       "exclude": true
     },
     "bemanicn|https://map.bemanicn.com/s/5474": {
@@ -9066,6 +9093,945 @@
       "note": "deep-research fleet: Permanently closed. Keep as closed (not exclude): was a real public music-game venue. Machines reportedly moved to other GiGO sites (e.g. Ha Dong).",
       "closed": true,
       "closed_reason": "Official GiGO Vietnam: GiGO Vincom Plaza 3 Thang 2 (Q10 HCMC) permanently closed from 2025-09-28."
+    },
+    "bemanicn|https://map.bemanicn.com/s/5205": {
+      "name": "【即将停业】吾技动漫（四元桥店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5205",
+      "note": "deep-research fleet: Update name prefix to 歇业关闭 or mark closed. Do not keep as open pin. Remaining arcade rows on BemaniCN are taiko/Initial D/Pokemon only and venue is shut.",
+      "closed": true,
+      "closed_reason": "Permanently closed 2026-07-31. BemaniCN live name is now 【歇业关闭】; maimai and chunithm removed 2026-07-14 to Longde store. ZIv marks CLOSED."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7305": {
+      "name": "耀乐汇家庭娱乐中心沙河店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7305",
+      "note": "deep-research fleet: Risk-3 bemanicn-only. Prefer closed pin over open. Re-check later if reopens; 2x maimai listed while paused.",
+      "closed": true,
+      "closed_reason": "BemaniCN live name 【暂停营业】; comment says force majeure pause as of 2026-08-03. Opened only 2026-07-16."
+    },
+    "bemanicn|https://map.bemanicn.com/s/7085": {
+      "name": "岛屋-白将小窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7085",
+      "note": "deep-research fleet: Private home / nest install (type=3), free friends-only, appointment via QQ, residential 石园. Not a public music-game venue. Exclude from public map.",
+      "exclude": true
+    },
+    "addr|China|泛时空北京大兴店|北京市大兴区欣宁街15号院1号楼2层02B50泛时空": {
+      "name": "泛时空北京大兴店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2287",
+      "note": "deep-research fleet: Duplicate of z9754 泛时空北京西红门荟聚店. Xihongmen Huiju is at 欣宁街15号 Daxing. Keep multi-source z9754 only (after its game cleanup).",
+      "exclude": true
+    },
+    "addr|China|跨特世界北京长阳龙湖店|北京市长阳镇熙悦龙湖天街B馆4F": {
+      "name": "跨特世界北京长阳龙湖店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/1354",
+      "note": "deep-research fleet: Duplicate of z11305 夸特游艺（熙悦店）. 跨特=夸特 brand spelling on WAHLAP. Keep multi-source z11305 (maimai+taiko).",
+      "exclude": true
+    },
+    "addr|China|阿凡达爱玩荟北京北苑路店|北京市朝阳区奥运村街道北苑路42号K酷时尚广场四楼": {
+      "name": "阿凡达爱玩荟北京北苑路店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4476",
+      "note": "deep-research fleet: Duplicate of z11378 same mall floor. Keep multi-source z11378.",
+      "exclude": true
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11373": {
+      "name": "Wanda Kids 宝贝王（昌平沙河万达）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4247",
+      "note": "deep-research fleet: Duplicate of b4247 万达宝贝王北京沙河万达店 (same 3F SW corner). Keep b4247.",
+      "exclude": true
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9754": {
+      "name": "泛时空北京西红门荟聚店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2287",
+      "note": "deep-research fleet: Remove dance_evo, ddr, gitadora, iidx, jubeat, sdvx, other. ZIv/nearcade inflated list. Keep chunithm, maimai_dx, taiko.",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11288": {
+      "name": "和音屋 x -Azisai- 北京店 立直麻将/音游",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6870",
+      "note": "deep-research fleet: Remove ddr, gitadora, iidx, jubeat, nostalgia, popn. No live BemaniCN evidence for full Konami suite. Public paid shop but adults-only QQ-entry style.",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx",
+        "sdvx"
+      ]
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11260": {
+      "name": "插电师北京王府井银泰店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4940",
+      "note": "deep-research fleet: Remove iidx and sdvx. Not present on current BemaniCN machine list.",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11407": {
+      "name": "电雀屋Cozyroom",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5623",
+      "note": "deep-research fleet: Remove iidx, jubeat, ongeki, taiko. Office-building hourly shop (type=3), still public paid. Distinct from risk-3 电雀屋六道口 WAHLAP pin.",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx"
+      ]
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11252": {
+      "name": "宝贝王北京通州万达店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4733",
+      "note": "deep-research fleet: Remove jubeat, other. Separate from b646 宝贝计划 on 3F of same mall (not a rename of each other; both live).",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/646": {
+      "name": "宝贝计划通州万达店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/646",
+      "note": "deep-research fleet: Remove jubeat, other. Live list has no jubeat. Keep as distinct 3F shop from 2F 宝贝王 z11252.",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/4422": {
+      "name": "【8.8开业】M.Lab 米莱音游研究所",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4422",
+      "note": "deep-research fleet: Remove iidx, project_diva, sdvx (nearcade over-listed). Name still has 8.8开业 prefix; machines from 2025 factory dates. type=3 member venue, still bookable public.",
+      "remove_games": [
+        "chunithm",
+        "maimai_dx"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6864": {
+      "name": "鼠窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6864",
+      "note": "deep-research fleet: Private home nest in residential complex 百合佳苑 (新泰). Not a public arcade. REMOVE from map (exclude, not closed).",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/2269": {
+      "name": "烟大轮渡中华复兴号客滚轮",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2269",
+      "note": "deep-research fleet: Passenger ferry cabin amusement, not a fixed public arcade pin. Coords are only the port. Requires ferry ticket Yantai-Dalian. Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/1347": {
+      "name": "燕窝 2.9ver",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/11347",
+      "note": "deep-research fleet: Private appointment-only 音游窝 (Jinan Lixia, Longquan Mall 5F). QQ booking required, membership hourly rates, full private-cab suite (IIDX/SDVX/GFDM/DDR/etc). Not a public walk-in arcade. EXCLUDE.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6951": {
+      "name": "芥末酒窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/16951",
+      "note": "deep-research fleet: Yantai Laishan private 音游窝 (BemaniCN tags as 音游窝). Access via QQ group only, sparse address 银海路3号. Bilibili promo frames it as student-run music den. Not public FEC. EXCLUDE.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7173": {
+      "name": "草窝音游屋",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/17173",
+      "note": "deep-research fleet: Binzhou residential 音游屋 in 中海豪庭 building 5. Unit number only via QQ, trial pricing, evening noise concern, PC/VR gear mix. Not public mall venue. EXCLUDE (not just close).",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6312": {
+      "name": "葱音舍【管理留：请于7日内完善详细地址，逾期将视为不公开店铺】",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/16312",
+      "note": "deep-research fleet: Jining private den in Suning office tower 8F with incomplete-address admin warning on the name itself. Hourly room rates, QQ for details. majdata lists office suite style address. EXCLUDE as non-public.",
+      "exclude": true
+    },
+    "nearcade|https://nearcade.phizone.cn/shops/12352": {
+      "name": "汤姆熊临沂兰山和谐广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/12352",
+      "note": "deep-research fleet: REMOVE maimai_dx: nearcade player note says DX pulled end of June; inventory now only classic FiNALE (titleId 2 / other). Also staff report of mall 撤店申请 and group-buy packages delisted. WAHLAP still lists branch so not hard-closed yet; monitor for full close. Keep other only if FiNALE still on floor.",
+      "remove_games": [
+        "other"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5554": {
+      "name": "赛博时空（鑫马吾悦店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/15554",
+      "note": "deep-research fleet: Zibo Xinma MixC. Comment states taiko already 撤机; live inventory only maimai DX; BemaniCN also maimai-only. REMOVE taiko.",
+      "remove_games": [
+        "maimai_dx"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5415": {
+      "name": "潮玩社济南章丘和谐广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/15415",
+      "note": "deep-research fleet: ADD chunithm. Confirmed on nearcade live inventory and BemaniCN (s/5415). Comment explicitly says first Zhangqiu maimai|CHUNI pair. WAHLAP also lists maimai at this branch.",
+      "add_games": [
+        "chunithm"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/4318": {
+      "name": "D 窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4318",
+      "note": "deep-research fleet: Private music-game nest (BemaniCN type 3), not a public arcade. Access via QQ group. Has maimai/chuni/taiko per BemaniCN but must not stay as a public pin.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6376": {
+      "name": "WIN窝 | 赢窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6376",
+      "note": "deep-research fleet: Private timed-entry 音游窝 in Guangzhou Tianhe. Mix of real 国行 maimai cabs and 手台 controllers on MuNET. Not public FEC; exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6778": {
+      "name": "不二的潮 新汇大融城店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6778",
+      "note": "deep-research fleet: Risk-2 other-only was placeholder for 舞立方EVO/秀. Remap to dance_evo. Public mall FEC (Jiangmen Xinhui).",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6301": {
+      "name": "利士堡潮玩乐园（新会时代ITC店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6301",
+      "note": "deep-research fleet: Pure 舞立方EVO public FEC. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5777": {
+      "name": "壹冠乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5777",
+      "note": "deep-research fleet: Zhongshan. 舞立方EVO/秀 dual system. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6182": {
+      "name": "奇妙之城（江门利和店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6182",
+      "note": "deep-research fleet: Jiangmen Lihe Plaza. Pure EVO. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6634": {
+      "name": "奇妙岛",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6634",
+      "note": "deep-research fleet: Guangzhou Huangshi Xinyue Plaza. Pure high-refresh 舞立方EVO. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5783": {
+      "name": "时空探险",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5783",
+      "note": "deep-research fleet: Maoming. EVO present. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5786": {
+      "name": "星力潮玩（阳江祥和轩市场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5786",
+      "note": "deep-research fleet: Yangjiang. Pure EVO. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5789": {
+      "name": "星际玩家（阳江阳西御海城店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5789",
+      "note": "deep-research fleet: Yangxi Yuhai City mall. Pure EVO. Remap other -> dance_evo.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6562": {
+      "name": "精灵岛潮玩城（东实旗云广场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6562",
+      "note": "deep-research fleet: Dongguan Shilong. Explicitly EVO-only kids FEC. Remap other -> dance_evo. Do not invent maimai/chuni/taiko.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6939": {
+      "name": "宴窝 | RIVIERA",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6939",
+      "note": "deep-research fleet: Apartment/co-living address plus QQ-group booking. Exclude as private install.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6158": {
+      "name": "拼好窝 PINHOWO",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6158",
+      "note": "deep-research fleet: Controller-based private nest in 百花广场. Do not list as official maimai/chunithm/ongeki.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5281": {
+      "name": "猫窝（东圃）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5281",
+      "note": "deep-research fleet: Hidden membership den. Exclude; do not keep as closed public pin.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6033": {
+      "name": "猫窝（京溪）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6033",
+      "note": "deep-research fleet: Private nest chain (猫窝). Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/4418": {
+      "name": "猫窝（大石店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4418",
+      "note": "deep-research fleet: Private nest. Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7038": {
+      "name": "酷乐窝宝安店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7038",
+      "note": "deep-research fleet: No public storefront address. Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5892": {
+      "name": "雁窝（广州昌岗店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5892",
+      "note": "deep-research fleet: Office-floor private nest. Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/2780": {
+      "name": "GuNe火窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2780",
+      "note": "deep-research fleet: Game list in our data is wildly inflated (iidx/jubeat/sdvx/wacca/etc.). BemaniCN only shows maimai + controller chunithm/ongeki. Exclude private nest; do not keep inflated game tags.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7138": {
+      "name": "LBF活动室",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7138",
+      "note": "deep-research fleet: Private fan activity room. Exclude.",
+      "exclude": true
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9990": {
+      "name": "深圳BitCity次元小镇",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/1535",
+      "note": "deep-research fleet: Duplicate of sid z9990 (BitCity大中华广场(次元小镇)). Same 大中华HUA广场 G层. Prefer multi-source z9990; drop this wahlap-only twin pin.",
+      "exclude": true
+    },
+    "addr|China|畅想城广州番禺亚运城店|广东省广州市番禺亚运城新华文化中心一楼F1012-F1015": {
+      "name": "畅想城广州番禺亚运城店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5985",
+      "note": "deep-research fleet: Duplicate of sid b5985 MAGIC畅想城（番禺亚运城店）. Same address block. Keep multi-source MAGIC pin; drop wahlap-only twin.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5379": {
+      "name": "堡窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5379",
+      "note": "deep-research fleet: Private 音游窝 on floor 24 of 华联大厦, QQ-group access only, hourly rental, controller/sim cabs not walk-in public arcade. Exclude (not closed). nearcade sid 15379 matches.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5595": {
+      "name": "焊窝×7shop",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5595",
+      "note": "deep-research fleet: Private nest in residential 康桥圣菲2栋220. Same coords as WAHLAP 7shop pin. Exclude as private access nest.",
+      "exclude": true
+    },
+    "addr|China|7shop南京栖霞康桥圣菲店|江苏省南京市栖霞区文范路9号 康桥圣菲": {
+      "name": "7shop南京栖霞康桥圣菲店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
+      "note": "deep-research fleet: WAHLAP-only pin at identical coords to 焊窝×7shop (b5595). Residential complex, nest access (QQ). Exclude as private nest / duplicate of b5595.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6651": {
+      "name": "苏州火窝音游",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6651",
+      "note": "deep-research fleet: Private nest (type=3), explicitly not open (renovation). Staff QQ required. Vague address (人民桥南地铁站 only). Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7068": {
+      "name": "苏州被窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7068",
+      "note": "deep-research fleet: Private nest (type=3). Appointment + group required; private-server style versions. Detailed address only after booking. Exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7165": {
+      "name": "Vita音游（试运营中）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7165",
+      "note": "deep-research fleet: Explicit 音游窝 (type=3) in office unit 喜马拉雅L座626. Controllers only; listed SEGA/Bemani titles are hand-cabs not public arcade fleet. Not on WAHLAP. Exclude. Game list inflated.",
+      "exclude": true
+    },
+    "addr|China|51区南京浦口天悦城店|江苏省南京市浦口区沿江街道百润路9号天悦城2楼 51区超级乐园": {
+      "name": "51区南京浦口天悦城店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6354",
+      "note": "deep-research fleet: WAHLAP-only incomplete duplicate of b6354 (multi-source, fuller game list maimai+chuni+taiko, same 天悦城). Exclude this pin; keep b6354.",
+      "exclude": true
+    },
+    "addr|China|51区超级乐园南京鼓楼店|江苏省南京市鼓楼区草场门大街99号龙江新城市广场一期第三层A305号（51区超级乐园）": {
+      "name": "51区超级乐园南京鼓楼店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2854",
+      "note": "deep-research fleet: WAHLAP-only duplicate of b2854 same 新城市广场 / 草场门大街99号. Exclude; keep multi-source b2854.",
+      "exclude": true
+    },
+    "addr|China|三十六计苏州吴中店|江苏省苏州市吴中区郭巷街道清禾路888号歌林公园1号楼二层1201B": {
+      "name": "三十六计苏州吴中店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4144",
+      "note": "deep-research fleet: Exact same address unit as b4144 (歌林公园1号楼2层1201B). WAHLAP-only duplicate of multi-source pin. Exclude h556c93b982; keep b4144.",
+      "exclude": true
+    },
+    "addr|China|g2街区盐城聚龙湖金鹰店|盐城市南城聚龙湖金鹰购物中心三楼": {
+      "name": "g2街区盐城聚龙湖金鹰店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5906",
+      "note": "deep-research fleet: WAHLAP-only name variant of b5906 at same 聚龙湖金鹰. Exclude incomplete single-source pin; keep b5906.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/4139": {
+      "name": "多奇妙儿童乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2015",
+      "note": "deep-research fleet: Duplicate pin of b2015 (keep b2015: more complete games maimai_dx+other, newer BemaniCN update 2026-05-11 vs 2026-02-08). Exclude b4139.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/758": {
+      "name": "大玩家超乐场（江宁万达广场店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/758",
+      "note": "deep-research fleet: Add jubeat to existing maimai_dx+taiko. nearcade also lists other (non-rhythm FEC cabs); leave other to owner discretion.",
+      "add_games": [
+        "jubeat"
+      ]
+    },
+    "nearcade|https://nearcade.phizone.cn/shops/22": {
+      "name": "宝贝王",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/22",
+      "note": "deep-research fleet: Same physical 连云港海州万达 宝贝王 as b4052. Shop 22 is a 2026-08-02 nearcade stub with correct coords; b4052 is the older fuller listing (maimai+pokemon). Exclude this stub after fixing b4052 coords. Do not keep both pins.",
+      "exclude": true
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=1732": {
+      "name": "汤姆熊欢乐世界 Tom's World (苏州绿宝店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1732",
+      "note": "deep-research fleet: Explicit ZIv crosswalk to bemanicn s/933 (our b933 汤姆熊欢乐世界（绿宝广场）). Same floor/mall, ~230m pin drift only. Keep b933 (bemanicn+nearcade, Chinese addr 长江路436号绿宝广场2期3楼). Merge any unique ZIv other-game notes into b933 if needed; do not leave two live pins.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6679": {
+      "name": "悠窝音游",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/16679",
+      "note": "deep-research fleet: Residential loft unit, hourly self-service room, machine versions are known DIY/sim controllers not licensed public cabinets. Not a standard public music-game venue for the map. Exclude rather than list as closed.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/2508": {
+      "name": "环游家族苏州吴江万宝店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/12508",
+      "note": "deep-research fleet: Our list only maimai_dx. nearcade lists two CHUNITHM cabinets plus membership pricing for 中二. Add chunithm.",
+      "add_games": [
+        "chunithm",
+        "maimai_dx"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/2762": {
+      "name": "喵呜雀庄",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2762",
+      "note": "deep-research fleet: BemaniCN marks as 音游窝 (type 3). 雀庄 + QQ nest pattern. Single-source maimai_dx not on WAHLAP. Exclude private nest, not public venue.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7250": {
+      "name": "苏州趴窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7250",
+      "note": "deep-research fleet: Invite-only private 趴窝 nest (BemaniCN type 3). nearcade 17250 also lists SDVX VII and 音击 手台 free play. Exclude; do not treat as public mall arcade. Shard game list incomplete but moot after exclude.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/6241": {
+      "name": "鸽屋咕咕咕x浪速雀庄（仙林店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6241",
+      "note": "deep-research fleet: Private nest co-located with mahjong 浪速雀庄; controller/sim hardware not official public cabs. Distinct from main 鸽屋咕咕咕 (sid b447, type 1, WAHLAP-backed) which should stay.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5791": {
+      "name": "玩家搭档动漫城",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5791",
+      "note": "deep-research fleet: Shard games=[other] was unmapped 舞立方EVO. Replace other with dance_evo. Public FEC (type 2) in 瑞金万合广场. Not on WAHLAP maimai. nearcade 15791 agrees.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6482": {
+      "name": "酷乐潮玩游乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6482",
+      "note": "deep-research fleet: Replace other with dance_evo. Public arcade type 1, 永丰县恩江古城. nearcade 16482 matches.",
+      "add_games": [
+        "dance_evo"
+      ]
+    },
+    "addr|China|搭档动漫城抚州临川万达店|江西省抚州市临川区万达广场三楼玩家搭档动漫城": {
+      "name": "搭档动漫城抚州临川万达店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/15703",
+      "note": "deep-research fleet: WAHLAP-backed maimai still listed. nearcade/BemaniCN confirm 舞立方EVO on floor. Add dance_evo. Same chain as risk2 瑞金 玩家搭档.",
+      "add_games": [
+        "dance_evo",
+        "maimai_dx"
+      ]
+    },
+    "addr|China|十二星球上饶信州万达店|江西省上饶市信州区万达广场三楼十二星球": {
+      "name": "十二星球上饶信州万达店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/11371",
+      "note": "deep-research fleet: Same physical 上饶万达三楼 venue as nearcade 大玩家（上饶十二星球店）. WAHLAP name 十二星球 still valid. Add taiko (old Asian cab). Optional other for 舞立方一代 if mapped; not dance_evo without EVO proof.",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=2460": {
+      "name": "乐翻天游乐园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=2460",
+      "note": "deep-research fleet: Same 佟温路2号 as multi-source b1792 乐翻天游乐城 (bemaniCN/nearcade/WAHLAP 乐翻天承德双桥店, maimai_dx). Keep b1792 only; drop z2460 stale iidx/reflec/taiko11 list.",
+      "exclude": true
+    },
+    "addr|China|万德隆邓州万德隆店|邓州市花洲街道办事处万德隆时代广场6楼": {
+      "name": "万德隆邓州万德隆店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/7162",
+      "note": "deep-research fleet: WAHLAP-only row with null lat/lng is same 万德隆时代广场 as b7162 (deep_042). Prefer bemanicn-linked twin; exclude this duplicate pin.",
+      "exclude": true
+    },
+    "addr|China|大大梦幻潮玩拾光新郑龙湖万佳商业广场店|新郑市龙湖镇双湖大道万佳商业广场1668": {
+      "name": "大大梦幻潮玩拾光新郑龙湖万佳商业广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6337",
+      "note": "deep-research fleet: WAHLAP row with null coords is same 龙湖万佳商业广场 venue as b6337 大大梦幻王国. Exclude WAHLAP twin; keep bemanicn multi-source pin.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/4123": {
+      "name": "赛博时空承德万达广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4123",
+      "note": "deep-research fleet: Do not leave as open pin. nearcade shop 14123 also uses （暂停营业） prefix. Prefer closed over live open; re-check later if 暂停 lifts.",
+      "closed": true,
+      "closed_reason": "bemanicn/nearcade live name prefix （暂停营业）"
+    },
+    "bemanicn|https://map.bemanicn.com/s/1053": {
+      "name": "热带雨林主题乐园（美乐城店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/1053",
+      "note": "deep-research fleet: Remove drs and pump_it_up from listing. Keep maimai_dx, chunithm, jubeat (音乐魔方 tid34), other. nearcade still carries stale drs/pump; prefer live bemanicn.",
+      "remove_games": [
+        "chunithm",
+        "jubeat",
+        "maimai_dx",
+        "other"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5935": {
+      "name": "星际玩家（郑州店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5935",
+      "note": "deep-research fleet: Add dance_evo (BemaniCN title_id 33 舞立方EVO). Keep other for any non-slug cabs. Open multi-source.",
+      "add_games": [
+        "dance_evo",
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6083": {
+      "name": "雷霆动力家庭娱乐中心",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6083",
+      "note": "deep-research fleet: Add dance_evo for title_id 33. Keep other as listed. Open on BemaniCN/nearcade.",
+      "add_games": [
+        "dance_evo",
+        "taiko"
+      ]
+    },
+    "addr|China|麦酷潮玩杭州拱墅银泰店|浙江省杭州市拱墅区祥符街道丰潭路380号城西银泰城2L麦酷潮玩空间": {
+      "name": "麦酷潮玩杭州拱墅银泰店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/15099",
+      "note": "deep-research fleet: Same mall address as WAHLAP 麦酷潮玩杭州拱墅银泰店 (丰潭/丰谭路380 城西银泰2L). BemaniCN s/5099 and nearcade 15099 hold the live pin under 真快活 with maimai+chuni+taiko. Exclude this WAHLAP-only 麦酷 ghost/stale name; keep/use the 真快活 listing (may itself still be renovation-named). Do not leave both open as separate venues.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/7175": {
+      "name": "䨻䨻音游同好会",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/17175",
+      "note": "deep-research fleet: Private club/home-style 同好会 at 宁波世界贸易中心. Free play, QQ-group access, not walk-in public arcade. Exclude from public map rather than keep as closed commercial venue.",
+      "exclude": true
+    },
+    "addr|China|魔力嘟嘟城绍兴上虞店|浙江省绍兴市上虞区上百万悦城三楼魔力嘟嘟城": {
+      "name": "魔力嘟嘟城绍兴上虞店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/14119",
+      "note": "deep-research fleet: WAHLAP-only pin in shard has maimai only; BemaniCN s/4119 and nearcade 14119 list same 万悦城 3F venue with chunithm x2 as well. Add chunithm. Also: nearcade/bemanicn coords for this shop are wrong (39.908348,116.403401 Beijing default); our WAHLAP geocode (30.0187,120.8569) is the usable Zhejiang position. If a separate b4119 pin exists with Beijing coords, fix_addr or merge onto this pin.",
+      "add_games": [
+        "chunithm",
+        "maimai_dx"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/2339": {
+      "name": "游戏大亨（台州临海店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/12339",
+      "note": "deep-research fleet: Keep as closed pin (not exclude). Live BC status still 1 but comment/nearcade desc are explicit 停业. Reopen unknown. Address 大洋街道大洋东路2号星悦广场3楼 still valid for closed listing.",
+      "closed": true,
+      "closed_reason": "BemaniCN and nearcade both state temporary/current closure with unknown reopen date"
+    },
+    "bemanicn|https://map.bemanicn.com/s/4147": {
+      "name": "谷噜谷子台州店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/14147",
+      "note": "deep-research fleet: Permanently closed at 赤城街道百花路24号. Keep closed (do not exclude). Successor location is 祥生二楼 with original cab; not the same pin. BC /s/4147 returns 404.",
+      "closed": true,
+      "closed_reason": "Nearcade comment triple-states 已闭店; cab moved to 祥生二楼; BemaniCN shop page HTTP 404"
+    },
+    "bemanicn|https://map.bemanicn.com/s/2423": {
+      "name": "杭州良渚虎窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2423",
+      "note": "deep-research fleet: Private studio/home-style install, not a public walk-in arcade. Address is only '大河李斯特教育视频媒体工作室' with real address behind QQ group. Appointment/invite required. Exclude from public map.",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5690": {
+      "name": "繁水屋Club",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5690",
+      "note": "deep-research fleet: Private club (BC type 3). Map deliberately wrong; must join group and book to get address. Free-play hand-cab suite on nearcade is not a public coin venue. Exclude. If ever re-listed, BC only has maimai_dx/chunithm/ongeki official-ish; shard over-lists gitadora/iidx/jubeat/sdvx/taiko relative to BC arcade rows (nearcade lists private cabs).",
+      "exclude": true
+    },
+    "bemanicn|https://map.bemanicn.com/s/5722": {
+      "name": "星际潮玩社金华万达店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/5722",
+      "note": "deep-research fleet: Open mall arcade at 金华金东万达 2F. Shard only has maimai_dx; live BC+nearcade both list 2x chunithm. Add chunithm.",
+      "add_games": [
+        "chunithm"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/2168": {
+      "name": "炫技星空金华义乌之心店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/2168",
+      "note": "deep-research fleet: Remove chunithm from this pin. Chunithm is at opposite shop 天空之城 (nearcade 13431 / BC shop 3431), not 炫技星空. WAHLAP still lists 炫技星空金华义乌之心店 for maimai. Keep maimai_dx only. Shard notes had two nearcade sids merged incorrectly.",
+      "remove_games": [
+        "chunithm"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/5243": {
+      "name": "刺窝",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/15243",
+      "note": "deep-research fleet: Private nest (窝) in Wuhan Hanyang. Vague public address, QQ-only details, overnight stays, all 手台/unofficial cabs. Listed games also wrong vs nearcade (has SDVX/ongeki/GC, not taiko). Exclude as non-public venue.",
+      "exclude": true
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=10214": {
+      "name": "环游嘉年华 (龙华上邦百汇城)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/16221",
+      "note": "deep-research fleet: Duplicate of b6221 (same 上邦百汇城 / Shangbang Baihui City). Keep b6221 with other+taiko. Drop z10214 rather than leave inflated ZIv game list (maimai_dx/jubeat/groove_coaster not on current nearcade).",
+      "exclude": true
+    },
+    "addr|China|乐斯尼乐园文昌耀龄广场店|海南省文昌市文城镇教育东路88号耀龄广场裙房商业2层F2-02铺位": {
+      "name": "乐斯尼乐园文昌耀龄广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/14953",
+      "note": "deep-research fleet: Duplicate pin of b4953 same mall. Exclude this WAHLAP-only stub; keep b4953.",
+      "exclude": true
+    },
+    "addr|China|乐斯尼乐园昌江恒基广场店|海南省昌江黎族自治县石碌镇恒基广场乐斯尼乐园": {
+      "name": "乐斯尼乐园昌江恒基广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/14955",
+      "note": "deep-research fleet: Exclude WAHLAP stub; keep b4955 multi-source entry.",
+      "exclude": true
+    },
+    "addr|China|偶予动漫三亚天涯店|海南省三亚市天涯区胜利路胜利购物广场1楼": {
+      "name": "偶予动漫三亚天涯店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/10281",
+      "note": "deep-research fleet: WAHLAP-only name variant of b281. Exclude stub; keep b281.",
+      "exclude": true
+    },
+    "addr|China|偶予电玩琼海嘉积春天广场店|海南省琼海市嘉积镇环球春天广场一楼偶予电玩城": {
+      "name": "偶予电玩琼海嘉积春天广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/13899",
+      "note": "deep-research fleet: WAHLAP-only duplicate of b3899. Exclude stub.",
+      "exclude": true
+    },
+    "addr|China|嗨乐电玩三亚吉阳蓝海店|海南省三亚市吉阳区新风街261号蓝海购物广场C030号商铺嗨乐电玩": {
+      "name": "嗨乐电玩三亚吉阳蓝海店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/13562",
+      "note": "deep-research fleet: WAHLAP-only stub of b3562. Exclude.",
+      "exclude": true
+    },
+    "addr|China|宝贝王咸宁咸安万达广场店|湖北省咸宁市咸安区温泉街道万达二楼宝贝王": {
+      "name": "宝贝王咸宁咸安万达广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6411",
+      "note": "deep-research fleet: WAHLAP-only duplicate of b6411 same Wanda Baby V mall. Exclude stub.",
+      "exclude": true
+    },
+    "nearcade|https://nearcade.phizone.cn/shops/10747": {
+      "name": "星世纪(五一广场万代店)【6月21日停止营业】",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/shops/10747",
+      "note": "deep-research fleet: Real former public arcade at 黄兴中路87号万代大酒店一楼/粉巢. Nearcade name already tagged 6月21日停止营业; API comment confirms 2026-06-21 start of permanent stop. WAHLAP maidx dump still lists 星世纪长沙五一广场万代店 (locator lag). ZIv 4313 stale (2019). Not on BemaniCN. Keep as closed, do not exclude (was real). Prefer closed pin over open ghost.",
+      "closed": true,
+      "closed_reason": "2026-06-21 permanent stop; name and nearcade comment both say 停止营业"
+    },
+    "bemanicn|https://map.bemanicn.com/s/3792": {
+      "name": "城市英雄长沙珠江店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/3792",
+      "note": "deep-research fleet: Open multi-source (WAHLAP 城市英雄长沙珠江店 + BemaniCN + nearcade 13792). Our list missing taiko; add taiko (Asia old-frame). Keep maimai_dx + other (classic murasaki-mod cab still listed). Cabs moved back indoors 2026-07-16.",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/4928": {
+      "name": "奇迹童年家庭娱乐中心（奥特莱斯店）",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/4928",
+      "note": "deep-research fleet: Open at 株洲天元 润鲨奥特莱斯2楼. WAHLAP 奇迹童年株洲天元奥特莱斯店. Add taiko (Asia ver 12). Keep maimai_dx; keep other unless later confirmed empty. Hours note 9:30-21:30 early close, not permanently closed.",
+      "add_games": [
+        "maimai_dx",
+        "taiko"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/707": {
+      "name": "四隆主题公园",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/707",
+      "note": "deep-research fleet: Remove wacca only. Venue still open with maimai (player notes through 2026-07). WACCA dead and Anshan has no remaining WACCA per same comment. Keep maimai_dx and other.",
+      "remove_games": [
+        "maimai_dx",
+        "other"
+      ]
+    },
+    "bemanicn|https://map.bemanicn.com/s/6938": {
+      "name": "TOKOYO电玩工作室",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://nearcade.phizone.cn/api/shops/16938",
+      "note": "deep-research fleet: Exclude as private home/unit install (万州). Do not keep as open public pin.",
+      "exclude": true
+    },
+    "addr|China|V-play潮玩重庆时代天街店|重庆市渝中区石油路时代天街C馆四楼潮玩运动街区": {
+      "name": "V-play潮玩重庆时代天街店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "deep-research fleet: Drop this WAHLAP shadow pin; keep z11669.",
+      "exclude": true
+    },
+    "addr|China|X机地重庆巴南万达广场店|重庆市巴南区渝南大道万达广场3楼X机地": {
+      "name": "X机地重庆巴南万达广场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://map.bemanicn.com/s/6510",
+      "note": "deep-research fleet: Keep b6510 (bemanicn+nearcade). Drop WAHLAP-only twin.",
+      "exclude": true
+    },
+    "addr|China|乐其潮玩重庆酉阳翠屏山大道北店|重庆市酉阳县翠屏山大道北段8号乐其潮玩": {
+      "name": "乐其潮玩重庆酉阳翠屏山大道北店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "deep-research fleet: Merge into b6509: add maimai_dx there (see b6509 finding). Then drop this WAHLAP-only row.",
+      "exclude": true
+    },
+    "addr|China|星际传奇渝北光环商场店|重庆市渝北区鸳鸯街道光环购物公园L3楼26-27星际传奇": {
+      "name": "星际传奇渝北光环商场店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "deep-research fleet: Keep multi-source b1146; drop WAHLAP-only twin.",
+      "exclude": true
+    },
+    "addr|China|宝贝王合川中奥城店|重庆市合川区中奥城新重百3楼宝贝王": {
+      "name": "宝贝王合川中奥城店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "deep-research fleet: Rebranded: keep b4062 as current name, drop WAHLAP 宝贝王 shadow.",
+      "exclude": true
+    },
+    "addr|China|宝贝王重庆永川万达店|重庆市永川区万达广场一楼宝贝王家庭娱乐中心": {
+      "name": "宝贝王重庆永川万达店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "deep-research fleet: Keep b5988 multi-source; drop WAHLAP twin.",
+      "exclude": true
+    },
+    "addr|China|潮玩无界重庆九龙坡迎宾店|重庆市九龙坡区迎宾大道37号5楼-04号商铺A馆潮玩无界": {
+      "name": "潮玩无界重庆九龙坡迎宾店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://wc.wahlap.net/maidx/location/index.html",
+      "note": "deep-research fleet: Same mall unit family. Keep z11675; drop WAHLAP alternate name.",
+      "exclude": true
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=11648": {
+      "name": "童年搭档 Childhood Buddies (万州鸿欧广场店)",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11648",
+      "note": "deep-research fleet: Keep b2479 (bemanicn+nearcade Chinese name). Drop English ZIv twin z11648.",
+      "exclude": true
     }
   }
 }
