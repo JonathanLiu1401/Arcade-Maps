@@ -179,8 +179,13 @@ window.AM = window.AM || {};
 
   function buildGameIndex() {
     gameIndex = AM.data.gamesInData.map(function (slug) {
-      var label = C.GAME_LABEL[slug] || slug;
-      var terms = [label.toLowerCase(), slug, slug.replace(/_/g, " ")];
+      var en = C.GAME_LABEL[slug] || slug;
+      var label = (AM.util && AM.util.gameLabel)
+        ? AM.util.gameLabel(slug) : en;
+      /* Index both the localized label and the English brand so a JP UI
+         still finds "maimai" / "CHUNITHM" by English typing. */
+      var terms = [label.toLowerCase(), en.toLowerCase(), slug,
+        slug.replace(/_/g, " ")];
       (GAME_ALIASES[slug] || []).forEach(function (t) {
         terms.push(t.toLowerCase());
       });
@@ -698,7 +703,12 @@ window.AM = window.AM || {};
 
     syncPlaceholder();
     if (AM.i18n && AM.i18n.on) {
-      AM.i18n.on(function () { syncPlaceholder(); });
+      AM.i18n.on(function () {
+        syncPlaceholder();
+        /* Localized game names change; rebuild so result rows and
+           typeahead match the current UI language. */
+        try { buildGameIndex(); } catch (e) {}
+      });
     }
 
     input.addEventListener("input", function () {

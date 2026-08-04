@@ -648,10 +648,23 @@ window.AM = window.AM || {};
      game name (place-panel chip, hero caption, price row, no-coords list, map
      popup) and nearby.js prints a sixth. Fixing one leaves the same false
      claim on the others in a different font, so they all read it from here. */
+  /* Localized game display name (filter chips, legend, search rows, etc.).
+     Falls back to the English GAME_LABEL table when i18n is not ready. */
+  function gameLabel(slug) {
+    if (slug === "maimai") slug = "maimai_finale";
+    if (AM.i18n && typeof AM.i18n.t === "function") {
+      var key = "games." + slug;
+      var s = AM.i18n.t(key);
+      if (s && s !== key) return s;
+    }
+    if (slug === "maimai_finale") return "maimai (FiNALE / pre-DX)";
+    return GAME_LABEL[slug] || slug;
+  }
+
   function gameLabelFor(a, g) {
     if (g === "maimai_dx") {
       var have = variantsOf(a);
-      if (have.maimai_classic && !have.maimai_dx_cab) return "maimai (FiNALE / pre-DX)";
+      if (have.maimai_classic && !have.maimai_dx_cab) return gameLabel("maimai_finale");
     }
     /* The scraper's PRE-DX slug, which is spelled `maimai` against
        `maimai_dx`. It never reaches a game chip - merge keeps it out of
@@ -663,8 +676,8 @@ window.AM = window.AM || {};
        whose one title is "maimai ORANGE PLUS") says nothing about the cabinet
        being pre-DX at all. Both cases are the same dead-network claim the
        chips already make, so they read it from the same string. */
-    if (g === "maimai") return "maimai (FiNALE / pre-DX)";
-    return GAME_LABEL[g] || g;
+    if (g === "maimai") return gameLabel("maimai_finale");
+    return gameLabel(g);
   }
 
   /* Only needed if the data file is ever swapped at runtime; arcades.json is
@@ -687,6 +700,7 @@ window.AM = window.AM || {};
     hasVariant: hasVariant,
     variantsForGame: variantsForGame,
     otherGamesOf: otherGamesOf,
+    gameLabel: gameLabel,
     gameLabelFor: gameLabelFor,
     resetVariantCache: resetVariantCache
   };

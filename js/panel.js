@@ -17,7 +17,6 @@ window.AM = window.AM || {};
   var C = AM.consts, U = AM.util;
   var $ = U.$, esc = U.esc;
 
-  /* UI chrome only - game brand names stay untranslated. */
   function tr(key, vars) {
     return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
   }
@@ -31,11 +30,16 @@ window.AM = window.AM || {};
   }
 
   function gameChipLabel(g) {
+    /* Prefer util.gameLabel so filter chips, panel chips, and popups share
+       the same localized name (games.* keys). */
+    if (U.gameLabel) return U.gameLabel(g);
     if (g === "other") {
       var s = tr("cabs.other_game");
       return (s && s !== "cabs.other_game") ? s : (C.GAME_LABEL.other || "Other");
     }
-    return C.GAME_LABEL[g] || g;
+    var key = "games." + g;
+    var t = tr(key);
+    return (t && t !== key) ? t : (C.GAME_LABEL[g] || g);
   }
 
   var SHEET_PEEK = 0.45;   /* mobile resting height, fraction of the map column */

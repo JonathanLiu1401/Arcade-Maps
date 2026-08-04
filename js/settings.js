@@ -257,7 +257,8 @@ window.AM = window.AM || {};
       var sw = el("span", "sd-swatch");
       sw.style.background = C.GAME_COLOR[g] || C.GAME_COLOR.other;
       item.appendChild(sw);
-      item.appendChild(el("span", "sd-color-name", C.GAME_LABEL[g] || g));
+      item.appendChild(el("span", "sd-color-name",
+        (U.gameLabel ? U.gameLabel(g) : null) || C.GAME_LABEL[g] || g));
       item.appendChild(el("span", "sd-count tabnum", U.num(gameCountFor(g))));
       grid.appendChild(item);
     });
@@ -519,7 +520,8 @@ window.AM = window.AM || {};
       var sw = el("span", "sd-swatch");
       sw.style.background = C.GAME_COLOR[g] || C.GAME_COLOR.other;
       item.appendChild(sw);
-      item.appendChild(el("span", null, C.GAME_LABEL[g] || g));
+      item.appendChild(el("span", null,
+        (U.gameLabel ? U.gameLabel(g) : null) || C.GAME_LABEL[g] || g));
       grid.appendChild(item);
     });
     legendBody.appendChild(grid);
@@ -660,6 +662,16 @@ window.AM = window.AM || {};
       for (var j = 0; j < sizes.length; j++) {
         if (sizes[j].title && /unknown|mid-size|mid size/i.test(sizes[j].title)) {
           sizes[j].title = tr("legend.unknown_title");
+        }
+      }
+      /* Legend color names are plain text nodes, not data-i18n. */
+      var colorRows = legendBody.querySelectorAll(".legend-color");
+      var games = (AM.data && AM.data.gamesInData) || [];
+      for (var k = 0; k < colorRows.length && k < games.length; k++) {
+        var nameEl = colorRows[k].querySelector("span:not(.sd-swatch)");
+        if (nameEl) {
+          nameEl.textContent = (U.gameLabel ? U.gameLabel(games[k]) : null)
+            || C.GAME_LABEL[games[k]] || games[k];
         }
       }
     }

@@ -114,6 +114,9 @@ window.AM = window.AM || {};
   /* ---------- cab counts ---------- */
 
   function gameLabel(slug) {
+    if (AM.util && typeof AM.util.gameLabel === "function") {
+      return AM.util.gameLabel(slug);
+    }
     return (C && C.GAME_LABEL && C.GAME_LABEL[slug]) || slug;
   }
 

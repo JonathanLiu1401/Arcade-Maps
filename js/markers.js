@@ -413,7 +413,8 @@ window.AM = window.AM || {};
          pre-DX)" would be followed by a "FiNALE / pre-DX" badge saying the
          same thing twice. The badge qualifies a game name; it is dropped
          when it IS the game name. */
-      var renamed = label !== (C.GAME_LABEL[g] || g);
+      var base = (U.gameLabel ? U.gameLabel(g) : null) || C.GAME_LABEL[g] || g;
+      var renamed = label !== base;
       h += '<span class="gc" style="--c:' + (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
         esc(label) + "</span>";
       (C.VARIANTS_BY_GAME[g] || []).forEach(function (v) {

@@ -196,12 +196,8 @@ window.AM = window.AM || {};
        store read as a live DX venue in the one place a phone user scans
        fastest. */
     var h = shown.map(function (g) {
-      var label = (g === "other")
-        ? (function () {
-            var s = tr("cabs.other_game");
-            return (s && s !== "cabs.other_game") ? s : (U.gameLabelFor(a, g) || "Other");
-          })()
-        : U.gameLabelFor(a, g);
+      var label = U.gameLabelFor ? U.gameLabelFor(a, g)
+        : (U.gameLabel ? U.gameLabel(g) : (C.GAME_LABEL[g] || g));
       return '<span class="gc" style="--c:' +
         (C.GAME_COLOR[g] || C.GAME_COLOR.other) + '">' +
         esc(label) + "</span>";
