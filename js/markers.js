@@ -431,9 +431,10 @@ window.AM = window.AM || {};
       h += '<div class="pp-row">';
       a.src.forEach(function (s) {
         var label = esc(C.SRC_LABEL[s] || s);
-        if ((s === "ziv" || s === "bemanicn") && a.links && a.links[s]) {
+        var href = a.links && a.links[s] ? U.safeUrl(a.links[s]) : "";
+        if (href) {
           h += '<a class="badge" target="_blank" rel="noopener" href="' +
-            esc(U.safeUrl(a.links[s])) + '">' + label + "</a>";
+            esc(href) + '">' + label + "</a>";
         } else {
           h += '<span class="badge">' + label + "</span>";
         }

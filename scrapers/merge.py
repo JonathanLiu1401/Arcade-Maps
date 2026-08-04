@@ -34,7 +34,8 @@ Pipeline rules (see README / task spec):
      matched ziv entries; recorded as inherited:true in notes.
  (e) gcj02 / bd09 -> wgs84 via eviltransform when coord_system says so.
  (f) country from region labels / wahlap province / geo+address heuristics.
- (g) links.gmaps / links.ziv / links.bemanicn.
+ (g) links.gmaps plus one page URL per source (allnet, ziv, bemanicn,
+     nearcade, …). Extras for the same source go in links.also.
  (h) a fresh per-source scrape file (ziv.json / round1usa.json)
      SUPERSEDES that source's rows bundled inside community.json, so
      a re-crawl replaces rather than doubles it; community.json's
@@ -699,6 +700,33 @@ def _common_prefix_len(a, b):
 
 _ZIV_ID_RE = re.compile(r"[?&]id=(\d+)")
 _BEMANICN_ID_RE = re.compile(r"/s/(\d+)")
+_ALLNET_SID_RE = re.compile(r"[?&]sid=(\d+)")
+ALLNET_SHOP_URL = "https://location.am-all.net/alm/shop?sid=%s"
+
+
+def allnet_shop_url(sid):
+    """Public SEGA store page for an ALL.Net shop id, or None."""
+    if sid is None:
+        return None
+    s = str(sid).strip()
+    if not s.isdigit():
+        return None
+    return ALLNET_SHOP_URL % s
+
+
+def is_useful_source_url(url):
+    """True when url is a human-openable source page (not an API dump)."""
+    if not url or not isinstance(url, str):
+        return False
+    u = url.strip()
+    if not (u.startswith("http://") or u.startswith("https://")):
+        return False
+    low = u.lower()
+    # WAHLAP and similar scrapers sometimes store the REST endpoint, which
+    # is useless in the UI.
+    if "/api/" in low or low.rstrip("/").endswith(".json"):
+        return False
+    return True
 
 
 def stable_sid(entry):
@@ -719,6 +747,9 @@ def stable_sid(entry):
     m = _BEMANICN_ID_RE.search(links.get("bemanicn") or "")
     if m:
         return "b" + m.group(1)
+    m = _ALLNET_SID_RE.search(links.get("allnet") or "")
+    if m:
+        return "a" + m.group(1)
     key = "%s|%s|%s" % (entry.get("country") or "",
                         (entry.get("name") or "").strip().casefold(),
                         (entry.get("addr") or "").strip().casefold())
@@ -1039,11 +1070,23 @@ def load_units(raw_dir, stats):
     def add(source, name, addr, lat, lng, games, cabs, country, pref,
             ziv_url=None, note=None, coord_system="wgs84",
             cn_prov=None, cn_city=None, bemanicn_url=None,
-            game_counts=None, count_evidence=None, cab_models=None):
+            source_url=None, game_counts=None, count_evidence=None,
+            cab_models=None):
         name = (name or "").strip()
         addr = (addr or "").strip()
         if not name:
             return
+        # Collapse legacy ziv/bemanicn kwargs onto the unit's page URL.
+        if source == "ziv" and not source_url and ziv_url:
+            source_url = ziv_url
+        if source == "bemanicn" and not source_url and bemanicn_url:
+            source_url = bemanicn_url
+        if source_url and not is_useful_source_url(source_url):
+            source_url = None
+        if ziv_url and not is_useful_source_url(ziv_url):
+            ziv_url = None
+        if bemanicn_url and not is_useful_source_url(bemanicn_url):
+            bemanicn_url = None
         gc = {}
         for slug, n in (game_counts or {}).items():
             try:
@@ -1086,7 +1129,9 @@ def load_units(raw_dir, stats):
                  "country": country, "pref": pref, "ziv_url": ziv_url,
                  "notes": [], "coord_system": coord_system,
                  "cn_prov": cn_prov, "cn_city": cn_city,
-                 "bemanicn_url": bemanicn_url, "game_counts": {},
+                 "bemanicn_url": bemanicn_url, "source_url": source_url,
+                 "source_url_also": [],
+                 "game_counts": {},
                  "count_evidence": {}, "cab_models": {},
                  "counts_tallied": False}
             units[key] = u
@@ -1103,6 +1148,12 @@ def load_units(raw_dir, stats):
                 u["cn_prov"], u["cn_city"] = cn_prov, cn_city
             if u["bemanicn_url"] is None and bemanicn_url:
                 u["bemanicn_url"] = bemanicn_url
+            if source_url:
+                if not u.get("source_url"):
+                    u["source_url"] = source_url
+                elif (source_url != u["source_url"]
+                      and source_url not in u.get("source_url_also", [])):
+                    u.setdefault("source_url_also", []).append(source_url)
         u["games"].update(games)
         u["cabs"].update(cabs)
         # Per-slug pick across within-source dupes. The evidence has to
@@ -1150,7 +1201,8 @@ def load_units(raw_dir, stats):
                         country = "United States"
                 pref = extract_pref(country, row.get("address"))
             add("allnet", row.get("name"), row.get("address"), lat, lng,
-                games, [], country, pref)
+                games, [], country, pref,
+                source_url=allnet_shop_url(row.get("sid")))
 
     # --- eagate ---
     for fn, (games, cabs) in EAGATE_FILES.items():
@@ -1426,12 +1478,6 @@ def load_units(raw_dir, stats):
                      for g in (row.get("games") or ["other"])]
             note = row.get("notes")
             url = row.get("source_url") or row.get("url")
-            if url:
-                tag = "source_url: " + str(url)
-                if not note:
-                    note = tag
-                elif str(url) not in note:
-                    note = "%s | %s" % (note, tag)
             # game_counts publish when evidence normalizes to a real
             # class (community_qty / ziv_comment / bemanicn_qty). Bare
             # inventory rows from OPTIONAL_COUNT_AUTO_EVIDENCE sources
@@ -1444,6 +1490,7 @@ def load_units(raw_dir, stats):
                 games, [], country, pref,
                 note=note,
                 coord_system=row.get("coord_system") or "wgs84",
+                source_url=url,
                 game_counts=gc,
                 count_evidence=ev,
                 cab_models=row.get("cab_models"))
@@ -2504,9 +2551,21 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     cabs = set()
     src = set()
     notes = []
-    ziv_url = None
-    bemanicn_url = None
+    # One primary page URL per source key (ziv, bemanicn, allnet, …).
+    # Second pages for the same source (two ZIv listings, two ALL.Net sids
+    # from different game scrapes) go into also_urls for photo joins / UI.
+    src_links = {}
     also_urls = []
+
+    def take_src_url(src_key, url):
+        if not is_useful_source_url(url):
+            return
+        cur = src_links.get(src_key)
+        if not cur:
+            src_links[src_key] = url
+        elif cur != url and url not in also_urls:
+            also_urls.append(url)
+
     pref = None
     country = best["country"]
     game_counts = {}
@@ -2533,26 +2592,20 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         for nt in u["notes"]:
             if nt and nt not in notes:
                 notes.append(nt)
-        # links carries ONE url per source, so a cluster holding two rows
-        # of the same source would silently drop the second page - and
-        # photos join on that page url, so its pictures are orphaned.
-        # Extras go to links.also; see photos.photos_for_arcade.
-        if u["ziv_url"]:
-            if ziv_url is None:
-                ziv_url = u["ziv_url"]
-            elif u["ziv_url"] != ziv_url and u["ziv_url"] not in also_urls:
-                also_urls.append(u["ziv_url"])
-        if u["bemanicn_url"]:
-            if bemanicn_url is None:
-                bemanicn_url = u["bemanicn_url"]
-            elif (u["bemanicn_url"] != bemanicn_url
-                  and u["bemanicn_url"] not in also_urls):
-                also_urls.append(u["bemanicn_url"])
+        # Per-source page for this unit (allnet shop, nearcade shop, …).
+        take_src_url(u["source"], u.get("source_url"))
+        for extra in u.get("source_url_also") or []:
+            take_src_url(u["source"], extra)
+        # Legacy ziv / bemanicn fields (community loaders still set them).
+        take_src_url("ziv", u.get("ziv_url"))
+        take_src_url("bemanicn", u.get("bemanicn_url"))
         if pref is None and u["pref"]:
             pref = u["pref"]
         if (u["country"] not in (None, "Unknown") and country
                 in (None, "Unknown")):
             country = u["country"]
+    ziv_url = src_links.get("ziv")
+    bemanicn_url = src_links.get("bemanicn")
     if best["source"] == "wahlap":
         # keep the (differing) community address for reference
         for u in members:
@@ -2586,6 +2639,15 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         q = urllib.parse.quote(("%s %s" % (best["name"], best["addr"])).strip())
         gmaps = "https://www.google.com/maps/search/?api=1&query=" + q
     games |= set(game_counts)   # a counted slug is always also a game
+    # Always emit gmaps. Emit every other source page that contributed.
+    # Keep null ziv/bemanicn keys only when historically expected? No:
+    # only include keys that have a real URL so the UI can do links[s].
+    links_out = {"gmaps": gmaps}
+    # Prefer stable key order: official then community.
+    for s in sorted(src_links.keys(), key=lambda k: SRC_PRIORITY.get(k, 99)):
+        links_out[s] = src_links[s]
+    if also_urls:
+        links_out["also"] = also_urls
     entry = {
         "name": best["name"],
         "addr": best["addr"],
@@ -2596,11 +2658,7 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "games": sorted(games),
         "cabs": sorted(cabs),
         "src": sorted(src, key=lambda s: SRC_PRIORITY[s]),
-        "links": ({"gmaps": gmaps, "ziv": ziv_url,
-                   "bemanicn": bemanicn_url, "also": also_urls}
-                  if also_urls else
-                  {"gmaps": gmaps, "ziv": ziv_url,
-                   "bemanicn": bemanicn_url}),
+        "links": links_out,
         "notes": note_str,
     }
     # ---- BEGIN counts confidence (owner: counts-honesty agent) -------

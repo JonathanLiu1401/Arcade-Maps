@@ -1051,9 +1051,14 @@ window.AM = window.AM || {};
 
   function sourcePage(a) {
     if (!a.links) return null;
-    if (a.links.ziv) return { url: a.links.ziv, label: C.SRC_LABEL.ziv || "ZIv" };
-    if (a.links.bemanicn) {
-      return { url: a.links.bemanicn, label: C.SRC_LABEL.bemanicn || "BemaniCN" };
+    /* Prefer the arcade's own src order (official first), then known keys. */
+    var order = (a.src && a.src.length) ? a.src.slice()
+      : ["ziv", "bemanicn", "allnet", "nearcade", "eagate", "wahlap"];
+    for (var i = 0; i < order.length; i++) {
+      var s = order[i];
+      if (a.links[s]) {
+        return { url: a.links[s], label: C.SRC_LABEL[s] || s };
+      }
     }
     return null;
   }
@@ -1807,11 +1812,14 @@ window.AM = window.AM || {};
     }
 
     if (a.src && a.src.length) {
+      /* Every provenance source with a page URL becomes a clickable badge
+         (ALL.Net shop, ZIv, BemaniCN, nearcade, Insert Coin, …). */
       var badges = a.src.map(function (s) {
         var label = esc(C.SRC_LABEL[s] || s);
-        if ((s === "ziv" || s === "bemanicn") && a.links && a.links[s]) {
+        var href = a.links && a.links[s] ? U.safeUrl(a.links[s]) : "";
+        if (href) {
           return '<a class="badge" target="_blank" rel="noopener" href="' +
-            esc(U.safeUrl(a.links[s])) + '">' + label + "</a>";
+            esc(href) + '">' + label + "</a>";
         }
         return '<span class="badge">' + label + "</span>";
       }).join("");
