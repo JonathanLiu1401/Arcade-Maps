@@ -3102,12 +3102,11 @@
     },
     "allnet|https://location.am-all.net/alm/shop?sid=18325": {
       "name": "ONE MORE EXTRA STAGE",
-      "closed": true,
-      "closed_reason": "Google Maps lists the venue as Temporarily closed (Mountain View). ALL.Net-only maimai intl pin with no ZIv/community corroboration.",
+      "exclude": true,
       "attested_by": "research-fleet",
       "attested_at": "2026-08-04",
       "evidence_url": "https://www.google.com/maps/search/?api=1&query=One+More+Extra+Stage+1313+W+El+Camino+Real+Mountain+View",
-      "note": "User report 2026-08-04: Google Maps shows Temporarily closed at 1313 W El Camino Real A, Mountain View CA 94040. ALL.Net sid=18325 still lists maimai DX International (network-auth list, not public hours proof). Keep pin as closed so searchers are warned."
+      "note": "Remove from map. Google Maps: Temporarily closed at 1313 W El Camino Real A, Mountain View. ALL.Net-only maimai intl registration (sid=18325) with no public hours, no ZIv/community corroboration. Not a useful music-map listing; prefer silence over a closed/open ghost pin."
     }
   }
 }
