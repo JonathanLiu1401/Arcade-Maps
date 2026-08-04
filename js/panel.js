@@ -17,6 +17,11 @@ window.AM = window.AM || {};
   var C = AM.consts, U = AM.util;
   var $ = U.$, esc = U.esc;
 
+  /* UI chrome only - game brand names stay untranslated. */
+  function tr(key, vars) {
+    return (AM.i18n && AM.i18n.t) ? AM.i18n.t(key, vars) : key;
+  }
+
   var SHEET_PEEK = 0.45;   /* mobile resting height, fraction of the map column */
   var SHEET_FULL = 0.88;   /* mobile expanded height */
   var DISMISS_PX = 90;     /* drag past this and the sheet is dismissed */
@@ -1449,15 +1454,15 @@ window.AM = window.AM || {};
        characters esc escapes - so the scheme is checked, not just the markup. */
     h += '<a class="act" href="' + esc(U.safeUrl(directionsUrl(a))) + '" target="_blank" rel="noopener">' +
       '<span class="act-ico">' + ico("directions") + '</span>' +
-      '<span class="act-lb">Directions</span></a>';
+      '<span class="act-lb">' + esc(tr("place.directions")) + '</span></a>';
     if (U.hasCoords(a)) {
       h += '<button type="button" class="act" data-act="nearby">' +
         '<span class="act-ico">' + ico("nearby") + '</span>' +
-        '<span class="act-lb">Nearby</span></button>';
+        '<span class="act-lb">' + esc(tr("place.nearby")) + '</span></button>';
     }
     h += '<button type="button" class="act" data-act="share">' +
       '<span class="act-ico">' + ico("share") + '</span>' +
-      '<span class="act-lb">Share</span></button>';
+      '<span class="act-lb">' + esc(tr("place.share")) + '</span></button>';
     var sp = sourcePage(a);
     if (sp) {
       h += '<a class="act" href="' + esc(U.safeUrl(sp.url)) + '" target="_blank" rel="noopener">' +
@@ -1498,19 +1503,21 @@ window.AM = window.AM || {};
       var community = /(^|\.)(?:zenius-i-vanisher\.com|bemanicn\.com)$/i
         .test(host);
       var cap = community
-        ? "re-checked on " + esc(host) + ", still community data"
-        : "checked against " +
-          (host ? esc(host) : "the operator's own listing");
-      if (rec.checked_at) cap += " (" + esc(rec.checked_at) + ")";
+        ? tr("place.rechecked_community", { host: host })
+        : (host
+            ? tr("place.checked_operator", { host: host })
+            : tr("place.checked_operator_generic"));
+      if (rec.checked_at) cap += " (" + rec.checked_at + ")";
+      cap = esc(cap);
       return rec.url
         ? '<a href="' + esc(rec.url) + '" target="_blank" rel="noopener' +
           ' noreferrer">' + cap + "</a>"
         : cap;
     }
-    var label = who ? (C.SRC_LABEL[who] || who) : "community listings";
+    var label = who ? (C.SRC_LABEL[who] || who) : tr("place.community_listings");
     var when = enrichedAt(a, e);
-    return "community data from " + esc(label) + ", may be outdated" +
-      (when ? " (" + esc(when) + ")" : "");
+    var datePart = when ? " (" + when + ")" : "";
+    return esc(tr("place.community_from", { src: label, date: datePart }));
   }
 
   function priceRowsHtml(a, e) {
@@ -1524,8 +1531,8 @@ window.AM = window.AM || {};
          number - it just shows fewer. */
       var line = AM.format.fmtPrice(vp.amount, vp.currency, fx);
       var cap = vp.derived
-        ? "Most common price across " + vp.games + " listed machine" +
-          (vp.games === 1 ? "" : "s") + " here. " + communityCaption(a, e, "machine_prices")
+        ? esc(tr("place.price_common", { n: String(vp.games) })) + " " +
+          communityCaption(a, e, "machine_prices")
         : communityCaption(a, e, "price_text");
       h += row("price", esc(line), cap);
     } else if (vp && vp.text) {
@@ -1542,7 +1549,7 @@ window.AM = window.AM || {};
           '<span class="pp-v">' + esc(r.text) + "</span></li>";
       }).join("");
       h += row("layers", '<ul class="pl-prices">' + items + "</ul>",
-        "Per machine, as listed. " + communityCaption(a, e, "machine_prices"));
+        esc(tr("place.per_machine")) + " " + communityCaption(a, e, "machine_prices"));
     }
 
     /* Only when the store itself says nothing: a country typical is context,
@@ -1613,12 +1620,12 @@ window.AM = window.AM || {};
       h += '<button type="button" class="pl-row pl-row-btn" data-act="copy-addr">' +
         '<span class="ri">' + ico("pin") + "</span>" +
         '<span class="rt"><span class="rv">' + esc(a.addr) + "</span>" +
-        '<span class="rc">Tap to copy</span></span></button>';
+        '<span class="rc">' + esc(tr("place.tap_to_copy")) + '</span></span></button>';
     }
 
     if (!U.hasCoords(a)) {
-      h += row("info", "No map position for this store",
-        "Published as an address only. Use Directions to search it.", "muted");
+      h += row("info", esc(tr("place.no_map_position")),
+        esc(tr("place.no_map_position_cap")), "muted");
     } else if (a.approx) {
       /* Name the level the merge actually reached. "City level" was printed for
          every approximate pin even after most of them moved to their district,
@@ -1626,22 +1633,14 @@ window.AM = window.AM || {};
          the district-level pins do not need to make. An address- or
          street-level pin came from geocoding the published address, so it is
          about the building: still derived, no longer a guess at an area. */
-      var APPROX_TEXT = {
-        address: ["Position from the address",
-          "The source publishes no coordinates, so this pin was geocoded from "
-          + "the printed address."],
-        street: ["Position from the address - street level",
-          "Geocoded to the road rather than the building, so expect to be a "
-          + "door or two out."],
-        district: ["Position approximate - district level",
-          "The source publishes no coordinates, so this pin is the centre of "
-          + "the district named in the address, not the store."],
-        city: ["Position approximate - city level",
-          "The source publishes no coordinates and the address names no "
-          + "district, so this pin is the centre of the city."]
-      };
-      var t = APPROX_TEXT[a.approx_level] || APPROX_TEXT.city;
-      h += row("alert", t[0], t[1], "warn");
+      var level = a.approx_level || "city";
+      if (["address", "street", "district", "city"].indexOf(level) === -1) {
+        level = "city";
+      }
+      h += row("alert",
+        esc(tr("place.approx_" + level)),
+        esc(tr("place.approx_" + level + "_cap")),
+        "warn");
     }
 
     var transit = field(a, e, ["transport", "transit", "access"]);
@@ -1667,13 +1666,11 @@ window.AM = window.AM || {};
        list. */
     if (!hasCounts(a)) {
       if (a.counts_src === null || a.game_counts) {
-        h += row("info", "Machine list, but no cab counts",
-          "The community listing names the machines below without saying how "
-          + "many of each, so the list is a floor and not a tally.", "muted");
+        h += row("info", esc(tr("place.machine_list_no_counts")),
+          esc(tr("place.machine_list_no_counts_cap")), "muted");
       } else {
-        h += row("info", "Cab counts unavailable",
-          "The listings this store comes from do not publish how many machines it has.",
-          "muted");
+        h += row("info", esc(tr("place.cab_counts_unavailable")),
+          esc(tr("place.cab_counts_unavailable_cap")), "muted");
       }
     }
 
@@ -1695,7 +1692,8 @@ window.AM = window.AM || {};
         }
         return '<span class="badge">' + label + "</span>";
       }).join("");
-      h += row("layers", '<span class="rbadges">' + badges + "</span>", "Listed by");
+      h += row("layers", '<span class="rbadges">' + badges + "</span>",
+        esc(tr("place.listed_by")));
     }
 
     /* Notes are the one unbounded field: a ZIv cab dump runs to hundreds of
@@ -1892,7 +1890,7 @@ window.AM = window.AM || {};
      promises a destination the user will not land on. */
   function surfaceBehind() {
     var nearbyOpen = !!(AM.nearby && AM.nearby.isOpen && AM.nearby.isOpen());
-    return nearbyOpen ? "Nearby" : "Filters";
+    return nearbyOpen ? tr("place.nearby") : tr("place.filters");
   }
 
   /* Keep the back button's wording in step with what is actually behind the
@@ -1903,7 +1901,7 @@ window.AM = window.AM || {};
     if (!span) return;
     var label = surfaceBehind();
     span.textContent = label;
-    $("pl-back").setAttribute("aria-label", "Back to " + label);
+    $("pl-back").setAttribute("aria-label", tr("place.back_to", { label: label }));
   }
 
   /* Back arrow: drop the selection (which closes the panel) and make sure the
@@ -2073,13 +2071,14 @@ window.AM = window.AM || {};
     placeEl = document.createElement("aside");
     placeEl.id = "place";
     placeEl.hidden = true;
-    placeEl.setAttribute("aria-label", "Place details");
+    placeEl.setAttribute("aria-label", tr("place.details"));
     placeEl.innerHTML =
       '<div id="pl-grip" class="pl-grip" aria-hidden="true"><span></span></div>' +
       '<div class="pl-bar">' +
         '<button type="button" id="pl-back" class="pl-back">' +
-          ico("back") + "<span>Filters</span></button>" +
-        '<button type="button" id="pl-close" class="pl-close" aria-label="Close place details">' +
+          ico("back") + "<span>" + esc(tr("place.filters")) + "</span></button>" +
+        '<button type="button" id="pl-close" class="pl-close" aria-label="' +
+          esc(tr("place.close")) + '">' +
           ico("close") + "</button>" +
       "</div>" +
       '<div id="pl-body" class="pl-body"></div>' +
@@ -2109,9 +2108,9 @@ window.AM = window.AM || {};
         return;
       }
       if (act === "copy-addr") {
-        copyText(current.addr || "", "Address copied");
+        copyText(current.addr || "", tr("place.address_copied"));
       } else if (act === "share") {
-        copyText(shareUrl(current), "Link copied");
+        copyText(shareUrl(current), tr("place.link_copied"));
       } else if (act === "nearby") {
         /* Contract from nearby.js: {lat, lng, label?, fly?}. It is optional -
            if that module never loads, nothing listens and nothing breaks. */
@@ -2310,6 +2309,24 @@ window.AM = window.AM || {};
     AM.state.on("selectedGames", syncChips);
     AM.state.on("selectedCabs", syncCabFilters);
     AM.state.on("selectedSizeTiers", syncSizeChips);
+    /* Re-render open place panel and back label when language changes.
+       data-i18n covers static chrome; this surface is built in JS. */
+    if (AM.i18n && AM.i18n.on) {
+      AM.i18n.on(function () {
+        if (placeEl) {
+          placeEl.setAttribute("aria-label", tr("place.details"));
+          var closeBtn = $("pl-close");
+          if (closeBtn) closeBtn.setAttribute("aria-label", tr("place.close"));
+        }
+        syncBackLabel();
+        if (current && isPlaceOpen()) {
+          var top = bodyEl ? bodyEl.scrollTop : 0;
+          renderPlace(current, true);
+          if (bodyEl) bodyEl.scrollTop = top;
+          fitSheet();
+        }
+      });
+    }
     /* Source and cab changes move what a chip's number would be, so the
        numbers are re-read whenever they do. search.js subscribes to the same
        two keys to clear its count cache, and it registers during
