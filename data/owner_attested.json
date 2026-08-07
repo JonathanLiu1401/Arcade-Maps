@@ -10032,6 +10032,21 @@
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11648",
       "note": "deep-research fleet: Keep b2479 (bemanicn+nearcade Chinese name). Drop English ZIv twin z11648.",
       "exclude": true
+    },
+    "allnet|https://location.am-all.net/alm/shop?sid=18524": {
+      "name": "SF JAPAN CENTER",
+      "exclude": true,
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-07",
+      "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9174",
+      "note": "Duplicate of Kiddleton Japantown (z9174) at Japan Center SF. ALL.Net used Webster St #225 mall address; ZIv/IC/public use 1737 Post St. Same venue ~23m apart. Merge allnet into Kiddleton; exclude this pin."
+    },
+    "ziv|https://zenius-i-vanisher.com/v5.2/arcade.php?id=9174": {
+      "name": "Kiddleton Japantown",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-07",
+      "evidence_url": "https://location.am-all.net/alm/shop?sid=18524",
+      "note": "Merged SF JAPAN CENTER ALL.Net shop sid=18524 (1581 Webster St #225) into this pin. Same Japan Center Kiddleton; Post St is the public entrance address."
     }
   }
 }
