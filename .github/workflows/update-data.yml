@@ -17,7 +17,10 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    # 150 min was not enough: the 2026-08-18 dispatch died at BemaniCN
+    # city 389/392 after eagate had already succeeded. ZIv + merge still
+    # need a tail. GitHub-hosted max is 360.
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
 
