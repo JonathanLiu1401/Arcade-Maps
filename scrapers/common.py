@@ -1,8 +1,14 @@
 """Shared helpers for Arcade Maps scrapers.
 
 stdlib only: urllib for HTTP, json for output.
-Every fetch retries 3x with exponential backoff and raises on final failure
-so callers exit nonzero instead of silently writing empty output.
+Every fetch retries on failure and raises FetchError at the end so
+callers exit nonzero instead of silently writing empty output.
+
+Ordinary transport errors (timeout, reset, IncompleteRead, 4xx) retry
+`retries` times with 1s/2s/4s backoff. HTTP 429/500/502/503/504 retry
+longer: those are WAF cool-downs and brief origin outages, and the
+2026-08-17 weekly Action died on the first eagate URL after three 503s
+in seven seconds. A 5xx from Imperva is not a parser bug.
 """
 
 import html
@@ -18,27 +24,55 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
 DEFAULT_SLEEP = 0.4
+DEFAULT_RETRIES = 3
+TRANSIENT_RETRIES = 8
+TRANSIENT_HTTP_CODES = frozenset({429, 500, 502, 503, 504})
+TRANSIENT_BACKOFF_START = 5
+TRANSIENT_BACKOFF_CAP = 120
 
 
 class FetchError(RuntimeError):
     pass
 
 
-def fetch(url, extra_headers=None, retries=3, sleep=DEFAULT_SLEEP, timeout=30):
+def http_status(err):
+    """HTTP status code on HTTPError, else None."""
+    return getattr(err, "code", None)
+
+
+def is_transient_http(err):
+    """True for 429 / 5xx that should wait out a WAF or blip."""
+    return http_status(err) in TRANSIENT_HTTP_CODES
+
+
+def _open(req, timeout, cookiejar):
+    if cookiejar is None:
+        return urllib.request.urlopen(req, timeout=timeout)
+    opener = urllib.request.build_opener(
+        urllib.request.HTTPCookieProcessor(cookiejar))
+    return opener.open(req, timeout=timeout)
+
+
+def fetch(url, extra_headers=None, retries=DEFAULT_RETRIES, sleep=DEFAULT_SLEEP,
+          timeout=30, cookiejar=None, transient_retries=TRANSIENT_RETRIES):
     """GET url, return decoded text (utf-8, replace errors).
 
-    Retries `retries` times with exponential backoff (1s, 2s, 4s).
-    Raises FetchError after the last attempt fails.
+    Retries ordinary failures `retries` times (1s, 2s, 4s). HTTP 429 and
+    5xx use `transient_retries` and a longer cap (5s, 10s, ... 120s) so a
+    WAF 503 can cool down. Raises FetchError after the last attempt.
     Sleeps `sleep` seconds after each successful request (politeness).
+    Pass `cookiejar` (http.cookiejar.CookieJar) to keep WAF/session cookies.
     """
     headers = {"User-Agent": USER_AGENT}
     if extra_headers:
         headers.update(extra_headers)
     last_err = None
-    for attempt in range(retries):
+    used = 0
+    max_attempts = max(retries, transient_retries)
+    for attempt in range(max_attempts):
         try:
             req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with _open(req, timeout, cookiejar) as resp:
                 raw = resp.read()
             time.sleep(sleep)
             return raw.decode("utf-8", errors="replace")
@@ -52,12 +86,20 @@ def fetch(url, extra_headers=None, retries=3, sleep=DEFAULT_SLEEP, timeout=30):
             # killed the 2026-08-03 run at a BemaniCN city request. A
             # truncated read is transient and is exactly what retrying is for.
             last_err = e
-            wait = 2 ** attempt
+            used = attempt + 1
+            limit = transient_retries if is_transient_http(e) else retries
+            if used >= limit:
+                break
+            if is_transient_http(e):
+                wait = min(TRANSIENT_BACKOFF_CAP,
+                           TRANSIENT_BACKOFF_START * (2 ** attempt))
+            else:
+                wait = 2 ** attempt
             print("fetch attempt %d/%d failed for %s: %s (retry in %ds)"
-                  % (attempt + 1, retries, url, e, wait), file=sys.stderr)
+                  % (used, limit, url, e, wait), file=sys.stderr)
             time.sleep(wait)
     raise FetchError("giving up on %s after %d attempts: %s"
-                     % (url, retries, last_err))
+                     % (url, used if last_err is not None else 0, last_err))
 
 
 def unescape(text):

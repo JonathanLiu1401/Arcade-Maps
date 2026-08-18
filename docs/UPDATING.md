@@ -57,14 +57,23 @@ one:
 
 ### Failure handling
 
-Arcade scrapers are fail-fast: every fetch retries 3 times with
-exponential backoff, and if a source still fails (site down, markup
-changed so a game parses to zero rows, or a ZIv country returns the
-silent empty-200 trap), `run_all.py` exits nonzero, the job fails, and
-nothing is committed - the previously committed data simply stays in
-place until a later run succeeds. There is currently no per-source skip
-for arcade sources; one broken arcade source blocks the whole weekly
-refresh.
+Arcade scrapers fail loud on parser bugs and stay up on a down host:
+
+- Ordinary transport errors retry 3 times (1s, 2s, 4s). HTTP 429 / 502
+  / 503 / 504 retry 8 times with a longer cap (5s, 10s, ... 120s). That
+  is the WAF cool-down the 2026-08-17 weekly run did not have: eagate
+  returned 503 three times in seven seconds and the job died after
+  ALL.Net had already finished.
+- Markup change (a game parses to zero rows) or a ZIv country returning
+  the silent empty-200 trap still makes `run_all.py` exit nonzero. Nothing
+  is committed; the previously committed data stays live.
+- `FetchError` after those retries (site down, Imperva 503 that never
+  lifts) keeps the previous `data_raw/` file for that game or source,
+  skips the rest of that host, and continues so the other sources can
+  still refresh. Last week's eagate plus this week's ALL.Net is better
+  than throwing the whole crawl away. There is no previous file to keep
+  (first run of a new slug) is still a hard fail; we will not invent an
+  empty file.
 
 **A quiet shrink is caught separately.** The checks above are all
 fail-loud: a source returning nothing, a ZIv country hitting the empty-200

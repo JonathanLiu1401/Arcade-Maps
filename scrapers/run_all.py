@@ -6,12 +6,15 @@
   build MyMaps       -> mymaps/*.kmz + *.csv
   FX rates           -> data/fx_rates.json (non-fatal; keeps previous)
 
-Scrape steps run the individual scraper CLIs in-process. A scraper
-failure aborts the run (nonzero exit) rather than producing partial
-silent output. ZIV country spellings must match ZIV's own list; adjust
-ZIV_COUNTRIES as needed. FX is the exception: a total feed failure is
-non-fatal (previous fx_rates.json is retained, exit still 0 for that
-step) so the weekly commit can still land other refreshed data.
+Scrape steps run the individual scraper CLIs in-process. Empty parses
+and ZIv empty-country 200s abort the run (nonzero exit) rather than
+writing silent empty output. A FetchError after retries keeps the
+previous data_raw file for that game/source and continues, so one
+down host cannot throw away a finished ALL.Net crawl (2026-08-17).
+ZIV country spellings must match ZIV's own list; adjust ZIV_COUNTRIES
+as needed. FX is the same shape: a total feed failure is non-fatal
+(previous fx_rates.json is retained) so the weekly commit can still
+land other refreshed data.
 
 --smoke runs every source in a minimal one-region connectivity mode
 instead: outputs go to data_raw/smoke_*.json (real raw files are never
@@ -76,69 +79,125 @@ ZIV_COUNTRIES = [
 ZIV_SMOKE_COUNTRY = "Singapore"
 
 
+def keep_previous_or_die(raw_dir, filename, label, err):
+    """On FetchError, keep the last committed raw file instead of dying.
+
+    Empty parses and ZIv empty-country 200s are still hard failures (those
+    are parser/spelling bugs). A 503 after retries is a down host, and
+    last week's eagate file plus this week's ALL.Net is better than
+    throwing the whole weekly refresh away. The 2026-08-17 Action died
+    on the first eagate URL and discarded a finished ALL.Net crawl.
+    No previous file = still die; we will not invent an empty one.
+    """
+    path = os.path.join(raw_dir, filename)
+    if not os.path.isfile(path):
+        common.die("%s fetch failed and no previous %s to keep: %s"
+                   % (label, filename, err))
+    print("WARNING %s: fetch failed (%s); keeping previous %s"
+          % (label, err, path), file=sys.stderr)
+    return path
+
+
+def _scrape_or_keep(raw_dir, filename, label, fn, empty_msg):
+    """Run fn(), save rows, or keep the previous file on FetchError.
+
+    Returns 'saved' or 'kept'. Empty results still die.
+    """
+    try:
+        rows = fn()
+    except common.FetchError as e:
+        keep_previous_or_die(raw_dir, filename, label, e)
+        return "kept"
+    if not rows:
+        common.die(empty_msg)
+    common.save_json(os.path.join(raw_dir, filename), rows)
+    return "saved"
+
+
 def scrape_all(raw_dir, only=None):
     def want(name):
         return only is None or name in only
 
     if want("allnet"):
+        skip_rest = False
         for gm in sorted(allnet.GAMES):
             slug, mode = allnet.GAMES[gm]
-            rows = allnet.scrape_game(gm, mode)
-            if not rows:
-                common.die("allnet gm=%d returned 0 rows" % gm)
-            common.save_json(os.path.join(raw_dir, slug + ".json"), rows)
+            if skip_rest:
+                print("WARNING allnet: skipping %s (host failed earlier "
+                      "this run)" % slug, file=sys.stderr)
+                continue
+            status = _scrape_or_keep(
+                raw_dir, slug + ".json", "allnet %s" % slug,
+                lambda gm=gm, mode=mode: allnet.scrape_game(gm, mode),
+                "allnet gm=%d returned 0 rows" % gm)
+            if status == "kept":
+                skip_rest = True
     if want("eagate"):
-        # Every other source dies on an empty result; eagate alone wrote the
-        # empty file and let the run continue, which is the one shape this
-        # orchestrator exists to refuse. A markup change upstream returns 0
-        # rows per game, all 20 files get overwritten with [], and the merge
-        # happily rebuilds without e-amusement. The size guard does not save
-        # the small ones either: museca ships 6 rows and dance_evo 12, both
-        # under its threshold. eagate.main already refuses this unless it is
-        # given --allow-empty; the orchestrator now refuses it the same way.
+        # Empty result is still a hard fail: a markup change upstream
+        # returns 0 rows per game, and writing [] would drop e-amusement
+        # from the merge. museca (6) and dance_evo (12) are under the
+        # size-guard threshold, so emptiness must die here. FetchError
+        # after retries is different: keep last week's file for that
+        # gkey and skip the rest of the eagate host (one 503 means the
+        # WAF is not going to let the other 19 games through either).
+        skip_rest = False
         for gkey in sorted(eagate.GKEYS):
-            rows = eagate.scrape_game(gkey)
-            if not rows:
-                common.die("eagate %s returned 0 rows"
-                           % eagate.GKEYS[gkey])
-            common.save_json(
-                os.path.join(raw_dir, eagate.GKEYS[gkey] + ".json"), rows)
+            slug = eagate.GKEYS[gkey]
+            if skip_rest:
+                print("WARNING eagate: skipping %s (host failed earlier "
+                      "this run)" % slug, file=sys.stderr)
+                continue
+            status = _scrape_or_keep(
+                raw_dir, slug + ".json", "eagate %s" % slug,
+                lambda gkey=gkey: eagate.scrape_game(gkey),
+                "eagate %s returned 0 rows" % slug)
+            if status == "kept":
+                skip_rest = True
     if want("wahlap"):
+        skip_rest = False
         for slug in sorted(wahlap.ENDPOINTS):
-            rows = wahlap.scrape_game(slug)
-            if not rows:
-                common.die("wahlap %s returned 0 rows" % slug)
-            common.save_json(
-                os.path.join(raw_dir, wahlap.OUTFILE[slug]), rows)
+            if skip_rest:
+                print("WARNING wahlap: skipping %s (host failed earlier "
+                      "this run)" % slug, file=sys.stderr)
+                continue
+            status = _scrape_or_keep(
+                raw_dir, wahlap.OUTFILE[slug], "wahlap %s" % slug,
+                lambda slug=slug: wahlap.scrape_game(slug),
+                "wahlap %s returned 0 rows" % slug)
+            if status == "kept":
+                skip_rest = True
     if want("bemanicn"):
-        rows = bemanicn.scrape()
-        if not rows:
-            common.die("bemanicn returned 0 rows")
-        common.save_json(os.path.join(raw_dir, bemanicn.OUTFILE), rows)
+        _scrape_or_keep(
+            raw_dir, bemanicn.OUTFILE, "bemanicn",
+            bemanicn.scrape,
+            "bemanicn returned 0 rows")
     if want("ziv"):
-        merged = {}
-        for country in ZIV_COUNTRIES:
-            got = (ziv.fetch_usa() if country == "USA"
-                   else ziv.fetch_country(country))
-            # A country whose ZIV spelling drifted returns an EMPTY
-            # 200 ({"arcades": [], "success": true}) rather than an
-            # error, silently dropping that whole country from the
-            # crawl (this is how "USA" lost ~1,250 US arcades). Treat
-            # it as a hard failure.
-            if not got:
-                common.die("ziv %s returned 0 arcades - check the "
-                           "country spelling in ZIV_COUNTRIES" % country)
-            merged.update(got)
-        if not merged:
-            common.die("ziv returned nothing")
-        rows = sorted(merged.values(),
-                      key=lambda r: (r["country"], r["name"]))
-        common.save_json(os.path.join(raw_dir, "ziv.json"), rows)
+        def _ziv():
+            merged = {}
+            for country in ZIV_COUNTRIES:
+                got = (ziv.fetch_usa() if country == "USA"
+                       else ziv.fetch_country(country))
+                # A country whose ZIV spelling drifted returns an EMPTY
+                # 200 ({"arcades": [], "success": true}) rather than an
+                # error, silently dropping that whole country from the
+                # crawl (this is how "USA" lost ~1,250 US arcades). Treat
+                # it as a hard failure. die() is SystemExit, not FetchError,
+                # so keep-previous does not swallow a spelling bug.
+                if not got:
+                    common.die("ziv %s returned 0 arcades - check the "
+                               "country spelling in ZIV_COUNTRIES" % country)
+                merged.update(got)
+            if not merged:
+                common.die("ziv returned nothing")
+            return sorted(merged.values(),
+                          key=lambda r: (r["country"], r["name"]))
+        _scrape_or_keep(raw_dir, "ziv.json", "ziv", _ziv,
+                        "ziv returned nothing")
     if want("round1usa"):
-        rows = round1usa.scrape()
-        if not rows:
-            common.die("round1usa returned 0 stores")
-        common.save_json(os.path.join(raw_dir, "round1usa.json"), rows)
+        _scrape_or_keep(
+            raw_dir, "round1usa.json", "round1usa",
+            round1usa.scrape,
+            "round1usa returned 0 stores")
 
     # Optional community sources: only when --only explicitly names them
     # (never on a bare full scrape). Module missing = skip with a note,

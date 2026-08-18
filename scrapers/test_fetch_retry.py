@@ -17,11 +17,13 @@ These tests pin that both common.fetch and bemanicn._fetch_json:
 
 from __future__ import annotations
 
+import email.message
 import http.client
 import json
 import os
 import sys
 import unittest
+import urllib.error
 from unittest import mock
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -138,6 +140,81 @@ class TestBemaniCNFetchJsonRetriesIncompleteRead(unittest.TestCase):
             shops = bemanicn.city_shops("350200000000")
         self.assertEqual(len(shops), 1)
         self.assertEqual(shops[0]["id"], 1)
+
+
+def _http_error(url, code, msg=None):
+    hdrs = email.message.Message()
+    return urllib.error.HTTPError(url, code, msg or str(code), hdrs, None)
+
+
+class TestTransientHttpRetries(unittest.TestCase):
+    """The 2026-08-17 weekly Action died on eagate HTTP 503 after 3 tries
+    in ~7s. 503/429 must wait longer than a dropped TCP connection."""
+
+    def test_503_then_success(self):
+        calls = {"n": 0}
+
+        def fake_urlopen(req, timeout=30):
+            calls["n"] += 1
+            if calls["n"] < 3:
+                raise _http_error(req.full_url, 503)
+            return _FakeResp(body=b"ok-after-waf")
+
+        with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen), \
+             mock.patch("time.sleep"):
+            text = common.fetch("https://example.test/x",
+                                retries=3, transient_retries=5, sleep=0)
+        self.assertEqual(text, "ok-after-waf")
+        self.assertEqual(calls["n"], 3)
+
+    def test_503_uses_transient_budget_not_retries(self):
+        calls = {"n": 0}
+
+        def always_503(req, timeout=30):
+            calls["n"] += 1
+            raise _http_error(req.full_url, 503)
+
+        with mock.patch("urllib.request.urlopen", side_effect=always_503), \
+             mock.patch("time.sleep"):
+            with self.assertRaises(common.FetchError) as cm:
+                common.fetch("https://example.test/x",
+                             retries=2, transient_retries=4, sleep=0)
+        self.assertEqual(calls["n"], 4)
+        self.assertIn("503", str(cm.exception))
+
+    def test_404_does_not_use_transient_budget(self):
+        calls = {"n": 0}
+
+        def always_404(req, timeout=30):
+            calls["n"] += 1
+            raise _http_error(req.full_url, 404, "Not Found")
+
+        with mock.patch("urllib.request.urlopen", side_effect=always_404), \
+             mock.patch("time.sleep"):
+            with self.assertRaises(common.FetchError):
+                common.fetch("https://example.test/x",
+                             retries=2, transient_retries=8, sleep=0)
+        self.assertEqual(calls["n"], 2)
+
+    def test_503_backoff_starts_long(self):
+        sleeps = []
+
+        def always_503(req, timeout=30):
+            raise _http_error(req.full_url, 503)
+
+        with mock.patch("urllib.request.urlopen", side_effect=always_503), \
+             mock.patch("time.sleep", side_effect=lambda s: sleeps.append(s)):
+            with self.assertRaises(common.FetchError):
+                common.fetch("https://example.test/x",
+                             retries=2, transient_retries=4, sleep=0)
+        # politeness sleep is 0; only backoff sleeps are recorded.
+        self.assertEqual(sleeps, [5, 10, 20])
+
+    def test_is_transient_http(self):
+        self.assertTrue(common.is_transient_http(_http_error("u", 503)))
+        self.assertTrue(common.is_transient_http(_http_error("u", 429)))
+        self.assertFalse(common.is_transient_http(_http_error("u", 404)))
+        self.assertFalse(common.is_transient_http(OSError("reset")))
 
 
 class TestIncompleteReadIsHttpException(unittest.TestCase):

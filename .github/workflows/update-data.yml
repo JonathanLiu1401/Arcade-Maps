@@ -17,7 +17,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
 
@@ -40,22 +40,27 @@ jobs:
             scrapers/test_stable_sid.py \
             scrapers/test_counts_honesty.py \
             scrapers/test_build_corrections.py \
+            scrapers/test_run_all_keep_previous.py \
             -q --tb=short
 
       - name: Scrape all sources
-        # run_all.py is fail-fast for arcade sources: fetches retry with
-        # backoff (including http.client.IncompleteRead / truncated
-        # chunked bodies - the 2026-08-03 weekly killer), and any source
-        # that still fails (or parses to zero rows) makes the run exit
-        # nonzero, failing this job so NOTHING is committed and the
-        # previously committed data stays in place.
-        # continue-on-error stays false so a broken run can never half-commit
-        # a partial refresh.
+        # Fetches retry with backoff, including IncompleteRead (the
+        # 2026-08-03 weekly killer) and HTTP 429/502/503/504 with a
+        # longer WAF cool-down (the 2026-08-17 weekly killer: eagate
+        # 503 x3 in 7s aborted the job after ALL.Net had already
+        # finished). Empty parses and ZIv empty-country 200s still
+        # fail the job. A FetchError after retries keeps the previous
+        # data_raw file for that game/source and continues so other
+        # sources can still land. continue-on-error stays false so a
+        # real parser bug can never half-commit empty files.
         #
         # Tolerant-failure exceptions (still exit 0 for the pipeline):
         #   * FX rates (scrapers/fx.py): if both frankfurter and open.er-api
         #     fail, the previous data/fx_rates.json is retained and the
         #     step warns instead of aborting, so arcade data can still land.
+        #   * Arcade FetchError after retries (site down / WAF 503): keep
+        #     the previous data_raw file for that game/source, skip the
+        #     rest of that host, continue other sources.
         #   * Individual ZIV countries that return rows are required; an
         #     empty country is hard-fail (spelling drift guard).
         #   * BemaniCN per-city / per-shop FetchError after retries: the

@@ -13,6 +13,7 @@ Output schema per row (matches the existing scratch data):
 """
 
 import argparse
+import http.cookiejar
 import os
 import re
 import sys
@@ -21,6 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common
 
 BASE = "https://p.eagate.573.jp/game/facility/search/p/list.html"
+INDEX = "https://p.eagate.573.jp/game/facility/search/p/index.html"
 NO_RESULTS = "店舗が見つかりませんでした"
 
 # gkey -> output slug (slug doubles as the raw filename).
@@ -91,10 +93,41 @@ def parse_page(html_text, region_code, region_label):
     return rows
 
 
+def request_headers(gkey):
+    """Browser-like headers. Cookie sets 50 rows/page; Referer is the
+    official entry page. Imperva in front of eagate has 503'd GitHub
+    runners that jumped straight at list.html with only the cookie."""
+    return {
+        "Cookie": "facility_dspcount=50",
+        "Accept": ("text/html,application/xhtml+xml,application/xml;"
+                   "q=0.9,*/*;q=0.8"),
+        "Accept-Language": "ja,en-US;q=0.8,en;q=0.7",
+        "Referer": "%s?gkey=%s" % (INDEX, gkey),
+    }
+
+
+def warmup(gkey, sleep=common.DEFAULT_SLEEP, cookiejar=None):
+    """Hit the per-game index so Imperva can issue visid/nlbi cookies.
+
+    Soft: a failed warmup does not abort the scrape. List pages still
+    retry 503s on their own. Keep this short so a down host does not
+    burn the full transient budget twice per game.
+    """
+    url = "%s?gkey=%s" % (INDEX, gkey)
+    common.fetch(url, extra_headers=request_headers(gkey), sleep=sleep,
+                 cookiejar=cookiejar, retries=2, transient_retries=3)
+
+
 def scrape_game(gkey, sleep=common.DEFAULT_SLEEP, smoke=False):
     """Scrape one game. smoke=True probes Tokyo (JP-13) only."""
     out = []
-    headers = {"Cookie": "facility_dspcount=50"}
+    headers = request_headers(gkey)
+    jar = http.cookiejar.CookieJar()
+    try:
+        warmup(gkey, sleep=sleep, cookiejar=jar)
+    except common.FetchError as e:
+        print("WARNING eagate %s warmup failed: %s (continuing to list)"
+              % (gkey, e), file=sys.stderr)
     for p in ([13] if smoke else range(1, 48)):
         region_code = "JP-%02d" % p
         region_label = PREF_EN[p]
@@ -108,7 +141,8 @@ def scrape_game(gkey, sleep=common.DEFAULT_SLEEP, smoke=False):
         while page <= 50:
             url = ("%s?finder=area&gkey=%s&pref=%s&paselif=false&page=%d"
                    % (BASE, gkey, region_code, page))
-            text = common.fetch(url, extra_headers=headers, sleep=sleep)
+            text = common.fetch(url, extra_headers=headers, sleep=sleep,
+                                cookiejar=jar)
             if NO_RESULTS in text:
                 break
             m = _COUNT_RE.search(text)
