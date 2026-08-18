@@ -2870,6 +2870,54 @@ def apply_attested_game_edits(arcade, rec):
     return sorted(games), False
 
 
+def prune_fields_to_games(arcade):
+    """Drop counts, cab models, and cab flags that no longer match games.
+
+    keep_games / remove_games used to strip only game_counts and
+    count_evidence. The 2026-08-18 rerun then died on 和音屋, which still
+    had cab_models.ddr_gold = 1 after DDR itself was removed.
+    """
+    games = set(arcade.get("games") or [])
+    for key in ("game_counts", "count_evidence"):
+        if arcade.get(key):
+            kept = {k: v for k, v in arcade[key].items() if k in games}
+            if kept:
+                arcade[key] = kept
+            else:
+                arcade.pop(key, None)
+                if key == "game_counts":
+                    arcade.pop("counts_src", None)
+    ev = arcade.get("count_evidence") or {}
+    if arcade.get("cab_models"):
+        kept = {}
+        for slug, n in arcade["cab_models"].items():
+            parent = CAB_MODEL_GAME.get(slug)
+            if parent not in games:
+                continue
+            if n is not None and ev.get(parent) not in REAL_COUNT_EVIDENCE:
+                n = None
+            kept[slug] = n
+        if kept:
+            arcade["cab_models"] = kept
+        else:
+            arcade.pop("cab_models", None)
+    if arcade.get("cabs"):
+        arcade["cabs"] = [c for c in arcade["cabs"]
+                          if CAB_MODEL_GAME.get(c, c) in games]
+    if arcade.get("counts_src") == "ziv":
+        ev = arcade.get("count_evidence") or {}
+        gcv = list((arcade.get("game_counts") or {}).values())
+        if not (any(e == "ziv_comment" for e in ev.values())
+                or any(isinstance(n, int) and n >= 2 for n in gcv)):
+            arcade.pop("game_counts", None)
+            arcade.pop("count_evidence", None)
+            arcade.pop("cab_models", None)
+            arcade["counts_src"] = None
+    if arcade.get("count_evidence") and not arcade.get("game_counts"):
+        arcade.pop("count_evidence", None)
+    return arcade
+
+
 def run(raw_dir, out_dir, updated=None):
     stats = Stats()
     units = load_units(raw_dir, stats)
@@ -3206,15 +3254,7 @@ def run(raw_dir, out_dir, updated=None):
                 continue
             if new_games is not None:
                 a["games"] = new_games
-                for key in ("game_counts", "count_evidence"):
-                    if a.get(key):
-                        kept_gc = {k: v for k, v in a[key].items()
-                                   if k in new_games}
-                        if kept_gc:
-                            a[key] = kept_gc
-                        else:
-                            a.pop(key, None)
-                            a.pop("counts_src", None)
+                prune_fields_to_games(a)
                 a["attested"] = {"by": rec.get("attested_by") or "owner",
                                  "at": rec.get("attested_at"),
                                  "games": rec.get("add_games") or [],
@@ -3252,6 +3292,7 @@ def run(raw_dir, out_dir, updated=None):
             a["id"] = i
 
     for a in ordered:
+        prune_fields_to_games(a)
         assert all(g in GAME_SLUGS for g in a["games"]), a["games"]
         assert all(c in CAB_SLUGS for c in a["cabs"]), a["cabs"]
         gc = a.get("game_counts", {})

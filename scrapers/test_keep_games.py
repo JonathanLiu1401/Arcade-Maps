@@ -52,5 +52,27 @@ class TestApplyAttestedGameEdits(unittest.TestCase):
         self.assertEqual(games, ["maimai_dx", "ongeki"])
 
 
+class TestPruneFieldsToGames(unittest.TestCase):
+    def test_azisai_ddr_gold_stripped_with_ddr(self):
+        # 2026-08-18 second weekly death: keep_games dropped ddr but
+        # left cab_models.ddr_gold = 1 with no count_evidence.
+        a = {
+            "name": "和音屋 x -Azisai- 北京店 立直麻将/音游",
+            "games": ["chunithm", "maimai_dx", "sdvx"],
+            "game_counts": {"chunithm": 2, "ddr": 1},
+            "count_evidence": {"chunithm": "bemanicn_qty", "ddr": "ziv_comment"},
+            "cab_models": {"ddr_gold": 1, "sdvx_vm": None},
+            "cabs": ["ddr_gold", "sdvx_vm"],
+            "counts_src": "ziv",
+        }
+        merge.prune_fields_to_games(a)
+        self.assertEqual(a["games"], ["chunithm", "maimai_dx", "sdvx"])
+        self.assertNotIn("ddr", a.get("game_counts", {}))
+        self.assertNotIn("ddr_gold", a.get("cab_models", {}))
+        self.assertNotIn("ddr_gold", a.get("cabs", []))
+        self.assertIn("sdvx_vm", a.get("cab_models", {}))
+        self.assertIsNone(a["cab_models"]["sdvx_vm"])
+
+
 if __name__ == "__main__":
     unittest.main()
