@@ -148,16 +148,25 @@ def main() -> int:
             continue
 
         if verdict == "remove_games":
-            games = [g for g in (f.get("games") or []) if g in VALID_GAMES]
-            if not games:
+            # findings.games is the KEEP list (live BemaniCN/official
+            # titles). The 2026-08-04 apply stored that list as
+            # remove_games, which later emptied M.Lab and killed the
+            # weekly merge. Store it as keep_games; extras currently on
+            # the arcade become remove_games.
+            keep = [g for g in (f.get("games") or []) if g in VALID_GAMES]
+            if not keep:
                 stats["skip"] += 1
                 continue
-            prev = set(rec.get("remove_games") or [])
-            rec["remove_games"] = sorted(prev | set(games))
+            extras = [g for g in (arcade.get("games") or [])
+                      if g in VALID_GAMES and g not in keep]
+            rec["keep_games"] = sorted(set(rec.get("keep_games") or [])
+                                       | set(keep))
+            if extras:
+                rec["remove_games"] = sorted(
+                    set(rec.get("remove_games") or []) | set(extras))
             arcade["games"] = sorted(
-                set(arcade.get("games") or []) - set(games))
-            if not arcade["games"]:
-                arcade["games"] = ["other"]
+                (set(arcade.get("games") or []) & set(keep))
+                or keep)
             stats["remove_games"] += 1
             stats["patch_live"] += 1
             venues[key] = rec

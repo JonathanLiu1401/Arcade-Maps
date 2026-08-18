@@ -44,6 +44,7 @@ jobs:
             scrapers/test_counts_honesty.py \
             scrapers/test_build_corrections.py \
             scrapers/test_run_all_keep_previous.py \
+            scrapers/test_keep_games.py \
             -q --tb=short
 
       - name: Scrape all sources

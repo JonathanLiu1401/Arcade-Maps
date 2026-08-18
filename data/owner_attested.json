@@ -234,7 +234,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/7304",
       "note": "deep-research fleet: BemaniCN lists title as maimai FiNALE 1.99 (old frame), not maimai DX. Remove maimai_dx; keep other if used for non-DX/legacy. Updated same day as research.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -277,7 +277,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/1902",
       "note": "deep-research fleet: Not on WAHLAP maimai DX. BemaniCN only old-frame maimai Finale (title_id 2) + Initial D. Nearcade games=['other'] only (enriched 2026-08-04). Remove maimai_dx; keep other. Venue still open at 威远万达广场2楼.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -290,7 +290,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/5932",
       "note": "deep-research fleet: Only Jingwen old maimai (title_id 2), not DX. Not in WAHLAP Sichuan maimai list (other 快乐比 are Guizhou). Nearcade games=['other']. Remove maimai_dx; keep as other/old. Brief Aug 2025 closure then reopened per shop comment; status still open.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -315,7 +315,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/986",
       "note": "deep-research fleet: No maimai DX (title_id 1). Only Finale old frame. Nearcade games other+wacca (dropped maimai_dx and dance_evo from list but BemaniCN still has dance_evo). Remove maimai_dx; keep dance_evo, wacca, other. Not on WAHLAP DX dump.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -358,7 +358,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=11617",
       "note": "deep-research fleet: Hard evidence is classic maimai FiNALE, NOT maimai_dx. nearcade 16881 also lists games=['other'] only. REMOVE maimai_dx. Keep other if desired; do not map FiNALE to maimai_dx.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -401,7 +401,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/7052",
       "note": "deep-research fleet: Remove dance_evo (Konami Dance Evolution not present). Keep other for 舞立方EVO. Public mall venue 利群6F still open.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -424,7 +424,7 @@
       ],
       "evidence_url": "https://nearcade.phizone.cn/api/shops/14369",
       "note": "deep-research fleet: Shard wrongly lists maimai_dx. Live nearcade + BemaniCN only have classic FiNALE ball-plate maimai (titleId 2), not DX. Not on WAHLAP maimai DX locator. REMOVE maimai_dx; keep other for classic maimai + e-dance.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -437,7 +437,7 @@
       ],
       "evidence_url": "https://nearcade.phizone.cn/api/shops/17035",
       "note": "deep-research fleet: Gaomi FEC only has classic ball-plate maimai (titleId 2), free play, not maimai DX. Not on WAHLAP. REMOVE maimai_dx; keep other.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -450,7 +450,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/7254",
       "note": "deep-research fleet: Name even says 旧框舞萌. games should be [other] only.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -463,7 +463,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/4303",
       "note": "deep-research fleet: games should be [wacca] only.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -476,7 +476,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/1639",
       "note": "deep-research fleet: games=[wacca] only. Venue still listed open but poor maintenance report.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -489,7 +489,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/1073",
       "note": "deep-research fleet: games=[pump_it_up] only (offline PIU).",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -502,7 +502,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/2763",
       "note": "deep-research fleet: games=[pump_it_up] only.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -515,7 +515,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/957",
       "note": "deep-research fleet: Classic FiNALE only plus 舞立方/piano-block as other. Remove false maimai_dx.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -528,7 +528,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/6650",
       "note": "deep-research fleet: title_id 2 classic maimai (Milk offline), NOT DX. Keep games=[other] only. Do not map classic maimai to maimai_dx.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -541,7 +541,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/4887",
       "note": "deep-research fleet: Classic FiNALE (title_id 2) plus offline 舞力特区 only. maimai_dx is wrong; keep other for domestic/classic stack. Do not map FiNALE to maimai_dx.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -584,7 +584,7 @@
       ],
       "evidence_url": "https://nearcade.phizone.cn/shops/14901",
       "note": "deep-research fleet: Shard lists maimai_dx but both nearcade and BemaniCN only have classic maimai Finale (titleId 2 maps to other per project policy). Remove maimai_dx chip; keep other (and notes already say other games: maimai).",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -687,7 +687,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/7286",
       "note": "deep-research fleet: Shard lists maimai_dx but live BemaniCN+nearcade only have offline classic maimai FiNALE (title_id 2). Map classic as other, remove maimai_dx. Keep other (FiNALE + 舞立方 per comment).",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -710,7 +710,7 @@
       ],
       "evidence_url": "https://nearcade.phizone.cn/api/shops/14747",
       "note": "deep-research fleet: Listed machine is classic maimai FiNALE (旧框), not maimai DX. Remove maimai_dx slug. Keep other (e舞/redemption). Do not map Finale to maimai_dx.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -764,7 +764,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/2421",
       "note": "deep-research fleet: Only classic maimai FiNALE/MiLK (title_id 2), not maimai_dx. nearcade notes 'maimai, 鼓王' under other. Remove maimai_dx; keep other (鼓王).",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -777,7 +777,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/3252",
       "note": "deep-research fleet: Old 精文 maimai, not maimai_dx. Remove maimai_dx. Keep other. Venue 江华沱江镇汇金国际 still referenced on community maps.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -874,7 +874,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/5075",
       "note": "deep-research fleet: Open venue (龙山 湘龙百货三楼). Only classic FiNALE/old-frame maimai (title_id 2), not DX. Nearcade live games are maimai finale only; cache maps to other. Not on WAHLAP maidx. Remove maimai_dx; keep other (classic cab).",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -887,7 +887,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/2216",
       "note": "deep-research fleet: Open at 双牌 鸿宇世纪广场一楼. BemaniCN+nearcade only classic offline FiNALE (title_id 2). Not on WAHLAP DX locator. Remove maimai_dx; keep other. Data thin (期待详细内容补齐) but DX claim is false.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -960,7 +960,7 @@
       ],
       "evidence_url": "https://map.bemanicn.com/s/1597",
       "note": "deep-research fleet: Remove maimai_dx (no DX cab; old FiNALE only, maps to other/legacy). Keep other. Venue still open at 苏宁广场4F.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1023,7 +1023,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9920",
       "note": "deep-research fleet: Shard tagged maimai_dx but ZIv hard evidence is offline 2012 classic 初代机 only (plus OutRun). Remove maimai_dx; keep other. Single-source ZIv risk3; open status unverified beyond ZIv 2025-03.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1107,7 +1107,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8017",
       "note": "deep-research fleet: Remove maimai_dx. Only FiNALE documented (classic, offline-style). Not on ALL.Net maimai DX Indonesia list. Keep other if any non-slug cabinets remain.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1120,7 +1120,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6734",
       "note": "deep-research fleet: Remove maimai_dx. ZIv only documents maimai FiNALE, not DX. Not on ALL.Net maimai DX Indonesia list. Keep other.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1133,7 +1133,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3183",
       "note": "deep-research fleet: Hotel Pirate Bay arcade still listed with recent ZIv update. Machine is classic maimai FiNALE offline, NOT maimai DX. Remove maimai_dx slug. No valid classic-maimai slug in map schema; keep other racers/shooters as other. Hotel complex publicly described as having arcade machines.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -1477,7 +1477,7 @@
       ],
       "evidence_url": "https://prtimes.jp/main/html/rd/p/000001143.000034930.html",
       "note": "deep-research fleet: Converted to GiGO Crane Game Oasis specialty. Remove taiko from list; keep other (crane/kids). Rename to GiGOクレーンゲームオアシス サンスパおおむら. Not closed.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1740,7 +1740,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6582",
       "note": "deep-research fleet: Only listed music game is maimai FiNALE (ex-Olongapo cab). Not ALL.Net DX. Remove maimai_dx. Last ZIv update 2023-04-24; venue/game presence may also be stale overall.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -1854,7 +1854,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10880",
       "note": "deep-research fleet: Remove maimai_dx. ZIv only documents offline maimai FiNALE (not DX), currently Not Working. Keep other for non-rhythm cabs. Venue itself open.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1867,7 +1867,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10461",
       "note": "deep-research fleet: Remove maimai_dx. Only FiNALE + Guitar Hero Arcade on ZIv. Free-play paid admission Playerbox. Address is thin (Chula soi 28) but venue documented open.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -1880,7 +1880,7 @@
       ],
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10014",
       "note": "deep-research fleet: Remove maimai_dx. Confirmed FiNALE only (classic generation), not maimai DX. Keep other. Venue open Phrae Mark Four Plaza.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -3662,7 +3662,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://sega-register.wahlap.net/api/sega/maidx/rest/location",
       "note": "deep-research fleet: Venue OPEN (WAHLAP maimai at same 解放大道690号武汉国际广场7楼). ZIv 2018 list (gitadora V7, jubeat knit, SDVX II, reflec, taiko12) is stale. REMOVE gitadora,jubeat,other,reflec,sdvx,taiko from live list; SET/ADD maimai_dx only until newer multi-game evidence.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -3908,7 +3908,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/3219",
       "note": "deep-research fleet: Remove wacca: BemaniCN only title_id 17 (not in maimai/chuni/wacca map; 舞立方-class/other). Ticket hall at 心悦汇3楼 near 乌兰浩特万达. No WACCA evidence.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4236,7 +4236,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/3725",
       "note": "deep-research fleet: Remove chunithm. Nearcade open True with games other/wacca/taiko only (no chunithm). 环球中心 shop notes machines transferred from 和悦广场. Keep taiko, wacca, other (old maimai). src lists wahlap but no matching 和悦 maimai/chuni row found in local WAHLAP dumps.",
-      "remove_games": [
+      "keep_games": [
         "chunithm"
       ]
     },
@@ -4422,7 +4422,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/5611",
       "note": "deep-research fleet: Shard lists maimai_dx but BemaniCN/nearcade only store classic maimai under other. Replace maimai_dx with other. Venue open.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4432,7 +4432,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/3413",
       "note": "deep-research fleet: Classic maimai mis-mapped to maimai_dx. Set games to other only.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4442,7 +4442,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/3289",
       "note": "deep-research fleet: Classic maimai mis-mapped to maimai_dx. Set games to other only.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4452,7 +4452,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4130",
       "note": "deep-research fleet: Classic maimai mis-mapped to maimai_dx. Set games to other only.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4462,7 +4462,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/3913",
       "note": "deep-research fleet: Classic maimai mis-mapped to maimai_dx. Set games to other only.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4472,7 +4472,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/1324",
       "note": "deep-research fleet: Remove false maimai_dx. Keep taiko. Keep other for classic maimai + 鼓王. Distinct from WAHLAP DX branch 哈雷慧6号星球淄博高新店 (b242).",
-      "remove_games": [
+      "keep_games": [
         "other",
         "taiko"
       ]
@@ -4483,7 +4483,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/5282",
       "note": "deep-research fleet: Classic maimai only. Set games to other.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4493,7 +4493,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/6448",
       "note": "deep-research fleet: Classic maimai mis-mapped to maimai_dx. Set games to other.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4503,7 +4503,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/6168",
       "note": "deep-research fleet: Classic maimai mis-mapped to maimai_dx. Set games to other.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4547,7 +4547,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4904",
       "note": "deep-research fleet: Rebranded from 吉合 to 乐到底. Remove false chunithm and other. Add taiko. Prefer source name 乐到底家庭娱乐中心（开发区万达店）.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx",
         "taiko"
       ]
@@ -4567,7 +4567,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/2494",
       "note": "deep-research fleet: Maimai moved to 游戏大魔方万达店 (bemanicn s/7321 / h00b693846f). Remaining music cabs: WACCA x2. Set games to [wacca] (replace other). Wahlap still lists maimai at this name but BemaniCN player report is newer and explicit about move.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -4577,7 +4577,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/529",
       "note": "deep-research fleet: Keep chunithm, maimai_dx, taiko. Historical comment mentions 2023 jubeat install but current arcade table has no jubeat/IIDX/SDVX/ongeki/WACCA. Strip inflated multi-game list.",
-      "remove_games": [
+      "keep_games": [
         "iidx",
         "jubeat",
         "ongeki",
@@ -4592,7 +4592,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/241",
       "note": "deep-research fleet: Keep maimai_dx + taiko. No non-music 'other' title on live table.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4602,7 +4602,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4368",
       "note": "deep-research fleet: Keep chunithm, maimai_dx, taiko. Strip empty other.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4612,7 +4612,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/2809",
       "note": "deep-research fleet: Keep chunithm, maimai_dx, taiko.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4779,7 +4779,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/2045",
       "note": "deep-research fleet: Remove chunithm from list. Keep maimai_dx + other (Initial D). WAHLAP may still lag with chuni.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx",
         "other"
       ]
@@ -4790,7 +4790,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4501",
       "note": "deep-research fleet: Remove maimai_dx. Only offline classic maimai (title_id 2), not DX; not on WAHLAP maimai DX locator. Keep other. Venue still open per BC.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -4800,7 +4800,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/133",
       "note": "deep-research fleet: Remove sdvx. Live BC and nearcade cache both lack SDVX. jubeat retained (nearcade lists jubeat; not on BC live but not strong enough to strip).",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "jubeat",
         "maimai_dx",
@@ -4978,7 +4978,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/5437",
       "note": "deep-research fleet: Remove maimai_dx. Keep taiko only. Venue still open as public FEC in Jiujiang China Merchants Garden City.",
-      "remove_games": [
+      "keep_games": [
         "taiko"
       ]
     },
@@ -5340,11 +5340,11 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/501",
       "note": "deep-research fleet: Add dance_evo (舞立方EVO). Same Happy站台 building as 开心汇 upstairs.",
-      "remove_games": [
-        "groove_coaster"
-      ],
       "add_games": [
         "dance_evo"
+      ],
+      "keep_games": [
+        "groove_coaster"
       ]
     },
     "bemanicn|https://map.bemanicn.com/s/5686": {
@@ -5872,7 +5872,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=7641",
       "note": "deep-research fleet: Remove maimai_dx only. Cabinet is classic FiNALE, not DX. Venue open (muzeumher Game Station Plzeň Štefánikovo nám. 2621/4). Exact duplicate of z7641 Cibien's Corner - Game Station; merge preferred.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "dance_evo",
         "drs",
@@ -5890,7 +5890,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://www.sugoi.fi/?page_id=34",
       "note": "deep-research fleet: Venue open and public (warehouse arcade, entry fee). Remove maimai_dx only: IC source text is maimai FiNALE. Large music list is IC/ZIv-backed; no independent 2026 machine audit done this run beyond official open status.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "ddr",
         "groove_coaster",
@@ -6067,7 +6067,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=125",
       "note": "deep-research fleet: Mall Artha Gading Amazone still open (ZIv updated 2026-07-16). Remove maimai_dx: only offline maimai FiNALE present, not DX, and not on ALL.Net Indonesia maimai list for this shop (nearby CPCM Mall of Indonesia is a different pin). Keep ddr/drs/iidx/pump/sdvx per ZIv.",
-      "remove_games": [
+      "keep_games": [
         "ddr",
         "drs",
         "iidx",
@@ -6081,7 +6081,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8511",
       "note": "deep-research fleet: Not Timezone. Real tenant is Funworld Bintaro Jaya Xchange. Has offline maimai GreeN PLUS not maimai_dx (remove maimai_dx). Pump confirmed. Consider renaming pin to Funworld Bintaro Xchange.",
-      "remove_games": [
+      "keep_games": [
         "pump_it_up"
       ]
     },
@@ -6386,7 +6386,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://miku.sega.jp/arcade/location/location_osaka.html",
       "note": "deep-research fleet: Remove beatstream and project_diva from games. Venue itself is open (official Round1 page + multi-source). Keep remaining listed music games. Shard notes field is stale (maimai ORANGE / IIDX 22 / pop'n ラピストリア etc.) and should not be treated as current cab inventory. atwiki Project DIVA Osaka also places ラウンドワン梅田 under the removed/closed isolation section.",
-      "remove_games": [
+      "keep_games": [
         "beatstream",
         "project_diva"
       ]
@@ -7164,7 +7164,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10868",
       "note": "deep-research fleet: Venue is real and open (opened 2026-01-17 Brooklyn Warehouse Recto; FB/Instagram activity through 2026-03 maimai pop-up cafe). Strip official-network tags maimai_dx, chunithm, iidx, sdvx, taiko, ddr, dance_evo: ZIv and staff comments document private/sim software only, not ALL.Net or e-amusement cabinets. Staffer BasilGaming claimed founder permission to remove ZIv listing because not official cabs. Keep as public other (private rhythm lounge) unless map policy wants sim venues under official slugs.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -7182,7 +7182,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=4296",
       "note": "deep-research fleet: ZIv lists maimai FiNALE only, not maimai DX. Not on ALL.Net PH maimai DX locator. Remove maimai_dx. Keep crossbeats, dance_evo, other. Classic FiNALE has no DX slug.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -7192,7 +7192,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=6570",
       "note": "deep-research fleet: Recent ZIv still shows FiNALE only (photos labeled maimai Finale). Not on ALL.Net DX list. Remove maimai_dx. Keep taiko and other.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -7202,7 +7202,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=471",
       "note": "deep-research fleet: ZIv updated 2026-01-11 still lists FiNALE only. Not on ALL.Net DX PH list. Remove maimai_dx.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -7212,7 +7212,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=1932",
       "note": "deep-research fleet: ZIv marks DDR EXTREME Not Working with RIP note; page updated 2026-06-15. Remove ddr. Keep gitadora and popn (still listed working).",
-      "remove_games": [
+      "keep_games": [
         "ddr"
       ]
     },
@@ -7469,7 +7469,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://namu.wiki/w/%EC%98%A4%EB%9D%BD%EC%8B%A4/%EC%84%9C%EC%9A%B8/%EA%B0%95%EB%B6%81",
       "note": "deep-research fleet: Still open public arcade after rebrand to 대빵오락실 신촌점 (명물길 17, same Sinchon site). ZIv games iidx/jubeat/sdvx removed in 2026-07 remodel. Keep pump_it_up; add taiko; drop iidx,jubeat,sdvx. Optional fix_addr to 서대문구 명물길 17 (shard still has 창천동 31-32).",
-      "remove_games": [
+      "keep_games": [
         "pump_it_up",
         "taiko"
       ]
@@ -7527,7 +7527,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://namu.wiki/w/%EC%82%BC%EB%B3%B4%EA%B2%8C%EC%9E%84%EB%9E%9C%EB%93%9C",
       "note": "deep-research fleet: Main 쥬디스태화 신관 still open (casual/FEC). Strip maniac titles (chunithm,ddr,drs,gitadora,iidx,jubeat,maimai_dx,popn,reflec,sdvx,wacca) from this pin; keep PIU+taiko per namu main-store list (2026-01-09). Full otoge list belongs to 삼보R (h156861bb32) at 서전로10번길 69. ZIv 2026-05 note also says rhythm games moved to nearby building but still dumps cabs on main id.",
-      "remove_games": [
+      "keep_games": [
         "pump_it_up",
         "taiko"
       ]
@@ -7722,7 +7722,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=8973",
       "note": "deep-research fleet: Insert Coin pin is mall-named; real arcade is Fun City (Hahama). Remove maimai_dx (only legacy FiNALE offline, not DX). Keep pump_it_up. Prefer rename display to Fun City Central Bangna if schema allows.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -7768,7 +7768,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3769",
       "note": "deep-research fleet: Remove maimai_dx only. ZIv has FiNALE not DX; PIU XX still listed. Multi-source insert_coin but still FiNALE. Venue open Central Chiangrai.",
-      "remove_games": [
+      "keep_games": [
         "other",
         "pump_it_up"
       ]
@@ -7779,7 +7779,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=9790",
       "note": "deep-research fleet: Remove maimai_dx. Only FiNALE (Not Working on ZIv). PIU Prime 2 still listed. Keep pump_it_up + other.",
-      "remove_games": [
+      "keep_games": [
         "other",
         "pump_it_up"
       ]
@@ -7790,7 +7790,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=10308",
       "note": "deep-research fleet: Remove maimai_dx. FiNALE only, not DX. Keep pump_it_up + other. Hours unknown on ZIv but venue listed open.",
-      "remove_games": [
+      "keep_games": [
         "other",
         "pump_it_up"
       ]
@@ -7801,7 +7801,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5743",
       "note": "deep-research fleet: Remove maimai_dx. Split 5F/B floor Hahama Let's Play; only FiNALE documented. Keep pump + other.",
-      "remove_games": [
+      "keep_games": [
         "other",
         "pump_it_up"
       ]
@@ -7812,7 +7812,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=3561",
       "note": "deep-research fleet: Remove maimai_dx only. Large active Hahama floor at MBK with many Bemani/PIU cabs updated Aug 2026; both maimai cabs are FiNALE offline not DX. MBK mall page still lists Let's Play.",
-      "remove_games": [
+      "keep_games": [
         "dance_evo",
         "ddr",
         "drs",
@@ -9158,7 +9158,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/2287",
       "note": "deep-research fleet: Remove dance_evo, ddr, gitadora, iidx, jubeat, sdvx, other. ZIv/nearcade inflated list. Keep chunithm, maimai_dx, taiko.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx",
         "taiko"
@@ -9170,7 +9170,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/6870",
       "note": "deep-research fleet: Remove ddr, gitadora, iidx, jubeat, nostalgia, popn. No live BemaniCN evidence for full Konami suite. Public paid shop but adults-only QQ-entry style.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx",
         "sdvx"
@@ -9182,7 +9182,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4940",
       "note": "deep-research fleet: Remove iidx and sdvx. Not present on current BemaniCN machine list.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx",
         "taiko"
@@ -9194,7 +9194,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/5623",
       "note": "deep-research fleet: Remove iidx, jubeat, ongeki, taiko. Office-building hourly shop (type=3), still public paid. Distinct from risk-3 电雀屋六道口 WAHLAP pin.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx"
       ]
@@ -9205,7 +9205,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4733",
       "note": "deep-research fleet: Remove jubeat, other. Separate from b646 宝贝计划 on 3F of same mall (not a rename of each other; both live).",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx",
         "taiko"
@@ -9217,7 +9217,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/646",
       "note": "deep-research fleet: Remove jubeat, other. Live list has no jubeat. Keep as distinct 3F shop from 2F 宝贝王 z11252.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx",
         "taiko"
@@ -9229,7 +9229,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/4422",
       "note": "deep-research fleet: Remove iidx, project_diva, sdvx (nearcade over-listed). Name still has 8.8开业 prefix; machines from 2025 factory dates. type=3 member venue, still bookable public.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "maimai_dx"
       ]
@@ -9288,7 +9288,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://nearcade.phizone.cn/api/shops/12352",
       "note": "deep-research fleet: REMOVE maimai_dx: nearcade player note says DX pulled end of June; inventory now only classic FiNALE (titleId 2 / other). Also staff report of mall 撤店申请 and group-buy packages delisted. WAHLAP still lists branch so not hard-closed yet; monitor for full close. Keep other only if FiNALE still on floor.",
-      "remove_games": [
+      "keep_games": [
         "other"
       ]
     },
@@ -9298,7 +9298,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://nearcade.phizone.cn/api/shops/15554",
       "note": "deep-research fleet: Zibo Xinma MixC. Comment states taiko already 撤机; live inventory only maimai DX; BemaniCN also maimai-only. REMOVE taiko.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx"
       ]
     },
@@ -9744,7 +9744,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/1053",
       "note": "deep-research fleet: Remove drs and pump_it_up from listing. Keep maimai_dx, chunithm, jubeat (音乐魔方 tid34), other. nearcade still carries stale drs/pump; prefer live bemanicn.",
-      "remove_games": [
+      "keep_games": [
         "chunithm",
         "jubeat",
         "maimai_dx",
@@ -9851,7 +9851,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/2168",
       "note": "deep-research fleet: Remove chunithm from this pin. Chunithm is at opposite shop 天空之城 (nearcade 13431 / BC shop 3431), not 炫技星空. WAHLAP still lists 炫技星空金华义乌之心店 for maimai. Keep maimai_dx only. Shard notes had two nearcade sids merged incorrectly.",
-      "remove_games": [
+      "keep_games": [
         "chunithm"
       ]
     },
@@ -9956,7 +9956,7 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://map.bemanicn.com/s/707",
       "note": "deep-research fleet: Remove wacca only. Venue still open with maimai (player notes through 2026-07). WACCA dead and Anshan has no remaining WACCA per same comment. Keep maimai_dx and other.",
-      "remove_games": [
+      "keep_games": [
         "maimai_dx",
         "other"
       ]

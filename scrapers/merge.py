@@ -2839,6 +2839,37 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
     return entry
 
 
+def apply_attested_game_edits(arcade, rec):
+    """Apply keep_games / add_games / remove_games to one arcade.
+
+    Returns (games, drop_row). games is None when nothing changed.
+    drop_row is True when the edit would leave the venue with no games:
+    that is a bad attested record or a source that only had extras, and
+    the weekly job must not assert-crash after a 3-hour scrape
+    (2026-08-18: M.Lab 米莱音游研究所).
+
+    keep_games is the surviving set (what a remove_games research
+    finding actually listed). 86 of 87 research-fleet remove_games
+    records stored that keep-list as remove_games, which stripped the
+    real cabs.
+    """
+    have = set(arcade.get("games") or [])
+    keep = {g for g in (rec.get("keep_games") or []) if g in GAME_SLUGS}
+    add = {g for g in (rec.get("add_games") or []) if g in GAME_SLUGS}
+    drop = {g for g in (rec.get("remove_games") or []) if g in GAME_SLUGS}
+    if not (keep or add or drop):
+        return None, False
+    games = set(have)
+    if keep:
+        games &= keep
+    games = (games | add) - drop
+    if not games:
+        return None, True
+    if games == have and not add:
+        return None, False
+    return sorted(games), False
+
+
 def run(raw_dir, out_dir, updated=None):
     stats = Stats()
     units = load_units(raw_dir, stats)
@@ -3167,17 +3198,18 @@ def run(raw_dir, out_dir, updated=None):
                                       or "owner-attested closed")
                 a["closed_source"] = rec.get("evidence_url")
                 touched = True
-            add = [g for g in (rec.get("add_games") or [])
-                   if g in GAME_SLUGS and g not in a["games"]]
-            drop = [g for g in (rec.get("remove_games") or [])
-                    if g in a["games"]]
-            if add or drop:
-                games = sorted((set(a["games"]) | set(add)) - set(drop))
-                a["games"] = games
+            new_games, dropped = apply_attested_game_edits(a, rec)
+            if dropped:
+                n_excl += 1
+                print("merge: excluded %s (attested edit left no games)"
+                      % a.get("name"), file=sys.stderr)
+                continue
+            if new_games is not None:
+                a["games"] = new_games
                 for key in ("game_counts", "count_evidence"):
                     if a.get(key):
                         kept_gc = {k: v for k, v in a[key].items()
-                                   if k in games}
+                                   if k in new_games}
                         if kept_gc:
                             a[key] = kept_gc
                         else:
@@ -3185,7 +3217,7 @@ def run(raw_dir, out_dir, updated=None):
                             a.pop("counts_src", None)
                 a["attested"] = {"by": rec.get("attested_by") or "owner",
                                  "at": rec.get("attested_at"),
-                                 "games": sorted(add),
+                                 "games": rec.get("add_games") or [],
                                  "note": rec.get("note")}
                 touched = True
             if touched:
@@ -3204,8 +3236,22 @@ def run(raw_dir, out_dir, updated=None):
                   % n_excl, file=sys.stderr)
 
     # ------- validation (hard fails) -------
+    # Empty games is a drop, not a crash. The 2026-08-18 weekly Action
+    # scraped for 2h46m then died on M.Lab 米莱音游研究所 after an inverted
+    # attested remove_games list emptied the row.
+    nonempty = []
     for a in ordered:
-        assert a["games"], "empty games for %s" % a["name"]
+        if not a.get("games"):
+            print("WARNING merge: dropping %s (empty games)"
+                  % a.get("name"), file=sys.stderr)
+            continue
+        nonempty.append(a)
+    if len(nonempty) != len(ordered):
+        ordered = nonempty
+        for i, a in enumerate(ordered, 1):
+            a["id"] = i
+
+    for a in ordered:
         assert all(g in GAME_SLUGS for g in a["games"]), a["games"]
         assert all(c in CAB_SLUGS for c in a["cabs"]), a["cabs"]
         gc = a.get("game_counts", {})
