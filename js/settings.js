@@ -38,7 +38,6 @@ window.AM = window.AM || {};
      toggle hides the feature rather than gating a permission prompt. */
   var PREFS = [
     { key: "markerScaling", def: true },
-    { key: "cartoBasemap", def: true },
     { key: "locationEnabled", def: true }
   ];
 
@@ -213,8 +212,6 @@ window.AM = window.AM || {};
     pane.appendChild(sectionHead(tr("settings.display_head")));
     pane.appendChild(prefRow("markerScaling", tr("settings.marker_scaling"),
       tr("settings.marker_scaling_desc")).row);
-    pane.appendChild(prefRow("cartoBasemap", tr("settings.carto_basemap"),
-      tr("settings.carto_basemap_desc")).row);
   }
 
   function buildLocationPane(pane) {
