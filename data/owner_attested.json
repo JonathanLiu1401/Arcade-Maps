@@ -6418,14 +6418,6 @@
         "taiko"
       ]
     },
-    "otogesetchi|https://w.atwiki.jp/otogesetchi/pages/19.html": {
-      "name": "ホテルバリアンリゾート新宿本店",
-      "attested_by": "research-fleet",
-      "attested_at": "2026-08-04",
-      "evidence_url": "https://www.balian.jp/shop/shinjuku/service/",
-      "note": "deep-research fleet: Love hotel guest amenity only, not a public arcade. otogesetchi lists Groove Coaster / old Taiko 13 / Hello Pop'n for hotel guests (Instagram confirm, no field check). Remove pin from public music-game map. Missing lat/lng irrelevant once excluded.",
-      "exclude": true
-    },
     "addr|Japan|ＨａｐｉｐｉＬａｎｄ十日町|新潟県十日町市丑７３５−１": {
       "name": "ＨａｐｉｐｉＬａｎｄ十日町",
       "attested_by": "research-fleet",
@@ -6484,14 +6476,6 @@
       "attested_at": "2026-08-04",
       "evidence_url": "https://p.eagate.573.jp/game/facility/search/p/detail.html?gkey=IIDX&paselif=true&area=AR-07&pref=JP-47&finder=area&fdesc=c796240b8baa78b7f83d2fe01f1e9bd6",
       "note": "deep-research fleet: Duplicate of h3d2be91b9c アミューズジョイBOX (same 首里儀保町3-16, coords ~15m apart). Keep eagate pin h3d2be91b9c; drop ZIv English-name pin. Venue is open netcafe/arcade with IIDX on e-amusement.",
-      "exclude": true
-    },
-    "otogesetchi|https://w.atwiki.jp/otogesetchi/pages/24.html": {
-      "name": "イミグランデ溝の口店",
-      "attested_by": "research-fleet",
-      "attested_at": "2026-08-04",
-      "evidence_url": "https://immigrant.jp/shop/shop_mizonokuti",
-      "note": "deep-research fleet: Duplicate of h245af84aa2. Exclude this otogesetchi-only null-coord pin. Merge useful cab notes (taiko) onto h245af84aa2.",
       "exclude": true
     },
     "allnet|https://location.am-all.net/alm/shop?sid=21264": {
@@ -10047,6 +10031,22 @@
       "attested_at": "2026-08-07",
       "evidence_url": "https://location.am-all.net/alm/shop?sid=18524",
       "note": "Merged SF JAPAN CENTER ALL.Net shop sid=18524 (1581 Webster St #225) into this pin. Same Japan Center Kiddleton; Post St is the public entrance address."
+    },
+    "addr|Japan|ホテルバリアンリゾート新宿本店|東京都新宿区歌舞伎町２丁目１−１１": {
+      "name": "ホテルバリアンリゾート新宿本店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://www.balian.jp/shop/shinjuku/service/",
+      "note": "deep-research fleet: Love hotel guest amenity only, not a public arcade. otogesetchi lists Groove Coaster / old Taiko 13 / Hello Pop'n for hotel guests (Instagram confirm, no field check). Remove pin from public music-game map. Missing lat/lng irrelevant once excluded.",
+      "exclude": true
+    },
+    "addr|Japan|イミグランデ溝の口店|神奈川県川崎市高津区溝口1-14-7第２カスタムビル１F～４F": {
+      "name": "イミグランデ溝の口店",
+      "attested_by": "research-fleet",
+      "attested_at": "2026-08-04",
+      "evidence_url": "https://immigrant.jp/shop/shop_mizonokuti",
+      "note": "deep-research fleet: Duplicate of h245af84aa2. Exclude this otogesetchi-only null-coord pin. Merge useful cab notes (taiko) onto h245af84aa2.",
+      "exclude": true
     }
   }
 }

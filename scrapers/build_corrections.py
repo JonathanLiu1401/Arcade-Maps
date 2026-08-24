@@ -263,6 +263,21 @@ def _location_ok(arcade, proposed, places, merge_mod):
     return True, "closer_to_named_district"
 
 
+def is_shared_list_url(url):
+    """True for a source URL that names a LIST, not one venue.
+
+    otogesetchi wiki pages enumerate many shops on one HTML file.
+    Keying owner_attested exclude on
+    otogesetchi|https://w.atwiki.jp/otogesetchi/pages/19.html (the
+    love-hotel ホテルバリアンリゾート新宿本店) made lookup() return that
+    exclude for every page-19 shop. The 2026-08-19 weekly refresh then
+    dropped 新宿スポーツランド本館, タイトーステーション新宿東口店,
+    シルクハット秋葉原, and the rest of that wiki page.
+    """
+    u = (url or "").lower()
+    return "atwiki.jp/otogesetchi/" in u
+
+
 def venue_keys(arcade):
     """EVERY stable identity this arcade answers to, best first.
 
@@ -280,7 +295,7 @@ def venue_keys(arcade):
                 "timezone", "round1usa", "wahlap_gc", "eagate", "wahlap",
                 "community"):
         u = links.get(src)
-        if u:
+        if u and not is_shared_list_url(u):
             keys.append(src + "|" + u)
     for url in (links.get("also") or []):
         u = str(url)

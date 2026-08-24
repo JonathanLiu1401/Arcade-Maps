@@ -171,7 +171,9 @@ window.AM = window.AM || {};
       var titles = AM.util.cabTitles(a);
       return {
         a: a,
-        hay: (a.name + " " + (a.addr || "") + " " + (a.pref || "") +
+        hay: (a.name + " " + (a.name_en || "") + " " +
+          (a.name_en ? a.name_en.replace(/sportsland/ig, "sports land") : "") +
+          " " + (a.addr || "") + " " + (a.pref || "") +
           (titles.length ? " " + titles.join(" ") : "")).toLowerCase()
       };
     });

@@ -11,13 +11,18 @@ import merge  # noqa: E402
 
 
 class TestApplyAttestedGameEdits(unittest.TestCase):
-    def test_mlab_inverted_remove_would_empty_now_keeps(self):
-        # After the fleet apply stored the KEEP list as remove_games,
-        # a clean BemaniCN scrape of M.Lab is only chunithm+maimai_dx.
+    def test_remove_all_does_not_drop_the_pin(self):
         arcade = {"name": "M.Lab", "games": ["chunithm", "maimai_dx"]}
         rec = {"remove_games": ["chunithm", "maimai_dx"]}
         games, drop = merge.apply_attested_game_edits(arcade, rec)
-        self.assertTrue(drop)
+        self.assertFalse(drop)
+        self.assertIsNone(games)
+
+    def test_keep_games_no_overlap_does_not_drop(self):
+        arcade = {"name": "Wonderpark", "games": ["other", "taiko"]}
+        rec = {"keep_games": ["maimai_dx"]}
+        games, drop = merge.apply_attested_game_edits(arcade, rec)
+        self.assertFalse(drop)
         self.assertIsNone(games)
 
     def test_keep_games_preserves_official_list(self):
@@ -72,6 +77,30 @@ class TestPruneFieldsToGames(unittest.TestCase):
         self.assertNotIn("ddr_gold", a.get("cabs", []))
         self.assertIn("sdvx_vm", a.get("cab_models", {}))
         self.assertIsNone(a["cab_models"]["sdvx_vm"])
+
+
+class TestSharedListUrlMustNotKeyAttested(unittest.TestCase):
+    def test_otogesetchi_wiki_page_is_not_a_venue_key(self):
+        import build_corrections
+        url = "https://w.atwiki.jp/otogesetchi/pages/19.html"
+        self.assertTrue(build_corrections.is_shared_list_url(url))
+        arcade = {
+            "name": "新宿スポーツランド本館",
+            "addr": "東京都新宿区新宿3-22-12",
+            "country": "Japan",
+            "links": {"otogesetchi": url,
+                      "ziv": "https://zenius-i-vanisher.com/v5.2/arcade.php?id=5168"},
+        }
+        keys = build_corrections.venue_keys(arcade)
+        self.assertFalse(any(k.startswith("otogesetchi|") for k in keys))
+        self.assertTrue(any(k.startswith("ziv|") for k in keys))
+        table = {
+            "otogesetchi|" + url: {
+                "name": "ホテルバリアンリゾート新宿本店",
+                "exclude": True,
+            }
+        }
+        self.assertIsNone(build_corrections.lookup(table, arcade))
 
 
 if __name__ == "__main__":

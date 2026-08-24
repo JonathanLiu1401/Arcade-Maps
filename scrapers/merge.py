@@ -2648,6 +2648,17 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         links_out[s] = src_links[s]
     if also_urls:
         links_out["also"] = also_urls
+    other_names = []
+    for u in members:
+        n = (u.get("name") or "").strip()
+        if n and n != (best["name"] or "").strip() and n not in other_names:
+            other_names.append(n)
+    name_en = None
+    for n in other_names:
+        latin = sum(1 for c in n if c.isascii() and c.isalpha())
+        if latin >= 4:
+            name_en = n
+            break
     entry = {
         "name": best["name"],
         "addr": best["addr"],
@@ -2661,6 +2672,8 @@ def merged_entry(units, idxs, inherit_log, conflict_log):
         "links": links_out,
         "notes": note_str,
     }
+    if name_en:
+        entry["name_en"] = name_en
     # ---- BEGIN counts confidence (owner: counts-honesty agent) -------
     # (m) A cabinet count is published only when a source ASSERTED one.
     # The decision is per slug and it is driven by count_evidence, not by
@@ -2861,10 +2874,14 @@ def apply_attested_game_edits(arcade, rec):
         return None, False
     games = set(have)
     if keep:
-        games &= keep
+        inter = games & keep
+        if inter:
+            games = inter
+        # If keep_games shares nothing with the scrape, it is the wrong
+        # venue or an inverted research record. Do not empty the row.
     games = (games | add) - drop
     if not games:
-        return None, True
+        return None, False
     if games == have and not add:
         return None, False
     return sorted(games), False
@@ -2953,7 +2970,8 @@ def run(raw_dir, out_dir, updated=None):
     # reorder keys for output (game_counts / count_evidence / counts_src /
     # cab_models are all optional)
     ordered = [{k: a[k] for k in
-                ("id", "sid", "name", "addr", "lat", "lng", "country", "pref",
+                ("id", "sid", "name", "name_en", "addr", "lat", "lng",
+                 "country", "pref",
                  "games", "game_counts", "count_evidence", "counts_src",
                  "cab_models", "cabs", "src", "links", "notes")
                 if k in a} for a in arcades]
@@ -3248,10 +3266,9 @@ def run(raw_dir, out_dir, updated=None):
                 touched = True
             new_games, dropped = apply_attested_game_edits(a, rec)
             if dropped:
-                n_excl += 1
-                print("merge: excluded %s (attested edit left no games)"
-                      % a.get("name"), file=sys.stderr)
-                continue
+                print("WARNING merge: attested edit would empty %s; "
+                      "keeping scraped games %s"
+                      % (a.get("name"), a.get("games")), file=sys.stderr)
             if new_games is not None:
                 a["games"] = new_games
                 prune_fields_to_games(a)
