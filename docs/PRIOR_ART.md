@@ -131,9 +131,12 @@ const OSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 });
 ```
 
-**Fallback constants:**
-1. CARTO raster basemaps - technically open and working ([verified] `https://a.basemaps.cartocdn.com/light_all/3/4/3.png` and `https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png` both 200, no key), **but policy caveat**: CARTO's own FAQ (docs.carto.com/faqs/carto-basemaps, [verified]) now says commercial use needs an Enterprise license and free use is "by CARTO grantees" (grants program). The old "free non-commercial 75k views" wording is gone. Keep as a fallback constant with attribution `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`, accept it may require a (free, nonprofit) grant or removal if challenged.
-2. OpenFreeMap - [verified from openfreemap.org]: completely free, **no API key, no registration, no limits** on views/requests, run by Zsolt Ero, donation-funded. Vector tiles for MapLibre (no raster endpoint), so this is the basemap to pair with the optional maplibre-gl-leaflet upgrade path (exactly what gcm-storefinder does). Required attribution: OpenMapTiles + OpenStreetMap ("OpenFreeMap" name optional).
+**Default raster layer (js/mapcore.js): CARTO Voyager, no API key.** URL `https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`. Attribution must include both OSM and CARTO: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`. Voyager is the light style (the marker halo in `assets/markers/marker-spec.md` is a light-tile device). On first `tileerror`, fall back once to OSM standard tiles so the map never goes blank. Settings > Display can pin CARTO or OSM; default is CARTO.
+
+**Policy caveat (CARTO):** technically open and working ([verified] `https://a.basemaps.cartocdn.com/light_all/3/4/3.png` and voyager both 200, no key), **but** CARTO's FAQ (docs.carto.com/faqs/carto-basemaps, [verified]) now says commercial use needs an Enterprise license and free use is "by CARTO grantees" (grants program). The old "free non-commercial 75k views" wording is gone. Accept it may require a (free, nonprofit) grant or removal if challenged.
+
+**Other fallback:**
+1. OpenFreeMap - [verified from openfreemap.org]: completely free, **no API key, no registration, no limits** on views/requests, run by Zsolt Ero, donation-funded. Vector tiles for MapLibre (no raster endpoint), so this is the basemap to pair with the optional maplibre-gl-leaflet upgrade path (exactly what gcm-storefinder does). Required attribution: OpenMapTiles + OpenStreetMap ("OpenFreeMap" name optional).
 
 ---
 

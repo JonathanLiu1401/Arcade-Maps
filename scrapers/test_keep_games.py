@@ -102,6 +102,47 @@ class TestSharedListUrlMustNotKeyAttested(unittest.TestCase):
         }
         self.assertIsNone(build_corrections.lookup(table, arcade))
 
+    def test_wahlap_gc_rest_location_is_not_a_venue_key(self):
+        import build_corrections
+        url = "https://wc.wahlap.net/gc/rest/location"
+        self.assertTrue(build_corrections.is_shared_list_url(url))
+        self.assertTrue(build_corrections.is_shared_list_url(
+            "https://sega-register.wahlap.net/api/sega/maidx/rest/location"))
+        arcade = {
+            "name": "城市英雄武汉新佳丽广场店",
+            "addr": "湖北省武汉市江汉区中山大道1544",
+            "country": "China",
+            "links": {"wahlap_gc": url,
+                      "bemanicn": "https://map.bemanicn.com/s/99999"},
+        }
+        keys = build_corrections.venue_keys(arcade)
+        self.assertFalse(any(k.startswith("wahlap_gc|") for k in keys))
+        self.assertTrue(any(k.startswith("bemanicn|") for k in keys))
+        table = {
+            "wahlap_gc|" + url: {
+                "name": "FAKE",
+                "exclude": True,
+            }
+        }
+        self.assertIsNone(build_corrections.lookup(table, arcade))
+
+    def test_owner_attested_has_no_shared_list_keys(self):
+        import json
+        import build_corrections
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "data", "owner_attested.json")
+        with open(path, encoding="utf-8") as fh:
+            att = json.load(fh)
+        bad = []
+        for k in att["venues"]:
+            if k.startswith("otogesetchi|"):
+                bad.append(k)
+                continue
+            prefix, _, rest = k.partition("|")
+            if prefix != "addr" and build_corrections.is_shared_list_url(rest):
+                bad.append(k)
+        self.assertEqual(bad, [])
+
 
 if __name__ == "__main__":
     unittest.main()

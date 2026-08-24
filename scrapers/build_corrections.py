@@ -273,9 +273,19 @@ def is_shared_list_url(url):
     exclude for every page-19 shop. The 2026-08-19 weekly refresh then
     dropped 新宿スポーツランド本館, タイトーステーション新宿東口店,
     シルクハット秋葉原, and the rest of that wiki page.
+
+    WAHLAP Groove Coaster China uses one REST dump
+    (https://wc.wahlap.net/gc/rest/location) as source_url for every shop.
+    Mainland WAHLAP maidx/midtr dumps are the same shape; merge already
+    drops /api/ URLs from links, but venue_keys must not key on them if
+    they leak through.
     """
     u = (url or "").lower()
-    return "atwiki.jp/otogesetchi/" in u
+    if "atwiki.jp/otogesetchi/" in u:
+        return True
+    if "wahlap.net" in u and "/rest/location" in u:
+        return True
+    return False
 
 
 def venue_keys(arcade):
