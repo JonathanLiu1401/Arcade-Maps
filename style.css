@@ -940,6 +940,17 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
    that property for its own fade animations), so a stylesheet rule for
    it is silently ignored no matter how specific - measured. */
 .am-tier.am-closed { filter: grayscale(0.85) opacity(0.5); }
+/* Unknown-count icons used to tint Other as #9E9E9E, which vanished into
+   CARTO Voyager's grey buildings. Other is now violet; this halo keeps
+   the ? readable on beige tiles even when a named-game unknown is a
+   similar mid tone. */
+.am-tier-U {
+  filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+.am-tier-U.am-closed {
+  filter: grayscale(0.85) opacity(0.5)
+    drop-shadow(0 0 1.5px #fff) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
 
 /* ---- chips ---- */
 .pl-chips {

@@ -54,10 +54,18 @@ window.AM = window.AM || {};
     return (AM.markers && AM.markers.TIER_LEGEND) || [];
   }
 
-  /* The legend samples one fixed colour. On the map the tint is the store's
-     game, which the colour section immediately below this one explains; using
-     a different hue per row here would read as "T3 means blue". */
+  /* Counted-tier samples share one colour so the SHAPE is the lesson.
+     The unknown row uses Other, which is what unlisted titles (デレステ
+     and the rest of the catch-all) actually draw on the map. Using the
+     sample pink there made the legend ? and the map ? two different colours. */
   var SAMPLE_COLOR = "#E4007F";
+
+  function swatchColor(tier) {
+    if (tier && tier.id === "U") {
+      return (C.GAME_COLOR && C.GAME_COLOR.other) || SAMPLE_COLOR;
+    }
+    return SAMPLE_COLOR;
+  }
 
   /* Fixed swatch size for the cramped on-map chip; see buildLegendChip. */
   var CHIP_PX = 24;
@@ -77,7 +85,7 @@ window.AM = window.AM || {};
     img.height = size;
     img.alt = "";
     if (AM.markers && AM.markers.tierIconUrl) {
-      img.src = AM.markers.tierIconUrl(tier.id, SAMPLE_COLOR);
+      img.src = AM.markers.tierIconUrl(tier.id, swatchColor(tier));
     }
     return img;
   }

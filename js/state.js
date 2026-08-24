@@ -67,8 +67,12 @@ window.AM = window.AM || {};
     ["groove_coaster", "Groove Coaster", "#827717"],
     ["crossbeats", "crossbeats", "#5D4037"],
     ["beatstream", "BeatStream", "#33691E"],
-    /* Stays last: the catch-all must sort after every named game. */
-    ["other", "Other", "#9E9E9E"]
+    /* Stays last: the catch-all must sort after every named game.
+       Not grey: CARTO Voyager paints buildings #d8d4cc-ish, and #9E9E9E
+       on that is about 1.5:1, so デレステ / other-only stores vanished
+       into the basemap. Violet-600 sits well clear of ongeki/museca
+       purples and of the beige tiles. */
+    ["other", "Other", "#7C3AED"]
   ];
   var GAME_LABEL = {}, GAME_COLOR = {}, GAME_ORDER = [];
   GAMES.forEach(function (g) {
