@@ -62,8 +62,8 @@ Most stores land in TU: the official ALL.Net and e-amusement listings publish
 *which* games a store has, not *how many* cabinets. Drawing those at T1 would
 assert "this arcade has one cab", which the data never said.
 
-TU therefore carries **T2/T3 visual weight** - it renders at 25px against T2's
-24px and T3's 26px, and it reuses T2's button-pad silhouette with a "?" in
+TU therefore carries **T2 visual weight** - it renders at 25px against T2's
+24px (T3's star is 39px), and it reuses T2's button-pad silhouette with a "?" in
 place of the note. It reads as "a normal arcade, count not published", never as
 "a tiny arcade". The existing note in Settings > About already explains this to
 users; keep that copy.
@@ -74,9 +74,9 @@ users; keep that copy.
 
 | Zoom band | T1 | T2 | T3 | TU | T4 | T5 |
 | --- | --- | --- | --- | --- | --- | --- |
-| **Compact** z <= 10 | 16 | 19 | 21 | 20 | 26 | 30 |
-| **Standard** z 11-14 | 20 | 24 | 26 | 25 | 30 | 36 |
-| **Close** z >= 15 | 22 | 27 | 29 | 28 | 34 | 40 |
+| **Compact** z <= 10 | 16 | 19 | 31 | 20 | 36 | 43 |
+| **Standard** z 11-14 | 20 | 24 | 39 | 25 | 45 | 54 |
+| **Close** z >= 15 | 22 | 27 | 44 | 28 | 51 | 61 |
 
 **Ship the Standard column alone as v1.** A single fixed size per tier is the
 safe implementation. The existing marker code is deliberately zoom-independent
@@ -140,7 +140,7 @@ L.divIcon({
 
 CSS `width` beats the `width=` presentation attribute, so the SVG scales to the
 wrapper. Verified in Chrome: with the files untouched, all six tiers measured
-exactly their target px (20/24/26/25/30/36) while `width` was still `"32"`, and
+exactly their target px (20/24/39/25/45/54) while `width` was still `"32"`, and
 `getComputedStyle(...).fill` returned a different colour per wrapper. Without
 the CSS rule the artwork would paint at 32px while Leaflet positioned it as
 `px`, leaving every anchor off by `(32 - px) / 2`.

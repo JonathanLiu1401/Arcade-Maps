@@ -53,9 +53,11 @@ window.AM = window.AM || {};
   var TIER_CLASSES = [
     { id: "1", min: 1,  max: 2,        px: 20, short: "1-2",   label: "1 to 2 cabinets" },
     { id: "2", min: 3,  max: 9,        px: 24, short: "3-9",   label: "3 to 9 cabinets" },
-    { id: "3", min: 10, max: 19,       px: 26, short: "10-19", label: "10 to 19 cabinets" },
-    { id: "4", min: 20, max: 49,       px: 30, short: "20-49", label: "20 to 49 cabinets", big: true },
-    { id: "5", min: 50, max: Infinity, px: 36, short: "50+",   label: "50 or more cabinets (mega arcade)", big: true }
+    /* T3 is the five-point star. Owner asked ~1.5x (26 -> 39). T4/T5
+       step up from there so a 20+ store stays larger than a star. */
+    { id: "3", min: 10, max: 19,       px: 39, short: "10-19", label: "10 to 19 cabinets" },
+    { id: "4", min: 20, max: 49,       px: 45, short: "20-49", label: "20 to 49 cabinets", big: true },
+    { id: "5", min: 50, max: Infinity, px: 54, short: "50+",   label: "50 or more cabinets (mega arcade)", big: true }
   ];
   var UNKNOWN_TIER = {
     id: "U", min: null, max: null, px: 25, short: "?", label: "Count unknown"
