@@ -112,7 +112,7 @@ window.AM = window.AM || {};
     position: "bottomright",
     metric: true,
     imperial: true,
-    maxWidth: 140
+    maxWidth: 180
   }).addTo(map);
 
   var renderer = L.canvas({ padding: 0.5 });

@@ -1481,23 +1481,49 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 .leaflet-bottom.leaflet-left { pointer-events: none; }
 .leaflet-bottom.leaflet-left .leaflet-control { pointer-events: auto; }
 
-/* Scale bar: sit above the OSM/CARTO attribution, dark chip so it
-   reads on Voyager beige the same way the legend does. */
-.leaflet-control-scale {
-  margin-bottom: 8px;
-  background: none;
-  box-shadow: none;
-  border: none;
+/* Bottom-right: scale ABOVE the OSM/CARTO attribution.
+   Leaflet floats both into one corner; attribution uses margin:0 and
+   paints over the scale (same z-index, later in the DOM). Flex column
+   sizes the corner to its children and pins that stack to bottom:0,
+   so the scale is inside the map instead of clipped below it.
+   .leaflet-bottom .leaflet-control-scale {margin-bottom:5px} in
+   leaflet.css is (0,2,0); a single-class rule cannot override it. */
+.leaflet-bottom.leaflet-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.leaflet-bottom.leaflet-right .leaflet-control {
+  float: none;
+  clear: none;
+  margin: 0;
+}
+.leaflet-bottom.leaflet-right .leaflet-control-scale {
+  margin: 0 6px 28px 0;
+  padding: 5px 7px 4px;
+  background: #17181d;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+  z-index: 1001;
 }
 .leaflet-control-scale-line {
-  background: rgba(23, 24, 29, 0.88);
-  color: #e8eaed;
-  border: 2px solid rgba(255, 255, 255, 0.45);
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
   border-top: none;
   font-size: 11px;
+  font-weight: 700;
   line-height: 1.2;
   padding: 2px 6px 1px;
   text-shadow: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.leaflet-control-scale-line:not(:first-child) {
+  border-top: 2px solid #ffffff;
+  border-bottom: none;
+  margin-top: -2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1534,6 +1560,15 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
   .sd-row { padding: 12px 6px; }
   .sd-colors { grid-template-columns: 1fr 1fr; }
   .legend-body { width: min(230px, calc(100vw - 40px)); max-height: 44vh; }
+  /* Attribution wraps instead of covering the scale or the legend chip. */
+  .leaflet-bottom.leaflet-right .leaflet-control-scale {
+    margin-bottom: 36px;
+  }
+  .leaflet-container .leaflet-bottom.leaflet-right .leaflet-control-attribution {
+    max-width: min(240px, calc(100vw - 130px));
+    white-space: normal;
+    line-height: 1.35;
+  }
 }
 /* === end settings modal + legend chip === */
 

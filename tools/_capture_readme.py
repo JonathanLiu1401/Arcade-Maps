@@ -51,7 +51,62 @@ def wait_map(page, timeout_ms=90000):
         }""",
         timeout=timeout_ms,
     )
-    page.wait_for_timeout(1200)
+    page.wait_for_selector(".leaflet-control-scale-line", timeout=timeout_ms)
+    page.wait_for_selector("#game-chips .chip", state="attached", timeout=timeout_ms)
+    page.wait_for_timeout(1800)
+
+
+def open_filters(page):
+    page.evaluate(
+        """() => {
+          document.body.classList.remove('drawer-closed');
+          const t = document.getElementById('drawer-toggle');
+          if (t) t.setAttribute('aria-expanded', 'true');
+          if (window.AM && AM.map && AM.map.map) AM.map.map.invalidateSize();
+        }"""
+    )
+    page.wait_for_timeout(400)
+
+
+def close_filters(page):
+    page.evaluate(
+        """() => {
+          document.body.classList.add('drawer-closed');
+          const t = document.getElementById('drawer-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+          if (window.AM && AM.map && AM.map.map) AM.map.map.invalidateSize();
+        }"""
+    )
+    page.wait_for_timeout(400)
+
+
+def collapse_legend(page):
+    page.evaluate(
+        """() => {
+          const btn = document.getElementById('legend-toggle');
+          if (btn && btn.getAttribute('aria-expanded') === 'true') btn.click();
+        }"""
+    )
+    page.wait_for_timeout(300)
+
+
+def expand_legend(page):
+    page.wait_for_selector("#legend-toggle", timeout=20000)
+    page.evaluate(
+        """() => {
+          const btn = document.getElementById('legend-toggle');
+          if (btn && btn.getAttribute('aria-expanded') !== 'true') btn.click();
+        }"""
+    )
+    page.wait_for_function(
+        """() => {
+          const b = document.getElementById('legend-body');
+          const btn = document.getElementById('legend-toggle');
+          return b && !b.hidden && btn && btn.getAttribute('aria-expanded') === 'true';
+        }""",
+        timeout=10000,
+    )
+    page.wait_for_timeout(500)
 
 
 def open_aki(page):
@@ -73,7 +128,48 @@ def wait_place(page):
         }""",
         timeout=20000,
     )
+    try:
+        page.wait_for_selector("#place img", timeout=8000)
+    except Exception:
+        pass
     page.wait_for_timeout(800)
+
+
+def tile_info(page):
+    return page.evaluate(
+        """() => {
+          const srcs = [...document.querySelectorAll('.leaflet-tile')]
+            .map(i => i.src || '');
+          const carto = srcs.filter(s => /cartocdn|voyager/i.test(s)).length;
+          const osm = srcs.filter(s => /tile\\.openstreetmap\\.org/i.test(s)).length;
+          const attr = (document.querySelector('.leaflet-control-attribution')
+            || {}).innerText || '';
+          const scale = document.querySelector('.leaflet-control-scale');
+          const sr = scale ? scale.getBoundingClientRect() : null;
+          const legend = document.getElementById('legend-toggle');
+          const body = document.getElementById('legend-body');
+          const chips = document.querySelectorAll('#game-chips .chip').length;
+          const other = [...document.querySelectorAll('#game-chips .chip')]
+            .find(c => (c.dataset.g || '') === 'other');
+          return {
+            nTiles: srcs.length,
+            carto,
+            osm,
+            attr,
+            scale: !!scale,
+            scaleText: scale ? (scale.innerText || '').replace(/\\s+/g, ' ').trim() : '',
+            scaleBox: sr ? {x: sr.x, y: sr.y, w: sr.width, h: sr.height} : null,
+            legendOpen: !!(legend && legend.getAttribute('aria-expanded') === 'true'),
+            legendBody: !!(body && !body.hidden),
+            chips,
+            otherColor: other ? getComputedStyle(other).getPropertyValue('--chip')
+              || getComputedStyle(other.querySelector('.dot') || other).backgroundColor
+              : null,
+            shown: (document.getElementById('meta-count') || {}).innerText || '',
+            sample: srcs.slice(0, 3),
+          };
+        }"""
+    )
 
 
 def shot(page, name):
@@ -83,7 +179,8 @@ def shot(page, name):
         from PIL import Image
         im = Image.open(path).convert("RGB")
         im.save(path, "JPEG", quality=88, optimize=True, progressive=True)
-    print("wrote", path, path.stat().st_size)
+    info = tile_info(page)
+    print("wrote", path, path.stat().st_size, info)
 
 
 def main():
@@ -102,14 +199,24 @@ def main():
         page.evaluate("() => { localStorage.clear(); }")
         page.reload(wait_until="domcontentloaded")
         wait_map(page)
+        open_filters(page)
+        wait_map(page)
         shot(page, "screenshot.png")
 
         page.goto(base + "#" + AKI_ZOOM, wait_until="domcontentloaded")
         wait_map(page)
+        open_filters(page)
         shot(page, "readme-akihabara.jpg")
+
+        page.goto(base + "#" + TOKYO, wait_until="domcontentloaded")
+        wait_map(page)
+        open_filters(page)
+        expand_legend(page)
+        shot(page, "readme-legend.jpg")
 
         page.goto(base + "#" + AKI_HASH, wait_until="domcontentloaded")
         wait_map(page)
+        collapse_legend(page)
         open_aki(page)
         wait_place(page)
         shot(page, "readme-place.jpg")
@@ -140,17 +247,13 @@ def main():
         mp.evaluate("() => localStorage.clear()")
         mp.reload(wait_until="domcontentloaded")
         wait_map(mp)
-        # close the filter drawer so the map fills the phone
-        toggle = mp.locator("#drawer-toggle")
-        if toggle.count():
-            expanded = toggle.get_attribute("aria-expanded")
-            if expanded == "true":
-                toggle.click()
-                mp.wait_for_timeout(400)
+        close_filters(mp)
         mp.goto(base + "#" + AKI_HASH, wait_until="domcontentloaded")
         wait_map(mp)
+        close_filters(mp)
         open_aki(mp)
         wait_place(mp)
+        close_filters(mp)
         shot(mp, "readme-mobile-place.jpg")
         browser.close()
     httpd.shutdown()
