@@ -104,10 +104,17 @@ jobs:
         run: python scrapers/guard_regression.py
 
       - name: Commit refreshed data if changed
+        # The scrape takes ~2.5h. main often moves while it runs (UI
+        # commits). A bare git push then dies with "fetch first", which
+        # is how the 2026-08-24 weekly lost a finished crawl (run
+        # 32763382083). Rebase onto origin/main before push; data files
+        # almost never overlap those UI commits.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ data_raw/ mymaps/ s/
           git add data/fx_rates.json data/enrichment.json data/china_areas.json data/hk_romanize.json
           git diff --cached --quiet || git commit -m "data: automated refresh $(date -u +%F)"
-          git push
+          git fetch origin main
+          git pull --rebase origin main
+          git push origin HEAD:main
