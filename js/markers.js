@@ -645,6 +645,7 @@ window.AM = window.AM || {};
     /* tier icons */
     TIER_CLASSES: TIER_CLASSES,
     UNKNOWN_TIER: UNKNOWN_TIER,
+    TIER_BY_ID: TIER_BY_ID,
     TIER_LEGEND: TIER_LEGEND,
     UNIFORM_PX: UNIFORM_PX,
     /* Renamed from totalCabs when the tier stopped counting suppressed rows.

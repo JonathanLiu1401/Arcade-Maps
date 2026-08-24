@@ -1481,6 +1481,25 @@ a.pl-hero-credit:hover { color: #fff; text-decoration: underline; }
 .leaflet-bottom.leaflet-left { pointer-events: none; }
 .leaflet-bottom.leaflet-left .leaflet-control { pointer-events: auto; }
 
+/* Scale bar: sit above the OSM/CARTO attribution, dark chip so it
+   reads on Voyager beige the same way the legend does. */
+.leaflet-control-scale {
+  margin-bottom: 8px;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+.leaflet-control-scale-line {
+  background: rgba(23, 24, 29, 0.88);
+  color: #e8eaed;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top: none;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 2px 6px 1px;
+  text-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sd-track, .sd-track::after { transition: none; }
 }

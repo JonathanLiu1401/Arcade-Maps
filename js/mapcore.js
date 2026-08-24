@@ -108,6 +108,13 @@ window.AM = window.AM || {};
     applyBasemap();
   });
 
+  L.control.scale({
+    position: "bottomright",
+    metric: true,
+    imperial: true,
+    maxWidth: 140
+  }).addTo(map);
+
   var renderer = L.canvas({ padding: 0.5 });
 
   /* pane for the search-result highlight halo: above markers (600), below popups (700) */

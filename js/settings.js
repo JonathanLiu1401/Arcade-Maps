@@ -54,17 +54,21 @@ window.AM = window.AM || {};
     return (AM.markers && AM.markers.TIER_LEGEND) || [];
   }
 
-  /* Counted-tier samples share one colour so the SHAPE is the lesson.
-     The unknown row uses Other, which is what unlisted titles (デレステ
-     and the rest of the catch-all) actually draw on the map. Using the
-     sample pink there made the legend ? and the map ? two different colours. */
-  var SAMPLE_COLOR = "#E4007F";
-
-  function swatchColor(tier) {
-    if (tier && tier.id === "U") {
-      return (C.GAME_COLOR && C.GAME_COLOR.other) || SAMPLE_COLOR;
+  /* Legend shapes use the same tint the map uses: the first selected
+     game in GAME_ORDER. A hardcoded maimai pink made 1-2 cab pins,
+     multi-cab pins, and ? pins look like a different game than the
+     map. Filter to one game and the tab matches the pins. */
+  function legendTint() {
+    var sel = AM.state.get("selectedGames");
+    var order = C.GAME_ORDER || [];
+    var i, g;
+    if (sel && sel.size) {
+      for (i = 0; i < order.length; i++) {
+        g = order[i];
+        if (sel.has(g) && C.GAME_COLOR[g]) return C.GAME_COLOR[g];
+      }
     }
-    return SAMPLE_COLOR;
+    return (C.GAME_COLOR && C.GAME_COLOR.maimai_dx) || "#E4007F";
   }
 
   /* Fixed swatch size for the cramped on-map chip; see buildLegendChip. */
@@ -84,10 +88,25 @@ window.AM = window.AM || {};
     img.width = size;
     img.height = size;
     img.alt = "";
+    img.setAttribute("data-am-tier", tier.id);
     if (AM.markers && AM.markers.tierIconUrl) {
-      img.src = AM.markers.tierIconUrl(tier.id, swatchColor(tier));
+      img.src = AM.markers.tierIconUrl(tier.id, legendTint());
     }
     return img;
+  }
+
+  function retintLegend() {
+    var nodes = document.querySelectorAll("img[data-am-tier]");
+    var color = legendTint();
+    var i, img, id, tier;
+    if (!AM.markers || !AM.markers.tierIconUrl) return;
+    for (i = 0; i < nodes.length; i++) {
+      img = nodes[i];
+      id = img.getAttribute("data-am-tier");
+      tier = (AM.markers.TIER_BY_ID && AM.markers.TIER_BY_ID[id])
+        || (id === "U" ? AM.markers.UNKNOWN_TIER : null);
+      if (tier) img.src = AM.markers.tierIconUrl(tier.id, color);
+    }
   }
 
   var SECTIONS = [
@@ -709,6 +728,7 @@ window.AM = window.AM || {};
       var box = document.getElementById("sd-tier-legend");
       if (box) renderTierRows(box);
     });
+    AM.state.on("selectedGames", retintLegend);
     if (AM.i18n && AM.i18n.on) AM.i18n.on(retranslate);
     syncSources();
     syncPrefs();
