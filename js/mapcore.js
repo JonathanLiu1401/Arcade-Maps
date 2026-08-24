@@ -50,10 +50,63 @@ window.AM = window.AM || {};
     smoothSensitivity: 3
   });
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  /* Voyager is the light CARTO style; the marker halo is a light-tile device.
+     OSM is a one-shot fallback if CARTO tiles fail, and a Settings > Display
+     choice. Do not persist the fallback: the next load retries CARTO. */
+  var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+  var CARTO_ATTR = OSM_ATTR + ' &copy; <a href="https://carto.com/attributions">CARTO</a>';
+  var CARTO_URL = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+  var OSM_URL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+  var tiles = null;
+  var tileKind = null;
+  var cartoFailed = false;
+
+  function preferCarto() {
+    var v = AM.state.get("cartoBasemap");
+    if (v === true || v === false) return v;
+    return AM.state.readSetting("cartoBasemap", true) !== false;
+  }
+
+  function addTileLayer(kind) {
+    if (tiles) {
+      map.removeLayer(tiles);
+      tiles = null;
+    }
+    tileKind = kind;
+    if (kind === "carto") {
+      tiles = L.tileLayer(CARTO_URL, {
+        maxZoom: 19,
+        subdomains: "abcd",
+        attribution: CARTO_ATTR
+      });
+      tiles.on("tileerror", onCartoTileError);
+    } else {
+      tiles = L.tileLayer(OSM_URL, {
+        maxZoom: 19,
+        attribution: OSM_ATTR
+      });
+    }
+    tiles.addTo(map);
+  }
+
+  function onCartoTileError() {
+    if (cartoFailed || tileKind !== "carto") return;
+    cartoFailed = true;
+    applyBasemap();
+  }
+
+  function applyBasemap() {
+    var want = (!cartoFailed && preferCarto()) ? "carto" : "osm";
+    if (want === tileKind && tiles) return;
+    addTileLayer(want);
+  }
+
+  applyBasemap();
+  AM.state.on("cartoBasemap", function () {
+    cartoFailed = false;
+    applyBasemap();
+  });
 
   var renderer = L.canvas({ padding: 0.5 });
 
@@ -278,6 +331,7 @@ window.AM = window.AM || {};
     startHashSync: startHashSync,
     setViewExact: setViewExact,
     fitToPoints: fitToPoints,
-    isApplyingHash: function () { return applyingHash; }
+    isApplyingHash: function () { return applyingHash; },
+    tileKind: function () { return tileKind; }
   };
 })(window.AM);
