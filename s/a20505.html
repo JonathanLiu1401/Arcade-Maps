@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://jonathanliu1401.github.io/Arcade-Maps/s/a20505.html">
 <meta property="og:image" content="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/chunithm.jpg">
 <meta property="og:image:alt" content="GiGO MITSUI OUTLET PARK Lin Kou - Representative cabinet photo (not this venue)">
+<meta property="og:image" content="https://staticmap.openstreetmap.de/staticmap.php?center=25.05346,121.36796&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=25.05346,121.36796,red-pushpin">
+<meta property="og:image:alt" content="Map pin - Taiwan">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GiGO MITSUI OUTLET PARK Lin Kou">
 <meta name="twitter:description" content="Taiwan - 2F, No.356, Sec.1,Wenhua3rdRd,LinkouDist,NewTaipeiCity,Taiwan. Games: CHUNITHM, maimai DX.">
@@ -57,15 +59,28 @@
 </style>
 </head>
 <body>
-<article class="card">
-  <img class="hero" src="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/chunithm.jpg" alt="GiGO MITSUI OUTLET PARK Lin Kou - Representative cabinet photo (not this venue)" width="1200" height="630">
+<article class="card card-wide">
+
+  <div class="media">
+    <div class="media-col">
+      <img class="hero" src="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/chunithm.jpg" alt="GiGO MITSUI OUTLET PARK Lin Kou - Representative cabinet photo (not this venue)" width="600" height="400"
+           loading="eager">
+      <p class="media-cap">Representative cabinet photo (not this venue)</p>
+    </div>
+    <div class="media-col media-map">
+      <img class="hero map" src="https://staticmap.openstreetmap.de/staticmap.php?center=25.05346,121.36796&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=25.05346,121.36796,red-pushpin" alt="Map pin - Taiwan" width="600" height="400"
+           loading="eager"
+           onerror="this.closest('.media-map').style.display='none';var m=this.closest('.media');if(m)m.classList.add('no-map');">
+      <p class="media-cap">Taiwan</p>
+    </div>
+  </div>
   <div class="body">
     
     <h1>GiGO MITSUI OUTLET PARK Lin Kou</h1>
     <p class="sub">Taiwan - 2F, No.356, Sec.1,Wenhua3rdRd,LinkouDist,NewTaipeiCity,Taiwan</p>
     <ul><li>CHUNITHM</li><li>maimai DX</li></ul>
-    <a class="btn" id="open" href="../#arcade=a20505">Open on Arcade Maps</a>
-    <p class="foot">Representative cabinet photo (not this venue) - <a href="https://jonathanliu1401.github.io/Arcade-Maps/#arcade=a20505">direct map link</a></p>
+    <a class="btn" id="open" href="../#16/25.05346/121.36796/arcade=a20505">Open on Arcade Maps</a>
+    <p class="foot">Representative cabinet photo (not this venue) - <a href="https://jonathanliu1401.github.io/Arcade-Maps/#16/25.05346/121.36796/arcade=a20505">direct map link</a></p>
   </div>
 </article>
 <script>
@@ -75,7 +90,7 @@
   try {
     var ua = navigator.userAgent || "";
     if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp|Applebot|bingbot|Googlebot/i.test(ua)) return;
-    var dest = "../#arcade=a20505";
+    var dest = "../#16/25.05346/121.36796/arcade=a20505";
     var q = (location.search || "").replace(/^\?/, "");
     var params = {};
     q.split("&").forEach(function (p) {
