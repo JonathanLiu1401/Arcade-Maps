@@ -38,7 +38,7 @@ window.AM = window.AM || {};
      toggle hides the feature rather than gating a permission prompt. */
   var PREFS = [
     { key: "markerScaling", def: true },
-    { key: "cartoBasemap", def: true },
+    { key: "cartoBasemap", def: false },
     { key: "locationEnabled", def: true }
   ];
 
