@@ -50,9 +50,9 @@ window.AM = window.AM || {};
     smoothSensitivity: 3
   });
 
-  /* Voyager is the light CARTO style; the marker halo is a light-tile device.
-     OSM is a one-shot fallback if CARTO tiles fail, and a Settings > Display
-     choice. Do not persist the fallback: the next load retries CARTO. */
+  /* OSM is the default basemap. CARTO Voyager (the light style) is opt-in via
+     Settings > Display; if its tiles fail, OSM is a one-shot fallback. Do not
+     persist the fallback: the next load retries CARTO. */
   var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   var CARTO_ATTR = OSM_ATTR + ' &copy; <a href="https://carto.com/attributions">CARTO</a>';
   var CARTO_URL = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
@@ -65,7 +65,7 @@ window.AM = window.AM || {};
   function preferCarto() {
     var v = AM.state.get("cartoBasemap");
     if (v === true || v === false) return v;
-    return AM.state.readSetting("cartoBasemap", true) !== false;
+    return AM.state.readSetting("cartoBasemap", false) === true;
   }
 
   function addTileLayer(kind) {
