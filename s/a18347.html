@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://jonathanliu1401.github.io/Arcade-Maps/s/a18347.html">
 <meta property="og:image" content="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/maimai_dx.jpg">
 <meta property="og:image:alt" content="COW PLAY COW MOO WEST MALL - Representative cabinet photo (not this venue)">
+<meta property="og:image" content="https://staticmap.openstreetmap.de/staticmap.php?center=1.35004,103.74923&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=1.35004,103.74923,red-pushpin">
+<meta property="og:image:alt" content="Map pin - Singapore">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="COW PLAY COW MOO WEST MALL">
 <meta name="twitter:description" content="Singapore - 1 Bukit Batok Central #05-01B, Singapore 658713. Games: maimai DX.">
@@ -57,15 +59,28 @@
 </style>
 </head>
 <body>
-<article class="card">
-  <img class="hero" src="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/maimai_dx.jpg" alt="COW PLAY COW MOO WEST MALL - Representative cabinet photo (not this venue)" width="1200" height="630">
+<article class="card card-wide">
+
+  <div class="media">
+    <div class="media-col">
+      <img class="hero" src="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/maimai_dx.jpg" alt="COW PLAY COW MOO WEST MALL - Representative cabinet photo (not this venue)" width="600" height="400"
+           loading="eager">
+      <p class="media-cap">Representative cabinet photo (not this venue)</p>
+    </div>
+    <div class="media-col media-map">
+      <img class="hero map" src="https://staticmap.openstreetmap.de/staticmap.php?center=1.35004,103.74923&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=1.35004,103.74923,red-pushpin" alt="Map pin - Singapore" width="600" height="400"
+           loading="eager"
+           onerror="this.closest('.media-map').style.display='none';var m=this.closest('.media');if(m)m.classList.add('no-map');">
+      <p class="media-cap">Singapore</p>
+    </div>
+  </div>
   <div class="body">
     
     <h1>COW PLAY COW MOO WEST MALL</h1>
     <p class="sub">Singapore - 1 Bukit Batok Central #05-01B, Singapore 658713</p>
     <ul><li>maimai DX</li></ul>
-    <a class="btn" id="open" href="../#arcade=a18347">Open on Arcade Maps</a>
-    <p class="foot">Representative cabinet photo (not this venue) - <a href="https://jonathanliu1401.github.io/Arcade-Maps/#arcade=a18347">direct map link</a></p>
+    <a class="btn" id="open" href="../#16/1.35004/103.74923/arcade=a18347">Open on Arcade Maps</a>
+    <p class="foot">Representative cabinet photo (not this venue) - <a href="https://jonathanliu1401.github.io/Arcade-Maps/#16/1.35004/103.74923/arcade=a18347">direct map link</a></p>
   </div>
 </article>
 <script>
@@ -75,7 +90,7 @@
   try {
     var ua = navigator.userAgent || "";
     if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp|Applebot|bingbot|Googlebot/i.test(ua)) return;
-    var dest = "../#arcade=a18347";
+    var dest = "../#16/1.35004/103.74923/arcade=a18347";
     var q = (location.search || "").replace(/^\?/, "");
     var params = {};
     q.split("&").forEach(function (p) {

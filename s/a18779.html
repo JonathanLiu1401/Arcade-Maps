@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://jonathanliu1401.github.io/Arcade-Maps/s/a18779.html">
 <meta property="og:image" content="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/maimai_dx.jpg">
 <meta property="og:image:alt" content="FUNHOUSE SUNNYBANK - Representative cabinet photo (not this venue)">
+<meta property="og:image" content="https://staticmap.openstreetmap.de/staticmap.php?center=-27.57040,153.06250&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=-27.57040,153.06250,red-pushpin">
+<meta property="og:image:alt" content="Map pin - Australia">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FUNHOUSE SUNNYBANK">
 <meta name="twitter:description" content="Australia - Corner Mains &amp; McCullough Roads, Sunnybank QLD 4109. Games: maimai DX.">
@@ -57,15 +59,28 @@
 </style>
 </head>
 <body>
-<article class="card">
-  <img class="hero" src="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/maimai_dx.jpg" alt="FUNHOUSE SUNNYBANK - Representative cabinet photo (not this venue)" width="1200" height="630">
+<article class="card card-wide">
+
+  <div class="media">
+    <div class="media-col">
+      <img class="hero" src="https://jonathanliu1401.github.io/Arcade-Maps/assets/cabs/maimai_dx.jpg" alt="FUNHOUSE SUNNYBANK - Representative cabinet photo (not this venue)" width="600" height="400"
+           loading="eager">
+      <p class="media-cap">Representative cabinet photo (not this venue)</p>
+    </div>
+    <div class="media-col media-map">
+      <img class="hero map" src="https://staticmap.openstreetmap.de/staticmap.php?center=-27.57040,153.06250&amp;zoom=11&amp;size=600x400&amp;maptype=mapnik&amp;markers=-27.57040,153.06250,red-pushpin" alt="Map pin - Australia" width="600" height="400"
+           loading="eager"
+           onerror="this.closest('.media-map').style.display='none';var m=this.closest('.media');if(m)m.classList.add('no-map');">
+      <p class="media-cap">Australia</p>
+    </div>
+  </div>
   <div class="body">
     
     <h1>FUNHOUSE SUNNYBANK</h1>
     <p class="sub">Australia - Corner Mains &amp; McCullough Roads, Sunnybank QLD 4109</p>
     <ul><li>maimai DX</li></ul>
-    <a class="btn" id="open" href="../#arcade=a18779">Open on Arcade Maps</a>
-    <p class="foot">Representative cabinet photo (not this venue) - <a href="https://jonathanliu1401.github.io/Arcade-Maps/#arcade=a18779">direct map link</a></p>
+    <a class="btn" id="open" href="../#16/-27.57040/153.06250/arcade=a18779">Open on Arcade Maps</a>
+    <p class="foot">Representative cabinet photo (not this venue) - <a href="https://jonathanliu1401.github.io/Arcade-Maps/#16/-27.57040/153.06250/arcade=a18779">direct map link</a></p>
   </div>
 </article>
 <script>
@@ -75,7 +90,7 @@
   try {
     var ua = navigator.userAgent || "";
     if (/Discordbot|Twitterbot|facebookexternalhit|Slackbot|LinkedInBot|WhatsApp|Applebot|bingbot|Googlebot/i.test(ua)) return;
-    var dest = "../#arcade=a18779";
+    var dest = "../#16/-27.57040/153.06250/arcade=a18779";
     var q = (location.search || "").replace(/^\?/, "");
     var params = {};
     q.split("&").forEach(function (p) {

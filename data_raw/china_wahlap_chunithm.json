@@ -1,5 +1,19 @@
 [
  {
+  "name": "超级伙伴潮玩街区南通CBD大有境店",
+  "name_en": null,
+  "address": "南通市崇川区桃园路12号南通CBD大有境A座3楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=5420; id=2104880724905050113"
+ },
+ {
   "name": "趣玩汇南京鼓楼天狮店",
   "name_en": null,
   "address": "江苏省南京市鼓楼区湖北路68号天狮百盛1楼",
@@ -14,48 +28,6 @@
   "notes": "province=江苏; placeId=5403; id=2103367147811520513"
  },
  {
-  "name": "构想星球大渡口万达店",
-  "name_en": null,
-  "address": "重庆市大渡口万达2A-A",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=重庆; placeId=5361; id=2091807414192513025"
- },
- {
-  "name": "平顶山万达广场三楼宝贝王家庭娱乐中心",
-  "name_en": null,
-  "address": "平顶山市卫东区建设路万达广场三楼宝贝王",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河南; placeId=5411; id=2104390447492775938"
- },
- {
-  "name": "闪蝶潮玩运动城桐乡服务区店",
-  "name_en": null,
-  "address": "嘉兴市桐乡市苏台高速桐乡服务区西区2楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=浙江; placeId=5389; id=2102220937906110466"
- },
- {
   "name": "萌多拉太仓香塘宝龙广场",
   "name_en": null,
   "address": "江苏省太仓香塘宝龙广场2楼萌多拉都市幻想",
@@ -68,20 +40,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=江苏; placeId=5401; id=2103073844830420993"
- },
- {
-  "name": "天空之城新塘乐益天地店",
-  "name_en": null,
-  "address": "广东省广州市增城区新塘镇乐益天地3楼天空之城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=5345; id=2086353525578211329"
  },
  {
   "name": "尖峰玩家衡阳蒸湘万达店",
@@ -154,6 +112,76 @@
   "notes": "province=辽宁; placeId=5366; id=2092875567433588737"
  },
  {
+  "name": "尖峰玩家杭州余杭万达店",
+  "name_en": null,
+  "address": "浙江省杭州市余杭区余杭街道文一西路1888号余杭万达广场2F-A尖峰玩家",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=浙江; placeId=4648; id=2001109092374937601"
+ },
+ {
+  "name": "构想星球大渡口万达店",
+  "name_en": null,
+  "address": "重庆市大渡口万达2A-A",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=重庆; placeId=5361; id=2091807414192513025"
+ },
+ {
+  "name": "平顶山万达广场三楼宝贝王家庭娱乐中心",
+  "name_en": null,
+  "address": "平顶山市卫东区建设路万达广场三楼宝贝王",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=河南; placeId=5411; id=2104390447492775938"
+ },
+ {
+  "name": "闪蝶潮玩运动城桐乡服务区店",
+  "name_en": null,
+  "address": "嘉兴市桐乡市苏台高速桐乡服务区西区2楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=浙江; placeId=5389; id=2102220937906110466"
+ },
+ {
+  "name": "天空之城新塘乐益天地店",
+  "name_en": null,
+  "address": "广东省广州市增城区新塘镇乐益天地3楼天空之城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=5345; id=2086353525578211329"
+ },
+ {
   "name": "尖峰玩家佛山南海万达店",
   "name_en": null,
   "address": "广东省佛山市南海区桂城街道桂澜北路28号万达广场二楼尖峰玩家",
@@ -166,6 +194,160 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=5249; id=2067509762135719937"
+ },
+ {
+  "name": "菲游乐上海奉贤新城龙湖店",
+  "name_en": null,
+  "address": "上海市奉贤区奉贤新城龙湖天街3楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=上海; placeId=4916; id=2048593659191918594"
+ },
+ {
+  "name": "智玩空间北京怀柔店",
+  "name_en": null,
+  "address": "北京市怀柔区府前街14号",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=北京; placeId=4955; id=2059465715869581313"
+ },
+ {
+  "name": "炫动星球盘锦兴隆台万达店",
+  "name_en": null,
+  "address": "辽宁省盘锦市兴隆台区兴盛街道万达社区万达商业广场室内步行街3F层3F-A号商铺",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=辽宁; placeId=4947; id=2058064996247568385"
+ },
+ {
+  "name": "玩家来也沈阳太原街万达店",
+  "name_en": null,
+  "address": "辽宁省沈阳市和平区太原街万达广场三楼玩家来也",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=辽宁; placeId=5238; id=2065677477451169793"
+ },
+ {
+  "name": "AKIBAGO北京朝阳微博in店",
+  "name_en": null,
+  "address": "北京市朝阳区朝阳公园微博in跨次元引力场一层",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=北京; placeId=4859; id=2022530845759782914"
+ },
+ {
+  "name": "嘻游地带青岛乐客城店",
+  "name_en": null,
+  "address": "山东省青岛市李沧区乐客城负一楼嘻游地带",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=5344; id=2086069738948599810"
+ },
+ {
+  "name": "AKIBAGO深圳罗湖新白马·次元店",
+  "name_en": null,
+  "address": "广东省深圳市罗湖区东门街道新白马·次元9号",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=4865; id=2029741389478641665"
+ },
+ {
+  "name": "丁丁家庭娱乐中心德阳旌阳区万达店",
+  "name_en": null,
+  "address": "四川省德阳市旌阳区东湖街道庐山北路一段8号德阳万达广场13号楼商业广场3F-A-A",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=四川; placeId=4897; id=2046134600484290561"
+ },
+ {
+  "name": "乖贝特大连瓦房店长兴店",
+  "name_en": null,
+  "address": "辽宁省大连市瓦房店市长兴岛景翠路77号斐卡影城三楼电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=辽宁; placeId=5254; id=2070064606684905473"
+ },
+ {
+  "name": "顽樂引擎西安店",
+  "name_en": null,
+  "address": "陕西省西安市未央区大明宫万达广场娱乐楼Z-2F-AA号顽楽引擎",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=陕西; placeId=4931; id=2050513649313484802"
+ },
+ {
+  "name": "城市英雄长沙开福北辰荟店",
+  "name_en": null,
+  "address": "湖南省长沙市开福区湘江路1500号北辰荟购物中心3楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖南; placeId=1639; id=1948316382253301869"
  },
  {
   "name": "炫动之城鹤山店",
@@ -336,9 +518,9 @@
   "notes": "province=安徽; placeId=4912; id=2047621559933239298"
  },
  {
-  "name": "菲游乐上海奉贤新城龙湖店",
+  "name": "宝贝王眉山东坡万达广场店",
   "name_en": null,
-  "address": "上海市奉贤区奉贤新城龙湖天街3楼",
+  "address": "四川省眉山市东坡区文忠路333号万达广场3楼宝贝王家庭娱乐中心",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -347,12 +529,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=4916; id=2048593659191918594"
+  "notes": "province=四川; placeId=4732; id=2006187104953507841"
  },
  {
-  "name": "智玩空间北京怀柔店",
+  "name": "超级兔宿迁泓宇广场店",
   "name_en": null,
-  "address": "北京市怀柔区府前街14号",
+  "address": "江苏省宿迁市苏宿大道宏宇广场一楼",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -361,12 +543,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=北京; placeId=4955; id=2059465715869581313"
+  "notes": "province=江苏; placeId=4860; id=2024788734901764097"
  },
  {
-  "name": "炫动星球盘锦兴隆台万达店",
+  "name": "柿柿潮玩云浮罗定客都汇店",
   "name_en": null,
-  "address": "辽宁省盘锦市兴隆台区兴盛街道万达社区万达商业广场室内步行街3F层3F-A号商铺",
+  "address": "云浮市罗定市龙园路客都汇负一楼柿柿潮玩",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -375,12 +557,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=辽宁; placeId=4947; id=2058064996247568385"
+  "notes": "province=广东; placeId=4768; id=2013093925141102594"
  },
  {
-  "name": "玩家来也沈阳太原街万达店",
+  "name": "摩羯星座芜湖镜湖万达店",
   "name_en": null,
-  "address": "辽宁省沈阳市和平区太原街万达广场三楼玩家来也",
+  "address": "芜湖市镜湖区万达广场二楼摩羯星座",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -389,12 +571,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=辽宁; placeId=5238; id=2065677477451169793"
+  "notes": "province=安徽; placeId=4813; id=2018142192035971074"
  },
  {
-  "name": "AKIBAGO北京朝阳微博in店",
+  "name": "天堡欢乐城阳江江城店",
   "name_en": null,
-  "address": "北京市朝阳区朝阳公园微博in跨次元引力场一层",
+  "address": "广东省阳江市江城区东风一路42号",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -403,12 +585,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=北京; placeId=4859; id=2022530845759782914"
+  "notes": "province=广东; placeId=2722; id=1948316382249107725"
  },
  {
-  "name": "嘻游地带青岛乐客城店",
+  "name": "GOODSLOVE LAND上海五角场店",
   "name_en": null,
-  "address": "山东省青岛市李沧区乐客城负一楼嘻游地带",
+  "address": "上海市杨浦区五角场万达广场C区2楼",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -417,77 +599,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=5344; id=2086069738948599810"
- },
- {
-  "name": "AKIBAGO深圳罗湖新白马·次元店",
-  "name_en": null,
-  "address": "广东省深圳市罗湖区东门街道新白马·次元9号",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4865; id=2029741389478641665"
- },
- {
-  "name": "丁丁家庭娱乐中心德阳旌阳区万达店",
-  "name_en": null,
-  "address": "四川省德阳市旌阳区东湖街道庐山北路一段8号德阳万达广场13号楼商业广场3F-A-A",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=四川; placeId=4897; id=2046134600484290561"
- },
- {
-  "name": "乖贝特大连瓦房店长兴店",
-  "name_en": null,
-  "address": "辽宁省大连市瓦房店市长兴岛景翠路77号斐卡影城三楼电玩城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=辽宁; placeId=5254; id=2070064606684905473"
- },
- {
-  "name": "顽樂引擎西安店",
-  "name_en": null,
-  "address": "陕西省西安市未央区大明宫万达广场娱乐楼Z-2F-AA号顽楽引擎",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=陕西; placeId=4931; id=2050513649313484802"
- },
- {
-  "name": "城市英雄长沙开福北辰荟店",
-  "name_en": null,
-  "address": "湖南省长沙市开福区湘江路1500号北辰荟购物中心3楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=1639; id=1948316382253301869"
+  "notes": "province=上海; placeId=4657; id=2001559408927645698"
  },
  {
   "name": "环游嘉年华广州天河领展店",
@@ -504,6 +616,34 @@
   "notes": "province=广东; placeId=2494; id=1948316381036954096"
  },
  {
+  "name": "e+潮玩南京江宁宝龙店",
+  "name_en": null,
+  "address": "江苏省南京市江宁区麒麟街道青喜社区丹霞街169号宝龙广场F3",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=4714; id=2005513863452762113"
+ },
+ {
+  "name": "潮玩社济南莱芜茂业天地店",
+  "name_en": null,
+  "address": "山东省济南市莱芜区茂业天地三楼潮玩社",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=4825; id=2018864910683357185"
+ },
+ {
   "name": "欢心谷合肥巢湖万达店",
   "name_en": null,
   "address": "安徽省合肥市巢湖市太湖山路与东塘路交叉口万达二楼欢心谷",
@@ -518,9 +658,9 @@
   "notes": "province=安徽; placeId=4819; id=2018251551663472642"
  },
  {
-  "name": "环游嘉年华超乐场乌鲁木齐卡乐士店",
+  "name": "焕游星际郑州荥阳吾悦广场店",
   "name_en": null,
-  "address": "乌鲁木齐长春南路环游嘉年华卡乐士店",
+  "address": "郑州市荥阳市荥泽大道与郑上路交叉口吾悦广场Z419",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -529,7 +669,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=新疆; placeId=4893; id=2046046622835572737"
+  "notes": "province=河南; placeId=4783; id=2014184642575876097"
  },
  {
   "name": "星奇多蚌埠蚌山万达店",
@@ -546,6 +686,20 @@
   "notes": "province=安徽; placeId=4743; id=2008087703758036993"
  },
  {
+  "name": "飞象动漫郑州金融岛店",
+  "name_en": null,
+  "address": "河南省郑州市金融岛四区3楼3017",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=河南; placeId=4689; id=2003724087801167873"
+ },
+ {
   "name": "嗨客玩家东莞厚街万达店",
   "name_en": null,
   "address": "广东省东莞市厚街镇厚街万达广场3楼嗨客玩家",
@@ -558,20 +712,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=4771; id=2013192902930874369"
- },
- {
-  "name": "星环游昌吉长宁华洋广场店",
-  "name_en": null,
-  "address": "新疆维吾尔自治区昌吉州昌吉市长宁南路111号华洋广场5楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=新疆; placeId=4746; id=2008390221306257409"
  },
  {
   "name": "1号机长超乐场西安未央西咸万象城店",
@@ -588,6 +728,20 @@
   "notes": "province=陕西; placeId=4877; id=2038556711195262978"
  },
  {
+  "name": "真快活电玩城无锡锡山开发荟聚中心店",
+  "name_en": null,
+  "address": "无锡市锡山开发区团结中路3号无锡荟聚中心L14 层05A01-01真快活电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=4720; id=2005823544545058818"
+ },
+ {
   "name": "环游时光南宁江南万达店",
   "name_en": null,
   "address": "广西省南宁市江南区江南万达三楼环游时光",
@@ -600,20 +754,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广西; placeId=4882; id=2039885884794372098"
- },
- {
-  "name": "和音屋上海闵行店",
-  "name_en": null,
-  "address": "上海市闵行区尚义路91号宝龙中心5号楼303",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=5390; id=2102221176331321345"
  },
  {
   "name": "玩家来也锦州太和万达店",
@@ -630,9 +770,9 @@
   "notes": "province=辽宁; placeId=4884; id=2041343013568937985"
  },
  {
-  "name": "吉合家庭娱乐中心烟台开发区万达店",
+  "name": "环游嘉年华超乐场乌鲁木齐卡乐士店",
   "name_en": null,
-  "address": "烟台开发区万达广场三楼吉合家庭娱乐中心",
+  "address": "乌鲁木齐长春南路环游嘉年华卡乐士店",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -641,7 +781,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=4833; id=2019596282720960513"
+  "notes": "province=新疆; placeId=4893; id=2046046622835572737"
  },
  {
   "name": "快乐时空临渭万达店",
@@ -672,9 +812,9 @@
   "notes": "province=江苏; placeId=4693; id=2003731842817605634"
  },
  {
-  "name": "超级兔宿迁泓宇广场店",
+  "name": "星环游昌吉长宁华洋广场店",
   "name_en": null,
-  "address": "江苏省宿迁市苏宿大道宏宇广场一楼",
+  "address": "新疆维吾尔自治区昌吉州昌吉市长宁南路111号华洋广场5楼",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -683,21 +823,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4860; id=2024788734901764097"
- },
- {
-  "name": "潮玩社济南莱芜茂业天地店",
-  "name_en": null,
-  "address": "山东省济南市莱芜区茂业天地三楼潮玩社",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=4825; id=2018864910683357185"
+  "notes": "province=新疆; placeId=4746; id=2008390221306257409"
  },
  {
   "name": "趣玩猩球潍坊寿光万达广场店",
@@ -714,9 +840,9 @@
   "notes": "province=山东; placeId=4767; id=2013093705510567937"
  },
  {
-  "name": "摩羯星座芜湖镜湖万达店",
+  "name": "和音屋上海闵行店",
   "name_en": null,
-  "address": "芜湖市镜湖区万达广场二楼摩羯星座",
+  "address": "上海市闵行区尚义路91号宝龙中心5号楼303",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -725,21 +851,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=安徽; placeId=4813; id=2018142192035971074"
- },
- {
-  "name": "飞象动漫郑州金融岛店",
-  "name_en": null,
-  "address": "河南省郑州市金融岛四区3楼3017",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河南; placeId=4689; id=2003724087801167873"
+  "notes": "province=上海; placeId=5390; id=2102221176331321345"
  },
  {
   "name": "飞象家庭娱乐中心南阳豪盛百货店",
@@ -756,9 +868,9 @@
   "notes": "province=河南; placeId=4733; id=2006191905833558018"
  },
  {
-  "name": "GOODSLOVE LAND上海五角场店",
+  "name": "吉合家庭娱乐中心烟台开发区万达店",
   "name_en": null,
-  "address": "上海市杨浦区五角场万达广场C区2楼",
+  "address": "烟台开发区万达广场三楼吉合家庭娱乐中心",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -767,12 +879,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=4657; id=2001559408927645698"
+  "notes": "province=山东; placeId=4833; id=2019596282720960513"
  },
  {
-  "name": "真快活电玩城无锡锡山开发荟聚中心店",
+  "name": "酷洛潮漫湘潭岳塘店",
   "name_en": null,
-  "address": "无锡市锡山开发区团结中路3号无锡荟聚中心L14 层05A01-01真快活电玩城",
+  "address": "湖南省湘潭市岳塘区建设路102号八楼酷洛潮漫",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -781,12 +893,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4720; id=2005823544545058818"
+  "notes": "province=湖南; placeId=2372; id=1948316381036953974"
  },
  {
-  "name": "宝贝王眉山东坡万达广场店",
+  "name": "奇妙之城梅州天虹店",
   "name_en": null,
-  "address": "四川省眉山市东坡区文忠路333号万达广场3楼宝贝王家庭娱乐中心",
+  "address": "广东省梅州市梅县区扶大镇天虹购物中心3楼",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -795,12 +907,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=四川; placeId=4732; id=2006187104953507841"
+  "notes": "province=广东; placeId=4518; id=1981931079120470017"
  },
  {
-  "name": "e+潮玩南京江宁宝龙店",
+  "name": "酷玩时代海口吾悦广场店",
   "name_en": null,
-  "address": "江苏省南京市江宁区麒麟街道青喜社区丹霞街169号宝龙广场F3",
+  "address": "海南省海口市新城吾悦广场3楼3020号商铺",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -809,12 +921,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4714; id=2005513863452762113"
+  "notes": "province=海南; placeId=4654; id=2001485254945742849"
  },
  {
-  "name": "柿柿潮玩云浮罗定客都汇店",
+  "name": "潮趣堂常州新北环球港店",
   "name_en": null,
-  "address": "云浮市罗定市龙园路客都汇负一楼柿柿潮玩",
+  "address": "江苏省常州市新北区通江中路江南环球港太阳大厅4楼L4111潮趣堂",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -823,12 +935,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4768; id=2013093925141102594"
+  "notes": "province=江苏; placeId=3740; id=1948316381485744372"
  },
  {
-  "name": "焕游星际郑州荥阳吾悦广场店",
+  "name": "欢乐城市嘉年华沈阳沈河店",
   "name_en": null,
-  "address": "郑州市荥阳市荥泽大道与郑上路交叉口吾悦广场Z419",
+  "address": "辽宁省沈阳市沈河区中街路268号益田假日世界一楼欢乐城市嘉年华",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -837,12 +949,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河南; placeId=4783; id=2014184642575876097"
+  "notes": "province=辽宁; placeId=1467; id=1948316381863231957"
  },
  {
-  "name": "天堡欢乐城阳江江城店",
+  "name": "宝贝王吴忠利通万达广场店",
   "name_en": null,
-  "address": "广东省阳江市江城区东风一路42号",
+  "address": "宁夏回族自治区吴忠市利通区万达广场三楼宝贝王",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -851,7 +963,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=2722; id=1948316382249107725"
+  "notes": "province=宁夏; placeId=4624; id=1998301867877072898"
  },
  {
   "name": "环游嘉年华维吾尔阿克苏店",
@@ -882,20 +994,6 @@
   "notes": "province=河北; placeId=4480; id=1973003910122061825"
  },
  {
-  "name": "DDPARK潮玩临汾尧都店",
-  "name_en": null,
-  "address": "山西省临汾市尧都区解放路33号生龙国际悦享城F4001",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山西; placeId=4550; id=1989931583905742849"
- },
- {
   "name": "城市英雄长沙永旺梦乐城店",
   "name_en": null,
   "address": "湖南省长沙市湘江新区永旺梦乐城3楼332城市英雄电玩馆",
@@ -910,9 +1008,9 @@
   "notes": "province=湖南; placeId=4574; id=1993245492855701506"
  },
  {
-  "name": "尖峰玩家杭州余杭万达店",
+  "name": "尖峰玩家兰州中心店",
   "name_en": null,
-  "address": "浙江省杭州市余杭区余杭街道文一西路1888号余杭万达广场2F-A尖峰玩家",
+  "address": "兰州市七里河区西津西路兰州中心3F",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -921,12 +1019,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=浙江; placeId=4648; id=2001109092374937601"
+  "notes": "province=甘肃; placeId=5414; id=2104780951912988673"
  },
  {
-  "name": "星际玩家石家庄勒泰店",
+  "name": "DDPARK潮玩临汾尧都店",
   "name_en": null,
-  "address": "河北省石家庄市长安区中山东路39号勒泰中心5层F5-0SA星际玩家",
+  "address": "山西省临汾市尧都区解放路33号生龙国际悦享城F4001",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -935,7 +1033,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河北; placeId=4520; id=1982316669385064450"
+  "notes": "province=山西; placeId=4550; id=1989931583905742849"
  },
  {
   "name": "小猪泰德大连中央大道店",
@@ -1092,90 +1190,6 @@
   "notes": "province=辽宁; placeId=4512; id=1979420246435971073"
  },
  {
-  "name": "酷洛潮漫湘潭岳塘店",
-  "name_en": null,
-  "address": "湖南省湘潭市岳塘区建设路102号八楼酷洛潮漫",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=2372; id=1948316381036953974"
- },
- {
-  "name": "奇妙之城梅州天虹店",
-  "name_en": null,
-  "address": "广东省梅州市梅县区扶大镇天虹购物中心3楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4518; id=1981931079120470017"
- },
- {
-  "name": "酷玩时代海口吾悦广场店",
-  "name_en": null,
-  "address": "海南省海口市新城吾悦广场3楼3020号商铺",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=海南; placeId=4654; id=2001485254945742849"
- },
- {
-  "name": "潮趣堂常州新北环球港店",
-  "name_en": null,
-  "address": "江苏省常州市新北区通江中路江南环球港太阳大厅4楼L4111潮趣堂",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=3740; id=1948316381485744372"
- },
- {
-  "name": "欢乐城市嘉年华沈阳沈河店",
-  "name_en": null,
-  "address": "辽宁省沈阳市沈河区中街路268号益田假日世界一楼欢乐城市嘉年华",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=辽宁; placeId=1467; id=1948316381863231957"
- },
- {
-  "name": "宝贝王吴忠利通万达广场店",
-  "name_en": null,
-  "address": "宁夏回族自治区吴忠市利通区万达广场三楼宝贝王",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=宁夏; placeId=4624; id=1998301867877072898"
- },
- {
   "name": "迅驰嘉年华长春南关迅驰广场店",
   "name_en": null,
   "address": "吉林省长春市南关区博学路1555号迅驰广场三楼迅驰嘉年华电玩城",
@@ -1204,20 +1218,6 @@
   "notes": "province=河南; placeId=4459; id=1972619183158476801"
  },
  {
-  "name": "尖峰玩家福州仓山万达店",
-  "name_en": null,
-  "address": "福建省福州市仓山区仓山万达二楼尖峰玩家",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=福建; placeId=5292; id=2075060572957704194"
- },
- {
   "name": "宝贝计划北京通州万达店",
   "name_en": null,
   "address": "北京市通州区新华西街58号万达广场3楼宝贝计划",
@@ -1230,6 +1230,118 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=北京; placeId=5356; id=2090285276155420673"
+ },
+ {
+  "name": "环游家族苏州太仓店",
+  "name_en": null,
+  "address": "江苏省苏州市太仓市城厢镇上海东路188号商业02室（2F）层",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=4436; id=1971937612407521282"
+ },
+ {
+  "name": "魔力空间杭州龙湖天街店",
+  "name_en": null,
+  "address": "浙江省杭州市上城区科城街龙湖天街368号3F-09/10_11_12",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=浙江; placeId=4570; id=1992794578734809089"
+ },
+ {
+  "name": "e+潮玩扬州邗江万达店",
+  "name_en": null,
+  "address": "江苏省扬州市邗江区万达广场3楼e+潮玩",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=4424; id=1971499464221278210"
+ },
+ {
+  "name": "六代玩家上海嘉定店",
+  "name_en": null,
+  "address": "上海市嘉定区真南路4368弄3号2层中冶祥腾六代玩家",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=上海; placeId=4426; id=1971540620292407297"
+ },
+ {
+  "name": "哒趣游乐场广州从化店",
+  "name_en": null,
+  "address": "广东省广州市从化区江浦街道107号远达汇聚2楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=2784; id=1948316382249107832"
+ },
+ {
+  "name": "战神争锋深圳光明凤凰英荟城店",
+  "name_en": null,
+  "address": "深圳市光明区凤凰街道甲子塘社区凤凰英荟城4栋338",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=4633; id=1999364089269190657"
+ },
+ {
+  "name": "ALL IN极限潮玩馆深圳罗湖国贸广场二期店",
+  "name_en": null,
+  "address": "深圳市罗湖区南湖街道嘉北社区南湖路3007号国贸 广场（二期）二层F2-01",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=4580; id=1993878256621715458"
+ },
+ {
+  "name": "娱乐侠泰安泰山万达店",
+  "name_en": null,
+  "address": "山东省泰安市泰山区泰山大街566号3F",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=4567; id=1992525814290186242"
  },
  {
   "name": "探奇爱玩荟银川建发店",
@@ -1386,258 +1498,6 @@
   "notes": "province=四川; placeId=4528; id=1984087156888977410"
  },
  {
-  "name": "环游家族苏州太仓店",
-  "name_en": null,
-  "address": "江苏省苏州市太仓市城厢镇上海东路188号商业02室（2F）层",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4436; id=1971937612407521282"
- },
- {
-  "name": "魔力空间杭州龙湖天街店",
-  "name_en": null,
-  "address": "浙江省杭州市上城区科城街龙湖天街368号3F-09/10_11_12",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=浙江; placeId=4570; id=1992794578734809089"
- },
- {
-  "name": "e+潮玩扬州邗江万达店",
-  "name_en": null,
-  "address": "江苏省扬州市邗江区万达广场3楼e+潮玩",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4424; id=1971499464221278210"
- },
- {
-  "name": "六代玩家上海嘉定店",
-  "name_en": null,
-  "address": "上海市嘉定区真南路4368弄3号2层中冶祥腾六代玩家",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=4426; id=1971540620292407297"
- },
- {
-  "name": "哒趣游乐场广州从化店",
-  "name_en": null,
-  "address": "广东省广州市从化区江浦街道107号远达汇聚2楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=2784; id=1948316382249107832"
- },
- {
-  "name": "战神争锋深圳光明凤凰英荟城店",
-  "name_en": null,
-  "address": "深圳市光明区凤凰街道甲子塘社区凤凰英荟城4栋338",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4633; id=1999364089269190657"
- },
- {
-  "name": "ALL IN极限潮玩馆深圳罗湖国贸广场二期店",
-  "name_en": null,
-  "address": "深圳市罗湖区南湖街道嘉北社区南湖路3007号国贸 广场（二期）二层F2-01",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4580; id=1993878256621715458"
- },
- {
-  "name": "娱乐侠泰安泰山万达店",
-  "name_en": null,
-  "address": "山东省泰安市泰山区泰山大街566号3F",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=4567; id=1992525814290186242"
- },
- {
-  "name": "超级乐园杭州亚奥万象天地店",
-  "name_en": null,
-  "address": "浙江省杭州市萧山区亚运村万象天地327号",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=浙江; placeId=4363; id=1964237728929824770"
- },
- {
-  "name": "壹耀娱乐佛山高明店",
-  "name_en": null,
-  "address": "广东省佛山市高明区荷城街道沧江路423号中港城3楼8-11号铺壹耀娱乐",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4316; id=1957045915273936898"
- },
- {
-  "name": "巅峰玩家惠州佳兆业广场店",
-  "name_en": null,
-  "address": "广东省惠州市佳兆业广场5楼巅峰玩家",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=4305; id=1955186555748892673"
- },
- {
-  "name": "梦时代电玩城贵阳逸天城店",
-  "name_en": null,
-  "address": "贵州省贵阳市南明区市南路42号国贸逸天城4楼梦时代电玩城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=贵州; placeId=4308; id=1955570771254853633"
- },
- {
-  "name": "全福元游乐园潍坊寿光洛城店",
-  "name_en": null,
-  "address": "山东省潍坊市寿光市洛城全福元中心全福元游乐园",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=3562; id=1948316381485744194"
- },
- {
-  "name": "畅想大玩家黑龙江伊春店",
-  "name_en": null,
-  "address": "黑龙江省伊春市卓越万象城畅想大玩家电玩城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=黑龙江; placeId=4269; id=1950043414729342978"
- },
- {
-  "name": "潮玩社黄石万达店",
-  "name_en": null,
-  "address": "湖北省黄石市黄石港区万达广场三楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖北; placeId=4285; id=1951886767149842433"
- },
- {
-  "name": "星奇多安徽阜阳颖泉万达店",
-  "name_en": null,
-  "address": "安徽省阜阳市颖泉区太和路396号",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=安徽; placeId=4382; id=1969247335540604930"
- },
- {
-  "name": "萌宝熊合肥包河悦方店",
-  "name_en": null,
-  "address": "安徽省合肥市包河区悦方店3楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=安徽; placeId=5287; id=2074673964718751745"
- },
- {
-  "name": "维京传奇长春绿园吾悦广场店",
-  "name_en": null,
-  "address": "吉林省长春市绿园区吾悦广场2楼西侧维京传奇2057",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=吉林; placeId=4372; id=1966404683002560514"
- },
- {
   "name": "玩力湃通辽壹方城店",
   "name_en": null,
   "address": "内蒙古自治区通辽市科尔沁区团结街道平安路与红胜大街交汇处天赐良缘（水晶郦湾）小区F2商业二层208铺位玩力湃",
@@ -1792,6 +1652,146 @@
   "notes": "province=河南; placeId=4292; id=1953331034086998017"
  },
  {
+  "name": "超级乐园杭州亚奥万象天地店",
+  "name_en": null,
+  "address": "浙江省杭州市萧山区亚运村万象天地327号",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=浙江; placeId=4363; id=1964237728929824770"
+ },
+ {
+  "name": "壹耀娱乐佛山高明店",
+  "name_en": null,
+  "address": "广东省佛山市高明区荷城街道沧江路423号中港城3楼8-11号铺壹耀娱乐",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=4316; id=1957045915273936898"
+ },
+ {
+  "name": "巅峰玩家惠州佳兆业广场店",
+  "name_en": null,
+  "address": "广东省惠州市佳兆业广场5楼巅峰玩家",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=4305; id=1955186555748892673"
+ },
+ {
+  "name": "梦时代电玩城贵阳逸天城店",
+  "name_en": null,
+  "address": "贵州省贵阳市南明区市南路42号国贸逸天城4楼梦时代电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=贵州; placeId=4308; id=1955570771254853633"
+ },
+ {
+  "name": "全福元游乐园潍坊寿光洛城店",
+  "name_en": null,
+  "address": "山东省潍坊市寿光市洛城全福元中心全福元游乐园",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=3562; id=1948316381485744194"
+ },
+ {
+  "name": "畅想大玩家黑龙江伊春店",
+  "name_en": null,
+  "address": "黑龙江省伊春市卓越万象城畅想大玩家电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=黑龙江; placeId=4269; id=1950043414729342978"
+ },
+ {
+  "name": "潮玩社黄石万达店",
+  "name_en": null,
+  "address": "湖北省黄石市黄石港区万达广场三楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖北; placeId=4285; id=1951886767149842433"
+ },
+ {
+  "name": "星奇多安徽阜阳颖泉万达店",
+  "name_en": null,
+  "address": "安徽省阜阳市颖泉区太和路396号",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=安徽; placeId=4382; id=1969247335540604930"
+ },
+ {
+  "name": "萌宝熊合肥包河悦方店",
+  "name_en": null,
+  "address": "安徽省合肥市包河区悦方店3楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=安徽; placeId=5287; id=2074673964718751745"
+ },
+ {
+  "name": "维京传奇长春绿园吾悦广场店",
+  "name_en": null,
+  "address": "吉林省长春市绿园区吾悦广场2楼西侧维京传奇2057",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=吉林; placeId=4372; id=1966404683002560514"
+ },
+ {
   "name": "潮酷潮玩潍坊潍城店",
   "name_en": null,
   "address": "山东省潍坊市潍城区北宫街清平路中百奥莱一楼潮酷潮玩电玩城",
@@ -1890,20 +1890,6 @@
   "notes": "province=陕西; placeId=4214; id=1948316397835141316"
  },
  {
-  "name": "superallday潮玩街区和平恒隆广场店",
-  "name_en": null,
-  "address": "天津市和平区兴安路恒隆广场4楼4030superallday潮玩街区",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=天津; placeId=4200; id=1948316397835141302"
- },
- {
   "name": "福熊电玩城大连沙河口店",
   "name_en": null,
   "address": "辽宁省大连市沙河口区冰山慧谷熊洞街",
@@ -1916,6 +1902,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=辽宁; placeId=4408; id=1971091140510236673"
+ },
+ {
+  "name": "superallday潮玩街区和平恒隆广场店",
+  "name_en": null,
+  "address": "天津市和平区兴安路恒隆广场4楼4030superallday潮玩街区",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=天津; placeId=4200; id=1948316397835141302"
  },
  {
   "name": "奇幻空间广州花都来又来店",
@@ -2128,20 +2128,6 @@
   "notes": "province=新疆; placeId=4088; id=1948316397835141190"
  },
  {
-  "name": "梦想赛道北海银海万达店",
-  "name_en": null,
-  "address": "广西省北海市银海区万达广场三楼3007",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广西; placeId=3902; id=1948316381485744534"
- },
- {
   "name": "1号机长郑州郑东新区熙地港店",
   "name_en": null,
   "address": "河南省郑州市郑东新区农业东路15号熙地港(郑州)购物中心3层027号1号机长店铺",
@@ -2154,6 +2140,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=河南; placeId=4010; id=1948316397830946831"
+ },
+ {
+  "name": "梦想赛道北海银海万达店",
+  "name_en": null,
+  "address": "广西省北海市银海区万达广场三楼3007",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广西; placeId=3902; id=1948316381485744534"
  },
  {
   "name": "偶予动漫三亚天涯店",
@@ -2198,6 +2198,20 @@
   "notes": "province=黑龙江; placeId=4072; id=1948316397835141174"
  },
  {
+  "name": "酷玩时代肇庆四会吾悦广场店",
+  "name_en": null,
+  "address": "广东省肇庆市四会市商业大道吾悦广场三层酷玩时代电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=3969; id=1948316381485744601"
+ },
+ {
   "name": "嗨fun天地太原尖草坪山姆士店",
   "name_en": null,
   "address": "山西省太原市尖草坪区汇丰街道兴华街299号山姆士广场三层F3-016",
@@ -2240,9 +2254,9 @@
   "notes": "province=重庆; placeId=4054; id=1948316397835141156"
  },
  {
-  "name": "酷玩时代肇庆四会吾悦广场店",
+  "name": "机动侠大同平城星茂汇店",
   "name_en": null,
-  "address": "广东省肇庆市四会市商业大道吾悦广场三层酷玩时代电玩城",
+  "address": "山西省大同市平城区永泰街道星茂汇三楼机动侠",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -2251,7 +2265,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=3969; id=1948316381485744601"
+  "notes": "province=山西; placeId=4027; id=1948316397835141129"
  },
  {
   "name": "大玩家周口文昌万达店",
@@ -2268,9 +2282,9 @@
   "notes": "province=河南; placeId=2152; id=1948316381036953754"
  },
  {
-  "name": "机动侠大同平城星茂汇店",
+  "name": "潮趣堂常州武进万达",
   "name_en": null,
-  "address": "山西省大同市平城区永泰街道星茂汇三楼机动侠",
+  "address": "江苏省常州市武进万达二楼潮趣堂",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -2279,7 +2293,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山西; placeId=4027; id=1948316397835141129"
+  "notes": "province=江苏; placeId=4011; id=1948316397830946832"
  },
  {
   "name": "魔逗潮玩社恩施和润城店",
@@ -2294,20 +2308,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=湖北; placeId=1849; id=1948316382253302228"
- },
- {
-  "name": "潮趣堂常州武进万达",
-  "name_en": null,
-  "address": "江苏省常州市武进万达二楼潮趣堂",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4011; id=1948316397830946832"
  },
  {
   "name": "酷漫地带成都金牛龙湖天街店",
@@ -2408,6 +2408,20 @@
   "notes": "province=辽宁; placeId=3991; id=1948316381485744623"
  },
  {
+  "name": "爱玩荟北京朝阳新世界百货店",
+  "name_en": null,
+  "address": "北京市朝阳区建国路93号万达广场A座新世界百货2楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=北京; placeId=3884; id=1948316381485744516"
+ },
+ {
   "name": "超次方潮玩南宁亭子码头店",
   "name_en": null,
   "address": "广西壮族自治区南宁市江南区江南大道亭子段16号超次方潮玩（亭子码头店）",
@@ -2420,20 +2434,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广西; placeId=3888; id=1948316381485744520"
- },
- {
-  "name": "宝贝王包头青山万达店",
-  "name_en": null,
-  "address": "内蒙古包头市青山区万达广场二楼宝贝王",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=内蒙古; placeId=3890; id=1948316381485744522"
  },
  {
   "name": "超乐趣玩堂常州武进店",
@@ -2450,9 +2450,9 @@
   "notes": "province=江苏; placeId=4215; id=1948316397835141317"
  },
  {
-  "name": "爱玩荟北京朝阳新世界百货店",
+  "name": "宝贝王包头青山万达店",
   "name_en": null,
-  "address": "北京市朝阳区建国路93号万达广场A座新世界百货2楼",
+  "address": "内蒙古包头市青山区万达广场二楼宝贝王",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -2461,7 +2461,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=北京; placeId=3884; id=1948316381485744516"
+  "notes": "province=内蒙古; placeId=3890; id=1948316381485744522"
  },
  {
   "name": "星核嘉年华清远顺盈时代店",
@@ -2490,20 +2490,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=安徽; placeId=1901; id=1948316382253302280"
- },
- {
-  "name": "kikis其趣游乐广州白云店",
-  "name_en": null,
-  "address": "广东省广州市白云区同和大道金铂天地2层kikis其趣游乐体验世界",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=1834; id=1948316382253302213"
  },
  {
   "name": "魅影苍穹深圳龙岗店",
@@ -2548,6 +2534,20 @@
   "notes": "province=湖南; placeId=3873; id=1948316381485744505"
  },
  {
+  "name": "kikis其趣游乐广州白云店",
+  "name_en": null,
+  "address": "广东省广州市白云区同和大道金铂天地2层kikis其趣游乐体验世界",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=1834; id=1948316382253302213"
+ },
+ {
   "name": "淘淘兔武穴永宁万达店",
   "name_en": null,
   "address": "湖北省武穴市永宁大道123号万达广场四楼",
@@ -2576,6 +2576,20 @@
   "notes": "province=广东; placeId=3857; id=1948316381485744489"
  },
  {
+  "name": "大玩家秦皇岛万达店",
+  "name_en": null,
+  "address": "河北省秦皇岛市海港区燕山大街万达广场二楼大玩家",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=河北; placeId=1168; id=1948316381863231658"
+ },
+ {
   "name": "极客玩家佛山悦汇广场店",
   "name_en": null,
   "address": "广东省佛山市南海区南海大道北81号悦汇广场A座3楼",
@@ -2602,20 +2616,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=4617; id=1997877896908111874"
- },
- {
-  "name": "大玩家秦皇岛万达店",
-  "name_en": null,
-  "address": "河北省秦皇岛市海港区燕山大街万达广场二楼大玩家",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河北; placeId=1168; id=1948316381863231658"
  },
  {
   "name": "潮光年三亚三亚湾壹号店",
@@ -2702,20 +2702,6 @@
   "notes": "province=新疆; placeId=3817; id=1948316381485744449"
  },
  {
-  "name": "环游艺派柳州柳北店",
-  "name_en": null,
-  "address": "广西柳州市柳北区大润发三楼环游艺派游艺中心",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广西; placeId=2366; id=1948316381036953968"
- },
- {
   "name": "环游嘉年华广州中华广场店",
   "name_en": null,
   "address": "广东省广州市越秀区中山三路33号中华广场三层3002A号环游嘉年华",
@@ -2728,6 +2714,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=1689; id=1948316382253301989"
+ },
+ {
+  "name": "环游艺派柳州柳北店",
+  "name_en": null,
+  "address": "广西柳州市柳北区大润发三楼环游艺派游艺中心",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广西; placeId=2366; id=1948316381036953968"
  },
  {
   "name": "益启趣玩南宁青秀凤岭万达广场店",
@@ -2898,20 +2898,6 @@
   "notes": "province=广东; placeId=3725; id=1948316381485744357"
  },
  {
-  "name": "潮乐里佛山南海云峰店",
-  "name_en": null,
-  "address": "广东省佛山市南海区丹灶镇云峰路8号",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=3709; id=1948316381485744341"
- },
- {
   "name": "潮趣堂常州溧阳万达店",
   "name_en": null,
   "address": "江苏省常州市溧阳市南大街199号万达广场三层3015商铺潮趣堂",
@@ -2924,6 +2910,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=江苏; placeId=3690; id=1948316381485744322"
+ },
+ {
+  "name": "宇宙队长南昌进贤嘉禾店",
+  "name_en": null,
+  "address": "江西省南昌市进贤县民和镇嘉禾广场鹏颂百货商场3楼宇宙队长",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江西; placeId=3694; id=1948316381485744326"
  },
  {
   "name": "插电师北京王府井银泰店",
@@ -2952,20 +2952,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=山东; placeId=2680; id=1948316382249107655"
- },
- {
-  "name": "宇宙队长南昌进贤嘉禾店",
-  "name_en": null,
-  "address": "江西省南昌市进贤县民和镇嘉禾广场鹏颂百货商场3楼宇宙队长",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江西; placeId=3694; id=1948316381485744326"
  },
  {
   "name": "宝贝王宜昌伍家岗万达店",
@@ -3024,20 +3010,6 @@
   "notes": "province=四川; placeId=3679; id=1948316381485744311"
  },
  {
-  "name": "星际梦想城天津河东万达店",
-  "name_en": null,
-  "address": "天津市河东区万达广场3楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=天津; placeId=3660; id=1948316381485744292"
- },
- {
   "name": "城市部落衡阳祁东友阿广场店",
   "name_en": null,
   "address": "湖南省衡阳市祁东县友阿广场城市部落",
@@ -3064,6 +3036,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=江西; placeId=4680; id=2003307753602826242"
+ },
+ {
+  "name": "星际梦想城天津河东万达店",
+  "name_en": null,
+  "address": "天津市河东区万达广场3楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=天津; placeId=3660; id=1948316381485744292"
  },
  {
   "name": "骑趣乐园贺州八步缤纷环球城店",
@@ -3150,20 +3136,6 @@
   "notes": "province=甘肃; placeId=3628; id=1948316381485744260"
  },
  {
-  "name": "大玩家哈尔滨南岗红博中央公园店",
-  "name_en": null,
-  "address": "黑龙江哈尔滨南岗区红旗大街33号红博中央公园B1大玩家",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=黑龙江; placeId=3622; id=1948316381485744254"
- },
- {
   "name": "潮乐潮上海颛桥万达店",
   "name_en": null,
   "address": "上海市闵行区都市路2700号颛桥万达广场3楼潮乐潮",
@@ -3176,6 +3148,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=上海; placeId=3621; id=1948316381485744253"
+ },
+ {
+  "name": "大玩家哈尔滨南岗红博中央公园店",
+  "name_en": null,
+  "address": "黑龙江哈尔滨南岗区红旗大街33号红博中央公园B1大玩家",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=黑龙江; placeId=3622; id=1948316381485744254"
  },
  {
   "name": "嗨嗨电玩邢台新都鸿胜店",
@@ -3276,20 +3262,6 @@
   "notes": "province=山东; placeId=3574; id=1948316381485744206"
  },
  {
-  "name": "天空之星贵溪雄石天虹店",
-  "name_en": null,
-  "address": "江西省贵溪市雄石路天虹购物中心3楼3028天空之星",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江西; placeId=3548; id=1948316381485744180"
- },
- {
   "name": "时代领风合肥蜀山银泰in77店",
   "name_en": null,
   "address": "安徽省合肥市政务区潜山路与祁门路交口政务in77三楼时代领风",
@@ -3302,6 +3274,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=安徽; placeId=3567; id=1948316381485744199"
+ },
+ {
+  "name": "天空之星贵溪雄石天虹店",
+  "name_en": null,
+  "address": "江西省贵溪市雄石路天虹购物中心3楼3028天空之星",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江西; placeId=3548; id=1948316381485744180"
  },
  {
   "name": "星城战记苏州吴江店",
@@ -3458,34 +3444,6 @@
   "notes": "province=河南; placeId=3511; id=1948316381485744143"
  },
  {
-  "name": "星城战记长沙望城吾悦广场店",
-  "name_en": null,
-  "address": "湖南省长沙市望城区吾悦广场3楼星城战记潮玩体验中心",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=3495; id=1948316381015982300"
- },
- {
-  "name": "天空之城九江浔阳联盛店",
-  "name_en": null,
-  "address": "江西省九江市浔阳区联盛快乐城2F天空之城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江西; placeId=3497; id=1948316381015982302"
- },
- {
   "name": "金满家天津宝坻天赋源店",
   "name_en": null,
   "address": "天津市宝坻区天赋源A座三楼金满家电玩城",
@@ -3514,6 +3472,34 @@
   "notes": "province=辽宁; placeId=1232; id=1948316381863231722"
  },
  {
+  "name": "星城战记长沙望城吾悦广场店",
+  "name_en": null,
+  "address": "湖南省长沙市望城区吾悦广场3楼星城战记潮玩体验中心",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖南; placeId=3495; id=1948316381015982300"
+ },
+ {
+  "name": "天空之城九江浔阳联盛店",
+  "name_en": null,
+  "address": "江西省九江市浔阳区联盛快乐城2F天空之城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江西; placeId=3497; id=1948316381015982302"
+ },
+ {
   "name": "梦之超玩绍兴上虞店",
   "name_en": null,
   "address": "浙江省绍兴市上虞区市民大道621号时代潮城二楼梦之超玩场",
@@ -3526,6 +3512,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=浙江; placeId=2227; id=1948316381036953829"
+ },
+ {
+  "name": "环游嘉年华白云万达店",
+  "name_en": null,
+  "address": "广东省广州市白云区云城东路503号万达广场三楼358号环游嘉年华",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=1017; id=1948316381863231507"
  },
  {
   "name": "叮当次元长春宽城万达店",
@@ -3542,20 +3542,6 @@
   "notes": "province=吉林; placeId=3483; id=1948316381015982288"
  },
  {
-  "name": "骑趣乐园广州海珠燕汇旗舰店",
-  "name_en": null,
-  "address": "广东省广州市海珠区江燕路108号燕汇广场3楼骑趣乐园",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=3602; id=1948316381485744234"
- },
- {
   "name": "电动工坊洛阳涧西万达店",
   "name_en": null,
   "address": "河南省洛阳市涧西区辽宁路万达广场二楼io电动工坊",
@@ -3570,9 +3556,9 @@
   "notes": "province=河南; placeId=3488; id=1948316381015982293"
  },
  {
-  "name": "环游嘉年华白云万达店",
+  "name": "骑趣乐园广州海珠燕汇旗舰店",
   "name_en": null,
-  "address": "广东省广州市白云区云城东路503号万达广场三楼358号环游嘉年华",
+  "address": "广东省广州市海珠区江燕路108号燕汇广场3楼骑趣乐园",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -3581,7 +3567,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=1017; id=1948316381863231507"
+  "notes": "province=广东; placeId=3602; id=1948316381485744234"
  },
  {
   "name": "天空之城福州仓山中俊店",
@@ -3878,6 +3864,34 @@
   "notes": "province=北京; placeId=3330; id=1948316381015982135"
  },
  {
+  "name": "尖峰玩家福州仓山万达店",
+  "name_en": null,
+  "address": "福建省福州市仓山区仓山万达二楼尖峰玩家",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=福建; placeId=5292; id=2075060572957704194"
+ },
+ {
+  "name": "魅影苍穹深圳宝安店",
+  "name_en": null,
+  "address": "深圳市宝安区福海街道塘尾社区华强时代广场L3-06",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=3228; id=1948316381011788006"
+ },
+ {
   "name": "天空之城长沙东四吾悦广场店",
   "name_en": null,
   "address": "湖南省长沙市长沙县星沙街道东四路西望仙路以北吾悦广场3015商铺",
@@ -3934,9 +3948,9 @@
   "notes": "province=海南; placeId=3276; id=1948316381011788054"
  },
  {
-  "name": "魅影苍穹深圳宝安店",
+  "name": "汤姆熊成都蜀都万达店",
   "name_en": null,
-  "address": "深圳市宝安区福海街道塘尾社区华强时代广场L3-06",
+  "address": "四川省成都市郫都区望丛东路139号蜀都万达广场2楼汤姆熊欢乐世界",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -3945,49 +3959,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=3228; id=1948316381011788006"
- },
- {
-  "name": "大森林时空屋兰州大学城店",
-  "name_en": null,
-  "address": "甘肃省兰州市兰州新区大学城京都茂三楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=甘肃; placeId=3309; id=1948316381015982114"
- },
- {
-  "name": "奇妙之城六安裕安吾悦广场店",
-  "name_en": null,
-  "address": "安徽省六安市裕安区小华山街道吾悦广场三楼奇妙之城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=安徽; placeId=3248; id=1948316381011788026"
- },
- {
-  "name": "极速时代上海江桥万达店",
-  "name_en": null,
-  "address": "上海市嘉定区金沙江西路江桥万达广场2楼极速时代",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=5285; id=2074407106044231681"
+  "notes": "province=四川; placeId=5311; id=2078321514738876418"
  },
  {
   "name": "大森林时空屋兰州京都之星店",
@@ -4060,6 +4032,48 @@
   "notes": "province=山东; placeId=3235; id=1948316381011788013"
  },
  {
+  "name": "大森林时空屋兰州大学城店",
+  "name_en": null,
+  "address": "甘肃省兰州市兰州新区大学城京都茂三楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=甘肃; placeId=3309; id=1948316381015982114"
+ },
+ {
+  "name": "奇妙之城六安裕安吾悦广场店",
+  "name_en": null,
+  "address": "安徽省六安市裕安区小华山街道吾悦广场三楼奇妙之城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=安徽; placeId=3248; id=1948316381011788026"
+ },
+ {
+  "name": "极速时代上海江桥万达店",
+  "name_en": null,
+  "address": "上海市嘉定区金沙江西路江桥万达广场2楼极速时代",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=上海; placeId=5285; id=2074407106044231681"
+ },
+ {
   "name": "星际小镇河南原阳店",
   "name_en": null,
   "address": "河南省原阳县香港城四楼星际小镇",
@@ -4074,20 +4088,6 @@
   "notes": "province=河南; placeId=4407; id=1971091122978045954"
  },
  {
-  "name": "奇妙之城深圳宝安店",
-  "name_en": null,
-  "address": "广东省深圳市宝安区宏发大世界b区三楼奇妙之城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=3243; id=1948316381011788021"
- },
- {
   "name": "AKIBAGO上海杨浦百联ZX造趣场店",
   "name_en": null,
   "address": "上海市杨浦区四平路2500号百联ZX造趣场2楼AKIBAGO",
@@ -4100,6 +4100,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=上海; placeId=3589; id=1948316381485744221"
+ },
+ {
+  "name": "奇妙之城深圳宝安店",
+  "name_en": null,
+  "address": "广东省深圳市宝安区宏发大世界b区三楼奇妙之城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=3243; id=1948316381011788021"
  },
  {
   "name": "奇妙之城柳州柳北保利店",
@@ -4214,20 +4228,6 @@
   "notes": "province=江苏; placeId=3089; id=1948316381011787867"
  },
  {
-  "name": "汤姆熊济南槐荫和谐广场店",
-  "name_en": null,
-  "address": "山东省济南市槐荫区经七纬十二路和谐广场3楼汤姆熊",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=1653; id=1948316382253301901"
- },
- {
   "name": "汤姆熊上海中山公园店",
   "name_en": null,
   "address": "上海市长宁区长宁路1018号中山公园龙之梦购物中心6楼汤姆熊",
@@ -4254,6 +4254,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=4159; id=1948316397835141261"
+ },
+ {
+  "name": "汤姆熊济南槐荫和谐广场店",
+  "name_en": null,
+  "address": "山东省济南市槐荫区经七纬十二路和谐广场3楼汤姆熊",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=1653; id=1948316382253301901"
  },
  {
   "name": "乐斗时代厦门湖里万达店",
@@ -4382,6 +4396,20 @@
   "notes": "province=福建; placeId=3062; id=1948316381011787840"
  },
  {
+  "name": "城市星空南京六合区",
+  "name_en": null,
+  "address": "江苏省南京市六合区龙湖天街三楼城市星空",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=5021; id=2059828202842517505"
+ },
+ {
   "name": "超乐空间内蒙古乌兰浩特万达店",
   "name_en": null,
   "address": "内蒙古乌兰浩特市万达广场二楼2FA",
@@ -4466,6 +4494,20 @@
   "notes": "province=广东; placeId=3051; id=1948316381011787829"
  },
  {
+  "name": "阳光狮乐园罗山西亚美悦广场",
+  "name_en": null,
+  "address": "河南省信阳市罗山县城关镇西亚美悦广场六楼阳光狮",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=河南; placeId=1216; id=1948316381863231706"
+ },
+ {
   "name": "小洋人宝贝王廊坊店",
   "name_en": null,
   "address": "河北省廊坊市大城县鑫达新天地三楼",
@@ -4480,9 +4522,9 @@
   "notes": "province=河北; placeId=1947; id=1948316382253302326"
  },
  {
-  "name": "阳光狮乐园罗山西亚美悦广场",
+  "name": "小洋人宝贝王保定雄县店",
   "name_en": null,
-  "address": "河南省信阳市罗山县城关镇西亚美悦广场六楼阳光狮",
+  "address": "河北省保定市雄县山水莲花购物广场二楼小洋人宝贝王",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -4491,7 +4533,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河南; placeId=1216; id=1948316381863231706"
+  "notes": "province=河北; placeId=1897; id=1948316382253302276"
  },
  {
   "name": "润宝梦湖州万达广场店",
@@ -4520,20 +4562,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=陕西; placeId=3047; id=1948316381011787825"
- },
- {
-  "name": "小洋人宝贝王保定雄县店",
-  "name_en": null,
-  "address": "河北省保定市雄县山水莲花购物广场二楼小洋人宝贝王",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河北; placeId=1897; id=1948316382253302276"
  },
  {
   "name": "疯狂牛仔城广州白云百信广场店",
@@ -4606,6 +4634,20 @@
   "notes": "province=广东; placeId=3034; id=1948316381011787812"
  },
  {
+  "name": "萌多拉上海奉发宝龙店",
+  "name_en": null,
+  "address": "上海市奉贤区四团镇港佳路奉发宝龙广场",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=上海; placeId=5428; id=2105246938072367106"
+ },
+ {
   "name": "萌多啦上海嘉定店",
   "name_en": null,
   "address": "上海市嘉定区环城路762弄1号萌多啦动漫",
@@ -4648,20 +4690,6 @@
   "notes": "province=江苏; placeId=4070; id=1948316397835141172"
  },
  {
-  "name": "梦时代电玩城贵阳新印1950店",
-  "name_en": null,
-  "address": "贵州省贵阳市云岩区国贸新印19503A层",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=贵州; placeId=2900; id=1948316382253301955"
- },
- {
   "name": "现代嘉年华珲春现代百货店",
   "name_en": null,
   "address": "吉林省珲春市沿河西街1463号现代百货",
@@ -4674,6 +4702,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=吉林; placeId=1321; id=1948316381863231811"
+ },
+ {
+  "name": "梦时代电玩城贵阳新印1950店",
+  "name_en": null,
+  "address": "贵州省贵阳市云岩区国贸新印19503A层",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=贵州; placeId=2900; id=1948316382253301955"
  },
  {
   "name": "环游地平线上海新松江店",
@@ -4760,20 +4802,6 @@
   "notes": "province=河南; placeId=3934; id=1948316381485744566"
  },
  {
-  "name": "孩皮吧咸宁咸安同惠店",
-  "name_en": null,
-  "address": "湖北省咸宁市咸安区同惠国际广场三楼孩皮吧",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖北; placeId=2884; id=1948316382253301929"
- },
- {
   "name": "天空之城江门新会万达店",
   "name_en": null,
   "address": "广东省江门市新会区会城启超大道2号江门新会万达广场二层2F-A-A",
@@ -4786,6 +4814,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=2377; id=1948316381036953979"
+ },
+ {
+  "name": "孩皮吧咸宁咸安同惠店",
+  "name_en": null,
+  "address": "湖北省咸宁市咸安区同惠国际广场三楼孩皮吧",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖北; placeId=2884; id=1948316382253301929"
  },
  {
   "name": "宝贝王余杭店",
@@ -4816,34 +4858,6 @@
   "notes": "province=安徽; placeId=2834; id=1948316382253301842"
  },
  {
-  "name": "奇妙之城宜宾成悦广场店",
-  "name_en": null,
-  "address": "四川省宜宾市江安县成悦广场二楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=四川; placeId=2964; id=1948316382253302067"
- },
- {
-  "name": "精灵岛佛山佳明广场店",
-  "name_en": null,
-  "address": "广东省佛山市南海区里水镇里水大道佳明广场三楼精灵岛",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=2960; id=1948316382253302059"
- },
- {
   "name": "天空之城扬州邗江吾悦店",
   "name_en": null,
   "address": "江苏省扬州市邗江区竹西路29号新城吾悅商场3楼天空之城",
@@ -4870,6 +4884,34 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=江苏; placeId=3168; id=1948316381011787946"
+ },
+ {
+  "name": "奇妙之城宜宾成悦广场店",
+  "name_en": null,
+  "address": "四川省宜宾市江安县成悦广场二楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=四川; placeId=2964; id=1948316382253302067"
+ },
+ {
+  "name": "精灵岛佛山佳明广场店",
+  "name_en": null,
+  "address": "广东省佛山市南海区里水镇里水大道佳明广场三楼精灵岛",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=2960; id=1948316382253302059"
  },
  {
   "name": "奇妙之城成都温江店",
@@ -4900,20 +4942,6 @@
   "notes": "province=广东; placeId=2953; id=1948316382253302048"
  },
  {
-  "name": "酷玩猩球济宁吾悦店",
-  "name_en": null,
-  "address": "山东省济宁市任城区吾悦广场三楼酷玩猩球",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=3361; id=1948316381015982166"
- },
- {
   "name": "潮玩无界万象宜宾天地店",
   "name_en": null,
   "address": "四川省宜宾市叙州区万象宜宾天地SL313潮玩无界",
@@ -4926,6 +4954,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=四川; placeId=4478; id=1973003058481217538"
+ },
+ {
+  "name": "酷玩猩球济宁吾悦店",
+  "name_en": null,
+  "address": "山东省济宁市任城区吾悦广场三楼酷玩猩球",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=3361; id=1948316381015982166"
  },
  {
   "name": "阿拉丁绥化北林春天店",
@@ -4998,20 +5040,6 @@
   "notes": "province=安徽; placeId=2868; id=1948316382253301902"
  },
  {
-  "name": "阿凡达&爱玩荟昆明店",
-  "name_en": null,
-  "address": "云南省昆明市西山区南坝路昆明大悦城D区三楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=云南; placeId=2865; id=1948316382253301896"
- },
- {
   "name": "七彩天空杭州临安锦北宝龙店",
   "name_en": null,
   "address": "浙江省杭州市临安区锦北街道宝龙广场2楼七彩天空乐园",
@@ -5024,6 +5052,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=浙江; placeId=2106; id=1948316381036953708"
+ },
+ {
+  "name": "阿凡达&爱玩荟昆明店",
+  "name_en": null,
+  "address": "云南省昆明市西山区南坝路昆明大悦城D区三楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=云南; placeId=2865; id=1948316382253301896"
  },
  {
   "name": "萌多拉福建南安世界城店",
@@ -5124,20 +5166,6 @@
   "notes": "province=江西; placeId=4399; id=1971031066731364353"
  },
  {
-  "name": "阳光狮乐园信阳西亚和悦店",
-  "name_en": null,
-  "address": "河南省信阳潢川县南城弋阳路西亚和悦广场",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河南; placeId=1961; id=1948316382253302340"
- },
- {
   "name": "福思特晋中榆次定阳万达店",
   "name_en": null,
   "address": "山西省晋中市榆次区大学城定阳万达3号门2楼",
@@ -5150,6 +5178,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=山西; placeId=2864; id=1948316382253301894"
+ },
+ {
+  "name": "阳光狮乐园信阳西亚和悦店",
+  "name_en": null,
+  "address": "河南省信阳潢川县南城弋阳路西亚和悦广场",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=河南; placeId=1961; id=1948316382253302340"
  },
  {
   "name": "福思特晋中新建路万达店",
@@ -5446,20 +5488,6 @@
   "notes": "province=江苏; placeId=2667; id=1948316382249107634"
  },
  {
-  "name": "吾技动漫北京龙德广场店",
-  "name_en": null,
-  "address": "北京市昌平区立汤路186号院龙德广场四层吾技动漫",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=北京; placeId=1121; id=1948316381863231611"
- },
- {
   "name": "九盈电玩台州南宫新天地店",
   "name_en": null,
   "address": "浙江省台州市路桥区路桥街道南官新天地观澜上城47幢102-123室",
@@ -5474,9 +5502,9 @@
   "notes": "province=浙江; placeId=2668; id=1948316382249107636"
  },
  {
-  "name": "潮玩社济南槐荫和谐广场店",
+  "name": "吾技动漫北京龙德广场店",
   "name_en": null,
-  "address": "山东省济南市槐荫区和谐广场五楼潮玩社",
+  "address": "北京市昌平区立汤路186号院龙德广场四层吾技动漫",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -5485,21 +5513,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山东; placeId=2652; id=1948316382249107613"
- },
- {
-  "name": "潮玩社西安雁塔店",
-  "name_en": null,
-  "address": "陕西省西安市雁塔区万象城四楼潮玩社",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=陕西; placeId=3440; id=1948316381015982245"
+  "notes": "province=北京; placeId=1121; id=1948316381863231611"
  },
  {
   "name": "炫动四方海口友谊阳光城店",
@@ -5528,6 +5542,34 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=海南; placeId=3292; id=1948316381015982097"
+ },
+ {
+  "name": "潮玩社济南槐荫和谐广场店",
+  "name_en": null,
+  "address": "山东省济南市槐荫区和谐广场五楼潮玩社",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山东; placeId=2652; id=1948316382249107613"
+ },
+ {
+  "name": "潮玩社西安雁塔店",
+  "name_en": null,
+  "address": "陕西省西安市雁塔区万象城四楼潮玩社",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=陕西; placeId=3440; id=1948316381015982245"
  },
  {
   "name": "星际传奇上海中海环宇城店",
@@ -5614,34 +5656,6 @@
   "notes": "province=广东; placeId=2614; id=1948316382249107572"
  },
  {
-  "name": "星际传奇南京万象汇店",
-  "name_en": null,
-  "address": "江苏省南京市栖霞区万象汇B馆三楼星际传奇",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=2608; id=1948316382249107566"
- },
- {
-  "name": "炫动魔方南昌东湖店",
-  "name_en": null,
-  "address": "江西省南昌市东湖区青山北路18号life青山汇3F-11炫动魔方家庭娱乐中心",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江西; placeId=3748; id=1948316381485744380"
- },
- {
   "name": "潮玩嘉年华漯河丹尼斯店",
   "name_en": null,
   "address": "河南省漯河市人民路丹尼斯2楼潮玩嘉年华",
@@ -5656,6 +5670,20 @@
   "notes": "province=河南; placeId=3749; id=1948316381485744381"
  },
  {
+  "name": "星际传奇南京万象汇店",
+  "name_en": null,
+  "address": "江苏省南京市栖霞区万象汇B馆三楼星际传奇",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=2608; id=1948316382249107566"
+ },
+ {
   "name": "宝贝王山东德州万达广场店",
   "name_en": null,
   "address": "山东省德州市德城区新华街道办事处湖滨南大道与新河路交汇处669号万达广场购物中心娱乐2F-A",
@@ -5668,6 +5696,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=山东; placeId=2219; id=1948316381036953821"
+ },
+ {
+  "name": "炫动魔方南昌东湖店",
+  "name_en": null,
+  "address": "江西省南昌市东湖区青山北路18号life青山汇3F-11炫动魔方家庭娱乐中心",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江西; placeId=3748; id=1948316381485744380"
  },
  {
   "name": "天空之城上海宝山店",
@@ -5712,9 +5754,9 @@
   "notes": "province=海南; placeId=2593; id=1948316382249107551"
  },
  {
-  "name": "头号玩家蚌埠东鼎店",
+  "name": "头号玩家合肥经开星达城店",
   "name_en": null,
-  "address": "安徽省蚌埠市龙子湖区东鼎购物中心4楼头号玩家潮玩竞技",
+  "address": "合肥市经开区翡翠路与丹霞路交口星达城购物中心二楼头号玩家",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -5723,7 +5765,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=安徽; placeId=2594; id=1948316382249107552"
+  "notes": "province=安徽; placeId=5212; id=2064922095498031106"
  },
  {
   "name": "超能星客广州白云店",
@@ -5908,6 +5950,20 @@
   "notes": "province=黑龙江; placeId=2276; id=1948316381036953878"
  },
  {
+  "name": "拾光派对沈阳大东区大悦城店",
+  "name_en": null,
+  "address": "辽宁省沈阳市大东区东中街大悦城A馆426号",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=辽宁; placeId=2496; id=1948316381036954098"
+ },
+ {
   "name": "super101烟台芝罘万达店",
   "name_en": null,
   "address": "烟台芝罘区万达广场二楼super101",
@@ -5934,20 +5990,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=海南; placeId=2509; id=1948316382249107467"
- },
- {
-  "name": "拾光派对沈阳大东区大悦城店",
-  "name_en": null,
-  "address": "辽宁省沈阳市大东区东中街大悦城A馆426号",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=辽宁; placeId=2496; id=1948316381036954098"
  },
  {
   "name": "三华里x精致玩家广州花都店",
@@ -5978,20 +6020,6 @@
   "notes": "province=北京; placeId=3618; id=1948316381485744250"
  },
  {
-  "name": "引力矩阵苏州常熟店",
-  "name_en": null,
-  "address": "江苏省苏州市常熟市琴湖溪里二期二楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=2397; id=1948316381036953999"
- },
- {
   "name": "11Lab超乐场天津SM广场店",
   "name_en": null,
   "address": "天津市东丽区环河北路SM城市广场168号金环B门一层11Lab超乐场",
@@ -6004,6 +6032,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=天津; placeId=2491; id=1948316381036954093"
+ },
+ {
+  "name": "引力矩阵苏州常熟店",
+  "name_en": null,
+  "address": "江苏省苏州市常熟市琴湖溪里二期二楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=2397; id=1948316381036953999"
  },
  {
   "name": "FS COMICS成都武侯时光里店",
@@ -6062,9 +6104,9 @@
   "notes": "province=浙江; placeId=5268; id=2072502752814272514"
  },
  {
-  "name": "super101昆明店",
+  "name": "星际反斗蛙大理昆百大泰业城店",
   "name_en": null,
-  "address": "云南省昆明市盘龙区北京路同德广场负一层super101",
+  "address": "云南省大理白族自治州大理市下关镇建设路泰业昆百大5楼",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -6073,7 +6115,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=云南; placeId=2481; id=1948316381036954083"
+  "notes": "province=云南; placeId=2189; id=1948316381036953791"
  },
  {
   "name": "星际传奇北京五棵松店",
@@ -6174,20 +6216,6 @@
   "notes": "province=湖北; placeId=2449; id=1948316381036954051"
  },
  {
-  "name": "第一回合宁波鄞州万达店",
-  "name_en": null,
-  "address": "浙江省宁波市鄞州区四明中路999号万达广场二楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=浙江; placeId=1448; id=1948316381863231938"
- },
- {
   "name": "昆明街区滨江店",
   "name_en": null,
   "address": "云南省昆明市盘龙区联盟街道办事处滨江·俊发广场",
@@ -6200,6 +6228,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=云南; placeId=2467; id=1948316381036954069"
+ },
+ {
+  "name": "第一回合宁波鄞州万达店",
+  "name_en": null,
+  "address": "浙江省宁波市鄞州区四明中路999号万达广场二楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=浙江; placeId=1448; id=1948316381863231938"
  },
  {
   "name": "酷玩e族淮北相山碧乐城",
@@ -6300,6 +6342,20 @@
   "notes": "province=山东; placeId=2451; id=1948316381036954053"
  },
  {
+  "name": "酷玩空间上海缤纷里店",
+  "name_en": null,
+  "address": "上海市金山区枫泾镇乐纷路268号爱琴海·缤纷里项目南区二层V8-202/V8-203号商铺酷玩空间",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=上海; placeId=5427; id=2105246695033421825"
+ },
+ {
   "name": "酷玩空间上海世纪汇店",
   "name_en": null,
   "address": "上海市浦东新区世纪大道1192号世纪汇负一楼酷玩空间",
@@ -6342,20 +6398,6 @@
   "notes": "province=辽宁; placeId=2445; id=1948316381036954047"
  },
  {
-  "name": "疯狂牛仔城佛山南海保利店",
-  "name_en": null,
-  "address": "广东省佛山市南海区桂城街道保利mall3楼疯狂牛仔城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=2612; id=1948316382249107570"
- },
- {
   "name": "疯狂牛仔城佛山三水广场店",
   "name_en": null,
   "address": "广东省佛山市三水区西南街道三水广场三楼疯狂牛仔城",
@@ -6368,6 +6410,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=1745; id=1948316382253302115"
+ },
+ {
+  "name": "疯狂牛仔城佛山南海保利店",
+  "name_en": null,
+  "address": "广东省佛山市南海区桂城街道保利mall3楼疯狂牛仔城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=2612; id=1948316382249107570"
  },
  {
   "name": "天空之城上海万嘉广场店",
@@ -6398,20 +6454,6 @@
   "notes": "province=广东; placeId=2924; id=1948316382253301996"
  },
  {
-  "name": "金色年华中街新玛特店",
-  "name_en": null,
-  "address": "辽宁省沈阳市大东区小东路1号中街新玛特7F",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=辽宁; placeId=1052; id=1948316381863231542"
- },
- {
   "name": "智游星期六郑州白沙店",
   "name_en": null,
   "address": "郑州市中牟县白沙镇双宇百货四楼智游星期六",
@@ -6426,9 +6468,9 @@
   "notes": "province=河南; placeId=4962; id=2059828137977606146"
  },
  {
-  "name": "星世纪动漫台球体验中心七星店",
+  "name": "金色年华中街新玛特店",
   "name_en": null,
-  "address": "湖南省株洲市芦淞区建设街道钟鼓岭路118号七星潮流购物公园星世纪动漫台球中心",
+  "address": "辽宁省沈阳市大东区小东路1号中街新玛特7F",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -6437,7 +6479,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=1303; id=1948316381863231793"
+  "notes": "province=辽宁; placeId=1052; id=1948316381863231542"
  },
  {
   "name": "潮玩社烟台蓬莱海情广场店",
@@ -6452,6 +6494,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=山东; placeId=2409; id=1948316381036954011"
+ },
+ {
+  "name": "星世纪动漫台球体验中心七星店",
+  "name_en": null,
+  "address": "湖南省株洲市芦淞区建设街道钟鼓岭路118号七星潮流购物公园星世纪动漫台球中心",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖南; placeId=1303; id=1948316381863231793"
  },
  {
   "name": "裕隆动漫城鹤壁淇滨裕隆爱之城店",
@@ -6776,20 +6832,6 @@
   "notes": "province=北京; placeId=1485; id=1948316381863231975"
  },
  {
-  "name": "量子攻略北京新奥店",
-  "name_en": null,
-  "address": "北京市朝阳区湖景东路新奥购物中心",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=北京; placeId=1289; id=1948316381863231779"
- },
- {
   "name": "王者之风天津大悦城店",
   "name_en": null,
   "address": "天津市和平区南京路大悦城王者之风3f-1",
@@ -6804,6 +6846,20 @@
   "notes": "province=天津; placeId=2502; id=1948316382249107460"
  },
  {
+  "name": "量子攻略北京新奥店",
+  "name_en": null,
+  "address": "北京市朝阳区湖景东路新奥购物中心",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=北京; placeId=1289; id=1948316381863231779"
+ },
+ {
   "name": "奥飞欢乐世界北京龙湖天街店",
   "name_en": null,
   "address": "北京市房山区龙湖天街",
@@ -6816,6 +6872,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=北京; placeId=2345; id=1948316381036953947"
+ },
+ {
+  "name": "欢悦天堂武汉范湖万达店",
+  "name_en": null,
+  "address": "湖北省武汉市江汉区范湖万达广场B区2F",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖北; placeId=2025; id=1948316381036953627"
  },
  {
   "name": "乐斗星空厦门集美店",
@@ -6844,20 +6914,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=湖北; placeId=2340; id=1948316381036953942"
- },
- {
-  "name": "欢悦天堂武汉范湖万达店",
-  "name_en": null,
-  "address": "湖北省武汉市江汉区范湖万达广场B区2F",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖北; placeId=2025; id=1948316381036953627"
  },
  {
   "name": "热带雨林邯郸丛台店",
@@ -7014,20 +7070,6 @@
   "notes": "province=河南; placeId=2023; id=1948316381036953625"
  },
  {
-  "name": "风云再起北京西西友谊店",
-  "name_en": null,
-  "address": "北京市西城区二环西单北大街109号西西友谊商城2层",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=北京; placeId=1984; id=1948316382253302363"
- },
- {
   "name": "风云再起苏州观前街店",
   "name_en": null,
   "address": "江苏省苏州市姑苏区观前街粤海广场1号楼2层风云再起",
@@ -7040,6 +7082,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=江苏; placeId=1164; id=1948316381863231654"
+ },
+ {
+  "name": "风云再起北京西西友谊店",
+  "name_en": null,
+  "address": "北京市西城区二环西单北大街109号西西友谊商城2层",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=北京; placeId=1984; id=1948316382253302363"
  },
  {
   "name": "牧童乐园威海环翠店",
@@ -7224,20 +7280,6 @@
   "notes": "province=山东; placeId=2180; id=1948316381036953782"
  },
  {
-  "name": "胖东来电玩天使城店",
-  "name_en": null,
-  "address": "河南省许昌市魏都区半截河街道建安大道与八龙路交叉口天使城三楼电玩城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=河南; placeId=2162; id=1948316381036953764"
- },
- {
   "name": "风云再起天津和平路店",
   "name_en": null,
   "address": "天津市和平区和平路印象城A座一层风云再起游乐汇",
@@ -7250,6 +7292,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=天津; placeId=1019; id=1948316381863231509"
+ },
+ {
+  "name": "胖东来电玩天使城店",
+  "name_en": null,
+  "address": "河南省许昌市魏都区半截河街道建安大道与八龙路交叉口天使城三楼电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=河南; placeId=2162; id=1948316381036953764"
  },
  {
   "name": "C翻乐园武汉洪山大悦城店",
@@ -7294,9 +7350,9 @@
   "notes": "province=安徽; placeId=2128; id=1948316381036953730"
  },
  {
-  "name": "第一回合成都郫都龙湖天街店",
+  "name": "第一回合成都银泰城店",
   "name_en": null,
-  "address": "四川省成都市郫都区创智北环路创智公园东侧约100米蜀新龙湖天街4楼第一回合",
+  "address": "四川省成都市武侯区益州大道1999号银泰城",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -7305,7 +7361,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=四川; placeId=2140; id=1948316381036953742"
+  "notes": "province=四川; placeId=1454; id=1948316381863231944"
  },
  {
   "name": "麦酷潮玩杭州拱墅银泰店",
@@ -7476,20 +7532,6 @@
   "notes": "province=广东; placeId=1217; id=1948316381863231707"
  },
  {
-  "name": "和音屋昆明世纪广场店",
-  "name_en": null,
-  "address": "云南省昆明市五华区世纪广场C2幢17楼E号",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=云南; placeId=4448; id=1972358423979245570"
- },
- {
   "name": "西瓜雀庄北京房山店",
   "name_en": null,
   "address": "北京市房山区卓秀北街绿地诺亚方舟北区2号楼804",
@@ -7502,6 +7544,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=北京; placeId=4536; id=1986672199054409729"
+ },
+ {
+  "name": "和音屋昆明世纪广场店",
+  "name_en": null,
+  "address": "云南省昆明市五华区世纪广场C2幢17楼E号",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=云南; placeId=4448; id=1972358423979245570"
  },
  {
   "name": "可多梦北京丰台店",
@@ -7588,20 +7644,6 @@
   "notes": "province=广东; placeId=3974; id=1948316381485744606"
  },
  {
-  "name": "天空之城东莞店",
-  "name_en": null,
-  "address": "广东省东莞市东城东路229号星河城3F-302号商铺",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=1933; id=1948316382253302312"
- },
- {
   "name": "童年搭档重庆江北店",
   "name_en": null,
   "address": "重庆市江北区观音桥天天尚街童年搭档",
@@ -7614,34 +7656,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=重庆; placeId=2067; id=1948316381036953669"
- },
- {
-  "name": "巷战英雄长春亚泰新动力店",
-  "name_en": null,
-  "address": "吉林省长春市二道区东盛大街与吉林大路交汇亚泰新动力",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=吉林; placeId=1391; id=1948316381863231881"
- },
- {
-  "name": "巷战英雄电玩长春欧亚新生活店",
-  "name_en": null,
-  "address": "吉林省长春市朝阳区红旗街新民广场欧亚新生活5楼城市英雄电玩城",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=吉林; placeId=1312; id=1948316381863231802"
  },
  {
   "name": "町豆部落槐房万达店",
@@ -7686,6 +7700,48 @@
   "notes": "province=北京; placeId=2072; id=1948316381036953674"
  },
  {
+  "name": "天空之城东莞店",
+  "name_en": null,
+  "address": "广东省东莞市东城东路229号星河城3F-302号商铺",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=1933; id=1948316382253302312"
+ },
+ {
+  "name": "巷战英雄长春亚泰新动力店",
+  "name_en": null,
+  "address": "吉林省长春市二道区东盛大街与吉林大路交汇亚泰新动力",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=吉林; placeId=1391; id=1948316381863231881"
+ },
+ {
+  "name": "巷战英雄电玩长春欧亚新生活店",
+  "name_en": null,
+  "address": "吉林省长春市朝阳区红旗街新民广场欧亚新生活5楼城市英雄电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=吉林; placeId=1312; id=1948316381863231802"
+ },
+ {
   "name": "环游嘉年华郑州二七店",
   "name_en": null,
   "address": "河南省郑州市二七区德化街100号百年德化负一楼环游嘉年华游乐体验中心（百年德化店）",
@@ -7698,20 +7754,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=河南; placeId=2064; id=1948316381036953666"
- },
- {
-  "name": "子洋联盟长沙望城奥莱店",
-  "name_en": null,
-  "address": "湖南省长沙市望城区金星北路砂之船奥莱3楼子洋联盟动漫体验中心",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=1522; id=1948316382249107668"
  },
  {
   "name": "街机 烈火",
@@ -7742,9 +7784,9 @@
   "notes": "province=广东; placeId=1286; id=1948316381863231776"
  },
  {
-  "name": "炫动四方长春居然世界里店",
+  "name": "子洋联盟长沙望城奥莱店",
   "name_en": null,
-  "address": "吉林省长春市高新区居然世界里三楼炫动四方电玩城",
+  "address": "湖南省长沙市望城区金星北路砂之船奥莱3楼子洋联盟动漫体验中心",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -7753,7 +7795,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=吉林; placeId=1811; id=1948316382253302190"
+  "notes": "province=湖南; placeId=1522; id=1948316382249107668"
  },
  {
   "name": "星悦潮玩无锡店",
@@ -7768,6 +7810,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=江苏; placeId=1352; id=1948316381863231842"
+ },
+ {
+  "name": "炫动四方长春居然世界里店",
+  "name_en": null,
+  "address": "吉林省长春市高新区居然世界里三楼炫动四方电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=吉林; placeId=1811; id=1948316382253302190"
  },
  {
   "name": "super101青岛崂山店",
@@ -7798,20 +7854,6 @@
   "notes": "province=湖南; placeId=2045; id=1948316381036953647"
  },
  {
-  "name": "环游嘉年华东莞长安店",
-  "name_en": null,
-  "address": "广东省东莞市长安镇长青南路1号7栋万科广场三楼3039室环游嘉年华",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=1008; id=1948316381863231498"
- },
- {
   "name": "环游嘉年华番禺易发店",
   "name_en": null,
   "address": "广东省广州市番禺区市桥街易发商业街新大新百货5楼",
@@ -7824,6 +7866,20 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=1002; id=1948316381863231492"
+ },
+ {
+  "name": "环游嘉年华东莞长安店",
+  "name_en": null,
+  "address": "广东省东莞市长安镇长青南路1号7栋万科广场三楼3039室环游嘉年华",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=1008; id=1948316381863231498"
  },
  {
   "name": "米其漫深圳福田店",
@@ -7910,20 +7966,6 @@
   "notes": "province=江苏; placeId=2029; id=1948316381036953631"
  },
  {
-  "name": "城市英雄江西南昌店",
-  "name_en": null,
-  "address": "江西省南昌市新建区长棱大道新城吾悦广场2楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江西; placeId=1208; id=1948316381863231698"
- },
- {
   "name": "城市英雄天津津南吾悦广场店",
   "name_en": null,
   "address": "天津市津南区吾悦广场三楼城市英雄",
@@ -7938,6 +7980,20 @@
   "notes": "province=天津; placeId=1167; id=1948316381863231657"
  },
  {
+  "name": "城市英雄江西南昌店",
+  "name_en": null,
+  "address": "江西省南昌市新建区长棱大道新城吾悦广场2楼",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江西; placeId=1208; id=1948316381863231698"
+ },
+ {
   "name": "51区超级乐园天津红桥水游城店",
   "name_en": null,
   "address": "天津市红桥区水游城A座2楼51区超级乐园",
@@ -7950,62 +8006,6 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=天津; placeId=1975; id=1948316382253302354"
- },
- {
-  "name": "风云再起上海人民广场店",
-  "name_en": null,
-  "address": "上海市黄浦区人民大道221号迪美广场负一楼227-229#",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=1006; id=1948316381863231496"
- },
- {
-  "name": "城市英雄西安熙地港店",
-  "name_en": null,
-  "address": "陕西省西安市未央区凤城七路熙地港购物中心五楼",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=陕西; placeId=1620; id=1948316382253301824"
- },
- {
-  "name": "城市英雄长沙岳麓万象城店",
-  "name_en": null,
-  "address": "湖南省长沙市岳麓区万象城L5 553城市英雄",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=3796; id=1948316381485744428"
- },
- {
-  "name": "星河部落上海杨浦店",
-  "name_en": null,
-  "address": "上海市杨浦区淞沪路 111 号 2 层",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=5080; id=2061718808871215105"
  },
  {
   "name": "城市英雄武汉滨江天街店",
@@ -8050,9 +8050,9 @@
   "notes": "province=江西; placeId=3983; id=1948316381485744615"
  },
  {
-  "name": "51区动漫游乐天津西青店",
+  "name": "星河部落上海杨浦店",
   "name_en": null,
-  "address": "天津市西青区中北镇阜盛道永旺梦乐城2楼51区动漫游乐场",
+  "address": "上海市杨浦区淞沪路 111 号 2 层",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -8061,12 +8061,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=天津; placeId=1192; id=1948316381863231682"
+  "notes": "province=上海; placeId=5080; id=2061718808871215105"
  },
  {
-  "name": "哆啦乐图西安钟楼店",
+  "name": "城市英雄西安熙地港店",
   "name_en": null,
-  "address": "陕西省西安市碑林区骡马市60号文商大厦一层",
+  "address": "陕西省西安市未央区凤城七路熙地港购物中心五楼",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -8075,12 +8075,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=陕西; placeId=1005; id=1948316381863231495"
+  "notes": "province=陕西; placeId=1620; id=1948316382253301824"
  },
  {
-  "name": "阿凡达电玩山西太原柳巷店",
+  "name": "风云再起上海人民广场店",
   "name_en": null,
-  "address": "山西省太原市迎泽区柳巷商业街工贸大厦四楼阿凡达电玩嘉年华",
+  "address": "上海市黄浦区人民大道221号迪美广场负一楼227-229#",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -8089,12 +8089,12 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=山西; placeId=1205; id=1948316381863231695"
+  "notes": "province=上海; placeId=1006; id=1948316381863231496"
  },
  {
-  "name": "星河部落川沙百联店",
+  "name": "城市英雄长沙岳麓万象城店",
   "name_en": null,
-  "address": "上海市浦东新区川沙路5398号川沙百联购物中心3楼星河部落电玩城",
+  "address": "湖南省长沙市岳麓区万象城L5 553城市英雄",
   "lat": null,
   "lng": null,
   "coord_system": "unknown",
@@ -8103,49 +8103,7 @@
   ],
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=上海; placeId=1623; id=1948316382253301831"
- },
- {
-  "name": "风云再起徐州鼓楼苏宁广场店",
-  "name_en": null,
-  "address": "江苏省徐州市鼓楼区淮海东路29号苏宁广场3F326",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=1858; id=1948316382253302237"
- },
- {
-  "name": "城市英雄长沙梅溪湖步步高店",
-  "name_en": null,
-  "address": "湖南省长沙市岳麓区梅溪湖步步高负一层城市英雄",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=1077; id=1948316381863231567"
- },
- {
-  "name": "米吉姆宁波鄞州银泰店",
-  "name_en": null,
-  "address": "浙江省宁波市鄞州区首南街道天童南路1088号句章东路999号银泰环球城内购物中心3F层",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=浙江; placeId=1869; id=1948316382253302248"
+  "notes": "province=湖南; placeId=3796; id=1948316381485744428"
  },
  {
   "name": "51区超级乐园济南印象城店",
@@ -8218,6 +8176,104 @@
   "notes": "province=广东; placeId=1417; id=1948316381863231907"
  },
  {
+  "name": "51区动漫游乐天津西青店",
+  "name_en": null,
+  "address": "天津市西青区中北镇阜盛道永旺梦乐城2楼51区动漫游乐场",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=天津; placeId=1192; id=1948316381863231682"
+ },
+ {
+  "name": "哆啦乐图西安钟楼店",
+  "name_en": null,
+  "address": "陕西省西安市碑林区骡马市60号文商大厦一层",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=陕西; placeId=1005; id=1948316381863231495"
+ },
+ {
+  "name": "阿凡达电玩山西太原柳巷店",
+  "name_en": null,
+  "address": "山西省太原市迎泽区柳巷商业街工贸大厦四楼阿凡达电玩嘉年华",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=山西; placeId=1205; id=1948316381863231695"
+ },
+ {
+  "name": "星河部落川沙百联店",
+  "name_en": null,
+  "address": "上海市浦东新区川沙路5398号川沙百联购物中心3楼星河部落电玩城",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=上海; placeId=1623; id=1948316382253301831"
+ },
+ {
+  "name": "城市英雄长沙梅溪湖步步高店",
+  "name_en": null,
+  "address": "湖南省长沙市岳麓区梅溪湖步步高负一层城市英雄",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖南; placeId=1077; id=1948316381863231567"
+ },
+ {
+  "name": "风云再起徐州鼓楼苏宁广场店",
+  "name_en": null,
+  "address": "江苏省徐州市鼓楼区淮海东路29号苏宁广场3F326",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=1858; id=1948316382253302237"
+ },
+ {
+  "name": "米吉姆宁波鄞州银泰店",
+  "name_en": null,
+  "address": "浙江省宁波市鄞州区首南街道天童南路1088号句章东路999号银泰环球城内购物中心3F层",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=浙江; placeId=1869; id=1948316382253302248"
+ },
+ {
   "name": "环游嘉年华上海环球港店",
   "name_en": null,
   "address": "上海市普陀区中山北路3300号月星环球港3楼L3163",
@@ -8244,6 +8300,62 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=广东; placeId=1001; id=1948316381863231491"
+ },
+ {
+  "name": "趣玩汇南京新街口店",
+  "name_en": null,
+  "address": "南京市秦淮区洪武路38号正洪大厦趣玩汇",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=江苏; placeId=4892; id=2045074755299606530"
+ },
+ {
+  "name": "城市英雄春天百货店",
+  "name_en": null,
+  "address": "湖南省长沙市天心区春天百货负一楼城市英雄电玩",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=湖南; placeId=1088; id=1948316381863231578"
+ },
+ {
+  "name": "环游嘉年华珠海华发店",
+  "name_en": null,
+  "address": "广东省珠海市香洲区珠海大道8号华发商都C馆三楼C3031号环游嘉年华",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=1896; id=1948316382253302275"
+ },
+ {
+  "name": "环游亲子嘉年华汇一城二店",
+  "name_en": null,
+  "address": "广东省东莞市南城街道鸿福路200号汇一城三区A3313号铺",
+  "lat": null,
+  "lng": null,
+  "coord_system": "unknown",
+  "games": [
+   "chunithm"
+  ],
+  "source": "wahlap_midtr",
+  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
+  "notes": "province=广东; placeId=2203; id=1948316381036953805"
  },
  {
   "name": "环游嘉年华东莞民盈国贸店",
@@ -8274,20 +8386,6 @@
   "notes": "province=广东; placeId=1627; id=1948316382253301841"
  },
  {
-  "name": "环游亲子嘉年华汇一城二店",
-  "name_en": null,
-  "address": "广东省东莞市南城街道鸿福路200号汇一城三区A3313号铺",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=2203; id=1948316381036953805"
- },
- {
   "name": "城市英雄司门口店",
   "name_en": null,
   "address": "湖南省长沙市解放西路147号",
@@ -8300,47 +8398,5 @@
   "source": "wahlap_midtr",
   "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
   "notes": "province=湖南; placeId=1146; id=1948316381863231636"
- },
- {
-  "name": "趣玩汇南京新街口店",
-  "name_en": null,
-  "address": "南京市秦淮区洪武路38号正洪大厦趣玩汇",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=江苏; placeId=4892; id=2045074755299606530"
- },
- {
-  "name": "环游嘉年华珠海华发店",
-  "name_en": null,
-  "address": "广东省珠海市香洲区珠海大道8号华发商都C馆三楼C3031号环游嘉年华",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=广东; placeId=1896; id=1948316382253302275"
- },
- {
-  "name": "城市英雄春天百货店",
-  "name_en": null,
-  "address": "湖南省长沙市天心区春天百货负一楼城市英雄电玩",
-  "lat": null,
-  "lng": null,
-  "coord_system": "unknown",
-  "games": [
-   "chunithm"
-  ],
-  "source": "wahlap_midtr",
-  "source_url": "https://sega-register.wahlap.net/api/sega/midtr/rest/location",
-  "notes": "province=湖南; placeId=1088; id=1948316381863231578"
  }
 ]
