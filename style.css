@@ -17,6 +17,9 @@
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
+/* The app is a fixed full-screen shell; the document itself must never scroll.
+   body alone is not enough on iOS Safari, which pans the root instead. */
+html { overflow: hidden; }
 body {
   font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue",
     Arial, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Microsoft YaHei", sans-serif;
@@ -552,6 +555,10 @@ body.nearby-open #pane-china { display: none; }
      tab, the favicon and the footer all still name the site), so it yields
      first and the search box keeps a usable floor. */
   #searchwrap { flex: 1 1 auto; min-width: 148px; }
+  /* iOS Safari zooms the page in on focus of any input whose font-size is
+     under 16px, and leaves it zoomed after blur: the header, map and place
+     sheet all ended up enlarged and panned off-screen. 16px opts out. */
+  #search { font-size: 16px; }
   #topbar h1 {
     font-size: 15px;
     overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 0 1 auto;
@@ -647,8 +654,21 @@ body.nearby-open #pane-china { display: none; }
    plus the 12px flex gap around a search box whose own 148px floor cannot
    shrink, so the padding and gap tighten here rather than the tap target. */
 @media (max-width: 360px) {
-  #repo-link { display: none; }
   #topbar { padding: 0 8px; gap: 8px; }
+}
+
+/* The 360px fix above was not enough on real phones: at 375-402px the bar
+   still measured 402-414px (wider again with a CJK count label), so the
+   document was wider than the screen. Chrome clipped the repo icon; iOS Safari
+   let the whole page pan sideways, cutting off the place sheet and the
+   drawer toggle. The repo link yields at every phone width now, and the count
+   may ellipsise rather than push the bar past the viewport. */
+@media (max-width: 430px) {
+  #repo-link { display: none; }
+  #meta-count { min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; }
+  /* Search grows into the leftover space from a zero basis, so the count keeps
+     its full text until search is down to its 148px floor. */
+  #searchwrap { flex-basis: 0; }
 }
 
 /* ---------- empty state (#10) ---------- */
